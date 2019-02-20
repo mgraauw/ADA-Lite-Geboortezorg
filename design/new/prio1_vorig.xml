@@ -1,94 +1,52 @@
-<!--New XML generator, 2019-02-20T12:12:57.535+01:00--><prio1_vorig transactionRef="2.16.840.1.113883.2.4.3.11.60.90.77.4.2456"
+<prio1_vorig transactionRef="2.16.840.1.113883.2.4.3.11.60.90.77.4.2456"
              versionDate="">
-   <zorgverlenerzorginstelling conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.1">
-      <zorgverlener conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10001">
-         <naam_zorgverlener value=""
-                            conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10006"
-                            nullFlavor=""/>
+   <zorgverlenerzorginstelling>
+      <zorgverlener>
+         <naam_zorgverlener value=""/>
       </zorgverlener>
-      <zorginstelling conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10020">
-         <naam_zorginstelling value="" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10026"/>
+      <zorginstelling>
+         <naam_zorginstelling value=""/>
       </zorginstelling>
    </zorgverlenerzorginstelling>
-   <vrouw conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.2">
-      <burgerservicenummer value=""
-                           root=""
-                           conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10030"/>
-      <naamgegevens conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10035">
-         <roepnaam value=""
-                   conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82360"
-                   nullFlavor=""/>
-         <achternaam conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82361">
-            <soort_naam value="1"
-                        conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82362"
-                        originalText=""/>
-            <voorvoegsel value=""
-                         conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82363"
-                         nullFlavor=""/>
-            <achternaam value=""
-                        conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10043"
-                        nullFlavor=""/>
+   <vrouw>
+      <burgerservicenummer value=""/>
+      <naamgegevens>
+         <roepnaam value=""/>
+         <achternaam>
+            <soort_naam value=""/>
+            <voorvoegsel value=""/>
+            <achternaam value=""/>
          </achternaam>
       </naamgegevens>
    </vrouw>
-   <zwangerschap conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.3">
-      <graviditeit value=""
-                   conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20010"
-                   nullFlavor=""/>
-      <pariteit_voor_deze_zwangerschap value=""
-                                       conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20150"
-                                       nullFlavor=""/>
-      <a_terme_datum_groep conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20029">
-         <a_terme_datum value=""
-                        conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20030"
-                        nullFlavor=""/>
+   <zwangerschap>
+      <graviditeit value=""/>
+      <pariteit_voor_deze_zwangerschap value=""/>
+      <a_terme_datum_groep>
+         <a_terme_datum value=""/>
       </a_terme_datum_groep>
-      <wijze_einde_zwangerschap value="1"
-                                conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80625"
-                                originalText=""/>
-      <datum_einde_zwangerschap value=""
-                                conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20540"
-                                nullFlavor=""/>
+      <wijze_einde_zwangerschap value=""/>
+      <datum_einde_zwangerschap value=""/>
    </zwangerschap>
-   <bevalling conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.6">
-      <diagnose_bevalling conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82291">
-         <zwangerschapsduur value=""
-                            unit="d"
-                            conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82382"
-                            nullFlavor=""/>
+   <bevalling>
+      <diagnose_bevalling>
+         <zwangerschapsduur value=""/>
       </diagnose_bevalling>
-      <hoeveelheid_bloedverlies value=""
-                                unit="ml"
-                                conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20640"
-                                nullFlavor=""/>
-      <conditie_perineum_postpartum value="1"
-                                    conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80673"
-                                    originalText=""/>
+      <hoeveelheid_bloedverlies value=""/>
+      <conditie_perineum_postpartum value=""/>
    </bevalling>
-   <uitkomst_per_kind conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.7">
-      <baring conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40002">
-         <kindspecifieke_maternale_gegevens conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.71"/>
-         <kindspecifieke_uitkomstgegevens conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.72">
-            <type_partus value="1"
-                         conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80626"
-                         originalText=""/>
-            <zwangerschapsduur value=""
-                               unit="d"
-                               conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20062"
-                               nullFlavor=""/>
-            <apgarscore_na_5_min value=""
-                                 conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40071"
-                                 nullFlavor=""/>
-            <vaginale_kunstverlossing_groep conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40189">
-               <vaginale_kunstverlossing value="1"
-                                         conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40190"
-                                         originalText=""/>
+   <uitkomst_per_kind>
+      <baring>
+         <kindspecifieke_maternale_gegevens/>
+         <kindspecifieke_uitkomstgegevens>
+            <type_partus value=""/>
+            <zwangerschapsduur value=""/>
+            <apgarscore_na_5_min value=""/>
+            <vaginale_kunstverlossing_groep>
+               <vaginale_kunstverlossing value=""/>
             </vaginale_kunstverlossing_groep>
-            <lichamelijk_onderzoek_kind conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80766">
-               <geboortegewicht value=""
-                                unit="gram"
-                                conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40060"
-                                nullFlavor=""/>
+            <lichamelijk_onderzoek_kind>
+               <geboortegewicht value=""/>
             </lichamelijk_onderzoek_kind>
          </kindspecifieke_uitkomstgegevens>
       </baring>

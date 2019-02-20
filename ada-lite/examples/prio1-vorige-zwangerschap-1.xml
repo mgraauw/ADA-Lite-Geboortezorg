@@ -10,24 +10,46 @@
     </zorgverlenerzorginstelling>
     <vrouw>
         <burgerservicenummer value="123456095"/>
-        <naam_vrouw>
-            <achternamen value="Janssen"/>
-        </naam_vrouw>
+        <naamgegevens>
+            <achternaam>
+                <voorvoegsel value="van der"/>
+                <achternaam value="Zwangeren"/>
+            </achternaam>
+        </naamgegevens>
+        <bloedgroep_vrouw value="58460004"/>
+        <rhesus_d_factor_vrouw value="165747007"/>
+        <rhesus_c_factor value="rhcpos"/>
     </vrouw>
-    <obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap>
+    <zwangerschap>
+        <graviditeit value="3"/>
+        <pariteit_voor_deze_zwangerschap value="1"/>
+        <a_terme_datum_groep>
+            <a_terme_datum value=""/>
+        </a_terme_datum_groep>
         <wijze_einde_zwangerschap value="1"/>
-        <eerdere_bevalling>
-            <hoeveelheid_bloedverlies value="400"/>
-            <duur_actieve_ontsluitingsfase_ontsluitingsduur value="4"/>
-            <duur_uitdrijving_vanaf_actief_meepersen value="0"/>
-            <conditie_perineum_postpartum value="A"/>
-            <vorige_uitkomst_per_kind>
-                <kindspecifieke_gegevens_vorige_uitkomsten>
-                    <type_partus value="200149009"/>
+        <datum_einde_zwangerschap value=""/>
+    </zwangerschap>
+    <bevalling>
+        <diagnose_bevalling>
+            <zwangerschapsduur value=""/>
+        </diagnose_bevalling>
+        <hoeveelheid_bloedverlies value="400"/>
+        <conditie_perineum_postpartum value="A"/>
+    </bevalling>
+    <uitkomst_per_kind>
+        <baring>
+            <kindspecifieke_maternale_gegevens/>
+            <kindspecifieke_uitkomstgegevens>
+                <type_partus value="200149009"/>
+                <zwangerschapsduur value=""/>
+                <apgarscore_na_5_min value="7"/>
+                <vaginale_kunstverlossing_groep>
+                    <vaginale_kunstverlossing value=""/>
+                </vaginale_kunstverlossing_groep>
+                <lichamelijk_onderzoek_kind>
                     <geboortegewicht value="2845"/>
-                    <apgarscore_na_5_min value="7"/>
-                </kindspecifieke_gegevens_vorige_uitkomsten>
-            </vorige_uitkomst_per_kind>
-        </eerdere_bevalling>
-    </obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap>
+                </lichamelijk_onderzoek_kind>
+            </kindspecifieke_uitkomstgegevens>
+        </baring>
+    </uitkomst_per_kind>
 </prio1_vorig>
