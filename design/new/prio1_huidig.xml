@@ -1,0 +1,62 @@
+<!--New XML generator, 2019-02-20T12:13:47.393+01:00--><prio1_huidig transactionRef="2.16.840.1.113883.2.4.3.11.60.90.77.4.2453"
+              versionDate="">
+   <zorgverlenerzorginstelling conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.1">
+      <zorgverlener conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10001">
+         <naam_zorgverlener value=""
+                            conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10006"
+                            nullFlavor=""/>
+      </zorgverlener>
+      <zorginstelling conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10020">
+         <naam_zorginstelling value="" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10026"/>
+      </zorginstelling>
+   </zorgverlenerzorginstelling>
+   <vrouw conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.2">
+      <burgerservicenummer value=""
+                           root=""
+                           conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10030"/>
+      <naamgegevens conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10035">
+         <roepnaam value=""
+                   conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82360"
+                   nullFlavor=""/>
+         <achternaam conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82361">
+            <soort_naam value="1"
+                        conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82362"
+                        originalText=""/>
+            <voorvoegsel value=""
+                         conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82363"
+                         nullFlavor=""/>
+            <achternaam value=""
+                        conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10043"
+                        nullFlavor=""/>
+         </achternaam>
+      </naamgegevens>
+      <anamnese conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80811"/>
+      <bloedgroep_vrouw value="1"
+                        conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10810"
+                        originalText=""/>
+      <rhesus_d_factor_vrouw value="1"
+                             conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10811"
+                             originalText=""/>
+      <rhesus_c_factor value="1"
+                       conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10816"
+                       originalText=""/>
+   </vrouw>
+   <zwangerschap conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.3">
+      <graviditeit value=""
+                   conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20010"
+                   nullFlavor=""/>
+      <pariteit value=""
+                conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20153"
+                nullFlavor=""/>
+   </zwangerschap>
+   <medisch_onderzoek conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.14">
+      <maternale_onderzoeksgegevens conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.142">
+         <urine_bloed_en_aanvullende_onderzoeken conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80959">
+            <hb value=""
+                unit="mmol/L"
+                conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10814"
+                nullFlavor=""/>
+         </urine_bloed_en_aanvullende_onderzoeken>
+      </maternale_onderzoeksgegevens>
+   </medisch_onderzoek>
+</prio1_huidig>

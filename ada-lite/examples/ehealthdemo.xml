@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<acute_overdracht transactionRef="2.16.840.1.113883.2.4.3.11.60.90.77.4.2301" versionDate="2018-11-09T12:31:45">
+    <vrouw>
+        <burgerservicenummer value="999995856"/>
+        <extension url="http://www.marcdegraauw.com/extension-example">
+            <skype-id value="mgraauw" conceptId="1"/>
+        </extension>
+    </vrouw>
+    <zorgverlenerzorginstelling>
+        <zorgverlener>
+            <naam_zorgverlener>
+                <achternamen value="Gessel"/>
+            </naam_zorgverlener>
+            <zorginstelling>
+                <naam_zorginstelling value="Verloskundigenpraktijk Astrid Limburg"/>
+            </zorginstelling>
+        </zorgverlener>
+    </zorgverlenerzorginstelling>
+    <bloedgroep_vrouw value="112144000"/>
+    <rhesus_d_factor_vrouw value="165747007"/>
+    <rhesus_c_factor value="rhcneg"/>
+    <obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap>
+        <wijze_einde_zwangerschap value="1"/>
+        <eerdere_bevalling>
+            <hoeveelheid_bloedverlies value="600"/>
+            <conditie_perineum_postpartum value="F"/>
+            <kindspecifieke_gegevens_vorige_uitkomsten>
+                <type_partus value="267278005"/>
+                <geboortegewicht value="3810"/>
+                <apgarscore_na_5_min value="8"/>
+                <vaginale_kunstverlossing/>
+            </kindspecifieke_gegevens_vorige_uitkomsten>
+        </eerdere_bevalling>
+    </obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap>
+    <obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap>
+        <wijze_einde_zwangerschap value="4"/>
+    </obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap>
+    <obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap>
+        <wijze_einde_zwangerschap value="1"/>
+        <eerdere_bevalling>
+            <hoeveelheid_bloedverlies value="400"/>
+            <conditie_perineum_postpartum value="A"/>
+            <kindspecifieke_gegevens_vorige_uitkomsten>
+                <type_partus value="48782003"/>
+                <geboortegewicht value="3150"/>
+                <apgarscore_na_5_min value="10"/>
+            </kindspecifieke_gegevens_vorige_uitkomsten>
+        </eerdere_bevalling>
+    </obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap>
+    <zwangerschap>
+        <graviditeit value="4"/>
+    </zwangerschap>
+</acute_overdracht>

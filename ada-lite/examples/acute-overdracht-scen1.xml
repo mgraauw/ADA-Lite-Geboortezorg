@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<acute_overdracht transactionRef="2.16.840.1.113883.2.4.3.11.60.90.77.4.2301" versionDate="2018-11-09T12:31:45">
+    <zorgverlenerzorginstelling>
+        <zorgverlener>
+            <naam_zorgverlener value="V.E.R. Loskundige"/>
+        </zorgverlener>
+        <zorginstelling>
+            <naam_zorginstelling value="Test instelling 1"/>
+        </zorginstelling>
+    </zorgverlenerzorginstelling>
+    <vrouw>
+        <burgerservicenummer value="123456095"/>
+        <naam_vrouw>
+            <achternamen value="Janssen"/>
+        </naam_vrouw>
+        <bloedgroep_vrouw value="58460004"/>
+        <rhesus_d_factor_vrouw value="165747007"/>
+        <rhesus_c_factor value="rhcpos"/>
+    </vrouw>
+    <obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap>
+        <wijze_einde_zwangerschap value="1"/>
+        <eerdere_bevalling>
+            <hoeveelheid_bloedverlies value="400"/>
+            <duur_actieve_ontsluitingsfase_ontsluitingsduur value="4"/>
+            <duur_uitdrijving_vanaf_actief_meepersen value="0"/>
+            <conditie_perineum_postpartum value="A"/>
+            <vorige_uitkomst_per_kind>
+                <kindspecifieke_gegevens_vorige_uitkomsten>
+                    <type_partus value="200149009"/>
+                    <geboortegewicht value="2845"/>
+                    <apgarscore_na_5_min value="7"/>
+                </kindspecifieke_gegevens_vorige_uitkomsten>
+            </vorige_uitkomst_per_kind>
+        </eerdere_bevalling>
+    </obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap>
+    <zwangerschap>
+        <graviditeit value="2"/>
+    </zwangerschap>
+    <medisch_onderzoek>
+        <maternale_onderzoeksgegevens>
+            <hb value="7.3"/>
+        </maternale_onderzoeksgegevens>
+    </medisch_onderzoek>
+    <medisch_onderzoek>
+        <maternale_onderzoeksgegevens>
+            <hb value="6.8"/>
+        </maternale_onderzoeksgegevens>
+    </medisch_onderzoek>
+</acute_overdracht>

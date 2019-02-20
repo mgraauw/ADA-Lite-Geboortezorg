@@ -1,0 +1,16 @@
+<ada xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../ada/core/ada.xsd">
+    <project prefix="prio1_huidig-" language="nl-NL" versionDate="">
+        <release baseUri="http://localhost:8877/decor/services/RetrieveTransaction"/>
+    <applications>
+        <application version="1">
+            <views>
+                <view id="1" type="crud" target="xforms" transactionId="2.16.840.1.113883.2.4.3.11.60.90.77.4.2453">
+                    <name>Prio1 huidig</name>
+                    <concepts include="all">
+                    </concepts>
+                </view>
+            </views>
+        </application>
+    </applications>
+    </project>
+</ada>

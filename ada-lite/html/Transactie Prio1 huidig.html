@@ -1,0 +1,908 @@
+
+<!-- saved from url=(0190)http://localhost:8877/decor/services/RetrieveTransaction?id=2.16.840.1.113883.2.4.3.11.60.90.77.4.2453&effectiveDate=2018-12-17T15:21:25&language=nl-NL&ui=nl-NL&format=html&hidecolumns=34567 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <title>Transactie Prio1 huidig</title>
+        <link href="./Transactie Prio1 huidig_files/default.css" rel="stylesheet" type="text/css">
+        <link href="./Transactie Prio1 huidig_files/retrieve-transaction.css" rel="stylesheet" type="text/css">
+        <script type="text/javascript">window.treeTableCollapsed=true;</script>
+        <script src="./Transactie Prio1 huidig_files/jquery-1.11.1.min.js.download" type="text/javascript"></script>
+        <script src="./Transactie Prio1 huidig_files/jquery.treetable.js.download" type="text/javascript"></script>
+        <script src="./Transactie Prio1 huidig_files/retrieve-transaction.js.download" type="text/javascript"></script>
+        <script src="./Transactie Prio1 huidig_files/jquery.cookie.js.download" type="text/javascript"></script>
+        <script src="./Transactie Prio1 huidig_files/dragtable.js.download" type="text/javascript"></script>
+    </head>
+    <body>
+        <table style="width: 100%;">
+            <tbody class="list">
+                <tr>
+                    <td style="text-align: left;">
+                        <h1>Transactie Prio1 huidig</h1>
+                        <p><span style="margin-right: 10px;">ID: 2.16.840.1.113883.2.4.3.11.60.90.77.1.5</span><span>Versielabel: Live versie</span></p>
+                    </td>
+                    <td style="text-align: right;"><a href="http://decor.nictiz.nl/perinatologie/"><img src="./Transactie Prio1 huidig_files/Nictiz_logo_PO_rechts_rgb.png" alt="" title="http://decor.nictiz.nl/perinatologie/" style="max-height: 50px;"></a></td>
+                </tr>
+            </tbody>
+        </table><!--<p>{i18n:getMessage($docMessages, 'columnID', $ui-lang)}: {$fullDatasetTree/@id/string()}</p>
+            <p>{i18n:getMessage($docMessages, 'columnVersionLabel', $ui-lang)}: {if ($version) then $version else i18n:getMessage($docMessages, 'columnLiveVersion', $ui-lang)}</p>-->
+        <div id="concepts"><button id="expandAll" type="button">Alles uitklappen</button><button id="collapseAll" type="button">Alles inklappen</button><input id="nameSearch" placeholder="Zoek op naam"><button id="nameSort" type="button">Sorteer op naam</button><select id="hiddenColumns">
+                <option value="title">Toon kolom...</option>
+                <option value="columnID" disabled="disabled">ID</option>
+                <option value="columnMandatory">Mandatory</option>
+                <option value="columnConformance">Conf</option>
+                <option value="columnCardinality">Card</option>
+                <option value="columnMax">Max</option>
+                <option value="columnCCD" disabled="disabled">Datatype CC</option>
+                <option value="columnDatatype">Datatype</option>
+                <option value="columnProperty">Eigenschappen</option>
+                <option value="columnExample">Voorbeeld</option>
+                <option value="columnCodes">Codes</option>
+                <option value="columnDescription">Omschrijving</option>
+                <option value="columnContext" disabled="disabled">Context</option>
+                <option value="columnSource">Bron</option>
+                <option value="columnRationale">Rationale</option>
+                <option value="columnOperationalization">Operationalisaties</option>
+                <option value="columnComment">Opmerking</option>
+                <option value="columnMapping">Mapping</option>
+                <option value="columnCondition" disabled="disabled">Conditie</option>
+                <option value="columnStatus">Status</option>
+                <option value="columnCommunity">Community</option>
+                <option value="columnTerminology">Terminologie</option>
+                <option value="columnValueSet" disabled="disabled">Waardelijst</option>
+                <option value="columnType">Type</option>
+                <option value="columnParent">Ouderconcept</option>
+                <option value="columnInherit" disabled="disabled">Erft van</option></select><button id="noTree" type="button">Lijst/Tree view</button><button id="resetToDefault" type="button">Reset view</button><button id="download" type="button" onclick="javascript:location.href=window.location.href+&#39;&amp;download=true&#39;;">Downloaden</button>
+            <p class="helptext" style="font-size:x-small;">Klik op de driehoeken in de eerste kolom om groepen te openen of te sluiten. Klik op [-] om een kolom te verbergen. Kies een kolom in 'Toon kolom' om deze weer te tonen. 
+            Kolommen kunnen versleept worden naar een nieuwe positie.</p>
+            <table id="transactionTable" class="draggable treetable">
+                <thead>
+                    <tr>
+                        <th class="columnName"><b>Naam</b></th>
+                        <th class="columnID"><b>ID</b><span class="hideMe" type="button">[‑]</span></th>
+                        <th class="columnMandatory" style="display: none;"><b>Mandatory</b><span class="hideMe" type="button">[‑]</span></th>
+                        <th class="columnConformance" style="display: none;"><b>Conf</b><span class="hideMe" type="button">[‑]</span></th>
+                        <th class="columnCardinality" style="display: none;"><b>Card</b><span class="hideMe" type="button">[‑]</span></th>
+                        <th class="columnMax" style="display: none;"><b>Max</b><span class="hideMe" type="button">[‑]</span></th>
+                        <th class="columnCCD"><b>Datatype CC</b><span class="hideMe" type="button">[‑]</span></th>
+                        <th class="columnDatatype" style="display: none;"><b>Datatype</b><span class="hideMe" type="button">[‑]</span></th>
+                        <th class="columnProperty" style="display: none;"><b>Eigenschappen</b><span class="hideMe" type="button">[‑]</span></th>
+                        <th class="columnExample" style="display: none;"><b>Voorbeeld</b><span class="hideMe" type="button">[‑]</span></th>
+                        <th class="columnCodes" style="display: none;"><b>Codes</b><span class="hideMe" type="button">[‑]</span></th>
+                        <th class="columnDescription" style="display: none;"><b>Omschrijving</b><span class="hideMe" type="button">[‑]</span></th>
+                        <th class="columnContext"><b>Context</b><span class="hideMe" type="button">[‑]</span></th>
+                        <th class="columnSource" style="display: none;"><b>Bron</b><span class="hideMe" type="button">[‑]</span></th>
+                        <th class="columnRationale" style="display: none;"><b>Rationale</b><span class="hideMe" type="button">[‑]</span></th>
+                        <th class="columnOperationalization" style="display: none;"><b>Operationalisaties</b><span class="hideMe" type="button">[‑]</span></th>
+                        <th class="columnComment" style="display: none;"><b>Opmerking</b><span class="hideMe" type="button">[‑]</span></th>
+                        <th class="columnMapping" style="display: none;"><b>Mapping</b><span class="hideMe" type="button">[‑]</span></th>
+                        <th class="columnCondition"><b>Conditie</b><span class="hideMe" type="button">[‑]</span></th>
+                        <th class="columnStatus" style="display: none;"><b>Status</b><span class="hideMe" type="button">[‑]</span></th>
+                        <th class="columnCommunity" style="display: none;"><b>Community</b><span class="hideMe" type="button">[‑]</span></th>
+                        <th class="columnTerminology" style="display: none;"><b>Terminologie</b><span class="hideMe" type="button">[‑]</span></th>
+                        <th class="columnValueSet"><b>Waardelijst</b><span class="hideMe" type="button">[‑]</span></th>
+                        <th class="columnType" style="display: none;"><b>Type</b><span class="hideMe" type="button">[‑]</span></th>
+                        <th class="columnParent" style="display: none;"><b>Ouderconcept</b><span class="hideMe" type="button">[‑]</span></th>
+                        <th class="columnInherit"><b>Erft van</b><span class="hideMe" type="button">[‑]</span></th>
+                    </tr>
+                </thead>
+                <tbody class="list">
+                    <tr class="bg-group branch collapsed" data-tt-id="id_2_16_840_1_113883_2_4_3_11_60_90_77_2_5_1" data-tt-parent-id="">
+                        <td class="columnName node-sfinal"><span class="indenter" style="padding-left: 0px;"><a href="http://localhost:8877/decor/services/RetrieveTransaction?id=2.16.840.1.113883.2.4.3.11.60.90.77.4.2453&amp;effectiveDate=2018-12-17T15:21:25&amp;language=nl-NL&amp;ui=nl-NL&amp;format=html&amp;hidecolumns=34567#" title="Expand">&nbsp;</a></span>Zorgverlener/Zorginstelling</td>
+                        <td class="columnID" style="">peri22-dataelement-1</td>
+                        <td class="columnMandatory" style="display: none;">-</td>
+                        <td class="columnConformance" style="display: none;">R</td>
+                        <td class="columnCardinality" style="display: none;">0 … 1</td>
+                        <td class="columnMax" style="display: none;">1</td>
+                        <td class="columnCCD" style="">0 … 1 R  <a href="https://art-decor.org/mediawiki/index.php?title=DECOR-dataset#"></a></td>
+                        <td class="columnDatatype" style="display: none;"><a href="https://art-decor.org/mediawiki/index.php?title=DECOR-dataset#"></a></td>
+                        <td class="columnProperty" style="display: none;"></td>
+                        <td class="columnExample" style="display: none;"></td>
+                        <td class="columnCodes" style="display: none;"></td>
+                        <td class="columnDescription" style="display: none;">Persoon (met bijbehorende instelling) die verantwoordelijk of uitvoerder was voor de zorg van de patiënt en aanleveraar van de gegevens.</td>
+                        <td class="columnContext" style=""></td>
+                        <td class="columnSource" style="display: none;"></td>
+                        <td class="columnRationale" style="display: none;"></td>
+                        <td class="columnOperationalization" style="display: none;"></td>
+                        <td class="columnComment" style="display: none;">
+                            <ul></ul>
+                        </td>
+                        <td class="columnMapping" style="display: none;"></td>
+                        <td class="columnCondition" style=""></td>
+                        <td class="columnStatus" style="display: none;">final</td>
+                        <td class="columnCommunity" style="display: none;"></td>
+                        <td class="columnTerminology" style="display: none;"></td>
+                        <td class="columnValueSet" style=""></td>
+                        <td class="columnType" style="display: none;">Groep</td>
+                        <td class="columnParent" style="display: none;"></td>
+                        <td class="columnInherit" style=""><a href="http://localhost:8877/decor/services/RetrieveDataSet?conceptId=2.16.840.1.113883.2.4.3.11.60.90.77.2.4.1&amp;conceptEffectiveDate=2012-08-06T00:00:00&amp;format=html&amp;language=nl-NL&amp;seetype=live-services">peri21-dataelement-1</a></td>
+                    </tr>
+                    <tr class="bg-group branch" data-tt-id="id_2_16_840_1_113883_2_4_3_11_60_90_77_2_5_10001" data-tt-parent-id="id_2_16_840_1_113883_2_4_3_11_60_90_77_2_5_1" style="display: none;">
+                        <td class="columnName node-sfinal"><span class="indenter"></span>Zorgverlener</td>
+                        <td class="columnID" style="">peri22-dataelement-10001</td>
+                        <td class="columnMandatory" style="display: none;">-</td>
+                        <td class="columnConformance" style="display: none;">R</td>
+                        <td class="columnCardinality" style="display: none;">0 … 1</td>
+                        <td class="columnMax" style="display: none;">1</td>
+                        <td class="columnCCD" style="">0 … 1 R  <a href="https://art-decor.org/mediawiki/index.php?title=DECOR-dataset#"></a></td>
+                        <td class="columnDatatype" style="display: none;"><a href="https://art-decor.org/mediawiki/index.php?title=DECOR-dataset#"></a></td>
+                        <td class="columnProperty" style="display: none;"></td>
+                        <td class="columnExample" style="display: none;"></td>
+                        <td class="columnCodes" style="display: none;"></td>
+                        <td class="columnDescription" style="display: none;">Zorgverlener</td>
+                        <td class="columnContext" style=""></td>
+                        <td class="columnSource" style="display: none;"></td>
+                        <td class="columnRationale" style="display: none;"></td>
+                        <td class="columnOperationalization" style="display: none;"></td>
+                        <td class="columnComment" style="display: none;">
+                            <ul></ul>
+                        </td>
+                        <td class="columnMapping" style="display: none;"></td>
+                        <td class="columnCondition" style=""></td>
+                        <td class="columnStatus" style="display: none;">final</td>
+                        <td class="columnCommunity" style="display: none;"></td>
+                        <td class="columnTerminology" style="display: none;"></td>
+                        <td class="columnValueSet" style=""></td>
+                        <td class="columnType" style="display: none;">Groep</td>
+                        <td class="columnParent" style="display: none;">Zorgverlener/Zorginstelling</td>
+                        <td class="columnInherit" style=""><a href="http://localhost:8877/decor/services/RetrieveDataSet?conceptId=2.16.840.1.113883.2.4.3.11.60.90.77.2.4.10001&amp;conceptEffectiveDate=2012-08-06T00:00:00&amp;format=html&amp;language=nl-NL&amp;seetype=live-services">peri21-dataelement-10001</a></td>
+                    </tr>
+                    <tr class="bg-item leaf" data-tt-id="id_2_16_840_1_113883_2_4_3_11_60_90_77_2_5_10006" data-tt-parent-id="id_2_16_840_1_113883_2_4_3_11_60_90_77_2_5_10001" style="display: none;">
+                        <td class="columnName node-sfinal"><span class="indenter"></span>Naam zorgverlener</td>
+                        <td class="columnID" style="">peri22-dataelement-10006</td>
+                        <td class="columnMandatory" style="display: none;">-</td>
+                        <td class="columnConformance" style="display: none;">R</td>
+                        <td class="columnCardinality" style="display: none;">0 … 1</td>
+                        <td class="columnMax" style="display: none;">1</td>
+                        <td class="columnCCD" style="">0 … 1 R  <a href="https://art-decor.org/mediawiki/index.php?title=DECOR-dataset#Samengestelde%20gegevens">Samengestelde gegevens</a></td>
+                        <td class="columnDatatype" style="display: none;"><a href="https://art-decor.org/mediawiki/index.php?title=DECOR-dataset#Samengestelde%20gegevens">Samengestelde gegevens</a></td>
+                        <td class="columnProperty" style="display: none;"></td>
+                        <td class="columnExample" style="display: none;"></td>
+                        <td class="columnCodes" style="display: none;"></td>
+                        <td class="columnDescription" style="display: none;">Naam zorgverlener</td>
+                        <td class="columnContext" style=""></td>
+                        <td class="columnSource" style="display: none;"></td>
+                        <td class="columnRationale" style="display: none;"></td>
+                        <td class="columnOperationalization" style="display: none;"></td>
+                        <td class="columnComment" style="display: none;">
+                            <ul></ul>
+                        </td>
+                        <td class="columnMapping" style="display: none;"></td>
+                        <td class="columnCondition" style=""></td>
+                        <td class="columnStatus" style="display: none;">final</td>
+                        <td class="columnCommunity" style="display: none;"></td>
+                        <td class="columnTerminology" style="display: none;"></td>
+                        <td class="columnValueSet" style=""></td>
+                        <td class="columnType" style="display: none;">Item</td>
+                        <td class="columnParent" style="display: none;">Zorgverlener</td>
+                        <td class="columnInherit" style=""><a href="http://localhost:8877/decor/services/RetrieveDataSet?conceptId=2.16.840.1.113883.2.4.3.11.60.90.77.2.1.10006&amp;conceptEffectiveDate=2009-10-01T00:00:00&amp;format=html&amp;language=nl-NL&amp;seetype=live-services">spirit1a-dataelement-10006</a></td>
+                    </tr>
+                    <tr class="bg-group branch" data-tt-id="id_2_16_840_1_113883_2_4_3_11_60_90_77_2_5_10020" data-tt-parent-id="id_2_16_840_1_113883_2_4_3_11_60_90_77_2_5_1" style="display: none;">
+                        <td class="columnName node-sfinal"><span class="indenter"></span>Zorginstelling</td>
+                        <td class="columnID" style="">peri22-dataelement-10020</td>
+                        <td class="columnMandatory" style="display: none;">+</td>
+                        <td class="columnConformance" style="display: none;">M</td>
+                        <td class="columnCardinality" style="display: none;">1 … 1</td>
+                        <td class="columnMax" style="display: none;">1</td>
+                        <td class="columnCCD" style="">1 … 1 M  <a href="https://art-decor.org/mediawiki/index.php?title=DECOR-dataset#"></a></td>
+                        <td class="columnDatatype" style="display: none;"><a href="https://art-decor.org/mediawiki/index.php?title=DECOR-dataset#"></a></td>
+                        <td class="columnProperty" style="display: none;"></td>
+                        <td class="columnExample" style="display: none;"></td>
+                        <td class="columnCodes" style="display: none;"></td>
+                        <td class="columnDescription" style="display: none;">Organisatie (instelling) die de zorg levert / heeft geleverd</td>
+                        <td class="columnContext" style=""></td>
+                        <td class="columnSource" style="display: none;"></td>
+                        <td class="columnRationale" style="display: none;"></td>
+                        <td class="columnOperationalization" style="display: none;"></td>
+                        <td class="columnComment" style="display: none;">
+                            <ul></ul>
+                        </td>
+                        <td class="columnMapping" style="display: none;"></td>
+                        <td class="columnCondition" style=""></td>
+                        <td class="columnStatus" style="display: none;">final</td>
+                        <td class="columnCommunity" style="display: none;"></td>
+                        <td class="columnTerminology" style="display: none;"></td>
+                        <td class="columnValueSet" style=""></td>
+                        <td class="columnType" style="display: none;">Groep</td>
+                        <td class="columnParent" style="display: none;">Zorgverlener/Zorginstelling</td>
+                        <td class="columnInherit" style=""><a href="http://localhost:8877/decor/services/RetrieveDataSet?conceptId=&amp;conceptEffectiveDate=&amp;format=html&amp;language=nl-NL&amp;seetype=live-services"></a></td>
+                    </tr>
+                    <tr class="bg-item leaf" data-tt-id="id_2_16_840_1_113883_2_4_3_11_60_90_77_2_5_10026" data-tt-parent-id="id_2_16_840_1_113883_2_4_3_11_60_90_77_2_5_10020" style="display: none;">
+                        <td class="columnName node-sfinal"><span class="indenter"></span>Naam zorginstelling</td>
+                        <td class="columnID" style="">peri22-dataelement-10026</td>
+                        <td class="columnMandatory" style="display: none;">+</td>
+                        <td class="columnConformance" style="display: none;">M</td>
+                        <td class="columnCardinality" style="display: none;">1 … 1</td>
+                        <td class="columnMax" style="display: none;">1</td>
+                        <td class="columnCCD" style="">1 … 1 M  <a href="https://art-decor.org/mediawiki/index.php?title=DECOR-dataset#Samengestelde%20gegevens">Samengestelde gegevens</a></td>
+                        <td class="columnDatatype" style="display: none;"><a href="https://art-decor.org/mediawiki/index.php?title=DECOR-dataset#Samengestelde%20gegevens">Samengestelde gegevens</a></td>
+                        <td class="columnProperty" style="display: none;"></td>
+                        <td class="columnExample" style="display: none;"></td>
+                        <td class="columnCodes" style="display: none;"></td>
+                        <td class="columnDescription" style="display: none;">Naam van de instelling</td>
+                        <td class="columnContext" style=""></td>
+                        <td class="columnSource" style="display: none;"></td>
+                        <td class="columnRationale" style="display: none;"></td>
+                        <td class="columnOperationalization" style="display: none;"></td>
+                        <td class="columnComment" style="display: none;">
+                            <ul></ul>
+                        </td>
+                        <td class="columnMapping" style="display: none;"></td>
+                        <td class="columnCondition" style=""></td>
+                        <td class="columnStatus" style="display: none;">final</td>
+                        <td class="columnCommunity" style="display: none;"></td>
+                        <td class="columnTerminology" style="display: none;"></td>
+                        <td class="columnValueSet" style=""></td>
+                        <td class="columnType" style="display: none;">Item</td>
+                        <td class="columnParent" style="display: none;">Zorginstelling</td>
+                        <td class="columnInherit" style=""><a href="http://localhost:8877/decor/services/RetrieveDataSet?conceptId=2.16.840.1.113883.2.4.3.11.60.90.77.2.4.10026&amp;conceptEffectiveDate=2012-08-06T00:00:00&amp;format=html&amp;language=nl-NL&amp;seetype=live-services">peri21-dataelement-10026</a></td>
+                    </tr>
+                    <tr class="bg-group branch collapsed" data-tt-id="id_2_16_840_1_113883_2_4_3_11_60_90_77_2_5_2" data-tt-parent-id="">
+                        <td class="columnName node-sfinal"><span class="indenter" style="padding-left: 0px;"><a href="http://localhost:8877/decor/services/RetrieveTransaction?id=2.16.840.1.113883.2.4.3.11.60.90.77.4.2453&amp;effectiveDate=2018-12-17T15:21:25&amp;language=nl-NL&amp;ui=nl-NL&amp;format=html&amp;hidecolumns=34567#" title="Expand">&nbsp;</a></span>Vrouw</td>
+                        <td class="columnID" style="">peri22-dataelement-2</td>
+                        <td class="columnMandatory" style="display: none;">+</td>
+                        <td class="columnConformance" style="display: none;">M</td>
+                        <td class="columnCardinality" style="display: none;">1 … 1</td>
+                        <td class="columnMax" style="display: none;">1</td>
+                        <td class="columnCCD" style="">1 … 1 M  <a href="https://art-decor.org/mediawiki/index.php?title=DECOR-dataset#"></a></td>
+                        <td class="columnDatatype" style="display: none;"><a href="https://art-decor.org/mediawiki/index.php?title=DECOR-dataset#"></a></td>
+                        <td class="columnProperty" style="display: none;"></td>
+                        <td class="columnExample" style="display: none;"></td>
+                        <td class="columnCodes" style="display: none;"></td>
+                        <td class="columnDescription" style="display: none;">Vrouw die obstetrische zorgdiensten afneemt / heeft afgenomen.</td>
+                        <td class="columnContext" style=""></td>
+                        <td class="columnSource" style="display: none;"></td>
+                        <td class="columnRationale" style="display: none;"></td>
+                        <td class="columnOperationalization" style="display: none;"></td>
+                        <td class="columnComment" style="display: none;">
+                            <ul></ul>
+                        </td>
+                        <td class="columnMapping" style="display: none;"></td>
+                        <td class="columnCondition" style=""></td>
+                        <td class="columnStatus" style="display: none;">final</td>
+                        <td class="columnCommunity" style="display: none;"></td>
+                        <td class="columnTerminology" style="display: none;"></td>
+                        <td class="columnValueSet" style=""></td>
+                        <td class="columnType" style="display: none;">Groep</td>
+                        <td class="columnParent" style="display: none;"></td>
+                        <td class="columnInherit" style=""><a href="http://localhost:8877/decor/services/RetrieveDataSet?conceptId=&amp;conceptEffectiveDate=&amp;format=html&amp;language=nl-NL&amp;seetype=live-services"></a></td>
+                    </tr>
+                    <tr class="bg-item leaf" data-tt-id="id_2_16_840_1_113883_2_4_3_11_60_90_77_2_5_10030" data-tt-parent-id="id_2_16_840_1_113883_2_4_3_11_60_90_77_2_5_2" style="display: none;">
+                        <td class="columnName node-sfinal"><span class="indenter"></span>Burgerservicenummer</td>
+                        <td class="columnID" style="">peri22-dataelement-10030</td>
+                        <td class="columnMandatory" style="display: none;">+</td>
+                        <td class="columnConformance" style="display: none;">M</td>
+                        <td class="columnCardinality" style="display: none;">1 … 1</td>
+                        <td class="columnMax" style="display: none;">1</td>
+                        <td class="columnCCD" style="">1 … 1 M  <a href="https://art-decor.org/mediawiki/index.php?title=DECOR-dataset#Identificatie">Identificatie</a></td>
+                        <td class="columnDatatype" style="display: none;"><a href="https://art-decor.org/mediawiki/index.php?title=DECOR-dataset#Identificatie">Identificatie</a></td>
+                        <td class="columnProperty" style="display: none;">
+                            <ul style="margin-bottom: 10px;">
+                                <li>Lengte: 9…9</li>
+                            </ul>
+                        </td>
+                        <td class="columnExample" style="display: none;"></td>
+                        <td class="columnCodes" style="display: none;"></td>
+                        <td class="columnDescription" style="display: none;">Uniek identificatienummer voor iedereen die een meervoudige relatie met de Nederlandse overheid heeft, goed te identificeren is en opgenomen is in de Gemeentelijke Basisadministratie Persoonsgegevens (GBA) of in de Registratie Niet Ingezetenen (RNI). </td>
+                        <td class="columnContext" style=""></td>
+                        <td class="columnSource" style="display: none;"></td>
+                        <td class="columnRationale" style="display: none;"></td>
+                        <td class="columnOperationalization" style="display: none;"></td>
+                        <td class="columnComment" style="display: none;">
+                            <ul>
+                                <li>Modulo 11-proef</li>
+                            </ul>
+                        </td>
+                        <td class="columnMapping" style="display: none;"></td>
+                        <td class="columnCondition" style=""></td>
+                        <td class="columnStatus" style="display: none;">final</td>
+                        <td class="columnCommunity" style="display: none;"></td>
+                        <td class="columnTerminology" style="display: none;"></td>
+                        <td class="columnValueSet" style=""></td>
+                        <td class="columnType" style="display: none;">Item</td>
+                        <td class="columnParent" style="display: none;">Vrouw</td>
+                        <td class="columnInherit" style=""><a href="http://localhost:8877/decor/services/RetrieveDataSet?conceptId=2.16.840.1.113883.2.4.3.11.60.90.77.2.1.10030&amp;conceptEffectiveDate=2009-10-01T00:00:00&amp;format=html&amp;language=nl-NL&amp;seetype=live-services">spirit1a-dataelement-10030</a></td>
+                    </tr>
+                    <tr class="bg-group branch" data-tt-id="id_2_16_840_1_113883_2_4_3_11_60_90_77_2_5_10035" data-tt-parent-id="id_2_16_840_1_113883_2_4_3_11_60_90_77_2_5_2" style="display: none;">
+                        <td class="columnName node-sfinal"><span class="indenter"></span>Naamgegevens</td>
+                        <td class="columnID" style="">peri22-dataelement-10035</td>
+                        <td class="columnMandatory" style="display: none;">-</td>
+                        <td class="columnConformance" style="display: none;">R</td>
+                        <td class="columnCardinality" style="display: none;">0 … 1</td>
+                        <td class="columnMax" style="display: none;">1</td>
+                        <td class="columnCCD" style="">0 … 1 R  <a href="https://art-decor.org/mediawiki/index.php?title=DECOR-dataset#"></a></td>
+                        <td class="columnDatatype" style="display: none;"><a href="https://art-decor.org/mediawiki/index.php?title=DECOR-dataset#"></a></td>
+                        <td class="columnProperty" style="display: none;"></td>
+                        <td class="columnExample" style="display: none;"></td>
+                        <td class="columnCodes" style="display: none;"></td>
+                        <td class="columnDescription" style="display: none;">Naamgegevens van de vrouw.</td>
+                        <td class="columnContext" style=""></td>
+                        <td class="columnSource" style="display: none;"></td>
+                        <td class="columnRationale" style="display: none;"></td>
+                        <td class="columnOperationalization" style="display: none;"></td>
+                        <td class="columnComment" style="display: none;">
+                            <ul></ul>
+                        </td>
+                        <td class="columnMapping" style="display: none;"></td>
+                        <td class="columnCondition" style=""></td>
+                        <td class="columnStatus" style="display: none;">final</td>
+                        <td class="columnCommunity" style="display: none;"></td>
+                        <td class="columnTerminology" style="display: none;"></td>
+                        <td class="columnValueSet" style=""></td>
+                        <td class="columnType" style="display: none;">Groep</td>
+                        <td class="columnParent" style="display: none;">Vrouw</td>
+                        <td class="columnInherit" style=""><a href="http://localhost:8877/decor/services/RetrieveDataSet?conceptId=&amp;conceptEffectiveDate=&amp;format=html&amp;language=nl-NL&amp;seetype=live-services"></a></td>
+                    </tr>
+                    <tr class="bg-item leaf" data-tt-id="id_2_16_840_1_113883_2_4_3_11_60_90_77_2_5_82360" data-tt-parent-id="id_2_16_840_1_113883_2_4_3_11_60_90_77_2_5_10035" style="display: none;">
+                        <td class="columnName node-sfinal"><span class="indenter"></span>Roepnaam</td>
+                        <td class="columnID" style="">peri22-dataelement-82360</td>
+                        <td class="columnMandatory" style="display: none;">-</td>
+                        <td class="columnConformance" style="display: none;">R</td>
+                        <td class="columnCardinality" style="display: none;">0 … 1</td>
+                        <td class="columnMax" style="display: none;">1</td>
+                        <td class="columnCCD" style="">0 … 1 R  <a href="https://art-decor.org/mediawiki/index.php?title=DECOR-dataset#String">String</a></td>
+                        <td class="columnDatatype" style="display: none;"><a href="https://art-decor.org/mediawiki/index.php?title=DECOR-dataset#String">String</a></td>
+                        <td class="columnProperty" style="display: none;"></td>
+                        <td class="columnExample" style="display: none;">Jet</td>
+                        <td class="columnCodes" style="display: none;"></td>
+                        <td class="columnDescription" style="display: none;">Naam, die de persoon voert en die niet de officiële naam is.</td>
+                        <td class="columnContext" style=""></td>
+                        <td class="columnSource" style="display: none;"></td>
+                        <td class="columnRationale" style="display: none;"></td>
+                        <td class="columnOperationalization" style="display: none;"></td>
+                        <td class="columnComment" style="display: none;">
+                            <ul></ul>
+                        </td>
+                        <td class="columnMapping" style="display: none;"></td>
+                        <td class="columnCondition" style=""></td>
+                        <td class="columnStatus" style="display: none;">final</td>
+                        <td class="columnCommunity" style="display: none;"></td>
+                        <td class="columnTerminology" style="display: none;"></td>
+                        <td class="columnValueSet" style=""></td>
+                        <td class="columnType" style="display: none;">Item</td>
+                        <td class="columnParent" style="display: none;">Naamgegevens</td>
+                        <td class="columnInherit" style=""><a href="http://localhost:8877/decor/services/RetrieveDataSet?conceptId=2.16.840.1.113883.2.4.3.11.60.101.2.1.10040&amp;conceptEffectiveDate=2013-03-25T21:46:30&amp;format=html&amp;language=nl-NL&amp;seetype=live-services">naw-dataelement-10040</a></td>
+                    </tr>
+                    <tr class="bg-group branch" data-tt-id="id_2_16_840_1_113883_2_4_3_11_60_90_77_2_5_82361" data-tt-parent-id="id_2_16_840_1_113883_2_4_3_11_60_90_77_2_5_10035" style="display: none;">
+                        <td class="columnName node-sfinal"><span class="indenter"></span>Achternaam</td>
+                        <td class="columnID" style="">peri22-dataelement-82361</td>
+                        <td class="columnMandatory" style="display: none;">-</td>
+                        <td class="columnConformance" style="display: none;">R</td>
+                        <td class="columnCardinality" style="display: none;">0 … 1</td>
+                        <td class="columnMax" style="display: none;">1</td>
+                        <td class="columnCCD" style="">0 … 1 R  <a href="https://art-decor.org/mediawiki/index.php?title=DECOR-dataset#"></a></td>
+                        <td class="columnDatatype" style="display: none;"><a href="https://art-decor.org/mediawiki/index.php?title=DECOR-dataset#"></a></td>
+                        <td class="columnProperty" style="display: none;"></td>
+                        <td class="columnExample" style="display: none;"></td>
+                        <td class="columnCodes" style="display: none;"></td>
+                        <td class="columnDescription" style="display: none;"></td>
+                        <td class="columnContext" style=""></td>
+                        <td class="columnSource" style="display: none;"></td>
+                        <td class="columnRationale" style="display: none;"></td>
+                        <td class="columnOperationalization" style="display: none;"></td>
+                        <td class="columnComment" style="display: none;">
+                            <ul></ul>
+                        </td>
+                        <td class="columnMapping" style="display: none;"></td>
+                        <td class="columnCondition" style=""></td>
+                        <td class="columnStatus" style="display: none;">final</td>
+                        <td class="columnCommunity" style="display: none;"></td>
+                        <td class="columnTerminology" style="display: none;"></td>
+                        <td class="columnValueSet" style=""></td>
+                        <td class="columnType" style="display: none;">Groep</td>
+                        <td class="columnParent" style="display: none;">Naamgegevens</td>
+                        <td class="columnInherit" style=""><a href="http://localhost:8877/decor/services/RetrieveDataSet?conceptId=2.16.840.1.113883.2.4.3.11.60.101.2.1.10050&amp;conceptEffectiveDate=2013-03-25T21:46:30&amp;format=html&amp;language=nl-NL&amp;seetype=live-services">naw-dataelement-10050</a></td>
+                    </tr>
+                    <tr class="bg-item leaf" data-tt-id="id_2_16_840_1_113883_2_4_3_11_60_90_77_2_5_82362" data-tt-parent-id="id_2_16_840_1_113883_2_4_3_11_60_90_77_2_5_82361" style="display: none;">
+                        <td class="columnName node-sfinal"><span class="indenter"></span>Soort naam</td>
+                        <td class="columnID" style="">peri22-dataelement-82362</td>
+                        <td class="columnMandatory" style="display: none;">-</td>
+                        <td class="columnConformance" style="display: none;">R</td>
+                        <td class="columnCardinality" style="display: none;">0 … 1</td>
+                        <td class="columnMax" style="display: none;">1</td>
+                        <td class="columnCCD" style="">0 … 1 R  <a href="https://art-decor.org/mediawiki/index.php?title=DECOR-dataset#Code">Code</a></td>
+                        <td class="columnDatatype" style="display: none;"><a href="https://art-decor.org/mediawiki/index.php?title=DECOR-dataset#Code">Code</a></td>
+                        <td class="columnProperty" style="display: none;"></td>
+                        <td class="columnExample" style="display: none;">Geboortenaam partner</td>
+                        <td class="columnCodes" style="display: none;">
+                            <div style="font-style: italic;"><a href="http://localhost:8877/decor/services/RetrieveValueSet?prefix=peri20-&amp;id=2.16.840.1.113883.2.4.3.11.60.101.11.9&amp;effectiveDate=2013-03-25T14:13:00&amp;version=&amp;format=html&amp;language=nl-NL&amp;seetype=live-services">Waardelijst:Achternaam soort  (2013-03-25T14:13:00)</a></div>
+                            <ul style="" title="Achternaam soort">
+                                <li class="concepttypeL" style="margin-left: 0px;">Geslachtsnaam</li>
+                                <li class="concepttypeL" style="margin-left: 0px;">Geslachtsnaam partner</li>
+                            </ul>
+                        </td>
+                        <td class="columnDescription" style="display: none;">Aanduiding die aangeeft welke functie de naam heeft.</td>
+                        <td class="columnContext" style=""></td>
+                        <td class="columnSource" style="display: none;"></td>
+                        <td class="columnRationale" style="display: none;"></td>
+                        <td class="columnOperationalization" style="display: none;"></td>
+                        <td class="columnComment" style="display: none;">
+                            <ul></ul>
+                        </td>
+                        <td class="columnMapping" style="display: none;"></td>
+                        <td class="columnCondition" style=""></td>
+                        <td class="columnStatus" style="display: none;">final</td>
+                        <td class="columnCommunity" style="display: none;"></td>
+                        <td class="columnTerminology" style="display: none;"></td>
+                        <td class="columnValueSet" style="">
+                            <div><a href="http://localhost:8877/decor/services/RetrieveValueSet?prefix=peri20-&amp;id=2.16.840.1.113883.2.4.3.11.60.101.11.9&amp;effectiveDate=2013-03-25T14:13:00&amp;version=&amp;format=html&amp;language=nl-NL&amp;seetype=live-services">Achternaam soort</a> 2013-03-25T14:13:00 (dynamisch)</div>
+                        </td>
+                        <td class="columnType" style="display: none;">Item</td>
+                        <td class="columnParent" style="display: none;">Achternaam</td>
+                        <td class="columnInherit" style=""><a href="http://localhost:8877/decor/services/RetrieveDataSet?conceptId=2.16.840.1.113883.2.4.3.11.60.101.2.1.10060&amp;conceptEffectiveDate=2013-03-25T21:46:30&amp;format=html&amp;language=nl-NL&amp;seetype=live-services">naw-dataelement-10060</a></td>
+                    </tr>
+                    <tr class="bg-item leaf" data-tt-id="id_2_16_840_1_113883_2_4_3_11_60_90_77_2_5_82363" data-tt-parent-id="id_2_16_840_1_113883_2_4_3_11_60_90_77_2_5_82361" style="display: none;">
+                        <td class="columnName node-sfinal"><span class="indenter"></span>Voorvoegsel</td>
+                        <td class="columnID" style="">peri22-dataelement-82363</td>
+                        <td class="columnMandatory" style="display: none;">-</td>
+                        <td class="columnConformance" style="display: none;">R</td>
+                        <td class="columnCardinality" style="display: none;">0 … 1</td>
+                        <td class="columnMax" style="display: none;">1</td>
+                        <td class="columnCCD" style="">0 … 1 R  <a href="https://art-decor.org/mediawiki/index.php?title=DECOR-dataset#String">String</a></td>
+                        <td class="columnDatatype" style="display: none;"><a href="https://art-decor.org/mediawiki/index.php?title=DECOR-dataset#String">String</a></td>
+                        <td class="columnProperty" style="display: none;"></td>
+                        <td class="columnExample" style="display: none;">van</td>
+                        <td class="columnCodes" style="display: none;"></td>
+                        <td class="columnDescription" style="display: none;">Deel van de achternaam dat het voorvoegsel bevat.</td>
+                        <td class="columnContext" style=""></td>
+                        <td class="columnSource" style="display: none;"></td>
+                        <td class="columnRationale" style="display: none;"></td>
+                        <td class="columnOperationalization" style="display: none;">GBA tabel 36</td>
+                        <td class="columnComment" style="display: none;">
+                            <ul>
+                                <li>GBA tabel 36 is een opsomming van te gebruiken voorvoegsels zonder bijbehorende code. Het gebruik wordt aanbevolen, maar is niet verplicht. Bij vulling via de SBV-Z zullen de voorzetsels overeenkomen met tabel 36.</li>
+                            </ul>
+                        </td>
+                        <td class="columnMapping" style="display: none;"></td>
+                        <td class="columnCondition" style=""></td>
+                        <td class="columnStatus" style="display: none;">final</td>
+                        <td class="columnCommunity" style="display: none;"></td>
+                        <td class="columnTerminology" style="display: none;"></td>
+                        <td class="columnValueSet" style=""></td>
+                        <td class="columnType" style="display: none;">Item</td>
+                        <td class="columnParent" style="display: none;">Achternaam</td>
+                        <td class="columnInherit" style=""><a href="http://localhost:8877/decor/services/RetrieveDataSet?conceptId=2.16.840.1.113883.2.4.3.11.60.101.2.1.10070&amp;conceptEffectiveDate=2013-03-25T21:46:30&amp;format=html&amp;language=nl-NL&amp;seetype=live-services">naw-dataelement-10070</a></td>
+                    </tr>
+                    <tr class="bg-item leaf" data-tt-id="id_2_16_840_1_113883_2_4_3_11_60_90_77_2_5_10043" data-tt-parent-id="id_2_16_840_1_113883_2_4_3_11_60_90_77_2_5_82361" style="display: none;">
+                        <td class="columnName node-sfinal"><span class="indenter"></span>Achternaam</td>
+                        <td class="columnID" style="">peri22-dataelement-10043</td>
+                        <td class="columnMandatory" style="display: none;">-</td>
+                        <td class="columnConformance" style="display: none;">R</td>
+                        <td class="columnCardinality" style="display: none;">0 … 1</td>
+                        <td class="columnMax" style="display: none;">1</td>
+                        <td class="columnCCD" style="">0 … 1 R  <a href="https://art-decor.org/mediawiki/index.php?title=DECOR-dataset#String">String</a></td>
+                        <td class="columnDatatype" style="display: none;"><a href="https://art-decor.org/mediawiki/index.php?title=DECOR-dataset#String">String</a></td>
+                        <td class="columnProperty" style="display: none;"></td>
+                        <td class="columnExample" style="display: none;">Putten</td>
+                        <td class="columnCodes" style="display: none;"></td>
+                        <td class="columnDescription" style="display: none;">De achternaam van een persoon die bij de geboorte is vastgelegd. Afhankeljk van de soort naam is dit de geboortenaam van de persoon of van de partner</td>
+                        <td class="columnContext" style=""></td>
+                        <td class="columnSource" style="display: none;"></td>
+                        <td class="columnRationale" style="display: none;"></td>
+                        <td class="columnOperationalization" style="display: none;"></td>
+                        <td class="columnComment" style="display: none;">
+                            <ul></ul>
+                        </td>
+                        <td class="columnMapping" style="display: none;"></td>
+                        <td class="columnCondition" style=""></td>
+                        <td class="columnStatus" style="display: none;">final</td>
+                        <td class="columnCommunity" style="display: none;"></td>
+                        <td class="columnTerminology" style="display: none;"></td>
+                        <td class="columnValueSet" style=""></td>
+                        <td class="columnType" style="display: none;">Item</td>
+                        <td class="columnParent" style="display: none;">Achternaam</td>
+                        <td class="columnInherit" style=""><a href="http://localhost:8877/decor/services/RetrieveDataSet?conceptId=2.16.840.1.113883.2.4.3.11.60.101.2.1.10080&amp;conceptEffectiveDate=2013-03-25T21:46:30&amp;format=html&amp;language=nl-NL&amp;seetype=live-services">naw-dataelement-10080</a></td>
+                    </tr>
+                    <tr class="bg-group leaf" data-tt-id="id_2_16_840_1_113883_2_4_3_11_60_90_77_2_5_80811" data-tt-parent-id="id_2_16_840_1_113883_2_4_3_11_60_90_77_2_5_2" style="display: none;">
+                        <td class="columnName node-sfinal"><span class="indenter"></span>Anamnese</td>
+                        <td class="columnID" style="">peri22-dataelement-80811</td>
+                        <td class="columnMandatory" style="display: none;">-</td>
+                        <td class="columnConformance" style="display: none;">R</td>
+                        <td class="columnCardinality" style="display: none;">0 … 1</td>
+                        <td class="columnMax" style="display: none;">1</td>
+                        <td class="columnCCD" style="">0 … 1 R  <a href="https://art-decor.org/mediawiki/index.php?title=DECOR-dataset#"></a></td>
+                        <td class="columnDatatype" style="display: none;"><a href="https://art-decor.org/mediawiki/index.php?title=DECOR-dataset#"></a></td>
+                        <td class="columnProperty" style="display: none;"></td>
+                        <td class="columnExample" style="display: none;"></td>
+                        <td class="columnCodes" style="display: none;"></td>
+                        <td class="columnDescription" style="display: none;">Anamnese</td>
+                        <td class="columnContext" style=""></td>
+                        <td class="columnSource" style="display: none;"></td>
+                        <td class="columnRationale" style="display: none;"></td>
+                        <td class="columnOperationalization" style="display: none;"></td>
+                        <td class="columnComment" style="display: none;">
+                            <ul></ul>
+                        </td>
+                        <td class="columnMapping" style="display: none;"></td>
+                        <td class="columnCondition" style=""></td>
+                        <td class="columnStatus" style="display: none;">final</td>
+                        <td class="columnCommunity" style="display: none;"></td>
+                        <td class="columnTerminology" style="display: none;">
+                            <div><a href="http://localhost:8877/decor/services/RedirectTerminology?codeSystem=2.16.840.1.113883.6.96&amp;conceptId=417662000&amp;language=nl-NL&amp;prefix=peri20-&amp;version=">History of clinical finding in subject (situation)</a> (Snomed: 417662000)</div>
+                        </td>
+                        <td class="columnValueSet" style=""></td>
+                        <td class="columnType" style="display: none;">Groep</td>
+                        <td class="columnParent" style="display: none;">Vrouw</td>
+                        <td class="columnInherit" style=""><a href="http://localhost:8877/decor/services/RetrieveDataSet?conceptId=&amp;conceptEffectiveDate=&amp;format=html&amp;language=nl-NL&amp;seetype=live-services"></a></td>
+                    </tr>
+                    <tr class="bg-item leaf" data-tt-id="id_2_16_840_1_113883_2_4_3_11_60_90_77_2_5_10810" data-tt-parent-id="id_2_16_840_1_113883_2_4_3_11_60_90_77_2_5_2" style="display: none;">
+                        <td class="columnName node-sfinal"><span class="indenter"></span>Bloedgroep vrouw</td>
+                        <td class="columnID" style="">peri22-dataelement-10810</td>
+                        <td class="columnMandatory" style="display: none;">-</td>
+                        <td class="columnConformance" style="display: none;">R</td>
+                        <td class="columnCardinality" style="display: none;">0 … 1</td>
+                        <td class="columnMax" style="display: none;">1</td>
+                        <td class="columnCCD" style="">0 … 1 R  <a href="https://art-decor.org/mediawiki/index.php?title=DECOR-dataset#Code">Code</a></td>
+                        <td class="columnDatatype" style="display: none;"><a href="https://art-decor.org/mediawiki/index.php?title=DECOR-dataset#Code">Code</a></td>
+                        <td class="columnProperty" style="display: none;"></td>
+                        <td class="columnExample" style="display: none;"></td>
+                        <td class="columnCodes" style="display: none;">
+                            <div style="font-style: italic;"><a href="http://localhost:8877/decor/services/RetrieveValueSet?prefix=peri20-&amp;id=2.16.840.1.113883.2.4.11.155&amp;effectiveDate=2012-03-17T00:00:00&amp;version=&amp;format=html&amp;language=nl-NL&amp;seetype=live-services">Waardelijst:AB0 blood group  (2012-03-17T00:00:00)</a></div>
+                            <ul style="" title="AB0 blood group">
+                                <li class="concepttypeL" style="margin-left: 0px;">A</li>
+                                <li class="concepttypeL" style="margin-left: 0px;">B</li>
+                                <li class="concepttypeL" style="margin-left: 0px;">AB</li>
+                                <li class="concepttypeL" style="margin-left: 0px;">0</li>
+                                <li class="concepttypeL" style="margin-left: 0px;">Onbekend</li>
+                                <li class="concepttypeL" style="margin-left: 0px;">Geen informatie</li>
+                            </ul>
+                        </td>
+                        <td class="columnDescription" style="display: none;">Bloedgroep van de vrouw</td>
+                        <td class="columnContext" style=""></td>
+                        <td class="columnSource" style="display: none;">PRN dataset 1.3 item #4.1.04.01</td>
+                        <td class="columnRationale" style="display: none;"></td>
+                        <td class="columnOperationalization" style="display: none;"></td>
+                        <td class="columnComment" style="display: none;">
+                            <ul></ul>
+                        </td>
+                        <td class="columnMapping" style="display: none;"></td>
+                        <td class="columnCondition" style=""></td>
+                        <td class="columnStatus" style="display: none;">final</td>
+                        <td class="columnCommunity" style="display: none;"></td>
+                        <td class="columnTerminology" style="display: none;">
+                            <div><a href="http://localhost:8877/decor/services/RedirectTerminology?codeSystem=2.16.840.1.113883.6.1&amp;conceptId=883-9&amp;language=nl-NL&amp;prefix=peri20-&amp;version=">
+    883-9
+    ABO-bloedgroep
+    type
+    moment
+    bloed
+    nominaal
+    BLDBK
+  </a> (LOINC: 883-9)</div>
+                            <div><a href="http://localhost:8877/decor/services/RedirectTerminology?codeSystem=2.16.840.1.113883.6.96&amp;conceptId=112144000&amp;language=nl-NL&amp;prefix=peri20-&amp;version=">Blood group A (finding)</a> (Snomed: 112144000)</div>
+                            <div><a href="http://localhost:8877/decor/services/RedirectTerminology?codeSystem=2.16.840.1.113883.6.96&amp;conceptId=112149005&amp;language=nl-NL&amp;prefix=peri20-&amp;version=">Blood group B (finding)</a> (Snomed: 112149005)</div>
+                            <div><a href="http://localhost:8877/decor/services/RedirectTerminology?codeSystem=2.16.840.1.113883.6.96&amp;conceptId=165743006&amp;language=nl-NL&amp;prefix=peri20-&amp;version=">Blood group AB (finding)</a> (Snomed: 165743006)</div>
+                            <div><a href="http://localhost:8877/decor/services/RedirectTerminology?codeSystem=2.16.840.1.113883.6.96&amp;conceptId=58460004&amp;language=nl-NL&amp;prefix=peri20-&amp;version=">Blood group O (finding)</a> (Snomed: 58460004)</div>
+                        </td>
+                        <td class="columnValueSet" style="">
+                            <div><a href="http://localhost:8877/decor/services/RetrieveValueSet?prefix=peri20-&amp;id=2.16.840.1.113883.2.4.11.155&amp;effectiveDate=2012-03-17T00:00:00&amp;version=&amp;format=html&amp;language=nl-NL&amp;seetype=live-services">AB0 blood group</a> 2012-03-17T00:00:00 (statisch)</div>
+                        </td>
+                        <td class="columnType" style="display: none;">Item</td>
+                        <td class="columnParent" style="display: none;">Vrouw</td>
+                        <td class="columnInherit" style=""><a href="http://localhost:8877/decor/services/RetrieveDataSet?conceptId=2.16.840.1.113883.2.4.3.11.60.90.77.2.3.10810&amp;conceptEffectiveDate=2011-12-06T00:00:00&amp;format=html&amp;language=nl-NL&amp;seetype=live-services">peri20-dataelement-10810</a></td>
+                    </tr>
+                    <tr class="bg-item leaf" data-tt-id="id_2_16_840_1_113883_2_4_3_11_60_90_77_2_5_10811" data-tt-parent-id="id_2_16_840_1_113883_2_4_3_11_60_90_77_2_5_2" style="display: none;">
+                        <td class="columnName node-sfinal"><span class="indenter"></span>Rhesus D Factor vrouw</td>
+                        <td class="columnID" style="">peri22-dataelement-10811</td>
+                        <td class="columnMandatory" style="display: none;">-</td>
+                        <td class="columnConformance" style="display: none;">R</td>
+                        <td class="columnCardinality" style="display: none;">0 … 1</td>
+                        <td class="columnMax" style="display: none;">1</td>
+                        <td class="columnCCD" style="">0 … 1 R  <a href="https://art-decor.org/mediawiki/index.php?title=DECOR-dataset#Code">Code</a></td>
+                        <td class="columnDatatype" style="display: none;"><a href="https://art-decor.org/mediawiki/index.php?title=DECOR-dataset#Code">Code</a></td>
+                        <td class="columnProperty" style="display: none;"></td>
+                        <td class="columnExample" style="display: none;"></td>
+                        <td class="columnCodes" style="display: none;">
+                            <div style="font-style: italic;"><a href="http://localhost:8877/decor/services/RetrieveValueSet?prefix=peri20-&amp;id=2.16.840.1.113883.2.4.11.156&amp;effectiveDate=2012-03-17T00:00:00&amp;version=&amp;format=html&amp;language=nl-NL&amp;seetype=live-services">Waardelijst:Rhesus D Blood Group  (2012-03-17T00:00:00)</a></div>
+                            <ul style="" title="Rhesus D Blood Group">
+                                <li class="concepttypeL" style="margin-left: 0px;">Rh D Positief</li>
+                                <li class="concepttypeL" style="margin-left: 0px;">Rh D Negatief</li>
+                                <li class="concepttypeL" style="margin-left: 0px;">onbekend</li>
+                                <li class="concepttypeL" style="margin-left: 0px;">geen informatie</li>
+                            </ul>
+                        </td>
+                        <td class="columnDescription" style="display: none;">Rhesus D factor van de vrouw</td>
+                        <td class="columnContext" style=""></td>
+                        <td class="columnSource" style="display: none;">PRN dataset 1.3 item #4.1.04.02</td>
+                        <td class="columnRationale" style="display: none;"></td>
+                        <td class="columnOperationalization" style="display: none;"></td>
+                        <td class="columnComment" style="display: none;">
+                            <ul></ul>
+                        </td>
+                        <td class="columnMapping" style="display: none;"></td>
+                        <td class="columnCondition" style=""></td>
+                        <td class="columnStatus" style="display: none;">final</td>
+                        <td class="columnCommunity" style="display: none;"></td>
+                        <td class="columnTerminology" style="display: none;">
+                            <div><a href="http://localhost:8877/decor/services/RedirectTerminology?codeSystem=2.16.840.1.113883.6.96&amp;conceptId=165747007&amp;language=nl-NL&amp;prefix=peri20-&amp;version=">Rh D Positief</a> (Snomed: 165747007)</div>
+                            <div><a href="http://localhost:8877/decor/services/RedirectTerminology?codeSystem=2.16.840.1.113883.6.96&amp;conceptId=165746003&amp;language=nl-NL&amp;prefix=peri20-&amp;version=">Rh D Negatief</a> (Snomed: 165746003)</div>
+                        </td>
+                        <td class="columnValueSet" style="">
+                            <div><a href="http://localhost:8877/decor/services/RetrieveValueSet?prefix=peri20-&amp;id=2.16.840.1.113883.2.4.11.156&amp;effectiveDate=2012-03-17T00:00:00&amp;version=&amp;format=html&amp;language=nl-NL&amp;seetype=live-services">Rhesus D Blood Group</a> 2012-03-17T00:00:00 (statisch)</div>
+                        </td>
+                        <td class="columnType" style="display: none;">Item</td>
+                        <td class="columnParent" style="display: none;">Vrouw</td>
+                        <td class="columnInherit" style=""><a href="http://localhost:8877/decor/services/RetrieveDataSet?conceptId=2.16.840.1.113883.2.4.3.11.60.90.77.2.3.10811&amp;conceptEffectiveDate=2011-12-06T00:00:00&amp;format=html&amp;language=nl-NL&amp;seetype=live-services">peri20-dataelement-10811</a></td>
+                    </tr>
+                    <tr class="bg-item leaf" data-tt-id="id_2_16_840_1_113883_2_4_3_11_60_90_77_2_5_10816" data-tt-parent-id="id_2_16_840_1_113883_2_4_3_11_60_90_77_2_5_2" style="display: none;">
+                        <td class="columnName node-sfinal"><span class="indenter"></span>Rhesus c Factor</td>
+                        <td class="columnID" style="">peri22-dataelement-10816</td>
+                        <td class="columnMandatory" style="display: none;">-</td>
+                        <td class="columnConformance" style="display: none;">R</td>
+                        <td class="columnCardinality" style="display: none;">0 … 1</td>
+                        <td class="columnMax" style="display: none;">1</td>
+                        <td class="columnCCD" style="">0 … 1 R  <a href="https://art-decor.org/mediawiki/index.php?title=DECOR-dataset#Code">Code</a></td>
+                        <td class="columnDatatype" style="display: none;"><a href="https://art-decor.org/mediawiki/index.php?title=DECOR-dataset#Code">Code</a></td>
+                        <td class="columnProperty" style="display: none;"></td>
+                        <td class="columnExample" style="display: none;"></td>
+                        <td class="columnCodes" style="display: none;">
+                            <div style="font-style: italic;"><a href="http://localhost:8877/decor/services/RetrieveValueSet?prefix=peri20-&amp;id=2.16.840.1.113883.2.4.11.164&amp;effectiveDate=2016-12-16T15:02:44&amp;version=&amp;format=html&amp;language=nl-NL&amp;seetype=live-services">Waardelijst:Rhesus c Factor  (2016-12-16T15:02:44)</a></div>
+                            <ul style="" title="Rhesus c Factor">
+                                <li class="concepttypeL" style="margin-left: 0px;">Rh c Positief</li>
+                                <li class="concepttypeL" style="margin-left: 0px;">Rh c Negatief</li>
+                                <li class="concepttypeL" style="margin-left: 0px;">Geen informatie</li>
+                            </ul>
+                        </td>
+                        <td class="columnDescription" style="display: none;">Rhesus c factor van de vrouw</td>
+                        <td class="columnContext" style=""></td>
+                        <td class="columnSource" style="display: none;">PWD Acute Fase Overdracht item #141</td>
+                        <td class="columnRationale" style="display: none;"></td>
+                        <td class="columnOperationalization" style="display: none;"></td>
+                        <td class="columnComment" style="display: none;">
+                            <ul></ul>
+                        </td>
+                        <td class="columnMapping" style="display: none;"></td>
+                        <td class="columnCondition" style=""></td>
+                        <td class="columnStatus" style="display: none;">final</td>
+                        <td class="columnCommunity" style="display: none;"></td>
+                        <td class="columnTerminology" style="display: none;">
+                            <div><a href="http://localhost:8877/decor/services/RedirectTerminology?codeSystem=2.16.840.1.113883.6.1&amp;conceptId=1159-3&amp;language=nl-NL&amp;prefix=peri20-&amp;version=">little c Ag [Presence] on Red Blood Cells</a> (LOINC: 1159-3)</div>
+                            <div><a href="http://localhost:8877/decor/services/RedirectTerminology?codeSystem=2.16.840.1.113883.6.96&amp;conceptId=733119003&amp;language=nl-NL&amp;prefix=peri20-&amp;version=">Rhc negative (finding)</a> (Snomed: 733119003)</div>
+                            <div><a href="http://localhost:8877/decor/services/RedirectTerminology?codeSystem=2.16.840.1.113883.6.96&amp;conceptId=733120009&amp;language=nl-NL&amp;prefix=peri20-&amp;version=">Rhc positive (finding)</a> (Snomed: 733120009)</div>
+                        </td>
+                        <td class="columnValueSet" style="">
+                            <div><a href="http://localhost:8877/decor/services/RetrieveValueSet?prefix=peri20-&amp;id=2.16.840.1.113883.2.4.11.164&amp;effectiveDate=2016-12-16T15:02:44&amp;version=&amp;format=html&amp;language=nl-NL&amp;seetype=live-services">Rhesus c Factor</a> 2016-12-16T15:02:44 (statisch)</div>
+                        </td>
+                        <td class="columnType" style="display: none;">Item</td>
+                        <td class="columnParent" style="display: none;">Vrouw</td>
+                        <td class="columnInherit" style=""><a href="http://localhost:8877/decor/services/RetrieveDataSet?conceptId=&amp;conceptEffectiveDate=&amp;format=html&amp;language=nl-NL&amp;seetype=live-services"></a></td>
+                    </tr>
+                    <tr class="bg-group branch collapsed" data-tt-id="id_2_16_840_1_113883_2_4_3_11_60_90_77_2_5_3" data-tt-parent-id="">
+                        <td class="columnName node-sfinal"><span class="indenter" style="padding-left: 0px;"><a href="http://localhost:8877/decor/services/RetrieveTransaction?id=2.16.840.1.113883.2.4.3.11.60.90.77.4.2453&amp;effectiveDate=2018-12-17T15:21:25&amp;language=nl-NL&amp;ui=nl-NL&amp;format=html&amp;hidecolumns=34567#" title="Expand">&nbsp;</a></span>Zwangerschap</td>
+                        <td class="columnID" style="">peri22-dataelement-3</td>
+                        <td class="columnMandatory" style="display: none;">-</td>
+                        <td class="columnConformance" style="display: none;">R</td>
+                        <td class="columnCardinality" style="display: none;">0 … 1</td>
+                        <td class="columnMax" style="display: none;">1</td>
+                        <td class="columnCCD" style="">0 … 1 R  <a href="https://art-decor.org/mediawiki/index.php?title=DECOR-dataset#"></a></td>
+                        <td class="columnDatatype" style="display: none;"><a href="https://art-decor.org/mediawiki/index.php?title=DECOR-dataset#"></a></td>
+                        <td class="columnProperty" style="display: none;"></td>
+                        <td class="columnExample" style="display: none;"></td>
+                        <td class="columnCodes" style="display: none;"></td>
+                        <td class="columnDescription" style="display: none;">De al dan niet afgesloten zwangerschap waarop de gegevens betrekking hebben.</td>
+                        <td class="columnContext" style=""></td>
+                        <td class="columnSource" style="display: none;"></td>
+                        <td class="columnRationale" style="display: none;"></td>
+                        <td class="columnOperationalization" style="display: none;"></td>
+                        <td class="columnComment" style="display: none;">
+                            <ul></ul>
+                        </td>
+                        <td class="columnMapping" style="display: none;"></td>
+                        <td class="columnCondition" style=""></td>
+                        <td class="columnStatus" style="display: none;">final</td>
+                        <td class="columnCommunity" style="display: none;"></td>
+                        <td class="columnTerminology" style="display: none;">
+                            <div><a href="http://localhost:8877/decor/services/RedirectTerminology?codeSystem=2.16.840.1.113883.6.96&amp;conceptId=364320009&amp;language=nl-NL&amp;prefix=peri20-&amp;version=">Pregnancy observable (observable entity)</a> (Snomed: 364320009)</div>
+                        </td>
+                        <td class="columnValueSet" style=""></td>
+                        <td class="columnType" style="display: none;">Groep</td>
+                        <td class="columnParent" style="display: none;"></td>
+                        <td class="columnInherit" style=""><a href="http://localhost:8877/decor/services/RetrieveDataSet?conceptId=&amp;conceptEffectiveDate=&amp;format=html&amp;language=nl-NL&amp;seetype=live-services"></a></td>
+                    </tr>
+                    <tr class="bg-item leaf" data-tt-id="id_2_16_840_1_113883_2_4_3_11_60_90_77_2_5_20010" data-tt-parent-id="id_2_16_840_1_113883_2_4_3_11_60_90_77_2_5_3" style="display: none;">
+                        <td class="columnName node-sfinal"><span class="indenter"></span>Graviditeit</td>
+                        <td class="columnID" style="">peri22-dataelement-20010</td>
+                        <td class="columnMandatory" style="display: none;">-</td>
+                        <td class="columnConformance" style="display: none;">R</td>
+                        <td class="columnCardinality" style="display: none;">0 … 1</td>
+                        <td class="columnMax" style="display: none;">1</td>
+                        <td class="columnCCD" style="">0 … 1 R  <a href="https://art-decor.org/mediawiki/index.php?title=DECOR-dataset#Aantal">Aantal</a></td>
+                        <td class="columnDatatype" style="display: none;"><a href="https://art-decor.org/mediawiki/index.php?title=DECOR-dataset#Aantal">Aantal</a></td>
+                        <td class="columnProperty" style="display: none;">
+                            <ul style="margin-bottom: 10px;">
+                                <li>Min/max: 1…75</li>
+                            </ul>
+                        </td>
+                        <td class="columnExample" style="display: none;"></td>
+                        <td class="columnCodes" style="display: none;"></td>
+                        <td class="columnDescription" style="display: none;">Het aantal keren dat de vrouw zwanger is geworden (inclusief deze).</td>
+                        <td class="columnContext" style=""></td>
+                        <td class="columnSource" style="display: none;"></td>
+                        <td class="columnRationale" style="display: none;"></td>
+                        <td class="columnOperationalization" style="display: none;"></td>
+                        <td class="columnComment" style="display: none;">
+                            <ul>
+                                <li>1 - 75</li>
+                            </ul>
+                        </td>
+                        <td class="columnMapping" style="display: none;"></td>
+                        <td class="columnCondition" style=""></td>
+                        <td class="columnStatus" style="display: none;">final</td>
+                        <td class="columnCommunity" style="display: none;"></td>
+                        <td class="columnTerminology" style="display: none;">
+                            <div><a href="http://localhost:8877/decor/services/RedirectTerminology?codeSystem=2.16.840.1.113883.2.4.4.13&amp;conceptId=Gravidity&amp;language=nl-NL&amp;prefix=peri20-&amp;version=">Gravidity</a> (PerinatologyObservations: Gravidity)</div>
+                        </td>
+                        <td class="columnValueSet" style=""></td>
+                        <td class="columnType" style="display: none;">Item</td>
+                        <td class="columnParent" style="display: none;">Zwangerschap</td>
+                        <td class="columnInherit" style=""><a href="http://localhost:8877/decor/services/RetrieveDataSet?conceptId=2.16.840.1.113883.2.4.3.11.60.90.77.2.1.20010&amp;conceptEffectiveDate=2009-10-01T00:00:00&amp;format=html&amp;language=nl-NL&amp;seetype=live-services">spirit1a-dataelement-20010</a></td>
+                    </tr>
+                    <tr class="bg-item leaf" data-tt-id="id_2_16_840_1_113883_2_4_3_11_60_90_77_2_5_20153" data-tt-parent-id="id_2_16_840_1_113883_2_4_3_11_60_90_77_2_5_3" style="display: none;">
+                        <td class="columnName node-sfinal"><span class="indenter"></span>Pariteit</td>
+                        <td class="columnID" style="">peri22-dataelement-20153</td>
+                        <td class="columnMandatory" style="display: none;">-</td>
+                        <td class="columnConformance" style="display: none;">R</td>
+                        <td class="columnCardinality" style="display: none;">0 … 1</td>
+                        <td class="columnMax" style="display: none;">1</td>
+                        <td class="columnCCD" style="">0 … 1 R  <a href="https://art-decor.org/mediawiki/index.php?title=DECOR-dataset#Aantal">Aantal</a></td>
+                        <td class="columnDatatype" style="display: none;"><a href="https://art-decor.org/mediawiki/index.php?title=DECOR-dataset#Aantal">Aantal</a></td>
+                        <td class="columnProperty" style="display: none;">
+                            <ul style="margin-bottom: 10px;">
+                                <li>Min/max: 0…30</li>
+                            </ul>
+                        </td>
+                        <td class="columnExample" style="display: none;"></td>
+                        <td class="columnCodes" style="display: none;"></td>
+                        <td class="columnDescription" style="display: none;">Aantal zwangerschappen die eindigden met een partus (&gt;= 16w 0d / 112 dagen)</td>
+                        <td class="columnContext" style=""></td>
+                        <td class="columnSource" style="display: none;"></td>
+                        <td class="columnRationale" style="display: none;"></td>
+                        <td class="columnOperationalization" style="display: none;"></td>
+                        <td class="columnComment" style="display: none;">
+                            <ul></ul>
+                        </td>
+                        <td class="columnMapping" style="display: none;"></td>
+                        <td class="columnCondition" style=""></td>
+                        <td class="columnStatus" style="display: none;">final</td>
+                        <td class="columnCommunity" style="display: none;"></td>
+                        <td class="columnTerminology" style="display: none;">
+                            <div><a href="http://localhost:8877/decor/services/RedirectTerminology?codeSystem=2.16.840.1.113883.6.96&amp;conceptId=364325004&amp;language=nl-NL&amp;prefix=peri20-&amp;version=">Parity (observable entity)</a> (Snomed: 364325004)</div>
+                        </td>
+                        <td class="columnValueSet" style=""></td>
+                        <td class="columnType" style="display: none;">Item</td>
+                        <td class="columnParent" style="display: none;">Zwangerschap</td>
+                        <td class="columnInherit" style=""><a href="http://localhost:8877/decor/services/RetrieveDataSet?conceptId=2.16.840.1.113883.2.4.3.11.60.90.77.2.4.20153&amp;conceptEffectiveDate=2012-08-06T00:00:00&amp;format=html&amp;language=nl-NL&amp;seetype=live-services">peri21-dataelement-20153</a></td>
+                    </tr>
+                    <tr class="bg-group branch collapsed" data-tt-id="id_2_16_840_1_113883_2_4_3_11_60_90_77_2_5_14" data-tt-parent-id="">
+                        <td class="columnName node-sfinal"><span class="indenter" style="padding-left: 0px;"><a href="http://localhost:8877/decor/services/RetrieveTransaction?id=2.16.840.1.113883.2.4.3.11.60.90.77.4.2453&amp;effectiveDate=2018-12-17T15:21:25&amp;language=nl-NL&amp;ui=nl-NL&amp;format=html&amp;hidecolumns=34567#" title="Expand">&nbsp;</a></span>Medisch onderzoek</td>
+                        <td class="columnID" style="">peri22-dataelement-14</td>
+                        <td class="columnMandatory" style="display: none;">-</td>
+                        <td class="columnConformance" style="display: none;">R</td>
+                        <td class="columnCardinality" style="display: none;">0 … 1</td>
+                        <td class="columnMax" style="display: none;">1</td>
+                        <td class="columnCCD" style="">0 … 1 R  <a href="https://art-decor.org/mediawiki/index.php?title=DECOR-dataset#"></a></td>
+                        <td class="columnDatatype" style="display: none;"><a href="https://art-decor.org/mediawiki/index.php?title=DECOR-dataset#"></a></td>
+                        <td class="columnProperty" style="display: none;"></td>
+                        <td class="columnExample" style="display: none;"></td>
+                        <td class="columnCodes" style="display: none;"></td>
+                        <td class="columnDescription" style="display: none;">Medisch onderzoek</td>
+                        <td class="columnContext" style=""></td>
+                        <td class="columnSource" style="display: none;"></td>
+                        <td class="columnRationale" style="display: none;"></td>
+                        <td class="columnOperationalization" style="display: none;"></td>
+                        <td class="columnComment" style="display: none;">
+                            <ul></ul>
+                        </td>
+                        <td class="columnMapping" style="display: none;"></td>
+                        <td class="columnCondition" style=""></td>
+                        <td class="columnStatus" style="display: none;">final</td>
+                        <td class="columnCommunity" style="display: none;"></td>
+                        <td class="columnTerminology" style="display: none;"></td>
+                        <td class="columnValueSet" style=""></td>
+                        <td class="columnType" style="display: none;">Groep</td>
+                        <td class="columnParent" style="display: none;"></td>
+                        <td class="columnInherit" style=""><a href="http://localhost:8877/decor/services/RetrieveDataSet?conceptId=&amp;conceptEffectiveDate=&amp;format=html&amp;language=nl-NL&amp;seetype=live-services"></a></td>
+                    </tr>
+                    <tr class="bg-group branch" data-tt-id="id_2_16_840_1_113883_2_4_3_11_60_90_77_2_5_142" data-tt-parent-id="id_2_16_840_1_113883_2_4_3_11_60_90_77_2_5_14" style="display: none;">
+                        <td class="columnName node-sfinal"><span class="indenter"></span>Maternale onderzoeksgegevens</td>
+                        <td class="columnID" style="">peri22-dataelement-142</td>
+                        <td class="columnMandatory" style="display: none;">-</td>
+                        <td class="columnConformance" style="display: none;">R</td>
+                        <td class="columnCardinality" style="display: none;">0 … 1</td>
+                        <td class="columnMax" style="display: none;">1</td>
+                        <td class="columnCCD" style="">0 … 1 R  <a href="https://art-decor.org/mediawiki/index.php?title=DECOR-dataset#"></a></td>
+                        <td class="columnDatatype" style="display: none;"><a href="https://art-decor.org/mediawiki/index.php?title=DECOR-dataset#"></a></td>
+                        <td class="columnProperty" style="display: none;"></td>
+                        <td class="columnExample" style="display: none;"></td>
+                        <td class="columnCodes" style="display: none;"></td>
+                        <td class="columnDescription" style="display: none;">Maternale onderzoeksgegevens</td>
+                        <td class="columnContext" style=""></td>
+                        <td class="columnSource" style="display: none;"></td>
+                        <td class="columnRationale" style="display: none;"></td>
+                        <td class="columnOperationalization" style="display: none;"></td>
+                        <td class="columnComment" style="display: none;">
+                            <ul></ul>
+                        </td>
+                        <td class="columnMapping" style="display: none;"></td>
+                        <td class="columnCondition" style=""></td>
+                        <td class="columnStatus" style="display: none;">final</td>
+                        <td class="columnCommunity" style="display: none;"></td>
+                        <td class="columnTerminology" style="display: none;">
+                            <div><a href="http://localhost:8877/decor/services/RedirectTerminology?codeSystem=2.16.840.1.113883.6.1&amp;conceptId=12131-9&amp;language=nl-NL&amp;prefix=peri20-&amp;version=">US Study observation general</a> (LOINC: 12131-9)</div>
+                        </td>
+                        <td class="columnValueSet" style=""></td>
+                        <td class="columnType" style="display: none;">Groep</td>
+                        <td class="columnParent" style="display: none;">Medisch onderzoek</td>
+                        <td class="columnInherit" style=""><a href="http://localhost:8877/decor/services/RetrieveDataSet?conceptId=&amp;conceptEffectiveDate=&amp;format=html&amp;language=nl-NL&amp;seetype=live-services"></a></td>
+                    </tr>
+                    <tr class="bg-group branch" data-tt-id="id_2_16_840_1_113883_2_4_3_11_60_90_77_2_5_80959" data-tt-parent-id="id_2_16_840_1_113883_2_4_3_11_60_90_77_2_5_142" style="display: none;">
+                        <td class="columnName node-sfinal"><span class="indenter"></span>Urine-, bloed- en aanvullende onderzoeken</td>
+                        <td class="columnID" style="">peri22-dataelement-80959</td>
+                        <td class="columnMandatory" style="display: none;">-</td>
+                        <td class="columnConformance" style="display: none;">R</td>
+                        <td class="columnCardinality" style="display: none;">0 … 1</td>
+                        <td class="columnMax" style="display: none;">1</td>
+                        <td class="columnCCD" style="">0 … 1 R  <a href="https://art-decor.org/mediawiki/index.php?title=DECOR-dataset#"></a></td>
+                        <td class="columnDatatype" style="display: none;"><a href="https://art-decor.org/mediawiki/index.php?title=DECOR-dataset#"></a></td>
+                        <td class="columnProperty" style="display: none;"></td>
+                        <td class="columnExample" style="display: none;"></td>
+                        <td class="columnCodes" style="display: none;"></td>
+                        <td class="columnDescription" style="display: none;">Urine-, bloed- en aanvullende onderzoeken<br clear="none">
+                            <br clear="none">Het gaat hier zowel om onderzoeken van bloed, urine en/of een ander monster door het laboratorium, als om onderzoeken die door de zorgverlener of patiënt 'zelf' worden gedaan. <br clear="none">Voorbeelden van deze 'zelf'-bepalingen zijn: glucose, Hb en proteïne op basis van strips.<br clear="none">
+                        </td>
+                        <td class="columnContext" style=""></td>
+                        <td class="columnSource" style="display: none;"></td>
+                        <td class="columnRationale" style="display: none;"></td>
+                        <td class="columnOperationalization" style="display: none;"></td>
+                        <td class="columnComment" style="display: none;">
+                            <ul></ul>
+                        </td>
+                        <td class="columnMapping" style="display: none;"></td>
+                        <td class="columnCondition" style=""></td>
+                        <td class="columnStatus" style="display: none;">final</td>
+                        <td class="columnCommunity" style="display: none;"></td>
+                        <td class="columnTerminology" style="display: none;"></td>
+                        <td class="columnValueSet" style=""></td>
+                        <td class="columnType" style="display: none;">Groep</td>
+                        <td class="columnParent" style="display: none;">Maternale onderzoeksgegevens</td>
+                        <td class="columnInherit" style=""><a href="http://localhost:8877/decor/services/RetrieveDataSet?conceptId=&amp;conceptEffectiveDate=&amp;format=html&amp;language=nl-NL&amp;seetype=live-services"></a></td>
+                    </tr>
+                    <tr class="bg-item leaf" data-tt-id="id_2_16_840_1_113883_2_4_3_11_60_90_77_2_5_10814" data-tt-parent-id="id_2_16_840_1_113883_2_4_3_11_60_90_77_2_5_80959" style="display: none;">
+                        <td class="columnName node-sfinal"><span class="indenter"></span>Hb</td>
+                        <td class="columnID" style="">peri22-dataelement-10814</td>
+                        <td class="columnMandatory" style="display: none;">-</td>
+                        <td class="columnConformance" style="display: none;">R</td>
+                        <td class="columnCardinality" style="display: none;">0 … 1</td>
+                        <td class="columnMax" style="display: none;">1</td>
+                        <td class="columnCCD" style="">0 … 1 R  <a href="https://art-decor.org/mediawiki/index.php?title=DECOR-dataset#Hoeveelheid">Hoeveelheid</a></td>
+                        <td class="columnDatatype" style="display: none;"><a href="https://art-decor.org/mediawiki/index.php?title=DECOR-dataset#Hoeveelheid">Hoeveelheid</a></td>
+                        <td class="columnProperty" style="display: none;">
+                            <ul style="margin-bottom: 10px;">
+                                <li>Min/max: 0…</li>
+                                <li>Eenheid: mmol/L</li>
+                            </ul>
+                        </td>
+                        <td class="columnExample" style="display: none;"></td>
+                        <td class="columnCodes" style="display: none;"></td>
+                        <td class="columnDescription" style="display: none;">Hb waarde</td>
+                        <td class="columnContext" style=""></td>
+                        <td class="columnSource" style="display: none;">PWD Acute Fase Overdracht item #127</td>
+                        <td class="columnRationale" style="display: none;"></td>
+                        <td class="columnOperationalization" style="display: none;"></td>
+                        <td class="columnComment" style="display: none;">
+                            <ul></ul>
+                        </td>
+                        <td class="columnMapping" style="display: none;"></td>
+                        <td class="columnCondition" style=""></td>
+                        <td class="columnStatus" style="display: none;">final</td>
+                        <td class="columnCommunity" style="display: none;"></td>
+                        <td class="columnTerminology" style="display: none;"></td>
+                        <td class="columnValueSet" style=""></td>
+                        <td class="columnType" style="display: none;">Item</td>
+                        <td class="columnParent" style="display: none;">Urine-, bloed- en aanvullende onderzoeken</td>
+                        <td class="columnInherit" style=""><a href="http://localhost:8877/decor/services/RetrieveDataSet?conceptId=2.16.840.1.113883.2.4.3.11.60.90.77.2.4.10814&amp;conceptEffectiveDate=2012-08-06T00:00:00&amp;format=html&amp;language=nl-NL&amp;seetype=live-services">peri21-dataelement-10814</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    
+</body></html>

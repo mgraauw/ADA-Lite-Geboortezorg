@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<acute_overdracht transactionRef="2.16.840.1.113883.2.4.3.11.60.90.77.4.2301" versionDate="2018-11-09T12:31:45">
+    <concept minimumMultiplicity="1" maximumMultiplicity="1" conformance="M" isMandatory="true" id="2.16.840.1.113883.2.4.3.11.60.90.77.2.4.1"
+        effectiveDate="2012-08-06T00:00:00" statusCode="final" type="group">
+        <name language="nl-NL">Zorgverlener/Zorginstelling</name>
+        <desc language="nl-NL">Persoon (met bijbehorende instelling) die verantwoordelijk of uitvoerder was voor de zorg van de patiënt en aanleveraar van de
+            gegevens.</desc>
+        <concept minimumMultiplicity="1" maximumMultiplicity="1" conformance="M" isMandatory="true" id="2.16.840.1.113883.2.4.3.11.60.90.77.2.4.10001"
+            statusCode="final" effectiveDate="2012-08-06T00:00:00" type="group">
+            <name language="nl-NL">Zorgverlener</name>
+            <desc language="nl-NL">Zorgverlener</desc>
+            <concept minimumMultiplicity="1" maximumMultiplicity="1" conformance="M" isMandatory="true" id="2.16.840.1.113883.2.4.3.11.60.90.77.2.4.10006"
+                effectiveDate="2012-08-06T00:00:00" statusCode="final" type="item">
+                <name language="nl-NL">Naam zorgverlener</name>
+                <desc language="nl-NL">Naam zorgverlener</desc>
+            </concept>
+        </concept>
+        <concept minimumMultiplicity="1" maximumMultiplicity="1" conformance="R" isMandatory="false" id="2.16.840.1.113883.2.4.3.11.60.90.77.2.4.10020"
+            effectiveDate="2012-08-06T00:00:00" statusCode="final" type="group">
+            <name language="nl-NL">Zorginstelling</name>
+            <desc language="nl-NL">Organisatie (instelling) die de zorg levert / heeft geleverd</desc>
+            <concept minimumMultiplicity="1" maximumMultiplicity="1" conformance="R" isMandatory="false" id="2.16.840.1.113883.2.4.3.11.60.90.77.2.4.10026"
+                effectiveDate="2012-08-06T00:00:00" statusCode="final" type="item">
+                <name language="nl-NL">Naam zorginstelling</name>
+                <desc language="nl-NL">Naam van de instelling</desc>
+            </concept>
+        </concept>
+    </concept>
+    <concept minimumMultiplicity="1" maximumMultiplicity="1" conformance="M" isMandatory="true" id="2.16.840.1.113883.2.4.3.11.60.90.77.2.4.2"
+        statusCode="final" effectiveDate="2012-08-06T00:00:00" type="group">
+        <name language="nl-NL">Vrouw</name>
+        <desc language="nl-NL">Vrouw die obstetrische zorgdiensten afneemt / heeft afgenomen.</desc>
+        <concept minimumMultiplicity="0" maximumMultiplicity="1" conformance="R" isMandatory="false" id="2.16.840.1.113883.2.4.3.11.60.90.77.2.4.10030"
+            effectiveDate="2012-08-06T00:00:00" statusCode="final" type="item">
+            <name language="nl-NL">Burgerservicenummer</name>
+            <desc language="nl-NL">Uniek identificatienummer voor iedereen die een meervoudige relatie met de Nederlandse overheid heeft, goed te identificeren
+                is en opgenomen is in de Gemeentelijke Basisadministratie Persoonsgegevens (GBA) of in de Registratie Niet Ingezetenen (RNI). </desc>
+        </concept>
+        <concept minimumMultiplicity="1" maximumMultiplicity="1" conformance="R" isMandatory="false" id="2.16.840.1.113883.2.4.3.11.60.90.77.2.4.10035"
+            effectiveDate="2012-08-06T00:00:00" statusCode="final" type="group">
+            <name language="nl-NL">Naam vrouw</name>
+            <desc language="nl-NL">Namen van de vrouw, zoals de vrouw die opgeeft; dit is de officiële naam en/of (indien van toepassing) de reguliere
+                naam</desc>
+            <concept minimumMultiplicity="1" maximumMultiplicity="*" conformance="R" isMandatory="false" id="2.16.840.1.113883.2.4.3.11.60.90.77.2.4.10043"
+                effectiveDate="2012-08-06T00:00:00" statusCode="final" type="item">
+                <name language="nl-NL">Achternamen</name>
+                <desc language="nl-NL">Achternamen van de persoon</desc>
+            </concept>
+        </concept>
+        <concept minimumMultiplicity="0" maximumMultiplicity="1" conformance="R" isMandatory="false" id="2.16.840.1.113883.2.4.3.11.60.90.77.2.4.10810"
+            effectiveDate="2012-08-06T00:00:00" statusCode="final" type="item">
+            <name language="nl-NL">Bloedgroep vrouw</name>
+            <desc language="nl-NL">Bloedgroep van de vrouw</desc>
+        </concept>
+        <concept minimumMultiplicity="0" maximumMultiplicity="1" conformance="R" isMandatory="false" id="2.16.840.1.113883.2.4.3.11.60.90.77.2.4.10811"
+            effectiveDate="2012-08-06T00:00:00" statusCode="final" type="item">
+            <name language="nl-NL">Rhesus D Factor vrouw</name>
+            <desc language="nl-NL">Rhesus D factor van de vrouw</desc>
+        </concept>
+        <concept minimumMultiplicity="0" maximumMultiplicity="1" conformance="R" isMandatory="false" id="2.16.840.1.113883.2.4.3.11.60.90.77.2.4.10816"
+            effectiveDate="2012-08-06T00:00:00" statusCode="final" type="item">
+            <name language="nl-NL">Rhesus c Factor</name>
+            <desc language="nl-NL">Rhesus c factor van de vrouw</desc>
+        </concept>
+    </concept>
+    <concept minimumMultiplicity="0" maximumMultiplicity="*" conformance="R" isMandatory="false" id="2.16.840.1.113883.2.4.3.11.60.90.77.2.4.17"
+        effectiveDate="2012-08-06T00:00:00" statusCode="final" type="group">
+        <name language="nl-NL">Obstetrische anamnese gegroepeerd per voorgaande zwangerschap</name>
+        <desc language="nl-NL">Relevante feiten vorige zwangerschap(pen) in chronologische volgorde.</desc>
+        <concept minimumMultiplicity="0" maximumMultiplicity="1" conformance="R" isMandatory="false" id="2.16.840.1.113883.2.4.3.11.60.90.77.2.4.80623"
+            statusCode="final" effectiveDate="2013-02-18T16:16:04" type="item">
+            <name language="nl-NL">Wijze einde zwangerschap</name>
+            <desc language="nl-NL">De wijze waarop de zwangerschap geëindigd is.<br clear="none"/>
+                <br clear="none"/>TOP (Termination of Pregnancy) is zwangerschapsafbreking na 16 weken. Bij TOP wordt hier 'Partus' geregistreerd, zodat dit
+                meegenomen wordt als pariteit. Dit in tegenstelling tot APLA, waarmee een zwangerschapsafbreking (abortus) van minder dan 16 weken wordt
+                    bedoeld.<br clear="none"/>
+            </desc>
+        </concept>
+        <concept minimumMultiplicity="0" maximumMultiplicity="1" conformance="C" isMandatory="false" id="2.16.840.1.113883.2.4.3.11.60.90.77.2.4.18"
+            statusCode="final" effectiveDate="2012-08-06T00:00:00" type="group">
+            <name language="nl-NL">Eerdere bevalling</name>
+            <desc language="nl-NL">Eerdere bevalling</desc>
+            <concept minimumMultiplicity="0" maximumMultiplicity="1" conformance="R" isMandatory="false" id="2.16.840.1.113883.2.4.3.11.60.90.77.2.4.10598"
+                effectiveDate="2012-08-06T00:00:00" statusCode="final" type="item">
+                <name language="nl-NL">Hoeveelheid bloedverlies</name>
+                <desc language="nl-NL">Hoeveelheid bloedverlies tijdens baring/nageboortetijdperk</desc>
+            </concept>
+            <concept minimumMultiplicity="0" maximumMultiplicity="1" conformance="R" isMandatory="false" id="2.16.840.1.113883.2.4.3.11.60.90.77.2.4.10601"
+                effectiveDate="2012-08-06T00:00:00" statusCode="final" type="item">
+                <name language="nl-NL">Duur actieve ontsluitingsfase (Ontsluitingsduur)</name>
+                <desc language="nl-NL">Ontsluitingsduur zwangerschap in uren</desc>
+            </concept>
+            <concept minimumMultiplicity="0" maximumMultiplicity="1" conformance="R" isMandatory="false" id="2.16.840.1.113883.2.4.3.11.60.90.77.2.4.10602"
+                effectiveDate="2012-08-06T00:00:00" statusCode="final" type="item">
+                <name language="nl-NL">Duur uitdrijving vanaf actief meepersen</name>
+                <desc language="nl-NL">Duur uitdrijving bij voorgaande zwangerschap in min</desc>
+            </concept>
+            <concept minimumMultiplicity="0" maximumMultiplicity="1" conformance="R" isMandatory="false" id="2.16.840.1.113883.2.4.3.11.60.90.77.2.4.80674"
+                statusCode="final" effectiveDate="2013-04-23T00:00:00" type="item">
+                <name language="nl-NL">Conditie perineum postpartum</name>
+                <desc language="nl-NL">Conditie perineum postpartum. Het gaat hier om de conditie aan het einde van de bevalling/partus, dus de
+                    'eindstatus'.</desc>
+            </concept>
+            <concept minimumMultiplicity="1" maximumMultiplicity="*" conformance="R" isMandatory="false" id="2.16.840.1.113883.2.4.3.11.60.90.77.2.4.19"
+                effectiveDate="2012-08-06T00:00:00" statusCode="final" type="group">
+                <name language="nl-NL">Vorige uitkomst (per kind)</name>
+                <desc language="nl-NL">Vorige uitkomst (per kind)</desc>
+                <concept minimumMultiplicity="0" maximumMultiplicity="1" conformance="R" isMandatory="false" id="2.16.840.1.113883.2.4.3.11.60.90.77.2.4.21"
+                    effectiveDate="2012-08-06T00:00:00" statusCode="final" type="group">
+                    <name language="nl-NL">Kindspecifieke gegevens vorige uitkomsten</name>
+                    <desc language="nl-NL">Specifieke gegevens per kind b.v. herhalend bij meerlingen</desc>
+                    <concept minimumMultiplicity="0" maximumMultiplicity="1" conformance="R" isMandatory="false"
+                        id="2.16.840.1.113883.2.4.3.11.60.90.77.2.4.80624" statusCode="final" effectiveDate="2013-02-18T16:26:02" type="item">
+                        <name language="nl-NL">Type partus</name>
+                        <desc language="nl-NL">Type partus</desc>
+                    </concept>
+                    <concept minimumMultiplicity="0" maximumMultiplicity="1" conformance="R" isMandatory="false"
+                        id="2.16.840.1.113883.2.4.3.11.60.90.77.2.4.10604" effectiveDate="2012-08-06T00:00:00" statusCode="final" type="item">
+                        <name language="nl-NL">Geboortegewicht</name>
+                        <desc language="nl-NL">Meting van het lichaamsgewicht zo kort mogelijk na de geboorte.</desc>
+                    </concept>
+                    <concept minimumMultiplicity="0" maximumMultiplicity="1" conformance="R" isMandatory="false"
+                        id="2.16.840.1.113883.2.4.3.11.60.90.77.2.4.10606" effectiveDate="2012-08-06T00:00:00" statusCode="final" type="item">
+                        <name language="nl-NL">Apgarscore na 5 min.</name>
+                        <desc language="nl-NL">Apgarscore na 5 min.</desc>
+                    </concept>
+                    <concept minimumMultiplicity="0" maximumMultiplicity="*" conformance="R" isMandatory="false"
+                        id="2.16.840.1.113883.2.4.3.11.60.90.77.2.4.10607" effectiveDate="2012-08-06T00:00:00" statusCode="final" type="item">
+                        <name language="nl-NL">Vaginale kunstverlossing</name>
+                        <desc language="nl-NL">Vaginale kunstverlossing</desc>
+                    </concept>
+                </concept>
+            </concept>
+        </concept>
+    </concept>
+    <concept minimumMultiplicity="0" maximumMultiplicity="1" conformance="R" isMandatory="false" id="2.16.840.1.113883.2.4.3.11.60.90.77.2.4.3"
+        statusCode="final" effectiveDate="2012-08-06T00:00:00" type="group">
+        <name language="nl-NL">Zwangerschap</name>
+        <desc language="nl-NL">De al dan niet afgesloten zwangerschap waarop de gegevens aan te leveren gegeven betrekking hebben.</desc>
+        <concept minimumMultiplicity="1" maximumMultiplicity="1" conformance="R" isMandatory="false" id="2.16.840.1.113883.2.4.3.11.60.90.77.2.4.20010"
+            effectiveDate="2012-08-06T00:00:00" statusCode="final" type="item">
+            <name language="nl-NL">Graviditeit</name>
+            <desc language="nl-NL">Het aantal keren dat de vrouw zwanger is geworden (inclusief deze).</desc>
+        </concept>
+    </concept>
+    <concept minimumMultiplicity="0" maximumMultiplicity="*" conformance="C" isMandatory="false" id="2.16.840.1.113883.2.4.3.11.60.90.77.2.4.14"
+        effectiveDate="2012-08-06T00:00:00" statusCode="final" type="group">
+        <name language="nl-NL">Medisch onderzoek</name>
+        <desc language="nl-NL">Medisch onderzoek</desc>
+        <concept minimumMultiplicity="0" maximumMultiplicity="1" conformance="R" isMandatory="false" id="2.16.840.1.113883.2.4.3.11.60.90.77.2.4.142"
+            effectiveDate="2012-08-06T00:00:00" statusCode="final" type="group">
+            <name language="nl-NL">Maternale onderzoeksgegevens</name>
+            <desc language="nl-NL">Maternale onderzoeksgegevens</desc>
+            <concept minimumMultiplicity="0" maximumMultiplicity="1" conformance="C" isMandatory="false" id="2.16.840.1.113883.2.4.3.11.60.90.77.2.4.10814"
+                statusCode="final" effectiveDate="2012-08-06T00:00:00" type="item">
+                <name language="nl-NL">Hb</name>
+                <desc language="nl-NL">Hb waarde</desc>
+            </concept>
+        </concept>
+    </concept>
+</acute_overdracht>
