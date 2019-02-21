@@ -52,7 +52,7 @@
          <xs:element name="medisch_onderzoek"
                      type="medisch_onderzoek_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_5_14"
                      minOccurs="0"
-                     maxOccurs="1"/>
+                     maxOccurs="unbounded"/>
       </xs:sequence>
       <xs:attribute name="id" type="xs:string"/>
       <xs:attribute name="app" type="xs:string"/>

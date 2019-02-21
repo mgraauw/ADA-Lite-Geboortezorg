@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<prio1_huidig transactionRef="2.16.840.1.113883.2.4.3.11.60.90.77.4.2453">
+<prio1_huidig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="../schemas/prio1_huidig.xsd" transactionRef="2.16.840.1.113883.2.4.3.11.60.90.77.4.2453">
     <zorgverlenerzorginstelling>
         <zorgverlener>
             <naam_zorgverlener value="V.E.R. Loskundige"/>

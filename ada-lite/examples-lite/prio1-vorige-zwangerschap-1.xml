@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<prio1_vorig transactionRef="2.16.840.1.113883.2.4.3.11.60.90.77.4.2456">
+<prio1_vorig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="../schemas/prio1_vorig.xsd" transactionRef="2.16.840.1.113883.2.4.3.11.60.90.77.4.2456">
     <zorgverlenerzorginstelling>
         <zorgverlener>
             <naam_zorgverlener value="V.E.R. Loskundige"/>
@@ -16,9 +17,6 @@
                 <achternaam value="Zwangeren"/>
             </achternaam>
         </naamgegevens>
-        <bloedgroep_vrouw value="58460004"/>
-        <rhesus_d_factor_vrouw value="165747007"/>
-        <rhesus_c_factor value="rhcpos"/>
     </vrouw>
     <zwangerschap>
         <graviditeit value="3"/>
