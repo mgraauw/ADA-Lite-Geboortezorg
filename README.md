@@ -7,13 +7,12 @@ die in de verloskunde gehanteerd worden. Binnen de geboortezorg is daarom behoef
 eenvoudiger formaat, wat dicht aansluit op de praktijk. Mogelijk kan op termijn FHIR in die behoefte voorzien.
 Daarvoor zijn op dit moment (begin 2019) de FHIR specificaties voor Geboortezorg nog onvoldoende 
 ontwikkeld. ADA is gebaseerd op het PWD en volgt de structuur van de dataset daarin.
-## ADA Lite
-### Aanlevering is XML
+## Aanlevering is XML
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 Aanbevolen is de XML declaratie op te nemen. Uitwisseling gebeurt in UTF-8.
 ```
-### Hoofdniveau is een transactie
+## Hoofdniveau is een transactie
 ```xml
 <acute_overdracht transactionRef="2.16.840.1.113883.2.4.3.11.60.90.77.4.2301" versionDate="2018-11-09T12:31:45">
    .... details ....
@@ -41,33 +40,41 @@ Zijn de volledige specs in XML te vinden. Met `format=html` dito in HTML.
 
 Dit zijn de enige twee versieaanduidingen.
 
-### Groepen volgen de dataset precies
+## Groepen volgen de dataset precies
 ```xml
 <acute_overdracht ....>
-    <vrouw>
-        <burgerservicenummer value="999995856"/>
-    </vrouw>
     <zorgverlenerzorginstelling>
         <zorgverlener>
-            <naam_zorgverlener>
-                <achternamen value="Gessel"/>
-            </naam_zorgverlener>
+            <naam_zorgverlener value="V.E.R. Loskundige"/>
+        </zorgverlener>
+        <zorginstelling>
+            <naam_zorginstelling value="Test instelling 1"/>
+        </zorginstelling>
+    </zorgverlenerzorginstelling>
+    <vrouw>
+        <burgerservicenummer value="123456095"/>
+        <naamgegevens>
+            <achternaam>
+                <voorvoegsel value="van der"/>
+                <achternaam value="Zwan"/>
+            </achternaam>
+        </naamgegevens>
     ...            
 </acute_overdracht>
 ```
 Iedere groep wordt overgenomen van de dataset. Er mag geen groep worden overgeslagen. Dit borgt dat ieder element 
 altijd uniek te traceren is met paden: `acute_overdracht/vrouw/burgerservicenummer/@value`
-### Gegevens zitten altijd in @value
+## Gegevens zitten altijd in @value
 ```xml
 <burgerservicenummer value="999995856"/>
 ```
 Identificaties zoals een BSN komen gewoon in de value.
 ```xml
-<naam_zorginstelling value="Verloskundigenpraktijk Astrid Limburg"/>
+<naam_zorginstelling value="Verloskundigenpraktijk Amstrecht Centrum"/>
 ```
 Dito voor strings.
 ```xml
-<bloedgroep_vrouw value="112144000"/>
+<bloedgroep_vrouw value="58460004"/>
 ```
 Codes (hier: een Snomed code) worden opgenomen zoals ze in de valueSet voorkomen.
 
@@ -92,7 +99,7 @@ Dito numerieke waarden. Er worden decimale punten gebruikt, geen komma's.
 <datum_onderzoek value="2019-01-20T13:15:00"/>```
 Datums en tijden worden doorgegeven in ISO formaat. Waar tijden worden doorgegeven, wordt de separator 'T' gebruikt.
 Er wordt geen timezone doorgegeven.
-### Extensies
+## Extensies
 ```xml
 <vrouw>
     <burgerservicenummer value="999995856"/>
@@ -103,64 +110,69 @@ Er wordt geen timezone doorgegeven.
 ```
 Leveranciers kunnen gegevens die niet in PWD voorkomen doorgeven in een `adaextension` groep. Deze groep kan (optioneel) voorkomen
 als laatste element binnen ieder groepselement.
-### Een compleet voorbeeld
+## Vorige zwangerschappen zijn losse aanleveringen
+In PWD zit de "obstetrische anamnese per voorgaande zwangerschap". Deze wordt aangeleverd
+als losse zwangerschap, met daarin de subset van gegevens die relevant zijn voor de vorige zwangerschap (dat 
+is niet het complete dossier).
+
+Dit is nodig bij aanlevering aan een repository, anders onstaat de volgende situatie:
+
+* kind 1 geboren, er wordt een zwangerschapsdossier aangeleverd
+* kind 2 geboren, er wordt een zwangerschapsdossier aangeleverd, met daarin gegevens van kind 1 weer in "obstetrische anamnese per voorgaande zwangerschap" 
+* kind 3 geboren, er wordt een zwangerschapsdossier aangeleverd, met daarin gegevens van kind 1 en 2 weer in "obstetrische anamnese per voorgaande zwangerschap"
+
+Kortom, met 3 kinderen worden 6 zwangerschappen geregistreerd. Dat is niet wenselijk. Voor aanleveringen
+als de kernset aan Perined kunnen de vorige en huidige zwangerschappen eventueel weer tot één aanleverberichte geaggregreerd worden.
+
+## Een compleet voorbeeld
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <acute_overdracht transactionRef="2.16.840.1.113883.2.4.3.11.60.90.77.4.2301" versionDate="2018-11-09T12:31:45">
-    <vrouw>
-        <burgerservicenummer value="999995856"/>
-        <extension url="http://www.marcdegraauw.com/extension-example">
-            <skype-id value="mgraauw" conceptId="1"/>
-        </extension>
-    </vrouw>
     <zorgverlenerzorginstelling>
         <zorgverlener>
-            <naam_zorgverlener>
-                <achternamen value="Gessel"/>
-            </naam_zorgverlener>
-            <zorginstelling>
-                <naam_zorginstelling value="Verloskundigenpraktijk Astrid Limburg"/>
-            </zorginstelling>
+            <naam_zorgverlener value="V.E.R. Loskundige"/>
         </zorgverlener>
+        <zorginstelling>
+            <naam_zorginstelling value="Test instelling 1"/>
+        </zorginstelling>
     </zorgverlenerzorginstelling>
-    <bloedgroep_vrouw value="112144000"/>
-    <rhesus_d_factor_vrouw value="165747007"/>
-    <rhesus_c_factor value="rhcneg"/>
-    <obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap>
-        <wijze_einde_zwangerschap value="1"/>
-        <eerdere_bevalling>
-            <hoeveelheid_bloedverlies value="600"/>
-            <conditie_perineum_postpartum value="F"/>
-            <kindspecifieke_gegevens_vorige_uitkomsten>
-                <type_partus value="267278005"/>
-                <geboortegewicht value="3810"/>
-                <apgarscore_na_5_min value="8"/>
-                <vaginale_kunstverlossing/>
-            </kindspecifieke_gegevens_vorige_uitkomsten>
-        </eerdere_bevalling>
-    </obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap>
-    <obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap>
-        <wijze_einde_zwangerschap value="4"/>
-    </obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap>
-    <obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap>
-        <wijze_einde_zwangerschap value="1"/>
-        <eerdere_bevalling>
-            <hoeveelheid_bloedverlies value="400"/>
-            <conditie_perineum_postpartum value="A"/>
-            <kindspecifieke_gegevens_vorige_uitkomsten>
-                <type_partus value="48782003"/>
-                <geboortegewicht value="3150"/>
-                <apgarscore_na_5_min value="10"/>
-            </kindspecifieke_gegevens_vorige_uitkomsten>
-        </eerdere_bevalling>
-    </obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap>
+    <vrouw>
+        <burgerservicenummer value="123456095"/>
+        <naamgegevens>
+            <achternaam>
+                <voorvoegsel value="van der"/>
+                <achternaam value="Zwan"/>
+            </achternaam>
+        </naamgegevens>
+        <bloedgroep_vrouw value="58460004"/>
+        <rhesus_d_factor_vrouw value="165747007"/>
+        <rhesus_c_factor value="rhcpos"/>
+    </vrouw>
     <zwangerschap>
-        <graviditeit value="4"/>
+        <graviditeit value="2"/>
     </zwangerschap>
+    <medisch_onderzoek>
+        <maternale_onderzoeksgegevens>
+            <urine_bloed_en_aanvullende_onderzoeken>
+                <hb value="7.3"/>
+            </urine_bloed_en_aanvullende_onderzoeken>
+        </maternale_onderzoeksgegevens>
+    </medisch_onderzoek>
+    <medisch_onderzoek>
+        <maternale_onderzoeksgegevens>
+            <urine_bloed_en_aanvullende_onderzoeken>
+                <hb value="6.8"/>
+            </urine_bloed_en_aanvullende_onderzoeken>
+        </maternale_onderzoeksgegevens>
+    </medisch_onderzoek>
 </acute_overdracht>
 ```
 
 ## Documentatie
+In de folder `ada-lite` staan specificaties die van belang zijn voor leveranciers. In de
+folder `design` staan materialen die gebruikt worden om de specificaties te maken; deze
+zijn niet van belang voor leveranciers.
+
 Het volledige ADA formaat is gedefinieerd op: https://www.art-decor.org/mediawiki/index.php/ADA_Documentation
 
 PWD specificaties zijn te vinden op: https://decor.nictiz.nl/decor/services/ProjectIndex?prefix=peri20-&format=html
