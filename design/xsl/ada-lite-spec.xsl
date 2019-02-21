@@ -32,6 +32,16 @@
                 </xsl:if>
                 <xsl:for-each select="conceptList/*">
                     <xsl:copy>
+                        <xsl:attribute name="localId">
+                            <xsl:choose>
+                                <xsl:when test="$uniqueCodes">
+                                    <xsl:value-of select="@code"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:value-of select="@localId"/>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </xsl:attribute>
                         <xsl:attribute name="value">
                             <xsl:choose>
                                 <xsl:when test="$uniqueCodes">

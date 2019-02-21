@@ -123,7 +123,16 @@ Dit is nodig bij aanlevering aan een repository, anders onstaat de volgende situ
 
 Kortom, met 3 kinderen worden 6 zwangerschappen geregistreerd. Dat is niet wenselijk. Voor aanleveringen
 als de kernset aan Perined kunnen de vorige en huidige zwangerschappen eventueel weer tot één aanleverberichte geaggregreerd worden.
+## Full ADA
 
+Volledig ADA, met conceptId, code en codeSystem en unit is ook toegestaan als aanlevering:
+```xml
+<actuele_bloeddruk conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.4.10807">
+    <actuele_bloeddruk_systolisch value="160" unit="mm Hg" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.4.10808"/>
+    <actuele_bloeddruk_diastolisch value="110" unit="mm Hg" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.4.10809"/>
+</actuele_bloeddruk>
+<bloedgroep_vrouw value="4" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.4.10810" code="58460004" codeSystem="2.16.840.1.113883.6.96" displayName="Blood group O (finding)"/>
+```        
 ## Een compleet voorbeeld
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
