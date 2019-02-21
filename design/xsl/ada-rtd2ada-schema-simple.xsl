@@ -8,7 +8,7 @@
         (simple) XML schema. This schema is not meant to be processed directly (although there is no problem 
         in doing so). It will be used primarily for the conversion into Schematron by
         ada-schema-simple2ada-schematron.xsl
-  -->        
+  -->
   <!-- ================================================================== -->
   <!-- SETUP: -->
 
@@ -33,7 +33,7 @@
     <!-- Setup the schema: -->
     <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
       <xsl:comment> == Schema generated {current-dateTime()} == </xsl:comment>
-      
+
       <xsl:apply-templates select="/*"/>
 
       <!-- Standard simple types used: -->
@@ -269,7 +269,8 @@
 
     <xsl:call-template name="add-value-restricted-attribute-definition">
       <xsl:with-param name="attribute-name" select="'value'"/>
-      <xsl:with-param name="attribute-allowed-values" select="data($base-concept-elements/@localId)"/>
+      <xsl:with-param name="attribute-allowed-values"
+        select="if (exists($base-concept-elements/@localId)) then data($base-concept-elements/@localId) else data($base-concept-elements/@value)"/>
       <xsl:with-param name="base-elements" select="$base-concept-elements"/>
     </xsl:call-template>
     <xsl:call-template name="add-value-restricted-attribute-definition">
