@@ -178,8 +178,18 @@ Volledig ADA, met conceptId, code en codeSystem en unit is ook toegestaan als aa
 ```
 
 ## Documentatie
-In de folder `ada-lite` staan specificaties die van belang zijn voor leveranciers. In de
-folder `design` staan materialen die gebruikt worden om de specificaties te maken; deze
+In de folder `ada-lite` staan specificaties die van belang zijn voor leveranciers. 
+
+* examples-empty: Lege voorbeelddocumenten
+* examples-lite: Voorbeelddocumenten met vulling
+* examples-full: TODO
+* html: Kopie van de transactieoverzichten in HTML
+* schemas: XML Schema voor de documenttypen
+* specs-lite: XML bestanden met alle meta-informatie over de documenttypen
+* xsl: 
+    * simple-ada2full-ada.xsl: Een style die ADA lite omzet naar full ADA
+
+In de folder `design` staan materialen die gebruikt worden om de specificaties te maken; deze
 zijn niet van belang voor leveranciers.
 
 Het volledige ADA formaat is gedefinieerd op: https://www.art-decor.org/mediawiki/index.php/ADA_Documentation
