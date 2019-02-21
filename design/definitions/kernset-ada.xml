@@ -1,0 +1,83 @@
+<ada xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://decor.nictiz.nl/ada/core/ada.xsd">
+    <project prefix="kernset-app-" language="nl-NL" versionDate="2018-03-20T18:06:27">
+        <release baseUri="http://decor.nictiz.nl/decor/services/RetrieveTransaction"/>
+    </project>
+    <applications>
+        <application version="1">
+            <views>
+                <view id="1" type="crud" target="xforms" transactionId="2.16.840.1.113883.2.4.3.11.60.90.77.4.2410" transactionEffectiveDate="2014-10-20T00:00:00">
+                    <name>Kernset aanleverbericht</name>
+                    <concepts include="all">
+                        <!-- tabs -->
+                        <concept ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.4" widget="tab"/>
+                        <concept ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.1" widget="tab"/>
+                        <concept ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.2" widget="tab"/>
+                        <concept ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.17" widget="tab"/>
+                        <concept ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.3" widget="tab"/>
+                        <concept ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.6" widget="tab"/>
+                        <concept ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.7" widget="tab"/>
+                        <concept ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.14" widget="tab"/>
+                        <concept ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.16" widget="tab"/>
+                        <!-- Conditionele velden -->
+                        <!-- Algemene anamnese -->
+                        <concept notPresentWhen="not(../onder_behandeling_geweestq/@value='true')" ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80904"/>
+                        <concept notPresentWhen="not(../autoimmuun_aandoeningq/@value='true')" ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82220"/>
+                        <concept notPresentWhen="not(../cardiovasculaire_aandoeningq/@value='true')" ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80906"/>
+                        <concept notPresentWhen="not(../urogenitale_aandoeningq/@value='true')" ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82267"/>
+                        <concept notPresentWhen="not(../oncologische_aandoeningq/@value='true')" ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82221"/>
+                        <concept notPresentWhen="not(../schildklier_aandoeningq/@value='true')" ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80909"/>
+                        <concept notPresentWhen="not(../neurologische_aandoeningq/@value='true')" ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80912"/>
+                        <concept notPresentWhen="not(../infectieziekteq/@value='true')" ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82210"/>
+                        <concept notPresentWhen="not(../mdl_aandoeningq/@value='true')" ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82219"/>
+                        <concept notPresentWhen="not(../anemieq/@value='true')" ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82222"/>
+                        <concept notPresentWhen="not(../longaandoeningq/@value='true')" ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82266"/>
+                        <concept notPresentWhen="not(../gynaecologische_aandoeningq/@value='true')" ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80917"/>
+                        <concept notPresentWhen="not(../orthopedische_afwijkingq/@value='true')" ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80918"/>
+                        <concept notPresentWhen="not(../bloedtransfusieq/@value='true')" ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82231"/>
+                        <concept notPresentWhen="not(../operatieq/@value='true')" ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80818"/>
+                        <concept notPresentWhen="not(../stollingsprobleemq/@value='true')" ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80817"/>
+                        <concept notPresentWhen="not(../overige_aandoeningq/@value='true')" ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80919"/>
+                        <concept notPresentWhen="not(../vrouwelijke_genitale_verminkingq/@value='true')" ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80676"/>
+                        <concept notPresentWhen="not(../congenitale_afwijkingenq/@value='true')" ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80998"/>
+                        <concept notPresentWhen="not(../medicatie_nageboortetijdperkq/@value='true')" ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20626"/>
+                        <concept notPresentWhen="not(../perinatale_sterfteq/@value='true')" ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40290"/>
+                        <concept notPresentWhen="not(../pijnbestrijdingq/@value='true')" ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82091"/>
+                        <!-- Gebaseerd op localId -->
+                        <!-- Pijnbestrijding overig -->
+                        <concept notPresentWhen="not(../methode/@value='4')" ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82094"/>
+                        <!-- Gebaseerd op localId -->
+                        <!-- Groep sectio alleen wanneer type partus = sectio, primair of secundair -->
+                        <concept notPresentWhen="not(../type_partus/@value='3' or ../type_partus/@value='4' or ../type_partus/@value='5')" ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40219"/>
+                        <!-- Gebaseerd op localId -->
+                        <!-- Beslismoment alleen voor secundaire sectio -->
+                        <concept notPresentWhen="../type_partus/@value='5'" ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40225"/>
+                        <concept notPresentWhen="not(../congenitale_afwijkingenq/@value='true')" ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40081"/>
+                        <concept notPresentWhen="not(../chromosomale_afwijkingenq/@value='true')" ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40111"/>
+                        <concept notPresentWhen="not(../kinderarts_betrokkenq/@value='true')" ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82120"/>
+                    <!-- extra velden -->
+                        <!-- rangnummer kind voor voeding postnataal -->
+                        <concept ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.161">
+                            <concept minimumMultiplicity="0" maximumMultiplicity="1" conformance="R" isMandatory="false" id="1.2.3.4.5.12345.40025" statusCode="draft" effectiveDate="2016-03-31T00:00:00" type="item">
+                                <name language="nl-NL">Rangnummer kind</name>
+                                <desc language="nl-NL">Volgnummer van geboorte binnen de betreffende zwangerschap.</desc>
+                                <implementation shortName="rangnummer_kind" hl7Type="INT" valueLocation="@value"/>
+                                <terminologyAssociation conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40025" effectiveDate="2014-10-20T19:21:26" code="BirthOrderNumber" displayName="Rangnummer kind" codeSystem="2.16.840.1.113883.2.4.4.13"/>
+                                <valueDomain type="count">
+                                    <property minInclude="1" maxInclude="9"/>
+                                </valueDomain>
+                            </concept>
+                        </concept>
+                    </concepts>
+                </view>
+                <view id="2" type="index" target="xforms" transactionId="2.16.840.1.113883.2.4.3.11.60.90.77.4.2410" transactionEffectiveDate="2014-10-20T00:00:00">
+                    <name>Kernset aanleverbericht index</name>
+                    <indexOf ref="1"/>
+                    <concepts include="only">
+                        <concept ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10006"/>
+                        <concept ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10043"/>
+                    </concepts>
+                </view>
+            </views>
+        </application>
+    </applications>
+</ada>
