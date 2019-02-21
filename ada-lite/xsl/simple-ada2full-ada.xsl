@@ -68,7 +68,7 @@
     <xsl:variable name="full-elm-path" as="xs:string" select="string-join(($parent-name-set, $elm-name), '/')"/>
     
     <!-- Find the right concept child and pre-flight check it:: -->
-    <xsl:variable name="concept" as="element(concept)?" select="($concept-root/concept[implementation/@shortName eq $elm-name])[1]"/>
+    <xsl:variable name="concept" as="element(concept)?" select="($concept-root/concept[@shortName eq $elm-name])[1]"/>
 
     <xsl:choose>
       <xsl:when test="exists($concept)">
