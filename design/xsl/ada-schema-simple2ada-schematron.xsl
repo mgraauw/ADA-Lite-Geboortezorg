@@ -37,7 +37,10 @@
 
     <!-- Setup the Schematron: -->
     <schema xmlns="http://purl.oclc.org/dsdl/schematron" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" queryBinding="xslt2" xml:lang="nl-NL">
-      <xsl:comment> == Schematron generated {current-dateTime()} == </xsl:comment>
+      <xsl:comment> == Schematron generated from rtd {current-dateTime()} == </xsl:comment>
+
+      <!-- Define the xsi namespace in the Schematron: -->
+      <ns uri="http://www.w3.org/2001/XMLSchema-instance" prefix="xsi"/>
 
       <!-- A simple ADA schema has only a single <xs:element> definition for the root element. The rest is nested inside this. So we start here. -->
       <xsl:call-template name="handle-element-definitions">
@@ -137,6 +140,7 @@
         <xsl:when test="exists($attribute-definitions)">
           <xsl:call-template name="handle-attribute-definitions">
             <xsl:with-param name="attribute-definitions" select="$attribute-definitions"/>
+            <xsl:with-param name="has-any-attribute-set" select="exists(xs:complexType/xs:anyAttribute)"/>
             <xsl:with-param name="xpath-to-parent" select="$xpath-to-element"/>
             <xsl:with-param name="parent-display-name" select="local:get-display-name(.)"/>
           </xsl:call-template>
@@ -165,6 +169,7 @@
 
   <xsl:template name="handle-attribute-definitions">
     <xsl:param name="attribute-definitions" as="element(xs:attribute)+" required="yes"/>
+    <xsl:param name="has-any-attribute-set" as="xs:boolean" required="yes"/>
     <xsl:param name="xpath-to-parent" as="xs:string" required="yes"/>
     <xsl:param name="parent-display-name" as="xs:string" required="yes"/>
 
@@ -178,6 +183,7 @@
           <xsl:variable name="attribute-name" as="xs:string" select="@name"/>
           <xsl:variable name="attribute-display-name" as="xs:string" select="local:get-display-name(.)"/>
           <xsl:variable name="exists-test-expression" as="xs:string" select="'exists(@' || $attribute-name || ')'"/>
+          <xsl:variable name="empty-test-expression" as="xs:string" select="'empty(@' || $attribute-name || ')'"/>
           <xsl:variable name="base-technical-info" as="xs:string" select="$xpath-to-parent || '/@' || $attribute-name"/>
 
           <xsl:comment> == Attribute {$attribute-display-name}: == </xsl:comment>
@@ -214,10 +220,10 @@
           </xsl:variable>
           <xsl:if test="exists($datatype-test-expression)">
             <xsl:call-template name="create-assertion">
-              <xsl:with-param name="test-expression" select="$exists-test-expression || ' and ' || $datatype-test-expression"/>
+              <xsl:with-param name="test-expression" select="$empty-test-expression || ' or ' || $datatype-test-expression"/>
               <xsl:with-param name="message-parts"
-                select="( $base-message, 'De waarde &quot;', '#@' || $attribute-name, '&quot; voor attribuut ', $attribute-name, ' heeft een onjuist formaat' )"/>
-              <xsl:with-param name="technical-info-parts" select="( $base-technical-info, $sep, $datatype )"/>
+                select="( $base-message, 'De waarde &quot;', '#@' || $attribute-name, '&quot; voor attribuut ', $attribute-display-name, ' heeft een onjuist formaat' )"/>
+              <xsl:with-param name="technical-info-parts" select="( $base-technical-info, $sep, 'type=', $datatype )"/>
             </xsl:call-template>
           </xsl:if>
 
@@ -226,9 +232,9 @@
           <xsl:if test="exists($fixed-value)">
             <xsl:call-template name="create-assertion">
               <xsl:with-param name="test-expression"
-                select="$exists-test-expression || ' and (@' || $attribute-name || ' eq ' || local:apos($fixed-value) || ')'"/>
+                select="$empty-test-expression || ' or (@' || $attribute-name || ' eq ' || local:apos($fixed-value) || ')'"/>
               <xsl:with-param name="message-parts"
-                select="( $base-message, 'De waarde &quot;', '#@' || $attribute-name, '&quot; voor attribuut ', $attribute-name, ' heeft niet de verwachte vaste waarde ', local:q($fixed-value) )"/>
+                select="( $base-message, 'De waarde &quot;', '#@' || $attribute-name, '&quot; voor attribuut ', $attribute-display-name, ' heeft niet de verwachte vaste waarde ', local:q($fixed-value) )"/>
               <xsl:with-param name="technical-info-parts" select="$base-technical-info"/>
             </xsl:call-template>
           </xsl:if>
@@ -240,14 +246,74 @@
               select="'(' || string-join(for $restriction in $enumerated-restrictions return local:apos($restriction), ', ') || ')'"/>
             <xsl:call-template name="create-assertion">
               <xsl:with-param name="test-expression"
-                select="$exists-test-expression || ' and (@' || $attribute-name || ' = ' || $enumerated-restrictions-sequence-expression || ')'"/>
+                select="$empty-test-expression || ' or (@' || $attribute-name || ' = ' || $enumerated-restrictions-sequence-expression || ')'"/>
               <xsl:with-param name="message-parts"
-                select="( $base-message, 'De waarde &quot;', '#@' || $attribute-name, '&quot; voor attribuut ', $attribute-name, ' is onjuist' )"/>
-              <xsl:with-param name="technical-info-parts" select="( $base-technical-info, $sep, $enumerated-restrictions-sequence-expression )"/>
+                select="( $base-message, 'De waarde &quot;', '#@' || $attribute-name, '&quot; voor attribuut ', $attribute-display-name, ' is onjuist' )"/>
+              <xsl:with-param name="technical-info-parts" select="( $base-technical-info, $sep, 'allowed=', $enumerated-restrictions-sequence-expression )"/>
+            </xsl:call-template>
+          </xsl:if>
+
+          <!-- Min and max length: -->
+          <xsl:variable name="min-length" as="xs:integer?" select="xs:integer(xs:simpleType/xs:restriction/xs:minLength/@value)"/>
+          <xsl:if test="exists($min-length)">
+            <xsl:call-template name="create-assertion">
+              <xsl:with-param name="test-expression"
+                select="$empty-test-expression || ' or (string-length(@' || $attribute-name || ') ge ' || $min-length || ')' "/>
+              <xsl:with-param name="message-parts"
+                select="( $base-message, 'De waarde &quot;', '#@' || $attribute-name, '&quot; voor attribuut ', $attribute-display-name, 
+                  ' moet minstens ', string($min-length), ' karakters bevatten' )"/>
+              <xsl:with-param name="technical-info-parts" select="( $base-technical-info, $sep, 'min-length=', string($min-length) )"/>
+            </xsl:call-template>
+          </xsl:if>
+          <xsl:variable name="max-length" as="xs:integer?" select="xs:integer(xs:simpleType/xs:restriction/xs:maxLength/@value)"/>
+          <xsl:if test="exists($max-length)">
+            <xsl:call-template name="create-assertion">
+              <xsl:with-param name="test-expression"
+                select="$empty-test-expression || ' or (string-length(@' || $attribute-name || ') le ' || $max-length || ')'"/>
+              <xsl:with-param name="message-parts"
+                select="( $base-message, 'De waarde &quot;', '#@' || $attribute-name, '&quot; voor attribuut ', $attribute-display-name, 
+                ' mag hoogstens ', string($max-length), ' karakters bevatten' )"/>
+              <xsl:with-param name="technical-info-parts" select="( $base-technical-info, $sep, 'max-length=', string($max-length) )"/>
+            </xsl:call-template>
+          </xsl:if>
+          
+          <!-- Min and max inclusive: -->
+          <xsl:variable name="min-inclusive" as="xs:decimal?" select="xs:decimal(xs:simpleType/xs:restriction/xs:minInclusive/@value)"/>
+          <xsl:if test="exists($min-inclusive)">
+            <xsl:call-template name="create-assertion">
+              <xsl:with-param name="test-expression"
+                select="$empty-test-expression || ' or (xs:decimal(@' || $attribute-name || ') ge ' || $min-inclusive || ')' "/>
+              <xsl:with-param name="message-parts"
+                select="( $base-message, 'De waarde &quot;', '#@' || $attribute-name, '&quot; voor attribuut ', $attribute-display-name, 
+                  ' moet minimaal ', string($min-inclusive), ' zijn' )"/>
+              <xsl:with-param name="technical-info-parts" select="( $base-technical-info, $sep, 'min-inclusive=', string($min-inclusive) )"/>
+            </xsl:call-template>
+          </xsl:if>
+          <xsl:variable name="max-inclusive" as="xs:decimal?" select="xs:decimal(xs:simpleType/xs:restriction/xs:maxInclusive/@value)"/>
+          <xsl:if test="exists($max-inclusive)">
+            <xsl:call-template name="create-assertion">
+              <xsl:with-param name="test-expression"
+                select="$empty-test-expression || ' or (xs:decimal(@' || $attribute-name || ') le ' || $max-inclusive || ')' "/>
+              <xsl:with-param name="message-parts"
+                select="( $base-message, 'De waarde &quot;', '#@' || $attribute-name, '&quot; voor attribuut ', $attribute-display-name, 
+                ' mag maximaal ', string($max-inclusive), ' zijn' )"/>
+              <xsl:with-param name="technical-info-parts" select="( $base-technical-info, $sep, 'max-inclusive=', string($max-inclusive) )"/>
             </xsl:call-template>
           </xsl:if>
           
         </xsl:for-each>
+
+        <!-- Add a rule to catch attributes that do not belong here (we explicitly exclude the xsi namespace attributes): -->
+        <xsl:if test="not($has-any-attribute-set)">
+          <xsl:variable name="attribute-name-sequence-expression" as="xs:string"
+            select="'(' || fn:string-join(for $name in $attribute-definitions/@name/string() return '@'|| $name, ', ') || ', @xsi:*)'"/>
+          <xsl:call-template name="create-assertion">
+            <xsl:with-param name="test-expression" select="'empty(@* except ' || $attribute-name-sequence-expression || ')'"/>
+            <xsl:with-param name="message-parts" select="( $base-message, 'Ongeldige attributen aangetroffen' )"/>
+            <xsl:with-param name="technical-info-parts" select="( $xpath-to-parent, $sep, 'allowed=', $attribute-name-sequence-expression )"/>
+          </xsl:call-template>
+        </xsl:if>
+
       </rule>
     </pattern>
   </xsl:template>
@@ -301,10 +367,10 @@
     <xsl:variable name="name" as="xs:string" select="string(($elm/xs:annotation/xs:documentation[@source eq 'name'])[1])"/>
     <xsl:choose>
       <xsl:when test="$name eq ''">
-        <xsl:sequence select="($elm/@name, $elm/@value)[1]"/>
+        <xsl:sequence select="local:q(($elm/@name, $elm/@value)[1])"/>
       </xsl:when>
       <xsl:otherwise>
-        <xsl:sequence select="$name"/>
+        <xsl:sequence select="local:q($name)"/>
       </xsl:otherwise>
     </xsl:choose>
   </xsl:function>
