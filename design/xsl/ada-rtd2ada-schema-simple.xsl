@@ -15,7 +15,15 @@
   <xsl:output method="xml" indent="yes" encoding="UTF-8"/>
 
   <xsl:mode on-no-match="fail"/>
-
+  
+  <!-- ================================================================== -->
+  <!-- PARAMETERS: -->
+  
+  <xsl:param name="ada-lite-version" as="xs:string" required="false" select="string(true())">
+    <!-- When true it creates a schema for ADA lit. When false for full ADA. -->
+  </xsl:param>
+  <xsl:variable name="do-ada-lite-version" as="xs:boolean" select="xs:boolean($ada-lite-version)"/>
+  
   <!-- ================================================================== -->
   <!-- GLOBAL DECLARATIONS: -->
 
@@ -25,6 +33,10 @@
   <xsl:variable name="base-type-boolean" as="xs:string" select="'xs:boolean'"/>
   <xsl:variable name="base-type-string" as="xs:string" select="'xs:string'"/>
 
+  <xsl:variable name="use-required" as="xs:string" select="'required'"/>
+  <xsl:variable name="use-optional" as="xs:string" select="'optional'"/>
+  <xsl:variable name="required-in-ada-full" as="xs:string" select="if ($do-ada-lite-version) then $use-optional else $use-required"/>
+  
   <!-- ================================================================== -->
   <!-- MAIN TEMPLATES: -->
 
@@ -63,10 +75,10 @@
           <xsl:apply-templates select="concept"/>
         </xs:sequence>
         <!-- Define the standard root element attributes: -->
-        <xs:attribute name="transactionId" type="{$simple-type-name-for-identifier}" use="required" fixed="{@transactionId}"/>
-        <xs:attribute name="transactionEffectiveDate" type="xs:dateTime" use="required" fixed="{@transactionEffectiveDate}"/>
-        <xs:attribute name="versionDate" type="xs:dateTime" use="required"/>
-        <xs:attribute name="prefix" type="xs:string" use="required"/>
+        <xs:attribute name="transactionRef" type="{$simple-type-name-for-identifier}" use="{$use-required}" fixed="{@transactionId}"/>
+        <xs:attribute name="transactionEffectiveDate" type="xs:dateTime" use="{$required-in-ada-full}" fixed="{@transactionEffectiveDate}"/>
+        <xs:attribute name="versionDate" type="xs:dateTime" use="{$required-in-ada-full}"/>
+        <xs:attribute name="prefix" type="xs:string" use="{$required-in-ada-full}"/>
       </xs:complexType>
     </xs:element>
 
@@ -85,17 +97,12 @@
             <xsl:apply-templates select="concept"/>
           </xs:sequence>
         </xsl:where-populated>
-        <xs:attribute name="conceptId" type="{$simple-type-name-for-identifier}" use="required" fixed="{@id}"/>
+        <xs:attribute name="conceptId" type="{$simple-type-name-for-identifier}" use="{$required-in-ada-full}" fixed="{@id}"/>
         <xsl:call-template name="handle-value-domain"/>
       </xs:complexType>
 
     </xs:element>
-
-
-
-
   </xsl:template>
-
 
   <!-- ================================================================== -->
   <!-- SUPPORT: -->
@@ -150,7 +157,7 @@
           <!-- See if there's a unit definition: -->
           <xsl:variable name="unit" as="xs:string?" select="property/@unit"/>
           <xsl:if test="exists($unit)">
-            <xs:attribute name="unit" type="xs:string" use="required" fixed="{$unit}"/>
+            <xs:attribute name="unit" type="xs:string" use="{$required-in-ada-full}" fixed="{$unit}"/>
           </xsl:if>
         </xsl:when>
 
@@ -229,7 +236,7 @@
     </xsl:variable>
 
     <!-- Create the attribute definition: -->
-    <xs:attribute name="value" use="required">
+    <xs:attribute name="value" use="{$use-required}">
       <!-- See if there are any default/fixed settings and output these as the correct attributes. Fixed/default settings are exclusive,
            so let fixed take precedence. -->
       <xsl:variable name="fixed" as="xs:string?" select="property/@fixed"/>
@@ -295,7 +302,7 @@
     <xsl:param name="attribute-allowed-values" as="xs:string+" required="yes"/>
     <xsl:param name="base-elements" as="element()*" required="false" select="()"/>
 
-    <xs:attribute name="{$attribute-name}">
+    <xs:attribute name="{$attribute-name}" use="{$required-in-ada-full}">
       <xs:simpleType>
         <xs:restriction base="xs:string">
           <xsl:for-each select="$attribute-allowed-values">
