@@ -41,13 +41,13 @@
 
   <xsl:template match="/*" priority="10">
     <xsl:element name="{$rtd-root/@shortName}">
-      <xsl:copy select="$rtd-root/@transactionId"/>
+      <xsl:copy select="@transactionRef"/>
       <xsl:copy select="$rtd-root/@transactionEffectiveDate"/>
       <xsl:copy select="/*/@versionDate"/>
       <!-- TODO: The prefix should come from the retrieve transaction dataset also, now fixed: -->
       <xsl:attribute name="prefix" select="'peri20-'"/>
 
-      <xsl:comment> == Generated {current-dateTime()} == </xsl:comment>
+      <xsl:comment> == ADA full format generated from lite format {current-dateTime()} == </xsl:comment>
 
       <xsl:apply-templates select="*">
         <xsl:with-param name="concept-root" as="element()" select="$rtd-root" tunnel="true"/>
