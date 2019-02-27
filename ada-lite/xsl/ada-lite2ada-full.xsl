@@ -127,11 +127,11 @@
       <!-- Code: Lookup the value in the code list of the concept. The actual value is the @localId. -->
       <xsl:when test="$value-domain-type eq 'code'">
         <xsl:variable name="code-element" as="element()?" select="($concept/valueSet/conceptList/*[@code eq $value])[1]"/>
+        <xsl:attribute name="value" select="$code-element/@localId"/>
         <xsl:if test="empty($code-element)">
           <xsl:attribute name="value" select="$value"/>
           <xsl:comment> == Code {$value} not found for {$full-elm-path} == </xsl:comment>
         </xsl:if>
-        <xsl:attribute name="value" select="$code-element/@localId"/>
         <xsl:copy-of select="($code-element/@code, $code-element/@codeSystem, $code-element/@displayName)"/>
       </xsl:when>
 
