@@ -4,7 +4,7 @@
   xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:local="#local.cvh_lb3_vgb" exclude-result-prefixes="#all" expand-text="true">
   <!-- ================================================================== -->
   <!-- 
-       This stylesheet converts a simple ADA XML document into full ADA XML.
+       This stylesheet converts an XML document from the ADAD Lite format into full ADA XML.
        For this it uses the definitions from a Retrieve Transaction Dataset (shortened to rtd here). 
        
        The input is assumed to be validated already. Therefore, when an error condition occurs, only a comment is output, no 
