@@ -37,7 +37,6 @@
 
     <!-- Setup the Schematron: -->
     <schema xmlns="http://purl.oclc.org/dsdl/schematron" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" queryBinding="xslt2" xml:lang="nl-NL">
-      <xsl:comment> == Schematron generated from rtd {current-dateTime()} == </xsl:comment>
 
       <!-- Define the xsi namespace in the Schematron: -->
       <ns uri="http://www.w3.org/2001/XMLSchema-instance" prefix="xsi"/>

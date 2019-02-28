@@ -2,7 +2,7 @@
 <kernset_aanleverbericht transactionRef="2.16.840.1.113883.2.4.3.11.60.90.77.4.2410"
                          transactionEffectiveDate="2014-10-20T00:00:00"
                          versionDate="2018-03-20T18:06:27"
-                         prefix="peri20-"><!-- == ADA full format generated from lite format == -->
+                         prefix="peri20-"><!-- == ADA full format generated from lite format 2019-02-27T16:54:11.25+01:00 == -->
    <zorgverlening conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.4">
       <datum_start_zorgverantwoordelijkheid conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20290"
                                             value="2016-01-05T00:00:00"/>
@@ -176,7 +176,7 @@
       <diagnose_postpartum conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82297">
          <pathologie_vrouwq conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82208" value="true"/>
       </diagnose_postpartum>
-      <kindspecifieke_gegevens conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.161"><!-- == *** No concept found for element kernset_aanleverbericht/postnatale_fase/kindspecifieke_gegevens/rangnummer_kind in file:/C:/Data/Erik/xmldev/Babyconnect/ADA-Lite-Geboortezorg/design/specs-full/RetrieveTransaction_kernset_22.xml == -->
+      <kindspecifieke_gegevens conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.161"><!-- == *** No concept found for element kernset_aanleverbericht/postnatale_fase/kindspecifieke_gegevens/rangnummer_kind in file:/C:/Data/Erik/xmldev/Babyconnect/ADA-Lite-Geboortezorg//design/specs-full//RetrieveTransaction_kernset_22.xml == -->
          <voeding_kind_groep conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.70009">
             <substantie_voeding_kind conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.70030"
                                      value="1"

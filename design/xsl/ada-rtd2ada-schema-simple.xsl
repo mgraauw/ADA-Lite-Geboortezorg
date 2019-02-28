@@ -44,8 +44,6 @@
 
     <!-- Setup the schema: -->
     <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
-      <xsl:comment> == Schema generated {current-dateTime()} == </xsl:comment>
-
       <xsl:apply-templates select="/*"/>
 
       <!-- Standard simple types used: -->
@@ -272,7 +270,11 @@
     <xsl:param name="value-domain" as="element(valueDomain)" required="false" select="."/>
 
     <!-- The definitions for the codes can be in <concept> and in <exception> elements. -->
-    <xsl:variable name="base-concept-elements" as="element()+" select="$value-domain/../valueSet/conceptList/(concept | exception)"/>
+    <xsl:variable name="base-concept-elements" as="element()*" select="$value-domain/../valueSet/conceptList/(concept | exception)"/>
+    <xsl:if test="empty($base-concept-elements)">
+      <xsl:sequence select="error((), 'No conceptList entries found for concept '|| string($value-domain/../@shortName))"/>
+    </xsl:if>
+    
 
     <xsl:call-template name="add-value-restricted-attribute-definition">
       <xsl:with-param name="attribute-name" select="'value'"/>

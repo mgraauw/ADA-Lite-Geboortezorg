@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <p:declare-step xmlns:p="http://www.w3.org/ns/xproc" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:xtlc="http://www.xtpxlib.nl/ns/common"
-  xmlns:local="#local.e53_j2w_xgb" version="1.0" xpath-version="2.0" exclude-inline-prefixes="#all">
+  xmlns:pxf="http://exproc.org/proposed/steps/file" xmlns:local="#local.e53_j2w_xgb" version="1.0" xpath-version="2.0" exclude-inline-prefixes="#all">
 
   <p:documentation>
       This pipeline generates what can be generated in the ADA-Lite-Geboortezorg repo. Input data is:
@@ -27,6 +27,7 @@
   <p:serialization port="result" method="xml" encoding="UTF-8" indent="true" omit-xml-declaration="false"/>
 
   <p:import href="../../../../xtpxlib/common/xplmod/common.mod/common.mod.xpl"/>
+  <p:import href="http://xmlcalabash.com/extension/steps/library-1.0.xpl"/>
 
   <!-- ================================================================== -->
   <!-- GLOBAL VARIABLES: -->
@@ -58,8 +59,27 @@
     <p:add-attribute attribute-name="status" attribute-value="success" match="/*"/>
   </p:viewport>
 
+  <!-- Copy files: -->
+  <p:viewport match="copy-file">
+    <p:variable name="source" select="/*/@source"/>
+    <p:variable name="target" select="/*/@target"/>
+    <p:identity name="original"/>
+    <pxf:copy>
+      <p:with-option name="href" select="$source"/>
+      <p:with-option name="target" select="$target"/>
+      <p:with-option name="fail-on-error" select="true()"/>
+    </pxf:copy>
+    <!-- Get the original input back: -->
+    <p:identity>
+      <p:input port="source">
+        <p:pipe port="result" step="original"/>
+      </p:input>
+    </p:identity>
+    <p:add-attribute attribute-name="status" attribute-value="success" match="/*"/>
+  </p:viewport>
+
   <!-- Create the specs-lite: -->
-  <p:viewport match="specs-full2specs-lite" name="viewport-specs-full2specs-lite">
+  <p:viewport match="specs-full2specs-lite" >
     <p:variable name="in" select="/*/@in"/>
     <p:variable name="out" select="/*/@out"/>
     <p:identity name="original"/>
@@ -69,6 +89,32 @@
     <p:xslt>
       <p:input port="stylesheet">
         <p:document href="../xsl/spec-full2spec-lite.xsl"/>
+      </p:input>
+      <p:with-param name="null" select="()"/>
+    </p:xslt>
+    <p:store method="xml" omit-xml-declaration="false" indent="true">
+      <p:with-option name="href" select="$out"/>
+    </p:store>
+    <!-- Get the original input back: -->
+    <p:identity>
+      <p:input port="source">
+        <p:pipe port="result" step="original"/>
+      </p:input>
+    </p:identity>
+    <p:add-attribute attribute-name="status" attribute-value="success" match="/*"/>
+  </p:viewport>
+  
+  <!-- Create the examples-empty: -->
+  <p:viewport match="example-lite2example-empty" >
+    <p:variable name="in" select="/*/@in"/>
+    <p:variable name="out" select="/*/@out"/>
+    <p:identity name="original"/>
+    <p:load dtd-validate="false">
+      <p:with-option name="href" select="$in"/>
+    </p:load>
+    <p:xslt>
+      <p:input port="stylesheet">
+        <p:document href="../xsl/example-lite2example-empty.xsl"/>
       </p:input>
       <p:with-param name="null" select="()"/>
     </p:xslt>
@@ -110,5 +156,40 @@
     </p:identity>
     <p:add-attribute attribute-name="status" attribute-value="success" match="/*"/>
   </p:viewport>
+  
+  <!-- Generate schematron: -->
+  <p:viewport match="spec2schematron">
+    <p:variable name="in" select="/*/@in"/>
+    <p:variable name="out" select="/*/@out"/>
+    <p:variable name="ada-lite-version" select="/*/@ada-lite-version"/>
+    <p:identity name="original"/>
+    <p:load dtd-validate="false">
+      <p:with-option name="href" select="$in"/>
+    </p:load>
+    <p:xslt>
+      <p:input port="stylesheet">
+        <p:document href="../xsl/ada-rtd2ada-schema-simple.xsl"/>
+      </p:input>
+      <p:with-param name="ada-lite-version" select="$ada-lite-version"/>
+    </p:xslt>
+    <p:xslt>
+      <p:input port="stylesheet">
+        <p:document href="../xsl/ada-schema-simple2ada-schematron.xsl"/>
+      </p:input>
+      <!-- Add the technical info to the full version only: -->
+      <p:with-param name="add-technical-info" select="not(xs:boolean($ada-lite-version))"/>
+    </p:xslt>
+    <p:store method="xml" omit-xml-declaration="false" indent="true">
+      <p:with-option name="href" select="$out"/>
+    </p:store>
+    <!-- Get the original input back: -->
+    <p:identity>
+      <p:input port="source">
+        <p:pipe port="result" step="original"/>
+      </p:input>
+    </p:identity>
+    <p:add-attribute attribute-name="status" attribute-value="success" match="/*"/>
+  </p:viewport>
+  
 
 </p:declare-step>

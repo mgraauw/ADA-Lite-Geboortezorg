@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<prio1_huidig transactionRef="2.16.840.1.113883.2.4.3.11.60.90.77.4.2453">
+   <zorgverlenerzorginstelling>
+      <zorgverlener>
+         <naam_zorgverlener value=""/>
+      </zorgverlener>
+      <zorginstelling>
+         <naam_zorginstelling value=""/>
+      </zorginstelling>
+   </zorgverlenerzorginstelling>
+   <vrouw>
+      <burgerservicenummer value=""/>
+      <naamgegevens>
+         <achternaam>
+            <voorvoegsel value=""/>
+            <achternaam value=""/>
+         </achternaam>
+      </naamgegevens>
+      <bloedgroep_vrouw value=""/>
+      <rhesus_d_factor_vrouw value=""/>
+      <rhesus_c_factor value=""/>
+   </vrouw>
+   <zwangerschap>
+      <graviditeit value=""/>
+   </zwangerschap>
+   <medisch_onderzoek>
+      <maternale_onderzoeksgegevens>
+         <urine_bloed_en_aanvullende_onderzoeken>
+            <hb value=""/>
+         </urine_bloed_en_aanvullende_onderzoeken>
+      </maternale_onderzoeksgegevens>
+   </medisch_onderzoek>
+   <medisch_onderzoek>
+      <maternale_onderzoeksgegevens>
+         <urine_bloed_en_aanvullende_onderzoeken>
+            <hb value=""/>
+         </urine_bloed_en_aanvullende_onderzoeken>
+      </maternale_onderzoeksgegevens>
+   </medisch_onderzoek>
+</prio1_huidig>

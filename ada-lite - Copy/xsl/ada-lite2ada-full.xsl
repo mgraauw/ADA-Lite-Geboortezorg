@@ -47,7 +47,7 @@
       <!-- TODO: The prefix should come from the retrieve transaction dataset also, now fixed: -->
       <xsl:attribute name="prefix" select="'peri20-'"/>
 
-      <xsl:comment> == ADA full format generated from lite format == </xsl:comment>
+      <xsl:comment> == ADA full format generated from lite format {current-dateTime()} == </xsl:comment>
 
       <xsl:apply-templates select="*">
         <xsl:with-param name="concept-root" as="element()" select="$rtd-root" tunnel="true"/>

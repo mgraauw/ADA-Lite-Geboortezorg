@@ -6,8 +6,6 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0">
     <xsl:output method="xml" indent="yes" omit-xml-declaration="yes"/>
     <xsl:template match="/">
-        <xsl:comment>Empty instance generator version 1, <xsl:value-of select="current-dateTime()"/>
-        </xsl:comment>
         <xsl:apply-templates select="ada//view[@type = 'crud']/dataset"/>
     </xsl:template>
     <xsl:template match="dataset[@shortName]">
