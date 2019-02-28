@@ -189,7 +189,7 @@ In de folder `ada-lite` staan specificaties die van belang zijn voor leverancier
 * `schema-lite`: XML schemas voor het valideren van documenten in het ADA-lite formaat 
 * `specs-lite`: XML bestanden met alle meta-informatie over de documenttypen
 * `xsl`: 
-    * `simple-ada2full-ada.xsl`: Stylesheet voor het omzetten van ADA-lite naar ADA-full formaat
+    * `simple-ada2full-ada.xsl`: Stylesheet voor het omzetten van ADA-lite naar ADA-full formaat. Deze stylesheet heeft een parameter `dref-rtd` die het pad moet bevatten naar het juiste bijbehorende Receive Transaction Dataset bestand (te vinden in de `specs-lite` directory). Specifieer dit pad met een `file:/` prefix.
 
 De Schematrons valideren in principe dezelfde zaken als de schemas, maar proberen gebruikersvriendelijker foutmeldingen te geven (in het Nederlands). 
 
