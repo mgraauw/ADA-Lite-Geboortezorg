@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <p:declare-step xmlns:p="http://www.w3.org/ns/xproc" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:xtlc="http://www.xtpxlib.nl/ns/common"
-  xmlns:pxf="http://exproc.org/proposed/steps/file" xmlns:local="#local.e53_j2w_xgb" version="1.0" xpath-version="2.0" exclude-inline-prefixes="#all">
+  xmlns:svrl="http://purl.oclc.org/dsdl/svrl" xmlns:pxf="http://exproc.org/proposed/steps/file" xmlns:local="#local.e53_j2w_xgb" version="1.0"
+  xpath-version="2.0" exclude-inline-prefixes="#all">
 
   <p:documentation>
       This pipeline generates what can be generated in the ADA-Lite-Geboortezorg repo. Input data is:
@@ -79,7 +80,7 @@
   </p:viewport>
 
   <!-- Create the specs-lite: -->
-  <p:viewport match="specs-full2specs-lite" >
+  <p:viewport match="specs-full2specs-lite">
     <p:variable name="in" select="/*/@in"/>
     <p:variable name="out" select="/*/@out"/>
     <p:identity name="original"/>
@@ -103,9 +104,9 @@
     </p:identity>
     <p:add-attribute attribute-name="status" attribute-value="success" match="/*"/>
   </p:viewport>
-  
+
   <!-- Create the examples-empty: -->
-  <p:viewport match="example-lite2example-empty" >
+  <p:viewport match="example-lite2example-empty">
     <p:variable name="in" select="/*/@in"/>
     <p:variable name="out" select="/*/@out"/>
     <p:identity name="original"/>
@@ -156,7 +157,7 @@
     </p:identity>
     <p:add-attribute attribute-name="status" attribute-value="success" match="/*"/>
   </p:viewport>
-  
+
   <!-- Generate schematron: -->
   <p:viewport match="spec2schematron">
     <p:variable name="in" select="/*/@in"/>
@@ -190,6 +191,51 @@
     </p:identity>
     <p:add-attribute attribute-name="status" attribute-value="success" match="/*"/>
   </p:viewport>
-  
+
+  <!-- Validate with schematron: -->
+  <p:viewport match="validate-schematron">
+    <p:variable name="in" select="/*/@in"/>
+    <p:variable name="schematron" select="/*/@schematron"/>
+    <p:identity name="original"/>
+    <!-- Load the Schematron file: -->
+    <p:load dtd-validate="false" name="schematron-file">
+      <p:with-option name="href" select="$schematron"/>
+    </p:load>
+    <p:sink/>
+    <!-- Load the file to validate and go: -->
+    <p:load dtd-validate="false">
+      <p:with-option name="href" select="$in"/>
+    </p:load>
+    <p:validate-with-schematron assert-valid="false" name="schematron-validation">
+      <p:input port="schema">
+        <p:pipe port="result" step="schematron-file"/>
+      </p:input>
+      <p:with-param name="null" select="()"/>
+    </p:validate-with-schematron>
+    <p:sink/>
+    <!-- Get the report and filter only the necessary failed messages: -->
+    <p:filter select="//svrl:failed-assert | //svrl:successful-report">
+      <p:input port="source">
+        <p:pipe port="report" step="schematron-validation"/>
+      </p:input>
+    </p:filter>
+    <p:wrap-sequence wrapper="validation-result"/>
+    <p:xslt name="schematron-validation-filtered">
+      <p:input port="stylesheet">
+        <p:document href="../xsl/remove-namespaces.xsl"/>
+      </p:input>
+      <p:with-param name="null" select="()"/>
+    </p:xslt>
+    <p:sink/>
+    <!-- Create output: -->
+    <p:insert match="/*" position="first-child">
+      <p:input port="source">
+        <p:pipe port="result" step="original"/>
+      </p:input>
+      <p:input port="insertion">
+        <p:pipe port="result" step="schematron-validation-filtered"/>
+      </p:input>
+    </p:insert>
+  </p:viewport>
 
 </p:declare-step>

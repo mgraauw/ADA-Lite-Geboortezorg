@@ -133,52 +133,33 @@
         <spec2schematron in="{.}" out="{xtlc:dref-concat(($dir-build-schematron-full, xtlc:dref-name-noext(.) || '.sch'))}" ada-lite-version="false"/>
       </xsl:for-each>
 
-
-      <!--      <xsl:call-template name="generate-actions-examples-lite2examples-full"/>-->
-      <!-- TBD: Generate the examples-empty -->
-      <!-- TBD: Generate the schematrons lite -->
-      <!-- TBD: Generate the schematrons full -->
       <!-- TBD: Generate the schemas (lite/full)? -->
-      <!-- TBD: generate the validations we can do! -->
+
+      <!-- Create validation actions 1: Validate the examples-lite against the appropriate Schematron: -->
+      <xsl:for-each select="$filelist-source-examples-lite">
+        <!-- We need the name of the specification file, since this was used to create the schema file: -->
+        <xsl:variable name="specification-file" as="xs:string" select="local:get-specification-file-from-transaction-id(doc(.)/*/@transactionRef)"/>
+        <xsl:variable name="schematron-file" as="xs:string"
+          select="xtlc:dref-concat(($dir-build-schematron-lite, xtlc:dref-name-noext($specification-file) || '.sch'))"/>
+        <validate-schematron in="{.}" schematron="{$schematron-file}"/>
+      </xsl:for-each>
+
+      <!-- Create validation actions 2: Validate the examples-full against the appropriate Schematron: -->
+      <xsl:for-each select="$filelist-source-examples-lite">
+        <xsl:variable name="examples-full-file" as="xs:string" select="xtlc:dref-concat(($dir-build-examples-full, xtlc:dref-name(.)))"/>
+        <!-- We need the name of the specification file, since this was used to create the schema file: -->
+        <xsl:variable name="specification-file" as="xs:string"
+          select="local:get-specification-file-from-transaction-id(doc($examples-full-file)/*/@transactionRef)"/>
+        <xsl:variable name="schematron-file" as="xs:string"
+          select="xtlc:dref-concat(($dir-build-schematron-full, xtlc:dref-name-noext($specification-file) || '.sch'))"/>
+        <validate-schematron in="{$examples-full-file}" schematron="{$schematron-file}"/>
+      </xsl:for-each>
+
+
     </actions>
   </xsl:template>
 
   <!-- ================================================================== -->
-  <!-- ACTION GENERATION: -->
-
-
-
-  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-
-  <!--<xsl:template name="generate-actions-examples-lite2examples-full">
-
-    <xsl:variable name="examples-lite-subdir-name" as="xs:string" select="'examples-lite'"/>
-    <xsl:variable name="examples-full-subdir-name" as="xs:string" select="'examples-full'"/>
-
-    <xsl:comment> == examples-full2examples-lite == </xsl:comment>
-    <xsl:call-template name="generate-action-remove-dir">
-      <xsl:with-param name="dir" select="$ada-lite-directory/c:directory[@name eq $examples-full-subdir-name]/@xml:base"/>
-    </xsl:call-template>
-
-    <xsl:variable name="examples-lite-directory" as="element(c:directory)"
-      select="$ada-lite-directory/c:directory[@name eq $examples-lite-subdir-name]"/>
-    <xsl:variable name="examples-lite-files" as="element(c:file)+" select="$examples-lite-directory/c:file"/>
-
-    <xsl:for-each select="$examples-lite-files">
-      <xsl:variable name="filename" as="xs:string" select="@name"/>
-      <xsl:variable name="full-input-filename" as="xs:string" select="$ada-lite-directory/@xml:base || $examples-lite-subdir-name || '/' || $filename"/>
-      <xsl:variable name="transaction-ref" as="xs:string" select="doc($full-input-filename)/*/@transactionRef"/>
-      <xsl:variable name="rtd" as="xs:string?" select="$transactionid2rtd($transaction-ref)"/>
-      <xsl:if test="empty($rtd)">
-        <xsl:sequence select="error((), 'No full specs rtd found for transaction id ' || $transaction-ref)"/>
-      </xsl:if>
-      <examples-lite2examples-full in="{$full-input-filename}" out="{$ada-lite-directory/@xml:base}{$examples-full-subdir-name}/{$filename}"
-        rtd="{$rtd}"/>
-    </xsl:for-each>
-
-  </xsl:template>-->
-
-  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 
   <xsl:template name="generate-action-copy-file">
     <!-- Copies a file into a directory. Specify $name-target if it needs another name. -->
@@ -202,6 +183,5 @@
     </xsl:if>
     <xsl:sequence select="$specification-file"/>
   </xsl:function>
-
 
 </xsl:stylesheet>

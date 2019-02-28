@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="3.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:map="http://www.w3.org/2005/xpath-functions/map"
   xmlns:array="http://www.w3.org/2005/xpath-functions/array" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://purl.oclc.org/dsdl/schematron"
-  xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:local="#local.mfj_4hd_wgb" exclude-result-prefixes="#all" expand-text="true">
+  xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:local="#local.mfj_4hd_wgb" xmlns:xslgen="#xslgen" exclude-result-prefixes="#all"
+  expand-text="true">
   <!-- ================================================================== -->
   <!-- 
        Transforms the output of ada-rtd2ada-schema-simple.xsl into a Schematron file.
@@ -12,6 +13,8 @@
   <xsl:output method="xml" indent="yes" encoding="UTF-8"/>
 
   <xsl:mode on-no-match="fail"/>
+
+  <xsl:namespace-alias stylesheet-prefix="xslgen" result-prefix="xsl"/>
 
   <!-- ================================================================== -->
   <!-- PARAMETERS: -->
@@ -36,10 +39,18 @@
   <xsl:template match="/">
 
     <!-- Setup the Schematron: -->
-    <schema xmlns="http://purl.oclc.org/dsdl/schematron" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" queryBinding="xslt2" xml:lang="nl-NL">
+    <schema xmlns="http://purl.oclc.org/dsdl/schematron" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:local="#local" queryBinding="xslt2"
+      xml:lang="nl-NL">
 
       <!-- Define the xsi namespace in the Schematron: -->
       <ns uri="http://www.w3.org/2001/XMLSchema-instance" prefix="xsi"/>
+
+      <!-- Create a function for safe decimal conversion: -->
+      <ns uri="#local" prefix="local"/>
+      <xslgen:function name="local:decimal-convert" as="xs:decimal">
+        <xslgen:param name="in" as="xs:string"/>
+        <xslgen:sequence select="if ($in castable as xs:decimal) then xs:decimal($in) else xs:decimal(0)"/>
+      </xslgen:function>
 
       <!-- A simple ADA schema has only a single <xs:element> definition for the root element. The rest is nested inside this. So we start here. -->
       <xsl:call-template name="handle-element-definitions">
@@ -248,7 +259,8 @@
                 select="$empty-test-expression || ' or (@' || $attribute-name || ' = ' || $enumerated-restrictions-sequence-expression || ')'"/>
               <xsl:with-param name="message-parts"
                 select="( $base-message, 'De waarde &quot;', '#@' || $attribute-name, '&quot; voor attribuut ', $attribute-display-name, ' is onjuist' )"/>
-              <xsl:with-param name="technical-info-parts" select="( $base-technical-info, $sep, 'allowed=', $enumerated-restrictions-sequence-expression )"/>
+              <xsl:with-param name="technical-info-parts"
+                select="( $base-technical-info, $sep, 'allowed=', $enumerated-restrictions-sequence-expression )"/>
             </xsl:call-template>
           </xsl:if>
 
@@ -275,13 +287,13 @@
               <xsl:with-param name="technical-info-parts" select="( $base-technical-info, $sep, 'max-length=', string($max-length) )"/>
             </xsl:call-template>
           </xsl:if>
-          
+
           <!-- Min and max inclusive: -->
           <xsl:variable name="min-inclusive" as="xs:decimal?" select="xs:decimal(xs:simpleType/xs:restriction/xs:minInclusive/@value)"/>
           <xsl:if test="exists($min-inclusive)">
             <xsl:call-template name="create-assertion">
               <xsl:with-param name="test-expression"
-                select="$empty-test-expression || ' or (xs:decimal(@' || $attribute-name || ') ge ' || $min-inclusive || ')' "/>
+                select="$empty-test-expression || ' or (local:decimal-convert(@' || $attribute-name || ') ge ' || $min-inclusive || ')' "/>
               <xsl:with-param name="message-parts"
                 select="( $base-message, 'De waarde &quot;', '#@' || $attribute-name, '&quot; voor attribuut ', $attribute-display-name, 
                   ' moet minimaal ', string($min-inclusive), ' zijn' )"/>
@@ -292,14 +304,14 @@
           <xsl:if test="exists($max-inclusive)">
             <xsl:call-template name="create-assertion">
               <xsl:with-param name="test-expression"
-                select="$empty-test-expression || ' or (xs:decimal(@' || $attribute-name || ') le ' || $max-inclusive || ')' "/>
+                select="$empty-test-expression || ' or (local:decimal-convert(@' || $attribute-name || ') le ' || $max-inclusive || ')' "/>
               <xsl:with-param name="message-parts"
                 select="( $base-message, 'De waarde &quot;', '#@' || $attribute-name, '&quot; voor attribuut ', $attribute-display-name, 
                 ' mag maximaal ', string($max-inclusive), ' zijn' )"/>
               <xsl:with-param name="technical-info-parts" select="( $base-technical-info, $sep, 'max-inclusive=', string($max-inclusive) )"/>
             </xsl:call-template>
           </xsl:if>
-          
+
         </xsl:for-each>
 
         <!-- Add a rule to catch attributes that do not belong here (we explicitly exclude the xsi namespace attributes): -->

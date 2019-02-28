@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schema xmlns="http://purl.oclc.org/dsdl/schematron"
+        xmlns:local="#local"
+        xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
         queryBinding="xslt2"
         xml:lang="nl-NL">
    <ns uri="http://www.w3.org/2001/XMLSchema-instance" prefix="xsi"/>
+   <ns uri="#local" prefix="local"/>
+   <xsl:function name="local:decimal-convert" as="xs:decimal">
+      <xsl:param name="in" as="xs:string"/>
+      <xsl:sequence select="if ($in castable as xs:decimal) then xs:decimal($in) else xs:decimal(0)"/>
+   </xsl:function>
    <pattern>
       <rule context="/"><!-- == Check occurrences of children of /: == -->
          <assert test="count(kernset_aanleverbericht) eq 1">Fout aantal voorkomens van "Kernset aanleverbericht": <value-of select="count(kernset_aanleverbericht)"/> (verwacht: 1) [/kernset_aanleverbericht]</assert>
@@ -577,8 +584,8 @@
          <!-- == Attribute "value": == -->
          <assert test="exists(@value)">Foutieve informatie voor "Lengte (gemeten)": Attribuut "value" ontbreekt [/kernset_aanleverbericht/vrouw/lengte_gemeten/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:decimal)">Foutieve informatie voor "Lengte (gemeten)": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_aanleverbericht/vrouw/lengte_gemeten/@value; type=xs:decimal]</assert>
-         <assert test="empty(@value) or (xs:decimal(@value) ge 60)">Foutieve informatie voor "Lengte (gemeten)": De waarde "<value-of select="@value"/>" voor attribuut "value" moet minimaal 60 zijn [/kernset_aanleverbericht/vrouw/lengte_gemeten/@value; min-inclusive=60]</assert>
-         <assert test="empty(@value) or (xs:decimal(@value) le 270)">Foutieve informatie voor "Lengte (gemeten)": De waarde "<value-of select="@value"/>" voor attribuut "value" mag maximaal 270 zijn [/kernset_aanleverbericht/vrouw/lengte_gemeten/@value; max-inclusive=270]</assert>
+         <assert test="empty(@value) or (local:decimal-convert(@value) ge 60)">Foutieve informatie voor "Lengte (gemeten)": De waarde "<value-of select="@value"/>" voor attribuut "value" moet minimaal 60 zijn [/kernset_aanleverbericht/vrouw/lengte_gemeten/@value; min-inclusive=60]</assert>
+         <assert test="empty(@value) or (local:decimal-convert(@value) le 270)">Foutieve informatie voor "Lengte (gemeten)": De waarde "<value-of select="@value"/>" voor attribuut "value" mag maximaal 270 zijn [/kernset_aanleverbericht/vrouw/lengte_gemeten/@value; max-inclusive=270]</assert>
          <!-- == Attribute "unit": == -->
          <assert test="exists(@unit)">Foutieve informatie voor "Lengte (gemeten)": Attribuut "unit" ontbreekt [/kernset_aanleverbericht/vrouw/lengte_gemeten/@unit]</assert>
          <assert test="empty(@unit) or (@unit eq 'cm')">Foutieve informatie voor "Lengte (gemeten)": De waarde "<value-of select="@unit"/>" voor attribuut "unit" heeft niet de verwachte vaste waarde "cm" [/kernset_aanleverbericht/vrouw/lengte_gemeten/@unit]</assert>
@@ -1734,8 +1741,8 @@
          <!-- == Attribute "value": == -->
          <assert test="exists(@value)">Foutieve informatie voor "Apgarscore na 5 min.": Attribuut "value" ontbreekt [/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/apgarscore_na_5_min/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:decimal)">Foutieve informatie voor "Apgarscore na 5 min.": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/apgarscore_na_5_min/@value; type=xs:decimal]</assert>
-         <assert test="empty(@value) or (xs:decimal(@value) ge 0)">Foutieve informatie voor "Apgarscore na 5 min.": De waarde "<value-of select="@value"/>" voor attribuut "value" moet minimaal 0 zijn [/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/apgarscore_na_5_min/@value; min-inclusive=0]</assert>
-         <assert test="empty(@value) or (xs:decimal(@value) le 10)">Foutieve informatie voor "Apgarscore na 5 min.": De waarde "<value-of select="@value"/>" voor attribuut "value" mag maximaal 10 zijn [/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/apgarscore_na_5_min/@value; max-inclusive=10]</assert>
+         <assert test="empty(@value) or (local:decimal-convert(@value) ge 0)">Foutieve informatie voor "Apgarscore na 5 min.": De waarde "<value-of select="@value"/>" voor attribuut "value" moet minimaal 0 zijn [/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/apgarscore_na_5_min/@value; min-inclusive=0]</assert>
+         <assert test="empty(@value) or (local:decimal-convert(@value) le 10)">Foutieve informatie voor "Apgarscore na 5 min.": De waarde "<value-of select="@value"/>" voor attribuut "value" mag maximaal 10 zijn [/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/apgarscore_na_5_min/@value; max-inclusive=10]</assert>
          <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Apgarscore na 5 min.": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/apgarscore_na_5_min; allowed=(@conceptId, @value, @xsi:*)]</assert>
       </rule>
    </pattern>
@@ -1809,8 +1816,8 @@
          <!-- == Attribute "value": == -->
          <assert test="exists(@value)">Foutieve informatie voor "Graviditeit": Attribuut "value" ontbreekt [/kernset_aanleverbericht/zwangerschap/graviditeit/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:decimal)">Foutieve informatie voor "Graviditeit": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_aanleverbericht/zwangerschap/graviditeit/@value; type=xs:decimal]</assert>
-         <assert test="empty(@value) or (xs:decimal(@value) ge 1)">Foutieve informatie voor "Graviditeit": De waarde "<value-of select="@value"/>" voor attribuut "value" moet minimaal 1 zijn [/kernset_aanleverbericht/zwangerschap/graviditeit/@value; min-inclusive=1]</assert>
-         <assert test="empty(@value) or (xs:decimal(@value) le 75)">Foutieve informatie voor "Graviditeit": De waarde "<value-of select="@value"/>" voor attribuut "value" mag maximaal 75 zijn [/kernset_aanleverbericht/zwangerschap/graviditeit/@value; max-inclusive=75]</assert>
+         <assert test="empty(@value) or (local:decimal-convert(@value) ge 1)">Foutieve informatie voor "Graviditeit": De waarde "<value-of select="@value"/>" voor attribuut "value" moet minimaal 1 zijn [/kernset_aanleverbericht/zwangerschap/graviditeit/@value; min-inclusive=1]</assert>
+         <assert test="empty(@value) or (local:decimal-convert(@value) le 75)">Foutieve informatie voor "Graviditeit": De waarde "<value-of select="@value"/>" voor attribuut "value" mag maximaal 75 zijn [/kernset_aanleverbericht/zwangerschap/graviditeit/@value; max-inclusive=75]</assert>
          <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Graviditeit": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zwangerschap/graviditeit; allowed=(@conceptId, @value, @xsi:*)]</assert>
       </rule>
    </pattern>
@@ -1823,8 +1830,8 @@
          <!-- == Attribute "value": == -->
          <assert test="exists(@value)">Foutieve informatie voor "Pariteit (vóór deze zwangerschap)": Attribuut "value" ontbreekt [/kernset_aanleverbericht/zwangerschap/pariteit_voor_deze_zwangerschap/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:decimal)">Foutieve informatie voor "Pariteit (vóór deze zwangerschap)": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_aanleverbericht/zwangerschap/pariteit_voor_deze_zwangerschap/@value; type=xs:decimal]</assert>
-         <assert test="empty(@value) or (xs:decimal(@value) ge 0)">Foutieve informatie voor "Pariteit (vóór deze zwangerschap)": De waarde "<value-of select="@value"/>" voor attribuut "value" moet minimaal 0 zijn [/kernset_aanleverbericht/zwangerschap/pariteit_voor_deze_zwangerschap/@value; min-inclusive=0]</assert>
-         <assert test="empty(@value) or (xs:decimal(@value) le 30)">Foutieve informatie voor "Pariteit (vóór deze zwangerschap)": De waarde "<value-of select="@value"/>" voor attribuut "value" mag maximaal 30 zijn [/kernset_aanleverbericht/zwangerschap/pariteit_voor_deze_zwangerschap/@value; max-inclusive=30]</assert>
+         <assert test="empty(@value) or (local:decimal-convert(@value) ge 0)">Foutieve informatie voor "Pariteit (vóór deze zwangerschap)": De waarde "<value-of select="@value"/>" voor attribuut "value" moet minimaal 0 zijn [/kernset_aanleverbericht/zwangerschap/pariteit_voor_deze_zwangerschap/@value; min-inclusive=0]</assert>
+         <assert test="empty(@value) or (local:decimal-convert(@value) le 30)">Foutieve informatie voor "Pariteit (vóór deze zwangerschap)": De waarde "<value-of select="@value"/>" voor attribuut "value" mag maximaal 30 zijn [/kernset_aanleverbericht/zwangerschap/pariteit_voor_deze_zwangerschap/@value; max-inclusive=30]</assert>
          <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Pariteit (vóór deze zwangerschap)": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zwangerschap/pariteit_voor_deze_zwangerschap; allowed=(@conceptId, @value, @xsi:*)]</assert>
       </rule>
    </pattern>
@@ -2077,8 +2084,8 @@
          <!-- == Attribute "value": == -->
          <assert test="exists(@value)">Foutieve informatie voor "Gewicht (gemeten)": Attribuut "value" ontbreekt [/kernset_aanleverbericht/zwangerschap/prenatale_controle/gewicht_gemeten/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:decimal)">Foutieve informatie voor "Gewicht (gemeten)": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_aanleverbericht/zwangerschap/prenatale_controle/gewicht_gemeten/@value; type=xs:decimal]</assert>
-         <assert test="empty(@value) or (xs:decimal(@value) ge 25)">Foutieve informatie voor "Gewicht (gemeten)": De waarde "<value-of select="@value"/>" voor attribuut "value" moet minimaal 25 zijn [/kernset_aanleverbericht/zwangerschap/prenatale_controle/gewicht_gemeten/@value; min-inclusive=25]</assert>
-         <assert test="empty(@value) or (xs:decimal(@value) le 249.9)">Foutieve informatie voor "Gewicht (gemeten)": De waarde "<value-of select="@value"/>" voor attribuut "value" mag maximaal 249.9 zijn [/kernset_aanleverbericht/zwangerschap/prenatale_controle/gewicht_gemeten/@value; max-inclusive=249.9]</assert>
+         <assert test="empty(@value) or (local:decimal-convert(@value) ge 25)">Foutieve informatie voor "Gewicht (gemeten)": De waarde "<value-of select="@value"/>" voor attribuut "value" moet minimaal 25 zijn [/kernset_aanleverbericht/zwangerschap/prenatale_controle/gewicht_gemeten/@value; min-inclusive=25]</assert>
+         <assert test="empty(@value) or (local:decimal-convert(@value) le 249.9)">Foutieve informatie voor "Gewicht (gemeten)": De waarde "<value-of select="@value"/>" voor attribuut "value" mag maximaal 249.9 zijn [/kernset_aanleverbericht/zwangerschap/prenatale_controle/gewicht_gemeten/@value; max-inclusive=249.9]</assert>
          <!-- == Attribute "unit": == -->
          <assert test="exists(@unit)">Foutieve informatie voor "Gewicht (gemeten)": Attribuut "unit" ontbreekt [/kernset_aanleverbericht/zwangerschap/prenatale_controle/gewicht_gemeten/@unit]</assert>
          <assert test="empty(@unit) or (@unit eq 'kg')">Foutieve informatie voor "Gewicht (gemeten)": De waarde "<value-of select="@unit"/>" voor attribuut "unit" heeft niet de verwachte vaste waarde "kg" [/kernset_aanleverbericht/zwangerschap/prenatale_controle/gewicht_gemeten/@unit]</assert>
@@ -2379,8 +2386,8 @@
          <!-- == Attribute "value": == -->
          <assert test="exists(@value)">Foutieve informatie voor "Aantal geboren kinderen": Attribuut "value" ontbreekt [/kernset_aanleverbericht/bevalling/aantal_geboren_kinderen/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:decimal)">Foutieve informatie voor "Aantal geboren kinderen": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_aanleverbericht/bevalling/aantal_geboren_kinderen/@value; type=xs:decimal]</assert>
-         <assert test="empty(@value) or (xs:decimal(@value) ge 0)">Foutieve informatie voor "Aantal geboren kinderen": De waarde "<value-of select="@value"/>" voor attribuut "value" moet minimaal 0 zijn [/kernset_aanleverbericht/bevalling/aantal_geboren_kinderen/@value; min-inclusive=0]</assert>
-         <assert test="empty(@value) or (xs:decimal(@value) le 9)">Foutieve informatie voor "Aantal geboren kinderen": De waarde "<value-of select="@value"/>" voor attribuut "value" mag maximaal 9 zijn [/kernset_aanleverbericht/bevalling/aantal_geboren_kinderen/@value; max-inclusive=9]</assert>
+         <assert test="empty(@value) or (local:decimal-convert(@value) ge 0)">Foutieve informatie voor "Aantal geboren kinderen": De waarde "<value-of select="@value"/>" voor attribuut "value" moet minimaal 0 zijn [/kernset_aanleverbericht/bevalling/aantal_geboren_kinderen/@value; min-inclusive=0]</assert>
+         <assert test="empty(@value) or (local:decimal-convert(@value) le 9)">Foutieve informatie voor "Aantal geboren kinderen": De waarde "<value-of select="@value"/>" voor attribuut "value" mag maximaal 9 zijn [/kernset_aanleverbericht/bevalling/aantal_geboren_kinderen/@value; max-inclusive=9]</assert>
          <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Aantal geboren kinderen": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/bevalling/aantal_geboren_kinderen; allowed=(@conceptId, @value, @xsi:*)]</assert>
       </rule>
    </pattern>
@@ -2917,8 +2924,8 @@
          <!-- == Attribute "value": == -->
          <assert test="exists(@value)">Foutieve informatie voor "Rangnummer kind": Attribuut "value" ontbreekt [/kernset_aanleverbericht/uitkomst_per_kind/baring/demografische_gegevens/rangnummer_kind/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:decimal)">Foutieve informatie voor "Rangnummer kind": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_aanleverbericht/uitkomst_per_kind/baring/demografische_gegevens/rangnummer_kind/@value; type=xs:decimal]</assert>
-         <assert test="empty(@value) or (xs:decimal(@value) ge 1)">Foutieve informatie voor "Rangnummer kind": De waarde "<value-of select="@value"/>" voor attribuut "value" moet minimaal 1 zijn [/kernset_aanleverbericht/uitkomst_per_kind/baring/demografische_gegevens/rangnummer_kind/@value; min-inclusive=1]</assert>
-         <assert test="empty(@value) or (xs:decimal(@value) le 9)">Foutieve informatie voor "Rangnummer kind": De waarde "<value-of select="@value"/>" voor attribuut "value" mag maximaal 9 zijn [/kernset_aanleverbericht/uitkomst_per_kind/baring/demografische_gegevens/rangnummer_kind/@value; max-inclusive=9]</assert>
+         <assert test="empty(@value) or (local:decimal-convert(@value) ge 1)">Foutieve informatie voor "Rangnummer kind": De waarde "<value-of select="@value"/>" voor attribuut "value" moet minimaal 1 zijn [/kernset_aanleverbericht/uitkomst_per_kind/baring/demografische_gegevens/rangnummer_kind/@value; min-inclusive=1]</assert>
+         <assert test="empty(@value) or (local:decimal-convert(@value) le 9)">Foutieve informatie voor "Rangnummer kind": De waarde "<value-of select="@value"/>" voor attribuut "value" mag maximaal 9 zijn [/kernset_aanleverbericht/uitkomst_per_kind/baring/demografische_gegevens/rangnummer_kind/@value; max-inclusive=9]</assert>
          <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Rangnummer kind": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/demografische_gegevens/rangnummer_kind; allowed=(@conceptId, @value, @xsi:*)]</assert>
       </rule>
    </pattern>
@@ -3336,8 +3343,8 @@
          <!-- == Attribute "value": == -->
          <assert test="exists(@value)">Foutieve informatie voor "Apgarscore na 5 min.": Attribuut "value" ontbreekt [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/apgarscore_na_5_min/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:decimal)">Foutieve informatie voor "Apgarscore na 5 min.": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/apgarscore_na_5_min/@value; type=xs:decimal]</assert>
-         <assert test="empty(@value) or (xs:decimal(@value) ge 0)">Foutieve informatie voor "Apgarscore na 5 min.": De waarde "<value-of select="@value"/>" voor attribuut "value" moet minimaal 0 zijn [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/apgarscore_na_5_min/@value; min-inclusive=0]</assert>
-         <assert test="empty(@value) or (xs:decimal(@value) le 10)">Foutieve informatie voor "Apgarscore na 5 min.": De waarde "<value-of select="@value"/>" voor attribuut "value" mag maximaal 10 zijn [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/apgarscore_na_5_min/@value; max-inclusive=10]</assert>
+         <assert test="empty(@value) or (local:decimal-convert(@value) ge 0)">Foutieve informatie voor "Apgarscore na 5 min.": De waarde "<value-of select="@value"/>" voor attribuut "value" moet minimaal 0 zijn [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/apgarscore_na_5_min/@value; min-inclusive=0]</assert>
+         <assert test="empty(@value) or (local:decimal-convert(@value) le 10)">Foutieve informatie voor "Apgarscore na 5 min.": De waarde "<value-of select="@value"/>" voor attribuut "value" mag maximaal 10 zijn [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/apgarscore_na_5_min/@value; max-inclusive=10]</assert>
          <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Apgarscore na 5 min.": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/apgarscore_na_5_min; allowed=(@conceptId, @value, @xsi:*)]</assert>
       </rule>
    </pattern>
@@ -3681,7 +3688,7 @@
          <!-- == Attribute "value": == -->
          <assert test="exists(@value)">Foutieve informatie voor "Geboortegewicht": Attribuut "value" ontbreekt [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/geboortegewicht/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:decimal)">Foutieve informatie voor "Geboortegewicht": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/geboortegewicht/@value; type=xs:decimal]</assert>
-         <assert test="empty(@value) or (xs:decimal(@value) ge 0)">Foutieve informatie voor "Geboortegewicht": De waarde "<value-of select="@value"/>" voor attribuut "value" moet minimaal 0 zijn [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/geboortegewicht/@value; min-inclusive=0]</assert>
+         <assert test="empty(@value) or (local:decimal-convert(@value) ge 0)">Foutieve informatie voor "Geboortegewicht": De waarde "<value-of select="@value"/>" voor attribuut "value" moet minimaal 0 zijn [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/geboortegewicht/@value; min-inclusive=0]</assert>
          <!-- == Attribute "unit": == -->
          <assert test="exists(@unit)">Foutieve informatie voor "Geboortegewicht": Attribuut "unit" ontbreekt [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/geboortegewicht/@unit]</assert>
          <assert test="empty(@unit) or (@unit eq 'gram')">Foutieve informatie voor "Geboortegewicht": De waarde "<value-of select="@unit"/>" voor attribuut "unit" heeft niet de verwachte vaste waarde "gram" [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/geboortegewicht/@unit]</assert>

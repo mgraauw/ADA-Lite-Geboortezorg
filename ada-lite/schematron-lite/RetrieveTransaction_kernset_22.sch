@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schema xmlns="http://purl.oclc.org/dsdl/schematron"
+        xmlns:local="#local"
+        xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
         queryBinding="xslt2"
         xml:lang="nl-NL">
    <ns uri="http://www.w3.org/2001/XMLSchema-instance" prefix="xsi"/>
+   <ns uri="#local" prefix="local"/>
+   <xsl:function name="local:decimal-convert" as="xs:decimal">
+      <xsl:param name="in" as="xs:string"/>
+      <xsl:sequence select="if ($in castable as xs:decimal) then xs:decimal($in) else xs:decimal(0)"/>
+   </xsl:function>
    <pattern>
       <rule context="/"><!-- == Check occurrences of children of /: == -->
          <assert test="count(kernset_aanleverbericht) eq 1">Fout aantal voorkomens van "Kernset aanleverbericht": <value-of select="count(kernset_aanleverbericht)"/> (verwacht: 1)</assert>
@@ -521,8 +528,8 @@
          <!-- == Attribute "value": == -->
          <assert test="exists(@value)">Foutieve informatie voor "Lengte (gemeten)": Attribuut "value" ontbreekt</assert>
          <assert test="empty(@value) or (@value castable as xs:decimal)">Foutieve informatie voor "Lengte (gemeten)": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat</assert>
-         <assert test="empty(@value) or (xs:decimal(@value) ge 60)">Foutieve informatie voor "Lengte (gemeten)": De waarde "<value-of select="@value"/>" voor attribuut "value" moet minimaal 60 zijn</assert>
-         <assert test="empty(@value) or (xs:decimal(@value) le 270)">Foutieve informatie voor "Lengte (gemeten)": De waarde "<value-of select="@value"/>" voor attribuut "value" mag maximaal 270 zijn</assert>
+         <assert test="empty(@value) or (local:decimal-convert(@value) ge 60)">Foutieve informatie voor "Lengte (gemeten)": De waarde "<value-of select="@value"/>" voor attribuut "value" moet minimaal 60 zijn</assert>
+         <assert test="empty(@value) or (local:decimal-convert(@value) le 270)">Foutieve informatie voor "Lengte (gemeten)": De waarde "<value-of select="@value"/>" voor attribuut "value" mag maximaal 270 zijn</assert>
          <!-- == Attribute "unit": == -->
          <assert test="empty(@unit) or (@unit eq 'cm')">Foutieve informatie voor "Lengte (gemeten)": De waarde "<value-of select="@unit"/>" voor attribuut "unit" heeft niet de verwachte vaste waarde "cm"</assert>
          <assert test="empty(@* except (@conceptId, @value, @unit, @xsi:*))">Foutieve informatie voor "Lengte (gemeten)": Ongeldige attributen aangetroffen</assert>
@@ -1528,8 +1535,8 @@
          <!-- == Attribute "value": == -->
          <assert test="exists(@value)">Foutieve informatie voor "Apgarscore na 5 min.": Attribuut "value" ontbreekt</assert>
          <assert test="empty(@value) or (@value castable as xs:decimal)">Foutieve informatie voor "Apgarscore na 5 min.": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat</assert>
-         <assert test="empty(@value) or (xs:decimal(@value) ge 0)">Foutieve informatie voor "Apgarscore na 5 min.": De waarde "<value-of select="@value"/>" voor attribuut "value" moet minimaal 0 zijn</assert>
-         <assert test="empty(@value) or (xs:decimal(@value) le 10)">Foutieve informatie voor "Apgarscore na 5 min.": De waarde "<value-of select="@value"/>" voor attribuut "value" mag maximaal 10 zijn</assert>
+         <assert test="empty(@value) or (local:decimal-convert(@value) ge 0)">Foutieve informatie voor "Apgarscore na 5 min.": De waarde "<value-of select="@value"/>" voor attribuut "value" moet minimaal 0 zijn</assert>
+         <assert test="empty(@value) or (local:decimal-convert(@value) le 10)">Foutieve informatie voor "Apgarscore na 5 min.": De waarde "<value-of select="@value"/>" voor attribuut "value" mag maximaal 10 zijn</assert>
          <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Apgarscore na 5 min.": Ongeldige attributen aangetroffen</assert>
       </rule>
    </pattern>
@@ -1601,8 +1608,8 @@
          <!-- == Attribute "value": == -->
          <assert test="exists(@value)">Foutieve informatie voor "Graviditeit": Attribuut "value" ontbreekt</assert>
          <assert test="empty(@value) or (@value castable as xs:decimal)">Foutieve informatie voor "Graviditeit": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat</assert>
-         <assert test="empty(@value) or (xs:decimal(@value) ge 1)">Foutieve informatie voor "Graviditeit": De waarde "<value-of select="@value"/>" voor attribuut "value" moet minimaal 1 zijn</assert>
-         <assert test="empty(@value) or (xs:decimal(@value) le 75)">Foutieve informatie voor "Graviditeit": De waarde "<value-of select="@value"/>" voor attribuut "value" mag maximaal 75 zijn</assert>
+         <assert test="empty(@value) or (local:decimal-convert(@value) ge 1)">Foutieve informatie voor "Graviditeit": De waarde "<value-of select="@value"/>" voor attribuut "value" moet minimaal 1 zijn</assert>
+         <assert test="empty(@value) or (local:decimal-convert(@value) le 75)">Foutieve informatie voor "Graviditeit": De waarde "<value-of select="@value"/>" voor attribuut "value" mag maximaal 75 zijn</assert>
          <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Graviditeit": Ongeldige attributen aangetroffen</assert>
       </rule>
    </pattern>
@@ -1614,8 +1621,8 @@
          <!-- == Attribute "value": == -->
          <assert test="exists(@value)">Foutieve informatie voor "Pariteit (vóór deze zwangerschap)": Attribuut "value" ontbreekt</assert>
          <assert test="empty(@value) or (@value castable as xs:decimal)">Foutieve informatie voor "Pariteit (vóór deze zwangerschap)": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat</assert>
-         <assert test="empty(@value) or (xs:decimal(@value) ge 0)">Foutieve informatie voor "Pariteit (vóór deze zwangerschap)": De waarde "<value-of select="@value"/>" voor attribuut "value" moet minimaal 0 zijn</assert>
-         <assert test="empty(@value) or (xs:decimal(@value) le 30)">Foutieve informatie voor "Pariteit (vóór deze zwangerschap)": De waarde "<value-of select="@value"/>" voor attribuut "value" mag maximaal 30 zijn</assert>
+         <assert test="empty(@value) or (local:decimal-convert(@value) ge 0)">Foutieve informatie voor "Pariteit (vóór deze zwangerschap)": De waarde "<value-of select="@value"/>" voor attribuut "value" moet minimaal 0 zijn</assert>
+         <assert test="empty(@value) or (local:decimal-convert(@value) le 30)">Foutieve informatie voor "Pariteit (vóór deze zwangerschap)": De waarde "<value-of select="@value"/>" voor attribuut "value" mag maximaal 30 zijn</assert>
          <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Pariteit (vóór deze zwangerschap)": Ongeldige attributen aangetroffen</assert>
       </rule>
    </pattern>
@@ -1830,8 +1837,8 @@
          <!-- == Attribute "value": == -->
          <assert test="exists(@value)">Foutieve informatie voor "Gewicht (gemeten)": Attribuut "value" ontbreekt</assert>
          <assert test="empty(@value) or (@value castable as xs:decimal)">Foutieve informatie voor "Gewicht (gemeten)": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat</assert>
-         <assert test="empty(@value) or (xs:decimal(@value) ge 25)">Foutieve informatie voor "Gewicht (gemeten)": De waarde "<value-of select="@value"/>" voor attribuut "value" moet minimaal 25 zijn</assert>
-         <assert test="empty(@value) or (xs:decimal(@value) le 249.9)">Foutieve informatie voor "Gewicht (gemeten)": De waarde "<value-of select="@value"/>" voor attribuut "value" mag maximaal 249.9 zijn</assert>
+         <assert test="empty(@value) or (local:decimal-convert(@value) ge 25)">Foutieve informatie voor "Gewicht (gemeten)": De waarde "<value-of select="@value"/>" voor attribuut "value" moet minimaal 25 zijn</assert>
+         <assert test="empty(@value) or (local:decimal-convert(@value) le 249.9)">Foutieve informatie voor "Gewicht (gemeten)": De waarde "<value-of select="@value"/>" voor attribuut "value" mag maximaal 249.9 zijn</assert>
          <!-- == Attribute "unit": == -->
          <assert test="empty(@unit) or (@unit eq 'kg')">Foutieve informatie voor "Gewicht (gemeten)": De waarde "<value-of select="@unit"/>" voor attribuut "unit" heeft niet de verwachte vaste waarde "kg"</assert>
          <assert test="empty(@* except (@conceptId, @value, @unit, @xsi:*))">Foutieve informatie voor "Gewicht (gemeten)": Ongeldige attributen aangetroffen</assert>
@@ -2098,8 +2105,8 @@
          <!-- == Attribute "value": == -->
          <assert test="exists(@value)">Foutieve informatie voor "Aantal geboren kinderen": Attribuut "value" ontbreekt</assert>
          <assert test="empty(@value) or (@value castable as xs:decimal)">Foutieve informatie voor "Aantal geboren kinderen": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat</assert>
-         <assert test="empty(@value) or (xs:decimal(@value) ge 0)">Foutieve informatie voor "Aantal geboren kinderen": De waarde "<value-of select="@value"/>" voor attribuut "value" moet minimaal 0 zijn</assert>
-         <assert test="empty(@value) or (xs:decimal(@value) le 9)">Foutieve informatie voor "Aantal geboren kinderen": De waarde "<value-of select="@value"/>" voor attribuut "value" mag maximaal 9 zijn</assert>
+         <assert test="empty(@value) or (local:decimal-convert(@value) ge 0)">Foutieve informatie voor "Aantal geboren kinderen": De waarde "<value-of select="@value"/>" voor attribuut "value" moet minimaal 0 zijn</assert>
+         <assert test="empty(@value) or (local:decimal-convert(@value) le 9)">Foutieve informatie voor "Aantal geboren kinderen": De waarde "<value-of select="@value"/>" voor attribuut "value" mag maximaal 9 zijn</assert>
          <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Aantal geboren kinderen": Ongeldige attributen aangetroffen</assert>
       </rule>
    </pattern>
@@ -2575,8 +2582,8 @@
          <!-- == Attribute "value": == -->
          <assert test="exists(@value)">Foutieve informatie voor "Rangnummer kind": Attribuut "value" ontbreekt</assert>
          <assert test="empty(@value) or (@value castable as xs:decimal)">Foutieve informatie voor "Rangnummer kind": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat</assert>
-         <assert test="empty(@value) or (xs:decimal(@value) ge 1)">Foutieve informatie voor "Rangnummer kind": De waarde "<value-of select="@value"/>" voor attribuut "value" moet minimaal 1 zijn</assert>
-         <assert test="empty(@value) or (xs:decimal(@value) le 9)">Foutieve informatie voor "Rangnummer kind": De waarde "<value-of select="@value"/>" voor attribuut "value" mag maximaal 9 zijn</assert>
+         <assert test="empty(@value) or (local:decimal-convert(@value) ge 1)">Foutieve informatie voor "Rangnummer kind": De waarde "<value-of select="@value"/>" voor attribuut "value" moet minimaal 1 zijn</assert>
+         <assert test="empty(@value) or (local:decimal-convert(@value) le 9)">Foutieve informatie voor "Rangnummer kind": De waarde "<value-of select="@value"/>" voor attribuut "value" mag maximaal 9 zijn</assert>
          <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Rangnummer kind": Ongeldige attributen aangetroffen</assert>
       </rule>
    </pattern>
@@ -2947,8 +2954,8 @@
          <!-- == Attribute "value": == -->
          <assert test="exists(@value)">Foutieve informatie voor "Apgarscore na 5 min.": Attribuut "value" ontbreekt</assert>
          <assert test="empty(@value) or (@value castable as xs:decimal)">Foutieve informatie voor "Apgarscore na 5 min.": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat</assert>
-         <assert test="empty(@value) or (xs:decimal(@value) ge 0)">Foutieve informatie voor "Apgarscore na 5 min.": De waarde "<value-of select="@value"/>" voor attribuut "value" moet minimaal 0 zijn</assert>
-         <assert test="empty(@value) or (xs:decimal(@value) le 10)">Foutieve informatie voor "Apgarscore na 5 min.": De waarde "<value-of select="@value"/>" voor attribuut "value" mag maximaal 10 zijn</assert>
+         <assert test="empty(@value) or (local:decimal-convert(@value) ge 0)">Foutieve informatie voor "Apgarscore na 5 min.": De waarde "<value-of select="@value"/>" voor attribuut "value" moet minimaal 0 zijn</assert>
+         <assert test="empty(@value) or (local:decimal-convert(@value) le 10)">Foutieve informatie voor "Apgarscore na 5 min.": De waarde "<value-of select="@value"/>" voor attribuut "value" mag maximaal 10 zijn</assert>
          <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Apgarscore na 5 min.": Ongeldige attributen aangetroffen</assert>
       </rule>
    </pattern>
@@ -3245,7 +3252,7 @@
          <!-- == Attribute "value": == -->
          <assert test="exists(@value)">Foutieve informatie voor "Geboortegewicht": Attribuut "value" ontbreekt</assert>
          <assert test="empty(@value) or (@value castable as xs:decimal)">Foutieve informatie voor "Geboortegewicht": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat</assert>
-         <assert test="empty(@value) or (xs:decimal(@value) ge 0)">Foutieve informatie voor "Geboortegewicht": De waarde "<value-of select="@value"/>" voor attribuut "value" moet minimaal 0 zijn</assert>
+         <assert test="empty(@value) or (local:decimal-convert(@value) ge 0)">Foutieve informatie voor "Geboortegewicht": De waarde "<value-of select="@value"/>" voor attribuut "value" moet minimaal 0 zijn</assert>
          <!-- == Attribute "unit": == -->
          <assert test="empty(@unit) or (@unit eq 'gram')">Foutieve informatie voor "Geboortegewicht": De waarde "<value-of select="@unit"/>" voor attribuut "unit" heeft niet de verwachte vaste waarde "gram"</assert>
          <assert test="empty(@* except (@conceptId, @value, @unit, @xsi:*))">Foutieve informatie voor "Geboortegewicht": Ongeldige attributen aangetroffen</assert>

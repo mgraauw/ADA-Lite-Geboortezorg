@@ -43,7 +43,9 @@
     <xsl:element name="{$rtd-root/@shortName}">
       <xsl:copy select="@transactionRef"/>
       <xsl:copy select="$rtd-root/@transactionEffectiveDate"/>
-      <xsl:copy select="/*/@versionDate"/>
+      <!-- Remark: We use a fixed version date (and not the current dat is might have been expected) if no @versionDate was present in the lite 
+        file to prevent the generated file from changing in-between generator runs.  -->
+      <xsl:attribute name="versionDate" select="(/*/@versionDate, '2019-01-01T00:00:00')[1]"/>
       <!-- TODO: The prefix should come from the retrieve transaction dataset also, now fixed: -->
       <xsl:attribute name="prefix" select="'peri20-'"/>
 
