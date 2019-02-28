@@ -68,7 +68,6 @@
     </xsl:map>
   </xsl:variable>
 
-
   <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
   <!-- Build related information: -->
 

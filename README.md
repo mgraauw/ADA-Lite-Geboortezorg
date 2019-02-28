@@ -185,9 +185,13 @@ In de folder `ada-lite` staan specificaties die van belang zijn voor leverancier
 * `examples-lite`: Voorbeelddocumenten in ADA-lite formaat, met ingevulde waarden
 * `schematron-full`: Schematrons voor het valideren van documenten in het ADA-full formaat 
 * `schematron-lite`: Schematrons voor het valideren van documenten in het ADA-lite formaat 
+* `schema-full`: XML schemas voor het valideren van documenten in het ADA-full formaat 
+* `schema-lite`: XML schemas voor het valideren van documenten in het ADA-lite formaat 
 * `specs-lite`: XML bestanden met alle meta-informatie over de documenttypen
 * `xsl`: 
     * `simple-ada2full-ada.xsl`: Stylesheet voor het omzetten van ADA-lite naar ADA-full formaat
+
+De Schematrons valideren in principe dezelfde zaken als de schemas, maar proberen gebruikersvriendelijker foutmeldingen te geven (in het Nederlands). 
 
 In de folder `design` staan materialen die gebruikt worden om de specificaties te maken; deze zijn niet van belang voor leveranciers.
 
