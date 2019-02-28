@@ -1,41 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<prio1_huidig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:noNamespaceSchemaLocation="../schemas/prio1_huidig.xsd" transactionRef="2.16.840.1.113883.2.4.3.11.60.90.77.4.2453">
-    <zorgverlenerzorginstelling>
-        <zorgverlener>
-            <naam_zorgverlener value="V.E.R. Loskundige"/>
-        </zorgverlener>
-        <zorginstelling>
-            <naam_zorginstelling value="Test instelling 1"/>
-        </zorginstelling>
-    </zorgverlenerzorginstelling>
-    <vrouw>
-        <burgerservicenummer value="123456095"/>
-        <naamgegevens>
-            <achternaam>
-                <voorvoegsel value="van der"/>
-                <achternaam value="Zwan"/>
-            </achternaam>
-        </naamgegevens>
-        <bloedgroep_vrouw value="58460004"/>
-        <rhesus_d_factor_vrouw value="165747007"/>
-        <rhesus_c_factor value="rhcpos"/>
-    </vrouw>
-    <zwangerschap>
-        <graviditeit value="2"/>
-    </zwangerschap>
-    <medisch_onderzoek>
-        <maternale_onderzoeksgegevens>
-            <urine_bloed_en_aanvullende_onderzoeken>
-                <hb value="7.3"/>
-            </urine_bloed_en_aanvullende_onderzoeken>
-        </maternale_onderzoeksgegevens>
-    </medisch_onderzoek>
-    <medisch_onderzoek>
-        <maternale_onderzoeksgegevens>
-            <urine_bloed_en_aanvullende_onderzoeken>
-                <hb value="6.8"/>
-            </urine_bloed_en_aanvullende_onderzoeken>
-        </maternale_onderzoeksgegevens>
-    </medisch_onderzoek>
+<prio1_huidig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../schemas/prio1_huidig.xsd"
+  transactionRef="2.16.840.1.113883.2.4.3.11.60.90.77.4.2453">
+  <zorgverlenerzorginstelling>
+    <zorgverlener>
+      <naam_zorgverlener value="V.E.R. Loskundige"/>
+    </zorgverlener>
+    <zorginstelling>
+      <naam_zorginstelling value="Test instelling 1"/>
+    </zorginstelling>
+  </zorgverlenerzorginstelling>
+  <vrouw>
+    <burgerservicenummer value="123456095"/>
+    <naamgegevens>
+      <achternaam>
+        <voorvoegsel value="van der"/>
+        <achternaam value="Zwan"/>
+      </achternaam>
+    </naamgegevens>
+    <bloedgroep_vrouw value="58460004"/>
+    <rhesus_d_factor_vrouw value="165747007"/>
+    <rhesus_c_factor value="733120009"/>
+  </vrouw>
+  <zwangerschap>
+    <graviditeit value="2"/>
+  </zwangerschap>
+  <medisch_onderzoek>
+    <maternale_onderzoeksgegevens>
+      <urine_bloed_en_aanvullende_onderzoeken>
+        <hb value="7.3"/>
+      </urine_bloed_en_aanvullende_onderzoeken>
+    </maternale_onderzoeksgegevens>
+  </medisch_onderzoek>
+  <medisch_onderzoek>
+    <maternale_onderzoeksgegevens>
+      <urine_bloed_en_aanvullende_onderzoeken>
+        <hb value="6.8"/>
+      </urine_bloed_en_aanvullende_onderzoeken>
+    </maternale_onderzoeksgegevens>
+  </medisch_onderzoek>
 </prio1_huidig>

@@ -83,7 +83,8 @@
                           unit="kg"/>
       </prenatale_controle>
       <prenatale_controle conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80732">
-         <datum_controle conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80737"><!-- == *** Unrecognized concept type/value combination for kernset_aanleverbericht/zwangerschap/prenatale_controle/datum_controle == --></datum_controle>
+         <datum_controle conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80737"
+                         value="2016-07-01T00:00:00"/>
          <drugsgebruikq conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82102" value="true"/>
       </prenatale_controle>
       <diagnose conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82268">
@@ -176,7 +177,7 @@
       <diagnose_postpartum conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82297">
          <pathologie_vrouwq conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82208" value="true"/>
       </diagnose_postpartum>
-      <kindspecifieke_gegevens conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.161"><!-- == *** No concept found for element kernset_aanleverbericht/postnatale_fase/kindspecifieke_gegevens/rangnummer_kind in file:/C:/Data/Erik/xmldev/Babyconnect/ADA-Lite-Geboortezorg/design/specs-full/RetrieveTransaction_kernset_22.xml == -->
+      <kindspecifieke_gegevens conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.161">
          <voeding_kind_groep conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.70009">
             <substantie_voeding_kind conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.70030"
                                      value="1"

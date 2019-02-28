@@ -129,8 +129,12 @@
 
       <!-- Create the Schematrons: -->
       <xsl:for-each select="$filelist-source-specs-full">
-        <spec2schematron in="{.}" out="{xtlc:dref-concat(($dir-build-schematron-lite, xtlc:dref-name-noext(.) || '.sch'))}" ada-lite-version="true"/>
-        <spec2schematron in="{.}" out="{xtlc:dref-concat(($dir-build-schematron-full, xtlc:dref-name-noext(.) || '.sch'))}" ada-lite-version="false"/>
+        <!-- The Schematron generation for lite uses the specs lite as input: -->
+        <xsl:variable name="filename-spec-lite" as="xs:string" select="xtlc:dref-concat(($dir-build-specs-lite, xtlc:dref-name(.)))"/>
+        <spec2schematron in="{$filename-spec-lite}" out="{xtlc:dref-concat(($dir-build-schematron-lite, xtlc:dref-name-noext(.) || '.sch'))}"
+          ada-lite-version="true"/>
+        <spec2schematron in="{.}" out="{xtlc:dref-concat(($dir-build-schematron-full, xtlc:dref-name-noext(.) || '.sch'))}"
+          ada-lite-version="false"/>
       </xsl:for-each>
 
       <!-- TBD: Generate the schemas (lite/full)? -->

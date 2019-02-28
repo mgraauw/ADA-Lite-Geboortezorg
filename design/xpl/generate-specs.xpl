@@ -178,7 +178,8 @@
         <p:document href="../xsl/ada-schema-simple2ada-schematron.xsl"/>
       </p:input>
       <!-- Add the technical info to the full version only: -->
-      <p:with-param name="add-technical-info" select="not(xs:boolean($ada-lite-version))"/>
+      <!--<p:with-param name="add-technical-info" select="not(xs:boolean($ada-lite-version))"/>-->
+      <p:with-param name="add-technical-info" select="true()"/>
     </p:xslt>
     <p:store method="xml" omit-xml-declaration="false" indent="true">
       <p:with-option name="href" select="$out"/>

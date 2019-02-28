@@ -43,7 +43,7 @@
          <gewicht_gemeten value=""/>
       </prenatale_controle>
       <prenatale_controle>
-         <datum_controle/>
+         <datum_controle value=""/>
          <drugsgebruikq value=""/>
       </prenatale_controle>
       <diagnose>
@@ -102,7 +102,6 @@
          <pathologie_vrouwq value=""/>
       </diagnose_postpartum>
       <kindspecifieke_gegevens>
-         <rangnummer_kind value=""/>
          <voeding_kind_groep>
             <substantie_voeding_kind value=""/>
          </voeding_kind_groep>

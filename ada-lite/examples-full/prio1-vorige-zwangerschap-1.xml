@@ -41,13 +41,17 @@
    <bevalling conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.6">
       <diagnose_bevalling conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82291">
          <zwangerschapsduur conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82382"
-                            value=""
+                            value="10"
                             unit="d"/>
       </diagnose_bevalling>
       <hoeveelheid_bloedverlies conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20640"
                                 value="400"
                                 unit="ml"/>
-      <conditie_perineum_postpartum conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80673" value="A"><!-- == Code A not found for prio1_vorig/bevalling/conditie_perineum_postpartum == --></conditie_perineum_postpartum>
+      <conditie_perineum_postpartum conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80673"
+                                    value="10"
+                                    code="OTH"
+                                    codeSystem="2.16.840.1.113883.5.1008"
+                                    displayName="Anders"/>
    </bevalling>
    <uitkomst_per_kind conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.7">
       <baring conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40002">
@@ -59,11 +63,15 @@
                          codeSystem="2.16.840.1.113883.6.96"
                          displayName="Delivery by emergency cesarean section (finding)"/>
             <zwangerschapsduur conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20062"
-                               value=""
+                               value="10"
                                unit="d"/>
             <apgarscore_na_5_min conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40071" value="7"/>
             <vaginale_kunstverlossing_groep conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40189">
-               <vaginale_kunstverlossing conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40190" value=""><!-- == Code  not found for prio1_vorig/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/vaginale_kunstverlossing_groep/vaginale_kunstverlossing == --></vaginale_kunstverlossing>
+               <vaginale_kunstverlossing conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40190"
+                                         value="6"
+                                         code="OTH"
+                                         codeSystem="2.16.840.1.113883.5.1008"
+                                         displayName="anders"/>
             </vaginale_kunstverlossing_groep>
             <lichamelijk_onderzoek_kind conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80766">
                <geboortegewicht conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40060"

@@ -34,7 +34,10 @@
                              codeSystem="2.16.840.1.113883.6.96"
                              displayName="Rh D Positief"/>
       <rhesus_c_factor conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10816"
-                       value="rhcpos"><!-- == Code rhcpos not found for prio1_huidig/vrouw/rhesus_c_factor == --></rhesus_c_factor>
+                       value="1"
+                       code="733120009"
+                       codeSystem="2.16.840.1.113883.6.96"
+                       displayName="Rhc positive (finding)"/>
    </vrouw>
    <zwangerschap conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.3">
       <graviditeit conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20010" value="2"/>
