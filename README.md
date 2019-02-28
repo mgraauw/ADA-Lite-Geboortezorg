@@ -178,20 +178,19 @@ Volledig ADA, met conceptId, code en codeSystem en unit is ook toegestaan als aa
 ```
 
 ## Documentatie
-In de folder `ada-lite` staan specificaties die van belang zijn voor leveranciers. 
+In de folder `ada-lite` staan specificaties die van belang zijn voor leveranciers: 
 
-* examples-empty: Lege voorbeelddocumenten
-* examples-lite: Voorbeelddocumenten met vulling
-* examples-full: TODO
-* html: Kopie van de transactieoverzichten in HTML
-* schemas: XML Schema voor de documenttypen
-* specs-lite: XML bestanden met alle meta-informatie over de documenttypen
-* xsl: 
-    * simple-ada2full-ada.xsl: Een style die ADA lite omzet naar full ADA
+* `examples-empty`: Voorbeelddocumenten in ADA-lite formaat, zonder ingevulde waarden
+* `examples-full`: Voorbeelddocumenten in ADA-full formaat, met ingevulde waarden
+* `examples-lite`: Voorbeelddocumenten in ADA-lite formaat, met ingevulde waarden
+* `schematron-full`: Schematrons voor het valideren van documenten in het ADA-full formaat 
+* `schematron-lite`: Schematrons voor het valideren van documenten in het ADA-lite formaat 
+* `specs-lite`: XML bestanden met alle meta-informatie over de documenttypen
+* `xsl`: 
+    * `simple-ada2full-ada.xsl`: Stylesheet voor het omzetten van ADA-lite naar ADA-full formaat
 
-In de folder `design` staan materialen die gebruikt worden om de specificaties te maken; deze
-zijn niet van belang voor leveranciers.
+In de folder `design` staan materialen die gebruikt worden om de specificaties te maken; deze zijn niet van belang voor leveranciers.
 
-Het volledige ADA formaat is gedefinieerd op: https://www.art-decor.org/mediawiki/index.php/ADA_Documentation
+Het volledige ADA formaat is gedefinieerd op: [https://www.art-decor.org/mediawiki/index.php/ADA_Documentation](https://www.art-decor.org/mediawiki/index.php/ADA_Documentation)
 
-PWD specificaties zijn te vinden op: https://decor.nictiz.nl/decor/services/ProjectIndex?prefix=peri20-&format=html
+PWD specificaties zijn te vinden op: [https://decor.nictiz.nl/decor/services/ProjectIndex?prefix=peri20-&format=html](https://decor.nictiz.nl/decor/services/ProjectIndex?prefix=peri20-&format=html)
