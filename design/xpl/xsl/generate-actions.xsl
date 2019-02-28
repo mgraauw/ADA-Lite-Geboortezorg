@@ -129,18 +129,16 @@
         <examples-lite2examples-full in="{.}" out="{xtlc:dref-concat(($dir-build-examples-full, xtlc:dref-name(.)))}"
           rtd="{local:get-specification-file-from-transaction-id(doc(.)/*/@transactionRef)}"/>
       </xsl:for-each>
-
+     
       <!-- Create the Schematrons: -->
       <xsl:for-each select="$filelist-source-specs-full">
-        <!-- The Schematron generation for lite uses the specs lite as input: -->
-        <xsl:variable name="filename-spec-lite" as="xs:string" select="xtlc:dref-concat(($dir-build-specs-lite, xtlc:dref-name(.)))"/>
-        <spec2schematron in="{$filename-spec-lite}" out="{xtlc:dref-concat(($dir-build-schematron-lite, xtlc:dref-name-noext(.) || '.sch'))}"
+        <spec2schematron in="{.}" out="{xtlc:dref-concat(($dir-build-schematron-lite, xtlc:dref-name-noext(.) || '.sch'))}"
           ada-lite-version="true"/>
         <spec2schematron in="{.}" out="{xtlc:dref-concat(($dir-build-schematron-full, xtlc:dref-name-noext(.) || '.sch'))}"
           ada-lite-version="false"/>
       </xsl:for-each>
 
-      <!-- TBD: Generate the schemas: -->
+      <!-- Generate the schemas: -->
       <xsl:for-each select="$filelist-source-specs-full">
         <!-- The schema generation for lite uses the specs lite as input: -->
         <xsl:variable name="filename-spec-lite" as="xs:string" select="xtlc:dref-concat(($dir-build-specs-lite, xtlc:dref-name(.)))"/>
@@ -152,7 +150,6 @@
       
       <!-- Create validation actions 1: Validate the examples-lite against the appropriate Schema: -->
       <xsl:for-each select="$filelist-source-examples-lite">
-        <!-- We need the name of the specification file, since this was used to create the schema file: -->
         <xsl:variable name="specification-file" as="xs:string" select="local:get-specification-file-from-transaction-id(doc(.)/*/@transactionRef)"/>
         <xsl:variable name="schema-file" as="xs:string"
           select="xtlc:dref-concat(($dir-build-schema-lite, xtlc:dref-name-noext($specification-file) || '.xsd'))"/>
@@ -161,10 +158,9 @@
       
       <!-- Create validation actions 2: Validate the examples-full against the appropriate Schema: -->
       <xsl:for-each select="$filelist-source-examples-lite">
-        <xsl:variable name="examples-full-file" as="xs:string" select="xtlc:dref-concat(($dir-build-examples-full, xtlc:dref-name(.)))"/>
-        <!-- We need the name of the specification file, since this was used to create the schema file: -->
         <xsl:variable name="specification-file" as="xs:string"
-          select="local:get-specification-file-from-transaction-id(doc($examples-full-file)/*/@transactionRef)"/>
+          select="local:get-specification-file-from-transaction-id(doc(.)/*/@transactionRef)"/>
+        <xsl:variable name="examples-full-file" as="xs:string" select="xtlc:dref-concat(($dir-build-examples-full, xtlc:dref-name(.)))"/>
         <xsl:variable name="schema-file" as="xs:string"
           select="xtlc:dref-concat(($dir-build-schema-full, xtlc:dref-name-noext($specification-file) || '.xsd'))"/>
         <validate-schema in="{$examples-full-file}" schema="{$schema-file}"/>
@@ -172,7 +168,6 @@
 
       <!-- Create validation actions 3: Validate the examples-lite against the appropriate Schematron: -->
       <xsl:for-each select="$filelist-source-examples-lite">
-        <!-- We need the name of the specification file, since this was used to create the schema file: -->
         <xsl:variable name="specification-file" as="xs:string" select="local:get-specification-file-from-transaction-id(doc(.)/*/@transactionRef)"/>
         <xsl:variable name="schematron-file" as="xs:string"
           select="xtlc:dref-concat(($dir-build-schematron-lite, xtlc:dref-name-noext($specification-file) || '.sch'))"/>
@@ -182,9 +177,8 @@
       <!-- Create validation actions 4: Validate the examples-full against the appropriate Schematron: -->
       <xsl:for-each select="$filelist-source-examples-lite">
         <xsl:variable name="examples-full-file" as="xs:string" select="xtlc:dref-concat(($dir-build-examples-full, xtlc:dref-name(.)))"/>
-        <!-- We need the name of the specification file, since this was used to create the schema file: -->
         <xsl:variable name="specification-file" as="xs:string"
-          select="local:get-specification-file-from-transaction-id(doc($examples-full-file)/*/@transactionRef)"/>
+          select="local:get-specification-file-from-transaction-id(doc(.)/*/@transactionRef)"/>
         <xsl:variable name="schematron-file" as="xs:string"
           select="xtlc:dref-concat(($dir-build-schematron-full, xtlc:dref-name-noext($specification-file) || '.sch'))"/>
         <validate-schematron in="{$examples-full-file}" schematron="{$schematron-file}"/>

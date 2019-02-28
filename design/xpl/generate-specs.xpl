@@ -142,7 +142,7 @@
     </p:load>
     <p:xslt>
       <p:input port="stylesheet">
-        <p:document href="../../ada-lite/xsl/ada-lite2ada-full.xsl"/>
+        <p:document href="../xsl/ada-lite2ada-full.xsl"/>
       </p:input>
       <p:with-param name="dref-rtd" select="$rtd"/>
     </p:xslt>

@@ -15,15 +15,15 @@
   <xsl:output method="xml" indent="yes" encoding="UTF-8"/>
 
   <xsl:mode on-no-match="fail"/>
-  
+
   <!-- ================================================================== -->
   <!-- PARAMETERS: -->
-  
+
   <xsl:param name="ada-lite-version" as="xs:string" required="false" select="string(true())">
     <!-- When true it creates a schema for ADA lit. When false for full ADA. -->
   </xsl:param>
   <xsl:variable name="do-ada-lite-version" as="xs:boolean" select="xs:boolean($ada-lite-version)"/>
-  
+
   <!-- ================================================================== -->
   <!-- GLOBAL DECLARATIONS: -->
 
@@ -36,7 +36,7 @@
   <xsl:variable name="use-required" as="xs:string" select="'required'"/>
   <xsl:variable name="use-optional" as="xs:string" select="'optional'"/>
   <xsl:variable name="required-in-ada-full" as="xs:string" select="if ($do-ada-lite-version) then $use-optional else $use-required"/>
-  
+
   <!-- ================================================================== -->
   <!-- MAIN TEMPLATES: -->
 
@@ -274,12 +274,12 @@
     <xsl:if test="empty($base-concept-elements)">
       <xsl:sequence select="error((), 'No conceptList entries found for concept '|| string($value-domain/../@shortName))"/>
     </xsl:if>
-    
+
 
     <xsl:call-template name="add-value-restricted-attribute-definition">
       <xsl:with-param name="attribute-name" select="'value'"/>
       <xsl:with-param name="attribute-allowed-values"
-        select="if (exists($base-concept-elements/@localId)) then data($base-concept-elements/@localId) else data($base-concept-elements/@value)"/>
+        select="if ($do-ada-lite-version) then data($base-concept-elements/@code) else data($base-concept-elements/@localId)"/>
       <xsl:with-param name="base-elements" select="$base-concept-elements"/>
     </xsl:call-template>
     <xsl:call-template name="add-value-restricted-attribute-definition">

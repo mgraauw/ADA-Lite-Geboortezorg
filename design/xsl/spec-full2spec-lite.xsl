@@ -20,7 +20,7 @@
   <xsl:template match="valueDomain">
     <xsl:copy>
       <xsl:apply-templates select="@*"/>
-      <xsl:apply-templates select="(* except conceptList)"/>
+      <xsl:apply-templates select="* except conceptList"/>
     </xsl:copy>
   </xsl:template>
 
@@ -28,34 +28,11 @@
     <xsl:copy>
       <xsl:apply-templates select="@*"/>
       <xsl:apply-templates select="name | desc"/>
-      <xsl:variable name="uniqueCodes" select="count(distinct-values(.//@code)) = count(.//@code)"/>
       <conceptList>
-        <xsl:if test="not($uniqueCodes)">
-          <xsl:comment> *** Values are not equal to code in this valueset! *** </xsl:comment>
-        </xsl:if>
         <xsl:for-each select="conceptList/*">
           <xsl:copy>
-            <xsl:attribute name="localId">
-              <xsl:choose>
-                <xsl:when test="$uniqueCodes">
-                  <xsl:value-of select="@code"/>
-                </xsl:when>
-                <xsl:otherwise>
-                  <xsl:value-of select="@localId"/>
-                </xsl:otherwise>
-              </xsl:choose>
-            </xsl:attribute>
-            <xsl:attribute name="value">
-              <xsl:choose>
-                <xsl:when test="$uniqueCodes">
-                  <xsl:value-of select="@code"/>
-                </xsl:when>
-                <xsl:otherwise>
-                  <xsl:value-of select="@localId"/>
-                </xsl:otherwise>
-              </xsl:choose>
-            </xsl:attribute>
-            <xsl:copy-of select="@code | @codeSystem | @displayName"/>
+            <xsl:copy-of select="(@localId, @code, @codeSystem, @displayName)"/>
+            <xsl:attribute name="value" select="@code"/>
           </xsl:copy>
         </xsl:for-each>
       </conceptList>
