@@ -193,6 +193,85 @@
     <p:add-attribute attribute-name="status" attribute-value="success" match="/*"/>
   </p:viewport>
 
+  <!-- Generate schema: -->
+  <p:viewport match="spec2schema">
+    <p:variable name="in" select="/*/@in"/>
+    <p:variable name="out" select="/*/@out"/>
+    <p:variable name="ada-lite-version" select="/*/@ada-lite-version"/>
+    <p:identity name="original"/>
+    <p:load dtd-validate="false">
+      <p:with-option name="href" select="$in"/>
+    </p:load>
+    <p:xslt>
+      <p:input port="stylesheet">
+        <p:document href="../xsl/ada-rtd2ada-schema-simple.xsl"/>
+      </p:input>
+      <p:with-param name="ada-lite-version" select="$ada-lite-version"/>
+    </p:xslt>
+    <p:store method="xml" omit-xml-declaration="false" indent="true">
+      <p:with-option name="href" select="$out"/>
+    </p:store>
+    <!-- Get the original input back: -->
+    <p:identity>
+      <p:input port="source">
+        <p:pipe port="result" step="original"/>
+      </p:input>
+    </p:identity>
+    <p:add-attribute attribute-name="status" attribute-value="success" match="/*"/>
+  </p:viewport>
+  
+  <!-- Validate with schema: -->
+  <p:viewport match="validate-schema">
+    <p:variable name="in" select="/*/@in"/>
+    <p:variable name="schema" select="/*/@schema"/>
+    <p:identity name="original"/>
+    <!-- Load the schema file: -->
+    <p:load dtd-validate="false" name="schema-file">
+      <p:with-option name="href" select="$schema"/>
+    </p:load>
+    <p:sink/>
+    <!-- Load the file to validate and go: -->
+    <p:load dtd-validate="false">
+      <p:with-option name="href" select="$in"/>
+    </p:load>
+    <p:try>
+      <p:group>
+        <p:validate-with-xml-schema assert-valid="true" name="schema-validation">
+          <p:input port="schema">
+            <p:pipe port="result" step="schema-file"/>
+          </p:input>
+        </p:validate-with-xml-schema>
+        <p:identity>
+          <p:input port="source">
+            <p:inline>
+              <validation-result/>
+            </p:inline>
+          </p:input>
+        </p:identity>
+      </p:group>
+      <p:catch name="catch-validation-errors">
+        <!-- Get error messages: -->
+        <p:filter select="//c:error">
+          <p:input port="source">
+            <p:pipe port="error" step="catch-validation-errors"/>
+          </p:input>
+        </p:filter>
+        <p:wrap-sequence wrapper="validation-result"/>
+      </p:catch>
+    </p:try>
+    <p:identity name="validation-result"/>
+    <p:sink/>
+    <!-- Create output: -->
+    <p:insert match="/*" position="first-child">
+      <p:input port="source">
+        <p:pipe port="result" step="original"/>
+      </p:input>
+      <p:input port="insertion">
+        <p:pipe port="result" step="validation-result"/>
+      </p:input>
+    </p:insert>
+  </p:viewport>
+
   <!-- Validate with schematron: -->
   <p:viewport match="validate-schematron">
     <p:variable name="in" select="/*/@in"/>
@@ -238,5 +317,10 @@
       </p:input>
     </p:insert>
   </p:viewport>
-
+  
+  <!-- Add an attribute that tells you there were validation errors: -->
+  <p:add-attribute attribute-name="validation-errors" match="/*">
+    <p:with-option name="attribute-value" select="exists(//validation-result/*)"/>
+  </p:add-attribute>
+  
 </p:declare-step>
