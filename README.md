@@ -181,13 +181,19 @@ Volledig ADA, met conceptId, code en codeSystem en unit is ook toegestaan als aa
 In de folder `ada-lite` staan specificaties die van belang zijn voor leveranciers: 
 
 * `examples-empty`: Voorbeelddocumenten in ADA-lite formaat, zonder ingevulde waarden
+
 * `examples-full`: Voorbeelddocumenten in ADA-full formaat, met ingevulde waarden
+
 * `examples-lite`: Voorbeelddocumenten in ADA-lite formaat, met ingevulde waarden
-* `schematron-full`: Schematrons voor het valideren van documenten in het ADA-full formaat 
-* `schematron-lite`: Schematrons voor het valideren van documenten in het ADA-lite formaat 
-* `schema-full`: XML schemas voor het valideren van documenten in het ADA-full formaat 
-* `schema-lite`: XML schemas voor het valideren van documenten in het ADA-lite formaat 
+
+* `schematrons-full`: Schematrons voor het valideren van documenten in het ADA-full formaat 
+
+* `schematrons-lite`: Schematrons voor het valideren van documenten in het ADA-lite formaat
+ 
+* `schemas`: XML schemas voor het valideren van documenten in het ADA (zowel full als lite) formaat 
+
 * `specs-lite`: XML bestanden met alle meta-informatie over de documenttypen
+
 * `xsl`: 
     * `simple-ada2full-ada.xsl`: Stylesheet voor het omzetten van ADA-lite naar ADA-full formaat. Deze stylesheet heeft een parameter `dref-rtd` die het pad moet bevatten naar het juiste bijbehorende Receive Transaction Dataset bestand (te vinden in de `specs-lite` directory). Specifieer dit pad met een `file:/` prefix.
 

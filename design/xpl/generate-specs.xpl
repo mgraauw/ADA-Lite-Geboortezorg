@@ -198,20 +198,41 @@
   <p:viewport match="spec2schema">
     <p:variable name="in" select="/*/@in"/>
     <p:variable name="out" select="/*/@out"/>
-    <p:variable name="ada-lite-version" select="/*/@ada-lite-version"/>
+    <p:variable name="generated-xsd-filename" select="/*/@generated-xsd-filename"/>
     <p:identity name="original"/>
     <p:load dtd-validate="false">
       <p:with-option name="href" select="$in"/>
     </p:load>
-    <p:xslt>
+    <!-- The ART-DECOR schema generator wants the stuff wrapped in two more layers: -->
+    <p:wrap match="/*" wrapper="view"/>
+    <p:add-attribute match="/*" attribute-name="type" attribute-value="crud"/>
+    <p:wrap match="/*" wrapper="ada"/>
+    <!-- Create the schemas. The ART-DECOR generator spits it out as additional result documents, so these appear on the secondary output port. -->
+    <p:xslt name="step-spec2schema-xsl">
       <p:input port="stylesheet">
-        <p:document href="../xsl/ada-rtd2ada-schema-simple.xsl"/>
+        <p:document href="../xsl/art-decor/release2schema.xsl"/>
       </p:input>
-      <p:with-param name="ada-lite-version" select="$ada-lite-version"/>
+      <p:with-param name="null" select="()"/>
     </p:xslt>
-    <p:store method="xml" omit-xml-declaration="false" indent="true">
-      <p:with-option name="href" select="$out"/>
-    </p:store>
+    <p:sink/>
+    <!-- Process the generated documents appearing on the secondary port of the transformation: -->
+    <p:identity>
+      <p:input port="source">
+        <p:pipe port="secondary" step="step-spec2schema-xsl"/>
+      </p:input>
+    </p:identity>
+    <p:for-each>
+      <p:choose>
+        <p:when test="ends-with(base-uri(), concat('/', $generated-xsd-filename))">
+          <p:store method="xml" omit-xml-declaration="false" indent="true">
+            <p:with-option name="href" select="$out"/>
+          </p:store>
+        </p:when>
+        <p:otherwise>
+          <p:sink/>
+        </p:otherwise>
+      </p:choose>
+    </p:for-each>
     <!-- Get the original input back: -->
     <p:identity>
       <p:input port="source">
@@ -220,7 +241,7 @@
     </p:identity>
     <p:add-attribute attribute-name="status" attribute-value="success" match="/*"/>
   </p:viewport>
-  
+
   <!-- Validate with schema: -->
   <p:viewport match="validate-schema">
     <p:variable name="in" select="/*/@in"/>
@@ -318,10 +339,10 @@
       </p:input>
     </p:insert>
   </p:viewport>
-  
+
   <!-- Add an attribute that tells you there were validation errors: -->
   <p:add-attribute attribute-name="validation-errors" match="/*">
     <p:with-option name="attribute-value" select="exists(//validation-result/*)"/>
   </p:add-attribute>
-  
+
 </p:declare-step>
