@@ -106,7 +106,7 @@
   </p:viewport>
 
   <!-- Create the examples-empty: -->
-  <p:viewport match="example-lite2example-empty">
+  <p:viewport match="specs-full2examples-empty">
     <p:variable name="in" select="/*/@in"/>
     <p:variable name="out" select="/*/@out"/>
     <p:identity name="original"/>
@@ -115,7 +115,7 @@
     </p:load>
     <p:xslt>
       <p:input port="stylesheet">
-        <p:document href="../xsl/example-lite2example-empty.xsl"/>
+        <p:document href="../xsl/ada-rtd2example-empty.xsl"/>
       </p:input>
       <p:with-param name="null" select="()"/>
     </p:xslt>
@@ -145,6 +145,7 @@
         <p:document href="../xsl/ada-lite2ada-full.xsl"/>
       </p:input>
       <p:with-param name="dref-rtd" select="$rtd"/>
+      <p:with-param name="use-fixed-version-date" select="true()"/>
     </p:xslt>
     <p:store method="xml" omit-xml-declaration="false" indent="true">
       <p:with-option name="href" select="$out"/>

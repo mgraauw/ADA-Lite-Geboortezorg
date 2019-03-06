@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="3.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:map="http://www.w3.org/2005/xpath-functions/map"
-  xmlns:array="http://www.w3.org/2005/xpath-functions/array" xmlns:xs="http://www.w3.org/2001/XMLSchema"
-  xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:local="#local.cvh_lb3_vgb" exclude-result-prefixes="#all" expand-text="true">
+  xmlns:array="http://www.w3.org/2005/xpath-functions/array" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:local="#local.cvh_lb3_vgb"
+  exclude-result-prefixes="#all" expand-text="true">
   <!-- ================================================================== -->
   <!-- 
        This stylesheet converts an XML document from the ADAD Lite format into full ADA XML.
@@ -25,10 +25,21 @@
   <xsl:param name="dref-rtd" as="xs:string" required="yes"/>
   <!-- Document reference to the Retrieve Transaction Dataset document (with root element <dataset>). -->
 
+  <xsl:param name="use-fixed-version-date" as="xs:string" required="false" select="string(false())"/>
+  <!-- Determines the value of /*/@versionDate when this attribute was not specified in the ada-lite input document.
+       - If false or unspecified, the current date/time is used
+       - If true, a *fixed* version date (see $fixed-version-date below) is used. 
+         This is useful because for generating the ada-full examples we don't want a new @versionDate after every generation: It would 
+         mean changes to the GIT repository after every generation, even when nothing was changed.
+  -->
+
   <!-- ================================================================== -->
   <!-- GLOBAL DECLARATIONS: -->
 
   <xsl:variable name="rtd-root" as="element(dataset)" select="doc($dref-rtd)/*"/>
+
+  <xsl:variable name="fixed-version-date" as="xs:string" select="'2019-01-01T00:00:00'"/>
+  <!-- See the remark for parameter $use-fixed-version-date above. -->
 
   <!-- ================================================================== -->
   <!-- MAIN TEMPLATES: -->
@@ -43,9 +54,10 @@
     <xsl:element name="{$rtd-root/@shortName}">
       <xsl:copy select="@transactionRef"/>
       <xsl:copy select="$rtd-root/@transactionEffectiveDate"/>
-      <!-- Remark: We use a fixed version date (and not the current date that might have been expected) if no @versionDate was present in the lite 
-        file to prevent the generated file from changing in-between generator runs.  -->
-      <xsl:attribute name="versionDate" select="(/*/@versionDate, '2019-01-01T00:00:00')[1]"/>
+      <!-- About @versionDate: See the remarks for parameter use-fixed-version-date above.  -->
+      <xsl:variable name="version-date" as="xs:string"
+        select="if (xs:boolean($use-fixed-version-date)) then $fixed-version-date else substring(string(current-dateTime()), 1, 19)"/>
+      <xsl:attribute name="versionDate" select="(/*/@versionDate, $version-date)[1]"/>
       <xsl:attribute name="prefix" select="($rtd-root/@prefix, 'peri20-')[1]"/>
 
       <xsl:comment> == ADA full format generated from lite format == </xsl:comment>
@@ -67,7 +79,7 @@
 
     <xsl:variable name="elm-name" as="xs:string" select="local-name(.)"/>
     <xsl:variable name="full-elm-path" as="xs:string" select="string-join(($parent-name-set, $elm-name), '/')"/>
-    
+
     <!-- Find the right concept child and pre-flight check it:: -->
     <xsl:variable name="concept" as="element(concept)?" select="($concept-root/concept[@shortName eq $elm-name])[1]"/>
 
@@ -122,9 +134,9 @@
 
     <xsl:variable name="value-domain" as="element(valueDomain)" select="$concept/valueDomain"/>
     <xsl:variable name="value-domain-type" as="xs:string" select="$value-domain/@type"/>
-    
+
     <xsl:choose>
-      
+
       <!-- Code: Lookup the value in the code list of the concept. The actual value is the @localId. -->
       <xsl:when test="$value-domain-type eq 'code'">
         <xsl:variable name="code-element" as="element()?" select="($concept/valueSet/conceptList/*[@code eq $value])[1]"/>
@@ -141,12 +153,12 @@
         <xsl:attribute name="value" select="$value"/>
         <xsl:copy select="$value-domain/property/@unit"/>
       </xsl:when>
-      
+
       <!-- Anything else, just output the value as-si: -->
       <xsl:otherwise>
         <xsl:attribute name="value" select="$value"/>
       </xsl:otherwise>
-      
+
     </xsl:choose>
 
   </xsl:template>

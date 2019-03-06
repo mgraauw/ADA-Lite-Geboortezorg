@@ -11,25 +11,22 @@
    <vrouw>
       <burgerservicenummer value=""/>
       <naamgegevens>
+         <roepnaam value=""/>
          <achternaam>
+            <soort_naam value=""/>
             <voorvoegsel value=""/>
             <achternaam value=""/>
          </achternaam>
       </naamgegevens>
+      <anamnese/>
       <bloedgroep_vrouw value=""/>
       <rhesus_d_factor_vrouw value=""/>
       <rhesus_c_factor value=""/>
    </vrouw>
    <zwangerschap>
       <graviditeit value=""/>
+      <pariteit value=""/>
    </zwangerschap>
-   <medisch_onderzoek>
-      <maternale_onderzoeksgegevens>
-         <urine_bloed_en_aanvullende_onderzoeken>
-            <hb value=""/>
-         </urine_bloed_en_aanvullende_onderzoeken>
-      </maternale_onderzoeksgegevens>
-   </medisch_onderzoek>
    <medisch_onderzoek>
       <maternale_onderzoeksgegevens>
          <urine_bloed_en_aanvullende_onderzoeken>

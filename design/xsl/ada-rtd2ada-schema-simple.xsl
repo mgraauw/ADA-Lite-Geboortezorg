@@ -272,9 +272,8 @@
     <!-- The definitions for the codes can be in <concept> and in <exception> elements. -->
     <xsl:variable name="base-concept-elements" as="element()*" select="$value-domain/../valueSet/conceptList/(concept | exception)"/>
     <xsl:if test="empty($base-concept-elements)">
-      <xsl:sequence select="error((), 'No conceptList entries found for concept '|| string($value-domain/../@shortName))"/>
+      <xsl:comment> == *** No conceptList entries found for concept {string($value-domain/../@shortName)} == </xsl:comment>
     </xsl:if>
-
 
     <xsl:call-template name="add-value-restricted-attribute-definition">
       <xsl:with-param name="attribute-name" select="'value'"/>
@@ -301,26 +300,34 @@
 
   <xsl:template name="add-value-restricted-attribute-definition">
     <xsl:param name="attribute-name" as="xs:string" required="yes"/>
-    <xsl:param name="attribute-allowed-values" as="xs:string+" required="yes"/>
+    <xsl:param name="attribute-allowed-values" as="xs:string*" required="yes"/>
     <xsl:param name="base-elements" as="element()*" required="false" select="()"/>
 
+    <!-- Remark: When $attribute-allowed-values is empty this will simply generate an xs:string typed attribute definition 
+      without any further ado. -->
     <xs:attribute name="{$attribute-name}" use="{$required-in-ada-full}">
-      <xs:simpleType>
-        <xs:restriction base="xs:string">
-          <xsl:for-each select="$attribute-allowed-values">
-            <xsl:variable name="index" as="xs:integer" select="position()"/>
-            <xs:enumeration value="{.}">
-              <xsl:if test="exists($base-elements)">
-                <xsl:call-template name="process-name-description">
-                  <xsl:with-param name="elm" as="element()?" select="$base-elements[$index]"/>
-                </xsl:call-template>
-              </xsl:if>
-            </xs:enumeration>
-          </xsl:for-each>
-        </xs:restriction>
-      </xs:simpleType>
+      <xsl:choose>
+        <xsl:when test="exists($attribute-allowed-values)">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xsl:for-each select="$attribute-allowed-values">
+                <xsl:variable name="index" as="xs:integer" select="position()"/>
+                <xs:enumeration value="{.}">
+                  <xsl:if test="exists($base-elements)">
+                    <xsl:call-template name="process-name-description">
+                      <xsl:with-param name="elm" as="element()?" select="$base-elements[$index]"/>
+                    </xsl:call-template>
+                  </xsl:if>
+                </xs:enumeration>
+              </xsl:for-each>
+            </xs:restriction>
+          </xs:simpleType>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:attribute name="type" select="'xs:string'"/>
+        </xsl:otherwise>  
+      </xsl:choose>
     </xs:attribute>
-
   </xsl:template>
 
 </xsl:stylesheet>

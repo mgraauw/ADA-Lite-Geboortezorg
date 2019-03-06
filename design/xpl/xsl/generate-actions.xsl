@@ -120,8 +120,8 @@
       </xsl:for-each>
 
       <!-- Create the examples-empty: -->
-      <xsl:for-each select="$filelist-source-examples-lite">
-        <example-lite2example-empty in="{.}" out="{xtlc:dref-concat(($dir-build-examples-empty, xtlc:dref-name(.)))}"/>
+      <xsl:for-each select="$filelist-source-specs-full">
+        <specs-full2examples-empty in="{.}" out="{xtlc:dref-concat(($dir-build-examples-empty, xtlc:dref-name(.)))}"/>
       </xsl:for-each>
 
       <!-- Create the examples-full: -->

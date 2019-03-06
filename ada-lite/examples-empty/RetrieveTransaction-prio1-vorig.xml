@@ -11,7 +11,9 @@
    <vrouw>
       <burgerservicenummer value=""/>
       <naamgegevens>
+         <roepnaam value=""/>
          <achternaam>
+            <soort_naam value=""/>
             <voorvoegsel value=""/>
             <achternaam value=""/>
          </achternaam>
