@@ -100,7 +100,6 @@ Dito numerieke waarden. Er worden decimale punten gebruikt, geen komma's.
 <datum_onderzoek value="2019-01-20T13:15:00"/>```
 Datums en tijden worden doorgegeven in ISO formaat. Waar tijden worden doorgegeven, wordt de separator 'T' gebruikt.
 Er wordt geen timezone doorgegeven.
-
 ### Enums
 ```xml
 <rhesus_d_factor_vrouw enum="Rh_D_Positief"/>
