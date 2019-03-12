@@ -1,11 +1,11 @@
 # ADA Lite voor de Geboortezorg
 
 ADA Lite is een aanleverformaat voor de Geboortezorg, in eerste instantie voor verloskundige informatie.
-Aanlevering gegevens op basis van HL7v3 berichten is vaak complex en foutgevoelig. Daarnaast staan de 
-gegevensstructuren zoals die in HL7v3 gehanteerd worden vaak ver af van de gegevens zoals 
-die in de verloskunde gehanteerd worden. Binnen de geboortezorg is daarom behoefte aan een 
+Aanlevering gegevens op basis van HL7v3 berichten is vaak complex en foutgevoelig. Daarnaast staan de
+gegevensstructuren zoals die in HL7v3 gehanteerd worden vaak ver af van de gegevens zoals
+die in de verloskunde gehanteerd worden. Binnen de geboortezorg is daarom behoefte aan een
 eenvoudiger formaat, wat dicht aansluit op de praktijk. Mogelijk kan op termijn FHIR in die behoefte voorzien.
-Daarvoor zijn op dit moment (begin 2019) de FHIR specificaties voor Geboortezorg nog onvoldoende 
+Daarvoor zijn op dit moment (begin 2019) de FHIR specificaties voor Geboortezorg nog onvoldoende
 ontwikkeld. ADA is gebaseerd op het PWD en volgt de structuur van de dataset daarin.
 ## Aanlevering is XML
 ```xml
@@ -18,7 +18,7 @@ Aanbevolen is de XML declaratie op te nemen. Uitwisseling gebeurt in UTF-8.
    .... details ....
 </acute_overdracht>
 ```
-Het root element is altijd de naam van een transactie. Hier wordt - net als voor alle elementnamen - 
+Het root element is altijd de naam van een transactie. Hier wordt - net als voor alle elementnamen -
 de ADA shortName genomen. Dit is de Nederlandse naam van het concept, maar dan geschikt gemaakt voor
 gebruik als XML tagnaam. Concreet betekent dit:
 
@@ -59,12 +59,12 @@ Dit zijn de enige twee versieaanduidingen.
                 <achternaam value="Zwan"/>
             </achternaam>
         </naamgegevens>
-    ...            
+    ...
 </acute_overdracht>
 ```
-Iedere groep wordt overgenomen van de dataset. Er mag geen groep worden overgeslagen. Dit borgt dat ieder element 
+Iedere groep wordt overgenomen van de dataset. Er mag geen groep worden overgeslagen. Dit borgt dat ieder element
 altijd uniek te traceren is met paden: `acute_overdracht/vrouw/burgerservicenummer/@value`
-## Gegevens zitten altijd in @value
+## Gegevens zitten in @value of @enum
 ```xml
 <burgerservicenummer value="999995856"/>
 ```
@@ -79,11 +79,12 @@ Dito voor strings.
 Codes (hier: een Snomed code) worden opgenomen zoals ze in de valueSet voorkomen.
 
 Er is één uitzondering: mocht een code tweemaal voorkomen in één valueSet (dat kan, als
-de code uit een ander codesysteem komt), dan wordt de code/codesysteem combinatie vervangen 
+de code uit een ander codesysteem komt), dan wordt de code/codesysteem combinatie vervangen
 door een uniek nummer (binnen die valueSet). Deze situatie komt in PWD 2.2 niet voor.
+
 ```xml
 <hoeveelheid_bloedverlies value="600"/>
-Hoeveelheden worden opgenomen als numerieke waarden. De bijbehorende eenheid is terug te vinden in 
+Hoeveelheden worden opgenomen als numerieke waarden. De bijbehorende eenheid is terug te vinden in
 de PWD specificaties.
 ```
 ```xml
@@ -99,6 +100,16 @@ Dito numerieke waarden. Er worden decimale punten gebruikt, geen komma's.
 <datum_onderzoek value="2019-01-20T13:15:00"/>```
 Datums en tijden worden doorgegeven in ISO formaat. Waar tijden worden doorgegeven, wordt de separator 'T' gebruikt.
 Er wordt geen timezone doorgegeven.
+
+### Enums
+```xml
+<rhesus_d_factor_vrouw enum="Rh_D_Positief"/>
+```
+Codes mogen ook opgenomen worden als enum attribuut. Bij iedere code wordt in het schema een unieke, leesbare
+enum naam gegenereerd. Dit is een alternatief voor het minder leesbare:
+```xml
+<rhesus_d_factor_vrouw value="165747007"/>
+```
 ## Extensies
 ```xml
 <vrouw>
@@ -112,13 +123,13 @@ Leveranciers kunnen gegevens die niet in PWD voorkomen doorgeven in een `adaexte
 als laatste element binnen ieder groepselement.
 ## Vorige zwangerschappen zijn losse aanleveringen
 In PWD zit de "obstetrische anamnese per voorgaande zwangerschap". Deze wordt aangeleverd
-als losse zwangerschap, met daarin de subset van gegevens die relevant zijn voor de vorige zwangerschap (dat 
+als losse zwangerschap, met daarin de subset van gegevens die relevant zijn voor de vorige zwangerschap (dat
 is niet het complete dossier).
 
 Dit is nodig bij aanlevering aan een repository, anders onstaat de volgende situatie:
 
 * kind 1 geboren, er wordt een zwangerschapsdossier aangeleverd
-* kind 2 geboren, er wordt een zwangerschapsdossier aangeleverd, met daarin gegevens van kind 1 weer in "obstetrische anamnese per voorgaande zwangerschap" 
+* kind 2 geboren, er wordt een zwangerschapsdossier aangeleverd, met daarin gegevens van kind 1 weer in "obstetrische anamnese per voorgaande zwangerschap"
 * kind 3 geboren, er wordt een zwangerschapsdossier aangeleverd, met daarin gegevens van kind 1 en 2 weer in "obstetrische anamnese per voorgaande zwangerschap"
 
 Kortom, met 3 kinderen worden 6 zwangerschappen geregistreerd. Dat is niet wenselijk. Voor aanleveringen
@@ -132,7 +143,7 @@ Volledig ADA, met conceptId, code en codeSystem en unit is ook toegestaan als aa
     <actuele_bloeddruk_diastolisch value="110" unit="mm Hg" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.4.10809"/>
 </actuele_bloeddruk>
 <bloedgroep_vrouw value="4" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.4.10810" code="58460004" codeSystem="2.16.840.1.113883.6.96" displayName="Blood group O (finding)"/>
-```        
+```
 ## Een compleet voorbeeld
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -178,7 +189,7 @@ Volledig ADA, met conceptId, code en codeSystem en unit is ook toegestaan als aa
 ```
 
 ## Documentatie
-In de folder `ada-lite` staan specificaties die van belang zijn voor leveranciers: 
+In de folder `ada-lite` staan specificaties die van belang zijn voor leveranciers:
 
 * `examples-empty`: Voorbeelddocumenten in ADA-lite formaat, zonder ingevulde waarden
 
@@ -186,21 +197,45 @@ In de folder `ada-lite` staan specificaties die van belang zijn voor leverancier
 
 * `examples-lite`: Voorbeelddocumenten in ADA-lite formaat, met ingevulde waarden
 
-* `schematrons-full`: Schematrons voor het valideren van documenten in het ADA-full formaat 
+* `schematrons-full`: Schematrons voor het valideren van documenten in het ADA-full formaat
 
 * `schematrons-lite`: Schematrons voor het valideren van documenten in het ADA-lite formaat
- 
-* `schemas`: XML schemas voor het valideren van documenten in het ADA (zowel full als lite) formaat 
+
+* `schemas`: XML schemas voor het valideren van documenten in het ADA (zowel full als lite) formaat
 
 * `specs-lite`: XML bestanden met alle meta-informatie over de documenttypen
 
-* `xsl`: 
+* `xsl`:
     * `simple-ada2full-ada.xsl`: Stylesheet voor het omzetten van ADA-lite naar ADA-full formaat. Deze stylesheet heeft een parameter `dref-rtd` die het pad moet bevatten naar het juiste bijbehorende Receive Transaction Dataset bestand (te vinden in de `specs-lite` directory). Specifieer dit pad met een `file:/` prefix.
 
-De Schematrons valideren in principe dezelfde zaken als de schemas, maar proberen gebruikersvriendelijker foutmeldingen te geven (in het Nederlands). 
+De Schematrons valideren in principe dezelfde zaken als de schemas, maar proberen gebruikersvriendelijker foutmeldingen te geven (in het Nederlands).
 
 In de folder `design` staan materialen die gebruikt worden om de specificaties te maken; deze zijn niet van belang voor leveranciers.
 
 Het volledige ADA formaat is gedefinieerd op: [https://www.art-decor.org/mediawiki/index.php/ADA_Documentation](https://www.art-decor.org/mediawiki/index.php/ADA_Documentation)
 
 PWD specificaties zijn te vinden op: [https://decor.nictiz.nl/decor/services/ProjectIndex?prefix=peri20-&format=html](https://decor.nictiz.nl/decor/services/ProjectIndex?prefix=peri20-&format=html)
+
+## Transacties
+De volgende transacties worden gebruikt:
+
+* `RetrieveTransaction-prio1-huidig.xml`: Een voorbeelddossier met een paar gegevens van de huidige zwangerschap, met name voor test- en demo-doeleinden.
+* `RetrieveTransaction-prio1-vorig.xml`: Een voorbeelddossier met een paar gegevens van de voorgaande zwangerschap, met name voor test- en demo-doeleinden.
+* `RetrieveTransaction-verloskundig-dossier-22.xml`: Het complete verloskundig dossier, gebaseerd op PWD 2.2, voor aanlevering aan Babyconnect.
+* `RetrieveTransaction_kernset_22.xml`: De kernset, gebaseerd op PWD 2.2, voor aanlevering aan Perined.
+### TODO
+Er volgen nog:
+
+* Verloskundig dossier PWD 2.3
+* Kernset PWD 2.3
+* Samenvatting voorgaande zwangerschap PWD 2.2
+* Samenvatting voorgaande zwangerschap PWD 2.3
+### Op ART-DECOR
+Deze transacties zijn te vinden bij Nictiz (behalve de twee voorbeelden):
+
+* [Verloskundig dossier PWD 2.2](https://decor.nictiz.nl/decor/services/RetrieveTransaction?id=2.16.840.1.113883.2.4.3.11.60.90.77.4.2462&effectiveDate=2019-03-07T15:19:31&language=nl-NL&ui=nl-NL&version=2019-03-07T18:19:02&format=html&hidecolumns=45ghijklmnop)
+* [Kernset PWD 2.2](https://decor.nictiz.nl/decor/services/RetrieveTransaction?id=2.16.840.1.113883.2.4.3.11.60.90.77.4.2410&effectiveDate=2014-10-20T00:00:00&language=nl-NL&ui=nl-NL&version=2018-11-09T12:31:45&format=html&hidecolumns=45ghijklmnop)
+* Verloskundig dossier PWD 2.3: TODO
+* [Kernset PWD 2.3](https://decor.nictiz.nl/decor/services/RetrieveTransaction?id=2.16.840.1.113883.2.4.3.11.60.90.77.4.2437&effectiveDate=2016-11-22T08:24:02&language=nl-NL&ui=nl-NL&version=2018-11-09T12:31:45&format=html&hidecolumns=45ghijklmnop)
+* [Samenvatting voorgaande zwangerschap PWD 2.2](https://decor.nictiz.nl/decor/services/RetrieveTransaction?id=2.16.840.1.113883.2.4.3.11.60.90.77.4.2465&effectiveDate=2019-03-07T15:23:44&language=nl-NL&ui=nl-NL&version=2019-03-07T18:19:02&format=html&hidecolumns=45ghijklmnop)
+* Samenvatting voorgaande zwangerschap PWD 2.3: TODO
