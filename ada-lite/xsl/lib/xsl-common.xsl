@@ -13,6 +13,12 @@
   
   <xsl:include href="../art-decor/shortName.xsl"/>
   
+  
+  <!-- ================================================================== -->
+  <!-- GLOBAL VARIABLES: -->
+  
+  <xsl:variable name="bc-alg:repo-name" as="xs:string" select="'ADA-Lite-Geboortezorg'"/>
+  
   <!-- ================================================================== -->
   
   <xsl:function name="bc-alg:value-to-enum" as="xs:string">
@@ -48,6 +54,23 @@
     <!-- Returns the (file)name part of a complete path. --> 
     <xsl:param name="dref" as="xs:string"/>
     <xsl:sequence select="replace($dref, '.*[/\\]([^/\\]+)$', '$1')"/>
+  </xsl:function>
+  
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+  
+  <xsl:function name="bc-alg:dref-alg-path" as="xs:string">
+    <!-- Returns the path of a document inside the ADA-Lite-Geboortezorg repo. -->
+    <xsl:param name="dref" as="xs:string"/>
+    
+    <xsl:variable name="repo-path-part" as="xs:string" select="'/' || $bc-alg:repo-name || '/'"/>
+    <xsl:choose>
+      <xsl:when test="contains($dref, $repo-path-part)">
+        <xsl:sequence select="fn:substring-after($dref, $repo-path-part)"/>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:sequence select="bc-alg:dref-name($dref)"/>
+      </xsl:otherwise>  
+    </xsl:choose>
   </xsl:function>
   
 </xsl:stylesheet>

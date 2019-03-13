@@ -50,11 +50,11 @@
       <xsl:variable name="lite-or-full-info" as="xs:string?" select="/*/xs:annotation/xs:appinfo[@source eq 'lite-or-full'][1]"/>
       <xsl:variable name="shortname-info" as="xs:string?" select="/*/xs:annotation/xs:appinfo[@source eq 'shortname'][1]"/>
       <xsl:variable name="generator-info" as="xs:string?" select="/*/xs:annotation/xs:appinfo[@source eq 'generator'][1]"/>
-      <xsl:comment> == Generated Schematron file for validating ADA {$lite-or-full-info} {$shortname-info} transactions  == </xsl:comment>
+      <xsl:comment> == Generated Schematron file for validating ADA {$lite-or-full-info} {$shortname-info} documents == </xsl:comment>
       <xsl:if test="exists($source-info)">
         <xsl:comment> == Source: {$source-info} == </xsl:comment>
       </xsl:if>
-      <xsl:comment> == Generator(s): {string-join(($generator-info, bc-alg:dref-name(fn:static-base-uri())), '; ')} == </xsl:comment>
+      <xsl:comment> == Generator(s): {string-join(($generator-info, bc-alg:dref-alg-path(fn:static-base-uri())), '; ')} == </xsl:comment>
       
       <!-- Define the xsi namespace in the Schematron: -->
       <ns uri="http://www.w3.org/2001/XMLSchema-instance" prefix="xsi"/>

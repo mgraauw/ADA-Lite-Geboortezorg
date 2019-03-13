@@ -4,7 +4,7 @@
   exclude-result-prefixes="#all" expand-text="true">
   <!-- ================================================================== -->
   <!-- 
-       This stylesheet converts an XML document from the ADAD Lite format into full ADA XML.
+       This stylesheet converts an XML document from the ADA Lite format into full ADA XML.
        For this it uses the definitions from a Retrieve Transaction Dataset (shortened to rtd here). 
        
        The input is assumed to be validated already. Therefore, when an error condition occurs, only a comment is output, no 
@@ -62,8 +62,10 @@
       <xsl:attribute name="versionDate" select="(/*/@versionDate, $version-date)[1]"/>
       <xsl:attribute name="prefix" select="($rtd-root/@prefix, 'peri20-')[1]"/>
 
-      <xsl:comment> == ADA full format generated from lite format == </xsl:comment>
-      <xsl:comment> == Source: {bc-alg:dref-name(base-uri(/))} == </xsl:comment>
+      <xsl:comment> == ADA full format document generated from lite format document == </xsl:comment>
+      <xsl:comment> == Source: {bc-alg:dref-alg-path(base-uri(/))} == </xsl:comment>
+      <xsl:comment> == Specification used: {bc-alg:dref-alg-path($dref-rtd)} == </xsl:comment>
+      <xsl:comment> == Generator: {bc-alg:dref-alg-path(static-base-uri())} == </xsl:comment>
 
       <xsl:apply-templates select="*">
         <xsl:with-param name="concept-root" as="element()" select="$rtd-root" tunnel="true"/>

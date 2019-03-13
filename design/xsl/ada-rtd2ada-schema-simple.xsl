@@ -46,15 +46,15 @@
   <xsl:template match="/">
 
     <xsl:variable name="lite-or-full" as="xs:string" select="if ($do-ada-lite-version) then 'Lite' else 'Full'"/>
-    <xsl:variable name="source" as="xs:string" select="bc-alg:dref-name(base-uri(/))"/>
+    <xsl:variable name="source" as="xs:string" select="bc-alg:dref-alg-path(base-uri(/))"/>
     <xsl:variable name="shortname" as="xs:string" select="string(/*/@shortName)"/>
-    <xsl:variable name="generator" as="xs:string" select="bc-alg:dref-name(fn:static-base-uri())"/>
+    <xsl:variable name="generator" as="xs:string" select="bc-alg:dref-alg-path(fn:static-base-uri())"/>
 
     <!-- Setup the schema: -->
     <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
       <xs:annotation>
         <xs:documentation xml:lang="nl-NL">
-          <xsl:text>Schema for ADA transaction </xsl:text>
+          <xsl:text>Schema for ADA documents </xsl:text>
           <xsl:value-of select="$shortname"/>
           <xsl:text> - </xsl:text>
           <xsl:value-of select="$lite-or-full"/>

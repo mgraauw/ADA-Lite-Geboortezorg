@@ -6,7 +6,7 @@
          transactionId="2.16.840.1.113883.2.4.3.11.60.90.77.4.2453"
          transactionEffectiveDate="2018-12-17T15:21:25"
          transactionStatusCode="draft"
-         shortName="prio1_huidig">
+         shortName="prio1_huidig"><!-- == Generated lite version of specification from full version for prio1_huidig == --><!-- == Source: design/specs-full/RetrieveTransaction-prio1-huidig.xml == --><!-- == Generator: design/xsl/spec-full2spec-lite.xsl == -->
    <name language="nl-NL">Prio1 huidig</name>
    <desc language="nl-NL"/>
    <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.1"
@@ -154,7 +154,7 @@
                          displayName="Achternaam soort"
                          effectiveDate="2013-03-25T14:13:00"
                          statusCode="final">
-                  <conceptList>
+                  <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
                      <concept localId="1"
                               code="BR"
                               codeSystem="2.16.840.1.113883.5.43"
@@ -232,7 +232,7 @@
                    effectiveDate="2012-03-17T00:00:00"
                    id="2.16.840.1.113883.2.4.11.155"
                    statusCode="final">
-            <conceptList>
+            <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
                <concept localId="1"
                         code="112144000"
                         codeSystem="2.16.840.1.113883.6.96"
@@ -284,7 +284,7 @@
                    effectiveDate="2012-03-17T00:00:00"
                    id="2.16.840.1.113883.2.4.11.156"
                    statusCode="final">
-            <conceptList>
+            <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
                <concept localId="1"
                         code="165747007"
                         codeSystem="2.16.840.1.113883.6.96"
@@ -331,7 +331,7 @@
                    effectiveDate="2016-12-16T15:02:44"
                    statusCode="draft"
                    strength="required">
-            <conceptList>
+            <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
                <concept localId="1"
                         code="733120009"
                         codeSystem="2.16.840.1.113883.6.96"

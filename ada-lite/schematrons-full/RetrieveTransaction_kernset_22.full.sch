@@ -3,7 +3,7 @@
         xmlns:local="#local"
         xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
         queryBinding="xslt2"
-        xml:lang="nl-NL"><!-- == Generated Schematron file for validating ADA Full kernset_aanleverbericht transactions  == --><!-- == Source: RetrieveTransaction_kernset_22.xml == --><!-- == Generator(s): ada-rtd2ada-schema-simple.xsl; ada-schema-simple2ada-schematron.xsl == -->
+        xml:lang="nl-NL"><!-- == Generated Schematron file for validating ADA Full kernset_aanleverbericht documents == --><!-- == Source: design/specs-full/RetrieveTransaction_kernset_22.xml == --><!-- == Generator(s): design/xsl/ada-rtd2ada-schema-simple.xsl; design/xsl/ada-schema-simple2ada-schematron.xsl == -->
    <ns uri="http://www.w3.org/2001/XMLSchema-instance" prefix="xsi"/>
    <ns uri="#local" prefix="local"/>
    <xsl:function name="local:decimal-convert" as="xs:decimal">
