@@ -78,6 +78,8 @@
   <xsl:variable name="subdir-build-schematron-full" as="xs:string" select="'schematrons-full'"/>
   <xsl:variable name="subdir-build-schematron-lite" as="xs:string" select="'schematrons-lite'"/>
   <xsl:variable name="subdir-build-schema" as="xs:string" select="'schemas'"/>
+  <xsl:variable name="subdir-build-schema-simple-full" as="xs:string" select="'schemas-simple-full'"/>
+  <xsl:variable name="subdir-build-schema-simple-lite" as="xs:string" select="'schemas-simple-lite'"/>
 
   <xsl:variable name="dir-build-main" as="xs:string" select="xtlc:dref-concat(($dir-common-root, $subdir-build-main))"/>
   <xsl:variable name="dir-build-xsl" as="xs:string" select="xtlc:dref-concat(($dir-build-main, $subdir-xsl))"/>
@@ -88,6 +90,8 @@
   <xsl:variable name="dir-build-schematron-full" as="xs:string" select="xtlc:dref-concat(($dir-build-main, $subdir-build-schematron-full))"/>
   <xsl:variable name="dir-build-schematron-lite" as="xs:string" select="xtlc:dref-concat(($dir-build-main, $subdir-build-schematron-lite))"/>
   <xsl:variable name="dir-build-schema" as="xs:string" select="xtlc:dref-concat(($dir-build-main, $subdir-build-schema))"/>
+  <xsl:variable name="dir-build-schema-simple-full" as="xs:string" select="xtlc:dref-concat(($dir-build-main, $subdir-build-schema-simple-full))"/>
+  <xsl:variable name="dir-build-schema-simple-lite" as="xs:string" select="xtlc:dref-concat(($dir-build-main, $subdir-build-schema-simple-lite))"/>
 
   <!-- ================================================================== -->
   <!-- MAIN TEMPLATES: -->
@@ -138,8 +142,10 @@
 
       <!-- Create the Schematrons: -->
       <xsl:for-each select="$filelist-source-specs-full">
-        <spec2schematron in="{.}" out="{xtlc:dref-concat(($dir-build-schematron-lite, xtlc:dref-name-noext(.) || '.lite.sch'))}" ada-lite-version="true"/>
-        <spec2schematron in="{.}" out="{xtlc:dref-concat(($dir-build-schematron-full, xtlc:dref-name-noext(.) || '.full.sch'))}" ada-lite-version="false"/>
+        <spec2schematron in="{.}" out="{xtlc:dref-concat(($dir-build-schematron-lite, xtlc:dref-name-noext(.) || '.lite.sch'))}"
+          ada-lite-version="true"/>
+        <spec2schematron in="{.}" out="{xtlc:dref-concat(($dir-build-schematron-full, xtlc:dref-name-noext(.) || '.full.sch'))}"
+          ada-lite-version="false"/>
       </xsl:for-each>
 
       <!-- Generate the schemas: -->
@@ -152,22 +158,37 @@
           generated-xsd-filename="{string(doc(.)/*/@shortName) || '.xsd'}"/>
       </xsl:for-each>
 
-      <!-- Create validation actions 1: Validate the examples-lite against the appropriate Schema: -->
-       <xsl:for-each select="$filelist-source-examples-lite">
-        <xsl:variable name="specification-file" as="xs:string" select="local:get-specification-file-from-transaction-id(doc(.)/*/@transactionRef)"/>
-        <xsl:variable name="schema-file" as="xs:string"
-          select="xtlc:dref-concat(($dir-build-schema, xtlc:dref-name-noext($specification-file) || '.xsd'))"/>
-        <validate-schema in="{.}" schema="{$schema-file}"/>
+      <!-- Create the simple schemas: -->
+      <xsl:for-each select="$filelist-source-specs-full">
+        <spec2schema-simple in="{.}" out="{xtlc:dref-concat(($dir-build-schema-simple-full, xtlc:dref-name-noext(.) || '.simple.full.xsd'))}"
+          ada-lite-version="false"/>
+        <spec2schema-simple in="{.}" out="{xtlc:dref-concat(($dir-build-schema-simple-lite, xtlc:dref-name-noext(.) || '.simple.lite.xsd'))}"
+          ada-lite-version="true"/>
       </xsl:for-each>
 
-      <!-- Create validation actions 2: Validate the examples-full against the appropriate Schema: -->
-       <xsl:for-each select="$filelist-source-examples-lite">
-        <xsl:variable name="specification-file" as="xs:string"
-          select="local:get-specification-file-from-transaction-id(doc(.)/*/@transactionRef)"/>
+      <!-- Create validation actions 1: Validate the examples-lite against the appropriate schemas (normal and simple one): -->
+      <xsl:for-each select="$filelist-source-examples-lite">
+        <xsl:variable name="specification-file" as="xs:string" select="local:get-specification-file-from-transaction-id(doc(.)/*/@transactionRef)"/>
+        <xsl:variable name="specification-filename-noext" as="xs:string" select="xtlc:dref-name-noext($specification-file)"/>
+        <xsl:variable name="schema-file" as="xs:string"
+          select="xtlc:dref-concat(($dir-build-schema, $specification-filename-noext || '.xsd'))"/>
+        <xsl:variable name="schema-file-simple" as="xs:string"
+          select="xtlc:dref-concat(($dir-build-schema-simple-lite, $specification-filename-noext || '.simple.lite.xsd'))"/>
+        <validate-schema in="{.}" schema="{$schema-file}"/>
+        <validate-schema in="{.}" schema="{$schema-file-simple}"/>
+      </xsl:for-each>
+
+      <!-- Create validation actions 2: Validate the examples-full against the appropriate schema (normal and simple one): -->
+      <xsl:for-each select="$filelist-source-examples-lite">
+        <xsl:variable name="specification-file" as="xs:string" select="local:get-specification-file-from-transaction-id(doc(.)/*/@transactionRef)"/>
+        <xsl:variable name="specification-filename-noext" as="xs:string" select="xtlc:dref-name-noext($specification-file)"/>
         <xsl:variable name="examples-full-file" as="xs:string" select="xtlc:dref-concat(($dir-build-examples-full, xtlc:dref-name(.)))"/>
         <xsl:variable name="schema-file" as="xs:string"
-          select="xtlc:dref-concat(($dir-build-schema, xtlc:dref-name-noext($specification-file) || '.xsd'))"/>
+          select="xtlc:dref-concat(($dir-build-schema, $specification-filename-noext || '.xsd'))"/>
+        <xsl:variable name="schema-file-simple" as="xs:string"
+          select="xtlc:dref-concat(($dir-build-schema-simple-full, $specification-filename-noext || '.simple.full.xsd'))"/>
         <validate-schema in="{$examples-full-file}" schema="{$schema-file}"/>
+        <validate-schema in="{$examples-full-file}" schema="{$schema-file-simple}"/>
       </xsl:for-each>
 
       <!-- Create validation actions 3: Validate the examples-lite against the appropriate Schematron: -->

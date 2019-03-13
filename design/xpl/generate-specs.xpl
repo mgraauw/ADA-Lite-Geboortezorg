@@ -241,6 +241,33 @@
     </p:identity>
     <p:add-attribute attribute-name="status" attribute-value="success" match="/*"/>
   </p:viewport>
+  
+  <!-- Generate the simple schemas: -->
+  <p:viewport match="spec2schema-simple">
+    <p:variable name="in" select="/*/@in"/>
+    <p:variable name="out" select="/*/@out"/>
+    <p:variable name="ada-lite-version" select="/*/@ada-lite-version"/>
+    <p:identity name="original"/>
+    <p:load dtd-validate="false">
+      <p:with-option name="href" select="$in"/>
+    </p:load>
+    <p:xslt>
+      <p:input port="stylesheet">
+        <p:document href="../xsl/ada-rtd2ada-schema-simple.xsl"/>
+      </p:input>
+      <p:with-param name="ada-lite-version" select="$ada-lite-version"/>
+    </p:xslt>
+    <p:store method="xml" omit-xml-declaration="false" indent="true">
+      <p:with-option name="href" select="$out"/>
+    </p:store>
+    <!-- Get the original input back: -->
+    <p:identity>
+      <p:input port="source">
+        <p:pipe port="result" step="original"/>
+      </p:input>
+    </p:identity>
+    <p:add-attribute attribute-name="status" attribute-value="success" match="/*"/>
+  </p:viewport>
 
   <!-- Validate with schema: -->
   <p:viewport match="validate-schema">
