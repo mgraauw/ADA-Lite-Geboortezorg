@@ -233,9 +233,9 @@ Er volgen nog:
 ### Op ART-DECOR
 Deze transacties zijn te vinden bij Nictiz (behalve de twee voorbeelden):
 
-* [Verloskundig dossier PWD 2.2](https://decor.nictiz.nl/decor/services/RetrieveTransaction?id=2.16.840.1.113883.2.4.3.11.60.90.77.4.2462&effectiveDate=2019-03-07T15:19:31&language=nl-NL&ui=nl-NL&version=2019-03-07T18:19:02&format=html&hidecolumns=45ghijklmnop)
 * [Kernset PWD 2.2](https://decor.nictiz.nl/decor/services/RetrieveTransaction?id=2.16.840.1.113883.2.4.3.11.60.90.77.4.2410&effectiveDate=2014-10-20T00:00:00&language=nl-NL&ui=nl-NL&version=2018-11-09T12:31:45&format=html&hidecolumns=45ghijklmnop)
-* Verloskundig dossier PWD 2.3: TODO
+* [Samenvatting voorgaande zwangerschap PWD 2.2](https://decor.nictiz.nl/decor/services/RetrieveTransaction?id=2.16.840.1.113883.2.4.3.11.60.90.77.4.2465&effectiveDate=2019-03-07T15:23:44&language=nl-NL&ui=nl-NL&version=2019-03-13T12:10:24&format=html&hidecolumns=45ghijklmnop)
+* [Verloskundig dossier PWD 2.2](https://decor.nictiz.nl/decor/services/RetrieveTransaction?id=2.16.840.1.113883.2.4.3.11.60.90.77.4.2462&effectiveDate=2019-03-07T15:19:31&language=nl-NL&ui=nl-NL&version=2019-03-13T12:10:24&format=html&hidecolumns=45ghijklmnop)
 * [Kernset PWD 2.3](https://decor.nictiz.nl/decor/services/RetrieveTransaction?id=2.16.840.1.113883.2.4.3.11.60.90.77.4.2437&effectiveDate=2016-11-22T08:24:02&language=nl-NL&ui=nl-NL&version=2018-11-09T12:31:45&format=html&hidecolumns=45ghijklmnop)
-* [Samenvatting voorgaande zwangerschap PWD 2.2](https://decor.nictiz.nl/decor/services/RetrieveTransaction?id=2.16.840.1.113883.2.4.3.11.60.90.77.4.2465&effectiveDate=2019-03-07T15:23:44&language=nl-NL&ui=nl-NL&version=2019-03-07T18:19:02&format=html&hidecolumns=45ghijklmnop)
-* Samenvatting voorgaande zwangerschap PWD 2.3: TODO
+* [Samenvatting voorgaande zwangerschap PWD 2.3](https://decor.nictiz.nl/decor/services/RetrieveTransaction?id=2.16.840.1.113883.2.4.3.11.60.90.77.4.2469&effectiveDate=2019-03-13T11:59:46&language=nl-NL&ui=nl-NL&version=2019-03-13T12:10:24&format=html&hidecolumns=45ghijklmnop)
+* [Verloskundig dossier PWD 2.3](https://decor.nictiz.nl/decor/services/RetrieveTransaction?id=2.16.840.1.113883.2.4.3.11.60.90.77.4.2467&effectiveDate=2019-03-13T11:57:08&language=nl-NL&ui=nl-NL&version=2019-03-13T12:10:24&format=html&hidecolumns=45ghijklmnop)
