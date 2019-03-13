@@ -193,6 +193,46 @@
     </p:identity>
     <p:add-attribute attribute-name="status" attribute-value="success" match="/*"/>
   </p:viewport>
+  
+  <!-- Generate the SVRL xslt stylesheets: -->
+  <p:viewport match="schematron2svrl-xsl">
+    <p:variable name="in" select="/*/@in"/>
+    <p:variable name="out" select="/*/@out"/>
+    <p:identity name="original"/>
+    <p:load dtd-validate="false">
+      <p:with-option name="href" select="$in"/>
+    </p:load>
+    <!-- For documentation, see ../xsl/schematron-convert/readme.txt -->
+    <p:xslt>
+      <p:input port="stylesheet">
+        <p:document href="../xsl/schematron-convert/iso_dsdl_include.xsl"/>
+      </p:input>
+      <p:with-param name="null" select="()"/>
+    </p:xslt>
+    <p:xslt>
+      <p:input port="stylesheet">
+        <p:document href="../xsl/schematron-convert/iso_abstract_expand.xsl"/>
+      </p:input>
+      <p:with-param name="null" select="()"/>
+    </p:xslt>  
+    <p:xslt>
+      <p:input port="stylesheet">
+        <p:document href="../xsl/schematron-convert/iso_svrl_for_xslt2.xsl"/>
+      </p:input>
+      <p:with-param name="null" select="()"/>
+    </p:xslt>
+    <p:store method="xml" omit-xml-declaration="false" indent="true">
+      <p:with-option name="href" select="$out"/>
+    </p:store>
+    <!-- Get the original input back: -->
+    <p:identity>
+      <p:input port="source">
+        <p:pipe port="result" step="original"/>
+      </p:input>
+    </p:identity>
+    <p:add-attribute attribute-name="status" attribute-value="success" match="/*"/>
+  </p:viewport>
+
 
   <!-- Generate schema: -->
   <p:viewport match="spec2schema">

@@ -198,8 +198,10 @@ In de folder `ada-lite` staan specificaties die van belang zijn voor leverancier
 * `examples-lite`: Voorbeelddocumenten in ADA-lite formaat, met ingevulde waarden
 
 * `schematrons-full`: Schematrons voor het valideren van documenten in het ADA-full formaat
-
+  * `svrl-xsl`: Bevat XSLT Stylesheets gegenereerd uit de Schematron bestanden. Deze kunnen worden gebruikt voor het valideren van de ADA documenten als er geen directe manier is om tegen Schematron te valideren.    
+  
 * `schematrons-lite`: Schematrons voor het valideren van documenten in het ADA-lite formaat
+  * `svrl-xsl`: Zie hierboven. 
 
 * `schemas`: XML schemas voor het valideren van documenten in het ADA formaat. Deze zijn gemaakt met de originele ART-DECOR schem generator
 
@@ -231,7 +233,7 @@ De volgende transacties worden gebruikt:
 Er volgen nog:
 
 * Verloskundig dossier PWD 2.3
-* Kernset PWD 2.3
+* ~~Kernset PWD 2.3~~
 * Samenvatting voorgaande zwangerschap PWD 2.2
 * Samenvatting voorgaande zwangerschap PWD 2.3
 ### Op ART-DECOR
