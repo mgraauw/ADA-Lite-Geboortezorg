@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="3.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:map="http://www.w3.org/2005/xpath-functions/map"
-  xmlns:array="http://www.w3.org/2005/xpath-functions/array" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:local="#local.cvh_lb3_vgb"
+  xmlns:array="http://www.w3.org/2005/xpath-functions/array" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:local="#local.cvh_lb3_vgb" xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg"
   exclude-result-prefixes="#all" expand-text="true">
   <!-- ================================================================== -->
   <!-- 
@@ -19,6 +19,8 @@
 
   <xsl:mode on-no-match="fail"/>
 
+  <xsl:include href="lib/xsl-common.xsl"/>
+
   <!-- ================================================================== -->
   <!-- PARAMETERS: -->
 
@@ -29,7 +31,7 @@
   <!-- Determines the value of /*/@versionDate when this attribute was not specified in the ada-lite input document.
        - If false or unspecified, the current date/time is used
        - If true, a *fixed* version date (see $fixed-version-date below) is used. 
-         This is useful because for generating the ada-full examples we don't want a new @versionDate after every generation: It would 
+         This is useful because for generating the ada-full examples we don't want a new @versionDate with every generation: This would 
          mean changes to the GIT repository after every generation, even when nothing was changed.
   -->
 
@@ -61,6 +63,7 @@
       <xsl:attribute name="prefix" select="($rtd-root/@prefix, 'peri20-')[1]"/>
 
       <xsl:comment> == ADA full format generated from lite format == </xsl:comment>
+      <xsl:comment> == Source: {bc-alg:dref-name(base-uri(/))} == </xsl:comment>
 
       <xsl:apply-templates select="*">
         <xsl:with-param name="concept-root" as="element()" select="$rtd-root" tunnel="true"/>
@@ -91,10 +94,11 @@
           <!-- Get the value for this concept:  -->
           <xsl:variable name="concept-type" as="xs:string" select="$concept/@type"/>
           <xsl:choose>
-            <xsl:when test="($concept-type eq 'item') and exists(@value)">
+            <xsl:when test="($concept-type eq 'item') and (exists(@value) or exists(@enum))">
               <xsl:call-template name="handle-concept-value">
                 <xsl:with-param name="concept" select="$concept"/>
                 <xsl:with-param name="value" select="@value"/>
+                <xsl:with-param name="enum" select="@enum"/>
                 <xsl:with-param name="full-elm-path" select="$full-elm-path"/>
               </xsl:call-template>
             </xsl:when>
@@ -104,7 +108,7 @@
             <xsl:otherwise>
               <!-- Since we assume the input is already validated this should not happen. Just output the value and a comment for now: -->
               <xsl:copy select="@value"/>
-              <xsl:comment> == *** Unrecognized concept type/value combination for {$full-elm-path} == </xsl:comment>
+              <xsl:comment> == *** Unrecognized concept-type/value combination for {$full-elm-path} == </xsl:comment>
             </xsl:otherwise>
           </xsl:choose>
 
@@ -123,13 +127,13 @@
 
   </xsl:template>
 
-
   <!-- ================================================================== -->
   <!-- SUPPORT: -->
 
   <xsl:template name="handle-concept-value">
     <xsl:param name="concept" as="element(concept)" required="yes"/>
-    <xsl:param name="value" as="xs:string" required="yes"/>
+    <xsl:param name="value" as="xs:string?" required="yes"/>
+    <xsl:param name="enum" as="xs:string?" required="yes"/>
     <xsl:param name="full-elm-path" as="xs:string" required="yes"/>
 
     <xsl:variable name="value-domain" as="element(valueDomain)" select="$concept/valueDomain"/>
@@ -139,13 +143,27 @@
 
       <!-- Code: Lookup the value in the code list of the concept. The actual value is the @localId. -->
       <xsl:when test="$value-domain-type eq 'code'">
-        <xsl:variable name="code-element" as="element()?" select="($concept/valueSet/conceptList/*[@code eq $value])[1]"/>
+        <xsl:variable name="valueset-concept-or-exception-elements" as="element()*" select="$concept/valueSet/conceptList/(concept | exception)"/>
+        <xsl:variable name="code-element" as="element()?">
+          <xsl:choose>
+            <xsl:when test="exists($value)">
+              <xsl:sequence select="($valueset-concept-or-exception-elements[@code eq $value])[1]"/>
+            </xsl:when>
+            <xsl:when test="exists($enum)">
+              <xsl:sequence select="($valueset-concept-or-exception-elements[bc-alg:value-to-enum(.) eq $enum])[1]"/>
+            </xsl:when>
+            <xsl:otherwise>
+              <!-- Should not happen... -->
+              <xsl:sequence select="error((), 'Internal error in ' || static-base-uri() || ': no value or enum')"/>
+            </xsl:otherwise>  
+          </xsl:choose>
+        </xsl:variable>
         <xsl:attribute name="value" select="$code-element/@localId"/>
-        <xsl:if test="empty($code-element)">
-          <xsl:attribute name="value" select="$value"/>
-          <xsl:comment> == Code {$value} not found for {$full-elm-path} == </xsl:comment>
-        </xsl:if>
         <xsl:copy-of select="($code-element/@code, $code-element/@codeSystem, $code-element/@displayName)"/>
+        
+        <xsl:if test="empty($code-element)">
+          <xsl:comment> == *** No concept/exception found for value="{$value}" enum="{$enum}" == </xsl:comment>
+        </xsl:if>
       </xsl:when>
 
       <!-- Quantity: Just output the value and a unit (if any): -->
@@ -154,7 +172,7 @@
         <xsl:copy select="$value-domain/property/@unit"/>
       </xsl:when>
 
-      <!-- Anything else, just output the value as-si: -->
+      <!-- Anything else, just output the value as-is: -->
       <xsl:otherwise>
         <xsl:attribute name="value" select="$value"/>
       </xsl:otherwise>

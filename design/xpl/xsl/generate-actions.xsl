@@ -98,10 +98,18 @@
       <!-- Remove the full build branch, since we're going to create this from scratch: -->
       <remove-dir path="{$dir-build-main}"/>
 
-      <!-- Copy the xsl files necessary in the build -->
+      <!-- Copy the xsl files (and included libraries!) necessary in the build -->
       <xsl:call-template name="generate-action-copy-file">
         <xsl:with-param name="file-source" select="xtlc:dref-concat(($dir-source-xsl, 'ada-lite2ada-full.xsl'))"/>
         <xsl:with-param name="dir-target" select="$dir-build-xsl"/>
+      </xsl:call-template>
+      <xsl:call-template name="generate-action-copy-file">
+        <xsl:with-param name="file-source" select="xtlc:dref-concat(($dir-source-xsl, 'lib', 'xsl-common.xsl'))"/>
+        <xsl:with-param name="dir-target" select="xtlc:dref-concat(($dir-build-xsl, 'lib'))"/>
+      </xsl:call-template>
+      <xsl:call-template name="generate-action-copy-file">
+        <xsl:with-param name="file-source" select="xtlc:dref-concat(($dir-source-xsl, 'art-decor', 'shortName.xsl'))"/>
+        <xsl:with-param name="dir-target" select="xtlc:dref-concat(($dir-build-xsl, 'art-decor'))"/>
       </xsl:call-template>
 
       <!-- Copy the examples lite: -->
@@ -130,8 +138,8 @@
 
       <!-- Create the Schematrons: -->
       <xsl:for-each select="$filelist-source-specs-full">
-        <spec2schematron in="{.}" out="{xtlc:dref-concat(($dir-build-schematron-lite, xtlc:dref-name-noext(.) || '.sch'))}" ada-lite-version="true"/>
-        <spec2schematron in="{.}" out="{xtlc:dref-concat(($dir-build-schematron-full, xtlc:dref-name-noext(.) || '.sch'))}" ada-lite-version="false"/>
+        <spec2schematron in="{.}" out="{xtlc:dref-concat(($dir-build-schematron-lite, xtlc:dref-name-noext(.) || '.lite.sch'))}" ada-lite-version="true"/>
+        <spec2schematron in="{.}" out="{xtlc:dref-concat(($dir-build-schematron-full, xtlc:dref-name-noext(.) || '.full.sch'))}" ada-lite-version="false"/>
       </xsl:for-each>
 
       <!-- Generate the schemas: -->
@@ -166,7 +174,7 @@
       <xsl:for-each select="$filelist-source-examples-lite">
         <xsl:variable name="specification-file" as="xs:string" select="local:get-specification-file-from-transaction-id(doc(.)/*/@transactionRef)"/>
         <xsl:variable name="schematron-file" as="xs:string"
-          select="xtlc:dref-concat(($dir-build-schematron-lite, xtlc:dref-name-noext($specification-file) || '.sch'))"/>
+          select="xtlc:dref-concat(($dir-build-schematron-lite, xtlc:dref-name-noext($specification-file) || '.lite.sch'))"/>
         <validate-schematron in="{.}" schematron="{$schematron-file}"/>
       </xsl:for-each>
 
@@ -175,7 +183,7 @@
         <xsl:variable name="examples-full-file" as="xs:string" select="xtlc:dref-concat(($dir-build-examples-full, xtlc:dref-name(.)))"/>
         <xsl:variable name="specification-file" as="xs:string" select="local:get-specification-file-from-transaction-id(doc(.)/*/@transactionRef)"/>
         <xsl:variable name="schematron-file" as="xs:string"
-          select="xtlc:dref-concat(($dir-build-schematron-full, xtlc:dref-name-noext($specification-file) || '.sch'))"/>
+          select="xtlc:dref-concat(($dir-build-schematron-full, xtlc:dref-name-noext($specification-file) || '.full.sch'))"/>
         <validate-schematron in="{$examples-full-file}" schematron="{$schematron-file}"/>
       </xsl:for-each>
 

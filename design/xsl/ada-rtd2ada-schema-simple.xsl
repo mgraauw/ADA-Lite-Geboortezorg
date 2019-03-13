@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="3.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:map="http://www.w3.org/2005/xpath-functions/map"
   xmlns:array="http://www.w3.org/2005/xpath-functions/array" xmlns:xs="http://www.w3.org/2001/XMLSchema"
-  xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:local="#local.pj1_vyb_wgb" exclude-result-prefixes="#all" expand-text="true">
+  xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:local="#local.pj1_vyb_wgb" xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg"
+  exclude-result-prefixes="#all" expand-text="true">
   <!-- ================================================================== -->
   <!-- 
         This stylesheet transforms an ADA Receive Transaction Dataset (shortened to rtd) into a
@@ -16,11 +17,13 @@
 
   <xsl:mode on-no-match="fail"/>
 
+  <xsl:include href="lib/xsl-common.xsl"/>
+
   <!-- ================================================================== -->
   <!-- PARAMETERS: -->
 
   <xsl:param name="ada-lite-version" as="xs:string" required="false" select="string(true())">
-    <!-- When true it creates a schema for ADA lit. When false for full ADA. -->
+    <!-- When true or omitted it creates a schema for ADA lite. When false for full ADA. -->
   </xsl:param>
   <xsl:variable name="do-ada-lite-version" as="xs:boolean" select="xs:boolean($ada-lite-version)"/>
 
@@ -42,15 +45,41 @@
 
   <xsl:template match="/">
 
+    <xsl:variable name="lite-or-full" as="xs:string" select="if ($do-ada-lite-version) then 'Lite' else 'Full'"/>
+    <xsl:variable name="source" as="xs:string" select="bc-alg:dref-name(base-uri(/))"/>
+    <xsl:variable name="shortname" as="xs:string" select="string(/*/@shortName)"/>
+    <xsl:variable name="generator" as="xs:string" select="bc-alg:dref-name(fn:static-base-uri())"/>
+
     <!-- Setup the schema: -->
     <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+      <xs:annotation>
+        <xs:documentation xml:lang="nl-NL">
+          <xsl:text>Schema for ADA transaction </xsl:text>
+          <xsl:value-of select="$shortname"/>
+          <xsl:text> - </xsl:text>
+          <xsl:value-of select="$lite-or-full"/>
+          <xsl:text> version</xsl:text>
+        </xs:documentation>
+        <xs:documentation xml:lang="nl-NL" >
+          <xsl:text>Source: </xsl:text>
+          <xsl:value-of select="$source"/>
+        </xs:documentation>
+        <xs:documentation xml:lang="nl-NL" >
+          <xsl:text>Generator: </xsl:text>
+          <xsl:value-of select="$generator"/>
+        </xs:documentation>
+        <xs:appinfo source="shortname">{$shortname}</xs:appinfo>
+        <xs:appinfo source="source">{$source}</xs:appinfo>
+        <xs:appinfo source="lite-or-full">{$lite-or-full}</xs:appinfo>
+        <xs:appinfo source="generator">{$generator}</xs:appinfo>
+      </xs:annotation>
+
       <xsl:apply-templates select="/*"/>
 
       <!-- Standard simple types used: -->
       <xs:simpleType name="{$simple-type-name-for-identifier}">
-        <!-- TBD: Refine the definition of an identifier, so it matches  -->
         <xs:annotation>
-          <xs:documentation>An identifier</xs:documentation>
+          <xs:documentation>An identifier in an ADA transaction</xs:documentation>
         </xs:annotation>
         <xs:restriction base="xs:string">
           <xs:pattern value="([0-9]+\.)+([0-9]+)"/>
@@ -294,6 +323,16 @@
       <xsl:with-param name="attribute-allowed-values" select="data($base-concept-elements/@displayName)"/>
     </xsl:call-template>
 
+    <!-- For the lite version, add the @enum alternative as well: -->
+    <xsl:if test="$do-ada-lite-version">
+      <xsl:call-template name="add-value-restricted-attribute-definition">
+        <xsl:with-param name="attribute-name" select="'enum'"/>
+        <xsl:with-param name="attribute-allowed-values"
+          select="for $base-concept-element in $base-concept-elements return bc-alg:value-to-enum($base-concept-element)"/>
+        <xsl:with-param name="base-elements" select="$base-concept-elements"/>
+      </xsl:call-template>
+    </xsl:if>
+
   </xsl:template>
 
   <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
@@ -325,7 +364,7 @@
         </xsl:when>
         <xsl:otherwise>
           <xsl:attribute name="type" select="'xs:string'"/>
-        </xsl:otherwise>  
+        </xsl:otherwise>
       </xsl:choose>
     </xs:attribute>
   </xsl:template>

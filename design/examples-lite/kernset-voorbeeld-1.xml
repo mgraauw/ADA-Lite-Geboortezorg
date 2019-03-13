@@ -3,7 +3,8 @@
   <zorgverlening>
     <datum_start_zorgverantwoordelijkheid value="2016-01-05T00:00:00"/>
     <datum_einde_zorgverantwoordelijkheid value="2016-08-10T00:00:00"/>
-    <eindverantwoordelijk_in_welke_perinatale_periodeq value="2"/>
+    <!-- Example of using an enum for value="2": -->
+    <eindverantwoordelijk_in_welke_perinatale_periodeq enum="zwangerschap_vervolg"/>
     <conclusie_risicostatus_na_intake value="1"/>
   </zorgverlening>
   <zorgverlenerzorginstelling>

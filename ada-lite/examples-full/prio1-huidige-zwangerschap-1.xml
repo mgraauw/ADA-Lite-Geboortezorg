@@ -2,7 +2,7 @@
 <prio1_huidig transactionRef="2.16.840.1.113883.2.4.3.11.60.90.77.4.2453"
               transactionEffectiveDate="2018-12-17T15:21:25"
               versionDate="2019-01-01T00:00:00"
-              prefix="peri20-"><!-- == ADA full format generated from lite format == -->
+              prefix="peri20-"><!-- == ADA full format generated from lite format == --><!-- == Source: prio1-huidige-zwangerschap-1.xml == -->
    <zorgverlenerzorginstelling conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.1">
       <zorgverlener conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10001">
          <naam_zorgverlener conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10006"

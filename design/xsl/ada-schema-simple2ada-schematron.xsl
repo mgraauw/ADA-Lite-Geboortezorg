@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="3.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:map="http://www.w3.org/2005/xpath-functions/map"
   xmlns:array="http://www.w3.org/2005/xpath-functions/array" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://purl.oclc.org/dsdl/schematron"
-  xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:local="#local.mfj_4hd_wgb" xmlns:xslgen="#xslgen" exclude-result-prefixes="#all"
-  expand-text="true">
+  xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:local="#local.mfj_4hd_wgb" xmlns:xslgen="#xslgen"
+  xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg" exclude-result-prefixes="#all" expand-text="true">
   <!-- ================================================================== -->
   <!-- 
        Transforms the output of ada-rtd2ada-schema-simple.xsl into a Schematron file.
@@ -11,6 +11,8 @@
   <!-- SETUP: -->
 
   <xsl:output method="xml" indent="yes" encoding="UTF-8"/>
+
+  <xsl:include href="lib/xsl-common.xsl"/>
 
   <xsl:mode on-no-match="fail"/>
 
@@ -42,6 +44,18 @@
     <schema xmlns="http://purl.oclc.org/dsdl/schematron" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:local="#local" queryBinding="xslt2"
       xml:lang="nl-NL">
 
+      <!-- Generate some identifying comments. If the source was created using ada-rtd2ada-schema-simple.xsl, we can say more because this leaves 
+        interesting global annotations: -->
+      <xsl:variable name="source-info" as="xs:string?" select="/*/xs:annotation/xs:appinfo[@source eq 'source'][1]"/>
+      <xsl:variable name="lite-or-full-info" as="xs:string?" select="/*/xs:annotation/xs:appinfo[@source eq 'lite-or-full'][1]"/>
+      <xsl:variable name="shortname-info" as="xs:string?" select="/*/xs:annotation/xs:appinfo[@source eq 'shortname'][1]"/>
+      <xsl:variable name="generator-info" as="xs:string?" select="/*/xs:annotation/xs:appinfo[@source eq 'generator'][1]"/>
+      <xsl:comment> == Generated Schematron file for validating ADA {$lite-or-full-info} {$shortname-info} transactions  == </xsl:comment>
+      <xsl:if test="exists($source-info)">
+        <xsl:comment> == Source: {$source-info} == </xsl:comment>
+      </xsl:if>
+      <xsl:comment> == Generator(s): {string-join(($generator-info, bc-alg:dref-name(fn:static-base-uri())), '; ')} == </xsl:comment>
+      
       <!-- Define the xsi namespace in the Schematron: -->
       <ns uri="http://www.w3.org/2001/XMLSchema-instance" prefix="xsi"/>
 
