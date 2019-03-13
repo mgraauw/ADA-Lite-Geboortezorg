@@ -174,7 +174,9 @@
           select="xtlc:dref-concat(($dir-build-schema, $specification-filename-noext || '.xsd'))"/>
         <xsl:variable name="schema-file-simple" as="xs:string"
           select="xtlc:dref-concat(($dir-build-schema-simple-lite, $specification-filename-noext || '.simple.lite.xsd'))"/>
-        <validate-schema in="{.}" schema="{$schema-file}"/>
+        <!-- Remark: Validation of the lite example against the (ART-DECOR generated) schema is disabled because a lite document can 
+          contain enum attributes. These are for the lite documents only and are not in the schemas. -->
+        <!--<validate-schema in="{.}" schema="{$schema-file}"/>-->
         <validate-schema in="{.}" schema="{$schema-file-simple}"/>
       </xsl:for-each>
 
