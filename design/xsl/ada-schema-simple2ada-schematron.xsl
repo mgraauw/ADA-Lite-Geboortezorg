@@ -43,6 +43,7 @@
     <!-- Setup the Schematron: -->
     <schema xmlns="http://purl.oclc.org/dsdl/schematron" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:local="#local" queryBinding="xslt2"
       xml:lang="nl-NL">
+      <xsl:call-template name="bc-alg:add-copyright-comment"/>
 
       <!-- Generate some identifying comments. If the source was created using ada-rtd2ada-schema-simple.xsl, we can say more because this leaves 
         interesting global annotations: -->

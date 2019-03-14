@@ -3,8 +3,19 @@
         xmlns:local="#local"
         xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
         queryBinding="xslt2"
-        xml:lang="nl-NL"><!-- == Generated Schematron file for validating ADA Full kernset_aanleverbericht documents == --><!-- == Source: design/specs-full/RetrieveTransaction_kernset_22.xml == --><!-- == Generator(s): design/xsl/ada-rtd2ada-schema-simple.xsl; design/xsl/ada-schema-simple2ada-schematron.xsl == -->
-   <ns uri="http://www.w3.org/2001/XMLSchema-instance" prefix="xsi"/>
+        xml:lang="nl-NL">
+<!--
+This program is free software; you can redistribute it and/or modify it under the terms 
+of the GNU Affero General Public License as published by the Free Software Foundation; 
+either version 3 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; 
+without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. 
+See the GNU Affero General Public Licensefor more details.
+
+See http://www.gnu.org/licenses/
+-->
+<!-- == Generated Schematron file for validating ADA Full kernset_aanleverbericht documents == --><!-- == Source: design/specs-full/RetrieveTransaction_kernset_22.xml == --><!-- == Generator(s): design/xsl/ada-rtd2ada-schema-simple.xsl; design/xsl/ada-schema-simple2ada-schematron.xsl == -->   <ns uri="http://www.w3.org/2001/XMLSchema-instance" prefix="xsi"/>
    <ns uri="#local" prefix="local"/>
    <xsl:function name="local:decimal-convert" as="xs:decimal">
       <xsl:param name="in" as="xs:string"/>

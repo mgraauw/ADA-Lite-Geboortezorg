@@ -237,6 +237,12 @@
       </p:input>
       <p:with-param name="null" select="()"/>
     </p:xslt>
+    <p:xslt>
+      <p:input port="stylesheet">
+        <p:document href="../xsl/add-copyright-text.xsl"/>
+      </p:input>
+      <p:with-param name="null" select="()"/>
+    </p:xslt>
     <p:store method="xml" omit-xml-declaration="false" indent="true">
       <p:with-option name="href" select="$out"/>
     </p:store>
@@ -280,6 +286,12 @@
     <p:for-each>
       <p:choose>
         <p:when test="ends-with(base-uri(), concat('/', $generated-xsd-filename))">
+          <p:xslt>
+            <p:input port="stylesheet">
+              <p:document href="../xsl/add-copyright-text.xsl"/>
+            </p:input>
+            <p:with-param name="null" select="()"/>
+          </p:xslt>
           <p:store method="xml" omit-xml-declaration="false" indent="true">
             <p:with-option name="href" select="$out"/>
           </p:store>

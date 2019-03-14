@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<!--
+This program is free software; you can redistribute it and/or modify it under the terms 
+of the GNU Affero General Public License as published by the Free Software Foundation; 
+either version 3 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; 
+without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. 
+See the GNU Affero General Public Licensefor more details.
+
+See http://www.gnu.org/licenses/
+-->
    <xs:annotation>
       <xs:documentation>Schema for transaction: 2.16.840.1.113883.2.4.3.11.60.90.77.4.2437</xs:documentation>
    </xs:annotation>

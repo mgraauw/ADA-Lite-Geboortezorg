@@ -8,7 +8,19 @@
                 xmlns:xhtml="http://www.w3.org/1999/xhtml"
                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                 xmlns:local="#local"
-                version="2.0"><!--Implementers: please note that overriding process-prolog or process-root is 
+                version="2.0">
+<!--
+This program is free software; you can redistribute it and/or modify it under the terms 
+of the GNU Affero General Public License as published by the Free Software Foundation; 
+either version 3 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; 
+without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. 
+See the GNU Affero General Public Licensefor more details.
+
+See http://www.gnu.org/licenses/
+-->
+<!--Implementers: please note that overriding process-prolog or process-root is 
     the preferred method for meta-stylesheets to use where possible. -->
    <xsl:param name="archiveDirParameter"/>
    <xsl:param name="archiveNameParameter"/>

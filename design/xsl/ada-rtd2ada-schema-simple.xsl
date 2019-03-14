@@ -52,6 +52,7 @@
 
     <!-- Setup the schema: -->
     <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+      <xsl:call-template name="bc-alg:add-copyright-comment"/>
       <xs:annotation>
         <xs:documentation xml:lang="nl-NL">
           <xsl:text>Schema for ADA documents </xsl:text>
