@@ -34,6 +34,7 @@
   <!-- ================================================================== -->
   <!-- GLOBAL VARIABLES: -->
 
+  <p:variable name="start-datetime" select="current-dateTime()"/>
   <p:variable name="root-dir" select="resolve-uri('../..', static-base-uri())"/>
 
   <!-- ================================================================== -->
@@ -194,7 +195,7 @@
     </p:identity>
     <p:add-attribute attribute-name="status" attribute-value="success" match="/*"/>
   </p:viewport>
-  
+
   <!-- Generate the SVRL xslt stylesheets: -->
   <p:viewport match="schematron2svrl-xsl">
     <p:variable name="in" select="/*/@in"/>
@@ -215,7 +216,7 @@
         <p:document href="../xsl/schematron-convert/iso_abstract_expand.xsl"/>
       </p:input>
       <p:with-param name="null" select="()"/>
-    </p:xslt>  
+    </p:xslt>
     <p:xslt>
       <p:input port="stylesheet">
         <p:document href="../xsl/schematron-convert/iso_svrl_for_xslt2.xsl"/>
@@ -282,7 +283,54 @@
     </p:identity>
     <p:add-attribute attribute-name="status" attribute-value="success" match="/*"/>
   </p:viewport>
-  
+
+  <!-- Do the diffs: -->
+  <p:viewport match="specification-diff">
+    <p:variable name="older" select="/*/@older"/>
+    <p:variable name="newer" select="/*/@newer"/>
+    <p:variable name="html-out" select="/*/@html-out"/>
+    <p:variable name="xml-out" select="/*/@xml-out"/>
+    <p:identity name="original"/>
+    <p:sink/>
+    <p:xslt>
+      <p:input port="source">
+        <p:inline>
+          <null/>
+        </p:inline>
+      </p:input>
+      <p:input port="stylesheet">
+        <p:document href="../xsl/diff/compare-datasets.xsl"/>
+      </p:input>
+      <p:with-param name="dref-rtd-older-version" select="$older"/>
+      <p:with-param name="dref-rtd-newer-version" select="$newer"/>
+      <p:with-param name="add-timestamp" select="false()"/>
+    </p:xslt>
+    <p:identity name="diff-xml-result"/>
+    <p:store method="xml" indent="true" omit-xml-declaration="false">
+      <p:with-option name="href" select="$xml-out"/>
+    </p:store>
+    <p:xslt>
+      <p:input port="source">
+        <p:pipe port="result" step="diff-xml-result"/>
+      </p:input>
+      <p:input port="stylesheet">
+        <p:document href="../xsl/diff/render-compare-datasets.xsl"/>
+      </p:input>
+      <p:with-param name="add-timestamp" select="false()"/>
+    </p:xslt>
+    <p:store method="xhtml" >
+      <p:with-option name="href" select="$html-out"/>
+    </p:store>
+    <!-- Get the original input back: -->
+    <p:identity>
+      <p:input port="source">
+        <p:pipe port="result" step="original"/>
+      </p:input>
+    </p:identity>
+    <p:add-attribute attribute-name="status" attribute-value="success" match="/*"/>
+  </p:viewport>
+
+
   <!-- Generate the simple schemas: -->
   <p:viewport match="spec2schema-simple">
     <p:variable name="in" select="/*/@in"/>
@@ -408,9 +456,15 @@
     </p:insert>
   </p:viewport>
 
-  <!-- Add an attribute that tells you there were validation errors: -->
+  <!-- Add some additional info to the root element: -->
   <p:add-attribute attribute-name="validation-errors" match="/*">
     <p:with-option name="attribute-value" select="exists(//validation-result/*)"/>
   </p:add-attribute>
-
+  <p:add-attribute attribute-name="timestamp" match="/*">
+    <p:with-option name="attribute-value" select="$start-datetime"/>
+  </p:add-attribute>
+  <p:add-attribute attribute-name="duration" match="/*">
+    <p:with-option name="attribute-value" select="current-dateTime() - xs:dateTime($start-datetime)"/>
+  </p:add-attribute>
+  
 </p:declare-step>

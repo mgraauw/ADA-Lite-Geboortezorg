@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="3.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:map="http://www.w3.org/2005/xpath-functions/map"
   xmlns:array="http://www.w3.org/2005/xpath-functions/array" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:c="http://www.w3.org/ns/xproc-step"
-  xmlns:xtlc="http://www.xtpxlib.nl/ns/common" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:local="#local.xqg_kfw_xgb"
-  exclude-result-prefixes="#all" expand-text="true">
+  xmlns:xtlc="http://www.xtpxlib.nl/ns/common" xmlns:local="#local.xqg_kfw_xgb" exclude-result-prefixes="#all" expand-text="true">
   <!-- ================================================================== -->
   <!-- 
        Input to this stylesheet is a full directory listing of the files in the ADA-Lite-Gebeoortezorg repo (as generated
@@ -19,6 +18,7 @@
 
   <xsl:mode on-no-match="fail"/>
 
+  <xsl:include href="../../../../../xtpxlib/common/xslmod/common.mod.xsl"/>
   <xsl:include href="../../../../../xtpxlib/common/xslmod/dref.mod.xsl"/>
 
   <!-- ================================================================== -->
@@ -81,6 +81,7 @@
   <xsl:variable name="subdir-build-schema-simple-full" as="xs:string" select="'schemas-simple-full'"/>
   <xsl:variable name="subdir-build-schema-simple-lite" as="xs:string" select="'schemas-simple-lite'"/>
   <xsl:variable name="subdir-build-svrl-xsl" as="xs:string" select="'svrl-xsl'"/>
+  <xsl:variable name="subdir-build-diffs" as="xs:string" select="'diffs'"/>
 
   <xsl:variable name="dir-build-main" as="xs:string" select="xtlc:dref-concat(($dir-common-root, $subdir-build-main))"/>
   <xsl:variable name="dir-build-xsl" as="xs:string" select="xtlc:dref-concat(($dir-build-main, $subdir-xsl))"/>
@@ -93,12 +94,13 @@
   <xsl:variable name="dir-build-schema" as="xs:string" select="xtlc:dref-concat(($dir-build-main, $subdir-build-schema))"/>
   <xsl:variable name="dir-build-schema-simple-full" as="xs:string" select="xtlc:dref-concat(($dir-build-main, $subdir-build-schema-simple-full))"/>
   <xsl:variable name="dir-build-schema-simple-lite" as="xs:string" select="xtlc:dref-concat(($dir-build-main, $subdir-build-schema-simple-lite))"/>
+  <xsl:variable name="dir-build-diffs" as="xs:string" select="xtlc:dref-concat(($dir-build-main, $subdir-build-diffs))"/>
 
   <!-- ================================================================== -->
   <!-- MAIN TEMPLATES: -->
 
   <xsl:template match="/">
-    <actions timestamp="{fn:current-dateTime()}" root="{/*/@xml:base}">
+    <actions timestamp="{current-dateTime()}" root="{/*/@xml:base}">
 
       <!-- Remove the full build branch, since we're going to create this from scratch: -->
       <remove-dir path="{$dir-build-main}"/>
@@ -174,6 +176,17 @@
           ada-lite-version="false"/>
         <spec2schema-simple in="{.}" out="{xtlc:dref-concat(($dir-build-schema-simple-lite, xtlc:dref-name-noext(.) || '.simple.lite.xsd'))}"
           ada-lite-version="true"/>
+      </xsl:for-each>
+
+      <!-- Create the diff specifications: -->
+      <xsl:variable name="dref-difflist" as="xs:string" select="xtlc:dref-canonical(resolve-uri('../data/difflist.xml', static-base-uri()))"/>
+      <xsl:if test="not(doc-available($dref-difflist))">
+        <xsl:sequence select="error((), 'Could not find the difflist xml ' || xtlc:q($dref-difflist))"/>
+      </xsl:if>
+      <xsl:for-each select="doc($dref-difflist)/*/diff[@newer][@older][@output]">
+        <specification-diff older="{xtlc:dref-concat(($dir-source-specs-full, @older))}" newer="{xtlc:dref-concat(($dir-source-specs-full, @newer))}"
+          html-out="{xtlc:dref-concat(($dir-build-diffs, @output || '.html'))}"
+          xml-out="{xtlc:dref-concat(($dir-build-diffs, @output || '.xml'))}"/>
       </xsl:for-each>
 
       <!-- Create validation actions 1: Validate the examples-lite against the appropriate schemas (normal and simple one): -->
