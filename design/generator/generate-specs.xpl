@@ -11,6 +11,7 @@
         Used in the generations mentoned above.
         From this it generates the schemas and Schematron files.
       
+      It can only be run using the Calabash (https://xmlcalabash.com/) processing engine, since it uses some of Calabash's extensions.
       
       The pipeline depends on an XProc module in xtpxlib (https://github.com/eriksiegel/xtpxlib). Directory dependencies:
       ---+--- Babyconnect --- ADA-Lite-Geboortezorg --- *
