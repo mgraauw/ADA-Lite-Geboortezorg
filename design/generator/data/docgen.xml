@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<docgen>
+  <!-- ================================================================== -->
+  <!--
+    Contains instructions for the (markdown) documentation that needs to get copied/generated into the ada-lite branch of the repo.
+    The source files for the documentation are in design/documentation.
+    The names of the destination files is always README.md so it will be recognized and displayed by GitHub. This also means there can only be one
+    documentation file in a sub-directory.
+    
+    - Simple file copying:
+      <doccopy source="filename-of-source-without-path" destination="sub-directory-of-ada-lite-branch"/>
+      
+  -->
+  <!-- ================================================================== -->
+  
+  <doccopy source="README-ada-lite.md" destination=""/>
+  
+  
+</docgen>

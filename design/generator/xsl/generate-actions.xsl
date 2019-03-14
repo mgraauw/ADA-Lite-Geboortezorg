@@ -32,16 +32,20 @@
   <xsl:variable name="subdir-examples-lite" as="xs:string" select="'examples-lite'"/>
   <xsl:variable name="subdir-xsl" as="xs:string" select="'xsl'"/>
 
+  <xsl:variable name="filename-readme" as="xs:string" select="'README.md'"/>
+  
   <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
   <!-- Source related information: -->
 
   <xsl:variable name="subdir-source-main" as="xs:string" select="'design'"/>
   <xsl:variable name="subdir-source-specs-full" as="xs:string" select="'specs-full'"/>
+  <xsl:variable name="subdir-source-documentation" as="xs:string" select="'documentation'"/>
 
   <xsl:variable name="dir-source-main" as="xs:string" select="xtlc:dref-concat(($dir-common-root, $subdir-source-main))"/>
   <xsl:variable name="dir-source-examples-lite" as="xs:string" select="xtlc:dref-concat(($dir-source-main, $subdir-examples-lite))"/>
   <xsl:variable name="dir-source-specs-full" as="xs:string" select="xtlc:dref-concat(($dir-source-main, $subdir-source-specs-full))"/>
   <xsl:variable name="dir-source-xsl" as="xs:string" select="xtlc:dref-concat(($dir-source-main, $subdir-xsl))"/>
+  <xsl:variable name="dir-source-documentation" as="xs:string" select="xtlc:dref-concat(($dir-source-main, $subdir-source-documentation))"/>
 
   <!-- All examples lite files: -->
   <xsl:variable name="filelist-source-examples-lite" as="xs:string*">
@@ -72,7 +76,7 @@
   <!-- Build related information: -->
 
   <xsl:variable name="subdir-build-main" as="xs:string" select="'ada-lite'"/>
-  <xsl:variable name="subdir-build-specs-lite" as="xs:string" select="'specs-lite'"/>
+  <xsl:variable name="subdir-build-specs-simplified" as="xs:string" select="'specs-simplified'"/>
   <xsl:variable name="subdir-build-examples-empty" as="xs:string" select="'examples-empty'"/>
   <xsl:variable name="subdir-build-examples-full" as="xs:string" select="'examples-full'"/>
   <xsl:variable name="subdir-build-schematron-full" as="xs:string" select="'schematrons-full'"/>
@@ -86,7 +90,7 @@
   <xsl:variable name="dir-build-main" as="xs:string" select="xtlc:dref-concat(($dir-common-root, $subdir-build-main))"/>
   <xsl:variable name="dir-build-xsl" as="xs:string" select="xtlc:dref-concat(($dir-build-main, $subdir-xsl))"/>
   <xsl:variable name="dir-build-examples-lite" as="xs:string" select="xtlc:dref-concat(($dir-build-main, $subdir-examples-lite))"/>
-  <xsl:variable name="dir-build-specs-lite" as="xs:string" select="xtlc:dref-concat(($dir-build-main, $subdir-build-specs-lite))"/>
+  <xsl:variable name="dir-build-specs-lite" as="xs:string" select="xtlc:dref-concat(($dir-build-main, $subdir-build-specs-simplified))"/>
   <xsl:variable name="dir-build-examples-empty" as="xs:string" select="xtlc:dref-concat(($dir-build-main, $subdir-build-examples-empty))"/>
   <xsl:variable name="dir-build-examples-full" as="xs:string" select="xtlc:dref-concat(($dir-build-main, $subdir-build-examples-full))"/>
   <xsl:variable name="dir-build-schematron-full" as="xs:string" select="xtlc:dref-concat(($dir-build-main, $subdir-build-schematron-full))"/>
@@ -169,7 +173,7 @@
         <spec2schema in="{.}" out="{xtlc:dref-concat(($dir-build-schema, xtlc:dref-name-noext(.) || '.xsd'))}"
           generated-xsd-filename="{string(doc(.)/*/@shortName) || '.xsd'}"/>
       </xsl:for-each>
-
+      
       <!-- Create the simple schemas: -->
       <xsl:for-each select="$filelist-source-specs-full">
         <spec2schema-simple in="{.}" out="{xtlc:dref-concat(($dir-build-schema-simple-full, xtlc:dref-name-noext(.) || '.simple.full.xsd'))}"
@@ -183,10 +187,25 @@
       <xsl:if test="not(doc-available($dref-difflist))">
         <xsl:sequence select="error((), 'Could not find the difflist xml ' || xtlc:q($dref-difflist))"/>
       </xsl:if>
-      <xsl:for-each select="doc($dref-difflist)/*/diff[@newer][@older][@output]">
+      <xsl:variable name="difflist-root" as="element(difflist)" select="doc($dref-difflist)/*"/>
+      <xsl:for-each select="$difflist-root/diff[@newer][@older][@output]">
         <specification-diff older="{xtlc:dref-concat(($dir-source-specs-full, @older))}" newer="{xtlc:dref-concat(($dir-source-specs-full, @newer))}"
           html-out="{xtlc:dref-concat(($dir-build-diffs, @output || '.html'))}"
           xml-out="{xtlc:dref-concat(($dir-build-diffs, @output || '.xml'))}"/>
+      </xsl:for-each>
+      
+      <!-- Documentation copy/generate: -->
+      <xsl:variable name="dref-docgen" as="xs:string" select="xtlc:dref-canonical(resolve-uri('../data/docgen.xml', static-base-uri()))"/>
+      <xsl:if test="not(doc-available($dref-docgen))">
+        <xsl:sequence select="error((), 'Could not find the docgen xml ' || xtlc:q($dref-docgen))"/>
+      </xsl:if>
+      <xsl:variable name="docgen-root" as="element(docgen)" select="doc($dref-docgen)/*"/>
+      <xsl:for-each select="$docgen-root/doccopy[@source][@destination]">
+        <xsl:call-template name="generate-action-copy-file">
+          <xsl:with-param name="file-source" select="xtlc:dref-concat(($dir-source-documentation, @source))"/>
+          <xsl:with-param name="dir-target" select="xtlc:dref-concat(($dir-build-main, @destination))"/>
+          <xsl:with-param name="name-target" select="$filename-readme"/>
+        </xsl:call-template>
       </xsl:for-each>
 
       <!-- Create validation actions 1: Validate the examples-lite against the appropriate schemas (normal and simple one): -->

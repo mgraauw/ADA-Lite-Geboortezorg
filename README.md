@@ -7,6 +7,7 @@ die in de verloskunde gehanteerd worden. Binnen de geboortezorg is daarom behoef
 eenvoudiger formaat, wat dicht aansluit op de praktijk. Mogelijk kan op termijn FHIR in die behoefte voorzien.
 Daarvoor zijn op dit moment (begin 2019) de FHIR specificaties voor Geboortezorg nog onvoldoende
 ontwikkeld. ADA is gebaseerd op het PWD en volgt de structuur van de dataset daarin.
+
 ## Aanlevering is XML
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -188,33 +189,9 @@ Volledig ADA, met conceptId, code en codeSystem en unit is ook toegestaan als aa
 </acute_overdracht>
 ```
 
-## Documentatie
-In de folder `ada-lite` staan specificaties die van belang zijn voor leveranciers:
+## Documentatie/Inhoud
 
-* `examples-empty`: Voorbeelddocumenten in ADA-lite formaat, zonder ingevulde waarden
-
-* `examples-full`: Voorbeelddocumenten in ADA-full formaat, met ingevulde waarden
-
-* `examples-lite`: Voorbeelddocumenten in ADA-lite formaat, met ingevulde waarden
-
-* `schematrons-full`: Schematrons voor het valideren van documenten in het ADA-full formaat
-  * `svrl-xsl`: Bevat XSLT Stylesheets gegenereerd uit de Schematron bestanden. Deze kunnen worden gebruikt voor het valideren van de ADA documenten als er geen directe manier is om tegen Schematron te valideren.    
-  
-* `schematrons-lite`: Schematrons voor het valideren van documenten in het ADA-lite formaat
-  * `svrl-xsl`: Zie hierboven. 
-
-* `schemas`: XML schemas voor het valideren van documenten in het ADA formaat. Deze zijn gemaakt met de originele ART-DECOR schem generator
-
-* `schemas-simple-full`: Een simpeler variant van XML schemas voor het valideren van ADA *full* documenten. 
-
-* `schemas-simple-lite`: Een simpeler variant van XML schemas voor het valideren van ADA *lite* documenten.
-
-* `specs-lite`: XML bestanden met alle meta-informatie over de documenttypen, afgeleid van de complexere volledige specificaties. Bevat alleen de noodzakelijke informatie.
-
-* `xsl`:
-    * `simple-ada2full-ada.xsl`: Stylesheet voor het omzetten van ADA-lite naar ADA-full formaat. Deze stylesheet heeft een parameter `dref-rtd` die het pad moet bevatten naar het juiste bijbehorende Receive Transaction Dataset bestand (te vinden in de `specs-lite` directory). Specifieer dit pad met een `file:/` prefix.
-
-De Schematrons valideren in principe dezelfde zaken als de schemas, maar proberen gebruikersvriendelijker foutmeldingen te geven (in het Nederlands).
+In de `ada-lite` sub-directory staan specificaties die van belang zijn voor leveranciers. De documentatie hiervoor is te vinden in de README van deze sub-directory. 
 
 In de folder `design` staan materialen die gebruikt worden om de specificaties te maken; deze zijn niet van belang voor leveranciers.
 
