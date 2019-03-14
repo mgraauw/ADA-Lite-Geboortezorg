@@ -52,6 +52,20 @@
     </p:input>
     <p:with-param name="null" select="()"/>
   </p:xslt>
+  
+  <!-- Check specifications: -->
+  <p:viewport match="check-specification">
+    <p:variable name="in" select="/*/@in"/>
+    <p:load dtd-validate="false">
+      <p:with-option name="href" select="$in"/>
+    </p:load>
+    <p:xslt>
+      <p:input port="stylesheet">
+        <p:document href="../xsl/check-specification.xsl"/>
+      </p:input>
+      <p:with-param name="null" select="$in"/>
+    </p:xslt>
+  </p:viewport>
 
   <!-- Remove the directories we need to remove: -->
   <p:viewport match="remove-dir">
@@ -459,6 +473,12 @@
   <!-- Add some additional info to the root element: -->
   <p:add-attribute attribute-name="validation-errors" match="/*">
     <p:with-option name="attribute-value" select="exists(//validation-result/*)"/>
+  </p:add-attribute>
+  <p:add-attribute attribute-name="enum-errors" match="/*">
+    <p:with-option name="attribute-value" select="count(//enum-error)"/>
+  </p:add-attribute>
+  <p:add-attribute attribute-name="code-errors" match="/*">
+    <p:with-option name="attribute-value" select="count(//code-error)"/>
   </p:add-attribute>
   <p:add-attribute attribute-name="timestamp" match="/*">
     <p:with-option name="attribute-value" select="$start-datetime"/>

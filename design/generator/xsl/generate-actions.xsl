@@ -105,6 +105,11 @@
 
   <xsl:template match="/">
     <actions timestamp="{current-dateTime()}" root="{/*/@xml:base}">
+      
+      <!-- Perform checks on the specifications: -->
+      <xsl:for-each select="$filelist-source-specs-full">
+        <check-specification  in="{.}"/>
+      </xsl:for-each>
 
       <!-- Remove the full build branch, since we're going to create this from scratch: -->
       <remove-dir path="{$dir-build-main}"/>
