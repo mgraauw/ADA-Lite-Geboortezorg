@@ -9,10 +9,14 @@ Daarvoor zijn op dit moment (begin 2019) de FHIR specificaties voor Geboortezorg
 ontwikkeld. ADA is gebaseerd op het PWD en volgt de structuur van de dataset daarin.
 
 ## Aanlevering is XML
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-Aanbevolen is de XML declaratie op te nemen. Uitwisseling gebeurt in UTF-8.
 ```
+
+Aanbevolen is de XML declaratie op te nemen. Uitwisseling gebeurt altijd in UTF-8.
+
+
 ## Hoofdniveau is een transactie
 ```xml
 <acute_overdracht transactionRef="2.16.840.1.113883.2.4.3.11.60.90.77.4.2301"
@@ -20,9 +24,7 @@ Aanbevolen is de XML declaratie op te nemen. Uitwisseling gebeurt in UTF-8.
    .... details ....
 </acute_overdracht>
 ```
-Het root element is altijd de naam van een transactie. Hier wordt - net als voor alle elementnamen -
-de ADA shortName genomen. Dit is de Nederlandse naam van het concept, maar dan geschikt gemaakt voor
-gebruik als XML tagnaam. Concreet betekent dit:
+Het root element is altijd de naam van een transactie. Hier wordt - net als voor alle elementnamen, de ADA shortName genomen. Dit is de Nederlandse naam van het concept, maar dan geschikt gemaakt voor gebruik als XML tagnaam. Concreet betekent dit:
 
 * alleen lowercase
 * whitespace wordt vervangen door een enkele underscore
@@ -81,36 +83,39 @@ Dito voor strings.
 Codes (hier: een Snomed code) worden opgenomen zoals ze in de valueSet voorkomen.
 
 Er is één uitzondering: mocht een code tweemaal voorkomen in één valueSet (dat kan, als
-de code uit een ander codesysteem komt), dan wordt de code/codesysteem combinatie vervangen
-door een uniek nummer (binnen die valueSet). Deze situatie komt in PWD 2.2 niet voor.
+de code uit een ander codesysteem komt), dan wordt de code/codesysteem combinatie vervangen door een uniek nummer (binnen die valueSet). Deze situatie komt in PWD 2.2 niet voor.
 
 ```xml
 <hoeveelheid_bloedverlies value="600"/>
-Hoeveelheden worden opgenomen als numerieke waarden. De bijbehorende eenheid is terug te vinden in
-de PWD specificaties.
 ```
+
+Hoeveelheden worden opgenomen als numerieke waarden. De bijbehorende eenheid is terug te vinden in de PWD specificaties.
+
 ```xml
 <apgarscore_na_5_min value="8"/>
 ```
+
 Scores en dergelijke worden ook opgenomen.
+
 ```xml
 <duur_actieve_ontsluitingsfase_ontsluitingsduur value="4.17"/>
 ```
+
 Dito numerieke waarden. Er worden decimale punten gebruikt, geen komma's.
+
 ```xml
 <geboortedatum value="1990-01-01"/>
 <datum_onderzoek value="2019-01-20T13:15:00"/>
 ```
-Datums en tijden worden doorgegeven in ISO formaat. Waar tijden worden doorgegeven, wordt de separator 'T' gebruikt.
-Er wordt geen timezone doorgegeven.
+
+Datums en tijden worden doorgegeven in ISO formaat. Waar tijden worden doorgegeven, wordt de separator 'T' gebruikt. Er wordt geen timezone doorgegeven.
 
 ### Enums
 
 ```xml
 <rhesus_d_factor_vrouw enum="Rh_D_Positief"/>
 ```
-Codes mogen ook opgenomen worden als enum attribuut. Bij iedere code wordt in het schema een unieke, leesbare
-enum naam gegenereerd. Dit is een alternatief voor het minder leesbare:
+Codes mogen ook opgenomen worden als enum attribuut. Bij iedere code wordt in het schema een unieke, leesbare enum naam gegenereerd. Dit is een alternatief voor het minder leesbare:
 ```xml
 <rhesus_d_factor_vrouw value="165747007"/>
 ```
@@ -124,13 +129,11 @@ enum naam gegenereerd. Dit is een alternatief voor het minder leesbare:
     </adaextension>
 </vrouw>
 ```
-Leveranciers kunnen gegevens die niet in PWD voorkomen doorgeven in een `adaextension` groep. Deze groep kan (optioneel) voorkomen
-als laatste element binnen ieder groepselement.
+Leveranciers kunnen gegevens die niet in PWD voorkomen doorgeven in een `adaextension` groep. Deze groep kan (optioneel) voorkomen als laatste element binnen ieder groepselement.
 
 ## Vorige zwangerschappen zijn losse aanleveringen
 In PWD zit de "obstetrische anamnese per voorgaande zwangerschap". Deze wordt aangeleverd
-als losse zwangerschap, met daarin de subset van gegevens die relevant zijn voor de vorige zwangerschap (dat
-is niet het complete dossier).
+als losse zwangerschap, met daarin de subset van gegevens die relevant zijn voor de vorige zwangerschap (dat is niet het complete dossier).
 
 Dit is nodig bij aanlevering aan een repository, anders onstaat de volgende situatie:
 
@@ -138,8 +141,7 @@ Dit is nodig bij aanlevering aan een repository, anders onstaat de volgende situ
 * kind 2 geboren, er wordt een zwangerschapsdossier aangeleverd, met daarin gegevens van kind 1 weer in "obstetrische anamnese per voorgaande zwangerschap"
 * kind 3 geboren, er wordt een zwangerschapsdossier aangeleverd, met daarin gegevens van kind 1 en 2 weer in "obstetrische anamnese per voorgaande zwangerschap"
 
-Kortom, met 3 kinderen worden 6 zwangerschappen geregistreerd. Dat is niet wenselijk. Voor aanleveringen
-als de kernset aan Perined kunnen de vorige en huidige zwangerschappen eventueel weer tot één aanleverberichte geaggregreerd worden.
+Kortom, met 3 kinderen worden 6 zwangerschappen geregistreerd. Dat is niet wenselijk. Voor aanleveringen als de kernset aan Perined kunnen de vorige en huidige zwangerschappen eventueel weer tot één aanleverberichte geaggregreerd worden.
 
 ## Full ADA
 
@@ -222,6 +224,7 @@ De volgende transacties worden gebruikt:
 * `RetrieveTransaction_kernset_22.xml`: De kernset, gebaseerd op PWD 2.2, voor aanlevering aan Perined.
 
 ### TODO
+
 Er volgen nog:
 
 * Verloskundig dossier PWD 2.3
