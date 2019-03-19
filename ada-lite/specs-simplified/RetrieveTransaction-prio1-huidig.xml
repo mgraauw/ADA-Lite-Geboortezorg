@@ -6,19 +6,8 @@
          transactionId="2.16.840.1.113883.2.4.3.11.60.90.77.4.2453"
          transactionEffectiveDate="2018-12-17T15:21:25"
          transactionStatusCode="draft"
-         shortName="prio1_huidig">
-<!--
-This program is free software; you can redistribute it and/or modify it under the terms 
-of the GNU Affero General Public License as published by the Free Software Foundation; 
-either version 3 of the License, or (at your option) any later version.
-
-This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; 
-without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. 
-See the GNU Affero General Public Licensefor more details.
-
-See http://www.gnu.org/licenses/
--->
-<!-- == Generated lite version of specification from full version for prio1_huidig == --><!-- == Source: design/specs-full/RetrieveTransaction-prio1-huidig.xml == --><!-- == Generator: design/xsl/spec-full2spec-lite.xsl == -->   <name language="nl-NL">Prio1 huidig</name>
+         shortName="prio1_huidig"><!-- == Generated lite version of specification from full version for prio1_huidig == --><!-- == Source: design/specs-full/RetrieveTransaction-prio1-huidig.xml == --><!-- == Generator: design/xsl/spec-full2spec-lite.xsl == -->
+   <name language="nl-NL">Prio1 huidig</name>
    <desc language="nl-NL"/>
    <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.1"
             statusCode="final"

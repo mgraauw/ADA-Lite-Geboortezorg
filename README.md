@@ -15,7 +15,8 @@ Aanbevolen is de XML declaratie op te nemen. Uitwisseling gebeurt in UTF-8.
 ```
 ## Hoofdniveau is een transactie
 ```xml
-<acute_overdracht transactionRef="2.16.840.1.113883.2.4.3.11.60.90.77.4.2301" versionDate="2018-11-09T12:31:45">
+<acute_overdracht transactionRef="2.16.840.1.113883.2.4.3.11.60.90.77.4.2301"
+                   versionDate="2018-11-09T12:31:45">
    .... details ....
 </acute_overdracht>
 ```
@@ -34,7 +35,7 @@ Op het root element zitten twee attributen die de versie van de transactie bepal
 * versionDate met de timestamp van de release
 
 Met deze twee gegevens en de volgende URI:
-``` mustache
+```mustache
 https://decor.nictiz.nl/decor/services/RetrieveTransaction?id={{transactionRef}}&version={{versionDate}}&format=xml
 ```
 Zijn de volledige specs in XML te vinden. Met `format=html` dito in HTML.
@@ -102,7 +103,9 @@ Dito numerieke waarden. Er worden decimale punten gebruikt, geen komma's.
 ```
 Datums en tijden worden doorgegeven in ISO formaat. Waar tijden worden doorgegeven, wordt de separator 'T' gebruikt.
 Er wordt geen timezone doorgegeven.
+
 ### Enums
+
 ```xml
 <rhesus_d_factor_vrouw enum="Rh_D_Positief"/>
 ```
@@ -112,6 +115,7 @@ enum naam gegenereerd. Dit is een alternatief voor het minder leesbare:
 <rhesus_d_factor_vrouw value="165747007"/>
 ```
 ## Extensies
+
 ```xml
 <vrouw>
     <burgerservicenummer value="999995856"/>
@@ -122,6 +126,7 @@ enum naam gegenereerd. Dit is een alternatief voor het minder leesbare:
 ```
 Leveranciers kunnen gegevens die niet in PWD voorkomen doorgeven in een `adaextension` groep. Deze groep kan (optioneel) voorkomen
 als laatste element binnen ieder groepselement.
+
 ## Vorige zwangerschappen zijn losse aanleveringen
 In PWD zit de "obstetrische anamnese per voorgaande zwangerschap". Deze wordt aangeleverd
 als losse zwangerschap, met daarin de subset van gegevens die relevant zijn voor de vorige zwangerschap (dat
@@ -135,17 +140,26 @@ Dit is nodig bij aanlevering aan een repository, anders onstaat de volgende situ
 
 Kortom, met 3 kinderen worden 6 zwangerschappen geregistreerd. Dat is niet wenselijk. Voor aanleveringen
 als de kernset aan Perined kunnen de vorige en huidige zwangerschappen eventueel weer tot één aanleverberichte geaggregreerd worden.
+
 ## Full ADA
 
 Volledig ADA, met conceptId, code en codeSystem en unit is ook toegestaan als aanlevering:
 ```xml
 <actuele_bloeddruk conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.4.10807">
-    <actuele_bloeddruk_systolisch value="160" unit="mm Hg" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.4.10808"/>
-    <actuele_bloeddruk_diastolisch value="110" unit="mm Hg" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.4.10809"/>
+    <actuele_bloeddruk_systolisch value="160" unit="mm Hg"
+         conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.4.10808"/>
+    <actuele_bloeddruk_diastolisch value="110" unit="mm Hg"
+         conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.4.10809"/>
 </actuele_bloeddruk>
-<bloedgroep_vrouw value="4" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.4.10810" code="58460004" codeSystem="2.16.840.1.113883.6.96" displayName="Blood group O (finding)"/>
+<bloedgroep_vrouw value="4" 
+   conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.4.10810" 
+   code="58460004" 
+   codeSystem="2.16.840.1.113883.6.96" 
+   displayName="Blood group O (finding)"/>
 ```
+
 ## Een compleet voorbeeld
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <acute_overdracht transactionRef="2.16.840.1.113883.2.4.3.11.60.90.77.4.2301" versionDate="2018-11-09T12:31:45">
@@ -206,14 +220,16 @@ De volgende transacties worden gebruikt:
 * `RetrieveTransaction-prio1-vorig.xml`: Een voorbeelddossier met een paar gegevens van de voorgaande zwangerschap, met name voor test- en demo-doeleinden.
 * `RetrieveTransaction-verloskundig-dossier-22.xml`: Het complete verloskundig dossier, gebaseerd op PWD 2.2, voor aanlevering aan Babyconnect.
 * `RetrieveTransaction_kernset_22.xml`: De kernset, gebaseerd op PWD 2.2, voor aanlevering aan Perined.
+
 ### TODO
 Er volgen nog:
 
 * Verloskundig dossier PWD 2.3
-* ~~Kernset PWD 2.3~~
 * Samenvatting voorgaande zwangerschap PWD 2.2
 * Samenvatting voorgaande zwangerschap PWD 2.3
+
 ### Op ART-DECOR
+
 Deze transacties zijn te vinden bij Nictiz (behalve de twee voorbeelden):
 
 * [Kernset PWD 2.2](https://decor.nictiz.nl/decor/services/RetrieveTransaction?id=2.16.840.1.113883.2.4.3.11.60.90.77.4.2410&effectiveDate=2014-10-20T00:00:00&language=nl-NL&ui=nl-NL&version=2018-11-09T12:31:45&format=html&hidecolumns=45ghijklmnop)

@@ -6,19 +6,8 @@
          transactionEffectiveDate="2014-10-20T00:00:00"
          templateId="2.16.840.1.113883.2.4.6.10.90.73"
          templateEffectiveDate="2014-10-20T00:00:00"
-         shortName="kernset_aanleverbericht">
-<!--
-This program is free software; you can redistribute it and/or modify it under the terms 
-of the GNU Affero General Public License as published by the Free Software Foundation; 
-either version 3 of the License, or (at your option) any later version.
-
-This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; 
-without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. 
-See the GNU Affero General Public Licensefor more details.
-
-See http://www.gnu.org/licenses/
--->
-<!-- == Generated lite version of specification from full version for kernset_aanleverbericht == --><!-- == Source: design/specs-full/RetrieveTransaction_kernset_22.xml == --><!-- == Generator: design/xsl/spec-full2spec-lite.xsl == -->   <name language="nl-NL">Kernset aanleverbericht</name>
+         shortName="kernset_aanleverbericht"><!-- == Generated lite version of specification from full version for kernset_aanleverbericht == --><!-- == Source: design/specs-full/RetrieveTransaction_kernset_22.xml == --><!-- == Generator: design/xsl/spec-full2spec-lite.xsl == -->
+   <name language="nl-NL">Kernset aanleverbericht</name>
    <desc language="nl-NL">Kernset aanleverbericht</desc>
    <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.4"
             statusCode="final"
