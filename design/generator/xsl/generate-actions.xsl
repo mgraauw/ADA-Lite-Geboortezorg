@@ -31,7 +31,11 @@
 
   <xsl:variable name="subdir-examples-lite" as="xs:string" select="'examples-lite'"/>
   <xsl:variable name="subdir-xsl" as="xs:string" select="'xsl'"/>
-
+  
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+  <!-- Documentation related information: -->
+  
+  <xsl:variable name="dir-docs-main" as="xs:string" select="xtlc:dref-concat(($dir-common-root, 'docs'))"/>
   <xsl:variable name="filename-readme" as="xs:string" select="'README.md'"/>
   
   <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
@@ -111,8 +115,9 @@
         <check-specification  in="{.}"/>
       </xsl:for-each>
 
-      <!-- Remove the full build branch, since we're going to create this from scratch: -->
+      <!-- Remove the full build and docs branch, since we're going to create these from scratch: -->
       <remove-dir path="{$dir-build-main}"/>
+      <remove-dir path="{$dir-docs-main}"/>
 
       <!-- Copy the xsl files (and included libraries!) necessary in the build -->
       <xsl:call-template name="generate-action-copy-file">
@@ -199,7 +204,22 @@
           xml-out="{xtlc:dref-concat(($dir-build-diffs, @output || '.xml'))}"/>
       </xsl:for-each>
       
-      <!-- Documentation copy/generate: -->
+      <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+      <!-- DOcumentation and GitHub pages: -->
+
+      <xsl:variable name="dref-sitegen" as="xs:string" select="xtlc:dref-canonical(resolve-uri('../data/sitegen.xml', static-base-uri()))"/>
+      <xsl:if test="not(doc-available($dref-sitegen))">
+        <xsl:sequence select="error((), 'Could not find the sitegen xml ' || xtlc:q($dref-sitegen))"/>
+      </xsl:if>
+      <xsl:variable name="sitegen-root" as="element(sitegen)"  select="doc($dref-sitegen)/*"/>
+      <xsl:for-each select="$sitegen-root/filecopy[@source][@destination]">
+        <xsl:call-template name="generate-action-copy-file">
+          <xsl:with-param name="file-source" select="xtlc:dref-concat(($dir-common-root, @source))"/>
+          <xsl:with-param name="dir-target" select="xtlc:dref-concat(($dir-docs-main, xtlc:dref-path(@destination)))"/>
+          <xsl:with-param name="name-target" select="xtlc:dref-name(@destination)"/>
+        </xsl:call-template>
+      </xsl:for-each>
+
       <xsl:variable name="dref-docgen" as="xs:string" select="xtlc:dref-canonical(resolve-uri('../data/docgen.xml', static-base-uri()))"/>
       <xsl:if test="not(doc-available($dref-docgen))">
         <xsl:sequence select="error((), 'Could not find the docgen xml ' || xtlc:q($dref-docgen))"/>
@@ -212,7 +232,10 @@
           <xsl:with-param name="name-target" select="$filename-readme"/>
         </xsl:call-template>
       </xsl:for-each>
-
+      
+      <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+      <!-- Validations: -->
+      
       <!-- Create validation actions 1: Validate the examples-lite against the appropriate schemas (normal and simple one): -->
       <xsl:for-each select="$filelist-source-examples-lite">
         <xsl:variable name="specification-file" as="xs:string" select="local:get-specification-file-from-transaction-id(doc(.)/*/@transactionRef)"/>
