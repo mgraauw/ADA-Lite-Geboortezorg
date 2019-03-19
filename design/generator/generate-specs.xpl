@@ -76,25 +76,6 @@
     <p:add-attribute attribute-name="status" attribute-value="success" match="/*"/>
   </p:viewport>
 
-  <!-- Copy files: -->
-  <p:viewport match="copy-file">
-    <p:variable name="source" select="/*/@source"/>
-    <p:variable name="target" select="/*/@target"/>
-    <p:identity name="original"/>
-    <pxf:copy>
-      <p:with-option name="href" select="$source"/>
-      <p:with-option name="target" select="$target"/>
-      <p:with-option name="fail-on-error" select="true()"/>
-    </pxf:copy>
-    <!-- Get the original input back: -->
-    <p:identity>
-      <p:input port="source">
-        <p:pipe port="result" step="original"/>
-      </p:input>
-    </p:identity>
-    <p:add-attribute attribute-name="status" attribute-value="success" match="/*"/>
-  </p:viewport>
-
   <!-- Create the specs-lite: -->
   <p:viewport match="specs-full2specs-lite">
     <p:variable name="in" select="/*/@in"/>
@@ -384,6 +365,25 @@
     <p:add-attribute attribute-name="status" attribute-value="success" match="/*"/>
   </p:viewport>
 
+  <!-- Copy files: -->
+  <p:viewport match="copy-file">
+    <p:variable name="source" select="/*/@source"/>
+    <p:variable name="target" select="/*/@target"/>
+    <p:identity name="original"/>
+    <pxf:copy>
+      <p:with-option name="href" select="$source"/>
+      <p:with-option name="target" select="$target"/>
+      <p:with-option name="fail-on-error" select="true()"/>
+    </pxf:copy>
+    <!-- Get the original input back: -->
+    <p:identity>
+      <p:input port="source">
+        <p:pipe port="result" step="original"/>
+      </p:input>
+    </p:identity>
+    <p:add-attribute attribute-name="status" attribute-value="success" match="/*"/>
+  </p:viewport>
+  
   <!-- Validate with schema: -->
   <p:viewport match="validate-schema">
     <p:variable name="in" select="/*/@in"/>

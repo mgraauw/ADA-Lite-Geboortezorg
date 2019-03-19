@@ -212,11 +212,19 @@
         <xsl:sequence select="error((), 'Could not find the sitegen xml ' || xtlc:q($dref-sitegen))"/>
       </xsl:if>
       <xsl:variable name="sitegen-root" as="element(sitegen)"  select="doc($dref-sitegen)/*"/>
+      <!-- Copy the documentation files as mentioned in the sitegen spec: -->
       <xsl:for-each select="$sitegen-root/filecopy[@source][@destination]">
         <xsl:call-template name="generate-action-copy-file">
           <xsl:with-param name="file-source" select="xtlc:dref-concat(($dir-common-root, @source))"/>
           <xsl:with-param name="dir-target" select="xtlc:dref-concat(($dir-docs-main, xtlc:dref-path(@destination)))"/>
           <xsl:with-param name="name-target" select="xtlc:dref-name(@destination)"/>
+        </xsl:call-template>
+      </xsl:for-each>
+      <!-- Copy the diff html files (the home page will link to them) -->
+      <xsl:for-each select="$difflist-root/diff[@newer][@older][@output]">
+        <xsl:call-template name="generate-action-copy-file">
+          <xsl:with-param name="file-source" select="xtlc:dref-concat(($dir-build-diffs, @output || '.html'))"/>
+          <xsl:with-param name="dir-target" select="xtlc:dref-concat(($dir-docs-main, 'diffs'))"/>
         </xsl:call-template>
       </xsl:for-each>
 
