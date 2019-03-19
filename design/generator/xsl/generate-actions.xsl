@@ -31,13 +31,13 @@
 
   <xsl:variable name="subdir-examples-lite" as="xs:string" select="'examples-lite'"/>
   <xsl:variable name="subdir-xsl" as="xs:string" select="'xsl'"/>
-  
+
   <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
   <!-- Documentation related information: -->
-  
+
   <xsl:variable name="dir-docs-main" as="xs:string" select="xtlc:dref-concat(($dir-common-root, 'docs'))"/>
   <xsl:variable name="filename-readme" as="xs:string" select="'README.md'"/>
-  
+
   <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
   <!-- Source related information: -->
 
@@ -109,10 +109,10 @@
 
   <xsl:template match="/">
     <actions timestamp="{current-dateTime()}" root="{/*/@xml:base}">
-      
+
       <!-- Perform checks on the specifications: -->
       <xsl:for-each select="$filelist-source-specs-full">
-        <check-specification  in="{.}"/>
+        <check-specification in="{.}"/>
       </xsl:for-each>
 
       <!-- Remove the full build and docs branch, since we're going to create these from scratch: -->
@@ -183,7 +183,7 @@
         <spec2schema in="{.}" out="{xtlc:dref-concat(($dir-build-schema, xtlc:dref-name-noext(.) || '.xsd'))}"
           generated-xsd-filename="{string(doc(.)/*/@shortName) || '.xsd'}"/>
       </xsl:for-each>
-      
+
       <!-- Create the simple schemas: -->
       <xsl:for-each select="$filelist-source-specs-full">
         <spec2schema-simple in="{.}" out="{xtlc:dref-concat(($dir-build-schema-simple-full, xtlc:dref-name-noext(.) || '.simple.full.xsd'))}"
@@ -200,10 +200,9 @@
       <xsl:variable name="difflist-root" as="element(difflist)" select="doc($dref-difflist)/*"/>
       <xsl:for-each select="$difflist-root/diff[@newer][@older][@output]">
         <specification-diff older="{xtlc:dref-concat(($dir-source-specs-full, @older))}" newer="{xtlc:dref-concat(($dir-source-specs-full, @newer))}"
-          html-out="{xtlc:dref-concat(($dir-build-diffs, @output || '.html'))}"
-          xml-out="{xtlc:dref-concat(($dir-build-diffs, @output || '.xml'))}"/>
+          html-out="{xtlc:dref-concat(($dir-build-diffs, @output || '.html'))}" xml-out="{xtlc:dref-concat(($dir-build-diffs, @output || '.xml'))}"/>
       </xsl:for-each>
-      
+
       <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
       <!-- DOcumentation and GitHub pages: -->
 
@@ -211,7 +210,7 @@
       <xsl:if test="not(doc-available($dref-sitegen))">
         <xsl:sequence select="error((), 'Could not find the sitegen xml ' || xtlc:q($dref-sitegen))"/>
       </xsl:if>
-      <xsl:variable name="sitegen-root" as="element(sitegen)"  select="doc($dref-sitegen)/*"/>
+      <xsl:variable name="sitegen-root" as="element(sitegen)" select="doc($dref-sitegen)/*"/>
       <!-- Copy the documentation files as mentioned in the sitegen spec: -->
       <xsl:for-each select="$sitegen-root/filecopy[@source][@destination]">
         <xsl:call-template name="generate-action-copy-file">
@@ -227,6 +226,10 @@
           <xsl:with-param name="dir-target" select="xtlc:dref-concat(($dir-docs-main, 'diffs'))"/>
         </xsl:call-template>
       </xsl:for-each>
+      <!-- Create home page: -->
+      <xsl:variable name="home-page-spec-elm" as="element(generate-home)" select="$sitegen-root/generate-home[1]"/>
+      <create-gh-home-page in="{xtlc:dref-concat(($dir-common-root, $home-page-spec-elm/@source))}"
+        out="{xtlc:dref-concat(($dir-docs-main, lower-case($filename-readme)))}" difflist="{$dref-difflist}" diffdir="{$dir-build-diffs}"/>
 
       <xsl:variable name="dref-docgen" as="xs:string" select="xtlc:dref-canonical(resolve-uri('../data/docgen.xml', static-base-uri()))"/>
       <xsl:if test="not(doc-available($dref-docgen))">
@@ -240,10 +243,10 @@
           <xsl:with-param name="name-target" select="$filename-readme"/>
         </xsl:call-template>
       </xsl:for-each>
-      
+
       <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
       <!-- Validations: -->
-      
+
       <!-- Create validation actions 1: Validate the examples-lite against the appropriate schemas (normal and simple one): -->
       <xsl:for-each select="$filelist-source-examples-lite">
         <xsl:variable name="specification-file" as="xs:string" select="local:get-specification-file-from-transaction-id(doc(.)/*/@transactionRef)"/>

@@ -52,7 +52,7 @@
     </p:input>
     <p:with-param name="null" select="()"/>
   </p:xslt>
-  
+
   <!-- Check specifications: -->
   <p:viewport match="check-specification">
     <p:variable name="in" select="/*/@in"/>
@@ -325,7 +325,7 @@
       </p:input>
       <p:with-param name="add-timestamp" select="false()"/>
     </p:xslt>
-    <p:store method="xhtml" >
+    <p:store method="xhtml">
       <p:with-option name="href" select="$html-out"/>
     </p:store>
     <!-- Get the original input back: -->
@@ -383,7 +383,39 @@
     </p:identity>
     <p:add-attribute attribute-name="status" attribute-value="success" match="/*"/>
   </p:viewport>
-  
+
+  <!-- Create gh homepage: -->
+  <p:viewport match="create-gh-home-page">
+    <p:variable name="in" select="/*/@in"/>
+    <p:variable name="out" select="/*/@out"/>
+    <p:variable name="difflist" select="/*/@difflist"/>
+    <p:variable name="diffdir" select="/*/@diffdir"/>
+    <p:identity name="original"/>
+    <p:xslt>
+      <p:input port="source">
+        <p:inline>
+          <null/>
+        </p:inline>
+      </p:input>
+      <p:input port="stylesheet">
+        <p:document href="../xsl/gh-pages/create-gh-home-page.xsl"/>
+      </p:input>
+      <p:with-param name="dref-in" select="$in"/>
+      <p:with-param name="difflist" select="$difflist"/>
+      <p:with-param name="diffdir" select="$diffdir"/>
+    </p:xslt>
+    <p:store method="text">
+      <p:with-option name="href" select="$out"/> 
+    </p:store>
+    <!-- Get the original input back: -->
+    <p:identity>
+      <p:input port="source">
+        <p:pipe port="result" step="original"/>
+      </p:input>
+    </p:identity>
+    <p:add-attribute attribute-name="status" attribute-value="success" match="/*"/>
+  </p:viewport>
+
   <!-- Validate with schema: -->
   <p:viewport match="validate-schema">
     <p:variable name="in" select="/*/@in"/>
@@ -498,5 +530,5 @@
   <p:add-attribute attribute-name="duration" match="/*">
     <p:with-option name="attribute-value" select="current-dateTime() - xs:dateTime($start-datetime)"/>
   </p:add-attribute>
-  
+
 </p:declare-step>
