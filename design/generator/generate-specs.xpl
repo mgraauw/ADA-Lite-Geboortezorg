@@ -389,7 +389,7 @@
     <p:variable name="in" select="/*/@in"/>
     <p:variable name="out" select="/*/@out"/>
     <p:variable name="difflist" select="/*/@difflist"/>
-    <p:variable name="diffdir" select="/*/@diffdir"/>
+    <p:variable name="sitegen" select="/*/@sitegen"/>
     <p:identity name="original"/>
     <p:xslt>
       <p:input port="source">
@@ -402,7 +402,7 @@
       </p:input>
       <p:with-param name="dref-in" select="$in"/>
       <p:with-param name="difflist" select="$difflist"/>
-      <p:with-param name="diffdir" select="$diffdir"/>
+      <p:with-param name="sitegen" select="$sitegen"/>
     </p:xslt>
     <p:store method="text">
       <p:with-option name="href" select="$out"/> 

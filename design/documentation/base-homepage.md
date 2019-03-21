@@ -6,9 +6,7 @@ Hulpbestanden (voorbeelden, schema's, transformaties) zijn te vinden in de bijbe
 
 De volgende informatie is beschikbaar:
 
-* [Algemene informatie ADA Lite](general)
-* [Technische documentatie](technical-documentation)
-
+[links]
 
 ----------
 

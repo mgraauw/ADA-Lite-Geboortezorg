@@ -4,8 +4,8 @@
   <!--
     Contains instructions for generating the GitHub pages website of ADA-Lite-Geboortezorg in the docs/ folder.
     
-    Copy these files to the docs folder:
-    <filecopy source="path-in-repo" destination="path-in-docs-folder"/>
+    Copy these files to the docs folder. Only add @linkname when you want a link to be generated on the home page for this file.
+    <filecopy source="path-in-repo" destination="path-in-docs-folder" linkname="text-for-link"/>
     
     Generate the home page:
     <generate-home source="path-in-repo-base-markdown-file"/>
@@ -13,11 +13,14 @@
   -->
   <!-- ================================================================== -->
   
+  <!-- Config file for GitHub pages: -->
   <filecopy source="design/documentation/_config.yml" destination="_config.yml"/>
-  <filecopy source="design/documentation/README-ada-lite.md" destination="technical-documentation.md"/>
-  <filecopy source="README.md" destination="general.md"/>
-  <filecopy source="design/documentation/base-homepage.md" destination="readme.md"/>
   
+  <!-- Basic markdown pages: -->
+  <filecopy source="README.md" destination="general.md" linkname="Algemene informatie ADA Lite"/>
+  <filecopy source="design/documentation/README-ada-lite.md" destination="technical-documentation.md" linkname="Technische documentatie"/>
+  
+  <!-- Home page generator: -->
   <generate-home source="design/documentation/base-homepage.md"/>
   
 </sitegen>

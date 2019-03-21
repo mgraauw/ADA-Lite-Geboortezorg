@@ -229,7 +229,7 @@
       <!-- Create home page: -->
       <xsl:variable name="home-page-spec-elm" as="element(generate-home)" select="$sitegen-root/generate-home[1]"/>
       <create-gh-home-page in="{xtlc:dref-concat(($dir-common-root, $home-page-spec-elm/@source))}"
-        out="{xtlc:dref-concat(($dir-docs-main, lower-case($filename-readme)))}" difflist="{$dref-difflist}" diffdir="{$dir-build-diffs}"/>
+        out="{xtlc:dref-concat(($dir-docs-main, lower-case($filename-readme)))}" difflist="{$dref-difflist}" sitegen="{$dref-sitegen}"/>
 
       <xsl:variable name="dref-docgen" as="xs:string" select="xtlc:dref-canonical(resolve-uri('../data/docgen.xml', static-base-uri()))"/>
       <xsl:if test="not(doc-available($dref-docgen))">
