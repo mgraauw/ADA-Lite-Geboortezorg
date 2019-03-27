@@ -217,13 +217,6 @@ De volgende transacties worden gebruikt:
 * `RetrieveTransaction-verloskundig-dossier-22.xml`: Het complete verloskundig dossier, gebaseerd op PWD 2.2, voor aanlevering aan Babyconnect.
 * `RetrieveTransaction_kernset_22.xml`: De kernset, gebaseerd op PWD 2.2, voor aanlevering aan Perined.
 
-### TODO
-
-Er volgen nog:
-
-* Verloskundig dossier PWD 2.3
-* Samenvatting voorgaande zwangerschap PWD 2.2
-* Samenvatting voorgaande zwangerschap PWD 2.3
 
 ### Op ART-DECOR
 

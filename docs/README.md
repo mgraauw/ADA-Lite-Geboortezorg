@@ -18,4 +18,6 @@ De volgende informatie is beschikbaar:
 Van een aantal deel-specificaties zijn meerdere versies aanwezig. De onderstaande pagina's geven een overzicht van de verschillen:
 
 * [Kernset versie 2.2 en 2.3](diffs/diff-kernset-22-23.html)
+* [Verloskundig dossier versie 2.2 en 2.3](diffs/diff-verloskundig-dossier-22-23.html)
+* [Samenvatting voorgaande zwangerschap versie 2.2 en 2.3](diffs/diff-samenvatting-voorgaande-zwangerschap-22-23.html)
 

@@ -297,6 +297,7 @@
     <p:variable name="newer" select="/*/@newer"/>
     <p:variable name="html-out" select="/*/@html-out"/>
     <p:variable name="xml-out" select="/*/@xml-out"/>
+    <p:variable name="description" select="/*/@description"/>
     <p:identity name="original"/>
     <p:sink/>
     <p:xslt>
@@ -324,6 +325,7 @@
         <p:document href="../xsl/diff/render-compare-datasets.xsl"/>
       </p:input>
       <p:with-param name="add-timestamp" select="false()"/>
+      <p:with-param name="description" select="$description"/>
     </p:xslt>
     <p:store method="xhtml">
       <p:with-option name="href" select="$html-out"/>

@@ -80,14 +80,12 @@
 
     <xsl:variable name="parts" as="xs:string*">
       <!-- [Kernset versie 2.2 en 2.3](diffs/diff-kernset-22-23.html) -->
-      <xsl:for-each select="$diffspecs">
-        <xsl:sequence select="'* ['"/>
-        <xsl:sequence select="$name"/>
-        <xsl:sequence select="']('"/>
-        <xsl:sequence select="$link"/>
-        <xsl:sequence select="')'"/>
-        <xsl:sequence select="$nl"/>
-      </xsl:for-each>
+      <xsl:sequence select="'* ['"/>
+      <xsl:sequence select="$name"/>
+      <xsl:sequence select="']('"/>
+      <xsl:sequence select="$link"/>
+      <xsl:sequence select="')'"/>
+      <xsl:sequence select="$nl"/>
     </xsl:variable>
     <xsl:sequence select="fn:string-join($parts)"/>
   </xsl:template>

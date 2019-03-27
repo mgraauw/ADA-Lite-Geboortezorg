@@ -1,0 +1,1360 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<compare-datasets dref-older="file:/C:/Data/Erik/xmldev/Babyconnect/ADA-Lite-Geboortezorg/design/specs-full/RetrieveTransaction-samenvatting-voorgaande-zwangerschap-22.xml"
+                  dref-newer="file:/C:/Data/Erik/xmldev/Babyconnect/ADA-Lite-Geboortezorg/design/specs-full/RetrieveTransaction-samenvatting-voorgaande-zwangerschap-23.xml">
+   <child-concepts doc-xpath="/voorgaande_zwangerschap_samenvatting_22">
+      <concept-compare signature="shortname:zorgverlenerzorginstelling"
+                       shortname="zorgverlenerzorginstelling"
+                       doc-xpath="/voorgaande_zwangerschap_samenvatting_22/zorgverlenerzorginstelling"
+                       rtd-xpath-older="/dataset/concept[1]"
+                       id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.1"
+                       index-older="1"
+                       value-type=""
+                       index-newer="1"
+                       rtd-xpath-newer="/dataset/concept[1]"
+                       id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.1">
+         <inherit-equals/>
+         <child-concepts doc-xpath="/voorgaande_zwangerschap_samenvatting_22/zorgverlenerzorginstelling">
+            <concept-compare signature="shortname:zorgverlener"
+                             shortname="zorgverlener"
+                             doc-xpath="/voorgaande_zwangerschap_samenvatting_22/zorgverlenerzorginstelling/zorgverlener"
+                             rtd-xpath-older="/dataset/concept[1]/concept[1]"
+                             id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10001"
+                             index-older="1"
+                             value-type=""
+                             index-newer="1"
+                             rtd-xpath-newer="/dataset/concept[1]/concept[1]"
+                             id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10001">
+               <inherit-equals/>
+               <child-concepts doc-xpath="/voorgaande_zwangerschap_samenvatting_22/zorgverlenerzorginstelling/zorgverlener">
+                  <concept-compare signature="shortname:zorgverlener_uzinummer"
+                                   shortname="zorgverlener_uzinummer"
+                                   doc-xpath="/voorgaande_zwangerschap_samenvatting_22/zorgverlenerzorginstelling/zorgverlener/zorgverlener_uzinummer"
+                                   rtd-xpath-older="/dataset/concept[1]/concept[1]/concept[1]"
+                                   id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10002"
+                                   index-older="1"
+                                   value-type="identifier"
+                                   index-newer="1"
+                                   rtd-xpath-newer="/dataset/concept[1]/concept[1]/concept[1]"
+                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10002">
+                     <inherit-equals/>
+                  </concept-compare>
+                  <concept-compare signature="shortname:zorgverlener_agbid"
+                                   shortname="zorgverlener_agbid"
+                                   doc-xpath="/voorgaande_zwangerschap_samenvatting_22/zorgverlenerzorginstelling/zorgverlener/zorgverlener_agbid"
+                                   rtd-xpath-older="/dataset/concept[1]/concept[1]/concept[2]"
+                                   id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10003"
+                                   index-older="2"
+                                   value-type="identifier"
+                                   index-newer="2"
+                                   rtd-xpath-newer="/dataset/concept[1]/concept[1]/concept[2]"
+                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10003">
+                     <inherit-equals/>
+                  </concept-compare>
+                  <concept-compare signature="shortname:zorgverlener_lvr1id"
+                                   shortname="zorgverlener_lvr1id"
+                                   doc-xpath="/voorgaande_zwangerschap_samenvatting_22/zorgverlenerzorginstelling/zorgverlener/zorgverlener_lvr1id"
+                                   rtd-xpath-older="/dataset/concept[1]/concept[1]/concept[3]"
+                                   id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10004"
+                                   index-older="3"
+                                   value-type="identifier"
+                                   index-newer="3"
+                                   rtd-xpath-newer="/dataset/concept[1]/concept[1]/concept[3]"
+                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10004">
+                     <inherit-equals/>
+                  </concept-compare>
+                  <concept-compare signature="shortname:naam_zorgverlener"
+                                   shortname="naam_zorgverlener"
+                                   doc-xpath="/voorgaande_zwangerschap_samenvatting_22/zorgverlenerzorginstelling/zorgverlener/naam_zorgverlener"
+                                   rtd-xpath-older="/dataset/concept[1]/concept[1]/concept[4]"
+                                   id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10006"
+                                   index-older="4"
+                                   value-type="complex"
+                                   index-newer="4"
+                                   rtd-xpath-newer="/dataset/concept[1]/concept[1]/concept[4]"
+                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10006">
+                     <inherit-equals/>
+                  </concept-compare>
+                  <concept-compare signature="shortname:zorgverlenertype"
+                                   shortname="zorgverlenertype"
+                                   doc-xpath="/voorgaande_zwangerschap_samenvatting_22/zorgverlenerzorginstelling/zorgverlener/zorgverlenertype"
+                                   rtd-xpath-older="/dataset/concept[1]/concept[1]/concept[5]"
+                                   id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10010"
+                                   index-older="5"
+                                   value-type="code"
+                                   index-newer="5"
+                                   rtd-xpath-newer="/dataset/concept[1]/concept[1]/concept[5]"
+                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10010">
+                     <inherit-equals/>
+                  </concept-compare>
+               </child-concepts>
+            </concept-compare>
+            <concept-compare signature="shortname:zorginstelling"
+                             shortname="zorginstelling"
+                             doc-xpath="/voorgaande_zwangerschap_samenvatting_22/zorgverlenerzorginstelling/zorginstelling"
+                             rtd-xpath-older="/dataset/concept[1]/concept[2]"
+                             id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10020"
+                             index-older="2"
+                             value-type=""
+                             index-newer="2"
+                             rtd-xpath-newer="/dataset/concept[1]/concept[2]"
+                             id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10020">
+               <child-concepts doc-xpath="/voorgaande_zwangerschap_samenvatting_22/zorgverlenerzorginstelling/zorginstelling">
+                  <concept-compare signature="shortname:zorginstelling_oid"
+                                   shortname="zorginstelling_oid"
+                                   doc-xpath="/voorgaande_zwangerschap_samenvatting_22/zorgverlenerzorginstelling/zorginstelling/zorginstelling_oid"
+                                   rtd-xpath-older="/dataset/concept[1]/concept[2]/concept[1]"
+                                   id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10021"
+                                   index-older="1"
+                                   value-type="identifier"
+                                   index-newer="1"
+                                   rtd-xpath-newer="/dataset/concept[1]/concept[2]/concept[1]"
+                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10021"/>
+                  <concept-compare signature="shortname:zorginstelling_agbid"
+                                   shortname="zorginstelling_agbid"
+                                   doc-xpath="/voorgaande_zwangerschap_samenvatting_22/zorgverlenerzorginstelling/zorginstelling/zorginstelling_agbid"
+                                   rtd-xpath-older="/dataset/concept[1]/concept[2]/concept[2]"
+                                   id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10022"
+                                   index-older="2"
+                                   value-type="identifier"
+                                   index-newer="2"
+                                   rtd-xpath-newer="/dataset/concept[1]/concept[2]/concept[2]"
+                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10022">
+                     <inherit-equals/>
+                  </concept-compare>
+                  <concept-compare signature="shortname:zorginstelling_lvrid"
+                                   shortname="zorginstelling_lvrid"
+                                   doc-xpath="/voorgaande_zwangerschap_samenvatting_22/zorgverlenerzorginstelling/zorginstelling/zorginstelling_lvrid"
+                                   rtd-xpath-older="/dataset/concept[1]/concept[2]/concept[3]"
+                                   id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10023"
+                                   index-older="3"
+                                   value-type="identifier"
+                                   index-newer="3"
+                                   rtd-xpath-newer="/dataset/concept[1]/concept[2]/concept[3]"
+                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10023"/>
+                  <concept-compare signature="shortname:zorginstelling_ura"
+                                   shortname="zorginstelling_ura"
+                                   doc-xpath="/voorgaande_zwangerschap_samenvatting_22/zorgverlenerzorginstelling/zorginstelling/zorginstelling_ura"
+                                   rtd-xpath-older="/dataset/concept[1]/concept[2]/concept[4]"
+                                   id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10024"
+                                   index-older="4"
+                                   value-type="identifier"
+                                   index-newer="4"
+                                   rtd-xpath-newer="/dataset/concept[1]/concept[2]/concept[4]"
+                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10024">
+                     <inherit-equals/>
+                  </concept-compare>
+                  <concept-compare signature="shortname:naam_zorginstelling"
+                                   shortname="naam_zorginstelling"
+                                   doc-xpath="/voorgaande_zwangerschap_samenvatting_22/zorgverlenerzorginstelling/zorginstelling/naam_zorginstelling"
+                                   rtd-xpath-older="/dataset/concept[1]/concept[2]/concept[5]"
+                                   id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10026"
+                                   index-older="5"
+                                   value-type="complex"
+                                   index-newer="5"
+                                   rtd-xpath-newer="/dataset/concept[1]/concept[2]/concept[5]"
+                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10026">
+                     <inherit-equals/>
+                  </concept-compare>
+                  <concept-compare signature="shortname:adres_zorginstelling"
+                                   shortname="adres_zorginstelling"
+                                   doc-xpath="/voorgaande_zwangerschap_samenvatting_22/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling"
+                                   rtd-xpath-older="/dataset/concept[1]/concept[2]/concept[6]"
+                                   id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10027"
+                                   index-older="6"
+                                   value-type=""
+                                   index-newer="6"
+                                   rtd-xpath-newer="/dataset/concept[1]/concept[2]/concept[6]"
+                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10027">
+                     <inherit-equals/>
+                     <child-concepts doc-xpath="/voorgaande_zwangerschap_samenvatting_22/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling">
+                        <concept-compare signature="shortname:straatnaam"
+                                         shortname="straatnaam"
+                                         doc-xpath="/voorgaande_zwangerschap_samenvatting_22/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/straatnaam"
+                                         rtd-xpath-older="/dataset/concept[1]/concept[2]/concept[6]/concept[1]"
+                                         id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10032"
+                                         index-older="1"
+                                         value-type="string"
+                                         index-newer="1"
+                                         rtd-xpath-newer="/dataset/concept[1]/concept[2]/concept[6]/concept[1]"
+                                         id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10032">
+                           <inherit-equals/>
+                        </concept-compare>
+                        <concept-compare signature="shortname:huisnummer"
+                                         shortname="huisnummer"
+                                         doc-xpath="/voorgaande_zwangerschap_samenvatting_22/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/huisnummer"
+                                         rtd-xpath-older="/dataset/concept[1]/concept[2]/concept[6]/concept[2]"
+                                         id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10033"
+                                         index-older="2"
+                                         value-type="string"
+                                         index-newer="2"
+                                         rtd-xpath-newer="/dataset/concept[1]/concept[2]/concept[6]/concept[2]"
+                                         id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10033">
+                           <inherit-equals/>
+                        </concept-compare>
+                        <concept-compare signature="shortname:huisletterhuisnummertoevoeging"
+                                         shortname="huisletterhuisnummertoevoeging"
+                                         doc-xpath="/voorgaande_zwangerschap_samenvatting_22/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/huisletterhuisnummertoevoeging"
+                                         rtd-xpath-older="/dataset/concept[1]/concept[2]/concept[6]/concept[3]"
+                                         id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10034"
+                                         index-older="3"
+                                         value-type="string"
+                                         index-newer="3"
+                                         rtd-xpath-newer="/dataset/concept[1]/concept[2]/concept[6]/concept[3]"
+                                         id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10034">
+                           <inherit-equals/>
+                        </concept-compare>
+                        <concept-compare signature="shortname:postcode"
+                                         shortname="postcode"
+                                         doc-xpath="/voorgaande_zwangerschap_samenvatting_22/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/postcode"
+                                         rtd-xpath-older="/dataset/concept[1]/concept[2]/concept[6]/concept[4]"
+                                         id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10041"
+                                         index-older="4"
+                                         value-type="string"
+                                         index-newer="4"
+                                         rtd-xpath-newer="/dataset/concept[1]/concept[2]/concept[6]/concept[4]"
+                                         id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10041">
+                           <inherit-equals/>
+                        </concept-compare>
+                        <concept-compare signature="shortname:plaatsnaam"
+                                         shortname="plaatsnaam"
+                                         doc-xpath="/voorgaande_zwangerschap_samenvatting_22/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/plaatsnaam"
+                                         rtd-xpath-older="/dataset/concept[1]/concept[2]/concept[6]/concept[5]"
+                                         id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10036"
+                                         index-older="5"
+                                         value-type="string"
+                                         index-newer="5"
+                                         rtd-xpath-newer="/dataset/concept[1]/concept[2]/concept[6]/concept[5]"
+                                         id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10036">
+                           <inherit-equals/>
+                        </concept-compare>
+                        <concept-compare signature="shortname:land"
+                                         shortname="land"
+                                         doc-xpath="/voorgaande_zwangerschap_samenvatting_22/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/land"
+                                         rtd-xpath-older="/dataset/concept[1]/concept[2]/concept[6]/concept[6]"
+                                         id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10038"
+                                         index-older="6"
+                                         value-type="string"
+                                         index-newer="6"
+                                         rtd-xpath-newer="/dataset/concept[1]/concept[2]/concept[6]/concept[6]"
+                                         id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10038">
+                           <inherit-equals/>
+                        </concept-compare>
+                     </child-concepts>
+                  </concept-compare>
+               </child-concepts>
+            </concept-compare>
+         </child-concepts>
+      </concept-compare>
+      <concept-compare signature="shortname:vrouw"
+                       shortname="vrouw"
+                       doc-xpath="/voorgaande_zwangerschap_samenvatting_22/vrouw"
+                       rtd-xpath-older="/dataset/concept[2]"
+                       id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.2"
+                       index-older="2"
+                       value-type=""
+                       index-newer="2"
+                       rtd-xpath-newer="/dataset/concept[2]"
+                       id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.2">
+         <child-concepts doc-xpath="/voorgaande_zwangerschap_samenvatting_22/vrouw">
+            <concept-compare signature="shortname:burgerservicenummer"
+                             shortname="burgerservicenummer"
+                             doc-xpath="/voorgaande_zwangerschap_samenvatting_22/vrouw/burgerservicenummer"
+                             rtd-xpath-older="/dataset/concept[2]/concept[1]"
+                             id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10030"
+                             index-older="1"
+                             value-type="identifier"
+                             index-newer="1"
+                             rtd-xpath-newer="/dataset/concept[2]/concept[1]"
+                             id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10030"/>
+            <concept-compare signature="shortname:naamgegevens"
+                             shortname="naamgegevens"
+                             doc-xpath="/voorgaande_zwangerschap_samenvatting_22/vrouw/naamgegevens"
+                             rtd-xpath-older="/dataset/concept[2]/concept[2]"
+                             id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10035"
+                             index-older="2"
+                             value-type=""
+                             index-newer="2"
+                             rtd-xpath-newer="/dataset/concept[2]/concept[2]"
+                             id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10035">
+               <child-concepts doc-xpath="/voorgaande_zwangerschap_samenvatting_22/vrouw/naamgegevens">
+                  <concept-compare signature="shortname:voornamen"
+                                   shortname="voornamen"
+                                   doc-xpath="/voorgaande_zwangerschap_samenvatting_22/vrouw/naamgegevens/voornamen"
+                                   rtd-xpath-older="/dataset/concept[2]/concept[2]/concept[1]"
+                                   id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10042"
+                                   index-older="1"
+                                   value-type="string"
+                                   index-newer="1"
+                                   rtd-xpath-newer="/dataset/concept[2]/concept[2]/concept[1]"
+                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10042">
+                     <inherit-equals/>
+                  </concept-compare>
+                  <concept-compare signature="shortname:initialen"
+                                   shortname="initialen"
+                                   doc-xpath="/voorgaande_zwangerschap_samenvatting_22/vrouw/naamgegevens/initialen"
+                                   rtd-xpath-older="/dataset/concept[2]/concept[2]/concept[2]"
+                                   id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82359"
+                                   index-older="2"
+                                   value-type="string"
+                                   index-newer="2"
+                                   rtd-xpath-newer="/dataset/concept[2]/concept[2]/concept[2]"
+                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82359">
+                     <inherit-equals/>
+                  </concept-compare>
+                  <concept-compare signature="shortname:roepnaam"
+                                   shortname="roepnaam"
+                                   doc-xpath="/voorgaande_zwangerschap_samenvatting_22/vrouw/naamgegevens/roepnaam"
+                                   rtd-xpath-older="/dataset/concept[2]/concept[2]/concept[3]"
+                                   id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82360"
+                                   index-older="3"
+                                   value-type="string"
+                                   index-newer="3"
+                                   rtd-xpath-newer="/dataset/concept[2]/concept[2]/concept[3]"
+                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82360">
+                     <inherit-equals/>
+                  </concept-compare>
+                  <concept-compare signature="shortname:achternaam"
+                                   shortname="achternaam"
+                                   doc-xpath="/voorgaande_zwangerschap_samenvatting_22/vrouw/naamgegevens/achternaam"
+                                   rtd-xpath-older="/dataset/concept[2]/concept[2]/concept[4]"
+                                   id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82361"
+                                   index-older="4"
+                                   value-type=""
+                                   index-newer="4"
+                                   rtd-xpath-newer="/dataset/concept[2]/concept[2]/concept[4]"
+                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82361">
+                     <inherit-equals/>
+                     <child-concepts doc-xpath="/voorgaande_zwangerschap_samenvatting_22/vrouw/naamgegevens/achternaam">
+                        <concept-compare signature="shortname:soort_naam"
+                                         shortname="soort_naam"
+                                         doc-xpath="/voorgaande_zwangerschap_samenvatting_22/vrouw/naamgegevens/achternaam/soort_naam"
+                                         rtd-xpath-older="/dataset/concept[2]/concept[2]/concept[4]/concept[1]"
+                                         id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82362"
+                                         index-older="1"
+                                         value-type="code"
+                                         index-newer="1"
+                                         rtd-xpath-newer="/dataset/concept[2]/concept[2]/concept[4]/concept[1]"
+                                         id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82362">
+                           <inherit-equals/>
+                        </concept-compare>
+                        <concept-compare signature="shortname:voorvoegsel"
+                                         shortname="voorvoegsel"
+                                         doc-xpath="/voorgaande_zwangerschap_samenvatting_22/vrouw/naamgegevens/achternaam/voorvoegsel"
+                                         rtd-xpath-older="/dataset/concept[2]/concept[2]/concept[4]/concept[2]"
+                                         id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82363"
+                                         index-older="2"
+                                         value-type="string"
+                                         index-newer="2"
+                                         rtd-xpath-newer="/dataset/concept[2]/concept[2]/concept[4]/concept[2]"
+                                         id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82363">
+                           <inherit-equals/>
+                        </concept-compare>
+                        <concept-compare signature="shortname:achternaam"
+                                         shortname="achternaam"
+                                         doc-xpath="/voorgaande_zwangerschap_samenvatting_22/vrouw/naamgegevens/achternaam/achternaam"
+                                         rtd-xpath-older="/dataset/concept[2]/concept[2]/concept[4]/concept[3]"
+                                         id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10043"
+                                         index-older="3"
+                                         value-type="string"
+                                         index-newer="3"
+                                         rtd-xpath-newer="/dataset/concept[2]/concept[2]/concept[4]/concept[3]"
+                                         id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10043">
+                           <inherit-equals/>
+                        </concept-compare>
+                     </child-concepts>
+                  </concept-compare>
+               </child-concepts>
+            </concept-compare>
+            <concept-compare signature="shortname:geboortedatum"
+                             shortname="geboortedatum"
+                             doc-xpath="/voorgaande_zwangerschap_samenvatting_22/vrouw/geboortedatum"
+                             rtd-xpath-older="/dataset/concept[2]/concept[3]"
+                             id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10040"
+                             index-older="3"
+                             value-type="date"
+                             index-newer="3"
+                             rtd-xpath-newer="/dataset/concept[2]/concept[3]"
+                             id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10040"/>
+         </child-concepts>
+      </concept-compare>
+      <concept-compare signature="shortname:zwangerschap"
+                       shortname="zwangerschap"
+                       doc-xpath="/voorgaande_zwangerschap_samenvatting_22/zwangerschap"
+                       rtd-xpath-older="/dataset/concept[3]"
+                       id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.3"
+                       index-older="3"
+                       value-type=""
+                       index-newer="3"
+                       rtd-xpath-newer="/dataset/concept[3]"
+                       id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.3">
+         <child-concepts doc-xpath="/voorgaande_zwangerschap_samenvatting_22/zwangerschap">
+            <concept-compare signature="shortname:identificatie_van_de_zwangerschap"
+                             shortname="identificatie_van_de_zwangerschap"
+                             doc-xpath="/voorgaande_zwangerschap_samenvatting_22/zwangerschap/identificatie_van_de_zwangerschap"
+                             rtd-xpath-older="/dataset/concept[3]/concept[1]"
+                             id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80627"
+                             index-older="1"
+                             value-type="identifier"
+                             index-newer="1"
+                             rtd-xpath-newer="/dataset/concept[3]/concept[1]"
+                             id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80627">
+               <inherit-equals/>
+            </concept-compare>
+            <concept-compare signature="shortname:graviditeit"
+                             shortname="graviditeit"
+                             doc-xpath="/voorgaande_zwangerschap_samenvatting_22/zwangerschap/graviditeit"
+                             rtd-xpath-older="/dataset/concept[3]/concept[2]"
+                             id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20010"
+                             index-older="2"
+                             value-type="count"
+                             index-newer="2"
+                             rtd-xpath-newer="/dataset/concept[3]/concept[2]"
+                             id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20010">
+               <inherit-equals/>
+            </concept-compare>
+            <concept-compare signature="shortname:pariteit_voor_deze_zwangerschap"
+                             shortname="pariteit_voor_deze_zwangerschap"
+                             doc-xpath="/voorgaande_zwangerschap_samenvatting_22/zwangerschap/pariteit_voor_deze_zwangerschap"
+                             rtd-xpath-older="/dataset/concept[3]/concept[3]"
+                             id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20150"
+                             index-older="3"
+                             value-type="count"
+                             index-newer="3"
+                             rtd-xpath-newer="/dataset/concept[3]/concept[3]"
+                             id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20150"/>
+            <concept-compare signature="shortname:definitieve_a_terme_datum"
+                             shortname="definitieve_a_terme_datum"
+                             doc-xpath="/voorgaande_zwangerschap_samenvatting_22/zwangerschap/definitieve_a_terme_datum"
+                             rtd-xpath-older="/dataset/concept[3]/concept[4]"
+                             id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82160"
+                             index-older="4"
+                             value-type="date"
+                             index-newer="4"
+                             rtd-xpath-newer="/dataset/concept[3]/concept[4]"
+                             id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82160"/>
+            <concept-compare signature="shortname:diagnose"
+                             shortname="diagnose"
+                             doc-xpath="/voorgaande_zwangerschap_samenvatting_22/zwangerschap/diagnose"
+                             rtd-xpath-older="/dataset/concept[3]/concept[5]"
+                             id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82268"
+                             index-older="5"
+                             value-type=""
+                             index-newer="5"
+                             rtd-xpath-newer="/dataset/concept[3]/concept[5]"
+                             id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82268">
+               <child-concepts doc-xpath="/voorgaande_zwangerschap_samenvatting_22/zwangerschap/diagnose">
+                  <concept-compare signature="shortname:gynaecologische_aandoening"
+                                   shortname="gynaecologische_aandoening"
+                                   doc-xpath="/voorgaande_zwangerschap_samenvatting_22/zwangerschap/diagnose/gynaecologische_aandoening"
+                                   rtd-xpath-older="/dataset/concept[3]/concept[5]/concept[1]"
+                                   id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82269"
+                                   index-older="1"
+                                   value-type="code"
+                                   index-newer="1"
+                                   rtd-xpath-newer="/dataset/concept[3]/concept[5]/concept[1]"
+                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82269">
+                     <inherit-equals/>
+                  </concept-compare>
+                  <concept-compare signature="shortname:bloedverliesq"
+                                   shortname="bloedverliesq"
+                                   doc-xpath="/voorgaande_zwangerschap_samenvatting_22/zwangerschap/diagnose/bloedverliesq"
+                                   rtd-xpath-older="/dataset/concept[3]/concept[5]/concept[2]"
+                                   id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82270"
+                                   index-older="2"
+                                   value-type="boolean"
+                                   index-newer="2"
+                                   rtd-xpath-newer="/dataset/concept[3]/concept[5]/concept[2]"
+                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82270"/>
+                  <concept-compare signature="shortname:cervixinsufficientieq"
+                                   shortname="cervixinsufficientieq"
+                                   doc-xpath="/voorgaande_zwangerschap_samenvatting_22/zwangerschap/diagnose/cervixinsufficientieq"
+                                   rtd-xpath-older="/dataset/concept[3]/concept[5]/concept[3]"
+                                   id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82271"
+                                   index-older="3"
+                                   value-type="boolean"
+                                   index-newer="3"
+                                   rtd-xpath-newer="/dataset/concept[3]/concept[5]/concept[3]"
+                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82271"/>
+                  <concept-compare signature="shortname:infectie"
+                                   shortname="infectie"
+                                   doc-xpath="/voorgaande_zwangerschap_samenvatting_22/zwangerschap/diagnose/infectie"
+                                   rtd-xpath-older="/dataset/concept[3]/concept[5]/concept[4]"
+                                   id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82273"
+                                   index-older="4"
+                                   value-type="code"
+                                   index-newer="4"
+                                   rtd-xpath-newer="/dataset/concept[3]/concept[5]/concept[4]"
+                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82273"/>
+                  <concept-compare signature="shortname:hyperemesis_gravidarumq"
+                                   shortname="hyperemesis_gravidarumq"
+                                   doc-xpath="/voorgaande_zwangerschap_samenvatting_22/zwangerschap/diagnose/hyperemesis_gravidarumq"
+                                   rtd-xpath-older="/dataset/concept[3]/concept[5]/concept[5]"
+                                   id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82274"
+                                   index-older="5"
+                                   value-type="boolean"
+                                   index-newer="5"
+                                   rtd-xpath-newer="/dataset/concept[3]/concept[5]/concept[5]"
+                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82274"/>
+                  <concept-compare signature="shortname:hypertensieve_aandoening"
+                                   shortname="hypertensieve_aandoening"
+                                   doc-xpath="/voorgaande_zwangerschap_samenvatting_22/zwangerschap/diagnose/hypertensieve_aandoening"
+                                   rtd-xpath-older="/dataset/concept[3]/concept[5]/concept[6]"
+                                   id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82275"
+                                   index-older="6"
+                                   value-type="code"
+                                   index-newer="6"
+                                   rtd-xpath-newer="/dataset/concept[3]/concept[5]/concept[6]"
+                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82275"/>
+                  <concept-compare signature="shortname:zwangerschapscholestaseq"
+                                   shortname="zwangerschapscholestaseq"
+                                   doc-xpath="/voorgaande_zwangerschap_samenvatting_22/zwangerschap/diagnose/zwangerschapscholestaseq"
+                                   rtd-xpath-older="/dataset/concept[3]/concept[5]/concept[7]"
+                                   id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82276"
+                                   index-older="7"
+                                   value-type="boolean"
+                                   index-newer="7"
+                                   rtd-xpath-newer="/dataset/concept[3]/concept[5]/concept[7]"
+                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82276"/>
+                  <concept-compare signature="shortname:diabetes_gravidarum_met_insulineq"
+                                   shortname="diabetes_gravidarum_met_insulineq"
+                                   doc-xpath="/voorgaande_zwangerschap_samenvatting_22/zwangerschap/diagnose/diabetes_gravidarum_met_insulineq"
+                                   rtd-xpath-older="/dataset/concept[3]/concept[5]/concept[8]"
+                                   id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82277"
+                                   index-older="8"
+                                   value-type="boolean"
+                                   index-newer="8"
+                                   rtd-xpath-newer="/dataset/concept[3]/concept[5]/concept[8]"
+                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82277"/>
+                  <concept-compare signature="shortname:afwijkende_groei_foetus"
+                                   shortname="afwijkende_groei_foetus"
+                                   doc-xpath="/voorgaande_zwangerschap_samenvatting_22/zwangerschap/diagnose/afwijkende_groei_foetus"
+                                   rtd-xpath-older="/dataset/concept[3]/concept[5]/concept[9]"
+                                   id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82278"
+                                   index-older="9"
+                                   value-type="code"
+                                   index-newer="9"
+                                   rtd-xpath-newer="/dataset/concept[3]/concept[5]/concept[9]"
+                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82278"/>
+                  <concept-compare signature="shortname:dreigende_partus_immaturusq"
+                                   shortname="dreigende_partus_immaturusq"
+                                   doc-xpath="/voorgaande_zwangerschap_samenvatting_22/zwangerschap/diagnose/dreigende_partus_immaturusq"
+                                   rtd-xpath-older="/dataset/concept[3]/concept[5]/concept[10]"
+                                   id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82279"
+                                   index-older="10"
+                                   value-type="boolean"
+                                   index-newer="10"
+                                   rtd-xpath-newer="/dataset/concept[3]/concept[5]/concept[10]"
+                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82279"/>
+                  <concept-compare signature="shortname:dreigende_partus_prematurusq"
+                                   shortname="dreigende_partus_prematurusq"
+                                   doc-xpath="/voorgaande_zwangerschap_samenvatting_22/zwangerschap/diagnose/dreigende_partus_prematurusq"
+                                   rtd-xpath-older="/dataset/concept[3]/concept[5]/concept[11]"
+                                   id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82280"
+                                   index-older="11"
+                                   value-type="boolean"
+                                   index-newer="11"
+                                   rtd-xpath-newer="/dataset/concept[3]/concept[5]/concept[11]"
+                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82280"/>
+                  <concept-compare signature="shortname:abruptio_placentaeq"
+                                   shortname="abruptio_placentaeq"
+                                   doc-xpath="/voorgaande_zwangerschap_samenvatting_22/zwangerschap/diagnose/abruptio_placentaeq"
+                                   rtd-xpath-older="/dataset/concept[3]/concept[5]/concept[12]"
+                                   id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82289"
+                                   index-older="12"
+                                   value-type="boolean"
+                                   index-newer="12"
+                                   rtd-xpath-newer="/dataset/concept[3]/concept[5]/concept[12]"
+                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82289"/>
+               </child-concepts>
+            </concept-compare>
+            <concept-compare signature="shortname:wijze_einde_zwangerschap"
+                             shortname="wijze_einde_zwangerschap"
+                             doc-xpath="/voorgaande_zwangerschap_samenvatting_22/zwangerschap/wijze_einde_zwangerschap"
+                             rtd-xpath-older="/dataset/concept[3]/concept[6]"
+                             id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80625"
+                             index-older="6"
+                             value-type="code"
+                             index-newer="6"
+                             rtd-xpath-newer="/dataset/concept[3]/concept[6]"
+                             id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80625">
+               <inherit-equals/>
+            </concept-compare>
+            <concept-compare signature="shortname:datum_einde_zwangerschap"
+                             shortname="datum_einde_zwangerschap"
+                             doc-xpath="/voorgaande_zwangerschap_samenvatting_22/zwangerschap/datum_einde_zwangerschap"
+                             rtd-xpath-older="/dataset/concept[3]/concept[7]"
+                             id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20540"
+                             index-older="7"
+                             value-type="datetime"
+                             index-newer="7"
+                             rtd-xpath-newer="/dataset/concept[3]/concept[7]"
+                             id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20540"/>
+         </child-concepts>
+      </concept-compare>
+      <concept-compare signature="shortname:bevalling"
+                       shortname="bevalling"
+                       doc-xpath="/voorgaande_zwangerschap_samenvatting_22/bevalling"
+                       rtd-xpath-older="/dataset/concept[4]"
+                       id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.6"
+                       index-older="4"
+                       value-type=""
+                       index-newer="4"
+                       rtd-xpath-newer="/dataset/concept[4]"
+                       id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.6">
+         <child-concepts doc-xpath="/voorgaande_zwangerschap_samenvatting_22/bevalling">
+            <concept-compare signature="shortname:diagnose_bevalling"
+                             shortname="diagnose_bevalling"
+                             doc-xpath="/voorgaande_zwangerschap_samenvatting_22/bevalling/diagnose_bevalling"
+                             rtd-xpath-older="/dataset/concept[4]/concept[1]"
+                             id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82291"
+                             index-older="1"
+                             value-type=""
+                             index-newer="1"
+                             rtd-xpath-newer="/dataset/concept[4]/concept[1]"
+                             id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82291">
+               <child-concepts doc-xpath="/voorgaande_zwangerschap_samenvatting_22/bevalling/diagnose_bevalling">
+                  <concept-compare signature="shortname:datum"
+                                   shortname="datum"
+                                   doc-xpath="/voorgaande_zwangerschap_samenvatting_22/bevalling/diagnose_bevalling/datum"
+                                   rtd-xpath-older="/dataset/concept[4]/concept[1]/concept[1]"
+                                   id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82381"
+                                   index-older="1"
+                                   value-type="datetime"
+                                   index-newer="1"
+                                   rtd-xpath-newer="/dataset/concept[4]/concept[1]/concept[1]"
+                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82381">
+                     <inherit-equals/>
+                  </concept-compare>
+                  <concept-compare signature="shortname:zwangerschapsduur"
+                                   shortname="zwangerschapsduur"
+                                   doc-xpath="/voorgaande_zwangerschap_samenvatting_22/bevalling/diagnose_bevalling/zwangerschapsduur"
+                                   rtd-xpath-older="/dataset/concept[4]/concept[1]/concept[2]"
+                                   id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82382"
+                                   index-older="2"
+                                   value-type="quantity"
+                                   index-newer="2"
+                                   rtd-xpath-newer="/dataset/concept[4]/concept[1]/concept[2]"
+                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82382">
+                     <inherit-equals/>
+                  </concept-compare>
+                  <concept-compare signature="shortname:fluxus_postpartumq"
+                                   shortname="fluxus_postpartumq"
+                                   doc-xpath="/voorgaande_zwangerschap_samenvatting_22/bevalling/diagnose_bevalling/fluxus_postpartumq"
+                                   rtd-xpath-older="/dataset/concept[4]/concept[1]/concept[3]"
+                                   id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82398"
+                                   index-older="3"
+                                   value-type="boolean"
+                                   index-newer="3"
+                                   rtd-xpath-newer="/dataset/concept[4]/concept[1]/concept[3]"
+                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82398"/>
+               </child-concepts>
+            </concept-compare>
+            <concept-compare signature="shortname:wijze_waarop_de_baring_begon"
+                             shortname="wijze_waarop_de_baring_begon"
+                             doc-xpath="/voorgaande_zwangerschap_samenvatting_22/bevalling/wijze_waarop_de_baring_begon"
+                             rtd-xpath-older="/dataset/concept[4]/concept[2]"
+                             id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20550"
+                             index-older="2"
+                             value-type="code"
+                             index-newer="3"
+                             rtd-xpath-newer="/dataset/concept[4]/concept[3]"
+                             id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20550">
+               <diff type="concept-moved" index-older="2" index-newer="3"/>
+               <inherit-equals/>
+            </concept-compare>
+            <concept-compare signature="shortname:interventies_begin_baring_groep"
+                             shortname="interventies_begin_baring_groep"
+                             doc-xpath="/voorgaande_zwangerschap_samenvatting_22/bevalling/interventies_begin_baring_groep"
+                             rtd-xpath-older="/dataset/concept[4]/concept[3]"
+                             id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20555"
+                             index-older="3"
+                             value-type="">
+               <diff type="concept-deleted"/>
+            </concept-compare>
+            <concept-compare signature="shortname:placenta"
+                             shortname="placenta"
+                             doc-xpath="/voorgaande_zwangerschap_samenvatting_22/bevalling/placenta"
+                             rtd-xpath-older="/dataset/concept[4]/concept[4]"
+                             id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80612"
+                             index-older="4"
+                             value-type=""
+                             index-newer="4"
+                             rtd-xpath-newer="/dataset/concept[4]/concept[4]"
+                             id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80612">
+               <child-concepts doc-xpath="/voorgaande_zwangerschap_samenvatting_22/bevalling/placenta">
+                  <concept-compare signature="shortname:geboorte_placenta"
+                                   shortname="geboorte_placenta"
+                                   doc-xpath="/voorgaande_zwangerschap_samenvatting_22/bevalling/placenta/geboorte_placenta"
+                                   rtd-xpath-older="/dataset/concept[4]/concept[4]/concept"
+                                   id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20630"
+                                   index-older="1"
+                                   value-type="code"
+                                   index-newer="1"
+                                   rtd-xpath-newer="/dataset/concept[4]/concept[4]/concept"
+                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20630"/>
+               </child-concepts>
+            </concept-compare>
+            <concept-compare signature="shortname:hoeveelheid_bloedverlies"
+                             shortname="hoeveelheid_bloedverlies"
+                             doc-xpath="/voorgaande_zwangerschap_samenvatting_22/bevalling/hoeveelheid_bloedverlies"
+                             rtd-xpath-older="/dataset/concept[4]/concept[5]"
+                             id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20640"
+                             index-older="5"
+                             value-type="quantity"
+                             index-newer="5"
+                             rtd-xpath-newer="/dataset/concept[4]/concept[5]"
+                             id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20640"/>
+            <concept-compare signature="shortname:conditie_perineum_postpartum"
+                             shortname="conditie_perineum_postpartum"
+                             doc-xpath="/voorgaande_zwangerschap_samenvatting_22/bevalling/conditie_perineum_postpartum"
+                             rtd-xpath-older="/dataset/concept[4]/concept[6]"
+                             id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80673"
+                             index-older="6"
+                             value-type="code"
+                             index-newer="6"
+                             rtd-xpath-newer="/dataset/concept[4]/concept[6]"
+                             id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80673"/>
+            <concept-compare signature="shortname:interventies_begin_baring"
+                             shortname="interventies_begin_baring"
+                             doc-xpath="/voorgaande_zwangerschap_samenvatting_23/bevalling/interventies_begin_baring"
+                             rtd-xpath-newer="/dataset/concept[4]/concept[2]"
+                             index-newer="2"
+                             id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20555"
+                             value-type="">
+               <diff type="concept-new"/>
+            </concept-compare>
+         </child-concepts>
+      </concept-compare>
+      <concept-compare signature="shortname:uitkomst_per_kind"
+                       shortname="uitkomst_per_kind"
+                       doc-xpath="/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind"
+                       rtd-xpath-older="/dataset/concept[5]"
+                       id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.7"
+                       index-older="5"
+                       value-type=""
+                       index-newer="5"
+                       rtd-xpath-newer="/dataset/concept[5]"
+                       id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.7">
+         <child-concepts doc-xpath="/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind">
+            <concept-compare signature="shortname:baring"
+                             shortname="baring"
+                             doc-xpath="/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring"
+                             rtd-xpath-older="/dataset/concept[5]/concept"
+                             id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40002"
+                             index-older="1"
+                             value-type=""
+                             index-newer="1"
+                             rtd-xpath-newer="/dataset/concept[5]/concept"
+                             id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40002">
+               <child-concepts doc-xpath="/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring">
+                  <concept-compare signature="shortname:werkelijke_plaats_baring_type_locatie"
+                                   shortname="werkelijke_plaats_baring_type_locatie"
+                                   doc-xpath="/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/werkelijke_plaats_baring_type_locatie"
+                                   rtd-xpath-older="/dataset/concept[5]/concept/concept[1]"
+                                   id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40003"
+                                   index-older="1"
+                                   value-type="code"
+                                   index-newer="1"
+                                   rtd-xpath-newer="/dataset/concept[5]/concept/concept[1]"
+                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40003"/>
+                  <concept-compare signature="shortname:ziekenhuis_baring"
+                                   shortname="ziekenhuis_baring"
+                                   doc-xpath="/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/ziekenhuis_baring"
+                                   rtd-xpath-older="/dataset/concept[5]/concept/concept[2]"
+                                   id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82114"
+                                   index-older="2"
+                                   value-type=""
+                                   index-newer="2"
+                                   rtd-xpath-newer="/dataset/concept[5]/concept/concept[2]"
+                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82114">
+                     <inherit-equals/>
+                     <child-concepts doc-xpath="/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/ziekenhuis_baring">
+                        <concept-compare signature="shortname:ziekenhuisnummer_lvrid"
+                                         shortname="ziekenhuisnummer_lvrid"
+                                         doc-xpath="/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/ziekenhuis_baring/ziekenhuisnummer_lvrid"
+                                         rtd-xpath-older="/dataset/concept[5]/concept/concept[2]/concept[1]"
+                                         id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40005"
+                                         index-older="1"
+                                         value-type="identifier"
+                                         index-newer="1"
+                                         rtd-xpath-newer="/dataset/concept[5]/concept/concept[2]/concept[1]"
+                                         id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40005">
+                           <inherit-equals/>
+                        </concept-compare>
+                        <concept-compare signature="shortname:zorginstelling_agbid"
+                                         shortname="zorginstelling_agbid"
+                                         doc-xpath="/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/ziekenhuis_baring/zorginstelling_agbid"
+                                         rtd-xpath-older="/dataset/concept[5]/concept/concept[2]/concept[2]"
+                                         id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82116"
+                                         index-older="2"
+                                         value-type="identifier"
+                                         index-newer="2"
+                                         rtd-xpath-newer="/dataset/concept[5]/concept/concept[2]/concept[2]"
+                                         id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82116">
+                           <inherit-equals/>
+                        </concept-compare>
+                        <concept-compare signature="shortname:naam_zorginstelling"
+                                         shortname="naam_zorginstelling"
+                                         doc-xpath="/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/ziekenhuis_baring/naam_zorginstelling"
+                                         rtd-xpath-older="/dataset/concept[5]/concept/concept[2]/concept[3]"
+                                         id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82117"
+                                         index-older="3"
+                                         value-type="complex"
+                                         index-newer="3"
+                                         rtd-xpath-newer="/dataset/concept[5]/concept/concept[2]/concept[3]"
+                                         id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82117">
+                           <inherit-equals/>
+                        </concept-compare>
+                     </child-concepts>
+                  </concept-compare>
+                  <concept-compare signature="shortname:demografische_gegevens"
+                                   shortname="demografische_gegevens"
+                                   doc-xpath="/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/demografische_gegevens"
+                                   rtd-xpath-older="/dataset/concept[5]/concept/concept[3]"
+                                   id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40006"
+                                   index-older="3"
+                                   value-type=""
+                                   index-newer="3"
+                                   rtd-xpath-newer="/dataset/concept[5]/concept/concept[3]"
+                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40006">
+                     <child-concepts doc-xpath="/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/demografische_gegevens">
+                        <concept-compare signature="shortname:naamgegevens_kind"
+                                         shortname="naamgegevens_kind"
+                                         doc-xpath="/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/demografische_gegevens/naamgegevens_kind"
+                                         rtd-xpath-older="/dataset/concept[5]/concept/concept[3]/concept[1]"
+                                         id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82051"
+                                         index-older="1"
+                                         value-type=""
+                                         index-newer="1"
+                                         rtd-xpath-newer="/dataset/concept[5]/concept/concept[3]/concept[1]"
+                                         id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82051">
+                           <child-concepts doc-xpath="/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/demografische_gegevens/naamgegevens_kind">
+                              <concept-compare signature="shortname:voornamen"
+                                               shortname="voornamen"
+                                               doc-xpath="/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/demografische_gegevens/naamgegevens_kind/voornamen"
+                                               rtd-xpath-older="/dataset/concept[5]/concept/concept[3]/concept[1]/concept[1]"
+                                               id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82353"
+                                               index-older="1"
+                                               value-type="string"
+                                               index-newer="1"
+                                               rtd-xpath-newer="/dataset/concept[5]/concept/concept[3]/concept[1]/concept[1]"
+                                               id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82353">
+                                 <inherit-equals/>
+                              </concept-compare>
+                              <concept-compare signature="shortname:achternaam"
+                                               shortname="achternaam"
+                                               doc-xpath="/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/demografische_gegevens/naamgegevens_kind/achternaam"
+                                               rtd-xpath-older="/dataset/concept[5]/concept/concept[3]/concept[1]/concept[2]"
+                                               id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82053"
+                                               index-older="2"
+                                               value-type=""
+                                               index-newer="2"
+                                               rtd-xpath-newer="/dataset/concept[5]/concept/concept[3]/concept[1]/concept[2]"
+                                               id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82053">
+                                 <inherit-equals/>
+                                 <child-concepts doc-xpath="/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/demografische_gegevens/naamgegevens_kind/achternaam">
+                                    <concept-compare signature="shortname:voorvoegsel"
+                                                     shortname="voorvoegsel"
+                                                     doc-xpath="/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/demografische_gegevens/naamgegevens_kind/achternaam/voorvoegsel"
+                                                     rtd-xpath-older="/dataset/concept[5]/concept/concept[3]/concept[1]/concept[2]/concept[1]"
+                                                     id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82054"
+                                                     index-older="1"
+                                                     value-type="string"
+                                                     index-newer="1"
+                                                     rtd-xpath-newer="/dataset/concept[5]/concept/concept[3]/concept[1]/concept[2]/concept[1]"
+                                                     id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82054">
+                                       <inherit-equals/>
+                                    </concept-compare>
+                                    <concept-compare signature="shortname:achternaam"
+                                                     shortname="achternaam"
+                                                     doc-xpath="/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/demografische_gegevens/naamgegevens_kind/achternaam/achternaam"
+                                                     rtd-xpath-older="/dataset/concept[5]/concept/concept[3]/concept[1]/concept[2]/concept[2]"
+                                                     id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82055"
+                                                     index-older="2"
+                                                     value-type="string"
+                                                     index-newer="2"
+                                                     rtd-xpath-newer="/dataset/concept[5]/concept/concept[3]/concept[1]/concept[2]/concept[2]"
+                                                     id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82055"/>
+                                 </child-concepts>
+                              </concept-compare>
+                           </child-concepts>
+                        </concept-compare>
+                        <concept-compare signature="shortname:geslacht_medische_observatie"
+                                         shortname="geslacht_medische_observatie"
+                                         doc-xpath="/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/demografische_gegevens/geslacht_medische_observatie"
+                                         rtd-xpath-older="/dataset/concept[5]/concept/concept[3]/concept[2]"
+                                         id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40041"
+                                         index-older="2"
+                                         value-type="code"
+                                         index-newer="2"
+                                         rtd-xpath-newer="/dataset/concept[5]/concept/concept[3]/concept[2]"
+                                         id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40041"/>
+                        <concept-compare signature="shortname:geboortedatum"
+                                         shortname="geboortedatum"
+                                         doc-xpath="/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/demografische_gegevens/geboortedatum"
+                                         rtd-xpath-older="/dataset/concept[5]/concept/concept[3]/concept[3]"
+                                         id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40050"
+                                         index-older="3"
+                                         value-type="datetime"
+                                         index-newer="3"
+                                         rtd-xpath-newer="/dataset/concept[5]/concept/concept[3]/concept[3]"
+                                         id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40050">
+                           <inherit-equals/>
+                        </concept-compare>
+                        <concept-compare signature="shortname:perinatale_sterfte_groep"
+                                         shortname="perinatale_sterfte_groep"
+                                         doc-xpath="/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/demografische_gegevens/perinatale_sterfte_groep"
+                                         rtd-xpath-older="/dataset/concept[5]/concept/concept[3]/concept[4]"
+                                         id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40279"
+                                         index-older="4"
+                                         value-type=""
+                                         index-newer="4"
+                                         rtd-xpath-newer="/dataset/concept[5]/concept/concept[3]/concept[4]"
+                                         id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40279">
+                           <inherit-equals/>
+                           <child-concepts doc-xpath="/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/demografische_gegevens/perinatale_sterfte_groep">
+                              <concept-compare signature="shortname:perinatale_sterfteq"
+                                               shortname="perinatale_sterfteq"
+                                               doc-xpath="/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/demografische_gegevens/perinatale_sterfte_groep/perinatale_sterfteq"
+                                               rtd-xpath-older="/dataset/concept[5]/concept/concept[3]/concept[4]/concept[1]"
+                                               id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40280"
+                                               index-older="1"
+                                               value-type="boolean"
+                                               index-newer="1"
+                                               rtd-xpath-newer="/dataset/concept[5]/concept/concept[3]/concept[4]/concept[1]"
+                                               id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40280">
+                                 <inherit-equals/>
+                              </concept-compare>
+                              <concept-compare signature="shortname:fase_perinatale_sterfte"
+                                               shortname="fase_perinatale_sterfte"
+                                               doc-xpath="/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/demografische_gegevens/perinatale_sterfte_groep/fase_perinatale_sterfte"
+                                               rtd-xpath-older="/dataset/concept[5]/concept/concept[3]/concept[4]/concept[2]"
+                                               id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40290"
+                                               index-older="2"
+                                               value-type="code"
+                                               index-newer="2"
+                                               rtd-xpath-newer="/dataset/concept[5]/concept/concept[3]/concept[4]/concept[2]"
+                                               id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40290"/>
+                           </child-concepts>
+                        </concept-compare>
+                     </child-concepts>
+                  </concept-compare>
+                  <concept-compare signature="shortname:kindspecifieke_uitkomstgegevens"
+                                   shortname="kindspecifieke_uitkomstgegevens"
+                                   doc-xpath="/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens"
+                                   rtd-xpath-older="/dataset/concept[5]/concept/concept[4]"
+                                   id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.72"
+                                   index-older="4"
+                                   value-type=""
+                                   index-newer="4"
+                                   rtd-xpath-newer="/dataset/concept[5]/concept/concept[4]"
+                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.72">
+                     <child-concepts doc-xpath="/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens">
+                        <concept-compare signature="shortname:type_partus"
+                                         shortname="type_partus"
+                                         doc-xpath="/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/type_partus"
+                                         rtd-xpath-older="/dataset/concept[5]/concept/concept[4]/concept[1]"
+                                         id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80626"
+                                         index-older="1"
+                                         value-type="code"
+                                         index-newer="1"
+                                         rtd-xpath-newer="/dataset/concept[5]/concept/concept[4]/concept[1]"
+                                         id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80626">
+                           <diff type="conceptlist">
+                              <diff type="code-deleted"
+                                    code-older="48782003"
+                                    code-type-older="concept"
+                                    displayname-older="Delivery normal (finding)"/>
+                              <diff type="code-deleted"
+                                    code-older="8561000146109"
+                                    code-type-older="concept"
+                                    displayname-older="Assisted delivery of fetus (finding)"/>
+                              <diff type="code-deleted"
+                                    code-older="200146002"
+                                    code-type-older="concept"
+                                    displayname-older="Cesarean delivery - delivered (finding)"/>
+                              <diff type="code-deleted"
+                                    code-older="200148001"
+                                    code-type-older="concept"
+                                    displayname-older="Delivery by elective cesarean section (finding)"/>
+                              <diff type="code-deleted"
+                                    code-older="200149009"
+                                    code-type-older="concept"
+                                    displayname-older="Delivery by emergency cesarean section (finding)"/>
+                              <diff type="code-deleted"
+                                    code-older="39406005"
+                                    code-type-older="concept"
+                                    displayname-older="Legally induced abortion (disorder)"/>
+                              <diff type="code-new"
+                                    code-newer="177184002"
+                                    code-type-newer="concept"
+                                    displayname-newer="Normal delivery procedure (procedure)"/>
+                              <diff type="code-new"
+                                    code-newer="3311000146109"
+                                    code-type-newer="concept"
+                                    displayname-newer="Assisted delivery of fetus (procedure)"/>
+                              <diff type="code-new"
+                                    code-newer="11466000"
+                                    code-type-newer="concept"
+                                    displayname-newer="Cesarean section (procedure)"/>
+                              <diff type="code-new"
+                                    code-newer="177141003"
+                                    code-type-newer="concept"
+                                    displayname-newer="Elective cesarian delivery (procedure)"/>
+                              <diff type="code-new"
+                                    code-newer="274130007"
+                                    code-type-newer="concept"
+                                    displayname-newer="Emergency cesarian section (procedure)"/>
+                              <diff type="code-new"
+                                    code-newer="10"
+                                    code-type-newer="concept"
+                                    displayname-newer="Termination of Pregnancy (TOP)"/>
+                              <diff type="code-new"
+                                    code-newer="447972007"
+                                    code-type-newer="concept"
+                                    displayname-newer="Medical termination of pregnancy using prostaglandin (procedure)"/>
+                              <diff type="code-new"
+                                    code-newer="236990004"
+                                    code-type-newer="concept"
+                                    displayname-newer="Postmortem cesarean section (procedure)"/>
+                              <diff type="code-new"
+                                    code-newer="9"
+                                    code-type-newer="concept"
+                                    displayname-newer="Overig"/>
+                           </diff>
+                        </concept-compare>
+                        <concept-compare signature="shortname:zwangerschapsduur"
+                                         shortname="zwangerschapsduur"
+                                         doc-xpath="/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/zwangerschapsduur"
+                                         rtd-xpath-older="/dataset/concept[5]/concept/concept[4]/concept[2]"
+                                         id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20062"
+                                         index-older="2"
+                                         value-type="quantity"
+                                         index-newer="2"
+                                         rtd-xpath-newer="/dataset/concept[5]/concept/concept[4]/concept[2]"
+                                         id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20062"/>
+                        <concept-compare signature="shortname:apgarscore_na_5_min"
+                                         shortname="apgarscore_na_5_min"
+                                         doc-xpath="/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/apgarscore_na_5_min"
+                                         rtd-xpath-older="/dataset/concept[5]/concept/concept[4]/concept[3]"
+                                         id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40071"
+                                         index-older="3"
+                                         value-type="count">
+                           <diff type="concept-deleted"/>
+                        </concept-compare>
+                        <concept-compare signature="shortname:vaginale_kunstverlossing_groep"
+                                         shortname="vaginale_kunstverlossing_groep"
+                                         doc-xpath="/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/vaginale_kunstverlossing_groep"
+                                         rtd-xpath-older="/dataset/concept[5]/concept/concept[4]/concept[4]"
+                                         id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40189"
+                                         index-older="4"
+                                         value-type=""
+                                         index-newer="3"
+                                         rtd-xpath-newer="/dataset/concept[5]/concept/concept[4]/concept[3]"
+                                         id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40189">
+                           <diff type="concept-moved" index-older="4" index-newer="3"/>
+                           <child-concepts doc-xpath="/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/vaginale_kunstverlossing_groep">
+                              <concept-compare signature="shortname:vaginale_kunstverlossing"
+                                               shortname="vaginale_kunstverlossing"
+                                               doc-xpath="/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/vaginale_kunstverlossing_groep/vaginale_kunstverlossing"
+                                               rtd-xpath-older="/dataset/concept[5]/concept/concept[4]/concept[4]/concept"
+                                               id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40190"
+                                               index-older="1"
+                                               value-type="code"
+                                               index-newer="1"
+                                               rtd-xpath-newer="/dataset/concept[5]/concept/concept[4]/concept[3]/concept"
+                                               id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40190"/>
+                           </child-concepts>
+                        </concept-compare>
+                        <concept-compare signature="shortname:sectio_caesarea_group"
+                                         shortname="sectio_caesarea_group"
+                                         doc-xpath="/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/sectio_caesarea_group"
+                                         rtd-xpath-older="/dataset/concept[5]/concept/concept[4]/concept[5]"
+                                         id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40219"
+                                         index-older="5"
+                                         value-type=""
+                                         index-newer="4"
+                                         rtd-xpath-newer="/dataset/concept[5]/concept/concept[4]/concept[4]"
+                                         id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40219">
+                           <diff type="concept-moved" index-older="5" index-newer="4"/>
+                           <child-concepts doc-xpath="/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/sectio_caesarea_group">
+                              <concept-compare signature="shortname:beslismoment_sectio_caesarea"
+                                               shortname="beslismoment_sectio_caesarea"
+                                               doc-xpath="/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/sectio_caesarea_group/beslismoment_sectio_caesarea"
+                                               rtd-xpath-older="/dataset/concept[5]/concept/concept[4]/concept[5]/concept[1]"
+                                               id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40225"
+                                               index-older="1"
+                                               value-type="code"
+                                               index-newer="1"
+                                               rtd-xpath-newer="/dataset/concept[5]/concept/concept[4]/concept[4]/concept"
+                                               id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40225"/>
+                              <concept-compare signature="shortname:indicatie_sectio_caesarea"
+                                               shortname="indicatie_sectio_caesarea"
+                                               doc-xpath="/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/sectio_caesarea_group/indicatie_sectio_caesarea"
+                                               rtd-xpath-older="/dataset/concept[5]/concept/concept[4]/concept[5]/concept[2]"
+                                               id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40230"
+                                               index-older="2"
+                                               value-type="code">
+                                 <diff type="concept-deleted"/>
+                              </concept-compare>
+                           </child-concepts>
+                        </concept-compare>
+                        <concept-compare signature="shortname:overige_interventies"
+                                         shortname="overige_interventies"
+                                         doc-xpath="/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/overige_interventies"
+                                         rtd-xpath-older="/dataset/concept[5]/concept/concept[4]/concept[6]"
+                                         id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40240"
+                                         index-older="6"
+                                         value-type="code"
+                                         index-newer="5"
+                                         rtd-xpath-newer="/dataset/concept[5]/concept/concept[4]/concept[5]"
+                                         id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40240">
+                           <diff type="concept-moved" index-older="6" index-newer="5"/>
+                           <diff type="conceptlist">
+                              <diff type="code-new"
+                                    code-newer="237009004"
+                                    code-type-newer="concept"
+                                    displayname-newer="McRobert's maneuver (procedure)"/>
+                              <diff type="code-new"
+                                    code-newer="237010009"
+                                    code-type-newer="concept"
+                                    displayname-newer="Suprapubic pressure on fetal shoulder (procedure)"/>
+                              <diff type="code-new"
+                                    code-newer="237012001"
+                                    code-type-newer="concept"
+                                    displayname-newer="Freeing the posterior arm (procedure)"/>
+                              <diff type="code-new"
+                                    code-newer="237011008"
+                                    code-type-newer="concept"
+                                    displayname-newer="Wood's screw maneuver (procedure)"/>
+                              <diff type="code-new"
+                                    code-newer="272541000"
+                                    code-type-newer="concept"
+                                    displayname-newer="Half-kneeling position (finding)"/>
+                              <diff type="code-new"
+                                    code-newer="9"
+                                    code-type-newer="concept"
+                                    displayname-newer="Overig"/>
+                           </diff>
+                        </concept-compare>
+                        <concept-compare signature="shortname:lichamelijk_onderzoek_kind"
+                                         shortname="lichamelijk_onderzoek_kind"
+                                         doc-xpath="/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind"
+                                         rtd-xpath-older="/dataset/concept[5]/concept/concept[4]/concept[7]"
+                                         id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80766"
+                                         index-older="7"
+                                         value-type=""
+                                         index-newer="6"
+                                         rtd-xpath-newer="/dataset/concept[5]/concept/concept[4]/concept[6]"
+                                         id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80766">
+                           <diff type="concept-moved" index-older="7" index-newer="6"/>
+                           <child-concepts doc-xpath="/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind">
+                              <concept-compare signature="shortname:geboortegewicht"
+                                               shortname="geboortegewicht"
+                                               doc-xpath="/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/geboortegewicht"
+                                               rtd-xpath-older="/dataset/concept[5]/concept/concept[4]/concept[7]/concept[1]"
+                                               id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40060"
+                                               index-older="1"
+                                               value-type="quantity"
+                                               index-newer="2"
+                                               rtd-xpath-newer="/dataset/concept[5]/concept/concept[4]/concept[6]/concept[2]"
+                                               id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40060">
+                                 <diff type="concept-moved" index-older="1" index-newer="2"/>
+                                 <inherit-equals/>
+                              </concept-compare>
+                              <concept-compare signature="shortname:percentiel_van_het_geboortegewicht"
+                                               shortname="percentiel_van_het_geboortegewicht"
+                                               doc-xpath="/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/percentiel_van_het_geboortegewicht"
+                                               rtd-xpath-older="/dataset/concept[5]/concept/concept[4]/concept[7]/concept[2]"
+                                               id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80670"
+                                               index-older="2"
+                                               value-type="code"
+                                               index-newer="3"
+                                               rtd-xpath-newer="/dataset/concept[5]/concept/concept[4]/concept[6]/concept[3]"
+                                               id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80670">
+                                 <diff type="concept-moved" index-older="2" index-newer="3"/>
+                              </concept-compare>
+                              <concept-compare signature="shortname:apgarscore_na_5_min"
+                                               shortname="apgarscore_na_5_min"
+                                               doc-xpath="/voorgaande_zwangerschap_samenvatting_23/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/apgarscore_na_5_min"
+                                               rtd-xpath-newer="/dataset/concept[5]/concept/concept[4]/concept[6]/concept[1]"
+                                               index-newer="1"
+                                               id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40071"
+                                               value-type="count">
+                                 <diff type="concept-new"/>
+                              </concept-compare>
+                           </child-concepts>
+                        </concept-compare>
+                        <concept-compare signature="shortname:congenitale_afwijkingenq"
+                                         shortname="congenitale_afwijkingenq"
+                                         doc-xpath="/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingenq"
+                                         rtd-xpath-older="/dataset/concept[5]/concept/concept[4]/concept[8]"
+                                         id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40080"
+                                         index-older="8"
+                                         value-type="boolean"
+                                         index-newer="7"
+                                         rtd-xpath-newer="/dataset/concept[5]/concept/concept[4]/concept[7]"
+                                         id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40080">
+                           <diff type="concept-moved" index-older="8" index-newer="7"/>
+                        </concept-compare>
+                        <concept-compare signature="shortname:congenitale_afwijkingen_groep"
+                                         shortname="congenitale_afwijkingen_groep"
+                                         doc-xpath="/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep"
+                                         rtd-xpath-older="/dataset/concept[5]/concept/concept[4]/concept[9]"
+                                         id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40081"
+                                         index-older="9"
+                                         value-type=""
+                                         index-newer="8"
+                                         rtd-xpath-newer="/dataset/concept[5]/concept/concept[4]/concept[8]"
+                                         id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40081">
+                           <diff type="concept-moved" index-older="9" index-newer="8"/>
+                           <diff type="maximumMultiplicity" value-older="1" value-newer="*"/>
+                           <child-concepts doc-xpath="/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep">
+                              <concept-compare signature="shortname:specificatie_congenitale_afwijking_groep"
+                                               shortname="specificatie_congenitale_afwijking_groep"
+                                               doc-xpath="/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_congenitale_afwijking_groep"
+                                               rtd-xpath-older="/dataset/concept[5]/concept/concept[4]/concept[9]/concept[1]"
+                                               id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40082"
+                                               index-older="1"
+                                               value-type=""
+                                               index-newer="1"
+                                               rtd-xpath-newer="/dataset/concept[5]/concept/concept[4]/concept[8]/concept[1]"
+                                               id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40082">
+                                 <child-concepts doc-xpath="/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_congenitale_afwijking_groep">
+                                    <concept-compare signature="shortname:specificatie_congenitale_afwijking"
+                                                     shortname="specificatie_congenitale_afwijking"
+                                                     doc-xpath="/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_congenitale_afwijking_groep/specificatie_congenitale_afwijking"
+                                                     rtd-xpath-older="/dataset/concept[5]/concept/concept[4]/concept[9]/concept[1]/concept"
+                                                     id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40090"
+                                                     index-older="1"
+                                                     value-type="code"
+                                                     index-newer="1"
+                                                     rtd-xpath-newer="/dataset/concept[5]/concept/concept[4]/concept[8]/concept[1]/concept"
+                                                     id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40090">
+                                       <diff type="conceptlist">
+                                          <diff type="code-new"
+                                                code-newer="276508000"
+                                                code-type-newer="concept"
+                                                displayname-newer="Hydrops foetalis"/>
+                                       </diff>
+                                    </concept-compare>
+                                 </child-concepts>
+                              </concept-compare>
+                              <concept-compare signature="shortname:chromosomale_afwijkingenq"
+                                               shortname="chromosomale_afwijkingenq"
+                                               doc-xpath="/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/chromosomale_afwijkingenq"
+                                               rtd-xpath-older="/dataset/concept[5]/concept/concept[4]/concept[9]/concept[2]"
+                                               id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40110"
+                                               index-older="2"
+                                               value-type="boolean"
+                                               index-newer="2"
+                                               rtd-xpath-newer="/dataset/concept[5]/concept/concept[4]/concept[8]/concept[2]"
+                                               id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40110"/>
+                              <concept-compare signature="shortname:specificatie_chromosomale_afwijking_groep"
+                                               shortname="specificatie_chromosomale_afwijking_groep"
+                                               doc-xpath="/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_chromosomale_afwijking_groep"
+                                               rtd-xpath-older="/dataset/concept[5]/concept/concept[4]/concept[9]/concept[3]"
+                                               id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40111"
+                                               index-older="3"
+                                               value-type=""
+                                               index-newer="3"
+                                               rtd-xpath-newer="/dataset/concept[5]/concept/concept[4]/concept[8]/concept[3]"
+                                               id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40111">
+                                 <child-concepts doc-xpath="/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_chromosomale_afwijking_groep">
+                                    <concept-compare signature="shortname:specificatie_chromosomale_afwijking"
+                                                     shortname="specificatie_chromosomale_afwijking"
+                                                     doc-xpath="/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_chromosomale_afwijking_groep/specificatie_chromosomale_afwijking"
+                                                     rtd-xpath-older="/dataset/concept[5]/concept/concept[4]/concept[9]/concept[3]/concept"
+                                                     id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40120"
+                                                     index-older="1"
+                                                     value-type="code"
+                                                     index-newer="1"
+                                                     rtd-xpath-newer="/dataset/concept[5]/concept/concept[4]/concept[8]/concept[3]/concept"
+                                                     id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40120"/>
+                                 </child-concepts>
+                              </concept-compare>
+                           </child-concepts>
+                        </concept-compare>
+                        <concept-compare signature="shortname:bijzonderheden_kind"
+                                         shortname="bijzonderheden_kind"
+                                         doc-xpath="/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/bijzonderheden_kind"
+                                         rtd-xpath-older="/dataset/concept[5]/concept/concept[4]/concept[10]"
+                                         id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80790"
+                                         index-older="10"
+                                         value-type="text"
+                                         index-newer="9"
+                                         rtd-xpath-newer="/dataset/concept[5]/concept/concept[4]/concept[9]"
+                                         id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80790">
+                           <diff type="concept-moved" index-older="10" index-newer="9"/>
+                           <inherit-equals/>
+                        </concept-compare>
+                     </child-concepts>
+                  </concept-compare>
+               </child-concepts>
+            </concept-compare>
+         </child-concepts>
+      </concept-compare>
+      <concept-compare signature="shortname:medisch_onderzoek"
+                       shortname="medisch_onderzoek"
+                       doc-xpath="/voorgaande_zwangerschap_samenvatting_22/medisch_onderzoek"
+                       rtd-xpath-older="/dataset/concept[6]"
+                       id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.14"
+                       index-older="6"
+                       value-type=""
+                       index-newer="6"
+                       rtd-xpath-newer="/dataset/concept[6]"
+                       id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.14">
+         <child-concepts doc-xpath="/voorgaande_zwangerschap_samenvatting_22/medisch_onderzoek">
+            <concept-compare signature="shortname:maternale_onderzoeksgegevens"
+                             shortname="maternale_onderzoeksgegevens"
+                             doc-xpath="/voorgaande_zwangerschap_samenvatting_22/medisch_onderzoek/maternale_onderzoeksgegevens"
+                             rtd-xpath-older="/dataset/concept[6]/concept"
+                             id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.142"
+                             index-older="1"
+                             value-type=""
+                             index-newer="1"
+                             rtd-xpath-newer="/dataset/concept[6]/concept"
+                             id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.142">
+               <child-concepts doc-xpath="/voorgaande_zwangerschap_samenvatting_22/medisch_onderzoek/maternale_onderzoeksgegevens">
+                  <concept-compare signature="shortname:urine_bloed_en_aanvullende_onderzoeken"
+                                   shortname="urine_bloed_en_aanvullende_onderzoeken"
+                                   doc-xpath="/voorgaande_zwangerschap_samenvatting_22/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken"
+                                   rtd-xpath-older="/dataset/concept[6]/concept/concept"
+                                   id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80959"
+                                   index-older="1"
+                                   value-type=""
+                                   index-newer="1"
+                                   rtd-xpath-newer="/dataset/concept[6]/concept/concept"
+                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80959">
+                     <child-concepts doc-xpath="/voorgaande_zwangerschap_samenvatting_22/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken">
+                        <concept-compare signature="shortname:psie"
+                                         shortname="psie"
+                                         doc-xpath="/voorgaande_zwangerschap_samenvatting_22/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/psie"
+                                         rtd-xpath-older="/dataset/concept[6]/concept/concept/concept"
+                                         id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80949"
+                                         index-older="1"
+                                         value-type=""
+                                         index-newer="1"
+                                         rtd-xpath-newer="/dataset/concept[6]/concept/concept/concept"
+                                         id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80949">
+                           <child-concepts doc-xpath="/voorgaande_zwangerschap_samenvatting_22/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/psie">
+                              <concept-compare signature="shortname:irregulaire_antistoffenq"
+                                               shortname="irregulaire_antistoffenq"
+                                               doc-xpath="/voorgaande_zwangerschap_samenvatting_22/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/psie/irregulaire_antistoffenq"
+                                               rtd-xpath-older="/dataset/concept[6]/concept/concept/concept/concept"
+                                               id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10812"
+                                               index-older="1"
+                                               value-type="boolean"
+                                               index-newer="1"
+                                               rtd-xpath-newer="/dataset/concept[6]/concept/concept/concept/concept"
+                                               id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10812"/>
+                           </child-concepts>
+                        </concept-compare>
+                     </child-concepts>
+                  </concept-compare>
+               </child-concepts>
+            </concept-compare>
+         </child-concepts>
+      </concept-compare>
+   </child-concepts>
+</compare-datasets>

@@ -6,11 +6,20 @@
     
     Specify filenames only. The input directory is always design/specs-full/. The output directory is determined by the generator software.
     
-    <diff older="older-rtd-version-filename" newer="newer-rtd-version-filename" output="output-filename-without-extension"/>
+    <diff older="older-rtd-version-filename" newer="newer-rtd-version-filename" output="output-filename-without-extension"
+      description="link-text-for-gh-pages-site"/>
+      
   -->
   <!-- ================================================================== -->
 
   <diff older="RetrieveTransaction_kernset_22.xml" newer="RetrieveTransaction_kernset_23.xml" output="diff-kernset-22-23"
     description="Kernset versie 2.2 en 2.3"/>
+
+  <diff older="RetrieveTransaction-verloskundig-dossier-22.xml" newer="RetrieveTransaction-verloskundig-dossier-23.xml"
+    output="diff-verloskundig-dossier-22-23" description="Verloskundig dossier versie 2.2 en 2.3"/>
+
+  <diff older="RetrieveTransaction-samenvatting-voorgaande-zwangerschap-22.xml"
+    newer="RetrieveTransaction-samenvatting-voorgaande-zwangerschap-23.xml" output="diff-samenvatting-voorgaande-zwangerschap-22-23"
+    description="Samenvatting voorgaande zwangerschap versie 2.2 en 2.3"/>
 
 </difflist>

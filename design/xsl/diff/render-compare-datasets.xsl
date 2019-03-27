@@ -20,6 +20,8 @@
   <!-- ================================================================== -->
   <!-- PARAMETERS: -->
 
+  <xsl:param name="description" as="xs:string?" required="no" select="()"/>
+
   <!-- You can turn off the generation of a timestamp. This is useful when generating the diffs for a repo and you don't want the 
     files to change on any generator run. -->
   <xsl:param name="add-timestamp" as="xs:string" required="false" select="string(true())"/>
@@ -34,7 +36,8 @@
   <!-- MAIN TEMPLATES: -->
 
   <xsl:template match="/">
-    <xsl:variable name="page-title" as="xs:string" select="'Datasets vergelijking'"/>
+    <xsl:variable name="page-title" as="xs:string"
+      select="'Datasets vergelijking' || (if (fn:normalize-space($description) ne '') then ': ' || $description else ())"/>
 
     <html>
       <head>

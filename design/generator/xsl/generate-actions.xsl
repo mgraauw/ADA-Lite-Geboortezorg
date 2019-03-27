@@ -200,7 +200,8 @@
       <xsl:variable name="difflist-root" as="element(difflist)" select="doc($dref-difflist)/*"/>
       <xsl:for-each select="$difflist-root/diff[@newer][@older][@output]">
         <specification-diff older="{xtlc:dref-concat(($dir-source-specs-full, @older))}" newer="{xtlc:dref-concat(($dir-source-specs-full, @newer))}"
-          html-out="{xtlc:dref-concat(($dir-build-diffs, @output || '.html'))}" xml-out="{xtlc:dref-concat(($dir-build-diffs, @output || '.xml'))}"/>
+          html-out="{xtlc:dref-concat(($dir-build-diffs, @output || '.html'))}" xml-out="{xtlc:dref-concat(($dir-build-diffs, @output || '.xml'))}"
+          description="{@description}"/>
       </xsl:for-each>
 
       <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
