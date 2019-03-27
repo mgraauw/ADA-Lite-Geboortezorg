@@ -24,7 +24,7 @@
 
   <xsl:function name="bc-alg:value-to-enum" as="xs:string">
     <!-- Determines the enum value for a value in a valueset/conceptList. -->
-    <xsl:param name="valueset-concept-or-exeception" as="element()">
+    <xsl:param name="valueset-concept-or-exception" as="element()">
       <!-- This must be a concept or exception element in a valueset/conceptList of an rtd concept with valueDomain[@type eq 'code'] -->
     </xsl:param>
 
@@ -32,7 +32,7 @@
       this is the switch: -->
     <xsl:variable name="use-simple-enum-generation" as="xs:boolean" select="false()"/>
 
-    <xsl:variable name="base-value" as="xs:string" select="($valueset-concept-or-exeception/@displayName, $valueset-concept-or-exeception/@code)[1]"/>
+    <xsl:variable name="base-value" as="xs:string" select="local:enum-base-value($valueset-concept-or-exception)"/>
     <xsl:choose>
       <xsl:when test="$use-simple-enum-generation">
         <xsl:sequence select="fn:normalize-space($base-value) => translate(' ', '_')"/>
@@ -47,6 +47,45 @@
       </xsl:otherwise>
     </xsl:choose>
 
+  </xsl:function>
+
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+  <xsl:function name="local:enum-base-value" as="xs:string">
+    <xsl:param name="valueset-concept-or-exception" as="element()"/>
+
+    <xsl:variable name="base-value" as="xs:string" select="($valueset-concept-or-exception/@displayName, $valueset-concept-or-exception/@code)[1]"/>
+    <xsl:variable name="level" as="xs:integer" select="local:concept-or-exception-level($valueset-concept-or-exception)"/>
+    <xsl:choose>
+      <xsl:when test="$level le 0">
+        <xsl:sequence select="$base-value"/>
+      </xsl:when>
+      <xsl:otherwise>
+        <!-- Nested concept/exception, find the parent(s) and add this in front: -->
+        <xsl:variable name="parent-concept-or-exception" as="element()?"
+          select="($valueset-concept-or-exception/(preceding-sibling::concept | preceding-sibling::exception)
+            [local:concept-or-exception-level(.) eq ($level - 1)])[last()]"/>
+        <xsl:choose>
+          <xsl:when test="exists($parent-concept-or-exception)">
+            <xsl:sequence select="local:enum-base-value($parent-concept-or-exception) || '_' || $base-value"/>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:sequence select="$base-value"/>
+          </xsl:otherwise>
+        </xsl:choose>
+      </xsl:otherwise>
+    </xsl:choose>
+
+  </xsl:function>
+
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+  <xsl:function name="local:concept-or-exception-level" as="xs:integer">
+    <xsl:param name="valueset-concept-or-exception" as="element()"/>
+    <xsl:sequence
+      select="if (exists($valueset-concept-or-exception/@level) and ($valueset-concept-or-exception/@level castable as xs:integer)) 
+      then xs:integer($valueset-concept-or-exception/@level) else 0"
+    />
   </xsl:function>
 
   <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->

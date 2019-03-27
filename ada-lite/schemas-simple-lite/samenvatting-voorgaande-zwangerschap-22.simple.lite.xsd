@@ -1473,17 +1473,17 @@ See http://www.gnu.org/licenses/
                                           <xs:documentation source="name" xml:lang="nl-NL">Miskraam</xs:documentation>
                                        </xs:annotation>
                                     </xs:enumeration>
-                                    <xs:enumeration value="spontaan">
+                                    <xs:enumeration value="miskraam_spontaan">
                                        <xs:annotation>
                                           <xs:documentation source="name" xml:lang="nl-NL">Spontaan</xs:documentation>
                                        </xs:annotation>
                                     </xs:enumeration>
-                                    <xs:enumeration value="medicamenteus">
+                                    <xs:enumeration value="miskraam_medicamenteus">
                                        <xs:annotation>
                                           <xs:documentation source="name" xml:lang="nl-NL">Medicamenteus</xs:documentation>
                                        </xs:annotation>
                                     </xs:enumeration>
-                                    <xs:enumeration value="instrumenteel">
+                                    <xs:enumeration value="miskraam_instrumenteel">
                                        <xs:annotation>
                                           <xs:documentation source="name" xml:lang="nl-NL">Instrumenteel</xs:documentation>
                                        </xs:annotation>
@@ -1493,12 +1493,12 @@ See http://www.gnu.org/licenses/
                                           <xs:documentation source="name" xml:lang="nl-NL">APLA</xs:documentation>
                                        </xs:annotation>
                                     </xs:enumeration>
-                                    <xs:enumeration value="medicamenteus">
+                                    <xs:enumeration value="apla_medicamenteus">
                                        <xs:annotation>
                                           <xs:documentation source="name" xml:lang="nl-NL">Medicamenteus</xs:documentation>
                                        </xs:annotation>
                                     </xs:enumeration>
-                                    <xs:enumeration value="instrumenteel">
+                                    <xs:enumeration value="apla_instrumenteel">
                                        <xs:annotation>
                                           <xs:documentation source="name" xml:lang="nl-NL">Instrumenteel</xs:documentation>
                                        </xs:annotation>
@@ -2054,17 +2054,17 @@ See http://www.gnu.org/licenses/
                                                    <xs:documentation source="name" xml:lang="nl-NL">gevaar moeder</xs:documentation>
                                                 </xs:annotation>
                                              </xs:enumeration>
-                                             <xs:enumeration value="acuut_levensbedreigend">
+                                             <xs:enumeration value="gevaar_moeder_acuut_levensbedreigend">
                                                 <xs:annotation>
                                                    <xs:documentation source="name" xml:lang="nl-NL">acuut levensbedreigend</xs:documentation>
                                                 </xs:annotation>
                                              </xs:enumeration>
-                                             <xs:enumeration value="niet_levensbedreigend">
+                                             <xs:enumeration value="gevaar_moeder_niet_levensbedreigend">
                                                 <xs:annotation>
                                                    <xs:documentation source="name" xml:lang="nl-NL">niet levensbedreigend</xs:documentation>
                                                 </xs:annotation>
                                              </xs:enumeration>
-                                             <xs:enumeration value="onbekend">
+                                             <xs:enumeration value="gevaar_moeder_onbekend">
                                                 <xs:annotation>
                                                    <xs:documentation source="name" xml:lang="nl-NL">onbekend</xs:documentation>
                                                 </xs:annotation>
@@ -2074,17 +2074,17 @@ See http://www.gnu.org/licenses/
                                                    <xs:documentation source="name" xml:lang="nl-NL">gevaar kind</xs:documentation>
                                                 </xs:annotation>
                                              </xs:enumeration>
-                                             <xs:enumeration value="acuut_levensbedreigend">
+                                             <xs:enumeration value="gevaar_kind_acuut_levensbedreigend">
                                                 <xs:annotation>
                                                    <xs:documentation source="name" xml:lang="nl-NL">acuut levensbedreigend</xs:documentation>
                                                 </xs:annotation>
                                              </xs:enumeration>
-                                             <xs:enumeration value="niet_levensbedreigend">
+                                             <xs:enumeration value="gevaar_kind_niet_levensbedreigend">
                                                 <xs:annotation>
                                                    <xs:documentation source="name" xml:lang="nl-NL">niet levensbedreigend</xs:documentation>
                                                 </xs:annotation>
                                              </xs:enumeration>
-                                             <xs:enumeration value="onbekend">
+                                             <xs:enumeration value="gevaar_kind_onbekend">
                                                 <xs:annotation>
                                                    <xs:documentation source="name" xml:lang="nl-NL">onbekend</xs:documentation>
                                                 </xs:annotation>
@@ -2473,17 +2473,17 @@ See http://www.gnu.org/licenses/
                                           <xs:documentation source="name" xml:lang="nl-NL">3e graads ruptuur</xs:documentation>
                                        </xs:annotation>
                                     </xs:enumeration>
-                                    <xs:enumeration value="type_3a_third_degree_laceration_of_perineum_disorder">
+                                    <xs:enumeration value="third_degree_perineal_tear_during_delivery__delivered_disorder_type_3a_third_degree_laceration_of_perineum_disorder">
                                        <xs:annotation>
                                           <xs:documentation source="name" xml:lang="nl-NL">3a - sfincterlaesie externum &lt; 50%</xs:documentation>
                                        </xs:annotation>
                                     </xs:enumeration>
-                                    <xs:enumeration value="type_3b_third_degree_laceration_of_perineum_disorder">
+                                    <xs:enumeration value="third_degree_perineal_tear_during_delivery__delivered_disorder_type_3b_third_degree_laceration_of_perineum_disorder">
                                        <xs:annotation>
                                           <xs:documentation source="name" xml:lang="nl-NL">3b - sfincterlaesie externum ≥ 50%</xs:documentation>
                                        </xs:annotation>
                                     </xs:enumeration>
-                                    <xs:enumeration value="type_3c_third_degree_laceration_of_perineum_disorder">
+                                    <xs:enumeration value="third_degree_perineal_tear_during_delivery__delivered_disorder_type_3c_third_degree_laceration_of_perineum_disorder">
                                        <xs:annotation>
                                           <xs:documentation source="name" xml:lang="nl-NL">3c - sfincterlaesie externum en internum</xs:documentation>
                                        </xs:annotation>
@@ -3232,12 +3232,12 @@ See http://www.gnu.org/licenses/
                                                             <xs:documentation source="name" xml:lang="nl-NL">Sectio Caesarea</xs:documentation>
                                                          </xs:annotation>
                                                       </xs:enumeration>
-                                                      <xs:enumeration value="delivery_by_elective_cesarean_section_finding">
+                                                      <xs:enumeration value="cesarean_delivery__delivered_finding_delivery_by_elective_cesarean_section_finding">
                                                          <xs:annotation>
                                                             <xs:documentation source="name" xml:lang="nl-NL">Primair</xs:documentation>
                                                          </xs:annotation>
                                                       </xs:enumeration>
-                                                      <xs:enumeration value="delivery_by_emergency_cesarean_section_finding">
+                                                      <xs:enumeration value="cesarean_delivery__delivered_finding_delivery_by_emergency_cesarean_section_finding">
                                                          <xs:annotation>
                                                             <xs:documentation source="name" xml:lang="nl-NL">Secundair</xs:documentation>
                                                          </xs:annotation>
@@ -4821,52 +4821,52 @@ See http://www.gnu.org/licenses/
                                                                               <xs:documentation source="name" xml:lang="nl-NL">zenuwstelsel</xs:documentation>
                                                                            </xs:annotation>
                                                                         </xs:enumeration>
-                                                                        <xs:enumeration value="fetal_anencephaly_disorder">
+                                                                        <xs:enumeration value="congenital_anomaly_of_nervous_system_disorder_fetal_anencephaly_disorder">
                                                                            <xs:annotation>
                                                                               <xs:documentation source="name" xml:lang="nl-NL">anencefalie</xs:documentation>
                                                                            </xs:annotation>
                                                                         </xs:enumeration>
-                                                                        <xs:enumeration value="fetal_microcephaly_disorder">
+                                                                        <xs:enumeration value="congenital_anomaly_of_nervous_system_disorder_fetal_microcephaly_disorder">
                                                                            <xs:annotation>
                                                                               <xs:documentation source="name" xml:lang="nl-NL">microcefalie</xs:documentation>
                                                                            </xs:annotation>
                                                                         </xs:enumeration>
-                                                                        <xs:enumeration value="spina_bifida_occulta_disorder">
+                                                                        <xs:enumeration value="congenital_anomaly_of_nervous_system_disorder_spina_bifida_occulta_disorder">
                                                                            <xs:annotation>
                                                                               <xs:documentation source="name" xml:lang="nl-NL">spina bifida occulta</xs:documentation>
                                                                            </xs:annotation>
                                                                         </xs:enumeration>
-                                                                        <xs:enumeration value="meningomyelocele_disorder">
+                                                                        <xs:enumeration value="congenital_anomaly_of_nervous_system_disorder_meningomyelocele_disorder">
                                                                            <xs:annotation>
                                                                               <xs:documentation source="name" xml:lang="nl-NL">meningomyelokèle</xs:documentation>
                                                                            </xs:annotation>
                                                                         </xs:enumeration>
-                                                                        <xs:enumeration value="meningocele_disorder">
+                                                                        <xs:enumeration value="congenital_anomaly_of_nervous_system_disorder_meningocele_disorder">
                                                                            <xs:annotation>
                                                                               <xs:documentation source="name" xml:lang="nl-NL">meningokèle</xs:documentation>
                                                                            </xs:annotation>
                                                                         </xs:enumeration>
-                                                                        <xs:enumeration value="congenital_hydrocephalus_disorder">
+                                                                        <xs:enumeration value="congenital_anomaly_of_nervous_system_disorder_congenital_hydrocephalus_disorder">
                                                                            <xs:annotation>
                                                                               <xs:documentation source="name" xml:lang="nl-NL">hydrocefalie</xs:documentation>
                                                                            </xs:annotation>
                                                                         </xs:enumeration>
-                                                                        <xs:enumeration value="holoprosencephaly_sequence_disorder">
+                                                                        <xs:enumeration value="congenital_anomaly_of_nervous_system_disorder_holoprosencephaly_sequence_disorder">
                                                                            <xs:annotation>
                                                                               <xs:documentation source="name" xml:lang="nl-NL">holoprosencefalie zonder defect neurale buis</xs:documentation>
                                                                            </xs:annotation>
                                                                         </xs:enumeration>
-                                                                        <xs:enumeration value="encephalocele_disorder">
+                                                                        <xs:enumeration value="congenital_anomaly_of_nervous_system_disorder_encephalocele_disorder">
                                                                            <xs:annotation>
                                                                               <xs:documentation source="name" xml:lang="nl-NL">encefalokèle</xs:documentation>
                                                                            </xs:annotation>
                                                                         </xs:enumeration>
-                                                                        <xs:enumeration value="neonatal_neuromuscular_disorder_disorder">
+                                                                        <xs:enumeration value="congenital_anomaly_of_nervous_system_disorder_neonatal_neuromuscular_disorder_disorder">
                                                                            <xs:annotation>
                                                                               <xs:documentation source="name" xml:lang="nl-NL">neuromusculaire afwijkingen</xs:documentation>
                                                                            </xs:annotation>
                                                                         </xs:enumeration>
-                                                                        <xs:enumeration value="overige_congenitale_afwijkingen_zenuwstelsel">
+                                                                        <xs:enumeration value="congenital_anomaly_of_nervous_system_disorder_overige_congenitale_afwijkingen_zenuwstelsel">
                                                                            <xs:annotation>
                                                                               <xs:documentation source="name" xml:lang="nl-NL">overige congenitale afwijkingen zenuwstelsel</xs:documentation>
                                                                            </xs:annotation>
@@ -4876,27 +4876,27 @@ See http://www.gnu.org/licenses/
                                                                               <xs:documentation source="name" xml:lang="nl-NL">zintuigen</xs:documentation>
                                                                            </xs:annotation>
                                                                         </xs:enumeration>
-                                                                        <xs:enumeration value="congenital_anomaly_of_eye_disorder">
+                                                                        <xs:enumeration value="zintuigen_congenital_anomaly_of_eye_disorder">
                                                                            <xs:annotation>
                                                                               <xs:documentation source="name" xml:lang="nl-NL">ogen</xs:documentation>
                                                                            </xs:annotation>
                                                                         </xs:enumeration>
-                                                                        <xs:enumeration value="microphthalmos_disorder">
+                                                                        <xs:enumeration value="zintuigen_congenital_anomaly_of_eye_disorder_microphthalmos_disorder">
                                                                            <xs:annotation>
                                                                               <xs:documentation source="name" xml:lang="nl-NL">microphtalmie</xs:documentation>
                                                                            </xs:annotation>
                                                                         </xs:enumeration>
-                                                                        <xs:enumeration value="overige_congenitale_afwijkingen_ogen">
+                                                                        <xs:enumeration value="zintuigen_congenital_anomaly_of_eye_disorder_overige_congenitale_afwijkingen_ogen">
                                                                            <xs:annotation>
                                                                               <xs:documentation source="name" xml:lang="nl-NL">overige congenitale afwijkingen ogen</xs:documentation>
                                                                            </xs:annotation>
                                                                         </xs:enumeration>
-                                                                        <xs:enumeration value="congenital_anomaly_of_ear_disorder">
+                                                                        <xs:enumeration value="zintuigen_congenital_anomaly_of_ear_disorder">
                                                                            <xs:annotation>
                                                                               <xs:documentation source="name" xml:lang="nl-NL">congenitale afwijkingen oren</xs:documentation>
                                                                            </xs:annotation>
                                                                         </xs:enumeration>
-                                                                        <xs:enumeration value="overige_congenitale_afwijkingen_zintuigen">
+                                                                        <xs:enumeration value="zintuigen_overige_congenitale_afwijkingen_zintuigen">
                                                                            <xs:annotation>
                                                                               <xs:documentation source="name" xml:lang="nl-NL">overige congenitale afwijkingen zintuigen</xs:documentation>
                                                                            </xs:annotation>
@@ -4906,47 +4906,47 @@ See http://www.gnu.org/licenses/
                                                                               <xs:documentation source="name" xml:lang="nl-NL">hart en bloedvaten</xs:documentation>
                                                                            </xs:annotation>
                                                                         </xs:enumeration>
-                                                                        <xs:enumeration value="single_umbilical_artery_disorder">
+                                                                        <xs:enumeration value="congenital_anomaly_of_cardiovascular_system_disorder_single_umbilical_artery_disorder">
                                                                            <xs:annotation>
                                                                               <xs:documentation source="name" xml:lang="nl-NL">ontbreken van 1 navelstrengarterie</xs:documentation>
                                                                            </xs:annotation>
                                                                         </xs:enumeration>
-                                                                        <xs:enumeration value="discordant_ventriculoarterial_connection_disorder">
+                                                                        <xs:enumeration value="congenital_anomaly_of_cardiovascular_system_disorder_discordant_ventriculoarterial_connection_disorder">
                                                                            <xs:annotation>
                                                                               <xs:documentation source="name" xml:lang="nl-NL">transpositie v/d grote vaten</xs:documentation>
                                                                            </xs:annotation>
                                                                         </xs:enumeration>
-                                                                        <xs:enumeration value="tetralogy_of_fallot_disorder">
+                                                                        <xs:enumeration value="congenital_anomaly_of_cardiovascular_system_disorder_tetralogy_of_fallot_disorder">
                                                                            <xs:annotation>
                                                                               <xs:documentation source="name" xml:lang="nl-NL">tetralogie van Fallot</xs:documentation>
                                                                            </xs:annotation>
                                                                         </xs:enumeration>
-                                                                        <xs:enumeration value="ventricular_septal_defect_disorder">
+                                                                        <xs:enumeration value="congenital_anomaly_of_cardiovascular_system_disorder_ventricular_septal_defect_disorder">
                                                                            <xs:annotation>
                                                                               <xs:documentation source="name" xml:lang="nl-NL">ventrikelseptumdefect</xs:documentation>
                                                                            </xs:annotation>
                                                                         </xs:enumeration>
-                                                                        <xs:enumeration value="hypoplastic_left_heart_syndrome_disorder">
+                                                                        <xs:enumeration value="congenital_anomaly_of_cardiovascular_system_disorder_hypoplastic_left_heart_syndrome_disorder">
                                                                            <xs:annotation>
                                                                               <xs:documentation source="name" xml:lang="nl-NL">hypoplastisch linker hart</xs:documentation>
                                                                            </xs:annotation>
                                                                         </xs:enumeration>
-                                                                        <xs:enumeration value="coarctation_of_aorta_disorder">
+                                                                        <xs:enumeration value="congenital_anomaly_of_cardiovascular_system_disorder_coarctation_of_aorta_disorder">
                                                                            <xs:annotation>
                                                                               <xs:documentation source="name" xml:lang="nl-NL">coarctatio aortae</xs:documentation>
                                                                            </xs:annotation>
                                                                         </xs:enumeration>
-                                                                        <xs:enumeration value="congenital_anomaly_of_tricuspid_valve_disorder">
+                                                                        <xs:enumeration value="congenital_anomaly_of_cardiovascular_system_disorder_congenital_anomaly_of_tricuspid_valve_disorder">
                                                                            <xs:annotation>
                                                                               <xs:documentation source="name" xml:lang="nl-NL">tricuspidalisatresie/stenose</xs:documentation>
                                                                            </xs:annotation>
                                                                         </xs:enumeration>
-                                                                        <xs:enumeration value="multiple_congenital_cardiac_defects_disorder">
+                                                                        <xs:enumeration value="congenital_anomaly_of_cardiovascular_system_disorder_multiple_congenital_cardiac_defects_disorder">
                                                                            <xs:annotation>
                                                                               <xs:documentation source="name" xml:lang="nl-NL">gecompliceerd vitium</xs:documentation>
                                                                            </xs:annotation>
                                                                         </xs:enumeration>
-                                                                        <xs:enumeration value="overige_congenitale_afwijking_hart_en_bloedvaten">
+                                                                        <xs:enumeration value="congenital_anomaly_of_cardiovascular_system_disorder_overige_congenitale_afwijking_hart_en_bloedvaten">
                                                                            <xs:annotation>
                                                                               <xs:documentation source="name" xml:lang="nl-NL">overige congenitale afwijking hart en bloedvaten</xs:documentation>
                                                                            </xs:annotation>
@@ -4956,52 +4956,52 @@ See http://www.gnu.org/licenses/
                                                                               <xs:documentation source="name" xml:lang="nl-NL">tractus digestivus</xs:documentation>
                                                                            </xs:annotation>
                                                                         </xs:enumeration>
-                                                                        <xs:enumeration value="cleft_lip_disorder">
+                                                                        <xs:enumeration value="congenital_anomaly_of_digestive_tract_disorder_cleft_lip_disorder">
                                                                            <xs:annotation>
                                                                               <xs:documentation source="name" xml:lang="nl-NL">lipspleet met of zonder verhemeltespleet</xs:documentation>
                                                                            </xs:annotation>
                                                                         </xs:enumeration>
-                                                                        <xs:enumeration value="cleft_palate_disorder">
+                                                                        <xs:enumeration value="congenital_anomaly_of_digestive_tract_disorder_cleft_palate_disorder">
                                                                            <xs:annotation>
                                                                               <xs:documentation source="name" xml:lang="nl-NL">verhemeltespleet zonder lipspleet</xs:documentation>
                                                                            </xs:annotation>
                                                                         </xs:enumeration>
-                                                                        <xs:enumeration value="congenital_anomaly_of_esophagus_disorder">
+                                                                        <xs:enumeration value="congenital_anomaly_of_digestive_tract_disorder_congenital_anomaly_of_esophagus_disorder">
                                                                            <xs:annotation>
                                                                               <xs:documentation source="name" xml:lang="nl-NL">oesofagus atresie/stenose/fistel</xs:documentation>
                                                                            </xs:annotation>
                                                                         </xs:enumeration>
-                                                                        <xs:enumeration value="congenital_atresia_of_small_intestine_disorder">
+                                                                        <xs:enumeration value="congenital_anomaly_of_digestive_tract_disorder_congenital_atresia_of_small_intestine_disorder">
                                                                            <xs:annotation>
                                                                               <xs:documentation source="name" xml:lang="nl-NL">atresie dunne darm</xs:documentation>
                                                                            </xs:annotation>
                                                                         </xs:enumeration>
-                                                                        <xs:enumeration value="atresia_of_large_intestine_disorder">
+                                                                        <xs:enumeration value="congenital_anomaly_of_digestive_tract_disorder_atresia_of_large_intestine_disorder">
                                                                            <xs:annotation>
                                                                               <xs:documentation source="name" xml:lang="nl-NL">atresie dikke darm</xs:documentation>
                                                                            </xs:annotation>
                                                                         </xs:enumeration>
-                                                                        <xs:enumeration value="anal_atresia_disorder">
+                                                                        <xs:enumeration value="congenital_anomaly_of_digestive_tract_disorder_anal_atresia_disorder">
                                                                            <xs:annotation>
                                                                               <xs:documentation source="name" xml:lang="nl-NL">atresie anus</xs:documentation>
                                                                            </xs:annotation>
                                                                         </xs:enumeration>
-                                                                        <xs:enumeration value="hirschsprungs_disease_disorder">
+                                                                        <xs:enumeration value="congenital_anomaly_of_digestive_tract_disorder_hirschsprungs_disease_disorder">
                                                                            <xs:annotation>
                                                                               <xs:documentation source="name" xml:lang="nl-NL">morbus Hirschsprung</xs:documentation>
                                                                            </xs:annotation>
                                                                         </xs:enumeration>
-                                                                        <xs:enumeration value="congenital_malrotation_of_intestine_disorder">
+                                                                        <xs:enumeration value="congenital_anomaly_of_digestive_tract_disorder_congenital_malrotation_of_intestine_disorder">
                                                                            <xs:annotation>
                                                                               <xs:documentation source="name" xml:lang="nl-NL">malrotatie</xs:documentation>
                                                                            </xs:annotation>
                                                                         </xs:enumeration>
-                                                                        <xs:enumeration value="intestinal_volvulus_disorder">
+                                                                        <xs:enumeration value="congenital_anomaly_of_digestive_tract_disorder_intestinal_volvulus_disorder">
                                                                            <xs:annotation>
                                                                               <xs:documentation source="name" xml:lang="nl-NL">volvulus</xs:documentation>
                                                                            </xs:annotation>
                                                                         </xs:enumeration>
-                                                                        <xs:enumeration value="overige_congenitale_afwijking_tractus_digestivus">
+                                                                        <xs:enumeration value="congenital_anomaly_of_digestive_tract_disorder_overige_congenitale_afwijking_tractus_digestivus">
                                                                            <xs:annotation>
                                                                               <xs:documentation source="name" xml:lang="nl-NL">overige congenitale afwijking tractus digestivus</xs:documentation>
                                                                            </xs:annotation>
@@ -5011,52 +5011,52 @@ See http://www.gnu.org/licenses/
                                                                               <xs:documentation source="name" xml:lang="nl-NL">tractus respiratorius</xs:documentation>
                                                                            </xs:annotation>
                                                                         </xs:enumeration>
-                                                                        <xs:enumeration value="choanal_atresia_disorder">
+                                                                        <xs:enumeration value="congenital_anomaly_of_respiratory_system_disorder_choanal_atresia_disorder">
                                                                            <xs:annotation>
                                                                               <xs:documentation source="name" xml:lang="nl-NL">choanaal atresie</xs:documentation>
                                                                            </xs:annotation>
                                                                         </xs:enumeration>
-                                                                        <xs:enumeration value="congenital_anomaly_of_trachea_disorder">
+                                                                        <xs:enumeration value="congenital_anomaly_of_respiratory_system_disorder_congenital_anomaly_of_trachea_disorder">
                                                                            <xs:annotation>
                                                                               <xs:documentation source="name" xml:lang="nl-NL">congenitale afwijking trachea</xs:documentation>
                                                                            </xs:annotation>
                                                                         </xs:enumeration>
-                                                                        <xs:enumeration value="congenital_hypoplasia_of_lung_disorder">
+                                                                        <xs:enumeration value="congenital_anomaly_of_respiratory_system_disorder_congenital_hypoplasia_of_lung_disorder">
                                                                            <xs:annotation>
                                                                               <xs:documentation source="name" xml:lang="nl-NL">longhypoplasie</xs:documentation>
                                                                            </xs:annotation>
                                                                         </xs:enumeration>
-                                                                        <xs:enumeration value="congenital_lobar_emphysema_disorder">
+                                                                        <xs:enumeration value="congenital_anomaly_of_respiratory_system_disorder_congenital_lobar_emphysema_disorder">
                                                                            <xs:annotation>
                                                                               <xs:documentation source="name" xml:lang="nl-NL">congenitaal lobair emfyseem</xs:documentation>
                                                                            </xs:annotation>
                                                                         </xs:enumeration>
-                                                                        <xs:enumeration value="congenital_cystic_adenomatoid_malformation_of_lung_disorder">
+                                                                        <xs:enumeration value="congenital_anomaly_of_respiratory_system_disorder_congenital_cystic_adenomatoid_malformation_of_lung_disorder">
                                                                            <xs:annotation>
                                                                               <xs:documentation source="name" xml:lang="nl-NL">congenitale cysteuze adenomatoïde malformatie</xs:documentation>
                                                                            </xs:annotation>
                                                                         </xs:enumeration>
-                                                                        <xs:enumeration value="hydrothorax_disorder">
+                                                                        <xs:enumeration value="congenital_anomaly_of_respiratory_system_disorder_hydrothorax_disorder">
                                                                            <xs:annotation>
                                                                               <xs:documentation source="name" xml:lang="nl-NL">hydrothorax</xs:documentation>
                                                                            </xs:annotation>
                                                                         </xs:enumeration>
-                                                                        <xs:enumeration value="chylothorax_disorder">
+                                                                        <xs:enumeration value="congenital_anomaly_of_respiratory_system_disorder_chylothorax_disorder">
                                                                            <xs:annotation>
                                                                               <xs:documentation source="name" xml:lang="nl-NL">chylothorax</xs:documentation>
                                                                            </xs:annotation>
                                                                         </xs:enumeration>
-                                                                        <xs:enumeration value="congenital_diaphragmatic_hernia_disorder">
+                                                                        <xs:enumeration value="congenital_anomaly_of_respiratory_system_disorder_congenital_diaphragmatic_hernia_disorder">
                                                                            <xs:annotation>
                                                                               <xs:documentation source="name" xml:lang="nl-NL">hernia diaphragmatica</xs:documentation>
                                                                            </xs:annotation>
                                                                         </xs:enumeration>
-                                                                        <xs:enumeration value="relaxation_of_diaphragm_disorder">
+                                                                        <xs:enumeration value="congenital_anomaly_of_respiratory_system_disorder_relaxation_of_diaphragm_disorder">
                                                                            <xs:annotation>
                                                                               <xs:documentation source="name" xml:lang="nl-NL">relaxatie diafragma</xs:documentation>
                                                                            </xs:annotation>
                                                                         </xs:enumeration>
-                                                                        <xs:enumeration value="overige_congenitale_afwijking_tractus_respiratorius">
+                                                                        <xs:enumeration value="congenital_anomaly_of_respiratory_system_disorder_overige_congenitale_afwijking_tractus_respiratorius">
                                                                            <xs:annotation>
                                                                               <xs:documentation source="name" xml:lang="nl-NL">overige congenitale afwijking tractus respiratorius</xs:documentation>
                                                                            </xs:annotation>
@@ -5066,47 +5066,47 @@ See http://www.gnu.org/licenses/
                                                                               <xs:documentation source="name" xml:lang="nl-NL">tractus urogenitalis</xs:documentation>
                                                                            </xs:annotation>
                                                                         </xs:enumeration>
-                                                                        <xs:enumeration value="hypospadias_disorder">
+                                                                        <xs:enumeration value="genitourinary_congenital_anomalies_disorder_hypospadias_disorder">
                                                                            <xs:annotation>
                                                                               <xs:documentation source="name" xml:lang="nl-NL">hypospadie</xs:documentation>
                                                                            </xs:annotation>
                                                                         </xs:enumeration>
-                                                                        <xs:enumeration value="epispadias_disorder">
+                                                                        <xs:enumeration value="genitourinary_congenital_anomalies_disorder_epispadias_disorder">
                                                                            <xs:annotation>
                                                                               <xs:documentation source="name" xml:lang="nl-NL">epispadie</xs:documentation>
                                                                            </xs:annotation>
                                                                         </xs:enumeration>
-                                                                        <xs:enumeration value="undescended_testicle_disorder">
+                                                                        <xs:enumeration value="genitourinary_congenital_anomalies_disorder_undescended_testicle_disorder">
                                                                            <xs:annotation>
                                                                               <xs:documentation source="name" xml:lang="nl-NL">cryptorchisme</xs:documentation>
                                                                            </xs:annotation>
                                                                         </xs:enumeration>
-                                                                        <xs:enumeration value="exstrophy_of_bladder_sequence_disorder">
+                                                                        <xs:enumeration value="genitourinary_congenital_anomalies_disorder_exstrophy_of_bladder_sequence_disorder">
                                                                            <xs:annotation>
                                                                               <xs:documentation source="name" xml:lang="nl-NL">exstrophia vesicae</xs:documentation>
                                                                            </xs:annotation>
                                                                         </xs:enumeration>
-                                                                        <xs:enumeration value="oligohydramnios_sequence_disorder">
+                                                                        <xs:enumeration value="genitourinary_congenital_anomalies_disorder_oligohydramnios_sequence_disorder">
                                                                            <xs:annotation>
                                                                               <xs:documentation source="name" xml:lang="nl-NL">dubbelzijdige nieragenesie (Potter)</xs:documentation>
                                                                            </xs:annotation>
                                                                         </xs:enumeration>
-                                                                        <xs:enumeration value="congenital_cystic_kidney_disease_disorder">
+                                                                        <xs:enumeration value="genitourinary_congenital_anomalies_disorder_congenital_cystic_kidney_disease_disorder">
                                                                            <xs:annotation>
                                                                               <xs:documentation source="name" xml:lang="nl-NL">congenitale cystenier</xs:documentation>
                                                                            </xs:annotation>
                                                                         </xs:enumeration>
-                                                                        <xs:enumeration value="urinary_tract_obstruction_disorder">
+                                                                        <xs:enumeration value="genitourinary_congenital_anomalies_disorder_urinary_tract_obstruction_disorder">
                                                                            <xs:annotation>
                                                                               <xs:documentation source="name" xml:lang="nl-NL">obstructieve uropathie</xs:documentation>
                                                                            </xs:annotation>
                                                                         </xs:enumeration>
-                                                                        <xs:enumeration value="disorder_of_sexual_differentiation_disorder">
+                                                                        <xs:enumeration value="genitourinary_congenital_anomalies_disorder_disorder_of_sexual_differentiation_disorder">
                                                                            <xs:annotation>
                                                                               <xs:documentation source="name" xml:lang="nl-NL">onduidelijk geslacht</xs:documentation>
                                                                            </xs:annotation>
                                                                         </xs:enumeration>
-                                                                        <xs:enumeration value="overige_congenitale_afwijking_tractus_urogenitalis">
+                                                                        <xs:enumeration value="genitourinary_congenital_anomalies_disorder_overige_congenitale_afwijking_tractus_urogenitalis">
                                                                            <xs:annotation>
                                                                               <xs:documentation source="name" xml:lang="nl-NL">overige congenitale afwijking tractus urogenitalis</xs:documentation>
                                                                            </xs:annotation>
@@ -5116,17 +5116,17 @@ See http://www.gnu.org/licenses/
                                                                               <xs:documentation source="name" xml:lang="nl-NL">huid</xs:documentation>
                                                                            </xs:annotation>
                                                                         </xs:enumeration>
-                                                                        <xs:enumeration value="hemangioma_of_skin_disorder">
+                                                                        <xs:enumeration value="congenital_anomaly_of_skin_disorder_hemangioma_of_skin_disorder">
                                                                            <xs:annotation>
                                                                               <xs:documentation source="name" xml:lang="nl-NL">hemangioom (&gt; 4 cm2)</xs:documentation>
                                                                            </xs:annotation>
                                                                         </xs:enumeration>
-                                                                        <xs:enumeration value="congenital_pigmented_melanocytic_nevus_of_skin_disorder">
+                                                                        <xs:enumeration value="congenital_anomaly_of_skin_disorder_congenital_pigmented_melanocytic_nevus_of_skin_disorder">
                                                                            <xs:annotation>
                                                                               <xs:documentation source="name" xml:lang="nl-NL">naevus pigmentosus</xs:documentation>
                                                                            </xs:annotation>
                                                                         </xs:enumeration>
-                                                                        <xs:enumeration value="overige_congenitale_huidafwijking">
+                                                                        <xs:enumeration value="congenital_anomaly_of_skin_disorder_overige_congenitale_huidafwijking">
                                                                            <xs:annotation>
                                                                               <xs:documentation source="name" xml:lang="nl-NL">overige congenitale huidafwijking</xs:documentation>
                                                                            </xs:annotation>
@@ -5136,27 +5136,27 @@ See http://www.gnu.org/licenses/
                                                                               <xs:documentation source="name" xml:lang="nl-NL">buikwand</xs:documentation>
                                                                            </xs:annotation>
                                                                         </xs:enumeration>
-                                                                        <xs:enumeration value="gastroschisis_disorder">
+                                                                        <xs:enumeration value="congenital_anomaly_of_abdominal_wall_disorder_gastroschisis_disorder">
                                                                            <xs:annotation>
                                                                               <xs:documentation source="name" xml:lang="nl-NL">gastroschizis</xs:documentation>
                                                                            </xs:annotation>
                                                                         </xs:enumeration>
-                                                                        <xs:enumeration value="congenital_omphalocele_disorder">
+                                                                        <xs:enumeration value="congenital_anomaly_of_abdominal_wall_disorder_congenital_omphalocele_disorder">
                                                                            <xs:annotation>
                                                                               <xs:documentation source="name" xml:lang="nl-NL">omfalokèle</xs:documentation>
                                                                            </xs:annotation>
                                                                         </xs:enumeration>
-                                                                        <xs:enumeration value="umbilical_hernia_disorder">
+                                                                        <xs:enumeration value="congenital_anomaly_of_abdominal_wall_disorder_umbilical_hernia_disorder">
                                                                            <xs:annotation>
                                                                               <xs:documentation source="name" xml:lang="nl-NL">hernia umbilicalis</xs:documentation>
                                                                            </xs:annotation>
                                                                         </xs:enumeration>
-                                                                        <xs:enumeration value="congenital_inguinal_hernia_disorder">
+                                                                        <xs:enumeration value="congenital_anomaly_of_abdominal_wall_disorder_congenital_inguinal_hernia_disorder">
                                                                            <xs:annotation>
                                                                               <xs:documentation source="name" xml:lang="nl-NL">hernia inguinalis</xs:documentation>
                                                                            </xs:annotation>
                                                                         </xs:enumeration>
-                                                                        <xs:enumeration value="overige_congenitale_afwijking_buikwand">
+                                                                        <xs:enumeration value="congenital_anomaly_of_abdominal_wall_disorder_overige_congenitale_afwijking_buikwand">
                                                                            <xs:annotation>
                                                                               <xs:documentation source="name" xml:lang="nl-NL">overige congenitale afwijking buikwand</xs:documentation>
                                                                            </xs:annotation>
@@ -5166,42 +5166,42 @@ See http://www.gnu.org/licenses/
                                                                               <xs:documentation source="name" xml:lang="nl-NL">skelet en spierstelsel</xs:documentation>
                                                                            </xs:annotation>
                                                                         </xs:enumeration>
-                                                                        <xs:enumeration value="polydactyly_disorder">
+                                                                        <xs:enumeration value="congenital_anomaly_of_musculoskeletal_system_disorder_polydactyly_disorder">
                                                                            <xs:annotation>
                                                                               <xs:documentation source="name" xml:lang="nl-NL">polydactylie</xs:documentation>
                                                                            </xs:annotation>
                                                                         </xs:enumeration>
-                                                                        <xs:enumeration value="syndactyly_disorder">
+                                                                        <xs:enumeration value="congenital_anomaly_of_musculoskeletal_system_disorder_syndactyly_disorder">
                                                                            <xs:annotation>
                                                                               <xs:documentation source="name" xml:lang="nl-NL">syndactylie</xs:documentation>
                                                                            </xs:annotation>
                                                                         </xs:enumeration>
-                                                                        <xs:enumeration value="congenital_deformity_of_foot_disorder">
+                                                                        <xs:enumeration value="congenital_anomaly_of_musculoskeletal_system_disorder_congenital_deformity_of_foot_disorder">
                                                                            <xs:annotation>
                                                                               <xs:documentation source="name" xml:lang="nl-NL">standafwijking voet(en)</xs:documentation>
                                                                            </xs:annotation>
                                                                         </xs:enumeration>
-                                                                        <xs:enumeration value="reduction_deformity_of_upper_limb_disorder">
+                                                                        <xs:enumeration value="congenital_anomaly_of_musculoskeletal_system_disorder_reduction_deformity_of_upper_limb_disorder">
                                                                            <xs:annotation>
                                                                               <xs:documentation source="name" xml:lang="nl-NL">reductiedeformiteit armen</xs:documentation>
                                                                            </xs:annotation>
                                                                         </xs:enumeration>
-                                                                        <xs:enumeration value="reduction_deformity_of_lower_limb_disorder">
+                                                                        <xs:enumeration value="congenital_anomaly_of_musculoskeletal_system_disorder_reduction_deformity_of_lower_limb_disorder">
                                                                            <xs:annotation>
                                                                               <xs:documentation source="name" xml:lang="nl-NL">reductiedeformiteit benen</xs:documentation>
                                                                            </xs:annotation>
                                                                         </xs:enumeration>
-                                                                        <xs:enumeration value="overige_congenitale_afwijking_extremiteiten">
+                                                                        <xs:enumeration value="congenital_anomaly_of_musculoskeletal_system_disorder_overige_congenitale_afwijking_extremiteiten">
                                                                            <xs:annotation>
                                                                               <xs:documentation source="name" xml:lang="nl-NL">overige congenitale afwijking extremiteiten</xs:documentation>
                                                                            </xs:annotation>
                                                                         </xs:enumeration>
-                                                                        <xs:enumeration value="congenital_subluxation_of_hip_disorder">
+                                                                        <xs:enumeration value="congenital_anomaly_of_musculoskeletal_system_disorder_congenital_subluxation_of_hip_disorder">
                                                                            <xs:annotation>
                                                                               <xs:documentation source="name" xml:lang="nl-NL">congenitale heupluxatie</xs:documentation>
                                                                            </xs:annotation>
                                                                         </xs:enumeration>
-                                                                        <xs:enumeration value="overige_congenitale_afwijking_skelet_en_spierstelsel">
+                                                                        <xs:enumeration value="congenital_anomaly_of_musculoskeletal_system_disorder_overige_congenitale_afwijking_skelet_en_spierstelsel">
                                                                            <xs:annotation>
                                                                               <xs:documentation source="name" xml:lang="nl-NL">overige congenitale afwijking skelet en spierstelsel</xs:documentation>
                                                                            </xs:annotation>
@@ -5211,27 +5211,27 @@ See http://www.gnu.org/licenses/
                                                                               <xs:documentation source="name" xml:lang="nl-NL">multipele/syndromale congenitale afwijkingen (niet chromosomaal)</xs:documentation>
                                                                            </xs:annotation>
                                                                         </xs:enumeration>
-                                                                        <xs:enumeration value="dysmorphism_disorder">
+                                                                        <xs:enumeration value="multipelesyndromale_congenitale_afwijkingen_niet_chromosomaal_dysmorphism_disorder">
                                                                            <xs:annotation>
                                                                               <xs:documentation source="name" xml:lang="nl-NL">dysmorfie (uitwendig)</xs:documentation>
                                                                            </xs:annotation>
                                                                         </xs:enumeration>
-                                                                        <xs:enumeration value="situs_inversus_viscerum_disorder">
+                                                                        <xs:enumeration value="multipelesyndromale_congenitale_afwijkingen_niet_chromosomaal_situs_inversus_viscerum_disorder">
                                                                            <xs:annotation>
                                                                               <xs:documentation source="name" xml:lang="nl-NL">situs inversus</xs:documentation>
                                                                            </xs:annotation>
                                                                         </xs:enumeration>
-                                                                        <xs:enumeration value="multiple_congenital_anomalies_disorder">
+                                                                        <xs:enumeration value="multipelesyndromale_congenitale_afwijkingen_niet_chromosomaal_multiple_congenital_anomalies_disorder">
                                                                            <xs:annotation>
                                                                               <xs:documentation source="name" xml:lang="nl-NL">multipele afwijkingen, geen syndroom</xs:documentation>
                                                                            </xs:annotation>
                                                                         </xs:enumeration>
-                                                                        <xs:enumeration value="multiple_system_malformation_syndrome_disorder">
+                                                                        <xs:enumeration value="multipelesyndromale_congenitale_afwijkingen_niet_chromosomaal_multiple_system_malformation_syndrome_disorder">
                                                                            <xs:annotation>
                                                                               <xs:documentation source="name" xml:lang="nl-NL">multipele afwijkingen, wel syndroom</xs:documentation>
                                                                            </xs:annotation>
                                                                         </xs:enumeration>
-                                                                        <xs:enumeration value="overige_multipelesyndromale_afwijkingen">
+                                                                        <xs:enumeration value="multipelesyndromale_congenitale_afwijkingen_niet_chromosomaal_overige_multipelesyndromale_afwijkingen">
                                                                            <xs:annotation>
                                                                               <xs:documentation source="name" xml:lang="nl-NL">overige multipele/syndromale afwijkingen</xs:documentation>
                                                                            </xs:annotation>
@@ -5241,22 +5241,22 @@ See http://www.gnu.org/licenses/
                                                                               <xs:documentation source="name" xml:lang="nl-NL">overige congenitale afwijkingen</xs:documentation>
                                                                            </xs:annotation>
                                                                         </xs:enumeration>
-                                                                        <xs:enumeration value="congenital_iodine_deficiency_syndrome_disorder">
+                                                                        <xs:enumeration value="overige_congenitale_afwijkingen_congenital_iodine_deficiency_syndrome_disorder">
                                                                            <xs:annotation>
                                                                               <xs:documentation source="name" xml:lang="nl-NL">congenitale hypothyreoïdie</xs:documentation>
                                                                            </xs:annotation>
                                                                         </xs:enumeration>
-                                                                        <xs:enumeration value="inborn_error_of_metabolism_disorder">
+                                                                        <xs:enumeration value="overige_congenitale_afwijkingen_inborn_error_of_metabolism_disorder">
                                                                            <xs:annotation>
                                                                               <xs:documentation source="name" xml:lang="nl-NL">inborn errors</xs:documentation>
                                                                            </xs:annotation>
                                                                         </xs:enumeration>
-                                                                        <xs:enumeration value="andere_endocrinologische_afwijkingen">
+                                                                        <xs:enumeration value="overige_congenitale_afwijkingen_andere_endocrinologische_afwijkingen">
                                                                            <xs:annotation>
                                                                               <xs:documentation source="name" xml:lang="nl-NL">andere endocrinologische afwijkingen</xs:documentation>
                                                                            </xs:annotation>
                                                                         </xs:enumeration>
-                                                                        <xs:enumeration value="congenital_malignant_neoplastic_disease_disorder">
+                                                                        <xs:enumeration value="overige_congenitale_afwijkingen_congenital_malignant_neoplastic_disease_disorder">
                                                                            <xs:annotation>
                                                                               <xs:documentation source="name" xml:lang="nl-NL">congenitale maligniteit</xs:documentation>
                                                                            </xs:annotation>

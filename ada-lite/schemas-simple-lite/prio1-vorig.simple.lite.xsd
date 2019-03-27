@@ -545,17 +545,17 @@ See http://www.gnu.org/licenses/
                                           <xs:documentation source="name" xml:lang="nl-NL">Miskraam</xs:documentation>
                                        </xs:annotation>
                                     </xs:enumeration>
-                                    <xs:enumeration value="spontaan">
+                                    <xs:enumeration value="miskraam_spontaan">
                                        <xs:annotation>
                                           <xs:documentation source="name" xml:lang="nl-NL">Spontaan</xs:documentation>
                                        </xs:annotation>
                                     </xs:enumeration>
-                                    <xs:enumeration value="medicamenteus">
+                                    <xs:enumeration value="miskraam_medicamenteus">
                                        <xs:annotation>
                                           <xs:documentation source="name" xml:lang="nl-NL">Medicamenteus</xs:documentation>
                                        </xs:annotation>
                                     </xs:enumeration>
-                                    <xs:enumeration value="instrumenteel">
+                                    <xs:enumeration value="miskraam_instrumenteel">
                                        <xs:annotation>
                                           <xs:documentation source="name" xml:lang="nl-NL">Instrumenteel</xs:documentation>
                                        </xs:annotation>
@@ -565,12 +565,12 @@ See http://www.gnu.org/licenses/
                                           <xs:documentation source="name" xml:lang="nl-NL">APLA</xs:documentation>
                                        </xs:annotation>
                                     </xs:enumeration>
-                                    <xs:enumeration value="medicamenteus">
+                                    <xs:enumeration value="apla_medicamenteus">
                                        <xs:annotation>
                                           <xs:documentation source="name" xml:lang="nl-NL">Medicamenteus</xs:documentation>
                                        </xs:annotation>
                                     </xs:enumeration>
-                                    <xs:enumeration value="instrumenteel">
+                                    <xs:enumeration value="apla_instrumenteel">
                                        <xs:annotation>
                                           <xs:documentation source="name" xml:lang="nl-NL">Instrumenteel</xs:documentation>
                                        </xs:annotation>
@@ -844,17 +844,17 @@ See http://www.gnu.org/licenses/
                                           <xs:documentation source="name" xml:lang="nl-NL">3e graads ruptuur</xs:documentation>
                                        </xs:annotation>
                                     </xs:enumeration>
-                                    <xs:enumeration value="type_3a_third_degree_laceration_of_perineum_disorder">
+                                    <xs:enumeration value="third_degree_perineal_tear_during_delivery__delivered_disorder_type_3a_third_degree_laceration_of_perineum_disorder">
                                        <xs:annotation>
                                           <xs:documentation source="name" xml:lang="nl-NL">3a - sfincterlaesie externum &lt; 50%</xs:documentation>
                                        </xs:annotation>
                                     </xs:enumeration>
-                                    <xs:enumeration value="type_3b_third_degree_laceration_of_perineum_disorder">
+                                    <xs:enumeration value="third_degree_perineal_tear_during_delivery__delivered_disorder_type_3b_third_degree_laceration_of_perineum_disorder">
                                        <xs:annotation>
                                           <xs:documentation source="name" xml:lang="nl-NL">3b - sfincterlaesie externum ≥ 50%</xs:documentation>
                                        </xs:annotation>
                                     </xs:enumeration>
-                                    <xs:enumeration value="type_3c_third_degree_laceration_of_perineum_disorder">
+                                    <xs:enumeration value="third_degree_perineal_tear_during_delivery__delivered_disorder_type_3c_third_degree_laceration_of_perineum_disorder">
                                        <xs:annotation>
                                           <xs:documentation source="name" xml:lang="nl-NL">3c - sfincterlaesie externum en internum</xs:documentation>
                                        </xs:annotation>
@@ -1069,12 +1069,12 @@ See http://www.gnu.org/licenses/
                                                             <xs:documentation source="name" xml:lang="nl-NL">Sectio Caesarea</xs:documentation>
                                                          </xs:annotation>
                                                       </xs:enumeration>
-                                                      <xs:enumeration value="delivery_by_elective_cesarean_section_finding">
+                                                      <xs:enumeration value="cesarean_delivery__delivered_finding_delivery_by_elective_cesarean_section_finding">
                                                          <xs:annotation>
                                                             <xs:documentation source="name" xml:lang="nl-NL">Primair</xs:documentation>
                                                          </xs:annotation>
                                                       </xs:enumeration>
-                                                      <xs:enumeration value="delivery_by_emergency_cesarean_section_finding">
+                                                      <xs:enumeration value="cesarean_delivery__delivered_finding_delivery_by_emergency_cesarean_section_finding">
                                                          <xs:annotation>
                                                             <xs:documentation source="name" xml:lang="nl-NL">Secundair</xs:documentation>
                                                          </xs:annotation>
