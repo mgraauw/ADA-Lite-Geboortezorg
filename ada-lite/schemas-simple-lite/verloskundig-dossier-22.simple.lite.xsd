@@ -1462,14 +1462,7 @@ See http://www.gnu.org/licenses/
                            </xs:attribute>
                         </xs:complexType>
                      </xs:element>
-                     <xs:element name="" minOccurs="0" maxOccurs="unbounded">
-                        <xs:complexType>
-                           <xs:attribute name="conceptId"
-                                         type="t-id"
-                                         use="optional"
-                                         fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82154"/>
-                        </xs:complexType>
-                     </xs:element>
+                     <!-- == *** Concept without @shortName found (id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82154") == -->
                      <xs:element name="accepteert_bloedtransfusieq" minOccurs="0" maxOccurs="1">
                         <xs:annotation>
                            <xs:documentation source="name" xml:lang="nl-NL">Accepteert bloedtransfusie?</xs:documentation>

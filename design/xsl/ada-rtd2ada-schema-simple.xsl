@@ -39,7 +39,7 @@
   <xsl:variable name="use-required" as="xs:string" select="'required'"/>
   <xsl:variable name="use-optional" as="xs:string" select="'optional'"/>
   <xsl:variable name="required-in-ada-full" as="xs:string" select="if ($do-ada-lite-version) then $use-optional else $use-required"/>
-  
+
   <xsl:variable name="adaextension-definition" as="element(xs:element)">
     <xs:element minOccurs="0" name="adaextension">
       <xs:annotation>
@@ -75,11 +75,11 @@
           <xsl:value-of select="$lite-or-full"/>
           <xsl:text> version</xsl:text>
         </xs:documentation>
-        <xs:documentation xml:lang="nl-NL" >
+        <xs:documentation xml:lang="nl-NL">
           <xsl:text>Source: </xsl:text>
           <xsl:value-of select="$source"/>
         </xs:documentation>
-        <xs:documentation xml:lang="nl-NL" >
+        <xs:documentation xml:lang="nl-NL">
           <xsl:text>Generator: </xsl:text>
           <xsl:value-of select="$generator"/>
         </xs:documentation>
@@ -130,26 +130,34 @@
   <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 
   <xsl:template match="concept">
-    
+
     <xsl:variable name="is-group" as="xs:boolean" select="string(@type) eq 'group'"/>
+    <xsl:variable name="has-shortname" as="xs:boolean" select="normalize-space(@shortName) ne ''"/>
 
-    <xs:element name="{@shortName}" minOccurs="{@minimumMultiplicity}"
-      maxOccurs="{if (@maximumMultiplicity eq '*') then 'unbounded' else @maximumMultiplicity}">
-      <xsl:call-template name="process-name-description"/>
-      <xs:complexType>
-        <xsl:where-populated>
-          <xs:sequence>
-            <xsl:apply-templates select="concept"/>
-            <xsl:if test="$is-group">
-              <xsl:sequence select="$adaextension-definition"/>
-            </xsl:if>
-          </xs:sequence>
-        </xsl:where-populated>
-        <xs:attribute name="conceptId" type="{$simple-type-name-for-identifier}" use="{$required-in-ada-full}" fixed="{@id}"/>
-        <xsl:call-template name="handle-value-domain"/>
-      </xs:complexType>
+    <xsl:choose>
+      <xsl:when test="$has-shortname">
+        <xs:element name="{@shortName}" minOccurs="{@minimumMultiplicity}"
+          maxOccurs="{if (@maximumMultiplicity eq '*') then 'unbounded' else @maximumMultiplicity}">
+          <xsl:call-template name="process-name-description"/>
+          <xs:complexType>
+            <xsl:where-populated>
+              <xs:sequence>
+                <xsl:apply-templates select="concept"/>
+                <xsl:if test="$is-group">
+                  <xsl:sequence select="$adaextension-definition"/>
+                </xsl:if>
+              </xs:sequence>
+            </xsl:where-populated>
+            <xs:attribute name="conceptId" type="{$simple-type-name-for-identifier}" use="{$required-in-ada-full}" fixed="{@id}"/>
+            <xsl:call-template name="handle-value-domain"/>
+          </xs:complexType>
+        </xs:element>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:comment> == *** Concept without @shortName found (id="{@id}") == </xsl:comment>
+      </xsl:otherwise>
+    </xsl:choose>
 
-    </xs:element>
   </xsl:template>
 
   <!-- ================================================================== -->
