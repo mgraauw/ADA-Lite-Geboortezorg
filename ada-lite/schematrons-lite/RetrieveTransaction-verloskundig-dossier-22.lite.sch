@@ -51,10 +51,11 @@ See http://www.gnu.org/licenses/
          <assert test="count(uitkomst_per_kind) ge 0">Fout aantal voorkomens van "Uitkomst (per kind)": <value-of select="count(uitkomst_per_kind)"/> (verwacht: 0 of meer) [/verloskundig_dossier/uitkomst_per_kind]</assert>
          <assert test="count(medisch_onderzoek) ge 0">Fout aantal voorkomens van "Medisch onderzoek": <value-of select="count(medisch_onderzoek)"/> (verwacht: 0 of meer) [/verloskundig_dossier/medisch_onderzoek]</assert>
          <assert test="(count(postnatale_fase) ge 0) and (count(postnatale_fase) le 1)">Fout aantal voorkomens van "Postnatale fase": <value-of select="count(postnatale_fase)"/> (verwacht: 0..1) [/verloskundig_dossier/postnatale_fase]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier: == -->
-      <rule context="/verloskundig_dossier/*[not(self::zorgverlenerzorginstelling)][not(self::vrouw)][not(self::zwangerschap)][not(self::counseling_prenatale_screening_en_prenatale_diagnostiek)][not(self::bevalling)][not(self::uitkomst_per_kind)][not(self::medisch_onderzoek)][not(self::postnatale_fase)]">
+      <rule context="/verloskundig_dossier/*[not(self::zorgverlenerzorginstelling)][not(self::vrouw)][not(self::zwangerschap)][not(self::counseling_prenatale_screening_en_prenatale_diagnostiek)][not(self::bevalling)][not(self::uitkomst_per_kind)][not(self::medisch_onderzoek)][not(self::postnatale_fase)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -122,14 +123,16 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @xsi:*))">Foutieve informatie voor "Postnatale fase": Ongeldige attributen aangetroffen [/verloskundig_dossier/postnatale_fase; allowed=(@conceptId, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/zorgverlenerzorginstelling"><!-- == Check occurrences of children of /verloskundig_dossier/zorgverlenerzorginstelling: == -->
          <assert test="count(zorgverlener) eq 1">Fout aantal voorkomens van "Zorgverlener": <value-of select="count(zorgverlener)"/> (verwacht: 1) [/verloskundig_dossier/zorgverlenerzorginstelling/zorgverlener]</assert>
          <assert test="count(zorginstelling) eq 1">Fout aantal voorkomens van "Zorginstelling": <value-of select="count(zorginstelling)"/> (verwacht: 1) [/verloskundig_dossier/zorgverlenerzorginstelling/zorginstelling]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/zorgverlenerzorginstelling/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/zorgverlenerzorginstelling: == -->
-      <rule context="/verloskundig_dossier/zorgverlenerzorginstelling/*[not(self::zorgverlener)][not(self::zorginstelling)]">
+      <rule context="/verloskundig_dossier/zorgverlenerzorginstelling/*[not(self::zorgverlener)][not(self::zorginstelling)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/zorgverlenerzorginstelling/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -149,6 +152,7 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @xsi:*))">Foutieve informatie voor "Zorginstelling": Ongeldige attributen aangetroffen [/verloskundig_dossier/zorgverlenerzorginstelling/zorginstelling; allowed=(@conceptId, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/zorgverlenerzorginstelling/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/zorgverlenerzorginstelling/zorgverlener"><!-- == Check occurrences of children of /verloskundig_dossier/zorgverlenerzorginstelling/zorgverlener: == -->
          <assert test="(count(zorgverlener_uzinummer) ge 0) and (count(zorgverlener_uzinummer) le 1)">Fout aantal voorkomens van "Zorgverlener UZI-nummer": <value-of select="count(zorgverlener_uzinummer)"/> (verwacht: 0..1) [/verloskundig_dossier/zorgverlenerzorginstelling/zorgverlener/zorgverlener_uzinummer]</assert>
@@ -157,10 +161,11 @@ See http://www.gnu.org/licenses/
          <assert test="(count(naam_zorgverlener) ge 0) and (count(naam_zorgverlener) le 1)">Fout aantal voorkomens van "Naam zorgverlener": <value-of select="count(naam_zorgverlener)"/> (verwacht: 0..1) [/verloskundig_dossier/zorgverlenerzorginstelling/zorgverlener/naam_zorgverlener]</assert>
          <assert test="(count(zorgverlenertype) ge 0) and (count(zorgverlenertype) le 1)">Fout aantal voorkomens van "Zorgverlenertype": <value-of select="count(zorgverlenertype)"/> (verwacht: 0..1) [/verloskundig_dossier/zorgverlenerzorginstelling/zorgverlener/zorgverlenertype]</assert>
          <assert test="(count(telefoon_waar_zorgverlener_is_te_bereiken) ge 0) and (count(telefoon_waar_zorgverlener_is_te_bereiken) le 1)">Fout aantal voorkomens van "Telefoon waar zorgverlener is te bereiken": <value-of select="count(telefoon_waar_zorgverlener_is_te_bereiken)"/> (verwacht: 0..1) [/verloskundig_dossier/zorgverlenerzorginstelling/zorgverlener/telefoon_waar_zorgverlener_is_te_bereiken]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/zorgverlenerzorginstelling/zorgverlener/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/zorgverlenerzorginstelling/zorgverlener: == -->
-      <rule context="/verloskundig_dossier/zorgverlenerzorginstelling/zorgverlener/*[not(self::zorgverlener_uzinummer)][not(self::zorgverlener_agbid)][not(self::zorgverlener_lvr1id)][not(self::naam_zorgverlener)][not(self::zorgverlenertype)][not(self::telefoon_waar_zorgverlener_is_te_bereiken)]">
+      <rule context="/verloskundig_dossier/zorgverlenerzorginstelling/zorgverlener/*[not(self::zorgverlener_uzinummer)][not(self::zorgverlener_agbid)][not(self::zorgverlener_lvr1id)][not(self::naam_zorgverlener)][not(self::zorgverlenertype)][not(self::telefoon_waar_zorgverlener_is_te_bereiken)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/zorgverlenerzorginstelling/zorgverlener/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -238,6 +243,7 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Telefoon waar zorgverlener is te bereiken": Ongeldige attributen aangetroffen [/verloskundig_dossier/zorgverlenerzorginstelling/zorgverlener/telefoon_waar_zorgverlener_is_te_bereiken; allowed=(@conceptId, @value, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/zorgverlenerzorginstelling/zorgverlener/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/zorgverlenerzorginstelling/zorginstelling"><!-- == Check occurrences of children of /verloskundig_dossier/zorgverlenerzorginstelling/zorginstelling: == -->
          <assert test="(count(zorginstelling_oid) ge 0) and (count(zorginstelling_oid) le 1)">Fout aantal voorkomens van "Zorginstelling OID": <value-of select="count(zorginstelling_oid)"/> (verwacht: 0..1) [/verloskundig_dossier/zorgverlenerzorginstelling/zorginstelling/zorginstelling_oid]</assert>
@@ -248,10 +254,11 @@ See http://www.gnu.org/licenses/
          <assert test="count(adres_zorginstelling) ge 0">Fout aantal voorkomens van "Adres zorginstelling": <value-of select="count(adres_zorginstelling)"/> (verwacht: 0 of meer) [/verloskundig_dossier/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling]</assert>
          <assert test="(count(type_zorginstelling) ge 0) and (count(type_zorginstelling) le 1)">Fout aantal voorkomens van "Type zorginstelling": <value-of select="count(type_zorginstelling)"/> (verwacht: 0..1) [/verloskundig_dossier/zorgverlenerzorginstelling/zorginstelling/type_zorginstelling]</assert>
          <assert test="(count(type_zorginstelling_bij_verwijzing) ge 0) and (count(type_zorginstelling_bij_verwijzing) le 1)">Fout aantal voorkomens van "Type zorginstelling (bij verwijzing)": <value-of select="count(type_zorginstelling_bij_verwijzing)"/> (verwacht: 0..1) [/verloskundig_dossier/zorgverlenerzorginstelling/zorginstelling/type_zorginstelling_bij_verwijzing]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/zorgverlenerzorginstelling/zorginstelling/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/zorgverlenerzorginstelling/zorginstelling: == -->
-      <rule context="/verloskundig_dossier/zorgverlenerzorginstelling/zorginstelling/*[not(self::zorginstelling_oid)][not(self::zorginstelling_agbid)][not(self::zorginstelling_lvrid)][not(self::zorginstelling_ura)][not(self::naam_zorginstelling)][not(self::adres_zorginstelling)][not(self::type_zorginstelling)][not(self::type_zorginstelling_bij_verwijzing)]">
+      <rule context="/verloskundig_dossier/zorgverlenerzorginstelling/zorginstelling/*[not(self::zorginstelling_oid)][not(self::zorginstelling_agbid)][not(self::zorginstelling_lvrid)][not(self::zorginstelling_ura)][not(self::naam_zorginstelling)][not(self::adres_zorginstelling)][not(self::type_zorginstelling)][not(self::type_zorginstelling_bij_verwijzing)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/zorgverlenerzorginstelling/zorginstelling/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -350,6 +357,7 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Type zorginstelling (bij verwijzing)": Ongeldige attributen aangetroffen [/verloskundig_dossier/zorgverlenerzorginstelling/zorginstelling/type_zorginstelling_bij_verwijzing; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/zorgverlenerzorginstelling/zorginstelling/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling"><!-- == Check occurrences of children of /verloskundig_dossier/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling: == -->
          <assert test="count(straatnaam) eq 1">Fout aantal voorkomens van "Straatnaam": <value-of select="count(straatnaam)"/> (verwacht: 1) [/verloskundig_dossier/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/straatnaam]</assert>
@@ -358,10 +366,11 @@ See http://www.gnu.org/licenses/
          <assert test="count(postcode) eq 1">Fout aantal voorkomens van "Postcode": <value-of select="count(postcode)"/> (verwacht: 1) [/verloskundig_dossier/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/postcode]</assert>
          <assert test="count(plaatsnaam) eq 1">Fout aantal voorkomens van "Plaatsnaam": <value-of select="count(plaatsnaam)"/> (verwacht: 1) [/verloskundig_dossier/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/plaatsnaam]</assert>
          <assert test="count(land) eq 1">Fout aantal voorkomens van "Land": <value-of select="count(land)"/> (verwacht: 1) [/verloskundig_dossier/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/land]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling: == -->
-      <rule context="/verloskundig_dossier/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/*[not(self::straatnaam)][not(self::huisnummer)][not(self::huisletterhuisnummertoevoeging)][not(self::postcode)][not(self::plaatsnaam)][not(self::land)]">
+      <rule context="/verloskundig_dossier/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/*[not(self::straatnaam)][not(self::huisnummer)][not(self::huisletterhuisnummertoevoeging)][not(self::postcode)][not(self::plaatsnaam)][not(self::land)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -425,6 +434,7 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Land": Ongeldige attributen aangetroffen [/verloskundig_dossier/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/land; allowed=(@conceptId, @value, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/vrouw"><!-- == Check occurrences of children of /verloskundig_dossier/vrouw: == -->
          <assert test="(count(burgerservicenummer) ge 0) and (count(burgerservicenummer) le 1)">Fout aantal voorkomens van "Burgerservicenummer": <value-of select="count(burgerservicenummer)"/> (verwacht: 0..1) [/verloskundig_dossier/vrouw/burgerservicenummer]</assert>
@@ -450,10 +460,11 @@ See http://www.gnu.org/licenses/
          <assert test="(count(rhesus_d_factor_vrouw) ge 0) and (count(rhesus_d_factor_vrouw) le 1)">Fout aantal voorkomens van "Rhesus D Factor vrouw": <value-of select="count(rhesus_d_factor_vrouw)"/> (verwacht: 0..1) [/verloskundig_dossier/vrouw/rhesus_d_factor_vrouw]</assert>
          <assert test="(count(rhesus_c_factor) ge 0) and (count(rhesus_c_factor) le 1)">Fout aantal voorkomens van "Rhesus c Factor": <value-of select="count(rhesus_c_factor)"/> (verwacht: 0..1) [/verloskundig_dossier/vrouw/rhesus_c_factor]</assert>
          <assert test="(count(partner) ge 0) and (count(partner) le 1)">Fout aantal voorkomens van "Partner": <value-of select="count(partner)"/> (verwacht: 0..1) [/verloskundig_dossier/vrouw/partner]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/vrouw/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/vrouw: == -->
-      <rule context="/verloskundig_dossier/vrouw/*[not(self::burgerservicenummer)][not(self::lokale_persoonsidentificatie)][not(self::naamgegevens)][not(self::geboortedatum)][not(self::adres)][not(self::etniciteit)][not(self::taalvaardigheid_vrouw_nederlandse_taal)][not(self::communicatietaal)][not(self::opleidingsniveau)][not(self::)][not(self::accepteert_bloedtransfusieq)][not(self::betrokken_zorgverlenerzorginstelling)][not(self::anamnese)][not(self::medicatiegebruikq)][not(self::medicatiegebruik)][not(self::lengte_gemeten)][not(self::bmi)][not(self::vrouwelijke_genitale_verminkingq)][not(self::type_vrouwelijke_genitale_verminking)][not(self::bloedgroep_vrouw)][not(self::rhesus_d_factor_vrouw)][not(self::rhesus_c_factor)][not(self::partner)]">
+      <rule context="/verloskundig_dossier/vrouw/*[not(self::burgerservicenummer)][not(self::lokale_persoonsidentificatie)][not(self::naamgegevens)][not(self::geboortedatum)][not(self::adres)][not(self::etniciteit)][not(self::taalvaardigheid_vrouw_nederlandse_taal)][not(self::communicatietaal)][not(self::opleidingsniveau)][not(self::)][not(self::accepteert_bloedtransfusieq)][not(self::betrokken_zorgverlenerzorginstelling)][not(self::anamnese)][not(self::medicatiegebruikq)][not(self::medicatiegebruik)][not(self::lengte_gemeten)][not(self::bmi)][not(self::vrouwelijke_genitale_verminkingq)][not(self::type_vrouwelijke_genitale_verminking)][not(self::bloedgroep_vrouw)][not(self::rhesus_d_factor_vrouw)][not(self::rhesus_c_factor)][not(self::partner)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/vrouw/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -740,16 +751,18 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @xsi:*))">Foutieve informatie voor "Partner": Ongeldige attributen aangetroffen [/verloskundig_dossier/vrouw/partner; allowed=(@conceptId, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/vrouw/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/vrouw/naamgegevens"><!-- == Check occurrences of children of /verloskundig_dossier/vrouw/naamgegevens: == -->
          <assert test="count(voornamen) ge 0">Fout aantal voorkomens van "Voornamen": <value-of select="count(voornamen)"/> (verwacht: 0 of meer) [/verloskundig_dossier/vrouw/naamgegevens/voornamen]</assert>
          <assert test="(count(initialen) ge 0) and (count(initialen) le 1)">Fout aantal voorkomens van "Initialen": <value-of select="count(initialen)"/> (verwacht: 0..1) [/verloskundig_dossier/vrouw/naamgegevens/initialen]</assert>
          <assert test="(count(roepnaam) ge 0) and (count(roepnaam) le 1)">Fout aantal voorkomens van "Roepnaam": <value-of select="count(roepnaam)"/> (verwacht: 0..1) [/verloskundig_dossier/vrouw/naamgegevens/roepnaam]</assert>
          <assert test="count(achternaam) ge 0">Fout aantal voorkomens van "Achternaam": <value-of select="count(achternaam)"/> (verwacht: 0 of meer) [/verloskundig_dossier/vrouw/naamgegevens/achternaam]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/vrouw/naamgegevens/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/vrouw/naamgegevens: == -->
-      <rule context="/verloskundig_dossier/vrouw/naamgegevens/*[not(self::voornamen)][not(self::initialen)][not(self::roepnaam)][not(self::achternaam)]">
+      <rule context="/verloskundig_dossier/vrouw/naamgegevens/*[not(self::voornamen)][not(self::initialen)][not(self::roepnaam)][not(self::achternaam)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/vrouw/naamgegevens/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -791,15 +804,17 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @xsi:*))">Foutieve informatie voor "Achternaam": Ongeldige attributen aangetroffen [/verloskundig_dossier/vrouw/naamgegevens/achternaam; allowed=(@conceptId, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/vrouw/naamgegevens/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/vrouw/naamgegevens/achternaam"><!-- == Check occurrences of children of /verloskundig_dossier/vrouw/naamgegevens/achternaam: == -->
          <assert test="(count(soort_naam) ge 0) and (count(soort_naam) le 1)">Fout aantal voorkomens van "Soort naam": <value-of select="count(soort_naam)"/> (verwacht: 0..1) [/verloskundig_dossier/vrouw/naamgegevens/achternaam/soort_naam]</assert>
          <assert test="(count(voorvoegsel) ge 0) and (count(voorvoegsel) le 1)">Fout aantal voorkomens van "Voorvoegsel": <value-of select="count(voorvoegsel)"/> (verwacht: 0..1) [/verloskundig_dossier/vrouw/naamgegevens/achternaam/voorvoegsel]</assert>
          <assert test="count(achternaam) eq 1">Fout aantal voorkomens van "Achternaam": <value-of select="count(achternaam)"/> (verwacht: 1) [/verloskundig_dossier/vrouw/naamgegevens/achternaam/achternaam]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/vrouw/naamgegevens/achternaam/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/vrouw/naamgegevens/achternaam: == -->
-      <rule context="/verloskundig_dossier/vrouw/naamgegevens/achternaam/*[not(self::soort_naam)][not(self::voorvoegsel)][not(self::achternaam)]">
+      <rule context="/verloskundig_dossier/vrouw/naamgegevens/achternaam/*[not(self::soort_naam)][not(self::voorvoegsel)][not(self::achternaam)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/vrouw/naamgegevens/achternaam/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -841,6 +856,7 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Achternaam": Ongeldige attributen aangetroffen [/verloskundig_dossier/vrouw/naamgegevens/achternaam/achternaam; allowed=(@conceptId, @value, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/vrouw/naamgegevens/achternaam/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/vrouw/adres"><!-- == Check occurrences of children of /verloskundig_dossier/vrouw/adres: == -->
          <assert test="(count(straatnaam) ge 0) and (count(straatnaam) le 1)">Fout aantal voorkomens van "Straatnaam": <value-of select="count(straatnaam)"/> (verwacht: 0..1) [/verloskundig_dossier/vrouw/adres/straatnaam]</assert>
@@ -850,10 +866,11 @@ See http://www.gnu.org/licenses/
          <assert test="(count(plaatsnaam) ge 0) and (count(plaatsnaam) le 1)">Fout aantal voorkomens van "Plaatsnaam": <value-of select="count(plaatsnaam)"/> (verwacht: 0..1) [/verloskundig_dossier/vrouw/adres/plaatsnaam]</assert>
          <assert test="(count(land) ge 0) and (count(land) le 1)">Fout aantal voorkomens van "Land": <value-of select="count(land)"/> (verwacht: 0..1) [/verloskundig_dossier/vrouw/adres/land]</assert>
          <assert test="(count(adrestype) ge 0) and (count(adrestype) le 1)">Fout aantal voorkomens van "Adrestype": <value-of select="count(adrestype)"/> (verwacht: 0..1) [/verloskundig_dossier/vrouw/adres/adrestype]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/vrouw/adres/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/vrouw/adres: == -->
-      <rule context="/verloskundig_dossier/vrouw/adres/*[not(self::straatnaam)][not(self::huisnummer)][not(self::huisletterhuisnummertoevoeging)][not(self::postcode)][not(self::plaatsnaam)][not(self::land)][not(self::adrestype)]">
+      <rule context="/verloskundig_dossier/vrouw/adres/*[not(self::straatnaam)][not(self::huisnummer)][not(self::huisletterhuisnummertoevoeging)][not(self::postcode)][not(self::plaatsnaam)][not(self::land)][not(self::adrestype)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/vrouw/adres/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -930,15 +947,17 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Adrestype": Ongeldige attributen aangetroffen [/verloskundig_dossier/vrouw/adres/adrestype; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/vrouw/adres/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/vrouw/betrokken_zorgverlenerzorginstelling"><!-- == Check occurrences of children of /verloskundig_dossier/vrouw/betrokken_zorgverlenerzorginstelling: == -->
          <assert test="(count(huisarts) ge 0) and (count(huisarts) le 1)">Fout aantal voorkomens van "Huisarts": <value-of select="count(huisarts)"/> (verwacht: 0..1) [/verloskundig_dossier/vrouw/betrokken_zorgverlenerzorginstelling/huisarts]</assert>
          <assert test="(count(apotheek) ge 0) and (count(apotheek) le 1)">Fout aantal voorkomens van "Apotheek": <value-of select="count(apotheek)"/> (verwacht: 0..1) [/verloskundig_dossier/vrouw/betrokken_zorgverlenerzorginstelling/apotheek]</assert>
          <assert test="count(specialist) ge 0">Fout aantal voorkomens van "Specialist": <value-of select="count(specialist)"/> (verwacht: 0 of meer) [/verloskundig_dossier/vrouw/betrokken_zorgverlenerzorginstelling/specialist]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/vrouw/betrokken_zorgverlenerzorginstelling/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/vrouw/betrokken_zorgverlenerzorginstelling: == -->
-      <rule context="/verloskundig_dossier/vrouw/betrokken_zorgverlenerzorginstelling/*[not(self::huisarts)][not(self::apotheek)][not(self::specialist)]">
+      <rule context="/verloskundig_dossier/vrouw/betrokken_zorgverlenerzorginstelling/*[not(self::huisarts)][not(self::apotheek)][not(self::specialist)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/vrouw/betrokken_zorgverlenerzorginstelling/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -966,15 +985,17 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @xsi:*))">Foutieve informatie voor "Specialist": Ongeldige attributen aangetroffen [/verloskundig_dossier/vrouw/betrokken_zorgverlenerzorginstelling/specialist; allowed=(@conceptId, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/vrouw/betrokken_zorgverlenerzorginstelling/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/vrouw/betrokken_zorgverlenerzorginstelling/huisarts"><!-- == Check occurrences of children of /verloskundig_dossier/vrouw/betrokken_zorgverlenerzorginstelling/huisarts: == -->
          <assert test="(count(zorgverlener_uzinummer) ge 0) and (count(zorgverlener_uzinummer) le 1)">Fout aantal voorkomens van "Zorgverlener UZI-nummer": <value-of select="count(zorgverlener_uzinummer)"/> (verwacht: 0..1) [/verloskundig_dossier/vrouw/betrokken_zorgverlenerzorginstelling/huisarts/zorgverlener_uzinummer]</assert>
          <assert test="(count(zorgverlener_agbid) ge 0) and (count(zorgverlener_agbid) le 1)">Fout aantal voorkomens van "Zorgverlener AGB-ID": <value-of select="count(zorgverlener_agbid)"/> (verwacht: 0..1) [/verloskundig_dossier/vrouw/betrokken_zorgverlenerzorginstelling/huisarts/zorgverlener_agbid]</assert>
          <assert test="(count(naam_zorgverlener) ge 0) and (count(naam_zorgverlener) le 1)">Fout aantal voorkomens van "Naam zorgverlener": <value-of select="count(naam_zorgverlener)"/> (verwacht: 0..1) [/verloskundig_dossier/vrouw/betrokken_zorgverlenerzorginstelling/huisarts/naam_zorgverlener]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/vrouw/betrokken_zorgverlenerzorginstelling/huisarts/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/vrouw/betrokken_zorgverlenerzorginstelling/huisarts: == -->
-      <rule context="/verloskundig_dossier/vrouw/betrokken_zorgverlenerzorginstelling/huisarts/*[not(self::zorgverlener_uzinummer)][not(self::zorgverlener_agbid)][not(self::naam_zorgverlener)]">
+      <rule context="/verloskundig_dossier/vrouw/betrokken_zorgverlenerzorginstelling/huisarts/*[not(self::zorgverlener_uzinummer)][not(self::zorgverlener_agbid)][not(self::naam_zorgverlener)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/vrouw/betrokken_zorgverlenerzorginstelling/huisarts/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -1012,14 +1033,16 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Naam zorgverlener": Ongeldige attributen aangetroffen [/verloskundig_dossier/vrouw/betrokken_zorgverlenerzorginstelling/huisarts/naam_zorgverlener; allowed=(@conceptId, @value, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/vrouw/betrokken_zorgverlenerzorginstelling/huisarts/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/vrouw/betrokken_zorgverlenerzorginstelling/apotheek"><!-- == Check occurrences of children of /verloskundig_dossier/vrouw/betrokken_zorgverlenerzorginstelling/apotheek: == -->
          <assert test="(count(zorginstelling_agbid) ge 0) and (count(zorginstelling_agbid) le 1)">Fout aantal voorkomens van "Zorginstelling AGB-ID": <value-of select="count(zorginstelling_agbid)"/> (verwacht: 0..1) [/verloskundig_dossier/vrouw/betrokken_zorgverlenerzorginstelling/apotheek/zorginstelling_agbid]</assert>
          <assert test="(count(naam_zorginstelling) ge 0) and (count(naam_zorginstelling) le 1)">Fout aantal voorkomens van "Naam zorginstelling": <value-of select="count(naam_zorginstelling)"/> (verwacht: 0..1) [/verloskundig_dossier/vrouw/betrokken_zorgverlenerzorginstelling/apotheek/naam_zorginstelling]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/vrouw/betrokken_zorgverlenerzorginstelling/apotheek/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/vrouw/betrokken_zorgverlenerzorginstelling/apotheek: == -->
-      <rule context="/verloskundig_dossier/vrouw/betrokken_zorgverlenerzorginstelling/apotheek/*[not(self::zorginstelling_agbid)][not(self::naam_zorginstelling)]">
+      <rule context="/verloskundig_dossier/vrouw/betrokken_zorgverlenerzorginstelling/apotheek/*[not(self::zorginstelling_agbid)][not(self::naam_zorginstelling)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/vrouw/betrokken_zorgverlenerzorginstelling/apotheek/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -1045,6 +1068,7 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Naam zorginstelling": Ongeldige attributen aangetroffen [/verloskundig_dossier/vrouw/betrokken_zorgverlenerzorginstelling/apotheek/naam_zorginstelling; allowed=(@conceptId, @value, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/vrouw/betrokken_zorgverlenerzorginstelling/apotheek/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/vrouw/betrokken_zorgverlenerzorginstelling/specialist"><!-- == Check occurrences of children of /verloskundig_dossier/vrouw/betrokken_zorgverlenerzorginstelling/specialist: == -->
          <assert test="(count(zorgverlener_uzinummer) ge 0) and (count(zorgverlener_uzinummer) le 1)">Fout aantal voorkomens van "Zorgverlener UZI-nummer": <value-of select="count(zorgverlener_uzinummer)"/> (verwacht: 0..1) [/verloskundig_dossier/vrouw/betrokken_zorgverlenerzorginstelling/specialist/zorgverlener_uzinummer]</assert>
@@ -1052,10 +1076,11 @@ See http://www.gnu.org/licenses/
          <assert test="(count(naam_zorgverlener) ge 0) and (count(naam_zorgverlener) le 1)">Fout aantal voorkomens van "Naam zorgverlener": <value-of select="count(naam_zorgverlener)"/> (verwacht: 0..1) [/verloskundig_dossier/vrouw/betrokken_zorgverlenerzorginstelling/specialist/naam_zorgverlener]</assert>
          <assert test="(count(type_specialist) ge 0) and (count(type_specialist) le 1)">Fout aantal voorkomens van "Type specialist": <value-of select="count(type_specialist)"/> (verwacht: 0..1) [/verloskundig_dossier/vrouw/betrokken_zorgverlenerzorginstelling/specialist/type_specialist]</assert>
          <assert test="(count(zorginstelling) ge 0) and (count(zorginstelling) le 1)">Fout aantal voorkomens van "Zorginstelling": <value-of select="count(zorginstelling)"/> (verwacht: 0..1) [/verloskundig_dossier/vrouw/betrokken_zorgverlenerzorginstelling/specialist/zorginstelling]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/vrouw/betrokken_zorgverlenerzorginstelling/specialist/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/vrouw/betrokken_zorgverlenerzorginstelling/specialist: == -->
-      <rule context="/verloskundig_dossier/vrouw/betrokken_zorgverlenerzorginstelling/specialist/*[not(self::zorgverlener_uzinummer)][not(self::zorgverlener_agbid)][not(self::naam_zorgverlener)][not(self::type_specialist)][not(self::zorginstelling)]">
+      <rule context="/verloskundig_dossier/vrouw/betrokken_zorgverlenerzorginstelling/specialist/*[not(self::zorgverlener_uzinummer)][not(self::zorgverlener_agbid)][not(self::naam_zorgverlener)][not(self::type_specialist)][not(self::zorginstelling)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/vrouw/betrokken_zorgverlenerzorginstelling/specialist/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -1111,14 +1136,16 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @xsi:*))">Foutieve informatie voor "Zorginstelling": Ongeldige attributen aangetroffen [/verloskundig_dossier/vrouw/betrokken_zorgverlenerzorginstelling/specialist/zorginstelling; allowed=(@conceptId, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/vrouw/betrokken_zorgverlenerzorginstelling/specialist/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/vrouw/betrokken_zorgverlenerzorginstelling/specialist/zorginstelling"><!-- == Check occurrences of children of /verloskundig_dossier/vrouw/betrokken_zorgverlenerzorginstelling/specialist/zorginstelling: == -->
          <assert test="(count(zorginstelling_agbid) ge 0) and (count(zorginstelling_agbid) le 1)">Fout aantal voorkomens van "Zorginstelling AGB-ID": <value-of select="count(zorginstelling_agbid)"/> (verwacht: 0..1) [/verloskundig_dossier/vrouw/betrokken_zorgverlenerzorginstelling/specialist/zorginstelling/zorginstelling_agbid]</assert>
          <assert test="(count(naam_zorginstelling) ge 0) and (count(naam_zorginstelling) le 1)">Fout aantal voorkomens van "Naam zorginstelling": <value-of select="count(naam_zorginstelling)"/> (verwacht: 0..1) [/verloskundig_dossier/vrouw/betrokken_zorgverlenerzorginstelling/specialist/zorginstelling/naam_zorginstelling]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/vrouw/betrokken_zorgverlenerzorginstelling/specialist/zorginstelling/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/vrouw/betrokken_zorgverlenerzorginstelling/specialist/zorginstelling: == -->
-      <rule context="/verloskundig_dossier/vrouw/betrokken_zorgverlenerzorginstelling/specialist/zorginstelling/*[not(self::zorginstelling_agbid)][not(self::naam_zorginstelling)]">
+      <rule context="/verloskundig_dossier/vrouw/betrokken_zorgverlenerzorginstelling/specialist/zorginstelling/*[not(self::zorginstelling_agbid)][not(self::naam_zorginstelling)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/vrouw/betrokken_zorgverlenerzorginstelling/specialist/zorginstelling/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -1144,6 +1171,7 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Naam zorginstelling": Ongeldige attributen aangetroffen [/verloskundig_dossier/vrouw/betrokken_zorgverlenerzorginstelling/specialist/zorginstelling/naam_zorginstelling; allowed=(@conceptId, @value, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/vrouw/betrokken_zorgverlenerzorginstelling/specialist/zorginstelling/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/vrouw/anamnese"><!-- == Check occurrences of children of /verloskundig_dossier/vrouw/anamnese: == -->
          <assert test="(count(onder_behandeling_geweestq) ge 0) and (count(onder_behandeling_geweestq) le 1)">Fout aantal voorkomens van "Onder behandeling (geweest)?": <value-of select="count(onder_behandeling_geweestq)"/> (verwacht: 0..1) [/verloskundig_dossier/vrouw/anamnese/onder_behandeling_geweestq]</assert>
@@ -1152,10 +1180,11 @@ See http://www.gnu.org/licenses/
          <assert test="count(relevante_allergieen) ge 0">Fout aantal voorkomens van "Relevante allergieën": <value-of select="count(relevante_allergieen)"/> (verwacht: 0 of meer) [/verloskundig_dossier/vrouw/anamnese/relevante_allergieen]</assert>
          <assert test="(count(familie_anamnese) ge 0) and (count(familie_anamnese) le 1)">Fout aantal voorkomens van "Familie anamnese": <value-of select="count(familie_anamnese)"/> (verwacht: 0..1) [/verloskundig_dossier/vrouw/anamnese/familie_anamnese]</assert>
          <assert test="(count(indicatie_prenatale_diagnostiek) ge 0) and (count(indicatie_prenatale_diagnostiek) le 1)">Fout aantal voorkomens van "Indicatie prenatale diagnostiek": <value-of select="count(indicatie_prenatale_diagnostiek)"/> (verwacht: 0..1) [/verloskundig_dossier/vrouw/anamnese/indicatie_prenatale_diagnostiek]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/vrouw/anamnese/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/vrouw/anamnese: == -->
-      <rule context="/verloskundig_dossier/vrouw/anamnese/*[not(self::onder_behandeling_geweestq)][not(self::algemene_anamnese)][not(self::psychosociale_anamnese)][not(self::relevante_allergieen)][not(self::familie_anamnese)][not(self::indicatie_prenatale_diagnostiek)]">
+      <rule context="/verloskundig_dossier/vrouw/anamnese/*[not(self::onder_behandeling_geweestq)][not(self::algemene_anamnese)][not(self::psychosociale_anamnese)][not(self::relevante_allergieen)][not(self::familie_anamnese)][not(self::indicatie_prenatale_diagnostiek)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/vrouw/anamnese/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -1220,6 +1249,7 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @xsi:*))">Foutieve informatie voor "Indicatie prenatale diagnostiek": Ongeldige attributen aangetroffen [/verloskundig_dossier/vrouw/anamnese/indicatie_prenatale_diagnostiek; allowed=(@conceptId, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/vrouw/anamnese/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/vrouw/anamnese/algemene_anamnese"><!-- == Check occurrences of children of /verloskundig_dossier/vrouw/anamnese/algemene_anamnese: == -->
          <assert test="(count(autoimmuun_aandoeningq) ge 0) and (count(autoimmuun_aandoeningq) le 1)">Fout aantal voorkomens van "Auto-immuun aandoening?": <value-of select="count(autoimmuun_aandoeningq)"/> (verwacht: 0..1) [/verloskundig_dossier/vrouw/anamnese/algemene_anamnese/autoimmuun_aandoeningq]</assert>
@@ -1258,10 +1288,11 @@ See http://www.gnu.org/licenses/
          <assert test="(count(overige_aandoeningq) ge 0) and (count(overige_aandoeningq) le 1)">Fout aantal voorkomens van "Overige aandoening?": <value-of select="count(overige_aandoeningq)"/> (verwacht: 0..1) [/verloskundig_dossier/vrouw/anamnese/algemene_anamnese/overige_aandoeningq]</assert>
          <assert test="count(overige_aandoening) ge 0">Fout aantal voorkomens van "Overige aandoening": <value-of select="count(overige_aandoening)"/> (verwacht: 0 of meer) [/verloskundig_dossier/vrouw/anamnese/algemene_anamnese/overige_aandoening]</assert>
          <assert test="(count(toelichting_alg_anamnese) ge 0) and (count(toelichting_alg_anamnese) le 1)">Fout aantal voorkomens van "Toelichting alg. anamnese": <value-of select="count(toelichting_alg_anamnese)"/> (verwacht: 0..1) [/verloskundig_dossier/vrouw/anamnese/algemene_anamnese/toelichting_alg_anamnese]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/vrouw/anamnese/algemene_anamnese/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/vrouw/anamnese/algemene_anamnese: == -->
-      <rule context="/verloskundig_dossier/vrouw/anamnese/algemene_anamnese/*[not(self::autoimmuun_aandoeningq)][not(self::autoimmuun_aandoening)][not(self::cardiovasculaire_aandoeningq)][not(self::cardiovasculaire_aandoening)][not(self::urogenitale_aandoeningq)][not(self::urogenitale_aandoening)][not(self::oncologische_aandoeningq)][not(self::oncologische_aandoening)][not(self::schildklier_aandoeningq)][not(self::schildklier_aandoening)][not(self::diabetes_mellitusq)][not(self::neurologische_aandoeningq)][not(self::neurologische_aandoening)][not(self::infectieziekteq)][not(self::infectieziekte)][not(self::mdl_aandoeningq)][not(self::mdl_aandoening)][not(self::anemieq)][not(self::anemie)][not(self::longaandoeningq)][not(self::longaandoening)][not(self::gynaecologische_aandoeningq)][not(self::gynaecologische_aandoening)][not(self::orthopedische_afwijkingq)][not(self::orthopedische_afwijking)][not(self::bloedtransfusieq)][not(self::transfusiereactieq)][not(self::operatieq)][not(self::type_operatie)][not(self::stollingsprobleemq)][not(self::type_stollingsprobleem)][not(self::psychiatrieq)][not(self::psychiatrie)][not(self::overige_aandoeningq)][not(self::overige_aandoening)][not(self::toelichting_alg_anamnese)]">
+      <rule context="/verloskundig_dossier/vrouw/anamnese/algemene_anamnese/*[not(self::autoimmuun_aandoeningq)][not(self::autoimmuun_aandoening)][not(self::cardiovasculaire_aandoeningq)][not(self::cardiovasculaire_aandoening)][not(self::urogenitale_aandoeningq)][not(self::urogenitale_aandoening)][not(self::oncologische_aandoeningq)][not(self::oncologische_aandoening)][not(self::schildklier_aandoeningq)][not(self::schildklier_aandoening)][not(self::diabetes_mellitusq)][not(self::neurologische_aandoeningq)][not(self::neurologische_aandoening)][not(self::infectieziekteq)][not(self::infectieziekte)][not(self::mdl_aandoeningq)][not(self::mdl_aandoening)][not(self::anemieq)][not(self::anemie)][not(self::longaandoeningq)][not(self::longaandoening)][not(self::gynaecologische_aandoeningq)][not(self::gynaecologische_aandoening)][not(self::orthopedische_afwijkingq)][not(self::orthopedische_afwijking)][not(self::bloedtransfusieq)][not(self::transfusiereactieq)][not(self::operatieq)][not(self::type_operatie)][not(self::stollingsprobleemq)][not(self::type_stollingsprobleem)][not(self::psychiatrieq)][not(self::psychiatrie)][not(self::overige_aandoeningq)][not(self::overige_aandoening)][not(self::toelichting_alg_anamnese)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/vrouw/anamnese/algemene_anamnese/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -1756,16 +1787,18 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Toelichting alg. anamnese": Ongeldige attributen aangetroffen [/verloskundig_dossier/vrouw/anamnese/algemene_anamnese/toelichting_alg_anamnese; allowed=(@conceptId, @value, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/vrouw/anamnese/algemene_anamnese/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/vrouw/anamnese/psychosociale_anamnese"><!-- == Check occurrences of children of /verloskundig_dossier/vrouw/anamnese/psychosociale_anamnese: == -->
          <assert test="(count(psychosociale_problematiekq) ge 0) and (count(psychosociale_problematiekq) le 1)">Fout aantal voorkomens van "Psychosociale problematiek?": <value-of select="count(psychosociale_problematiekq)"/> (verwacht: 0..1) [/verloskundig_dossier/vrouw/anamnese/psychosociale_anamnese/psychosociale_problematiekq]</assert>
          <assert test="(count(negatieve_seksuele_ervaringenq) ge 0) and (count(negatieve_seksuele_ervaringenq) le 1)">Fout aantal voorkomens van "Negatieve seksuele ervaringen?": <value-of select="count(negatieve_seksuele_ervaringenq)"/> (verwacht: 0..1) [/verloskundig_dossier/vrouw/anamnese/psychosociale_anamnese/negatieve_seksuele_ervaringenq]</assert>
          <assert test="(count(huiselijk_geweldq) ge 0) and (count(huiselijk_geweldq) le 1)">Fout aantal voorkomens van "Huiselijk geweld?": <value-of select="count(huiselijk_geweldq)"/> (verwacht: 0..1) [/verloskundig_dossier/vrouw/anamnese/psychosociale_anamnese/huiselijk_geweldq]</assert>
          <assert test="(count(toelichting_psychosociale_anamnese) ge 0) and (count(toelichting_psychosociale_anamnese) le 1)">Fout aantal voorkomens van "Toelichting psychosociale anamnese": <value-of select="count(toelichting_psychosociale_anamnese)"/> (verwacht: 0..1) [/verloskundig_dossier/vrouw/anamnese/psychosociale_anamnese/toelichting_psychosociale_anamnese]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/vrouw/anamnese/psychosociale_anamnese/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/vrouw/anamnese/psychosociale_anamnese: == -->
-      <rule context="/verloskundig_dossier/vrouw/anamnese/psychosociale_anamnese/*[not(self::psychosociale_problematiekq)][not(self::negatieve_seksuele_ervaringenq)][not(self::huiselijk_geweldq)][not(self::toelichting_psychosociale_anamnese)]">
+      <rule context="/verloskundig_dossier/vrouw/anamnese/psychosociale_anamnese/*[not(self::psychosociale_problematiekq)][not(self::negatieve_seksuele_ervaringenq)][not(self::huiselijk_geweldq)][not(self::toelichting_psychosociale_anamnese)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/vrouw/anamnese/psychosociale_anamnese/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -1812,13 +1845,15 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Toelichting psychosociale anamnese": Ongeldige attributen aangetroffen [/verloskundig_dossier/vrouw/anamnese/psychosociale_anamnese/toelichting_psychosociale_anamnese; allowed=(@conceptId, @value, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/vrouw/anamnese/psychosociale_anamnese/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/vrouw/anamnese/familie_anamnese"><!-- == Check occurrences of children of /verloskundig_dossier/vrouw/anamnese/familie_anamnese: == -->
          <assert test="count(aandoening) ge 0">Fout aantal voorkomens van "Aandoening": <value-of select="count(aandoening)"/> (verwacht: 0 of meer) [/verloskundig_dossier/vrouw/anamnese/familie_anamnese/aandoening]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/vrouw/anamnese/familie_anamnese/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/vrouw/anamnese/familie_anamnese: == -->
-      <rule context="/verloskundig_dossier/vrouw/anamnese/familie_anamnese/*[not(self::aandoening)]">
+      <rule context="/verloskundig_dossier/vrouw/anamnese/familie_anamnese/*[not(self::aandoening)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/vrouw/anamnese/familie_anamnese/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -1830,14 +1865,16 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @xsi:*))">Foutieve informatie voor "Aandoening": Ongeldige attributen aangetroffen [/verloskundig_dossier/vrouw/anamnese/familie_anamnese/aandoening; allowed=(@conceptId, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/vrouw/anamnese/familie_anamnese/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/vrouw/anamnese/familie_anamnese/aandoening"><!-- == Check occurrences of children of /verloskundig_dossier/vrouw/anamnese/familie_anamnese/aandoening: == -->
          <assert test="count(aandoening_details) eq 1">Fout aantal voorkomens van "Aandoening details": <value-of select="count(aandoening_details)"/> (verwacht: 1) [/verloskundig_dossier/vrouw/anamnese/familie_anamnese/aandoening/aandoening_details]</assert>
          <assert test="count(type_verwantschap) ge 1">Fout aantal voorkomens van "Type verwantschap": <value-of select="count(type_verwantschap)"/> (verwacht: 1 of meer) [/verloskundig_dossier/vrouw/anamnese/familie_anamnese/aandoening/type_verwantschap]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/vrouw/anamnese/familie_anamnese/aandoening/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/vrouw/anamnese/familie_anamnese/aandoening: == -->
-      <rule context="/verloskundig_dossier/vrouw/anamnese/familie_anamnese/aandoening/*[not(self::aandoening_details)][not(self::type_verwantschap)]">
+      <rule context="/verloskundig_dossier/vrouw/anamnese/familie_anamnese/aandoening/*[not(self::aandoening_details)][not(self::type_verwantschap)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/vrouw/anamnese/familie_anamnese/aandoening/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -1864,15 +1901,17 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Type verwantschap": Ongeldige attributen aangetroffen [/verloskundig_dossier/vrouw/anamnese/familie_anamnese/aandoening/type_verwantschap; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/vrouw/anamnese/familie_anamnese/aandoening/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/vrouw/anamnese/indicatie_prenatale_diagnostiek"><!-- == Check occurrences of children of /verloskundig_dossier/vrouw/anamnese/indicatie_prenatale_diagnostiek: == -->
          <assert test="(count(indicatie_invasieve_prenatale_diagnostiekq) ge 0) and (count(indicatie_invasieve_prenatale_diagnostiekq) le 1)">Fout aantal voorkomens van "Indicatie invasieve prenatale diagnostiek?": <value-of select="count(indicatie_invasieve_prenatale_diagnostiekq)"/> (verwacht: 0..1) [/verloskundig_dossier/vrouw/anamnese/indicatie_prenatale_diagnostiek/indicatie_invasieve_prenatale_diagnostiekq]</assert>
          <assert test="(count(indicatie_guoq) ge 0) and (count(indicatie_guoq) le 1)">Fout aantal voorkomens van "Indicatie GUO?": <value-of select="count(indicatie_guoq)"/> (verwacht: 0..1) [/verloskundig_dossier/vrouw/anamnese/indicatie_prenatale_diagnostiek/indicatie_guoq]</assert>
          <assert test="(count(indicatie_niptq) ge 0) and (count(indicatie_niptq) le 1)">Fout aantal voorkomens van "Indicatie NIPT?": <value-of select="count(indicatie_niptq)"/> (verwacht: 0..1) [/verloskundig_dossier/vrouw/anamnese/indicatie_prenatale_diagnostiek/indicatie_niptq]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/vrouw/anamnese/indicatie_prenatale_diagnostiek/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/vrouw/anamnese/indicatie_prenatale_diagnostiek: == -->
-      <rule context="/verloskundig_dossier/vrouw/anamnese/indicatie_prenatale_diagnostiek/*[not(self::indicatie_invasieve_prenatale_diagnostiekq)][not(self::indicatie_guoq)][not(self::indicatie_niptq)]">
+      <rule context="/verloskundig_dossier/vrouw/anamnese/indicatie_prenatale_diagnostiek/*[not(self::indicatie_invasieve_prenatale_diagnostiekq)][not(self::indicatie_guoq)][not(self::indicatie_niptq)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/vrouw/anamnese/indicatie_prenatale_diagnostiek/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -1909,6 +1948,7 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Indicatie NIPT?": Ongeldige attributen aangetroffen [/verloskundig_dossier/vrouw/anamnese/indicatie_prenatale_diagnostiek/indicatie_niptq; allowed=(@conceptId, @value, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/vrouw/anamnese/indicatie_prenatale_diagnostiek/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/vrouw/medicatiegebruik"><!-- == Check occurrences of children of /verloskundig_dossier/vrouw/medicatiegebruik: == -->
          <assert test="count(soort_medicatie) eq 1">Fout aantal voorkomens van "Soort medicatie": <value-of select="count(soort_medicatie)"/> (verwacht: 1) [/verloskundig_dossier/vrouw/medicatiegebruik/soort_medicatie]</assert>
@@ -1916,10 +1956,11 @@ See http://www.gnu.org/licenses/
          <assert test="(count(einddatum) ge 0) and (count(einddatum) le 1)">Fout aantal voorkomens van "Einddatum": <value-of select="count(einddatum)"/> (verwacht: 0..1) [/verloskundig_dossier/vrouw/medicatiegebruik/einddatum]</assert>
          <assert test="(count(dosering_medicatie) ge 0) and (count(dosering_medicatie) le 1)">Fout aantal voorkomens van "Dosering medicatie": <value-of select="count(dosering_medicatie)"/> (verwacht: 0..1) [/verloskundig_dossier/vrouw/medicatiegebruik/dosering_medicatie]</assert>
          <assert test="(count(bijzonderheden) ge 0) and (count(bijzonderheden) le 1)">Fout aantal voorkomens van "Bijzonderheden": <value-of select="count(bijzonderheden)"/> (verwacht: 0..1) [/verloskundig_dossier/vrouw/medicatiegebruik/bijzonderheden]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/vrouw/medicatiegebruik/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/vrouw/medicatiegebruik: == -->
-      <rule context="/verloskundig_dossier/vrouw/medicatiegebruik/*[not(self::soort_medicatie)][not(self::begindatum)][not(self::einddatum)][not(self::dosering_medicatie)][not(self::bijzonderheden)]">
+      <rule context="/verloskundig_dossier/vrouw/medicatiegebruik/*[not(self::soort_medicatie)][not(self::begindatum)][not(self::einddatum)][not(self::dosering_medicatie)][not(self::bijzonderheden)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/vrouw/medicatiegebruik/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -1973,14 +2014,16 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Bijzonderheden": Ongeldige attributen aangetroffen [/verloskundig_dossier/vrouw/medicatiegebruik/bijzonderheden; allowed=(@conceptId, @value, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/vrouw/medicatiegebruik/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/vrouw/bmi"><!-- == Check occurrences of children of /verloskundig_dossier/vrouw/bmi: == -->
          <assert test="(count(datum_bepaling) ge 0) and (count(datum_bepaling) le 1)">Fout aantal voorkomens van "Datum bepaling": <value-of select="count(datum_bepaling)"/> (verwacht: 0..1) [/verloskundig_dossier/vrouw/bmi/datum_bepaling]</assert>
          <assert test="(count(bmi_vrouw) ge 0) and (count(bmi_vrouw) le 1)">Fout aantal voorkomens van "BMI vrouw": <value-of select="count(bmi_vrouw)"/> (verwacht: 0..1) [/verloskundig_dossier/vrouw/bmi/bmi_vrouw]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/vrouw/bmi/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/vrouw/bmi: == -->
-      <rule context="/verloskundig_dossier/vrouw/bmi/*[not(self::datum_bepaling)][not(self::bmi_vrouw)]">
+      <rule context="/verloskundig_dossier/vrouw/bmi/*[not(self::datum_bepaling)][not(self::bmi_vrouw)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/vrouw/bmi/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -2006,14 +2049,16 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "BMI vrouw": Ongeldige attributen aangetroffen [/verloskundig_dossier/vrouw/bmi/bmi_vrouw; allowed=(@conceptId, @value, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/vrouw/bmi/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/vrouw/partner"><!-- == Check occurrences of children of /verloskundig_dossier/vrouw/partner: == -->
          <assert test="count(persoonsnaam) ge 0">Fout aantal voorkomens van "Persoonsnaam": <value-of select="count(persoonsnaam)"/> (verwacht: 0 of meer) [/verloskundig_dossier/vrouw/partner/persoonsnaam]</assert>
          <assert test="count(etniciteit) ge 0">Fout aantal voorkomens van "Etniciteit": <value-of select="count(etniciteit)"/> (verwacht: 0 of meer) [/verloskundig_dossier/vrouw/partner/etniciteit]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/vrouw/partner/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/vrouw/partner: == -->
-      <rule context="/verloskundig_dossier/vrouw/partner/*[not(self::persoonsnaam)][not(self::etniciteit)]">
+      <rule context="/verloskundig_dossier/vrouw/partner/*[not(self::persoonsnaam)][not(self::etniciteit)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/vrouw/partner/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -2043,15 +2088,17 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Etniciteit": Ongeldige attributen aangetroffen [/verloskundig_dossier/vrouw/partner/etniciteit; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/vrouw/partner/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/vrouw/partner/persoonsnaam"><!-- == Check occurrences of children of /verloskundig_dossier/vrouw/partner/persoonsnaam: == -->
          <assert test="(count(voornamen) ge 0) and (count(voornamen) le 1)">Fout aantal voorkomens van "Voornamen": <value-of select="count(voornamen)"/> (verwacht: 0..1) [/verloskundig_dossier/vrouw/partner/persoonsnaam/voornamen]</assert>
          <assert test="(count(voorvoegsel) ge 0) and (count(voorvoegsel) le 1)">Fout aantal voorkomens van "Voorvoegsel": <value-of select="count(voorvoegsel)"/> (verwacht: 0..1) [/verloskundig_dossier/vrouw/partner/persoonsnaam/voorvoegsel]</assert>
          <assert test="(count(achternamen) ge 0) and (count(achternamen) le 1)">Fout aantal voorkomens van "Achternamen": <value-of select="count(achternamen)"/> (verwacht: 0..1) [/verloskundig_dossier/vrouw/partner/persoonsnaam/achternamen]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/vrouw/partner/persoonsnaam/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/vrouw/partner/persoonsnaam: == -->
-      <rule context="/verloskundig_dossier/vrouw/partner/persoonsnaam/*[not(self::voornamen)][not(self::voorvoegsel)][not(self::achternamen)]">
+      <rule context="/verloskundig_dossier/vrouw/partner/persoonsnaam/*[not(self::voornamen)][not(self::voorvoegsel)][not(self::achternamen)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/vrouw/partner/persoonsnaam/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -2085,6 +2132,7 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Achternamen": Ongeldige attributen aangetroffen [/verloskundig_dossier/vrouw/partner/persoonsnaam/achternamen; allowed=(@conceptId, @value, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/vrouw/partner/persoonsnaam/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/zwangerschap"><!-- == Check occurrences of children of /verloskundig_dossier/zwangerschap: == -->
          <assert test="count(identificatie_van_de_zwangerschap) eq 1">Fout aantal voorkomens van "Identificatie van de zwangerschap": <value-of select="count(identificatie_van_de_zwangerschap)"/> (verwacht: 1) [/verloskundig_dossier/zwangerschap/identificatie_van_de_zwangerschap]</assert>
@@ -2117,10 +2165,11 @@ See http://www.gnu.org/licenses/
          <assert test="(count(wijze_einde_zwangerschap) ge 0) and (count(wijze_einde_zwangerschap) le 1)">Fout aantal voorkomens van "Wijze einde zwangerschap": <value-of select="count(wijze_einde_zwangerschap)"/> (verwacht: 0..1) [/verloskundig_dossier/zwangerschap/wijze_einde_zwangerschap]</assert>
          <assert test="count(datum_einde_zwangerschap) ge 0">Fout aantal voorkomens van "Datum einde zwangerschap": <value-of select="count(datum_einde_zwangerschap)"/> (verwacht: 0 of meer) [/verloskundig_dossier/zwangerschap/datum_einde_zwangerschap]</assert>
          <assert test="count(bijlage) ge 0">Fout aantal voorkomens van "Bijlage": <value-of select="count(bijlage)"/> (verwacht: 0 of meer) [/verloskundig_dossier/zwangerschap/bijlage]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/zwangerschap/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/zwangerschap: == -->
-      <rule context="/verloskundig_dossier/zwangerschap/*[not(self::identificatie_van_de_zwangerschap)][not(self::casemanager_naam)][not(self::graviditeit)][not(self::pariteit_voor_deze_zwangerschap)][not(self::pariteit)][not(self::aantal_levende_kinderen)][not(self::fetal_loss)][not(self::a_terme_datum_groep)][not(self::definitieve_a_terme_datum)][not(self::foliumzuur_gebruik)][not(self::hoeveelling)][not(self::amnioniciteit)][not(self::chorioniciteit)][not(self::consanguiniteitq)][not(self::vals_positieve_zwangerschapq)][not(self::subfertiliteitsbehandelingq)][not(self::soort_subfertiliteitsbehandeling_groep)][not(self::trisomie_in_de_anamneseq)][not(self::voornemens)][not(self::prenatale_controle)][not(self::diagnose)][not(self::interventie)][not(self::intrauteriene_behandeling)][not(self::antenatale_betrokkenheid_kinderartsq)][not(self::reden_antenatale_betrokkenheid_kinderarts)][not(self::maternale_sterfteq)][not(self::datum_maternale_sterfte)][not(self::wijze_einde_zwangerschap)][not(self::datum_einde_zwangerschap)][not(self::bijlage)]">
+      <rule context="/verloskundig_dossier/zwangerschap/*[not(self::identificatie_van_de_zwangerschap)][not(self::casemanager_naam)][not(self::graviditeit)][not(self::pariteit_voor_deze_zwangerschap)][not(self::pariteit)][not(self::aantal_levende_kinderen)][not(self::fetal_loss)][not(self::a_terme_datum_groep)][not(self::definitieve_a_terme_datum)][not(self::foliumzuur_gebruik)][not(self::hoeveelling)][not(self::amnioniciteit)][not(self::chorioniciteit)][not(self::consanguiniteitq)][not(self::vals_positieve_zwangerschapq)][not(self::subfertiliteitsbehandelingq)][not(self::soort_subfertiliteitsbehandeling_groep)][not(self::trisomie_in_de_anamneseq)][not(self::voornemens)][not(self::prenatale_controle)][not(self::diagnose)][not(self::interventie)][not(self::intrauteriene_behandeling)][not(self::antenatale_betrokkenheid_kinderartsq)][not(self::reden_antenatale_betrokkenheid_kinderarts)][not(self::maternale_sterfteq)][not(self::datum_maternale_sterfte)][not(self::wijze_einde_zwangerschap)][not(self::datum_einde_zwangerschap)][not(self::bijlage)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/zwangerschap/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -2481,6 +2530,7 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Bijlage": Ongeldige attributen aangetroffen [/verloskundig_dossier/zwangerschap/bijlage; allowed=(@conceptId, @value, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/zwangerschap/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/zwangerschap/a_terme_datum_groep"><!-- == Check occurrences of children of /verloskundig_dossier/zwangerschap/a_terme_datum_groep: == -->
          <assert test="count(a_terme_datum) eq 1">Fout aantal voorkomens van "A terme datum": <value-of select="count(a_terme_datum)"/> (verwacht: 1) [/verloskundig_dossier/zwangerschap/a_terme_datum_groep/a_terme_datum]</assert>
@@ -2488,10 +2538,11 @@ See http://www.gnu.org/licenses/
          <assert test="(count(a_terme_datum_obv) ge 0) and (count(a_terme_datum_obv) le 1)">Fout aantal voorkomens van "A terme datum o.b.v.": <value-of select="count(a_terme_datum_obv)"/> (verwacht: 0..1) [/verloskundig_dossier/zwangerschap/a_terme_datum_groep/a_terme_datum_obv]</assert>
          <assert test="(count(actuele_a_terme_datumq) ge 0) and (count(actuele_a_terme_datumq) le 1)">Fout aantal voorkomens van "Actuele à terme datum?": <value-of select="count(actuele_a_terme_datumq)"/> (verwacht: 0..1) [/verloskundig_dossier/zwangerschap/a_terme_datum_groep/actuele_a_terme_datumq]</assert>
          <assert test="(count(zekerq) ge 0) and (count(zekerq) le 1)">Fout aantal voorkomens van "Zeker?": <value-of select="count(zekerq)"/> (verwacht: 0..1) [/verloskundig_dossier/zwangerschap/a_terme_datum_groep/zekerq]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/zwangerschap/a_terme_datum_groep/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/zwangerschap/a_terme_datum_groep: == -->
-      <rule context="/verloskundig_dossier/zwangerschap/a_terme_datum_groep/*[not(self::a_terme_datum)][not(self::datum_bepaling_a_terme_datum)][not(self::a_terme_datum_obv)][not(self::actuele_a_terme_datumq)][not(self::zekerq)]">
+      <rule context="/verloskundig_dossier/zwangerschap/a_terme_datum_groep/*[not(self::a_terme_datum)][not(self::datum_bepaling_a_terme_datum)][not(self::a_terme_datum_obv)][not(self::actuele_a_terme_datumq)][not(self::zekerq)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/zwangerschap/a_terme_datum_groep/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -2555,14 +2606,16 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Zeker?": Ongeldige attributen aangetroffen [/verloskundig_dossier/zwangerschap/a_terme_datum_groep/zekerq; allowed=(@conceptId, @value, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/zwangerschap/a_terme_datum_groep/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/zwangerschap/soort_subfertiliteitsbehandeling_groep"><!-- == Check occurrences of children of /verloskundig_dossier/zwangerschap/soort_subfertiliteitsbehandeling_groep: == -->
          <assert test="(count(ovulatieinductie_toegepastq) ge 0) and (count(ovulatieinductie_toegepastq) le 1)">Fout aantal voorkomens van "Ovulatie-inductie toegepast?": <value-of select="count(ovulatieinductie_toegepastq)"/> (verwacht: 0..1) [/verloskundig_dossier/zwangerschap/soort_subfertiliteitsbehandeling_groep/ovulatieinductie_toegepastq]</assert>
          <assert test="count(geassisteerde_conceptie) ge 0">Fout aantal voorkomens van "Geassisteerde conceptie": <value-of select="count(geassisteerde_conceptie)"/> (verwacht: 0 of meer) [/verloskundig_dossier/zwangerschap/soort_subfertiliteitsbehandeling_groep/geassisteerde_conceptie]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/zwangerschap/soort_subfertiliteitsbehandeling_groep/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/zwangerschap/soort_subfertiliteitsbehandeling_groep: == -->
-      <rule context="/verloskundig_dossier/zwangerschap/soort_subfertiliteitsbehandeling_groep/*[not(self::ovulatieinductie_toegepastq)][not(self::geassisteerde_conceptie)]">
+      <rule context="/verloskundig_dossier/zwangerschap/soort_subfertiliteitsbehandeling_groep/*[not(self::ovulatieinductie_toegepastq)][not(self::geassisteerde_conceptie)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/zwangerschap/soort_subfertiliteitsbehandeling_groep/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -2595,6 +2648,7 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Geassisteerde conceptie": Ongeldige attributen aangetroffen [/verloskundig_dossier/zwangerschap/soort_subfertiliteitsbehandeling_groep/geassisteerde_conceptie; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/zwangerschap/soort_subfertiliteitsbehandeling_groep/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/zwangerschap/voornemens"><!-- == Check occurrences of children of /verloskundig_dossier/zwangerschap/voornemens: == -->
          <assert test="(count(risicostatus_van_de_zwangerschap) ge 0) and (count(risicostatus_van_de_zwangerschap) le 1)">Fout aantal voorkomens van "Risicostatus van de zwangerschap": <value-of select="count(risicostatus_van_de_zwangerschap)"/> (verwacht: 0..1) [/verloskundig_dossier/zwangerschap/voornemens/risicostatus_van_de_zwangerschap]</assert>
@@ -2604,10 +2658,11 @@ See http://www.gnu.org/licenses/
          <assert test="(count(voorgenomen_achternaam) ge 0) and (count(voorgenomen_achternaam) le 1)">Fout aantal voorkomens van "Voorgenomen achternaam": <value-of select="count(voorgenomen_achternaam)"/> (verwacht: 0..1) [/verloskundig_dossier/zwangerschap/voornemens/voorgenomen_achternaam]</assert>
          <assert test="(count(kraamzorg) ge 0) and (count(kraamzorg) le 1)">Fout aantal voorkomens van "Kraamzorg": <value-of select="count(kraamzorg)"/> (verwacht: 0..1) [/verloskundig_dossier/zwangerschap/voornemens/kraamzorg]</assert>
          <assert test="(count(bevalplan) ge 0) and (count(bevalplan) le 1)">Fout aantal voorkomens van "Bevalplan": <value-of select="count(bevalplan)"/> (verwacht: 0..1) [/verloskundig_dossier/zwangerschap/voornemens/bevalplan]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/zwangerschap/voornemens/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/zwangerschap/voornemens: == -->
-      <rule context="/verloskundig_dossier/zwangerschap/voornemens/*[not(self::risicostatus_van_de_zwangerschap)][not(self::voorgenomen_plaats_baring_tijdens_zwangerschap_type_locatie)][not(self::afspraken)][not(self::voorgenomen_voeding)][not(self::voorgenomen_achternaam)][not(self::kraamzorg)][not(self::bevalplan)]">
+      <rule context="/verloskundig_dossier/zwangerschap/voornemens/*[not(self::risicostatus_van_de_zwangerschap)][not(self::voorgenomen_plaats_baring_tijdens_zwangerschap_type_locatie)][not(self::afspraken)][not(self::voorgenomen_voeding)][not(self::voorgenomen_achternaam)][not(self::kraamzorg)][not(self::bevalplan)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/zwangerschap/voornemens/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -2703,14 +2758,16 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Bevalplan": Ongeldige attributen aangetroffen [/verloskundig_dossier/zwangerschap/voornemens/bevalplan; allowed=(@conceptId, @value, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/zwangerschap/voornemens/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/zwangerschap/voornemens/kraamzorg"><!-- == Check occurrences of children of /verloskundig_dossier/zwangerschap/voornemens/kraamzorg: == -->
          <assert test="(count(kraamzorg_aangevraagd) ge 0) and (count(kraamzorg_aangevraagd) le 1)">Fout aantal voorkomens van "Kraamzorg aangevraagd": <value-of select="count(kraamzorg_aangevraagd)"/> (verwacht: 0..1) [/verloskundig_dossier/zwangerschap/voornemens/kraamzorg/kraamzorg_aangevraagd]</assert>
          <assert test="(count(kraamzorginstelling) ge 0) and (count(kraamzorginstelling) le 1)">Fout aantal voorkomens van "Kraamzorginstelling": <value-of select="count(kraamzorginstelling)"/> (verwacht: 0..1) [/verloskundig_dossier/zwangerschap/voornemens/kraamzorg/kraamzorginstelling]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/zwangerschap/voornemens/kraamzorg/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/zwangerschap/voornemens/kraamzorg: == -->
-      <rule context="/verloskundig_dossier/zwangerschap/voornemens/kraamzorg/*[not(self::kraamzorg_aangevraagd)][not(self::kraamzorginstelling)]">
+      <rule context="/verloskundig_dossier/zwangerschap/voornemens/kraamzorg/*[not(self::kraamzorg_aangevraagd)][not(self::kraamzorginstelling)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/zwangerschap/voornemens/kraamzorg/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -2735,6 +2792,7 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Kraamzorginstelling": Ongeldige attributen aangetroffen [/verloskundig_dossier/zwangerschap/voornemens/kraamzorg/kraamzorginstelling; allowed=(@conceptId, @value, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/zwangerschap/voornemens/kraamzorg/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/zwangerschap/prenatale_controle"><!-- == Check occurrences of children of /verloskundig_dossier/zwangerschap/prenatale_controle: == -->
          <assert test="count(datum_controle) eq 1">Fout aantal voorkomens van "Datum controle": <value-of select="count(datum_controle)"/> (verwacht: 1) [/verloskundig_dossier/zwangerschap/prenatale_controle/datum_controle]</assert>
@@ -2755,10 +2813,11 @@ See http://www.gnu.org/licenses/
          <assert test="(count(uitwendig_onderzoek) ge 0) and (count(uitwendig_onderzoek) le 1)">Fout aantal voorkomens van "Uitwendig onderzoek": <value-of select="count(uitwendig_onderzoek)"/> (verwacht: 0..1) [/verloskundig_dossier/zwangerschap/prenatale_controle/uitwendig_onderzoek]</assert>
          <assert test="(count(actuele_aantal_levende_foetus) ge 0) and (count(actuele_aantal_levende_foetus) le 1)">Fout aantal voorkomens van "Actuele aantal levende foetus": <value-of select="count(actuele_aantal_levende_foetus)"/> (verwacht: 0..1) [/verloskundig_dossier/zwangerschap/prenatale_controle/actuele_aantal_levende_foetus]</assert>
          <assert test="count(opmerkingen) ge 0">Fout aantal voorkomens van "Opmerkingen": <value-of select="count(opmerkingen)"/> (verwacht: 0 of meer) [/verloskundig_dossier/zwangerschap/prenatale_controle/opmerkingen]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/zwangerschap/prenatale_controle/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/zwangerschap/prenatale_controle: == -->
-      <rule context="/verloskundig_dossier/zwangerschap/prenatale_controle/*[not(self::datum_controle)][not(self::naam_zorgverlener)][not(self::zorgverlenertype)][not(self::zwangerschapsduur)][not(self::leven_voelen)][not(self::oedeem)][not(self::rookgedrag)][not(self::alcoholgebruik)][not(self::drugsgebruikq)][not(self::soort_drugs)][not(self::bloeddruk)][not(self::gewicht_gemeten)][not(self::proteine_in_urine_obv_strips)][not(self::fundushoogte)][not(self::fundusstand)][not(self::uitwendig_onderzoek)][not(self::actuele_aantal_levende_foetus)][not(self::opmerkingen)]">
+      <rule context="/verloskundig_dossier/zwangerschap/prenatale_controle/*[not(self::datum_controle)][not(self::naam_zorgverlener)][not(self::zorgverlenertype)][not(self::zwangerschapsduur)][not(self::leven_voelen)][not(self::oedeem)][not(self::rookgedrag)][not(self::alcoholgebruik)][not(self::drugsgebruikq)][not(self::soort_drugs)][not(self::bloeddruk)][not(self::gewicht_gemeten)][not(self::proteine_in_urine_obv_strips)][not(self::fundushoogte)][not(self::fundusstand)][not(self::uitwendig_onderzoek)][not(self::actuele_aantal_levende_foetus)][not(self::opmerkingen)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/zwangerschap/prenatale_controle/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -3012,14 +3071,16 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Opmerkingen": Ongeldige attributen aangetroffen [/verloskundig_dossier/zwangerschap/prenatale_controle/opmerkingen; allowed=(@conceptId, @value, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/zwangerschap/prenatale_controle/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/zwangerschap/prenatale_controle/bloeddruk"><!-- == Check occurrences of children of /verloskundig_dossier/zwangerschap/prenatale_controle/bloeddruk: == -->
          <assert test="count(bloeddruk_systolisch) eq 1">Fout aantal voorkomens van "Bloeddruk systolisch": <value-of select="count(bloeddruk_systolisch)"/> (verwacht: 1) [/verloskundig_dossier/zwangerschap/prenatale_controle/bloeddruk/bloeddruk_systolisch]</assert>
          <assert test="count(bloeddruk_diastolisch) eq 1">Fout aantal voorkomens van "Bloeddruk diastolisch": <value-of select="count(bloeddruk_diastolisch)"/> (verwacht: 1) [/verloskundig_dossier/zwangerschap/prenatale_controle/bloeddruk/bloeddruk_diastolisch]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/zwangerschap/prenatale_controle/bloeddruk/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/zwangerschap/prenatale_controle/bloeddruk: == -->
-      <rule context="/verloskundig_dossier/zwangerschap/prenatale_controle/bloeddruk/*[not(self::bloeddruk_systolisch)][not(self::bloeddruk_diastolisch)]">
+      <rule context="/verloskundig_dossier/zwangerschap/prenatale_controle/bloeddruk/*[not(self::bloeddruk_systolisch)][not(self::bloeddruk_diastolisch)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/zwangerschap/prenatale_controle/bloeddruk/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -3051,6 +3112,7 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @unit, @xsi:*))">Foutieve informatie voor "Bloeddruk diastolisch": Ongeldige attributen aangetroffen [/verloskundig_dossier/zwangerschap/prenatale_controle/bloeddruk/bloeddruk_diastolisch; allowed=(@conceptId, @value, @unit, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/zwangerschap/prenatale_controle/bloeddruk/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/zwangerschap/prenatale_controle/uitwendig_onderzoek"><!-- == Check occurrences of children of /verloskundig_dossier/zwangerschap/prenatale_controle/uitwendig_onderzoek: == -->
          <assert test="(count(ligging) ge 0) and (count(ligging) le 1)">Fout aantal voorkomens van "Ligging": <value-of select="count(ligging)"/> (verwacht: 0..1) [/verloskundig_dossier/zwangerschap/prenatale_controle/uitwendig_onderzoek/ligging]</assert>
@@ -3058,10 +3120,11 @@ See http://www.gnu.org/licenses/
          <assert test="(count(hartactie_aanwezigq) ge 0) and (count(hartactie_aanwezigq) le 1)">Fout aantal voorkomens van "Hartactie aanwezig?": <value-of select="count(hartactie_aanwezigq)"/> (verwacht: 0..1) [/verloskundig_dossier/zwangerschap/prenatale_controle/uitwendig_onderzoek/hartactie_aanwezigq]</assert>
          <assert test="count(hartactie) ge 0">Fout aantal voorkomens van "Hartactie": <value-of select="count(hartactie)"/> (verwacht: 0 of meer) [/verloskundig_dossier/zwangerschap/prenatale_controle/uitwendig_onderzoek/hartactie]</assert>
          <assert test="count(hartactie_op_basis_van) ge 0">Fout aantal voorkomens van "Hartactie op basis van": <value-of select="count(hartactie_op_basis_van)"/> (verwacht: 0 of meer) [/verloskundig_dossier/zwangerschap/prenatale_controle/uitwendig_onderzoek/hartactie_op_basis_van]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/zwangerschap/prenatale_controle/uitwendig_onderzoek/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/zwangerschap/prenatale_controle/uitwendig_onderzoek: == -->
-      <rule context="/verloskundig_dossier/zwangerschap/prenatale_controle/uitwendig_onderzoek/*[not(self::ligging)][not(self::indaling)][not(self::hartactie_aanwezigq)][not(self::hartactie)][not(self::hartactie_op_basis_van)]">
+      <rule context="/verloskundig_dossier/zwangerschap/prenatale_controle/uitwendig_onderzoek/*[not(self::ligging)][not(self::indaling)][not(self::hartactie_aanwezigq)][not(self::hartactie)][not(self::hartactie_op_basis_van)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/zwangerschap/prenatale_controle/uitwendig_onderzoek/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -3138,14 +3201,16 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Hartactie op basis van": Ongeldige attributen aangetroffen [/verloskundig_dossier/zwangerschap/prenatale_controle/uitwendig_onderzoek/hartactie_op_basis_van; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/zwangerschap/prenatale_controle/uitwendig_onderzoek/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/zwangerschap/prenatale_controle/uitwendig_onderzoek/hartactie"><!-- == Check occurrences of children of /verloskundig_dossier/zwangerschap/prenatale_controle/uitwendig_onderzoek/hartactie: == -->
          <assert test="(count(regelmaat_hartslag) ge 0) and (count(regelmaat_hartslag) le 1)">Fout aantal voorkomens van "Regelmaat hartslag": <value-of select="count(regelmaat_hartslag)"/> (verwacht: 0..1) [/verloskundig_dossier/zwangerschap/prenatale_controle/uitwendig_onderzoek/hartactie/regelmaat_hartslag]</assert>
          <assert test="(count(frequentie_hartslag) ge 0) and (count(frequentie_hartslag) le 1)">Fout aantal voorkomens van "Frequentie hartslag": <value-of select="count(frequentie_hartslag)"/> (verwacht: 0..1) [/verloskundig_dossier/zwangerschap/prenatale_controle/uitwendig_onderzoek/hartactie/frequentie_hartslag]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/zwangerschap/prenatale_controle/uitwendig_onderzoek/hartactie/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/zwangerschap/prenatale_controle/uitwendig_onderzoek/hartactie: == -->
-      <rule context="/verloskundig_dossier/zwangerschap/prenatale_controle/uitwendig_onderzoek/hartactie/*[not(self::regelmaat_hartslag)][not(self::frequentie_hartslag)]">
+      <rule context="/verloskundig_dossier/zwangerschap/prenatale_controle/uitwendig_onderzoek/hartactie/*[not(self::regelmaat_hartslag)][not(self::frequentie_hartslag)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/zwangerschap/prenatale_controle/uitwendig_onderzoek/hartactie/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -3185,6 +3250,7 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Frequentie hartslag": Ongeldige attributen aangetroffen [/verloskundig_dossier/zwangerschap/prenatale_controle/uitwendig_onderzoek/hartactie/frequentie_hartslag; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/zwangerschap/prenatale_controle/uitwendig_onderzoek/hartactie/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/zwangerschap/diagnose"><!-- == Check occurrences of children of /verloskundig_dossier/zwangerschap/diagnose: == -->
          <assert test="(count(datum) ge 0) and (count(datum) le 1)">Fout aantal voorkomens van "Datum": <value-of select="count(datum)"/> (verwacht: 0..1) [/verloskundig_dossier/zwangerschap/diagnose/datum]</assert>
@@ -3203,10 +3269,11 @@ See http://www.gnu.org/licenses/
          <assert test="(count(dreigende_partus_prematurusq) ge 0) and (count(dreigende_partus_prematurusq) le 1)">Fout aantal voorkomens van "Dreigende partus prematurus?": <value-of select="count(dreigende_partus_prematurusq)"/> (verwacht: 0..1) [/verloskundig_dossier/zwangerschap/diagnose/dreigende_partus_prematurusq]</assert>
          <assert test="(count(abruptio_placentaeq) ge 0) and (count(abruptio_placentaeq) le 1)">Fout aantal voorkomens van "Abruptio placentae?": <value-of select="count(abruptio_placentaeq)"/> (verwacht: 0..1) [/verloskundig_dossier/zwangerschap/diagnose/abruptio_placentaeq]</assert>
          <assert test="(count(liggingsafwijking) ge 0) and (count(liggingsafwijking) le 1)">Fout aantal voorkomens van "Liggingsafwijking": <value-of select="count(liggingsafwijking)"/> (verwacht: 0..1) [/verloskundig_dossier/zwangerschap/diagnose/liggingsafwijking]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/zwangerschap/diagnose/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/zwangerschap/diagnose: == -->
-      <rule context="/verloskundig_dossier/zwangerschap/diagnose/*[not(self::datum)][not(self::zwangerschapsduur)][not(self::gynaecologische_aandoening)][not(self::bloedverliesq)][not(self::partiele_molaq)][not(self::cervixinsufficientieq)][not(self::infectie)][not(self::hyperemesis_gravidarumq)][not(self::hypertensieve_aandoening)][not(self::zwangerschapscholestaseq)][not(self::diabetes_gravidarum_met_insulineq)][not(self::afwijkende_groei_foetus)][not(self::dreigende_partus_immaturusq)][not(self::dreigende_partus_prematurusq)][not(self::abruptio_placentaeq)][not(self::liggingsafwijking)]">
+      <rule context="/verloskundig_dossier/zwangerschap/diagnose/*[not(self::datum)][not(self::zwangerschapsduur)][not(self::gynaecologische_aandoening)][not(self::bloedverliesq)][not(self::partiele_molaq)][not(self::cervixinsufficientieq)][not(self::infectie)][not(self::hyperemesis_gravidarumq)][not(self::hypertensieve_aandoening)][not(self::zwangerschapscholestaseq)][not(self::diabetes_gravidarum_met_insulineq)][not(self::afwijkende_groei_foetus)][not(self::dreigende_partus_immaturusq)][not(self::dreigende_partus_prematurusq)][not(self::abruptio_placentaeq)][not(self::liggingsafwijking)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/zwangerschap/diagnose/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -3422,15 +3489,17 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Liggingsafwijking": Ongeldige attributen aangetroffen [/verloskundig_dossier/zwangerschap/diagnose/liggingsafwijking; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/zwangerschap/diagnose/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/zwangerschap/interventie"><!-- == Check occurrences of children of /verloskundig_dossier/zwangerschap/interventie: == -->
          <assert test="(count(datum) ge 0) and (count(datum) le 1)">Fout aantal voorkomens van "Datum": <value-of select="count(datum)"/> (verwacht: 0..1) [/verloskundig_dossier/zwangerschap/interventie/datum]</assert>
          <assert test="(count(zwangerschapsduur) ge 0) and (count(zwangerschapsduur) le 1)">Fout aantal voorkomens van "Zwangerschapsduur": <value-of select="count(zwangerschapsduur)"/> (verwacht: 0..1) [/verloskundig_dossier/zwangerschap/interventie/zwangerschapsduur]</assert>
          <assert test="count(interventie) eq 1">Fout aantal voorkomens van "Interventie": <value-of select="count(interventie)"/> (verwacht: 1) [/verloskundig_dossier/zwangerschap/interventie/interventie]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/zwangerschap/interventie/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/zwangerschap/interventie: == -->
-      <rule context="/verloskundig_dossier/zwangerschap/interventie/*[not(self::datum)][not(self::zwangerschapsduur)][not(self::interventie)]">
+      <rule context="/verloskundig_dossier/zwangerschap/interventie/*[not(self::datum)][not(self::zwangerschapsduur)][not(self::interventie)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/zwangerschap/interventie/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -3475,16 +3544,18 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Interventie": Ongeldige attributen aangetroffen [/verloskundig_dossier/zwangerschap/interventie/interventie; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/zwangerschap/interventie/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/counseling_prenatale_screening_en_prenatale_diagnostiek"><!-- == Check occurrences of children of /verloskundig_dossier/counseling_prenatale_screening_en_prenatale_diagnostiek: == -->
          <assert test="(count(counseling_prenatale_gewenst) ge 0) and (count(counseling_prenatale_gewenst) le 1)">Fout aantal voorkomens van "Counseling prenatale gewenst": <value-of select="count(counseling_prenatale_gewenst)"/> (verwacht: 0..1) [/verloskundig_dossier/counseling_prenatale_screening_en_prenatale_diagnostiek/counseling_prenatale_gewenst]</assert>
          <assert test="count(reden_verzending) eq 1">Fout aantal voorkomens van "Reden verzending": <value-of select="count(reden_verzending)"/> (verwacht: 1) [/verloskundig_dossier/counseling_prenatale_screening_en_prenatale_diagnostiek/reden_verzending]</assert>
          <assert test="(count(counseling_combinatietest) ge 0) and (count(counseling_combinatietest) le 1)">Fout aantal voorkomens van "Counseling combinatietest": <value-of select="count(counseling_combinatietest)"/> (verwacht: 0..1) [/verloskundig_dossier/counseling_prenatale_screening_en_prenatale_diagnostiek/counseling_combinatietest]</assert>
          <assert test="(count(counseling_seo) ge 0) and (count(counseling_seo) le 1)">Fout aantal voorkomens van "Counseling SEO": <value-of select="count(counseling_seo)"/> (verwacht: 0..1) [/verloskundig_dossier/counseling_prenatale_screening_en_prenatale_diagnostiek/counseling_seo]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/counseling_prenatale_screening_en_prenatale_diagnostiek/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/counseling_prenatale_screening_en_prenatale_diagnostiek: == -->
-      <rule context="/verloskundig_dossier/counseling_prenatale_screening_en_prenatale_diagnostiek/*[not(self::counseling_prenatale_gewenst)][not(self::reden_verzending)][not(self::counseling_combinatietest)][not(self::counseling_seo)]">
+      <rule context="/verloskundig_dossier/counseling_prenatale_screening_en_prenatale_diagnostiek/*[not(self::counseling_prenatale_gewenst)][not(self::reden_verzending)][not(self::counseling_combinatietest)][not(self::counseling_seo)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/counseling_prenatale_screening_en_prenatale_diagnostiek/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -3540,16 +3611,18 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @xsi:*))">Foutieve informatie voor "Counseling SEO": Ongeldige attributen aangetroffen [/verloskundig_dossier/counseling_prenatale_screening_en_prenatale_diagnostiek/counseling_seo; allowed=(@conceptId, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/counseling_prenatale_screening_en_prenatale_diagnostiek/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/counseling_prenatale_screening_en_prenatale_diagnostiek/counseling_combinatietest"><!-- == Check occurrences of children of /verloskundig_dossier/counseling_prenatale_screening_en_prenatale_diagnostiek/counseling_combinatietest: == -->
          <assert test="(count(datum_counseling) ge 0) and (count(datum_counseling) le 1)">Fout aantal voorkomens van "Datum counseling": <value-of select="count(datum_counseling)"/> (verwacht: 0..1) [/verloskundig_dossier/counseling_prenatale_screening_en_prenatale_diagnostiek/counseling_combinatietest/datum_counseling]</assert>
          <assert test="(count(zorgverlener) ge 0) and (count(zorgverlener) le 1)">Fout aantal voorkomens van "Zorgverlener": <value-of select="count(zorgverlener)"/> (verwacht: 0..1) [/verloskundig_dossier/counseling_prenatale_screening_en_prenatale_diagnostiek/counseling_combinatietest/zorgverlener]</assert>
          <assert test="(count(direct_ipd_gewenstq) ge 0) and (count(direct_ipd_gewenstq) le 1)">Fout aantal voorkomens van "Direct IPD gewenst?": <value-of select="count(direct_ipd_gewenstq)"/> (verwacht: 0..1) [/verloskundig_dossier/counseling_prenatale_screening_en_prenatale_diagnostiek/counseling_combinatietest/direct_ipd_gewenstq]</assert>
          <assert test="(count(combinatietest_gewenstq) ge 0) and (count(combinatietest_gewenstq) le 1)">Fout aantal voorkomens van "Combinatietest gewenst?": <value-of select="count(combinatietest_gewenstq)"/> (verwacht: 0..1) [/verloskundig_dossier/counseling_prenatale_screening_en_prenatale_diagnostiek/counseling_combinatietest/combinatietest_gewenstq]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/counseling_prenatale_screening_en_prenatale_diagnostiek/counseling_combinatietest/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/counseling_prenatale_screening_en_prenatale_diagnostiek/counseling_combinatietest: == -->
-      <rule context="/verloskundig_dossier/counseling_prenatale_screening_en_prenatale_diagnostiek/counseling_combinatietest/*[not(self::datum_counseling)][not(self::zorgverlener)][not(self::direct_ipd_gewenstq)][not(self::combinatietest_gewenstq)]">
+      <rule context="/verloskundig_dossier/counseling_prenatale_screening_en_prenatale_diagnostiek/counseling_combinatietest/*[not(self::datum_counseling)][not(self::zorgverlener)][not(self::direct_ipd_gewenstq)][not(self::combinatietest_gewenstq)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/counseling_prenatale_screening_en_prenatale_diagnostiek/counseling_combinatietest/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -3593,16 +3666,18 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Combinatietest gewenst?": Ongeldige attributen aangetroffen [/verloskundig_dossier/counseling_prenatale_screening_en_prenatale_diagnostiek/counseling_combinatietest/combinatietest_gewenstq; allowed=(@conceptId, @value, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/counseling_prenatale_screening_en_prenatale_diagnostiek/counseling_combinatietest/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/counseling_prenatale_screening_en_prenatale_diagnostiek/counseling_combinatietest/zorgverlener"><!-- == Check occurrences of children of /verloskundig_dossier/counseling_prenatale_screening_en_prenatale_diagnostiek/counseling_combinatietest/zorgverlener: == -->
          <assert test="(count(zorgverlener_uzinummer) ge 0) and (count(zorgverlener_uzinummer) le 1)">Fout aantal voorkomens van "Zorgverlener UZI-nummer": <value-of select="count(zorgverlener_uzinummer)"/> (verwacht: 0..1) [/verloskundig_dossier/counseling_prenatale_screening_en_prenatale_diagnostiek/counseling_combinatietest/zorgverlener/zorgverlener_uzinummer]</assert>
          <assert test="(count(zorgverlener_agbid) ge 0) and (count(zorgverlener_agbid) le 1)">Fout aantal voorkomens van "Zorgverlener AGB-ID": <value-of select="count(zorgverlener_agbid)"/> (verwacht: 0..1) [/verloskundig_dossier/counseling_prenatale_screening_en_prenatale_diagnostiek/counseling_combinatietest/zorgverlener/zorgverlener_agbid]</assert>
          <assert test="(count(zorgverlener_lvr1id) ge 0) and (count(zorgverlener_lvr1id) le 1)">Fout aantal voorkomens van "Zorgverlener LVR1-ID": <value-of select="count(zorgverlener_lvr1id)"/> (verwacht: 0..1) [/verloskundig_dossier/counseling_prenatale_screening_en_prenatale_diagnostiek/counseling_combinatietest/zorgverlener/zorgverlener_lvr1id]</assert>
          <assert test="(count(naam_zorgverlener) ge 0) and (count(naam_zorgverlener) le 1)">Fout aantal voorkomens van "Naam zorgverlener": <value-of select="count(naam_zorgverlener)"/> (verwacht: 0..1) [/verloskundig_dossier/counseling_prenatale_screening_en_prenatale_diagnostiek/counseling_combinatietest/zorgverlener/naam_zorgverlener]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/counseling_prenatale_screening_en_prenatale_diagnostiek/counseling_combinatietest/zorgverlener/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/counseling_prenatale_screening_en_prenatale_diagnostiek/counseling_combinatietest/zorgverlener: == -->
-      <rule context="/verloskundig_dossier/counseling_prenatale_screening_en_prenatale_diagnostiek/counseling_combinatietest/zorgverlener/*[not(self::zorgverlener_uzinummer)][not(self::zorgverlener_agbid)][not(self::zorgverlener_lvr1id)][not(self::naam_zorgverlener)]">
+      <rule context="/verloskundig_dossier/counseling_prenatale_screening_en_prenatale_diagnostiek/counseling_combinatietest/zorgverlener/*[not(self::zorgverlener_uzinummer)][not(self::zorgverlener_agbid)][not(self::zorgverlener_lvr1id)][not(self::naam_zorgverlener)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/counseling_prenatale_screening_en_prenatale_diagnostiek/counseling_combinatietest/zorgverlener/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -3652,16 +3727,18 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Naam zorgverlener": Ongeldige attributen aangetroffen [/verloskundig_dossier/counseling_prenatale_screening_en_prenatale_diagnostiek/counseling_combinatietest/zorgverlener/naam_zorgverlener; allowed=(@conceptId, @value, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/counseling_prenatale_screening_en_prenatale_diagnostiek/counseling_combinatietest/zorgverlener/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/counseling_prenatale_screening_en_prenatale_diagnostiek/counseling_seo"><!-- == Check occurrences of children of /verloskundig_dossier/counseling_prenatale_screening_en_prenatale_diagnostiek/counseling_seo: == -->
          <assert test="(count(datum_counseling) ge 0) and (count(datum_counseling) le 1)">Fout aantal voorkomens van "Datum counseling": <value-of select="count(datum_counseling)"/> (verwacht: 0..1) [/verloskundig_dossier/counseling_prenatale_screening_en_prenatale_diagnostiek/counseling_seo/datum_counseling]</assert>
          <assert test="(count(zorgverlener) ge 0) and (count(zorgverlener) le 1)">Fout aantal voorkomens van "Zorgverlener": <value-of select="count(zorgverlener)"/> (verwacht: 0..1) [/verloskundig_dossier/counseling_prenatale_screening_en_prenatale_diagnostiek/counseling_seo/zorgverlener]</assert>
          <assert test="(count(direct_guo_gewenstq) ge 0) and (count(direct_guo_gewenstq) le 1)">Fout aantal voorkomens van "Direct GUO gewenst?": <value-of select="count(direct_guo_gewenstq)"/> (verwacht: 0..1) [/verloskundig_dossier/counseling_prenatale_screening_en_prenatale_diagnostiek/counseling_seo/direct_guo_gewenstq]</assert>
          <assert test="(count(seo_gewenstq) ge 0) and (count(seo_gewenstq) le 1)">Fout aantal voorkomens van "SEO gewenst?": <value-of select="count(seo_gewenstq)"/> (verwacht: 0..1) [/verloskundig_dossier/counseling_prenatale_screening_en_prenatale_diagnostiek/counseling_seo/seo_gewenstq]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/counseling_prenatale_screening_en_prenatale_diagnostiek/counseling_seo/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/counseling_prenatale_screening_en_prenatale_diagnostiek/counseling_seo: == -->
-      <rule context="/verloskundig_dossier/counseling_prenatale_screening_en_prenatale_diagnostiek/counseling_seo/*[not(self::datum_counseling)][not(self::zorgverlener)][not(self::direct_guo_gewenstq)][not(self::seo_gewenstq)]">
+      <rule context="/verloskundig_dossier/counseling_prenatale_screening_en_prenatale_diagnostiek/counseling_seo/*[not(self::datum_counseling)][not(self::zorgverlener)][not(self::direct_guo_gewenstq)][not(self::seo_gewenstq)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/counseling_prenatale_screening_en_prenatale_diagnostiek/counseling_seo/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -3705,16 +3782,18 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "SEO gewenst?": Ongeldige attributen aangetroffen [/verloskundig_dossier/counseling_prenatale_screening_en_prenatale_diagnostiek/counseling_seo/seo_gewenstq; allowed=(@conceptId, @value, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/counseling_prenatale_screening_en_prenatale_diagnostiek/counseling_seo/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/counseling_prenatale_screening_en_prenatale_diagnostiek/counseling_seo/zorgverlener"><!-- == Check occurrences of children of /verloskundig_dossier/counseling_prenatale_screening_en_prenatale_diagnostiek/counseling_seo/zorgverlener: == -->
          <assert test="(count(zorgverlener_uzinummer) ge 0) and (count(zorgverlener_uzinummer) le 1)">Fout aantal voorkomens van "Zorgverlener UZI-nummer": <value-of select="count(zorgverlener_uzinummer)"/> (verwacht: 0..1) [/verloskundig_dossier/counseling_prenatale_screening_en_prenatale_diagnostiek/counseling_seo/zorgverlener/zorgverlener_uzinummer]</assert>
          <assert test="(count(zorgverlener_agbid) ge 0) and (count(zorgverlener_agbid) le 1)">Fout aantal voorkomens van "Zorgverlener AGB-ID": <value-of select="count(zorgverlener_agbid)"/> (verwacht: 0..1) [/verloskundig_dossier/counseling_prenatale_screening_en_prenatale_diagnostiek/counseling_seo/zorgverlener/zorgverlener_agbid]</assert>
          <assert test="(count(zorgverlener_lvr1id) ge 0) and (count(zorgverlener_lvr1id) le 1)">Fout aantal voorkomens van "Zorgverlener LVR1-ID": <value-of select="count(zorgverlener_lvr1id)"/> (verwacht: 0..1) [/verloskundig_dossier/counseling_prenatale_screening_en_prenatale_diagnostiek/counseling_seo/zorgverlener/zorgverlener_lvr1id]</assert>
          <assert test="(count(naam_zorgverlener) ge 0) and (count(naam_zorgverlener) le 1)">Fout aantal voorkomens van "Naam zorgverlener": <value-of select="count(naam_zorgverlener)"/> (verwacht: 0..1) [/verloskundig_dossier/counseling_prenatale_screening_en_prenatale_diagnostiek/counseling_seo/zorgverlener/naam_zorgverlener]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/counseling_prenatale_screening_en_prenatale_diagnostiek/counseling_seo/zorgverlener/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/counseling_prenatale_screening_en_prenatale_diagnostiek/counseling_seo/zorgverlener: == -->
-      <rule context="/verloskundig_dossier/counseling_prenatale_screening_en_prenatale_diagnostiek/counseling_seo/zorgverlener/*[not(self::zorgverlener_uzinummer)][not(self::zorgverlener_agbid)][not(self::zorgverlener_lvr1id)][not(self::naam_zorgverlener)]">
+      <rule context="/verloskundig_dossier/counseling_prenatale_screening_en_prenatale_diagnostiek/counseling_seo/zorgverlener/*[not(self::zorgverlener_uzinummer)][not(self::zorgverlener_agbid)][not(self::zorgverlener_lvr1id)][not(self::naam_zorgverlener)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/counseling_prenatale_screening_en_prenatale_diagnostiek/counseling_seo/zorgverlener/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -3764,6 +3843,7 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Naam zorgverlener": Ongeldige attributen aangetroffen [/verloskundig_dossier/counseling_prenatale_screening_en_prenatale_diagnostiek/counseling_seo/zorgverlener/naam_zorgverlener; allowed=(@conceptId, @value, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/counseling_prenatale_screening_en_prenatale_diagnostiek/counseling_seo/zorgverlener/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/bevalling"><!-- == Check occurrences of children of /verloskundig_dossier/bevalling: == -->
          <assert test="(count(partusnummer) ge 0) and (count(partusnummer) le 1)">Fout aantal voorkomens van "Partusnummer": <value-of select="count(partusnummer)"/> (verwacht: 0..1) [/verloskundig_dossier/bevalling/partusnummer]</assert>
@@ -3788,10 +3868,11 @@ See http://www.gnu.org/licenses/
          <assert test="(count(partusassistentie) ge 0) and (count(partusassistentie) le 1)">Fout aantal voorkomens van "Partusassistentie": <value-of select="count(partusassistentie)"/> (verwacht: 0..1) [/verloskundig_dossier/bevalling/partusassistentie]</assert>
          <assert test="(count(risicostatus_uiteindelijk) ge 0) and (count(risicostatus_uiteindelijk) le 1)">Fout aantal voorkomens van "Risicostatus uiteindelijk": <value-of select="count(risicostatus_uiteindelijk)"/> (verwacht: 0..1) [/verloskundig_dossier/bevalling/risicostatus_uiteindelijk]</assert>
          <assert test="count(ontslagdatum_post_partum) ge 0">Fout aantal voorkomens van "Ontslagdatum post partum": <value-of select="count(ontslagdatum_post_partum)"/> (verwacht: 0 of meer) [/verloskundig_dossier/bevalling/ontslagdatum_post_partum]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/bevalling/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/bevalling: == -->
-      <rule context="/verloskundig_dossier/bevalling/*[not(self::partusnummer)][not(self::diagnose_bevalling)][not(self::aantal_geboren_kinderen)][not(self::risicostatus_voor_baring)][not(self::wijze_waarop_de_baring_begon)][not(self::interventies_begin_baring_groep)][not(self::tijdstip_begin_actieve_ontsluiting)][not(self::bijstimulatie_toegediendq)][not(self::medicatie_nageboortetijdperk_groep)][not(self::placenta)][not(self::compleetheid_vliezen)][not(self::hoeveelheid_bloedverlies)][not(self::conditie_perineum_postpartum)][not(self::hechtenq)][not(self::wijze_van_hechten)][not(self::overig_traumaq)][not(self::overig_trauma)][not(self::immunisatie)][not(self::partusassistentieq)][not(self::partusassistentie)][not(self::risicostatus_uiteindelijk)][not(self::ontslagdatum_post_partum)]">
+      <rule context="/verloskundig_dossier/bevalling/*[not(self::partusnummer)][not(self::diagnose_bevalling)][not(self::aantal_geboren_kinderen)][not(self::risicostatus_voor_baring)][not(self::wijze_waarop_de_baring_begon)][not(self::interventies_begin_baring_groep)][not(self::tijdstip_begin_actieve_ontsluiting)][not(self::bijstimulatie_toegediendq)][not(self::medicatie_nageboortetijdperk_groep)][not(self::placenta)][not(self::compleetheid_vliezen)][not(self::hoeveelheid_bloedverlies)][not(self::conditie_perineum_postpartum)][not(self::hechtenq)][not(self::wijze_van_hechten)][not(self::overig_traumaq)][not(self::overig_trauma)][not(self::immunisatie)][not(self::partusassistentieq)][not(self::partusassistentie)][not(self::risicostatus_uiteindelijk)][not(self::ontslagdatum_post_partum)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/bevalling/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -4071,6 +4152,7 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Ontslagdatum post partum": Ongeldige attributen aangetroffen [/verloskundig_dossier/bevalling/ontslagdatum_post_partum; allowed=(@conceptId, @value, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/bevalling/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/bevalling/diagnose_bevalling"><!-- == Check occurrences of children of /verloskundig_dossier/bevalling/diagnose_bevalling: == -->
          <assert test="(count(datum) ge 0) and (count(datum) le 1)">Fout aantal voorkomens van "Datum": <value-of select="count(datum)"/> (verwacht: 0..1) [/verloskundig_dossier/bevalling/diagnose_bevalling/datum]</assert>
@@ -4083,10 +4165,11 @@ See http://www.gnu.org/licenses/
          <assert test="(count(verdenking_foetale_noodq) ge 0) and (count(verdenking_foetale_noodq) le 1)">Fout aantal voorkomens van "Verdenking foetale nood?": <value-of select="count(verdenking_foetale_noodq)"/> (verwacht: 0..1) [/verloskundig_dossier/bevalling/diagnose_bevalling/verdenking_foetale_noodq]</assert>
          <assert test="(count(vastzittende_placentaq) ge 0) and (count(vastzittende_placentaq) le 1)">Fout aantal voorkomens van "Vastzittende placenta?": <value-of select="count(vastzittende_placentaq)"/> (verwacht: 0..1) [/verloskundig_dossier/bevalling/diagnose_bevalling/vastzittende_placentaq]</assert>
          <assert test="(count(fluxus_postpartumq) ge 0) and (count(fluxus_postpartumq) le 1)">Fout aantal voorkomens van "Fluxus postpartum?": <value-of select="count(fluxus_postpartumq)"/> (verwacht: 0..1) [/verloskundig_dossier/bevalling/diagnose_bevalling/fluxus_postpartumq]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/bevalling/diagnose_bevalling/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/bevalling/diagnose_bevalling: == -->
-      <rule context="/verloskundig_dossier/bevalling/diagnose_bevalling/*[not(self::datum)][not(self::zwangerschapsduur)][not(self::ppromq)][not(self::promq)][not(self::koortsq)][not(self::niet_vorderende_ontsluitingq)][not(self::niet_vorderende_uitdrijvingq)][not(self::verdenking_foetale_noodq)][not(self::vastzittende_placentaq)][not(self::fluxus_postpartumq)]">
+      <rule context="/verloskundig_dossier/bevalling/diagnose_bevalling/*[not(self::datum)][not(self::zwangerschapsduur)][not(self::ppromq)][not(self::promq)][not(self::koortsq)][not(self::niet_vorderende_ontsluitingq)][not(self::niet_vorderende_uitdrijvingq)][not(self::verdenking_foetale_noodq)][not(self::vastzittende_placentaq)][not(self::fluxus_postpartumq)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/bevalling/diagnose_bevalling/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -4201,16 +4284,18 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Fluxus postpartum?": Ongeldige attributen aangetroffen [/verloskundig_dossier/bevalling/diagnose_bevalling/fluxus_postpartumq; allowed=(@conceptId, @value, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/bevalling/diagnose_bevalling/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/bevalling/interventies_begin_baring_groep"><!-- == Check occurrences of children of /verloskundig_dossier/bevalling/interventies_begin_baring_groep: == -->
          <assert test="(count(datum) ge 0) and (count(datum) le 1)">Fout aantal voorkomens van "Datum": <value-of select="count(datum)"/> (verwacht: 0..1) [/verloskundig_dossier/bevalling/interventies_begin_baring_groep/datum]</assert>
          <assert test="(count(zwangerschapsduur) ge 0) and (count(zwangerschapsduur) le 1)">Fout aantal voorkomens van "Zwangerschapsduur": <value-of select="count(zwangerschapsduur)"/> (verwacht: 0..1) [/verloskundig_dossier/bevalling/interventies_begin_baring_groep/zwangerschapsduur]</assert>
          <assert test="(count(interventie_begin_baring) ge 0) and (count(interventie_begin_baring) le 1)">Fout aantal voorkomens van "Interventie begin baring": <value-of select="count(interventie_begin_baring)"/> (verwacht: 0..1) [/verloskundig_dossier/bevalling/interventies_begin_baring_groep/interventie_begin_baring]</assert>
          <assert test="(count(indicatie_interventie_begin_baring) ge 0) and (count(indicatie_interventie_begin_baring) le 1)">Fout aantal voorkomens van "Indicatie interventie begin baring": <value-of select="count(indicatie_interventie_begin_baring)"/> (verwacht: 0..1) [/verloskundig_dossier/bevalling/interventies_begin_baring_groep/indicatie_interventie_begin_baring]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/bevalling/interventies_begin_baring_groep/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/bevalling/interventies_begin_baring_groep: == -->
-      <rule context="/verloskundig_dossier/bevalling/interventies_begin_baring_groep/*[not(self::datum)][not(self::zwangerschapsduur)][not(self::interventie_begin_baring)][not(self::indicatie_interventie_begin_baring)]">
+      <rule context="/verloskundig_dossier/bevalling/interventies_begin_baring_groep/*[not(self::datum)][not(self::zwangerschapsduur)][not(self::interventie_begin_baring)][not(self::indicatie_interventie_begin_baring)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/bevalling/interventies_begin_baring_groep/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -4273,14 +4358,16 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Indicatie interventie begin baring": Ongeldige attributen aangetroffen [/verloskundig_dossier/bevalling/interventies_begin_baring_groep/indicatie_interventie_begin_baring; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/bevalling/interventies_begin_baring_groep/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/bevalling/medicatie_nageboortetijdperk_groep"><!-- == Check occurrences of children of /verloskundig_dossier/bevalling/medicatie_nageboortetijdperk_groep: == -->
          <assert test="(count(medicatie_nageboortetijdperkq) ge 0) and (count(medicatie_nageboortetijdperkq) le 1)">Fout aantal voorkomens van "Medicatie nageboortetijdperk?": <value-of select="count(medicatie_nageboortetijdperkq)"/> (verwacht: 0..1) [/verloskundig_dossier/bevalling/medicatie_nageboortetijdperk_groep/medicatie_nageboortetijdperkq]</assert>
          <assert test="count(soort_medicatie_nageboortetijdperk) ge 0">Fout aantal voorkomens van "Soort medicatie nageboortetijdperk": <value-of select="count(soort_medicatie_nageboortetijdperk)"/> (verwacht: 0 of meer) [/verloskundig_dossier/bevalling/medicatie_nageboortetijdperk_groep/soort_medicatie_nageboortetijdperk]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/bevalling/medicatie_nageboortetijdperk_groep/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/bevalling/medicatie_nageboortetijdperk_groep: == -->
-      <rule context="/verloskundig_dossier/bevalling/medicatie_nageboortetijdperk_groep/*[not(self::medicatie_nageboortetijdperkq)][not(self::soort_medicatie_nageboortetijdperk)]">
+      <rule context="/verloskundig_dossier/bevalling/medicatie_nageboortetijdperk_groep/*[not(self::medicatie_nageboortetijdperkq)][not(self::soort_medicatie_nageboortetijdperk)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/bevalling/medicatie_nageboortetijdperk_groep/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -4313,6 +4400,7 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Soort medicatie nageboortetijdperk": Ongeldige attributen aangetroffen [/verloskundig_dossier/bevalling/medicatie_nageboortetijdperk_groep/soort_medicatie_nageboortetijdperk; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/bevalling/medicatie_nageboortetijdperk_groep/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/bevalling/placenta"><!-- == Check occurrences of children of /verloskundig_dossier/bevalling/placenta: == -->
          <assert test="(count(geboorte_placenta) ge 0) and (count(geboorte_placenta) le 1)">Fout aantal voorkomens van "Geboorte placenta": <value-of select="count(geboorte_placenta)"/> (verwacht: 0..1) [/verloskundig_dossier/bevalling/placenta/geboorte_placenta]</assert>
@@ -4322,10 +4410,11 @@ See http://www.gnu.org/licenses/
          <assert test="(count(placenta_naar_paq) ge 0) and (count(placenta_naar_paq) le 1)">Fout aantal voorkomens van "Placenta naar PA?": <value-of select="count(placenta_naar_paq)"/> (verwacht: 0..1) [/verloskundig_dossier/bevalling/placenta/placenta_naar_paq]</assert>
          <assert test="(count(uitslag_placenta_pa) ge 0) and (count(uitslag_placenta_pa) le 1)">Fout aantal voorkomens van "Uitslag placenta PA": <value-of select="count(uitslag_placenta_pa)"/> (verwacht: 0..1) [/verloskundig_dossier/bevalling/placenta/uitslag_placenta_pa]</assert>
          <assert test="(count(bijzonderheden_placenta) ge 0) and (count(bijzonderheden_placenta) le 1)">Fout aantal voorkomens van "Bijzonderheden placenta": <value-of select="count(bijzonderheden_placenta)"/> (verwacht: 0..1) [/verloskundig_dossier/bevalling/placenta/bijzonderheden_placenta]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/bevalling/placenta/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/bevalling/placenta: == -->
-      <rule context="/verloskundig_dossier/bevalling/placenta/*[not(self::geboorte_placenta)][not(self::natastenq)][not(self::placenta_compleet)][not(self::datumtijd_geboorte_placenta)][not(self::placenta_naar_paq)][not(self::uitslag_placenta_pa)][not(self::bijzonderheden_placenta)]">
+      <rule context="/verloskundig_dossier/bevalling/placenta/*[not(self::geboorte_placenta)][not(self::natastenq)][not(self::placenta_compleet)][not(self::datumtijd_geboorte_placenta)][not(self::placenta_naar_paq)][not(self::uitslag_placenta_pa)][not(self::bijzonderheden_placenta)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/bevalling/placenta/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -4417,15 +4506,17 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Bijzonderheden placenta": Ongeldige attributen aangetroffen [/verloskundig_dossier/bevalling/placenta/bijzonderheden_placenta; allowed=(@conceptId, @value, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/bevalling/placenta/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/bevalling/immunisatie"><!-- == Check occurrences of children of /verloskundig_dossier/bevalling/immunisatie: == -->
          <assert test="count(rhesus_d_immunisatieq) eq 1">Fout aantal voorkomens van "Rhesus D immunisatie?": <value-of select="count(rhesus_d_immunisatieq)"/> (verwacht: 1) [/verloskundig_dossier/bevalling/immunisatie/rhesus_d_immunisatieq]</assert>
          <assert test="count(datum_immunisatie) ge 0">Fout aantal voorkomens van "Datum immunisatie": <value-of select="count(datum_immunisatie)"/> (verwacht: 0 of meer) [/verloskundig_dossier/bevalling/immunisatie/datum_immunisatie]</assert>
          <assert test="(count(chargenummer) ge 0) and (count(chargenummer) le 1)">Fout aantal voorkomens van "Chargenummer": <value-of select="count(chargenummer)"/> (verwacht: 0..1) [/verloskundig_dossier/bevalling/immunisatie/chargenummer]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/bevalling/immunisatie/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/bevalling/immunisatie: == -->
-      <rule context="/verloskundig_dossier/bevalling/immunisatie/*[not(self::rhesus_d_immunisatieq)][not(self::datum_immunisatie)][not(self::chargenummer)]">
+      <rule context="/verloskundig_dossier/bevalling/immunisatie/*[not(self::rhesus_d_immunisatieq)][not(self::datum_immunisatie)][not(self::chargenummer)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/bevalling/immunisatie/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -4460,14 +4551,16 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Chargenummer": Ongeldige attributen aangetroffen [/verloskundig_dossier/bevalling/immunisatie/chargenummer; allowed=(@conceptId, @value, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/bevalling/immunisatie/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/bevalling/partusassistentie"><!-- == Check occurrences of children of /verloskundig_dossier/bevalling/partusassistentie: == -->
          <assert test="(count(partusstadium_assistentie_gearriveerd) ge 0) and (count(partusstadium_assistentie_gearriveerd) le 1)">Fout aantal voorkomens van "Partusstadium assistentie gearriveerd": <value-of select="count(partusstadium_assistentie_gearriveerd)"/> (verwacht: 0..1) [/verloskundig_dossier/bevalling/partusassistentie/partusstadium_assistentie_gearriveerd]</assert>
          <assert test="(count(rol_partusassistent) ge 0) and (count(rol_partusassistent) le 1)">Fout aantal voorkomens van "Rol partusassistent": <value-of select="count(rol_partusassistent)"/> (verwacht: 0..1) [/verloskundig_dossier/bevalling/partusassistentie/rol_partusassistent]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/bevalling/partusassistentie/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/bevalling/partusassistentie: == -->
-      <rule context="/verloskundig_dossier/bevalling/partusassistentie/*[not(self::partusstadium_assistentie_gearriveerd)][not(self::rol_partusassistent)]">
+      <rule context="/verloskundig_dossier/bevalling/partusassistentie/*[not(self::partusstadium_assistentie_gearriveerd)][not(self::rol_partusassistent)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/bevalling/partusassistentie/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -4507,13 +4600,15 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Rol partusassistent": Ongeldige attributen aangetroffen [/verloskundig_dossier/bevalling/partusassistentie/rol_partusassistent; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/bevalling/partusassistentie/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/uitkomst_per_kind"><!-- == Check occurrences of children of /verloskundig_dossier/uitkomst_per_kind: == -->
          <assert test="count(baring) ge 0">Fout aantal voorkomens van "Baring": <value-of select="count(baring)"/> (verwacht: 0 of meer) [/verloskundig_dossier/uitkomst_per_kind/baring]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/uitkomst_per_kind: == -->
-      <rule context="/verloskundig_dossier/uitkomst_per_kind/*[not(self::baring)]">
+      <rule context="/verloskundig_dossier/uitkomst_per_kind/*[not(self::baring)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/uitkomst_per_kind/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -4525,6 +4620,7 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @xsi:*))">Foutieve informatie voor "Baring": Ongeldige attributen aangetroffen [/verloskundig_dossier/uitkomst_per_kind/baring; allowed=(@conceptId, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/uitkomst_per_kind/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/uitkomst_per_kind/baring"><!-- == Check occurrences of children of /verloskundig_dossier/uitkomst_per_kind/baring: == -->
          <assert test="(count(werkelijke_plaats_baring_type_locatie) ge 0) and (count(werkelijke_plaats_baring_type_locatie) le 1)">Fout aantal voorkomens van "Werkelijke plaats baring (type locatie)": <value-of select="count(werkelijke_plaats_baring_type_locatie)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/werkelijke_plaats_baring_type_locatie]</assert>
@@ -4533,10 +4629,11 @@ See http://www.gnu.org/licenses/
          <assert test="(count(kindspecifieke_maternale_gegevens) ge 0) and (count(kindspecifieke_maternale_gegevens) le 1)">Fout aantal voorkomens van "Kindspecifieke maternale gegevens": <value-of select="count(kindspecifieke_maternale_gegevens)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens]</assert>
          <assert test="(count(kindspecifieke_uitkomstgegevens) ge 0) and (count(kindspecifieke_uitkomstgegevens) le 1)">Fout aantal voorkomens van "Kindspecifieke uitkomstgegevens": <value-of select="count(kindspecifieke_uitkomstgegevens)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens]</assert>
          <assert test="(count(labonderzoek_neonataal_bloed) ge 0) and (count(labonderzoek_neonataal_bloed) le 1)">Fout aantal voorkomens van "Labonderzoek neonataal bloed": <value-of select="count(labonderzoek_neonataal_bloed)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/labonderzoek_neonataal_bloed]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/uitkomst_per_kind/baring: == -->
-      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/*[not(self::werkelijke_plaats_baring_type_locatie)][not(self::ziekenhuis_baring)][not(self::demografische_gegevens)][not(self::kindspecifieke_maternale_gegevens)][not(self::kindspecifieke_uitkomstgegevens)][not(self::labonderzoek_neonataal_bloed)]">
+      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/*[not(self::werkelijke_plaats_baring_type_locatie)][not(self::ziekenhuis_baring)][not(self::demografische_gegevens)][not(self::kindspecifieke_maternale_gegevens)][not(self::kindspecifieke_uitkomstgegevens)][not(self::labonderzoek_neonataal_bloed)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/uitkomst_per_kind/baring/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -4598,15 +4695,17 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @xsi:*))">Foutieve informatie voor "Labonderzoek neonataal bloed": Ongeldige attributen aangetroffen [/verloskundig_dossier/uitkomst_per_kind/baring/labonderzoek_neonataal_bloed; allowed=(@conceptId, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/uitkomst_per_kind/baring/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/ziekenhuis_baring"><!-- == Check occurrences of children of /verloskundig_dossier/uitkomst_per_kind/baring/ziekenhuis_baring: == -->
          <assert test="(count(ziekenhuisnummer_lvrid) ge 0) and (count(ziekenhuisnummer_lvrid) le 1)">Fout aantal voorkomens van "Ziekenhuisnummer (LVR-id)": <value-of select="count(ziekenhuisnummer_lvrid)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/ziekenhuis_baring/ziekenhuisnummer_lvrid]</assert>
          <assert test="(count(zorginstelling_agbid) ge 0) and (count(zorginstelling_agbid) le 1)">Fout aantal voorkomens van "Zorginstelling AGB-ID": <value-of select="count(zorginstelling_agbid)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/ziekenhuis_baring/zorginstelling_agbid]</assert>
          <assert test="(count(naam_zorginstelling) ge 0) and (count(naam_zorginstelling) le 1)">Fout aantal voorkomens van "Naam zorginstelling": <value-of select="count(naam_zorginstelling)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/ziekenhuis_baring/naam_zorginstelling]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/ziekenhuis_baring/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/uitkomst_per_kind/baring/ziekenhuis_baring: == -->
-      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/ziekenhuis_baring/*[not(self::ziekenhuisnummer_lvrid)][not(self::zorginstelling_agbid)][not(self::naam_zorginstelling)]">
+      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/ziekenhuis_baring/*[not(self::ziekenhuisnummer_lvrid)][not(self::zorginstelling_agbid)][not(self::naam_zorginstelling)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/uitkomst_per_kind/baring/ziekenhuis_baring/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -4644,6 +4743,7 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Naam zorginstelling": Ongeldige attributen aangetroffen [/verloskundig_dossier/uitkomst_per_kind/baring/ziekenhuis_baring/naam_zorginstelling; allowed=(@conceptId, @value, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/uitkomst_per_kind/baring/ziekenhuis_baring/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens"><!-- == Check occurrences of children of /verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens: == -->
          <assert test="(count(identificaties_kind) ge 0) and (count(identificaties_kind) le 1)">Fout aantal voorkomens van "Identificaties kind": <value-of select="count(identificaties_kind)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/identificaties_kind]</assert>
@@ -4660,10 +4760,11 @@ See http://www.gnu.org/licenses/
          <assert test="(count(perinatale_sterfte_groep) ge 0) and (count(perinatale_sterfte_groep) le 1)">Fout aantal voorkomens van "Perinatale sterfte (groep)": <value-of select="count(perinatale_sterfte_groep)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/perinatale_sterfte_groep]</assert>
          <assert test="(count(foetus_identificatie_zoals_ante_partum_gehanteerd) ge 0) and (count(foetus_identificatie_zoals_ante_partum_gehanteerd) le 1)">Fout aantal voorkomens van "Foetus identificatie (zoals ante partum gehanteerd)": <value-of select="count(foetus_identificatie_zoals_ante_partum_gehanteerd)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/foetus_identificatie_zoals_ante_partum_gehanteerd]</assert>
          <assert test="(count(foetus_volgletter_zoals_ante_partum_gehanteerd) ge 0) and (count(foetus_volgletter_zoals_ante_partum_gehanteerd) le 1)">Fout aantal voorkomens van "Foetus volgletter (zoals ante partum gehanteerd)": <value-of select="count(foetus_volgletter_zoals_ante_partum_gehanteerd)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/foetus_volgletter_zoals_ante_partum_gehanteerd]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens: == -->
-      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/*[not(self::identificaties_kind)][not(self::naamgegevens_kind)][not(self::contactgegevens)][not(self::adres_tbv_hielprik)][not(self::adres)][not(self::geslacht_administratief)][not(self::geslacht_medische_observatie)][not(self::geboortedatum)][not(self::geboorteplaats)][not(self::meerlingindicatie)][not(self::rangnummer_kind)][not(self::perinatale_sterfte_groep)][not(self::foetus_identificatie_zoals_ante_partum_gehanteerd)][not(self::foetus_volgletter_zoals_ante_partum_gehanteerd)]">
+      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/*[not(self::identificaties_kind)][not(self::naamgegevens_kind)][not(self::contactgegevens)][not(self::adres_tbv_hielprik)][not(self::adres)][not(self::geslacht_administratief)][not(self::geslacht_medische_observatie)][not(self::geboortedatum)][not(self::geboorteplaats)][not(self::meerlingindicatie)][not(self::rangnummer_kind)][not(self::perinatale_sterfte_groep)][not(self::foetus_identificatie_zoals_ante_partum_gehanteerd)][not(self::foetus_volgletter_zoals_ante_partum_gehanteerd)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -4821,15 +4922,17 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Foetus volgletter (zoals ante partum gehanteerd)": Ongeldige attributen aangetroffen [/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/foetus_volgletter_zoals_ante_partum_gehanteerd; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/identificaties_kind"><!-- == Check occurrences of children of /verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/identificaties_kind: == -->
          <assert test="(count(bsn_kind) ge 0) and (count(bsn_kind) le 1)">Fout aantal voorkomens van "BSN kind": <value-of select="count(bsn_kind)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/identificaties_kind/bsn_kind]</assert>
          <assert test="(count(lokale_identificatie_kind) ge 0) and (count(lokale_identificatie_kind) le 1)">Fout aantal voorkomens van "Lokale identificatie kind": <value-of select="count(lokale_identificatie_kind)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/identificaties_kind/lokale_identificatie_kind]</assert>
          <assert test="(count(identificatie_kind_prn_formaat) ge 0) and (count(identificatie_kind_prn_formaat) le 1)">Fout aantal voorkomens van "Identificatie kind PRN formaat": <value-of select="count(identificatie_kind_prn_formaat)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/identificaties_kind/identificatie_kind_prn_formaat]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/identificaties_kind/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/identificaties_kind: == -->
-      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/identificaties_kind/*[not(self::bsn_kind)][not(self::lokale_identificatie_kind)][not(self::identificatie_kind_prn_formaat)]">
+      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/identificaties_kind/*[not(self::bsn_kind)][not(self::lokale_identificatie_kind)][not(self::identificatie_kind_prn_formaat)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/identificaties_kind/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -4865,16 +4968,18 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Identificatie kind PRN formaat": Ongeldige attributen aangetroffen [/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/identificaties_kind/identificatie_kind_prn_formaat; allowed=(@conceptId, @value, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/identificaties_kind/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/naamgegevens_kind"><!-- == Check occurrences of children of /verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/naamgegevens_kind: == -->
          <assert test="count(voornamen) ge 0">Fout aantal voorkomens van "Voornamen": <value-of select="count(voornamen)"/> (verwacht: 0 of meer) [/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/naamgegevens_kind/voornamen]</assert>
          <assert test="(count(initialen) ge 0) and (count(initialen) le 1)">Fout aantal voorkomens van "Initialen": <value-of select="count(initialen)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/naamgegevens_kind/initialen]</assert>
          <assert test="(count(roepnaam) ge 0) and (count(roepnaam) le 1)">Fout aantal voorkomens van "Roepnaam": <value-of select="count(roepnaam)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/naamgegevens_kind/roepnaam]</assert>
          <assert test="(count(achternaam) ge 0) and (count(achternaam) le 1)">Fout aantal voorkomens van "Achternaam": <value-of select="count(achternaam)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/naamgegevens_kind/achternaam]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/naamgegevens_kind/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/naamgegevens_kind: == -->
-      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/naamgegevens_kind/*[not(self::voornamen)][not(self::initialen)][not(self::roepnaam)][not(self::achternaam)]">
+      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/naamgegevens_kind/*[not(self::voornamen)][not(self::initialen)][not(self::roepnaam)][not(self::achternaam)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/naamgegevens_kind/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -4916,14 +5021,16 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @xsi:*))">Foutieve informatie voor "Achternaam": Ongeldige attributen aangetroffen [/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/naamgegevens_kind/achternaam; allowed=(@conceptId, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/naamgegevens_kind/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/naamgegevens_kind/achternaam"><!-- == Check occurrences of children of /verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/naamgegevens_kind/achternaam: == -->
          <assert test="(count(voorvoegsel) ge 0) and (count(voorvoegsel) le 1)">Fout aantal voorkomens van "Voorvoegsel": <value-of select="count(voorvoegsel)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/naamgegevens_kind/achternaam/voorvoegsel]</assert>
          <assert test="(count(achternaam) ge 0) and (count(achternaam) le 1)">Fout aantal voorkomens van "Achternaam": <value-of select="count(achternaam)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/naamgegevens_kind/achternaam/achternaam]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/naamgegevens_kind/achternaam/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/naamgegevens_kind/achternaam: == -->
-      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/naamgegevens_kind/achternaam/*[not(self::voorvoegsel)][not(self::achternaam)]">
+      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/naamgegevens_kind/achternaam/*[not(self::voorvoegsel)][not(self::achternaam)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/naamgegevens_kind/achternaam/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -4947,13 +5054,15 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Achternaam": Ongeldige attributen aangetroffen [/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/naamgegevens_kind/achternaam/achternaam; allowed=(@conceptId, @value, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/naamgegevens_kind/achternaam/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/contactgegevens"><!-- == Check occurrences of children of /verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/contactgegevens: == -->
          <assert test="count(telefoonnummers) ge 1">Fout aantal voorkomens van "Telefoonnummers": <value-of select="count(telefoonnummers)"/> (verwacht: 1 of meer) [/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/contactgegevens/telefoonnummers]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/contactgegevens/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/contactgegevens: == -->
-      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/contactgegevens/*[not(self::telefoonnummers)]">
+      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/contactgegevens/*[not(self::telefoonnummers)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/contactgegevens/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -4965,14 +5074,16 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @xsi:*))">Foutieve informatie voor "Telefoonnummers": Ongeldige attributen aangetroffen [/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/contactgegevens/telefoonnummers; allowed=(@conceptId, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/contactgegevens/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/contactgegevens/telefoonnummers"><!-- == Check occurrences of children of /verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/contactgegevens/telefoonnummers: == -->
          <assert test="(count(soort_telefoonnummer) ge 0) and (count(soort_telefoonnummer) le 1)">Fout aantal voorkomens van "Soort telefoonnummer": <value-of select="count(soort_telefoonnummer)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/contactgegevens/telefoonnummers/soort_telefoonnummer]</assert>
          <assert test="count(telefoonnummer) eq 1">Fout aantal voorkomens van "Telefoonnummer": <value-of select="count(telefoonnummer)"/> (verwacht: 1) [/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/contactgegevens/telefoonnummers/telefoonnummer]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/contactgegevens/telefoonnummers/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/contactgegevens/telefoonnummers: == -->
-      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/contactgegevens/telefoonnummers/*[not(self::soort_telefoonnummer)][not(self::telefoonnummer)]">
+      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/contactgegevens/telefoonnummers/*[not(self::soort_telefoonnummer)][not(self::telefoonnummer)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/contactgegevens/telefoonnummers/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -5004,6 +5115,7 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Telefoonnummer": Ongeldige attributen aangetroffen [/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/contactgegevens/telefoonnummers/telefoonnummer; allowed=(@conceptId, @value, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/contactgegevens/telefoonnummers/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/adres_tbv_hielprik"><!-- == Check occurrences of children of /verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/adres_tbv_hielprik: == -->
          <assert test="count(straatnaam) eq 1">Fout aantal voorkomens van "Straatnaam": <value-of select="count(straatnaam)"/> (verwacht: 1) [/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/adres_tbv_hielprik/straatnaam]</assert>
@@ -5013,10 +5125,11 @@ See http://www.gnu.org/licenses/
          <assert test="count(plaatsnaam) eq 1">Fout aantal voorkomens van "Plaatsnaam": <value-of select="count(plaatsnaam)"/> (verwacht: 1) [/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/adres_tbv_hielprik/plaatsnaam]</assert>
          <assert test="(count(land) ge 0) and (count(land) le 1)">Fout aantal voorkomens van "Land": <value-of select="count(land)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/adres_tbv_hielprik/land]</assert>
          <assert test="(count(adrestype) ge 0) and (count(adrestype) le 1)">Fout aantal voorkomens van "Adrestype": <value-of select="count(adrestype)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/adres_tbv_hielprik/adrestype]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/adres_tbv_hielprik/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/adres_tbv_hielprik: == -->
-      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/adres_tbv_hielprik/*[not(self::straatnaam)][not(self::huisnummer)][not(self::huisletterhuisnummertoevoeging)][not(self::postcode)][not(self::plaatsnaam)][not(self::land)][not(self::adrestype)]">
+      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/adres_tbv_hielprik/*[not(self::straatnaam)][not(self::huisnummer)][not(self::huisletterhuisnummertoevoeging)][not(self::postcode)][not(self::plaatsnaam)][not(self::land)][not(self::adrestype)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/adres_tbv_hielprik/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -5093,13 +5206,15 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Adrestype": Ongeldige attributen aangetroffen [/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/adres_tbv_hielprik/adrestype; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/adres_tbv_hielprik/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/adres"><!-- == Check occurrences of children of /verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/adres: == -->
          <assert test="(count(postcode) ge 0) and (count(postcode) le 1)">Fout aantal voorkomens van "Postcode": <value-of select="count(postcode)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/adres/postcode]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/adres/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/adres: == -->
-      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/adres/*[not(self::postcode)]">
+      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/adres/*[not(self::postcode)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/adres/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -5113,15 +5228,17 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Postcode": Ongeldige attributen aangetroffen [/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/adres/postcode; allowed=(@conceptId, @value, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/adres/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/geboorteplaats"><!-- == Check occurrences of children of /verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/geboorteplaats: == -->
          <assert test="(count(postcode) ge 0) and (count(postcode) le 1)">Fout aantal voorkomens van "Postcode": <value-of select="count(postcode)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/geboorteplaats/postcode]</assert>
          <assert test="(count(plaatsnaam) ge 0) and (count(plaatsnaam) le 1)">Fout aantal voorkomens van "Plaatsnaam": <value-of select="count(plaatsnaam)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/geboorteplaats/plaatsnaam]</assert>
          <assert test="(count(land) ge 0) and (count(land) le 1)">Fout aantal voorkomens van "Land": <value-of select="count(land)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/geboorteplaats/land]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/geboorteplaats/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/geboorteplaats: == -->
-      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/geboorteplaats/*[not(self::postcode)][not(self::plaatsnaam)][not(self::land)]">
+      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/geboorteplaats/*[not(self::postcode)][not(self::plaatsnaam)][not(self::land)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/geboorteplaats/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -5155,15 +5272,17 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Land": Ongeldige attributen aangetroffen [/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/geboorteplaats/land; allowed=(@conceptId, @value, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/geboorteplaats/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/perinatale_sterfte_groep"><!-- == Check occurrences of children of /verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/perinatale_sterfte_groep: == -->
          <assert test="(count(perinatale_sterfteq) ge 0) and (count(perinatale_sterfteq) le 1)">Fout aantal voorkomens van "Perinatale sterfte?": <value-of select="count(perinatale_sterfteq)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/perinatale_sterfte_groep/perinatale_sterfteq]</assert>
          <assert test="(count(fase_perinatale_sterfte) ge 0) and (count(fase_perinatale_sterfte) le 1)">Fout aantal voorkomens van "Fase perinatale sterfte": <value-of select="count(fase_perinatale_sterfte)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/perinatale_sterfte_groep/fase_perinatale_sterfte]</assert>
          <assert test="(count(datumtijd_vaststelling_perinatale_sterfte) ge 0) and (count(datumtijd_vaststelling_perinatale_sterfte) le 1)">Fout aantal voorkomens van "Datum/tijd vaststelling perinatale sterfte": <value-of select="count(datumtijd_vaststelling_perinatale_sterfte)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/perinatale_sterfte_groep/datumtijd_vaststelling_perinatale_sterfte]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/perinatale_sterfte_groep/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/perinatale_sterfte_groep: == -->
-      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/perinatale_sterfte_groep/*[not(self::perinatale_sterfteq)][not(self::fase_perinatale_sterfte)][not(self::datumtijd_vaststelling_perinatale_sterfte)]">
+      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/perinatale_sterfte_groep/*[not(self::perinatale_sterfteq)][not(self::fase_perinatale_sterfte)][not(self::datumtijd_vaststelling_perinatale_sterfte)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/perinatale_sterfte_groep/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -5206,6 +5325,7 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Datum/tijd vaststelling perinatale sterfte": Ongeldige attributen aangetroffen [/verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/perinatale_sterfte_groep/datumtijd_vaststelling_perinatale_sterfte; allowed=(@conceptId, @value, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/uitkomst_per_kind/baring/demografische_gegevens/perinatale_sterfte_groep/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens"><!-- == Check occurrences of children of /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens: == -->
          <assert test="(count(amniotomie_groep) ge 0) and (count(amniotomie_groep) le 1)">Fout aantal voorkomens van "Amniotomie (groep)": <value-of select="count(amniotomie_groep)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/amniotomie_groep]</assert>
@@ -5220,10 +5340,11 @@ See http://www.gnu.org/licenses/
          <assert test="count(pijnbestrijding) ge 0">Fout aantal voorkomens van "Pijnbestrijding": <value-of select="count(pijnbestrijding)"/> (verwacht: 0 of meer) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding]</assert>
          <assert test="(count(sedatieq) ge 0) and (count(sedatieq) le 1)">Fout aantal voorkomens van "Sedatie?": <value-of select="count(sedatieq)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/sedatieq]</assert>
          <assert test="(count(sedatie) ge 0) and (count(sedatie) le 1)">Fout aantal voorkomens van "Sedatie": <value-of select="count(sedatie)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/sedatie]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens: == -->
-      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/*[not(self::amniotomie_groep)][not(self::tijdstip_breken_vliezen)][not(self::kleur_en_consistentie_vruchtwater)][not(self::tijdstip_actief_meepersen)][not(self::episiotomieq)][not(self::indicatie_episiotomie)][not(self::locatie_episiotomie)][not(self::ruggeprik_gewenst_niet_gekregenq)][not(self::pijnbestrijdingq)][not(self::pijnbestrijding)][not(self::sedatieq)][not(self::sedatie)]">
+      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/*[not(self::amniotomie_groep)][not(self::tijdstip_breken_vliezen)][not(self::kleur_en_consistentie_vruchtwater)][not(self::tijdstip_actief_meepersen)][not(self::episiotomieq)][not(self::indicatie_episiotomie)][not(self::locatie_episiotomie)][not(self::ruggeprik_gewenst_niet_gekregenq)][not(self::pijnbestrijdingq)][not(self::pijnbestrijding)][not(self::sedatieq)][not(self::sedatie)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -5369,14 +5490,16 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @xsi:*))">Foutieve informatie voor "Sedatie": Ongeldige attributen aangetroffen [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/sedatie; allowed=(@conceptId, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/amniotomie_groep"><!-- == Check occurrences of children of /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/amniotomie_groep: == -->
          <assert test="(count(amniotomieq) ge 0) and (count(amniotomieq) le 1)">Fout aantal voorkomens van "Amniotomie?": <value-of select="count(amniotomieq)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/amniotomie_groep/amniotomieq]</assert>
          <assert test="(count(fase_amniotomie) ge 0) and (count(fase_amniotomie) le 1)">Fout aantal voorkomens van "Fase amniotomie": <value-of select="count(fase_amniotomie)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/amniotomie_groep/fase_amniotomie]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/amniotomie_groep/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/amniotomie_groep: == -->
-      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/amniotomie_groep/*[not(self::amniotomieq)][not(self::fase_amniotomie)]">
+      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/amniotomie_groep/*[not(self::amniotomieq)][not(self::fase_amniotomie)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/amniotomie_groep/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -5409,16 +5532,18 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Fase amniotomie": Ongeldige attributen aangetroffen [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/amniotomie_groep/fase_amniotomie; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/amniotomie_groep/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding"><!-- == Check occurrences of children of /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding: == -->
          <assert test="(count(datumtijd) ge 0) and (count(datumtijd) le 1)">Fout aantal voorkomens van "Datum/tijd": <value-of select="count(datumtijd)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/datumtijd]</assert>
          <assert test="count(methode) eq 1">Fout aantal voorkomens van "Methode": <value-of select="count(methode)"/> (verwacht: 1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode]</assert>
          <assert test="(count(periode) ge 0) and (count(periode) le 1)">Fout aantal voorkomens van "Periode": <value-of select="count(periode)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/periode]</assert>
          <assert test="count(reden) ge 1">Fout aantal voorkomens van "Reden": <value-of select="count(reden)"/> (verwacht: 1 of meer) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/reden]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding: == -->
-      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/*[not(self::datumtijd)][not(self::methode)][not(self::periode)][not(self::reden)]">
+      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/*[not(self::datumtijd)][not(self::methode)][not(self::periode)][not(self::reden)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -5471,14 +5596,16 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Reden": Ongeldige attributen aangetroffen [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/reden; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode"><!-- == Check occurrences of children of /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode: == -->
          <assert test="count(methode) eq 1">Fout aantal voorkomens van "Methode": <value-of select="count(methode)"/> (verwacht: 1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode/methode]</assert>
          <assert test="count(overig_middel) ge 1">Fout aantal voorkomens van "Overig middel": <value-of select="count(overig_middel)"/> (verwacht: 1 of meer) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode/overig_middel]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode: == -->
-      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode/*[not(self::methode)][not(self::overig_middel)]">
+      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode/*[not(self::methode)][not(self::overig_middel)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -5508,14 +5635,16 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @xsi:*))">Foutieve informatie voor "Overig middel": Ongeldige attributen aangetroffen [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode/overig_middel; allowed=(@conceptId, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode/overig_middel"><!-- == Check occurrences of children of /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode/overig_middel: == -->
          <assert test="(count(middel) ge 0) and (count(middel) le 1)">Fout aantal voorkomens van "Middel": <value-of select="count(middel)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode/overig_middel/middel]</assert>
          <assert test="(count(toediening) ge 0) and (count(toediening) le 1)">Fout aantal voorkomens van "Toediening": <value-of select="count(toediening)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode/overig_middel/toediening]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode/overig_middel/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode/overig_middel: == -->
-      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode/overig_middel/*[not(self::middel)][not(self::toediening)]">
+      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode/overig_middel/*[not(self::middel)][not(self::toediening)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode/overig_middel/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -5555,15 +5684,17 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Toediening": Ongeldige attributen aangetroffen [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode/overig_middel/toediening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode/overig_middel/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/sedatie"><!-- == Check occurrences of children of /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/sedatie: == -->
          <assert test="(count(datumtijd) ge 0) and (count(datumtijd) le 1)">Fout aantal voorkomens van "Datum/tijd": <value-of select="count(datumtijd)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/sedatie/datumtijd]</assert>
          <assert test="(count(periode) ge 0) and (count(periode) le 1)">Fout aantal voorkomens van "Periode": <value-of select="count(periode)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/sedatie/periode]</assert>
          <assert test="(count(reden) ge 0) and (count(reden) le 1)">Fout aantal voorkomens van "Reden": <value-of select="count(reden)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/sedatie/reden]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/sedatie/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/sedatie: == -->
-      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/sedatie/*[not(self::datumtijd)][not(self::periode)][not(self::reden)]">
+      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/sedatie/*[not(self::datumtijd)][not(self::periode)][not(self::reden)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/sedatie/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -5608,6 +5739,7 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Reden": Ongeldige attributen aangetroffen [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/sedatie/reden; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/sedatie/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens"><!-- == Check occurrences of children of /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens: == -->
          <assert test="(count(type_partus) ge 0) and (count(type_partus) le 1)">Fout aantal voorkomens van "Type partus": <value-of select="count(type_partus)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/type_partus]</assert>
@@ -5634,10 +5766,11 @@ See http://www.gnu.org/licenses/
          <assert test="count(betrokkenheid_kinderarts) ge 0">Fout aantal voorkomens van "Betrokkenheid kinderarts": <value-of select="count(betrokkenheid_kinderarts)"/> (verwacht: 0 of meer) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts]</assert>
          <assert test="count(bijzonderheden_kind) ge 0">Fout aantal voorkomens van "Bijzonderheden kind": <value-of select="count(bijzonderheden_kind)"/> (verwacht: 0 of meer) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/bijzonderheden_kind]</assert>
          <assert test="count(opmerkingen_baring) ge 0">Fout aantal voorkomens van "Opmerkingen baring": <value-of select="count(opmerkingen_baring)"/> (verwacht: 0 of meer) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/opmerkingen_baring]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens: == -->
-      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/*[not(self::type_partus)][not(self::top_nav_prenataal_onderzoekq)][not(self::zwangerschapsduur)][not(self::apgarscore_na_1_min)][not(self::apgarscore_na_5_min)][not(self::apgarscore_na_10_min)][not(self::ligging_bij_geboorte)][not(self::aanpakker_kind_groep)][not(self::supervisor_groep)][not(self::vaginale_kunstverlossing_groep)][not(self::sectio_caesarea_group)][not(self::overige_interventies)][not(self::lichamelijk_onderzoek_kind)][not(self::congenitale_afwijkingenq)][not(self::congenitale_afwijkingen_groep)][not(self::problematiek_kindq)][not(self::problematiek_kind)][not(self::navelstreng_vaten)][not(self::vitamine_kq)][not(self::hepatitis_b)][not(self::kinderarts_betrokkenq)][not(self::betrokkenheid_kinderarts)][not(self::bijzonderheden_kind)][not(self::opmerkingen_baring)]">
+      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/*[not(self::type_partus)][not(self::top_nav_prenataal_onderzoekq)][not(self::zwangerschapsduur)][not(self::apgarscore_na_1_min)][not(self::apgarscore_na_5_min)][not(self::apgarscore_na_10_min)][not(self::ligging_bij_geboorte)][not(self::aanpakker_kind_groep)][not(self::supervisor_groep)][not(self::vaginale_kunstverlossing_groep)][not(self::sectio_caesarea_group)][not(self::overige_interventies)][not(self::lichamelijk_onderzoek_kind)][not(self::congenitale_afwijkingenq)][not(self::congenitale_afwijkingen_groep)][not(self::problematiek_kindq)][not(self::problematiek_kind)][not(self::navelstreng_vaten)][not(self::vitamine_kq)][not(self::hepatitis_b)][not(self::kinderarts_betrokkenq)][not(self::betrokkenheid_kinderarts)][not(self::bijzonderheden_kind)][not(self::opmerkingen_baring)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -5923,15 +6056,17 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Opmerkingen baring": Ongeldige attributen aangetroffen [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/opmerkingen_baring; allowed=(@conceptId, @value, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/aanpakker_kind_groep"><!-- == Check occurrences of children of /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/aanpakker_kind_groep: == -->
          <assert test="(count(naam_zorgverlener) ge 0) and (count(naam_zorgverlener) le 1)">Fout aantal voorkomens van "Naam zorgverlener": <value-of select="count(naam_zorgverlener)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/aanpakker_kind_groep/naam_zorgverlener]</assert>
          <assert test="(count(rol_aanpakker_kind) ge 0) and (count(rol_aanpakker_kind) le 1)">Fout aantal voorkomens van "Rol aanpakker kind": <value-of select="count(rol_aanpakker_kind)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/aanpakker_kind_groep/rol_aanpakker_kind]</assert>
          <assert test="(count(identificatie_aanpakker_kind) ge 0) and (count(identificatie_aanpakker_kind) le 1)">Fout aantal voorkomens van "Identificatie aanpakker kind": <value-of select="count(identificatie_aanpakker_kind)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/aanpakker_kind_groep/identificatie_aanpakker_kind]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/aanpakker_kind_groep/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/aanpakker_kind_groep: == -->
-      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/aanpakker_kind_groep/*[not(self::naam_zorgverlener)][not(self::rol_aanpakker_kind)][not(self::identificatie_aanpakker_kind)]">
+      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/aanpakker_kind_groep/*[not(self::naam_zorgverlener)][not(self::rol_aanpakker_kind)][not(self::identificatie_aanpakker_kind)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/aanpakker_kind_groep/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -5973,15 +6108,17 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Identificatie aanpakker kind": Ongeldige attributen aangetroffen [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/aanpakker_kind_groep/identificatie_aanpakker_kind; allowed=(@conceptId, @value, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/aanpakker_kind_groep/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/supervisor_groep"><!-- == Check occurrences of children of /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/supervisor_groep: == -->
          <assert test="(count(naam_zorgverlener) ge 0) and (count(naam_zorgverlener) le 1)">Fout aantal voorkomens van "Naam zorgverlener": <value-of select="count(naam_zorgverlener)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/supervisor_groep/naam_zorgverlener]</assert>
          <assert test="(count(rol_supervisor) ge 0) and (count(rol_supervisor) le 1)">Fout aantal voorkomens van "Rol supervisor": <value-of select="count(rol_supervisor)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/supervisor_groep/rol_supervisor]</assert>
          <assert test="(count(identificatie_supervisor) ge 0) and (count(identificatie_supervisor) le 1)">Fout aantal voorkomens van "Identificatie supervisor": <value-of select="count(identificatie_supervisor)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/supervisor_groep/identificatie_supervisor]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/supervisor_groep/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/supervisor_groep: == -->
-      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/supervisor_groep/*[not(self::naam_zorgverlener)][not(self::rol_supervisor)][not(self::identificatie_supervisor)]">
+      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/supervisor_groep/*[not(self::naam_zorgverlener)][not(self::rol_supervisor)][not(self::identificatie_supervisor)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/supervisor_groep/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -6023,15 +6160,17 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Identificatie supervisor": Ongeldige attributen aangetroffen [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/supervisor_groep/identificatie_supervisor; allowed=(@conceptId, @value, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/supervisor_groep/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/vaginale_kunstverlossing_groep"><!-- == Check occurrences of children of /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/vaginale_kunstverlossing_groep: == -->
          <assert test="(count(vaginale_kunstverlossing) ge 0) and (count(vaginale_kunstverlossing) le 1)">Fout aantal voorkomens van "Vaginale kunstverlossing": <value-of select="count(vaginale_kunstverlossing)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/vaginale_kunstverlossing_groep/vaginale_kunstverlossing]</assert>
          <assert test="(count(succes_vaginale_kunstverlossingq) ge 0) and (count(succes_vaginale_kunstverlossingq) le 1)">Fout aantal voorkomens van "Succes vaginale kunstverlossing?": <value-of select="count(succes_vaginale_kunstverlossingq)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/vaginale_kunstverlossing_groep/succes_vaginale_kunstverlossingq]</assert>
          <assert test="(count(indicatie_vaginale_kunstverlossing) ge 0) and (count(indicatie_vaginale_kunstverlossing) le 1)">Fout aantal voorkomens van "Indicatie vaginale kunstverlossing": <value-of select="count(indicatie_vaginale_kunstverlossing)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/vaginale_kunstverlossing_groep/indicatie_vaginale_kunstverlossing]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/vaginale_kunstverlossing_groep/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/vaginale_kunstverlossing_groep: == -->
-      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/vaginale_kunstverlossing_groep/*[not(self::vaginale_kunstverlossing)][not(self::succes_vaginale_kunstverlossingq)][not(self::indicatie_vaginale_kunstverlossing)]">
+      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/vaginale_kunstverlossing_groep/*[not(self::vaginale_kunstverlossing)][not(self::succes_vaginale_kunstverlossingq)][not(self::indicatie_vaginale_kunstverlossing)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/vaginale_kunstverlossing_groep/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -6082,14 +6221,16 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Indicatie vaginale kunstverlossing": Ongeldige attributen aangetroffen [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/vaginale_kunstverlossing_groep/indicatie_vaginale_kunstverlossing; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/vaginale_kunstverlossing_groep/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/sectio_caesarea_group"><!-- == Check occurrences of children of /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/sectio_caesarea_group: == -->
          <assert test="count(beslismoment_sectio_caesarea) ge 0">Fout aantal voorkomens van "Beslismoment sectio caesarea": <value-of select="count(beslismoment_sectio_caesarea)"/> (verwacht: 0 of meer) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/sectio_caesarea_group/beslismoment_sectio_caesarea]</assert>
          <assert test="count(indicatie_sectio_caesarea) ge 0">Fout aantal voorkomens van "Indicatie sectio caesarea": <value-of select="count(indicatie_sectio_caesarea)"/> (verwacht: 0 of meer) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/sectio_caesarea_group/indicatie_sectio_caesarea]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/sectio_caesarea_group/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/sectio_caesarea_group: == -->
-      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/sectio_caesarea_group/*[not(self::beslismoment_sectio_caesarea)][not(self::indicatie_sectio_caesarea)]">
+      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/sectio_caesarea_group/*[not(self::beslismoment_sectio_caesarea)][not(self::indicatie_sectio_caesarea)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/sectio_caesarea_group/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -6129,6 +6270,7 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Indicatie sectio caesarea": Ongeldige attributen aangetroffen [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/sectio_caesarea_group/indicatie_sectio_caesarea; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/sectio_caesarea_group/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind"><!-- == Check occurrences of children of /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind: == -->
          <assert test="(count(afwijkende_bevindingen_kindq) ge 0) and (count(afwijkende_bevindingen_kindq) le 1)">Fout aantal voorkomens van "Afwijkende bevindingen kind?": <value-of select="count(afwijkende_bevindingen_kindq)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen_kindq]</assert>
@@ -6139,10 +6281,11 @@ See http://www.gnu.org/licenses/
          <assert test="(count(schedelomtrek) ge 0) and (count(schedelomtrek) le 1)">Fout aantal voorkomens van "Schedelomtrek": <value-of select="count(schedelomtrek)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/schedelomtrek]</assert>
          <assert test="count(indaling_testes) ge 0">Fout aantal voorkomens van "Indaling testes": <value-of select="count(indaling_testes)"/> (verwacht: 0 of meer) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/indaling_testes]</assert>
          <assert test="(count(bijzonderheden_lichamelijk_onderzoek_kind) ge 0) and (count(bijzonderheden_lichamelijk_onderzoek_kind) le 1)">Fout aantal voorkomens van "Bijzonderheden lichamelijk onderzoek kind": <value-of select="count(bijzonderheden_lichamelijk_onderzoek_kind)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/bijzonderheden_lichamelijk_onderzoek_kind]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind: == -->
-      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/*[not(self::afwijkende_bevindingen_kindq)][not(self::afwijkende_bevindingen)][not(self::geboortegewicht)][not(self::percentiel_van_het_geboortegewicht)][not(self::lengte)][not(self::schedelomtrek)][not(self::indaling_testes)][not(self::bijzonderheden_lichamelijk_onderzoek_kind)]">
+      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/*[not(self::afwijkende_bevindingen_kindq)][not(self::afwijkende_bevindingen)][not(self::geboortegewicht)][not(self::percentiel_van_het_geboortegewicht)][not(self::lengte)][not(self::schedelomtrek)][not(self::indaling_testes)][not(self::bijzonderheden_lichamelijk_onderzoek_kind)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -6241,6 +6384,7 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Bijzonderheden lichamelijk onderzoek kind": Ongeldige attributen aangetroffen [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/bijzonderheden_lichamelijk_onderzoek_kind; allowed=(@conceptId, @value, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen"><!-- == Check occurrences of children of /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen: == -->
          <assert test="count(algemene_indruk) ge 0">Fout aantal voorkomens van "Algemene indruk": <value-of select="count(algemene_indruk)"/> (verwacht: 0 of meer) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/algemene_indruk]</assert>
@@ -6253,10 +6397,11 @@ See http://www.gnu.org/licenses/
          <assert test="(count(extremiteiten) ge 0) and (count(extremiteiten) le 1)">Fout aantal voorkomens van "Extremiteiten": <value-of select="count(extremiteiten)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/extremiteiten]</assert>
          <assert test="(count(genitalia) ge 0) and (count(genitalia) le 1)">Fout aantal voorkomens van "Genitalia": <value-of select="count(genitalia)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/genitalia]</assert>
          <assert test="(count(neurologie) ge 0) and (count(neurologie) le 1)">Fout aantal voorkomens van "Neurologie": <value-of select="count(neurologie)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/neurologie]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen: == -->
-      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/*[not(self::algemene_indruk)][not(self::bijzonderheden_huid)][not(self::hoofd)][not(self::bijzonderheden_hals)][not(self::thorax)][not(self::abdomen)][not(self::rug)][not(self::extremiteiten)][not(self::genitalia)][not(self::neurologie)]">
+      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/*[not(self::algemene_indruk)][not(self::bijzonderheden_huid)][not(self::hoofd)][not(self::bijzonderheden_hals)][not(self::thorax)][not(self::abdomen)][not(self::rug)][not(self::extremiteiten)][not(self::genitalia)][not(self::neurologie)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -6350,16 +6495,18 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @xsi:*))">Foutieve informatie voor "Neurologie": Ongeldige attributen aangetroffen [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/neurologie; allowed=(@conceptId, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/algemene_indruk"><!-- == Check occurrences of children of /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/algemene_indruk: == -->
          <assert test="(count(zieke_indrukq) ge 0) and (count(zieke_indrukq) le 1)">Fout aantal voorkomens van "Zieke indruk?": <value-of select="count(zieke_indrukq)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/algemene_indruk/zieke_indrukq]</assert>
          <assert test="(count(bewustzijn) ge 0) and (count(bewustzijn) le 1)">Fout aantal voorkomens van "Bewustzijn": <value-of select="count(bewustzijn)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/algemene_indruk/bewustzijn]</assert>
          <assert test="(count(respiratie) ge 0) and (count(respiratie) le 1)">Fout aantal voorkomens van "Respiratie": <value-of select="count(respiratie)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/algemene_indruk/respiratie]</assert>
          <assert test="(count(dysmorfie) ge 0) and (count(dysmorfie) le 1)">Fout aantal voorkomens van "Dysmorfie": <value-of select="count(dysmorfie)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/algemene_indruk/dysmorfie]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/algemene_indruk/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/algemene_indruk: == -->
-      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/algemene_indruk/*[not(self::zieke_indrukq)][not(self::bewustzijn)][not(self::respiratie)][not(self::dysmorfie)]">
+      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/algemene_indruk/*[not(self::zieke_indrukq)][not(self::bewustzijn)][not(self::respiratie)][not(self::dysmorfie)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/algemene_indruk/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -6413,6 +6560,7 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Dysmorfie": Ongeldige attributen aangetroffen [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/algemene_indruk/dysmorfie; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/algemene_indruk/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/hoofd"><!-- == Check occurrences of children of /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/hoofd: == -->
          <assert test="(count(fontanel) ge 0) and (count(fontanel) le 1)">Fout aantal voorkomens van "Fontanel": <value-of select="count(fontanel)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/hoofd/fontanel]</assert>
@@ -6422,10 +6570,11 @@ See http://www.gnu.org/licenses/
          <assert test="(count(neus) ge 0) and (count(neus) le 1)">Fout aantal voorkomens van "Neus": <value-of select="count(neus)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/hoofd/neus]</assert>
          <assert test="(count(mond) ge 0) and (count(mond) le 1)">Fout aantal voorkomens van "Mond": <value-of select="count(mond)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/hoofd/mond]</assert>
          <assert test="(count(kin__standafwijkingq) ge 0) and (count(kin__standafwijkingq) le 1)">Fout aantal voorkomens van "Kin - standafwijking?": <value-of select="count(kin__standafwijkingq)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/hoofd/kin__standafwijkingq]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/hoofd/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/hoofd: == -->
-      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/hoofd/*[not(self::fontanel)][not(self::schedel)][not(self::ogen)][not(self::oren)][not(self::neus)][not(self::mond)][not(self::kin__standafwijkingq)]">
+      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/hoofd/*[not(self::fontanel)][not(self::schedel)][not(self::ogen)][not(self::oren)][not(self::neus)][not(self::mond)][not(self::kin__standafwijkingq)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/hoofd/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -6515,6 +6664,7 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Kin - standafwijking?": Ongeldige attributen aangetroffen [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/hoofd/kin__standafwijkingq; allowed=(@conceptId, @value, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/hoofd/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/thorax"><!-- == Check occurrences of children of /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/thorax: == -->
          <assert test="(count(inspectie) ge 0) and (count(inspectie) le 1)">Fout aantal voorkomens van "Inspectie": <value-of select="count(inspectie)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/thorax/inspectie]</assert>
@@ -6522,10 +6672,11 @@ See http://www.gnu.org/licenses/
          <assert test="(count(mamma) ge 0) and (count(mamma) le 1)">Fout aantal voorkomens van "Mamma": <value-of select="count(mamma)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/thorax/mamma]</assert>
          <assert test="(count(hart) ge 0) and (count(hart) le 1)">Fout aantal voorkomens van "Hart": <value-of select="count(hart)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/thorax/hart]</assert>
          <assert test="(count(longen) ge 0) and (count(longen) le 1)">Fout aantal voorkomens van "Longen": <value-of select="count(longen)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/thorax/longen]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/thorax/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/thorax: == -->
-      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/thorax/*[not(self::inspectie)][not(self::skelet)][not(self::mamma)][not(self::hart)][not(self::longen)]">
+      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/thorax/*[not(self::inspectie)][not(self::skelet)][not(self::mamma)][not(self::hart)][not(self::longen)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/thorax/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -6589,14 +6740,16 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Longen": Ongeldige attributen aangetroffen [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/thorax/longen; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/thorax/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/thorax/skelet"><!-- == Check occurrences of children of /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/thorax/skelet: == -->
          <assert test="(count(claviculae_fractuur) ge 0) and (count(claviculae_fractuur) le 1)">Fout aantal voorkomens van "Claviculae fractuur": <value-of select="count(claviculae_fractuur)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/thorax/skelet/claviculae_fractuur]</assert>
          <assert test="(count(overige_afwijkingen_ribbensternum) ge 0) and (count(overige_afwijkingen_ribbensternum) le 1)">Fout aantal voorkomens van "Overige afwijkingen ribben/sternum": <value-of select="count(overige_afwijkingen_ribbensternum)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/thorax/skelet/overige_afwijkingen_ribbensternum]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/thorax/skelet/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/thorax/skelet: == -->
-      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/thorax/skelet/*[not(self::claviculae_fractuur)][not(self::overige_afwijkingen_ribbensternum)]">
+      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/thorax/skelet/*[not(self::claviculae_fractuur)][not(self::overige_afwijkingen_ribbensternum)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/thorax/skelet/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -6623,6 +6776,7 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Overige afwijkingen ribben/sternum": Ongeldige attributen aangetroffen [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/thorax/skelet/overige_afwijkingen_ribbensternum; allowed=(@conceptId, @value, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/thorax/skelet/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/abdomen"><!-- == Check occurrences of children of /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/abdomen: == -->
          <assert test="(count(inspectie) ge 0) and (count(inspectie) le 1)">Fout aantal voorkomens van "Inspectie": <value-of select="count(inspectie)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/abdomen/inspectie]</assert>
@@ -6634,10 +6788,11 @@ See http://www.gnu.org/licenses/
          <assert test="(count(anus__atresiefistelq) ge 0) and (count(anus__atresiefistelq) le 1)">Fout aantal voorkomens van "Anus - atresie/fistel?": <value-of select="count(anus__atresiefistelq)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/abdomen/anus__atresiefistelq]</assert>
          <assert test="(count(andere_palpabele_weerstandenq) ge 0) and (count(andere_palpabele_weerstandenq) le 1)">Fout aantal voorkomens van "Andere palpabele weerstanden?": <value-of select="count(andere_palpabele_weerstandenq)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/abdomen/andere_palpabele_weerstandenq]</assert>
          <assert test="(count(toelichting_palpabele_weerstanden) ge 0) and (count(toelichting_palpabele_weerstanden) le 1)">Fout aantal voorkomens van "Toelichting palpabele weerstanden": <value-of select="count(toelichting_palpabele_weerstanden)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/abdomen/toelichting_palpabele_weerstanden]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/abdomen/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/abdomen: == -->
-      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/abdomen/*[not(self::inspectie)][not(self::buikwand)][not(self::lever__vergrootq)][not(self::milt_palpabelq)][not(self::darmen__afwijkende_peristaltiekq)][not(self::toelichting_darmen__afwijkende_peristaltiek)][not(self::anus__atresiefistelq)][not(self::andere_palpabele_weerstandenq)][not(self::toelichting_palpabele_weerstanden)]">
+      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/abdomen/*[not(self::inspectie)][not(self::buikwand)][not(self::lever__vergrootq)][not(self::milt_palpabelq)][not(self::darmen__afwijkende_peristaltiekq)][not(self::toelichting_darmen__afwijkende_peristaltiek)][not(self::anus__atresiefistelq)][not(self::andere_palpabele_weerstandenq)][not(self::toelichting_palpabele_weerstanden)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/abdomen/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -6742,14 +6897,16 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Toelichting palpabele weerstanden": Ongeldige attributen aangetroffen [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/abdomen/toelichting_palpabele_weerstanden; allowed=(@conceptId, @value, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/abdomen/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/rug"><!-- == Check occurrences of children of /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/rug: == -->
          <assert test="(count(inspectie__palpatie) ge 0) and (count(inspectie__palpatie) le 1)">Fout aantal voorkomens van "Inspectie / palpatie": <value-of select="count(inspectie__palpatie)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/rug/inspectie__palpatie]</assert>
          <assert test="(count(overige_bevindingen) ge 0) and (count(overige_bevindingen) le 1)">Fout aantal voorkomens van "Overige bevindingen": <value-of select="count(overige_bevindingen)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/rug/overige_bevindingen]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/rug/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/rug: == -->
-      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/rug/*[not(self::inspectie__palpatie)][not(self::overige_bevindingen)]">
+      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/rug/*[not(self::inspectie__palpatie)][not(self::overige_bevindingen)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/rug/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -6776,6 +6933,7 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Overige bevindingen": Ongeldige attributen aangetroffen [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/rug/overige_bevindingen; allowed=(@conceptId, @value, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/rug/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/extremiteiten"><!-- == Check occurrences of children of /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/extremiteiten: == -->
          <assert test="(count(proportie__afwijkendq) ge 0) and (count(proportie__afwijkendq) le 1)">Fout aantal voorkomens van "Proportie - afwijkend?": <value-of select="count(proportie__afwijkendq)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/extremiteiten/proportie__afwijkendq]</assert>
@@ -6785,10 +6943,11 @@ See http://www.gnu.org/licenses/
          <assert test="(count(beweeglijkheid) ge 0) and (count(beweeglijkheid) le 1)">Fout aantal voorkomens van "Beweeglijkheid": <value-of select="count(beweeglijkheid)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/extremiteiten/beweeglijkheid]</assert>
          <assert test="(count(handen) ge 0) and (count(handen) le 1)">Fout aantal voorkomens van "Handen": <value-of select="count(handen)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/extremiteiten/handen]</assert>
          <assert test="(count(voeten) ge 0) and (count(voeten) le 1)">Fout aantal voorkomens van "Voeten": <value-of select="count(voeten)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/extremiteiten/voeten]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/extremiteiten/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/extremiteiten: == -->
-      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/extremiteiten/*[not(self::proportie__afwijkendq)][not(self::vorm__afwijkendq)][not(self::toelichting_afwijkende_vorm)][not(self::heupen__asymmetrisch__asymmetrische_plooienq)][not(self::beweeglijkheid)][not(self::handen)][not(self::voeten)]">
+      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/extremiteiten/*[not(self::proportie__afwijkendq)][not(self::vorm__afwijkendq)][not(self::toelichting_afwijkende_vorm)][not(self::heupen__asymmetrisch__asymmetrische_plooienq)][not(self::beweeglijkheid)][not(self::handen)][not(self::voeten)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/extremiteiten/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -6874,15 +7033,17 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Voeten": Ongeldige attributen aangetroffen [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/extremiteiten/voeten; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/extremiteiten/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/genitalia"><!-- == Check occurrences of children of /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/genitalia: == -->
          <assert test="(count(mannelijk) ge 0) and (count(mannelijk) le 1)">Fout aantal voorkomens van "Mannelijk": <value-of select="count(mannelijk)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/genitalia/mannelijk]</assert>
          <assert test="(count(vrouwelijk) ge 0) and (count(vrouwelijk) le 1)">Fout aantal voorkomens van "Vrouwelijk": <value-of select="count(vrouwelijk)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/genitalia/vrouwelijk]</assert>
          <assert test="(count(geslacht_niet_conclusief) ge 0) and (count(geslacht_niet_conclusief) le 1)">Fout aantal voorkomens van "Geslacht niet conclusief": <value-of select="count(geslacht_niet_conclusief)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/genitalia/geslacht_niet_conclusief]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/genitalia/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/genitalia: == -->
-      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/genitalia/*[not(self::mannelijk)][not(self::vrouwelijk)][not(self::geslacht_niet_conclusief)]">
+      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/genitalia/*[not(self::mannelijk)][not(self::vrouwelijk)][not(self::geslacht_niet_conclusief)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/genitalia/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -6917,13 +7078,15 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Geslacht niet conclusief": Ongeldige attributen aangetroffen [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/genitalia/geslacht_niet_conclusief; allowed=(@conceptId, @value, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/genitalia/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/genitalia/mannelijk"><!-- == Check occurrences of children of /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/genitalia/mannelijk: == -->
          <assert test="count(penis) ge 0">Fout aantal voorkomens van "Penis": <value-of select="count(penis)"/> (verwacht: 0 of meer) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/genitalia/mannelijk/penis]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/genitalia/mannelijk/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/genitalia/mannelijk: == -->
-      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/genitalia/mannelijk/*[not(self::penis)]">
+      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/genitalia/mannelijk/*[not(self::penis)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/genitalia/mannelijk/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -6940,15 +7103,17 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Penis": Ongeldige attributen aangetroffen [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/genitalia/mannelijk/penis; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/genitalia/mannelijk/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/neurologie"><!-- == Check occurrences of children of /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/neurologie: == -->
          <assert test="(count(tonus) ge 0) and (count(tonus) le 1)">Fout aantal voorkomens van "Tonus": <value-of select="count(tonus)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/neurologie/tonus]</assert>
          <assert test="(count(beweeglijkheid__asymmetrischq) ge 0) and (count(beweeglijkheid__asymmetrischq) le 1)">Fout aantal voorkomens van "Beweeglijkheid - asymmetrisch?": <value-of select="count(beweeglijkheid__asymmetrischq)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/neurologie/beweeglijkheid__asymmetrischq]</assert>
          <assert test="(count(reflexen__moro__asymmetrischq) ge 0) and (count(reflexen__moro__asymmetrischq) le 1)">Fout aantal voorkomens van "Reflexen - Moro - asymmetrisch?": <value-of select="count(reflexen__moro__asymmetrischq)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/neurologie/reflexen__moro__asymmetrischq]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/neurologie/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/neurologie: == -->
-      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/neurologie/*[not(self::tonus)][not(self::beweeglijkheid__asymmetrischq)][not(self::reflexen__moro__asymmetrischq)]">
+      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/neurologie/*[not(self::tonus)][not(self::beweeglijkheid__asymmetrischq)][not(self::reflexen__moro__asymmetrischq)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/neurologie/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -6987,14 +7152,16 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Reflexen - Moro - asymmetrisch?": Ongeldige attributen aangetroffen [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/neurologie/reflexen__moro__asymmetrischq; allowed=(@conceptId, @value, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/afwijkende_bevindingen/neurologie/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/indaling_testes"><!-- == Check occurrences of children of /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/indaling_testes: == -->
          <assert test="count(links) eq 1">Fout aantal voorkomens van "Links": <value-of select="count(links)"/> (verwacht: 1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/indaling_testes/links]</assert>
          <assert test="count(rechts) eq 1">Fout aantal voorkomens van "Rechts": <value-of select="count(rechts)"/> (verwacht: 1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/indaling_testes/rechts]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/indaling_testes/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/indaling_testes: == -->
-      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/indaling_testes/*[not(self::links)][not(self::rechts)]">
+      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/indaling_testes/*[not(self::links)][not(self::rechts)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/indaling_testes/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -7034,15 +7201,17 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Rechts": Ongeldige attributen aangetroffen [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/indaling_testes/rechts; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/indaling_testes/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep"><!-- == Check occurrences of children of /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep: == -->
          <assert test="count(specificatie_congenitale_afwijking_groep) ge 0">Fout aantal voorkomens van "Specificatie congenitale afwijking (groep)": <value-of select="count(specificatie_congenitale_afwijking_groep)"/> (verwacht: 0 of meer) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_congenitale_afwijking_groep]</assert>
          <assert test="(count(chromosomale_afwijkingenq) ge 0) and (count(chromosomale_afwijkingenq) le 1)">Fout aantal voorkomens van "Chromosomale afwijkingen?": <value-of select="count(chromosomale_afwijkingenq)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/chromosomale_afwijkingenq]</assert>
          <assert test="count(specificatie_chromosomale_afwijking_groep) ge 0">Fout aantal voorkomens van "Specificatie chromosomale afwijking (groep)": <value-of select="count(specificatie_chromosomale_afwijking_groep)"/> (verwacht: 0 of meer) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_chromosomale_afwijking_groep]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep: == -->
-      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/*[not(self::specificatie_congenitale_afwijking_groep)][not(self::chromosomale_afwijkingenq)][not(self::specificatie_chromosomale_afwijking_groep)]">
+      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/*[not(self::specificatie_congenitale_afwijking_groep)][not(self::chromosomale_afwijkingenq)][not(self::specificatie_chromosomale_afwijking_groep)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -7073,14 +7242,16 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @xsi:*))">Foutieve informatie voor "Specificatie chromosomale afwijking (groep)": Ongeldige attributen aangetroffen [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_chromosomale_afwijking_groep; allowed=(@conceptId, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_congenitale_afwijking_groep"><!-- == Check occurrences of children of /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_congenitale_afwijking_groep: == -->
          <assert test="(count(specificatie_congenitale_afwijking) ge 0) and (count(specificatie_congenitale_afwijking) le 1)">Fout aantal voorkomens van "Specificatie congenitale afwijking": <value-of select="count(specificatie_congenitale_afwijking)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_congenitale_afwijking_groep/specificatie_congenitale_afwijking]</assert>
          <assert test="count(waarschijnlijkheid_congenitale_afwijking) eq 1">Fout aantal voorkomens van "Waarschijnlijkheid congenitale afwijking": <value-of select="count(waarschijnlijkheid_congenitale_afwijking)"/> (verwacht: 1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_congenitale_afwijking_groep/waarschijnlijkheid_congenitale_afwijking]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_congenitale_afwijking_groep/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_congenitale_afwijking_groep: == -->
-      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_congenitale_afwijking_groep/*[not(self::specificatie_congenitale_afwijking)][not(self::waarschijnlijkheid_congenitale_afwijking)]">
+      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_congenitale_afwijking_groep/*[not(self::specificatie_congenitale_afwijking)][not(self::waarschijnlijkheid_congenitale_afwijking)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_congenitale_afwijking_groep/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -7120,14 +7291,16 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Waarschijnlijkheid congenitale afwijking": Ongeldige attributen aangetroffen [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_congenitale_afwijking_groep/waarschijnlijkheid_congenitale_afwijking; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_congenitale_afwijking_groep/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_chromosomale_afwijking_groep"><!-- == Check occurrences of children of /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_chromosomale_afwijking_groep: == -->
          <assert test="count(specificatie_chromosomale_afwijking) eq 1">Fout aantal voorkomens van "Specificatie chromosomale afwijking": <value-of select="count(specificatie_chromosomale_afwijking)"/> (verwacht: 1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_chromosomale_afwijking_groep/specificatie_chromosomale_afwijking]</assert>
          <assert test="count(waarschijnlijkheid_chromosomale_afwijking) eq 1">Fout aantal voorkomens van "Waarschijnlijkheid chromosomale afwijking": <value-of select="count(waarschijnlijkheid_chromosomale_afwijking)"/> (verwacht: 1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_chromosomale_afwijking_groep/waarschijnlijkheid_chromosomale_afwijking]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_chromosomale_afwijking_groep/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_chromosomale_afwijking_groep: == -->
-      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_chromosomale_afwijking_groep/*[not(self::specificatie_chromosomale_afwijking)][not(self::waarschijnlijkheid_chromosomale_afwijking)]">
+      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_chromosomale_afwijking_groep/*[not(self::specificatie_chromosomale_afwijking)][not(self::waarschijnlijkheid_chromosomale_afwijking)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_chromosomale_afwijking_groep/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -7167,14 +7340,16 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Waarschijnlijkheid chromosomale afwijking": Ongeldige attributen aangetroffen [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_chromosomale_afwijking_groep/waarschijnlijkheid_chromosomale_afwijking; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_chromosomale_afwijking_groep/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/hepatitis_b"><!-- == Check occurrences of children of /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/hepatitis_b: == -->
          <assert test="(count(hepatitis_b_immunisatieq) ge 0) and (count(hepatitis_b_immunisatieq) le 1)">Fout aantal voorkomens van "Hepatitis B immunisatie?": <value-of select="count(hepatitis_b_immunisatieq)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/hepatitis_b/hepatitis_b_immunisatieq]</assert>
          <assert test="(count(hepatitis_b_vaccinatieq) ge 0) and (count(hepatitis_b_vaccinatieq) le 1)">Fout aantal voorkomens van "Hepatitis B vaccinatie?": <value-of select="count(hepatitis_b_vaccinatieq)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/hepatitis_b/hepatitis_b_vaccinatieq]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/hepatitis_b/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/hepatitis_b: == -->
-      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/hepatitis_b/*[not(self::hepatitis_b_immunisatieq)][not(self::hepatitis_b_vaccinatieq)]">
+      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/hepatitis_b/*[not(self::hepatitis_b_immunisatieq)][not(self::hepatitis_b_vaccinatieq)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/hepatitis_b/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -7200,16 +7375,18 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Hepatitis B vaccinatie?": Ongeldige attributen aangetroffen [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/hepatitis_b/hepatitis_b_vaccinatieq; allowed=(@conceptId, @value, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/hepatitis_b/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts"><!-- == Check occurrences of children of /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts: == -->
          <assert test="(count(datum_betrokkenheid) ge 0) and (count(datum_betrokkenheid) le 1)">Fout aantal voorkomens van "Datum betrokkenheid": <value-of select="count(datum_betrokkenheid)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts/datum_betrokkenheid]</assert>
          <assert test="(count(reden_betrokkenheid) ge 0) and (count(reden_betrokkenheid) le 1)">Fout aantal voorkomens van "Reden betrokkenheid": <value-of select="count(reden_betrokkenheid)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts/reden_betrokkenheid]</assert>
          <assert test="(count(type_betrokkenheid) ge 0) and (count(type_betrokkenheid) le 1)">Fout aantal voorkomens van "Type betrokkenheid": <value-of select="count(type_betrokkenheid)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts/type_betrokkenheid]</assert>
          <assert test="(count(zorginstelling_lvrid) ge 0) and (count(zorginstelling_lvrid) le 1)">Fout aantal voorkomens van "Zorginstelling LVR-ID": <value-of select="count(zorginstelling_lvrid)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts/zorginstelling_lvrid]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts: == -->
-      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts/*[not(self::datum_betrokkenheid)][not(self::reden_betrokkenheid)][not(self::type_betrokkenheid)][not(self::zorginstelling_lvrid)]">
+      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts/*[not(self::datum_betrokkenheid)][not(self::reden_betrokkenheid)][not(self::type_betrokkenheid)][not(self::zorginstelling_lvrid)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -7271,6 +7448,7 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Zorginstelling LVR-ID": Ongeldige attributen aangetroffen [/verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts/zorginstelling_lvrid; allowed=(@conceptId, @value, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/labonderzoek_neonataal_bloed"><!-- == Check occurrences of children of /verloskundig_dossier/uitkomst_per_kind/baring/labonderzoek_neonataal_bloed: == -->
          <assert test="(count(datum_afname_neonataal_bloed) ge 0) and (count(datum_afname_neonataal_bloed) le 1)">Fout aantal voorkomens van "Datum afname neonataal bloed": <value-of select="count(datum_afname_neonataal_bloed)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/labonderzoek_neonataal_bloed/datum_afname_neonataal_bloed]</assert>
@@ -7279,10 +7457,11 @@ See http://www.gnu.org/licenses/
          <assert test="(count(naam_afnemer) ge 0) and (count(naam_afnemer) le 1)">Fout aantal voorkomens van "Naam afnemer": <value-of select="count(naam_afnemer)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/labonderzoek_neonataal_bloed/naam_afnemer]</assert>
          <assert test="(count(zorgaanbieder_afnemer) ge 0) and (count(zorgaanbieder_afnemer) le 1)">Fout aantal voorkomens van "Zorgaanbieder afnemer": <value-of select="count(zorgaanbieder_afnemer)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/labonderzoek_neonataal_bloed/zorgaanbieder_afnemer]</assert>
          <assert test="(count(hl7_labaanvraag) ge 0) and (count(hl7_labaanvraag) le 1)">Fout aantal voorkomens van "(HL7: Labaanvraag)": <value-of select="count(hl7_labaanvraag)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/labonderzoek_neonataal_bloed/hl7_labaanvraag]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/labonderzoek_neonataal_bloed/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/uitkomst_per_kind/baring/labonderzoek_neonataal_bloed: == -->
-      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/labonderzoek_neonataal_bloed/*[not(self::datum_afname_neonataal_bloed)][not(self::afnemer_identificatie)][not(self::rol_afnemer)][not(self::naam_afnemer)][not(self::zorgaanbieder_afnemer)][not(self::hl7_labaanvraag)]">
+      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/labonderzoek_neonataal_bloed/*[not(self::datum_afname_neonataal_bloed)][not(self::afnemer_identificatie)][not(self::rol_afnemer)][not(self::naam_afnemer)][not(self::zorgaanbieder_afnemer)][not(self::hl7_labaanvraag)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/uitkomst_per_kind/baring/labonderzoek_neonataal_bloed/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -7352,13 +7531,15 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @xsi:*))">Foutieve informatie voor "(HL7: Labaanvraag)": Ongeldige attributen aangetroffen [/verloskundig_dossier/uitkomst_per_kind/baring/labonderzoek_neonataal_bloed/hl7_labaanvraag; allowed=(@conceptId, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/uitkomst_per_kind/baring/labonderzoek_neonataal_bloed/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/labonderzoek_neonataal_bloed/hl7_labaanvraag"><!-- == Check occurrences of children of /verloskundig_dossier/uitkomst_per_kind/baring/labonderzoek_neonataal_bloed/hl7_labaanvraag: == -->
          <assert test="(count(uitvoerend_lab) ge 0) and (count(uitvoerend_lab) le 1)">Fout aantal voorkomens van "Uitvoerend lab": <value-of select="count(uitvoerend_lab)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/labonderzoek_neonataal_bloed/hl7_labaanvraag/uitvoerend_lab]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/uitkomst_per_kind/baring/labonderzoek_neonataal_bloed/hl7_labaanvraag/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/uitkomst_per_kind/baring/labonderzoek_neonataal_bloed/hl7_labaanvraag: == -->
-      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/labonderzoek_neonataal_bloed/hl7_labaanvraag/*[not(self::uitvoerend_lab)]">
+      <rule context="/verloskundig_dossier/uitkomst_per_kind/baring/labonderzoek_neonataal_bloed/hl7_labaanvraag/*[not(self::uitvoerend_lab)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/uitkomst_per_kind/baring/labonderzoek_neonataal_bloed/hl7_labaanvraag/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -7372,6 +7553,7 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Uitvoerend lab": Ongeldige attributen aangetroffen [/verloskundig_dossier/uitkomst_per_kind/baring/labonderzoek_neonataal_bloed/hl7_labaanvraag/uitvoerend_lab; allowed=(@conceptId, @value, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/uitkomst_per_kind/baring/labonderzoek_neonataal_bloed/hl7_labaanvraag/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/medisch_onderzoek"><!-- == Check occurrences of children of /verloskundig_dossier/medisch_onderzoek: == -->
          <assert test="(count(onderzoek_identificatie) ge 0) and (count(onderzoek_identificatie) le 1)">Fout aantal voorkomens van "Onderzoek identificatie": <value-of select="count(onderzoek_identificatie)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/onderzoek_identificatie]</assert>
@@ -7391,10 +7573,11 @@ See http://www.gnu.org/licenses/
          <assert test="(count(uitslag_screening) ge 0) and (count(uitslag_screening) le 1)">Fout aantal voorkomens van "Uitslag screening": <value-of select="count(uitslag_screening)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/uitslag_screening]</assert>
          <assert test="count(foetusspecifieke_onderzoeksgegevens) ge 0">Fout aantal voorkomens van "Foetusspecifieke (onderzoeks)gegevens": <value-of select="count(foetusspecifieke_onderzoeksgegevens)"/> (verwacht: 0 of meer) [/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens]</assert>
          <assert test="(count(maternale_onderzoeksgegevens) ge 0) and (count(maternale_onderzoeksgegevens) le 1)">Fout aantal voorkomens van "Maternale onderzoeksgegevens": <value-of select="count(maternale_onderzoeksgegevens)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/medisch_onderzoek: == -->
-      <rule context="/verloskundig_dossier/medisch_onderzoek/*[not(self::onderzoek_identificatie)][not(self::datum_onderzoek)][not(self::naam_uitvoerder_onderzoek)][not(self::zorgverlenertype)][not(self::zwangerschapsduur_op_datum_onderzoek)][not(self::onderzoektype_jonge_zwangerschapsecho)][not(self::onderzoektype_ntmeting)][not(self::onderzoektype_seo)][not(self::onderzoektype_guo)][not(self::onderzoektype_kansbepaling_combinatietest)][not(self::seotype)][not(self::conclusie_seo)][not(self::advies_seo)][not(self::conclusie_a_terme_datum)][not(self::uitslag_screening)][not(self::foetusspecifieke_onderzoeksgegevens)][not(self::maternale_onderzoeksgegevens)]">
+      <rule context="/verloskundig_dossier/medisch_onderzoek/*[not(self::onderzoek_identificatie)][not(self::datum_onderzoek)][not(self::naam_uitvoerder_onderzoek)][not(self::zorgverlenertype)][not(self::zwangerschapsduur_op_datum_onderzoek)][not(self::onderzoektype_jonge_zwangerschapsecho)][not(self::onderzoektype_ntmeting)][not(self::onderzoektype_seo)][not(self::onderzoektype_guo)][not(self::onderzoektype_kansbepaling_combinatietest)][not(self::seotype)][not(self::conclusie_seo)][not(self::advies_seo)][not(self::conclusie_a_terme_datum)][not(self::uitslag_screening)][not(self::foetusspecifieke_onderzoeksgegevens)][not(self::maternale_onderzoeksgegevens)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/medisch_onderzoek/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -7612,13 +7795,15 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @xsi:*))">Foutieve informatie voor "Maternale onderzoeksgegevens": Ongeldige attributen aangetroffen [/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens; allowed=(@conceptId, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/medisch_onderzoek/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/medisch_onderzoek/uitslag_screening"><!-- == Check occurrences of children of /verloskundig_dossier/medisch_onderzoek/uitslag_screening: == -->
          <assert test="(count(indicatie_prenatale_diagnostiek_obv_screening) ge 0) and (count(indicatie_prenatale_diagnostiek_obv_screening) le 1)">Fout aantal voorkomens van "Indicatie prenatale diagnostiek obv screening": <value-of select="count(indicatie_prenatale_diagnostiek_obv_screening)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/uitslag_screening/indicatie_prenatale_diagnostiek_obv_screening]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/uitslag_screening/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/medisch_onderzoek/uitslag_screening: == -->
-      <rule context="/verloskundig_dossier/medisch_onderzoek/uitslag_screening/*[not(self::indicatie_prenatale_diagnostiek_obv_screening)]">
+      <rule context="/verloskundig_dossier/medisch_onderzoek/uitslag_screening/*[not(self::indicatie_prenatale_diagnostiek_obv_screening)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/medisch_onderzoek/uitslag_screening/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -7640,6 +7825,7 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Indicatie prenatale diagnostiek obv screening": Ongeldige attributen aangetroffen [/verloskundig_dossier/medisch_onderzoek/uitslag_screening/indicatie_prenatale_diagnostiek_obv_screening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/medisch_onderzoek/uitslag_screening/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens"><!-- == Check occurrences of children of /verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens: == -->
          <assert test="count(foetus_identificatie) eq 1">Fout aantal voorkomens van "Foetus identificatie": <value-of select="count(foetus_identificatie)"/> (verwacht: 1) [/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/foetus_identificatie]</assert>
@@ -7648,10 +7834,11 @@ See http://www.gnu.org/licenses/
          <assert test="(count(echoparameters_bpd_hc_ac_fl) ge 0) and (count(echoparameters_bpd_hc_ac_fl) le 1)">Fout aantal voorkomens van "Echoparameters BPD, HC, AC, FL": <value-of select="count(echoparameters_bpd_hc_ac_fl)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/echoparameters_bpd_hc_ac_fl]</assert>
          <assert test="(count(combinatietest) ge 0) and (count(combinatietest) le 1)">Fout aantal voorkomens van "Combinatietest": <value-of select="count(combinatietest)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/combinatietest]</assert>
          <assert test="count(invasieve_prenatale_diagnostiek) ge 0">Fout aantal voorkomens van "Invasieve prenatale diagnostiek": <value-of select="count(invasieve_prenatale_diagnostiek)"/> (verwacht: 0 of meer) [/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/invasieve_prenatale_diagnostiek]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens: == -->
-      <rule context="/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/*[not(self::foetus_identificatie)][not(self::foetus_volgletter)][not(self::echoscopie)][not(self::echoparameters_bpd_hc_ac_fl)][not(self::combinatietest)][not(self::invasieve_prenatale_diagnostiek)]">
+      <rule context="/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/*[not(self::foetus_identificatie)][not(self::foetus_volgletter)][not(self::echoscopie)][not(self::echoparameters_bpd_hc_ac_fl)][not(self::combinatietest)][not(self::invasieve_prenatale_diagnostiek)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -7727,6 +7914,7 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Invasieve prenatale diagnostiek": Ongeldige attributen aangetroffen [/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/invasieve_prenatale_diagnostiek; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/echoscopie"><!-- == Check occurrences of children of /verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/echoscopie: == -->
          <assert test="count(crl) ge 0">Fout aantal voorkomens van "CRL": <value-of select="count(crl)"/> (verwacht: 0 of meer) [/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/echoscopie/crl]</assert>
@@ -7753,10 +7941,11 @@ See http://www.gnu.org/licenses/
          <assert test="(count(navelstreng_vaten) ge 0) and (count(navelstreng_vaten) le 1)">Fout aantal voorkomens van "Navelstreng vaten": <value-of select="count(navelstreng_vaten)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/echoscopie/navelstreng_vaten]</assert>
          <assert test="(count(opmerkingen) ge 0) and (count(opmerkingen) le 1)">Fout aantal voorkomens van "Opmerkingen": <value-of select="count(opmerkingen)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/echoscopie/opmerkingen]</assert>
          <assert test="(count(bevindingen) ge 0) and (count(bevindingen) le 1)">Fout aantal voorkomens van "Bevindingen": <value-of select="count(bevindingen)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/echoscopie/bevindingen]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/echoscopie/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/echoscopie: == -->
-      <rule context="/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/echoscopie/*[not(self::crl)][not(self::bpd)][not(self::bpd_percentiel)][not(self::nt_in_mm)][not(self::hc)][not(self::hc_percentiel)][not(self::tcd)][not(self::ac)][not(self::ac_percentiel)][not(self::fl)][not(self::fl_percentiel)][not(self::efw)][not(self::hartactie_aanwezigq)][not(self::hartactie)][not(self::ligging)][not(self::beweging)][not(self::vruchtwater)][not(self::placentalokalisatie)][not(self::afwijking_placentavliezennavelstrengq)][not(self::afwijking_placentavliezennavelstreng)][not(self::cervixlengte)][not(self::navelstreng_vaten)][not(self::opmerkingen)][not(self::bevindingen)]">
+      <rule context="/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/echoscopie/*[not(self::crl)][not(self::bpd)][not(self::bpd_percentiel)][not(self::nt_in_mm)][not(self::hc)][not(self::hc_percentiel)][not(self::tcd)][not(self::ac)][not(self::ac_percentiel)][not(self::fl)][not(self::fl_percentiel)][not(self::efw)][not(self::hartactie_aanwezigq)][not(self::hartactie)][not(self::ligging)][not(self::beweging)][not(self::vruchtwater)][not(self::placentalokalisatie)][not(self::afwijking_placentavliezennavelstrengq)][not(self::afwijking_placentavliezennavelstreng)][not(self::cervixlengte)][not(self::navelstreng_vaten)][not(self::opmerkingen)][not(self::bevindingen)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/echoscopie/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -8078,14 +8267,16 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @xsi:*))">Foutieve informatie voor "Bevindingen": Ongeldige attributen aangetroffen [/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/echoscopie/bevindingen; allowed=(@conceptId, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/echoscopie/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/echoscopie/hartactie"><!-- == Check occurrences of children of /verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/echoscopie/hartactie: == -->
          <assert test="(count(regelmaat_hartslag) ge 0) and (count(regelmaat_hartslag) le 1)">Fout aantal voorkomens van "Regelmaat hartslag": <value-of select="count(regelmaat_hartslag)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/echoscopie/hartactie/regelmaat_hartslag]</assert>
          <assert test="(count(frequentie_hartslag) ge 0) and (count(frequentie_hartslag) le 1)">Fout aantal voorkomens van "Frequentie hartslag": <value-of select="count(frequentie_hartslag)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/echoscopie/hartactie/frequentie_hartslag]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/echoscopie/hartactie/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/echoscopie/hartactie: == -->
-      <rule context="/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/echoscopie/hartactie/*[not(self::regelmaat_hartslag)][not(self::frequentie_hartslag)]">
+      <rule context="/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/echoscopie/hartactie/*[not(self::regelmaat_hartslag)][not(self::frequentie_hartslag)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/echoscopie/hartactie/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -8125,15 +8316,17 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Frequentie hartslag": Ongeldige attributen aangetroffen [/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/echoscopie/hartactie/frequentie_hartslag; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/echoscopie/hartactie/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/echoscopie/placentalokalisatie"><!-- == Check occurrences of children of /verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/echoscopie/placentalokalisatie: == -->
          <assert test="(count(placentalokalisatie) ge 0) and (count(placentalokalisatie) le 1)">Fout aantal voorkomens van "Placentalokalisatie": <value-of select="count(placentalokalisatie)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/echoscopie/placentalokalisatie/placentalokalisatie]</assert>
          <assert test="(count(ostium) ge 0) and (count(ostium) le 1)">Fout aantal voorkomens van "Ostium": <value-of select="count(ostium)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/echoscopie/placentalokalisatie/ostium]</assert>
          <assert test="(count(over_sectio_littekenq) ge 0) and (count(over_sectio_littekenq) le 1)">Fout aantal voorkomens van "Over sectio litteken?": <value-of select="count(over_sectio_littekenq)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/echoscopie/placentalokalisatie/over_sectio_littekenq]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/echoscopie/placentalokalisatie/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/echoscopie/placentalokalisatie: == -->
-      <rule context="/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/echoscopie/placentalokalisatie/*[not(self::placentalokalisatie)][not(self::ostium)][not(self::over_sectio_littekenq)]">
+      <rule context="/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/echoscopie/placentalokalisatie/*[not(self::placentalokalisatie)][not(self::ostium)][not(self::over_sectio_littekenq)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/echoscopie/placentalokalisatie/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -8179,6 +8372,7 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Over sectio litteken?": Ongeldige attributen aangetroffen [/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/echoscopie/placentalokalisatie/over_sectio_littekenq; allowed=(@conceptId, @value, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/echoscopie/placentalokalisatie/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/echoscopie/bevindingen"><!-- == Check occurrences of children of /verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/echoscopie/bevindingen: == -->
          <assert test="(count(algehele_beoordeling) ge 0) and (count(algehele_beoordeling) le 1)">Fout aantal voorkomens van "Algehele beoordeling": <value-of select="count(algehele_beoordeling)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/echoscopie/bevindingen/algehele_beoordeling]</assert>
@@ -8202,10 +8396,11 @@ See http://www.gnu.org/licenses/
          <assert test="(count(placenta_afwijkingen) ge 0) and (count(placenta_afwijkingen) le 1)">Fout aantal voorkomens van "Placenta afwijkingen": <value-of select="count(placenta_afwijkingen)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/echoscopie/bevindingen/placenta_afwijkingen]</assert>
          <assert test="(count(wervelkolom_neuraalbuisdefect) ge 0) and (count(wervelkolom_neuraalbuisdefect) le 1)">Fout aantal voorkomens van "Wervelkolom neuraalbuisdefect": <value-of select="count(wervelkolom_neuraalbuisdefect)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/echoscopie/bevindingen/wervelkolom_neuraalbuisdefect]</assert>
          <assert test="(count(wervelkolom_overige) ge 0) and (count(wervelkolom_overige) le 1)">Fout aantal voorkomens van "Wervelkolom overige": <value-of select="count(wervelkolom_overige)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/echoscopie/bevindingen/wervelkolom_overige]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/echoscopie/bevindingen/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/echoscopie/bevindingen: == -->
-      <rule context="/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/echoscopie/bevindingen/*[not(self::algehele_beoordeling)][not(self::neuraalbuis_van_de_wervelkolom)][not(self::hersenen_neuraalbuisdefect)][not(self::hersenen_overige)][not(self::aangezicht)][not(self::nek__huid)][not(self::hart)][not(self::longen)][not(self::diafragma)][not(self::buikwand)][not(self::maagdarm)][not(self::nierenblaas)][not(self::extremiteiten)][not(self::skelet)][not(self::sonomarkers)][not(self::biometrie)][not(self::vruchtwatercompartiment)][not(self::navelstreng)][not(self::placenta_afwijkingen)][not(self::wervelkolom_neuraalbuisdefect)][not(self::wervelkolom_overige)]">
+      <rule context="/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/echoscopie/bevindingen/*[not(self::algehele_beoordeling)][not(self::neuraalbuis_van_de_wervelkolom)][not(self::hersenen_neuraalbuisdefect)][not(self::hersenen_overige)][not(self::aangezicht)][not(self::nek__huid)][not(self::hart)][not(self::longen)][not(self::diafragma)][not(self::buikwand)][not(self::maagdarm)][not(self::nierenblaas)][not(self::extremiteiten)][not(self::skelet)][not(self::sonomarkers)][not(self::biometrie)][not(self::vruchtwatercompartiment)][not(self::navelstreng)][not(self::placenta_afwijkingen)][not(self::wervelkolom_neuraalbuisdefect)][not(self::wervelkolom_overige)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/echoscopie/bevindingen/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -8572,6 +8767,7 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Wervelkolom overige": Ongeldige attributen aangetroffen [/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/echoscopie/bevindingen/wervelkolom_overige; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/echoscopie/bevindingen/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/echoscopie/bevindingen/sonomarkers"><!-- == Check occurrences of children of /verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/echoscopie/bevindingen/sonomarkers: == -->
          <assert test="(count(echodense_focus_in_het_hart) ge 0) and (count(echodense_focus_in_het_hart) le 1)">Fout aantal voorkomens van "Echodense focus in het hart": <value-of select="count(echodense_focus_in_het_hart)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/echoscopie/bevindingen/sonomarkers/echodense_focus_in_het_hart]</assert>
@@ -8582,10 +8778,11 @@ See http://www.gnu.org/licenses/
          <assert test="(count(pyelectasie) ge 0) and (count(pyelectasie) le 1)">Fout aantal voorkomens van "Pyelectasie": <value-of select="count(pyelectasie)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/echoscopie/bevindingen/sonomarkers/pyelectasie]</assert>
          <assert test="(count(kort_femur) ge 0) and (count(kort_femur) le 1)">Fout aantal voorkomens van "Kort femur": <value-of select="count(kort_femur)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/echoscopie/bevindingen/sonomarkers/kort_femur]</assert>
          <assert test="(count(_2_navelstrengvaten) ge 0) and (count(_2_navelstrengvaten) le 1)">Fout aantal voorkomens van "2 navelstrengvaten": <value-of select="count(_2_navelstrengvaten)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/echoscopie/bevindingen/sonomarkers/_2_navelstrengvaten]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/echoscopie/bevindingen/sonomarkers/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/echoscopie/bevindingen/sonomarkers: == -->
-      <rule context="/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/echoscopie/bevindingen/sonomarkers/*[not(self::echodense_focus_in_het_hart)][not(self::plexus_choroideus_cysten)][not(self::verdikte_nekplooi__nekhuid)][not(self::echodense_darmen)][not(self::milde_ventriculomegalie)][not(self::pyelectasie)][not(self::kort_femur)][not(self::_2_navelstrengvaten)]">
+      <rule context="/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/echoscopie/bevindingen/sonomarkers/*[not(self::echodense_focus_in_het_hart)][not(self::plexus_choroideus_cysten)][not(self::verdikte_nekplooi__nekhuid)][not(self::echodense_darmen)][not(self::milde_ventriculomegalie)][not(self::pyelectasie)][not(self::kort_femur)][not(self::_2_navelstrengvaten)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/echoscopie/bevindingen/sonomarkers/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -8733,6 +8930,7 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "2 navelstrengvaten": Ongeldige attributen aangetroffen [/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/echoscopie/bevindingen/sonomarkers/_2_navelstrengvaten; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/echoscopie/bevindingen/sonomarkers/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/combinatietest"><!-- == Check occurrences of children of /verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/combinatietest: == -->
          <assert test="(count(datum_kansbepaling) ge 0) and (count(datum_kansbepaling) le 1)">Fout aantal voorkomens van "Datum kansbepaling": <value-of select="count(datum_kansbepaling)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/combinatietest/datum_kansbepaling]</assert>
@@ -8745,10 +8943,11 @@ See http://www.gnu.org/licenses/
          <assert test="(count(combinatietest_kans_op_trisomie_18) ge 0) and (count(combinatietest_kans_op_trisomie_18) le 1)">Fout aantal voorkomens van "Combinatietest kans op trisomie 18": <value-of select="count(combinatietest_kans_op_trisomie_18)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/combinatietest/combinatietest_kans_op_trisomie_18]</assert>
          <assert test="(count(combinatietest_kans_op_trisomie_13) ge 0) and (count(combinatietest_kans_op_trisomie_13) le 1)">Fout aantal voorkomens van "Combinatietest kans op trisomie 13": <value-of select="count(combinatietest_kans_op_trisomie_13)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/combinatietest/combinatietest_kans_op_trisomie_13]</assert>
          <assert test="count(gehanteerde_gegevens) eq 1">Fout aantal voorkomens van "Gehanteerde gegevens": <value-of select="count(gehanteerde_gegevens)"/> (verwacht: 1) [/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/combinatietest/gehanteerde_gegevens]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/combinatietest/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/combinatietest: == -->
-      <rule context="/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/combinatietest/*[not(self::datum_kansbepaling)][not(self::methode_kansbepaling)][not(self::software_kansbepaling)][not(self::a_priori_kans_op_trisomie_21_down)][not(self::a_priori_kans_op_trisomie_18_edwards)][not(self::a_priori_kans_op_trisomie_13_patau)][not(self::combinatietest_kans_op_trisomie_21)][not(self::combinatietest_kans_op_trisomie_18)][not(self::combinatietest_kans_op_trisomie_13)][not(self::gehanteerde_gegevens)]">
+      <rule context="/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/combinatietest/*[not(self::datum_kansbepaling)][not(self::methode_kansbepaling)][not(self::software_kansbepaling)][not(self::a_priori_kans_op_trisomie_21_down)][not(self::a_priori_kans_op_trisomie_18_edwards)][not(self::a_priori_kans_op_trisomie_13_patau)][not(self::combinatietest_kans_op_trisomie_21)][not(self::combinatietest_kans_op_trisomie_18)][not(self::combinatietest_kans_op_trisomie_13)][not(self::gehanteerde_gegevens)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/combinatietest/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -8862,14 +9061,16 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @xsi:*))">Foutieve informatie voor "Gehanteerde gegevens": Ongeldige attributen aangetroffen [/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/combinatietest/gehanteerde_gegevens; allowed=(@conceptId, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/combinatietest/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/combinatietest/software_kansbepaling"><!-- == Check occurrences of children of /verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/combinatietest/software_kansbepaling: == -->
          <assert test="count(naam_kansbepaling_softwareapplicatie) eq 1">Fout aantal voorkomens van "Naam kansbepaling softwareapplicatie": <value-of select="count(naam_kansbepaling_softwareapplicatie)"/> (verwacht: 1) [/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/combinatietest/software_kansbepaling/naam_kansbepaling_softwareapplicatie]</assert>
          <assert test="count(versie_softwareapplicatie) eq 1">Fout aantal voorkomens van "Versie softwareapplicatie": <value-of select="count(versie_softwareapplicatie)"/> (verwacht: 1) [/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/combinatietest/software_kansbepaling/versie_softwareapplicatie]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/combinatietest/software_kansbepaling/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/combinatietest/software_kansbepaling: == -->
-      <rule context="/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/combinatietest/software_kansbepaling/*[not(self::naam_kansbepaling_softwareapplicatie)][not(self::versie_softwareapplicatie)]">
+      <rule context="/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/combinatietest/software_kansbepaling/*[not(self::naam_kansbepaling_softwareapplicatie)][not(self::versie_softwareapplicatie)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/combinatietest/software_kansbepaling/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -8903,6 +9104,7 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Versie softwareapplicatie": Ongeldige attributen aangetroffen [/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/combinatietest/software_kansbepaling/versie_softwareapplicatie; allowed=(@conceptId, @value, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/combinatietest/software_kansbepaling/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/combinatietest/gehanteerde_gegevens"><!-- == Check occurrences of children of /verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/combinatietest/gehanteerde_gegevens: == -->
          <assert test="count(zwangerschapsduur) eq 1">Fout aantal voorkomens van "Zwangerschapsduur": <value-of select="count(zwangerschapsduur)"/> (verwacht: 1) [/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/combinatietest/gehanteerde_gegevens/zwangerschapsduur]</assert>
@@ -8926,10 +9128,11 @@ See http://www.gnu.org/licenses/
          <assert test="(count(nt_in_mo_m) ge 0) and (count(nt_in_mo_m) le 1)">Fout aantal voorkomens van "NT in MoM": <value-of select="count(nt_in_mo_m)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/combinatietest/gehanteerde_gegevens/nt_in_mo_m]</assert>
          <assert test="(count(crl) ge 0) and (count(crl) le 1)">Fout aantal voorkomens van "CRL": <value-of select="count(crl)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/combinatietest/gehanteerde_gegevens/crl]</assert>
          <assert test="(count(bpd) ge 0) and (count(bpd) le 1)">Fout aantal voorkomens van "BPD": <value-of select="count(bpd)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/combinatietest/gehanteerde_gegevens/bpd]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/combinatietest/gehanteerde_gegevens/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/combinatietest/gehanteerde_gegevens: == -->
-      <rule context="/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/combinatietest/gehanteerde_gegevens/*[not(self::zwangerschapsduur)][not(self::actuele_aantal_foetus)][not(self::chorioniciteit)][not(self::lengte)][not(self::gewicht_gemeten)][not(self::diabetes_mellitusq)][not(self::ivf__icsi_graviditeitq)][not(self::trisomie_in_de_anamneseq)][not(self::gehanteerde_rookgewoonteq)][not(self::etniciteit)][not(self::gehanteerde_pappa_concentratie_in_m_iul)][not(self::gehanteerde_pappa_in_mo_m)][not(self::gehanteerde_vrij_h_cg_concentratie_in_ngml)][not(self::gehanteerde_vrij_h_cg_in_mo_m)][not(self::gehanteerde_corrected_pappa)][not(self::gehanteerde_corrected_vrij_h_cg)][not(self::gehanteerde_datum_ntmeting)][not(self::nt_in_mm)][not(self::nt_in_mo_m)][not(self::crl)][not(self::bpd)]">
+      <rule context="/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/combinatietest/gehanteerde_gegevens/*[not(self::zwangerschapsduur)][not(self::actuele_aantal_foetus)][not(self::chorioniciteit)][not(self::lengte)][not(self::gewicht_gemeten)][not(self::diabetes_mellitusq)][not(self::ivf__icsi_graviditeitq)][not(self::trisomie_in_de_anamneseq)][not(self::gehanteerde_rookgewoonteq)][not(self::etniciteit)][not(self::gehanteerde_pappa_concentratie_in_m_iul)][not(self::gehanteerde_pappa_in_mo_m)][not(self::gehanteerde_vrij_h_cg_concentratie_in_ngml)][not(self::gehanteerde_vrij_h_cg_in_mo_m)][not(self::gehanteerde_corrected_pappa)][not(self::gehanteerde_corrected_vrij_h_cg)][not(self::gehanteerde_datum_ntmeting)][not(self::nt_in_mm)][not(self::nt_in_mo_m)][not(self::crl)][not(self::bpd)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/combinatietest/gehanteerde_gegevens/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -9217,14 +9420,16 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @unit, @xsi:*))">Foutieve informatie voor "BPD": Ongeldige attributen aangetroffen [/verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/combinatietest/gehanteerde_gegevens/bpd; allowed=(@conceptId, @value, @unit, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/medisch_onderzoek/foetusspecifieke_onderzoeksgegevens/combinatietest/gehanteerde_gegevens/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens"><!-- == Check occurrences of children of /verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens: == -->
          <assert test="(count(urine_bloed_en_aanvullende_onderzoeken) ge 0) and (count(urine_bloed_en_aanvullende_onderzoeken) le 1)">Fout aantal voorkomens van "Urine-, bloed- en aanvullende onderzoeken": <value-of select="count(urine_bloed_en_aanvullende_onderzoeken)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken]</assert>
          <assert test="count(vaginaal_toucher) ge 0">Fout aantal voorkomens van "Vaginaal toucher": <value-of select="count(vaginaal_toucher)"/> (verwacht: 0 of meer) [/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/vaginaal_toucher]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens: == -->
-      <rule context="/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/*[not(self::urine_bloed_en_aanvullende_onderzoeken)][not(self::vaginaal_toucher)]">
+      <rule context="/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/*[not(self::urine_bloed_en_aanvullende_onderzoeken)][not(self::vaginaal_toucher)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -9244,6 +9449,7 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @xsi:*))">Foutieve informatie voor "Vaginaal toucher": Ongeldige attributen aangetroffen [/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/vaginaal_toucher; allowed=(@conceptId, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken"><!-- == Check occurrences of children of /verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken: == -->
          <assert test="(count(psie) ge 0) and (count(psie) le 1)">Fout aantal voorkomens van "PSIE": <value-of select="count(psie)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/psie]</assert>
@@ -9258,10 +9464,11 @@ See http://www.gnu.org/licenses/
          <assert test="(count(urine) ge 0) and (count(urine) le 1)">Fout aantal voorkomens van "Urine": <value-of select="count(urine)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/urine]</assert>
          <assert test="(count(eiwitcreatinineratio) ge 0) and (count(eiwitcreatinineratio) le 1)">Fout aantal voorkomens van "Eiwit/creatinineratio": <value-of select="count(eiwitcreatinineratio)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/eiwitcreatinineratio]</assert>
          <assert test="(count(vaginakweek) ge 0) and (count(vaginakweek) le 1)">Fout aantal voorkomens van "Vaginakweek": <value-of select="count(vaginakweek)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/vaginakweek]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken: == -->
-      <rule context="/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/*[not(self::psie)][not(self::niptq)][not(self::nipt__uitslag)][not(self::hb)][not(self::anemie)][not(self::diabetes_diagnostiek)][not(self::schildklier_diagnostiek)][not(self::torch)][not(self::rhesus_d_factor_foetus)][not(self::urine)][not(self::eiwitcreatinineratio)][not(self::vaginakweek)]">
+      <rule context="/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/*[not(self::psie)][not(self::niptq)][not(self::nipt__uitslag)][not(self::hb)][not(self::anemie)][not(self::diabetes_diagnostiek)][not(self::schildklier_diagnostiek)][not(self::torch)][not(self::rhesus_d_factor_foetus)][not(self::urine)][not(self::eiwitcreatinineratio)][not(self::vaginakweek)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -9387,6 +9594,7 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Vaginakweek": Ongeldige attributen aangetroffen [/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/vaginakweek; allowed=(@conceptId, @value, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/psie"><!-- == Check occurrences of children of /verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/psie: == -->
          <assert test="(count(bloedgroep_vrouw) ge 0) and (count(bloedgroep_vrouw) le 1)">Fout aantal voorkomens van "Bloedgroep vrouw": <value-of select="count(bloedgroep_vrouw)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/psie/bloedgroep_vrouw]</assert>
@@ -9397,10 +9605,11 @@ See http://www.gnu.org/licenses/
          <assert test="(count(lues) ge 0) and (count(lues) le 1)">Fout aantal voorkomens van "Lues": <value-of select="count(lues)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/psie/lues]</assert>
          <assert test="(count(irregulaire_antistoffenq) ge 0) and (count(irregulaire_antistoffenq) le 1)">Fout aantal voorkomens van "Irregulaire antistoffen?": <value-of select="count(irregulaire_antistoffenq)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/psie/irregulaire_antistoffenq]</assert>
          <assert test="count(welke_irregulaire_antistoffen_vrouw_aanwezig) ge 0">Fout aantal voorkomens van "Welke irregulaire antistoffen vrouw aanwezig.": <value-of select="count(welke_irregulaire_antistoffen_vrouw_aanwezig)"/> (verwacht: 0 of meer) [/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/psie/welke_irregulaire_antistoffen_vrouw_aanwezig]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/psie/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/psie: == -->
-      <rule context="/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/psie/*[not(self::bloedgroep_vrouw)][not(self::rhesus_d_factor_vrouw)][not(self::rhesus_c_factor)][not(self::hbs_ag)][not(self::hiv)][not(self::lues)][not(self::irregulaire_antistoffenq)][not(self::welke_irregulaire_antistoffen_vrouw_aanwezig)]">
+      <rule context="/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/psie/*[not(self::bloedgroep_vrouw)][not(self::rhesus_d_factor_vrouw)][not(self::rhesus_c_factor)][not(self::hbs_ag)][not(self::hiv)][not(self::lues)][not(self::irregulaire_antistoffenq)][not(self::welke_irregulaire_antistoffen_vrouw_aanwezig)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/psie/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -9536,14 +9745,16 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Welke irregulaire antistoffen vrouw aanwezig.": Ongeldige attributen aangetroffen [/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/psie/welke_irregulaire_antistoffen_vrouw_aanwezig; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/psie/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/nipt__uitslag"><!-- == Check occurrences of children of /verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/nipt__uitslag: == -->
          <assert test="(count(nipt__uitslag) ge 0) and (count(nipt__uitslag) le 1)">Fout aantal voorkomens van "NIPT - uitslag": <value-of select="count(nipt__uitslag)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/nipt__uitslag/nipt__uitslag]</assert>
          <assert test="(count(nipt__geslacht) ge 0) and (count(nipt__geslacht) le 1)">Fout aantal voorkomens van "NIPT - geslacht": <value-of select="count(nipt__geslacht)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/nipt__uitslag/nipt__geslacht]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/nipt__uitslag/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/nipt__uitslag: == -->
-      <rule context="/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/nipt__uitslag/*[not(self::nipt__uitslag)][not(self::nipt__geslacht)]">
+      <rule context="/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/nipt__uitslag/*[not(self::nipt__uitslag)][not(self::nipt__geslacht)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/nipt__uitslag/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -9583,6 +9794,7 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "NIPT - geslacht": Ongeldige attributen aangetroffen [/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/nipt__uitslag/nipt__geslacht; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/nipt__uitslag/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/anemie"><!-- == Check occurrences of children of /verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/anemie: == -->
          <assert test="(count(mcv) ge 0) and (count(mcv) le 1)">Fout aantal voorkomens van "MCV": <value-of select="count(mcv)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/anemie/mcv]</assert>
@@ -9591,10 +9803,11 @@ See http://www.gnu.org/licenses/
          <assert test="(count(actiefb12) ge 0) and (count(actiefb12) le 1)">Fout aantal voorkomens van "Actief-B12": <value-of select="count(actiefb12)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/anemie/actiefb12]</assert>
          <assert test="(count(ferritine) ge 0) and (count(ferritine) le 1)">Fout aantal voorkomens van "Ferritine": <value-of select="count(ferritine)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/anemie/ferritine]</assert>
          <assert test="(count(foliumzuur) ge 0) and (count(foliumzuur) le 1)">Fout aantal voorkomens van "Foliumzuur": <value-of select="count(foliumzuur)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/anemie/foliumzuur]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/anemie/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/anemie: == -->
-      <rule context="/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/anemie/*[not(self::mcv)][not(self::hbpathie)][not(self::vit_b12)][not(self::actiefb12)][not(self::ferritine)][not(self::foliumzuur)]">
+      <rule context="/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/anemie/*[not(self::mcv)][not(self::hbpathie)][not(self::vit_b12)][not(self::actiefb12)][not(self::ferritine)][not(self::foliumzuur)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/anemie/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -9676,14 +9889,16 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @unit, @xsi:*))">Foutieve informatie voor "Foliumzuur": Ongeldige attributen aangetroffen [/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/anemie/foliumzuur; allowed=(@conceptId, @value, @unit, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/anemie/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/diabetes_diagnostiek"><!-- == Check occurrences of children of /verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/diabetes_diagnostiek: == -->
          <assert test="count(glucose) ge 0">Fout aantal voorkomens van "Glucose": <value-of select="count(glucose)"/> (verwacht: 0 of meer) [/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/diabetes_diagnostiek/glucose]</assert>
          <assert test="(count(toelichting) ge 0) and (count(toelichting) le 1)">Fout aantal voorkomens van "Toelichting": <value-of select="count(toelichting)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/diabetes_diagnostiek/toelichting]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/diabetes_diagnostiek/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/diabetes_diagnostiek: == -->
-      <rule context="/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/diabetes_diagnostiek/*[not(self::glucose)][not(self::toelichting)]">
+      <rule context="/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/diabetes_diagnostiek/*[not(self::glucose)][not(self::toelichting)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/diabetes_diagnostiek/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -9705,14 +9920,16 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Toelichting": Ongeldige attributen aangetroffen [/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/diabetes_diagnostiek/toelichting; allowed=(@conceptId, @value, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/diabetes_diagnostiek/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/diabetes_diagnostiek/glucose"><!-- == Check occurrences of children of /verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/diabetes_diagnostiek/glucose: == -->
          <assert test="(count(tijd) ge 0) and (count(tijd) le 1)">Fout aantal voorkomens van "Tijd": <value-of select="count(tijd)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/diabetes_diagnostiek/glucose/tijd]</assert>
          <assert test="(count(glucose) ge 0) and (count(glucose) le 1)">Fout aantal voorkomens van "Glucose": <value-of select="count(glucose)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/diabetes_diagnostiek/glucose/glucose]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/diabetes_diagnostiek/glucose/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/diabetes_diagnostiek/glucose: == -->
-      <rule context="/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/diabetes_diagnostiek/glucose/*[not(self::tijd)][not(self::glucose)]">
+      <rule context="/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/diabetes_diagnostiek/glucose/*[not(self::tijd)][not(self::glucose)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/diabetes_diagnostiek/glucose/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -9739,15 +9956,17 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @unit, @xsi:*))">Foutieve informatie voor "Glucose": Ongeldige attributen aangetroffen [/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/diabetes_diagnostiek/glucose/glucose; allowed=(@conceptId, @value, @unit, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/diabetes_diagnostiek/glucose/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/schildklier_diagnostiek"><!-- == Check occurrences of children of /verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/schildklier_diagnostiek: == -->
          <assert test="(count(tsh_receptor_antistoffen) ge 0) and (count(tsh_receptor_antistoffen) le 1)">Fout aantal voorkomens van "TSH receptor antistoffen": <value-of select="count(tsh_receptor_antistoffen)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/schildklier_diagnostiek/tsh_receptor_antistoffen]</assert>
          <assert test="(count(vrij_t4) ge 0) and (count(vrij_t4) le 1)">Fout aantal voorkomens van "Vrij T4": <value-of select="count(vrij_t4)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/schildklier_diagnostiek/vrij_t4]</assert>
          <assert test="(count(tsh) ge 0) and (count(tsh) le 1)">Fout aantal voorkomens van "TSH": <value-of select="count(tsh)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/schildklier_diagnostiek/tsh]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/schildklier_diagnostiek/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/schildklier_diagnostiek: == -->
-      <rule context="/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/schildklier_diagnostiek/*[not(self::tsh_receptor_antistoffen)][not(self::vrij_t4)][not(self::tsh)]">
+      <rule context="/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/schildklier_diagnostiek/*[not(self::tsh_receptor_antistoffen)][not(self::vrij_t4)][not(self::tsh)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/schildklier_diagnostiek/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -9790,6 +10009,7 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @unit, @xsi:*))">Foutieve informatie voor "TSH": Ongeldige attributen aangetroffen [/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/schildklier_diagnostiek/tsh; allowed=(@conceptId, @value, @unit, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/schildklier_diagnostiek/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/torch"><!-- == Check occurrences of children of /verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/torch: == -->
          <assert test="(count(toxoplasmose_ig_g) ge 0) and (count(toxoplasmose_ig_g) le 1)">Fout aantal voorkomens van "Toxoplasmose IgG": <value-of select="count(toxoplasmose_ig_g)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/torch/toxoplasmose_ig_g]</assert>
@@ -9802,10 +10022,11 @@ See http://www.gnu.org/licenses/
          <assert test="(count(herpes_ig_m) ge 0) and (count(herpes_ig_m) le 1)">Fout aantal voorkomens van "Herpes IgM": <value-of select="count(herpes_ig_m)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/torch/herpes_ig_m]</assert>
          <assert test="(count(parvovirus_ig_g) ge 0) and (count(parvovirus_ig_g) le 1)">Fout aantal voorkomens van "Parvovirus IgG": <value-of select="count(parvovirus_ig_g)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/torch/parvovirus_ig_g]</assert>
          <assert test="(count(parvovirus_ig_m) ge 0) and (count(parvovirus_ig_m) le 1)">Fout aantal voorkomens van "Parvovirus IgM": <value-of select="count(parvovirus_ig_m)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/torch/parvovirus_ig_m]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/torch/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/torch: == -->
-      <rule context="/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/torch/*[not(self::toxoplasmose_ig_g)][not(self::toxoplasmose_ig_m)][not(self::rubella_ig_g)][not(self::rubella_ig_m)][not(self::cmv_ig_g)][not(self::cmv_ig_m)][not(self::herpes_ig_g)][not(self::herpes_ig_m)][not(self::parvovirus_ig_g)][not(self::parvovirus_ig_m)]">
+      <rule context="/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/torch/*[not(self::toxoplasmose_ig_g)][not(self::toxoplasmose_ig_m)][not(self::rubella_ig_g)][not(self::rubella_ig_m)][not(self::cmv_ig_g)][not(self::cmv_ig_m)][not(self::herpes_ig_g)][not(self::herpes_ig_m)][not(self::parvovirus_ig_g)][not(self::parvovirus_ig_m)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/torch/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -9933,14 +10154,16 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Parvovirus IgM": Ongeldige attributen aangetroffen [/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/torch/parvovirus_ig_m; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/torch/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/urine"><!-- == Check occurrences of children of /verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/urine: == -->
          <assert test="(count(sedimentstick) ge 0) and (count(sedimentstick) le 1)">Fout aantal voorkomens van "Sediment/stick": <value-of select="count(sedimentstick)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/urine/sedimentstick]</assert>
          <assert test="(count(urinekweek) ge 0) and (count(urinekweek) le 1)">Fout aantal voorkomens van "Urinekweek": <value-of select="count(urinekweek)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/urine/urinekweek]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/urine/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/urine: == -->
-      <rule context="/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/urine/*[not(self::sedimentstick)][not(self::urinekweek)]">
+      <rule context="/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/urine/*[not(self::sedimentstick)][not(self::urinekweek)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/urine/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -9962,16 +10185,18 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Urinekweek": Ongeldige attributen aangetroffen [/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/urine/urinekweek; allowed=(@conceptId, @value, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/urine/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/urine/sedimentstick"><!-- == Check occurrences of children of /verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/urine/sedimentstick: == -->
          <assert test="(count(ketonen) ge 0) and (count(ketonen) le 1)">Fout aantal voorkomens van "Ketonen": <value-of select="count(ketonen)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/urine/sedimentstick/ketonen]</assert>
          <assert test="(count(nitriet) ge 0) and (count(nitriet) le 1)">Fout aantal voorkomens van "Nitriet": <value-of select="count(nitriet)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/urine/sedimentstick/nitriet]</assert>
          <assert test="(count(aantal_g_proteine_24_uurs) ge 0) and (count(aantal_g_proteine_24_uurs) le 1)">Fout aantal voorkomens van "Aantal g proteïne, 24 uurs": <value-of select="count(aantal_g_proteine_24_uurs)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/urine/sedimentstick/aantal_g_proteine_24_uurs]</assert>
          <assert test="(count(proteine_in_urine) ge 0) and (count(proteine_in_urine) le 1)">Fout aantal voorkomens van "Proteïne in urine": <value-of select="count(proteine_in_urine)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/urine/sedimentstick/proteine_in_urine]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/urine/sedimentstick/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/urine/sedimentstick: == -->
-      <rule context="/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/urine/sedimentstick/*[not(self::ketonen)][not(self::nitriet)][not(self::aantal_g_proteine_24_uurs)][not(self::proteine_in_urine)]">
+      <rule context="/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/urine/sedimentstick/*[not(self::ketonen)][not(self::nitriet)][not(self::aantal_g_proteine_24_uurs)][not(self::proteine_in_urine)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/urine/sedimentstick/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -10032,6 +10257,7 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @unit, @xsi:*))">Foutieve informatie voor "Proteïne in urine": Ongeldige attributen aangetroffen [/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/urine/sedimentstick/proteine_in_urine; allowed=(@conceptId, @value, @unit, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/urine/sedimentstick/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/vaginaal_toucher"><!-- == Check occurrences of children of /verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/vaginaal_toucher: == -->
          <assert test="count(portio) eq 1">Fout aantal voorkomens van "Portio": <value-of select="count(portio)"/> (verwacht: 1) [/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/vaginaal_toucher/portio]</assert>
@@ -10041,10 +10267,11 @@ See http://www.gnu.org/licenses/
          <assert test="count(indaling_hodge) eq 1">Fout aantal voorkomens van "Indaling Hodge": <value-of select="count(indaling_hodge)"/> (verwacht: 1) [/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/vaginaal_toucher/indaling_hodge]</assert>
          <assert test="(count(aard_van_het_voorliggend_deel) ge 0) and (count(aard_van_het_voorliggend_deel) le 1)">Fout aantal voorkomens van "Aard van het voorliggend deel": <value-of select="count(aard_van_het_voorliggend_deel)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/vaginaal_toucher/aard_van_het_voorliggend_deel]</assert>
          <assert test="(count(stand) ge 0) and (count(stand) le 1)">Fout aantal voorkomens van "Stand": <value-of select="count(stand)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/vaginaal_toucher/stand]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/vaginaal_toucher/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/vaginaal_toucher: == -->
-      <rule context="/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/vaginaal_toucher/*[not(self::portio)][not(self::positie_portio)][not(self::ontsluiting)][not(self::vliezen)][not(self::indaling_hodge)][not(self::aard_van_het_voorliggend_deel)][not(self::stand)]">
+      <rule context="/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/vaginaal_toucher/*[not(self::portio)][not(self::positie_portio)][not(self::ontsluiting)][not(self::vliezen)][not(self::indaling_hodge)][not(self::aard_van_het_voorliggend_deel)][not(self::stand)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/vaginaal_toucher/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -10174,6 +10401,7 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Stand": Ongeldige attributen aangetroffen [/verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/vaginaal_toucher/stand; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/medisch_onderzoek/maternale_onderzoeksgegevens/vaginaal_toucher/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/postnatale_fase"><!-- == Check occurrences of children of /verloskundig_dossier/postnatale_fase: == -->
          <assert test="count(diagnose_postpartum) ge 0">Fout aantal voorkomens van "Diagnose postpartum": <value-of select="count(diagnose_postpartum)"/> (verwacht: 0 of meer) [/verloskundig_dossier/postnatale_fase/diagnose_postpartum]</assert>
@@ -10183,10 +10411,11 @@ See http://www.gnu.org/licenses/
          <assert test="count(opmerkingen_kraambed) ge 0">Fout aantal voorkomens van "Opmerkingen kraambed": <value-of select="count(opmerkingen_kraambed)"/> (verwacht: 0 of meer) [/verloskundig_dossier/postnatale_fase/opmerkingen_kraambed]</assert>
          <assert test="count(kindspecifieke_gegevens) ge 0">Fout aantal voorkomens van "Kindspecifieke gegevens": <value-of select="count(kindspecifieke_gegevens)"/> (verwacht: 0 of meer) [/verloskundig_dossier/postnatale_fase/kindspecifieke_gegevens]</assert>
          <assert test="count(nacontrole) ge 0">Fout aantal voorkomens van "Nacontrole": <value-of select="count(nacontrole)"/> (verwacht: 0 of meer) [/verloskundig_dossier/postnatale_fase/nacontrole]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/postnatale_fase/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/postnatale_fase: == -->
-      <rule context="/verloskundig_dossier/postnatale_fase/*[not(self::diagnose_postpartum)][not(self::kraamzorgq)][not(self::kraamzorginstelling)][not(self::bloedverlies_kraambed)][not(self::opmerkingen_kraambed)][not(self::kindspecifieke_gegevens)][not(self::nacontrole)]">
+      <rule context="/verloskundig_dossier/postnatale_fase/*[not(self::diagnose_postpartum)][not(self::kraamzorgq)][not(self::kraamzorginstelling)][not(self::bloedverlies_kraambed)][not(self::opmerkingen_kraambed)][not(self::kindspecifieke_gegevens)][not(self::nacontrole)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/postnatale_fase/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -10256,16 +10485,18 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @xsi:*))">Foutieve informatie voor "Nacontrole": Ongeldige attributen aangetroffen [/verloskundig_dossier/postnatale_fase/nacontrole; allowed=(@conceptId, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/postnatale_fase/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/postnatale_fase/diagnose_postpartum"><!-- == Check occurrences of children of /verloskundig_dossier/postnatale_fase/diagnose_postpartum: == -->
          <assert test="(count(datum) ge 0) and (count(datum) le 1)">Fout aantal voorkomens van "Datum": <value-of select="count(datum)"/> (verwacht: 0..1) [/verloskundig_dossier/postnatale_fase/diagnose_postpartum/datum]</assert>
          <assert test="(count(pathologie_vrouwq) ge 0) and (count(pathologie_vrouwq) le 1)">Fout aantal voorkomens van "Pathologie vrouw?": <value-of select="count(pathologie_vrouwq)"/> (verwacht: 0..1) [/verloskundig_dossier/postnatale_fase/diagnose_postpartum/pathologie_vrouwq]</assert>
          <assert test="count(pathologie_vrouw) ge 0">Fout aantal voorkomens van "Pathologie vrouw": <value-of select="count(pathologie_vrouw)"/> (verwacht: 0 of meer) [/verloskundig_dossier/postnatale_fase/diagnose_postpartum/pathologie_vrouw]</assert>
          <assert test="count(interventie) ge 0">Fout aantal voorkomens van "Interventie": <value-of select="count(interventie)"/> (verwacht: 0 of meer) [/verloskundig_dossier/postnatale_fase/diagnose_postpartum/interventie]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/postnatale_fase/diagnose_postpartum/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/postnatale_fase/diagnose_postpartum: == -->
-      <rule context="/verloskundig_dossier/postnatale_fase/diagnose_postpartum/*[not(self::datum)][not(self::pathologie_vrouwq)][not(self::pathologie_vrouw)][not(self::interventie)]">
+      <rule context="/verloskundig_dossier/postnatale_fase/diagnose_postpartum/*[not(self::datum)][not(self::pathologie_vrouwq)][not(self::pathologie_vrouw)][not(self::interventie)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/postnatale_fase/diagnose_postpartum/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -10326,14 +10557,16 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Interventie": Ongeldige attributen aangetroffen [/verloskundig_dossier/postnatale_fase/diagnose_postpartum/interventie; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/postnatale_fase/diagnose_postpartum/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/postnatale_fase/kraamzorginstelling"><!-- == Check occurrences of children of /verloskundig_dossier/postnatale_fase/kraamzorginstelling: == -->
          <assert test="(count(naam_zorginstelling) ge 0) and (count(naam_zorginstelling) le 1)">Fout aantal voorkomens van "Naam zorginstelling": <value-of select="count(naam_zorginstelling)"/> (verwacht: 0..1) [/verloskundig_dossier/postnatale_fase/kraamzorginstelling/naam_zorginstelling]</assert>
          <assert test="(count(telefoonnummer_instelling) ge 0) and (count(telefoonnummer_instelling) le 1)">Fout aantal voorkomens van "Telefoonnummer instelling": <value-of select="count(telefoonnummer_instelling)"/> (verwacht: 0..1) [/verloskundig_dossier/postnatale_fase/kraamzorginstelling/telefoonnummer_instelling]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/postnatale_fase/kraamzorginstelling/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/postnatale_fase/kraamzorginstelling: == -->
-      <rule context="/verloskundig_dossier/postnatale_fase/kraamzorginstelling/*[not(self::naam_zorginstelling)][not(self::telefoonnummer_instelling)]">
+      <rule context="/verloskundig_dossier/postnatale_fase/kraamzorginstelling/*[not(self::naam_zorginstelling)][not(self::telefoonnummer_instelling)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/postnatale_fase/kraamzorginstelling/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -10357,15 +10590,17 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Telefoonnummer instelling": Ongeldige attributen aangetroffen [/verloskundig_dossier/postnatale_fase/kraamzorginstelling/telefoonnummer_instelling; allowed=(@conceptId, @value, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/postnatale_fase/kraamzorginstelling/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/postnatale_fase/kindspecifieke_gegevens"><!-- == Check occurrences of children of /verloskundig_dossier/postnatale_fase/kindspecifieke_gegevens: == -->
          <assert test="count(voeding_kind_groep) ge 0">Fout aantal voorkomens van "Voeding kind (groep)": <value-of select="count(voeding_kind_groep)"/> (verwacht: 0 of meer) [/verloskundig_dossier/postnatale_fase/kindspecifieke_gegevens/voeding_kind_groep]</assert>
          <assert test="(count(betrokkenheid_andere_zorgverlenerq) ge 0) and (count(betrokkenheid_andere_zorgverlenerq) le 1)">Fout aantal voorkomens van "Betrokkenheid andere zorgverlener?": <value-of select="count(betrokkenheid_andere_zorgverlenerq)"/> (verwacht: 0..1) [/verloskundig_dossier/postnatale_fase/kindspecifieke_gegevens/betrokkenheid_andere_zorgverlenerq]</assert>
          <assert test="count(betrokkenheid_andere_zorgverlener) ge 0">Fout aantal voorkomens van "Betrokkenheid andere zorgverlener": <value-of select="count(betrokkenheid_andere_zorgverlener)"/> (verwacht: 0 of meer) [/verloskundig_dossier/postnatale_fase/kindspecifieke_gegevens/betrokkenheid_andere_zorgverlener]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/postnatale_fase/kindspecifieke_gegevens/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/postnatale_fase/kindspecifieke_gegevens: == -->
-      <rule context="/verloskundig_dossier/postnatale_fase/kindspecifieke_gegevens/*[not(self::voeding_kind_groep)][not(self::betrokkenheid_andere_zorgverlenerq)][not(self::betrokkenheid_andere_zorgverlener)]">
+      <rule context="/verloskundig_dossier/postnatale_fase/kindspecifieke_gegevens/*[not(self::voeding_kind_groep)][not(self::betrokkenheid_andere_zorgverlenerq)][not(self::betrokkenheid_andere_zorgverlener)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/postnatale_fase/kindspecifieke_gegevens/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -10396,14 +10631,16 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @xsi:*))">Foutieve informatie voor "Betrokkenheid andere zorgverlener": Ongeldige attributen aangetroffen [/verloskundig_dossier/postnatale_fase/kindspecifieke_gegevens/betrokkenheid_andere_zorgverlener; allowed=(@conceptId, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/postnatale_fase/kindspecifieke_gegevens/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/postnatale_fase/kindspecifieke_gegevens/voeding_kind_groep"><!-- == Check occurrences of children of /verloskundig_dossier/postnatale_fase/kindspecifieke_gegevens/voeding_kind_groep: == -->
          <assert test="(count(voeding_kind_datum) ge 0) and (count(voeding_kind_datum) le 1)">Fout aantal voorkomens van "Voeding kind (datum)": <value-of select="count(voeding_kind_datum)"/> (verwacht: 0..1) [/verloskundig_dossier/postnatale_fase/kindspecifieke_gegevens/voeding_kind_groep/voeding_kind_datum]</assert>
          <assert test="count(substantie_voeding_kind) ge 1">Fout aantal voorkomens van "Substantie voeding kind": <value-of select="count(substantie_voeding_kind)"/> (verwacht: 1 of meer) [/verloskundig_dossier/postnatale_fase/kindspecifieke_gegevens/voeding_kind_groep/substantie_voeding_kind]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/postnatale_fase/kindspecifieke_gegevens/voeding_kind_groep/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/postnatale_fase/kindspecifieke_gegevens/voeding_kind_groep: == -->
-      <rule context="/verloskundig_dossier/postnatale_fase/kindspecifieke_gegevens/voeding_kind_groep/*[not(self::voeding_kind_datum)][not(self::substantie_voeding_kind)]">
+      <rule context="/verloskundig_dossier/postnatale_fase/kindspecifieke_gegevens/voeding_kind_groep/*[not(self::voeding_kind_datum)][not(self::substantie_voeding_kind)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/postnatale_fase/kindspecifieke_gegevens/voeding_kind_groep/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -10435,16 +10672,18 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Substantie voeding kind": Ongeldige attributen aangetroffen [/verloskundig_dossier/postnatale_fase/kindspecifieke_gegevens/voeding_kind_groep/substantie_voeding_kind; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/postnatale_fase/kindspecifieke_gegevens/voeding_kind_groep/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/postnatale_fase/kindspecifieke_gegevens/betrokkenheid_andere_zorgverlener"><!-- == Check occurrences of children of /verloskundig_dossier/postnatale_fase/kindspecifieke_gegevens/betrokkenheid_andere_zorgverlener: == -->
          <assert test="(count(type_betrokkenheid) ge 0) and (count(type_betrokkenheid) le 1)">Fout aantal voorkomens van "Type betrokkenheid": <value-of select="count(type_betrokkenheid)"/> (verwacht: 0..1) [/verloskundig_dossier/postnatale_fase/kindspecifieke_gegevens/betrokkenheid_andere_zorgverlener/type_betrokkenheid]</assert>
          <assert test="(count(datum_betrokkenheid) ge 0) and (count(datum_betrokkenheid) le 1)">Fout aantal voorkomens van "Datum betrokkenheid": <value-of select="count(datum_betrokkenheid)"/> (verwacht: 0..1) [/verloskundig_dossier/postnatale_fase/kindspecifieke_gegevens/betrokkenheid_andere_zorgverlener/datum_betrokkenheid]</assert>
          <assert test="(count(zorgverlenertype) ge 0) and (count(zorgverlenertype) le 1)">Fout aantal voorkomens van "Zorgverlenertype": <value-of select="count(zorgverlenertype)"/> (verwacht: 0..1) [/verloskundig_dossier/postnatale_fase/kindspecifieke_gegevens/betrokkenheid_andere_zorgverlener/zorgverlenertype]</assert>
          <assert test="(count(reden_betrokkenheid) ge 0) and (count(reden_betrokkenheid) le 1)">Fout aantal voorkomens van "Reden betrokkenheid": <value-of select="count(reden_betrokkenheid)"/> (verwacht: 0..1) [/verloskundig_dossier/postnatale_fase/kindspecifieke_gegevens/betrokkenheid_andere_zorgverlener/reden_betrokkenheid]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/postnatale_fase/kindspecifieke_gegevens/betrokkenheid_andere_zorgverlener/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/postnatale_fase/kindspecifieke_gegevens/betrokkenheid_andere_zorgverlener: == -->
-      <rule context="/verloskundig_dossier/postnatale_fase/kindspecifieke_gegevens/betrokkenheid_andere_zorgverlener/*[not(self::type_betrokkenheid)][not(self::datum_betrokkenheid)][not(self::zorgverlenertype)][not(self::reden_betrokkenheid)]">
+      <rule context="/verloskundig_dossier/postnatale_fase/kindspecifieke_gegevens/betrokkenheid_andere_zorgverlener/*[not(self::type_betrokkenheid)][not(self::datum_betrokkenheid)][not(self::zorgverlenertype)][not(self::reden_betrokkenheid)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/postnatale_fase/kindspecifieke_gegevens/betrokkenheid_andere_zorgverlener/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -10512,6 +10751,7 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Reden betrokkenheid": Ongeldige attributen aangetroffen [/verloskundig_dossier/postnatale_fase/kindspecifieke_gegevens/betrokkenheid_andere_zorgverlener/reden_betrokkenheid; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/postnatale_fase/kindspecifieke_gegevens/betrokkenheid_andere_zorgverlener/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/postnatale_fase/nacontrole"><!-- == Check occurrences of children of /verloskundig_dossier/postnatale_fase/nacontrole: == -->
          <assert test="count(datum_controle) eq 1">Fout aantal voorkomens van "Datum controle": <value-of select="count(datum_controle)"/> (verwacht: 1) [/verloskundig_dossier/postnatale_fase/nacontrole/datum_controle]</assert>
@@ -10529,10 +10769,11 @@ See http://www.gnu.org/licenses/
          <assert test="(count(bloeddruk) ge 0) and (count(bloeddruk) le 1)">Fout aantal voorkomens van "Bloeddruk": <value-of select="count(bloeddruk)"/> (verwacht: 0..1) [/verloskundig_dossier/postnatale_fase/nacontrole/bloeddruk]</assert>
          <assert test="(count(hb) ge 0) and (count(hb) le 1)">Fout aantal voorkomens van "Hb": <value-of select="count(hb)"/> (verwacht: 0..1) [/verloskundig_dossier/postnatale_fase/nacontrole/hb]</assert>
          <assert test="count(bijzonderheden) ge 0">Fout aantal voorkomens van "Bijzonderheden": <value-of select="count(bijzonderheden)"/> (verwacht: 0 of meer) [/verloskundig_dossier/postnatale_fase/nacontrole/bijzonderheden]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/postnatale_fase/nacontrole/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/postnatale_fase/nacontrole: == -->
-      <rule context="/verloskundig_dossier/postnatale_fase/nacontrole/*[not(self::datum_controle)][not(self::naam_zorgverlener)][not(self::zorgverlenertype)][not(self::kindspecifieke_kraamperiodegegevens)][not(self::anticonceptie_besprokenq)][not(self::type_anticonceptie)][not(self::vloeien)][not(self::menstruatieq)][not(self::incontinentieq)][not(self::incontinentie)][not(self::episiotomieruptuur)][not(self::sectiowond)][not(self::bloeddruk)][not(self::hb)][not(self::bijzonderheden)]">
+      <rule context="/verloskundig_dossier/postnatale_fase/nacontrole/*[not(self::datum_controle)][not(self::naam_zorgverlener)][not(self::zorgverlenertype)][not(self::kindspecifieke_kraamperiodegegevens)][not(self::anticonceptie_besprokenq)][not(self::type_anticonceptie)][not(self::vloeien)][not(self::menstruatieq)][not(self::incontinentieq)][not(self::incontinentie)][not(self::episiotomieruptuur)][not(self::sectiowond)][not(self::bloeddruk)][not(self::hb)][not(self::bijzonderheden)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/postnatale_fase/nacontrole/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -10737,14 +10978,16 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Bijzonderheden": Ongeldige attributen aangetroffen [/verloskundig_dossier/postnatale_fase/nacontrole/bijzonderheden; allowed=(@conceptId, @value, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/postnatale_fase/nacontrole/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/postnatale_fase/nacontrole/kindspecifieke_kraamperiodegegevens"><!-- == Check occurrences of children of /verloskundig_dossier/postnatale_fase/nacontrole/kindspecifieke_kraamperiodegegevens: == -->
          <assert test="count(substantie_voeding_kind) ge 0">Fout aantal voorkomens van "Substantie voeding kind": <value-of select="count(substantie_voeding_kind)"/> (verwacht: 0 of meer) [/verloskundig_dossier/postnatale_fase/nacontrole/kindspecifieke_kraamperiodegegevens/substantie_voeding_kind]</assert>
          <assert test="(count(bijzonderheden_kind_kraamperiode) ge 0) and (count(bijzonderheden_kind_kraamperiode) le 1)">Fout aantal voorkomens van "Bijzonderheden kind kraamperiode": <value-of select="count(bijzonderheden_kind_kraamperiode)"/> (verwacht: 0..1) [/verloskundig_dossier/postnatale_fase/nacontrole/kindspecifieke_kraamperiodegegevens/bijzonderheden_kind_kraamperiode]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/postnatale_fase/nacontrole/kindspecifieke_kraamperiodegegevens/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/postnatale_fase/nacontrole/kindspecifieke_kraamperiodegegevens: == -->
-      <rule context="/verloskundig_dossier/postnatale_fase/nacontrole/kindspecifieke_kraamperiodegegevens/*[not(self::substantie_voeding_kind)][not(self::bijzonderheden_kind_kraamperiode)]">
+      <rule context="/verloskundig_dossier/postnatale_fase/nacontrole/kindspecifieke_kraamperiodegegevens/*[not(self::substantie_voeding_kind)][not(self::bijzonderheden_kind_kraamperiode)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/postnatale_fase/nacontrole/kindspecifieke_kraamperiodegegevens/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -10776,14 +11019,16 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Bijzonderheden kind kraamperiode": Ongeldige attributen aangetroffen [/verloskundig_dossier/postnatale_fase/nacontrole/kindspecifieke_kraamperiodegegevens/bijzonderheden_kind_kraamperiode; allowed=(@conceptId, @value, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/postnatale_fase/nacontrole/kindspecifieke_kraamperiodegegevens/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier/postnatale_fase/nacontrole/bloeddruk"><!-- == Check occurrences of children of /verloskundig_dossier/postnatale_fase/nacontrole/bloeddruk: == -->
          <assert test="count(bloeddruk_systolisch) eq 1">Fout aantal voorkomens van "Bloeddruk systolisch": <value-of select="count(bloeddruk_systolisch)"/> (verwacht: 1) [/verloskundig_dossier/postnatale_fase/nacontrole/bloeddruk/bloeddruk_systolisch]</assert>
          <assert test="count(bloeddruk_diastolisch) eq 1">Fout aantal voorkomens van "Bloeddruk diastolisch": <value-of select="count(bloeddruk_diastolisch)"/> (verwacht: 1) [/verloskundig_dossier/postnatale_fase/nacontrole/bloeddruk/bloeddruk_diastolisch]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/verloskundig_dossier/postnatale_fase/nacontrole/bloeddruk/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/postnatale_fase/nacontrole/bloeddruk: == -->
-      <rule context="/verloskundig_dossier/postnatale_fase/nacontrole/bloeddruk/*[not(self::bloeddruk_systolisch)][not(self::bloeddruk_diastolisch)]">
+      <rule context="/verloskundig_dossier/postnatale_fase/nacontrole/bloeddruk/*[not(self::bloeddruk_systolisch)][not(self::bloeddruk_diastolisch)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/postnatale_fase/nacontrole/bloeddruk/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -10815,4 +11060,5 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @unit, @xsi:*))">Foutieve informatie voor "Bloeddruk diastolisch": Ongeldige attributen aangetroffen [/verloskundig_dossier/postnatale_fase/nacontrole/bloeddruk/bloeddruk_diastolisch; allowed=(@conceptId, @value, @unit, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /verloskundig_dossier/postnatale_fase/nacontrole/bloeddruk/adaextension == -->
 </schema>

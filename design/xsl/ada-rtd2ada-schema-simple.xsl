@@ -39,6 +39,20 @@
   <xsl:variable name="use-required" as="xs:string" select="'required'"/>
   <xsl:variable name="use-optional" as="xs:string" select="'optional'"/>
   <xsl:variable name="required-in-ada-full" as="xs:string" select="if ($do-ada-lite-version) then $use-optional else $use-required"/>
+  
+  <xsl:variable name="adaextension-definition" as="element(xs:element)">
+    <xs:element minOccurs="0" name="adaextension">
+      <xs:annotation>
+        <xs:documentation>Optionele extensie informatie</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+        <xs:sequence>
+          <xs:any maxOccurs="unbounded" minOccurs="0" processContents="skip"/>
+        </xs:sequence>
+        <xs:anyAttribute namespace="##any" processContents="skip"/>
+      </xs:complexType>
+    </xs:element>
+  </xsl:variable>
 
   <!-- ================================================================== -->
   <!-- MAIN TEMPLATES: -->
@@ -101,6 +115,7 @@
       <xs:complexType>
         <xs:sequence>
           <xsl:apply-templates select="concept"/>
+          <xsl:sequence select="$adaextension-definition"/>
         </xs:sequence>
         <!-- Define the standard root element attributes: -->
         <xs:attribute name="transactionRef" type="{$simple-type-name-for-identifier}" use="{$use-required}" fixed="{@transactionId}"/>
@@ -115,6 +130,8 @@
   <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 
   <xsl:template match="concept">
+    
+    <xsl:variable name="is-group" as="xs:boolean" select="string(@type) eq 'group'"/>
 
     <xs:element name="{@shortName}" minOccurs="{@minimumMultiplicity}"
       maxOccurs="{if (@maximumMultiplicity eq '*') then 'unbounded' else @maximumMultiplicity}">
@@ -123,6 +140,9 @@
         <xsl:where-populated>
           <xs:sequence>
             <xsl:apply-templates select="concept"/>
+            <xsl:if test="$is-group">
+              <xsl:sequence select="$adaextension-definition"/>
+            </xsl:if>
           </xs:sequence>
         </xsl:where-populated>
         <xs:attribute name="conceptId" type="{$simple-type-name-for-identifier}" use="{$required-in-ada-full}" fixed="{@id}"/>

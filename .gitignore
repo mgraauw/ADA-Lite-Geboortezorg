@@ -1,0 +1,4 @@
+# .gitignore file for ADA-Lite-Geboortezorg
+
+# The tmp/ subdirectory can be used for temporary results and reports (e.g. the generator output of design/generator/generate-specs.xpl):
+tmp/

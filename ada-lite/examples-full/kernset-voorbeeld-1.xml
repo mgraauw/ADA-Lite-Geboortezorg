@@ -18,6 +18,9 @@
                                         code="1"
                                         codeSystem="2.16.840.1.113883.2.4.4.13.26"
                                         displayName="1e lijn (VIL A)"/>
+      <adaextension some-attribute="some-value">
+         <example>Voorbeeld van een adaextension element toevoeging</example>
+      </adaextension>
    </zorgverlening>
    <zorgverlenerzorginstelling conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.1">
       <zorginstelling conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10020">

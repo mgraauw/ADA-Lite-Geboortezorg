@@ -56,7 +56,7 @@
         <xsl:comment> == Source: {$source-info} == </xsl:comment>
       </xsl:if>
       <xsl:comment> == Generator(s): {string-join(($generator-info, bc-alg:dref-alg-path(fn:static-base-uri())), '; ')} == </xsl:comment>
-      
+
       <!-- Define the xsi namespace in the Schematron: -->
       <ns uri="http://www.w3.org/2001/XMLSchema-instance" prefix="xsi"/>
 
@@ -161,19 +161,21 @@
     <xsl:for-each select="$element-definitions">
       <xsl:variable name="xpath-to-element" as="xs:string" select="local:xpath-concat($xpath-to-parent, @name)"/>
       <xsl:variable name="attribute-definitions" as="element(xs:attribute)*" select="xs:complexType/xs:attribute"/>
-      <xsl:choose>
-        <xsl:when test="exists($attribute-definitions)">
-          <xsl:call-template name="handle-attribute-definitions">
-            <xsl:with-param name="attribute-definitions" select="$attribute-definitions"/>
-            <xsl:with-param name="has-any-attribute-set" select="exists(xs:complexType/xs:anyAttribute)"/>
-            <xsl:with-param name="xpath-to-parent" select="$xpath-to-element"/>
-            <xsl:with-param name="parent-display-name" select="local:get-display-name(.)"/>
-          </xsl:call-template>
-        </xsl:when>
-        <xsl:otherwise>
-          <xsl:comment> == No attributes for {$xpath-to-element} == </xsl:comment>
-        </xsl:otherwise>
-      </xsl:choose>
+      <xsl:variable name="any-attributes-definition" as="element(xs:anyAttribute)?" select="xs:complexType/xs:anyAttribute"/>
+      <xsl:if test="exists($attribute-definitions)">
+        <xsl:call-template name="handle-attribute-definitions">
+          <xsl:with-param name="attribute-definitions" select="$attribute-definitions"/>
+          <xsl:with-param name="has-any-attribute-set" select="exists(xs:complexType/xs:anyAttribute)"/>
+          <xsl:with-param name="xpath-to-parent" select="$xpath-to-element"/>
+          <xsl:with-param name="parent-display-name" select="local:get-display-name(.)"/>
+        </xsl:call-template>
+      </xsl:if>
+      <xsl:if test="exists($any-attributes-definition)">
+        <xsl:comment> == Any attributes allowed on {$xpath-to-element} == </xsl:comment>
+      </xsl:if>
+      <xsl:if test="empty($attribute-definitions) and empty($any-attributes-definition)">
+        <xsl:comment> == No attributes for {$xpath-to-element} == </xsl:comment>
+      </xsl:if>
     </xsl:for-each>
 
     <!-- Dive deeper, do all the child element definitions:  -->

@@ -47,10 +47,11 @@ See http://www.gnu.org/licenses/
          <assert test="count(vrouw) eq 1">Fout aantal voorkomens van "Vrouw": <value-of select="count(vrouw)"/> (verwacht: 1) [/prio1_huidig/vrouw]</assert>
          <assert test="(count(zwangerschap) ge 0) and (count(zwangerschap) le 1)">Fout aantal voorkomens van "Zwangerschap": <value-of select="count(zwangerschap)"/> (verwacht: 0..1) [/prio1_huidig/zwangerschap]</assert>
          <assert test="count(medisch_onderzoek) ge 0">Fout aantal voorkomens van "Medisch onderzoek": <value-of select="count(medisch_onderzoek)"/> (verwacht: 0 of meer) [/prio1_huidig/medisch_onderzoek]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/prio1_huidig/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /prio1_huidig: == -->
-      <rule context="/prio1_huidig/*[not(self::zorgverlenerzorginstelling)][not(self::vrouw)][not(self::zwangerschap)][not(self::medisch_onderzoek)]">
+      <rule context="/prio1_huidig/*[not(self::zorgverlenerzorginstelling)][not(self::vrouw)][not(self::zwangerschap)][not(self::medisch_onderzoek)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/prio1_huidig/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -86,14 +87,16 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @xsi:*))">Foutieve informatie voor "Medisch onderzoek": Ongeldige attributen aangetroffen [/prio1_huidig/medisch_onderzoek; allowed=(@conceptId, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /prio1_huidig/adaextension == -->
    <pattern>
       <rule context="/prio1_huidig/zorgverlenerzorginstelling"><!-- == Check occurrences of children of /prio1_huidig/zorgverlenerzorginstelling: == -->
          <assert test="(count(zorgverlener) ge 0) and (count(zorgverlener) le 1)">Fout aantal voorkomens van "Zorgverlener": <value-of select="count(zorgverlener)"/> (verwacht: 0..1) [/prio1_huidig/zorgverlenerzorginstelling/zorgverlener]</assert>
          <assert test="count(zorginstelling) eq 1">Fout aantal voorkomens van "Zorginstelling": <value-of select="count(zorginstelling)"/> (verwacht: 1) [/prio1_huidig/zorgverlenerzorginstelling/zorginstelling]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/prio1_huidig/zorgverlenerzorginstelling/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /prio1_huidig/zorgverlenerzorginstelling: == -->
-      <rule context="/prio1_huidig/zorgverlenerzorginstelling/*[not(self::zorgverlener)][not(self::zorginstelling)]">
+      <rule context="/prio1_huidig/zorgverlenerzorginstelling/*[not(self::zorgverlener)][not(self::zorginstelling)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/prio1_huidig/zorgverlenerzorginstelling/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -113,13 +116,15 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @xsi:*))">Foutieve informatie voor "Zorginstelling": Ongeldige attributen aangetroffen [/prio1_huidig/zorgverlenerzorginstelling/zorginstelling; allowed=(@conceptId, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /prio1_huidig/zorgverlenerzorginstelling/adaextension == -->
    <pattern>
       <rule context="/prio1_huidig/zorgverlenerzorginstelling/zorgverlener"><!-- == Check occurrences of children of /prio1_huidig/zorgverlenerzorginstelling/zorgverlener: == -->
          <assert test="(count(naam_zorgverlener) ge 0) and (count(naam_zorgverlener) le 1)">Fout aantal voorkomens van "Naam zorgverlener": <value-of select="count(naam_zorgverlener)"/> (verwacht: 0..1) [/prio1_huidig/zorgverlenerzorginstelling/zorgverlener/naam_zorgverlener]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/prio1_huidig/zorgverlenerzorginstelling/zorgverlener/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /prio1_huidig/zorgverlenerzorginstelling/zorgverlener: == -->
-      <rule context="/prio1_huidig/zorgverlenerzorginstelling/zorgverlener/*[not(self::naam_zorgverlener)]">
+      <rule context="/prio1_huidig/zorgverlenerzorginstelling/zorgverlener/*[not(self::naam_zorgverlener)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/prio1_huidig/zorgverlenerzorginstelling/zorgverlener/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -133,13 +138,15 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Naam zorgverlener": Ongeldige attributen aangetroffen [/prio1_huidig/zorgverlenerzorginstelling/zorgverlener/naam_zorgverlener; allowed=(@conceptId, @value, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /prio1_huidig/zorgverlenerzorginstelling/zorgverlener/adaextension == -->
    <pattern>
       <rule context="/prio1_huidig/zorgverlenerzorginstelling/zorginstelling"><!-- == Check occurrences of children of /prio1_huidig/zorgverlenerzorginstelling/zorginstelling: == -->
          <assert test="count(naam_zorginstelling) eq 1">Fout aantal voorkomens van "Naam zorginstelling": <value-of select="count(naam_zorginstelling)"/> (verwacht: 1) [/prio1_huidig/zorgverlenerzorginstelling/zorginstelling/naam_zorginstelling]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/prio1_huidig/zorgverlenerzorginstelling/zorginstelling/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /prio1_huidig/zorgverlenerzorginstelling/zorginstelling: == -->
-      <rule context="/prio1_huidig/zorgverlenerzorginstelling/zorginstelling/*[not(self::naam_zorginstelling)]">
+      <rule context="/prio1_huidig/zorgverlenerzorginstelling/zorginstelling/*[not(self::naam_zorginstelling)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/prio1_huidig/zorgverlenerzorginstelling/zorginstelling/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -153,6 +160,7 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Naam zorginstelling": Ongeldige attributen aangetroffen [/prio1_huidig/zorgverlenerzorginstelling/zorginstelling/naam_zorginstelling; allowed=(@conceptId, @value, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /prio1_huidig/zorgverlenerzorginstelling/zorginstelling/adaextension == -->
    <pattern>
       <rule context="/prio1_huidig/vrouw"><!-- == Check occurrences of children of /prio1_huidig/vrouw: == -->
          <assert test="count(burgerservicenummer) eq 1">Fout aantal voorkomens van "Burgerservicenummer": <value-of select="count(burgerservicenummer)"/> (verwacht: 1) [/prio1_huidig/vrouw/burgerservicenummer]</assert>
@@ -161,10 +169,11 @@ See http://www.gnu.org/licenses/
          <assert test="(count(bloedgroep_vrouw) ge 0) and (count(bloedgroep_vrouw) le 1)">Fout aantal voorkomens van "Bloedgroep vrouw": <value-of select="count(bloedgroep_vrouw)"/> (verwacht: 0..1) [/prio1_huidig/vrouw/bloedgroep_vrouw]</assert>
          <assert test="(count(rhesus_d_factor_vrouw) ge 0) and (count(rhesus_d_factor_vrouw) le 1)">Fout aantal voorkomens van "Rhesus D Factor vrouw": <value-of select="count(rhesus_d_factor_vrouw)"/> (verwacht: 0..1) [/prio1_huidig/vrouw/rhesus_d_factor_vrouw]</assert>
          <assert test="(count(rhesus_c_factor) ge 0) and (count(rhesus_c_factor) le 1)">Fout aantal voorkomens van "Rhesus c Factor": <value-of select="count(rhesus_c_factor)"/> (verwacht: 0..1) [/prio1_huidig/vrouw/rhesus_c_factor]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/prio1_huidig/vrouw/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /prio1_huidig/vrouw: == -->
-      <rule context="/prio1_huidig/vrouw/*[not(self::burgerservicenummer)][not(self::naamgegevens)][not(self::anamnese)][not(self::bloedgroep_vrouw)][not(self::rhesus_d_factor_vrouw)][not(self::rhesus_c_factor)]">
+      <rule context="/prio1_huidig/vrouw/*[not(self::burgerservicenummer)][not(self::naamgegevens)][not(self::anamnese)][not(self::bloedgroep_vrouw)][not(self::rhesus_d_factor_vrouw)][not(self::rhesus_c_factor)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/prio1_huidig/vrouw/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -250,14 +259,16 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Rhesus c Factor": Ongeldige attributen aangetroffen [/prio1_huidig/vrouw/rhesus_c_factor; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /prio1_huidig/vrouw/adaextension == -->
    <pattern>
       <rule context="/prio1_huidig/vrouw/naamgegevens"><!-- == Check occurrences of children of /prio1_huidig/vrouw/naamgegevens: == -->
          <assert test="(count(roepnaam) ge 0) and (count(roepnaam) le 1)">Fout aantal voorkomens van "Roepnaam": <value-of select="count(roepnaam)"/> (verwacht: 0..1) [/prio1_huidig/vrouw/naamgegevens/roepnaam]</assert>
          <assert test="(count(achternaam) ge 0) and (count(achternaam) le 1)">Fout aantal voorkomens van "Achternaam": <value-of select="count(achternaam)"/> (verwacht: 0..1) [/prio1_huidig/vrouw/naamgegevens/achternaam]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/prio1_huidig/vrouw/naamgegevens/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /prio1_huidig/vrouw/naamgegevens: == -->
-      <rule context="/prio1_huidig/vrouw/naamgegevens/*[not(self::roepnaam)][not(self::achternaam)]">
+      <rule context="/prio1_huidig/vrouw/naamgegevens/*[not(self::roepnaam)][not(self::achternaam)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/prio1_huidig/vrouw/naamgegevens/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -279,15 +290,17 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @xsi:*))">Foutieve informatie voor "Achternaam": Ongeldige attributen aangetroffen [/prio1_huidig/vrouw/naamgegevens/achternaam; allowed=(@conceptId, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /prio1_huidig/vrouw/naamgegevens/adaextension == -->
    <pattern>
       <rule context="/prio1_huidig/vrouw/naamgegevens/achternaam"><!-- == Check occurrences of children of /prio1_huidig/vrouw/naamgegevens/achternaam: == -->
          <assert test="(count(soort_naam) ge 0) and (count(soort_naam) le 1)">Fout aantal voorkomens van "Soort naam": <value-of select="count(soort_naam)"/> (verwacht: 0..1) [/prio1_huidig/vrouw/naamgegevens/achternaam/soort_naam]</assert>
          <assert test="(count(voorvoegsel) ge 0) and (count(voorvoegsel) le 1)">Fout aantal voorkomens van "Voorvoegsel": <value-of select="count(voorvoegsel)"/> (verwacht: 0..1) [/prio1_huidig/vrouw/naamgegevens/achternaam/voorvoegsel]</assert>
          <assert test="(count(achternaam) ge 0) and (count(achternaam) le 1)">Fout aantal voorkomens van "Achternaam": <value-of select="count(achternaam)"/> (verwacht: 0..1) [/prio1_huidig/vrouw/naamgegevens/achternaam/achternaam]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/prio1_huidig/vrouw/naamgegevens/achternaam/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /prio1_huidig/vrouw/naamgegevens/achternaam: == -->
-      <rule context="/prio1_huidig/vrouw/naamgegevens/achternaam/*[not(self::soort_naam)][not(self::voorvoegsel)][not(self::achternaam)]">
+      <rule context="/prio1_huidig/vrouw/naamgegevens/achternaam/*[not(self::soort_naam)][not(self::voorvoegsel)][not(self::achternaam)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/prio1_huidig/vrouw/naamgegevens/achternaam/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -329,14 +342,27 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Achternaam": Ongeldige attributen aangetroffen [/prio1_huidig/vrouw/naamgegevens/achternaam/achternaam; allowed=(@conceptId, @value, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /prio1_huidig/vrouw/naamgegevens/achternaam/adaextension == -->
+   <pattern>
+      <rule context="/prio1_huidig/vrouw/anamnese"><!-- == Check occurrences of children of /prio1_huidig/vrouw/anamnese: == -->
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/prio1_huidig/vrouw/anamnese/adaextension]</assert>
+      </rule>
+   </pattern>
+   <pattern><!-- == Check for any unexpected elements in /prio1_huidig/vrouw/anamnese: == -->
+      <rule context="/prio1_huidig/vrouw/anamnese/*[not(self::adaextension)]">
+         <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/prio1_huidig/vrouw/anamnese/<value-of select="name(.)"/>]</report>
+      </rule>
+   </pattern>
+   <!-- == Any attributes allowed on /prio1_huidig/vrouw/anamnese/adaextension == -->
    <pattern>
       <rule context="/prio1_huidig/zwangerschap"><!-- == Check occurrences of children of /prio1_huidig/zwangerschap: == -->
          <assert test="(count(graviditeit) ge 0) and (count(graviditeit) le 1)">Fout aantal voorkomens van "Graviditeit": <value-of select="count(graviditeit)"/> (verwacht: 0..1) [/prio1_huidig/zwangerschap/graviditeit]</assert>
          <assert test="(count(pariteit) ge 0) and (count(pariteit) le 1)">Fout aantal voorkomens van "Pariteit": <value-of select="count(pariteit)"/> (verwacht: 0..1) [/prio1_huidig/zwangerschap/pariteit]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/prio1_huidig/zwangerschap/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /prio1_huidig/zwangerschap: == -->
-      <rule context="/prio1_huidig/zwangerschap/*[not(self::graviditeit)][not(self::pariteit)]">
+      <rule context="/prio1_huidig/zwangerschap/*[not(self::graviditeit)][not(self::pariteit)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/prio1_huidig/zwangerschap/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -366,13 +392,15 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Pariteit": Ongeldige attributen aangetroffen [/prio1_huidig/zwangerschap/pariteit; allowed=(@conceptId, @value, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /prio1_huidig/zwangerschap/adaextension == -->
    <pattern>
       <rule context="/prio1_huidig/medisch_onderzoek"><!-- == Check occurrences of children of /prio1_huidig/medisch_onderzoek: == -->
          <assert test="(count(maternale_onderzoeksgegevens) ge 0) and (count(maternale_onderzoeksgegevens) le 1)">Fout aantal voorkomens van "Maternale onderzoeksgegevens": <value-of select="count(maternale_onderzoeksgegevens)"/> (verwacht: 0..1) [/prio1_huidig/medisch_onderzoek/maternale_onderzoeksgegevens]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/prio1_huidig/medisch_onderzoek/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /prio1_huidig/medisch_onderzoek: == -->
-      <rule context="/prio1_huidig/medisch_onderzoek/*[not(self::maternale_onderzoeksgegevens)]">
+      <rule context="/prio1_huidig/medisch_onderzoek/*[not(self::maternale_onderzoeksgegevens)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/prio1_huidig/medisch_onderzoek/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -384,13 +412,15 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @xsi:*))">Foutieve informatie voor "Maternale onderzoeksgegevens": Ongeldige attributen aangetroffen [/prio1_huidig/medisch_onderzoek/maternale_onderzoeksgegevens; allowed=(@conceptId, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /prio1_huidig/medisch_onderzoek/adaextension == -->
    <pattern>
       <rule context="/prio1_huidig/medisch_onderzoek/maternale_onderzoeksgegevens"><!-- == Check occurrences of children of /prio1_huidig/medisch_onderzoek/maternale_onderzoeksgegevens: == -->
          <assert test="(count(urine_bloed_en_aanvullende_onderzoeken) ge 0) and (count(urine_bloed_en_aanvullende_onderzoeken) le 1)">Fout aantal voorkomens van "Urine-, bloed- en aanvullende onderzoeken": <value-of select="count(urine_bloed_en_aanvullende_onderzoeken)"/> (verwacht: 0..1) [/prio1_huidig/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/prio1_huidig/medisch_onderzoek/maternale_onderzoeksgegevens/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /prio1_huidig/medisch_onderzoek/maternale_onderzoeksgegevens: == -->
-      <rule context="/prio1_huidig/medisch_onderzoek/maternale_onderzoeksgegevens/*[not(self::urine_bloed_en_aanvullende_onderzoeken)]">
+      <rule context="/prio1_huidig/medisch_onderzoek/maternale_onderzoeksgegevens/*[not(self::urine_bloed_en_aanvullende_onderzoeken)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/prio1_huidig/medisch_onderzoek/maternale_onderzoeksgegevens/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -402,13 +432,15 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @xsi:*))">Foutieve informatie voor "Urine-, bloed- en aanvullende onderzoeken": Ongeldige attributen aangetroffen [/prio1_huidig/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken; allowed=(@conceptId, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /prio1_huidig/medisch_onderzoek/maternale_onderzoeksgegevens/adaextension == -->
    <pattern>
       <rule context="/prio1_huidig/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken"><!-- == Check occurrences of children of /prio1_huidig/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken: == -->
          <assert test="(count(hb) ge 0) and (count(hb) le 1)">Fout aantal voorkomens van "Hb": <value-of select="count(hb)"/> (verwacht: 0..1) [/prio1_huidig/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/hb]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/prio1_huidig/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /prio1_huidig/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken: == -->
-      <rule context="/prio1_huidig/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/*[not(self::hb)]">
+      <rule context="/prio1_huidig/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/*[not(self::hb)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/prio1_huidig/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -426,4 +458,5 @@ See http://www.gnu.org/licenses/
          <assert test="empty(@* except (@conceptId, @value, @unit, @xsi:*))">Foutieve informatie voor "Hb": Ongeldige attributen aangetroffen [/prio1_huidig/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/hb; allowed=(@conceptId, @value, @unit, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Any attributes allowed on /prio1_huidig/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/adaextension == -->
 </schema>

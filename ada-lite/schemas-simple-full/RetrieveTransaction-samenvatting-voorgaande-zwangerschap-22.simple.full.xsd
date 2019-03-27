@@ -211,6 +211,17 @@ See http://www.gnu.org/licenses/
                                     </xs:attribute>
                                  </xs:complexType>
                               </xs:element>
+                              <xs:element minOccurs="0" name="adaextension">
+                                 <xs:annotation>
+                                    <xs:documentation>Optionele extensie informatie</xs:documentation>
+                                 </xs:annotation>
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                       <xs:any maxOccurs="unbounded" minOccurs="0" processContents="skip"/>
+                                    </xs:sequence>
+                                    <xs:anyAttribute namespace="##any" processContents="skip"/>
+                                 </xs:complexType>
+                              </xs:element>
                            </xs:sequence>
                            <xs:attribute name="conceptId"
                                          type="t-id"
@@ -395,6 +406,17 @@ See http://www.gnu.org/licenses/
                                              <xs:attribute name="value" use="required" type="xs:string"/>
                                           </xs:complexType>
                                        </xs:element>
+                                       <xs:element minOccurs="0" name="adaextension">
+                                          <xs:annotation>
+                                             <xs:documentation>Optionele extensie informatie</xs:documentation>
+                                          </xs:annotation>
+                                          <xs:complexType>
+                                             <xs:sequence>
+                                                <xs:any maxOccurs="unbounded" minOccurs="0" processContents="skip"/>
+                                             </xs:sequence>
+                                             <xs:anyAttribute namespace="##any" processContents="skip"/>
+                                          </xs:complexType>
+                                       </xs:element>
                                     </xs:sequence>
                                     <xs:attribute name="conceptId"
                                                   type="t-id"
@@ -402,11 +424,33 @@ See http://www.gnu.org/licenses/
                                                   fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10027"/>
                                  </xs:complexType>
                               </xs:element>
+                              <xs:element minOccurs="0" name="adaextension">
+                                 <xs:annotation>
+                                    <xs:documentation>Optionele extensie informatie</xs:documentation>
+                                 </xs:annotation>
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                       <xs:any maxOccurs="unbounded" minOccurs="0" processContents="skip"/>
+                                    </xs:sequence>
+                                    <xs:anyAttribute namespace="##any" processContents="skip"/>
+                                 </xs:complexType>
+                              </xs:element>
                            </xs:sequence>
                            <xs:attribute name="conceptId"
                                          type="t-id"
                                          use="required"
                                          fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10020"/>
+                        </xs:complexType>
+                     </xs:element>
+                     <xs:element minOccurs="0" name="adaextension">
+                        <xs:annotation>
+                           <xs:documentation>Optionele extensie informatie</xs:documentation>
+                        </xs:annotation>
+                        <xs:complexType>
+                           <xs:sequence>
+                              <xs:any maxOccurs="unbounded" minOccurs="0" processContents="skip"/>
+                           </xs:sequence>
+                           <xs:anyAttribute namespace="##any" processContents="skip"/>
                         </xs:complexType>
                      </xs:element>
                   </xs:sequence>
@@ -573,11 +617,33 @@ See http://www.gnu.org/licenses/
                                              <xs:attribute name="value" use="required" type="xs:string"/>
                                           </xs:complexType>
                                        </xs:element>
+                                       <xs:element minOccurs="0" name="adaextension">
+                                          <xs:annotation>
+                                             <xs:documentation>Optionele extensie informatie</xs:documentation>
+                                          </xs:annotation>
+                                          <xs:complexType>
+                                             <xs:sequence>
+                                                <xs:any maxOccurs="unbounded" minOccurs="0" processContents="skip"/>
+                                             </xs:sequence>
+                                             <xs:anyAttribute namespace="##any" processContents="skip"/>
+                                          </xs:complexType>
+                                       </xs:element>
                                     </xs:sequence>
                                     <xs:attribute name="conceptId"
                                                   type="t-id"
                                                   use="required"
                                                   fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82361"/>
+                                 </xs:complexType>
+                              </xs:element>
+                              <xs:element minOccurs="0" name="adaextension">
+                                 <xs:annotation>
+                                    <xs:documentation>Optionele extensie informatie</xs:documentation>
+                                 </xs:annotation>
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                       <xs:any maxOccurs="unbounded" minOccurs="0" processContents="skip"/>
+                                    </xs:sequence>
+                                    <xs:anyAttribute namespace="##any" processContents="skip"/>
                                  </xs:complexType>
                               </xs:element>
                            </xs:sequence>
@@ -598,6 +664,17 @@ See http://www.gnu.org/licenses/
                                          use="required"
                                          fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10040"/>
                            <xs:attribute name="value" use="required" type="xs:string"/>
+                        </xs:complexType>
+                     </xs:element>
+                     <xs:element minOccurs="0" name="adaextension">
+                        <xs:annotation>
+                           <xs:documentation>Optionele extensie informatie</xs:documentation>
+                        </xs:annotation>
+                        <xs:complexType>
+                           <xs:sequence>
+                              <xs:any maxOccurs="unbounded" minOccurs="0" processContents="skip"/>
+                           </xs:sequence>
+                           <xs:anyAttribute namespace="##any" processContents="skip"/>
                         </xs:complexType>
                      </xs:element>
                   </xs:sequence>
@@ -1072,6 +1149,17 @@ See http://www.gnu.org/licenses/
                                     <xs:attribute name="value" use="required" type="xs:boolean"/>
                                  </xs:complexType>
                               </xs:element>
+                              <xs:element minOccurs="0" name="adaextension">
+                                 <xs:annotation>
+                                    <xs:documentation>Optionele extensie informatie</xs:documentation>
+                                 </xs:annotation>
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                       <xs:any maxOccurs="unbounded" minOccurs="0" processContents="skip"/>
+                                    </xs:sequence>
+                                    <xs:anyAttribute namespace="##any" processContents="skip"/>
+                                 </xs:complexType>
+                              </xs:element>
                            </xs:sequence>
                            <xs:attribute name="conceptId"
                                          type="t-id"
@@ -1216,6 +1304,17 @@ See http://www.gnu.org/licenses/
                            <xs:attribute name="value" use="required" type="xs:string"/>
                         </xs:complexType>
                      </xs:element>
+                     <xs:element minOccurs="0" name="adaextension">
+                        <xs:annotation>
+                           <xs:documentation>Optionele extensie informatie</xs:documentation>
+                        </xs:annotation>
+                        <xs:complexType>
+                           <xs:sequence>
+                              <xs:any maxOccurs="unbounded" minOccurs="0" processContents="skip"/>
+                           </xs:sequence>
+                           <xs:anyAttribute namespace="##any" processContents="skip"/>
+                        </xs:complexType>
+                     </xs:element>
                   </xs:sequence>
                   <xs:attribute name="conceptId"
                                 type="t-id"
@@ -1273,6 +1372,17 @@ See http://www.gnu.org/licenses/
                                                   use="required"
                                                   fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82398"/>
                                     <xs:attribute name="value" use="required" type="xs:boolean"/>
+                                 </xs:complexType>
+                              </xs:element>
+                              <xs:element minOccurs="0" name="adaextension">
+                                 <xs:annotation>
+                                    <xs:documentation>Optionele extensie informatie</xs:documentation>
+                                 </xs:annotation>
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                       <xs:any maxOccurs="unbounded" minOccurs="0" processContents="skip"/>
+                                    </xs:sequence>
+                                    <xs:anyAttribute namespace="##any" processContents="skip"/>
                                  </xs:complexType>
                               </xs:element>
                            </xs:sequence>
@@ -1624,6 +1734,17 @@ See http://www.gnu.org/licenses/
                                     </xs:attribute>
                                  </xs:complexType>
                               </xs:element>
+                              <xs:element minOccurs="0" name="adaextension">
+                                 <xs:annotation>
+                                    <xs:documentation>Optionele extensie informatie</xs:documentation>
+                                 </xs:annotation>
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                       <xs:any maxOccurs="unbounded" minOccurs="0" processContents="skip"/>
+                                    </xs:sequence>
+                                    <xs:anyAttribute namespace="##any" processContents="skip"/>
+                                 </xs:complexType>
+                              </xs:element>
                            </xs:sequence>
                            <xs:attribute name="conceptId"
                                          type="t-id"
@@ -1728,6 +1849,17 @@ See http://www.gnu.org/licenses/
                                           </xs:restriction>
                                        </xs:simpleType>
                                     </xs:attribute>
+                                 </xs:complexType>
+                              </xs:element>
+                              <xs:element minOccurs="0" name="adaextension">
+                                 <xs:annotation>
+                                    <xs:documentation>Optionele extensie informatie</xs:documentation>
+                                 </xs:annotation>
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                       <xs:any maxOccurs="unbounded" minOccurs="0" processContents="skip"/>
+                                    </xs:sequence>
+                                    <xs:anyAttribute namespace="##any" processContents="skip"/>
                                  </xs:complexType>
                               </xs:element>
                            </xs:sequence>
@@ -1887,6 +2019,17 @@ See http://www.gnu.org/licenses/
                                  </xs:restriction>
                               </xs:simpleType>
                            </xs:attribute>
+                        </xs:complexType>
+                     </xs:element>
+                     <xs:element minOccurs="0" name="adaextension">
+                        <xs:annotation>
+                           <xs:documentation>Optionele extensie informatie</xs:documentation>
+                        </xs:annotation>
+                        <xs:complexType>
+                           <xs:sequence>
+                              <xs:any maxOccurs="unbounded" minOccurs="0" processContents="skip"/>
+                           </xs:sequence>
+                           <xs:anyAttribute namespace="##any" processContents="skip"/>
                         </xs:complexType>
                      </xs:element>
                   </xs:sequence>
@@ -2056,6 +2199,17 @@ See http://www.gnu.org/licenses/
                                              <xs:attribute name="value" use="required" type="xs:string"/>
                                           </xs:complexType>
                                        </xs:element>
+                                       <xs:element minOccurs="0" name="adaextension">
+                                          <xs:annotation>
+                                             <xs:documentation>Optionele extensie informatie</xs:documentation>
+                                          </xs:annotation>
+                                          <xs:complexType>
+                                             <xs:sequence>
+                                                <xs:any maxOccurs="unbounded" minOccurs="0" processContents="skip"/>
+                                             </xs:sequence>
+                                             <xs:anyAttribute namespace="##any" processContents="skip"/>
+                                          </xs:complexType>
+                                       </xs:element>
                                     </xs:sequence>
                                     <xs:attribute name="conceptId"
                                                   type="t-id"
@@ -2119,11 +2273,33 @@ See http://www.gnu.org/licenses/
                                                                <xs:attribute name="value" use="required" type="xs:string"/>
                                                             </xs:complexType>
                                                          </xs:element>
+                                                         <xs:element minOccurs="0" name="adaextension">
+                                                            <xs:annotation>
+                                                               <xs:documentation>Optionele extensie informatie</xs:documentation>
+                                                            </xs:annotation>
+                                                            <xs:complexType>
+                                                               <xs:sequence>
+                                                                  <xs:any maxOccurs="unbounded" minOccurs="0" processContents="skip"/>
+                                                               </xs:sequence>
+                                                               <xs:anyAttribute namespace="##any" processContents="skip"/>
+                                                            </xs:complexType>
+                                                         </xs:element>
                                                       </xs:sequence>
                                                       <xs:attribute name="conceptId"
                                                                     type="t-id"
                                                                     use="required"
                                                                     fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82053"/>
+                                                   </xs:complexType>
+                                                </xs:element>
+                                                <xs:element minOccurs="0" name="adaextension">
+                                                   <xs:annotation>
+                                                      <xs:documentation>Optionele extensie informatie</xs:documentation>
+                                                   </xs:annotation>
+                                                   <xs:complexType>
+                                                      <xs:sequence>
+                                                         <xs:any maxOccurs="unbounded" minOccurs="0" processContents="skip"/>
+                                                      </xs:sequence>
+                                                      <xs:anyAttribute namespace="##any" processContents="skip"/>
                                                    </xs:complexType>
                                                 </xs:element>
                                              </xs:sequence>
@@ -2308,11 +2484,33 @@ See http://www.gnu.org/licenses/
                                                       </xs:attribute>
                                                    </xs:complexType>
                                                 </xs:element>
+                                                <xs:element minOccurs="0" name="adaextension">
+                                                   <xs:annotation>
+                                                      <xs:documentation>Optionele extensie informatie</xs:documentation>
+                                                   </xs:annotation>
+                                                   <xs:complexType>
+                                                      <xs:sequence>
+                                                         <xs:any maxOccurs="unbounded" minOccurs="0" processContents="skip"/>
+                                                      </xs:sequence>
+                                                      <xs:anyAttribute namespace="##any" processContents="skip"/>
+                                                   </xs:complexType>
+                                                </xs:element>
                                              </xs:sequence>
                                              <xs:attribute name="conceptId"
                                                            type="t-id"
                                                            use="required"
                                                            fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40279"/>
+                                          </xs:complexType>
+                                       </xs:element>
+                                       <xs:element minOccurs="0" name="adaextension">
+                                          <xs:annotation>
+                                             <xs:documentation>Optionele extensie informatie</xs:documentation>
+                                          </xs:annotation>
+                                          <xs:complexType>
+                                             <xs:sequence>
+                                                <xs:any maxOccurs="unbounded" minOccurs="0" processContents="skip"/>
+                                             </xs:sequence>
+                                             <xs:anyAttribute namespace="##any" processContents="skip"/>
                                           </xs:complexType>
                                        </xs:element>
                                     </xs:sequence>
@@ -2564,6 +2762,17 @@ See http://www.gnu.org/licenses/
                                                       </xs:attribute>
                                                    </xs:complexType>
                                                 </xs:element>
+                                                <xs:element minOccurs="0" name="adaextension">
+                                                   <xs:annotation>
+                                                      <xs:documentation>Optionele extensie informatie</xs:documentation>
+                                                   </xs:annotation>
+                                                   <xs:complexType>
+                                                      <xs:sequence>
+                                                         <xs:any maxOccurs="unbounded" minOccurs="0" processContents="skip"/>
+                                                      </xs:sequence>
+                                                      <xs:anyAttribute namespace="##any" processContents="skip"/>
+                                                   </xs:complexType>
+                                                </xs:element>
                                              </xs:sequence>
                                              <xs:attribute name="conceptId"
                                                            type="t-id"
@@ -2762,6 +2971,17 @@ See http://www.gnu.org/licenses/
                                                       </xs:attribute>
                                                    </xs:complexType>
                                                 </xs:element>
+                                                <xs:element minOccurs="0" name="adaextension">
+                                                   <xs:annotation>
+                                                      <xs:documentation>Optionele extensie informatie</xs:documentation>
+                                                   </xs:annotation>
+                                                   <xs:complexType>
+                                                      <xs:sequence>
+                                                         <xs:any maxOccurs="unbounded" minOccurs="0" processContents="skip"/>
+                                                      </xs:sequence>
+                                                      <xs:anyAttribute namespace="##any" processContents="skip"/>
+                                                   </xs:complexType>
+                                                </xs:element>
                                              </xs:sequence>
                                              <xs:attribute name="conceptId"
                                                            type="t-id"
@@ -2957,6 +3177,17 @@ See http://www.gnu.org/licenses/
                                                             </xs:restriction>
                                                          </xs:simpleType>
                                                       </xs:attribute>
+                                                   </xs:complexType>
+                                                </xs:element>
+                                                <xs:element minOccurs="0" name="adaextension">
+                                                   <xs:annotation>
+                                                      <xs:documentation>Optionele extensie informatie</xs:documentation>
+                                                   </xs:annotation>
+                                                   <xs:complexType>
+                                                      <xs:sequence>
+                                                         <xs:any maxOccurs="unbounded" minOccurs="0" processContents="skip"/>
+                                                      </xs:sequence>
+                                                      <xs:anyAttribute namespace="##any" processContents="skip"/>
                                                    </xs:complexType>
                                                 </xs:element>
                                              </xs:sequence>
@@ -3758,6 +3989,17 @@ See http://www.gnu.org/licenses/
                                                                </xs:attribute>
                                                             </xs:complexType>
                                                          </xs:element>
+                                                         <xs:element minOccurs="0" name="adaextension">
+                                                            <xs:annotation>
+                                                               <xs:documentation>Optionele extensie informatie</xs:documentation>
+                                                            </xs:annotation>
+                                                            <xs:complexType>
+                                                               <xs:sequence>
+                                                                  <xs:any maxOccurs="unbounded" minOccurs="0" processContents="skip"/>
+                                                               </xs:sequence>
+                                                               <xs:anyAttribute namespace="##any" processContents="skip"/>
+                                                            </xs:complexType>
+                                                         </xs:element>
                                                       </xs:sequence>
                                                       <xs:attribute name="conceptId"
                                                                     type="t-id"
@@ -3879,11 +4121,33 @@ See http://www.gnu.org/licenses/
                                                                </xs:attribute>
                                                             </xs:complexType>
                                                          </xs:element>
+                                                         <xs:element minOccurs="0" name="adaextension">
+                                                            <xs:annotation>
+                                                               <xs:documentation>Optionele extensie informatie</xs:documentation>
+                                                            </xs:annotation>
+                                                            <xs:complexType>
+                                                               <xs:sequence>
+                                                                  <xs:any maxOccurs="unbounded" minOccurs="0" processContents="skip"/>
+                                                               </xs:sequence>
+                                                               <xs:anyAttribute namespace="##any" processContents="skip"/>
+                                                            </xs:complexType>
+                                                         </xs:element>
                                                       </xs:sequence>
                                                       <xs:attribute name="conceptId"
                                                                     type="t-id"
                                                                     use="required"
                                                                     fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40111"/>
+                                                   </xs:complexType>
+                                                </xs:element>
+                                                <xs:element minOccurs="0" name="adaextension">
+                                                   <xs:annotation>
+                                                      <xs:documentation>Optionele extensie informatie</xs:documentation>
+                                                   </xs:annotation>
+                                                   <xs:complexType>
+                                                      <xs:sequence>
+                                                         <xs:any maxOccurs="unbounded" minOccurs="0" processContents="skip"/>
+                                                      </xs:sequence>
+                                                      <xs:anyAttribute namespace="##any" processContents="skip"/>
                                                    </xs:complexType>
                                                 </xs:element>
                                              </xs:sequence>
@@ -3906,6 +4170,17 @@ See http://www.gnu.org/licenses/
                                              <xs:attribute name="value" use="required" type="xs:string"/>
                                           </xs:complexType>
                                        </xs:element>
+                                       <xs:element minOccurs="0" name="adaextension">
+                                          <xs:annotation>
+                                             <xs:documentation>Optionele extensie informatie</xs:documentation>
+                                          </xs:annotation>
+                                          <xs:complexType>
+                                             <xs:sequence>
+                                                <xs:any maxOccurs="unbounded" minOccurs="0" processContents="skip"/>
+                                             </xs:sequence>
+                                             <xs:anyAttribute namespace="##any" processContents="skip"/>
+                                          </xs:complexType>
+                                       </xs:element>
                                     </xs:sequence>
                                     <xs:attribute name="conceptId"
                                                   type="t-id"
@@ -3913,11 +4188,33 @@ See http://www.gnu.org/licenses/
                                                   fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.72"/>
                                  </xs:complexType>
                               </xs:element>
+                              <xs:element minOccurs="0" name="adaextension">
+                                 <xs:annotation>
+                                    <xs:documentation>Optionele extensie informatie</xs:documentation>
+                                 </xs:annotation>
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                       <xs:any maxOccurs="unbounded" minOccurs="0" processContents="skip"/>
+                                    </xs:sequence>
+                                    <xs:anyAttribute namespace="##any" processContents="skip"/>
+                                 </xs:complexType>
+                              </xs:element>
                            </xs:sequence>
                            <xs:attribute name="conceptId"
                                          type="t-id"
                                          use="required"
                                          fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40002"/>
+                        </xs:complexType>
+                     </xs:element>
+                     <xs:element minOccurs="0" name="adaextension">
+                        <xs:annotation>
+                           <xs:documentation>Optionele extensie informatie</xs:documentation>
+                        </xs:annotation>
+                        <xs:complexType>
+                           <xs:sequence>
+                              <xs:any maxOccurs="unbounded" minOccurs="0" processContents="skip"/>
+                           </xs:sequence>
+                           <xs:anyAttribute namespace="##any" processContents="skip"/>
                         </xs:complexType>
                      </xs:element>
                   </xs:sequence>
@@ -3968,11 +4265,33 @@ See http://www.gnu.org/licenses/
                                                       <xs:attribute name="value" use="required" type="xs:boolean"/>
                                                    </xs:complexType>
                                                 </xs:element>
+                                                <xs:element minOccurs="0" name="adaextension">
+                                                   <xs:annotation>
+                                                      <xs:documentation>Optionele extensie informatie</xs:documentation>
+                                                   </xs:annotation>
+                                                   <xs:complexType>
+                                                      <xs:sequence>
+                                                         <xs:any maxOccurs="unbounded" minOccurs="0" processContents="skip"/>
+                                                      </xs:sequence>
+                                                      <xs:anyAttribute namespace="##any" processContents="skip"/>
+                                                   </xs:complexType>
+                                                </xs:element>
                                              </xs:sequence>
                                              <xs:attribute name="conceptId"
                                                            type="t-id"
                                                            use="required"
                                                            fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80949"/>
+                                          </xs:complexType>
+                                       </xs:element>
+                                       <xs:element minOccurs="0" name="adaextension">
+                                          <xs:annotation>
+                                             <xs:documentation>Optionele extensie informatie</xs:documentation>
+                                          </xs:annotation>
+                                          <xs:complexType>
+                                             <xs:sequence>
+                                                <xs:any maxOccurs="unbounded" minOccurs="0" processContents="skip"/>
+                                             </xs:sequence>
+                                             <xs:anyAttribute namespace="##any" processContents="skip"/>
                                           </xs:complexType>
                                        </xs:element>
                                     </xs:sequence>
@@ -3982,6 +4301,17 @@ See http://www.gnu.org/licenses/
                                                   fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80959"/>
                                  </xs:complexType>
                               </xs:element>
+                              <xs:element minOccurs="0" name="adaextension">
+                                 <xs:annotation>
+                                    <xs:documentation>Optionele extensie informatie</xs:documentation>
+                                 </xs:annotation>
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                       <xs:any maxOccurs="unbounded" minOccurs="0" processContents="skip"/>
+                                    </xs:sequence>
+                                    <xs:anyAttribute namespace="##any" processContents="skip"/>
+                                 </xs:complexType>
+                              </xs:element>
                            </xs:sequence>
                            <xs:attribute name="conceptId"
                                          type="t-id"
@@ -3989,11 +4319,33 @@ See http://www.gnu.org/licenses/
                                          fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.142"/>
                         </xs:complexType>
                      </xs:element>
+                     <xs:element minOccurs="0" name="adaextension">
+                        <xs:annotation>
+                           <xs:documentation>Optionele extensie informatie</xs:documentation>
+                        </xs:annotation>
+                        <xs:complexType>
+                           <xs:sequence>
+                              <xs:any maxOccurs="unbounded" minOccurs="0" processContents="skip"/>
+                           </xs:sequence>
+                           <xs:anyAttribute namespace="##any" processContents="skip"/>
+                        </xs:complexType>
+                     </xs:element>
                   </xs:sequence>
                   <xs:attribute name="conceptId"
                                 type="t-id"
                                 use="required"
                                 fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.14"/>
+               </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="adaextension">
+               <xs:annotation>
+                  <xs:documentation>Optionele extensie informatie</xs:documentation>
+               </xs:annotation>
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:any maxOccurs="unbounded" minOccurs="0" processContents="skip"/>
+                  </xs:sequence>
+                  <xs:anyAttribute namespace="##any" processContents="skip"/>
                </xs:complexType>
             </xs:element>
          </xs:sequence>

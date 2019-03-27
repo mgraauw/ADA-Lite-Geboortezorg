@@ -128,7 +128,13 @@
     </xsl:choose>
 
   </xsl:template>
-
+  
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+  
+  <xsl:template match="adaextension">
+    <xsl:copy-of select="."/>
+  </xsl:template>
+  
   <!-- ================================================================== -->
   <!-- SUPPORT: -->
 

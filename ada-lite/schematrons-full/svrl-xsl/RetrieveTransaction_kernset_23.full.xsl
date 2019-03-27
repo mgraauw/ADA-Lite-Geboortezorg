@@ -3670,6 +3670,22 @@ See http://www.gnu.org/licenses/
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(adaextension) ge 0) and (count(adaextension) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
+                  <xsl:value-of select="count(adaextension)"/>
+                  <xsl:text/> (verwacht: 0..1) [/kernset_geboortezorg/adaextension]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
       <xsl:apply-templates select="*" mode="M5"/>
    </xsl:template>
    <xsl:template match="text()" priority="-1" mode="M5"/>
@@ -3681,11 +3697,11 @@ See http://www.gnu.org/licenses/
 
 
 	  <!--RULE -->
-   <xsl:template match="/kernset_geboortezorg/*[not(self::zorgverlening)][not(self::zorgverlenerzorginstelling)][not(self::vrouw)][not(self::obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap)][not(self::zwangerschap)][not(self::bevalling)][not(self::uitkomst_per_kind)][not(self::medisch_onderzoek)][not(self::postnatale_fase)]"
+   <xsl:template match="/kernset_geboortezorg/*[not(self::zorgverlening)][not(self::zorgverlenerzorginstelling)][not(self::vrouw)][not(self::obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap)][not(self::zwangerschap)][not(self::bevalling)][not(self::uitkomst_per_kind)][not(self::medisch_onderzoek)][not(self::postnatale_fase)][not(self::adaextension)]"
                  priority="1000"
                  mode="M6">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/kernset_geboortezorg/*[not(self::zorgverlening)][not(self::zorgverlenerzorginstelling)][not(self::vrouw)][not(self::obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap)][not(self::zwangerschap)][not(self::bevalling)][not(self::uitkomst_per_kind)][not(self::medisch_onderzoek)][not(self::postnatale_fase)]"/>
+                       context="/kernset_geboortezorg/*[not(self::zorgverlening)][not(self::zorgverlenerzorginstelling)][not(self::vrouw)][not(self::obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap)][not(self::zwangerschap)][not(self::bevalling)][not(self::uitkomst_per_kind)][not(self::medisch_onderzoek)][not(self::postnatale_fase)][not(self::adaextension)]"/>
 
 		    <!--REPORT -->
       <xsl:if test="true()">
@@ -4467,6 +4483,22 @@ See http://www.gnu.org/licenses/
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(adaextension) ge 0) and (count(adaextension) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
+                  <xsl:value-of select="count(adaextension)"/>
+                  <xsl:text/> (verwacht: 0..1) [/kernset_geboortezorg/zorgverlening/adaextension]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
       <xsl:apply-templates select="*" mode="M16"/>
    </xsl:template>
    <xsl:template match="text()" priority="-1" mode="M16"/>
@@ -4478,11 +4510,11 @@ See http://www.gnu.org/licenses/
 
 
 	  <!--RULE -->
-   <xsl:template match="/kernset_geboortezorg/zorgverlening/*[not(self::datum_start_zorgverantwoordelijkheid)][not(self::datum_einde_zorgverantwoordelijkheid)][not(self::eindverantwoordelijk_in_welke_perinatale_periodeq)][not(self::conclusie_risicostatus_na_intake)][not(self::verwijsdetails)]"
+   <xsl:template match="/kernset_geboortezorg/zorgverlening/*[not(self::datum_start_zorgverantwoordelijkheid)][not(self::datum_einde_zorgverantwoordelijkheid)][not(self::eindverantwoordelijk_in_welke_perinatale_periodeq)][not(self::conclusie_risicostatus_na_intake)][not(self::verwijsdetails)][not(self::adaextension)]"
                  priority="1000"
                  mode="M17">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/kernset_geboortezorg/zorgverlening/*[not(self::datum_start_zorgverantwoordelijkheid)][not(self::datum_einde_zorgverantwoordelijkheid)][not(self::eindverantwoordelijk_in_welke_perinatale_periodeq)][not(self::conclusie_risicostatus_na_intake)][not(self::verwijsdetails)]"/>
+                       context="/kernset_geboortezorg/zorgverlening/*[not(self::datum_start_zorgverantwoordelijkheid)][not(self::datum_einde_zorgverantwoordelijkheid)][not(self::eindverantwoordelijk_in_welke_perinatale_periodeq)][not(self::conclusie_risicostatus_na_intake)][not(self::verwijsdetails)][not(self::adaextension)]"/>
 
 		    <!--REPORT -->
       <xsl:if test="true()">
@@ -5226,6 +5258,22 @@ See http://www.gnu.org/licenses/
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(adaextension) ge 0) and (count(adaextension) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
+                  <xsl:value-of select="count(adaextension)"/>
+                  <xsl:text/> (verwacht: 0..1) [/kernset_geboortezorg/zorgverlening/verwijsdetails/adaextension]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
       <xsl:apply-templates select="*" mode="M23"/>
    </xsl:template>
    <xsl:template match="text()" priority="-1" mode="M23"/>
@@ -5237,11 +5285,11 @@ See http://www.gnu.org/licenses/
 
 
 	  <!--RULE -->
-   <xsl:template match="/kernset_geboortezorg/zorgverlening/verwijsdetails/*[not(self::datum_verwijzing)][not(self::verwijzing_van)][not(self::verwijzing_naar)][not(self::redenen_van_verwijzing)][not(self::perinatale_periode)]"
+   <xsl:template match="/kernset_geboortezorg/zorgverlening/verwijsdetails/*[not(self::datum_verwijzing)][not(self::verwijzing_van)][not(self::verwijzing_naar)][not(self::redenen_van_verwijzing)][not(self::perinatale_periode)][not(self::adaextension)]"
                  priority="1000"
                  mode="M24">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/kernset_geboortezorg/zorgverlening/verwijsdetails/*[not(self::datum_verwijzing)][not(self::verwijzing_van)][not(self::verwijzing_naar)][not(self::redenen_van_verwijzing)][not(self::perinatale_periode)]"/>
+                       context="/kernset_geboortezorg/zorgverlening/verwijsdetails/*[not(self::datum_verwijzing)][not(self::verwijzing_van)][not(self::verwijzing_naar)][not(self::redenen_van_verwijzing)][not(self::perinatale_periode)][not(self::adaextension)]"/>
 
 		    <!--REPORT -->
       <xsl:if test="true()">
@@ -5792,6 +5840,22 @@ See http://www.gnu.org/licenses/
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(adaextension) ge 0) and (count(adaextension) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
+                  <xsl:value-of select="count(adaextension)"/>
+                  <xsl:text/> (verwacht: 0..1) [/kernset_geboortezorg/zorgverlening/verwijsdetails/verwijzing_van/adaextension]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
       <xsl:apply-templates select="*" mode="M30"/>
    </xsl:template>
    <xsl:template match="text()" priority="-1" mode="M30"/>
@@ -5803,11 +5867,11 @@ See http://www.gnu.org/licenses/
 
 
 	  <!--RULE -->
-   <xsl:template match="/kernset_geboortezorg/zorgverlening/verwijsdetails/verwijzing_van/*[not(self::zorginstelling)]"
+   <xsl:template match="/kernset_geboortezorg/zorgverlening/verwijsdetails/verwijzing_van/*[not(self::zorginstelling)][not(self::adaextension)]"
                  priority="1000"
                  mode="M31">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/kernset_geboortezorg/zorgverlening/verwijsdetails/verwijzing_van/*[not(self::zorginstelling)]"/>
+                       context="/kernset_geboortezorg/zorgverlening/verwijsdetails/verwijzing_van/*[not(self::zorginstelling)][not(self::adaextension)]"/>
 
 		    <!--REPORT -->
       <xsl:if test="true()">
@@ -5945,6 +6009,22 @@ See http://www.gnu.org/licenses/
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(adaextension) ge 0) and (count(adaextension) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
+                  <xsl:value-of select="count(adaextension)"/>
+                  <xsl:text/> (verwacht: 0..1) [/kernset_geboortezorg/zorgverlening/verwijsdetails/verwijzing_van/zorginstelling/adaextension]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
       <xsl:apply-templates select="*" mode="M33"/>
    </xsl:template>
    <xsl:template match="text()" priority="-1" mode="M33"/>
@@ -5956,11 +6036,11 @@ See http://www.gnu.org/licenses/
 
 
 	  <!--RULE -->
-   <xsl:template match="/kernset_geboortezorg/zorgverlening/verwijsdetails/verwijzing_van/zorginstelling/*[not(self::zorgaanbieder_identificatie_nummer)][not(self::specialisme)]"
+   <xsl:template match="/kernset_geboortezorg/zorgverlening/verwijsdetails/verwijzing_van/zorginstelling/*[not(self::zorgaanbieder_identificatie_nummer)][not(self::specialisme)][not(self::adaextension)]"
                  priority="1000"
                  mode="M34">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/kernset_geboortezorg/zorgverlening/verwijsdetails/verwijzing_van/zorginstelling/*[not(self::zorgaanbieder_identificatie_nummer)][not(self::specialisme)]"/>
+                       context="/kernset_geboortezorg/zorgverlening/verwijsdetails/verwijzing_van/zorginstelling/*[not(self::zorgaanbieder_identificatie_nummer)][not(self::specialisme)][not(self::adaextension)]"/>
 
 		    <!--REPORT -->
       <xsl:if test="true()">
@@ -6302,6 +6382,22 @@ See http://www.gnu.org/licenses/
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(adaextension) ge 0) and (count(adaextension) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
+                  <xsl:value-of select="count(adaextension)"/>
+                  <xsl:text/> (verwacht: 0..1) [/kernset_geboortezorg/zorgverlening/verwijsdetails/verwijzing_naar/adaextension]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
       <xsl:apply-templates select="*" mode="M37"/>
    </xsl:template>
    <xsl:template match="text()" priority="-1" mode="M37"/>
@@ -6313,11 +6409,11 @@ See http://www.gnu.org/licenses/
 
 
 	  <!--RULE -->
-   <xsl:template match="/kernset_geboortezorg/zorgverlening/verwijsdetails/verwijzing_naar/*[not(self::zorginstelling)][not(self::type_verwijzing)]"
+   <xsl:template match="/kernset_geboortezorg/zorgverlening/verwijsdetails/verwijzing_naar/*[not(self::zorginstelling)][not(self::type_verwijzing)][not(self::adaextension)]"
                  priority="1000"
                  mode="M38">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/kernset_geboortezorg/zorgverlening/verwijsdetails/verwijzing_naar/*[not(self::zorginstelling)][not(self::type_verwijzing)]"/>
+                       context="/kernset_geboortezorg/zorgverlening/verwijsdetails/verwijzing_naar/*[not(self::zorginstelling)][not(self::type_verwijzing)][not(self::adaextension)]"/>
 
 		    <!--REPORT -->
       <xsl:if test="true()">
@@ -6646,6 +6742,22 @@ See http://www.gnu.org/licenses/
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(adaextension) ge 0) and (count(adaextension) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
+                  <xsl:value-of select="count(adaextension)"/>
+                  <xsl:text/> (verwacht: 0..1) [/kernset_geboortezorg/zorgverlening/verwijsdetails/verwijzing_naar/zorginstelling/adaextension]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
       <xsl:apply-templates select="*" mode="M41"/>
    </xsl:template>
    <xsl:template match="text()" priority="-1" mode="M41"/>
@@ -6657,11 +6769,11 @@ See http://www.gnu.org/licenses/
 
 
 	  <!--RULE -->
-   <xsl:template match="/kernset_geboortezorg/zorgverlening/verwijsdetails/verwijzing_naar/zorginstelling/*[not(self::zorgaanbieder_identificatie_nummer)][not(self::specialisme)]"
+   <xsl:template match="/kernset_geboortezorg/zorgverlening/verwijsdetails/verwijzing_naar/zorginstelling/*[not(self::zorgaanbieder_identificatie_nummer)][not(self::specialisme)][not(self::adaextension)]"
                  priority="1000"
                  mode="M42">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/kernset_geboortezorg/zorgverlening/verwijsdetails/verwijzing_naar/zorginstelling/*[not(self::zorgaanbieder_identificatie_nummer)][not(self::specialisme)]"/>
+                       context="/kernset_geboortezorg/zorgverlening/verwijsdetails/verwijzing_naar/zorginstelling/*[not(self::zorgaanbieder_identificatie_nummer)][not(self::specialisme)][not(self::adaextension)]"/>
 
 		    <!--REPORT -->
       <xsl:if test="true()">
@@ -7035,6 +7147,22 @@ See http://www.gnu.org/licenses/
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(adaextension) ge 0) and (count(adaextension) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
+                  <xsl:value-of select="count(adaextension)"/>
+                  <xsl:text/> (verwacht: 0..1) [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/adaextension]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
       <xsl:apply-templates select="*" mode="M45"/>
    </xsl:template>
    <xsl:template match="text()" priority="-1" mode="M45"/>
@@ -7046,11 +7174,11 @@ See http://www.gnu.org/licenses/
 
 
 	  <!--RULE -->
-   <xsl:template match="/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/*[not(self::van_1e_naar_2e_lijn)][not(self::van_2e_naar_3e_lijn)][not(self::van_2e_naar_1e_lijn)][not(self::van_3e_naar_2e_lijn)]"
+   <xsl:template match="/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/*[not(self::van_1e_naar_2e_lijn)][not(self::van_2e_naar_3e_lijn)][not(self::van_2e_naar_1e_lijn)][not(self::van_3e_naar_2e_lijn)][not(self::adaextension)]"
                  priority="1000"
                  mode="M46">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/*[not(self::van_1e_naar_2e_lijn)][not(self::van_2e_naar_3e_lijn)][not(self::van_2e_naar_1e_lijn)][not(self::van_3e_naar_2e_lijn)]"/>
+                       context="/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/*[not(self::van_1e_naar_2e_lijn)][not(self::van_2e_naar_3e_lijn)][not(self::van_2e_naar_1e_lijn)][not(self::van_3e_naar_2e_lijn)][not(self::adaextension)]"/>
 
 		    <!--REPORT -->
       <xsl:if test="true()">
@@ -7738,6 +7866,22 @@ See http://www.gnu.org/licenses/
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(adaextension) ge 0) and (count(adaextension) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
+                  <xsl:value-of select="count(adaextension)"/>
+                  <xsl:text/> (verwacht: 0..1) [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/adaextension]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
       <xsl:apply-templates select="*" mode="M51"/>
    </xsl:template>
    <xsl:template match="text()" priority="-1" mode="M51"/>
@@ -7749,11 +7893,11 @@ See http://www.gnu.org/licenses/
 
 
 	  <!--RULE -->
-   <xsl:template match="/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/*[not(self::algemene_anamnese)][not(self::obstetrische_anamnese)][not(self::zwangerschap)][not(self::einde_zwangerschap)][not(self::bevalling)][not(self::postnatale_fase)][not(self::overig)]"
+   <xsl:template match="/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/*[not(self::algemene_anamnese)][not(self::obstetrische_anamnese)][not(self::zwangerschap)][not(self::einde_zwangerschap)][not(self::bevalling)][not(self::postnatale_fase)][not(self::overig)][not(self::adaextension)]"
                  priority="1000"
                  mode="M52">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/*[not(self::algemene_anamnese)][not(self::obstetrische_anamnese)][not(self::zwangerschap)][not(self::einde_zwangerschap)][not(self::bevalling)][not(self::postnatale_fase)][not(self::overig)]"/>
+                       context="/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/*[not(self::algemene_anamnese)][not(self::obstetrische_anamnese)][not(self::zwangerschap)][not(self::einde_zwangerschap)][not(self::bevalling)][not(self::postnatale_fase)][not(self::overig)][not(self::adaextension)]"/>
 
 		    <!--REPORT -->
       <xsl:if test="true()">
@@ -8742,6 +8886,22 @@ See http://www.gnu.org/licenses/
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(adaextension) ge 0) and (count(adaextension) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
+                  <xsl:value-of select="count(adaextension)"/>
+                  <xsl:text/> (verwacht: 0..1) [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/adaextension]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
       <xsl:apply-templates select="*" mode="M60"/>
    </xsl:template>
    <xsl:template match="text()" priority="-1" mode="M60"/>
@@ -8753,11 +8913,11 @@ See http://www.gnu.org/licenses/
 
 
 	  <!--RULE -->
-   <xsl:template match="/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/*[not(self::autoimmuun_aandoening)][not(self::cardiovasculaire_aandoening)][not(self::urogenitale_aandoening)][not(self::oncologische_aandoening)][not(self::schildklier_aandoening)][not(self::diabetes_mellitusq)][not(self::neurologische_aandoening)][not(self::infectieziekte)][not(self::mdl_aandoening)][not(self::anemie)][not(self::longaandoening)][not(self::gynaecologische_aandoening)][not(self::orthopedische_afwijking)][not(self::bloedtransfusieq)][not(self::transfusiereactieq)][not(self::type_operatie)][not(self::type_stollingsprobleem)][not(self::psychiatrieq)][not(self::overige_aandoeningq)]"
+   <xsl:template match="/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/*[not(self::autoimmuun_aandoening)][not(self::cardiovasculaire_aandoening)][not(self::urogenitale_aandoening)][not(self::oncologische_aandoening)][not(self::schildklier_aandoening)][not(self::diabetes_mellitusq)][not(self::neurologische_aandoening)][not(self::infectieziekte)][not(self::mdl_aandoening)][not(self::anemie)][not(self::longaandoening)][not(self::gynaecologische_aandoening)][not(self::orthopedische_afwijking)][not(self::bloedtransfusieq)][not(self::transfusiereactieq)][not(self::type_operatie)][not(self::type_stollingsprobleem)][not(self::psychiatrieq)][not(self::overige_aandoeningq)][not(self::adaextension)]"
                  priority="1000"
                  mode="M61">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/*[not(self::autoimmuun_aandoening)][not(self::cardiovasculaire_aandoening)][not(self::urogenitale_aandoening)][not(self::oncologische_aandoening)][not(self::schildklier_aandoening)][not(self::diabetes_mellitusq)][not(self::neurologische_aandoening)][not(self::infectieziekte)][not(self::mdl_aandoening)][not(self::anemie)][not(self::longaandoening)][not(self::gynaecologische_aandoening)][not(self::orthopedische_afwijking)][not(self::bloedtransfusieq)][not(self::transfusiereactieq)][not(self::type_operatie)][not(self::type_stollingsprobleem)][not(self::psychiatrieq)][not(self::overige_aandoeningq)]"/>
+                       context="/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/*[not(self::autoimmuun_aandoening)][not(self::cardiovasculaire_aandoening)][not(self::urogenitale_aandoening)][not(self::oncologische_aandoening)][not(self::schildklier_aandoening)][not(self::diabetes_mellitusq)][not(self::neurologische_aandoening)][not(self::infectieziekte)][not(self::mdl_aandoening)][not(self::anemie)][not(self::longaandoening)][not(self::gynaecologische_aandoening)][not(self::orthopedische_afwijking)][not(self::bloedtransfusieq)][not(self::transfusiereactieq)][not(self::type_operatie)][not(self::type_stollingsprobleem)][not(self::psychiatrieq)][not(self::overige_aandoeningq)][not(self::adaextension)]"/>
 
 		    <!--REPORT -->
       <xsl:if test="true()">
@@ -12206,6 +12366,22 @@ See http://www.gnu.org/licenses/
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(adaextension) ge 0) and (count(adaextension) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
+                  <xsl:value-of select="count(adaextension)"/>
+                  <xsl:text/> (verwacht: 0..1) [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/adaextension]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
       <xsl:apply-templates select="*" mode="M81"/>
    </xsl:template>
    <xsl:template match="text()" priority="-1" mode="M81"/>
@@ -12217,11 +12393,11 @@ See http://www.gnu.org/licenses/
 
 
 	  <!--RULE -->
-   <xsl:template match="/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/*[not(self::gynaecologische_aandoening)][not(self::bloedverliesq)][not(self::partiele_molaq)][not(self::cervixinsufficientieq)][not(self::infectie)][not(self::hyperemesis_gravidarumq)][not(self::hypertensieve_aandoening)][not(self::zwangerschapscholestaseq)][not(self::diabetes_gravidarum_met_insulineq)][not(self::afwijkende_groei_foetus)][not(self::dreigende_partus_immaturusq)][not(self::dreigende_partus_prematurusq)][not(self::abruptio_placentaeq)][not(self::fluxus_postpartumq)]"
+   <xsl:template match="/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/*[not(self::gynaecologische_aandoening)][not(self::bloedverliesq)][not(self::partiele_molaq)][not(self::cervixinsufficientieq)][not(self::infectie)][not(self::hyperemesis_gravidarumq)][not(self::hypertensieve_aandoening)][not(self::zwangerschapscholestaseq)][not(self::diabetes_gravidarum_met_insulineq)][not(self::afwijkende_groei_foetus)][not(self::dreigende_partus_immaturusq)][not(self::dreigende_partus_prematurusq)][not(self::abruptio_placentaeq)][not(self::fluxus_postpartumq)][not(self::adaextension)]"
                  priority="1000"
                  mode="M82">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/*[not(self::gynaecologische_aandoening)][not(self::bloedverliesq)][not(self::partiele_molaq)][not(self::cervixinsufficientieq)][not(self::infectie)][not(self::hyperemesis_gravidarumq)][not(self::hypertensieve_aandoening)][not(self::zwangerschapscholestaseq)][not(self::diabetes_gravidarum_met_insulineq)][not(self::afwijkende_groei_foetus)][not(self::dreigende_partus_immaturusq)][not(self::dreigende_partus_prematurusq)][not(self::abruptio_placentaeq)][not(self::fluxus_postpartumq)]"/>
+                       context="/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/*[not(self::gynaecologische_aandoening)][not(self::bloedverliesq)][not(self::partiele_molaq)][not(self::cervixinsufficientieq)][not(self::infectie)][not(self::hyperemesis_gravidarumq)][not(self::hypertensieve_aandoening)][not(self::zwangerschapscholestaseq)][not(self::diabetes_gravidarum_met_insulineq)][not(self::afwijkende_groei_foetus)][not(self::dreigende_partus_immaturusq)][not(self::dreigende_partus_prematurusq)][not(self::abruptio_placentaeq)][not(self::fluxus_postpartumq)][not(self::adaextension)]"/>
 
 		    <!--REPORT -->
       <xsl:if test="true()">
@@ -14312,6 +14488,22 @@ See http://www.gnu.org/licenses/
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(adaextension) ge 0) and (count(adaextension) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
+                  <xsl:value-of select="count(adaextension)"/>
+                  <xsl:text/> (verwacht: 0..1) [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/adaextension]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
       <xsl:apply-templates select="*" mode="M97"/>
    </xsl:template>
    <xsl:template match="text()" priority="-1" mode="M97"/>
@@ -14323,11 +14515,11 @@ See http://www.gnu.org/licenses/
 
 
 	  <!--RULE -->
-   <xsl:template match="/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/*[not(self::gynaecologische_aandoening)][not(self::bloedverliesq)][not(self::partiele_molaq)][not(self::cervixinsufficientieq)][not(self::infectie)][not(self::hyperemesis_gravidarumq)][not(self::hypertensieve_aandoening)][not(self::zwangerschapscholestaseq)][not(self::diabetes_gravidarum_met_insulineq)][not(self::afwijkende_groei_foetus)][not(self::dreigende_partus_immaturusq)][not(self::dreigende_partus_prematurusq)][not(self::abruptio_placentaeq)][not(self::navelstrengprolapsq)][not(self::liggingsafwijking)][not(self::intrauteriene_vruchtdood)]"
+   <xsl:template match="/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/*[not(self::gynaecologische_aandoening)][not(self::bloedverliesq)][not(self::partiele_molaq)][not(self::cervixinsufficientieq)][not(self::infectie)][not(self::hyperemesis_gravidarumq)][not(self::hypertensieve_aandoening)][not(self::zwangerschapscholestaseq)][not(self::diabetes_gravidarum_met_insulineq)][not(self::afwijkende_groei_foetus)][not(self::dreigende_partus_immaturusq)][not(self::dreigende_partus_prematurusq)][not(self::abruptio_placentaeq)][not(self::navelstrengprolapsq)][not(self::liggingsafwijking)][not(self::intrauteriene_vruchtdood)][not(self::adaextension)]"
                  priority="1000"
                  mode="M98">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/*[not(self::gynaecologische_aandoening)][not(self::bloedverliesq)][not(self::partiele_molaq)][not(self::cervixinsufficientieq)][not(self::infectie)][not(self::hyperemesis_gravidarumq)][not(self::hypertensieve_aandoening)][not(self::zwangerschapscholestaseq)][not(self::diabetes_gravidarum_met_insulineq)][not(self::afwijkende_groei_foetus)][not(self::dreigende_partus_immaturusq)][not(self::dreigende_partus_prematurusq)][not(self::abruptio_placentaeq)][not(self::navelstrengprolapsq)][not(self::liggingsafwijking)][not(self::intrauteriene_vruchtdood)]"/>
+                       context="/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/*[not(self::gynaecologische_aandoening)][not(self::bloedverliesq)][not(self::partiele_molaq)][not(self::cervixinsufficientieq)][not(self::infectie)][not(self::hyperemesis_gravidarumq)][not(self::hypertensieve_aandoening)][not(self::zwangerschapscholestaseq)][not(self::diabetes_gravidarum_met_insulineq)][not(self::afwijkende_groei_foetus)][not(self::dreigende_partus_immaturusq)][not(self::dreigende_partus_prematurusq)][not(self::abruptio_placentaeq)][not(self::navelstrengprolapsq)][not(self::liggingsafwijking)][not(self::intrauteriene_vruchtdood)][not(self::adaextension)]"/>
 
 		    <!--REPORT -->
       <xsl:if test="true()">
@@ -16444,6 +16636,22 @@ See http://www.gnu.org/licenses/
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(adaextension) ge 0) and (count(adaextension) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
+                  <xsl:value-of select="count(adaextension)"/>
+                  <xsl:text/> (verwacht: 0..1) [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/intrauteriene_vruchtdood/adaextension]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
       <xsl:apply-templates select="*" mode="M115"/>
    </xsl:template>
    <xsl:template match="text()" priority="-1" mode="M115"/>
@@ -16455,11 +16663,11 @@ See http://www.gnu.org/licenses/
 
 
 	  <!--RULE -->
-   <xsl:template match="/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/intrauteriene_vruchtdood/*[not(self::vermoeden_intrauteriene_vruchtdoodq)]"
+   <xsl:template match="/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/intrauteriene_vruchtdood/*[not(self::vermoeden_intrauteriene_vruchtdoodq)][not(self::adaextension)]"
                  priority="1000"
                  mode="M116">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/intrauteriene_vruchtdood/*[not(self::vermoeden_intrauteriene_vruchtdoodq)]"/>
+                       context="/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/intrauteriene_vruchtdood/*[not(self::vermoeden_intrauteriene_vruchtdoodq)][not(self::adaextension)]"/>
 
 		    <!--REPORT -->
       <xsl:if test="true()">
@@ -16754,6 +16962,22 @@ See http://www.gnu.org/licenses/
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(adaextension) ge 0) and (count(adaextension) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
+                  <xsl:value-of select="count(adaextension)"/>
+                  <xsl:text/> (verwacht: 0..1) [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/bevalling/adaextension]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
       <xsl:apply-templates select="*" mode="M118"/>
    </xsl:template>
    <xsl:template match="text()" priority="-1" mode="M118"/>
@@ -16765,11 +16989,11 @@ See http://www.gnu.org/licenses/
 
 
 	  <!--RULE -->
-   <xsl:template match="/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/bevalling/*[not(self::ppromq)][not(self::promq)][not(self::koortsq)][not(self::niet_vorderende_ontsluitingq)][not(self::niet_vorderende_uitdrijvingq)][not(self::verdenking_foetale_noodq)][not(self::intrauteriene_vruchtdood)][not(self::vastzittende_placentaq)][not(self::conditie_perineum_postpartum)][not(self::fluxus_postpartumq)]"
+   <xsl:template match="/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/bevalling/*[not(self::ppromq)][not(self::promq)][not(self::koortsq)][not(self::niet_vorderende_ontsluitingq)][not(self::niet_vorderende_uitdrijvingq)][not(self::verdenking_foetale_noodq)][not(self::intrauteriene_vruchtdood)][not(self::vastzittende_placentaq)][not(self::conditie_perineum_postpartum)][not(self::fluxus_postpartumq)][not(self::adaextension)]"
                  priority="1000"
                  mode="M119">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/bevalling/*[not(self::ppromq)][not(self::promq)][not(self::koortsq)][not(self::niet_vorderende_ontsluitingq)][not(self::niet_vorderende_uitdrijvingq)][not(self::verdenking_foetale_noodq)][not(self::intrauteriene_vruchtdood)][not(self::vastzittende_placentaq)][not(self::conditie_perineum_postpartum)][not(self::fluxus_postpartumq)]"/>
+                       context="/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/bevalling/*[not(self::ppromq)][not(self::promq)][not(self::koortsq)][not(self::niet_vorderende_ontsluitingq)][not(self::niet_vorderende_uitdrijvingq)][not(self::verdenking_foetale_noodq)][not(self::intrauteriene_vruchtdood)][not(self::vastzittende_placentaq)][not(self::conditie_perineum_postpartum)][not(self::fluxus_postpartumq)][not(self::adaextension)]"/>
 
 		    <!--REPORT -->
       <xsl:if test="true()">
@@ -17827,6 +18051,22 @@ See http://www.gnu.org/licenses/
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(adaextension) ge 0) and (count(adaextension) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
+                  <xsl:value-of select="count(adaextension)"/>
+                  <xsl:text/> (verwacht: 0..1) [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/bevalling/intrauteriene_vruchtdood/adaextension]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
       <xsl:apply-templates select="*" mode="M130"/>
    </xsl:template>
    <xsl:template match="text()" priority="-1" mode="M130"/>
@@ -17838,11 +18078,11 @@ See http://www.gnu.org/licenses/
 
 
 	  <!--RULE -->
-   <xsl:template match="/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/bevalling/intrauteriene_vruchtdood/*[not(self::vermoeden_intrauteriene_vruchtdoodq)]"
+   <xsl:template match="/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/bevalling/intrauteriene_vruchtdood/*[not(self::vermoeden_intrauteriene_vruchtdoodq)][not(self::adaextension)]"
                  priority="1000"
                  mode="M131">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/bevalling/intrauteriene_vruchtdood/*[not(self::vermoeden_intrauteriene_vruchtdoodq)]"/>
+                       context="/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/bevalling/intrauteriene_vruchtdood/*[not(self::vermoeden_intrauteriene_vruchtdoodq)][not(self::adaextension)]"/>
 
 		    <!--REPORT -->
       <xsl:if test="true()">
@@ -17993,6 +18233,22 @@ See http://www.gnu.org/licenses/
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(adaextension) ge 0) and (count(adaextension) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
+                  <xsl:value-of select="count(adaextension)"/>
+                  <xsl:text/> (verwacht: 0..1) [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/postnatale_fase/adaextension]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
       <xsl:apply-templates select="*" mode="M133"/>
    </xsl:template>
    <xsl:template match="text()" priority="-1" mode="M133"/>
@@ -18004,11 +18260,11 @@ See http://www.gnu.org/licenses/
 
 
 	  <!--RULE -->
-   <xsl:template match="/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/postnatale_fase/*[not(self::pathologie_vrouw)]"
+   <xsl:template match="/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/postnatale_fase/*[not(self::pathologie_vrouw)][not(self::adaextension)]"
                  priority="1000"
                  mode="M134">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/postnatale_fase/*[not(self::pathologie_vrouw)]"/>
+                       context="/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/postnatale_fase/*[not(self::pathologie_vrouw)][not(self::adaextension)]"/>
 
 		    <!--REPORT -->
       <xsl:if test="true()">
@@ -18246,6 +18502,22 @@ See http://www.gnu.org/licenses/
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(adaextension) ge 0) and (count(adaextension) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
+                  <xsl:value-of select="count(adaextension)"/>
+                  <xsl:text/> (verwacht: 0..1) [/kernset_geboortezorg/zorgverlenerzorginstelling/adaextension]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
       <xsl:apply-templates select="*" mode="M136"/>
    </xsl:template>
    <xsl:template match="text()" priority="-1" mode="M136"/>
@@ -18257,11 +18529,11 @@ See http://www.gnu.org/licenses/
 
 
 	  <!--RULE -->
-   <xsl:template match="/kernset_geboortezorg/zorgverlenerzorginstelling/*[not(self::zorginstelling)]"
+   <xsl:template match="/kernset_geboortezorg/zorgverlenerzorginstelling/*[not(self::zorginstelling)][not(self::adaextension)]"
                  priority="1000"
                  mode="M137">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/kernset_geboortezorg/zorgverlenerzorginstelling/*[not(self::zorginstelling)]"/>
+                       context="/kernset_geboortezorg/zorgverlenerzorginstelling/*[not(self::zorginstelling)][not(self::adaextension)]"/>
 
 		    <!--REPORT -->
       <xsl:if test="true()">
@@ -18399,6 +18671,22 @@ See http://www.gnu.org/licenses/
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(adaextension) ge 0) and (count(adaextension) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
+                  <xsl:value-of select="count(adaextension)"/>
+                  <xsl:text/> (verwacht: 0..1) [/kernset_geboortezorg/zorgverlenerzorginstelling/zorginstelling/adaextension]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
       <xsl:apply-templates select="*" mode="M139"/>
    </xsl:template>
    <xsl:template match="text()" priority="-1" mode="M139"/>
@@ -18410,11 +18698,11 @@ See http://www.gnu.org/licenses/
 
 
 	  <!--RULE -->
-   <xsl:template match="/kernset_geboortezorg/zorgverlenerzorginstelling/zorginstelling/*[not(self::zorginstelling_agbid)][not(self::zorginstelling_lvrid)]"
+   <xsl:template match="/kernset_geboortezorg/zorgverlenerzorginstelling/zorginstelling/*[not(self::zorginstelling_agbid)][not(self::zorginstelling_lvrid)][not(self::adaextension)]"
                  priority="1000"
                  mode="M140">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/kernset_geboortezorg/zorgverlenerzorginstelling/zorginstelling/*[not(self::zorginstelling_agbid)][not(self::zorginstelling_lvrid)]"/>
+                       context="/kernset_geboortezorg/zorgverlenerzorginstelling/zorginstelling/*[not(self::zorginstelling_agbid)][not(self::zorginstelling_lvrid)][not(self::adaextension)]"/>
 
 		    <!--REPORT -->
       <xsl:if test="true()">
@@ -18827,6 +19115,22 @@ See http://www.gnu.org/licenses/
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(adaextension) ge 0) and (count(adaextension) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
+                  <xsl:value-of select="count(adaextension)"/>
+                  <xsl:text/> (verwacht: 0..1) [/kernset_geboortezorg/vrouw/adaextension]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
       <xsl:apply-templates select="*" mode="M143"/>
    </xsl:template>
    <xsl:template match="text()" priority="-1" mode="M143"/>
@@ -18838,11 +19142,11 @@ See http://www.gnu.org/licenses/
 
 
 	  <!--RULE -->
-   <xsl:template match="/kernset_geboortezorg/vrouw/*[not(self::burgerservicenummer)][not(self::lokale_persoonsidentificatie)][not(self::geboortedatum)][not(self::adres)][not(self::etniciteit)][not(self::anamnese)][not(self::lengte_gemeten)][not(self::vrouwelijke_genitale_verminkingq)][not(self::type_vrouwelijke_genitale_verminking)]"
+   <xsl:template match="/kernset_geboortezorg/vrouw/*[not(self::burgerservicenummer)][not(self::lokale_persoonsidentificatie)][not(self::geboortedatum)][not(self::adres)][not(self::etniciteit)][not(self::anamnese)][not(self::lengte_gemeten)][not(self::vrouwelijke_genitale_verminkingq)][not(self::type_vrouwelijke_genitale_verminking)][not(self::adaextension)]"
                  priority="1000"
                  mode="M144">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/kernset_geboortezorg/vrouw/*[not(self::burgerservicenummer)][not(self::lokale_persoonsidentificatie)][not(self::geboortedatum)][not(self::adres)][not(self::etniciteit)][not(self::anamnese)][not(self::lengte_gemeten)][not(self::vrouwelijke_genitale_verminkingq)][not(self::type_vrouwelijke_genitale_verminking)]"/>
+                       context="/kernset_geboortezorg/vrouw/*[not(self::burgerservicenummer)][not(self::lokale_persoonsidentificatie)][not(self::geboortedatum)][not(self::adres)][not(self::etniciteit)][not(self::anamnese)][not(self::lengte_gemeten)][not(self::vrouwelijke_genitale_verminkingq)][not(self::type_vrouwelijke_genitale_verminking)][not(self::adaextension)]"/>
 
 		    <!--REPORT -->
       <xsl:if test="true()">
@@ -19986,6 +20290,22 @@ See http://www.gnu.org/licenses/
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(adaextension) ge 0) and (count(adaextension) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
+                  <xsl:value-of select="count(adaextension)"/>
+                  <xsl:text/> (verwacht: 0..1) [/kernset_geboortezorg/vrouw/adres/adaextension]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
       <xsl:apply-templates select="*" mode="M154"/>
    </xsl:template>
    <xsl:template match="text()" priority="-1" mode="M154"/>
@@ -19997,11 +20317,11 @@ See http://www.gnu.org/licenses/
 
 
 	  <!--RULE -->
-   <xsl:template match="/kernset_geboortezorg/vrouw/adres/*[not(self::postcode)]"
+   <xsl:template match="/kernset_geboortezorg/vrouw/adres/*[not(self::postcode)][not(self::adaextension)]"
                  priority="1000"
                  mode="M155">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/kernset_geboortezorg/vrouw/adres/*[not(self::postcode)]"/>
+                       context="/kernset_geboortezorg/vrouw/adres/*[not(self::postcode)][not(self::adaextension)]"/>
 
 		    <!--REPORT -->
       <xsl:if test="true()">
@@ -20152,6 +20472,22 @@ See http://www.gnu.org/licenses/
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(adaextension) ge 0) and (count(adaextension) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
+                  <xsl:value-of select="count(adaextension)"/>
+                  <xsl:text/> (verwacht: 0..1) [/kernset_geboortezorg/vrouw/anamnese/adaextension]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
       <xsl:apply-templates select="*" mode="M157"/>
    </xsl:template>
    <xsl:template match="text()" priority="-1" mode="M157"/>
@@ -20163,11 +20499,11 @@ See http://www.gnu.org/licenses/
 
 
 	  <!--RULE -->
-   <xsl:template match="/kernset_geboortezorg/vrouw/anamnese/*[not(self::onder_behandeling_geweestq)][not(self::algemene_anamnese)]"
+   <xsl:template match="/kernset_geboortezorg/vrouw/anamnese/*[not(self::onder_behandeling_geweestq)][not(self::algemene_anamnese)][not(self::adaextension)]"
                  priority="1000"
                  mode="M158">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/kernset_geboortezorg/vrouw/anamnese/*[not(self::onder_behandeling_geweestq)][not(self::algemene_anamnese)]"/>
+                       context="/kernset_geboortezorg/vrouw/anamnese/*[not(self::onder_behandeling_geweestq)][not(self::algemene_anamnese)][not(self::adaextension)]"/>
 
 		    <!--REPORT -->
       <xsl:if test="true()">
@@ -20696,6 +21032,22 @@ See http://www.gnu.org/licenses/
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(adaextension) ge 0) and (count(adaextension) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
+                  <xsl:value-of select="count(adaextension)"/>
+                  <xsl:text/> (verwacht: 0..1) [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/adaextension]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
       <xsl:apply-templates select="*" mode="M161"/>
    </xsl:template>
    <xsl:template match="text()" priority="-1" mode="M161"/>
@@ -20707,11 +21059,11 @@ See http://www.gnu.org/licenses/
 
 
 	  <!--RULE -->
-   <xsl:template match="/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/*[not(self::autoimmuun_aandoening)][not(self::cardiovasculaire_aandoening)][not(self::urogenitale_aandoening)][not(self::oncologische_aandoening)][not(self::schildklier_aandoening)][not(self::diabetes_mellitusq)][not(self::neurologische_aandoening)][not(self::infectieziekte)][not(self::mdl_aandoening)][not(self::anemie)][not(self::longaandoening)][not(self::gynaecologische_aandoening)][not(self::orthopedische_afwijking)][not(self::bloedtransfusieq)][not(self::transfusiereactieq)][not(self::type_operatie)][not(self::type_stollingsprobleem)][not(self::psychiatrieq)][not(self::overige_aandoeningq)][not(self::overige_aandoening)]"
+   <xsl:template match="/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/*[not(self::autoimmuun_aandoening)][not(self::cardiovasculaire_aandoening)][not(self::urogenitale_aandoening)][not(self::oncologische_aandoening)][not(self::schildklier_aandoening)][not(self::diabetes_mellitusq)][not(self::neurologische_aandoening)][not(self::infectieziekte)][not(self::mdl_aandoening)][not(self::anemie)][not(self::longaandoening)][not(self::gynaecologische_aandoening)][not(self::orthopedische_afwijking)][not(self::bloedtransfusieq)][not(self::transfusiereactieq)][not(self::type_operatie)][not(self::type_stollingsprobleem)][not(self::psychiatrieq)][not(self::overige_aandoeningq)][not(self::overige_aandoening)][not(self::adaextension)]"
                  priority="1000"
                  mode="M162">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/*[not(self::autoimmuun_aandoening)][not(self::cardiovasculaire_aandoening)][not(self::urogenitale_aandoening)][not(self::oncologische_aandoening)][not(self::schildklier_aandoening)][not(self::diabetes_mellitusq)][not(self::neurologische_aandoening)][not(self::infectieziekte)][not(self::mdl_aandoening)][not(self::anemie)][not(self::longaandoening)][not(self::gynaecologische_aandoening)][not(self::orthopedische_afwijking)][not(self::bloedtransfusieq)][not(self::transfusiereactieq)][not(self::type_operatie)][not(self::type_stollingsprobleem)][not(self::psychiatrieq)][not(self::overige_aandoeningq)][not(self::overige_aandoening)]"/>
+                       context="/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/*[not(self::autoimmuun_aandoening)][not(self::cardiovasculaire_aandoening)][not(self::urogenitale_aandoening)][not(self::oncologische_aandoening)][not(self::schildklier_aandoening)][not(self::diabetes_mellitusq)][not(self::neurologische_aandoening)][not(self::infectieziekte)][not(self::mdl_aandoening)][not(self::anemie)][not(self::longaandoening)][not(self::gynaecologische_aandoening)][not(self::orthopedische_afwijking)][not(self::bloedtransfusieq)][not(self::transfusiereactieq)][not(self::type_operatie)][not(self::type_stollingsprobleem)][not(self::psychiatrieq)][not(self::overige_aandoeningq)][not(self::overige_aandoening)][not(self::adaextension)]"/>
 
 		    <!--REPORT -->
       <xsl:if test="true()">
@@ -24103,6 +24455,22 @@ See http://www.gnu.org/licenses/
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(adaextension) ge 0) and (count(adaextension) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
+                  <xsl:value-of select="count(adaextension)"/>
+                  <xsl:text/> (verwacht: 0..1) [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/adaextension]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
       <xsl:apply-templates select="*" mode="M183"/>
    </xsl:template>
    <xsl:template match="text()" priority="-1" mode="M183"/>
@@ -24114,11 +24482,11 @@ See http://www.gnu.org/licenses/
 
 
 	  <!--RULE -->
-   <xsl:template match="/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/*[not(self::wijze_einde_zwangerschap)][not(self::definitieve_a_terme_datum)][not(self::diagnose)][not(self::irregulaire_antistoffenq)][not(self::eerdere_bevalling)]"
+   <xsl:template match="/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/*[not(self::wijze_einde_zwangerschap)][not(self::definitieve_a_terme_datum)][not(self::diagnose)][not(self::irregulaire_antistoffenq)][not(self::eerdere_bevalling)][not(self::adaextension)]"
                  priority="1000"
                  mode="M184">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/*[not(self::wijze_einde_zwangerschap)][not(self::definitieve_a_terme_datum)][not(self::diagnose)][not(self::irregulaire_antistoffenq)][not(self::eerdere_bevalling)]"/>
+                       context="/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/*[not(self::wijze_einde_zwangerschap)][not(self::definitieve_a_terme_datum)][not(self::diagnose)][not(self::irregulaire_antistoffenq)][not(self::eerdere_bevalling)][not(self::adaextension)]"/>
 
 		    <!--REPORT -->
       <xsl:if test="true()">
@@ -24874,6 +25242,22 @@ See http://www.gnu.org/licenses/
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(adaextension) ge 0) and (count(adaextension) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
+                  <xsl:value-of select="count(adaextension)"/>
+                  <xsl:text/> (verwacht: 0..1) [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/adaextension]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
       <xsl:apply-templates select="*" mode="M190"/>
    </xsl:template>
    <xsl:template match="text()" priority="-1" mode="M190"/>
@@ -24885,11 +25269,11 @@ See http://www.gnu.org/licenses/
 
 
 	  <!--RULE -->
-   <xsl:template match="/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/*[not(self::gynaecologische_aandoening)][not(self::bloedverliesq)][not(self::cervixinsufficientieq)][not(self::infectie)][not(self::hyperemesis_gravidarumq)][not(self::hypertensieve_aandoening)][not(self::zwangerschapscholestaseq)][not(self::diabetes_gravidarum_met_insulineq)][not(self::afwijkende_groei_foetus)][not(self::dreigende_partus_immaturusq)][not(self::dreigende_partus_prematurusq)][not(self::abruptio_placentaeq)]"
+   <xsl:template match="/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/*[not(self::gynaecologische_aandoening)][not(self::bloedverliesq)][not(self::cervixinsufficientieq)][not(self::infectie)][not(self::hyperemesis_gravidarumq)][not(self::hypertensieve_aandoening)][not(self::zwangerschapscholestaseq)][not(self::diabetes_gravidarum_met_insulineq)][not(self::afwijkende_groei_foetus)][not(self::dreigende_partus_immaturusq)][not(self::dreigende_partus_prematurusq)][not(self::abruptio_placentaeq)][not(self::adaextension)]"
                  priority="1000"
                  mode="M191">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/*[not(self::gynaecologische_aandoening)][not(self::bloedverliesq)][not(self::cervixinsufficientieq)][not(self::infectie)][not(self::hyperemesis_gravidarumq)][not(self::hypertensieve_aandoening)][not(self::zwangerschapscholestaseq)][not(self::diabetes_gravidarum_met_insulineq)][not(self::afwijkende_groei_foetus)][not(self::dreigende_partus_immaturusq)][not(self::dreigende_partus_prematurusq)][not(self::abruptio_placentaeq)]"/>
+                       context="/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/*[not(self::gynaecologische_aandoening)][not(self::bloedverliesq)][not(self::cervixinsufficientieq)][not(self::infectie)][not(self::hyperemesis_gravidarumq)][not(self::hypertensieve_aandoening)][not(self::zwangerschapscholestaseq)][not(self::diabetes_gravidarum_met_insulineq)][not(self::afwijkende_groei_foetus)][not(self::dreigende_partus_immaturusq)][not(self::dreigende_partus_prematurusq)][not(self::abruptio_placentaeq)][not(self::adaextension)]"/>
 
 		    <!--REPORT -->
       <xsl:if test="true()">
@@ -26564,6 +26948,22 @@ See http://www.gnu.org/licenses/
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(adaextension) ge 0) and (count(adaextension) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
+                  <xsl:value-of select="count(adaextension)"/>
+                  <xsl:text/> (verwacht: 0..1) [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/adaextension]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
       <xsl:apply-templates select="*" mode="M204"/>
    </xsl:template>
    <xsl:template match="text()" priority="-1" mode="M204"/>
@@ -26575,11 +26975,11 @@ See http://www.gnu.org/licenses/
 
 
 	  <!--RULE -->
-   <xsl:template match="/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/*[not(self::placenta)][not(self::hoeveelheid_bloedverlies)][not(self::vorige_uitkomst_per_kind)]"
+   <xsl:template match="/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/*[not(self::placenta)][not(self::hoeveelheid_bloedverlies)][not(self::vorige_uitkomst_per_kind)][not(self::adaextension)]"
                  priority="1000"
                  mode="M205">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/*[not(self::placenta)][not(self::hoeveelheid_bloedverlies)][not(self::vorige_uitkomst_per_kind)]"/>
+                       context="/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/*[not(self::placenta)][not(self::hoeveelheid_bloedverlies)][not(self::vorige_uitkomst_per_kind)][not(self::adaextension)]"/>
 
 		    <!--REPORT -->
       <xsl:if test="true()">
@@ -26909,6 +27309,22 @@ See http://www.gnu.org/licenses/
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(adaextension) ge 0) and (count(adaextension) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
+                  <xsl:value-of select="count(adaextension)"/>
+                  <xsl:text/> (verwacht: 0..1) [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/placenta/adaextension]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
       <xsl:apply-templates select="*" mode="M209"/>
    </xsl:template>
    <xsl:template match="text()" priority="-1" mode="M209"/>
@@ -26920,11 +27336,11 @@ See http://www.gnu.org/licenses/
 
 
 	  <!--RULE -->
-   <xsl:template match="/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/placenta/*[not(self::geboorte_placenta)]"
+   <xsl:template match="/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/placenta/*[not(self::geboorte_placenta)][not(self::adaextension)]"
                  priority="1000"
                  mode="M210">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/placenta/*[not(self::geboorte_placenta)]"/>
+                       context="/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/placenta/*[not(self::geboorte_placenta)][not(self::adaextension)]"/>
 
 		    <!--REPORT -->
       <xsl:if test="true()">
@@ -27162,6 +27578,22 @@ See http://www.gnu.org/licenses/
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(adaextension) ge 0) and (count(adaextension) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
+                  <xsl:value-of select="count(adaextension)"/>
+                  <xsl:text/> (verwacht: 0..1) [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/adaextension]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
       <xsl:apply-templates select="*" mode="M212"/>
    </xsl:template>
    <xsl:template match="text()" priority="-1" mode="M212"/>
@@ -27173,11 +27605,11 @@ See http://www.gnu.org/licenses/
 
 
 	  <!--RULE -->
-   <xsl:template match="/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/*[not(self::vorige_baring)]"
+   <xsl:template match="/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/*[not(self::vorige_baring)][not(self::adaextension)]"
                  priority="1000"
                  mode="M213">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/*[not(self::vorige_baring)]"/>
+                       context="/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/*[not(self::vorige_baring)][not(self::adaextension)]"/>
 
 		    <!--REPORT -->
       <xsl:if test="true()">
@@ -27315,6 +27747,22 @@ See http://www.gnu.org/licenses/
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(adaextension) ge 0) and (count(adaextension) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
+                  <xsl:value-of select="count(adaextension)"/>
+                  <xsl:text/> (verwacht: 0..1) [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/adaextension]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
       <xsl:apply-templates select="*" mode="M215"/>
    </xsl:template>
    <xsl:template match="text()" priority="-1" mode="M215"/>
@@ -27326,11 +27774,11 @@ See http://www.gnu.org/licenses/
 
 
 	  <!--RULE -->
-   <xsl:template match="/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/*[not(self::demografische_gegevens)][not(self::kindspecifieke_gegevens_vorige_uitkomsten)]"
+   <xsl:template match="/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/*[not(self::demografische_gegevens)][not(self::kindspecifieke_gegevens_vorige_uitkomsten)][not(self::adaextension)]"
                  priority="1000"
                  mode="M216">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/*[not(self::demografische_gegevens)][not(self::kindspecifieke_gegevens_vorige_uitkomsten)]"/>
+                       context="/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/*[not(self::demografische_gegevens)][not(self::kindspecifieke_gegevens_vorige_uitkomsten)][not(self::adaextension)]"/>
 
 		    <!--REPORT -->
       <xsl:if test="true()">
@@ -27527,6 +27975,22 @@ See http://www.gnu.org/licenses/
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(adaextension) ge 0) and (count(adaextension) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
+                  <xsl:value-of select="count(adaextension)"/>
+                  <xsl:text/> (verwacht: 0..1) [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/demografische_gegevens/adaextension]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
       <xsl:apply-templates select="*" mode="M219"/>
    </xsl:template>
    <xsl:template match="text()" priority="-1" mode="M219"/>
@@ -27538,11 +28002,11 @@ See http://www.gnu.org/licenses/
 
 
 	  <!--RULE -->
-   <xsl:template match="/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/demografische_gegevens/*[not(self::geboortedatum)]"
+   <xsl:template match="/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/demografische_gegevens/*[not(self::geboortedatum)][not(self::adaextension)]"
                  priority="1000"
                  mode="M220">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/demografische_gegevens/*[not(self::geboortedatum)]"/>
+                       context="/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/demografische_gegevens/*[not(self::geboortedatum)][not(self::adaextension)]"/>
 
 		    <!--REPORT -->
       <xsl:if test="true()">
@@ -27741,6 +28205,22 @@ See http://www.gnu.org/licenses/
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(adaextension) ge 0) and (count(adaextension) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
+                  <xsl:value-of select="count(adaextension)"/>
+                  <xsl:text/> (verwacht: 0..1) [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/adaextension]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
       <xsl:apply-templates select="*" mode="M222"/>
    </xsl:template>
    <xsl:template match="text()" priority="-1" mode="M222"/>
@@ -27752,11 +28232,11 @@ See http://www.gnu.org/licenses/
 
 
 	  <!--RULE -->
-   <xsl:template match="/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/*[not(self::type_partus)][not(self::percentiel_van_het_geboortegewicht)][not(self::apgarscore_na_5_min)][not(self::congenitale_afwijkingenq)][not(self::congenitale_afwijkingen_groep)]"
+   <xsl:template match="/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/*[not(self::type_partus)][not(self::percentiel_van_het_geboortegewicht)][not(self::apgarscore_na_5_min)][not(self::congenitale_afwijkingenq)][not(self::congenitale_afwijkingen_groep)][not(self::adaextension)]"
                  priority="1000"
                  mode="M223">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/*[not(self::type_partus)][not(self::percentiel_van_het_geboortegewicht)][not(self::apgarscore_na_5_min)][not(self::congenitale_afwijkingenq)][not(self::congenitale_afwijkingen_groep)]"/>
+                       context="/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/*[not(self::type_partus)][not(self::percentiel_van_het_geboortegewicht)][not(self::apgarscore_na_5_min)][not(self::congenitale_afwijkingenq)][not(self::congenitale_afwijkingen_groep)][not(self::adaextension)]"/>
 
 		    <!--REPORT -->
       <xsl:if test="true()">
@@ -28500,6 +28980,22 @@ See http://www.gnu.org/licenses/
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(adaextension) ge 0) and (count(adaextension) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
+                  <xsl:value-of select="count(adaextension)"/>
+                  <xsl:text/> (verwacht: 0..1) [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/congenitale_afwijkingen_groep/adaextension]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
       <xsl:apply-templates select="*" mode="M229"/>
    </xsl:template>
    <xsl:template match="text()" priority="-1" mode="M229"/>
@@ -28511,11 +29007,11 @@ See http://www.gnu.org/licenses/
 
 
 	  <!--RULE -->
-   <xsl:template match="/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/congenitale_afwijkingen_groep/*[not(self::chromosomale_afwijkingenq)]"
+   <xsl:template match="/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/congenitale_afwijkingen_groep/*[not(self::chromosomale_afwijkingenq)][not(self::adaextension)]"
                  priority="1000"
                  mode="M230">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/congenitale_afwijkingen_groep/*[not(self::chromosomale_afwijkingenq)]"/>
+                       context="/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/congenitale_afwijkingen_groep/*[not(self::chromosomale_afwijkingenq)][not(self::adaextension)]"/>
 
 		    <!--REPORT -->
       <xsl:if test="true()">
@@ -28793,6 +29289,22 @@ See http://www.gnu.org/licenses/
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(adaextension) ge 0) and (count(adaextension) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
+                  <xsl:value-of select="count(adaextension)"/>
+                  <xsl:text/> (verwacht: 0..1) [/kernset_geboortezorg/zwangerschap/adaextension]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
       <xsl:apply-templates select="*" mode="M232"/>
    </xsl:template>
    <xsl:template match="text()" priority="-1" mode="M232"/>
@@ -28804,11 +29316,11 @@ See http://www.gnu.org/licenses/
 
 
 	  <!--RULE -->
-   <xsl:template match="/kernset_geboortezorg/zwangerschap/*[not(self::graviditeit)][not(self::pariteit_voor_deze_zwangerschap)][not(self::definitieve_a_terme_datum)][not(self::voornemens)][not(self::prenatale_controle)][not(self::diagnose)][not(self::intrauteriene_behandeling)][not(self::maternale_sterfteq)][not(self::wijze_einde_zwangerschap)]"
+   <xsl:template match="/kernset_geboortezorg/zwangerschap/*[not(self::graviditeit)][not(self::pariteit_voor_deze_zwangerschap)][not(self::definitieve_a_terme_datum)][not(self::voornemens)][not(self::prenatale_controle)][not(self::diagnose)][not(self::intrauteriene_behandeling)][not(self::maternale_sterfteq)][not(self::wijze_einde_zwangerschap)][not(self::adaextension)]"
                  priority="1000"
                  mode="M233">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/kernset_geboortezorg/zwangerschap/*[not(self::graviditeit)][not(self::pariteit_voor_deze_zwangerschap)][not(self::definitieve_a_terme_datum)][not(self::voornemens)][not(self::prenatale_controle)][not(self::diagnose)][not(self::intrauteriene_behandeling)][not(self::maternale_sterfteq)][not(self::wijze_einde_zwangerschap)]"/>
+                       context="/kernset_geboortezorg/zwangerschap/*[not(self::graviditeit)][not(self::pariteit_voor_deze_zwangerschap)][not(self::definitieve_a_terme_datum)][not(self::voornemens)][not(self::prenatale_controle)][not(self::diagnose)][not(self::intrauteriene_behandeling)][not(self::maternale_sterfteq)][not(self::wijze_einde_zwangerschap)][not(self::adaextension)]"/>
 
 		    <!--REPORT -->
       <xsl:if test="true()">
@@ -29926,6 +30438,22 @@ See http://www.gnu.org/licenses/
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(adaextension) ge 0) and (count(adaextension) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
+                  <xsl:value-of select="count(adaextension)"/>
+                  <xsl:text/> (verwacht: 0..1) [/kernset_geboortezorg/zwangerschap/voornemens/adaextension]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
       <xsl:apply-templates select="*" mode="M243"/>
    </xsl:template>
    <xsl:template match="text()" priority="-1" mode="M243"/>
@@ -29937,11 +30465,11 @@ See http://www.gnu.org/licenses/
 
 
 	  <!--RULE -->
-   <xsl:template match="/kernset_geboortezorg/zwangerschap/voornemens/*[not(self::voorgenomen_plaats_baring_tijdens_zwangerschap_type_locatie)]"
+   <xsl:template match="/kernset_geboortezorg/zwangerschap/voornemens/*[not(self::voorgenomen_plaats_baring_tijdens_zwangerschap_type_locatie)][not(self::adaextension)]"
                  priority="1000"
                  mode="M244">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/kernset_geboortezorg/zwangerschap/voornemens/*[not(self::voorgenomen_plaats_baring_tijdens_zwangerschap_type_locatie)]"/>
+                       context="/kernset_geboortezorg/zwangerschap/voornemens/*[not(self::voorgenomen_plaats_baring_tijdens_zwangerschap_type_locatie)][not(self::adaextension)]"/>
 
 		    <!--REPORT -->
       <xsl:if test="true()">
@@ -30275,6 +30803,22 @@ See http://www.gnu.org/licenses/
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(adaextension) ge 0) and (count(adaextension) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
+                  <xsl:value-of select="count(adaextension)"/>
+                  <xsl:text/> (verwacht: 0..1) [/kernset_geboortezorg/zwangerschap/prenatale_controle/adaextension]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
       <xsl:apply-templates select="*" mode="M246"/>
    </xsl:template>
    <xsl:template match="text()" priority="-1" mode="M246"/>
@@ -30286,11 +30830,11 @@ See http://www.gnu.org/licenses/
 
 
 	  <!--RULE -->
-   <xsl:template match="/kernset_geboortezorg/zwangerschap/prenatale_controle/*[not(self::datum_controle)][not(self::zwangerschapsduur)][not(self::leven_voelen)][not(self::rookgedrag)][not(self::alcoholgebruik)][not(self::drugsgebruikq)][not(self::gewicht_gemeten)]"
+   <xsl:template match="/kernset_geboortezorg/zwangerschap/prenatale_controle/*[not(self::datum_controle)][not(self::zwangerschapsduur)][not(self::leven_voelen)][not(self::rookgedrag)][not(self::alcoholgebruik)][not(self::drugsgebruikq)][not(self::gewicht_gemeten)][not(self::adaextension)]"
                  priority="1000"
                  mode="M247">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/kernset_geboortezorg/zwangerschap/prenatale_controle/*[not(self::datum_controle)][not(self::zwangerschapsduur)][not(self::leven_voelen)][not(self::rookgedrag)][not(self::alcoholgebruik)][not(self::drugsgebruikq)][not(self::gewicht_gemeten)]"/>
+                       context="/kernset_geboortezorg/zwangerschap/prenatale_controle/*[not(self::datum_controle)][not(self::zwangerschapsduur)][not(self::leven_voelen)][not(self::rookgedrag)][not(self::alcoholgebruik)][not(self::drugsgebruikq)][not(self::gewicht_gemeten)][not(self::adaextension)]"/>
 
 		    <!--REPORT -->
       <xsl:if test="true()">
@@ -31672,6 +32216,22 @@ See http://www.gnu.org/licenses/
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(adaextension) ge 0) and (count(adaextension) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
+                  <xsl:value-of select="count(adaextension)"/>
+                  <xsl:text/> (verwacht: 0..1) [/kernset_geboortezorg/zwangerschap/diagnose/adaextension]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
       <xsl:apply-templates select="*" mode="M255"/>
    </xsl:template>
    <xsl:template match="text()" priority="-1" mode="M255"/>
@@ -31683,11 +32243,11 @@ See http://www.gnu.org/licenses/
 
 
 	  <!--RULE -->
-   <xsl:template match="/kernset_geboortezorg/zwangerschap/diagnose/*[not(self::datum)][not(self::zwangerschapsduur)][not(self::gynaecologische_aandoening)][not(self::bloedverliesq)][not(self::partiele_molaq)][not(self::cervixinsufficientieq)][not(self::infectie)][not(self::hyperemesis_gravidarumq)][not(self::hypertensieve_aandoening)][not(self::zwangerschapscholestaseq)][not(self::diabetes_gravidarum_met_insulineq)][not(self::afwijkende_groei_foetus)][not(self::dreigende_partus_immaturusq)][not(self::dreigende_partus_prematurusq)][not(self::abruptio_placentaeq)][not(self::navelstrengprolapsq)][not(self::liggingsafwijking)][not(self::intrauteriene_vruchtdood)]"
+   <xsl:template match="/kernset_geboortezorg/zwangerschap/diagnose/*[not(self::datum)][not(self::zwangerschapsduur)][not(self::gynaecologische_aandoening)][not(self::bloedverliesq)][not(self::partiele_molaq)][not(self::cervixinsufficientieq)][not(self::infectie)][not(self::hyperemesis_gravidarumq)][not(self::hypertensieve_aandoening)][not(self::zwangerschapscholestaseq)][not(self::diabetes_gravidarum_met_insulineq)][not(self::afwijkende_groei_foetus)][not(self::dreigende_partus_immaturusq)][not(self::dreigende_partus_prematurusq)][not(self::abruptio_placentaeq)][not(self::navelstrengprolapsq)][not(self::liggingsafwijking)][not(self::intrauteriene_vruchtdood)][not(self::adaextension)]"
                  priority="1000"
                  mode="M256">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/kernset_geboortezorg/zwangerschap/diagnose/*[not(self::datum)][not(self::zwangerschapsduur)][not(self::gynaecologische_aandoening)][not(self::bloedverliesq)][not(self::partiele_molaq)][not(self::cervixinsufficientieq)][not(self::infectie)][not(self::hyperemesis_gravidarumq)][not(self::hypertensieve_aandoening)][not(self::zwangerschapscholestaseq)][not(self::diabetes_gravidarum_met_insulineq)][not(self::afwijkende_groei_foetus)][not(self::dreigende_partus_immaturusq)][not(self::dreigende_partus_prematurusq)][not(self::abruptio_placentaeq)][not(self::navelstrengprolapsq)][not(self::liggingsafwijking)][not(self::intrauteriene_vruchtdood)]"/>
+                       context="/kernset_geboortezorg/zwangerschap/diagnose/*[not(self::datum)][not(self::zwangerschapsduur)][not(self::gynaecologische_aandoening)][not(self::bloedverliesq)][not(self::partiele_molaq)][not(self::cervixinsufficientieq)][not(self::infectie)][not(self::hyperemesis_gravidarumq)][not(self::hypertensieve_aandoening)][not(self::zwangerschapscholestaseq)][not(self::diabetes_gravidarum_met_insulineq)][not(self::afwijkende_groei_foetus)][not(self::dreigende_partus_immaturusq)][not(self::dreigende_partus_prematurusq)][not(self::abruptio_placentaeq)][not(self::navelstrengprolapsq)][not(self::liggingsafwijking)][not(self::intrauteriene_vruchtdood)][not(self::adaextension)]"/>
 
 		    <!--REPORT -->
       <xsl:if test="true()">
@@ -34041,6 +34601,22 @@ See http://www.gnu.org/licenses/
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(adaextension) ge 0) and (count(adaextension) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
+                  <xsl:value-of select="count(adaextension)"/>
+                  <xsl:text/> (verwacht: 0..1) [/kernset_geboortezorg/zwangerschap/diagnose/intrauteriene_vruchtdood/adaextension]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
       <xsl:apply-templates select="*" mode="M275"/>
    </xsl:template>
    <xsl:template match="text()" priority="-1" mode="M275"/>
@@ -34052,11 +34628,11 @@ See http://www.gnu.org/licenses/
 
 
 	  <!--RULE -->
-   <xsl:template match="/kernset_geboortezorg/zwangerschap/diagnose/intrauteriene_vruchtdood/*[not(self::vermoeden_intrauteriene_vruchtdoodq)][not(self::vermoeden_iuvd_op_basis_van)]"
+   <xsl:template match="/kernset_geboortezorg/zwangerschap/diagnose/intrauteriene_vruchtdood/*[not(self::vermoeden_intrauteriene_vruchtdoodq)][not(self::vermoeden_iuvd_op_basis_van)][not(self::adaextension)]"
                  priority="1000"
                  mode="M276">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/kernset_geboortezorg/zwangerschap/diagnose/intrauteriene_vruchtdood/*[not(self::vermoeden_intrauteriene_vruchtdoodq)][not(self::vermoeden_iuvd_op_basis_van)]"/>
+                       context="/kernset_geboortezorg/zwangerschap/diagnose/intrauteriene_vruchtdood/*[not(self::vermoeden_intrauteriene_vruchtdoodq)][not(self::vermoeden_iuvd_op_basis_van)][not(self::adaextension)]"/>
 
 		    <!--REPORT -->
       <xsl:if test="true()">
@@ -34556,6 +35132,22 @@ See http://www.gnu.org/licenses/
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(adaextension) ge 0) and (count(adaextension) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
+                  <xsl:value-of select="count(adaextension)"/>
+                  <xsl:text/> (verwacht: 0..1) [/kernset_geboortezorg/bevalling/adaextension]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
       <xsl:apply-templates select="*" mode="M279"/>
    </xsl:template>
    <xsl:template match="text()" priority="-1" mode="M279"/>
@@ -34567,11 +35159,11 @@ See http://www.gnu.org/licenses/
 
 
 	  <!--RULE -->
-   <xsl:template match="/kernset_geboortezorg/bevalling/*[not(self::partusnummer)][not(self::diagnose_bevalling)][not(self::aantal_geboren_kinderen)][not(self::risicostatus_voor_baring)][not(self::interventies_begin_baring)][not(self::wijze_waarop_de_baring_begon)][not(self::tijdstip_begin_actieve_ontsluiting)][not(self::medicatie_nageboortetijdperk_groep)][not(self::placenta)][not(self::hoeveelheid_bloedverlies)][not(self::conditie_perineum_postpartum)]"
+   <xsl:template match="/kernset_geboortezorg/bevalling/*[not(self::partusnummer)][not(self::diagnose_bevalling)][not(self::aantal_geboren_kinderen)][not(self::risicostatus_voor_baring)][not(self::interventies_begin_baring)][not(self::wijze_waarop_de_baring_begon)][not(self::tijdstip_begin_actieve_ontsluiting)][not(self::medicatie_nageboortetijdperk_groep)][not(self::placenta)][not(self::hoeveelheid_bloedverlies)][not(self::conditie_perineum_postpartum)][not(self::adaextension)]"
                  priority="1000"
                  mode="M280">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/kernset_geboortezorg/bevalling/*[not(self::partusnummer)][not(self::diagnose_bevalling)][not(self::aantal_geboren_kinderen)][not(self::risicostatus_voor_baring)][not(self::interventies_begin_baring)][not(self::wijze_waarop_de_baring_begon)][not(self::tijdstip_begin_actieve_ontsluiting)][not(self::medicatie_nageboortetijdperk_groep)][not(self::placenta)][not(self::hoeveelheid_bloedverlies)][not(self::conditie_perineum_postpartum)]"/>
+                       context="/kernset_geboortezorg/bevalling/*[not(self::partusnummer)][not(self::diagnose_bevalling)][not(self::aantal_geboren_kinderen)][not(self::risicostatus_voor_baring)][not(self::interventies_begin_baring)][not(self::wijze_waarop_de_baring_begon)][not(self::tijdstip_begin_actieve_ontsluiting)][not(self::medicatie_nageboortetijdperk_groep)][not(self::placenta)][not(self::hoeveelheid_bloedverlies)][not(self::conditie_perineum_postpartum)][not(self::adaextension)]"/>
 
 		    <!--REPORT -->
       <xsl:if test="true()">
@@ -36096,6 +36688,22 @@ See http://www.gnu.org/licenses/
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(adaextension) ge 0) and (count(adaextension) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
+                  <xsl:value-of select="count(adaextension)"/>
+                  <xsl:text/> (verwacht: 0..1) [/kernset_geboortezorg/bevalling/diagnose_bevalling/adaextension]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
       <xsl:apply-templates select="*" mode="M292"/>
    </xsl:template>
    <xsl:template match="text()" priority="-1" mode="M292"/>
@@ -36107,11 +36715,11 @@ See http://www.gnu.org/licenses/
 
 
 	  <!--RULE -->
-   <xsl:template match="/kernset_geboortezorg/bevalling/diagnose_bevalling/*[not(self::ppromq)][not(self::promq)][not(self::koortsq)][not(self::niet_vorderende_ontsluitingq)][not(self::niet_vorderende_uitdrijvingq)][not(self::verdenking_foetale_noodq)][not(self::intrauteriene_vruchtdood)][not(self::vastzittende_placentaq)][not(self::fluxus_postpartumq)]"
+   <xsl:template match="/kernset_geboortezorg/bevalling/diagnose_bevalling/*[not(self::ppromq)][not(self::promq)][not(self::koortsq)][not(self::niet_vorderende_ontsluitingq)][not(self::niet_vorderende_uitdrijvingq)][not(self::verdenking_foetale_noodq)][not(self::intrauteriene_vruchtdood)][not(self::vastzittende_placentaq)][not(self::fluxus_postpartumq)][not(self::adaextension)]"
                  priority="1000"
                  mode="M293">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/kernset_geboortezorg/bevalling/diagnose_bevalling/*[not(self::ppromq)][not(self::promq)][not(self::koortsq)][not(self::niet_vorderende_ontsluitingq)][not(self::niet_vorderende_uitdrijvingq)][not(self::verdenking_foetale_noodq)][not(self::intrauteriene_vruchtdood)][not(self::vastzittende_placentaq)][not(self::fluxus_postpartumq)]"/>
+                       context="/kernset_geboortezorg/bevalling/diagnose_bevalling/*[not(self::ppromq)][not(self::promq)][not(self::koortsq)][not(self::niet_vorderende_ontsluitingq)][not(self::niet_vorderende_uitdrijvingq)][not(self::verdenking_foetale_noodq)][not(self::intrauteriene_vruchtdood)][not(self::vastzittende_placentaq)][not(self::fluxus_postpartumq)][not(self::adaextension)]"/>
 
 		    <!--REPORT -->
       <xsl:if test="true()">
@@ -37081,6 +37689,22 @@ See http://www.gnu.org/licenses/
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(adaextension) ge 0) and (count(adaextension) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
+                  <xsl:value-of select="count(adaextension)"/>
+                  <xsl:text/> (verwacht: 0..1) [/kernset_geboortezorg/bevalling/diagnose_bevalling/intrauteriene_vruchtdood/adaextension]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
       <xsl:apply-templates select="*" mode="M303"/>
    </xsl:template>
    <xsl:template match="text()" priority="-1" mode="M303"/>
@@ -37092,11 +37716,11 @@ See http://www.gnu.org/licenses/
 
 
 	  <!--RULE -->
-   <xsl:template match="/kernset_geboortezorg/bevalling/diagnose_bevalling/intrauteriene_vruchtdood/*[not(self::vermoeden_intrauteriene_vruchtdoodq)][not(self::vermoeden_iuvd_op_basis_van)]"
+   <xsl:template match="/kernset_geboortezorg/bevalling/diagnose_bevalling/intrauteriene_vruchtdood/*[not(self::vermoeden_intrauteriene_vruchtdoodq)][not(self::vermoeden_iuvd_op_basis_van)][not(self::adaextension)]"
                  priority="1000"
                  mode="M304">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/kernset_geboortezorg/bevalling/diagnose_bevalling/intrauteriene_vruchtdood/*[not(self::vermoeden_intrauteriene_vruchtdoodq)][not(self::vermoeden_iuvd_op_basis_van)]"/>
+                       context="/kernset_geboortezorg/bevalling/diagnose_bevalling/intrauteriene_vruchtdood/*[not(self::vermoeden_intrauteriene_vruchtdoodq)][not(self::vermoeden_iuvd_op_basis_van)][not(self::adaextension)]"/>
 
 		    <!--REPORT -->
       <xsl:if test="true()">
@@ -37454,6 +38078,22 @@ See http://www.gnu.org/licenses/
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(adaextension) ge 0) and (count(adaextension) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
+                  <xsl:value-of select="count(adaextension)"/>
+                  <xsl:text/> (verwacht: 0..1) [/kernset_geboortezorg/bevalling/interventies_begin_baring/adaextension]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
       <xsl:apply-templates select="*" mode="M307"/>
    </xsl:template>
    <xsl:template match="text()" priority="-1" mode="M307"/>
@@ -37465,11 +38105,11 @@ See http://www.gnu.org/licenses/
 
 
 	  <!--RULE -->
-   <xsl:template match="/kernset_geboortezorg/bevalling/interventies_begin_baring/*[not(self::interventie_begin_baring)][not(self::indicatie_interventie_begin_baring)]"
+   <xsl:template match="/kernset_geboortezorg/bevalling/interventies_begin_baring/*[not(self::interventie_begin_baring)][not(self::indicatie_interventie_begin_baring)][not(self::adaextension)]"
                  priority="1000"
                  mode="M308">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/kernset_geboortezorg/bevalling/interventies_begin_baring/*[not(self::interventie_begin_baring)][not(self::indicatie_interventie_begin_baring)]"/>
+                       context="/kernset_geboortezorg/bevalling/interventies_begin_baring/*[not(self::interventie_begin_baring)][not(self::indicatie_interventie_begin_baring)][not(self::adaextension)]"/>
 
 		    <!--REPORT -->
       <xsl:if test="true()">
@@ -37914,6 +38554,22 @@ See http://www.gnu.org/licenses/
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(adaextension) ge 0) and (count(adaextension) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
+                  <xsl:value-of select="count(adaextension)"/>
+                  <xsl:text/> (verwacht: 0..1) [/kernset_geboortezorg/bevalling/medicatie_nageboortetijdperk_groep/adaextension]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
       <xsl:apply-templates select="*" mode="M311"/>
    </xsl:template>
    <xsl:template match="text()" priority="-1" mode="M311"/>
@@ -37925,11 +38581,11 @@ See http://www.gnu.org/licenses/
 
 
 	  <!--RULE -->
-   <xsl:template match="/kernset_geboortezorg/bevalling/medicatie_nageboortetijdperk_groep/*[not(self::medicatie_nageboortetijdperkq)][not(self::soort_medicatie_nageboortetijdperk)]"
+   <xsl:template match="/kernset_geboortezorg/bevalling/medicatie_nageboortetijdperk_groep/*[not(self::medicatie_nageboortetijdperkq)][not(self::soort_medicatie_nageboortetijdperk)][not(self::adaextension)]"
                  priority="1000"
                  mode="M312">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/kernset_geboortezorg/bevalling/medicatie_nageboortetijdperk_groep/*[not(self::medicatie_nageboortetijdperkq)][not(self::soort_medicatie_nageboortetijdperk)]"/>
+                       context="/kernset_geboortezorg/bevalling/medicatie_nageboortetijdperk_groep/*[not(self::medicatie_nageboortetijdperkq)][not(self::soort_medicatie_nageboortetijdperk)][not(self::adaextension)]"/>
 
 		    <!--REPORT -->
       <xsl:if test="true()">
@@ -38271,6 +38927,22 @@ See http://www.gnu.org/licenses/
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(adaextension) ge 0) and (count(adaextension) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
+                  <xsl:value-of select="count(adaextension)"/>
+                  <xsl:text/> (verwacht: 0..1) [/kernset_geboortezorg/bevalling/placenta/adaextension]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
       <xsl:apply-templates select="*" mode="M315"/>
    </xsl:template>
    <xsl:template match="text()" priority="-1" mode="M315"/>
@@ -38282,11 +38954,11 @@ See http://www.gnu.org/licenses/
 
 
 	  <!--RULE -->
-   <xsl:template match="/kernset_geboortezorg/bevalling/placenta/*[not(self::geboorte_placenta)]"
+   <xsl:template match="/kernset_geboortezorg/bevalling/placenta/*[not(self::geboorte_placenta)][not(self::adaextension)]"
                  priority="1000"
                  mode="M316">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/kernset_geboortezorg/bevalling/placenta/*[not(self::geboorte_placenta)]"/>
+                       context="/kernset_geboortezorg/bevalling/placenta/*[not(self::geboorte_placenta)][not(self::adaextension)]"/>
 
 		    <!--REPORT -->
       <xsl:if test="true()">
@@ -38524,6 +39196,22 @@ See http://www.gnu.org/licenses/
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(adaextension) ge 0) and (count(adaextension) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
+                  <xsl:value-of select="count(adaextension)"/>
+                  <xsl:text/> (verwacht: 0..1) [/kernset_geboortezorg/uitkomst_per_kind/adaextension]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
       <xsl:apply-templates select="*" mode="M318"/>
    </xsl:template>
    <xsl:template match="text()" priority="-1" mode="M318"/>
@@ -38535,11 +39223,11 @@ See http://www.gnu.org/licenses/
 
 
 	  <!--RULE -->
-   <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/*[not(self::baring)]"
+   <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/*[not(self::baring)][not(self::adaextension)]"
                  priority="1000"
                  mode="M319">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/kernset_geboortezorg/uitkomst_per_kind/*[not(self::baring)]"/>
+                       context="/kernset_geboortezorg/uitkomst_per_kind/*[not(self::baring)][not(self::adaextension)]"/>
 
 		    <!--REPORT -->
       <xsl:if test="true()">
@@ -38725,6 +39413,22 @@ See http://www.gnu.org/licenses/
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(adaextension) ge 0) and (count(adaextension) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
+                  <xsl:value-of select="count(adaextension)"/>
+                  <xsl:text/> (verwacht: 0..1) [/kernset_geboortezorg/uitkomst_per_kind/baring/adaextension]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
       <xsl:apply-templates select="*" mode="M321"/>
    </xsl:template>
    <xsl:template match="text()" priority="-1" mode="M321"/>
@@ -38736,11 +39440,11 @@ See http://www.gnu.org/licenses/
 
 
 	  <!--RULE -->
-   <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/*[not(self::werkelijke_plaats_baring_type_locatie)][not(self::ziekenhuis_baring)][not(self::demografische_gegevens)][not(self::kindspecifieke_maternale_gegevens)][not(self::kindspecifieke_uitkomstgegevens)]"
+   <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/*[not(self::werkelijke_plaats_baring_type_locatie)][not(self::ziekenhuis_baring)][not(self::demografische_gegevens)][not(self::kindspecifieke_maternale_gegevens)][not(self::kindspecifieke_uitkomstgegevens)][not(self::adaextension)]"
                  priority="1000"
                  mode="M322">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/kernset_geboortezorg/uitkomst_per_kind/baring/*[not(self::werkelijke_plaats_baring_type_locatie)][not(self::ziekenhuis_baring)][not(self::demografische_gegevens)][not(self::kindspecifieke_maternale_gegevens)][not(self::kindspecifieke_uitkomstgegevens)]"/>
+                       context="/kernset_geboortezorg/uitkomst_per_kind/baring/*[not(self::werkelijke_plaats_baring_type_locatie)][not(self::ziekenhuis_baring)][not(self::demografische_gegevens)][not(self::kindspecifieke_maternale_gegevens)][not(self::kindspecifieke_uitkomstgegevens)][not(self::adaextension)]"/>
 
 		    <!--REPORT -->
       <xsl:if test="true()">
@@ -39278,6 +39982,22 @@ See http://www.gnu.org/licenses/
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(adaextension) ge 0) and (count(adaextension) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
+                  <xsl:value-of select="count(adaextension)"/>
+                  <xsl:text/> (verwacht: 0..1) [/kernset_geboortezorg/uitkomst_per_kind/baring/ziekenhuis_baring/adaextension]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
       <xsl:apply-templates select="*" mode="M328"/>
    </xsl:template>
    <xsl:template match="text()" priority="-1" mode="M328"/>
@@ -39289,11 +40009,11 @@ See http://www.gnu.org/licenses/
 
 
 	  <!--RULE -->
-   <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/ziekenhuis_baring/*[not(self::ziekenhuisnummer_lvrid)]"
+   <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/ziekenhuis_baring/*[not(self::ziekenhuisnummer_lvrid)][not(self::adaextension)]"
                  priority="1000"
                  mode="M329">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/kernset_geboortezorg/uitkomst_per_kind/baring/ziekenhuis_baring/*[not(self::ziekenhuisnummer_lvrid)]"/>
+                       context="/kernset_geboortezorg/uitkomst_per_kind/baring/ziekenhuis_baring/*[not(self::ziekenhuisnummer_lvrid)][not(self::adaextension)]"/>
 
 		    <!--REPORT -->
       <xsl:if test="true()">
@@ -39524,6 +40244,22 @@ See http://www.gnu.org/licenses/
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(adaextension) ge 0) and (count(adaextension) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
+                  <xsl:value-of select="count(adaextension)"/>
+                  <xsl:text/> (verwacht: 0..1) [/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/adaextension]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
       <xsl:apply-templates select="*" mode="M331"/>
    </xsl:template>
    <xsl:template match="text()" priority="-1" mode="M331"/>
@@ -39535,11 +40271,11 @@ See http://www.gnu.org/licenses/
 
 
 	  <!--RULE -->
-   <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/*[not(self::identificaties_kind)][not(self::geslacht_medische_observatie)][not(self::geboortedatum)][not(self::rangnummer_kind)][not(self::perinatale_sterfte_groep)]"
+   <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/*[not(self::identificaties_kind)][not(self::geslacht_medische_observatie)][not(self::geboortedatum)][not(self::rangnummer_kind)][not(self::perinatale_sterfte_groep)][not(self::adaextension)]"
                  priority="1000"
                  mode="M332">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/*[not(self::identificaties_kind)][not(self::geslacht_medische_observatie)][not(self::geboortedatum)][not(self::rangnummer_kind)][not(self::perinatale_sterfte_groep)]"/>
+                       context="/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/*[not(self::identificaties_kind)][not(self::geslacht_medische_observatie)][not(self::geboortedatum)][not(self::rangnummer_kind)][not(self::perinatale_sterfte_groep)][not(self::adaextension)]"/>
 
 		    <!--REPORT -->
       <xsl:if test="true()">
@@ -40151,6 +40887,22 @@ See http://www.gnu.org/licenses/
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(adaextension) ge 0) and (count(adaextension) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
+                  <xsl:value-of select="count(adaextension)"/>
+                  <xsl:text/> (verwacht: 0..1) [/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/identificaties_kind/adaextension]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
       <xsl:apply-templates select="*" mode="M338"/>
    </xsl:template>
    <xsl:template match="text()" priority="-1" mode="M338"/>
@@ -40162,11 +40914,11 @@ See http://www.gnu.org/licenses/
 
 
 	  <!--RULE -->
-   <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/identificaties_kind/*[not(self::bsn_kind)]"
+   <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/identificaties_kind/*[not(self::bsn_kind)][not(self::adaextension)]"
                  priority="1000"
                  mode="M339">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/identificaties_kind/*[not(self::bsn_kind)]"/>
+                       context="/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/identificaties_kind/*[not(self::bsn_kind)][not(self::adaextension)]"/>
 
 		    <!--REPORT -->
       <xsl:if test="true()">
@@ -40333,6 +41085,22 @@ See http://www.gnu.org/licenses/
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(adaextension) ge 0) and (count(adaextension) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
+                  <xsl:value-of select="count(adaextension)"/>
+                  <xsl:text/> (verwacht: 0..1) [/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/perinatale_sterfte_groep/adaextension]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
       <xsl:apply-templates select="*" mode="M341"/>
    </xsl:template>
    <xsl:template match="text()" priority="-1" mode="M341"/>
@@ -40344,11 +41112,11 @@ See http://www.gnu.org/licenses/
 
 
 	  <!--RULE -->
-   <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/perinatale_sterfte_groep/*[not(self::perinatale_sterfteq)][not(self::fase_perinatale_sterfte)][not(self::datumtijd_vaststelling_perinatale_sterfte)]"
+   <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/perinatale_sterfte_groep/*[not(self::perinatale_sterfteq)][not(self::fase_perinatale_sterfte)][not(self::datumtijd_vaststelling_perinatale_sterfte)][not(self::adaextension)]"
                  priority="1000"
                  mode="M342">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/perinatale_sterfte_groep/*[not(self::perinatale_sterfteq)][not(self::fase_perinatale_sterfte)][not(self::datumtijd_vaststelling_perinatale_sterfte)]"/>
+                       context="/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/perinatale_sterfte_groep/*[not(self::perinatale_sterfteq)][not(self::fase_perinatale_sterfte)][not(self::datumtijd_vaststelling_perinatale_sterfte)][not(self::adaextension)]"/>
 
 		    <!--REPORT -->
       <xsl:if test="true()">
@@ -40938,6 +41706,22 @@ See http://www.gnu.org/licenses/
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(adaextension) ge 0) and (count(adaextension) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
+                  <xsl:value-of select="count(adaextension)"/>
+                  <xsl:text/> (verwacht: 0..1) [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/adaextension]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
       <xsl:apply-templates select="*" mode="M346"/>
    </xsl:template>
    <xsl:template match="text()" priority="-1" mode="M346"/>
@@ -40949,11 +41733,11 @@ See http://www.gnu.org/licenses/
 
 
 	  <!--RULE -->
-   <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/*[not(self::bijstimulatie_toegediendq)][not(self::tijdstip_breken_vliezen)][not(self::kleur_en_consistentie_vruchtwater)][not(self::tijdstip_actief_meepersen)][not(self::episiotomieq)][not(self::indicatie_episiotomie)][not(self::locatie_episiotomie)][not(self::ruggeprik_gewenst_niet_gekregenq)][not(self::pijnbestrijdingq)][not(self::pijnbestrijding)][not(self::sedatieq)]"
+   <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/*[not(self::bijstimulatie_toegediendq)][not(self::tijdstip_breken_vliezen)][not(self::kleur_en_consistentie_vruchtwater)][not(self::tijdstip_actief_meepersen)][not(self::episiotomieq)][not(self::indicatie_episiotomie)][not(self::locatie_episiotomie)][not(self::ruggeprik_gewenst_niet_gekregenq)][not(self::pijnbestrijdingq)][not(self::pijnbestrijding)][not(self::sedatieq)][not(self::adaextension)]"
                  priority="1000"
                  mode="M347">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/*[not(self::bijstimulatie_toegediendq)][not(self::tijdstip_breken_vliezen)][not(self::kleur_en_consistentie_vruchtwater)][not(self::tijdstip_actief_meepersen)][not(self::episiotomieq)][not(self::indicatie_episiotomie)][not(self::locatie_episiotomie)][not(self::ruggeprik_gewenst_niet_gekregenq)][not(self::pijnbestrijdingq)][not(self::pijnbestrijding)][not(self::sedatieq)]"/>
+                       context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/*[not(self::bijstimulatie_toegediendq)][not(self::tijdstip_breken_vliezen)][not(self::kleur_en_consistentie_vruchtwater)][not(self::tijdstip_actief_meepersen)][not(self::episiotomieq)][not(self::indicatie_episiotomie)][not(self::locatie_episiotomie)][not(self::ruggeprik_gewenst_niet_gekregenq)][not(self::pijnbestrijdingq)][not(self::pijnbestrijding)][not(self::sedatieq)][not(self::adaextension)]"/>
 
 		    <!--REPORT -->
       <xsl:if test="true()">
@@ -42359,6 +43143,22 @@ See http://www.gnu.org/licenses/
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(adaextension) ge 0) and (count(adaextension) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
+                  <xsl:value-of select="count(adaextension)"/>
+                  <xsl:text/> (verwacht: 0..1) [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/adaextension]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
       <xsl:apply-templates select="*" mode="M359"/>
    </xsl:template>
    <xsl:template match="text()" priority="-1" mode="M359"/>
@@ -42370,11 +43170,11 @@ See http://www.gnu.org/licenses/
 
 
 	  <!--RULE -->
-   <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/*[not(self::methode)][not(self::periode)]"
+   <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/*[not(self::methode)][not(self::periode)][not(self::adaextension)]"
                  priority="1000"
                  mode="M360">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/*[not(self::methode)][not(self::periode)]"/>
+                       context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/*[not(self::methode)][not(self::periode)][not(self::adaextension)]"/>
 
 		    <!--REPORT -->
       <xsl:if test="true()">
@@ -42702,6 +43502,22 @@ See http://www.gnu.org/licenses/
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(adaextension) ge 0) and (count(adaextension) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
+                  <xsl:value-of select="count(adaextension)"/>
+                  <xsl:text/> (verwacht: 0..1) [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode/adaextension]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
       <xsl:apply-templates select="*" mode="M363"/>
    </xsl:template>
    <xsl:template match="text()" priority="-1" mode="M363"/>
@@ -42713,11 +43529,11 @@ See http://www.gnu.org/licenses/
 
 
 	  <!--RULE -->
-   <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode/*[not(self::methode)][not(self::overig_middel)]"
+   <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode/*[not(self::methode)][not(self::overig_middel)][not(self::adaextension)]"
                  priority="1000"
                  mode="M364">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode/*[not(self::methode)][not(self::overig_middel)]"/>
+                       context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode/*[not(self::methode)][not(self::overig_middel)][not(self::adaextension)]"/>
 
 		    <!--REPORT -->
       <xsl:if test="true()">
@@ -43046,6 +43862,22 @@ See http://www.gnu.org/licenses/
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(adaextension) ge 0) and (count(adaextension) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
+                  <xsl:value-of select="count(adaextension)"/>
+                  <xsl:text/> (verwacht: 0..1) [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode/overig_middel/adaextension]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
       <xsl:apply-templates select="*" mode="M367"/>
    </xsl:template>
    <xsl:template match="text()" priority="-1" mode="M367"/>
@@ -43057,11 +43889,11 @@ See http://www.gnu.org/licenses/
 
 
 	  <!--RULE -->
-   <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode/overig_middel/*[not(self::middel)][not(self::toediening)]"
+   <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode/overig_middel/*[not(self::middel)][not(self::toediening)][not(self::adaextension)]"
                  priority="1000"
                  mode="M368">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode/overig_middel/*[not(self::middel)][not(self::toediening)]"/>
+                       context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode/overig_middel/*[not(self::middel)][not(self::toediening)][not(self::adaextension)]"/>
 
 		    <!--REPORT -->
       <xsl:if test="true()">
@@ -43698,6 +44530,22 @@ See http://www.gnu.org/licenses/
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(adaextension) ge 0) and (count(adaextension) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
+                  <xsl:value-of select="count(adaextension)"/>
+                  <xsl:text/> (verwacht: 0..1) [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/adaextension]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
       <xsl:apply-templates select="*" mode="M371"/>
    </xsl:template>
    <xsl:template match="text()" priority="-1" mode="M371"/>
@@ -43709,11 +44557,11 @@ See http://www.gnu.org/licenses/
 
 
 	  <!--RULE -->
-   <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/*[not(self::type_partus)][not(self::ligging_bij_geboorte)][not(self::aanpakker_kind_groep)][not(self::supervisor_groep)][not(self::vaginale_kunstverlossing_groep)][not(self::sectio_caesarea_group)][not(self::overige_interventies)][not(self::lichamelijk_onderzoek_kind)][not(self::congenitale_afwijkingenq)][not(self::congenitale_afwijkingen_groep)][not(self::problematiek_kindq)][not(self::problematiek_kind)][not(self::kinderarts_betrokkenq)][not(self::betrokkenheid_kinderarts)]"
+   <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/*[not(self::type_partus)][not(self::ligging_bij_geboorte)][not(self::aanpakker_kind_groep)][not(self::supervisor_groep)][not(self::vaginale_kunstverlossing_groep)][not(self::sectio_caesarea_group)][not(self::overige_interventies)][not(self::lichamelijk_onderzoek_kind)][not(self::congenitale_afwijkingenq)][not(self::congenitale_afwijkingen_groep)][not(self::problematiek_kindq)][not(self::problematiek_kind)][not(self::kinderarts_betrokkenq)][not(self::betrokkenheid_kinderarts)][not(self::adaextension)]"
                  priority="1000"
                  mode="M372">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/*[not(self::type_partus)][not(self::ligging_bij_geboorte)][not(self::aanpakker_kind_groep)][not(self::supervisor_groep)][not(self::vaginale_kunstverlossing_groep)][not(self::sectio_caesarea_group)][not(self::overige_interventies)][not(self::lichamelijk_onderzoek_kind)][not(self::congenitale_afwijkingenq)][not(self::congenitale_afwijkingen_groep)][not(self::problematiek_kindq)][not(self::problematiek_kind)][not(self::kinderarts_betrokkenq)][not(self::betrokkenheid_kinderarts)]"/>
+                       context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/*[not(self::type_partus)][not(self::ligging_bij_geboorte)][not(self::aanpakker_kind_groep)][not(self::supervisor_groep)][not(self::vaginale_kunstverlossing_groep)][not(self::sectio_caesarea_group)][not(self::overige_interventies)][not(self::lichamelijk_onderzoek_kind)][not(self::congenitale_afwijkingenq)][not(self::congenitale_afwijkingen_groep)][not(self::problematiek_kindq)][not(self::problematiek_kind)][not(self::kinderarts_betrokkenq)][not(self::betrokkenheid_kinderarts)][not(self::adaextension)]"/>
 
 		    <!--REPORT -->
       <xsl:if test="true()">
@@ -45361,6 +46209,22 @@ See http://www.gnu.org/licenses/
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(adaextension) ge 0) and (count(adaextension) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
+                  <xsl:value-of select="count(adaextension)"/>
+                  <xsl:text/> (verwacht: 0..1) [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/aanpakker_kind_groep/adaextension]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
       <xsl:apply-templates select="*" mode="M387"/>
    </xsl:template>
    <xsl:template match="text()" priority="-1" mode="M387"/>
@@ -45372,11 +46236,11 @@ See http://www.gnu.org/licenses/
 
 
 	  <!--RULE -->
-   <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/aanpakker_kind_groep/*[not(self::rol_aanpakker_kind)]"
+   <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/aanpakker_kind_groep/*[not(self::rol_aanpakker_kind)][not(self::adaextension)]"
                  priority="1000"
                  mode="M388">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/aanpakker_kind_groep/*[not(self::rol_aanpakker_kind)]"/>
+                       context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/aanpakker_kind_groep/*[not(self::rol_aanpakker_kind)][not(self::adaextension)]"/>
 
 		    <!--REPORT -->
       <xsl:if test="true()">
@@ -45614,6 +46478,22 @@ See http://www.gnu.org/licenses/
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(adaextension) ge 0) and (count(adaextension) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
+                  <xsl:value-of select="count(adaextension)"/>
+                  <xsl:text/> (verwacht: 0..1) [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/supervisor_groep/adaextension]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
       <xsl:apply-templates select="*" mode="M390"/>
    </xsl:template>
    <xsl:template match="text()" priority="-1" mode="M390"/>
@@ -45625,11 +46505,11 @@ See http://www.gnu.org/licenses/
 
 
 	  <!--RULE -->
-   <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/supervisor_groep/*[not(self::rol_supervisor)]"
+   <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/supervisor_groep/*[not(self::rol_supervisor)][not(self::adaextension)]"
                  priority="1000"
                  mode="M391">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/supervisor_groep/*[not(self::rol_supervisor)]"/>
+                       context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/supervisor_groep/*[not(self::rol_supervisor)][not(self::adaextension)]"/>
 
 		    <!--REPORT -->
       <xsl:if test="true()">
@@ -45883,6 +46763,22 @@ See http://www.gnu.org/licenses/
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(adaextension) ge 0) and (count(adaextension) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
+                  <xsl:value-of select="count(adaextension)"/>
+                  <xsl:text/> (verwacht: 0..1) [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/vaginale_kunstverlossing_groep/adaextension]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
       <xsl:apply-templates select="*" mode="M393"/>
    </xsl:template>
    <xsl:template match="text()" priority="-1" mode="M393"/>
@@ -45894,11 +46790,11 @@ See http://www.gnu.org/licenses/
 
 
 	  <!--RULE -->
-   <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/vaginale_kunstverlossing_groep/*[not(self::vaginale_kunstverlossing)][not(self::succes_vaginale_kunstverlossingq)]"
+   <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/vaginale_kunstverlossing_groep/*[not(self::vaginale_kunstverlossing)][not(self::succes_vaginale_kunstverlossingq)][not(self::adaextension)]"
                  priority="1000"
                  mode="M394">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/vaginale_kunstverlossing_groep/*[not(self::vaginale_kunstverlossing)][not(self::succes_vaginale_kunstverlossingq)]"/>
+                       context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/vaginale_kunstverlossing_groep/*[not(self::vaginale_kunstverlossing)][not(self::succes_vaginale_kunstverlossingq)][not(self::adaextension)]"/>
 
 		    <!--REPORT -->
       <xsl:if test="true()">
@@ -46272,6 +47168,22 @@ See http://www.gnu.org/licenses/
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(adaextension) ge 0) and (count(adaextension) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
+                  <xsl:value-of select="count(adaextension)"/>
+                  <xsl:text/> (verwacht: 0..1) [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/sectio_caesarea_group/adaextension]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
       <xsl:apply-templates select="*" mode="M397"/>
    </xsl:template>
    <xsl:template match="text()" priority="-1" mode="M397"/>
@@ -46283,11 +47195,11 @@ See http://www.gnu.org/licenses/
 
 
 	  <!--RULE -->
-   <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/sectio_caesarea_group/*[not(self::beslismoment_sectio_caesarea)][not(self::indicatie_primaire_sectio)][not(self::indicatie_secundaire_sectio)]"
+   <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/sectio_caesarea_group/*[not(self::beslismoment_sectio_caesarea)][not(self::indicatie_primaire_sectio)][not(self::indicatie_secundaire_sectio)][not(self::adaextension)]"
                  priority="1000"
                  mode="M398">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/sectio_caesarea_group/*[not(self::beslismoment_sectio_caesarea)][not(self::indicatie_primaire_sectio)][not(self::indicatie_secundaire_sectio)]"/>
+                       context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/sectio_caesarea_group/*[not(self::beslismoment_sectio_caesarea)][not(self::indicatie_primaire_sectio)][not(self::indicatie_secundaire_sectio)][not(self::adaextension)]"/>
 
 		    <!--REPORT -->
       <xsl:if test="true()">
@@ -46923,6 +47835,22 @@ See http://www.gnu.org/licenses/
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(adaextension) ge 0) and (count(adaextension) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
+                  <xsl:value-of select="count(adaextension)"/>
+                  <xsl:text/> (verwacht: 0..1) [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/adaextension]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
       <xsl:apply-templates select="*" mode="M402"/>
    </xsl:template>
    <xsl:template match="text()" priority="-1" mode="M402"/>
@@ -46934,11 +47862,11 @@ See http://www.gnu.org/licenses/
 
 
 	  <!--RULE -->
-   <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/*[not(self::apgarscore_na_5_min)][not(self::geboortegewicht)]"
+   <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/*[not(self::apgarscore_na_5_min)][not(self::geboortegewicht)][not(self::adaextension)]"
                  priority="1000"
                  mode="M403">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/*[not(self::apgarscore_na_5_min)][not(self::geboortegewicht)]"/>
+                       context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/*[not(self::apgarscore_na_5_min)][not(self::geboortegewicht)][not(self::adaextension)]"/>
 
 		    <!--REPORT -->
       <xsl:if test="true()">
@@ -47302,6 +48230,22 @@ See http://www.gnu.org/licenses/
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(adaextension) ge 0) and (count(adaextension) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
+                  <xsl:value-of select="count(adaextension)"/>
+                  <xsl:text/> (verwacht: 0..1) [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/adaextension]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
       <xsl:apply-templates select="*" mode="M406"/>
    </xsl:template>
    <xsl:template match="text()" priority="-1" mode="M406"/>
@@ -47313,11 +48257,11 @@ See http://www.gnu.org/licenses/
 
 
 	  <!--RULE -->
-   <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/*[not(self::specificatie_congenitale_afwijking_groep)][not(self::chromosomale_afwijkingenq)][not(self::specificatie_chromosomale_afwijking_groep)]"
+   <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/*[not(self::specificatie_congenitale_afwijking_groep)][not(self::chromosomale_afwijkingenq)][not(self::specificatie_chromosomale_afwijking_groep)][not(self::adaextension)]"
                  priority="1000"
                  mode="M407">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/*[not(self::specificatie_congenitale_afwijking_groep)][not(self::chromosomale_afwijkingenq)][not(self::specificatie_chromosomale_afwijking_groep)]"/>
+                       context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/*[not(self::specificatie_congenitale_afwijking_groep)][not(self::chromosomale_afwijkingenq)][not(self::specificatie_chromosomale_afwijking_groep)][not(self::adaextension)]"/>
 
 		    <!--REPORT -->
       <xsl:if test="true()">
@@ -47618,6 +48562,22 @@ See http://www.gnu.org/licenses/
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(adaextension) ge 0) and (count(adaextension) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
+                  <xsl:value-of select="count(adaextension)"/>
+                  <xsl:text/> (verwacht: 0..1) [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_congenitale_afwijking_groep/adaextension]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
       <xsl:apply-templates select="*" mode="M411"/>
    </xsl:template>
    <xsl:template match="text()" priority="-1" mode="M411"/>
@@ -47629,11 +48589,11 @@ See http://www.gnu.org/licenses/
 
 
 	  <!--RULE -->
-   <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_congenitale_afwijking_groep/*[not(self::specificatie_congenitale_afwijking)]"
+   <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_congenitale_afwijking_groep/*[not(self::specificatie_congenitale_afwijking)][not(self::adaextension)]"
                  priority="1000"
                  mode="M412">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_congenitale_afwijking_groep/*[not(self::specificatie_congenitale_afwijking)]"/>
+                       context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_congenitale_afwijking_groep/*[not(self::specificatie_congenitale_afwijking)][not(self::adaextension)]"/>
 
 		    <!--REPORT -->
       <xsl:if test="true()">
@@ -47871,6 +48831,22 @@ See http://www.gnu.org/licenses/
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(adaextension) ge 0) and (count(adaextension) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
+                  <xsl:value-of select="count(adaextension)"/>
+                  <xsl:text/> (verwacht: 0..1) [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_chromosomale_afwijking_groep/adaextension]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
       <xsl:apply-templates select="*" mode="M414"/>
    </xsl:template>
    <xsl:template match="text()" priority="-1" mode="M414"/>
@@ -47882,11 +48858,11 @@ See http://www.gnu.org/licenses/
 
 
 	  <!--RULE -->
-   <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_chromosomale_afwijking_groep/*[not(self::specificatie_chromosomale_afwijking)]"
+   <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_chromosomale_afwijking_groep/*[not(self::specificatie_chromosomale_afwijking)][not(self::adaextension)]"
                  priority="1000"
                  mode="M415">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_chromosomale_afwijking_groep/*[not(self::specificatie_chromosomale_afwijking)]"/>
+                       context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_chromosomale_afwijking_groep/*[not(self::specificatie_chromosomale_afwijking)][not(self::adaextension)]"/>
 
 		    <!--REPORT -->
       <xsl:if test="true()">
@@ -48172,6 +49148,22 @@ See http://www.gnu.org/licenses/
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(adaextension) ge 0) and (count(adaextension) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
+                  <xsl:value-of select="count(adaextension)"/>
+                  <xsl:text/> (verwacht: 0..1) [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts/adaextension]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
       <xsl:apply-templates select="*" mode="M417"/>
    </xsl:template>
    <xsl:template match="text()" priority="-1" mode="M417"/>
@@ -48183,11 +49175,11 @@ See http://www.gnu.org/licenses/
 
 
 	  <!--RULE -->
-   <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts/*[not(self::datum_betrokkenheid)][not(self::reden_betrokkenheid)][not(self::type_betrokkenheid)][not(self::zorginstelling_lvrid)]"
+   <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts/*[not(self::datum_betrokkenheid)][not(self::reden_betrokkenheid)][not(self::type_betrokkenheid)][not(self::zorginstelling_lvrid)][not(self::adaextension)]"
                  priority="1000"
                  mode="M418">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts/*[not(self::datum_betrokkenheid)][not(self::reden_betrokkenheid)][not(self::type_betrokkenheid)][not(self::zorginstelling_lvrid)]"/>
+                       context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts/*[not(self::datum_betrokkenheid)][not(self::reden_betrokkenheid)][not(self::type_betrokkenheid)][not(self::zorginstelling_lvrid)][not(self::adaextension)]"/>
 
 		    <!--REPORT -->
       <xsl:if test="true()">
@@ -48824,6 +49816,22 @@ See http://www.gnu.org/licenses/
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(adaextension) ge 0) and (count(adaextension) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
+                  <xsl:value-of select="count(adaextension)"/>
+                  <xsl:text/> (verwacht: 0..1) [/kernset_geboortezorg/medisch_onderzoek/adaextension]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
       <xsl:apply-templates select="*" mode="M423"/>
    </xsl:template>
    <xsl:template match="text()" priority="-1" mode="M423"/>
@@ -48835,11 +49843,11 @@ See http://www.gnu.org/licenses/
 
 
 	  <!--RULE -->
-   <xsl:template match="/kernset_geboortezorg/medisch_onderzoek/*[not(self::maternale_onderzoeksgegevens)]"
+   <xsl:template match="/kernset_geboortezorg/medisch_onderzoek/*[not(self::maternale_onderzoeksgegevens)][not(self::adaextension)]"
                  priority="1000"
                  mode="M424">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/kernset_geboortezorg/medisch_onderzoek/*[not(self::maternale_onderzoeksgegevens)]"/>
+                       context="/kernset_geboortezorg/medisch_onderzoek/*[not(self::maternale_onderzoeksgegevens)][not(self::adaextension)]"/>
 
 		    <!--REPORT -->
       <xsl:if test="true()">
@@ -48961,6 +49969,22 @@ See http://www.gnu.org/licenses/
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(adaextension) ge 0) and (count(adaextension) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
+                  <xsl:value-of select="count(adaextension)"/>
+                  <xsl:text/> (verwacht: 0..1) [/kernset_geboortezorg/medisch_onderzoek/maternale_onderzoeksgegevens/adaextension]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
       <xsl:apply-templates select="*" mode="M426"/>
    </xsl:template>
    <xsl:template match="text()" priority="-1" mode="M426"/>
@@ -48972,11 +49996,11 @@ See http://www.gnu.org/licenses/
 
 
 	  <!--RULE -->
-   <xsl:template match="/kernset_geboortezorg/medisch_onderzoek/maternale_onderzoeksgegevens/*[not(self::urine_bloed_en_aanvullende_onderzoeken)]"
+   <xsl:template match="/kernset_geboortezorg/medisch_onderzoek/maternale_onderzoeksgegevens/*[not(self::urine_bloed_en_aanvullende_onderzoeken)][not(self::adaextension)]"
                  priority="1000"
                  mode="M427">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/kernset_geboortezorg/medisch_onderzoek/maternale_onderzoeksgegevens/*[not(self::urine_bloed_en_aanvullende_onderzoeken)]"/>
+                       context="/kernset_geboortezorg/medisch_onderzoek/maternale_onderzoeksgegevens/*[not(self::urine_bloed_en_aanvullende_onderzoeken)][not(self::adaextension)]"/>
 
 		    <!--REPORT -->
       <xsl:if test="true()">
@@ -49098,6 +50122,22 @@ See http://www.gnu.org/licenses/
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(adaextension) ge 0) and (count(adaextension) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
+                  <xsl:value-of select="count(adaextension)"/>
+                  <xsl:text/> (verwacht: 0..1) [/kernset_geboortezorg/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/adaextension]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
       <xsl:apply-templates select="*" mode="M429"/>
    </xsl:template>
    <xsl:template match="text()" priority="-1" mode="M429"/>
@@ -49109,11 +50149,11 @@ See http://www.gnu.org/licenses/
 
 
 	  <!--RULE -->
-   <xsl:template match="/kernset_geboortezorg/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/*[not(self::psie)]"
+   <xsl:template match="/kernset_geboortezorg/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/*[not(self::psie)][not(self::adaextension)]"
                  priority="1000"
                  mode="M430">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/kernset_geboortezorg/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/*[not(self::psie)]"/>
+                       context="/kernset_geboortezorg/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/*[not(self::psie)][not(self::adaextension)]"/>
 
 		    <!--REPORT -->
       <xsl:if test="true()">
@@ -49251,6 +50291,22 @@ See http://www.gnu.org/licenses/
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(adaextension) ge 0) and (count(adaextension) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
+                  <xsl:value-of select="count(adaextension)"/>
+                  <xsl:text/> (verwacht: 0..1) [/kernset_geboortezorg/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/psie/adaextension]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
       <xsl:apply-templates select="*" mode="M432"/>
    </xsl:template>
    <xsl:template match="text()" priority="-1" mode="M432"/>
@@ -49262,11 +50318,11 @@ See http://www.gnu.org/licenses/
 
 
 	  <!--RULE -->
-   <xsl:template match="/kernset_geboortezorg/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/psie/*[not(self::irregulaire_antistoffenq)][not(self::welke_irregulaire_antistoffen_vrouw_aanwezig)]"
+   <xsl:template match="/kernset_geboortezorg/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/psie/*[not(self::irregulaire_antistoffenq)][not(self::welke_irregulaire_antistoffen_vrouw_aanwezig)][not(self::adaextension)]"
                  priority="1000"
                  mode="M433">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/kernset_geboortezorg/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/psie/*[not(self::irregulaire_antistoffenq)][not(self::welke_irregulaire_antistoffen_vrouw_aanwezig)]"/>
+                       context="/kernset_geboortezorg/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/psie/*[not(self::irregulaire_antistoffenq)][not(self::welke_irregulaire_antistoffen_vrouw_aanwezig)][not(self::adaextension)]"/>
 
 		    <!--REPORT -->
       <xsl:if test="true()">
@@ -49624,6 +50680,22 @@ See http://www.gnu.org/licenses/
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(adaextension) ge 0) and (count(adaextension) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
+                  <xsl:value-of select="count(adaextension)"/>
+                  <xsl:text/> (verwacht: 0..1) [/kernset_geboortezorg/postnatale_fase/adaextension]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
       <xsl:apply-templates select="*" mode="M436"/>
    </xsl:template>
    <xsl:template match="text()" priority="-1" mode="M436"/>
@@ -49635,11 +50707,11 @@ See http://www.gnu.org/licenses/
 
 
 	  <!--RULE -->
-   <xsl:template match="/kernset_geboortezorg/postnatale_fase/*[not(self::diagnoseinterventie_postpartum)][not(self::kindspecifieke_gegevens)]"
+   <xsl:template match="/kernset_geboortezorg/postnatale_fase/*[not(self::diagnoseinterventie_postpartum)][not(self::kindspecifieke_gegevens)][not(self::adaextension)]"
                  priority="1000"
                  mode="M437">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/kernset_geboortezorg/postnatale_fase/*[not(self::diagnoseinterventie_postpartum)][not(self::kindspecifieke_gegevens)]"/>
+                       context="/kernset_geboortezorg/postnatale_fase/*[not(self::diagnoseinterventie_postpartum)][not(self::kindspecifieke_gegevens)][not(self::adaextension)]"/>
 
 		    <!--REPORT -->
       <xsl:if test="true()">
@@ -49852,6 +50924,22 @@ See http://www.gnu.org/licenses/
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(adaextension) ge 0) and (count(adaextension) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
+                  <xsl:value-of select="count(adaextension)"/>
+                  <xsl:text/> (verwacht: 0..1) [/kernset_geboortezorg/postnatale_fase/diagnoseinterventie_postpartum/adaextension]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
       <xsl:apply-templates select="*" mode="M440"/>
    </xsl:template>
    <xsl:template match="text()" priority="-1" mode="M440"/>
@@ -49863,11 +50951,11 @@ See http://www.gnu.org/licenses/
 
 
 	  <!--RULE -->
-   <xsl:template match="/kernset_geboortezorg/postnatale_fase/diagnoseinterventie_postpartum/*[not(self::datum)][not(self::pathologie_vrouw)]"
+   <xsl:template match="/kernset_geboortezorg/postnatale_fase/diagnoseinterventie_postpartum/*[not(self::datum)][not(self::pathologie_vrouw)][not(self::adaextension)]"
                  priority="1000"
                  mode="M441">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/kernset_geboortezorg/postnatale_fase/diagnoseinterventie_postpartum/*[not(self::datum)][not(self::pathologie_vrouw)]"/>
+                       context="/kernset_geboortezorg/postnatale_fase/diagnoseinterventie_postpartum/*[not(self::datum)][not(self::pathologie_vrouw)][not(self::adaextension)]"/>
 
 		    <!--REPORT -->
       <xsl:if test="true()">
@@ -50193,6 +51281,22 @@ See http://www.gnu.org/licenses/
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(adaextension) ge 0) and (count(adaextension) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
+                  <xsl:value-of select="count(adaextension)"/>
+                  <xsl:text/> (verwacht: 0..1) [/kernset_geboortezorg/postnatale_fase/kindspecifieke_gegevens/adaextension]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
       <xsl:apply-templates select="*" mode="M444"/>
    </xsl:template>
    <xsl:template match="text()" priority="-1" mode="M444"/>
@@ -50204,11 +51308,11 @@ See http://www.gnu.org/licenses/
 
 
 	  <!--RULE -->
-   <xsl:template match="/kernset_geboortezorg/postnatale_fase/kindspecifieke_gegevens/*[not(self::voeding_kind_groep)]"
+   <xsl:template match="/kernset_geboortezorg/postnatale_fase/kindspecifieke_gegevens/*[not(self::voeding_kind_groep)][not(self::adaextension)]"
                  priority="1000"
                  mode="M445">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/kernset_geboortezorg/postnatale_fase/kindspecifieke_gegevens/*[not(self::voeding_kind_groep)]"/>
+                       context="/kernset_geboortezorg/postnatale_fase/kindspecifieke_gegevens/*[not(self::voeding_kind_groep)][not(self::adaextension)]"/>
 
 		    <!--REPORT -->
       <xsl:if test="true()">
@@ -50346,6 +51450,22 @@ See http://www.gnu.org/licenses/
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(adaextension) ge 0) and (count(adaextension) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
+                  <xsl:value-of select="count(adaextension)"/>
+                  <xsl:text/> (verwacht: 0..1) [/kernset_geboortezorg/postnatale_fase/kindspecifieke_gegevens/voeding_kind_groep/adaextension]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
       <xsl:apply-templates select="*" mode="M447"/>
    </xsl:template>
    <xsl:template match="text()" priority="-1" mode="M447"/>
@@ -50357,11 +51477,11 @@ See http://www.gnu.org/licenses/
 
 
 	  <!--RULE -->
-   <xsl:template match="/kernset_geboortezorg/postnatale_fase/kindspecifieke_gegevens/voeding_kind_groep/*[not(self::voeding_kind_datum)][not(self::substantie_voeding_kind)]"
+   <xsl:template match="/kernset_geboortezorg/postnatale_fase/kindspecifieke_gegevens/voeding_kind_groep/*[not(self::voeding_kind_datum)][not(self::substantie_voeding_kind)][not(self::adaextension)]"
                  priority="1000"
                  mode="M448">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/kernset_geboortezorg/postnatale_fase/kindspecifieke_gegevens/voeding_kind_groep/*[not(self::voeding_kind_datum)][not(self::substantie_voeding_kind)]"/>
+                       context="/kernset_geboortezorg/postnatale_fase/kindspecifieke_gegevens/voeding_kind_groep/*[not(self::voeding_kind_datum)][not(self::substantie_voeding_kind)][not(self::adaextension)]"/>
 
 		    <!--REPORT -->
       <xsl:if test="true()">
