@@ -1819,11 +1819,6 @@ SOFTWARE.
                                     <xs:attribute name="value" use="optional">
                                        <xs:simpleType>
                                           <xs:restriction base="xs:string">
-                                             <xs:enumeration value="10">
-                                                <xs:annotation>
-                                                   <xs:documentation source="name" xml:lang="nl-NL">conditie moeder</xs:documentation>
-                                                </xs:annotation>
-                                             </xs:enumeration>
                                              <xs:enumeration value="1">
                                                 <xs:annotation>
                                                    <xs:documentation source="name" xml:lang="nl-NL">acuut levensbedreigend</xs:documentation>
@@ -1837,11 +1832,6 @@ SOFTWARE.
                                              <xs:enumeration value="8">
                                                 <xs:annotation>
                                                    <xs:documentation source="name" xml:lang="nl-NL">onbekend</xs:documentation>
-                                                </xs:annotation>
-                                             </xs:enumeration>
-                                             <xs:enumeration value="20">
-                                                <xs:annotation>
-                                                   <xs:documentation source="name" xml:lang="nl-NL">conditie kind</xs:documentation>
                                                 </xs:annotation>
                                              </xs:enumeration>
                                              <xs:enumeration value="2">
@@ -1895,11 +1885,9 @@ SOFTWARE.
                                     <xs:attribute name="code" use="optional">
                                        <xs:simpleType>
                                           <xs:restriction base="xs:string">
-                                             <xs:enumeration value="10"/>
                                              <xs:enumeration value="1"/>
                                              <xs:enumeration value="3"/>
                                              <xs:enumeration value="8"/>
-                                             <xs:enumeration value="20"/>
                                              <xs:enumeration value="2"/>
                                              <xs:enumeration value="4"/>
                                              <xs:enumeration value="23"/>
@@ -1924,8 +1912,6 @@ SOFTWARE.
                                              <xs:enumeration value="2.16.840.1.113883.2.4.3.22.1.2.7"/>
                                              <xs:enumeration value="2.16.840.1.113883.2.4.3.22.1.2.7"/>
                                              <xs:enumeration value="2.16.840.1.113883.2.4.3.22.1.2.7"/>
-                                             <xs:enumeration value="2.16.840.1.113883.2.4.3.22.1.2.7"/>
-                                             <xs:enumeration value="2.16.840.1.113883.2.4.3.22.1.2.7"/>
                                              <xs:enumeration value="2.16.840.1.113883.5.1008"/>
                                              <xs:enumeration value="2.16.840.1.113883.5.1008"/>
                                              <xs:enumeration value="2.16.840.1.113883.5.1008"/>
@@ -1935,11 +1921,9 @@ SOFTWARE.
                                     <xs:attribute name="displayName" use="optional">
                                        <xs:simpleType>
                                           <xs:restriction base="xs:string">
-                                             <xs:enumeration value="Conditie moeder"/>
                                              <xs:enumeration value="Acuut levensbedreigend"/>
                                              <xs:enumeration value="Niet levensbedreigend"/>
                                              <xs:enumeration value="Onbekend"/>
-                                             <xs:enumeration value="Conditie kind"/>
                                              <xs:enumeration value="Foetale nood"/>
                                              <xs:enumeration value="Niet levensbedreigend"/>
                                              <xs:enumeration value="Inleiding vanwege congenitale afwijking"/>
@@ -1955,11 +1939,6 @@ SOFTWARE.
                                     <xs:attribute name="enum" use="optional">
                                        <xs:simpleType>
                                           <xs:restriction base="xs:string">
-                                             <xs:enumeration value="conditie_moeder">
-                                                <xs:annotation>
-                                                   <xs:documentation source="name" xml:lang="nl-NL">conditie moeder</xs:documentation>
-                                                </xs:annotation>
-                                             </xs:enumeration>
                                              <xs:enumeration value="conditie_moeder_acuut_levensbedreigend">
                                                 <xs:annotation>
                                                    <xs:documentation source="name" xml:lang="nl-NL">acuut levensbedreigend</xs:documentation>
@@ -1973,11 +1952,6 @@ SOFTWARE.
                                              <xs:enumeration value="conditie_moeder_onbekend">
                                                 <xs:annotation>
                                                    <xs:documentation source="name" xml:lang="nl-NL">onbekend</xs:documentation>
-                                                </xs:annotation>
-                                             </xs:enumeration>
-                                             <xs:enumeration value="conditie_kind">
-                                                <xs:annotation>
-                                                   <xs:documentation source="name" xml:lang="nl-NL">conditie kind</xs:documentation>
                                                 </xs:annotation>
                                              </xs:enumeration>
                                              <xs:enumeration value="conditie_kind_foetale_nood">

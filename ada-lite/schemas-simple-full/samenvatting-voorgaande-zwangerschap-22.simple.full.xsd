@@ -1611,11 +1611,6 @@ SOFTWARE.
                                     <xs:attribute name="value" use="required">
                                        <xs:simpleType>
                                           <xs:restriction base="xs:string">
-                                             <xs:enumeration value="1">
-                                                <xs:annotation>
-                                                   <xs:documentation source="name" xml:lang="nl-NL">gevaar moeder</xs:documentation>
-                                                </xs:annotation>
-                                             </xs:enumeration>
                                              <xs:enumeration value="2">
                                                 <xs:annotation>
                                                    <xs:documentation source="name" xml:lang="nl-NL">acuut levensbedreigend</xs:documentation>
@@ -1629,11 +1624,6 @@ SOFTWARE.
                                              <xs:enumeration value="4">
                                                 <xs:annotation>
                                                    <xs:documentation source="name" xml:lang="nl-NL">onbekend</xs:documentation>
-                                                </xs:annotation>
-                                             </xs:enumeration>
-                                             <xs:enumeration value="5">
-                                                <xs:annotation>
-                                                   <xs:documentation source="name" xml:lang="nl-NL">gevaar kind</xs:documentation>
                                                 </xs:annotation>
                                              </xs:enumeration>
                                              <xs:enumeration value="6">
@@ -1687,11 +1677,9 @@ SOFTWARE.
                                     <xs:attribute name="code" use="required">
                                        <xs:simpleType>
                                           <xs:restriction base="xs:string">
-                                             <xs:enumeration value="10"/>
                                              <xs:enumeration value="1"/>
                                              <xs:enumeration value="3"/>
                                              <xs:enumeration value="8"/>
-                                             <xs:enumeration value="20"/>
                                              <xs:enumeration value="2"/>
                                              <xs:enumeration value="4"/>
                                              <xs:enumeration value="9"/>
@@ -1716,8 +1704,6 @@ SOFTWARE.
                                              <xs:enumeration value="2.16.840.1.113883.2.4.3.22.1.2.7"/>
                                              <xs:enumeration value="2.16.840.1.113883.2.4.3.22.1.2.7"/>
                                              <xs:enumeration value="2.16.840.1.113883.2.4.3.22.1.2.7"/>
-                                             <xs:enumeration value="2.16.840.1.113883.2.4.3.22.1.2.7"/>
-                                             <xs:enumeration value="2.16.840.1.113883.2.4.3.22.1.2.7"/>
                                              <xs:enumeration value="2.16.840.1.113883.5.1008"/>
                                              <xs:enumeration value="2.16.840.1.113883.5.1008"/>
                                              <xs:enumeration value="2.16.840.1.113883.5.1008"/>
@@ -1727,11 +1713,9 @@ SOFTWARE.
                                     <xs:attribute name="displayName" use="required">
                                        <xs:simpleType>
                                           <xs:restriction base="xs:string">
-                                             <xs:enumeration value="gevaar moeder"/>
                                              <xs:enumeration value="acuut levensbedreigend"/>
                                              <xs:enumeration value="niet levensbedreigend"/>
                                              <xs:enumeration value="onbekend"/>
-                                             <xs:enumeration value="gevaar kind"/>
                                              <xs:enumeration value="acuut levensbedreigend"/>
                                              <xs:enumeration value="niet levensbedreigend"/>
                                              <xs:enumeration value="onbekend"/>

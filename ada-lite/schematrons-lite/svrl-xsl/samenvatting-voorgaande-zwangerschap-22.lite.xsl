@@ -9264,80 +9264,80 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@value) or (@value = ('10', '1', '3', '8', '20', '2', '4', '9', '5', '6', '7', 'OTH', 'UNK', 'NI'))"/>
+         <xsl:when test="empty(@value) or (@value = ('1', '3', '8', '2', '4', '9', '5', '6', '7', 'OTH', 'UNK', 'NI'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@value) or (@value = ('10', '1', '3', '8', '20', '2', '4', '9', '5', '6', '7', 'OTH', 'UNK', 'NI'))">
+                                test="empty(@value) or (@value = ('1', '3', '8', '2', '4', '9', '5', '6', '7', 'OTH', 'UNK', 'NI'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Indicatie interventie begin baring": De waarde "<xsl:text/>
                   <xsl:value-of select="@value"/>
-                  <xsl:text/>" voor attribuut "value" is onjuist [/voorgaande_zwangerschap_samenvatting_22/bevalling/interventies_begin_baring_groep/indicatie_interventie_begin_baring/@value; allowed=('10', '1', '3', '8', '20', '2', '4', '9', '5', '6', '7', 'OTH', 'UNK', 'NI')]</svrl:text>
+                  <xsl:text/>" voor attribuut "value" is onjuist [/voorgaande_zwangerschap_samenvatting_22/bevalling/interventies_begin_baring_groep/indicatie_interventie_begin_baring/@value; allowed=('1', '3', '8', '2', '4', '9', '5', '6', '7', 'OTH', 'UNK', 'NI')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@code) or (@code = ('10', '1', '3', '8', '20', '2', '4', '9', '5', '6', '7', 'OTH', 'UNK', 'NI'))"/>
+         <xsl:when test="empty(@code) or (@code = ('1', '3', '8', '2', '4', '9', '5', '6', '7', 'OTH', 'UNK', 'NI'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@code) or (@code = ('10', '1', '3', '8', '20', '2', '4', '9', '5', '6', '7', 'OTH', 'UNK', 'NI'))">
+                                test="empty(@code) or (@code = ('1', '3', '8', '2', '4', '9', '5', '6', '7', 'OTH', 'UNK', 'NI'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Indicatie interventie begin baring": De waarde "<xsl:text/>
                   <xsl:value-of select="@code"/>
-                  <xsl:text/>" voor attribuut "code" is onjuist [/voorgaande_zwangerschap_samenvatting_22/bevalling/interventies_begin_baring_groep/indicatie_interventie_begin_baring/@code; allowed=('10', '1', '3', '8', '20', '2', '4', '9', '5', '6', '7', 'OTH', 'UNK', 'NI')]</svrl:text>
+                  <xsl:text/>" voor attribuut "code" is onjuist [/voorgaande_zwangerschap_samenvatting_22/bevalling/interventies_begin_baring_groep/indicatie_interventie_begin_baring/@code; allowed=('1', '3', '8', '2', '4', '9', '5', '6', '7', 'OTH', 'UNK', 'NI')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008'))"/>
+         <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008'))">
+                                test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Indicatie interventie begin baring": De waarde "<xsl:text/>
                   <xsl:value-of select="@codeSystem"/>
-                  <xsl:text/>" voor attribuut "codeSystem" is onjuist [/voorgaande_zwangerschap_samenvatting_22/bevalling/interventies_begin_baring_groep/indicatie_interventie_begin_baring/@codeSystem; allowed=('2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008')]</svrl:text>
+                  <xsl:text/>" voor attribuut "codeSystem" is onjuist [/voorgaande_zwangerschap_samenvatting_22/bevalling/interventies_begin_baring_groep/indicatie_interventie_begin_baring/@codeSystem; allowed=('2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@displayName) or (@displayName = ('gevaar moeder', 'acuut levensbedreigend', 'niet levensbedreigend', 'onbekend', 'gevaar kind', 'acuut levensbedreigend', 'niet levensbedreigend', 'onbekend', 'baring op korte termijn geïndiceerd door zorgverlener', 'wens zorgverlener (incl: wetenschappelijk onderzoek)', 'wens patiënt', 'overig', 'onbekend', 'geen informatie'))"/>
+         <xsl:when test="empty(@displayName) or (@displayName = ('acuut levensbedreigend', 'niet levensbedreigend', 'onbekend', 'acuut levensbedreigend', 'niet levensbedreigend', 'onbekend', 'baring op korte termijn geïndiceerd door zorgverlener', 'wens zorgverlener (incl: wetenschappelijk onderzoek)', 'wens patiënt', 'overig', 'onbekend', 'geen informatie'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@displayName) or (@displayName = ('gevaar moeder', 'acuut levensbedreigend', 'niet levensbedreigend', 'onbekend', 'gevaar kind', 'acuut levensbedreigend', 'niet levensbedreigend', 'onbekend', 'baring op korte termijn geïndiceerd door zorgverlener', 'wens zorgverlener (incl: wetenschappelijk onderzoek)', 'wens patiënt', 'overig', 'onbekend', 'geen informatie'))">
+                                test="empty(@displayName) or (@displayName = ('acuut levensbedreigend', 'niet levensbedreigend', 'onbekend', 'acuut levensbedreigend', 'niet levensbedreigend', 'onbekend', 'baring op korte termijn geïndiceerd door zorgverlener', 'wens zorgverlener (incl: wetenschappelijk onderzoek)', 'wens patiënt', 'overig', 'onbekend', 'geen informatie'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Indicatie interventie begin baring": De waarde "<xsl:text/>
                   <xsl:value-of select="@displayName"/>
-                  <xsl:text/>" voor attribuut "displayName" is onjuist [/voorgaande_zwangerschap_samenvatting_22/bevalling/interventies_begin_baring_groep/indicatie_interventie_begin_baring/@displayName; allowed=('gevaar moeder', 'acuut levensbedreigend', 'niet levensbedreigend', 'onbekend', 'gevaar kind', 'acuut levensbedreigend', 'niet levensbedreigend', 'onbekend', 'baring op korte termijn geïndiceerd door zorgverlener', 'wens zorgverlener (incl: wetenschappelijk onderzoek)', 'wens patiënt', 'overig', 'onbekend', 'geen informatie')]</svrl:text>
+                  <xsl:text/>" voor attribuut "displayName" is onjuist [/voorgaande_zwangerschap_samenvatting_22/bevalling/interventies_begin_baring_groep/indicatie_interventie_begin_baring/@displayName; allowed=('acuut levensbedreigend', 'niet levensbedreigend', 'onbekend', 'acuut levensbedreigend', 'niet levensbedreigend', 'onbekend', 'baring op korte termijn geïndiceerd door zorgverlener', 'wens zorgverlener (incl: wetenschappelijk onderzoek)', 'wens patiënt', 'overig', 'onbekend', 'geen informatie')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('gevaar_moeder', 'gevaar_moeder_acuut_levensbedreigend', 'gevaar_moeder_niet_levensbedreigend', 'gevaar_moeder_onbekend', 'gevaar_kind', 'gevaar_kind_acuut_levensbedreigend', 'gevaar_kind_niet_levensbedreigend', 'gevaar_kind_onbekend', 'baring_op_korte_termijn_geindiceerd_door_zorgverlener', 'wens_zorgverlener_incl_wetenschappelijk_onderzoek', 'wens_patient', 'overig', 'onbekend', 'geen_informatie'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('gevaar_moeder_acuut_levensbedreigend', 'gevaar_moeder_niet_levensbedreigend', 'gevaar_moeder_onbekend', 'gevaar_kind_acuut_levensbedreigend', 'gevaar_kind_niet_levensbedreigend', 'gevaar_kind_onbekend', 'baring_op_korte_termijn_geindiceerd_door_zorgverlener', 'wens_zorgverlener_incl_wetenschappelijk_onderzoek', 'wens_patient', 'overig', 'onbekend', 'geen_informatie'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('gevaar_moeder', 'gevaar_moeder_acuut_levensbedreigend', 'gevaar_moeder_niet_levensbedreigend', 'gevaar_moeder_onbekend', 'gevaar_kind', 'gevaar_kind_acuut_levensbedreigend', 'gevaar_kind_niet_levensbedreigend', 'gevaar_kind_onbekend', 'baring_op_korte_termijn_geindiceerd_door_zorgverlener', 'wens_zorgverlener_incl_wetenschappelijk_onderzoek', 'wens_patient', 'overig', 'onbekend', 'geen_informatie'))">
+                                test="empty(@enum) or (@enum = ('gevaar_moeder_acuut_levensbedreigend', 'gevaar_moeder_niet_levensbedreigend', 'gevaar_moeder_onbekend', 'gevaar_kind_acuut_levensbedreigend', 'gevaar_kind_niet_levensbedreigend', 'gevaar_kind_onbekend', 'baring_op_korte_termijn_geindiceerd_door_zorgverlener', 'wens_zorgverlener_incl_wetenschappelijk_onderzoek', 'wens_patient', 'overig', 'onbekend', 'geen_informatie'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Indicatie interventie begin baring": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/voorgaande_zwangerschap_samenvatting_22/bevalling/interventies_begin_baring_groep/indicatie_interventie_begin_baring/@enum; allowed=('gevaar_moeder', 'gevaar_moeder_acuut_levensbedreigend', 'gevaar_moeder_niet_levensbedreigend', 'gevaar_moeder_onbekend', 'gevaar_kind', 'gevaar_kind_acuut_levensbedreigend', 'gevaar_kind_niet_levensbedreigend', 'gevaar_kind_onbekend', 'baring_op_korte_termijn_geindiceerd_door_zorgverlener', 'wens_zorgverlener_incl_wetenschappelijk_onderzoek', 'wens_patient', 'overig', 'onbekend', 'geen_informatie')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/voorgaande_zwangerschap_samenvatting_22/bevalling/interventies_begin_baring_groep/indicatie_interventie_begin_baring/@enum; allowed=('gevaar_moeder_acuut_levensbedreigend', 'gevaar_moeder_niet_levensbedreigend', 'gevaar_moeder_onbekend', 'gevaar_kind_acuut_levensbedreigend', 'gevaar_kind_niet_levensbedreigend', 'gevaar_kind_onbekend', 'baring_op_korte_termijn_geindiceerd_door_zorgverlener', 'wens_zorgverlener_incl_wetenschappelijk_onderzoek', 'wens_patient', 'overig', 'onbekend', 'geen_informatie')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>

@@ -2444,11 +2444,6 @@ SOFTWARE.
                                              <xs:attribute name="value" use="optional">
                                                 <xs:simpleType>
                                                    <xs:restriction base="xs:string">
-                                                      <xs:enumeration value="87628006">
-                                                         <xs:annotation>
-                                                            <xs:documentation source="name" xml:lang="nl-NL">Bacterieel</xs:documentation>
-                                                         </xs:annotation>
-                                                      </xs:enumeration>
                                                       <xs:enumeration value="240589008">
                                                          <xs:annotation>
                                                             <xs:documentation source="name" xml:lang="nl-NL">Chlamydia trachomatis</xs:documentation>
@@ -2472,11 +2467,6 @@ SOFTWARE.
                                                       <xs:enumeration value="56717001">
                                                          <xs:annotation>
                                                             <xs:documentation source="name" xml:lang="nl-NL">TBC</xs:documentation>
-                                                         </xs:annotation>
-                                                      </xs:enumeration>
-                                                      <xs:enumeration value="34014006">
-                                                         <xs:annotation>
-                                                            <xs:documentation source="name" xml:lang="nl-NL">Viraal</xs:documentation>
                                                          </xs:annotation>
                                                       </xs:enumeration>
                                                       <xs:enumeration value="28944009">
@@ -2524,11 +2514,6 @@ SOFTWARE.
                                                             <xs:documentation source="name" xml:lang="nl-NL">Parvo</xs:documentation>
                                                          </xs:annotation>
                                                       </xs:enumeration>
-                                                      <xs:enumeration value="17322007">
-                                                         <xs:annotation>
-                                                            <xs:documentation source="name" xml:lang="nl-NL">Parasitair</xs:documentation>
-                                                         </xs:annotation>
-                                                      </xs:enumeration>
                                                       <xs:enumeration value="76272004">
                                                          <xs:annotation>
                                                             <xs:documentation source="name" xml:lang="nl-NL">Lues</xs:documentation>
@@ -2565,13 +2550,11 @@ SOFTWARE.
                                              <xs:attribute name="code" use="optional">
                                                 <xs:simpleType>
                                                    <xs:restriction base="xs:string">
-                                                      <xs:enumeration value="87628006"/>
                                                       <xs:enumeration value="240589008"/>
                                                       <xs:enumeration value="15628003"/>
                                                       <xs:enumeration value="426933007"/>
                                                       <xs:enumeration value="266096002"/>
                                                       <xs:enumeration value="56717001"/>
-                                                      <xs:enumeration value="34014006"/>
                                                       <xs:enumeration value="28944009"/>
                                                       <xs:enumeration value="23513009"/>
                                                       <xs:enumeration value="165806002"/>
@@ -2581,7 +2564,6 @@ SOFTWARE.
                                                       <xs:enumeration value="36653000"/>
                                                       <xs:enumeration value="309465005"/>
                                                       <xs:enumeration value="186748004"/>
-                                                      <xs:enumeration value="17322007"/>
                                                       <xs:enumeration value="76272004"/>
                                                       <xs:enumeration value="187192000"/>
                                                       <xs:enumeration value="23502006"/>
@@ -2613,9 +2595,6 @@ SOFTWARE.
                                                       <xs:enumeration value="2.16.840.1.113883.6.96"/>
                                                       <xs:enumeration value="2.16.840.1.113883.6.96"/>
                                                       <xs:enumeration value="2.16.840.1.113883.6.96"/>
-                                                      <xs:enumeration value="2.16.840.1.113883.6.96"/>
-                                                      <xs:enumeration value="2.16.840.1.113883.6.96"/>
-                                                      <xs:enumeration value="2.16.840.1.113883.6.96"/>
                                                       <xs:enumeration value="2.16.840.1.113883.5.1008"/>
                                                    </xs:restriction>
                                                 </xs:simpleType>
@@ -2623,13 +2602,11 @@ SOFTWARE.
                                              <xs:attribute name="displayName" use="optional">
                                                 <xs:simpleType>
                                                    <xs:restriction base="xs:string">
-                                                      <xs:enumeration value="Bacterial infectious disease (disorder)"/>
                                                       <xs:enumeration value="Chlamydia trachomatis infection (disorder)"/>
                                                       <xs:enumeration value="Gonorrhea (disorder)"/>
                                                       <xs:enumeration value="Streptococcus agalactiae infection (disorder)"/>
                                                       <xs:enumeration value="Methicillin resistant Staphylococcus aureus infection (disorder)"/>
                                                       <xs:enumeration value="Tuberculosis (disorder)"/>
-                                                      <xs:enumeration value="Viral disease (disorder)"/>
                                                       <xs:enumeration value="Cytomegalovirus infection (disorder)"/>
                                                       <xs:enumeration value="Herpesvirus infection (disorder)"/>
                                                       <xs:enumeration value="Hepatitis B surface antigen positive (finding)"/>
@@ -2639,7 +2616,6 @@ SOFTWARE.
                                                       <xs:enumeration value="Rubella (disorder)"/>
                                                       <xs:enumeration value="Varicella-zoster virus infection (disorder)"/>
                                                       <xs:enumeration value="Parvovirus infection (disorder)"/>
-                                                      <xs:enumeration value="Disease caused by parasite (disorder)"/>
                                                       <xs:enumeration value="Syphilis (disorder)"/>
                                                       <xs:enumeration value="Toxoplasmosis (disorder)"/>
                                                       <xs:enumeration value="Lyme disease (disorder)"/>
@@ -2652,11 +2628,6 @@ SOFTWARE.
                                              <xs:attribute name="enum" use="optional">
                                                 <xs:simpleType>
                                                    <xs:restriction base="xs:string">
-                                                      <xs:enumeration value="bacterial_infectious_disease_disorder">
-                                                         <xs:annotation>
-                                                            <xs:documentation source="name" xml:lang="nl-NL">Bacterieel</xs:documentation>
-                                                         </xs:annotation>
-                                                      </xs:enumeration>
                                                       <xs:enumeration value="bacterial_infectious_disease_disorder_chlamydia_trachomatis_infection_disorder">
                                                          <xs:annotation>
                                                             <xs:documentation source="name" xml:lang="nl-NL">Chlamydia trachomatis</xs:documentation>
@@ -2680,11 +2651,6 @@ SOFTWARE.
                                                       <xs:enumeration value="bacterial_infectious_disease_disorder_tuberculosis_disorder">
                                                          <xs:annotation>
                                                             <xs:documentation source="name" xml:lang="nl-NL">TBC</xs:documentation>
-                                                         </xs:annotation>
-                                                      </xs:enumeration>
-                                                      <xs:enumeration value="viral_disease_disorder">
-                                                         <xs:annotation>
-                                                            <xs:documentation source="name" xml:lang="nl-NL">Viraal</xs:documentation>
                                                          </xs:annotation>
                                                       </xs:enumeration>
                                                       <xs:enumeration value="viral_disease_disorder_cytomegalovirus_infection_disorder">
@@ -2730,11 +2696,6 @@ SOFTWARE.
                                                       <xs:enumeration value="viral_disease_disorder_parvovirus_infection_disorder">
                                                          <xs:annotation>
                                                             <xs:documentation source="name" xml:lang="nl-NL">Parvo</xs:documentation>
-                                                         </xs:annotation>
-                                                      </xs:enumeration>
-                                                      <xs:enumeration value="disease_caused_by_parasite_disorder">
-                                                         <xs:annotation>
-                                                            <xs:documentation source="name" xml:lang="nl-NL">Parasitair</xs:documentation>
                                                          </xs:annotation>
                                                       </xs:enumeration>
                                                       <xs:enumeration value="disease_caused_by_parasite_disorder_syphilis_disorder">
@@ -10717,11 +10678,6 @@ SOFTWARE.
                                     <xs:attribute name="value" use="optional">
                                        <xs:simpleType>
                                           <xs:restriction base="xs:string">
-                                             <xs:enumeration value="10">
-                                                <xs:annotation>
-                                                   <xs:documentation source="name" xml:lang="nl-NL">conditie moeder</xs:documentation>
-                                                </xs:annotation>
-                                             </xs:enumeration>
                                              <xs:enumeration value="1">
                                                 <xs:annotation>
                                                    <xs:documentation source="name" xml:lang="nl-NL">acuut levensbedreigend</xs:documentation>
@@ -10735,11 +10691,6 @@ SOFTWARE.
                                              <xs:enumeration value="8">
                                                 <xs:annotation>
                                                    <xs:documentation source="name" xml:lang="nl-NL">onbekend</xs:documentation>
-                                                </xs:annotation>
-                                             </xs:enumeration>
-                                             <xs:enumeration value="20">
-                                                <xs:annotation>
-                                                   <xs:documentation source="name" xml:lang="nl-NL">conditie kind</xs:documentation>
                                                 </xs:annotation>
                                              </xs:enumeration>
                                              <xs:enumeration value="2">
@@ -10793,11 +10744,9 @@ SOFTWARE.
                                     <xs:attribute name="code" use="optional">
                                        <xs:simpleType>
                                           <xs:restriction base="xs:string">
-                                             <xs:enumeration value="10"/>
                                              <xs:enumeration value="1"/>
                                              <xs:enumeration value="3"/>
                                              <xs:enumeration value="8"/>
-                                             <xs:enumeration value="20"/>
                                              <xs:enumeration value="2"/>
                                              <xs:enumeration value="4"/>
                                              <xs:enumeration value="23"/>
@@ -10822,8 +10771,6 @@ SOFTWARE.
                                              <xs:enumeration value="2.16.840.1.113883.2.4.3.22.1.2.7"/>
                                              <xs:enumeration value="2.16.840.1.113883.2.4.3.22.1.2.7"/>
                                              <xs:enumeration value="2.16.840.1.113883.2.4.3.22.1.2.7"/>
-                                             <xs:enumeration value="2.16.840.1.113883.2.4.3.22.1.2.7"/>
-                                             <xs:enumeration value="2.16.840.1.113883.2.4.3.22.1.2.7"/>
                                              <xs:enumeration value="2.16.840.1.113883.5.1008"/>
                                              <xs:enumeration value="2.16.840.1.113883.5.1008"/>
                                              <xs:enumeration value="2.16.840.1.113883.5.1008"/>
@@ -10833,11 +10780,9 @@ SOFTWARE.
                                     <xs:attribute name="displayName" use="optional">
                                        <xs:simpleType>
                                           <xs:restriction base="xs:string">
-                                             <xs:enumeration value="Conditie moeder"/>
                                              <xs:enumeration value="Acuut levensbedreigend"/>
                                              <xs:enumeration value="Niet levensbedreigend"/>
                                              <xs:enumeration value="Onbekend"/>
-                                             <xs:enumeration value="Conditie kind"/>
                                              <xs:enumeration value="Foetale nood"/>
                                              <xs:enumeration value="Niet levensbedreigend"/>
                                              <xs:enumeration value="Inleiding vanwege congenitale afwijking"/>
@@ -10853,11 +10798,6 @@ SOFTWARE.
                                     <xs:attribute name="enum" use="optional">
                                        <xs:simpleType>
                                           <xs:restriction base="xs:string">
-                                             <xs:enumeration value="conditie_moeder">
-                                                <xs:annotation>
-                                                   <xs:documentation source="name" xml:lang="nl-NL">conditie moeder</xs:documentation>
-                                                </xs:annotation>
-                                             </xs:enumeration>
                                              <xs:enumeration value="conditie_moeder_acuut_levensbedreigend">
                                                 <xs:annotation>
                                                    <xs:documentation source="name" xml:lang="nl-NL">acuut levensbedreigend</xs:documentation>
@@ -10871,11 +10811,6 @@ SOFTWARE.
                                              <xs:enumeration value="conditie_moeder_onbekend">
                                                 <xs:annotation>
                                                    <xs:documentation source="name" xml:lang="nl-NL">onbekend</xs:documentation>
-                                                </xs:annotation>
-                                             </xs:enumeration>
-                                             <xs:enumeration value="conditie_kind">
-                                                <xs:annotation>
-                                                   <xs:documentation source="name" xml:lang="nl-NL">conditie kind</xs:documentation>
                                                 </xs:annotation>
                                              </xs:enumeration>
                                              <xs:enumeration value="conditie_kind_foetale_nood">
@@ -29360,11 +29295,6 @@ SOFTWARE.
                                     <xs:attribute name="value" use="optional">
                                        <xs:simpleType>
                                           <xs:restriction base="xs:string">
-                                             <xs:enumeration value="6010">
-                                                <xs:annotation>
-                                                   <xs:documentation source="name" xml:lang="nl-NL">(Dreigende) eclampsie, (verdenking op) HELLP-syndroom</xs:documentation>
-                                                </xs:annotation>
-                                             </xs:enumeration>
                                              <xs:enumeration value="398254007">
                                                 <xs:annotation>
                                                    <xs:documentation source="name" xml:lang="nl-NL">Pre-eclampsie</xs:documentation>
@@ -29420,11 +29350,6 @@ SOFTWARE.
                                                    <xs:documentation source="name" xml:lang="nl-NL">Anemie</xs:documentation>
                                                 </xs:annotation>
                                              </xs:enumeration>
-                                             <xs:enumeration value="178280004">
-                                                <xs:annotation>
-                                                   <xs:documentation source="name" xml:lang="nl-NL">Infectie</xs:documentation>
-                                                </xs:annotation>
-                                             </xs:enumeration>
                                              <xs:enumeration value="78623009">
                                                 <xs:annotation>
                                                    <xs:documentation source="name" xml:lang="nl-NL">Endometritis</xs:documentation>
@@ -29461,7 +29386,6 @@ SOFTWARE.
                                     <xs:attribute name="code" use="optional">
                                        <xs:simpleType>
                                           <xs:restriction base="xs:string">
-                                             <xs:enumeration value="6010"/>
                                              <xs:enumeration value="398254007"/>
                                              <xs:enumeration value="67359005"/>
                                              <xs:enumeration value="303063000"/>
@@ -29473,7 +29397,6 @@ SOFTWARE.
                                              <xs:enumeration value="414086009"/>
                                              <xs:enumeration value="385494008"/>
                                              <xs:enumeration value="271737000"/>
-                                             <xs:enumeration value="178280004"/>
                                              <xs:enumeration value="78623009"/>
                                              <xs:enumeration value="45198002"/>
                                              <xs:enumeration value="68566005"/>
@@ -29486,8 +29409,6 @@ SOFTWARE.
                                     <xs:attribute name="codeSystem" use="optional">
                                        <xs:simpleType>
                                           <xs:restriction base="xs:string">
-                                             <xs:enumeration value="2.16.840.1.113883.2.4.3.22.1.2.1"/>
-                                             <xs:enumeration value="2.16.840.1.113883.6.96"/>
                                              <xs:enumeration value="2.16.840.1.113883.6.96"/>
                                              <xs:enumeration value="2.16.840.1.113883.6.96"/>
                                              <xs:enumeration value="2.16.840.1.113883.6.96"/>
@@ -29511,7 +29432,6 @@ SOFTWARE.
                                     <xs:attribute name="displayName" use="optional">
                                        <xs:simpleType>
                                           <xs:restriction base="xs:string">
-                                             <xs:enumeration value="(Dreigende) eclampsie, (verdenking op) HELLP-syndroom"/>
                                              <xs:enumeration value="Pre-eclampsia (disorder)"/>
                                              <xs:enumeration value="Pre-eclampsia added to pre-existing hypertension (disorder)"/>
                                              <xs:enumeration value="Eclampsia in puerperium (disorder)"/>
@@ -29523,7 +29443,6 @@ SOFTWARE.
                                              <xs:enumeration value="Embolism (disorder)"/>
                                              <xs:enumeration value="Hematoma (disorder)"/>
                                              <xs:enumeration value="Anemia (disorder)"/>
-                                             <xs:enumeration value="Postnatal infection (disorder)"/>
                                              <xs:enumeration value="Endometritis (disorder)"/>
                                              <xs:enumeration value="Mastitis (disorder)"/>
                                              <xs:enumeration value="Urinary tract infectious disease (disorder)"/>
@@ -29536,11 +29455,6 @@ SOFTWARE.
                                     <xs:attribute name="enum" use="optional">
                                        <xs:simpleType>
                                           <xs:restriction base="xs:string">
-                                             <xs:enumeration value="dreigende_eclampsie_verdenking_op_hellpsyndroom">
-                                                <xs:annotation>
-                                                   <xs:documentation source="name" xml:lang="nl-NL">(Dreigende) eclampsie, (verdenking op) HELLP-syndroom</xs:documentation>
-                                                </xs:annotation>
-                                             </xs:enumeration>
                                              <xs:enumeration value="dreigende_eclampsie_verdenking_op_hellpsyndroom_preeclampsia_disorder">
                                                 <xs:annotation>
                                                    <xs:documentation source="name" xml:lang="nl-NL">Pre-eclampsie</xs:documentation>
@@ -29594,11 +29508,6 @@ SOFTWARE.
                                              <xs:enumeration value="anemia_disorder">
                                                 <xs:annotation>
                                                    <xs:documentation source="name" xml:lang="nl-NL">Anemie</xs:documentation>
-                                                </xs:annotation>
-                                             </xs:enumeration>
-                                             <xs:enumeration value="postnatal_infection_disorder">
-                                                <xs:annotation>
-                                                   <xs:documentation source="name" xml:lang="nl-NL">Infectie</xs:documentation>
                                                 </xs:annotation>
                                              </xs:enumeration>
                                              <xs:enumeration value="postnatal_infection_disorder_endometritis_disorder">

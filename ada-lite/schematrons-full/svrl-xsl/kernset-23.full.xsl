@@ -5706,16 +5706,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@value) or (@value = ('1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17'))"/>
+         <xsl:when test="empty(@value) or (@value = ('2', '3', '4', '5', '7', '8', '9', '11', '12', '13', '14', '15', '16', '17'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@value) or (@value = ('1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17'))">
+                                test="empty(@value) or (@value = ('2', '3', '4', '5', '7', '8', '9', '11', '12', '13', '14', '15', '16', '17'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Perinatale periode": De waarde "<xsl:text/>
                   <xsl:value-of select="@value"/>
-                  <xsl:text/>" voor attribuut "value" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/perinatale_periode/@value; allowed=('1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17')]</svrl:text>
+                  <xsl:text/>" voor attribuut "value" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/perinatale_periode/@value; allowed=('2', '3', '4', '5', '7', '8', '9', '11', '12', '13', '14', '15', '16', '17')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -5735,16 +5735,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@code) or (@code = ('100', '1', '2', '3', '4', '200', '5', '6', '7', '300', '8', '9', '91', '92', '10', 'UNK', 'NI'))"/>
+         <xsl:when test="empty(@code) or (@code = ('1', '2', '3', '4', '5', '6', '7', '8', '9', '91', '92', '10', 'UNK', 'NI'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@code) or (@code = ('100', '1', '2', '3', '4', '200', '5', '6', '7', '300', '8', '9', '91', '92', '10', 'UNK', 'NI'))">
+                                test="empty(@code) or (@code = ('1', '2', '3', '4', '5', '6', '7', '8', '9', '91', '92', '10', 'UNK', 'NI'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Perinatale periode": De waarde "<xsl:text/>
                   <xsl:value-of select="@code"/>
-                  <xsl:text/>" voor attribuut "code" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/perinatale_periode/@code; allowed=('100', '1', '2', '3', '4', '200', '5', '6', '7', '300', '8', '9', '91', '92', '10', 'UNK', 'NI')]</svrl:text>
+                  <xsl:text/>" voor attribuut "code" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/perinatale_periode/@code; allowed=('1', '2', '3', '4', '5', '6', '7', '8', '9', '91', '92', '10', 'UNK', 'NI')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -5764,16 +5764,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008'))"/>
+         <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008'))">
+                                test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Perinatale periode": De waarde "<xsl:text/>
                   <xsl:value-of select="@codeSystem"/>
-                  <xsl:text/>" voor attribuut "codeSystem" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/perinatale_periode/@codeSystem; allowed=('2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008')]</svrl:text>
+                  <xsl:text/>" voor attribuut "codeSystem" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/perinatale_periode/@codeSystem; allowed=('2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -5793,16 +5793,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@displayName) or (@displayName = ('Ante partum', 'Na eerste controle', 'Voor 28e week', '28e tot en met 36e week', 'Vanaf 37e week', 'Durante partu', 'Tijdens ontsluiting', 'Tijdens uitdrijving', 'Nageboortetijdperk', 'Postpartum', 'Direct postpartum', 'Tijdens kraambed', 'Binnen 24 uur', '2e t/m 7e dag', '2e week of later', 'Onbekend', 'Geen informatie'))"/>
+         <xsl:when test="empty(@displayName) or (@displayName = ('Na eerste controle', 'Voor 28e week', '28e tot en met 36e week', 'Vanaf 37e week', 'Tijdens ontsluiting', 'Tijdens uitdrijving', 'Nageboortetijdperk', 'Direct postpartum', 'Tijdens kraambed', 'Binnen 24 uur', '2e t/m 7e dag', '2e week of later', 'Onbekend', 'Geen informatie'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@displayName) or (@displayName = ('Ante partum', 'Na eerste controle', 'Voor 28e week', '28e tot en met 36e week', 'Vanaf 37e week', 'Durante partu', 'Tijdens ontsluiting', 'Tijdens uitdrijving', 'Nageboortetijdperk', 'Postpartum', 'Direct postpartum', 'Tijdens kraambed', 'Binnen 24 uur', '2e t/m 7e dag', '2e week of later', 'Onbekend', 'Geen informatie'))">
+                                test="empty(@displayName) or (@displayName = ('Na eerste controle', 'Voor 28e week', '28e tot en met 36e week', 'Vanaf 37e week', 'Tijdens ontsluiting', 'Tijdens uitdrijving', 'Nageboortetijdperk', 'Direct postpartum', 'Tijdens kraambed', 'Binnen 24 uur', '2e t/m 7e dag', '2e week of later', 'Onbekend', 'Geen informatie'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Perinatale periode": De waarde "<xsl:text/>
                   <xsl:value-of select="@displayName"/>
-                  <xsl:text/>" voor attribuut "displayName" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/perinatale_periode/@displayName; allowed=('Ante partum', 'Na eerste controle', 'Voor 28e week', '28e tot en met 36e week', 'Vanaf 37e week', 'Durante partu', 'Tijdens ontsluiting', 'Tijdens uitdrijving', 'Nageboortetijdperk', 'Postpartum', 'Direct postpartum', 'Tijdens kraambed', 'Binnen 24 uur', '2e t/m 7e dag', '2e week of later', 'Onbekend', 'Geen informatie')]</svrl:text>
+                  <xsl:text/>" voor attribuut "displayName" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/perinatale_periode/@displayName; allowed=('Na eerste controle', 'Voor 28e week', '28e tot en met 36e week', 'Vanaf 37e week', 'Tijdens ontsluiting', 'Tijdens uitdrijving', 'Nageboortetijdperk', 'Direct postpartum', 'Tijdens kraambed', 'Binnen 24 uur', '2e t/m 7e dag', '2e week of later', 'Onbekend', 'Geen informatie')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -10271,16 +10271,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@value) or (@value = ('1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23'))"/>
+         <xsl:when test="empty(@value) or (@value = ('2', '3', '4', '5', '6', '8', '9', '10', '11', '12', '13', '14', '15', '16', '18', '19', '20', '21', '22', '23'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@value) or (@value = ('1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23'))">
+                                test="empty(@value) or (@value = ('2', '3', '4', '5', '6', '8', '9', '10', '11', '12', '13', '14', '15', '16', '18', '19', '20', '21', '22', '23'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Infectieziekte": De waarde "<xsl:text/>
                   <xsl:value-of select="@value"/>
-                  <xsl:text/>" voor attribuut "value" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/infectieziekte/@value; allowed=('1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23')]</svrl:text>
+                  <xsl:text/>" voor attribuut "value" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/infectieziekte/@value; allowed=('2', '3', '4', '5', '6', '8', '9', '10', '11', '12', '13', '14', '15', '16', '18', '19', '20', '21', '22', '23')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -10300,16 +10300,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@code) or (@code = ('87628006', '240589008', '15628003', '426933007', '266096002', '56717001', '34014006', '28944009', '23513009', '165806002', '86406008', '66071002', '50711007', '36653000', '309465005', '186748004', '17322007', '76272004', '187192000', '23502006', '61462000', '56335008', 'OTH'))"/>
+         <xsl:when test="empty(@code) or (@code = ('240589008', '15628003', '426933007', '266096002', '56717001', '28944009', '23513009', '165806002', '86406008', '66071002', '50711007', '36653000', '309465005', '186748004', '76272004', '187192000', '23502006', '61462000', '56335008', 'OTH'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@code) or (@code = ('87628006', '240589008', '15628003', '426933007', '266096002', '56717001', '34014006', '28944009', '23513009', '165806002', '86406008', '66071002', '50711007', '36653000', '309465005', '186748004', '17322007', '76272004', '187192000', '23502006', '61462000', '56335008', 'OTH'))">
+                                test="empty(@code) or (@code = ('240589008', '15628003', '426933007', '266096002', '56717001', '28944009', '23513009', '165806002', '86406008', '66071002', '50711007', '36653000', '309465005', '186748004', '76272004', '187192000', '23502006', '61462000', '56335008', 'OTH'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Infectieziekte": De waarde "<xsl:text/>
                   <xsl:value-of select="@code"/>
-                  <xsl:text/>" voor attribuut "code" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/infectieziekte/@code; allowed=('87628006', '240589008', '15628003', '426933007', '266096002', '56717001', '34014006', '28944009', '23513009', '165806002', '86406008', '66071002', '50711007', '36653000', '309465005', '186748004', '17322007', '76272004', '187192000', '23502006', '61462000', '56335008', 'OTH')]</svrl:text>
+                  <xsl:text/>" voor attribuut "code" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/infectieziekte/@code; allowed=('240589008', '15628003', '426933007', '266096002', '56717001', '28944009', '23513009', '165806002', '86406008', '66071002', '50711007', '36653000', '309465005', '186748004', '76272004', '187192000', '23502006', '61462000', '56335008', 'OTH')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -10329,16 +10329,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.5.1008'))"/>
+         <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.5.1008'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.5.1008'))">
+                                test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.5.1008'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Infectieziekte": De waarde "<xsl:text/>
                   <xsl:value-of select="@codeSystem"/>
-                  <xsl:text/>" voor attribuut "codeSystem" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/infectieziekte/@codeSystem; allowed=('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.5.1008')]</svrl:text>
+                  <xsl:text/>" voor attribuut "codeSystem" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/infectieziekte/@codeSystem; allowed=('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.5.1008')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -10358,16 +10358,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@displayName) or (@displayName = ('Bacterial infectious disease (disorder)', 'Chlamydia trachomatis infection (disorder)', 'Gonorrhea (disorder)', 'Streptococcus agalactiae infection (disorder)', 'Methicillin resistant Staphylococcus aureus infection (disorder)', 'Tuberculosis (disorder)', 'Viral disease (disorder)', 'Cytomegalovirus infection (disorder)', 'Herpesvirus infection (disorder)', 'Hepatitis B surface antigen positive (finding)', 'Human immunodeficiency virus infection (disorder)', 'Type B viral hepatitis (disorder)', 'Viral hepatitis C (disorder)', 'Rubella (disorder)', 'Varicella-zoster virus infection (disorder)', 'Parvovirus infection (disorder)', 'Disease caused by parasite (disorder)', 'Syphilis (disorder)', 'Toxoplasmosis (disorder)', 'Lyme disease (disorder)', 'Malaria (disorder)', 'Infection by Trichomonas (disorder)', 'Overig'))"/>
+         <xsl:when test="empty(@displayName) or (@displayName = ('Chlamydia trachomatis infection (disorder)', 'Gonorrhea (disorder)', 'Streptococcus agalactiae infection (disorder)', 'Methicillin resistant Staphylococcus aureus infection (disorder)', 'Tuberculosis (disorder)', 'Cytomegalovirus infection (disorder)', 'Herpesvirus infection (disorder)', 'Hepatitis B surface antigen positive (finding)', 'Human immunodeficiency virus infection (disorder)', 'Type B viral hepatitis (disorder)', 'Viral hepatitis C (disorder)', 'Rubella (disorder)', 'Varicella-zoster virus infection (disorder)', 'Parvovirus infection (disorder)', 'Syphilis (disorder)', 'Toxoplasmosis (disorder)', 'Lyme disease (disorder)', 'Malaria (disorder)', 'Infection by Trichomonas (disorder)', 'Overig'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@displayName) or (@displayName = ('Bacterial infectious disease (disorder)', 'Chlamydia trachomatis infection (disorder)', 'Gonorrhea (disorder)', 'Streptococcus agalactiae infection (disorder)', 'Methicillin resistant Staphylococcus aureus infection (disorder)', 'Tuberculosis (disorder)', 'Viral disease (disorder)', 'Cytomegalovirus infection (disorder)', 'Herpesvirus infection (disorder)', 'Hepatitis B surface antigen positive (finding)', 'Human immunodeficiency virus infection (disorder)', 'Type B viral hepatitis (disorder)', 'Viral hepatitis C (disorder)', 'Rubella (disorder)', 'Varicella-zoster virus infection (disorder)', 'Parvovirus infection (disorder)', 'Disease caused by parasite (disorder)', 'Syphilis (disorder)', 'Toxoplasmosis (disorder)', 'Lyme disease (disorder)', 'Malaria (disorder)', 'Infection by Trichomonas (disorder)', 'Overig'))">
+                                test="empty(@displayName) or (@displayName = ('Chlamydia trachomatis infection (disorder)', 'Gonorrhea (disorder)', 'Streptococcus agalactiae infection (disorder)', 'Methicillin resistant Staphylococcus aureus infection (disorder)', 'Tuberculosis (disorder)', 'Cytomegalovirus infection (disorder)', 'Herpesvirus infection (disorder)', 'Hepatitis B surface antigen positive (finding)', 'Human immunodeficiency virus infection (disorder)', 'Type B viral hepatitis (disorder)', 'Viral hepatitis C (disorder)', 'Rubella (disorder)', 'Varicella-zoster virus infection (disorder)', 'Parvovirus infection (disorder)', 'Syphilis (disorder)', 'Toxoplasmosis (disorder)', 'Lyme disease (disorder)', 'Malaria (disorder)', 'Infection by Trichomonas (disorder)', 'Overig'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Infectieziekte": De waarde "<xsl:text/>
                   <xsl:value-of select="@displayName"/>
-                  <xsl:text/>" voor attribuut "displayName" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/infectieziekte/@displayName; allowed=('Bacterial infectious disease (disorder)', 'Chlamydia trachomatis infection (disorder)', 'Gonorrhea (disorder)', 'Streptococcus agalactiae infection (disorder)', 'Methicillin resistant Staphylococcus aureus infection (disorder)', 'Tuberculosis (disorder)', 'Viral disease (disorder)', 'Cytomegalovirus infection (disorder)', 'Herpesvirus infection (disorder)', 'Hepatitis B surface antigen positive (finding)', 'Human immunodeficiency virus infection (disorder)', 'Type B viral hepatitis (disorder)', 'Viral hepatitis C (disorder)', 'Rubella (disorder)', 'Varicella-zoster virus infection (disorder)', 'Parvovirus infection (disorder)', 'Disease caused by parasite (disorder)', 'Syphilis (disorder)', 'Toxoplasmosis (disorder)', 'Lyme disease (disorder)', 'Malaria (disorder)', 'Infection by Trichomonas (disorder)', 'Overig')]</svrl:text>
+                  <xsl:text/>" voor attribuut "displayName" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/infectieziekte/@displayName; allowed=('Chlamydia trachomatis infection (disorder)', 'Gonorrhea (disorder)', 'Streptococcus agalactiae infection (disorder)', 'Methicillin resistant Staphylococcus aureus infection (disorder)', 'Tuberculosis (disorder)', 'Cytomegalovirus infection (disorder)', 'Herpesvirus infection (disorder)', 'Hepatitis B surface antigen positive (finding)', 'Human immunodeficiency virus infection (disorder)', 'Type B viral hepatitis (disorder)', 'Viral hepatitis C (disorder)', 'Rubella (disorder)', 'Varicella-zoster virus infection (disorder)', 'Parvovirus infection (disorder)', 'Syphilis (disorder)', 'Toxoplasmosis (disorder)', 'Lyme disease (disorder)', 'Malaria (disorder)', 'Infection by Trichomonas (disorder)', 'Overig')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -18368,16 +18368,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@value) or (@value = ('1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19'))"/>
+         <xsl:when test="empty(@value) or (@value = ('2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '14', '15', '16', '17', '18', '19'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@value) or (@value = ('1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19'))">
+                                test="empty(@value) or (@value = ('2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '14', '15', '16', '17', '18', '19'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Pathologie vrouw": De waarde "<xsl:text/>
                   <xsl:value-of select="@value"/>
-                  <xsl:text/>" voor attribuut "value" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/postnatale_fase/pathologie_vrouw/@value; allowed=('1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19')]</svrl:text>
+                  <xsl:text/>" voor attribuut "value" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/postnatale_fase/pathologie_vrouw/@value; allowed=('2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '14', '15', '16', '17', '18', '19')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -18397,16 +18397,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@code) or (@code = ('6010', '398254007', '67359005', '303063000', '95605009', '56272000', '58703003', '18260003', '301822002', '414086009', '385494008', '116859006', '178280004', '78623009', '45198002', '68566005', '300927001', '6150', 'OTH'))"/>
+         <xsl:when test="empty(@code) or (@code = ('398254007', '67359005', '303063000', '95605009', '56272000', '58703003', '18260003', '301822002', '414086009', '385494008', '116859006', '78623009', '45198002', '68566005', '300927001', '6150', 'OTH'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@code) or (@code = ('6010', '398254007', '67359005', '303063000', '95605009', '56272000', '58703003', '18260003', '301822002', '414086009', '385494008', '116859006', '178280004', '78623009', '45198002', '68566005', '300927001', '6150', 'OTH'))">
+                                test="empty(@code) or (@code = ('398254007', '67359005', '303063000', '95605009', '56272000', '58703003', '18260003', '301822002', '414086009', '385494008', '116859006', '78623009', '45198002', '68566005', '300927001', '6150', 'OTH'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Pathologie vrouw": De waarde "<xsl:text/>
                   <xsl:value-of select="@code"/>
-                  <xsl:text/>" voor attribuut "code" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/postnatale_fase/pathologie_vrouw/@code; allowed=('6010', '398254007', '67359005', '303063000', '95605009', '56272000', '58703003', '18260003', '301822002', '414086009', '385494008', '116859006', '178280004', '78623009', '45198002', '68566005', '300927001', '6150', 'OTH')]</svrl:text>
+                  <xsl:text/>" voor attribuut "code" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/postnatale_fase/pathologie_vrouw/@code; allowed=('398254007', '67359005', '303063000', '95605009', '56272000', '58703003', '18260003', '301822002', '414086009', '385494008', '116859006', '78623009', '45198002', '68566005', '300927001', '6150', 'OTH')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -18426,16 +18426,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.5.1008'))"/>
+         <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.5.1008'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.5.1008'))">
+                                test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.5.1008'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Pathologie vrouw": De waarde "<xsl:text/>
                   <xsl:value-of select="@codeSystem"/>
-                  <xsl:text/>" voor attribuut "codeSystem" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/postnatale_fase/pathologie_vrouw/@codeSystem; allowed=('2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.5.1008')]</svrl:text>
+                  <xsl:text/>" voor attribuut "codeSystem" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/postnatale_fase/pathologie_vrouw/@codeSystem; allowed=('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.5.1008')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -18455,16 +18455,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@displayName) or (@displayName = ('(Dreigende) eclampsie, (verdenking op) HELLP-syndroom', 'Pre-eclampsia (disorder)', 'Pre-eclampsia added to pre-existing hypertension (disorder)', 'Eclampsia in puerperium (disorder)', 'Hemolysis-elevated liver enzymes-low platelet count syndrome (disorder)', 'Postpartum deep phlebothrombosis (disorder)', 'Postpartum depression (disorder)', 'Postpartum psychosis (disorder)', 'Abnormal vaginal bleeding (finding)', 'Embolism (disorder)', 'Hematoma (disorder)', 'Transfusion of blood product (procedure)', 'Postnatal infection (disorder)', 'Endometritis (disorder)', 'Mastitis (disorder)', 'Urinary tract infectious disease (disorder)', 'Episiotomy infection (disorder)', 'Overige infecties', 'Overig'))"/>
+         <xsl:when test="empty(@displayName) or (@displayName = ('Pre-eclampsia (disorder)', 'Pre-eclampsia added to pre-existing hypertension (disorder)', 'Eclampsia in puerperium (disorder)', 'Hemolysis-elevated liver enzymes-low platelet count syndrome (disorder)', 'Postpartum deep phlebothrombosis (disorder)', 'Postpartum depression (disorder)', 'Postpartum psychosis (disorder)', 'Abnormal vaginal bleeding (finding)', 'Embolism (disorder)', 'Hematoma (disorder)', 'Transfusion of blood product (procedure)', 'Endometritis (disorder)', 'Mastitis (disorder)', 'Urinary tract infectious disease (disorder)', 'Episiotomy infection (disorder)', 'Overige infecties', 'Overig'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@displayName) or (@displayName = ('(Dreigende) eclampsie, (verdenking op) HELLP-syndroom', 'Pre-eclampsia (disorder)', 'Pre-eclampsia added to pre-existing hypertension (disorder)', 'Eclampsia in puerperium (disorder)', 'Hemolysis-elevated liver enzymes-low platelet count syndrome (disorder)', 'Postpartum deep phlebothrombosis (disorder)', 'Postpartum depression (disorder)', 'Postpartum psychosis (disorder)', 'Abnormal vaginal bleeding (finding)', 'Embolism (disorder)', 'Hematoma (disorder)', 'Transfusion of blood product (procedure)', 'Postnatal infection (disorder)', 'Endometritis (disorder)', 'Mastitis (disorder)', 'Urinary tract infectious disease (disorder)', 'Episiotomy infection (disorder)', 'Overige infecties', 'Overig'))">
+                                test="empty(@displayName) or (@displayName = ('Pre-eclampsia (disorder)', 'Pre-eclampsia added to pre-existing hypertension (disorder)', 'Eclampsia in puerperium (disorder)', 'Hemolysis-elevated liver enzymes-low platelet count syndrome (disorder)', 'Postpartum deep phlebothrombosis (disorder)', 'Postpartum depression (disorder)', 'Postpartum psychosis (disorder)', 'Abnormal vaginal bleeding (finding)', 'Embolism (disorder)', 'Hematoma (disorder)', 'Transfusion of blood product (procedure)', 'Endometritis (disorder)', 'Mastitis (disorder)', 'Urinary tract infectious disease (disorder)', 'Episiotomy infection (disorder)', 'Overige infecties', 'Overig'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Pathologie vrouw": De waarde "<xsl:text/>
                   <xsl:value-of select="@displayName"/>
-                  <xsl:text/>" voor attribuut "displayName" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/postnatale_fase/pathologie_vrouw/@displayName; allowed=('(Dreigende) eclampsie, (verdenking op) HELLP-syndroom', 'Pre-eclampsia (disorder)', 'Pre-eclampsia added to pre-existing hypertension (disorder)', 'Eclampsia in puerperium (disorder)', 'Hemolysis-elevated liver enzymes-low platelet count syndrome (disorder)', 'Postpartum deep phlebothrombosis (disorder)', 'Postpartum depression (disorder)', 'Postpartum psychosis (disorder)', 'Abnormal vaginal bleeding (finding)', 'Embolism (disorder)', 'Hematoma (disorder)', 'Transfusion of blood product (procedure)', 'Postnatal infection (disorder)', 'Endometritis (disorder)', 'Mastitis (disorder)', 'Urinary tract infectious disease (disorder)', 'Episiotomy infection (disorder)', 'Overige infecties', 'Overig')]</svrl:text>
+                  <xsl:text/>" voor attribuut "displayName" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/postnatale_fase/pathologie_vrouw/@displayName; allowed=('Pre-eclampsia (disorder)', 'Pre-eclampsia added to pre-existing hypertension (disorder)', 'Eclampsia in puerperium (disorder)', 'Hemolysis-elevated liver enzymes-low platelet count syndrome (disorder)', 'Postpartum deep phlebothrombosis (disorder)', 'Postpartum depression (disorder)', 'Postpartum psychosis (disorder)', 'Abnormal vaginal bleeding (finding)', 'Embolism (disorder)', 'Hematoma (disorder)', 'Transfusion of blood product (procedure)', 'Endometritis (disorder)', 'Mastitis (disorder)', 'Urinary tract infectious disease (disorder)', 'Episiotomy infection (disorder)', 'Overige infecties', 'Overig')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -22417,16 +22417,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@value) or (@value = ('1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23'))"/>
+         <xsl:when test="empty(@value) or (@value = ('2', '3', '4', '5', '6', '8', '9', '10', '11', '12', '13', '14', '15', '16', '18', '19', '20', '21', '22', '23'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@value) or (@value = ('1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23'))">
+                                test="empty(@value) or (@value = ('2', '3', '4', '5', '6', '8', '9', '10', '11', '12', '13', '14', '15', '16', '18', '19', '20', '21', '22', '23'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Infectieziekte": De waarde "<xsl:text/>
                   <xsl:value-of select="@value"/>
-                  <xsl:text/>" voor attribuut "value" is onjuist [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/infectieziekte/@value; allowed=('1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23')]</svrl:text>
+                  <xsl:text/>" voor attribuut "value" is onjuist [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/infectieziekte/@value; allowed=('2', '3', '4', '5', '6', '8', '9', '10', '11', '12', '13', '14', '15', '16', '18', '19', '20', '21', '22', '23')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -22446,16 +22446,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@code) or (@code = ('87628006', '240589008', '15628003', '426933007', '266096002', '56717001', '34014006', '28944009', '23513009', '165806002', '86406008', '66071002', '50711007', '36653000', '309465005', '186748004', '17322007', '76272004', '187192000', '23502006', '61462000', '56335008', 'OTH'))"/>
+         <xsl:when test="empty(@code) or (@code = ('240589008', '15628003', '426933007', '266096002', '56717001', '28944009', '23513009', '165806002', '86406008', '66071002', '50711007', '36653000', '309465005', '186748004', '76272004', '187192000', '23502006', '61462000', '56335008', 'OTH'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@code) or (@code = ('87628006', '240589008', '15628003', '426933007', '266096002', '56717001', '34014006', '28944009', '23513009', '165806002', '86406008', '66071002', '50711007', '36653000', '309465005', '186748004', '17322007', '76272004', '187192000', '23502006', '61462000', '56335008', 'OTH'))">
+                                test="empty(@code) or (@code = ('240589008', '15628003', '426933007', '266096002', '56717001', '28944009', '23513009', '165806002', '86406008', '66071002', '50711007', '36653000', '309465005', '186748004', '76272004', '187192000', '23502006', '61462000', '56335008', 'OTH'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Infectieziekte": De waarde "<xsl:text/>
                   <xsl:value-of select="@code"/>
-                  <xsl:text/>" voor attribuut "code" is onjuist [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/infectieziekte/@code; allowed=('87628006', '240589008', '15628003', '426933007', '266096002', '56717001', '34014006', '28944009', '23513009', '165806002', '86406008', '66071002', '50711007', '36653000', '309465005', '186748004', '17322007', '76272004', '187192000', '23502006', '61462000', '56335008', 'OTH')]</svrl:text>
+                  <xsl:text/>" voor attribuut "code" is onjuist [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/infectieziekte/@code; allowed=('240589008', '15628003', '426933007', '266096002', '56717001', '28944009', '23513009', '165806002', '86406008', '66071002', '50711007', '36653000', '309465005', '186748004', '76272004', '187192000', '23502006', '61462000', '56335008', 'OTH')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -22475,16 +22475,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.5.1008'))"/>
+         <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.5.1008'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.5.1008'))">
+                                test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.5.1008'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Infectieziekte": De waarde "<xsl:text/>
                   <xsl:value-of select="@codeSystem"/>
-                  <xsl:text/>" voor attribuut "codeSystem" is onjuist [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/infectieziekte/@codeSystem; allowed=('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.5.1008')]</svrl:text>
+                  <xsl:text/>" voor attribuut "codeSystem" is onjuist [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/infectieziekte/@codeSystem; allowed=('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.5.1008')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -22504,16 +22504,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@displayName) or (@displayName = ('Bacterial infectious disease (disorder)', 'Chlamydia trachomatis infection (disorder)', 'Gonorrhea (disorder)', 'Streptococcus agalactiae infection (disorder)', 'Methicillin resistant Staphylococcus aureus infection (disorder)', 'Tuberculosis (disorder)', 'Viral disease (disorder)', 'Cytomegalovirus infection (disorder)', 'Herpesvirus infection (disorder)', 'Hepatitis B surface antigen positive (finding)', 'Human immunodeficiency virus infection (disorder)', 'Type B viral hepatitis (disorder)', 'Viral hepatitis C (disorder)', 'Rubella (disorder)', 'Varicella-zoster virus infection (disorder)', 'Parvovirus infection (disorder)', 'Disease caused by parasite (disorder)', 'Syphilis (disorder)', 'Toxoplasmosis (disorder)', 'Lyme disease (disorder)', 'Malaria (disorder)', 'Infection by Trichomonas (disorder)', 'Overig'))"/>
+         <xsl:when test="empty(@displayName) or (@displayName = ('Chlamydia trachomatis infection (disorder)', 'Gonorrhea (disorder)', 'Streptococcus agalactiae infection (disorder)', 'Methicillin resistant Staphylococcus aureus infection (disorder)', 'Tuberculosis (disorder)', 'Cytomegalovirus infection (disorder)', 'Herpesvirus infection (disorder)', 'Hepatitis B surface antigen positive (finding)', 'Human immunodeficiency virus infection (disorder)', 'Type B viral hepatitis (disorder)', 'Viral hepatitis C (disorder)', 'Rubella (disorder)', 'Varicella-zoster virus infection (disorder)', 'Parvovirus infection (disorder)', 'Syphilis (disorder)', 'Toxoplasmosis (disorder)', 'Lyme disease (disorder)', 'Malaria (disorder)', 'Infection by Trichomonas (disorder)', 'Overig'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@displayName) or (@displayName = ('Bacterial infectious disease (disorder)', 'Chlamydia trachomatis infection (disorder)', 'Gonorrhea (disorder)', 'Streptococcus agalactiae infection (disorder)', 'Methicillin resistant Staphylococcus aureus infection (disorder)', 'Tuberculosis (disorder)', 'Viral disease (disorder)', 'Cytomegalovirus infection (disorder)', 'Herpesvirus infection (disorder)', 'Hepatitis B surface antigen positive (finding)', 'Human immunodeficiency virus infection (disorder)', 'Type B viral hepatitis (disorder)', 'Viral hepatitis C (disorder)', 'Rubella (disorder)', 'Varicella-zoster virus infection (disorder)', 'Parvovirus infection (disorder)', 'Disease caused by parasite (disorder)', 'Syphilis (disorder)', 'Toxoplasmosis (disorder)', 'Lyme disease (disorder)', 'Malaria (disorder)', 'Infection by Trichomonas (disorder)', 'Overig'))">
+                                test="empty(@displayName) or (@displayName = ('Chlamydia trachomatis infection (disorder)', 'Gonorrhea (disorder)', 'Streptococcus agalactiae infection (disorder)', 'Methicillin resistant Staphylococcus aureus infection (disorder)', 'Tuberculosis (disorder)', 'Cytomegalovirus infection (disorder)', 'Herpesvirus infection (disorder)', 'Hepatitis B surface antigen positive (finding)', 'Human immunodeficiency virus infection (disorder)', 'Type B viral hepatitis (disorder)', 'Viral hepatitis C (disorder)', 'Rubella (disorder)', 'Varicella-zoster virus infection (disorder)', 'Parvovirus infection (disorder)', 'Syphilis (disorder)', 'Toxoplasmosis (disorder)', 'Lyme disease (disorder)', 'Malaria (disorder)', 'Infection by Trichomonas (disorder)', 'Overig'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Infectieziekte": De waarde "<xsl:text/>
                   <xsl:value-of select="@displayName"/>
-                  <xsl:text/>" voor attribuut "displayName" is onjuist [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/infectieziekte/@displayName; allowed=('Bacterial infectious disease (disorder)', 'Chlamydia trachomatis infection (disorder)', 'Gonorrhea (disorder)', 'Streptococcus agalactiae infection (disorder)', 'Methicillin resistant Staphylococcus aureus infection (disorder)', 'Tuberculosis (disorder)', 'Viral disease (disorder)', 'Cytomegalovirus infection (disorder)', 'Herpesvirus infection (disorder)', 'Hepatitis B surface antigen positive (finding)', 'Human immunodeficiency virus infection (disorder)', 'Type B viral hepatitis (disorder)', 'Viral hepatitis C (disorder)', 'Rubella (disorder)', 'Varicella-zoster virus infection (disorder)', 'Parvovirus infection (disorder)', 'Disease caused by parasite (disorder)', 'Syphilis (disorder)', 'Toxoplasmosis (disorder)', 'Lyme disease (disorder)', 'Malaria (disorder)', 'Infection by Trichomonas (disorder)', 'Overig')]</svrl:text>
+                  <xsl:text/>" voor attribuut "displayName" is onjuist [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/infectieziekte/@displayName; allowed=('Chlamydia trachomatis infection (disorder)', 'Gonorrhea (disorder)', 'Streptococcus agalactiae infection (disorder)', 'Methicillin resistant Staphylococcus aureus infection (disorder)', 'Tuberculosis (disorder)', 'Cytomegalovirus infection (disorder)', 'Herpesvirus infection (disorder)', 'Hepatitis B surface antigen positive (finding)', 'Human immunodeficiency virus infection (disorder)', 'Type B viral hepatitis (disorder)', 'Viral hepatitis C (disorder)', 'Rubella (disorder)', 'Varicella-zoster virus infection (disorder)', 'Parvovirus infection (disorder)', 'Syphilis (disorder)', 'Toxoplasmosis (disorder)', 'Lyme disease (disorder)', 'Malaria (disorder)', 'Infection by Trichomonas (disorder)', 'Overig')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -38404,16 +38404,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@value) or (@value = ('1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14'))"/>
+         <xsl:when test="empty(@value) or (@value = ('2', '3', '4', '6', '7', '8', '9', '10', '11', '12', '13', '14'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@value) or (@value = ('1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14'))">
+                                test="empty(@value) or (@value = ('2', '3', '4', '6', '7', '8', '9', '10', '11', '12', '13', '14'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Indicatie interventie begin baring": De waarde "<xsl:text/>
                   <xsl:value-of select="@value"/>
-                  <xsl:text/>" voor attribuut "value" is onjuist [/kernset_geboortezorg/bevalling/interventies_begin_baring/indicatie_interventie_begin_baring/@value; allowed=('1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14')]</svrl:text>
+                  <xsl:text/>" voor attribuut "value" is onjuist [/kernset_geboortezorg/bevalling/interventies_begin_baring/indicatie_interventie_begin_baring/@value; allowed=('2', '3', '4', '6', '7', '8', '9', '10', '11', '12', '13', '14')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -38433,16 +38433,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@code) or (@code = ('10', '1', '3', '8', '20', '2', '4', '23', '9', '6', '7', 'OTH', 'UNK', 'NI'))"/>
+         <xsl:when test="empty(@code) or (@code = ('1', '3', '8', '2', '4', '23', '9', '6', '7', 'OTH', 'UNK', 'NI'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@code) or (@code = ('10', '1', '3', '8', '20', '2', '4', '23', '9', '6', '7', 'OTH', 'UNK', 'NI'))">
+                                test="empty(@code) or (@code = ('1', '3', '8', '2', '4', '23', '9', '6', '7', 'OTH', 'UNK', 'NI'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Indicatie interventie begin baring": De waarde "<xsl:text/>
                   <xsl:value-of select="@code"/>
-                  <xsl:text/>" voor attribuut "code" is onjuist [/kernset_geboortezorg/bevalling/interventies_begin_baring/indicatie_interventie_begin_baring/@code; allowed=('10', '1', '3', '8', '20', '2', '4', '23', '9', '6', '7', 'OTH', 'UNK', 'NI')]</svrl:text>
+                  <xsl:text/>" voor attribuut "code" is onjuist [/kernset_geboortezorg/bevalling/interventies_begin_baring/indicatie_interventie_begin_baring/@code; allowed=('1', '3', '8', '2', '4', '23', '9', '6', '7', 'OTH', 'UNK', 'NI')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -38462,16 +38462,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008'))"/>
+         <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008'))">
+                                test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Indicatie interventie begin baring": De waarde "<xsl:text/>
                   <xsl:value-of select="@codeSystem"/>
-                  <xsl:text/>" voor attribuut "codeSystem" is onjuist [/kernset_geboortezorg/bevalling/interventies_begin_baring/indicatie_interventie_begin_baring/@codeSystem; allowed=('2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008')]</svrl:text>
+                  <xsl:text/>" voor attribuut "codeSystem" is onjuist [/kernset_geboortezorg/bevalling/interventies_begin_baring/indicatie_interventie_begin_baring/@codeSystem; allowed=('2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -38491,16 +38491,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@displayName) or (@displayName = ('Conditie moeder', 'Acuut levensbedreigend', 'Niet levensbedreigend', 'Onbekend', 'Conditie kind', 'Foetale nood', 'Niet levensbedreigend', 'Inleiding vanwege congenitale afwijking', 'Onbekend', 'Interventie in het kader van wetenschappelijk onderzoek', 'Wens patiënt', 'Overig', 'Onbekend', 'Geen informatie'))"/>
+         <xsl:when test="empty(@displayName) or (@displayName = ('Acuut levensbedreigend', 'Niet levensbedreigend', 'Onbekend', 'Foetale nood', 'Niet levensbedreigend', 'Inleiding vanwege congenitale afwijking', 'Onbekend', 'Interventie in het kader van wetenschappelijk onderzoek', 'Wens patiënt', 'Overig', 'Onbekend', 'Geen informatie'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@displayName) or (@displayName = ('Conditie moeder', 'Acuut levensbedreigend', 'Niet levensbedreigend', 'Onbekend', 'Conditie kind', 'Foetale nood', 'Niet levensbedreigend', 'Inleiding vanwege congenitale afwijking', 'Onbekend', 'Interventie in het kader van wetenschappelijk onderzoek', 'Wens patiënt', 'Overig', 'Onbekend', 'Geen informatie'))">
+                                test="empty(@displayName) or (@displayName = ('Acuut levensbedreigend', 'Niet levensbedreigend', 'Onbekend', 'Foetale nood', 'Niet levensbedreigend', 'Inleiding vanwege congenitale afwijking', 'Onbekend', 'Interventie in het kader van wetenschappelijk onderzoek', 'Wens patiënt', 'Overig', 'Onbekend', 'Geen informatie'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Indicatie interventie begin baring": De waarde "<xsl:text/>
                   <xsl:value-of select="@displayName"/>
-                  <xsl:text/>" voor attribuut "displayName" is onjuist [/kernset_geboortezorg/bevalling/interventies_begin_baring/indicatie_interventie_begin_baring/@displayName; allowed=('Conditie moeder', 'Acuut levensbedreigend', 'Niet levensbedreigend', 'Onbekend', 'Conditie kind', 'Foetale nood', 'Niet levensbedreigend', 'Inleiding vanwege congenitale afwijking', 'Onbekend', 'Interventie in het kader van wetenschappelijk onderzoek', 'Wens patiënt', 'Overig', 'Onbekend', 'Geen informatie')]</svrl:text>
+                  <xsl:text/>" voor attribuut "displayName" is onjuist [/kernset_geboortezorg/bevalling/interventies_begin_baring/indicatie_interventie_begin_baring/@displayName; allowed=('Acuut levensbedreigend', 'Niet levensbedreigend', 'Onbekend', 'Foetale nood', 'Niet levensbedreigend', 'Inleiding vanwege congenitale afwijking', 'Onbekend', 'Interventie in het kader van wetenschappelijk onderzoek', 'Wens patiënt', 'Overig', 'Onbekend', 'Geen informatie')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -51147,16 +51147,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@value) or (@value = ('1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19'))"/>
+         <xsl:when test="empty(@value) or (@value = ('2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '14', '15', '16', '17', '18', '19'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@value) or (@value = ('1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19'))">
+                                test="empty(@value) or (@value = ('2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '14', '15', '16', '17', '18', '19'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Pathologie vrouw": De waarde "<xsl:text/>
                   <xsl:value-of select="@value"/>
-                  <xsl:text/>" voor attribuut "value" is onjuist [/kernset_geboortezorg/postnatale_fase/diagnoseinterventie_postpartum/pathologie_vrouw/@value; allowed=('1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19')]</svrl:text>
+                  <xsl:text/>" voor attribuut "value" is onjuist [/kernset_geboortezorg/postnatale_fase/diagnoseinterventie_postpartum/pathologie_vrouw/@value; allowed=('2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '14', '15', '16', '17', '18', '19')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -51176,16 +51176,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@code) or (@code = ('6010', '398254007', '67359005', '303063000', '95605009', '56272000', '58703003', '18260003', '301822002', '414086009', '385494008', '271737000', '178280004', '78623009', '45198002', '68566005', '300927001', '6150', 'OTH'))"/>
+         <xsl:when test="empty(@code) or (@code = ('398254007', '67359005', '303063000', '95605009', '56272000', '58703003', '18260003', '301822002', '414086009', '385494008', '271737000', '78623009', '45198002', '68566005', '300927001', '6150', 'OTH'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@code) or (@code = ('6010', '398254007', '67359005', '303063000', '95605009', '56272000', '58703003', '18260003', '301822002', '414086009', '385494008', '271737000', '178280004', '78623009', '45198002', '68566005', '300927001', '6150', 'OTH'))">
+                                test="empty(@code) or (@code = ('398254007', '67359005', '303063000', '95605009', '56272000', '58703003', '18260003', '301822002', '414086009', '385494008', '271737000', '78623009', '45198002', '68566005', '300927001', '6150', 'OTH'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Pathologie vrouw": De waarde "<xsl:text/>
                   <xsl:value-of select="@code"/>
-                  <xsl:text/>" voor attribuut "code" is onjuist [/kernset_geboortezorg/postnatale_fase/diagnoseinterventie_postpartum/pathologie_vrouw/@code; allowed=('6010', '398254007', '67359005', '303063000', '95605009', '56272000', '58703003', '18260003', '301822002', '414086009', '385494008', '271737000', '178280004', '78623009', '45198002', '68566005', '300927001', '6150', 'OTH')]</svrl:text>
+                  <xsl:text/>" voor attribuut "code" is onjuist [/kernset_geboortezorg/postnatale_fase/diagnoseinterventie_postpartum/pathologie_vrouw/@code; allowed=('398254007', '67359005', '303063000', '95605009', '56272000', '58703003', '18260003', '301822002', '414086009', '385494008', '271737000', '78623009', '45198002', '68566005', '300927001', '6150', 'OTH')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -51205,16 +51205,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.5.1008'))"/>
+         <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.5.1008'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.5.1008'))">
+                                test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.5.1008'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Pathologie vrouw": De waarde "<xsl:text/>
                   <xsl:value-of select="@codeSystem"/>
-                  <xsl:text/>" voor attribuut "codeSystem" is onjuist [/kernset_geboortezorg/postnatale_fase/diagnoseinterventie_postpartum/pathologie_vrouw/@codeSystem; allowed=('2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.5.1008')]</svrl:text>
+                  <xsl:text/>" voor attribuut "codeSystem" is onjuist [/kernset_geboortezorg/postnatale_fase/diagnoseinterventie_postpartum/pathologie_vrouw/@codeSystem; allowed=('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.5.1008')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -51234,16 +51234,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@displayName) or (@displayName = ('(Dreigende) eclampsie, (verdenking op) HELLP-syndroom', 'Pre-eclampsia (disorder)', 'Pre-eclampsia added to pre-existing hypertension (disorder)', 'Eclampsia in puerperium (disorder)', 'Hemolysis-elevated liver enzymes-low platelet count syndrome (disorder)', 'Postpartum deep phlebothrombosis (disorder)', 'Postpartum depression (disorder)', 'Postpartum psychosis (disorder)', 'Abnormal vaginal bleeding (finding)', 'Embolism (disorder)', 'Hematoma (disorder)', 'Anemia (disorder)', 'Postnatal infection (disorder)', 'Endometritis (disorder)', 'Mastitis (disorder)', 'Urinary tract infectious disease (disorder)', 'Episiotomy infection (disorder)', 'Overige infecties', 'Overig'))"/>
+         <xsl:when test="empty(@displayName) or (@displayName = ('Pre-eclampsia (disorder)', 'Pre-eclampsia added to pre-existing hypertension (disorder)', 'Eclampsia in puerperium (disorder)', 'Hemolysis-elevated liver enzymes-low platelet count syndrome (disorder)', 'Postpartum deep phlebothrombosis (disorder)', 'Postpartum depression (disorder)', 'Postpartum psychosis (disorder)', 'Abnormal vaginal bleeding (finding)', 'Embolism (disorder)', 'Hematoma (disorder)', 'Anemia (disorder)', 'Endometritis (disorder)', 'Mastitis (disorder)', 'Urinary tract infectious disease (disorder)', 'Episiotomy infection (disorder)', 'Overige infecties', 'Overig'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@displayName) or (@displayName = ('(Dreigende) eclampsie, (verdenking op) HELLP-syndroom', 'Pre-eclampsia (disorder)', 'Pre-eclampsia added to pre-existing hypertension (disorder)', 'Eclampsia in puerperium (disorder)', 'Hemolysis-elevated liver enzymes-low platelet count syndrome (disorder)', 'Postpartum deep phlebothrombosis (disorder)', 'Postpartum depression (disorder)', 'Postpartum psychosis (disorder)', 'Abnormal vaginal bleeding (finding)', 'Embolism (disorder)', 'Hematoma (disorder)', 'Anemia (disorder)', 'Postnatal infection (disorder)', 'Endometritis (disorder)', 'Mastitis (disorder)', 'Urinary tract infectious disease (disorder)', 'Episiotomy infection (disorder)', 'Overige infecties', 'Overig'))">
+                                test="empty(@displayName) or (@displayName = ('Pre-eclampsia (disorder)', 'Pre-eclampsia added to pre-existing hypertension (disorder)', 'Eclampsia in puerperium (disorder)', 'Hemolysis-elevated liver enzymes-low platelet count syndrome (disorder)', 'Postpartum deep phlebothrombosis (disorder)', 'Postpartum depression (disorder)', 'Postpartum psychosis (disorder)', 'Abnormal vaginal bleeding (finding)', 'Embolism (disorder)', 'Hematoma (disorder)', 'Anemia (disorder)', 'Endometritis (disorder)', 'Mastitis (disorder)', 'Urinary tract infectious disease (disorder)', 'Episiotomy infection (disorder)', 'Overige infecties', 'Overig'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Pathologie vrouw": De waarde "<xsl:text/>
                   <xsl:value-of select="@displayName"/>
-                  <xsl:text/>" voor attribuut "displayName" is onjuist [/kernset_geboortezorg/postnatale_fase/diagnoseinterventie_postpartum/pathologie_vrouw/@displayName; allowed=('(Dreigende) eclampsie, (verdenking op) HELLP-syndroom', 'Pre-eclampsia (disorder)', 'Pre-eclampsia added to pre-existing hypertension (disorder)', 'Eclampsia in puerperium (disorder)', 'Hemolysis-elevated liver enzymes-low platelet count syndrome (disorder)', 'Postpartum deep phlebothrombosis (disorder)', 'Postpartum depression (disorder)', 'Postpartum psychosis (disorder)', 'Abnormal vaginal bleeding (finding)', 'Embolism (disorder)', 'Hematoma (disorder)', 'Anemia (disorder)', 'Postnatal infection (disorder)', 'Endometritis (disorder)', 'Mastitis (disorder)', 'Urinary tract infectious disease (disorder)', 'Episiotomy infection (disorder)', 'Overige infecties', 'Overig')]</svrl:text>
+                  <xsl:text/>" voor attribuut "displayName" is onjuist [/kernset_geboortezorg/postnatale_fase/diagnoseinterventie_postpartum/pathologie_vrouw/@displayName; allowed=('Pre-eclampsia (disorder)', 'Pre-eclampsia added to pre-existing hypertension (disorder)', 'Eclampsia in puerperium (disorder)', 'Hemolysis-elevated liver enzymes-low platelet count syndrome (disorder)', 'Postpartum deep phlebothrombosis (disorder)', 'Postpartum depression (disorder)', 'Postpartum psychosis (disorder)', 'Abnormal vaginal bleeding (finding)', 'Embolism (disorder)', 'Hematoma (disorder)', 'Anemia (disorder)', 'Endometritis (disorder)', 'Mastitis (disorder)', 'Urinary tract infectious disease (disorder)', 'Episiotomy infection (disorder)', 'Overige infecties', 'Overig')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>

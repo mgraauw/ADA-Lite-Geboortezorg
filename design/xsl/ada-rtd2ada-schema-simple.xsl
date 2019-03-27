@@ -351,7 +351,9 @@
     <xsl:param name="value-domain" as="element(valueDomain)" required="false" select="."/>
 
     <!-- The definitions for the codes can be in <concept> and in <exception> elements. -->
-    <xsl:variable name="base-concept-elements" as="element()*" select="$value-domain/../valueSet/conceptList/(concept | exception)"/>
+    <xsl:variable name="code-type-abstract" as="xs:string" select="'A'"/>
+    <xsl:variable name="base-concept-elements" as="element()*"
+      select="($value-domain/../valueSet/conceptList/(concept | exception))[string(@type) ne $code-type-abstract]"/>
     <xsl:if test="empty($base-concept-elements)">
       <xsl:comment> == *** No conceptList entries found for concept {string($value-domain/../@shortName)} == </xsl:comment>
     </xsl:if>
