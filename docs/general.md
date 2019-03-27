@@ -2,6 +2,8 @@
 
 ADA Lite is een aanleverformaat voor de Geboortezorg, in eerste instantie voor verloskundige informatie. Aanlevering gegevens op basis van HL7v3 berichten is vaak complex en foutgevoelig. Daarnaast staan de gegevensstructuren zoals die in HL7v3 gehanteerd worden vaak ver af van de gegevens zoals die in de verloskunde gehanteerd worden. Binnen de geboortezorg is daarom behoefte aan een eenvoudiger formaat, wat dicht aansluit op de praktijk. Mogelijk kan op termijn FHIR in die behoefte voorzien. Daarvoor zijn op dit moment (begin 2019) de FHIR specificaties voor Geboortezorg nog onvoldoende ontwikkeld. ADA is gebaseerd op het PWD en volgt de structuur van de dataset daarin. De software en specificaties vallen onder de open source [MIT licentie](https://choosealicense.com/licenses/mit/).
 
+Zie ook de [GitHub pages](https://mgraauw.github.io/ADA-Lite-Geboortezorg) behorende bij deze repository.
+
 ## Aanlevering is XML
 
 ```xml

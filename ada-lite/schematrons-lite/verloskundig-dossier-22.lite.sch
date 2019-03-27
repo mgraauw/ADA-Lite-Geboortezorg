@@ -446,7 +446,6 @@ See http://www.gnu.org/licenses/
          <assert test="(count(taalvaardigheid_vrouw_nederlandse_taal) ge 0) and (count(taalvaardigheid_vrouw_nederlandse_taal) le 1)">Fout aantal voorkomens van "Taalvaardigheid vrouw Nederlandse taal": <value-of select="count(taalvaardigheid_vrouw_nederlandse_taal)"/> (verwacht: 0..1) [/verloskundig_dossier/vrouw/taalvaardigheid_vrouw_nederlandse_taal]</assert>
          <assert test="count(communicatietaal) ge 0">Fout aantal voorkomens van "Communicatietaal": <value-of select="count(communicatietaal)"/> (verwacht: 0 of meer) [/verloskundig_dossier/vrouw/communicatietaal]</assert>
          <assert test="(count(opleidingsniveau) ge 0) and (count(opleidingsniveau) le 1)">Fout aantal voorkomens van "Opleidingsniveau": <value-of select="count(opleidingsniveau)"/> (verwacht: 0..1) [/verloskundig_dossier/vrouw/opleidingsniveau]</assert>
-         <assert test="count() ge 0">Fout aantal voorkomens van "": <value-of select="count()"/> (verwacht: 0 of meer) [/verloskundig_dossier/vrouw/]</assert>
          <assert test="(count(accepteert_bloedtransfusieq) ge 0) and (count(accepteert_bloedtransfusieq) le 1)">Fout aantal voorkomens van "Accepteert bloedtransfusie?": <value-of select="count(accepteert_bloedtransfusieq)"/> (verwacht: 0..1) [/verloskundig_dossier/vrouw/accepteert_bloedtransfusieq]</assert>
          <assert test="count(betrokken_zorgverlenerzorginstelling) ge 0">Fout aantal voorkomens van "Betrokken zorgverlener/zorginstelling": <value-of select="count(betrokken_zorgverlenerzorginstelling)"/> (verwacht: 0 of meer) [/verloskundig_dossier/vrouw/betrokken_zorgverlenerzorginstelling]</assert>
          <assert test="(count(anamnese) ge 0) and (count(anamnese) le 1)">Fout aantal voorkomens van "Anamnese": <value-of select="count(anamnese)"/> (verwacht: 0..1) [/verloskundig_dossier/vrouw/anamnese]</assert>
@@ -464,7 +463,7 @@ See http://www.gnu.org/licenses/
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier/vrouw: == -->
-      <rule context="/verloskundig_dossier/vrouw/*[not(self::burgerservicenummer)][not(self::lokale_persoonsidentificatie)][not(self::naamgegevens)][not(self::geboortedatum)][not(self::adres)][not(self::etniciteit)][not(self::taalvaardigheid_vrouw_nederlandse_taal)][not(self::communicatietaal)][not(self::opleidingsniveau)][not(self::)][not(self::accepteert_bloedtransfusieq)][not(self::betrokken_zorgverlenerzorginstelling)][not(self::anamnese)][not(self::medicatiegebruikq)][not(self::medicatiegebruik)][not(self::lengte_gemeten)][not(self::bmi)][not(self::vrouwelijke_genitale_verminkingq)][not(self::type_vrouwelijke_genitale_verminking)][not(self::bloedgroep_vrouw)][not(self::rhesus_d_factor_vrouw)][not(self::rhesus_c_factor)][not(self::partner)][not(self::adaextension)]">
+      <rule context="/verloskundig_dossier/vrouw/*[not(self::burgerservicenummer)][not(self::lokale_persoonsidentificatie)][not(self::naamgegevens)][not(self::geboortedatum)][not(self::adres)][not(self::etniciteit)][not(self::taalvaardigheid_vrouw_nederlandse_taal)][not(self::communicatietaal)][not(self::opleidingsniveau)][not(self::accepteert_bloedtransfusieq)][not(self::betrokken_zorgverlenerzorginstelling)][not(self::anamnese)][not(self::medicatiegebruikq)][not(self::medicatiegebruik)][not(self::lengte_gemeten)][not(self::bmi)][not(self::vrouwelijke_genitale_verminkingq)][not(self::type_vrouwelijke_genitale_verminking)][not(self::bloedgroep_vrouw)][not(self::rhesus_d_factor_vrouw)][not(self::rhesus_c_factor)][not(self::partner)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier/vrouw/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -581,14 +580,6 @@ See http://www.gnu.org/licenses/
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('geen_opleiding', 'lager_algemeen_onderwijs', 'lager_beroepsonderwijs', 'middelbaar_algemeen_onderwijs', 'middelbaar_beroepsonderwijs', 'hoger_algemeen_onderwijs', 'hoger_beroepsonderwijs', 'wetenschappelijk_onderwijs', 'onbekend', 'anders_namelijk'))">Foutieve informatie voor "Opleidingsniveau": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/verloskundig_dossier/vrouw/opleidingsniveau/@enum; allowed=('geen_opleiding', 'lager_algemeen_onderwijs', 'lager_beroepsonderwijs', 'middelbaar_algemeen_onderwijs', 'middelbaar_beroepsonderwijs', 'hoger_algemeen_onderwijs', 'hoger_beroepsonderwijs', 'wetenschappelijk_onderwijs', 'onbekend', 'anders_namelijk')]</assert>
          <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Opleidingsniveau": Ongeldige attributen aangetroffen [/verloskundig_dossier/vrouw/opleidingsniveau; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
-      </rule>
-   </pattern>
-   <!-- == Check attributes of /verloskundig_dossier/vrouw/: == -->
-   <pattern>
-      <rule context="/verloskundig_dossier/vrouw/"><!-- == Attribute "conceptId": == -->
-         <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/verloskundig_dossier/vrouw//@conceptId; type=t-id]</assert>
-         <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82154')">Foutieve informatie voor "": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82154" [/verloskundig_dossier/vrouw//@conceptId]</assert>
-         <assert test="empty(@* except (@conceptId, @xsi:*))">Foutieve informatie voor "": Ongeldige attributen aangetroffen [/verloskundig_dossier/vrouw/; allowed=(@conceptId, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /verloskundig_dossier/vrouw/accepteert_bloedtransfusieq: == -->
