@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<verloskundig_dossier transactionRef="2.16.840.1.113883.2.4.3.11.60.90.77.4.2459"><!-- == Generated empty ADA Lite document for verloskundig_dossier == --><!-- == Source: design/specs-full/verloskundig-dossier-22.xml == --><!-- == Generator: design/xsl/ada-rtd2example-empty.xsl == --><!-- == IMPORTANT REMARK: When elements in have both a value and an enum attribute, use only one of them, not both! == -->
+<verloskundig_dossier_22 transactionRef="2.16.840.1.113883.2.4.3.11.60.90.77.4.2462"><!-- == Generated empty ADA Lite document for verloskundig_dossier_22 == --><!-- == Source: design/specs-full/verloskundig-dossier-22.xml == --><!-- == Generator: design/xsl/ada-rtd2example-empty.xsl == --><!-- == IMPORTANT REMARK: When elements in have both a value and an enum attribute, use only one of them, not both! == -->
    <zorgverlenerzorginstelling>
       <zorgverlener>
          <zorgverlener_uzinummer value=""/>
@@ -54,6 +54,7 @@
       <taalvaardigheid_vrouw_nederlandse_taal value="" enum=""/>
       <communicatietaal value="" enum=""/>
       <opleidingsniveau value="" enum=""/>
+      <beroep value=""/>
       <accepteert_bloedtransfusieq value=""/>
       <betrokken_zorgverlenerzorginstelling>
          <huisarts>
@@ -837,4 +838,4 @@
          <bijzonderheden value=""/>
       </nacontrole>
    </postnatale_fase>
-</verloskundig_dossier>
+</verloskundig_dossier_22>

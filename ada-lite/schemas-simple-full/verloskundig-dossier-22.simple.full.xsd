@@ -1,28 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
 <!--
-This program is free software; you can redistribute it and/or modify it under the terms 
-of the GNU Affero General Public License as published by the Free Software Foundation; 
-either version 3 of the License, or (at your option) any later version.
+MIT License
 
-This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; 
-without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. 
-See the GNU Affero General Public Licensefor more details.
+Copyright (c) 2019 Marc de Graauw and Erik Siegel
 
-See http://www.gnu.org/licenses/
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 -->
    <xs:annotation>
-      <xs:documentation xml:lang="nl-NL">Schema for ADA documents verloskundig_dossier - Full version</xs:documentation>
+      <xs:documentation xml:lang="nl-NL">Schema for ADA documents verloskundig_dossier_22 - Full version</xs:documentation>
       <xs:documentation xml:lang="nl-NL">Source: design/specs-full/verloskundig-dossier-22.xml</xs:documentation>
       <xs:documentation xml:lang="nl-NL">Generator: design/xsl/ada-rtd2ada-schema-simple.xsl</xs:documentation>
-      <xs:appinfo source="shortname">verloskundig_dossier</xs:appinfo>
+      <xs:appinfo source="shortname">verloskundig_dossier_22</xs:appinfo>
       <xs:appinfo source="source">design/specs-full/verloskundig-dossier-22.xml</xs:appinfo>
       <xs:appinfo source="lite-or-full">Full</xs:appinfo>
       <xs:appinfo source="generator">design/xsl/ada-rtd2ada-schema-simple.xsl</xs:appinfo>
    </xs:annotation>
-   <xs:element name="verloskundig_dossier">
+   <xs:element name="verloskundig_dossier_22">
       <xs:annotation>
-         <xs:documentation source="name" xml:lang="nl-NL">Verloskundig dossier</xs:documentation>
+         <xs:documentation source="name" xml:lang="nl-NL">Verloskundig dossier (2.2)</xs:documentation>
       </xs:annotation>
       <xs:complexType>
          <xs:sequence>
@@ -216,7 +228,7 @@ See http://www.gnu.org/licenses/
                                           maxOccurs="1">
                                  <xs:annotation>
                                     <xs:documentation source="name" xml:lang="nl-NL">Telefoon waar zorgverlener is te bereiken</xs:documentation>
-                                    <xs:documentation source="desc" xml:lang="nl-NL">Het gaat hier uitdrukkelijk niet om het normale praktijknummer, maar het (mobiele) nummer waar de verloskundige bereikbaar is voor vragen in verband met de acute overdracht. Dit is een essentieel gegeven om in de urgente situatie de verwijzer te kunnen bellen voor vragen. Verplicht invullen bij acute overdracht.</xs:documentation>
+                                    <xs:documentation source="desc" xml:lang="nl-NL">Het gaat hier uitdrukkelijk niet om het normale praktijknummer, maar het (mobiele) nummer waar de verloskundige bereikbaar is voor vragen in verband met de acute overdracht.Dit is een essentieel gegeven om in de urgente situatie de verwijzer te kunnen bellen voor vragen.Verplicht invullen bij acute overdracht.</xs:documentation>
                                  </xs:annotation>
                                  <xs:complexType>
                                     <xs:attribute name="conceptId"
@@ -779,7 +791,7 @@ See http://www.gnu.org/licenses/
                      <xs:element name="geboortedatum" minOccurs="0" maxOccurs="1">
                         <xs:annotation>
                            <xs:documentation source="name" xml:lang="nl-NL">Geboortedatum</xs:documentation>
-                           <xs:documentation source="desc" xml:lang="nl-NL">Geboortedatum. Indien de dag en/of maand van de geboortedatum niet bekend zijn, vult u dit in als 01-01-xxxx. Wanneer het geboortejaar ook onbekend is, is schatten van het geboortejaar toegestaan.</xs:documentation>
+                           <xs:documentation source="desc" xml:lang="nl-NL">Geboortedatum.Indien de dag en/of maand van de geboortedatum niet bekend zijn, vult u dit in als 01-01-xxxx. Wanneer het geboortejaar ook onbekend is, is schatten van het geboortejaar toegestaan.</xs:documentation>
                         </xs:annotation>
                         <xs:complexType>
                            <xs:attribute name="conceptId"
@@ -1019,7 +1031,7 @@ See http://www.gnu.org/licenses/
                                  maxOccurs="1">
                         <xs:annotation>
                            <xs:documentation source="name" xml:lang="nl-NL">Taalvaardigheid vrouw Nederlandse taal</xs:documentation>
-                           <xs:documentation source="desc" xml:lang="nl-NL">Dit item is opgenomen om na te gaan in welke mate zorgverlener en zwangere vrouw met elkaar kunnen communiceren. Het gaat om het achterhalen van de kwaliteit van de communicatie. Uitgangspunt is dat de voertaal altijd Nederlands is. Hoewel het mogelijk is dat een zwangere en een zorgverlener beiden dezelfde 'vreemde' taal spreken, zal een zwangere te maken krijgen met verschillende zorgverleners die deze taal waarschijnlijk niet machtig zijn. Het vastleggen van de taalvaardigheid in het Nederlands is daarom de beste benadering voor de kwaliteit van de communicatie. De communicatietaal van de vrouw kan overigens wél vastgelegd worden in een separaat item (peri22-dataelement-82371).</xs:documentation>
+                           <xs:documentation source="desc" xml:lang="nl-NL">Dit item is opgenomen om na te gaan in welke mate zorgverlener en zwangere vrouw met elkaar kunnen communiceren. Het gaat om het achterhalen van de kwaliteit van de communicatie. Uitgangspunt is dat de voertaal altijd Nederlands is. Hoewel het mogelijk is dat een zwangere en een zorgverlener beiden dezelfde 'vreemde' taal spreken, zal een zwangere te maken krijgen met verschillende zorgverleners die deze taal waarschijnlijk niet machtig zijn. Het vastleggen van de taalvaardigheid in het Nederlands is daarom de beste benadering voor de kwaliteit van de communicatie.De communicatietaal van de vrouw kan overigens wél vastgelegd worden in een separaat item (peri22-dataelement-82371).</xs:documentation>
                         </xs:annotation>
                         <xs:complexType>
                            <xs:attribute name="conceptId"
@@ -1225,7 +1237,19 @@ See http://www.gnu.org/licenses/
                            </xs:attribute>
                         </xs:complexType>
                      </xs:element>
-                     <!-- == *** Concept without @shortName found (id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82154") == -->
+                     <xs:element name="beroep" minOccurs="0" maxOccurs="unbounded">
+                        <xs:annotation>
+                           <xs:documentation source="name" xml:lang="nl-NL">Beroep</xs:documentation>
+                           <xs:documentation source="desc" xml:lang="nl-NL">De specificatie van het beroep dat iemand uitvoert of heeft uitgevoerd.</xs:documentation>
+                        </xs:annotation>
+                        <xs:complexType>
+                           <xs:attribute name="conceptId"
+                                         type="t-id"
+                                         use="required"
+                                         fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82154"/>
+                           <xs:attribute name="value" use="required" type="xs:string"/>
+                        </xs:complexType>
+                     </xs:element>
                      <xs:element name="accepteert_bloedtransfusieq" minOccurs="0" maxOccurs="1">
                         <xs:annotation>
                            <xs:documentation source="name" xml:lang="nl-NL">Accepteert bloedtransfusie?</xs:documentation>
@@ -2098,7 +2122,7 @@ See http://www.gnu.org/licenses/
                                        <xs:element name="infectieziekte" minOccurs="0" maxOccurs="unbounded">
                                           <xs:annotation>
                                              <xs:documentation source="name" xml:lang="nl-NL">Infectieziekte</xs:documentation>
-                                             <xs:documentation source="desc" xml:lang="nl-NL">Infectieziekte Let op! Sommige infectieziekten behoeven extra attentiewaarde bij een verwijzing, bijvoorbeeld: MRSA, HIV, Hepatitis.</xs:documentation>
+                                             <xs:documentation source="desc" xml:lang="nl-NL">InfectieziekteLet op! Sommige infectieziekten behoeven extra attentiewaarde bij een verwijzing, bijvoorbeeld: MRSA, HIV, Hepatitis.</xs:documentation>
                                           </xs:annotation>
                                           <xs:complexType>
                                              <xs:attribute name="conceptId"
@@ -2726,7 +2750,7 @@ See http://www.gnu.org/licenses/
                                        <xs:element name="transfusiereactieq" minOccurs="0" maxOccurs="unbounded">
                                           <xs:annotation>
                                              <xs:documentation source="name" xml:lang="nl-NL">Transfusiereactie?</xs:documentation>
-                                             <xs:documentation source="desc" xml:lang="nl-NL">Heeft vrouw een transfusiereactie gehad? Alleen van toepassing als Bloedtransfusie? = 'Ja'.</xs:documentation>
+                                             <xs:documentation source="desc" xml:lang="nl-NL">Heeft vrouw een transfusiereactie gehad?Alleen van toepassing als Bloedtransfusie? = 'Ja'.</xs:documentation>
                                           </xs:annotation>
                                           <xs:complexType>
                                              <xs:attribute name="conceptId"
@@ -3478,7 +3502,7 @@ See http://www.gnu.org/licenses/
                               <xs:element name="indicatie_prenatale_diagnostiek" minOccurs="0" maxOccurs="1">
                                  <xs:annotation>
                                     <xs:documentation source="name" xml:lang="nl-NL">Indicatie prenatale diagnostiek</xs:documentation>
-                                    <xs:documentation source="desc" xml:lang="nl-NL">Prenatale diagnostiek. Groep die gegevens bevat over primaire indicatie op basis van anamnese. Voor een aantal indicaties is prenatale diagnostiek (bijvoorbeeld vruchtwateronderzoek, geavanceerd ultrageluidonderzoek, NIPT) een geschikte methode om meer informatie te krijgen over de aanwezigheid van een aangeboren aandoening. Welke methode gebruikt wordt, is afhankelijk van het beleid van de verschillende centra en van de wens van de zwangere.</xs:documentation>
+                                    <xs:documentation source="desc" xml:lang="nl-NL">Prenatale diagnostiek. Groep die gegevens bevat over primaire indicatie op basis van anamnese.Voor een aantal indicaties is prenatale diagnostiek (bijvoorbeeld vruchtwateronderzoek, geavanceerd ultrageluidonderzoek, NIPT) een geschikte methode om meer informatie te krijgen over de aanwezigheid van een aangeboren aandoening. Welke methode gebruikt wordt, is afhankelijk van het beleid van de verschillende centra en van de wens van de zwangere.</xs:documentation>
                                  </xs:annotation>
                                  <xs:complexType>
                                     <xs:sequence>
@@ -5020,7 +5044,7 @@ See http://www.gnu.org/licenses/
                                           maxOccurs="1">
                                  <xs:annotation>
                                     <xs:documentation source="name" xml:lang="nl-NL">Voorgenomen plaats baring tijdens zwangerschap (type locatie)</xs:documentation>
-                                    <xs:documentation source="desc" xml:lang="nl-NL">Voorgenomen plaats baring tijdens zwangerschap (type locatie). Het gaat hier primair om de wens van de vrouw die soms beperkt wordt door de risicostatus. Er kan gekozen worden voor 'ziekenhuis' ook als er géén sprake is van een medische indicaite.</xs:documentation>
+                                    <xs:documentation source="desc" xml:lang="nl-NL">Voorgenomen plaats baring tijdens zwangerschap (type locatie).Het gaat hier primair om de wens van de vrouw die soms beperkt wordt door de risicostatus. Er kan gekozen worden voor 'ziekenhuis' ook als er géén sprake is van een medische indicaite.</xs:documentation>
                                  </xs:annotation>
                                  <xs:complexType>
                                     <xs:attribute name="conceptId"
@@ -6297,7 +6321,7 @@ See http://www.gnu.org/licenses/
                                        <xs:element name="hartactie_aanwezigq" minOccurs="0" maxOccurs="1">
                                           <xs:annotation>
                                              <xs:documentation source="name" xml:lang="nl-NL">Hartactie aanwezig?</xs:documentation>
-                                             <xs:documentation source="desc" xml:lang="nl-NL">Hartactie van de foetus aanwezig? ja/nee/onbekend Ja -&gt; hartactie waargenomenNee -&gt; geen hartactie waargenomen, terwijl dit op grond van het onderzoek wél de verwachting wasOnbekend -&gt; bijvoorbeeld wanneer de hartactie nog niet waarneembaar is omdat het te vroeg in de zwangerschap is</xs:documentation>
+                                             <xs:documentation source="desc" xml:lang="nl-NL">Hartactie van de foetus aanwezig?ja/nee/onbekendJa -&gt; hartactie waargenomenNee -&gt; geen hartactie waargenomen, terwijl dit op grond van het onderzoek wél de verwachting wasOnbekend -&gt; bijvoorbeeld wanneer de hartactie nog niet waarneembaar is omdat het te vroeg in de zwangerschap is</xs:documentation>
                                           </xs:annotation>
                                           <xs:complexType>
                                              <xs:attribute name="conceptId"
@@ -6697,7 +6721,7 @@ See http://www.gnu.org/licenses/
                               <xs:element name="partiele_molaq" minOccurs="0" maxOccurs="1">
                                  <xs:annotation>
                                     <xs:documentation source="name" xml:lang="nl-NL">Partiële mola?</xs:documentation>
-                                    <xs:documentation source="desc" xml:lang="nl-NL">Is er sprake van een partiële mola, met intacte zwangerschap? Een mola wordt geregistreerd bij 'wijze einde zwangerschap'.</xs:documentation>
+                                    <xs:documentation source="desc" xml:lang="nl-NL">Is er sprake van een partiële mola, met intacte zwangerschap?Een mola wordt geregistreerd bij 'wijze einde zwangerschap'.</xs:documentation>
                                  </xs:annotation>
                                  <xs:complexType>
                                     <xs:attribute name="conceptId"
@@ -6974,7 +6998,7 @@ See http://www.gnu.org/licenses/
                               <xs:element name="dreigende_partus_immaturusq" minOccurs="0" maxOccurs="1">
                                  <xs:annotation>
                                     <xs:documentation source="name" xml:lang="nl-NL">Dreigende partus immaturus?</xs:documentation>
-                                    <xs:documentation source="desc" xml:lang="nl-NL">Is er sprake van dreigende partus immaturus? Een partus immaturus is van 16w0d tot en met 23w6d.</xs:documentation>
+                                    <xs:documentation source="desc" xml:lang="nl-NL">Is er sprake van dreigende partus immaturus?Een partus immaturus is van 16w0d tot en met 23w6d.</xs:documentation>
                                  </xs:annotation>
                                  <xs:complexType>
                                     <xs:attribute name="conceptId"
@@ -6987,7 +7011,7 @@ See http://www.gnu.org/licenses/
                               <xs:element name="dreigende_partus_prematurusq" minOccurs="0" maxOccurs="1">
                                  <xs:annotation>
                                     <xs:documentation source="name" xml:lang="nl-NL">Dreigende partus prematurus?</xs:documentation>
-                                    <xs:documentation source="desc" xml:lang="nl-NL">Is er sprake van dreigende partus prematurus? Een partus prematurus is van 24w0d tot en met 36w6d.</xs:documentation>
+                                    <xs:documentation source="desc" xml:lang="nl-NL">Is er sprake van dreigende partus prematurus?Een partus prematurus is van 24w0d tot en met 36w6d.</xs:documentation>
                                  </xs:annotation>
                                  <xs:complexType>
                                     <xs:attribute name="conceptId"
@@ -7389,7 +7413,7 @@ See http://www.gnu.org/licenses/
                                  maxOccurs="unbounded">
                         <xs:annotation>
                            <xs:documentation source="name" xml:lang="nl-NL">Reden antenatale betrokkenheid kinderarts</xs:documentation>
-                           <xs:documentation source="desc" xml:lang="nl-NL">Reden antenatale betrokkenheid kinderarts. Er kunnen meerdere redenen van toepassing zijn.</xs:documentation>
+                           <xs:documentation source="desc" xml:lang="nl-NL">Reden antenatale betrokkenheid kinderarts.Er kunnen meerdere redenen van toepassing zijn.</xs:documentation>
                         </xs:annotation>
                         <xs:complexType>
                            <xs:attribute name="conceptId"
@@ -7500,7 +7524,7 @@ See http://www.gnu.org/licenses/
                      <xs:element name="wijze_einde_zwangerschap" minOccurs="0" maxOccurs="1">
                         <xs:annotation>
                            <xs:documentation source="name" xml:lang="nl-NL">Wijze einde zwangerschap</xs:documentation>
-                           <xs:documentation source="desc" xml:lang="nl-NL">De wijze waarop de zwangerschap geëindigd is. TOP (Termination of Pregnancy) is zwangerschapsafbreking na 16 weken. Bij TOP wordt hier 'Partus' geregistreerd, zodat dit meegenomen wordt als pariteit. Dit in tegenstelling tot APLA, waarmee een zwangerschapsafbreking (abortus) van minder dan 16 weken wordt bedoeld.</xs:documentation>
+                           <xs:documentation source="desc" xml:lang="nl-NL">De wijze waarop de zwangerschap geëindigd is.TOP (Termination of Pregnancy) is zwangerschapsafbreking na 16 weken. Bij TOP wordt hier 'Partus' geregistreerd, zodat dit meegenomen wordt als pariteit. Dit in tegenstelling tot APLA, waarmee een zwangerschapsafbreking (abortus) van minder dan 16 weken wordt bedoeld.</xs:documentation>
                         </xs:annotation>
                         <xs:complexType>
                            <xs:attribute name="conceptId"
@@ -7624,7 +7648,7 @@ See http://www.gnu.org/licenses/
                      <xs:element name="datum_einde_zwangerschap" minOccurs="0" maxOccurs="unbounded">
                         <xs:annotation>
                            <xs:documentation source="name" xml:lang="nl-NL">Datum einde zwangerschap</xs:documentation>
-                           <xs:documentation source="desc" xml:lang="nl-NL">Moment (datum en tijd) waarop de zwangerschap medisch gezien is geëindigd, anders dan na een partus (bij een partus wordt dit item niet ingevuld). NB. Bij een partus wordt op een andere plaats in het dossier geregistreerd: geboortedatum per kind én geboortedatum/tijd van de placenta(e).</xs:documentation>
+                           <xs:documentation source="desc" xml:lang="nl-NL">Moment (datum en tijd) waarop de zwangerschap medisch gezien is geëindigd, anders dan na een partus (bij een partus wordt dit item niet ingevuld).NB. Bij een partus wordt op een andere plaats in het dossier geregistreerd: geboortedatum per kind én geboortedatum/tijd van de placenta(e).</xs:documentation>
                         </xs:annotation>
                         <xs:complexType>
                            <xs:attribute name="conceptId"
@@ -7938,7 +7962,7 @@ See http://www.gnu.org/licenses/
                               <xs:element name="direct_ipd_gewenstq" minOccurs="0" maxOccurs="1">
                                  <xs:annotation>
                                     <xs:documentation source="name" xml:lang="nl-NL">Direct IPD gewenst?</xs:documentation>
-                                    <xs:documentation source="desc" xml:lang="nl-NL">Is invasieve prenatale diagnostiek (IPD) door de vrouw gewenst? Dit item is alleen van toepassing wanneer mevrouw een indicatie heeft voor invasieve prenatale diagnostiek (IPD, item 80937) zonder voorafgaande screening.</xs:documentation>
+                                    <xs:documentation source="desc" xml:lang="nl-NL">Is invasieve prenatale diagnostiek (IPD) door de vrouw gewenst?Dit item is alleen van toepassing wanneer mevrouw een indicatie heeft voor invasieve prenatale diagnostiek (IPD, item 80937) zonder voorafgaande screening.</xs:documentation>
                                  </xs:annotation>
                                  <xs:complexType>
                                     <xs:attribute name="conceptId"
@@ -8099,7 +8123,7 @@ See http://www.gnu.org/licenses/
                               <xs:element name="direct_guo_gewenstq" minOccurs="0" maxOccurs="1">
                                  <xs:annotation>
                                     <xs:documentation source="name" xml:lang="nl-NL">Direct GUO gewenst?</xs:documentation>
-                                    <xs:documentation source="desc" xml:lang="nl-NL">Is de GUO door de vrouw gewenst? Dit item is alleen van toepassing wanneer mevrouw een indicatie heeft voor geavanceerd ultrageluidonderzoekl (GUO, item 80938) zonder voorafgaande screening (SEO).</xs:documentation>
+                                    <xs:documentation source="desc" xml:lang="nl-NL">Is de GUO door de vrouw gewenst?Dit item is alleen van toepassing wanneer mevrouw een indicatie heeft voor geavanceerd ultrageluidonderzoekl (GUO, item 80938) zonder voorafgaande screening (SEO).</xs:documentation>
                                  </xs:annotation>
                                  <xs:complexType>
                                     <xs:attribute name="conceptId"
@@ -8220,7 +8244,7 @@ See http://www.gnu.org/licenses/
                               <xs:element name="ppromq" minOccurs="0" maxOccurs="unbounded">
                                  <xs:annotation>
                                     <xs:documentation source="name" xml:lang="nl-NL">PPROM?</xs:documentation>
-                                    <xs:documentation source="desc" xml:lang="nl-NL">PPROM = Preterm Prelabor Rupture of Membranes. PPROM = Breken van vliezen zonder weeën tot en met 36w6d.</xs:documentation>
+                                    <xs:documentation source="desc" xml:lang="nl-NL">PPROM = Preterm Prelabor Rupture of Membranes.PPROM = Breken van vliezen zonder weeën tot en met 36w6d.</xs:documentation>
                                  </xs:annotation>
                                  <xs:complexType>
                                     <xs:attribute name="conceptId"
@@ -8233,7 +8257,7 @@ See http://www.gnu.org/licenses/
                               <xs:element name="promq" minOccurs="0" maxOccurs="1">
                                  <xs:annotation>
                                     <xs:documentation source="name" xml:lang="nl-NL">PROM?</xs:documentation>
-                                    <xs:documentation source="desc" xml:lang="nl-NL">PROM = Prelabor Rupture of Membranes PROM = Breken van vliezen zonder weeën 37w0d of later.</xs:documentation>
+                                    <xs:documentation source="desc" xml:lang="nl-NL">PROM = Prelabor Rupture of MembranesPROM = Breken van vliezen zonder weeën 37w0d of later.</xs:documentation>
                                  </xs:annotation>
                                  <xs:complexType>
                                     <xs:attribute name="conceptId"
@@ -8272,7 +8296,7 @@ See http://www.gnu.org/licenses/
                               <xs:element name="niet_vorderende_uitdrijvingq" minOccurs="0" maxOccurs="1">
                                  <xs:annotation>
                                     <xs:documentation source="name" xml:lang="nl-NL">Niet vorderende uitdrijving?</xs:documentation>
-                                    <xs:documentation source="desc" xml:lang="nl-NL">Niet vorderende uitdrijving? Er is sprake van niet vorderende uitdrijving (NVOG richtlijn) wanneer: bij primipara: zonder regionale anesthesie de uitdrijving langer dan 2 uur duurt met regionale anesthesie de uitdrijving langer dan 3 uur duurt; bij multipara die eerder vaginaal bevallen is: zonder regionale anesthesie de uitdrijving langer dan 1 uur duurt. met regionale anesthesie de uitdrijving langer dan 2 uur duurt</xs:documentation>
+                                    <xs:documentation source="desc" xml:lang="nl-NL">Niet vorderende uitdrijving?Er is sprake van niet vorderende uitdrijving (NVOG richtlijn) wanneer: bij primipara: zonder regionale anesthesie de uitdrijving langer dan 2 uur duurt met regionale anesthesie de uitdrijving langer dan 3 uur duurt; bij multipara die eerder vaginaal bevallen is: zonder regionale anesthesie de uitdrijving langer dan 1 uur duurt. met regionale anesthesie de uitdrijving langer dan 2 uur duurt</xs:documentation>
                                  </xs:annotation>
                                  <xs:complexType>
                                     <xs:attribute name="conceptId"
@@ -8311,7 +8335,7 @@ See http://www.gnu.org/licenses/
                               <xs:element name="fluxus_postpartumq" minOccurs="0" maxOccurs="1">
                                  <xs:annotation>
                                     <xs:documentation source="name" xml:lang="nl-NL">Fluxus postpartum?</xs:documentation>
-                                    <xs:documentation source="desc" xml:lang="nl-NL">Is er sprake van een fluxus postpartum? Er is sprake van een fluxus postpartum wanneer er na de geboorte van het kind meer dan 1000 cc bloedverlies is. Ja/Nee/Onbekend</xs:documentation>
+                                    <xs:documentation source="desc" xml:lang="nl-NL">Is er sprake van een fluxus postpartum? Er is sprake van een fluxus postpartum wanneer er na de geboorte van het kind meer dan 1000 cc bloedverlies is.Ja/Nee/Onbekend</xs:documentation>
                                  </xs:annotation>
                                  <xs:complexType>
                                     <xs:attribute name="conceptId"
@@ -8556,7 +8580,7 @@ See http://www.gnu.org/licenses/
                               <xs:element name="interventie_begin_baring" minOccurs="0" maxOccurs="1">
                                  <xs:annotation>
                                     <xs:documentation source="name" xml:lang="nl-NL">Interventie begin baring</xs:documentation>
-                                    <xs:documentation source="desc" xml:lang="nl-NL">Interventie begin baring Een primaire sectio is een geplande sectio en wordt óók als zodanig geregistreerd als deze uitgevoerd wordt wanneer de weeën al zijn begonnen, de vliezen zijn gebroken en/of de uitdrijving is begonnen.</xs:documentation>
+                                    <xs:documentation source="desc" xml:lang="nl-NL">Interventie begin baringEen primaire sectio is een geplande sectio en wordt óók als zodanig geregistreerd als deze uitgevoerd wordt wanneer de weeën al zijn begonnen, de vliezen zijn gebroken en/of de uitdrijving is begonnen.</xs:documentation>
                                  </xs:annotation>
                                  <xs:complexType>
                                     <xs:attribute name="conceptId"
@@ -8666,7 +8690,7 @@ See http://www.gnu.org/licenses/
                                           maxOccurs="1">
                                  <xs:annotation>
                                     <xs:documentation source="name" xml:lang="nl-NL">Indicatie interventie begin baring</xs:documentation>
-                                    <xs:documentation source="desc" xml:lang="nl-NL">Indicatie interventie begin baring. Registreer hier één indicatie: de meest zwaarwegende.</xs:documentation>
+                                    <xs:documentation source="desc" xml:lang="nl-NL">Indicatie interventie begin baring.Registreer hier één indicatie: de meest zwaarwegende.</xs:documentation>
                                  </xs:annotation>
                                  <xs:complexType>
                                     <xs:attribute name="conceptId"
@@ -8834,7 +8858,7 @@ See http://www.gnu.org/licenses/
                                  maxOccurs="1">
                         <xs:annotation>
                            <xs:documentation source="name" xml:lang="nl-NL">Tijdstip begin actieve ontsluiting</xs:documentation>
-                           <xs:documentation source="desc" xml:lang="nl-NL">Datum en tijd begin actieve ontsluiting KNOV definitie van actieve ontsluting: dunne verstreken cervix én ten minste 3 cm ontsluiting én krachtige, pijnlijke weeën om de 2 à 3 minuten.</xs:documentation>
+                           <xs:documentation source="desc" xml:lang="nl-NL">Datum en tijd begin actieve ontsluitingKNOV definitie van actieve ontsluting: dunne verstreken cervix én ten minste 3 cm ontsluiting én krachtige, pijnlijke weeën om de 2 à 3 minuten.</xs:documentation>
                         </xs:annotation>
                         <xs:complexType>
                            <xs:attribute name="conceptId"
@@ -10089,7 +10113,7 @@ See http://www.gnu.org/licenses/
                               <xs:element name="ziekenhuis_baring" minOccurs="0" maxOccurs="1">
                                  <xs:annotation>
                                     <xs:documentation source="name" xml:lang="nl-NL">Ziekenhuis baring</xs:documentation>
-                                    <xs:documentation source="desc" xml:lang="nl-NL">Het ziekenhuis waar baring plaats vond. Alleen van toepassing indien "Werkelijke plaats baring (type locatie)" een ziekenhuis betreft.</xs:documentation>
+                                    <xs:documentation source="desc" xml:lang="nl-NL">Het ziekenhuis waar baring plaats vond.Alleen van toepassing indien "Werkelijke plaats baring (type locatie)" een ziekenhuis betreft.</xs:documentation>
                                  </xs:annotation>
                                  <xs:complexType>
                                     <xs:sequence>
@@ -12019,7 +12043,7 @@ See http://www.gnu.org/licenses/
                                        <xs:element name="sedatieq" minOccurs="0" maxOccurs="1">
                                           <xs:annotation>
                                              <xs:documentation source="name" xml:lang="nl-NL">Sedatie?</xs:documentation>
-                                             <xs:documentation source="desc" xml:lang="nl-NL">Is er sprake van sedatie?Ja/Nee/Onbekend Sedatie is geen pijnbestrijding en wordt in principe niet durante partu toegepast. Opiaten, epiduraal of spinaal horen onder pijnbestrijding en dus niet onder sedatie.Onder sedatie valt bijvoorbeeld dormicum of phenergan.</xs:documentation>
+                                             <xs:documentation source="desc" xml:lang="nl-NL">Is er sprake van sedatie?Ja/Nee/OnbekendSedatie is geen pijnbestrijding en wordt in principe niet durante partu toegepast. Opiaten, epiduraal of spinaal horen onder pijnbestrijding en dus niet onder sedatie.Onder sedatie valt bijvoorbeeld dormicum of phenergan.</xs:documentation>
                                           </xs:annotation>
                                           <xs:complexType>
                                              <xs:attribute name="conceptId"
@@ -12032,7 +12056,7 @@ See http://www.gnu.org/licenses/
                                        <xs:element name="sedatie" minOccurs="0" maxOccurs="1">
                                           <xs:annotation>
                                              <xs:documentation source="name" xml:lang="nl-NL">Sedatie</xs:documentation>
-                                             <xs:documentation source="desc" xml:lang="nl-NL">Sedatie. Sedatie is geen pijnbestrijding en wordt in principe niet durante partu toegepast. Opiaten, epiduraal of spinaal horen onder pijnbestrijding en dus niet onder sedatie.Onder sedatie valt bijvoorbeeld dormicum of phenergan.</xs:documentation>
+                                             <xs:documentation source="desc" xml:lang="nl-NL">Sedatie.Sedatie is geen pijnbestrijding en wordt in principe niet durante partu toegepast. Opiaten, epiduraal of spinaal horen onder pijnbestrijding en dus niet onder sedatie.Onder sedatie valt bijvoorbeeld dormicum of phenergan.</xs:documentation>
                                           </xs:annotation>
                                           <xs:complexType>
                                              <xs:sequence>
@@ -12161,7 +12185,7 @@ See http://www.gnu.org/licenses/
                                        <xs:element name="type_partus" minOccurs="0" maxOccurs="1">
                                           <xs:annotation>
                                              <xs:documentation source="name" xml:lang="nl-NL">Type partus</xs:documentation>
-                                             <xs:documentation source="desc" xml:lang="nl-NL">Type partus. Een primaire sectio is een geplande sectio en wordt óók als zodanig geregistreerd als deze uitgevoerd wordt wanneer de weeën al zijn begonnen, de vliezen zijn gebroken en/of de uitdrijving is begonnen. TOP (Termination of Pregnancy) is zwangerschapsafbreking na 16 weken. Dit in tegenstelling tot APLA, waarmee een zwangerschapsafbreking (abortus) van minder dan 16 weken wordt bedoeld.</xs:documentation>
+                                             <xs:documentation source="desc" xml:lang="nl-NL">Type partus.Een primaire sectio is een geplande sectio en wordt óók als zodanig geregistreerd als deze uitgevoerd wordt wanneer de weeën al zijn begonnen, de vliezen zijn gebroken en/of de uitdrijving is begonnen.TOP (Termination of Pregnancy) is zwangerschapsafbreking na 16 weken. Dit in tegenstelling tot APLA, waarmee een zwangerschapsafbreking (abortus) van minder dan 16 weken wordt bedoeld.</xs:documentation>
                                           </xs:annotation>
                                           <xs:complexType>
                                              <xs:attribute name="conceptId"
@@ -12261,7 +12285,7 @@ See http://www.gnu.org/licenses/
                                        <xs:element name="top_nav_prenataal_onderzoekq" minOccurs="0" maxOccurs="1">
                                           <xs:annotation>
                                              <xs:documentation source="name" xml:lang="nl-NL">TOP nav prenataal onderzoek?</xs:documentation>
-                                             <xs:documentation source="desc" xml:lang="nl-NL">TOP (Termination Of Pregnancy, zwangerschapsafbreking ná 16 weken) naar aanleiding van afwijking(en) zoals gebleken uit prenataal onderzoek. (Ja/Nee/Onbekend). Alleen van toepassing wanneer 'Type partus' = TOP</xs:documentation>
+                                             <xs:documentation source="desc" xml:lang="nl-NL">TOP (Termination Of Pregnancy, zwangerschapsafbreking ná 16 weken) naar aanleiding van afwijking(en) zoals gebleken uit prenataal onderzoek. (Ja/Nee/Onbekend).Alleen van toepassing wanneer 'Type partus' = TOP</xs:documentation>
                                           </xs:annotation>
                                           <xs:complexType>
                                              <xs:attribute name="conceptId"
@@ -12917,7 +12941,7 @@ See http://www.gnu.org/licenses/
                                                 <xs:element name="succes_vaginale_kunstverlossingq" minOccurs="0" maxOccurs="1">
                                                    <xs:annotation>
                                                       <xs:documentation source="name" xml:lang="nl-NL">Succes vaginale kunstverlossing?</xs:documentation>
-                                                      <xs:documentation source="desc" xml:lang="nl-NL">Vaginale kunstverlossing geslaagd? Een vaginale kunstverlossing is geslaagd als het kind daarmee geboren wordt, onafhankelijk van de conditie van het kind.</xs:documentation>
+                                                      <xs:documentation source="desc" xml:lang="nl-NL">Vaginale kunstverlossing geslaagd?Een vaginale kunstverlossing is geslaagd als het kind daarmee geboren wordt, onafhankelijk van de conditie van het kind.</xs:documentation>
                                                    </xs:annotation>
                                                    <xs:complexType>
                                                       <xs:attribute name="conceptId"
@@ -13096,7 +13120,7 @@ See http://www.gnu.org/licenses/
                                                             maxOccurs="unbounded">
                                                    <xs:annotation>
                                                       <xs:documentation source="name" xml:lang="nl-NL">Indicatie sectio caesarea</xs:documentation>
-                                                      <xs:documentation source="desc" xml:lang="nl-NL">Indicatie sectio caesarea Hieronder vallen de indicaties van alle sectio’s zowel primair als secundair.</xs:documentation>
+                                                      <xs:documentation source="desc" xml:lang="nl-NL">Indicatie sectio caesareaHieronder vallen de indicaties van alle sectio’s zowel primair als secundair.</xs:documentation>
                                                    </xs:annotation>
                                                    <xs:complexType>
                                                       <xs:attribute name="conceptId"
@@ -13315,7 +13339,7 @@ See http://www.gnu.org/licenses/
                                                 <xs:element name="afwijkende_bevindingen_kindq" minOccurs="0" maxOccurs="1">
                                                    <xs:annotation>
                                                       <xs:documentation source="name" xml:lang="nl-NL">Afwijkende bevindingen kind?</xs:documentation>
-                                                      <xs:documentation source="desc" xml:lang="nl-NL">Zijn er na uitvoeren van het lichamelijk onderzoek kind (volgens protocol) afwijkende bevindingen geconstateerd? Vervolgens alleen de afwijkende bevindingen invullen.</xs:documentation>
+                                                      <xs:documentation source="desc" xml:lang="nl-NL">Zijn er na uitvoeren van het lichamelijk onderzoek kind (volgens protocol) afwijkende bevindingen geconstateerd?Vervolgens alleen de afwijkende bevindingen invullen.</xs:documentation>
                                                    </xs:annotation>
                                                    <xs:complexType>
                                                       <xs:attribute name="conceptId"
@@ -16108,7 +16132,7 @@ See http://www.gnu.org/licenses/
                                        <xs:element name="hepatitis_b" minOccurs="0" maxOccurs="1">
                                           <xs:annotation>
                                              <xs:documentation source="name" xml:lang="nl-NL">Hepatitis B</xs:documentation>
-                                             <xs:documentation source="desc" xml:lang="nl-NL">Hepatitis B vaccinatie / immunisatie. Alleen van toepassing bij positieve HBsAg van de moeder (volgt uit PSIE).</xs:documentation>
+                                             <xs:documentation source="desc" xml:lang="nl-NL">Hepatitis B vaccinatie / immunisatie.Alleen van toepassing bij positieve HBsAg van de moeder (volgt uit PSIE).</xs:documentation>
                                           </xs:annotation>
                                           <xs:complexType>
                                              <xs:sequence>
@@ -17713,7 +17737,7 @@ See http://www.gnu.org/licenses/
                                        <xs:element name="hartactie_aanwezigq" minOccurs="0" maxOccurs="1">
                                           <xs:annotation>
                                              <xs:documentation source="name" xml:lang="nl-NL">Hartactie aanwezig?</xs:documentation>
-                                             <xs:documentation source="desc" xml:lang="nl-NL">Hartactie van de foetus aanwezig? ja/nee/onbekend Ja -&gt; hartactie waargenomenNee -&gt; geen hartactie waargenomen, terwijl dit op grond van het onderzoek wél de verwachting wasOnbekend -&gt; bijvoorbeeld wanneer de hartactie nog niet waarneembaar is omdat het te vroeg in de zwangerschap is</xs:documentation>
+                                             <xs:documentation source="desc" xml:lang="nl-NL">Hartactie van de foetus aanwezig?ja/nee/onbekendJa -&gt; hartactie waargenomenNee -&gt; geen hartactie waargenomen, terwijl dit op grond van het onderzoek wél de verwachting wasOnbekend -&gt; bijvoorbeeld wanneer de hartactie nog niet waarneembaar is omdat het te vroeg in de zwangerschap is</xs:documentation>
                                           </xs:annotation>
                                           <xs:complexType>
                                              <xs:attribute name="conceptId"
@@ -20224,7 +20248,7 @@ See http://www.gnu.org/licenses/
                                                    maxOccurs="1">
                                           <xs:annotation>
                                              <xs:documentation source="name" xml:lang="nl-NL">A priori kans op trisomie 21 (Down)</xs:documentation>
-                                             <xs:documentation source="desc" xml:lang="nl-NL">De kans op trisomie 21, louter op basis van maternale leeftijd en eerdere zwangerschap van foetus met niet erfelijke trisomie. Bij een bekende kans is de teller (value.numerator) altijd 1. Het aantal cijfers van de noemer (value.denominator) is aangegeven in de kolom 'Lengte'.</xs:documentation>
+                                             <xs:documentation source="desc" xml:lang="nl-NL">De kans op trisomie 21, louter op basis van maternale leeftijd en eerdere zwangerschap van foetus met niet erfelijke trisomie.Bij een bekende kans is de teller (value.numerator) altijd 1. Het aantal cijfers van de noemer (value.denominator) is aangegeven in de kolom 'Lengte'.</xs:documentation>
                                           </xs:annotation>
                                           <xs:complexType>
                                              <xs:attribute name="conceptId"
@@ -20239,7 +20263,7 @@ See http://www.gnu.org/licenses/
                                                    maxOccurs="1">
                                           <xs:annotation>
                                              <xs:documentation source="name" xml:lang="nl-NL">A priori kans op trisomie 18 (Edwards)</xs:documentation>
-                                             <xs:documentation source="desc" xml:lang="nl-NL">De kans op trisomie 18, louter op basis van maternale leeftijd en eerdere zwangerschap van foetus met niet erfelijke trisomie. Bij een bekende kans is de teller (value.numerator) altijd 1. Het aantal cijfers van de noemer (value.denominator) is aangegeven in de kolom 'Lengte'.</xs:documentation>
+                                             <xs:documentation source="desc" xml:lang="nl-NL">De kans op trisomie 18, louter op basis van maternale leeftijd en eerdere zwangerschap van foetus met niet erfelijke trisomie.Bij een bekende kans is de teller (value.numerator) altijd 1. Het aantal cijfers van de noemer (value.denominator) is aangegeven in de kolom 'Lengte'.</xs:documentation>
                                           </xs:annotation>
                                           <xs:complexType>
                                              <xs:attribute name="conceptId"
@@ -20254,7 +20278,7 @@ See http://www.gnu.org/licenses/
                                                    maxOccurs="1">
                                           <xs:annotation>
                                              <xs:documentation source="name" xml:lang="nl-NL">A priori kans op trisomie 13 (Patau)</xs:documentation>
-                                             <xs:documentation source="desc" xml:lang="nl-NL">De kans op trisomie 13, louter op basis van maternale leeftijd en eerdere zwangerschap van foetus met niet erfelijke trisomie. Bij een bekende kans is de teller (value.numerator) altijd 1. Het aantal cijfers van de noemer (value.denominator) is aangegeven in de kolom 'Lengte'.</xs:documentation>
+                                             <xs:documentation source="desc" xml:lang="nl-NL">De kans op trisomie 13, louter op basis van maternale leeftijd en eerdere zwangerschap van foetus met niet erfelijke trisomie.Bij een bekende kans is de teller (value.numerator) altijd 1. Het aantal cijfers van de noemer (value.denominator) is aangegeven in de kolom 'Lengte'.</xs:documentation>
                                           </xs:annotation>
                                           <xs:complexType>
                                              <xs:attribute name="conceptId"
@@ -20269,7 +20293,7 @@ See http://www.gnu.org/licenses/
                                                    maxOccurs="1">
                                           <xs:annotation>
                                              <xs:documentation source="name" xml:lang="nl-NL">Combinatietest kans op trisomie 21</xs:documentation>
-                                             <xs:documentation source="desc" xml:lang="nl-NL">Kans op basis van de combinatietest op trisomie 21 van 1:X Bij een bekende kans is de teller (value.numerator) altijd 1. Het aantal cijfers van de noemer (value.denominator) is aangegeven in de kolom 'Lengte'.</xs:documentation>
+                                             <xs:documentation source="desc" xml:lang="nl-NL">Kans op basis van de combinatietest op trisomie 21 van 1:XBij een bekende kans is de teller (value.numerator) altijd 1. Het aantal cijfers van de noemer (value.denominator) is aangegeven in de kolom 'Lengte'.</xs:documentation>
                                           </xs:annotation>
                                           <xs:complexType>
                                              <xs:attribute name="conceptId"
@@ -20284,7 +20308,7 @@ See http://www.gnu.org/licenses/
                                                    maxOccurs="1">
                                           <xs:annotation>
                                              <xs:documentation source="name" xml:lang="nl-NL">Combinatietest kans op trisomie 18</xs:documentation>
-                                             <xs:documentation source="desc" xml:lang="nl-NL">Kans op trisomie 18 van 1:X Bij een bekende kans is de teller (value.numerator) altijd 1. Het aantal cijfers van de noemer (value.denominator) is aangegeven in de kolom 'Lengte'.</xs:documentation>
+                                             <xs:documentation source="desc" xml:lang="nl-NL">Kans op trisomie 18 van 1:XBij een bekende kans is de teller (value.numerator) altijd 1. Het aantal cijfers van de noemer (value.denominator) is aangegeven in de kolom 'Lengte'.</xs:documentation>
                                           </xs:annotation>
                                           <xs:complexType>
                                              <xs:attribute name="conceptId"
@@ -20299,7 +20323,7 @@ See http://www.gnu.org/licenses/
                                                    maxOccurs="1">
                                           <xs:annotation>
                                              <xs:documentation source="name" xml:lang="nl-NL">Combinatietest kans op trisomie 13</xs:documentation>
-                                             <xs:documentation source="desc" xml:lang="nl-NL">Kans op trisomie 13 van 1:X Bij een bekende kans is de teller (value.numerator) altijd 1. Het aantal cijfers van de noemer (value.denominator) is aangegeven in de kolom 'Lengte'.</xs:documentation>
+                                             <xs:documentation source="desc" xml:lang="nl-NL">Kans op trisomie 13 van 1:XBij een bekende kans is de teller (value.numerator) altijd 1. Het aantal cijfers van de noemer (value.denominator) is aangegeven in de kolom 'Lengte'.</xs:documentation>
                                           </xs:annotation>
                                           <xs:complexType>
                                              <xs:attribute name="conceptId"
@@ -20958,7 +20982,7 @@ See http://www.gnu.org/licenses/
                                           maxOccurs="1">
                                  <xs:annotation>
                                     <xs:documentation source="name" xml:lang="nl-NL">Urine-, bloed- en aanvullende onderzoeken</xs:documentation>
-                                    <xs:documentation source="desc" xml:lang="nl-NL">Urine-, bloed- en aanvullende onderzoeken Het gaat hier zowel om onderzoeken van bloed, urine en/of een ander monster door het laboratorium, als om onderzoeken die door de zorgverlener of patiënt 'zelf' worden gedaan. Voorbeelden van deze 'zelf'-bepalingen zijn: glucose, Hb en proteïne op basis van strips.</xs:documentation>
+                                    <xs:documentation source="desc" xml:lang="nl-NL">Urine-, bloed- en aanvullende onderzoekenHet gaat hier zowel om onderzoeken van bloed, urine en/of een ander monster door het laboratorium, als om onderzoeken die door de zorgverlener of patiënt 'zelf' worden gedaan. Voorbeelden van deze 'zelf'-bepalingen zijn: glucose, Hb en proteïne op basis van strips.</xs:documentation>
                                  </xs:annotation>
                                  <xs:complexType>
                                     <xs:sequence>
@@ -22419,7 +22443,7 @@ See http://www.gnu.org/licenses/
                               <xs:element name="vaginaal_toucher" minOccurs="0" maxOccurs="unbounded">
                                  <xs:annotation>
                                     <xs:documentation source="name" xml:lang="nl-NL">Vaginaal toucher</xs:documentation>
-                                    <xs:documentation source="desc" xml:lang="nl-NL">Vaginaal toucher / inwendig onderzoek POVIAS = portio, ontsluiting, vliezen, indaling, aard voorliggend deel, stand voorliggend deel</xs:documentation>
+                                    <xs:documentation source="desc" xml:lang="nl-NL">Vaginaal toucher / inwendig onderzoekPOVIAS = portio, ontsluiting, vliezen, indaling, aard voorliggend deel, stand voorliggend deel</xs:documentation>
                                  </xs:annotation>
                                  <xs:complexType>
                                     <xs:sequence>
@@ -22693,7 +22717,7 @@ See http://www.gnu.org/licenses/
                                        <xs:element name="vliezen" minOccurs="1" maxOccurs="1">
                                           <xs:annotation>
                                              <xs:documentation source="name" xml:lang="nl-NL">Vliezen</xs:documentation>
-                                             <xs:documentation source="desc" xml:lang="nl-NL">Aanduiding of de vliezen zijn gebroken of nog intact zijn. Indien het niet duidelijk is of de vliezen gebroken zijn, dient gekozen te worden voor 'Onbekend'.</xs:documentation>
+                                             <xs:documentation source="desc" xml:lang="nl-NL">Aanduiding of de vliezen zijn gebroken of nog intact zijn.Indien het niet duidelijk is of de vliezen gebroken zijn, dient gekozen te worden voor 'Onbekend'.</xs:documentation>
                                           </xs:annotation>
                                           <xs:complexType>
                                              <xs:attribute name="conceptId"
@@ -23182,7 +23206,7 @@ See http://www.gnu.org/licenses/
                               <xs:element name="pathologie_vrouw" minOccurs="0" maxOccurs="unbounded">
                                  <xs:annotation>
                                     <xs:documentation source="name" xml:lang="nl-NL">Pathologie vrouw</xs:documentation>
-                                    <xs:documentation source="desc" xml:lang="nl-NL">Specificatie van de pathologie van de vrouw postpartum. Deze lijst is geïnspireerd door VIL Codelijst A Indicaties 6000-6499 met uitzondering van code 6050 (Opname-indicatie voor het kind), en met toevoeging van Depressie en met uitbreiding van een aantal infecties.</xs:documentation>
+                                    <xs:documentation source="desc" xml:lang="nl-NL">Specificatie van de pathologie van de vrouw postpartum.Deze lijst is geïnspireerd door VIL Codelijst A Indicaties 6000-6499 met uitzondering van code 6050 (Opname-indicatie voor het kind), en met toevoeging van Depressie en met uitbreiding van een aantal infecties.</xs:documentation>
                                  </xs:annotation>
                                  <xs:complexType>
                                     <xs:attribute name="conceptId"
@@ -23370,7 +23394,7 @@ See http://www.gnu.org/licenses/
                               <xs:element name="interventie" minOccurs="0" maxOccurs="unbounded">
                                  <xs:annotation>
                                     <xs:documentation source="name" xml:lang="nl-NL">Interventie</xs:documentation>
-                                    <xs:documentation source="desc" xml:lang="nl-NL">Interventies volgende op een diagnose. Alleen van toepassing wanneer "Pathologie vrouw?" 'ja' is.</xs:documentation>
+                                    <xs:documentation source="desc" xml:lang="nl-NL">Interventies volgende op een diagnose.Alleen van toepassing wanneer "Pathologie vrouw?" 'ja' is.</xs:documentation>
                                  </xs:annotation>
                                  <xs:complexType>
                                     <xs:attribute name="conceptId"
@@ -23561,7 +23585,7 @@ See http://www.gnu.org/licenses/
                               <xs:element name="voeding_kind_groep" minOccurs="0" maxOccurs="unbounded">
                                  <xs:annotation>
                                     <xs:documentation source="name" xml:lang="nl-NL">Voeding kind (groep)</xs:documentation>
-                                    <xs:documentation source="desc" xml:lang="nl-NL">Voeding kind (groep). Registratie richtlijn PRN: de voeding van het kind bij voorkeur vastleggen op de zevende dag. De voeding van het kind mag vaker dan één keer (dus op meer dan één datum) worden vastgelegd, soms is dit ook nuttig omdat het verandert. Daarnaast is het ook mogelijk dat een kind op één datum verschillende substanties voeding krijgt (bijvoorbeeld zowel borst- als kunstvoeding). Ook dat kan vastgelegd worden.</xs:documentation>
+                                    <xs:documentation source="desc" xml:lang="nl-NL">Voeding kind (groep).Registratie richtlijn PRN: de voeding van het kind bij voorkeur vastleggen op de zevende dag.De voeding van het kind mag vaker dan één keer (dus op meer dan één datum) worden vastgelegd, soms is dit ook nuttig omdat het verandert. Daarnaast is het ook mogelijk dat een kind op één datum verschillende substanties voeding krijgt (bijvoorbeeld zowel borst- als kunstvoeding). Ook dat kan vastgelegd worden.</xs:documentation>
                                  </xs:annotation>
                                  <xs:complexType>
                                     <xs:sequence>
@@ -24806,11 +24830,11 @@ See http://www.gnu.org/licenses/
          <xs:attribute name="transactionRef"
                        type="t-id"
                        use="required"
-                       fixed="2.16.840.1.113883.2.4.3.11.60.90.77.4.2459"/>
+                       fixed="2.16.840.1.113883.2.4.3.11.60.90.77.4.2462"/>
          <xs:attribute name="transactionEffectiveDate"
                        type="xs:dateTime"
                        use="required"
-                       fixed="2019-02-21T15:17:51"/>
+                       fixed="2019-03-07T15:19:31"/>
          <xs:attribute name="versionDate" type="xs:dateTime" use="required"/>
          <xs:attribute name="prefix" type="xs:string" use="required"/>
       </xs:complexType>

@@ -154,7 +154,7 @@
         </xs:element>
       </xsl:when>
       <xsl:otherwise>
-        <xsl:comment> == *** Concept without @shortName found (id="{@id}") == </xsl:comment>
+        <xsl:sequence select="error((), 'Concept without shortname found for id=' || @id)"/>
       </xsl:otherwise>
     </xsl:choose>
 
