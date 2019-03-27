@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<prio1_huidig transactionRef="2.16.840.1.113883.2.4.3.11.60.90.77.4.2453"><!-- == Generated empty ADA Lite document for prio1_huidig == --><!-- == Source: design/specs-full/prio1-huidig.xml == --><!-- == Generator: design/xsl/ada-rtd2example-empty.xsl == --><!-- == IMPORTANT REMARK: When elements in have both a value and an enum attribute, use only one of them, not both! == -->
+   <zorgverlenerzorginstelling>
+      <zorgverlener>
+         <naam_zorgverlener value=""/>
+      </zorgverlener>
+      <zorginstelling>
+         <naam_zorginstelling value=""/>
+      </zorginstelling>
+   </zorgverlenerzorginstelling>
+   <vrouw>
+      <burgerservicenummer value=""/>
+      <naamgegevens>
+         <roepnaam value=""/>
+         <achternaam>
+            <soort_naam value="" enum=""/>
+            <voorvoegsel value=""/>
+            <achternaam value=""/>
+         </achternaam>
+      </naamgegevens>
+      <anamnese/>
+      <bloedgroep_vrouw value="" enum=""/>
+      <rhesus_d_factor_vrouw value="" enum=""/>
+      <rhesus_c_factor value="" enum=""/>
+   </vrouw>
+   <zwangerschap>
+      <graviditeit value=""/>
+      <pariteit value=""/>
+   </zwangerschap>
+   <medisch_onderzoek>
+      <maternale_onderzoeksgegevens>
+         <urine_bloed_en_aanvullende_onderzoeken>
+            <hb value=""/>
+         </urine_bloed_en_aanvullende_onderzoeken>
+      </maternale_onderzoeksgegevens>
+   </medisch_onderzoek>
+</prio1_huidig>

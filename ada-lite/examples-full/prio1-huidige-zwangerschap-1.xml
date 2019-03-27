@@ -2,7 +2,7 @@
 <prio1_huidig transactionRef="2.16.840.1.113883.2.4.3.11.60.90.77.4.2453"
               transactionEffectiveDate="2018-12-17T15:21:25"
               versionDate="2019-01-01T00:00:00"
-              prefix="peri20-"><!-- == ADA full format document generated from lite format document == --><!-- == Source: design/examples-lite/prio1-huidige-zwangerschap-1.xml == --><!-- == Specification used: design/specs-full/RetrieveTransaction-prio1-huidig.xml == --><!-- == Generator: design/xsl/ada-lite2ada-full.xsl == -->
+              prefix="peri20-"><!-- == ADA full format document generated from lite format document == --><!-- == Source: design/examples-lite/prio1-huidige-zwangerschap-1.xml == --><!-- == Specification used: design/specs-full/prio1-huidig.xml == --><!-- == Generator: design/xsl/ada-lite2ada-full.xsl == -->
    <zorgverlenerzorginstelling conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.1">
       <zorgverlener conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10001">
          <naam_zorgverlener conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10006"

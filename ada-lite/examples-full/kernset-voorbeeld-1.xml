@@ -2,7 +2,7 @@
 <kernset_aanleverbericht transactionRef="2.16.840.1.113883.2.4.3.11.60.90.77.4.2410"
                          transactionEffectiveDate="2014-10-20T00:00:00"
                          versionDate="2018-03-20T18:06:27"
-                         prefix="peri20-"><!-- == ADA full format document generated from lite format document == --><!-- == Source: design/examples-lite/kernset-voorbeeld-1.xml == --><!-- == Specification used: design/specs-full/RetrieveTransaction_kernset_22.xml == --><!-- == Generator: design/xsl/ada-lite2ada-full.xsl == -->
+                         prefix="peri20-"><!-- == ADA full format document generated from lite format document == --><!-- == Source: design/examples-lite/kernset-voorbeeld-1.xml == --><!-- == Specification used: design/specs-full/kernset-22.xml == --><!-- == Generator: design/xsl/ada-lite2ada-full.xsl == -->
    <zorgverlening conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.4">
       <datum_start_zorgverantwoordelijkheid conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20290"
                                             value="2016-01-05T00:00:00"/>

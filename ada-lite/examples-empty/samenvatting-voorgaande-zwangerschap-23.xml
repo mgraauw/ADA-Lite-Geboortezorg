@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<voorgaande_zwangerschap_samenvatting_23 transactionRef="2.16.840.1.113883.2.4.3.11.60.90.77.4.2469"><!-- == Generated empty ADA Lite document for voorgaande_zwangerschap_samenvatting_23 == --><!-- == Source: design/specs-full/samenvatting-voorgaande-zwangerschap-23.xml == --><!-- == Generator: design/xsl/ada-rtd2example-empty.xsl == --><!-- == IMPORTANT REMARK: When elements in have both a value and an enum attribute, use only one of them, not both! == -->
+   <zorgverlenerzorginstelling>
+      <zorgverlener>
+         <zorgverlener_uzinummer value=""/>
+         <zorgverlener_agbid value=""/>
+         <zorgverlener_lvr1id value=""/>
+         <naam_zorgverlener value=""/>
+         <zorgverlenertype value="" enum=""/>
+      </zorgverlener>
+      <zorginstelling>
+         <zorginstelling_oid value=""/>
+         <zorginstelling_agbid value=""/>
+         <zorginstelling_lvrid value=""/>
+         <zorginstelling_ura value=""/>
+         <naam_zorginstelling value=""/>
+         <adres_zorginstelling>
+            <straatnaam value=""/>
+            <huisnummer value=""/>
+            <huisletterhuisnummertoevoeging value=""/>
+            <postcode value=""/>
+            <plaatsnaam value=""/>
+            <land value=""/>
+         </adres_zorginstelling>
+      </zorginstelling>
+   </zorgverlenerzorginstelling>
+   <vrouw>
+      <burgerservicenummer value=""/>
+      <naamgegevens>
+         <voornamen value=""/>
+         <initialen value=""/>
+         <roepnaam value=""/>
+         <achternaam>
+            <soort_naam value="" enum=""/>
+            <voorvoegsel value=""/>
+            <achternaam value=""/>
+         </achternaam>
+      </naamgegevens>
+      <geboortedatum value=""/>
+   </vrouw>
+   <zwangerschap>
+      <identificatie_van_de_zwangerschap value=""/>
+      <graviditeit value=""/>
+      <pariteit_voor_deze_zwangerschap value=""/>
+      <definitieve_a_terme_datum value=""/>
+      <diagnose>
+         <gynaecologische_aandoening value="" enum=""/>
+         <bloedverliesq value=""/>
+         <cervixinsufficientieq value=""/>
+         <infectie value="" enum=""/>
+         <hyperemesis_gravidarumq value=""/>
+         <hypertensieve_aandoening value="" enum=""/>
+         <zwangerschapscholestaseq value=""/>
+         <diabetes_gravidarum_met_insulineq value=""/>
+         <afwijkende_groei_foetus value="" enum=""/>
+         <dreigende_partus_immaturusq value=""/>
+         <dreigende_partus_prematurusq value=""/>
+         <abruptio_placentaeq value=""/>
+      </diagnose>
+      <wijze_einde_zwangerschap value="" enum=""/>
+      <datum_einde_zwangerschap value=""/>
+   </zwangerschap>
+   <bevalling>
+      <diagnose_bevalling>
+         <datum value=""/>
+         <zwangerschapsduur value=""/>
+         <fluxus_postpartumq value=""/>
+      </diagnose_bevalling>
+      <interventies_begin_baring>
+         <interventie_begin_baring value="" enum=""/>
+         <indicatie_interventie_begin_baring value="" enum=""/>
+      </interventies_begin_baring>
+      <wijze_waarop_de_baring_begon value="" enum=""/>
+      <placenta>
+         <geboorte_placenta value="" enum=""/>
+      </placenta>
+      <hoeveelheid_bloedverlies value=""/>
+      <conditie_perineum_postpartum value="" enum=""/>
+   </bevalling>
+   <uitkomst_per_kind>
+      <baring>
+         <werkelijke_plaats_baring_type_locatie value="" enum=""/>
+         <ziekenhuis_baring>
+            <ziekenhuisnummer_lvrid value=""/>
+            <zorginstelling_agbid value=""/>
+            <naam_zorginstelling value=""/>
+         </ziekenhuis_baring>
+         <demografische_gegevens>
+            <naamgegevens_kind>
+               <voornamen value=""/>
+               <achternaam>
+                  <voorvoegsel value=""/>
+                  <achternaam value=""/>
+               </achternaam>
+            </naamgegevens_kind>
+            <geslacht_medische_observatie value="" enum=""/>
+            <geboortedatum value=""/>
+            <perinatale_sterfte_groep>
+               <perinatale_sterfteq value=""/>
+               <fase_perinatale_sterfte value="" enum=""/>
+            </perinatale_sterfte_groep>
+         </demografische_gegevens>
+         <kindspecifieke_uitkomstgegevens>
+            <type_partus value="" enum=""/>
+            <zwangerschapsduur value=""/>
+            <vaginale_kunstverlossing_groep>
+               <vaginale_kunstverlossing value="" enum=""/>
+            </vaginale_kunstverlossing_groep>
+            <sectio_caesarea_group>
+               <beslismoment_sectio_caesarea value="" enum=""/>
+            </sectio_caesarea_group>
+            <overige_interventies value="" enum=""/>
+            <lichamelijk_onderzoek_kind>
+               <apgarscore_na_5_min value=""/>
+               <geboortegewicht value=""/>
+               <percentiel_van_het_geboortegewicht value="" enum=""/>
+            </lichamelijk_onderzoek_kind>
+            <congenitale_afwijkingenq value=""/>
+            <congenitale_afwijkingen_groep>
+               <specificatie_congenitale_afwijking_groep>
+                  <specificatie_congenitale_afwijking value="" enum=""/>
+               </specificatie_congenitale_afwijking_groep>
+               <chromosomale_afwijkingenq value=""/>
+               <specificatie_chromosomale_afwijking_groep>
+                  <specificatie_chromosomale_afwijking value="" enum=""/>
+               </specificatie_chromosomale_afwijking_groep>
+            </congenitale_afwijkingen_groep>
+            <bijzonderheden_kind value=""/>
+         </kindspecifieke_uitkomstgegevens>
+      </baring>
+   </uitkomst_per_kind>
+   <medisch_onderzoek>
+      <maternale_onderzoeksgegevens>
+         <urine_bloed_en_aanvullende_onderzoeken>
+            <psie>
+               <irregulaire_antistoffenq value=""/>
+            </psie>
+         </urine_bloed_en_aanvullende_onderzoeken>
+      </maternale_onderzoeksgegevens>
+   </medisch_onderzoek>
+</voorgaande_zwangerschap_samenvatting_23>

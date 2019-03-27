@@ -37,7 +37,7 @@ De ADA Full versie van deze documenten zijn te vinden in de `ada-lite/examples-f
 
 ### Ingevulde voorbeelddocument ADA Full (`ada-lite/schemas`)
 
-De `ada-lite/schemas` sub-directory bevat XML schemas waarmee ADA Full documenten gevalideerd kunnen worden. Er is een schema per document type. Bijvoorbeeld `RetrieveTransaction_kernset_22.xsd` bevat het schema voor het valideren van Full ADA kernset versie 2.2 documenten. 
+De `ada-lite/schemas` sub-directory bevat XML schemas waarmee ADA Full documenten gevalideerd kunnen worden. Er is een schema per document type. Bijvoorbeeld `kernset-22.xsd` bevat het schema voor het valideren van Full ADA kernset versie 2.2 documenten. 
 
 Deze schemas zijn gegenereerd met behulp van de ART-DECOR schema generator.
 
@@ -47,7 +47,7 @@ Deze schemas zijn intern complex van opzet en voor code generatie waarschijnlijk
 
 ### <a name="schemas-simple-full"></a>Vereenvoudigde schemas ADA Full (`ada-lite/schemas-simple-full`)
 
-De `ada-lite/schemas-simple-full` sub-directory bevat vereenvoudigde schemas waarmee ADA Full documenten gevalideerd kunnen worden. Er is een schema per document type. Bijvoorbeeld `RetrieveTransaction_kernset_22.simple.full.xsd` bevat het schema voor het valideren van Full ADA kernset versie 2.2 documenten. 
+De `ada-lite/schemas-simple-full` sub-directory bevat vereenvoudigde schemas waarmee ADA Full documenten gevalideerd kunnen worden. Er is een schema per document type. Bijvoorbeeld `kernset-22.simple.full.xsd` bevat het schema voor het valideren van Full ADA kernset versie 2.2 documenten. 
 
 Vereenvoudigd betekent *niet* dat de validatie onvolledig is, alles wordt gevalideerd. Alleen de opzet van het schema is vereenvoudigd, zodat het simpeler wordt om code generatoren hierop te baseren. 
 
@@ -55,13 +55,13 @@ Hoe een validatie met behulp van een schema uitgevoerd moet worden staat beschre
 
 ### Vereenvoudigde schemas ADA Lite (`ada-lite/schemas-simple-lite`)
 
-De `ada-lite/schemas-simple-lite` sub-directory bevat vereenvoudigde schemas waarmee ADA Lite documenten gevalideerd kunnen worden. Er is een schema per document type. Bijvoorbeeld `RetrieveTransaction_kernset_22.simple.lite.xsd` bevat het schema voor het valideren van Full ADA kernset versie 2.2 documenten. 
+De `ada-lite/schemas-simple-lite` sub-directory bevat vereenvoudigde schemas waarmee ADA Lite documenten gevalideerd kunnen worden. Er is een schema per document type. Bijvoorbeeld `kernset-22.simple.lite.xsd` bevat het schema voor het valideren van Full ADA kernset versie 2.2 documenten. 
 
 Verdere informatie en gebruik is identiek aan [Vereenvoudigde schemas ADA Full](#schemas-simple-full).
 
 ### <a name="schematrons-ada-full"></a>Schematrons ADA Full (`ada-lite/schematrons-full`)
 
-De `ada-lite/schematrons-full` sub-directory bevat Schematron documenten waarmee ADA Full documenten gevalideerd kunnen worden. Er is een Schematron bestand per document type. Bijvoorbeeld `RetrieveTransaction_kernset_22.simple.full.sch` is bedoeld voor het het valideren van Full ADA kernset versie 2.2 documenten.   
+De `ada-lite/schematrons-full` sub-directory bevat Schematron documenten waarmee ADA Full documenten gevalideerd kunnen worden. Er is een Schematron bestand per document type. Bijvoorbeeld `kernset-22.simple.full.sch` is bedoeld voor het het valideren van Full ADA kernset versie 2.2 documenten.   
 
 De Schematron validatie is zo opgezet dat deze hetzelfde doet als de schema validatie, alleen zijn de meldingen gebruikersvriendelijker en in het Nederlands.
 
@@ -69,7 +69,7 @@ Hoe een Schematron validatie uitgevoerd moet worden staat beschreven in [Schema 
 
 ### <a name="schematrons-ada-lits"></a>Schematrons ADA Lite (`ada-lite/schematrons-lite`)
 
-De `ada-lite/schematrons-lite` sub-directory bevat Schematron documenten waarmee ADA Lite documenten gevalideerd kunnen worden. Er is een Schematron bestand per document type. Bijvoorbeeld `RetrieveTransaction_kernset_22.simple.lite.sch` is bedoeld voor het het valideren van Lite ADA kernset versie 2.2 documenten.   
+De `ada-lite/schematrons-lite` sub-directory bevat Schematron documenten waarmee ADA Lite documenten gevalideerd kunnen worden. Er is een Schematron bestand per document type. Bijvoorbeeld `kernset-22.simple.lite.sch` is bedoeld voor het het valideren van Lite ADA kernset versie 2.2 documenten.   
 
 Verdere informatie en gebruik is identiek aan [Schematrons ADA Full](#schematrons-ada-full) .
 
