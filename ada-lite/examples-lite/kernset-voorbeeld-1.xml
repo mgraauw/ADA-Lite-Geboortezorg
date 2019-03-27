@@ -6,6 +6,9 @@
     <!-- Example of using an enum for value="2": -->
     <eindverantwoordelijk_in_welke_perinatale_periodeq enum="zwangerschap_vervolg"/>
     <conclusie_risicostatus_na_intake value="1"/>
+    <adaextension some-attribute="some-value">
+      <example>Voorbeeld van een adaextension element toevoeging</example>
+    </adaextension>
   </zorgverlening>
   <zorgverlenerzorginstelling>
     <zorginstelling>

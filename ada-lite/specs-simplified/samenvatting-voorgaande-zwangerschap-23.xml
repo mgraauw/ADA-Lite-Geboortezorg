@@ -1,0 +1,2979 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset id="2.16.840.1.113883.2.4.3.11.60.90.77.1.6"
+         effectiveDate="2016-09-08T00:00:00"
+         statusCode="draft"
+         prefix="peri20-"
+         transactionId="2.16.840.1.113883.2.4.3.11.60.90.77.4.2469"
+         transactionEffectiveDate="2019-03-13T11:59:46"
+         shortName="voorgaande_zwangerschap_samenvatting_23"><!-- == Generated lite version of specification from full version for voorgaande_zwangerschap_samenvatting_23 == --><!-- == Source: design/specs-full/samenvatting-voorgaande-zwangerschap-23.xml == --><!-- == Generator: design/xsl/spec-full2spec-lite.xsl == -->
+   <name language="nl-NL">Voorgaande zwangerschap samenvatting (2.3) </name>
+   <desc language="nl-NL"/>
+   <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.1"
+            statusCode="draft"
+            effectiveDate="2016-09-08T00:00:00"
+            type="group"
+            minimumMultiplicity="1"
+            maximumMultiplicity="1"
+            conformance="R"
+            isMandatory="false"
+            shortName="zorgverlenerzorginstelling">
+      <name language="nl-NL">Zorgverlener/Zorginstelling</name>
+      <desc language="nl-NL">Persoon (met bijbehorende instelling) die verantwoordelijk of uitvoerder was voor de zorg van de patiënt en aanleveraar van de gegevens.</desc>
+      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10001"
+               statusCode="draft"
+               effectiveDate="2016-09-08T00:00:00"
+               type="group"
+               minimumMultiplicity="1"
+               maximumMultiplicity="1"
+               conformance="R"
+               isMandatory="false"
+               shortName="zorgverlener">
+         <name language="nl-NL">Zorgverlener</name>
+         <desc language="nl-NL">Zorgverlener</desc>
+         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10002"
+                  statusCode="final"
+                  effectiveDate="2016-09-08T00:00:00"
+                  type="item"
+                  minimumMultiplicity="0"
+                  maximumMultiplicity="1"
+                  conformance="R"
+                  isMandatory="false"
+                  shortName="zorgverlener_uzinummer">
+            <name language="nl-NL">Zorgverlener UZI-nummer</name>
+            <desc language="nl-NL">Unieke Zorgverlener Identificatienummer van de zorgverlener</desc>
+            <comment language="nl-NL">UZI-register</comment>
+            <valueDomain type="identifier">
+               <property minLength="9" maxLength="9"/>
+            </valueDomain>
+         </concept>
+         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10003"
+                  statusCode="final"
+                  effectiveDate="2016-09-08T00:00:00"
+                  type="item"
+                  minimumMultiplicity="0"
+                  maximumMultiplicity="1"
+                  conformance="R"
+                  isMandatory="false"
+                  shortName="zorgverlener_agbid">
+            <name language="nl-NL">Zorgverlener AGB-ID</name>
+            <desc language="nl-NL">Unieke AGB-ID van de zorgverlener</desc>
+            <operationalization language="nl-NL">Vektis AGB-codelijst</operationalization>
+            <valueDomain type="identifier">
+               <property minLength="8" maxLength="8"/>
+            </valueDomain>
+         </concept>
+         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10004"
+                  statusCode="final"
+                  effectiveDate="2016-09-08T00:00:00"
+                  type="item"
+                  minimumMultiplicity="0"
+                  maximumMultiplicity="1"
+                  conformance="R"
+                  isMandatory="false"
+                  shortName="zorgverlener_lvr1id">
+            <name language="nl-NL">Zorgverlener LVR1-ID</name>
+            <desc language="nl-NL">Unieke LVR1-ID van de zorgverlener</desc>
+            <operationalization language="nl-NL">LVR1-lijst</operationalization>
+            <valueDomain type="identifier">
+               <property minLength="4" maxLength="4"/>
+            </valueDomain>
+         </concept>
+         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10006"
+                  statusCode="final"
+                  effectiveDate="2016-09-08T00:00:00"
+                  type="item"
+                  minimumMultiplicity="0"
+                  maximumMultiplicity="1"
+                  conformance="R"
+                  isMandatory="false"
+                  shortName="naam_zorgverlener">
+            <name language="nl-NL">Naam zorgverlener</name>
+            <desc language="nl-NL">Naam zorgverlener</desc>
+            <valueDomain type="complex"/>
+         </concept>
+         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10010"
+                  statusCode="draft"
+                  effectiveDate="2016-09-08T00:00:00"
+                  type="item"
+                  minimumMultiplicity="0"
+                  maximumMultiplicity="1"
+                  conformance="R"
+                  isMandatory="false"
+                  shortName="zorgverlenertype">
+            <name language="nl-NL">Zorgverlenertype</name>
+            <desc language="nl-NL">Rol van de zorgverlener waarop deze registratie betrekking heeft.</desc>
+            <comment language="nl-NL">Keuzelijst Aorta (2.16.840.1.113883.2.4.15.111)</comment>
+            <valueDomain type="code"/>
+            <valueSet name="ZorgverlenerType"
+                      displayName="ZorgverlenerType"
+                      effectiveDate="2011-01-28T00:00:00"
+                      id="2.16.840.1.113883.2.4.11.58"
+                      statusCode="final">
+               <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                  <concept localId="1"
+                           code="01.000"
+                           codeSystem="2.16.840.1.113883.2.4.15.111"
+                           displayName="Arts"
+                           value="01.000"/>
+                  <concept localId="2"
+                           code="01.015"
+                           codeSystem="2.16.840.1.113883.2.4.15.111"
+                           displayName="Huisarts"
+                           value="01.015"/>
+                  <concept localId="3"
+                           code="01.019"
+                           codeSystem="2.16.840.1.113883.2.4.15.111"
+                           displayName="Kinderarts"
+                           value="01.019"/>
+                  <concept localId="4"
+                           code="01.020"
+                           codeSystem="2.16.840.1.113883.2.4.15.111"
+                           displayName="Arts klinische chemie"
+                           value="01.020"/>
+                  <concept localId="5"
+                           code="01.046"
+                           codeSystem="2.16.840.1.113883.2.4.15.111"
+                           displayName="Gynaecoloog / obstetricus"
+                           value="01.046"/>
+                  <concept localId="6"
+                           code="03.000"
+                           codeSystem="2.16.840.1.113883.2.4.15.111"
+                           displayName="Verloskundige"
+                           value="03.000"/>
+                  <concept localId="7"
+                           code="AA.001"
+                           codeSystem="2.16.840.1.113883.2.4.98.111"
+                           displayName="Echoscopist"
+                           value="AA.001"/>
+                  <concept localId="8"
+                           code="AA.002"
+                           codeSystem="2.16.840.1.113883.2.4.98.111"
+                           displayName="Analist"
+                           value="AA.002"/>
+               </conceptList>
+            </valueSet>
+         </concept>
+      </concept>
+      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10020"
+               statusCode="draft"
+               effectiveDate="2016-09-08T00:00:00"
+               type="group"
+               minimumMultiplicity="1"
+               maximumMultiplicity="1"
+               conformance="R"
+               isMandatory="false"
+               shortName="zorginstelling">
+         <name language="nl-NL">Zorginstelling</name>
+         <desc language="nl-NL">Organisatie (instelling) die de zorg levert / heeft geleverd</desc>
+         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10021"
+                  statusCode="final"
+                  effectiveDate="2016-09-08T00:00:00"
+                  type="item"
+                  minimumMultiplicity="0"
+                  maximumMultiplicity="1"
+                  conformance="R"
+                  isMandatory="false"
+                  shortName="zorginstelling_oid">
+            <name language="nl-NL">Zorginstelling OID</name>
+            <desc language="nl-NL">Identificatie van de instelling met behulp van een unieke root-OID (Object Identificatie). <br clear="none"/>Dit gegeven wordt ingesteld in de software van de zorginstelling en dan automatisch meegegeven bij informatie-uitwisseling (met andere woorden: het is géén invulveld voor een zorgverlener). <br clear="none"/>
+                </desc>
+            <relationship type="SPEC"
+                          ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.4.10021"
+                          flexibility="2012-08-06T00:00:00"
+                          refdisplay="peri21-dataelement-10021"/>
+            <valueDomain type="identifier"/>
+         </concept>
+         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10022"
+                  statusCode="final"
+                  effectiveDate="2016-09-08T00:00:00"
+                  type="item"
+                  minimumMultiplicity="0"
+                  maximumMultiplicity="1"
+                  conformance="R"
+                  isMandatory="false"
+                  shortName="zorginstelling_agbid">
+            <name language="nl-NL">Zorginstelling AGB-ID</name>
+            <desc language="nl-NL">Unieke AGB-ID van de instelling</desc>
+            <operationalization language="nl-NL">Vektis AGB-codelijst</operationalization>
+            <valueDomain type="identifier">
+               <property minLength="8" maxLength="8"/>
+            </valueDomain>
+         </concept>
+         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10023"
+                  statusCode="final"
+                  effectiveDate="2016-09-08T00:00:00"
+                  type="item"
+                  minimumMultiplicity="0"
+                  maximumMultiplicity="1"
+                  conformance="R"
+                  isMandatory="false"
+                  shortName="zorginstelling_lvrid">
+            <name language="nl-NL">Zorginstelling LVR-ID</name>
+            <desc language="nl-NL">Unieke LVR-identificatie van de zorginstelling. <br clear="none"/>
+                </desc>
+            <valueDomain type="identifier">
+               <property minLength="4" maxLength="5"/>
+            </valueDomain>
+         </concept>
+         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10024"
+                  statusCode="final"
+                  effectiveDate="2016-09-08T00:00:00"
+                  type="item"
+                  minimumMultiplicity="0"
+                  maximumMultiplicity="1"
+                  conformance="R"
+                  isMandatory="false"
+                  shortName="zorginstelling_ura">
+            <name language="nl-NL">Zorginstelling URA</name>
+            <desc language="nl-NL">Unieke UZI-register abonneenummer van de instelling</desc>
+            <operationalization language="nl-NL">UZI-register abonneenummer</operationalization>
+            <valueDomain type="identifier">
+               <property minLength="8" maxLength="8"/>
+            </valueDomain>
+         </concept>
+         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10026"
+                  statusCode="final"
+                  effectiveDate="2016-09-08T00:00:00"
+                  type="item"
+                  minimumMultiplicity="0"
+                  maximumMultiplicity="1"
+                  conformance="R"
+                  isMandatory="false"
+                  shortName="naam_zorginstelling">
+            <name language="nl-NL">Naam zorginstelling</name>
+            <desc language="nl-NL">Naam van de instelling</desc>
+            <valueDomain type="complex"/>
+         </concept>
+         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10027"
+                  statusCode="draft"
+                  effectiveDate="2016-09-08T00:00:00"
+                  type="group"
+                  minimumMultiplicity="0"
+                  maximumMultiplicity="1"
+                  conformance="R"
+                  isMandatory="false"
+                  shortName="adres_zorginstelling">
+            <name language="nl-NL">Adres zorginstelling</name>
+            <desc language="nl-NL">Adres van de instelling</desc>
+            <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10032"
+                     statusCode="draft"
+                     effectiveDate="2016-09-08T00:00:00"
+                     type="item"
+                     minimumMultiplicity="1"
+                     maximumMultiplicity="1"
+                     conformance="R"
+                     isMandatory="false"
+                     shortName="straatnaam">
+               <name language="nl-NL">Straatnaam</name>
+               <desc language="nl-NL">Straatnaam (zonder nummer) van het adres</desc>
+               <valueDomain type="string"/>
+            </concept>
+            <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10033"
+                     statusCode="draft"
+                     effectiveDate="2016-09-08T00:00:00"
+                     type="item"
+                     minimumMultiplicity="1"
+                     maximumMultiplicity="1"
+                     conformance="R"
+                     isMandatory="false"
+                     shortName="huisnummer">
+               <name language="nl-NL">Huisnummer</name>
+               <desc language="nl-NL">Huisnummer van het adres. Het is verplicht indien de straatnaam ook wordt doorgegeven.</desc>
+               <valueDomain type="string"/>
+            </concept>
+            <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10034"
+                     statusCode="draft"
+                     effectiveDate="2016-09-08T00:00:00"
+                     type="item"
+                     minimumMultiplicity="0"
+                     maximumMultiplicity="1"
+                     conformance="R"
+                     isMandatory="false"
+                     shortName="huisletterhuisnummertoevoeging">
+               <name language="nl-NL">Huisletter/huisnummertoevoeging</name>
+               <desc language="nl-NL">Huisletter/huisnummertoevoeging van het huisnummer</desc>
+               <valueDomain type="string"/>
+            </concept>
+            <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10041"
+                     statusCode="draft"
+                     effectiveDate="2016-09-08T00:00:00"
+                     type="item"
+                     minimumMultiplicity="1"
+                     maximumMultiplicity="1"
+                     conformance="R"
+                     isMandatory="false"
+                     shortName="postcode">
+               <name language="nl-NL">Postcode</name>
+               <desc language="nl-NL">Postcode van het adres</desc>
+               <valueDomain type="string"/>
+            </concept>
+            <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10036"
+                     statusCode="draft"
+                     effectiveDate="2016-09-08T00:00:00"
+                     type="item"
+                     minimumMultiplicity="1"
+                     maximumMultiplicity="1"
+                     conformance="R"
+                     isMandatory="false"
+                     shortName="plaatsnaam">
+               <name language="nl-NL">Plaatsnaam</name>
+               <desc language="nl-NL">Plaatsnaam als onderdeel van het adres; De naam van een stad, dorp of ander woongebied of bezorgcentrum. Merk op: dit is de woonplaats, niet de eventuele gemeente waartoe de woonplaats behoort. Voorbeeld: Haren, gemeente Groningen.</desc>
+               <valueDomain type="string"/>
+            </concept>
+            <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10038"
+                     statusCode="draft"
+                     effectiveDate="2016-09-08T00:00:00"
+                     type="item"
+                     minimumMultiplicity="0"
+                     maximumMultiplicity="1"
+                     conformance="R"
+                     isMandatory="false"
+                     shortName="land">
+               <name language="nl-NL">Land</name>
+               <desc language="nl-NL">Land</desc>
+               <valueDomain type="string"/>
+            </concept>
+         </concept>
+      </concept>
+   </concept>
+   <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.2"
+            statusCode="draft"
+            effectiveDate="2016-09-08T00:00:00"
+            type="group"
+            minimumMultiplicity="1"
+            maximumMultiplicity="1"
+            conformance="R"
+            isMandatory="false"
+            shortName="vrouw">
+      <name language="nl-NL">Vrouw</name>
+      <desc language="nl-NL">Vrouw die obstetrische zorgdiensten afneemt / heeft afgenomen.</desc>
+      <relationship type="SPEC"
+                    ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.2"
+                    flexibility="2013-09-10T00:00:00"
+                    refdisplay="peri22-dataelement-2"/>
+      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10030"
+               statusCode="final"
+               effectiveDate="2016-09-08T00:00:00"
+               type="item"
+               minimumMultiplicity="0"
+               maximumMultiplicity="1"
+               conformance="R"
+               isMandatory="false"
+               shortName="burgerservicenummer">
+         <name language="nl-NL">Burgerservicenummer</name>
+         <desc language="nl-NL">Het burgerservicenummer (BSN) is een uniek en persoonsgebonden identificerend nummer. Dit nummer wordt automatisch toegekend bij geboorte en wanneer iemand zich inschrijft bij de Basisregistratie personen (BRP). </desc>
+         <comment language="nl-NL">Modulo 11-proef</comment>
+         <comment language="nl-NL">Modulo 11-proef</comment>
+         <relationship type="SPEC"
+                       ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.1.10030"
+                       flexibility="2009-10-01T00:00:00"
+                       refdisplay="spirit1a-dataelement-10030"/>
+         <valueDomain type="identifier">
+            <property minLength="9" maxLength="9"/>
+         </valueDomain>
+      </concept>
+      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10035"
+               statusCode="draft"
+               effectiveDate="2016-09-08T00:00:00"
+               type="group"
+               minimumMultiplicity="1"
+               maximumMultiplicity="2"
+               conformance="R"
+               isMandatory="false"
+               shortName="naamgegevens">
+         <name language="nl-NL">Naamgegevens</name>
+         <desc language="nl-NL">Naamgegevens van de vrouw.</desc>
+         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10042"
+                  statusCode="final"
+                  effectiveDate="2016-09-08T00:00:00"
+                  type="item"
+                  minimumMultiplicity="0"
+                  maximumMultiplicity="1"
+                  conformance="R"
+                  isMandatory="false"
+                  shortName="voornamen">
+            <name language="nl-NL">Voornamen</name>
+            <desc language="nl-NL">De verzameling officiële voornamen die bij de geboorte zijn vastgelegd.</desc>
+            <valueDomain type="string">
+               <example>Johanna Henriette Maria</example>
+            </valueDomain>
+         </concept>
+         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82359"
+                  statusCode="draft"
+                  effectiveDate="2016-09-08T00:00:00"
+                  type="item"
+                  minimumMultiplicity="0"
+                  maximumMultiplicity="1"
+                  conformance="R"
+                  isMandatory="false"
+                  shortName="initialen">
+            <name language="nl-NL">Initialen</name>
+            <desc language="nl-NL">Voorletters gebaseerd op de voornamen van de persoon.</desc>
+            <valueDomain type="string">
+               <example>J.H.M.</example>
+            </valueDomain>
+         </concept>
+         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82360"
+                  statusCode="draft"
+                  effectiveDate="2016-09-08T00:00:00"
+                  type="item"
+                  minimumMultiplicity="0"
+                  maximumMultiplicity="1"
+                  conformance="R"
+                  isMandatory="false"
+                  shortName="roepnaam">
+            <name language="nl-NL">Roepnaam</name>
+            <desc language="nl-NL">Naam, die de persoon voert en die niet de officiële naam is.</desc>
+            <valueDomain type="string">
+               <example>Jet</example>
+            </valueDomain>
+         </concept>
+         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82361"
+                  statusCode="final"
+                  effectiveDate="2016-09-08T00:00:00"
+                  type="group"
+                  minimumMultiplicity="0"
+                  maximumMultiplicity="1"
+                  conformance="R"
+                  isMandatory="false"
+                  shortName="achternaam">
+            <name language="nl-NL">Achternaam</name>
+            <desc language="nl-NL"/>
+            <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82362"
+                     statusCode="final"
+                     effectiveDate="2016-09-08T00:00:00"
+                     type="item"
+                     minimumMultiplicity="0"
+                     maximumMultiplicity="1"
+                     conformance="R"
+                     isMandatory="false"
+                     shortName="soort_naam">
+               <name language="nl-NL">Soort naam</name>
+               <desc language="nl-NL">Aanduiding die aangeeft welke functie de naam heeft.</desc>
+               <valueDomain type="code">
+                  <example>Geboortenaam partner</example>
+               </valueDomain>
+               <valueSet id="2.16.840.1.113883.2.4.3.11.60.101.11.9"
+                         name="AchternaamSoort"
+                         displayName="Achternaam soort"
+                         effectiveDate="2013-03-25T14:13:00"
+                         statusCode="final">
+                  <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                     <concept localId="1"
+                              code="BR"
+                              codeSystem="2.16.840.1.113883.5.43"
+                              displayName="Geslachtsnaam"
+                              value="BR"/>
+                     <concept localId="2"
+                              code="SP"
+                              codeSystem="2.16.840.1.113883.5.43"
+                              displayName="Geslachtsnaam partner"
+                              value="SP"/>
+                  </conceptList>
+               </valueSet>
+            </concept>
+            <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82363"
+                     statusCode="final"
+                     effectiveDate="2016-09-08T00:00:00"
+                     type="item"
+                     minimumMultiplicity="0"
+                     maximumMultiplicity="1"
+                     conformance="R"
+                     isMandatory="false"
+                     shortName="voorvoegsel">
+               <name language="nl-NL">Voorvoegsel</name>
+               <desc language="nl-NL">Deel van de achternaam dat het voorvoegsel bevat.</desc>
+               <comment language="nl-NL">GBA tabel 36 is een opsomming van te gebruiken voorvoegsels zonder bijbehorende code. Het gebruik wordt aanbevolen, maar is niet verplicht. Bij vulling via de SBV-Z zullen de voorzetsels overeenkomen met tabel 36.</comment>
+               <operationalization language="nl-NL">GBA tabel 36</operationalization>
+               <valueDomain type="string">
+                  <example>van</example>
+               </valueDomain>
+            </concept>
+            <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10043"
+                     statusCode="final"
+                     effectiveDate="2016-09-08T00:00:00"
+                     type="item"
+                     minimumMultiplicity="0"
+                     maximumMultiplicity="1"
+                     conformance="R"
+                     isMandatory="false"
+                     shortName="achternaam">
+               <name language="nl-NL">Achternaam</name>
+               <desc language="nl-NL">De achternaam van een persoon die bij de geboorte is vastgelegd. Afhankeljk van de soort naam is dit de geboortenaam van de persoon of van de partner</desc>
+               <valueDomain type="string">
+                  <example>Putten</example>
+               </valueDomain>
+            </concept>
+         </concept>
+      </concept>
+      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10040"
+               statusCode="final"
+               effectiveDate="2016-09-08T00:00:00"
+               type="item"
+               minimumMultiplicity="0"
+               maximumMultiplicity="1"
+               conformance="R"
+               isMandatory="false"
+               shortName="geboortedatum">
+         <name language="nl-NL">Geboortedatum</name>
+         <desc language="nl-NL">Geboortedatum.<br clear="none"/>
+            <br clear="none"/>Indien de dag en/of maand van de geboortedatum niet bekend zijn, vult u dit in als 01-01-xxxx. Wanneer het geboortejaar ook onbekend is, is schatten van het geboortejaar toegestaan.<br clear="none"/>
+            </desc>
+         <valueDomain type="date">
+            <property timeStampPrecision="YMD"/>
+         </valueDomain>
+      </concept>
+   </concept>
+   <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.3"
+            statusCode="draft"
+            effectiveDate="2016-09-08T00:00:00"
+            type="group"
+            minimumMultiplicity="1"
+            maximumMultiplicity="1"
+            conformance="R"
+            isMandatory="false"
+            shortName="zwangerschap">
+      <name language="nl-NL">Zwangerschap</name>
+      <desc language="nl-NL">De al dan niet afgesloten zwangerschap waarop de gegevens betrekking hebben.</desc>
+      <relationship type="SPEC"
+                    ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.3"
+                    flexibility="2013-09-10T00:00:00"
+                    refdisplay="peri22-dataelement-3"/>
+      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80627"
+               statusCode="draft"
+               effectiveDate="2016-09-08T00:00:00"
+               type="item"
+               minimumMultiplicity="0"
+               maximumMultiplicity="1"
+               conformance="R"
+               isMandatory="false"
+               shortName="identificatie_van_de_zwangerschap">
+         <name language="nl-NL">Identificatie van de zwangerschap</name>
+         <desc language="nl-NL">Uniek zwangerschapsnummer</desc>
+         <operationalization language="nl-NL">Voor de identificatie van de zwangerschap van de vrouw wordt eerst de leeftijd van de vrouw in dagen op de datum van conceptie bepaald en dan het aantal episodes van veertien dagen berekend. De volgende formule wordt gebruikt: leeftijd van de vrouw in dagen op de datum van conceptie div 14 (geheeltallige deling). De methode levert voor een conceptiedatum het identificatienummer op in combinatie met het BSN nummer of andere identificatiegegevens van de vrouw. Voorbeeld: conceptiedatum 3. oktober 2011, de vrouw (geboren op 9. april 1985)
+                        is op die datum 9673 dagen oud. De formule /14 levert als identificatie van deze zwangerschap 690.<br clear="none"/>
+            <br clear="none"/>Indien de conceptiedatum niet en de a terme datum wel beschikbaar is kan de conceptiedatum geschat worden door: A terme datum – 267 dagen..</operationalization>
+         <valueDomain type="identifier"/>
+      </concept>
+      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20010"
+               statusCode="final"
+               effectiveDate="2016-09-08T00:00:00"
+               type="item"
+               minimumMultiplicity="0"
+               maximumMultiplicity="1"
+               conformance="R"
+               isMandatory="false"
+               shortName="graviditeit">
+         <name language="nl-NL">Graviditeit</name>
+         <desc language="nl-NL">Het aantal keren dat de vrouw zwanger is geworden (inclusief deze).</desc>
+         <comment language="nl-NL">1 - 75</comment>
+         <valueDomain type="count">
+            <property minInclude="1" maxInclude="75"/>
+         </valueDomain>
+      </concept>
+      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20150"
+               statusCode="final"
+               effectiveDate="2016-09-08T00:00:00"
+               type="item"
+               minimumMultiplicity="0"
+               maximumMultiplicity="1"
+               conformance="R"
+               isMandatory="false"
+               shortName="pariteit_voor_deze_zwangerschap">
+         <name language="nl-NL">Pariteit (vóór deze zwangerschap)</name>
+         <desc language="nl-NL">Aantal voorafgaande zwangerschappen vóór deze zwangerschap die eindigden met een partus (&gt;= 16w 0d / 112 dagen).<br clear="none"/>De waarde van dit item is minimaal 1 minder dan graviditeit. <br clear="none"/>
+            </desc>
+         <valueDomain type="count">
+            <property minInclude="0" maxInclude="30"/>
+         </valueDomain>
+      </concept>
+      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82160"
+               statusCode="final"
+               effectiveDate="2016-09-08T00:00:00"
+               type="item"
+               minimumMultiplicity="0"
+               maximumMultiplicity="1"
+               conformance="R"
+               isMandatory="false"
+               shortName="definitieve_a_terme_datum">
+         <name language="nl-NL">Definitieve à terme datum</name>
+         <desc language="nl-NL">De ‘Definitieve à terme datum’ is de ‘Zekere à terme datum’ bepaald volgens het landelijke protocol "Datering Zwangerschap". Indien er geen ‘Zekere à terme datum’ meer bepaald kan worden op basis van dit protocol is de ‘Definitieve à terme datum’ de à terme datum die voor de rest van de zorgverlening gehanteerd zal worden.<br clear="none"/>Noot: oorzaken van het niet meer kunnen bepalen van 'Zekere à terme datum' volgens het protocol kunnen bijvoorbeeld zijn: miskraam of te lange zwangerschapsduur.<br clear="none"/>
+            </desc>
+         <valueDomain type="date">
+            <property timeStampPrecision="YMD"/>
+         </valueDomain>
+      </concept>
+      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82268"
+               statusCode="draft"
+               effectiveDate="2016-09-08T00:00:00"
+               type="group"
+               minimumMultiplicity="0"
+               maximumMultiplicity="*"
+               conformance="R"
+               isMandatory="false"
+               shortName="diagnose">
+         <name language="nl-NL">Diagnose</name>
+         <desc language="nl-NL">Diagnose relevant voor zwangerschap<br clear="none"/>
+            </desc>
+         <relationship type="SPEC"
+                       ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82268"
+                       flexibility="2014-09-12T14:04:48"
+                       refdisplay="peri22-dataelement-82268"/>
+         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82269"
+                  statusCode="final"
+                  effectiveDate="2016-09-08T00:00:00"
+                  type="item"
+                  minimumMultiplicity="0"
+                  maximumMultiplicity="1"
+                  conformance="R"
+                  isMandatory="false"
+                  shortName="gynaecologische_aandoening">
+            <name language="nl-NL">Gynaecologische aandoening</name>
+            <desc language="nl-NL">Gynaecologische aandoening met mogelijke consequenties voor de zwangerschap.<br clear="none"/>
+                </desc>
+            <valueDomain type="code"/>
+            <valueSet id="2.16.840.1.113883.2.4.3.11.60.90.77.11.16"
+                      statusCode="final"
+                      name="GynaecologischAandoening"
+                      displayName="Gynaecologische aandoeningen"
+                      effectiveDate="2014-08-14T13:45:44">
+               <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                  <concept localId="1"
+                           code="129103003"
+                           codeSystem="2.16.840.1.113883.6.96"
+                           displayName="Endometriosis (disorder)"
+                           value="129103003"/>
+                  <concept localId="2"
+                           code="95315005"
+                           codeSystem="2.16.840.1.113883.6.96"
+                           displayName="Uterine leiomyoma (disorder)"
+                           value="95315005"/>
+                  <concept localId="3"
+                           code="37849005"
+                           codeSystem="2.16.840.1.113883.6.96"
+                           displayName="Congenital uterine anomaly (disorder)"
+                           value="37849005"/>
+                  <exception localId="4"
+                             code="OTH"
+                             codeSystem="2.16.840.1.113883.5.1008"
+                             displayName="Overig"
+                             value="OTH"/>
+               </conceptList>
+            </valueSet>
+         </concept>
+         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82270"
+                  statusCode="final"
+                  effectiveDate="2016-09-08T00:00:00"
+                  type="item"
+                  minimumMultiplicity="0"
+                  maximumMultiplicity="1"
+                  conformance="R"
+                  isMandatory="false"
+                  shortName="bloedverliesq">
+            <name language="nl-NL">Bloedverlies?</name>
+            <desc language="nl-NL">Is er sprake van bloedverlies?<br clear="none"/>
+                </desc>
+            <valueDomain type="boolean"/>
+         </concept>
+         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82271"
+                  statusCode="final"
+                  effectiveDate="2016-09-08T00:00:00"
+                  type="item"
+                  minimumMultiplicity="0"
+                  maximumMultiplicity="1"
+                  conformance="R"
+                  isMandatory="false"
+                  shortName="cervixinsufficientieq">
+            <name language="nl-NL">Cervixinsufficiëntie?</name>
+            <desc language="nl-NL">Is er sprake van cervixinsufficiëntie?<br clear="none"/>
+                </desc>
+            <valueDomain type="boolean">
+               <property/>
+            </valueDomain>
+         </concept>
+         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82273"
+                  statusCode="final"
+                  effectiveDate="2016-09-08T00:00:00"
+                  type="item"
+                  minimumMultiplicity="0"
+                  maximumMultiplicity="1"
+                  conformance="R"
+                  isMandatory="false"
+                  shortName="infectie">
+            <name language="nl-NL">Infectie</name>
+            <desc language="nl-NL">Infectie<br clear="none"/>
+                </desc>
+            <valueDomain type="code"/>
+            <valueSet id="2.16.840.1.113883.2.4.3.11.60.90.77.11.204"
+                      name="Infectie22"
+                      displayName="Infectie (2.2)"
+                      statusCode="final"
+                      effectiveDate="2014-10-21T11:45:54">
+               <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                  <concept localId="1"
+                           code="301775005"
+                           codeSystem="2.16.840.1.113883.6.96"
+                           displayName="Infection of uterus (disorder)"
+                           value="301775005"/>
+                  <concept localId="2"
+                           code="307534009"
+                           codeSystem="2.16.840.1.113883.6.96"
+                           displayName="Urinary tract infection in pregnancy (disorder)"
+                           value="307534009"/>
+                  <concept localId="3"
+                           code="45816000"
+                           codeSystem="2.16.840.1.113883.6.96"
+                           displayName="Pyelonephritis (disorder)"
+                           value="45816000"/>
+                  <concept localId="4"
+                           code="186156007"
+                           codeSystem="2.16.840.1.113883.6.96"
+                           displayName="Infectious colitis, enteritis and gastroenteritis (disorder)"
+                           value="186156007"/>
+                  <exception localId="5"
+                             code="OTH"
+                             codeSystem="2.16.840.1.113883.5.1008"
+                             displayName="Overig"
+                             value="OTH"/>
+                  <exception localId="6"
+                             code="NI"
+                             codeSystem="2.16.840.1.113883.5.1008"
+                             displayName="Geen informatie"
+                             value="NI"/>
+               </conceptList>
+            </valueSet>
+         </concept>
+         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82274"
+                  statusCode="final"
+                  effectiveDate="2016-09-08T00:00:00"
+                  type="item"
+                  minimumMultiplicity="0"
+                  maximumMultiplicity="1"
+                  conformance="R"
+                  isMandatory="false"
+                  shortName="hyperemesis_gravidarumq">
+            <name language="nl-NL">Hyperemesis gravidarum?</name>
+            <desc language="nl-NL">Is er sprake van hyperemesis gravidarum?<br clear="none"/>
+                </desc>
+            <valueDomain type="boolean">
+               <property/>
+            </valueDomain>
+         </concept>
+         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82275"
+                  statusCode="final"
+                  effectiveDate="2016-09-08T00:00:00"
+                  type="item"
+                  minimumMultiplicity="0"
+                  maximumMultiplicity="1"
+                  conformance="R"
+                  isMandatory="false"
+                  shortName="hypertensieve_aandoening">
+            <name language="nl-NL">Hypertensieve aandoening</name>
+            <desc language="nl-NL">Hypertensieve aandoening tijdens zwangerschap<br clear="none"/>
+                </desc>
+            <valueDomain type="code">
+               <property/>
+            </valueDomain>
+            <valueSet statusCode="final"
+                      id="2.16.840.1.113883.2.4.3.11.60.90.77.11.36"
+                      name="HypertensieveAandoening"
+                      displayName="Hypertensieve aandoening"
+                      effectiveDate="2014-10-20T14:55:18">
+               <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                  <concept localId="1"
+                           code="48194001"
+                           codeSystem="2.16.840.1.113883.6.96"
+                           displayName="Pregnancy-induced hypertension (disorder)"
+                           value="48194001"/>
+                  <concept localId="2"
+                           code="398254007"
+                           codeSystem="2.16.840.1.113883.6.96"
+                           displayName="Pre-eclampsia (disorder)"
+                           value="398254007"/>
+                  <concept localId="3"
+                           code="95605009"
+                           codeSystem="2.16.840.1.113883.6.96"
+                           displayName="Hemolysis-elevated liver enzymes-low platelet count syndrome (disorder)"
+                           value="95605009"/>
+                  <concept localId="4"
+                           code="15938005"
+                           codeSystem="2.16.840.1.113883.6.96"
+                           displayName="Eclampsia (disorder)"
+                           value="15938005"/>
+               </conceptList>
+            </valueSet>
+         </concept>
+         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82276"
+                  statusCode="final"
+                  effectiveDate="2016-09-08T00:00:00"
+                  type="item"
+                  minimumMultiplicity="0"
+                  maximumMultiplicity="1"
+                  conformance="R"
+                  isMandatory="false"
+                  shortName="zwangerschapscholestaseq">
+            <name language="nl-NL">Zwangerschapscholestase?</name>
+            <desc language="nl-NL">Is er sprake van zwangerschapscholestase?<br clear="none"/>
+                </desc>
+            <valueDomain type="boolean">
+               <property/>
+            </valueDomain>
+         </concept>
+         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82277"
+                  statusCode="final"
+                  effectiveDate="2016-09-08T00:00:00"
+                  type="item"
+                  minimumMultiplicity="0"
+                  maximumMultiplicity="1"
+                  conformance="R"
+                  isMandatory="false"
+                  shortName="diabetes_gravidarum_met_insulineq">
+            <name language="nl-NL">Diabetes gravidarum met insuline?</name>
+            <desc language="nl-NL">Is er sprake van diabetes gravidarum met insuline?<br clear="none"/>
+                </desc>
+            <valueDomain type="boolean">
+               <property/>
+            </valueDomain>
+         </concept>
+         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82278"
+                  statusCode="final"
+                  effectiveDate="2016-09-08T00:00:00"
+                  type="item"
+                  minimumMultiplicity="0"
+                  maximumMultiplicity="1"
+                  conformance="R"
+                  isMandatory="false"
+                  shortName="afwijkende_groei_foetus">
+            <name language="nl-NL">Afwijkende groei foetus</name>
+            <desc language="nl-NL">Afwijkende groei foetus<br clear="none"/>
+                </desc>
+            <valueDomain type="code"/>
+            <valueSet statusCode="final"
+                      id="2.16.840.1.113883.2.4.3.11.60.90.77.11.37"
+                      name="GroeiAfwijkend"
+                      displayName="Groei afwijkend"
+                      effectiveDate="2014-10-20T15:12:52">
+               <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                  <concept localId="1"
+                           code="199616008"
+                           codeSystem="2.16.840.1.113883.6.96"
+                           displayName="Large-for-dates fetus (disorder)"
+                           value="199616008"/>
+                  <concept localId="2"
+                           code="267258002"
+                           codeSystem="2.16.840.1.113883.6.96"
+                           displayName="Small for gestational age fetus (disorder)"
+                           value="267258002"/>
+                  <exception localId="3"
+                             code="NI"
+                             codeSystem="2.16.840.1.113883.5.1008"
+                             displayName="Geen informatie"
+                             value="NI"/>
+               </conceptList>
+            </valueSet>
+         </concept>
+         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82279"
+                  statusCode="final"
+                  effectiveDate="2016-09-08T00:00:00"
+                  type="item"
+                  minimumMultiplicity="0"
+                  maximumMultiplicity="1"
+                  conformance="R"
+                  isMandatory="false"
+                  shortName="dreigende_partus_immaturusq">
+            <name language="nl-NL">Dreigende partus immaturus?</name>
+            <desc language="nl-NL">Is er sprake van dreigende partus immaturus?<br clear="none"/>
+               <br clear="none"/>Een partus immaturus is van 16w0d tot en met 23w6d.<br clear="none"/>
+                </desc>
+            <valueDomain type="boolean"/>
+         </concept>
+         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82280"
+                  statusCode="final"
+                  effectiveDate="2016-09-08T00:00:00"
+                  type="item"
+                  minimumMultiplicity="0"
+                  maximumMultiplicity="1"
+                  conformance="R"
+                  isMandatory="false"
+                  shortName="dreigende_partus_prematurusq">
+            <name language="nl-NL">Dreigende partus prematurus?</name>
+            <desc language="nl-NL">Is er sprake van dreigende partus prematurus?<br clear="none"/>
+               <br clear="none"/>Een partus prematurus is van 24w0d tot en met 36w6d.<br clear="none"/>
+                </desc>
+            <valueDomain type="boolean"/>
+         </concept>
+         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82289"
+                  statusCode="final"
+                  effectiveDate="2016-09-08T00:00:00"
+                  type="item"
+                  minimumMultiplicity="0"
+                  maximumMultiplicity="1"
+                  conformance="R"
+                  isMandatory="false"
+                  shortName="abruptio_placentaeq">
+            <name language="nl-NL">Abruptio placentae?</name>
+            <desc language="nl-NL">Abruptio placentae?<br clear="none"/>
+                </desc>
+            <valueDomain type="boolean">
+               <property/>
+            </valueDomain>
+         </concept>
+      </concept>
+      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80625"
+               statusCode="final"
+               effectiveDate="2016-09-08T00:00:00"
+               type="item"
+               minimumMultiplicity="0"
+               maximumMultiplicity="1"
+               conformance="R"
+               isMandatory="false"
+               shortName="wijze_einde_zwangerschap">
+         <name language="nl-NL">Wijze einde zwangerschap</name>
+         <desc language="nl-NL">De wijze waarop de zwangerschap geëindigd is.<br clear="none"/>
+            <br clear="none"/>TOP (Termination of Pregnancy) is zwangerschapsafbreking na 16 weken. Bij TOP wordt hier 'Partus' geregistreerd, zodat dit meegenomen wordt als pariteit. Dit in tegenstelling tot APLA, waarmee een zwangerschapsafbreking (abortus) van minder dan 16 weken wordt bedoeld.<br clear="none"/>
+            </desc>
+         <valueDomain type="code">
+            <property/>
+         </valueDomain>
+         <valueSet id="2.16.840.1.113883.2.4.11.171"
+                   effectiveDate="2013-03-20T00:00:00"
+                   name="WijzeEindeZwangerschap"
+                   displayName="WijzeEindeZwangerschap"
+                   statusCode="final">
+            <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+               <concept localId="1"
+                        code="1"
+                        codeSystem="2.16.840.1.113883.2.4.4.13.46"
+                        displayName="Partus"
+                        value="1"/>
+               <concept localId="2"
+                        code="2"
+                        codeSystem="2.16.840.1.113883.2.4.4.13.46"
+                        displayName="Miskraam"
+                        value="2"/>
+               <concept localId="3"
+                        code="21"
+                        codeSystem="2.16.840.1.113883.2.4.4.13.46"
+                        displayName="Spontaan"
+                        value="21"/>
+               <concept localId="4"
+                        code="22"
+                        codeSystem="2.16.840.1.113883.2.4.4.13.46"
+                        displayName="Medicamenteus"
+                        value="22"/>
+               <concept localId="5"
+                        code="23"
+                        codeSystem="2.16.840.1.113883.2.4.4.13.46"
+                        displayName="Instrumenteel"
+                        value="23"/>
+               <concept localId="6"
+                        code="3"
+                        codeSystem="2.16.840.1.113883.2.4.4.13.46"
+                        displayName="APLA"
+                        value="3"/>
+               <concept localId="7"
+                        code="31"
+                        codeSystem="2.16.840.1.113883.2.4.4.13.46"
+                        displayName="Medicamenteus"
+                        value="31"/>
+               <concept localId="8"
+                        code="32"
+                        codeSystem="2.16.840.1.113883.2.4.4.13.46"
+                        displayName="Instrumenteel"
+                        value="32"/>
+               <concept localId="9"
+                        code="4"
+                        codeSystem="2.16.840.1.113883.2.4.4.13.46"
+                        displayName="EUG - behandeld"
+                        value="4"/>
+               <concept localId="10"
+                        code="5"
+                        codeSystem="2.16.840.1.113883.2.4.4.13.46"
+                        displayName="(partiële) Mola - behandeld"
+                        value="5"/>
+               <exception localId="11"
+                          code="NI"
+                          codeSystem="2.16.840.1.113883.5.1008"
+                          displayName="geen informatie"
+                          value="NI"/>
+            </conceptList>
+         </valueSet>
+      </concept>
+      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20540"
+               statusCode="draft"
+               effectiveDate="2016-09-08T00:00:00"
+               type="item"
+               minimumMultiplicity="0"
+               maximumMultiplicity="1"
+               conformance="R"
+               isMandatory="false"
+               shortName="datum_einde_zwangerschap">
+         <name language="nl-NL">Datum einde zwangerschap</name>
+         <desc language="nl-NL">Moment (datum en tijd) waarop de zwangerschap medisch gezien is geëindigd, anders dan na een partus (bij een partus wordt dit item niet ingevuld).<br clear="none"/>
+            <br clear="none"/>NB. Bij een partus wordt op een andere plaats in het dossier geregistreerd: geboortedatum per kind én geboortedatum/tijd van de placenta(e).<br clear="none"/>
+            </desc>
+         <valueDomain type="datetime">
+            <property timeStampPrecision="YMD"/>
+         </valueDomain>
+      </concept>
+   </concept>
+   <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.6"
+            statusCode="draft"
+            effectiveDate="2016-09-08T00:00:00"
+            type="group"
+            minimumMultiplicity="0"
+            maximumMultiplicity="1"
+            conformance="R"
+            isMandatory="false"
+            shortName="bevalling">
+      <name language="nl-NL">Bevalling</name>
+      <desc language="nl-NL">Gegevens over de partus</desc>
+      <relationship type="SPEC"
+                    ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.6"
+                    flexibility="2013-09-10T00:00:00"
+                    refdisplay="peri22-dataelement-6"/>
+      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82291"
+               statusCode="draft"
+               effectiveDate="2016-09-08T00:00:00"
+               type="group"
+               minimumMultiplicity="0"
+               maximumMultiplicity="1"
+               conformance="R"
+               isMandatory="false"
+               shortName="diagnose_bevalling">
+         <name language="nl-NL">Diagnose bevalling</name>
+         <desc language="nl-NL">Diagnose bevalling<br clear="none"/>
+            </desc>
+         <relationship type="SPEC"
+                       ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82291"
+                       flexibility="2014-09-15T12:23:55"
+                       refdisplay="peri22-dataelement-82291"/>
+         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82381"
+                  statusCode="draft"
+                  effectiveDate="2016-09-08T00:00:00"
+                  type="item"
+                  minimumMultiplicity="0"
+                  maximumMultiplicity="1"
+                  conformance="R"
+                  isMandatory="false"
+                  shortName="datum">
+            <name language="nl-NL">Datum</name>
+            <desc language="nl-NL">Datum<br clear="none"/>
+                </desc>
+            <valueDomain type="datetime">
+               <property timeStampPrecision="YMD"/>
+            </valueDomain>
+         </concept>
+         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82382"
+                  statusCode="draft"
+                  effectiveDate="2016-09-08T00:00:00"
+                  type="item"
+                  minimumMultiplicity="0"
+                  maximumMultiplicity="1"
+                  conformance="R"
+                  isMandatory="false"
+                  shortName="zwangerschapsduur">
+            <name language="nl-NL">Zwangerschapsduur</name>
+            <desc language="nl-NL">Zwangerschapsduur<br clear="none"/>De dataset definieert de zwangerschapsduur in dagen. <br clear="none"/>Zorgverleners zien de zwangerschapsduur het liefste in weken/dagen. Dus bijvoorbeeld: 36w2d of 40+2.<br clear="none"/>
+                </desc>
+            <valueDomain type="quantity">
+               <property unit="d"/>
+            </valueDomain>
+         </concept>
+         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82398"
+                  statusCode="final"
+                  effectiveDate="2016-09-08T00:00:00"
+                  type="item"
+                  minimumMultiplicity="0"
+                  maximumMultiplicity="1"
+                  conformance="R"
+                  isMandatory="false"
+                  shortName="fluxus_postpartumq">
+            <name language="nl-NL">Fluxus postpartum?</name>
+            <desc language="nl-NL">Is er sprake van een fluxus postpartum? <br clear="none"/>Er is sprake van een fluxus postpartum wanneer er na de geboorte van het kind meer dan 1000 cc bloedverlies is.<br clear="none"/>
+               <br clear="none"/>Ja/Nee/Onbekend<br clear="none"/>
+                </desc>
+            <valueDomain type="boolean">
+               <property/>
+            </valueDomain>
+         </concept>
+      </concept>
+      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20555"
+               statusCode="draft"
+               effectiveDate="2016-09-08T00:00:00"
+               type="group"
+               minimumMultiplicity="0"
+               maximumMultiplicity="*"
+               conformance="R"
+               isMandatory="false"
+               shortName="interventies_begin_baring">
+         <name language="nl-NL">Interventies begin baring</name>
+         <desc language="nl-NL">Interventies begin baring.<br clear="none"/>
+            <br clear="none"/>
+            </desc>
+         <relationship type="SPEC"
+                       ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20555"
+                       flexibility="2013-09-10T00:00:00"
+                       refdisplay="peri22-dataelement-20555"/>
+         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20560"
+                  statusCode="final"
+                  effectiveDate="2016-09-08T00:00:00"
+                  type="item"
+                  minimumMultiplicity="1"
+                  maximumMultiplicity="1"
+                  conformance="R"
+                  isMandatory="false"
+                  shortName="interventie_begin_baring">
+            <name language="nl-NL">Interventie begin baring</name>
+            <desc language="nl-NL">Interventie begin baring<br clear="none"/>
+               <br clear="none"/>Een primaire sectio is een geplande sectio en wordt óók als zodanig geregistreerd als deze uitgevoerd wordt wanneer de weeën al zijn begonnen, de vliezen zijn gebroken en/of de uitdrijving is begonnen. </desc>
+            <valueDomain type="code"/>
+            <valueSet id="2.16.840.1.113883.2.4.11.189"
+                      statusCode="final"
+                      name="InterventieBeginBaring22"
+                      displayName="Interventie begin baring (2.2)"
+                      effectiveDate="2014-01-20T14:20:52">
+               <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                  <concept localId="1"
+                           code="236960006"
+                           codeSystem="2.16.840.1.113883.6.96"
+                           displayName="Sweeping of membrane (procedure)"
+                           value="236960006"/>
+                  <concept localId="2"
+                           code="408818004"
+                           codeSystem="2.16.840.1.113883.6.96"
+                           displayName="Induction of labour by artificial rupture of membranes (procedure)"
+                           value="408818004"/>
+                  <concept localId="3"
+                           code="425861005"
+                           codeSystem="2.16.840.1.113883.6.96"
+                           displayName="Cervical ripening with balloon (procedure)"
+                           value="425861005"/>
+                  <concept localId="4"
+                           code="236966000"
+                           codeSystem="2.16.840.1.113883.6.96"
+                           displayName="Cervical ripening with Prostaglandin E2 (procedure)"
+                           value="236966000"/>
+                  <concept localId="5"
+                           code="177135005"
+                           codeSystem="2.16.840.1.113883.6.96"
+                           displayName="Oxytocin induction of labour (procedure)"
+                           value="177135005"/>
+                  <concept localId="6"
+                           code="177136006"
+                           codeSystem="2.16.840.1.113883.6.96"
+                           displayName="Prostaglandin induction of labour (procedure)"
+                           value="177136006"/>
+                  <concept localId="7"
+                           code="177141003"
+                           codeSystem="2.16.840.1.113883.6.96"
+                           displayName="Elective caesarean section (procedure)"
+                           value="177141003"/>
+                  <exception localId="8"
+                             code="OTH"
+                             codeSystem="2.16.840.1.113883.5.1008"
+                             displayName="Overig"
+                             value="OTH"/>
+                  <exception localId="9"
+                             code="NI"
+                             codeSystem="2.16.840.1.113883.5.1008"
+                             displayName="Geen informatie"
+                             value="NI"/>
+               </conceptList>
+            </valueSet>
+         </concept>
+         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20570"
+                  statusCode="final"
+                  effectiveDate="2016-09-08T00:00:00"
+                  type="item"
+                  minimumMultiplicity="0"
+                  maximumMultiplicity="1"
+                  conformance="R"
+                  isMandatory="false"
+                  shortName="indicatie_interventie_begin_baring">
+            <name language="nl-NL">Indicatie interventie begin baring</name>
+            <desc language="nl-NL">Indicatie interventie begin baring.<br clear="none"/>
+               <br clear="none"/>Registreer hier één indicatie: de meest zwaarwegende.<br clear="none"/>
+                </desc>
+            <relationship type="SPEC"
+                          ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20570"
+                          flexibility="2013-09-10T00:00:00"
+                          refdisplay="peri22-dataelement-20570"/>
+            <valueDomain type="code"/>
+            <valueSet id="2.16.840.1.113883.2.4.11.190"
+                      name="IndicatieInterventie"
+                      displayName="Indicatie interventie"
+                      effectiveDate="2016-11-06T16:37:58"
+                      statusCode="draft">
+               <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                  <concept localId="1"
+                           code="10"
+                           codeSystem="2.16.840.1.113883.2.4.3.22.1.2.7"
+                           displayName="Conditie moeder"
+                           value="10"/>
+                  <concept localId="2"
+                           code="1"
+                           codeSystem="2.16.840.1.113883.2.4.3.22.1.2.7"
+                           displayName="Acuut levensbedreigend"
+                           value="1"/>
+                  <concept localId="3"
+                           code="3"
+                           codeSystem="2.16.840.1.113883.2.4.3.22.1.2.7"
+                           displayName="Niet levensbedreigend"
+                           value="3"/>
+                  <concept localId="4"
+                           code="8"
+                           codeSystem="2.16.840.1.113883.2.4.3.22.1.2.7"
+                           displayName="Onbekend"
+                           value="8"/>
+                  <concept localId="5"
+                           code="20"
+                           codeSystem="2.16.840.1.113883.2.4.3.22.1.2.7"
+                           displayName="Conditie kind"
+                           value="20"/>
+                  <concept localId="6"
+                           code="2"
+                           codeSystem="2.16.840.1.113883.2.4.3.22.1.2.7"
+                           displayName="Foetale nood"
+                           value="2"/>
+                  <concept localId="7"
+                           code="4"
+                           codeSystem="2.16.840.1.113883.2.4.3.22.1.2.7"
+                           displayName="Niet levensbedreigend"
+                           value="4"/>
+                  <concept localId="8"
+                           code="23"
+                           codeSystem="2.16.840.1.113883.2.4.3.22.1.2.7"
+                           displayName="Inleiding vanwege congenitale afwijking"
+                           value="23"/>
+                  <concept localId="9"
+                           code="9"
+                           codeSystem="2.16.840.1.113883.2.4.3.22.1.2.7"
+                           displayName="Onbekend"
+                           value="9"/>
+                  <concept localId="10"
+                           code="6"
+                           codeSystem="2.16.840.1.113883.2.4.3.22.1.2.7"
+                           displayName="Interventie in het kader van wetenschappelijk onderzoek"
+                           value="6"/>
+                  <concept localId="11"
+                           code="7"
+                           codeSystem="2.16.840.1.113883.2.4.3.22.1.2.7"
+                           displayName="Wens patiënt"
+                           value="7"/>
+                  <exception localId="12"
+                             code="OTH"
+                             codeSystem="2.16.840.1.113883.5.1008"
+                             displayName="Overig"
+                             value="OTH"/>
+                  <exception localId="13"
+                             code="UNK"
+                             codeSystem="2.16.840.1.113883.5.1008"
+                             displayName="Onbekend"
+                             value="UNK"/>
+                  <exception localId="14"
+                             code="NI"
+                             codeSystem="2.16.840.1.113883.5.1008"
+                             displayName="Geen informatie"
+                             value="NI"/>
+               </conceptList>
+            </valueSet>
+         </concept>
+      </concept>
+      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20550"
+               statusCode="final"
+               effectiveDate="2016-09-08T00:00:00"
+               type="item"
+               minimumMultiplicity="0"
+               maximumMultiplicity="1"
+               conformance="R"
+               isMandatory="false"
+               shortName="wijze_waarop_de_baring_begon">
+         <name language="nl-NL">Wijze waarop de baring begon</name>
+         <desc language="nl-NL">Wijze waarop de baring begon</desc>
+         <valueDomain type="code"/>
+         <valueSet id="2.16.840.1.113883.2.4.11.16"
+                   effectiveDate="2013-01-10T12:25:06"
+                   name="WijzeBaringBegin"
+                   displayName="WijzeBaringBegin"
+                   statusCode="final">
+            <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+               <concept localId="1"
+                        code="1"
+                        codeSystem="2.16.840.1.113883.2.4.3.22.1.2.46"
+                        displayName="spontane weeën"
+                        value="1"/>
+               <concept localId="2"
+                        code="2"
+                        codeSystem="2.16.840.1.113883.2.4.3.22.1.2.46"
+                        displayName="spontane vliesscheur"
+                        value="2"/>
+               <concept localId="3"
+                        code="3"
+                        codeSystem="2.16.840.1.113883.2.4.3.22.1.2.46"
+                        displayName="interventie om baring op gang te brengen"
+                        value="3"/>
+               <exception localId="4"
+                          code="UNK"
+                          codeSystem="2.16.840.1.113883.5.1008"
+                          displayName="onbekend"
+                          value="UNK"/>
+               <exception localId="5"
+                          code="NI"
+                          codeSystem="2.16.840.1.113883.5.1008"
+                          displayName="geen informatie"
+                          value="NI"/>
+            </conceptList>
+         </valueSet>
+      </concept>
+      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80612"
+               statusCode="draft"
+               effectiveDate="2016-09-08T00:00:00"
+               type="group"
+               minimumMultiplicity="0"
+               maximumMultiplicity="1"
+               conformance="R"
+               isMandatory="false"
+               shortName="placenta">
+         <name language="nl-NL">Placenta</name>
+         <desc language="nl-NL">Placenta (groep)</desc>
+         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20630"
+                  statusCode="final"
+                  effectiveDate="2016-09-08T00:00:00"
+                  type="item"
+                  minimumMultiplicity="0"
+                  maximumMultiplicity="1"
+                  conformance="R"
+                  isMandatory="false"
+                  shortName="geboorte_placenta">
+            <name language="nl-NL">Geboorte placenta</name>
+            <desc language="nl-NL">De wijze waarop de placenta geboren is</desc>
+            <valueDomain type="code"/>
+            <valueSet id="2.16.840.1.113883.2.4.11.22"
+                      name="GeboortePlacenta"
+                      displayName="GeboortePlacenta"
+                      effectiveDate="2014-07-31T16:09:54"
+                      statusCode="draft">
+               <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                  <concept localId="1"
+                           code="0"
+                           codeSystem="2.16.840.1.113883.2.4.4.13.19"
+                           displayName="Spontaan"
+                           value="0"/>
+                  <concept localId="2"
+                           code="2"
+                           codeSystem="2.16.840.1.113883.2.4.4.13.19"
+                           displayName="Controlled cord traction"
+                           value="2"/>
+                  <concept localId="3"
+                           code="3"
+                           codeSystem="2.16.840.1.113883.2.4.4.13.19"
+                           displayName="Manuele placentaverwijdering"
+                           value="3"/>
+                  <concept localId="4"
+                           code="4"
+                           codeSystem="2.16.840.1.113883.2.4.4.13.19"
+                           displayName="Placentaverwijdering bij SC"
+                           value="4"/>
+                  <exception localId="5"
+                             code="OTH"
+                             codeSystem="2.16.840.1.113883.5.1008"
+                             displayName="Overig"
+                             value="OTH"/>
+                  <exception localId="6"
+                             code="NI"
+                             codeSystem="2.16.840.1.113883.5.1008"
+                             displayName="Geen informatie"
+                             value="NI"/>
+                  <exception localId="7"
+                             code="UNK"
+                             codeSystem="2.16.840.1.113883.5.1008"
+                             displayName="Onbekend"
+                             value="UNK"/>
+               </conceptList>
+            </valueSet>
+         </concept>
+      </concept>
+      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20640"
+               statusCode="final"
+               effectiveDate="2016-09-08T00:00:00"
+               type="item"
+               minimumMultiplicity="0"
+               maximumMultiplicity="1"
+               conformance="R"
+               isMandatory="false"
+               shortName="hoeveelheid_bloedverlies">
+         <name language="nl-NL">Hoeveelheid bloedverlies</name>
+         <desc language="nl-NL">Hoeveelheid bloedverlies tijdens baring/nageboortetijdperk</desc>
+         <valueDomain type="quantity">
+            <property unit="ml" fractionDigits="0!"/>
+         </valueDomain>
+      </concept>
+      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80673"
+               statusCode="final"
+               effectiveDate="2016-09-08T00:00:00"
+               type="item"
+               minimumMultiplicity="0"
+               maximumMultiplicity="1"
+               conformance="R"
+               isMandatory="false"
+               shortName="conditie_perineum_postpartum">
+         <name language="nl-NL">Conditie perineum postpartum</name>
+         <desc language="nl-NL">Conditie perineum postpartum. Het gaat hier om de conditie aan het einde van de bevalling/partus.</desc>
+         <valueDomain type="code"/>
+         <valueSet id="2.16.840.1.113883.2.4.11.192"
+                   statusCode="final"
+                   name="Conditieperineum22"
+                   displayName="Conditie perineum (2.2)"
+                   effectiveDate="2014-01-22T11:04:47">
+            <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+               <concept localId="1"
+                        code="289854007"
+                        codeSystem="2.16.840.1.113883.6.96"
+                        displayName="Perineum intact  (finding)"
+                        value="289854007"/>
+               <concept localId="2"
+                        code="199916005"
+                        codeSystem="2.16.840.1.113883.6.96"
+                        displayName="First degree perineal tear during delivery - delivered (disorder)"
+                        value="199916005"/>
+               <concept localId="3"
+                        code="199925004"
+                        codeSystem="2.16.840.1.113883.6.96"
+                        displayName="Second degree perineal tear during delivery - delivered  (disorder)"
+                        value="199925004"/>
+               <concept localId="4"
+                        code="199930000"
+                        codeSystem="2.16.840.1.113883.6.96"
+                        displayName="Third degree perineal tear during delivery - delivered  (disorder)"
+                        value="199930000"/>
+               <concept localId="5"
+                        code="449807005"
+                        codeSystem="2.16.840.1.113883.6.96"
+                        displayName="Type 3a third degree laceration of perineum  (disorder)"
+                        value="449807005"/>
+               <concept localId="6"
+                        code="449808000"
+                        codeSystem="2.16.840.1.113883.6.96"
+                        displayName="Type 3b third degree laceration of perineum (disorder)"
+                        value="449808000"/>
+               <concept localId="7"
+                        code="449809008"
+                        codeSystem="2.16.840.1.113883.6.96"
+                        displayName="Type 3c third degree laceration of perineum (disorder)"
+                        value="449809008"/>
+               <concept localId="8"
+                        code="199934009"
+                        codeSystem="2.16.840.1.113883.6.96"
+                        displayName="Fourth degree perineal tear during delivery - delivered  (disorder)"
+                        value="199934009"/>
+               <concept localId="9"
+                        code="609344008"
+                        codeSystem="2.16.840.1.113883.6.96"
+                        displayName="Episiotomy wound  (morphologic abnormality)"
+                        value="609344008"/>
+               <exception localId="10"
+                          code="OTH"
+                          codeSystem="2.16.840.1.113883.5.1008"
+                          displayName="Anders"
+                          value="OTH"/>
+               <exception localId="11"
+                          code="UNK"
+                          codeSystem="2.16.840.1.113883.5.1008"
+                          displayName="Onbekend"
+                          value="UNK"/>
+               <exception localId="12"
+                          code="NI"
+                          codeSystem="2.16.840.1.113883.5.1008"
+                          displayName="Geen informatie"
+                          value="NI"/>
+            </conceptList>
+         </valueSet>
+      </concept>
+   </concept>
+   <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.7"
+            statusCode="draft"
+            effectiveDate="2016-09-08T00:00:00"
+            type="group"
+            minimumMultiplicity="0"
+            maximumMultiplicity="*"
+            conformance="R"
+            isMandatory="false"
+            shortName="uitkomst_per_kind">
+      <name language="nl-NL">Uitkomst (per kind)</name>
+      <desc language="nl-NL">Groepering om de gegevens van elke uitkomst (kind) samen te vatten.</desc>
+      <relationship type="SPEC"
+                    ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.7"
+                    flexibility="2013-09-10T00:00:00"
+                    refdisplay="peri22-dataelement-7"/>
+      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40002"
+               statusCode="draft"
+               effectiveDate="2016-09-08T00:00:00"
+               type="group"
+               minimumMultiplicity="0"
+               maximumMultiplicity="1"
+               conformance="R"
+               isMandatory="false"
+               shortName="baring">
+         <name language="nl-NL">Baring</name>
+         <desc language="nl-NL">Baring is het geboren laten worden van één uitkomst (kind).</desc>
+         <relationship type="SPEC"
+                       ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40002"
+                       flexibility="2013-09-10T00:00:00"
+                       refdisplay="peri22-dataelement-40002"/>
+         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40003"
+                  statusCode="final"
+                  effectiveDate="2016-09-08T00:00:00"
+                  type="item"
+                  minimumMultiplicity="0"
+                  maximumMultiplicity="1"
+                  conformance="R"
+                  isMandatory="false"
+                  shortName="werkelijke_plaats_baring_type_locatie">
+            <name language="nl-NL">Werkelijke plaats baring (type locatie)</name>
+            <desc language="nl-NL">Werkelijke plaats geboorte kind (type locatie)</desc>
+            <valueDomain type="code">
+               <property/>
+            </valueDomain>
+            <valueSet id="2.16.840.1.113883.2.4.11.178"
+                      name="WerkelijkePlaatsBaring22"
+                      displayName="WerkelijkePlaatsBaring22"
+                      statusCode="final"
+                      effectiveDate="2013-12-30T00:00:00">
+               <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                  <concept localId="1"
+                           code="169813005"
+                           codeSystem="2.16.840.1.113883.6.96"
+                           displayName="Home birth (finding)"
+                           value="169813005"/>
+                  <concept localId="2"
+                           code="23"
+                           codeSystem="2.16.840.1.113883.2.4.3.22.1.8.7"
+                           displayName="Geboortecentrum"
+                           value="23"/>
+                  <concept localId="3"
+                           code="22232009"
+                           codeSystem="2.16.840.1.113883.6.96"
+                           displayName="Hospital (environment)"
+                           value="22232009"/>
+                  <concept localId="4"
+                           code="40"
+                           codeSystem="2.16.840.1.113883.2.4.3.22.1.8.7"
+                           displayName="Onderweg"
+                           value="40"/>
+                  <exception localId="5"
+                             code="UNK"
+                             codeSystem="2.16.840.1.113883.5.1008"
+                             displayName="Onbekend"
+                             value="UNK"/>
+                  <exception localId="6"
+                             code="NI"
+                             codeSystem="2.16.840.1.113883.5.1008"
+                             displayName="Geen informatie"
+                             value="NI"/>
+               </conceptList>
+            </valueSet>
+         </concept>
+         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82114"
+                  statusCode="draft"
+                  effectiveDate="2016-09-08T00:00:00"
+                  type="group"
+                  minimumMultiplicity="0"
+                  maximumMultiplicity="1"
+                  conformance="R"
+                  isMandatory="false"
+                  shortName="ziekenhuis_baring">
+            <name language="nl-NL">Ziekenhuis baring</name>
+            <desc language="nl-NL">Het ziekenhuis waar baring plaats vond.<br clear="none"/>
+               <br clear="none"/>Alleen van toepassing indien "Werkelijke plaats baring (type locatie)" een ziekenhuis betreft. <br clear="none"/>
+                </desc>
+            <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40005"
+                     statusCode="final"
+                     effectiveDate="2016-09-08T00:00:00"
+                     type="item"
+                     minimumMultiplicity="0"
+                     maximumMultiplicity="1"
+                     conformance="R"
+                     isMandatory="false"
+                     shortName="ziekenhuisnummer_lvrid">
+               <name language="nl-NL">Ziekenhuisnummer (LVR-id)</name>
+               <desc language="nl-NL">LVR-id van het ziekenhuis, indien baring in het ziekenhuis is uitgevoerd.</desc>
+               <valueDomain type="identifier">
+                  <property minLength="4" maxLength="4"/>
+               </valueDomain>
+            </concept>
+            <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82116"
+                     statusCode="draft"
+                     effectiveDate="2016-09-08T00:00:00"
+                     type="item"
+                     minimumMultiplicity="0"
+                     maximumMultiplicity="1"
+                     conformance="R"
+                     isMandatory="false"
+                     shortName="zorginstelling_agbid">
+               <name language="nl-NL">Zorginstelling AGB-ID</name>
+               <desc language="nl-NL">Unieke AGB-ID van de instelling</desc>
+               <operationalization language="nl-NL">Vektis AGB-codelijst</operationalization>
+               <valueDomain type="identifier">
+                  <property minLength="8" maxLength="8"/>
+               </valueDomain>
+            </concept>
+            <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82117"
+                     statusCode="draft"
+                     effectiveDate="2016-09-08T00:00:00"
+                     type="item"
+                     minimumMultiplicity="0"
+                     maximumMultiplicity="1"
+                     conformance="R"
+                     isMandatory="false"
+                     shortName="naam_zorginstelling">
+               <name language="nl-NL">Naam zorginstelling</name>
+               <desc language="nl-NL">Naam van de instelling</desc>
+               <valueDomain type="complex"/>
+            </concept>
+         </concept>
+         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40006"
+                  statusCode="draft"
+                  effectiveDate="2016-09-08T00:00:00"
+                  type="group"
+                  minimumMultiplicity="0"
+                  maximumMultiplicity="1"
+                  conformance="R"
+                  isMandatory="false"
+                  shortName="demografische_gegevens">
+            <name language="nl-NL">Demografische gegevens</name>
+            <desc language="nl-NL">Demografische gegevens</desc>
+            <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82051"
+                     statusCode="draft"
+                     effectiveDate="2016-09-08T00:00:00"
+                     type="group"
+                     minimumMultiplicity="0"
+                     maximumMultiplicity="1"
+                     conformance="R"
+                     isMandatory="false"
+                     shortName="naamgegevens_kind">
+               <name language="nl-NL">Naamgegevens kind</name>
+               <desc language="nl-NL"/>
+               <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82353"
+                        statusCode="draft"
+                        effectiveDate="2016-09-08T00:00:00"
+                        type="item"
+                        minimumMultiplicity="0"
+                        maximumMultiplicity="*"
+                        conformance="R"
+                        isMandatory="false"
+                        shortName="voornamen">
+                  <name language="nl-NL">Voornamen</name>
+                  <desc language="nl-NL">De verzameling officiële voornamen die bij de geboorte zijn vastgelegd.</desc>
+                  <valueDomain type="string">
+                     <example>Johanna Henriette Maria</example>
+                  </valueDomain>
+               </concept>
+               <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82053"
+                        statusCode="draft"
+                        effectiveDate="2016-09-08T00:00:00"
+                        type="group"
+                        minimumMultiplicity="0"
+                        maximumMultiplicity="1"
+                        conformance="R"
+                        isMandatory="false"
+                        shortName="achternaam">
+                  <name language="nl-NL">Achternaam</name>
+                  <desc language="nl-NL"/>
+                  <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82054"
+                           statusCode="draft"
+                           effectiveDate="2016-09-08T00:00:00"
+                           type="item"
+                           minimumMultiplicity="0"
+                           maximumMultiplicity="1"
+                           conformance="R"
+                           isMandatory="false"
+                           shortName="voorvoegsel">
+                     <name language="nl-NL">Voorvoegsel</name>
+                     <desc language="nl-NL">Deel van de achternaam dat het voorvoegsel bevat.</desc>
+                     <comment language="nl-NL">GBA tabel 36 is een opsomming van te gebruiken voorvoegsels zonder bijbehorende code. Het gebruik wordt aanbevolen, maar is niet verplicht. Bij vulling via de SBV-Z zullen de voorzetsels overeenkomen met tabel 36.</comment>
+                     <operationalization language="nl-NL">GBA tabel 36</operationalization>
+                     <valueDomain type="string">
+                        <example>van</example>
+                     </valueDomain>
+                  </concept>
+                  <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82055"
+                           statusCode="draft"
+                           effectiveDate="2016-09-08T00:00:00"
+                           type="item"
+                           minimumMultiplicity="0"
+                           maximumMultiplicity="1"
+                           conformance="R"
+                           isMandatory="false"
+                           shortName="achternaam">
+                     <name language="nl-NL">Achternaam</name>
+                     <desc language="nl-NL">Achternaam</desc>
+                     <valueDomain type="string">
+                        <example>Putten</example>
+                     </valueDomain>
+                  </concept>
+               </concept>
+            </concept>
+            <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40041"
+                     statusCode="final"
+                     effectiveDate="2016-09-08T00:00:00"
+                     type="item"
+                     minimumMultiplicity="0"
+                     maximumMultiplicity="1"
+                     conformance="R"
+                     isMandatory="false"
+                     shortName="geslacht_medische_observatie">
+               <name language="nl-NL">Geslacht (medische observatie)</name>
+               <desc language="nl-NL">Geslacht (medische observatie)</desc>
+               <valueDomain type="code"/>
+               <valueSet id="2.16.840.1.113883.2.4.11.110"
+                         statusCode="final"
+                         name="GenderMedisch"
+                         displayName="GenderMedisch"
+                         effectiveDate="2014-01-21T09:17:10">
+                  <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                     <concept localId="1"
+                              code="1"
+                              codeSystem="2.16.840.1.113883.2.4.4.13.21"
+                              displayName="Mannelijk"
+                              value="1"/>
+                     <concept localId="2"
+                              code="2"
+                              codeSystem="2.16.840.1.113883.2.4.4.13.21"
+                              displayName="Vrouwelijk"
+                              value="2"/>
+                     <concept localId="3"
+                              code="3"
+                              codeSystem="2.16.840.1.113883.2.4.4.13.21"
+                              displayName="Niet conclusief"
+                              value="3"/>
+                     <exception localId="4"
+                                code="UNK"
+                                codeSystem="2.16.840.1.113883.5.1008"
+                                displayName="Onbekend"
+                                value="UNK"/>
+                     <exception localId="5"
+                                code="NI"
+                                codeSystem="2.16.840.1.113883.5.1008"
+                                displayName="Geen informatie"
+                                value="NI"/>
+                  </conceptList>
+               </valueSet>
+            </concept>
+            <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40050"
+                     statusCode="final"
+                     effectiveDate="2016-09-08T00:00:00"
+                     type="item"
+                     minimumMultiplicity="0"
+                     maximumMultiplicity="1"
+                     conformance="R"
+                     isMandatory="false"
+                     shortName="geboortedatum">
+               <name language="nl-NL">Geboortedatum</name>
+               <desc language="nl-NL">Moment van geboorte. Datum en (zo mogelijk) tijd</desc>
+               <valueDomain type="datetime">
+                  <property timeStampPrecision="YMD"/>
+               </valueDomain>
+            </concept>
+            <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40279"
+                     statusCode="draft"
+                     effectiveDate="2016-09-08T00:00:00"
+                     type="group"
+                     minimumMultiplicity="0"
+                     maximumMultiplicity="1"
+                     conformance="R"
+                     isMandatory="false"
+                     shortName="perinatale_sterfte_groep">
+               <name language="nl-NL">Perinatale sterfte (groep)</name>
+               <desc language="nl-NL">Perinatale sterfte (group)</desc>
+               <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40280"
+                        statusCode="final"
+                        effectiveDate="2016-09-08T00:00:00"
+                        type="item"
+                        minimumMultiplicity="0"
+                        maximumMultiplicity="1"
+                        conformance="R"
+                        isMandatory="false"
+                        shortName="perinatale_sterfteq">
+                  <name language="nl-NL">Perinatale sterfte?</name>
+                  <desc language="nl-NL">Is de foetus of het kind overleden?</desc>
+                  <valueDomain type="boolean"/>
+               </concept>
+               <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40290"
+                        statusCode="final"
+                        effectiveDate="2016-09-08T00:00:00"
+                        type="item"
+                        minimumMultiplicity="0"
+                        maximumMultiplicity="1"
+                        conformance="R"
+                        isMandatory="false"
+                        shortName="fase_perinatale_sterfte">
+                  <name language="nl-NL">Fase perinatale sterfte</name>
+                  <desc language="nl-NL">Fase perinatale sterfte</desc>
+                  <valueDomain type="code"/>
+                  <valueSet statusCode="final"
+                            id="2.16.840.1.113883.2.4.3.11.60.90.77.11.10"
+                            name="FasePerinataleSterfte22"
+                            displayName="Fase Perinatale Sterfte (2.2)"
+                            effectiveDate="2014-08-13T09:40:49">
+                     <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                        <concept localId="1"
+                                 code="237361005"
+                                 codeSystem="2.16.840.1.113883.6.96"
+                                 displayName="Antepartum fetal death (event)"
+                                 value="237361005"/>
+                        <concept localId="2"
+                                 code="237362003"
+                                 codeSystem="2.16.840.1.113883.6.96"
+                                 displayName="Intrapartum fetal death (event)"
+                                 value="237362003"/>
+                        <concept localId="3"
+                                 code="276506001"
+                                 codeSystem="2.16.840.1.113883.6.96"
+                                 displayName="Newborn death (event)"
+                                 value="276506001"/>
+                        <exception localId="4"
+                                   code="NI"
+                                   codeSystem="2.16.840.1.113883.5.1008"
+                                   displayName="Geen informatie"
+                                   value="NI"/>
+                     </conceptList>
+                  </valueSet>
+               </concept>
+            </concept>
+         </concept>
+         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.72"
+                  statusCode="draft"
+                  effectiveDate="2016-09-08T00:00:00"
+                  type="group"
+                  minimumMultiplicity="0"
+                  maximumMultiplicity="1"
+                  conformance="R"
+                  isMandatory="false"
+                  shortName="kindspecifieke_uitkomstgegevens">
+            <name language="nl-NL">Kindspecifieke uitkomstgegevens</name>
+            <desc language="nl-NL">Kindspecifieke uitkomstgegevens</desc>
+            <relationship type="SPEC"
+                          ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.72"
+                          flexibility="2013-09-10T00:00:00"
+                          refdisplay="peri22-dataelement-72"/>
+            <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80626"
+                     statusCode="final"
+                     effectiveDate="2016-09-08T00:00:00"
+                     type="item"
+                     minimumMultiplicity="0"
+                     maximumMultiplicity="1"
+                     conformance="R"
+                     isMandatory="false"
+                     shortName="type_partus">
+               <name language="nl-NL">Type partus</name>
+               <desc language="nl-NL">Type partus.<br clear="none"/>
+                  <br clear="none"/>Een primaire sectio is een geplande sectio en wordt óók als zodanig geregistreerd als deze uitgevoerd wordt wanneer de weeën al zijn begonnen, de vliezen zijn gebroken en/of de uitdrijving is begonnen.<br clear="none"/>
+                  <br clear="none"/>TOP (Termination of Pregnancy) is zwangerschapsafbreking na 16 weken. Dit in tegenstelling tot APLA, waarmee een zwangerschapsafbreking (abortus) van minder dan 16 weken wordt bedoeld.<br clear="none"/>
+                    </desc>
+               <relationship type="SPEC"
+                             ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80626"
+                             flexibility="2013-09-10T00:00:00"
+                             refdisplay="peri22-dataelement-80626"/>
+               <valueDomain type="code"/>
+               <valueSet id="2.16.840.1.113883.2.4.11.182"
+                         name="TypePartus22"
+                         displayName="TypePartus"
+                         statusCode="final"
+                         effectiveDate="2016-11-22T14:00:45">
+                  <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                     <concept localId="1"
+                              code="177184002"
+                              codeSystem="2.16.840.1.113883.6.96"
+                              displayName="Normal delivery procedure (procedure)"
+                              value="177184002"/>
+                     <concept localId="2"
+                              code="3311000146109"
+                              codeSystem="2.16.840.1.113883.6.96"
+                              displayName="Assisted delivery of fetus (procedure)"
+                              value="3311000146109"/>
+                     <concept localId="3"
+                              code="11466000"
+                              codeSystem="2.16.840.1.113883.6.96"
+                              displayName="Cesarean section (procedure)"
+                              value="11466000"/>
+                     <concept localId="4"
+                              code="177141003"
+                              codeSystem="2.16.840.1.113883.6.96"
+                              displayName="Elective cesarian delivery (procedure)"
+                              value="177141003"/>
+                     <concept localId="5"
+                              code="274130007"
+                              codeSystem="2.16.840.1.113883.6.96"
+                              displayName="Emergency cesarian section (procedure)"
+                              value="274130007"/>
+                     <concept localId="6"
+                              code="10"
+                              codeSystem="2.16.840.1.113883.2.4.4.14"
+                              displayName="Termination of Pregnancy (TOP)"
+                              value="10"/>
+                     <concept localId="7"
+                              code="447972007"
+                              codeSystem="2.16.840.1.113883.6.96"
+                              displayName="Medical termination of pregnancy using prostaglandin (procedure)"
+                              value="447972007"/>
+                     <concept localId="8"
+                              code="236990004"
+                              codeSystem="2.16.840.1.113883.6.96"
+                              displayName="Postmortem cesarean section (procedure)"
+                              value="236990004"/>
+                     <concept localId="9"
+                              code="9"
+                              codeSystem="2.16.840.1.113883.2.4.4.14.10"
+                              displayName="Overig"
+                              value="9"/>
+                     <exception localId="10"
+                                code="NI"
+                                codeSystem="2.16.840.1.113883.5.1008"
+                                displayName="Geen informatie"
+                                value="NI"/>
+                  </conceptList>
+               </valueSet>
+            </concept>
+            <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20062"
+                     statusCode="draft"
+                     effectiveDate="2016-09-08T00:00:00"
+                     type="item"
+                     minimumMultiplicity="0"
+                     maximumMultiplicity="1"
+                     conformance="R"
+                     isMandatory="false"
+                     shortName="zwangerschapsduur">
+               <name language="nl-NL">Zwangerschapsduur</name>
+               <desc language="nl-NL">Zwangerschapsduur in dagen bij geboorte kinderen.<br clear="none"/>De dataset definieert de zwangerschapsduur in dagen.<br clear="none"/>Zorgverleners zien de zwangerschapsduur het liefste in weken/dagen. Dus bijvoorbeeld: 36w2d of 40+2.<br clear="none"/>
+                    </desc>
+               <relationship type="SPEC"
+                             ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.4.20062"
+                             flexibility="2012-08-06T00:00:00"
+                             refdisplay="peri21-dataelement-20062"/>
+               <operationalization language="nl-NL">Berekend veld: zwangerschapsduur in dagen bij geboorte kind. Berekend veld ((geboortedatum-atermedatum)+280) geven.</operationalization>
+               <valueDomain type="quantity">
+                  <property unit="d" minInclude="0"/>
+               </valueDomain>
+            </concept>
+            <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40189"
+                     statusCode="draft"
+                     effectiveDate="2016-09-08T00:00:00"
+                     type="group"
+                     minimumMultiplicity="0"
+                     maximumMultiplicity="1"
+                     conformance="R"
+                     isMandatory="false"
+                     shortName="vaginale_kunstverlossing_groep">
+               <name language="nl-NL">Vaginale kunstverlossing (groep)</name>
+               <desc language="nl-NL">Vaginale kunstverlossing (groep)</desc>
+               <relationship type="SPEC"
+                             ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.4.40189"
+                             flexibility="2012-08-06T00:00:00"
+                             refdisplay="peri21-dataelement-40189"/>
+               <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40190"
+                        statusCode="final"
+                        effectiveDate="2016-09-08T00:00:00"
+                        type="item"
+                        minimumMultiplicity="0"
+                        maximumMultiplicity="1"
+                        conformance="R"
+                        isMandatory="false"
+                        shortName="vaginale_kunstverlossing">
+                  <name language="nl-NL">Vaginale kunstverlossing</name>
+                  <desc language="nl-NL">Vaginale kunstverlossing</desc>
+                  <valueDomain type="code">
+                     <property/>
+                  </valueDomain>
+                  <valueSet name="VaginaleKunstverlossing22"
+                            displayName="VaginaleKunstverlossing22"
+                            id="2.16.840.1.113883.2.4.11.181"
+                            statusCode="final"
+                            effectiveDate="2014-01-02T00:00:00">
+                     <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                        <concept localId="1"
+                                 code="302383004"
+                                 codeSystem="2.16.840.1.113883.6.96"
+                                 displayName="Forceps delivery (procedure)"
+                                 value="302383004"/>
+                        <concept localId="2"
+                                 code="61586001"
+                                 codeSystem="2.16.840.1.113883.6.96"
+                                 displayName="Delivery by vacuum extraction (procedure)"
+                                 value="61586001"/>
+                        <concept localId="3"
+                                 code="699999008"
+                                 codeSystem="2.16.840.1.113883.6.96"
+                                 displayName="Obstetrical version with extraction (procedure)"
+                                 value="699999008"/>
+                        <concept localId="4"
+                                 code="359940006"
+                                 codeSystem="2.16.840.1.113883.6.96"
+                                 displayName="Partial breech extraction (procedure)"
+                                 value="359940006"/>
+                        <concept localId="5"
+                                 code="416055001"
+                                 codeSystem="2.16.840.1.113883.6.96"
+                                 displayName="Total breech extraction (procedure)"
+                                 value="416055001"/>
+                        <exception localId="6"
+                                   code="OTH"
+                                   codeSystem="2.16.840.1.113883.5.1008"
+                                   displayName="anders"
+                                   value="OTH"/>
+                        <exception localId="7"
+                                   code="NI"
+                                   codeSystem="2.16.840.1.113883.5.1008"
+                                   displayName="geen informatie"
+                                   value="NI"/>
+                     </conceptList>
+                  </valueSet>
+               </concept>
+            </concept>
+            <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40219"
+                     statusCode="draft"
+                     effectiveDate="2016-09-08T00:00:00"
+                     type="group"
+                     minimumMultiplicity="0"
+                     maximumMultiplicity="1"
+                     conformance="R"
+                     isMandatory="false"
+                     shortName="sectio_caesarea_group">
+               <name language="nl-NL">Sectio caesarea (group)</name>
+               <desc language="nl-NL">Sectio ceasarea (group)</desc>
+               <relationship type="SPEC"
+                             ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40219"
+                             flexibility="2013-09-10T00:00:00"
+                             refdisplay="peri22-dataelement-40219"/>
+               <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40225"
+                        statusCode="final"
+                        effectiveDate="2016-09-08T00:00:00"
+                        type="item"
+                        minimumMultiplicity="0"
+                        maximumMultiplicity="1"
+                        conformance="R"
+                        isMandatory="false"
+                        shortName="beslismoment_sectio_caesarea">
+                  <name language="nl-NL">Beslismoment sectio caesarea</name>
+                  <desc language="nl-NL">Beslismoment voor de secundaire sectio caesarea.</desc>
+                  <comment language="nl-NL">Alleen van toepassing wanneer 'Type partus' is Sectio - secundair.<br clear="none"/>
+                  </comment>
+                  <valueDomain type="code">
+                     <property/>
+                  </valueDomain>
+                  <valueSet id="2.16.840.1.113883.2.4.11.38"
+                            name="BesluitSC"
+                            displayName="BesluitSC"
+                            statusCode="final"
+                            effectiveDate="2014-11-06T15:34:16">
+                     <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                        <concept localId="1"
+                                 code="2"
+                                 codeSystem="2.16.840.1.113883.2.4.3.22.1.3.5"
+                                 displayName="Tijdens ontsluiting besloten"
+                                 value="2"/>
+                        <concept localId="2"
+                                 code="3"
+                                 codeSystem="2.16.840.1.113883.2.4.3.22.1.3.5"
+                                 displayName="Tijdens uitdrijving besloten"
+                                 value="3"/>
+                        <exception localId="3"
+                                   code="NI"
+                                   codeSystem="2.16.840.1.113883.5.1008"
+                                   displayName="Geen informatie"
+                                   value="NI"/>
+                     </conceptList>
+                  </valueSet>
+               </concept>
+            </concept>
+            <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40240"
+                     statusCode="final"
+                     effectiveDate="2016-09-08T00:00:00"
+                     type="item"
+                     minimumMultiplicity="0"
+                     maximumMultiplicity="*"
+                     conformance="R"
+                     isMandatory="false"
+                     shortName="overige_interventies">
+               <name language="nl-NL">Overige interventies</name>
+               <desc language="nl-NL">Overige interventies bij baring. Dit gaat om de interventies bij baring (eventueel) náást vaginale kunstverlossing en/of sectio.<br clear="none"/>
+                    </desc>
+               <relationship type="SPEC"
+                             ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40240"
+                             flexibility="2013-09-10T00:00:00"
+                             refdisplay="peri22-dataelement-40240"/>
+               <valueDomain type="code"/>
+               <valueSet name="OverigeInterventies22"
+                         displayName="Overige interventies"
+                         id="2.16.840.1.113883.2.4.3.11.60.90.77.11.20"
+                         effectiveDate="2016-11-23T20:45:23"
+                         statusCode="final">
+                  <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                     <concept localId="1"
+                              code="32189006"
+                              codeSystem="2.16.840.1.113883.6.96"
+                              displayName="Pubiotomy (procedure)"
+                              value="32189006"/>
+                     <concept localId="2"
+                              code="237008007"
+                              codeSystem="2.16.840.1.113883.6.96"
+                              displayName="Maneuvers for delivery in shoulder dystocia (procedure)"
+                              value="237008007"/>
+                     <concept localId="3"
+                              code="237009004"
+                              codeSystem="2.16.840.1.113883.6.96"
+                              displayName="McRobert's maneuver (procedure)"
+                              value="237009004"/>
+                     <concept localId="4"
+                              code="237010009"
+                              codeSystem="2.16.840.1.113883.6.96"
+                              displayName="Suprapubic pressure on fetal shoulder (procedure)"
+                              value="237010009"/>
+                     <concept localId="5"
+                              code="237012001"
+                              codeSystem="2.16.840.1.113883.6.96"
+                              displayName="Freeing the posterior arm (procedure)"
+                              value="237012001"/>
+                     <concept localId="6"
+                              code="237011008"
+                              codeSystem="2.16.840.1.113883.6.96"
+                              displayName="Wood's screw maneuver (procedure)"
+                              value="237011008"/>
+                     <concept localId="7"
+                              code="272541000"
+                              codeSystem="2.16.840.1.113883.6.96"
+                              displayName="Half-kneeling position (finding)"
+                              value="272541000"/>
+                     <concept localId="8"
+                              code="9"
+                              codeSystem="2.16.840.1.113883.2.4.4.14.237008007"
+                              displayName="Overig"
+                              value="9"/>
+                     <concept localId="9"
+                              code="40792007"
+                              codeSystem="2.16.840.1.113883.6.96"
+                              displayName="Kristeller maneuver (procedure)"
+                              value="40792007"/>
+                     <exception localId="10"
+                                code="OTH"
+                                codeSystem="2.16.840.1.113883.5.1008"
+                                displayName="Overig"
+                                value="OTH"/>
+                  </conceptList>
+               </valueSet>
+            </concept>
+            <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80766"
+                     statusCode="draft"
+                     effectiveDate="2016-09-08T00:00:00"
+                     type="group"
+                     minimumMultiplicity="0"
+                     maximumMultiplicity="1"
+                     conformance="R"
+                     isMandatory="false"
+                     shortName="lichamelijk_onderzoek_kind">
+               <name language="nl-NL">Lichamelijk onderzoek kind</name>
+               <desc language="nl-NL">Lichamelijk onderzoek pasgeborene direct postpartum </desc>
+               <source language="nl-NL">Mede gebaseerd op LESA richtlijn<br clear="none"/>
+               </source>
+               <relationship type="SPEC"
+                             ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80766"
+                             flexibility="2013-09-10T00:00:00"
+                             refdisplay="peri22-dataelement-80766"/>
+               <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40071"
+                        statusCode="final"
+                        effectiveDate="2016-09-08T00:00:00"
+                        type="item"
+                        minimumMultiplicity="0"
+                        maximumMultiplicity="1"
+                        conformance="R"
+                        isMandatory="false"
+                        shortName="apgarscore_na_5_min">
+                  <name language="nl-NL">Apgarscore na 5 min.</name>
+                  <desc language="nl-NL">Apgarscore na 5 min.</desc>
+                  <valueDomain type="count">
+                     <property minInclude="0" maxInclude="10"/>
+                  </valueDomain>
+               </concept>
+               <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40060"
+                        statusCode="final"
+                        effectiveDate="2016-09-08T00:00:00"
+                        type="item"
+                        minimumMultiplicity="0"
+                        maximumMultiplicity="1"
+                        conformance="R"
+                        isMandatory="false"
+                        shortName="geboortegewicht">
+                  <name language="nl-NL">Geboortegewicht</name>
+                  <desc language="nl-NL">Meting van het lichaamsgewicht zo kort mogelijk na de geboorte.</desc>
+                  <comment language="nl-NL">N.B. De hierbij gebruikte LOINC-code is niet uitsluitend beperkt tot het gebruik voor het concept 'neonataal geboortegewicht', maar kan ook gebruikt worden voor het concept 'maternaal lichaamsgewicht, bij de geboorte'.</comment>
+                  <valueDomain type="quantity">
+                     <property minInclude="0" unit="gram" fractionDigits="0!"/>
+                  </valueDomain>
+               </concept>
+               <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80670"
+                        statusCode="draft"
+                        effectiveDate="2016-09-08T00:00:00"
+                        type="item"
+                        minimumMultiplicity="0"
+                        maximumMultiplicity="1"
+                        conformance="R"
+                        isMandatory="false"
+                        shortName="percentiel_van_het_geboortegewicht">
+                  <name language="nl-NL">Percentiel van het geboortegewicht</name>
+                  <desc language="nl-NL">Percentiel score geboortegewicht.</desc>
+                  <source language="nl-NL">PWD Acute Fase Overdracht item #111</source>
+                  <relationship type="SPEC"
+                                ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.4.10605"
+                                flexibility="2013-11-08T00:00:00"
+                                refdisplay="peri21-dataelement-10605"/>
+                  <valueDomain type="code"/>
+                  <valueSet id="2.16.840.1.113883.2.4.11.176"
+                            name="PercentielGeboortegewicht"
+                            displayName="PercentielGeboortegewicht"
+                            effectiveDate="2016-07-20T00:00:00"
+                            statusCode="draft">
+                     <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                        <concept localId="1"
+                                 code="1"
+                                 codeSystem="2.16.840.1.113883.2.4.4.13.50"
+                                 displayName="&lt; p2,3"
+                                 value="1"/>
+                        <concept localId="2"
+                                 code="2"
+                                 codeSystem="2.16.840.1.113883.2.4.4.13.50"
+                                 displayName="p2,3 tot p10"
+                                 value="2"/>
+                        <concept localId="3"
+                                 code="3"
+                                 codeSystem="2.16.840.1.113883.2.4.4.13.50"
+                                 displayName="p10 tot p50"
+                                 value="3"/>
+                        <concept localId="4"
+                                 code="4"
+                                 codeSystem="2.16.840.1.113883.2.4.4.13.50"
+                                 displayName="p50 tot p90"
+                                 value="4"/>
+                        <concept localId="5"
+                                 code="5"
+                                 codeSystem="2.16.840.1.113883.2.4.4.13.50"
+                                 displayName="p90 tot p97,7"
+                                 value="5"/>
+                        <concept localId="6"
+                                 code="6"
+                                 codeSystem="2.16.840.1.113883.2.4.4.13.50"
+                                 displayName="&gt;= p97,7"
+                                 value="6"/>
+                        <exception localId="7"
+                                   code="NI"
+                                   codeSystem="2.16.840.1.113883.5.1008"
+                                   displayName="Geen informatie"
+                                   value="NI"/>
+                     </conceptList>
+                  </valueSet>
+               </concept>
+            </concept>
+            <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40080"
+                     statusCode="final"
+                     effectiveDate="2016-09-08T00:00:00"
+                     type="item"
+                     minimumMultiplicity="0"
+                     maximumMultiplicity="1"
+                     conformance="R"
+                     isMandatory="false"
+                     shortName="congenitale_afwijkingenq">
+               <name language="nl-NL">Congenitale afwijkingen?</name>
+               <desc language="nl-NL">Congenitale afwijkingen?</desc>
+               <valueDomain type="boolean"/>
+            </concept>
+            <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40081"
+                     statusCode="draft"
+                     effectiveDate="2016-09-08T00:00:00"
+                     type="group"
+                     minimumMultiplicity="0"
+                     maximumMultiplicity="*"
+                     conformance="C"
+                     isMandatory="false"
+                     shortName="congenitale_afwijkingen_groep">
+               <name language="nl-NL">Congenitale afwijkingen (groep)</name>
+               <desc language="nl-NL">Congenitale afwijkingen (groep)</desc>
+               <relationship type="SPEC"
+                             ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40081"
+                             flexibility="2013-09-10T00:00:00"
+                             refdisplay="peri22-dataelement-40081"/>
+               <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40082"
+                        statusCode="draft"
+                        effectiveDate="2016-09-08T00:00:00"
+                        type="group"
+                        minimumMultiplicity="0"
+                        maximumMultiplicity="1"
+                        conformance="R"
+                        isMandatory="false"
+                        shortName="specificatie_congenitale_afwijking_groep">
+                  <name language="nl-NL">Specificatie congenitale afwijking (groep)</name>
+                  <desc language="nl-NL">Specificatie congenitale afwijking (groep)</desc>
+                  <relationship type="SPEC"
+                                ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40082"
+                                flexibility="2013-09-10T00:00:00"
+                                refdisplay="peri22-dataelement-40082"/>
+                  <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40090"
+                           statusCode="final"
+                           effectiveDate="2016-09-08T00:00:00"
+                           type="item"
+                           minimumMultiplicity="0"
+                           maximumMultiplicity="1"
+                           conformance="R"
+                           isMandatory="false"
+                           shortName="specificatie_congenitale_afwijking">
+                     <name language="nl-NL">Specificatie congenitale afwijking</name>
+                     <desc language="nl-NL">Aangeboren afwijkingen, conform de lijst PRN, exclusief chromosomale afwijkingen</desc>
+                     <source language="nl-NL">De waardenlijst bevat de lijst van PRN zoals deze afgestemd is met de kinderartsen (Codelijst KA behorende bij Dataset Perinatale Registratie versie 1.4.xls).</source>
+                     <comment language="nl-NL">Niet alle afwijkingen zijn als zodanig te constateren door de verloskundige/gynaecoloog bij uitkomst van het kind.<br clear="none"/>Het kan dan ook volstaan om een hoofdgroep uit deze lijst te kiezen (niveau 0 of soms 1 in waardenlijst), maar áls de zorgverlener meer detail weet (bijvoorbeeld bij lipspleet of microcefalie) dient wél de betreffende (gedetailleerde) waarde gekozen te worden. Gewenst is om te registreren tot op het detail niveau dat de zorgverlener (in dit geval verloskundige of gynaecoloog) dat kan.<br clear="none"/>
+                        <br clear="none"/>Bij anemnestische gegevens (vorige zwangerschappen) is vaak wél bekend welke afwijkingen op een kind van toepassing zijn/waren. Dit kan dan ook gedetailleerd worden vastgelegd.<br clear="none"/>
+                     </comment>
+                     <relationship type="SPEC"
+                                   ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40090"
+                                   flexibility="2013-09-10T00:00:00"
+                                   refdisplay="peri22-dataelement-40090"/>
+                     <valueDomain type="code"/>
+                     <valueSet id="2.16.840.1.113883.2.4.11.196"
+                               name="CongenitaleAfwijking22"
+                               displayName="Congenitale afwijking"
+                               statusCode="final"
+                               effectiveDate="2016-11-10T14:40:18">
+                        <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                           <concept localId="1"
+                                    code="276508000"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="Hydrops foetalis"
+                                    value="276508000"/>
+                           <concept localId="2"
+                                    code="88425004"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="Congenital anomaly of nervous system (disorder)"
+                                    value="88425004"/>
+                           <concept localId="3"
+                                    code="609417004"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="Fetal anencephaly (disorder)"
+                                    value="609417004"/>
+                           <concept localId="4"
+                                    code="431265009"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="Fetal microcephaly (disorder)"
+                                    value="431265009"/>
+                           <concept localId="5"
+                                    code="76916001"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="Spina bifida occulta (disorder)"
+                                    value="76916001"/>
+                           <concept localId="6"
+                                    code="414667000"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="Meningomyelocele (disorder)"
+                                    value="414667000"/>
+                           <concept localId="7"
+                                    code="171131006"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="Meningocele (disorder)"
+                                    value="171131006"/>
+                           <concept localId="8"
+                                    code="47032000"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="Congenital hydrocephalus (disorder)"
+                                    value="47032000"/>
+                           <concept localId="9"
+                                    code="30915001"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="Holoprosencephaly sequence (disorder)"
+                                    value="30915001"/>
+                           <concept localId="10"
+                                    code="55999004"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="Encephalocele (disorder)"
+                                    value="55999004"/>
+                           <concept localId="11"
+                                    code="363222009"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="Neonatal neuromuscular disorder (disorder)"
+                                    value="363222009"/>
+                           <concept localId="12"
+                                    code="09"
+                                    codeSystem="2.16.840.1.113883.2.4.4.13.8"
+                                    displayName="Overige congenitale afwijkingen zenuwstelsel"
+                                    value="09"/>
+                           <concept localId="13"
+                                    code="B"
+                                    codeSystem="2.16.840.1.113883.2.4.4.13.8"
+                                    displayName="Zintuigen"
+                                    value="B"/>
+                           <concept localId="14"
+                                    code="19416009"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="Congenital anomaly of eye (disorder)"
+                                    value="19416009"/>
+                           <concept localId="15"
+                                    code="61142002"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="Microphthalmos (disorder)"
+                                    value="61142002"/>
+                           <concept localId="16"
+                                    code="11"
+                                    codeSystem="2.16.840.1.113883.2.4.4.13.8"
+                                    displayName="Overige congenitale afwijkingen ogen"
+                                    value="11"/>
+                           <concept localId="17"
+                                    code="8380000"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="Congenital anomaly of ear (disorder)"
+                                    value="8380000"/>
+                           <concept localId="18"
+                                    code="13"
+                                    codeSystem="2.16.840.1.113883.2.4.4.13.8"
+                                    displayName="Overige congenitale afwijkingen zintuigen"
+                                    value="13"/>
+                           <concept localId="19"
+                                    code="9904008"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="Congenital anomaly of cardiovascular system (disorder)"
+                                    value="9904008"/>
+                           <concept localId="20"
+                                    code="204470001"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="Single umbilical artery (disorder)"
+                                    value="204470001"/>
+                           <concept localId="21"
+                                    code="204296002"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="Discordant ventriculoarterial connection (disorder)"
+                                    value="204296002"/>
+                           <concept localId="22"
+                                    code="86299006"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="Tetralogy of Fallot (disorder)"
+                                    value="86299006"/>
+                           <concept localId="23"
+                                    code="30288003"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="Ventricular septal defect (disorder)"
+                                    value="30288003"/>
+                           <concept localId="24"
+                                    code="62067003"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="Hypoplastic left heart syndrome (disorder)"
+                                    value="62067003"/>
+                           <concept localId="25"
+                                    code="7305005"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="Coarctation of aorta (disorder)"
+                                    value="7305005"/>
+                           <concept localId="26"
+                                    code="4374004"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="Congenital anomaly of tricuspid valve (disorder)"
+                                    value="4374004"/>
+                           <concept localId="27"
+                                    code="94702005"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="Multiple congenital cardiac defects (disorder)"
+                                    value="94702005"/>
+                           <concept localId="28"
+                                    code="22"
+                                    codeSystem="2.16.840.1.113883.2.4.4.13.8"
+                                    displayName="Overige congenitale afwijking hart en bloedvaten"
+                                    value="22"/>
+                           <concept localId="29"
+                                    code="95470009"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="Congenital anomaly of digestive tract (disorder)"
+                                    value="95470009"/>
+                           <concept localId="30"
+                                    code="80281008"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="Cleft lip (disorder)"
+                                    value="80281008"/>
+                           <concept localId="31"
+                                    code="87979003"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="Cleft palate (disorder)"
+                                    value="87979003"/>
+                           <concept localId="32"
+                                    code="69771008"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="Congenital anomaly of esophagus (disorder)"
+                                    value="69771008"/>
+                           <concept localId="33"
+                                    code="84296002"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="Congenital atresia of small intestine (disorder)"
+                                    value="84296002"/>
+                           <concept localId="34"
+                                    code="204711007"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="Atresia of large intestine (disorder)"
+                                    value="204711007"/>
+                           <concept localId="35"
+                                    code="204712000"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="Anal atresia (disorder)"
+                                    value="204712000"/>
+                           <concept localId="36"
+                                    code="204739008"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="Hirschsprung's disease (disorder)"
+                                    value="204739008"/>
+                           <concept localId="37"
+                                    code="29980002"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="Congenital malrotation of intestine (disorder)"
+                                    value="29980002"/>
+                           <concept localId="38"
+                                    code="9707006"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="Intestinal volvulus (disorder)"
+                                    value="9707006"/>
+                           <concept localId="39"
+                                    code="30"
+                                    codeSystem="2.16.840.1.113883.2.4.4.13.8"
+                                    displayName="Overige congenitale afwijking tractus digestivus"
+                                    value="30"/>
+                           <concept localId="40"
+                                    code="77868001"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="Congenital anomaly of respiratory system (disorder)"
+                                    value="77868001"/>
+                           <concept localId="41"
+                                    code="204508009"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="Choanal atresia (disorder)"
+                                    value="204508009"/>
+                           <concept localId="42"
+                                    code="14532008"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="Congenital anomaly of trachea (disorder)"
+                                    value="14532008"/>
+                           <concept localId="43"
+                                    code="80825009"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="Congenital hypoplasia of lung (disorder)"
+                                    value="80825009"/>
+                           <concept localId="44"
+                                    code="66987001"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="Congenital lobar emphysema (disorder)"
+                                    value="66987001"/>
+                           <concept localId="45"
+                                    code="111318005"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="Congenital cystic adenomatoid malformation of lung (disorder)"
+                                    value="111318005"/>
+                           <concept localId="46"
+                                    code="79231000"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="Hydrothorax (disorder)"
+                                    value="79231000"/>
+                           <concept localId="47"
+                                    code="83035003"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="Chylothorax (disorder)"
+                                    value="83035003"/>
+                           <concept localId="48"
+                                    code="17190001"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="Congenital diaphragmatic hernia (disorder)"
+                                    value="17190001"/>
+                           <concept localId="49"
+                                    code="21524000"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="Relaxation of diaphragm (disorder)"
+                                    value="21524000"/>
+                           <concept localId="50"
+                                    code="38"
+                                    codeSystem="2.16.840.1.113883.2.4.4.13.8"
+                                    displayName="Overige congenitale afwijking tractus respiratorius"
+                                    value="38"/>
+                           <concept localId="51"
+                                    code="287085006"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="Genitourinary congenital anomalies (disorder)"
+                                    value="287085006"/>
+                           <concept localId="52"
+                                    code="416010008"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="Hypospadias (disorder)"
+                                    value="416010008"/>
+                           <concept localId="53"
+                                    code="406476007"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="Epispadias (disorder)"
+                                    value="406476007"/>
+                           <concept localId="54"
+                                    code="204878001"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="Undescended testicle (disorder)"
+                                    value="204878001"/>
+                           <concept localId="55"
+                                    code="61758007"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="Exstrophy of bladder sequence (disorder)"
+                                    value="61758007"/>
+                           <concept localId="56"
+                                    code="41962002"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="Oligohydramnios sequence (disorder)"
+                                    value="41962002"/>
+                           <concept localId="57"
+                                    code="82525005"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="Congenital cystic kidney disease (disorder)"
+                                    value="82525005"/>
+                           <concept localId="58"
+                                    code="7163005"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="Urinary tract obstruction (disorder)"
+                                    value="7163005"/>
+                           <concept localId="59"
+                                    code="39179006"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="Disorder of sexual differentiation (disorder)"
+                                    value="39179006"/>
+                           <concept localId="60"
+                                    code="69"
+                                    codeSystem="2.16.840.1.113883.2.4.4.13.8"
+                                    displayName="Overige congenitale afwijking tractus urogenitalis"
+                                    value="69"/>
+                           <concept localId="61"
+                                    code="199879009"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="Congenital anomaly of skin (disorder)"
+                                    value="199879009"/>
+                           <concept localId="62"
+                                    code="93471006"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="Hemangioma of skin (disorder)"
+                                    value="93471006"/>
+                           <concept localId="63"
+                                    code="398943008"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="Congenital pigmented melanocytic nevus of skin (disorder)"
+                                    value="398943008"/>
+                           <concept localId="64"
+                                    code="74"
+                                    codeSystem="2.16.840.1.113883.2.4.4.13.8"
+                                    displayName="Overige congenitale huidafwijking"
+                                    value="74"/>
+                           <concept localId="65"
+                                    code="81336004"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="Congenital anomaly of abdominal wall (disorder)"
+                                    value="81336004"/>
+                           <concept localId="66"
+                                    code="72951007"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="Gastroschisis (disorder)"
+                                    value="72951007"/>
+                           <concept localId="67"
+                                    code="18735004"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="Congenital omphalocele (disorder)"
+                                    value="18735004"/>
+                           <concept localId="68"
+                                    code="396347007"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="Umbilical hernia (disorder)"
+                                    value="396347007"/>
+                           <concept localId="69"
+                                    code="429200006"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="Congenital inguinal hernia (disorder)"
+                                    value="429200006"/>
+                           <concept localId="70"
+                                    code="85"
+                                    codeSystem="2.16.840.1.113883.2.4.4.13.8"
+                                    displayName="Overige congenitale afwijking buikwand"
+                                    value="85"/>
+                           <concept localId="71"
+                                    code="73573004"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="Congenital anomaly of musculoskeletal system (disorder)"
+                                    value="73573004"/>
+                           <concept localId="72"
+                                    code="367506006"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="Polydactyly (disorder)"
+                                    value="367506006"/>
+                           <concept localId="73"
+                                    code="373413006"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="Syndactyly (disorder)"
+                                    value="373413006"/>
+                           <concept localId="74"
+                                    code="302297009"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="Congenital deformity of foot (disorder)"
+                                    value="302297009"/>
+                           <concept localId="75"
+                                    code="45806008"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="Reduction deformity of upper limb (disorder)"
+                                    value="45806008"/>
+                           <concept localId="76"
+                                    code="77595004"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="Reduction deformity of lower limb (disorder)"
+                                    value="77595004"/>
+                           <concept localId="77"
+                                    code="96"
+                                    codeSystem="2.16.840.1.113883.2.4.4.13.8"
+                                    displayName="Overige congenitale afwijking extremiteiten"
+                                    value="96"/>
+                           <concept localId="78"
+                                    code="36172001"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="Congenital subluxation of hip (disorder)"
+                                    value="36172001"/>
+                           <concept localId="79"
+                                    code="98"
+                                    codeSystem="2.16.840.1.113883.2.4.4.13.8"
+                                    displayName="Overige congenitale afwijking skelet en spierstelsel"
+                                    value="98"/>
+                           <concept localId="80"
+                                    code="J"
+                                    codeSystem="2.16.840.1.113883.2.4.4.13.8"
+                                    displayName="Multipele/syndromale congenitale afwijkingen (niet chromosomaal)"
+                                    value="J"/>
+                           <concept localId="81"
+                                    code="276720006"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="Dysmorphism (disorder)"
+                                    value="276720006"/>
+                           <concept localId="82"
+                                    code="43876007"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="Situs inversus viscerum (disorder)"
+                                    value="43876007"/>
+                           <concept localId="83"
+                                    code="444406006"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="Multiple congenital anomalies (disorder)"
+                                    value="444406006"/>
+                           <concept localId="84"
+                                    code="82354003"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="Multiple system malformation syndrome (disorder)"
+                                    value="82354003"/>
+                           <concept localId="85"
+                                    code="104"
+                                    codeSystem="2.16.840.1.113883.2.4.4.13.8"
+                                    displayName="Overige multipele/syndromale afwijkingen"
+                                    value="104"/>
+                           <concept localId="86"
+                                    code="K"
+                                    codeSystem="2.16.840.1.113883.2.4.4.13.8"
+                                    displayName="Overige congenitale afwijkingen"
+                                    value="K"/>
+                           <concept localId="87"
+                                    code="217710005"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="Congenital iodine deficiency syndrome (disorder)"
+                                    value="217710005"/>
+                           <concept localId="88"
+                                    code="112"
+                                    codeSystem="2.16.840.1.113883.2.4.4.13.8"
+                                    displayName="Andere endocrinologische afwijkingen"
+                                    value="112"/>
+                           <concept localId="89"
+                                    code="86095007"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="Inborn error of metabolism (disorder)"
+                                    value="86095007"/>
+                           <concept localId="90"
+                                    code="363346000:246454002=255399007"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="Congenital malignant neoplastic disease (disorder)"
+                                    value="363346000:246454002=255399007"/>
+                           <exception localId="91"
+                                      code="OTH"
+                                      codeSystem="2.16.840.1.113883.5.1008"
+                                      displayName="Overig"
+                                      value="OTH"/>
+                           <exception localId="92"
+                                      code="NI"
+                                      codeSystem="2.16.840.1.113883.5.1008"
+                                      displayName="Geen informatie"
+                                      value="NI"/>
+                        </conceptList>
+                     </valueSet>
+                  </concept>
+               </concept>
+               <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40110"
+                        statusCode="final"
+                        effectiveDate="2016-09-08T00:00:00"
+                        type="item"
+                        minimumMultiplicity="0"
+                        maximumMultiplicity="1"
+                        conformance="R"
+                        isMandatory="false"
+                        shortName="chromosomale_afwijkingenq">
+                  <name language="nl-NL">Chromosomale afwijkingen?</name>
+                  <desc language="nl-NL">Congenitale aandoeningen die passen bij chromosomale afwijkingen</desc>
+                  <valueDomain type="boolean"/>
+               </concept>
+               <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40111"
+                        statusCode="draft"
+                        effectiveDate="2016-09-08T00:00:00"
+                        type="group"
+                        minimumMultiplicity="0"
+                        maximumMultiplicity="1"
+                        conformance="R"
+                        isMandatory="false"
+                        shortName="specificatie_chromosomale_afwijking_groep">
+                  <name language="nl-NL">Specificatie chromosomale afwijking (groep)</name>
+                  <desc language="nl-NL">Specificatie chromosomale afwijking (groep)</desc>
+                  <relationship type="SPEC"
+                                ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40111"
+                                flexibility="2013-09-10T00:00:00"
+                                refdisplay="peri22-dataelement-40111"/>
+                  <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40120"
+                           statusCode="final"
+                           effectiveDate="2016-09-08T00:00:00"
+                           type="item"
+                           minimumMultiplicity="0"
+                           maximumMultiplicity="1"
+                           conformance="R"
+                           isMandatory="false"
+                           shortName="specificatie_chromosomale_afwijking">
+                     <name language="nl-NL">Specificatie chromosomale afwijking</name>
+                     <desc language="nl-NL">Specificatie chromosomale afwijking</desc>
+                     <comment language="nl-NL">Bij keuze voor 'overige chromosomale afwijkingen' kan in een vrije tekst veld een nadere specificatie worden meegegeven.</comment>
+                     <comment language="nl-NL">Bij keuze voor 'overige chromosomale afwijkingen' kan in een vrije tekst veld een nadere specificatie worden meegegeven.</comment>
+                     <relationship type="SPEC"
+                                   ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40120"
+                                   flexibility="2013-09-10T00:00:00"
+                                   refdisplay="peri22-dataelement-40120"/>
+                     <valueDomain type="code"/>
+                     <valueSet id="2.16.840.1.113883.2.4.11.198"
+                               name="ChromosomaleAfwijkingen22"
+                               displayName="ChromosomaleAfwijkingen"
+                               statusCode="final"
+                               effectiveDate="2016-10-26T16:44:18">
+                        <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                           <concept localId="1"
+                                    code="41040004"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="Complete trisomy 21 syndrome (disorder)"
+                                    value="41040004"/>
+                           <concept localId="2"
+                                    code="51500006"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="Complete trisomy 18 syndrome (disorder)"
+                                    value="51500006"/>
+                           <concept localId="3"
+                                    code="21111006"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="Complete trisomy 13 syndrome (disorder)"
+                                    value="21111006"/>
+                           <concept localId="4"
+                                    code="7"
+                                    codeSystem="2.16.840.1.113883.2.4.4.13.22"
+                                    displayName="Andere numerieke chromosomale afwijkingen"
+                                    value="7"/>
+                           <exception localId="5"
+                                      code="OTH"
+                                      codeSystem="2.16.840.1.113883.5.1008"
+                                      displayName="Overige chromosomale afwijkingen"
+                                      value="OTH"/>
+                           <exception localId="6"
+                                      code="NI"
+                                      codeSystem="2.16.840.1.113883.5.1008"
+                                      displayName="Geen informatie"
+                                      value="NI"/>
+                        </conceptList>
+                     </valueSet>
+                  </concept>
+               </concept>
+            </concept>
+            <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80790"
+                     statusCode="draft"
+                     effectiveDate="2016-09-08T00:00:00"
+                     type="item"
+                     minimumMultiplicity="0"
+                     maximumMultiplicity="1"
+                     conformance="R"
+                     isMandatory="false"
+                     shortName="bijzonderheden_kind">
+               <name language="nl-NL">Bijzonderheden kind</name>
+               <desc language="nl-NL">Bijzonderheden van dit kind.</desc>
+               <valueDomain type="text">
+                  <property/>
+               </valueDomain>
+            </concept>
+         </concept>
+      </concept>
+   </concept>
+   <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.14"
+            statusCode="draft"
+            effectiveDate="2016-09-08T00:00:00"
+            type="group"
+            minimumMultiplicity="0"
+            maximumMultiplicity="1"
+            conformance="R"
+            isMandatory="false"
+            shortName="medisch_onderzoek">
+      <name language="nl-NL">Medisch onderzoek</name>
+      <desc language="nl-NL">Medisch onderzoek</desc>
+      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.142"
+               statusCode="draft"
+               effectiveDate="2016-09-08T00:00:00"
+               type="group"
+               minimumMultiplicity="0"
+               maximumMultiplicity="1"
+               conformance="R"
+               isMandatory="false"
+               shortName="maternale_onderzoeksgegevens">
+         <name language="nl-NL">Maternale onderzoeksgegevens</name>
+         <desc language="nl-NL">Maternale onderzoeksgegevens</desc>
+         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80959"
+                  statusCode="draft"
+                  effectiveDate="2016-09-08T00:00:00"
+                  type="group"
+                  minimumMultiplicity="0"
+                  maximumMultiplicity="1"
+                  conformance="R"
+                  isMandatory="false"
+                  shortName="urine_bloed_en_aanvullende_onderzoeken">
+            <name language="nl-NL">Urine-, bloed- en aanvullende onderzoeken</name>
+            <desc language="nl-NL">Urine-, bloed- en aanvullende onderzoeken<br clear="none"/>
+               <br clear="none"/>Het gaat hier zowel om onderzoeken van bloed, urine en/of een ander monster door het laboratorium, als om onderzoeken die door de zorgverlener of patiënt 'zelf' worden gedaan. <br clear="none"/>Voorbeelden van deze 'zelf'-bepalingen zijn: glucose, Hb en proteïne op basis van strips.<br clear="none"/>
+                </desc>
+            <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80949"
+                     statusCode="draft"
+                     effectiveDate="2016-09-08T00:00:00"
+                     type="group"
+                     minimumMultiplicity="0"
+                     maximumMultiplicity="1"
+                     conformance="R"
+                     isMandatory="false"
+                     shortName="psie">
+               <name language="nl-NL">PSIE</name>
+               <desc language="nl-NL"> Bloedonderzoek vrouw in het kader van PSIE (Prenatale Screening Infectieziekten en Erytrocytenimmunisatie). Het gaat hier om het onderzoek dat in principe uitgevoerd wordt vóór de 13e week. </desc>
+               <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10812"
+                        statusCode="final"
+                        effectiveDate="2016-09-08T00:00:00"
+                        type="item"
+                        minimumMultiplicity="0"
+                        maximumMultiplicity="1"
+                        conformance="R"
+                        isMandatory="false"
+                        shortName="irregulaire_antistoffenq">
+                  <name language="nl-NL">Irregulaire antistoffen?</name>
+                  <desc language="nl-NL">Irregulaire antistoffen aanwezig?</desc>
+                  <source language="nl-NL">PRN dataset 1.3 item #4.1.04.03</source>
+                  <valueDomain type="boolean">
+                     <property/>
+                  </valueDomain>
+               </concept>
+            </concept>
+         </concept>
+      </concept>
+   </concept>
+</dataset>
