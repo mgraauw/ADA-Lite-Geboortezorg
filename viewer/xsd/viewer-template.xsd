@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="ada-viewer-template">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:group ref="g-title"/>
+        <xs:group minOccurs="0" ref="g-header"/>
+        <xs:group ref="g-section-list"/>
+      </xs:sequence>
+      <xs:attribute name="specification" type="xs:anyURI" use="required">
+        <xs:annotation>
+          <xs:documentation>Reference to the ADA specification file. A relative path is resolved against the location of this template file.</xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+      <xs:attributeGroup ref="ag-context"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:group name="g-title">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="title">
+        <xs:annotation>
+          <xs:documentation>Title. If missing the default title is {#}</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:extension base="ct-text">
+              <xs:attributeGroup ref="ag-context"/>
+            </xs:extension>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:group>
+  <xs:group name="g-header">
+    <xs:sequence>
+      <xs:element name="header">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:group maxOccurs="unbounded" minOccurs="0" ref="g-item-list"/>
+          </xs:sequence>
+          <xs:attributeGroup ref="ag-context"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:group>
+  <xs:group name="g-section-list">
+    <xs:sequence>
+      <xs:choice maxOccurs="unbounded" minOccurs="0">
+        <xs:element name="section">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:group ref="g-title"/>
+              <xs:choice maxOccurs="unbounded" minOccurs="0">
+                <xs:group ref="g-table-view"/>
+                <xs:group ref="g-section-list"/>
+              </xs:choice>
+            </xs:sequence>
+            <xs:attributeGroup ref="ag-section-attributes"/>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="auto-sections">
+          <xs:complexType>
+            <xs:attributeGroup ref="ag-section-attributes"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:sequence>
+  </xs:group>
+  <xs:group name="g-table-view">
+    <xs:sequence>
+      <xs:element name="table-view">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:group ref="g-item-list"/>
+          </xs:sequence>
+          <xs:attributeGroup ref="ag-context"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:group>
+  <xs:group name="g-item-list">
+    <xs:sequence>
+      <xs:choice maxOccurs="unbounded" minOccurs="0">
+        <xs:element name="item">
+          <xs:annotation>
+            <xs:documentation>A single item to display</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" name="prompt">
+                <xs:annotation>
+                  <xs:documentation>Prompt for this item. If missing its the display name of the context {#}</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:complexContent>
+                    <xs:extension base="ct-text">
+                      <xs:attributeGroup ref="ag-context"/>
+                    </xs:extension>
+                  </xs:complexContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="value">
+                <xs:annotation>
+                  <xs:documentation>The value for tis item. If missing its the value of the context {.}</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:complexContent>
+                    <xs:extension base="ct-text">
+                      <xs:attributeGroup ref="ag-context"/>
+                    </xs:extension>
+                  </xs:complexContent>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attributeGroup ref="ag-context"/>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="auto-items">
+          <xs:annotation>
+            <xs:documentation>Automatically create items (with default prompt/value) for all non-group concepts in the current context</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:attributeGroup ref="ag-context"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:sequence>
+  </xs:group>
+  <xs:attributeGroup name="ag-context">
+    <xs:attribute name="context" type="t-simple-xpath">
+      <xs:annotation>
+        <xs:documentation>XPath context</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="ag-section-attributes">
+    <xs:attributeGroup ref="ag-context"/>
+    <xs:attribute default="silver" name="color" type="t-color"/>
+  </xs:attributeGroup>
+  <xs:complexType mixed="true" name="ct-text">
+    <xs:annotation>
+      <xs:documentation>Text with optional additional HTML markup</xs:documentation>
+    </xs:annotation>
+    <xs:choice>
+      <xs:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="skip"/>
+    </xs:choice>
+  </xs:complexType>
+  <xs:simpleType name="t-simple-xpath">
+    <xs:annotation>
+      <xs:documentation>Simple XPath expression as understood by the viewer stylesheet</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:simpleType name="t-color">
+    <xs:annotation>
+      <xs:documentation>HTML/CSS color expression</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+</xs:schema>

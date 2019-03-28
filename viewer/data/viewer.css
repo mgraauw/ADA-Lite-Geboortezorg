@@ -1,0 +1,66 @@
+html,
+body {
+  font-family: Verdana, sans-serif;
+  font-size: 10pt;
+}
+
+/*  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
+/* Header: */
+
+table.header-table {
+  color: darkgrey;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+table.header-table td:nth-child(1) {
+  padding-right: 1em;
+}
+
+/*  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
+/*  Table views: */
+
+table.table-view {
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: thin solid black;
+  font-size: 9pt;
+}
+
+table.table-view td {
+  border: thin solid black;
+  font-weight: bold;
+  padding: 1pt;
+}
+
+table.table-view th {
+  border: thin solid black;
+  text-align: left;
+  background-color: silver;
+  font-weight: normal;
+  padding: 1pt;
+}
+
+/*  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
+/* Sections: */
+
+div.child-section {
+  margin-left: 1em;
+}
+
+/*  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
+
+*.section-title {
+  display:inline-block;
+  padding-right: 5em;
+  margin-top: 1em;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  font-size: 12pt;
+  font-weight: bold;
+}
+
+h1.main-title {
+  margin-bottom: 1em;
+  font-size: 14pt;
+}
