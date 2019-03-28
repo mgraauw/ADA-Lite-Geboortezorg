@@ -243,12 +243,12 @@ SOFTWARE.
                                              <xs:attribute name="enum" use="optional">
                                                 <xs:simpleType>
                                                    <xs:restriction base="xs:string">
-                                                      <xs:enumeration value="geslachtsnaam">
+                                                      <xs:enumeration value="Geslachtsnaam">
                                                          <xs:annotation>
                                                             <xs:documentation source="name" xml:lang="nl-NL">Geslachtsnaam</xs:documentation>
                                                          </xs:annotation>
                                                       </xs:enumeration>
-                                                      <xs:enumeration value="geslachtsnaam_partner">
+                                                      <xs:enumeration value="Geslachtsnaam_partner">
                                                          <xs:annotation>
                                                             <xs:documentation source="name" xml:lang="nl-NL">Geslachtsnaam partner</xs:documentation>
                                                          </xs:annotation>
@@ -547,52 +547,52 @@ SOFTWARE.
                            <xs:attribute name="enum" use="optional">
                               <xs:simpleType>
                                  <xs:restriction base="xs:string">
-                                    <xs:enumeration value="partus">
+                                    <xs:enumeration value="Partus">
                                        <xs:annotation>
                                           <xs:documentation source="name" xml:lang="nl-NL">Partus</xs:documentation>
                                        </xs:annotation>
                                     </xs:enumeration>
-                                    <xs:enumeration value="miskraam">
+                                    <xs:enumeration value="Miskraam">
                                        <xs:annotation>
                                           <xs:documentation source="name" xml:lang="nl-NL">Miskraam</xs:documentation>
                                        </xs:annotation>
                                     </xs:enumeration>
-                                    <xs:enumeration value="miskraam_spontaan">
+                                    <xs:enumeration value="Miskraam_Spontaan">
                                        <xs:annotation>
                                           <xs:documentation source="name" xml:lang="nl-NL">Spontaan</xs:documentation>
                                        </xs:annotation>
                                     </xs:enumeration>
-                                    <xs:enumeration value="miskraam_medicamenteus">
+                                    <xs:enumeration value="Miskraam_Medicamenteus">
                                        <xs:annotation>
                                           <xs:documentation source="name" xml:lang="nl-NL">Medicamenteus</xs:documentation>
                                        </xs:annotation>
                                     </xs:enumeration>
-                                    <xs:enumeration value="miskraam_instrumenteel">
+                                    <xs:enumeration value="Miskraam_Instrumenteel">
                                        <xs:annotation>
                                           <xs:documentation source="name" xml:lang="nl-NL">Instrumenteel</xs:documentation>
                                        </xs:annotation>
                                     </xs:enumeration>
-                                    <xs:enumeration value="apla">
+                                    <xs:enumeration value="APLA">
                                        <xs:annotation>
                                           <xs:documentation source="name" xml:lang="nl-NL">APLA</xs:documentation>
                                        </xs:annotation>
                                     </xs:enumeration>
-                                    <xs:enumeration value="apla_medicamenteus">
+                                    <xs:enumeration value="APLA_Medicamenteus">
                                        <xs:annotation>
                                           <xs:documentation source="name" xml:lang="nl-NL">Medicamenteus</xs:documentation>
                                        </xs:annotation>
                                     </xs:enumeration>
-                                    <xs:enumeration value="apla_instrumenteel">
+                                    <xs:enumeration value="APLA_Instrumenteel">
                                        <xs:annotation>
                                           <xs:documentation source="name" xml:lang="nl-NL">Instrumenteel</xs:documentation>
                                        </xs:annotation>
                                     </xs:enumeration>
-                                    <xs:enumeration value="eug__behandeld">
+                                    <xs:enumeration value="EUG_-_behandeld">
                                        <xs:annotation>
                                           <xs:documentation source="name" xml:lang="nl-NL">EUG</xs:documentation>
                                        </xs:annotation>
                                     </xs:enumeration>
-                                    <xs:enumeration value="partiele_mola__behandeld">
+                                    <xs:enumeration value="(partiële)_Mola_-_behandeld">
                                        <xs:annotation>
                                           <xs:documentation source="name" xml:lang="nl-NL">(Partiële) Mola</xs:documentation>
                                        </xs:annotation>
@@ -836,62 +836,62 @@ SOFTWARE.
                            <xs:attribute name="enum" use="optional">
                               <xs:simpleType>
                                  <xs:restriction base="xs:string">
-                                    <xs:enumeration value="perineum_intact_finding">
+                                    <xs:enumeration value="Perineum_intact_(finding)">
                                        <xs:annotation>
                                           <xs:documentation source="name" xml:lang="nl-NL">Gaaf</xs:documentation>
                                        </xs:annotation>
                                     </xs:enumeration>
-                                    <xs:enumeration value="first_degree_perineal_tear_during_delivery__delivered_disorder">
+                                    <xs:enumeration value="First_degree_perineal_tear_during_delivery_-_delivered_(disorder)">
                                        <xs:annotation>
                                           <xs:documentation source="name" xml:lang="nl-NL">1e graads perineumruptuur</xs:documentation>
                                        </xs:annotation>
                                     </xs:enumeration>
-                                    <xs:enumeration value="second_degree_perineal_tear_during_delivery__delivered_disorder">
+                                    <xs:enumeration value="Second_degree_perineal_tear_during_delivery_-_delivered_(disorder)">
                                        <xs:annotation>
                                           <xs:documentation source="name" xml:lang="nl-NL">2e graads perineumruptuur</xs:documentation>
                                        </xs:annotation>
                                     </xs:enumeration>
-                                    <xs:enumeration value="third_degree_perineal_tear_during_delivery__delivered_disorder">
+                                    <xs:enumeration value="Third_degree_perineal_tear_during_delivery_-_delivered_(disorder)">
                                        <xs:annotation>
                                           <xs:documentation source="name" xml:lang="nl-NL">3e graads ruptuur</xs:documentation>
                                        </xs:annotation>
                                     </xs:enumeration>
-                                    <xs:enumeration value="third_degree_perineal_tear_during_delivery__delivered_disorder_type_3a_third_degree_laceration_of_perineum_disorder">
+                                    <xs:enumeration value="Third_degree_perineal_tear_during_delivery_-_delivered_(disorder)_Type_3a_third_degree_laceration_of_perineum_(disorder)">
                                        <xs:annotation>
                                           <xs:documentation source="name" xml:lang="nl-NL">3a - sfincterlaesie externum &lt; 50%</xs:documentation>
                                        </xs:annotation>
                                     </xs:enumeration>
-                                    <xs:enumeration value="third_degree_perineal_tear_during_delivery__delivered_disorder_type_3b_third_degree_laceration_of_perineum_disorder">
+                                    <xs:enumeration value="Third_degree_perineal_tear_during_delivery_-_delivered_(disorder)_Type_3b_third_degree_laceration_of_perineum_(disorder)">
                                        <xs:annotation>
                                           <xs:documentation source="name" xml:lang="nl-NL">3b - sfincterlaesie externum ≥ 50%</xs:documentation>
                                        </xs:annotation>
                                     </xs:enumeration>
-                                    <xs:enumeration value="third_degree_perineal_tear_during_delivery__delivered_disorder_type_3c_third_degree_laceration_of_perineum_disorder">
+                                    <xs:enumeration value="Third_degree_perineal_tear_during_delivery_-_delivered_(disorder)_Type_3c_third_degree_laceration_of_perineum_(disorder)">
                                        <xs:annotation>
                                           <xs:documentation source="name" xml:lang="nl-NL">3c - sfincterlaesie externum en internum</xs:documentation>
                                        </xs:annotation>
                                     </xs:enumeration>
-                                    <xs:enumeration value="fourth_degree_perineal_tear_during_delivery__delivered_disorder">
+                                    <xs:enumeration value="Fourth_degree_perineal_tear_during_delivery_-_delivered_(disorder)">
                                        <xs:annotation>
                                           <xs:documentation source="name" xml:lang="nl-NL">4e graads ruptuur</xs:documentation>
                                        </xs:annotation>
                                     </xs:enumeration>
-                                    <xs:enumeration value="episiotomy_wound_morphologic_abnormality">
+                                    <xs:enumeration value="Episiotomy_wound_(morphologic_abnormality)">
                                        <xs:annotation>
                                           <xs:documentation source="name" xml:lang="nl-NL">Episiotomiewond</xs:documentation>
                                        </xs:annotation>
                                     </xs:enumeration>
-                                    <xs:enumeration value="anders">
+                                    <xs:enumeration value="Anders">
                                        <xs:annotation>
                                           <xs:documentation source="name" xml:lang="nl-NL">Anders</xs:documentation>
                                        </xs:annotation>
                                     </xs:enumeration>
-                                    <xs:enumeration value="onbekend">
+                                    <xs:enumeration value="Onbekend">
                                        <xs:annotation>
                                           <xs:documentation source="name" xml:lang="nl-NL">Onbekend</xs:documentation>
                                        </xs:annotation>
                                     </xs:enumeration>
-                                    <xs:enumeration value="geen_informatie">
+                                    <xs:enumeration value="Geen_informatie">
                                        <xs:annotation>
                                           <xs:documentation source="name" xml:lang="nl-NL">Geen informatie</xs:documentation>
                                        </xs:annotation>
@@ -1066,32 +1066,32 @@ SOFTWARE.
                                              <xs:attribute name="enum" use="optional">
                                                 <xs:simpleType>
                                                    <xs:restriction base="xs:string">
-                                                      <xs:enumeration value="delivery_normal_finding">
+                                                      <xs:enumeration value="Delivery_normal_(finding)">
                                                          <xs:annotation>
                                                             <xs:documentation source="name" xml:lang="nl-NL">Spontaan</xs:documentation>
                                                          </xs:annotation>
                                                       </xs:enumeration>
-                                                      <xs:enumeration value="assisted_delivery_of_fetus_finding">
+                                                      <xs:enumeration value="Assisted_delivery_of_fetus_(finding)">
                                                          <xs:annotation>
                                                             <xs:documentation source="name" xml:lang="nl-NL">Vaginale kunstverlossing</xs:documentation>
                                                          </xs:annotation>
                                                       </xs:enumeration>
-                                                      <xs:enumeration value="cesarean_delivery__delivered_finding">
+                                                      <xs:enumeration value="Cesarean_delivery_-_delivered_(finding)">
                                                          <xs:annotation>
                                                             <xs:documentation source="name" xml:lang="nl-NL">Sectio Caesarea</xs:documentation>
                                                          </xs:annotation>
                                                       </xs:enumeration>
-                                                      <xs:enumeration value="cesarean_delivery__delivered_finding_delivery_by_elective_cesarean_section_finding">
+                                                      <xs:enumeration value="Cesarean_delivery_-_delivered_(finding)_Delivery_by_elective_cesarean_section_(finding)">
                                                          <xs:annotation>
                                                             <xs:documentation source="name" xml:lang="nl-NL">Primair</xs:documentation>
                                                          </xs:annotation>
                                                       </xs:enumeration>
-                                                      <xs:enumeration value="cesarean_delivery__delivered_finding_delivery_by_emergency_cesarean_section_finding">
+                                                      <xs:enumeration value="Cesarean_delivery_-_delivered_(finding)_Delivery_by_emergency_cesarean_section_(finding)">
                                                          <xs:annotation>
                                                             <xs:documentation source="name" xml:lang="nl-NL">Secundair</xs:documentation>
                                                          </xs:annotation>
                                                       </xs:enumeration>
-                                                      <xs:enumeration value="legally_induced_abortion_disorder">
+                                                      <xs:enumeration value="Legally_induced_abortion_(disorder)">
                                                          <xs:annotation>
                                                             <xs:documentation source="name" xml:lang="nl-NL">Termination Of Pregnancy (TOP)</xs:documentation>
                                                          </xs:annotation>
@@ -1248,27 +1248,27 @@ SOFTWARE.
                                                       <xs:attribute name="enum" use="optional">
                                                          <xs:simpleType>
                                                             <xs:restriction base="xs:string">
-                                                               <xs:enumeration value="forceps_delivery_procedure">
+                                                               <xs:enumeration value="Forceps_delivery_(procedure)">
                                                                   <xs:annotation>
                                                                      <xs:documentation source="name" xml:lang="nl-NL">Forceps</xs:documentation>
                                                                   </xs:annotation>
                                                                </xs:enumeration>
-                                                               <xs:enumeration value="delivery_by_vacuum_extraction_procedure">
+                                                               <xs:enumeration value="Delivery_by_vacuum_extraction_(procedure)">
                                                                   <xs:annotation>
                                                                      <xs:documentation source="name" xml:lang="nl-NL">Vacuüm</xs:documentation>
                                                                   </xs:annotation>
                                                                </xs:enumeration>
-                                                               <xs:enumeration value="obstetrical_version_with_extraction_procedure">
+                                                               <xs:enumeration value="Obstetrical_version_with_extraction_(procedure)">
                                                                   <xs:annotation>
                                                                      <xs:documentation source="name" xml:lang="nl-NL">Versie en extractie</xs:documentation>
                                                                   </xs:annotation>
                                                                </xs:enumeration>
-                                                               <xs:enumeration value="partial_breech_extraction_procedure">
+                                                               <xs:enumeration value="Partial_breech_extraction_(procedure)">
                                                                   <xs:annotation>
                                                                      <xs:documentation source="name" xml:lang="nl-NL">Partiële stuitextractie</xs:documentation>
                                                                   </xs:annotation>
                                                                </xs:enumeration>
-                                                               <xs:enumeration value="total_breech_extraction_procedure">
+                                                               <xs:enumeration value="Total_breech_extraction_(procedure)">
                                                                   <xs:annotation>
                                                                      <xs:documentation source="name" xml:lang="nl-NL">Stuitextractie</xs:documentation>
                                                                   </xs:annotation>

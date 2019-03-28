@@ -2084,16 +2084,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('blood_group_a_finding', 'blood_group_b_finding', 'blood_group_ab_finding', 'blood_group_o_finding', 'onbekend', 'geen_informatie'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Blood_group_A_(finding)', 'Blood_group_B_(finding)', 'Blood_group_AB_(finding)', 'Blood_group_O_(finding)', 'Onbekend', 'Geen_informatie'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('blood_group_a_finding', 'blood_group_b_finding', 'blood_group_ab_finding', 'blood_group_o_finding', 'onbekend', 'geen_informatie'))">
+                                test="empty(@enum) or (@enum = ('Blood_group_A_(finding)', 'Blood_group_B_(finding)', 'Blood_group_AB_(finding)', 'Blood_group_O_(finding)', 'Onbekend', 'Geen_informatie'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Bloedgroep vrouw": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/prio1_huidig/vrouw/bloedgroep_vrouw/@enum; allowed=('blood_group_a_finding', 'blood_group_b_finding', 'blood_group_ab_finding', 'blood_group_o_finding', 'onbekend', 'geen_informatie')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/prio1_huidig/vrouw/bloedgroep_vrouw/@enum; allowed=('Blood_group_A_(finding)', 'Blood_group_B_(finding)', 'Blood_group_AB_(finding)', 'Blood_group_O_(finding)', 'Onbekend', 'Geen_informatie')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -2226,16 +2226,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('rh_d_positief', 'rh_d_negatief', 'onbekend', 'geen_informatie'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Rh_D_Positief', 'Rh_D_Negatief', 'onbekend', 'geen_informatie'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('rh_d_positief', 'rh_d_negatief', 'onbekend', 'geen_informatie'))">
+                                test="empty(@enum) or (@enum = ('Rh_D_Positief', 'Rh_D_Negatief', 'onbekend', 'geen_informatie'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Rhesus D Factor vrouw": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/prio1_huidig/vrouw/rhesus_d_factor_vrouw/@enum; allowed=('rh_d_positief', 'rh_d_negatief', 'onbekend', 'geen_informatie')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/prio1_huidig/vrouw/rhesus_d_factor_vrouw/@enum; allowed=('Rh_D_Positief', 'Rh_D_Negatief', 'onbekend', 'geen_informatie')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -2368,16 +2368,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('rhc_positive_finding', 'rhc_negative_finding', 'geen_informatie'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Rhc_positive_(finding)', 'Rhc_negative_(finding)', 'Geen_informatie'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('rhc_positive_finding', 'rhc_negative_finding', 'geen_informatie'))">
+                                test="empty(@enum) or (@enum = ('Rhc_positive_(finding)', 'Rhc_negative_(finding)', 'Geen_informatie'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Rhesus c Factor": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/prio1_huidig/vrouw/rhesus_c_factor/@enum; allowed=('rhc_positive_finding', 'rhc_negative_finding', 'geen_informatie')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/prio1_huidig/vrouw/rhesus_c_factor/@enum; allowed=('Rhc_positive_(finding)', 'Rhc_negative_(finding)', 'Geen_informatie')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -2849,16 +2849,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('geslachtsnaam', 'geslachtsnaam_partner'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Geslachtsnaam', 'Geslachtsnaam_partner'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('geslachtsnaam', 'geslachtsnaam_partner'))">
+                                test="empty(@enum) or (@enum = ('Geslachtsnaam', 'Geslachtsnaam_partner'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Soort naam": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/prio1_huidig/vrouw/naamgegevens/achternaam/soort_naam/@enum; allowed=('geslachtsnaam', 'geslachtsnaam_partner')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/prio1_huidig/vrouw/naamgegevens/achternaam/soort_naam/@enum; allowed=('Geslachtsnaam', 'Geslachtsnaam_partner')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>

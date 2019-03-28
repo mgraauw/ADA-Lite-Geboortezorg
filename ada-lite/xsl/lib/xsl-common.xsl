@@ -53,7 +53,7 @@
 
     <!-- There is a very simple and an ART-DECOR shortName way of generating the enums. Since we don't know yet what we're going to use,
       this is the switch: -->
-    <xsl:variable name="use-simple-enum-generation" as="xs:boolean" select="false()"/>
+    <xsl:variable name="use-simple-enum-generation" as="xs:boolean" select="true()"/>
 
     <xsl:variable name="base-value" as="xs:string" select="local:enum-base-value($valueset-concept-or-exception)"/>
     <xsl:choose>
