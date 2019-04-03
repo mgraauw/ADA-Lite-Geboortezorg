@@ -2529,16 +2529,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('geslachtsnaam', 'geslachtsnaam_partner'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Geslachtsnaam', 'Geslachtsnaam_partner'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('geslachtsnaam', 'geslachtsnaam_partner'))">
+                                test="empty(@enum) or (@enum = ('Geslachtsnaam', 'Geslachtsnaam_partner'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Soort naam": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/prio1_vorig/vrouw/naamgegevens/achternaam/soort_naam/@enum; allowed=('geslachtsnaam', 'geslachtsnaam_partner')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/prio1_vorig/vrouw/naamgegevens/achternaam/soort_naam/@enum; allowed=('Geslachtsnaam', 'Geslachtsnaam_partner')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -3269,16 +3269,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('partus', 'miskraam', 'miskraam_spontaan', 'miskraam_medicamenteus', 'miskraam_instrumenteel', 'apla', 'apla_medicamenteus', 'apla_instrumenteel', 'eug__behandeld', 'partiele_mola__behandeld', 'geen_informatie'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Partus', 'Miskraam', 'Miskraam_Spontaan', 'Miskraam_Medicamenteus', 'Miskraam_Instrumenteel', 'APLA', 'APLA_Medicamenteus', 'APLA_Instrumenteel', 'EUG_-_behandeld', '(partiële)_Mola_-_behandeld', 'geen_informatie'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('partus', 'miskraam', 'miskraam_spontaan', 'miskraam_medicamenteus', 'miskraam_instrumenteel', 'apla', 'apla_medicamenteus', 'apla_instrumenteel', 'eug__behandeld', 'partiele_mola__behandeld', 'geen_informatie'))">
+                                test="empty(@enum) or (@enum = ('Partus', 'Miskraam', 'Miskraam_Spontaan', 'Miskraam_Medicamenteus', 'Miskraam_Instrumenteel', 'APLA', 'APLA_Medicamenteus', 'APLA_Instrumenteel', 'EUG_-_behandeld', '(partiële)_Mola_-_behandeld', 'geen_informatie'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Wijze einde zwangerschap": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/prio1_vorig/zwangerschap/wijze_einde_zwangerschap/@enum; allowed=('partus', 'miskraam', 'miskraam_spontaan', 'miskraam_medicamenteus', 'miskraam_instrumenteel', 'apla', 'apla_medicamenteus', 'apla_instrumenteel', 'eug__behandeld', 'partiele_mola__behandeld', 'geen_informatie')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/prio1_vorig/zwangerschap/wijze_einde_zwangerschap/@enum; allowed=('Partus', 'Miskraam', 'Miskraam_Spontaan', 'Miskraam_Medicamenteus', 'Miskraam_Instrumenteel', 'APLA', 'APLA_Medicamenteus', 'APLA_Instrumenteel', 'EUG_-_behandeld', '(partiële)_Mola_-_behandeld', 'geen_informatie')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -3916,16 +3916,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('perineum_intact_finding', 'first_degree_perineal_tear_during_delivery__delivered_disorder', 'second_degree_perineal_tear_during_delivery__delivered_disorder', 'third_degree_perineal_tear_during_delivery__delivered_disorder', 'third_degree_perineal_tear_during_delivery__delivered_disorder_type_3a_third_degree_laceration_of_perineum_disorder', 'third_degree_perineal_tear_during_delivery__delivered_disorder_type_3b_third_degree_laceration_of_perineum_disorder', 'third_degree_perineal_tear_during_delivery__delivered_disorder_type_3c_third_degree_laceration_of_perineum_disorder', 'fourth_degree_perineal_tear_during_delivery__delivered_disorder', 'episiotomy_wound_morphologic_abnormality', 'anders', 'onbekend', 'geen_informatie'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Perineum_intact_(finding)', 'First_degree_perineal_tear_during_delivery_-_delivered_(disorder)', 'Second_degree_perineal_tear_during_delivery_-_delivered_(disorder)', 'Third_degree_perineal_tear_during_delivery_-_delivered_(disorder)', 'Third_degree_perineal_tear_during_delivery_-_delivered_(disorder)_Type_3a_third_degree_laceration_of_perineum_(disorder)', 'Third_degree_perineal_tear_during_delivery_-_delivered_(disorder)_Type_3b_third_degree_laceration_of_perineum_(disorder)', 'Third_degree_perineal_tear_during_delivery_-_delivered_(disorder)_Type_3c_third_degree_laceration_of_perineum_(disorder)', 'Fourth_degree_perineal_tear_during_delivery_-_delivered_(disorder)', 'Episiotomy_wound_(morphologic_abnormality)', 'Anders', 'Onbekend', 'Geen_informatie'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('perineum_intact_finding', 'first_degree_perineal_tear_during_delivery__delivered_disorder', 'second_degree_perineal_tear_during_delivery__delivered_disorder', 'third_degree_perineal_tear_during_delivery__delivered_disorder', 'third_degree_perineal_tear_during_delivery__delivered_disorder_type_3a_third_degree_laceration_of_perineum_disorder', 'third_degree_perineal_tear_during_delivery__delivered_disorder_type_3b_third_degree_laceration_of_perineum_disorder', 'third_degree_perineal_tear_during_delivery__delivered_disorder_type_3c_third_degree_laceration_of_perineum_disorder', 'fourth_degree_perineal_tear_during_delivery__delivered_disorder', 'episiotomy_wound_morphologic_abnormality', 'anders', 'onbekend', 'geen_informatie'))">
+                                test="empty(@enum) or (@enum = ('Perineum_intact_(finding)', 'First_degree_perineal_tear_during_delivery_-_delivered_(disorder)', 'Second_degree_perineal_tear_during_delivery_-_delivered_(disorder)', 'Third_degree_perineal_tear_during_delivery_-_delivered_(disorder)', 'Third_degree_perineal_tear_during_delivery_-_delivered_(disorder)_Type_3a_third_degree_laceration_of_perineum_(disorder)', 'Third_degree_perineal_tear_during_delivery_-_delivered_(disorder)_Type_3b_third_degree_laceration_of_perineum_(disorder)', 'Third_degree_perineal_tear_during_delivery_-_delivered_(disorder)_Type_3c_third_degree_laceration_of_perineum_(disorder)', 'Fourth_degree_perineal_tear_during_delivery_-_delivered_(disorder)', 'Episiotomy_wound_(morphologic_abnormality)', 'Anders', 'Onbekend', 'Geen_informatie'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Conditie perineum postpartum": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/prio1_vorig/bevalling/conditie_perineum_postpartum/@enum; allowed=('perineum_intact_finding', 'first_degree_perineal_tear_during_delivery__delivered_disorder', 'second_degree_perineal_tear_during_delivery__delivered_disorder', 'third_degree_perineal_tear_during_delivery__delivered_disorder', 'third_degree_perineal_tear_during_delivery__delivered_disorder_type_3a_third_degree_laceration_of_perineum_disorder', 'third_degree_perineal_tear_during_delivery__delivered_disorder_type_3b_third_degree_laceration_of_perineum_disorder', 'third_degree_perineal_tear_during_delivery__delivered_disorder_type_3c_third_degree_laceration_of_perineum_disorder', 'fourth_degree_perineal_tear_during_delivery__delivered_disorder', 'episiotomy_wound_morphologic_abnormality', 'anders', 'onbekend', 'geen_informatie')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/prio1_vorig/bevalling/conditie_perineum_postpartum/@enum; allowed=('Perineum_intact_(finding)', 'First_degree_perineal_tear_during_delivery_-_delivered_(disorder)', 'Second_degree_perineal_tear_during_delivery_-_delivered_(disorder)', 'Third_degree_perineal_tear_during_delivery_-_delivered_(disorder)', 'Third_degree_perineal_tear_during_delivery_-_delivered_(disorder)_Type_3a_third_degree_laceration_of_perineum_(disorder)', 'Third_degree_perineal_tear_during_delivery_-_delivered_(disorder)_Type_3b_third_degree_laceration_of_perineum_(disorder)', 'Third_degree_perineal_tear_during_delivery_-_delivered_(disorder)_Type_3c_third_degree_laceration_of_perineum_(disorder)', 'Fourth_degree_perineal_tear_during_delivery_-_delivered_(disorder)', 'Episiotomy_wound_(morphologic_abnormality)', 'Anders', 'Onbekend', 'Geen_informatie')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -4803,16 +4803,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('delivery_normal_finding', 'assisted_delivery_of_fetus_finding', 'cesarean_delivery__delivered_finding', 'cesarean_delivery__delivered_finding_delivery_by_elective_cesarean_section_finding', 'cesarean_delivery__delivered_finding_delivery_by_emergency_cesarean_section_finding', 'legally_induced_abortion_disorder', 'onbekend', 'geen_informatie'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Delivery_normal_(finding)', 'Assisted_delivery_of_fetus_(finding)', 'Cesarean_delivery_-_delivered_(finding)', 'Cesarean_delivery_-_delivered_(finding)_Delivery_by_elective_cesarean_section_(finding)', 'Cesarean_delivery_-_delivered_(finding)_Delivery_by_emergency_cesarean_section_(finding)', 'Legally_induced_abortion_(disorder)', 'onbekend', 'geen_informatie'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('delivery_normal_finding', 'assisted_delivery_of_fetus_finding', 'cesarean_delivery__delivered_finding', 'cesarean_delivery__delivered_finding_delivery_by_elective_cesarean_section_finding', 'cesarean_delivery__delivered_finding_delivery_by_emergency_cesarean_section_finding', 'legally_induced_abortion_disorder', 'onbekend', 'geen_informatie'))">
+                                test="empty(@enum) or (@enum = ('Delivery_normal_(finding)', 'Assisted_delivery_of_fetus_(finding)', 'Cesarean_delivery_-_delivered_(finding)', 'Cesarean_delivery_-_delivered_(finding)_Delivery_by_elective_cesarean_section_(finding)', 'Cesarean_delivery_-_delivered_(finding)_Delivery_by_emergency_cesarean_section_(finding)', 'Legally_induced_abortion_(disorder)', 'onbekend', 'geen_informatie'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Type partus": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/prio1_vorig/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/type_partus/@enum; allowed=('delivery_normal_finding', 'assisted_delivery_of_fetus_finding', 'cesarean_delivery__delivered_finding', 'cesarean_delivery__delivered_finding_delivery_by_elective_cesarean_section_finding', 'cesarean_delivery__delivered_finding_delivery_by_emergency_cesarean_section_finding', 'legally_induced_abortion_disorder', 'onbekend', 'geen_informatie')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/prio1_vorig/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/type_partus/@enum; allowed=('Delivery_normal_(finding)', 'Assisted_delivery_of_fetus_(finding)', 'Cesarean_delivery_-_delivered_(finding)', 'Cesarean_delivery_-_delivered_(finding)_Delivery_by_elective_cesarean_section_(finding)', 'Cesarean_delivery_-_delivered_(finding)_Delivery_by_emergency_cesarean_section_(finding)', 'Legally_induced_abortion_(disorder)', 'onbekend', 'geen_informatie')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -5393,16 +5393,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('forceps_delivery_procedure', 'delivery_by_vacuum_extraction_procedure', 'obstetrical_version_with_extraction_procedure', 'partial_breech_extraction_procedure', 'total_breech_extraction_procedure', 'anders', 'geen_informatie'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Forceps_delivery_(procedure)', 'Delivery_by_vacuum_extraction_(procedure)', 'Obstetrical_version_with_extraction_(procedure)', 'Partial_breech_extraction_(procedure)', 'Total_breech_extraction_(procedure)', 'anders', 'geen_informatie'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('forceps_delivery_procedure', 'delivery_by_vacuum_extraction_procedure', 'obstetrical_version_with_extraction_procedure', 'partial_breech_extraction_procedure', 'total_breech_extraction_procedure', 'anders', 'geen_informatie'))">
+                                test="empty(@enum) or (@enum = ('Forceps_delivery_(procedure)', 'Delivery_by_vacuum_extraction_(procedure)', 'Obstetrical_version_with_extraction_(procedure)', 'Partial_breech_extraction_(procedure)', 'Total_breech_extraction_(procedure)', 'anders', 'geen_informatie'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Vaginale kunstverlossing": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/prio1_vorig/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/vaginale_kunstverlossing_groep/vaginale_kunstverlossing/@enum; allowed=('forceps_delivery_procedure', 'delivery_by_vacuum_extraction_procedure', 'obstetrical_version_with_extraction_procedure', 'partial_breech_extraction_procedure', 'total_breech_extraction_procedure', 'anders', 'geen_informatie')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/prio1_vorig/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/vaginale_kunstverlossing_groep/vaginale_kunstverlossing/@enum; allowed=('Forceps_delivery_(procedure)', 'Delivery_by_vacuum_extraction_(procedure)', 'Obstetrical_version_with_extraction_(procedure)', 'Partial_breech_extraction_(procedure)', 'Total_breech_extraction_(procedure)', 'anders', 'geen_informatie')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>

@@ -4649,16 +4649,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('start_intake_zwangerschapszorg', 'zwangerschap_vervolg', 'start_baringontsluiting', 'uitdrijving', 'nageboortetijdperk', '_1e_24_uur_postpartum', '_2e__7e_dag_postpartum', 'followup_eerste_6_wkn_postpartum', 'geen_informatie'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Start_/intake_zwangerschapszorg', 'Zwangerschap_vervolg', 'Start_baring/ontsluiting', 'Uitdrijving', 'Nageboortetijdperk', '1e_24_uur_postpartum', '2e_-_7e_dag_postpartum', 'Follow-up_eerste_6_wkn_postpartum', 'Geen_informatie'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('start_intake_zwangerschapszorg', 'zwangerschap_vervolg', 'start_baringontsluiting', 'uitdrijving', 'nageboortetijdperk', '_1e_24_uur_postpartum', '_2e__7e_dag_postpartum', 'followup_eerste_6_wkn_postpartum', 'geen_informatie'))">
+                                test="empty(@enum) or (@enum = ('Start_/intake_zwangerschapszorg', 'Zwangerschap_vervolg', 'Start_baring/ontsluiting', 'Uitdrijving', 'Nageboortetijdperk', '1e_24_uur_postpartum', '2e_-_7e_dag_postpartum', 'Follow-up_eerste_6_wkn_postpartum', 'Geen_informatie'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Eindverantwoordelijk in welke perinatale periode?": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/eindverantwoordelijk_in_welke_perinatale_periodeq/@enum; allowed=('start_intake_zwangerschapszorg', 'zwangerschap_vervolg', 'start_baringontsluiting', 'uitdrijving', 'nageboortetijdperk', '_1e_24_uur_postpartum', '_2e__7e_dag_postpartum', 'followup_eerste_6_wkn_postpartum', 'geen_informatie')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/eindverantwoordelijk_in_welke_perinatale_periodeq/@enum; allowed=('Start_/intake_zwangerschapszorg', 'Zwangerschap_vervolg', 'Start_baring/ontsluiting', 'Uitdrijving', 'Nageboortetijdperk', '1e_24_uur_postpartum', '2e_-_7e_dag_postpartum', 'Follow-up_eerste_6_wkn_postpartum', 'Geen_informatie')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -4791,16 +4791,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('_1e_lijn_vil_a', 'overlegsituatie_vil_b', '_2e_lijn_vil_c', '_1e_lijn_met_plaatsindicatie_vil_d', '_3e_lijns_zorg'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('1e_lijn_(VIL_A)', 'overlegsituatie_(VIL_B)', '2e_lijn_(VIL_C)', '1e_lijn_met_plaatsindicatie_(VIL_D)', '3e_lijns_zorg'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('_1e_lijn_vil_a', 'overlegsituatie_vil_b', '_2e_lijn_vil_c', '_1e_lijn_met_plaatsindicatie_vil_d', '_3e_lijns_zorg'))">
+                                test="empty(@enum) or (@enum = ('1e_lijn_(VIL_A)', 'overlegsituatie_(VIL_B)', '2e_lijn_(VIL_C)', '1e_lijn_met_plaatsindicatie_(VIL_D)', '3e_lijns_zorg'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Conclusie risicostatus na intake": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/conclusie_risicostatus_na_intake/@enum; allowed=('_1e_lijn_vil_a', 'overlegsituatie_vil_b', '_2e_lijn_vil_c', '_1e_lijn_met_plaatsindicatie_vil_d', '_3e_lijns_zorg')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/conclusie_risicostatus_na_intake/@enum; allowed=('1e_lijn_(VIL_A)', 'overlegsituatie_(VIL_B)', '2e_lijn_(VIL_C)', '1e_lijn_met_plaatsindicatie_(VIL_D)', '3e_lijns_zorg')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -5398,16 +5398,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('ante_partum_na_eerste_controle', 'ante_partum_voor_28e_week', 'ante_partum_28e_tot_en_met_36e_week', 'ante_partum_vanaf_37e_week', 'durante_partu_tijdens_ontsluiting', 'durante_partu_tijdens_uitdrijving', 'durante_partu_nageboortetijdperk', 'postpartum_direct_postpartum', 'postpartum_tijdens_kraambed', 'postpartum_tijdens_kraambed_binnen_24_uur', 'postpartum_tijdens_kraambed_2e_tm_7e_dag', 'postpartum_2e_week_of_later', 'onbekend', 'geen_informatie'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Ante_partum_Na_eerste_controle', 'Ante_partum_Voor_28e_week', 'Ante_partum_28e_tot_en_met_36e_week', 'Ante_partum_Vanaf_37e_week', 'Durante_partu_Tijdens_ontsluiting', 'Durante_partu_Tijdens_uitdrijving', 'Durante_partu_Nageboortetijdperk', 'Postpartum_Direct_postpartum', 'Postpartum_Tijdens_kraambed', 'Postpartum_Tijdens_kraambed_Binnen_24_uur', 'Postpartum_Tijdens_kraambed_2e_t/m_7e_dag', 'Postpartum_2e_week_of_later', 'Onbekend', 'Geen_informatie'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('ante_partum_na_eerste_controle', 'ante_partum_voor_28e_week', 'ante_partum_28e_tot_en_met_36e_week', 'ante_partum_vanaf_37e_week', 'durante_partu_tijdens_ontsluiting', 'durante_partu_tijdens_uitdrijving', 'durante_partu_nageboortetijdperk', 'postpartum_direct_postpartum', 'postpartum_tijdens_kraambed', 'postpartum_tijdens_kraambed_binnen_24_uur', 'postpartum_tijdens_kraambed_2e_tm_7e_dag', 'postpartum_2e_week_of_later', 'onbekend', 'geen_informatie'))">
+                                test="empty(@enum) or (@enum = ('Ante_partum_Na_eerste_controle', 'Ante_partum_Voor_28e_week', 'Ante_partum_28e_tot_en_met_36e_week', 'Ante_partum_Vanaf_37e_week', 'Durante_partu_Tijdens_ontsluiting', 'Durante_partu_Tijdens_uitdrijving', 'Durante_partu_Nageboortetijdperk', 'Postpartum_Direct_postpartum', 'Postpartum_Tijdens_kraambed', 'Postpartum_Tijdens_kraambed_Binnen_24_uur', 'Postpartum_Tijdens_kraambed_2e_t/m_7e_dag', 'Postpartum_2e_week_of_later', 'Onbekend', 'Geen_informatie'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Perinatale periode": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/perinatale_periode/@enum; allowed=('ante_partum_na_eerste_controle', 'ante_partum_voor_28e_week', 'ante_partum_28e_tot_en_met_36e_week', 'ante_partum_vanaf_37e_week', 'durante_partu_tijdens_ontsluiting', 'durante_partu_tijdens_uitdrijving', 'durante_partu_nageboortetijdperk', 'postpartum_direct_postpartum', 'postpartum_tijdens_kraambed', 'postpartum_tijdens_kraambed_binnen_24_uur', 'postpartum_tijdens_kraambed_2e_tm_7e_dag', 'postpartum_2e_week_of_later', 'onbekend', 'geen_informatie')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/perinatale_periode/@enum; allowed=('Ante_partum_Na_eerste_controle', 'Ante_partum_Voor_28e_week', 'Ante_partum_28e_tot_en_met_36e_week', 'Ante_partum_Vanaf_37e_week', 'Durante_partu_Tijdens_ontsluiting', 'Durante_partu_Tijdens_uitdrijving', 'Durante_partu_Nageboortetijdperk', 'Postpartum_Direct_postpartum', 'Postpartum_Tijdens_kraambed', 'Postpartum_Tijdens_kraambed_Binnen_24_uur', 'Postpartum_Tijdens_kraambed_2e_t/m_7e_dag', 'Postpartum_2e_week_of_later', 'Onbekend', 'Geen_informatie')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -5849,16 +5849,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('verloskundige', 'gynaecoloog_2e_lijn', 'gynaecoloog_3e_lijn', 'kinderarts_2e_lijn', 'kinderarts_3e_lijn', 'huisarts', 'echoscopist', 'klinisch_geneticus', 'psychiater', 'medisch_specialist_overig', 'overig', 'geen_informatie'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Verloskundige', 'Gynaecoloog_2e_lijn', 'Gynaecoloog_3e_lijn', 'Kinderarts_2e_lijn', 'Kinderarts_3e_lijn', 'Huisarts', 'Echoscopist', 'Klinisch_geneticus', 'Psychiater', 'Medisch_specialist_overig', 'Overig', 'Geen_informatie'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('verloskundige', 'gynaecoloog_2e_lijn', 'gynaecoloog_3e_lijn', 'kinderarts_2e_lijn', 'kinderarts_3e_lijn', 'huisarts', 'echoscopist', 'klinisch_geneticus', 'psychiater', 'medisch_specialist_overig', 'overig', 'geen_informatie'))">
+                                test="empty(@enum) or (@enum = ('Verloskundige', 'Gynaecoloog_2e_lijn', 'Gynaecoloog_3e_lijn', 'Kinderarts_2e_lijn', 'Kinderarts_3e_lijn', 'Huisarts', 'Echoscopist', 'Klinisch_geneticus', 'Psychiater', 'Medisch_specialist_overig', 'Overig', 'Geen_informatie'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Specialisme": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/verwijzing_van/zorginstelling/specialisme/@enum; allowed=('verloskundige', 'gynaecoloog_2e_lijn', 'gynaecoloog_3e_lijn', 'kinderarts_2e_lijn', 'kinderarts_3e_lijn', 'huisarts', 'echoscopist', 'klinisch_geneticus', 'psychiater', 'medisch_specialist_overig', 'overig', 'geen_informatie')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/verwijzing_van/zorginstelling/specialisme/@enum; allowed=('Verloskundige', 'Gynaecoloog_2e_lijn', 'Gynaecoloog_3e_lijn', 'Kinderarts_2e_lijn', 'Kinderarts_3e_lijn', 'Huisarts', 'Echoscopist', 'Klinisch_geneticus', 'Psychiater', 'Medisch_specialist_overig', 'Overig', 'Geen_informatie')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -6147,16 +6147,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('consultation_procedure', 'transfer_of_care_procedure', 'geen_informatie'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Consultation_(procedure)', 'Transfer_of_care_(procedure)', 'Geen_informatie'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('consultation_procedure', 'transfer_of_care_procedure', 'geen_informatie'))">
+                                test="empty(@enum) or (@enum = ('Consultation_(procedure)', 'Transfer_of_care_(procedure)', 'Geen_informatie'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Type verwijzing": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/verwijzing_naar/type_verwijzing/@enum; allowed=('consultation_procedure', 'transfer_of_care_procedure', 'geen_informatie')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/verwijzing_naar/type_verwijzing/@enum; allowed=('Consultation_(procedure)', 'Transfer_of_care_(procedure)', 'Geen_informatie')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -6458,16 +6458,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('verloskundige', 'gynaecoloog_2e_lijn', 'gynaecoloog_3e_lijn', 'kinderarts_2e_lijn', 'kinderarts_3e_lijn', 'huisarts', 'echoscopist', 'klinisch_geneticus', 'psychiater', 'medisch_specialist_overig', 'overig', 'geen_informatie'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Verloskundige', 'Gynaecoloog_2e_lijn', 'Gynaecoloog_3e_lijn', 'Kinderarts_2e_lijn', 'Kinderarts_3e_lijn', 'Huisarts', 'Echoscopist', 'Klinisch_geneticus', 'Psychiater', 'Medisch_specialist_overig', 'Overig', 'Geen_informatie'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('verloskundige', 'gynaecoloog_2e_lijn', 'gynaecoloog_3e_lijn', 'kinderarts_2e_lijn', 'kinderarts_3e_lijn', 'huisarts', 'echoscopist', 'klinisch_geneticus', 'psychiater', 'medisch_specialist_overig', 'overig', 'geen_informatie'))">
+                                test="empty(@enum) or (@enum = ('Verloskundige', 'Gynaecoloog_2e_lijn', 'Gynaecoloog_3e_lijn', 'Kinderarts_2e_lijn', 'Kinderarts_3e_lijn', 'Huisarts', 'Echoscopist', 'Klinisch_geneticus', 'Psychiater', 'Medisch_specialist_overig', 'Overig', 'Geen_informatie'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Specialisme": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/verwijzing_naar/zorginstelling/specialisme/@enum; allowed=('verloskundige', 'gynaecoloog_2e_lijn', 'gynaecoloog_3e_lijn', 'kinderarts_2e_lijn', 'kinderarts_3e_lijn', 'huisarts', 'echoscopist', 'klinisch_geneticus', 'psychiater', 'medisch_specialist_overig', 'overig', 'geen_informatie')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/verwijzing_naar/zorginstelling/specialisme/@enum; allowed=('Verloskundige', 'Gynaecoloog_2e_lijn', 'Gynaecoloog_3e_lijn', 'Kinderarts_2e_lijn', 'Kinderarts_3e_lijn', 'Huisarts', 'Echoscopist', 'Klinisch_geneticus', 'Psychiater', 'Medisch_specialist_overig', 'Overig', 'Geen_informatie')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -6863,16 +6863,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('zwangerschapbaringkind_ongestoord_fysiologie', 'zwangerschapbaringkind_ongestoord_met_advies', 'overig'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Zwangerschap/baring/kind_ongestoord,_fysiologie', 'Zwangerschap/baring/kind_ongestoord,_met_advies', 'overig'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('zwangerschapbaringkind_ongestoord_fysiologie', 'zwangerschapbaringkind_ongestoord_met_advies', 'overig'))">
+                                test="empty(@enum) or (@enum = ('Zwangerschap/baring/kind_ongestoord,_fysiologie', 'Zwangerschap/baring/kind_ongestoord,_met_advies', 'overig'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Van 2e naar 1e lijn": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_2e_naar_1e_lijn/@enum; allowed=('zwangerschapbaringkind_ongestoord_fysiologie', 'zwangerschapbaringkind_ongestoord_met_advies', 'overig')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_2e_naar_1e_lijn/@enum; allowed=('Zwangerschap/baring/kind_ongestoord,_fysiologie', 'Zwangerschap/baring/kind_ongestoord,_met_advies', 'overig')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -7005,16 +7005,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('ohc_indicatie_vervallen', 'overig'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('OHC_indicatie_vervallen', 'overig'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('ohc_indicatie_vervallen', 'overig'))">
+                                test="empty(@enum) or (@enum = ('OHC_indicatie_vervallen', 'overig'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Van 3e naar 2e lijn": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_3e_naar_2e_lijn/@enum; allowed=('ohc_indicatie_vervallen', 'overig')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_3e_naar_2e_lijn/@enum; allowed=('OHC_indicatie_vervallen', 'overig')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -7507,16 +7507,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('miskraam', 'apla', 'eug__behandeld', 'partiele_mola__behandeld', 'geen_informatie'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Miskraam', 'APLA', 'EUG_-_behandeld', '(partiële)_Mola_-_behandeld', 'Geen_informatie'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('miskraam', 'apla', 'eug__behandeld', 'partiele_mola__behandeld', 'geen_informatie'))">
+                                test="empty(@enum) or (@enum = ('Miskraam', 'APLA', 'EUG_-_behandeld', '(partiële)_Mola_-_behandeld', 'Geen_informatie'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Einde zwangerschap": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/einde_zwangerschap/@enum; allowed=('miskraam', 'apla', 'eug__behandeld', 'partiele_mola__behandeld', 'geen_informatie')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/einde_zwangerschap/@enum; allowed=('Miskraam', 'APLA', 'EUG_-_behandeld', '(partiële)_Mola_-_behandeld', 'Geen_informatie')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -8214,16 +8214,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('systemic_lupus_erythematosus_disorder', 'rheumatism_disorder', 'overig'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Systemic_lupus_erythematosus_(disorder)', 'Rheumatism_(disorder)', 'Overig'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('systemic_lupus_erythematosus_disorder', 'rheumatism_disorder', 'overig'))">
+                                test="empty(@enum) or (@enum = ('Systemic_lupus_erythematosus_(disorder)', 'Rheumatism_(disorder)', 'Overig'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Auto-immuun aandoening": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/autoimmuun_aandoening/@enum; allowed=('systemic_lupus_erythematosus_disorder', 'rheumatism_disorder', 'overig')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/autoimmuun_aandoening/@enum; allowed=('Systemic_lupus_erythematosus_(disorder)', 'Rheumatism_(disorder)', 'Overig')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -8356,16 +8356,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('hypertensive_disorder_systemic_arterial_disorder', 'cardiomyopathy_disorder', 'cardiac_arrhythmia_disorder', 'structural_disorder_of_heart_disorder', 'overig'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Hypertensive_disorder,_systemic_arterial_(disorder)', 'Cardiomyopathy_(disorder)', 'Cardiac_arrhythmia_(disorder)', 'Structural_disorder_of_heart_(disorder)', 'Overig'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('hypertensive_disorder_systemic_arterial_disorder', 'cardiomyopathy_disorder', 'cardiac_arrhythmia_disorder', 'structural_disorder_of_heart_disorder', 'overig'))">
+                                test="empty(@enum) or (@enum = ('Hypertensive_disorder,_systemic_arterial_(disorder)', 'Cardiomyopathy_(disorder)', 'Cardiac_arrhythmia_(disorder)', 'Structural_disorder_of_heart_(disorder)', 'Overig'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Cardiovasculaire aandoening": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/cardiovasculaire_aandoening/@enum; allowed=('hypertensive_disorder_systemic_arterial_disorder', 'cardiomyopathy_disorder', 'cardiac_arrhythmia_disorder', 'structural_disorder_of_heart_disorder', 'overig')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/cardiovasculaire_aandoening/@enum; allowed=('Hypertensive_disorder,_systemic_arterial_(disorder)', 'Cardiomyopathy_(disorder)', 'Cardiac_arrhythmia_(disorder)', 'Structural_disorder_of_heart_(disorder)', 'Overig')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -8498,16 +8498,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('pyelonephritis_disorder', 'bacteriuria_finding', 'chronic_renal_impairment_disorder'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Pyelonephritis_(disorder)', 'Bacteriuria_(finding)', 'Chronic_renal_impairment_(disorder)'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('pyelonephritis_disorder', 'bacteriuria_finding', 'chronic_renal_impairment_disorder'))">
+                                test="empty(@enum) or (@enum = ('Pyelonephritis_(disorder)', 'Bacteriuria_(finding)', 'Chronic_renal_impairment_(disorder)'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Urogenitale aandoening": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/urogenitale_aandoening/@enum; allowed=('pyelonephritis_disorder', 'bacteriuria_finding', 'chronic_renal_impairment_disorder')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/urogenitale_aandoening/@enum; allowed=('Pyelonephritis_(disorder)', 'Bacteriuria_(finding)', 'Chronic_renal_impairment_(disorder)')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -8640,16 +8640,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('primary_malignant_neoplasm_of_female_breast_disorder', 'carcinoma_of_cervix_disorder', 'leukemia_disease_disorder', 'primary_malignant_neoplasm_of_lung_disorder', 'malignant_melanoma_disorder', 'other'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Primary_malignant_neoplasm_of_female_breast_(disorder)', 'Carcinoma_of_cervix_(disorder)', 'Leukemia,_disease_(disorder)', 'Primary_malignant_neoplasm_of_lung_(disorder)', 'Malignant_melanoma_(disorder)', 'other'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('primary_malignant_neoplasm_of_female_breast_disorder', 'carcinoma_of_cervix_disorder', 'leukemia_disease_disorder', 'primary_malignant_neoplasm_of_lung_disorder', 'malignant_melanoma_disorder', 'other'))">
+                                test="empty(@enum) or (@enum = ('Primary_malignant_neoplasm_of_female_breast_(disorder)', 'Carcinoma_of_cervix_(disorder)', 'Leukemia,_disease_(disorder)', 'Primary_malignant_neoplasm_of_lung_(disorder)', 'Malignant_melanoma_(disorder)', 'other'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Oncologische aandoening": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/oncologische_aandoening/@enum; allowed=('primary_malignant_neoplasm_of_female_breast_disorder', 'carcinoma_of_cervix_disorder', 'leukemia_disease_disorder', 'primary_malignant_neoplasm_of_lung_disorder', 'malignant_melanoma_disorder', 'other')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/oncologische_aandoening/@enum; allowed=('Primary_malignant_neoplasm_of_female_breast_(disorder)', 'Carcinoma_of_cervix_(disorder)', 'Leukemia,_disease_(disorder)', 'Primary_malignant_neoplasm_of_lung_(disorder)', 'Malignant_melanoma_(disorder)', 'other')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -8782,16 +8782,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('hypothyroidism_disorder', 'hyperthyroidism_disorder'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Hypothyroidism_(disorder)', 'Hyperthyroidism_(disorder)'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('hypothyroidism_disorder', 'hyperthyroidism_disorder'))">
+                                test="empty(@enum) or (@enum = ('Hypothyroidism_(disorder)', 'Hyperthyroidism_(disorder)'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Schildklier aandoening": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/schildklier_aandoening/@enum; allowed=('hypothyroidism_disorder', 'hyperthyroidism_disorder')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/schildklier_aandoening/@enum; allowed=('Hypothyroidism_(disorder)', 'Hyperthyroidism_(disorder)')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -9015,16 +9015,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('epilepsy_disorder', 'cerebrovascular_accident_disorder', 'multiple_sclerosis_disorder', 'migraine_disorder', 'herniation_of_nucleus_pulposus_disorder', 'disease_of_pituitary_gland_disorder', 'overig'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Epilepsy_(disorder)', 'Cerebrovascular_accident_(disorder)', 'Multiple_sclerosis_(disorder)', 'Migraine_(disorder)', 'Herniation_of_nucleus_pulposus_(disorder)', 'Disease_of_pituitary_gland_(disorder)', 'Overig'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('epilepsy_disorder', 'cerebrovascular_accident_disorder', 'multiple_sclerosis_disorder', 'migraine_disorder', 'herniation_of_nucleus_pulposus_disorder', 'disease_of_pituitary_gland_disorder', 'overig'))">
+                                test="empty(@enum) or (@enum = ('Epilepsy_(disorder)', 'Cerebrovascular_accident_(disorder)', 'Multiple_sclerosis_(disorder)', 'Migraine_(disorder)', 'Herniation_of_nucleus_pulposus_(disorder)', 'Disease_of_pituitary_gland_(disorder)', 'Overig'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Neurologische aandoening": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/neurologische_aandoening/@enum; allowed=('epilepsy_disorder', 'cerebrovascular_accident_disorder', 'multiple_sclerosis_disorder', 'migraine_disorder', 'herniation_of_nucleus_pulposus_disorder', 'disease_of_pituitary_gland_disorder', 'overig')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/neurologische_aandoening/@enum; allowed=('Epilepsy_(disorder)', 'Cerebrovascular_accident_(disorder)', 'Multiple_sclerosis_(disorder)', 'Migraine_(disorder)', 'Herniation_of_nucleus_pulposus_(disorder)', 'Disease_of_pituitary_gland_(disorder)', 'Overig')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -9157,16 +9157,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('bacterial_infectious_disease_disorder_chlamydia_trachomatis_infection_disorder', 'bacterial_infectious_disease_disorder_gonorrhea_disorder', 'bacterial_infectious_disease_disorder_streptococcus_agalactiae_infection_disorder', 'bacterial_infectious_disease_disorder_methicillin_resistant_staphylococcus_aureus_infection_disorder', 'bacterial_infectious_disease_disorder_tuberculosis_disorder', 'viral_disease_disorder_cytomegalovirus_infection_disorder', 'viral_disease_disorder_herpesvirus_infection_disorder', 'viral_disease_disorder_hepatitis_b_surface_antigen_positive_finding', 'viral_disease_disorder_human_immunodeficiency_virus_infection_disorder', 'viral_disease_disorder_type_b_viral_hepatitis_disorder', 'viral_disease_disorder_viral_hepatitis_c_disorder', 'viral_disease_disorder_rubella_disorder', 'viral_disease_disorder_varicellazoster_virus_infection_disorder', 'viral_disease_disorder_parvovirus_infection_disorder', 'disease_caused_by_parasite_disorder_syphilis_disorder', 'disease_caused_by_parasite_disorder_toxoplasmosis_disorder', 'disease_caused_by_parasite_disorder_lyme_disease_disorder', 'disease_caused_by_parasite_disorder_malaria_disorder', 'disease_caused_by_parasite_disorder_infection_by_trichomonas_disorder', 'overig'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Bacterial_infectious_disease_(disorder)_Chlamydia_trachomatis_infection_(disorder)', 'Bacterial_infectious_disease_(disorder)_Gonorrhea_(disorder)', 'Bacterial_infectious_disease_(disorder)_Streptococcus_agalactiae_infection_(disorder)', 'Bacterial_infectious_disease_(disorder)_Methicillin_resistant_Staphylococcus_aureus_infection_(disorder)', 'Bacterial_infectious_disease_(disorder)_Tuberculosis_(disorder)', 'Viral_disease_(disorder)_Cytomegalovirus_infection_(disorder)', 'Viral_disease_(disorder)_Herpesvirus_infection_(disorder)', 'Viral_disease_(disorder)_Hepatitis_B_surface_antigen_positive_(finding)', 'Viral_disease_(disorder)_Human_immunodeficiency_virus_infection_(disorder)', 'Viral_disease_(disorder)_Type_B_viral_hepatitis_(disorder)', 'Viral_disease_(disorder)_Viral_hepatitis_C_(disorder)', 'Viral_disease_(disorder)_Rubella_(disorder)', 'Viral_disease_(disorder)_Varicella-zoster_virus_infection_(disorder)', 'Viral_disease_(disorder)_Parvovirus_infection_(disorder)', 'Disease_caused_by_parasite_(disorder)_Syphilis_(disorder)', 'Disease_caused_by_parasite_(disorder)_Toxoplasmosis_(disorder)', 'Disease_caused_by_parasite_(disorder)_Lyme_disease_(disorder)', 'Disease_caused_by_parasite_(disorder)_Malaria_(disorder)', 'Disease_caused_by_parasite_(disorder)_Infection_by_Trichomonas_(disorder)', 'Overig'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('bacterial_infectious_disease_disorder_chlamydia_trachomatis_infection_disorder', 'bacterial_infectious_disease_disorder_gonorrhea_disorder', 'bacterial_infectious_disease_disorder_streptococcus_agalactiae_infection_disorder', 'bacterial_infectious_disease_disorder_methicillin_resistant_staphylococcus_aureus_infection_disorder', 'bacterial_infectious_disease_disorder_tuberculosis_disorder', 'viral_disease_disorder_cytomegalovirus_infection_disorder', 'viral_disease_disorder_herpesvirus_infection_disorder', 'viral_disease_disorder_hepatitis_b_surface_antigen_positive_finding', 'viral_disease_disorder_human_immunodeficiency_virus_infection_disorder', 'viral_disease_disorder_type_b_viral_hepatitis_disorder', 'viral_disease_disorder_viral_hepatitis_c_disorder', 'viral_disease_disorder_rubella_disorder', 'viral_disease_disorder_varicellazoster_virus_infection_disorder', 'viral_disease_disorder_parvovirus_infection_disorder', 'disease_caused_by_parasite_disorder_syphilis_disorder', 'disease_caused_by_parasite_disorder_toxoplasmosis_disorder', 'disease_caused_by_parasite_disorder_lyme_disease_disorder', 'disease_caused_by_parasite_disorder_malaria_disorder', 'disease_caused_by_parasite_disorder_infection_by_trichomonas_disorder', 'overig'))">
+                                test="empty(@enum) or (@enum = ('Bacterial_infectious_disease_(disorder)_Chlamydia_trachomatis_infection_(disorder)', 'Bacterial_infectious_disease_(disorder)_Gonorrhea_(disorder)', 'Bacterial_infectious_disease_(disorder)_Streptococcus_agalactiae_infection_(disorder)', 'Bacterial_infectious_disease_(disorder)_Methicillin_resistant_Staphylococcus_aureus_infection_(disorder)', 'Bacterial_infectious_disease_(disorder)_Tuberculosis_(disorder)', 'Viral_disease_(disorder)_Cytomegalovirus_infection_(disorder)', 'Viral_disease_(disorder)_Herpesvirus_infection_(disorder)', 'Viral_disease_(disorder)_Hepatitis_B_surface_antigen_positive_(finding)', 'Viral_disease_(disorder)_Human_immunodeficiency_virus_infection_(disorder)', 'Viral_disease_(disorder)_Type_B_viral_hepatitis_(disorder)', 'Viral_disease_(disorder)_Viral_hepatitis_C_(disorder)', 'Viral_disease_(disorder)_Rubella_(disorder)', 'Viral_disease_(disorder)_Varicella-zoster_virus_infection_(disorder)', 'Viral_disease_(disorder)_Parvovirus_infection_(disorder)', 'Disease_caused_by_parasite_(disorder)_Syphilis_(disorder)', 'Disease_caused_by_parasite_(disorder)_Toxoplasmosis_(disorder)', 'Disease_caused_by_parasite_(disorder)_Lyme_disease_(disorder)', 'Disease_caused_by_parasite_(disorder)_Malaria_(disorder)', 'Disease_caused_by_parasite_(disorder)_Infection_by_Trichomonas_(disorder)', 'Overig'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Infectieziekte": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/infectieziekte/@enum; allowed=('bacterial_infectious_disease_disorder_chlamydia_trachomatis_infection_disorder', 'bacterial_infectious_disease_disorder_gonorrhea_disorder', 'bacterial_infectious_disease_disorder_streptococcus_agalactiae_infection_disorder', 'bacterial_infectious_disease_disorder_methicillin_resistant_staphylococcus_aureus_infection_disorder', 'bacterial_infectious_disease_disorder_tuberculosis_disorder', 'viral_disease_disorder_cytomegalovirus_infection_disorder', 'viral_disease_disorder_herpesvirus_infection_disorder', 'viral_disease_disorder_hepatitis_b_surface_antigen_positive_finding', 'viral_disease_disorder_human_immunodeficiency_virus_infection_disorder', 'viral_disease_disorder_type_b_viral_hepatitis_disorder', 'viral_disease_disorder_viral_hepatitis_c_disorder', 'viral_disease_disorder_rubella_disorder', 'viral_disease_disorder_varicellazoster_virus_infection_disorder', 'viral_disease_disorder_parvovirus_infection_disorder', 'disease_caused_by_parasite_disorder_syphilis_disorder', 'disease_caused_by_parasite_disorder_toxoplasmosis_disorder', 'disease_caused_by_parasite_disorder_lyme_disease_disorder', 'disease_caused_by_parasite_disorder_malaria_disorder', 'disease_caused_by_parasite_disorder_infection_by_trichomonas_disorder', 'overig')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/infectieziekte/@enum; allowed=('Bacterial_infectious_disease_(disorder)_Chlamydia_trachomatis_infection_(disorder)', 'Bacterial_infectious_disease_(disorder)_Gonorrhea_(disorder)', 'Bacterial_infectious_disease_(disorder)_Streptococcus_agalactiae_infection_(disorder)', 'Bacterial_infectious_disease_(disorder)_Methicillin_resistant_Staphylococcus_aureus_infection_(disorder)', 'Bacterial_infectious_disease_(disorder)_Tuberculosis_(disorder)', 'Viral_disease_(disorder)_Cytomegalovirus_infection_(disorder)', 'Viral_disease_(disorder)_Herpesvirus_infection_(disorder)', 'Viral_disease_(disorder)_Hepatitis_B_surface_antigen_positive_(finding)', 'Viral_disease_(disorder)_Human_immunodeficiency_virus_infection_(disorder)', 'Viral_disease_(disorder)_Type_B_viral_hepatitis_(disorder)', 'Viral_disease_(disorder)_Viral_hepatitis_C_(disorder)', 'Viral_disease_(disorder)_Rubella_(disorder)', 'Viral_disease_(disorder)_Varicella-zoster_virus_infection_(disorder)', 'Viral_disease_(disorder)_Parvovirus_infection_(disorder)', 'Disease_caused_by_parasite_(disorder)_Syphilis_(disorder)', 'Disease_caused_by_parasite_(disorder)_Toxoplasmosis_(disorder)', 'Disease_caused_by_parasite_(disorder)_Lyme_disease_(disorder)', 'Disease_caused_by_parasite_(disorder)_Malaria_(disorder)', 'Disease_caused_by_parasite_(disorder)_Infection_by_Trichomonas_(disorder)', 'Overig')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -9299,16 +9299,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('chronic_liver_disease_disorder', 'ulcerative_colitis_disorder', 'crohns_disease_disorder'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Chronic_liver_disease_(disorder)', 'Ulcerative_colitis_(disorder)', 'Crohn''s_disease_(disorder)'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('chronic_liver_disease_disorder', 'ulcerative_colitis_disorder', 'crohns_disease_disorder'))">
+                                test="empty(@enum) or (@enum = ('Chronic_liver_disease_(disorder)', 'Ulcerative_colitis_(disorder)', 'Crohn''s_disease_(disorder)'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "MDL aandoening": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/mdl_aandoening/@enum; allowed=('chronic_liver_disease_disorder', 'ulcerative_colitis_disorder', 'crohns_disease_disorder')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/mdl_aandoening/@enum; allowed=('Chronic_liver_disease_(disorder)', 'Ulcerative_colitis_(disorder)', 'Crohn''s_disease_(disorder)')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -9441,16 +9441,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('iron_deficiency_anemia_disorder', 'hemoglobinopathy_disorder', 'hereditary_hemoglobinopathy_disorder_homozygous_for_hemoglobin_s_disorder', 'thalassemia_disorder'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Iron_deficiency_anemia_(disorder)', 'Hemoglobinopathy_(disorder)', 'Hereditary_hemoglobinopathy_disorder_homozygous_for_hemoglobin_S_(disorder)', 'Thalassemia_(disorder)'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('iron_deficiency_anemia_disorder', 'hemoglobinopathy_disorder', 'hereditary_hemoglobinopathy_disorder_homozygous_for_hemoglobin_s_disorder', 'thalassemia_disorder'))">
+                                test="empty(@enum) or (@enum = ('Iron_deficiency_anemia_(disorder)', 'Hemoglobinopathy_(disorder)', 'Hereditary_hemoglobinopathy_disorder_homozygous_for_hemoglobin_S_(disorder)', 'Thalassemia_(disorder)'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Anemie": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/anemie/@enum; allowed=('iron_deficiency_anemia_disorder', 'hemoglobinopathy_disorder', 'hereditary_hemoglobinopathy_disorder_homozygous_for_hemoglobin_s_disorder', 'thalassemia_disorder')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/anemie/@enum; allowed=('Iron_deficiency_anemia_(disorder)', 'Hemoglobinopathy_(disorder)', 'Hereditary_hemoglobinopathy_disorder_homozygous_for_hemoglobin_S_(disorder)', 'Thalassemia_(disorder)')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -9583,16 +9583,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('asthma_disorder', 'chronic_obstructive_lung_disease_disorder', 'sarcoidosis_disorder', 'overig', 'geen_informatie'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Asthma_(disorder)', 'Chronic_obstructive_lung_disease_(disorder)', 'Sarcoidosis_(disorder)', 'Overig', 'Geen_informatie'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('asthma_disorder', 'chronic_obstructive_lung_disease_disorder', 'sarcoidosis_disorder', 'overig', 'geen_informatie'))">
+                                test="empty(@enum) or (@enum = ('Asthma_(disorder)', 'Chronic_obstructive_lung_disease_(disorder)', 'Sarcoidosis_(disorder)', 'Overig', 'Geen_informatie'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Longaandoening": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/longaandoening/@enum; allowed=('asthma_disorder', 'chronic_obstructive_lung_disease_disorder', 'sarcoidosis_disorder', 'overig', 'geen_informatie')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/longaandoening/@enum; allowed=('Asthma_(disorder)', 'Chronic_obstructive_lung_disease_(disorder)', 'Sarcoidosis_(disorder)', 'Overig', 'Geen_informatie')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -9725,16 +9725,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('endometriosis_disorder', 'uterine_leiomyoma_disorder', 'congenital_uterine_anomaly_disorder', 'overig'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Endometriosis_(disorder)', 'Uterine_leiomyoma_(disorder)', 'Congenital_uterine_anomaly_(disorder)', 'Overig'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('endometriosis_disorder', 'uterine_leiomyoma_disorder', 'congenital_uterine_anomaly_disorder', 'overig'))">
+                                test="empty(@enum) or (@enum = ('Endometriosis_(disorder)', 'Uterine_leiomyoma_(disorder)', 'Congenital_uterine_anomaly_(disorder)', 'Overig'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Gynaecologische aandoening": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/gynaecologische_aandoening/@enum; allowed=('endometriosis_disorder', 'uterine_leiomyoma_disorder', 'congenital_uterine_anomaly_disorder', 'overig')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/gynaecologische_aandoening/@enum; allowed=('Endometriosis_(disorder)', 'Uterine_leiomyoma_(disorder)', 'Congenital_uterine_anomaly_(disorder)', 'Overig')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -9867,16 +9867,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('congenital_dislocation_of_hip_disorder', 'pelvic_injury_disorder', 'overig'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Congenital_dislocation_of_hip_(disorder)', 'Pelvic_injury_(disorder)', 'Overig'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('congenital_dislocation_of_hip_disorder', 'pelvic_injury_disorder', 'overig'))">
+                                test="empty(@enum) or (@enum = ('Congenital_dislocation_of_hip_(disorder)', 'Pelvic_injury_(disorder)', 'Overig'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Orthopedische afwijking": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/orthopedische_afwijking/@enum; allowed=('congenital_dislocation_of_hip_disorder', 'pelvic_injury_disorder', 'overig')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/orthopedische_afwijking/@enum; allowed=('Congenital_dislocation_of_hip_(disorder)', 'Pelvic_injury_(disorder)', 'Overig')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -10191,16 +10191,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('operation_on_female_genital_organs_procedure', 'operation_on_female_genital_organs_procedure_curettage_procedure', 'operation_on_female_genital_organs_procedure_cesarean_section_procedure', 'operation_on_female_genital_organs_procedure_manual_removal_of_retained_placenta_procedure', 'operation_on_female_genital_organs_procedure_operation_on_uterus_procedure', 'operation_on_female_genital_organs_procedure_uterine_myomectomy_procedure', 'operation_on_female_genital_organs_procedure_operation_on_ovary_procedure', 'operation_on_musculoskeletal_system_procedure', 'operation_on_musculoskeletal_system_procedure_operative_procedure_on_pelvis_procedure', 'operation_on_musculoskeletal_system_procedure_operation_on_back_procedure', 'operation_on_abdominal_region_procedure', 'operation_on_abdominal_region_procedure_laparotomy_procedure', 'operation_on_abdominal_region_procedure_appendectomy_procedure', 'operation_on_abdominal_region_procedure_abdominoplasty_procedure', 'operation_on_abdominal_region_procedure_operation_on_intestine_procedure', 'operation_on_breast_procedure', 'operation_on_organ_procedure', 'operation_on_organ_procedure_kidney_operation_procedure', 'operation_on_organ_procedure_operation_on_thyroid_gland_procedure', 'operation_on_organ_procedure_operation_on_heart_procedure', 'operation_on_organ_procedure_operation_on_adrenal_gland_procedure', 'operation_on_nervous_system_procedure', 'onbekend', 'overig'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Operation_on_female_genital_organs_(procedure)', 'Operation_on_female_genital_organs_(procedure)_Curettage_(procedure)', 'Operation_on_female_genital_organs_(procedure)_Cesarean_section_(procedure)', 'Operation_on_female_genital_organs_(procedure)_Manual_removal_of_retained_placenta_(procedure)', 'Operation_on_female_genital_organs_(procedure)_Operation_on_uterus_(procedure)', 'Operation_on_female_genital_organs_(procedure)_Uterine_myomectomy_(procedure)', 'Operation_on_female_genital_organs_(procedure)_Operation_on_ovary_(procedure)', 'Operation_on_musculoskeletal_system_(procedure)', 'Operation_on_musculoskeletal_system_(procedure)_Operative_procedure_on_pelvis_(procedure)', 'Operation_on_musculoskeletal_system_(procedure)_Operation_on_back_(procedure)', 'Operation_on_abdominal_region_(procedure)', 'Operation_on_abdominal_region_(procedure)_Laparotomy_(procedure)', 'Operation_on_abdominal_region_(procedure)_Appendectomy_(procedure)', 'Operation_on_abdominal_region_(procedure)_Abdominoplasty_(procedure)', 'Operation_on_abdominal_region_(procedure)_Operation_on_intestine_(procedure)', 'Operation_on_breast_(procedure)', 'Operation_on_organ_(procedure)', 'Operation_on_organ_(procedure)_Kidney_operation_(procedure)', 'Operation_on_organ_(procedure)_Operation_on_thyroid_gland_(procedure)', 'Operation_on_organ_(procedure)_Operation_on_heart_(procedure)', 'Operation_on_organ_(procedure)_Operation_on_adrenal_gland_(procedure)', 'Operation_on_nervous_system_(procedure)', 'Onbekend', 'Overig'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('operation_on_female_genital_organs_procedure', 'operation_on_female_genital_organs_procedure_curettage_procedure', 'operation_on_female_genital_organs_procedure_cesarean_section_procedure', 'operation_on_female_genital_organs_procedure_manual_removal_of_retained_placenta_procedure', 'operation_on_female_genital_organs_procedure_operation_on_uterus_procedure', 'operation_on_female_genital_organs_procedure_uterine_myomectomy_procedure', 'operation_on_female_genital_organs_procedure_operation_on_ovary_procedure', 'operation_on_musculoskeletal_system_procedure', 'operation_on_musculoskeletal_system_procedure_operative_procedure_on_pelvis_procedure', 'operation_on_musculoskeletal_system_procedure_operation_on_back_procedure', 'operation_on_abdominal_region_procedure', 'operation_on_abdominal_region_procedure_laparotomy_procedure', 'operation_on_abdominal_region_procedure_appendectomy_procedure', 'operation_on_abdominal_region_procedure_abdominoplasty_procedure', 'operation_on_abdominal_region_procedure_operation_on_intestine_procedure', 'operation_on_breast_procedure', 'operation_on_organ_procedure', 'operation_on_organ_procedure_kidney_operation_procedure', 'operation_on_organ_procedure_operation_on_thyroid_gland_procedure', 'operation_on_organ_procedure_operation_on_heart_procedure', 'operation_on_organ_procedure_operation_on_adrenal_gland_procedure', 'operation_on_nervous_system_procedure', 'onbekend', 'overig'))">
+                                test="empty(@enum) or (@enum = ('Operation_on_female_genital_organs_(procedure)', 'Operation_on_female_genital_organs_(procedure)_Curettage_(procedure)', 'Operation_on_female_genital_organs_(procedure)_Cesarean_section_(procedure)', 'Operation_on_female_genital_organs_(procedure)_Manual_removal_of_retained_placenta_(procedure)', 'Operation_on_female_genital_organs_(procedure)_Operation_on_uterus_(procedure)', 'Operation_on_female_genital_organs_(procedure)_Uterine_myomectomy_(procedure)', 'Operation_on_female_genital_organs_(procedure)_Operation_on_ovary_(procedure)', 'Operation_on_musculoskeletal_system_(procedure)', 'Operation_on_musculoskeletal_system_(procedure)_Operative_procedure_on_pelvis_(procedure)', 'Operation_on_musculoskeletal_system_(procedure)_Operation_on_back_(procedure)', 'Operation_on_abdominal_region_(procedure)', 'Operation_on_abdominal_region_(procedure)_Laparotomy_(procedure)', 'Operation_on_abdominal_region_(procedure)_Appendectomy_(procedure)', 'Operation_on_abdominal_region_(procedure)_Abdominoplasty_(procedure)', 'Operation_on_abdominal_region_(procedure)_Operation_on_intestine_(procedure)', 'Operation_on_breast_(procedure)', 'Operation_on_organ_(procedure)', 'Operation_on_organ_(procedure)_Kidney_operation_(procedure)', 'Operation_on_organ_(procedure)_Operation_on_thyroid_gland_(procedure)', 'Operation_on_organ_(procedure)_Operation_on_heart_(procedure)', 'Operation_on_organ_(procedure)_Operation_on_adrenal_gland_(procedure)', 'Operation_on_nervous_system_(procedure)', 'Onbekend', 'Overig'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Type operatie": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/type_operatie/@enum; allowed=('operation_on_female_genital_organs_procedure', 'operation_on_female_genital_organs_procedure_curettage_procedure', 'operation_on_female_genital_organs_procedure_cesarean_section_procedure', 'operation_on_female_genital_organs_procedure_manual_removal_of_retained_placenta_procedure', 'operation_on_female_genital_organs_procedure_operation_on_uterus_procedure', 'operation_on_female_genital_organs_procedure_uterine_myomectomy_procedure', 'operation_on_female_genital_organs_procedure_operation_on_ovary_procedure', 'operation_on_musculoskeletal_system_procedure', 'operation_on_musculoskeletal_system_procedure_operative_procedure_on_pelvis_procedure', 'operation_on_musculoskeletal_system_procedure_operation_on_back_procedure', 'operation_on_abdominal_region_procedure', 'operation_on_abdominal_region_procedure_laparotomy_procedure', 'operation_on_abdominal_region_procedure_appendectomy_procedure', 'operation_on_abdominal_region_procedure_abdominoplasty_procedure', 'operation_on_abdominal_region_procedure_operation_on_intestine_procedure', 'operation_on_breast_procedure', 'operation_on_organ_procedure', 'operation_on_organ_procedure_kidney_operation_procedure', 'operation_on_organ_procedure_operation_on_thyroid_gland_procedure', 'operation_on_organ_procedure_operation_on_heart_procedure', 'operation_on_organ_procedure_operation_on_adrenal_gland_procedure', 'operation_on_nervous_system_procedure', 'onbekend', 'overig')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/type_operatie/@enum; allowed=('Operation_on_female_genital_organs_(procedure)', 'Operation_on_female_genital_organs_(procedure)_Curettage_(procedure)', 'Operation_on_female_genital_organs_(procedure)_Cesarean_section_(procedure)', 'Operation_on_female_genital_organs_(procedure)_Manual_removal_of_retained_placenta_(procedure)', 'Operation_on_female_genital_organs_(procedure)_Operation_on_uterus_(procedure)', 'Operation_on_female_genital_organs_(procedure)_Uterine_myomectomy_(procedure)', 'Operation_on_female_genital_organs_(procedure)_Operation_on_ovary_(procedure)', 'Operation_on_musculoskeletal_system_(procedure)', 'Operation_on_musculoskeletal_system_(procedure)_Operative_procedure_on_pelvis_(procedure)', 'Operation_on_musculoskeletal_system_(procedure)_Operation_on_back_(procedure)', 'Operation_on_abdominal_region_(procedure)', 'Operation_on_abdominal_region_(procedure)_Laparotomy_(procedure)', 'Operation_on_abdominal_region_(procedure)_Appendectomy_(procedure)', 'Operation_on_abdominal_region_(procedure)_Abdominoplasty_(procedure)', 'Operation_on_abdominal_region_(procedure)_Operation_on_intestine_(procedure)', 'Operation_on_breast_(procedure)', 'Operation_on_organ_(procedure)', 'Operation_on_organ_(procedure)_Kidney_operation_(procedure)', 'Operation_on_organ_(procedure)_Operation_on_thyroid_gland_(procedure)', 'Operation_on_organ_(procedure)_Operation_on_heart_(procedure)', 'Operation_on_organ_(procedure)_Operation_on_adrenal_gland_(procedure)', 'Operation_on_nervous_system_(procedure)', 'Onbekend', 'Overig')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -10333,16 +10333,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('von_willebrand_disorder_disorder', 'hemophilia_disorder', 'thrombocytopenic_disorder_disorder', 'disseminated_intravascular_coagulation_disorder', 'thrombophilia_disorder', 'thrombophilia_disorder_antithrombin_iii_deficiency_disorder', 'thrombophilia_disorder_protein_c_deficiency_disease_disorder', 'thrombophilia_disorder_protein_s_deficiency_disease_disorder', 'thrombophilia_disorder_heterozygous_factor_v_leiden_mutation_disorder', 'thrombophilia_disorder_homozygous_factor_v_leiden_mutation_disorder', 'thrombophilia_disorder_factor_xii_deficiency_disease_disorder', 'deep_venous_thrombosis_disorder', 'pulmonary_embolism_disorder', 'overig'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('von_Willebrand_disorder_(disorder)', 'Hemophilia_(disorder)', 'Thrombocytopenic_disorder_(disorder)', 'Disseminated_intravascular_coagulation_(disorder)', 'Thrombophilia_(disorder)', 'Thrombophilia_(disorder)_Antithrombin_III_deficiency_(disorder)', 'Thrombophilia_(disorder)_Protein_C_deficiency_disease_(disorder)', 'Thrombophilia_(disorder)_Protein_S_deficiency_disease_(disorder)', 'Thrombophilia_(disorder)_Heterozygous_Factor_V_Leiden_mutation_(disorder)', 'Thrombophilia_(disorder)_Homozygous_Factor_V_Leiden_mutation_(disorder)', 'Thrombophilia_(disorder)_Factor_XII_deficiency_disease_(disorder)', 'Deep_venous_thrombosis_(disorder)', 'Pulmonary_embolism_(disorder)', 'Overig'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('von_willebrand_disorder_disorder', 'hemophilia_disorder', 'thrombocytopenic_disorder_disorder', 'disseminated_intravascular_coagulation_disorder', 'thrombophilia_disorder', 'thrombophilia_disorder_antithrombin_iii_deficiency_disorder', 'thrombophilia_disorder_protein_c_deficiency_disease_disorder', 'thrombophilia_disorder_protein_s_deficiency_disease_disorder', 'thrombophilia_disorder_heterozygous_factor_v_leiden_mutation_disorder', 'thrombophilia_disorder_homozygous_factor_v_leiden_mutation_disorder', 'thrombophilia_disorder_factor_xii_deficiency_disease_disorder', 'deep_venous_thrombosis_disorder', 'pulmonary_embolism_disorder', 'overig'))">
+                                test="empty(@enum) or (@enum = ('von_Willebrand_disorder_(disorder)', 'Hemophilia_(disorder)', 'Thrombocytopenic_disorder_(disorder)', 'Disseminated_intravascular_coagulation_(disorder)', 'Thrombophilia_(disorder)', 'Thrombophilia_(disorder)_Antithrombin_III_deficiency_(disorder)', 'Thrombophilia_(disorder)_Protein_C_deficiency_disease_(disorder)', 'Thrombophilia_(disorder)_Protein_S_deficiency_disease_(disorder)', 'Thrombophilia_(disorder)_Heterozygous_Factor_V_Leiden_mutation_(disorder)', 'Thrombophilia_(disorder)_Homozygous_Factor_V_Leiden_mutation_(disorder)', 'Thrombophilia_(disorder)_Factor_XII_deficiency_disease_(disorder)', 'Deep_venous_thrombosis_(disorder)', 'Pulmonary_embolism_(disorder)', 'Overig'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Type stollingsprobleem": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/type_stollingsprobleem/@enum; allowed=('von_willebrand_disorder_disorder', 'hemophilia_disorder', 'thrombocytopenic_disorder_disorder', 'disseminated_intravascular_coagulation_disorder', 'thrombophilia_disorder', 'thrombophilia_disorder_antithrombin_iii_deficiency_disorder', 'thrombophilia_disorder_protein_c_deficiency_disease_disorder', 'thrombophilia_disorder_protein_s_deficiency_disease_disorder', 'thrombophilia_disorder_heterozygous_factor_v_leiden_mutation_disorder', 'thrombophilia_disorder_homozygous_factor_v_leiden_mutation_disorder', 'thrombophilia_disorder_factor_xii_deficiency_disease_disorder', 'deep_venous_thrombosis_disorder', 'pulmonary_embolism_disorder', 'overig')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/type_stollingsprobleem/@enum; allowed=('von_Willebrand_disorder_(disorder)', 'Hemophilia_(disorder)', 'Thrombocytopenic_disorder_(disorder)', 'Disseminated_intravascular_coagulation_(disorder)', 'Thrombophilia_(disorder)', 'Thrombophilia_(disorder)_Antithrombin_III_deficiency_(disorder)', 'Thrombophilia_(disorder)_Protein_C_deficiency_disease_(disorder)', 'Thrombophilia_(disorder)_Protein_S_deficiency_disease_(disorder)', 'Thrombophilia_(disorder)_Heterozygous_Factor_V_Leiden_mutation_(disorder)', 'Thrombophilia_(disorder)_Homozygous_Factor_V_Leiden_mutation_(disorder)', 'Thrombophilia_(disorder)_Factor_XII_deficiency_disease_(disorder)', 'Deep_venous_thrombosis_(disorder)', 'Pulmonary_embolism_(disorder)', 'Overig')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -10943,16 +10943,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('endometriosis_disorder', 'uterine_leiomyoma_disorder', 'congenital_uterine_anomaly_disorder', 'overig'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Endometriosis_(disorder)', 'Uterine_leiomyoma_(disorder)', 'Congenital_uterine_anomaly_(disorder)', 'Overig'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('endometriosis_disorder', 'uterine_leiomyoma_disorder', 'congenital_uterine_anomaly_disorder', 'overig'))">
+                                test="empty(@enum) or (@enum = ('Endometriosis_(disorder)', 'Uterine_leiomyoma_(disorder)', 'Congenital_uterine_anomaly_(disorder)', 'Overig'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Gynaecologische aandoening": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/gynaecologische_aandoening/@enum; allowed=('endometriosis_disorder', 'uterine_leiomyoma_disorder', 'congenital_uterine_anomaly_disorder', 'overig')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/gynaecologische_aandoening/@enum; allowed=('Endometriosis_(disorder)', 'Uterine_leiomyoma_(disorder)', 'Congenital_uterine_anomaly_(disorder)', 'Overig')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -11358,16 +11358,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('infection_of_uterus_disorder', 'urinary_tract_infection_in_pregnancy_disorder', 'pyelonephritis_disorder', 'infectious_colitis_enteritis_and_gastroenteritis_disorder', 'overig', 'geen_informatie'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Infection_of_uterus_(disorder)', 'Urinary_tract_infection_in_pregnancy_(disorder)', 'Pyelonephritis_(disorder)', 'Infectious_colitis,_enteritis_and_gastroenteritis_(disorder)', 'Overig', 'Geen_informatie'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('infection_of_uterus_disorder', 'urinary_tract_infection_in_pregnancy_disorder', 'pyelonephritis_disorder', 'infectious_colitis_enteritis_and_gastroenteritis_disorder', 'overig', 'geen_informatie'))">
+                                test="empty(@enum) or (@enum = ('Infection_of_uterus_(disorder)', 'Urinary_tract_infection_in_pregnancy_(disorder)', 'Pyelonephritis_(disorder)', 'Infectious_colitis,_enteritis_and_gastroenteritis_(disorder)', 'Overig', 'Geen_informatie'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Infectie": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/infectie/@enum; allowed=('infection_of_uterus_disorder', 'urinary_tract_infection_in_pregnancy_disorder', 'pyelonephritis_disorder', 'infectious_colitis_enteritis_and_gastroenteritis_disorder', 'overig', 'geen_informatie')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/infectie/@enum; allowed=('Infection_of_uterus_(disorder)', 'Urinary_tract_infection_in_pregnancy_(disorder)', 'Pyelonephritis_(disorder)', 'Infectious_colitis,_enteritis_and_gastroenteritis_(disorder)', 'Overig', 'Geen_informatie')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -11591,16 +11591,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('pregnancyinduced_hypertension_disorder', 'preeclampsia_disorder', 'hemolysiselevated_liver_enzymeslow_platelet_count_syndrome_disorder', 'eclampsia_disorder'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Pregnancy-induced_hypertension_(disorder)', 'Pre-eclampsia_(disorder)', 'Hemolysis-elevated_liver_enzymes-low_platelet_count_syndrome_(disorder)', 'Eclampsia_(disorder)'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('pregnancyinduced_hypertension_disorder', 'preeclampsia_disorder', 'hemolysiselevated_liver_enzymeslow_platelet_count_syndrome_disorder', 'eclampsia_disorder'))">
+                                test="empty(@enum) or (@enum = ('Pregnancy-induced_hypertension_(disorder)', 'Pre-eclampsia_(disorder)', 'Hemolysis-elevated_liver_enzymes-low_platelet_count_syndrome_(disorder)', 'Eclampsia_(disorder)'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Hypertensieve aandoening": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/hypertensieve_aandoening/@enum; allowed=('pregnancyinduced_hypertension_disorder', 'preeclampsia_disorder', 'hemolysiselevated_liver_enzymeslow_platelet_count_syndrome_disorder', 'eclampsia_disorder')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/hypertensieve_aandoening/@enum; allowed=('Pregnancy-induced_hypertension_(disorder)', 'Pre-eclampsia_(disorder)', 'Hemolysis-elevated_liver_enzymes-low_platelet_count_syndrome_(disorder)', 'Eclampsia_(disorder)')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -11915,16 +11915,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('largefordates_fetus_disorder', 'small_for_gestational_age_fetus_disorder', 'geen_informatie'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Large-for-dates_fetus_(disorder)', 'Small_for_gestational_age_fetus_(disorder)', 'Geen_informatie'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('largefordates_fetus_disorder', 'small_for_gestational_age_fetus_disorder', 'geen_informatie'))">
+                                test="empty(@enum) or (@enum = ('Large-for-dates_fetus_(disorder)', 'Small_for_gestational_age_fetus_(disorder)', 'Geen_informatie'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Afwijkende groei foetus": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/afwijkende_groei_foetus/@enum; allowed=('largefordates_fetus_disorder', 'small_for_gestational_age_fetus_disorder', 'geen_informatie')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/afwijkende_groei_foetus/@enum; allowed=('Large-for-dates_fetus_(disorder)', 'Small_for_gestational_age_fetus_(disorder)', 'Geen_informatie')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -12739,16 +12739,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('endometriosis_disorder', 'uterine_leiomyoma_disorder', 'congenital_uterine_anomaly_disorder', 'overig'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Endometriosis_(disorder)', 'Uterine_leiomyoma_(disorder)', 'Congenital_uterine_anomaly_(disorder)', 'Overig'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('endometriosis_disorder', 'uterine_leiomyoma_disorder', 'congenital_uterine_anomaly_disorder', 'overig'))">
+                                test="empty(@enum) or (@enum = ('Endometriosis_(disorder)', 'Uterine_leiomyoma_(disorder)', 'Congenital_uterine_anomaly_(disorder)', 'Overig'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Gynaecologische aandoening": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/gynaecologische_aandoening/@enum; allowed=('endometriosis_disorder', 'uterine_leiomyoma_disorder', 'congenital_uterine_anomaly_disorder', 'overig')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/gynaecologische_aandoening/@enum; allowed=('Endometriosis_(disorder)', 'Uterine_leiomyoma_(disorder)', 'Congenital_uterine_anomaly_(disorder)', 'Overig')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -13154,16 +13154,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('infection_of_uterus_disorder', 'urinary_tract_infection_in_pregnancy_disorder', 'pyelonephritis_disorder', 'infectious_colitis_enteritis_and_gastroenteritis_disorder', 'overig', 'geen_informatie'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Infection_of_uterus_(disorder)', 'Urinary_tract_infection_in_pregnancy_(disorder)', 'Pyelonephritis_(disorder)', 'Infectious_colitis,_enteritis_and_gastroenteritis_(disorder)', 'Overig', 'Geen_informatie'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('infection_of_uterus_disorder', 'urinary_tract_infection_in_pregnancy_disorder', 'pyelonephritis_disorder', 'infectious_colitis_enteritis_and_gastroenteritis_disorder', 'overig', 'geen_informatie'))">
+                                test="empty(@enum) or (@enum = ('Infection_of_uterus_(disorder)', 'Urinary_tract_infection_in_pregnancy_(disorder)', 'Pyelonephritis_(disorder)', 'Infectious_colitis,_enteritis_and_gastroenteritis_(disorder)', 'Overig', 'Geen_informatie'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Infectie": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/infectie/@enum; allowed=('infection_of_uterus_disorder', 'urinary_tract_infection_in_pregnancy_disorder', 'pyelonephritis_disorder', 'infectious_colitis_enteritis_and_gastroenteritis_disorder', 'overig', 'geen_informatie')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/infectie/@enum; allowed=('Infection_of_uterus_(disorder)', 'Urinary_tract_infection_in_pregnancy_(disorder)', 'Pyelonephritis_(disorder)', 'Infectious_colitis,_enteritis_and_gastroenteritis_(disorder)', 'Overig', 'Geen_informatie')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -13387,16 +13387,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('pregnancyinduced_hypertension_disorder', 'preeclampsia_disorder', 'hemolysiselevated_liver_enzymeslow_platelet_count_syndrome_disorder', 'eclampsia_disorder'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Pregnancy-induced_hypertension_(disorder)', 'Pre-eclampsia_(disorder)', 'Hemolysis-elevated_liver_enzymes-low_platelet_count_syndrome_(disorder)', 'Eclampsia_(disorder)'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('pregnancyinduced_hypertension_disorder', 'preeclampsia_disorder', 'hemolysiselevated_liver_enzymeslow_platelet_count_syndrome_disorder', 'eclampsia_disorder'))">
+                                test="empty(@enum) or (@enum = ('Pregnancy-induced_hypertension_(disorder)', 'Pre-eclampsia_(disorder)', 'Hemolysis-elevated_liver_enzymes-low_platelet_count_syndrome_(disorder)', 'Eclampsia_(disorder)'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Hypertensieve aandoening": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/hypertensieve_aandoening/@enum; allowed=('pregnancyinduced_hypertension_disorder', 'preeclampsia_disorder', 'hemolysiselevated_liver_enzymeslow_platelet_count_syndrome_disorder', 'eclampsia_disorder')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/hypertensieve_aandoening/@enum; allowed=('Pregnancy-induced_hypertension_(disorder)', 'Pre-eclampsia_(disorder)', 'Hemolysis-elevated_liver_enzymes-low_platelet_count_syndrome_(disorder)', 'Eclampsia_(disorder)')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -13711,16 +13711,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('largefordates_fetus_disorder', 'small_for_gestational_age_fetus_disorder', 'geen_informatie'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Large-for-dates_fetus_(disorder)', 'Small_for_gestational_age_fetus_(disorder)', 'Geen_informatie'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('largefordates_fetus_disorder', 'small_for_gestational_age_fetus_disorder', 'geen_informatie'))">
+                                test="empty(@enum) or (@enum = ('Large-for-dates_fetus_(disorder)', 'Small_for_gestational_age_fetus_(disorder)', 'Geen_informatie'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Afwijkende groei foetus": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/afwijkende_groei_foetus/@enum; allowed=('largefordates_fetus_disorder', 'small_for_gestational_age_fetus_disorder', 'geen_informatie')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/afwijkende_groei_foetus/@enum; allowed=('Large-for-dates_fetus_(disorder)', 'Small_for_gestational_age_fetus_(disorder)', 'Geen_informatie')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -14217,16 +14217,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('breech_presentation_finding', 'transverseoblique_lie_finding', 'unstable_lie_finding', 'onbekend', 'geen_informatie'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Breech_presentation_(finding)', 'Transverse/oblique_lie_(finding)', 'Unstable_lie_(finding)', 'Onbekend', 'Geen_informatie'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('breech_presentation_finding', 'transverseoblique_lie_finding', 'unstable_lie_finding', 'onbekend', 'geen_informatie'))">
+                                test="empty(@enum) or (@enum = ('Breech_presentation_(finding)', 'Transverse/oblique_lie_(finding)', 'Unstable_lie_(finding)', 'Onbekend', 'Geen_informatie'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Liggingsafwijking": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/liggingsafwijking/@enum; allowed=('breech_presentation_finding', 'transverseoblique_lie_finding', 'unstable_lie_finding', 'onbekend', 'geen_informatie')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/liggingsafwijking/@enum; allowed=('Breech_presentation_(finding)', 'Transverse/oblique_lie_(finding)', 'Unstable_lie_(finding)', 'Onbekend', 'Geen_informatie')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -15940,16 +15940,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('dreigende_eclampsie_verdenking_op_hellpsyndroom_preeclampsia_disorder', 'dreigende_eclampsie_verdenking_op_hellpsyndroom_preeclampsia_added_to_preexisting_hypertension_disorder', 'dreigende_eclampsie_verdenking_op_hellpsyndroom_eclampsia_in_puerperium_disorder', 'dreigende_eclampsie_verdenking_op_hellpsyndroom_hemolysiselevated_liver_enzymeslow_platelet_count_syndrome_disorder', 'postpartum_deep_phlebothrombosis_disorder', 'postpartum_depression_disorder', 'postpartum_psychosis_disorder', 'abnormal_vaginal_bleeding_finding', 'embolism_disorder', 'hematoma_disorder', 'transfusion_of_blood_product_procedure', 'postnatal_infection_disorder_endometritis_disorder', 'postnatal_infection_disorder_mastitis_disorder', 'postnatal_infection_disorder_urinary_tract_infectious_disease_disorder', 'postnatal_infection_disorder_episiotomy_infection_disorder', 'postnatal_infection_disorder_overige_infecties', 'overig'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('(Dreigende)_eclampsie,_(verdenking_op)_HELLP-syndroom_Pre-eclampsia_(disorder)', '(Dreigende)_eclampsie,_(verdenking_op)_HELLP-syndroom_Pre-eclampsia_added_to_pre-existing_hypertension_(disorder)', '(Dreigende)_eclampsie,_(verdenking_op)_HELLP-syndroom_Eclampsia_in_puerperium_(disorder)', '(Dreigende)_eclampsie,_(verdenking_op)_HELLP-syndroom_Hemolysis-elevated_liver_enzymes-low_platelet_count_syndrome_(disorder)', 'Postpartum_deep_phlebothrombosis_(disorder)', 'Postpartum_depression_(disorder)', 'Postpartum_psychosis_(disorder)', 'Abnormal_vaginal_bleeding_(finding)', 'Embolism_(disorder)', 'Hematoma_(disorder)', 'Transfusion_of_blood_product_(procedure)', 'Postnatal_infection_(disorder)_Endometritis_(disorder)', 'Postnatal_infection_(disorder)_Mastitis_(disorder)', 'Postnatal_infection_(disorder)_Urinary_tract_infectious_disease_(disorder)', 'Postnatal_infection_(disorder)_Episiotomy_infection_(disorder)', 'Postnatal_infection_(disorder)_Overige_infecties', 'Overig'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('dreigende_eclampsie_verdenking_op_hellpsyndroom_preeclampsia_disorder', 'dreigende_eclampsie_verdenking_op_hellpsyndroom_preeclampsia_added_to_preexisting_hypertension_disorder', 'dreigende_eclampsie_verdenking_op_hellpsyndroom_eclampsia_in_puerperium_disorder', 'dreigende_eclampsie_verdenking_op_hellpsyndroom_hemolysiselevated_liver_enzymeslow_platelet_count_syndrome_disorder', 'postpartum_deep_phlebothrombosis_disorder', 'postpartum_depression_disorder', 'postpartum_psychosis_disorder', 'abnormal_vaginal_bleeding_finding', 'embolism_disorder', 'hematoma_disorder', 'transfusion_of_blood_product_procedure', 'postnatal_infection_disorder_endometritis_disorder', 'postnatal_infection_disorder_mastitis_disorder', 'postnatal_infection_disorder_urinary_tract_infectious_disease_disorder', 'postnatal_infection_disorder_episiotomy_infection_disorder', 'postnatal_infection_disorder_overige_infecties', 'overig'))">
+                                test="empty(@enum) or (@enum = ('(Dreigende)_eclampsie,_(verdenking_op)_HELLP-syndroom_Pre-eclampsia_(disorder)', '(Dreigende)_eclampsie,_(verdenking_op)_HELLP-syndroom_Pre-eclampsia_added_to_pre-existing_hypertension_(disorder)', '(Dreigende)_eclampsie,_(verdenking_op)_HELLP-syndroom_Eclampsia_in_puerperium_(disorder)', '(Dreigende)_eclampsie,_(verdenking_op)_HELLP-syndroom_Hemolysis-elevated_liver_enzymes-low_platelet_count_syndrome_(disorder)', 'Postpartum_deep_phlebothrombosis_(disorder)', 'Postpartum_depression_(disorder)', 'Postpartum_psychosis_(disorder)', 'Abnormal_vaginal_bleeding_(finding)', 'Embolism_(disorder)', 'Hematoma_(disorder)', 'Transfusion_of_blood_product_(procedure)', 'Postnatal_infection_(disorder)_Endometritis_(disorder)', 'Postnatal_infection_(disorder)_Mastitis_(disorder)', 'Postnatal_infection_(disorder)_Urinary_tract_infectious_disease_(disorder)', 'Postnatal_infection_(disorder)_Episiotomy_infection_(disorder)', 'Postnatal_infection_(disorder)_Overige_infecties', 'Overig'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Pathologie vrouw": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/postnatale_fase/pathologie_vrouw/@enum; allowed=('dreigende_eclampsie_verdenking_op_hellpsyndroom_preeclampsia_disorder', 'dreigende_eclampsie_verdenking_op_hellpsyndroom_preeclampsia_added_to_preexisting_hypertension_disorder', 'dreigende_eclampsie_verdenking_op_hellpsyndroom_eclampsia_in_puerperium_disorder', 'dreigende_eclampsie_verdenking_op_hellpsyndroom_hemolysiselevated_liver_enzymeslow_platelet_count_syndrome_disorder', 'postpartum_deep_phlebothrombosis_disorder', 'postpartum_depression_disorder', 'postpartum_psychosis_disorder', 'abnormal_vaginal_bleeding_finding', 'embolism_disorder', 'hematoma_disorder', 'transfusion_of_blood_product_procedure', 'postnatal_infection_disorder_endometritis_disorder', 'postnatal_infection_disorder_mastitis_disorder', 'postnatal_infection_disorder_urinary_tract_infectious_disease_disorder', 'postnatal_infection_disorder_episiotomy_infection_disorder', 'postnatal_infection_disorder_overige_infecties', 'overig')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/postnatale_fase/pathologie_vrouw/@enum; allowed=('(Dreigende)_eclampsie,_(verdenking_op)_HELLP-syndroom_Pre-eclampsia_(disorder)', '(Dreigende)_eclampsie,_(verdenking_op)_HELLP-syndroom_Pre-eclampsia_added_to_pre-existing_hypertension_(disorder)', '(Dreigende)_eclampsie,_(verdenking_op)_HELLP-syndroom_Eclampsia_in_puerperium_(disorder)', '(Dreigende)_eclampsie,_(verdenking_op)_HELLP-syndroom_Hemolysis-elevated_liver_enzymes-low_platelet_count_syndrome_(disorder)', 'Postpartum_deep_phlebothrombosis_(disorder)', 'Postpartum_depression_(disorder)', 'Postpartum_psychosis_(disorder)', 'Abnormal_vaginal_bleeding_(finding)', 'Embolism_(disorder)', 'Hematoma_(disorder)', 'Transfusion_of_blood_product_(procedure)', 'Postnatal_infection_(disorder)_Endometritis_(disorder)', 'Postnatal_infection_(disorder)_Mastitis_(disorder)', 'Postnatal_infection_(disorder)_Urinary_tract_infectious_disease_(disorder)', 'Postnatal_infection_(disorder)_Episiotomy_infection_(disorder)', 'Postnatal_infection_(disorder)_Overige_infecties', 'Overig')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -17053,16 +17053,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('latijns_amerikaans', 'hindoestaans', 'kaukasisch', 'noordafrikaans', 'overig_afrikaans', 'turks', 'overig_aziatisch', 'meervoudige_afkomst__overig', 'onbekend'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Latijns_Amerikaans', 'Hindoestaans', 'Kaukasisch', 'Noord-Afrikaans', 'Overig_Afrikaans', 'Turks', 'Overig_Aziatisch', 'Meervoudige_afkomst_/_Overig', 'onbekend'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('latijns_amerikaans', 'hindoestaans', 'kaukasisch', 'noordafrikaans', 'overig_afrikaans', 'turks', 'overig_aziatisch', 'meervoudige_afkomst__overig', 'onbekend'))">
+                                test="empty(@enum) or (@enum = ('Latijns_Amerikaans', 'Hindoestaans', 'Kaukasisch', 'Noord-Afrikaans', 'Overig_Afrikaans', 'Turks', 'Overig_Aziatisch', 'Meervoudige_afkomst_/_Overig', 'onbekend'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Etniciteit": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/vrouw/etniciteit/@enum; allowed=('latijns_amerikaans', 'hindoestaans', 'kaukasisch', 'noordafrikaans', 'overig_afrikaans', 'turks', 'overig_aziatisch', 'meervoudige_afkomst__overig', 'onbekend')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/vrouw/etniciteit/@enum; allowed=('Latijns_Amerikaans', 'Hindoestaans', 'Kaukasisch', 'Noord-Afrikaans', 'Overig_Afrikaans', 'Turks', 'Overig_Aziatisch', 'Meervoudige_afkomst_/_Overig', 'onbekend')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -17487,16 +17487,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('female_genital_mutilation_type_1_disorder', 'female_genital_mutilation_type_2_disorder', 'female_genital_mutilation_type_3_disorder', 'female_genital_mutilation_type_4_disorder', 'onbekend', 'geen_informatie'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Female_genital_mutilation_type_1_(disorder)', 'Female_genital_mutilation_type_2_(disorder)', 'Female_genital_mutilation_type_3_(disorder)', 'Female_genital_mutilation_type_4_(disorder)', 'onbekend', 'geen_informatie'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('female_genital_mutilation_type_1_disorder', 'female_genital_mutilation_type_2_disorder', 'female_genital_mutilation_type_3_disorder', 'female_genital_mutilation_type_4_disorder', 'onbekend', 'geen_informatie'))">
+                                test="empty(@enum) or (@enum = ('Female_genital_mutilation_type_1_(disorder)', 'Female_genital_mutilation_type_2_(disorder)', 'Female_genital_mutilation_type_3_(disorder)', 'Female_genital_mutilation_type_4_(disorder)', 'onbekend', 'geen_informatie'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Type vrouwelijke genitale verminking": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/vrouw/type_vrouwelijke_genitale_verminking/@enum; allowed=('female_genital_mutilation_type_1_disorder', 'female_genital_mutilation_type_2_disorder', 'female_genital_mutilation_type_3_disorder', 'female_genital_mutilation_type_4_disorder', 'onbekend', 'geen_informatie')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/vrouw/type_vrouwelijke_genitale_verminking/@enum; allowed=('Female_genital_mutilation_type_1_(disorder)', 'Female_genital_mutilation_type_2_(disorder)', 'Female_genital_mutilation_type_3_(disorder)', 'Female_genital_mutilation_type_4_(disorder)', 'onbekend', 'geen_informatie')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -18410,16 +18410,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('systemic_lupus_erythematosus_disorder', 'rheumatism_disorder', 'overig'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Systemic_lupus_erythematosus_(disorder)', 'Rheumatism_(disorder)', 'Overig'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('systemic_lupus_erythematosus_disorder', 'rheumatism_disorder', 'overig'))">
+                                test="empty(@enum) or (@enum = ('Systemic_lupus_erythematosus_(disorder)', 'Rheumatism_(disorder)', 'Overig'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Auto-immuun aandoening": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/autoimmuun_aandoening/@enum; allowed=('systemic_lupus_erythematosus_disorder', 'rheumatism_disorder', 'overig')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/autoimmuun_aandoening/@enum; allowed=('Systemic_lupus_erythematosus_(disorder)', 'Rheumatism_(disorder)', 'Overig')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -18552,16 +18552,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('hypertensive_disorder_systemic_arterial_disorder', 'cardiomyopathy_disorder', 'cardiac_arrhythmia_disorder', 'structural_disorder_of_heart_disorder', 'overig'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Hypertensive_disorder,_systemic_arterial_(disorder)', 'Cardiomyopathy_(disorder)', 'Cardiac_arrhythmia_(disorder)', 'Structural_disorder_of_heart_(disorder)', 'Overig'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('hypertensive_disorder_systemic_arterial_disorder', 'cardiomyopathy_disorder', 'cardiac_arrhythmia_disorder', 'structural_disorder_of_heart_disorder', 'overig'))">
+                                test="empty(@enum) or (@enum = ('Hypertensive_disorder,_systemic_arterial_(disorder)', 'Cardiomyopathy_(disorder)', 'Cardiac_arrhythmia_(disorder)', 'Structural_disorder_of_heart_(disorder)', 'Overig'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Cardiovasculaire aandoening": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/cardiovasculaire_aandoening/@enum; allowed=('hypertensive_disorder_systemic_arterial_disorder', 'cardiomyopathy_disorder', 'cardiac_arrhythmia_disorder', 'structural_disorder_of_heart_disorder', 'overig')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/cardiovasculaire_aandoening/@enum; allowed=('Hypertensive_disorder,_systemic_arterial_(disorder)', 'Cardiomyopathy_(disorder)', 'Cardiac_arrhythmia_(disorder)', 'Structural_disorder_of_heart_(disorder)', 'Overig')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -18694,16 +18694,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('pyelonephritis_disorder', 'bacteriuria_finding', 'chronic_renal_impairment_disorder'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Pyelonephritis_(disorder)', 'Bacteriuria_(finding)', 'Chronic_renal_impairment_(disorder)'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('pyelonephritis_disorder', 'bacteriuria_finding', 'chronic_renal_impairment_disorder'))">
+                                test="empty(@enum) or (@enum = ('Pyelonephritis_(disorder)', 'Bacteriuria_(finding)', 'Chronic_renal_impairment_(disorder)'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Urogenitale aandoening": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/urogenitale_aandoening/@enum; allowed=('pyelonephritis_disorder', 'bacteriuria_finding', 'chronic_renal_impairment_disorder')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/urogenitale_aandoening/@enum; allowed=('Pyelonephritis_(disorder)', 'Bacteriuria_(finding)', 'Chronic_renal_impairment_(disorder)')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -18836,16 +18836,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('primary_malignant_neoplasm_of_female_breast_disorder', 'carcinoma_of_cervix_disorder', 'leukemia_disease_disorder', 'primary_malignant_neoplasm_of_lung_disorder', 'malignant_melanoma_disorder', 'other'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Primary_malignant_neoplasm_of_female_breast_(disorder)', 'Carcinoma_of_cervix_(disorder)', 'Leukemia,_disease_(disorder)', 'Primary_malignant_neoplasm_of_lung_(disorder)', 'Malignant_melanoma_(disorder)', 'other'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('primary_malignant_neoplasm_of_female_breast_disorder', 'carcinoma_of_cervix_disorder', 'leukemia_disease_disorder', 'primary_malignant_neoplasm_of_lung_disorder', 'malignant_melanoma_disorder', 'other'))">
+                                test="empty(@enum) or (@enum = ('Primary_malignant_neoplasm_of_female_breast_(disorder)', 'Carcinoma_of_cervix_(disorder)', 'Leukemia,_disease_(disorder)', 'Primary_malignant_neoplasm_of_lung_(disorder)', 'Malignant_melanoma_(disorder)', 'other'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Oncologische aandoening": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/oncologische_aandoening/@enum; allowed=('primary_malignant_neoplasm_of_female_breast_disorder', 'carcinoma_of_cervix_disorder', 'leukemia_disease_disorder', 'primary_malignant_neoplasm_of_lung_disorder', 'malignant_melanoma_disorder', 'other')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/oncologische_aandoening/@enum; allowed=('Primary_malignant_neoplasm_of_female_breast_(disorder)', 'Carcinoma_of_cervix_(disorder)', 'Leukemia,_disease_(disorder)', 'Primary_malignant_neoplasm_of_lung_(disorder)', 'Malignant_melanoma_(disorder)', 'other')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -18978,16 +18978,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('hypothyroidism_disorder', 'hyperthyroidism_disorder'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Hypothyroidism_(disorder)', 'Hyperthyroidism_(disorder)'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('hypothyroidism_disorder', 'hyperthyroidism_disorder'))">
+                                test="empty(@enum) or (@enum = ('Hypothyroidism_(disorder)', 'Hyperthyroidism_(disorder)'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Schildklier aandoening": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/schildklier_aandoening/@enum; allowed=('hypothyroidism_disorder', 'hyperthyroidism_disorder')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/schildklier_aandoening/@enum; allowed=('Hypothyroidism_(disorder)', 'Hyperthyroidism_(disorder)')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -19211,16 +19211,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('epilepsy_disorder', 'cerebrovascular_accident_disorder', 'multiple_sclerosis_disorder', 'migraine_disorder', 'herniation_of_nucleus_pulposus_disorder', 'disease_of_pituitary_gland_disorder', 'overig'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Epilepsy_(disorder)', 'Cerebrovascular_accident_(disorder)', 'Multiple_sclerosis_(disorder)', 'Migraine_(disorder)', 'Herniation_of_nucleus_pulposus_(disorder)', 'Disease_of_pituitary_gland_(disorder)', 'Overig'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('epilepsy_disorder', 'cerebrovascular_accident_disorder', 'multiple_sclerosis_disorder', 'migraine_disorder', 'herniation_of_nucleus_pulposus_disorder', 'disease_of_pituitary_gland_disorder', 'overig'))">
+                                test="empty(@enum) or (@enum = ('Epilepsy_(disorder)', 'Cerebrovascular_accident_(disorder)', 'Multiple_sclerosis_(disorder)', 'Migraine_(disorder)', 'Herniation_of_nucleus_pulposus_(disorder)', 'Disease_of_pituitary_gland_(disorder)', 'Overig'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Neurologische aandoening": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/neurologische_aandoening/@enum; allowed=('epilepsy_disorder', 'cerebrovascular_accident_disorder', 'multiple_sclerosis_disorder', 'migraine_disorder', 'herniation_of_nucleus_pulposus_disorder', 'disease_of_pituitary_gland_disorder', 'overig')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/neurologische_aandoening/@enum; allowed=('Epilepsy_(disorder)', 'Cerebrovascular_accident_(disorder)', 'Multiple_sclerosis_(disorder)', 'Migraine_(disorder)', 'Herniation_of_nucleus_pulposus_(disorder)', 'Disease_of_pituitary_gland_(disorder)', 'Overig')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -19353,16 +19353,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('bacterial_infectious_disease_disorder_chlamydia_trachomatis_infection_disorder', 'bacterial_infectious_disease_disorder_gonorrhea_disorder', 'bacterial_infectious_disease_disorder_streptococcus_agalactiae_infection_disorder', 'bacterial_infectious_disease_disorder_methicillin_resistant_staphylococcus_aureus_infection_disorder', 'bacterial_infectious_disease_disorder_tuberculosis_disorder', 'viral_disease_disorder_cytomegalovirus_infection_disorder', 'viral_disease_disorder_herpesvirus_infection_disorder', 'viral_disease_disorder_hepatitis_b_surface_antigen_positive_finding', 'viral_disease_disorder_human_immunodeficiency_virus_infection_disorder', 'viral_disease_disorder_type_b_viral_hepatitis_disorder', 'viral_disease_disorder_viral_hepatitis_c_disorder', 'viral_disease_disorder_rubella_disorder', 'viral_disease_disorder_varicellazoster_virus_infection_disorder', 'viral_disease_disorder_parvovirus_infection_disorder', 'disease_caused_by_parasite_disorder_syphilis_disorder', 'disease_caused_by_parasite_disorder_toxoplasmosis_disorder', 'disease_caused_by_parasite_disorder_lyme_disease_disorder', 'disease_caused_by_parasite_disorder_malaria_disorder', 'disease_caused_by_parasite_disorder_infection_by_trichomonas_disorder', 'overig'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Bacterial_infectious_disease_(disorder)_Chlamydia_trachomatis_infection_(disorder)', 'Bacterial_infectious_disease_(disorder)_Gonorrhea_(disorder)', 'Bacterial_infectious_disease_(disorder)_Streptococcus_agalactiae_infection_(disorder)', 'Bacterial_infectious_disease_(disorder)_Methicillin_resistant_Staphylococcus_aureus_infection_(disorder)', 'Bacterial_infectious_disease_(disorder)_Tuberculosis_(disorder)', 'Viral_disease_(disorder)_Cytomegalovirus_infection_(disorder)', 'Viral_disease_(disorder)_Herpesvirus_infection_(disorder)', 'Viral_disease_(disorder)_Hepatitis_B_surface_antigen_positive_(finding)', 'Viral_disease_(disorder)_Human_immunodeficiency_virus_infection_(disorder)', 'Viral_disease_(disorder)_Type_B_viral_hepatitis_(disorder)', 'Viral_disease_(disorder)_Viral_hepatitis_C_(disorder)', 'Viral_disease_(disorder)_Rubella_(disorder)', 'Viral_disease_(disorder)_Varicella-zoster_virus_infection_(disorder)', 'Viral_disease_(disorder)_Parvovirus_infection_(disorder)', 'Disease_caused_by_parasite_(disorder)_Syphilis_(disorder)', 'Disease_caused_by_parasite_(disorder)_Toxoplasmosis_(disorder)', 'Disease_caused_by_parasite_(disorder)_Lyme_disease_(disorder)', 'Disease_caused_by_parasite_(disorder)_Malaria_(disorder)', 'Disease_caused_by_parasite_(disorder)_Infection_by_Trichomonas_(disorder)', 'Overig'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('bacterial_infectious_disease_disorder_chlamydia_trachomatis_infection_disorder', 'bacterial_infectious_disease_disorder_gonorrhea_disorder', 'bacterial_infectious_disease_disorder_streptococcus_agalactiae_infection_disorder', 'bacterial_infectious_disease_disorder_methicillin_resistant_staphylococcus_aureus_infection_disorder', 'bacterial_infectious_disease_disorder_tuberculosis_disorder', 'viral_disease_disorder_cytomegalovirus_infection_disorder', 'viral_disease_disorder_herpesvirus_infection_disorder', 'viral_disease_disorder_hepatitis_b_surface_antigen_positive_finding', 'viral_disease_disorder_human_immunodeficiency_virus_infection_disorder', 'viral_disease_disorder_type_b_viral_hepatitis_disorder', 'viral_disease_disorder_viral_hepatitis_c_disorder', 'viral_disease_disorder_rubella_disorder', 'viral_disease_disorder_varicellazoster_virus_infection_disorder', 'viral_disease_disorder_parvovirus_infection_disorder', 'disease_caused_by_parasite_disorder_syphilis_disorder', 'disease_caused_by_parasite_disorder_toxoplasmosis_disorder', 'disease_caused_by_parasite_disorder_lyme_disease_disorder', 'disease_caused_by_parasite_disorder_malaria_disorder', 'disease_caused_by_parasite_disorder_infection_by_trichomonas_disorder', 'overig'))">
+                                test="empty(@enum) or (@enum = ('Bacterial_infectious_disease_(disorder)_Chlamydia_trachomatis_infection_(disorder)', 'Bacterial_infectious_disease_(disorder)_Gonorrhea_(disorder)', 'Bacterial_infectious_disease_(disorder)_Streptococcus_agalactiae_infection_(disorder)', 'Bacterial_infectious_disease_(disorder)_Methicillin_resistant_Staphylococcus_aureus_infection_(disorder)', 'Bacterial_infectious_disease_(disorder)_Tuberculosis_(disorder)', 'Viral_disease_(disorder)_Cytomegalovirus_infection_(disorder)', 'Viral_disease_(disorder)_Herpesvirus_infection_(disorder)', 'Viral_disease_(disorder)_Hepatitis_B_surface_antigen_positive_(finding)', 'Viral_disease_(disorder)_Human_immunodeficiency_virus_infection_(disorder)', 'Viral_disease_(disorder)_Type_B_viral_hepatitis_(disorder)', 'Viral_disease_(disorder)_Viral_hepatitis_C_(disorder)', 'Viral_disease_(disorder)_Rubella_(disorder)', 'Viral_disease_(disorder)_Varicella-zoster_virus_infection_(disorder)', 'Viral_disease_(disorder)_Parvovirus_infection_(disorder)', 'Disease_caused_by_parasite_(disorder)_Syphilis_(disorder)', 'Disease_caused_by_parasite_(disorder)_Toxoplasmosis_(disorder)', 'Disease_caused_by_parasite_(disorder)_Lyme_disease_(disorder)', 'Disease_caused_by_parasite_(disorder)_Malaria_(disorder)', 'Disease_caused_by_parasite_(disorder)_Infection_by_Trichomonas_(disorder)', 'Overig'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Infectieziekte": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/infectieziekte/@enum; allowed=('bacterial_infectious_disease_disorder_chlamydia_trachomatis_infection_disorder', 'bacterial_infectious_disease_disorder_gonorrhea_disorder', 'bacterial_infectious_disease_disorder_streptococcus_agalactiae_infection_disorder', 'bacterial_infectious_disease_disorder_methicillin_resistant_staphylococcus_aureus_infection_disorder', 'bacterial_infectious_disease_disorder_tuberculosis_disorder', 'viral_disease_disorder_cytomegalovirus_infection_disorder', 'viral_disease_disorder_herpesvirus_infection_disorder', 'viral_disease_disorder_hepatitis_b_surface_antigen_positive_finding', 'viral_disease_disorder_human_immunodeficiency_virus_infection_disorder', 'viral_disease_disorder_type_b_viral_hepatitis_disorder', 'viral_disease_disorder_viral_hepatitis_c_disorder', 'viral_disease_disorder_rubella_disorder', 'viral_disease_disorder_varicellazoster_virus_infection_disorder', 'viral_disease_disorder_parvovirus_infection_disorder', 'disease_caused_by_parasite_disorder_syphilis_disorder', 'disease_caused_by_parasite_disorder_toxoplasmosis_disorder', 'disease_caused_by_parasite_disorder_lyme_disease_disorder', 'disease_caused_by_parasite_disorder_malaria_disorder', 'disease_caused_by_parasite_disorder_infection_by_trichomonas_disorder', 'overig')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/infectieziekte/@enum; allowed=('Bacterial_infectious_disease_(disorder)_Chlamydia_trachomatis_infection_(disorder)', 'Bacterial_infectious_disease_(disorder)_Gonorrhea_(disorder)', 'Bacterial_infectious_disease_(disorder)_Streptococcus_agalactiae_infection_(disorder)', 'Bacterial_infectious_disease_(disorder)_Methicillin_resistant_Staphylococcus_aureus_infection_(disorder)', 'Bacterial_infectious_disease_(disorder)_Tuberculosis_(disorder)', 'Viral_disease_(disorder)_Cytomegalovirus_infection_(disorder)', 'Viral_disease_(disorder)_Herpesvirus_infection_(disorder)', 'Viral_disease_(disorder)_Hepatitis_B_surface_antigen_positive_(finding)', 'Viral_disease_(disorder)_Human_immunodeficiency_virus_infection_(disorder)', 'Viral_disease_(disorder)_Type_B_viral_hepatitis_(disorder)', 'Viral_disease_(disorder)_Viral_hepatitis_C_(disorder)', 'Viral_disease_(disorder)_Rubella_(disorder)', 'Viral_disease_(disorder)_Varicella-zoster_virus_infection_(disorder)', 'Viral_disease_(disorder)_Parvovirus_infection_(disorder)', 'Disease_caused_by_parasite_(disorder)_Syphilis_(disorder)', 'Disease_caused_by_parasite_(disorder)_Toxoplasmosis_(disorder)', 'Disease_caused_by_parasite_(disorder)_Lyme_disease_(disorder)', 'Disease_caused_by_parasite_(disorder)_Malaria_(disorder)', 'Disease_caused_by_parasite_(disorder)_Infection_by_Trichomonas_(disorder)', 'Overig')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -19495,16 +19495,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('chronic_liver_disease_disorder', 'ulcerative_colitis_disorder', 'crohns_disease_disorder'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Chronic_liver_disease_(disorder)', 'Ulcerative_colitis_(disorder)', 'Crohn''s_disease_(disorder)'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('chronic_liver_disease_disorder', 'ulcerative_colitis_disorder', 'crohns_disease_disorder'))">
+                                test="empty(@enum) or (@enum = ('Chronic_liver_disease_(disorder)', 'Ulcerative_colitis_(disorder)', 'Crohn''s_disease_(disorder)'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "MDL aandoening": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/mdl_aandoening/@enum; allowed=('chronic_liver_disease_disorder', 'ulcerative_colitis_disorder', 'crohns_disease_disorder')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/mdl_aandoening/@enum; allowed=('Chronic_liver_disease_(disorder)', 'Ulcerative_colitis_(disorder)', 'Crohn''s_disease_(disorder)')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -19637,16 +19637,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('iron_deficiency_anemia_disorder', 'hemoglobinopathy_disorder', 'hereditary_hemoglobinopathy_disorder_homozygous_for_hemoglobin_s_disorder', 'thalassemia_disorder'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Iron_deficiency_anemia_(disorder)', 'Hemoglobinopathy_(disorder)', 'Hereditary_hemoglobinopathy_disorder_homozygous_for_hemoglobin_S_(disorder)', 'Thalassemia_(disorder)'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('iron_deficiency_anemia_disorder', 'hemoglobinopathy_disorder', 'hereditary_hemoglobinopathy_disorder_homozygous_for_hemoglobin_s_disorder', 'thalassemia_disorder'))">
+                                test="empty(@enum) or (@enum = ('Iron_deficiency_anemia_(disorder)', 'Hemoglobinopathy_(disorder)', 'Hereditary_hemoglobinopathy_disorder_homozygous_for_hemoglobin_S_(disorder)', 'Thalassemia_(disorder)'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Anemie": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/anemie/@enum; allowed=('iron_deficiency_anemia_disorder', 'hemoglobinopathy_disorder', 'hereditary_hemoglobinopathy_disorder_homozygous_for_hemoglobin_s_disorder', 'thalassemia_disorder')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/anemie/@enum; allowed=('Iron_deficiency_anemia_(disorder)', 'Hemoglobinopathy_(disorder)', 'Hereditary_hemoglobinopathy_disorder_homozygous_for_hemoglobin_S_(disorder)', 'Thalassemia_(disorder)')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -19779,16 +19779,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('asthma_disorder', 'chronic_obstructive_lung_disease_disorder', 'sarcoidosis_disorder', 'overig', 'geen_informatie'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Asthma_(disorder)', 'Chronic_obstructive_lung_disease_(disorder)', 'Sarcoidosis_(disorder)', 'Overig', 'Geen_informatie'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('asthma_disorder', 'chronic_obstructive_lung_disease_disorder', 'sarcoidosis_disorder', 'overig', 'geen_informatie'))">
+                                test="empty(@enum) or (@enum = ('Asthma_(disorder)', 'Chronic_obstructive_lung_disease_(disorder)', 'Sarcoidosis_(disorder)', 'Overig', 'Geen_informatie'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Longaandoening": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/longaandoening/@enum; allowed=('asthma_disorder', 'chronic_obstructive_lung_disease_disorder', 'sarcoidosis_disorder', 'overig', 'geen_informatie')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/longaandoening/@enum; allowed=('Asthma_(disorder)', 'Chronic_obstructive_lung_disease_(disorder)', 'Sarcoidosis_(disorder)', 'Overig', 'Geen_informatie')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -19921,16 +19921,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('endometriosis_disorder', 'uterine_leiomyoma_disorder', 'congenital_uterine_anomaly_disorder', 'overig'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Endometriosis_(disorder)', 'Uterine_leiomyoma_(disorder)', 'Congenital_uterine_anomaly_(disorder)', 'Overig'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('endometriosis_disorder', 'uterine_leiomyoma_disorder', 'congenital_uterine_anomaly_disorder', 'overig'))">
+                                test="empty(@enum) or (@enum = ('Endometriosis_(disorder)', 'Uterine_leiomyoma_(disorder)', 'Congenital_uterine_anomaly_(disorder)', 'Overig'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Gynaecologische aandoening": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/gynaecologische_aandoening/@enum; allowed=('endometriosis_disorder', 'uterine_leiomyoma_disorder', 'congenital_uterine_anomaly_disorder', 'overig')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/gynaecologische_aandoening/@enum; allowed=('Endometriosis_(disorder)', 'Uterine_leiomyoma_(disorder)', 'Congenital_uterine_anomaly_(disorder)', 'Overig')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -20063,16 +20063,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('congenital_dislocation_of_hip_disorder', 'pelvic_injury_disorder', 'overig'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Congenital_dislocation_of_hip_(disorder)', 'Pelvic_injury_(disorder)', 'Overig'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('congenital_dislocation_of_hip_disorder', 'pelvic_injury_disorder', 'overig'))">
+                                test="empty(@enum) or (@enum = ('Congenital_dislocation_of_hip_(disorder)', 'Pelvic_injury_(disorder)', 'Overig'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Orthopedische afwijking": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/orthopedische_afwijking/@enum; allowed=('congenital_dislocation_of_hip_disorder', 'pelvic_injury_disorder', 'overig')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/orthopedische_afwijking/@enum; allowed=('Congenital_dislocation_of_hip_(disorder)', 'Pelvic_injury_(disorder)', 'Overig')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -20387,16 +20387,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('operation_on_female_genital_organs_procedure', 'operation_on_female_genital_organs_procedure_curettage_procedure', 'operation_on_female_genital_organs_procedure_cesarean_section_procedure', 'operation_on_female_genital_organs_procedure_manual_removal_of_retained_placenta_procedure', 'operation_on_female_genital_organs_procedure_operation_on_uterus_procedure', 'operation_on_female_genital_organs_procedure_uterine_myomectomy_procedure', 'operation_on_female_genital_organs_procedure_operation_on_ovary_procedure', 'operation_on_musculoskeletal_system_procedure', 'operation_on_musculoskeletal_system_procedure_operative_procedure_on_pelvis_procedure', 'operation_on_musculoskeletal_system_procedure_operation_on_back_procedure', 'operation_on_abdominal_region_procedure', 'operation_on_abdominal_region_procedure_laparotomy_procedure', 'operation_on_abdominal_region_procedure_appendectomy_procedure', 'operation_on_abdominal_region_procedure_abdominoplasty_procedure', 'operation_on_abdominal_region_procedure_operation_on_intestine_procedure', 'operation_on_breast_procedure', 'operation_on_organ_procedure', 'operation_on_organ_procedure_kidney_operation_procedure', 'operation_on_organ_procedure_operation_on_thyroid_gland_procedure', 'operation_on_organ_procedure_operation_on_heart_procedure', 'operation_on_organ_procedure_operation_on_adrenal_gland_procedure', 'operation_on_nervous_system_procedure', 'onbekend', 'overig'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Operation_on_female_genital_organs_(procedure)', 'Operation_on_female_genital_organs_(procedure)_Curettage_(procedure)', 'Operation_on_female_genital_organs_(procedure)_Cesarean_section_(procedure)', 'Operation_on_female_genital_organs_(procedure)_Manual_removal_of_retained_placenta_(procedure)', 'Operation_on_female_genital_organs_(procedure)_Operation_on_uterus_(procedure)', 'Operation_on_female_genital_organs_(procedure)_Uterine_myomectomy_(procedure)', 'Operation_on_female_genital_organs_(procedure)_Operation_on_ovary_(procedure)', 'Operation_on_musculoskeletal_system_(procedure)', 'Operation_on_musculoskeletal_system_(procedure)_Operative_procedure_on_pelvis_(procedure)', 'Operation_on_musculoskeletal_system_(procedure)_Operation_on_back_(procedure)', 'Operation_on_abdominal_region_(procedure)', 'Operation_on_abdominal_region_(procedure)_Laparotomy_(procedure)', 'Operation_on_abdominal_region_(procedure)_Appendectomy_(procedure)', 'Operation_on_abdominal_region_(procedure)_Abdominoplasty_(procedure)', 'Operation_on_abdominal_region_(procedure)_Operation_on_intestine_(procedure)', 'Operation_on_breast_(procedure)', 'Operation_on_organ_(procedure)', 'Operation_on_organ_(procedure)_Kidney_operation_(procedure)', 'Operation_on_organ_(procedure)_Operation_on_thyroid_gland_(procedure)', 'Operation_on_organ_(procedure)_Operation_on_heart_(procedure)', 'Operation_on_organ_(procedure)_Operation_on_adrenal_gland_(procedure)', 'Operation_on_nervous_system_(procedure)', 'Onbekend', 'Overig'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('operation_on_female_genital_organs_procedure', 'operation_on_female_genital_organs_procedure_curettage_procedure', 'operation_on_female_genital_organs_procedure_cesarean_section_procedure', 'operation_on_female_genital_organs_procedure_manual_removal_of_retained_placenta_procedure', 'operation_on_female_genital_organs_procedure_operation_on_uterus_procedure', 'operation_on_female_genital_organs_procedure_uterine_myomectomy_procedure', 'operation_on_female_genital_organs_procedure_operation_on_ovary_procedure', 'operation_on_musculoskeletal_system_procedure', 'operation_on_musculoskeletal_system_procedure_operative_procedure_on_pelvis_procedure', 'operation_on_musculoskeletal_system_procedure_operation_on_back_procedure', 'operation_on_abdominal_region_procedure', 'operation_on_abdominal_region_procedure_laparotomy_procedure', 'operation_on_abdominal_region_procedure_appendectomy_procedure', 'operation_on_abdominal_region_procedure_abdominoplasty_procedure', 'operation_on_abdominal_region_procedure_operation_on_intestine_procedure', 'operation_on_breast_procedure', 'operation_on_organ_procedure', 'operation_on_organ_procedure_kidney_operation_procedure', 'operation_on_organ_procedure_operation_on_thyroid_gland_procedure', 'operation_on_organ_procedure_operation_on_heart_procedure', 'operation_on_organ_procedure_operation_on_adrenal_gland_procedure', 'operation_on_nervous_system_procedure', 'onbekend', 'overig'))">
+                                test="empty(@enum) or (@enum = ('Operation_on_female_genital_organs_(procedure)', 'Operation_on_female_genital_organs_(procedure)_Curettage_(procedure)', 'Operation_on_female_genital_organs_(procedure)_Cesarean_section_(procedure)', 'Operation_on_female_genital_organs_(procedure)_Manual_removal_of_retained_placenta_(procedure)', 'Operation_on_female_genital_organs_(procedure)_Operation_on_uterus_(procedure)', 'Operation_on_female_genital_organs_(procedure)_Uterine_myomectomy_(procedure)', 'Operation_on_female_genital_organs_(procedure)_Operation_on_ovary_(procedure)', 'Operation_on_musculoskeletal_system_(procedure)', 'Operation_on_musculoskeletal_system_(procedure)_Operative_procedure_on_pelvis_(procedure)', 'Operation_on_musculoskeletal_system_(procedure)_Operation_on_back_(procedure)', 'Operation_on_abdominal_region_(procedure)', 'Operation_on_abdominal_region_(procedure)_Laparotomy_(procedure)', 'Operation_on_abdominal_region_(procedure)_Appendectomy_(procedure)', 'Operation_on_abdominal_region_(procedure)_Abdominoplasty_(procedure)', 'Operation_on_abdominal_region_(procedure)_Operation_on_intestine_(procedure)', 'Operation_on_breast_(procedure)', 'Operation_on_organ_(procedure)', 'Operation_on_organ_(procedure)_Kidney_operation_(procedure)', 'Operation_on_organ_(procedure)_Operation_on_thyroid_gland_(procedure)', 'Operation_on_organ_(procedure)_Operation_on_heart_(procedure)', 'Operation_on_organ_(procedure)_Operation_on_adrenal_gland_(procedure)', 'Operation_on_nervous_system_(procedure)', 'Onbekend', 'Overig'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Type operatie": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/type_operatie/@enum; allowed=('operation_on_female_genital_organs_procedure', 'operation_on_female_genital_organs_procedure_curettage_procedure', 'operation_on_female_genital_organs_procedure_cesarean_section_procedure', 'operation_on_female_genital_organs_procedure_manual_removal_of_retained_placenta_procedure', 'operation_on_female_genital_organs_procedure_operation_on_uterus_procedure', 'operation_on_female_genital_organs_procedure_uterine_myomectomy_procedure', 'operation_on_female_genital_organs_procedure_operation_on_ovary_procedure', 'operation_on_musculoskeletal_system_procedure', 'operation_on_musculoskeletal_system_procedure_operative_procedure_on_pelvis_procedure', 'operation_on_musculoskeletal_system_procedure_operation_on_back_procedure', 'operation_on_abdominal_region_procedure', 'operation_on_abdominal_region_procedure_laparotomy_procedure', 'operation_on_abdominal_region_procedure_appendectomy_procedure', 'operation_on_abdominal_region_procedure_abdominoplasty_procedure', 'operation_on_abdominal_region_procedure_operation_on_intestine_procedure', 'operation_on_breast_procedure', 'operation_on_organ_procedure', 'operation_on_organ_procedure_kidney_operation_procedure', 'operation_on_organ_procedure_operation_on_thyroid_gland_procedure', 'operation_on_organ_procedure_operation_on_heart_procedure', 'operation_on_organ_procedure_operation_on_adrenal_gland_procedure', 'operation_on_nervous_system_procedure', 'onbekend', 'overig')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/type_operatie/@enum; allowed=('Operation_on_female_genital_organs_(procedure)', 'Operation_on_female_genital_organs_(procedure)_Curettage_(procedure)', 'Operation_on_female_genital_organs_(procedure)_Cesarean_section_(procedure)', 'Operation_on_female_genital_organs_(procedure)_Manual_removal_of_retained_placenta_(procedure)', 'Operation_on_female_genital_organs_(procedure)_Operation_on_uterus_(procedure)', 'Operation_on_female_genital_organs_(procedure)_Uterine_myomectomy_(procedure)', 'Operation_on_female_genital_organs_(procedure)_Operation_on_ovary_(procedure)', 'Operation_on_musculoskeletal_system_(procedure)', 'Operation_on_musculoskeletal_system_(procedure)_Operative_procedure_on_pelvis_(procedure)', 'Operation_on_musculoskeletal_system_(procedure)_Operation_on_back_(procedure)', 'Operation_on_abdominal_region_(procedure)', 'Operation_on_abdominal_region_(procedure)_Laparotomy_(procedure)', 'Operation_on_abdominal_region_(procedure)_Appendectomy_(procedure)', 'Operation_on_abdominal_region_(procedure)_Abdominoplasty_(procedure)', 'Operation_on_abdominal_region_(procedure)_Operation_on_intestine_(procedure)', 'Operation_on_breast_(procedure)', 'Operation_on_organ_(procedure)', 'Operation_on_organ_(procedure)_Kidney_operation_(procedure)', 'Operation_on_organ_(procedure)_Operation_on_thyroid_gland_(procedure)', 'Operation_on_organ_(procedure)_Operation_on_heart_(procedure)', 'Operation_on_organ_(procedure)_Operation_on_adrenal_gland_(procedure)', 'Operation_on_nervous_system_(procedure)', 'Onbekend', 'Overig')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -20529,16 +20529,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('von_willebrand_disorder_disorder', 'hemophilia_disorder', 'thrombocytopenic_disorder_disorder', 'disseminated_intravascular_coagulation_disorder', 'thrombophilia_disorder', 'thrombophilia_disorder_antithrombin_iii_deficiency_disorder', 'thrombophilia_disorder_protein_c_deficiency_disease_disorder', 'thrombophilia_disorder_protein_s_deficiency_disease_disorder', 'thrombophilia_disorder_heterozygous_factor_v_leiden_mutation_disorder', 'thrombophilia_disorder_homozygous_factor_v_leiden_mutation_disorder', 'thrombophilia_disorder_factor_xii_deficiency_disease_disorder', 'deep_venous_thrombosis_disorder', 'pulmonary_embolism_disorder', 'overig'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('von_Willebrand_disorder_(disorder)', 'Hemophilia_(disorder)', 'Thrombocytopenic_disorder_(disorder)', 'Disseminated_intravascular_coagulation_(disorder)', 'Thrombophilia_(disorder)', 'Thrombophilia_(disorder)_Antithrombin_III_deficiency_(disorder)', 'Thrombophilia_(disorder)_Protein_C_deficiency_disease_(disorder)', 'Thrombophilia_(disorder)_Protein_S_deficiency_disease_(disorder)', 'Thrombophilia_(disorder)_Heterozygous_Factor_V_Leiden_mutation_(disorder)', 'Thrombophilia_(disorder)_Homozygous_Factor_V_Leiden_mutation_(disorder)', 'Thrombophilia_(disorder)_Factor_XII_deficiency_disease_(disorder)', 'Deep_venous_thrombosis_(disorder)', 'Pulmonary_embolism_(disorder)', 'Overig'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('von_willebrand_disorder_disorder', 'hemophilia_disorder', 'thrombocytopenic_disorder_disorder', 'disseminated_intravascular_coagulation_disorder', 'thrombophilia_disorder', 'thrombophilia_disorder_antithrombin_iii_deficiency_disorder', 'thrombophilia_disorder_protein_c_deficiency_disease_disorder', 'thrombophilia_disorder_protein_s_deficiency_disease_disorder', 'thrombophilia_disorder_heterozygous_factor_v_leiden_mutation_disorder', 'thrombophilia_disorder_homozygous_factor_v_leiden_mutation_disorder', 'thrombophilia_disorder_factor_xii_deficiency_disease_disorder', 'deep_venous_thrombosis_disorder', 'pulmonary_embolism_disorder', 'overig'))">
+                                test="empty(@enum) or (@enum = ('von_Willebrand_disorder_(disorder)', 'Hemophilia_(disorder)', 'Thrombocytopenic_disorder_(disorder)', 'Disseminated_intravascular_coagulation_(disorder)', 'Thrombophilia_(disorder)', 'Thrombophilia_(disorder)_Antithrombin_III_deficiency_(disorder)', 'Thrombophilia_(disorder)_Protein_C_deficiency_disease_(disorder)', 'Thrombophilia_(disorder)_Protein_S_deficiency_disease_(disorder)', 'Thrombophilia_(disorder)_Heterozygous_Factor_V_Leiden_mutation_(disorder)', 'Thrombophilia_(disorder)_Homozygous_Factor_V_Leiden_mutation_(disorder)', 'Thrombophilia_(disorder)_Factor_XII_deficiency_disease_(disorder)', 'Deep_venous_thrombosis_(disorder)', 'Pulmonary_embolism_(disorder)', 'Overig'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Type stollingsprobleem": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/type_stollingsprobleem/@enum; allowed=('von_willebrand_disorder_disorder', 'hemophilia_disorder', 'thrombocytopenic_disorder_disorder', 'disseminated_intravascular_coagulation_disorder', 'thrombophilia_disorder', 'thrombophilia_disorder_antithrombin_iii_deficiency_disorder', 'thrombophilia_disorder_protein_c_deficiency_disease_disorder', 'thrombophilia_disorder_protein_s_deficiency_disease_disorder', 'thrombophilia_disorder_heterozygous_factor_v_leiden_mutation_disorder', 'thrombophilia_disorder_homozygous_factor_v_leiden_mutation_disorder', 'thrombophilia_disorder_factor_xii_deficiency_disease_disorder', 'deep_venous_thrombosis_disorder', 'pulmonary_embolism_disorder', 'overig')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/type_stollingsprobleem/@enum; allowed=('von_Willebrand_disorder_(disorder)', 'Hemophilia_(disorder)', 'Thrombocytopenic_disorder_(disorder)', 'Disseminated_intravascular_coagulation_(disorder)', 'Thrombophilia_(disorder)', 'Thrombophilia_(disorder)_Antithrombin_III_deficiency_(disorder)', 'Thrombophilia_(disorder)_Protein_C_deficiency_disease_(disorder)', 'Thrombophilia_(disorder)_Protein_S_deficiency_disease_(disorder)', 'Thrombophilia_(disorder)_Heterozygous_Factor_V_Leiden_mutation_(disorder)', 'Thrombophilia_(disorder)_Homozygous_Factor_V_Leiden_mutation_(disorder)', 'Thrombophilia_(disorder)_Factor_XII_deficiency_disease_(disorder)', 'Deep_venous_thrombosis_(disorder)', 'Pulmonary_embolism_(disorder)', 'Overig')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -21069,16 +21069,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('partus', 'miskraam', 'miskraam_spontaan', 'miskraam_medicamenteus', 'miskraam_instrumenteel', 'apla', 'apla_medicamenteus', 'apla_instrumenteel', 'eug__behandeld', 'partiele_mola__behandeld', 'geen_informatie'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Partus', 'Miskraam', 'Miskraam_Spontaan', 'Miskraam_Medicamenteus', 'Miskraam_Instrumenteel', 'APLA', 'APLA_Medicamenteus', 'APLA_Instrumenteel', 'EUG_-_behandeld', '(partiële)_Mola_-_behandeld', 'geen_informatie'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('partus', 'miskraam', 'miskraam_spontaan', 'miskraam_medicamenteus', 'miskraam_instrumenteel', 'apla', 'apla_medicamenteus', 'apla_instrumenteel', 'eug__behandeld', 'partiele_mola__behandeld', 'geen_informatie'))">
+                                test="empty(@enum) or (@enum = ('Partus', 'Miskraam', 'Miskraam_Spontaan', 'Miskraam_Medicamenteus', 'Miskraam_Instrumenteel', 'APLA', 'APLA_Medicamenteus', 'APLA_Instrumenteel', 'EUG_-_behandeld', '(partiële)_Mola_-_behandeld', 'geen_informatie'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Wijze einde zwangerschap": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/wijze_einde_zwangerschap/@enum; allowed=('partus', 'miskraam', 'miskraam_spontaan', 'miskraam_medicamenteus', 'miskraam_instrumenteel', 'apla', 'apla_medicamenteus', 'apla_instrumenteel', 'eug__behandeld', 'partiele_mola__behandeld', 'geen_informatie')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/wijze_einde_zwangerschap/@enum; allowed=('Partus', 'Miskraam', 'Miskraam_Spontaan', 'Miskraam_Medicamenteus', 'Miskraam_Instrumenteel', 'APLA', 'APLA_Medicamenteus', 'APLA_Instrumenteel', 'EUG_-_behandeld', '(partiële)_Mola_-_behandeld', 'geen_informatie')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -21755,16 +21755,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('endometriosis_disorder', 'uterine_leiomyoma_disorder', 'congenital_uterine_anomaly_disorder', 'overig'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Endometriosis_(disorder)', 'Uterine_leiomyoma_(disorder)', 'Congenital_uterine_anomaly_(disorder)', 'Overig'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('endometriosis_disorder', 'uterine_leiomyoma_disorder', 'congenital_uterine_anomaly_disorder', 'overig'))">
+                                test="empty(@enum) or (@enum = ('Endometriosis_(disorder)', 'Uterine_leiomyoma_(disorder)', 'Congenital_uterine_anomaly_(disorder)', 'Overig'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Gynaecologische aandoening": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/gynaecologische_aandoening/@enum; allowed=('endometriosis_disorder', 'uterine_leiomyoma_disorder', 'congenital_uterine_anomaly_disorder', 'overig')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/gynaecologische_aandoening/@enum; allowed=('Endometriosis_(disorder)', 'Uterine_leiomyoma_(disorder)', 'Congenital_uterine_anomaly_(disorder)', 'Overig')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -22079,16 +22079,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('infection_of_uterus_disorder', 'urinary_tract_infection_in_pregnancy_disorder', 'pyelonephritis_disorder', 'infectious_colitis_enteritis_and_gastroenteritis_disorder', 'overig', 'geen_informatie'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Infection_of_uterus_(disorder)', 'Urinary_tract_infection_in_pregnancy_(disorder)', 'Pyelonephritis_(disorder)', 'Infectious_colitis,_enteritis_and_gastroenteritis_(disorder)', 'Overig', 'Geen_informatie'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('infection_of_uterus_disorder', 'urinary_tract_infection_in_pregnancy_disorder', 'pyelonephritis_disorder', 'infectious_colitis_enteritis_and_gastroenteritis_disorder', 'overig', 'geen_informatie'))">
+                                test="empty(@enum) or (@enum = ('Infection_of_uterus_(disorder)', 'Urinary_tract_infection_in_pregnancy_(disorder)', 'Pyelonephritis_(disorder)', 'Infectious_colitis,_enteritis_and_gastroenteritis_(disorder)', 'Overig', 'Geen_informatie'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Infectie": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/infectie/@enum; allowed=('infection_of_uterus_disorder', 'urinary_tract_infection_in_pregnancy_disorder', 'pyelonephritis_disorder', 'infectious_colitis_enteritis_and_gastroenteritis_disorder', 'overig', 'geen_informatie')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/infectie/@enum; allowed=('Infection_of_uterus_(disorder)', 'Urinary_tract_infection_in_pregnancy_(disorder)', 'Pyelonephritis_(disorder)', 'Infectious_colitis,_enteritis_and_gastroenteritis_(disorder)', 'Overig', 'Geen_informatie')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -22312,16 +22312,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('pregnancyinduced_hypertension_disorder', 'preeclampsia_disorder', 'hemolysiselevated_liver_enzymeslow_platelet_count_syndrome_disorder', 'eclampsia_disorder'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Pregnancy-induced_hypertension_(disorder)', 'Pre-eclampsia_(disorder)', 'Hemolysis-elevated_liver_enzymes-low_platelet_count_syndrome_(disorder)', 'Eclampsia_(disorder)'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('pregnancyinduced_hypertension_disorder', 'preeclampsia_disorder', 'hemolysiselevated_liver_enzymeslow_platelet_count_syndrome_disorder', 'eclampsia_disorder'))">
+                                test="empty(@enum) or (@enum = ('Pregnancy-induced_hypertension_(disorder)', 'Pre-eclampsia_(disorder)', 'Hemolysis-elevated_liver_enzymes-low_platelet_count_syndrome_(disorder)', 'Eclampsia_(disorder)'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Hypertensieve aandoening": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/hypertensieve_aandoening/@enum; allowed=('pregnancyinduced_hypertension_disorder', 'preeclampsia_disorder', 'hemolysiselevated_liver_enzymeslow_platelet_count_syndrome_disorder', 'eclampsia_disorder')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/hypertensieve_aandoening/@enum; allowed=('Pregnancy-induced_hypertension_(disorder)', 'Pre-eclampsia_(disorder)', 'Hemolysis-elevated_liver_enzymes-low_platelet_count_syndrome_(disorder)', 'Eclampsia_(disorder)')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -22636,16 +22636,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('largefordates_fetus_disorder', 'small_for_gestational_age_fetus_disorder', 'geen_informatie'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Large-for-dates_fetus_(disorder)', 'Small_for_gestational_age_fetus_(disorder)', 'Geen_informatie'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('largefordates_fetus_disorder', 'small_for_gestational_age_fetus_disorder', 'geen_informatie'))">
+                                test="empty(@enum) or (@enum = ('Large-for-dates_fetus_(disorder)', 'Small_for_gestational_age_fetus_(disorder)', 'Geen_informatie'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Afwijkende groei foetus": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/afwijkende_groei_foetus/@enum; allowed=('largefordates_fetus_disorder', 'small_for_gestational_age_fetus_disorder', 'geen_informatie')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/afwijkende_groei_foetus/@enum; allowed=('Large-for-dates_fetus_(disorder)', 'Small_for_gestational_age_fetus_(disorder)', 'Geen_informatie')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -23470,16 +23470,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('spontaan', 'controlled_cord_traction', 'manuele_placentaverwijdering', 'placentaverwijdering_bij_sc', 'overig', 'geen_informatie', 'onbekend'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Spontaan', 'Controlled_cord_traction', 'Manuele_placentaverwijdering', 'Placentaverwijdering_bij_SC', 'Overig', 'Geen_informatie', 'Onbekend'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('spontaan', 'controlled_cord_traction', 'manuele_placentaverwijdering', 'placentaverwijdering_bij_sc', 'overig', 'geen_informatie', 'onbekend'))">
+                                test="empty(@enum) or (@enum = ('Spontaan', 'Controlled_cord_traction', 'Manuele_placentaverwijdering', 'Placentaverwijdering_bij_SC', 'Overig', 'Geen_informatie', 'Onbekend'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Geboorte placenta": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/placenta/geboorte_placenta/@enum; allowed=('spontaan', 'controlled_cord_traction', 'manuele_placentaverwijdering', 'placentaverwijdering_bij_sc', 'overig', 'geen_informatie', 'onbekend')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/placenta/geboorte_placenta/@enum; allowed=('Spontaan', 'Controlled_cord_traction', 'Manuele_placentaverwijdering', 'Placentaverwijdering_bij_SC', 'Overig', 'Geen_informatie', 'Onbekend')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -24265,16 +24265,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('normal_delivery_procedure_procedure', 'assisted_delivery_of_fetus_procedure', 'cesarean_section_procedure', 'cesarean_section_procedure_elective_cesarian_delivery_procedure', 'cesarean_section_procedure_emergency_cesarian_section_procedure', 'termination_of_pregnancy_top', 'termination_of_pregnancy_top_medical_termination_of_pregnancy_using_prostaglandin_procedure', 'termination_of_pregnancy_top_postmortem_cesarean_section_procedure', 'termination_of_pregnancy_top_overig', 'geen_informatie'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Normal_delivery_procedure_(procedure)', 'Assisted_delivery_of_fetus_(procedure)', 'Cesarean_section_(procedure)', 'Cesarean_section_(procedure)_Elective_cesarian_delivery_(procedure)', 'Cesarean_section_(procedure)_Emergency_cesarian_section_(procedure)', 'Termination_of_Pregnancy_(TOP)', 'Termination_of_Pregnancy_(TOP)_Medical_termination_of_pregnancy_using_prostaglandin_(procedure)', 'Termination_of_Pregnancy_(TOP)_Postmortem_cesarean_section_(procedure)', 'Termination_of_Pregnancy_(TOP)_Overig', 'Geen_informatie'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('normal_delivery_procedure_procedure', 'assisted_delivery_of_fetus_procedure', 'cesarean_section_procedure', 'cesarean_section_procedure_elective_cesarian_delivery_procedure', 'cesarean_section_procedure_emergency_cesarian_section_procedure', 'termination_of_pregnancy_top', 'termination_of_pregnancy_top_medical_termination_of_pregnancy_using_prostaglandin_procedure', 'termination_of_pregnancy_top_postmortem_cesarean_section_procedure', 'termination_of_pregnancy_top_overig', 'geen_informatie'))">
+                                test="empty(@enum) or (@enum = ('Normal_delivery_procedure_(procedure)', 'Assisted_delivery_of_fetus_(procedure)', 'Cesarean_section_(procedure)', 'Cesarean_section_(procedure)_Elective_cesarian_delivery_(procedure)', 'Cesarean_section_(procedure)_Emergency_cesarian_section_(procedure)', 'Termination_of_Pregnancy_(TOP)', 'Termination_of_Pregnancy_(TOP)_Medical_termination_of_pregnancy_using_prostaglandin_(procedure)', 'Termination_of_Pregnancy_(TOP)_Postmortem_cesarean_section_(procedure)', 'Termination_of_Pregnancy_(TOP)_Overig', 'Geen_informatie'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Type partus": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/type_partus/@enum; allowed=('normal_delivery_procedure_procedure', 'assisted_delivery_of_fetus_procedure', 'cesarean_section_procedure', 'cesarean_section_procedure_elective_cesarian_delivery_procedure', 'cesarean_section_procedure_emergency_cesarian_section_procedure', 'termination_of_pregnancy_top', 'termination_of_pregnancy_top_medical_termination_of_pregnancy_using_prostaglandin_procedure', 'termination_of_pregnancy_top_postmortem_cesarean_section_procedure', 'termination_of_pregnancy_top_overig', 'geen_informatie')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/type_partus/@enum; allowed=('Normal_delivery_procedure_(procedure)', 'Assisted_delivery_of_fetus_(procedure)', 'Cesarean_section_(procedure)', 'Cesarean_section_(procedure)_Elective_cesarian_delivery_(procedure)', 'Cesarean_section_(procedure)_Emergency_cesarian_section_(procedure)', 'Termination_of_Pregnancy_(TOP)', 'Termination_of_Pregnancy_(TOP)_Medical_termination_of_pregnancy_using_prostaglandin_(procedure)', 'Termination_of_Pregnancy_(TOP)_Postmortem_cesarean_section_(procedure)', 'Termination_of_Pregnancy_(TOP)_Overig', 'Geen_informatie')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -24407,16 +24407,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('_p23', 'p23_tot_p10', 'p10_tot_p50', 'p50_tot_p90', 'p90_tot_p977', '_p977', 'geen_informatie'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('&lt;_p2,3', 'p2,3_tot_p10', 'p10_tot_p50', 'p50_tot_p90', 'p90_tot_p97,7', '&gt;=_p97,7', 'Geen_informatie'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('_p23', 'p23_tot_p10', 'p10_tot_p50', 'p50_tot_p90', 'p90_tot_p977', '_p977', 'geen_informatie'))">
+                                test="empty(@enum) or (@enum = ('&lt;_p2,3', 'p2,3_tot_p10', 'p10_tot_p50', 'p50_tot_p90', 'p90_tot_p97,7', '&gt;=_p97,7', 'Geen_informatie'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Percentiel van het geboortegewicht": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/percentiel_van_het_geboortegewicht/@enum; allowed=('_p23', 'p23_tot_p10', 'p10_tot_p50', 'p50_tot_p90', 'p90_tot_p977', '_p977', 'geen_informatie')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/percentiel_van_het_geboortegewicht/@enum; allowed=('&lt;_p2,3', 'p2,3_tot_p10', 'p10_tot_p50', 'p50_tot_p90', 'p90_tot_p97,7', '&gt;=_p97,7', 'Geen_informatie')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -25706,16 +25706,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('intrauterine_transfusion_procedure', 'selective_destruction_of_fetus_procedure', 'operation_on_fetus_procedure', 'therapeutic_drainage_of_amniotic_fluid_procedure', 'operation_on_placenta_procedure', 'overig'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Intrauterine_transfusion_(procedure)', 'Selective_destruction_of_fetus_(procedure)', 'Operation_on_fetus_(procedure)', 'Therapeutic_drainage_of_amniotic_fluid_(procedure)', 'Operation_on_placenta_(procedure)', 'Overig'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('intrauterine_transfusion_procedure', 'selective_destruction_of_fetus_procedure', 'operation_on_fetus_procedure', 'therapeutic_drainage_of_amniotic_fluid_procedure', 'operation_on_placenta_procedure', 'overig'))">
+                                test="empty(@enum) or (@enum = ('Intrauterine_transfusion_(procedure)', 'Selective_destruction_of_fetus_(procedure)', 'Operation_on_fetus_(procedure)', 'Therapeutic_drainage_of_amniotic_fluid_(procedure)', 'Operation_on_placenta_(procedure)', 'Overig'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Intra-uteriene behandeling": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zwangerschap/intrauteriene_behandeling/@enum; allowed=('intrauterine_transfusion_procedure', 'selective_destruction_of_fetus_procedure', 'operation_on_fetus_procedure', 'therapeutic_drainage_of_amniotic_fluid_procedure', 'operation_on_placenta_procedure', 'overig')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zwangerschap/intrauteriene_behandeling/@enum; allowed=('Intrauterine_transfusion_(procedure)', 'Selective_destruction_of_fetus_(procedure)', 'Operation_on_fetus_(procedure)', 'Therapeutic_drainage_of_amniotic_fluid_(procedure)', 'Operation_on_placenta_(procedure)', 'Overig')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -25939,16 +25939,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('partus', 'miskraam', 'miskraam_spontaan', 'miskraam_medicamenteus', 'miskraam_instrumenteel', 'apla', 'apla_medicamenteus', 'apla_instrumenteel', 'eug__behandeld', 'partiele_mola__behandeld', 'geen_informatie'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Partus', 'Miskraam', 'Miskraam_Spontaan', 'Miskraam_Medicamenteus', 'Miskraam_Instrumenteel', 'APLA', 'APLA_Medicamenteus', 'APLA_Instrumenteel', 'EUG_-_behandeld', '(partiële)_Mola_-_behandeld', 'geen_informatie'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('partus', 'miskraam', 'miskraam_spontaan', 'miskraam_medicamenteus', 'miskraam_instrumenteel', 'apla', 'apla_medicamenteus', 'apla_instrumenteel', 'eug__behandeld', 'partiele_mola__behandeld', 'geen_informatie'))">
+                                test="empty(@enum) or (@enum = ('Partus', 'Miskraam', 'Miskraam_Spontaan', 'Miskraam_Medicamenteus', 'Miskraam_Instrumenteel', 'APLA', 'APLA_Medicamenteus', 'APLA_Instrumenteel', 'EUG_-_behandeld', '(partiële)_Mola_-_behandeld', 'geen_informatie'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Wijze einde zwangerschap": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zwangerschap/wijze_einde_zwangerschap/@enum; allowed=('partus', 'miskraam', 'miskraam_spontaan', 'miskraam_medicamenteus', 'miskraam_instrumenteel', 'apla', 'apla_medicamenteus', 'apla_instrumenteel', 'eug__behandeld', 'partiele_mola__behandeld', 'geen_informatie')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zwangerschap/wijze_einde_zwangerschap/@enum; allowed=('Partus', 'Miskraam', 'Miskraam_Spontaan', 'Miskraam_Medicamenteus', 'Miskraam_Instrumenteel', 'APLA', 'APLA_Medicamenteus', 'APLA_Instrumenteel', 'EUG_-_behandeld', '(partiële)_Mola_-_behandeld', 'geen_informatie')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -26159,16 +26159,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('home_birth_finding', 'geboortecentrum', 'hospital_environment', 'nog_niet_bepaald', 'geen_voorkeur', 'onbekend', 'geen_informatie'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Home_birth_(finding)', 'Geboortecentrum', 'Hospital_(environment)', 'Nog_niet_bepaald', 'Geen_voorkeur', 'Onbekend', 'Geen_informatie'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('home_birth_finding', 'geboortecentrum', 'hospital_environment', 'nog_niet_bepaald', 'geen_voorkeur', 'onbekend', 'geen_informatie'))">
+                                test="empty(@enum) or (@enum = ('Home_birth_(finding)', 'Geboortecentrum', 'Hospital_(environment)', 'Nog_niet_bepaald', 'Geen_voorkeur', 'Onbekend', 'Geen_informatie'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Voorgenomen plaats baring tijdens zwangerschap (type locatie)": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zwangerschap/voornemens/voorgenomen_plaats_baring_tijdens_zwangerschap_type_locatie/@enum; allowed=('home_birth_finding', 'geboortecentrum', 'hospital_environment', 'nog_niet_bepaald', 'geen_voorkeur', 'onbekend', 'geen_informatie')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zwangerschap/voornemens/voorgenomen_plaats_baring_tijdens_zwangerschap_type_locatie/@enum; allowed=('Home_birth_(finding)', 'Geboortecentrum', 'Hospital_(environment)', 'Nog_niet_bepaald', 'Geen_voorkeur', 'Onbekend', 'Geen_informatie')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -26657,16 +26657,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('fetal_movements_present_finding', 'weak_fetal_movements_finding', 'reduced_fetal_movement_finding', 'fetal_movements_absent_contextdependent_category'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Fetal_movements_present_(finding)', 'Weak_fetal_movements_(finding)', 'Reduced_fetal_movement_(finding)', 'Fetal_movements_absent_(context-dependent_category)'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('fetal_movements_present_finding', 'weak_fetal_movements_finding', 'reduced_fetal_movement_finding', 'fetal_movements_absent_contextdependent_category'))">
+                                test="empty(@enum) or (@enum = ('Fetal_movements_present_(finding)', 'Weak_fetal_movements_(finding)', 'Reduced_fetal_movement_(finding)', 'Fetal_movements_absent_(context-dependent_category)'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Leven voelen": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zwangerschap/prenatale_controle/leven_voelen/@enum; allowed=('fetal_movements_present_finding', 'weak_fetal_movements_finding', 'reduced_fetal_movement_finding', 'fetal_movements_absent_contextdependent_category')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zwangerschap/prenatale_controle/leven_voelen/@enum; allowed=('Fetal_movements_present_(finding)', 'Weak_fetal_movements_(finding)', 'Reduced_fetal_movement_(finding)', 'Fetal_movements_absent_(context-dependent_category)')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -26799,16 +26799,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('niet_gerookt', '_1__10_per_dag', '_11__20_per_dag', 'meer_dan_20_per_dag', 'gestopt_voor_huidige_zwangerschap', 'gestopt_tijdens_huidige_zwangerschap', 'unknown'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('niet_gerookt', '1_-_10_per_dag', '11_-_20_per_dag', 'meer_dan_20_per_dag', 'gestopt_vóór_huidige_zwangerschap', 'gestopt_tijdens_huidige_zwangerschap', 'Unknown'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('niet_gerookt', '_1__10_per_dag', '_11__20_per_dag', 'meer_dan_20_per_dag', 'gestopt_voor_huidige_zwangerschap', 'gestopt_tijdens_huidige_zwangerschap', 'unknown'))">
+                                test="empty(@enum) or (@enum = ('niet_gerookt', '1_-_10_per_dag', '11_-_20_per_dag', 'meer_dan_20_per_dag', 'gestopt_vóór_huidige_zwangerschap', 'gestopt_tijdens_huidige_zwangerschap', 'Unknown'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Rookgedrag": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zwangerschap/prenatale_controle/rookgedrag/@enum; allowed=('niet_gerookt', '_1__10_per_dag', '_11__20_per_dag', 'meer_dan_20_per_dag', 'gestopt_voor_huidige_zwangerschap', 'gestopt_tijdens_huidige_zwangerschap', 'unknown')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zwangerschap/prenatale_controle/rookgedrag/@enum; allowed=('niet_gerookt', '1_-_10_per_dag', '11_-_20_per_dag', 'meer_dan_20_per_dag', 'gestopt_vóór_huidige_zwangerschap', 'gestopt_tijdens_huidige_zwangerschap', 'Unknown')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -26941,16 +26941,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('geen', '_2_eenheden_per_dag', '_2_eenheden_per_dag'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('geen', '&lt;_2_eenheden_per_dag', '≥_2_eenheden_per_dag'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('geen', '_2_eenheden_per_dag', '_2_eenheden_per_dag'))">
+                                test="empty(@enum) or (@enum = ('geen', '&lt;_2_eenheden_per_dag', '≥_2_eenheden_per_dag'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Alcoholgebruik": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zwangerschap/prenatale_controle/alcoholgebruik/@enum; allowed=('geen', '_2_eenheden_per_dag', '_2_eenheden_per_dag')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zwangerschap/prenatale_controle/alcoholgebruik/@enum; allowed=('geen', '&lt;_2_eenheden_per_dag', '≥_2_eenheden_per_dag')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -27845,16 +27845,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('endometriosis_disorder', 'uterine_leiomyoma_disorder', 'congenital_uterine_anomaly_disorder', 'overig'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Endometriosis_(disorder)', 'Uterine_leiomyoma_(disorder)', 'Congenital_uterine_anomaly_(disorder)', 'Overig'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('endometriosis_disorder', 'uterine_leiomyoma_disorder', 'congenital_uterine_anomaly_disorder', 'overig'))">
+                                test="empty(@enum) or (@enum = ('Endometriosis_(disorder)', 'Uterine_leiomyoma_(disorder)', 'Congenital_uterine_anomaly_(disorder)', 'Overig'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Gynaecologische aandoening": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zwangerschap/diagnose/gynaecologische_aandoening/@enum; allowed=('endometriosis_disorder', 'uterine_leiomyoma_disorder', 'congenital_uterine_anomaly_disorder', 'overig')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zwangerschap/diagnose/gynaecologische_aandoening/@enum; allowed=('Endometriosis_(disorder)', 'Uterine_leiomyoma_(disorder)', 'Congenital_uterine_anomaly_(disorder)', 'Overig')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -28260,16 +28260,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('infection_of_uterus_disorder', 'urinary_tract_infection_in_pregnancy_disorder', 'pyelonephritis_disorder', 'infectious_colitis_enteritis_and_gastroenteritis_disorder', 'overig', 'geen_informatie'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Infection_of_uterus_(disorder)', 'Urinary_tract_infection_in_pregnancy_(disorder)', 'Pyelonephritis_(disorder)', 'Infectious_colitis,_enteritis_and_gastroenteritis_(disorder)', 'Overig', 'Geen_informatie'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('infection_of_uterus_disorder', 'urinary_tract_infection_in_pregnancy_disorder', 'pyelonephritis_disorder', 'infectious_colitis_enteritis_and_gastroenteritis_disorder', 'overig', 'geen_informatie'))">
+                                test="empty(@enum) or (@enum = ('Infection_of_uterus_(disorder)', 'Urinary_tract_infection_in_pregnancy_(disorder)', 'Pyelonephritis_(disorder)', 'Infectious_colitis,_enteritis_and_gastroenteritis_(disorder)', 'Overig', 'Geen_informatie'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Infectie": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zwangerschap/diagnose/infectie/@enum; allowed=('infection_of_uterus_disorder', 'urinary_tract_infection_in_pregnancy_disorder', 'pyelonephritis_disorder', 'infectious_colitis_enteritis_and_gastroenteritis_disorder', 'overig', 'geen_informatie')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zwangerschap/diagnose/infectie/@enum; allowed=('Infection_of_uterus_(disorder)', 'Urinary_tract_infection_in_pregnancy_(disorder)', 'Pyelonephritis_(disorder)', 'Infectious_colitis,_enteritis_and_gastroenteritis_(disorder)', 'Overig', 'Geen_informatie')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -28493,16 +28493,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('pregnancyinduced_hypertension_disorder', 'preeclampsia_disorder', 'hemolysiselevated_liver_enzymeslow_platelet_count_syndrome_disorder', 'eclampsia_disorder'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Pregnancy-induced_hypertension_(disorder)', 'Pre-eclampsia_(disorder)', 'Hemolysis-elevated_liver_enzymes-low_platelet_count_syndrome_(disorder)', 'Eclampsia_(disorder)'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('pregnancyinduced_hypertension_disorder', 'preeclampsia_disorder', 'hemolysiselevated_liver_enzymeslow_platelet_count_syndrome_disorder', 'eclampsia_disorder'))">
+                                test="empty(@enum) or (@enum = ('Pregnancy-induced_hypertension_(disorder)', 'Pre-eclampsia_(disorder)', 'Hemolysis-elevated_liver_enzymes-low_platelet_count_syndrome_(disorder)', 'Eclampsia_(disorder)'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Hypertensieve aandoening": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zwangerschap/diagnose/hypertensieve_aandoening/@enum; allowed=('pregnancyinduced_hypertension_disorder', 'preeclampsia_disorder', 'hemolysiselevated_liver_enzymeslow_platelet_count_syndrome_disorder', 'eclampsia_disorder')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zwangerschap/diagnose/hypertensieve_aandoening/@enum; allowed=('Pregnancy-induced_hypertension_(disorder)', 'Pre-eclampsia_(disorder)', 'Hemolysis-elevated_liver_enzymes-low_platelet_count_syndrome_(disorder)', 'Eclampsia_(disorder)')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -28817,16 +28817,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('largefordates_fetus_disorder', 'small_for_gestational_age_fetus_disorder', 'geen_informatie'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Large-for-dates_fetus_(disorder)', 'Small_for_gestational_age_fetus_(disorder)', 'Geen_informatie'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('largefordates_fetus_disorder', 'small_for_gestational_age_fetus_disorder', 'geen_informatie'))">
+                                test="empty(@enum) or (@enum = ('Large-for-dates_fetus_(disorder)', 'Small_for_gestational_age_fetus_(disorder)', 'Geen_informatie'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Afwijkende groei foetus": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zwangerschap/diagnose/afwijkende_groei_foetus/@enum; allowed=('largefordates_fetus_disorder', 'small_for_gestational_age_fetus_disorder', 'geen_informatie')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zwangerschap/diagnose/afwijkende_groei_foetus/@enum; allowed=('Large-for-dates_fetus_(disorder)', 'Small_for_gestational_age_fetus_(disorder)', 'Geen_informatie')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -29323,16 +29323,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('breech_presentation_finding', 'transverseoblique_lie_finding', 'unstable_lie_finding', 'onbekend', 'geen_informatie'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Breech_presentation_(finding)', 'Transverse/oblique_lie_(finding)', 'Unstable_lie_(finding)', 'Onbekend', 'Geen_informatie'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('breech_presentation_finding', 'transverseoblique_lie_finding', 'unstable_lie_finding', 'onbekend', 'geen_informatie'))">
+                                test="empty(@enum) or (@enum = ('Breech_presentation_(finding)', 'Transverse/oblique_lie_(finding)', 'Unstable_lie_(finding)', 'Onbekend', 'Geen_informatie'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Liggingsafwijking": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zwangerschap/diagnose/liggingsafwijking/@enum; allowed=('breech_presentation_finding', 'transverseoblique_lie_finding', 'unstable_lie_finding', 'onbekend', 'geen_informatie')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zwangerschap/diagnose/liggingsafwijking/@enum; allowed=('Breech_presentation_(finding)', 'Transverse/oblique_lie_(finding)', 'Unstable_lie_(finding)', 'Onbekend', 'Geen_informatie')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -29712,16 +29712,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('doppler_fetal_echocardiography_procedure', 'us_scan_of_fetus_procedure', 'overig', 'geen_informatie'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Doppler_fetal_echocardiography_(procedure)', 'US_scan_of_fetus_(procedure)', 'Overig', 'Geen_informatie'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('doppler_fetal_echocardiography_procedure', 'us_scan_of_fetus_procedure', 'overig', 'geen_informatie'))">
+                                test="empty(@enum) or (@enum = ('Doppler_fetal_echocardiography_(procedure)', 'US_scan_of_fetus_(procedure)', 'Overig', 'Geen_informatie'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Vermoeden iuvd op basis van": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zwangerschap/diagnose/intrauteriene_vruchtdood/vermoeden_iuvd_op_basis_van/@enum; allowed=('doppler_fetal_echocardiography_procedure', 'us_scan_of_fetus_procedure', 'overig', 'geen_informatie')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zwangerschap/diagnose/intrauteriene_vruchtdood/vermoeden_iuvd_op_basis_van/@enum; allowed=('Doppler_fetal_echocardiography_(procedure)', 'US_scan_of_fetus_(procedure)', 'Overig', 'Geen_informatie')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -30382,16 +30382,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('_1e_lijn_vil_a', '_2e_lijn_vil_c', '_1e_lijn_met_plaatsindicatie_vil_d', '_3e_lijn', 'onbekend', 'geen_informatie'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('1e_lijn_(VIL_A)', '2e_lijn_(VIL_C)', '1e_lijn_met_plaatsindicatie_(VIL_D)', '3e_lijn', 'Onbekend', 'Geen_informatie'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('_1e_lijn_vil_a', '_2e_lijn_vil_c', '_1e_lijn_met_plaatsindicatie_vil_d', '_3e_lijn', 'onbekend', 'geen_informatie'))">
+                                test="empty(@enum) or (@enum = ('1e_lijn_(VIL_A)', '2e_lijn_(VIL_C)', '1e_lijn_met_plaatsindicatie_(VIL_D)', '3e_lijn', 'Onbekend', 'Geen_informatie'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Risicostatus vóór baring": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/bevalling/risicostatus_voor_baring/@enum; allowed=('_1e_lijn_vil_a', '_2e_lijn_vil_c', '_1e_lijn_met_plaatsindicatie_vil_d', '_3e_lijn', 'onbekend', 'geen_informatie')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/bevalling/risicostatus_voor_baring/@enum; allowed=('1e_lijn_(VIL_A)', '2e_lijn_(VIL_C)', '1e_lijn_met_plaatsindicatie_(VIL_D)', '3e_lijn', 'Onbekend', 'Geen_informatie')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -30586,16 +30586,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('spontane_weeen', 'spontane_vliesscheur', 'interventie_om_baring_op_gang_te_brengen', 'onbekend', 'geen_informatie'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('spontane_weeën', 'spontane_vliesscheur', 'interventie_om_baring_op_gang_te_brengen', 'onbekend', 'geen_informatie'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('spontane_weeen', 'spontane_vliesscheur', 'interventie_om_baring_op_gang_te_brengen', 'onbekend', 'geen_informatie'))">
+                                test="empty(@enum) or (@enum = ('spontane_weeën', 'spontane_vliesscheur', 'interventie_om_baring_op_gang_te_brengen', 'onbekend', 'geen_informatie'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Wijze waarop de baring begon": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/bevalling/wijze_waarop_de_baring_begon/@enum; allowed=('spontane_weeen', 'spontane_vliesscheur', 'interventie_om_baring_op_gang_te_brengen', 'onbekend', 'geen_informatie')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/bevalling/wijze_waarop_de_baring_begon/@enum; allowed=('spontane_weeën', 'spontane_vliesscheur', 'interventie_om_baring_op_gang_te_brengen', 'onbekend', 'geen_informatie')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -31034,16 +31034,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('perineum_intact_finding', 'first_degree_perineal_tear_during_delivery__delivered_disorder', 'second_degree_perineal_tear_during_delivery__delivered_disorder', 'third_degree_perineal_tear_during_delivery__delivered_disorder', 'third_degree_perineal_tear_during_delivery__delivered_disorder_type_3a_third_degree_laceration_of_perineum_disorder', 'third_degree_perineal_tear_during_delivery__delivered_disorder_type_3b_third_degree_laceration_of_perineum_disorder', 'third_degree_perineal_tear_during_delivery__delivered_disorder_type_3c_third_degree_laceration_of_perineum_disorder', 'fourth_degree_perineal_tear_during_delivery__delivered_disorder', 'episiotomy_wound_morphologic_abnormality', 'anders', 'onbekend', 'geen_informatie'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Perineum_intact_(finding)', 'First_degree_perineal_tear_during_delivery_-_delivered_(disorder)', 'Second_degree_perineal_tear_during_delivery_-_delivered_(disorder)', 'Third_degree_perineal_tear_during_delivery_-_delivered_(disorder)', 'Third_degree_perineal_tear_during_delivery_-_delivered_(disorder)_Type_3a_third_degree_laceration_of_perineum_(disorder)', 'Third_degree_perineal_tear_during_delivery_-_delivered_(disorder)_Type_3b_third_degree_laceration_of_perineum_(disorder)', 'Third_degree_perineal_tear_during_delivery_-_delivered_(disorder)_Type_3c_third_degree_laceration_of_perineum_(disorder)', 'Fourth_degree_perineal_tear_during_delivery_-_delivered_(disorder)', 'Episiotomy_wound_(morphologic_abnormality)', 'Anders', 'Onbekend', 'Geen_informatie'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('perineum_intact_finding', 'first_degree_perineal_tear_during_delivery__delivered_disorder', 'second_degree_perineal_tear_during_delivery__delivered_disorder', 'third_degree_perineal_tear_during_delivery__delivered_disorder', 'third_degree_perineal_tear_during_delivery__delivered_disorder_type_3a_third_degree_laceration_of_perineum_disorder', 'third_degree_perineal_tear_during_delivery__delivered_disorder_type_3b_third_degree_laceration_of_perineum_disorder', 'third_degree_perineal_tear_during_delivery__delivered_disorder_type_3c_third_degree_laceration_of_perineum_disorder', 'fourth_degree_perineal_tear_during_delivery__delivered_disorder', 'episiotomy_wound_morphologic_abnormality', 'anders', 'onbekend', 'geen_informatie'))">
+                                test="empty(@enum) or (@enum = ('Perineum_intact_(finding)', 'First_degree_perineal_tear_during_delivery_-_delivered_(disorder)', 'Second_degree_perineal_tear_during_delivery_-_delivered_(disorder)', 'Third_degree_perineal_tear_during_delivery_-_delivered_(disorder)', 'Third_degree_perineal_tear_during_delivery_-_delivered_(disorder)_Type_3a_third_degree_laceration_of_perineum_(disorder)', 'Third_degree_perineal_tear_during_delivery_-_delivered_(disorder)_Type_3b_third_degree_laceration_of_perineum_(disorder)', 'Third_degree_perineal_tear_during_delivery_-_delivered_(disorder)_Type_3c_third_degree_laceration_of_perineum_(disorder)', 'Fourth_degree_perineal_tear_during_delivery_-_delivered_(disorder)', 'Episiotomy_wound_(morphologic_abnormality)', 'Anders', 'Onbekend', 'Geen_informatie'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Conditie perineum postpartum": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/bevalling/conditie_perineum_postpartum/@enum; allowed=('perineum_intact_finding', 'first_degree_perineal_tear_during_delivery__delivered_disorder', 'second_degree_perineal_tear_during_delivery__delivered_disorder', 'third_degree_perineal_tear_during_delivery__delivered_disorder', 'third_degree_perineal_tear_during_delivery__delivered_disorder_type_3a_third_degree_laceration_of_perineum_disorder', 'third_degree_perineal_tear_during_delivery__delivered_disorder_type_3b_third_degree_laceration_of_perineum_disorder', 'third_degree_perineal_tear_during_delivery__delivered_disorder_type_3c_third_degree_laceration_of_perineum_disorder', 'fourth_degree_perineal_tear_during_delivery__delivered_disorder', 'episiotomy_wound_morphologic_abnormality', 'anders', 'onbekend', 'geen_informatie')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/bevalling/conditie_perineum_postpartum/@enum; allowed=('Perineum_intact_(finding)', 'First_degree_perineal_tear_during_delivery_-_delivered_(disorder)', 'Second_degree_perineal_tear_during_delivery_-_delivered_(disorder)', 'Third_degree_perineal_tear_during_delivery_-_delivered_(disorder)', 'Third_degree_perineal_tear_during_delivery_-_delivered_(disorder)_Type_3a_third_degree_laceration_of_perineum_(disorder)', 'Third_degree_perineal_tear_during_delivery_-_delivered_(disorder)_Type_3b_third_degree_laceration_of_perineum_(disorder)', 'Third_degree_perineal_tear_during_delivery_-_delivered_(disorder)_Type_3c_third_degree_laceration_of_perineum_(disorder)', 'Fourth_degree_perineal_tear_during_delivery_-_delivered_(disorder)', 'Episiotomy_wound_(morphologic_abnormality)', 'Anders', 'Onbekend', 'Geen_informatie')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -32357,16 +32357,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('doppler_fetal_echocardiography_procedure', 'us_scan_of_fetus_procedure', 'overig', 'geen_informatie'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Doppler_fetal_echocardiography_(procedure)', 'US_scan_of_fetus_(procedure)', 'Overig', 'Geen_informatie'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('doppler_fetal_echocardiography_procedure', 'us_scan_of_fetus_procedure', 'overig', 'geen_informatie'))">
+                                test="empty(@enum) or (@enum = ('Doppler_fetal_echocardiography_(procedure)', 'US_scan_of_fetus_(procedure)', 'Overig', 'Geen_informatie'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Vermoeden iuvd op basis van": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/bevalling/diagnose_bevalling/intrauteriene_vruchtdood/vermoeden_iuvd_op_basis_van/@enum; allowed=('doppler_fetal_echocardiography_procedure', 'us_scan_of_fetus_procedure', 'overig', 'geen_informatie')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/bevalling/diagnose_bevalling/intrauteriene_vruchtdood/vermoeden_iuvd_op_basis_van/@enum; allowed=('Doppler_fetal_echocardiography_(procedure)', 'US_scan_of_fetus_(procedure)', 'Overig', 'Geen_informatie')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -32593,16 +32593,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('sweeping_of_membrane_procedure', 'induction_of_labour_by_artificial_rupture_of_membranes_procedure', 'cervical_ripening_with_balloon_procedure', 'cervical_ripening_with_prostaglandin_e2_procedure', 'oxytocin_induction_of_labour_procedure', 'prostaglandin_induction_of_labour_procedure', 'elective_caesarean_section_procedure', 'overig', 'geen_informatie'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Sweeping_of_membrane_(procedure)', 'Induction_of_labour_by_artificial_rupture_of_membranes_(procedure)', 'Cervical_ripening_with_balloon_(procedure)', 'Cervical_ripening_with_Prostaglandin_E2_(procedure)', 'Oxytocin_induction_of_labour_(procedure)', 'Prostaglandin_induction_of_labour_(procedure)', 'Elective_caesarean_section_(procedure)', 'Overig', 'Geen_informatie'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('sweeping_of_membrane_procedure', 'induction_of_labour_by_artificial_rupture_of_membranes_procedure', 'cervical_ripening_with_balloon_procedure', 'cervical_ripening_with_prostaglandin_e2_procedure', 'oxytocin_induction_of_labour_procedure', 'prostaglandin_induction_of_labour_procedure', 'elective_caesarean_section_procedure', 'overig', 'geen_informatie'))">
+                                test="empty(@enum) or (@enum = ('Sweeping_of_membrane_(procedure)', 'Induction_of_labour_by_artificial_rupture_of_membranes_(procedure)', 'Cervical_ripening_with_balloon_(procedure)', 'Cervical_ripening_with_Prostaglandin_E2_(procedure)', 'Oxytocin_induction_of_labour_(procedure)', 'Prostaglandin_induction_of_labour_(procedure)', 'Elective_caesarean_section_(procedure)', 'Overig', 'Geen_informatie'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Interventie begin baring": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/bevalling/interventies_begin_baring/interventie_begin_baring/@enum; allowed=('sweeping_of_membrane_procedure', 'induction_of_labour_by_artificial_rupture_of_membranes_procedure', 'cervical_ripening_with_balloon_procedure', 'cervical_ripening_with_prostaglandin_e2_procedure', 'oxytocin_induction_of_labour_procedure', 'prostaglandin_induction_of_labour_procedure', 'elective_caesarean_section_procedure', 'overig', 'geen_informatie')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/bevalling/interventies_begin_baring/interventie_begin_baring/@enum; allowed=('Sweeping_of_membrane_(procedure)', 'Induction_of_labour_by_artificial_rupture_of_membranes_(procedure)', 'Cervical_ripening_with_balloon_(procedure)', 'Cervical_ripening_with_Prostaglandin_E2_(procedure)', 'Oxytocin_induction_of_labour_(procedure)', 'Prostaglandin_induction_of_labour_(procedure)', 'Elective_caesarean_section_(procedure)', 'Overig', 'Geen_informatie')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -32735,16 +32735,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('conditie_moeder_acuut_levensbedreigend', 'conditie_moeder_niet_levensbedreigend', 'conditie_moeder_onbekend', 'conditie_kind_foetale_nood', 'conditie_kind_niet_levensbedreigend', 'conditie_kind_inleiding_vanwege_congenitale_afwijking', 'conditie_kind_onbekend', 'interventie_in_het_kader_van_wetenschappelijk_onderzoek', 'wens_patient', 'overig', 'onbekend', 'geen_informatie'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Conditie_moeder_Acuut_levensbedreigend', 'Conditie_moeder_Niet_levensbedreigend', 'Conditie_moeder_Onbekend', 'Conditie_kind_Foetale_nood', 'Conditie_kind_Niet_levensbedreigend', 'Conditie_kind_Inleiding_vanwege_congenitale_afwijking', 'Conditie_kind_Onbekend', 'Interventie_in_het_kader_van_wetenschappelijk_onderzoek', 'Wens_patiënt', 'Overig', 'Onbekend', 'Geen_informatie'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('conditie_moeder_acuut_levensbedreigend', 'conditie_moeder_niet_levensbedreigend', 'conditie_moeder_onbekend', 'conditie_kind_foetale_nood', 'conditie_kind_niet_levensbedreigend', 'conditie_kind_inleiding_vanwege_congenitale_afwijking', 'conditie_kind_onbekend', 'interventie_in_het_kader_van_wetenschappelijk_onderzoek', 'wens_patient', 'overig', 'onbekend', 'geen_informatie'))">
+                                test="empty(@enum) or (@enum = ('Conditie_moeder_Acuut_levensbedreigend', 'Conditie_moeder_Niet_levensbedreigend', 'Conditie_moeder_Onbekend', 'Conditie_kind_Foetale_nood', 'Conditie_kind_Niet_levensbedreigend', 'Conditie_kind_Inleiding_vanwege_congenitale_afwijking', 'Conditie_kind_Onbekend', 'Interventie_in_het_kader_van_wetenschappelijk_onderzoek', 'Wens_patiënt', 'Overig', 'Onbekend', 'Geen_informatie'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Indicatie interventie begin baring": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/bevalling/interventies_begin_baring/indicatie_interventie_begin_baring/@enum; allowed=('conditie_moeder_acuut_levensbedreigend', 'conditie_moeder_niet_levensbedreigend', 'conditie_moeder_onbekend', 'conditie_kind_foetale_nood', 'conditie_kind_niet_levensbedreigend', 'conditie_kind_inleiding_vanwege_congenitale_afwijking', 'conditie_kind_onbekend', 'interventie_in_het_kader_van_wetenschappelijk_onderzoek', 'wens_patient', 'overig', 'onbekend', 'geen_informatie')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/bevalling/interventies_begin_baring/indicatie_interventie_begin_baring/@enum; allowed=('Conditie_moeder_Acuut_levensbedreigend', 'Conditie_moeder_Niet_levensbedreigend', 'Conditie_moeder_Onbekend', 'Conditie_kind_Foetale_nood', 'Conditie_kind_Niet_levensbedreigend', 'Conditie_kind_Inleiding_vanwege_congenitale_afwijking', 'Conditie_kind_Onbekend', 'Interventie_in_het_kader_van_wetenschappelijk_onderzoek', 'Wens_patiënt', 'Overig', 'Onbekend', 'Geen_informatie')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -33062,16 +33062,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('oxytocin', 'prostaglandins', 'ergot_alkaloids', 'overig', 'onbekend'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Oxytocin', 'Prostaglandins', 'Ergot_alkaloids', 'Overig', 'Onbekend'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('oxytocin', 'prostaglandins', 'ergot_alkaloids', 'overig', 'onbekend'))">
+                                test="empty(@enum) or (@enum = ('Oxytocin', 'Prostaglandins', 'Ergot_alkaloids', 'Overig', 'Onbekend'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Soort medicatie nageboortetijdperk": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/bevalling/medicatie_nageboortetijdperk_groep/soort_medicatie_nageboortetijdperk/@enum; allowed=('oxytocin', 'prostaglandins', 'ergot_alkaloids', 'overig', 'onbekend')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/bevalling/medicatie_nageboortetijdperk_groep/soort_medicatie_nageboortetijdperk/@enum; allowed=('Oxytocin', 'Prostaglandins', 'Ergot_alkaloids', 'Overig', 'Onbekend')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -33282,16 +33282,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('spontaan', 'controlled_cord_traction', 'manuele_placentaverwijdering', 'placentaverwijdering_bij_sc', 'overig', 'geen_informatie', 'onbekend'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Spontaan', 'Controlled_cord_traction', 'Manuele_placentaverwijdering', 'Placentaverwijdering_bij_SC', 'Overig', 'Geen_informatie', 'Onbekend'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('spontaan', 'controlled_cord_traction', 'manuele_placentaverwijdering', 'placentaverwijdering_bij_sc', 'overig', 'geen_informatie', 'onbekend'))">
+                                test="empty(@enum) or (@enum = ('Spontaan', 'Controlled_cord_traction', 'Manuele_placentaverwijdering', 'Placentaverwijdering_bij_SC', 'Overig', 'Geen_informatie', 'Onbekend'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Geboorte placenta": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/bevalling/placenta/geboorte_placenta/@enum; allowed=('spontaan', 'controlled_cord_traction', 'manuele_placentaverwijdering', 'placentaverwijdering_bij_sc', 'overig', 'geen_informatie', 'onbekend')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/bevalling/placenta/geboorte_placenta/@enum; allowed=('Spontaan', 'Controlled_cord_traction', 'Manuele_placentaverwijdering', 'Placentaverwijdering_bij_SC', 'Overig', 'Geen_informatie', 'Onbekend')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -33706,16 +33706,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('home_birth_finding', 'geboortecentrum', 'hospital_environment', 'onderweg', 'onbekend', 'geen_informatie'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Home_birth_(finding)', 'Geboortecentrum', 'Hospital_(environment)', 'Onderweg', 'Onbekend', 'Geen_informatie'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('home_birth_finding', 'geboortecentrum', 'hospital_environment', 'onderweg', 'onbekend', 'geen_informatie'))">
+                                test="empty(@enum) or (@enum = ('Home_birth_(finding)', 'Geboortecentrum', 'Hospital_(environment)', 'Onderweg', 'Onbekend', 'Geen_informatie'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Werkelijke plaats baring (type locatie)": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/uitkomst_per_kind/baring/werkelijke_plaats_baring_type_locatie/@enum; allowed=('home_birth_finding', 'geboortecentrum', 'hospital_environment', 'onderweg', 'onbekend', 'geen_informatie')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/uitkomst_per_kind/baring/werkelijke_plaats_baring_type_locatie/@enum; allowed=('Home_birth_(finding)', 'Geboortecentrum', 'Hospital_(environment)', 'Onderweg', 'Onbekend', 'Geen_informatie')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -34485,16 +34485,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('mannelijk', 'vrouwelijk', 'niet_conclusief', 'onbekend', 'geen_informatie'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Mannelijk', 'Vrouwelijk', 'Niet_conclusief', 'Onbekend', 'Geen_informatie'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('mannelijk', 'vrouwelijk', 'niet_conclusief', 'onbekend', 'geen_informatie'))">
+                                test="empty(@enum) or (@enum = ('Mannelijk', 'Vrouwelijk', 'Niet_conclusief', 'Onbekend', 'Geen_informatie'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Geslacht (medische observatie)": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/geslacht_medische_observatie/@enum; allowed=('mannelijk', 'vrouwelijk', 'niet_conclusief', 'onbekend', 'geen_informatie')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/geslacht_medische_observatie/@enum; allowed=('Mannelijk', 'Vrouwelijk', 'Niet_conclusief', 'Onbekend', 'Geen_informatie')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -35241,16 +35241,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('antepartum_fetal_death_event', 'intrapartum_fetal_death_event', 'newborn_death_event', 'geen_informatie'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Antepartum_fetal_death_(event)', 'Intrapartum_fetal_death_(event)', 'Newborn_death_(event)', 'Geen_informatie'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('antepartum_fetal_death_event', 'intrapartum_fetal_death_event', 'newborn_death_event', 'geen_informatie'))">
+                                test="empty(@enum) or (@enum = ('Antepartum_fetal_death_(event)', 'Intrapartum_fetal_death_(event)', 'Newborn_death_(event)', 'Geen_informatie'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Fase perinatale sterfte": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/perinatale_sterfte_groep/fase_perinatale_sterfte/@enum; allowed=('antepartum_fetal_death_event', 'intrapartum_fetal_death_event', 'newborn_death_event', 'geen_informatie')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/perinatale_sterfte_groep/fase_perinatale_sterfte/@enum; allowed=('Antepartum_fetal_death_(event)', 'Intrapartum_fetal_death_(event)', 'Newborn_death_(event)', 'Geen_informatie')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -36170,16 +36170,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('foetale_indicatie', 'maternale_indicatie', 'maternale_indicatie_preventie_ruptuur', 'maternale_indicatie_gesloten_vulva_tgv_besnijdenis', 'kunstverlossing_routine_handeling', 'overig', 'geen_informatie'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Foetale_indicatie', 'Maternale_indicatie', 'Maternale_indicatie_Preventie_ruptuur', 'Maternale_indicatie_Gesloten_vulva_tgv_besnijdenis', 'Kunstverlossing_(routine_handeling)', 'Overig', 'Geen_informatie'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('foetale_indicatie', 'maternale_indicatie', 'maternale_indicatie_preventie_ruptuur', 'maternale_indicatie_gesloten_vulva_tgv_besnijdenis', 'kunstverlossing_routine_handeling', 'overig', 'geen_informatie'))">
+                                test="empty(@enum) or (@enum = ('Foetale_indicatie', 'Maternale_indicatie', 'Maternale_indicatie_Preventie_ruptuur', 'Maternale_indicatie_Gesloten_vulva_tgv_besnijdenis', 'Kunstverlossing_(routine_handeling)', 'Overig', 'Geen_informatie'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Indicatie episiotomie": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/indicatie_episiotomie/@enum; allowed=('foetale_indicatie', 'maternale_indicatie', 'maternale_indicatie_preventie_ruptuur', 'maternale_indicatie_gesloten_vulva_tgv_besnijdenis', 'kunstverlossing_routine_handeling', 'overig', 'geen_informatie')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/indicatie_episiotomie/@enum; allowed=('Foetale_indicatie', 'Maternale_indicatie', 'Maternale_indicatie_Preventie_ruptuur', 'Maternale_indicatie_Gesloten_vulva_tgv_besnijdenis', 'Kunstverlossing_(routine_handeling)', 'Overig', 'Geen_informatie')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -36944,16 +36944,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('tijdens_ontsluitingsperiode__3_cm', 'tijdens_ontsluitingsperiode__3_cm', 'tijdens_uitdrijving', 'tijdens_sectio', 'na_geboorte_kind'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('tijdens_ontsluitingsperiode_&lt;=_3_cm', 'tijdens_ontsluitingsperiode_&gt;_3_cm', 'tijdens_uitdrijving', 'tijdens_sectio', 'na_geboorte_kind'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('tijdens_ontsluitingsperiode__3_cm', 'tijdens_ontsluitingsperiode__3_cm', 'tijdens_uitdrijving', 'tijdens_sectio', 'na_geboorte_kind'))">
+                                test="empty(@enum) or (@enum = ('tijdens_ontsluitingsperiode_&lt;=_3_cm', 'tijdens_ontsluitingsperiode_&gt;_3_cm', 'tijdens_uitdrijving', 'tijdens_sectio', 'na_geboorte_kind'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Periode": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/periode/@enum; allowed=('tijdens_ontsluitingsperiode__3_cm', 'tijdens_ontsluitingsperiode__3_cm', 'tijdens_uitdrijving', 'tijdens_sectio', 'na_geboorte_kind')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/periode/@enum; allowed=('tijdens_ontsluitingsperiode_&lt;=_3_cm', 'tijdens_ontsluitingsperiode_&gt;_3_cm', 'tijdens_uitdrijving', 'tijdens_sectio', 'na_geboorte_kind')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -37179,16 +37179,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('local_anesthetic_intrathecal_block_procedure', 'epidural_anesthesia_procedure', 'general_anesthesia_procedure', 'overig'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Local_anesthetic_intrathecal_block_(procedure)', 'Epidural_anesthesia_(procedure)', 'General_anesthesia_(procedure)', 'Overig'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('local_anesthetic_intrathecal_block_procedure', 'epidural_anesthesia_procedure', 'general_anesthesia_procedure', 'overig'))">
+                                test="empty(@enum) or (@enum = ('Local_anesthetic_intrathecal_block_(procedure)', 'Epidural_anesthesia_(procedure)', 'General_anesthesia_(procedure)', 'Overig'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Methode": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode/methode/@enum; allowed=('local_anesthetic_intrathecal_block_procedure', 'epidural_anesthesia_procedure', 'general_anesthesia_procedure', 'overig')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode/methode/@enum; allowed=('Local_anesthetic_intrathecal_block_(procedure)', 'Epidural_anesthesia_(procedure)', 'General_anesthesia_(procedure)', 'Overig')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -37477,16 +37477,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('administration_of_morphinomimetic_analgesic_procedure', 'sterile_water_injection_procedure', 'transcutaneous_electrical_nerve_stimulation_regimetherapy', 'nitrous_oxide_and_oxygen_gas_analgesia_in_labor_procedure', 'overig'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Administration_of_morphinomimetic_analgesic_(procedure)', 'Sterile_water_injection_(procedure)', 'Transcutaneous_electrical_nerve_stimulation_(regime/therapy)', 'Nitrous_oxide_and_oxygen_gas_analgesia_in_labor_(procedure)', 'overig'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('administration_of_morphinomimetic_analgesic_procedure', 'sterile_water_injection_procedure', 'transcutaneous_electrical_nerve_stimulation_regimetherapy', 'nitrous_oxide_and_oxygen_gas_analgesia_in_labor_procedure', 'overig'))">
+                                test="empty(@enum) or (@enum = ('Administration_of_morphinomimetic_analgesic_(procedure)', 'Sterile_water_injection_(procedure)', 'Transcutaneous_electrical_nerve_stimulation_(regime/therapy)', 'Nitrous_oxide_and_oxygen_gas_analgesia_in_labor_(procedure)', 'overig'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Middel": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode/overig_middel/middel/@enum; allowed=('administration_of_morphinomimetic_analgesic_procedure', 'sterile_water_injection_procedure', 'transcutaneous_electrical_nerve_stimulation_regimetherapy', 'nitrous_oxide_and_oxygen_gas_analgesia_in_labor_procedure', 'overig')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode/overig_middel/middel/@enum; allowed=('Administration_of_morphinomimetic_analgesic_(procedure)', 'Sterile_water_injection_(procedure)', 'Transcutaneous_electrical_nerve_stimulation_(regime/therapy)', 'Nitrous_oxide_and_oxygen_gas_analgesia_in_labor_(procedure)', 'overig')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -37619,16 +37619,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('administration_of_substance_via_oral_route_procedure', 'neurostimulation_procedure_procedure', 'medication_administration_intramuscular_procedure', 'administration_of_substance_via_intravenous_route_procedure', 'administration_of_substance_via_subcutaneous_route_procedure', 'patient_controlled_analgesia_procedure', 'inhalational_analgesia_procedure', 'overig'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Administration_of_substance_via_oral_route_(procedure)', 'Neurostimulation_procedure_(procedure)', 'Medication_administration:_intramuscular_(procedure)', 'Administration_of_substance_via_intravenous_route_(procedure)', 'Administration_of_substance_via_subcutaneous_route_(procedure)', 'Patient_controlled_analgesia_(procedure)', 'Inhalational_analgesia_(procedure)', 'overig'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('administration_of_substance_via_oral_route_procedure', 'neurostimulation_procedure_procedure', 'medication_administration_intramuscular_procedure', 'administration_of_substance_via_intravenous_route_procedure', 'administration_of_substance_via_subcutaneous_route_procedure', 'patient_controlled_analgesia_procedure', 'inhalational_analgesia_procedure', 'overig'))">
+                                test="empty(@enum) or (@enum = ('Administration_of_substance_via_oral_route_(procedure)', 'Neurostimulation_procedure_(procedure)', 'Medication_administration:_intramuscular_(procedure)', 'Administration_of_substance_via_intravenous_route_(procedure)', 'Administration_of_substance_via_subcutaneous_route_(procedure)', 'Patient_controlled_analgesia_(procedure)', 'Inhalational_analgesia_(procedure)', 'overig'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Toediening": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode/overig_middel/toediening/@enum; allowed=('administration_of_substance_via_oral_route_procedure', 'neurostimulation_procedure_procedure', 'medication_administration_intramuscular_procedure', 'administration_of_substance_via_intravenous_route_procedure', 'administration_of_substance_via_subcutaneous_route_procedure', 'patient_controlled_analgesia_procedure', 'inhalational_analgesia_procedure', 'overig')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode/overig_middel/toediening/@enum; allowed=('Administration_of_substance_via_oral_route_(procedure)', 'Neurostimulation_procedure_(procedure)', 'Medication_administration:_intramuscular_(procedure)', 'Administration_of_substance_via_intravenous_route_(procedure)', 'Administration_of_substance_via_subcutaneous_route_(procedure)', 'Patient_controlled_analgesia_(procedure)', 'Inhalational_analgesia_(procedure)', 'overig')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -38047,16 +38047,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('normal_delivery_procedure_procedure', 'assisted_delivery_of_fetus_procedure', 'cesarean_section_procedure', 'cesarean_section_procedure_elective_cesarian_delivery_procedure', 'cesarean_section_procedure_emergency_cesarian_section_procedure', 'termination_of_pregnancy_top', 'termination_of_pregnancy_top_medical_termination_of_pregnancy_using_prostaglandin_procedure', 'termination_of_pregnancy_top_postmortem_cesarean_section_procedure', 'termination_of_pregnancy_top_overig', 'geen_informatie'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Normal_delivery_procedure_(procedure)', 'Assisted_delivery_of_fetus_(procedure)', 'Cesarean_section_(procedure)', 'Cesarean_section_(procedure)_Elective_cesarian_delivery_(procedure)', 'Cesarean_section_(procedure)_Emergency_cesarian_section_(procedure)', 'Termination_of_Pregnancy_(TOP)', 'Termination_of_Pregnancy_(TOP)_Medical_termination_of_pregnancy_using_prostaglandin_(procedure)', 'Termination_of_Pregnancy_(TOP)_Postmortem_cesarean_section_(procedure)', 'Termination_of_Pregnancy_(TOP)_Overig', 'Geen_informatie'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('normal_delivery_procedure_procedure', 'assisted_delivery_of_fetus_procedure', 'cesarean_section_procedure', 'cesarean_section_procedure_elective_cesarian_delivery_procedure', 'cesarean_section_procedure_emergency_cesarian_section_procedure', 'termination_of_pregnancy_top', 'termination_of_pregnancy_top_medical_termination_of_pregnancy_using_prostaglandin_procedure', 'termination_of_pregnancy_top_postmortem_cesarean_section_procedure', 'termination_of_pregnancy_top_overig', 'geen_informatie'))">
+                                test="empty(@enum) or (@enum = ('Normal_delivery_procedure_(procedure)', 'Assisted_delivery_of_fetus_(procedure)', 'Cesarean_section_(procedure)', 'Cesarean_section_(procedure)_Elective_cesarian_delivery_(procedure)', 'Cesarean_section_(procedure)_Emergency_cesarian_section_(procedure)', 'Termination_of_Pregnancy_(TOP)', 'Termination_of_Pregnancy_(TOP)_Medical_termination_of_pregnancy_using_prostaglandin_(procedure)', 'Termination_of_Pregnancy_(TOP)_Postmortem_cesarean_section_(procedure)', 'Termination_of_Pregnancy_(TOP)_Overig', 'Geen_informatie'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Type partus": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/type_partus/@enum; allowed=('normal_delivery_procedure_procedure', 'assisted_delivery_of_fetus_procedure', 'cesarean_section_procedure', 'cesarean_section_procedure_elective_cesarian_delivery_procedure', 'cesarean_section_procedure_emergency_cesarian_section_procedure', 'termination_of_pregnancy_top', 'termination_of_pregnancy_top_medical_termination_of_pregnancy_using_prostaglandin_procedure', 'termination_of_pregnancy_top_postmortem_cesarean_section_procedure', 'termination_of_pregnancy_top_overig', 'geen_informatie')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/type_partus/@enum; allowed=('Normal_delivery_procedure_(procedure)', 'Assisted_delivery_of_fetus_(procedure)', 'Cesarean_section_(procedure)', 'Cesarean_section_(procedure)_Elective_cesarian_delivery_(procedure)', 'Cesarean_section_(procedure)_Emergency_cesarian_section_(procedure)', 'Termination_of_Pregnancy_(TOP)', 'Termination_of_Pregnancy_(TOP)_Medical_termination_of_pregnancy_using_prostaglandin_(procedure)', 'Termination_of_Pregnancy_(TOP)_Postmortem_cesarean_section_(procedure)', 'Termination_of_Pregnancy_(TOP)_Overig', 'Geen_informatie')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -38189,16 +38189,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('occipitoposterior_position_finding', 'vertex_presentation_finding', 'fontanelles_presenting_finding', 'face_presentation_finding', 'brow_presentation_finding', 'complete_breech_presentation_finding', 'incomplete_breech_presentation_finding', 'frank_breech_presentation_finding', 'overig', 'onbekend', 'geen_informatie'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Occipitoposterior_position_(finding)', 'Vertex_presentation_(finding)', 'Fontanelles_presenting_(finding)', 'Face_presentation_(finding)', 'Brow_presentation_(finding)', 'Complete_breech_presentation_(finding)', 'Incomplete_breech_presentation_(finding)', 'Frank_breech_presentation_(finding)', 'Overig', 'Onbekend', 'Geen_informatie'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('occipitoposterior_position_finding', 'vertex_presentation_finding', 'fontanelles_presenting_finding', 'face_presentation_finding', 'brow_presentation_finding', 'complete_breech_presentation_finding', 'incomplete_breech_presentation_finding', 'frank_breech_presentation_finding', 'overig', 'onbekend', 'geen_informatie'))">
+                                test="empty(@enum) or (@enum = ('Occipitoposterior_position_(finding)', 'Vertex_presentation_(finding)', 'Fontanelles_presenting_(finding)', 'Face_presentation_(finding)', 'Brow_presentation_(finding)', 'Complete_breech_presentation_(finding)', 'Incomplete_breech_presentation_(finding)', 'Frank_breech_presentation_(finding)', 'Overig', 'Onbekend', 'Geen_informatie'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Ligging bij geboorte": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/ligging_bij_geboorte/@enum; allowed=('occipitoposterior_position_finding', 'vertex_presentation_finding', 'fontanelles_presenting_finding', 'face_presentation_finding', 'brow_presentation_finding', 'complete_breech_presentation_finding', 'incomplete_breech_presentation_finding', 'frank_breech_presentation_finding', 'overig', 'onbekend', 'geen_informatie')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/ligging_bij_geboorte/@enum; allowed=('Occipitoposterior_position_(finding)', 'Vertex_presentation_(finding)', 'Fontanelles_presenting_(finding)', 'Face_presentation_(finding)', 'Brow_presentation_(finding)', 'Complete_breech_presentation_(finding)', 'Incomplete_breech_presentation_(finding)', 'Frank_breech_presentation_(finding)', 'Overig', 'Onbekend', 'Geen_informatie')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -38579,16 +38579,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('pubiotomy_procedure', 'maneuvers_for_delivery_in_shoulder_dystocia_procedure', 'maneuvers_for_delivery_in_shoulder_dystocia_procedure_mc_roberts_maneuver_procedure', 'maneuvers_for_delivery_in_shoulder_dystocia_procedure_suprapubic_pressure_on_fetal_shoulder_procedure', 'maneuvers_for_delivery_in_shoulder_dystocia_procedure_freeing_the_posterior_arm_procedure', 'maneuvers_for_delivery_in_shoulder_dystocia_procedure_woods_screw_maneuver_procedure', 'maneuvers_for_delivery_in_shoulder_dystocia_procedure_halfkneeling_position_finding', 'maneuvers_for_delivery_in_shoulder_dystocia_procedure_overig', 'kristeller_maneuver_procedure', 'overig'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Pubiotomy_(procedure)', 'Maneuvers_for_delivery_in_shoulder_dystocia_(procedure)', 'Maneuvers_for_delivery_in_shoulder_dystocia_(procedure)_McRobert''s_maneuver_(procedure)', 'Maneuvers_for_delivery_in_shoulder_dystocia_(procedure)_Suprapubic_pressure_on_fetal_shoulder_(procedure)', 'Maneuvers_for_delivery_in_shoulder_dystocia_(procedure)_Freeing_the_posterior_arm_(procedure)', 'Maneuvers_for_delivery_in_shoulder_dystocia_(procedure)_Wood''s_screw_maneuver_(procedure)', 'Maneuvers_for_delivery_in_shoulder_dystocia_(procedure)_Half-kneeling_position_(finding)', 'Maneuvers_for_delivery_in_shoulder_dystocia_(procedure)_Overig', 'Kristeller_maneuver_(procedure)', 'Overig'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('pubiotomy_procedure', 'maneuvers_for_delivery_in_shoulder_dystocia_procedure', 'maneuvers_for_delivery_in_shoulder_dystocia_procedure_mc_roberts_maneuver_procedure', 'maneuvers_for_delivery_in_shoulder_dystocia_procedure_suprapubic_pressure_on_fetal_shoulder_procedure', 'maneuvers_for_delivery_in_shoulder_dystocia_procedure_freeing_the_posterior_arm_procedure', 'maneuvers_for_delivery_in_shoulder_dystocia_procedure_woods_screw_maneuver_procedure', 'maneuvers_for_delivery_in_shoulder_dystocia_procedure_halfkneeling_position_finding', 'maneuvers_for_delivery_in_shoulder_dystocia_procedure_overig', 'kristeller_maneuver_procedure', 'overig'))">
+                                test="empty(@enum) or (@enum = ('Pubiotomy_(procedure)', 'Maneuvers_for_delivery_in_shoulder_dystocia_(procedure)', 'Maneuvers_for_delivery_in_shoulder_dystocia_(procedure)_McRobert''s_maneuver_(procedure)', 'Maneuvers_for_delivery_in_shoulder_dystocia_(procedure)_Suprapubic_pressure_on_fetal_shoulder_(procedure)', 'Maneuvers_for_delivery_in_shoulder_dystocia_(procedure)_Freeing_the_posterior_arm_(procedure)', 'Maneuvers_for_delivery_in_shoulder_dystocia_(procedure)_Wood''s_screw_maneuver_(procedure)', 'Maneuvers_for_delivery_in_shoulder_dystocia_(procedure)_Half-kneeling_position_(finding)', 'Maneuvers_for_delivery_in_shoulder_dystocia_(procedure)_Overig', 'Kristeller_maneuver_(procedure)', 'Overig'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Overige interventies": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/overige_interventies/@enum; allowed=('pubiotomy_procedure', 'maneuvers_for_delivery_in_shoulder_dystocia_procedure', 'maneuvers_for_delivery_in_shoulder_dystocia_procedure_mc_roberts_maneuver_procedure', 'maneuvers_for_delivery_in_shoulder_dystocia_procedure_suprapubic_pressure_on_fetal_shoulder_procedure', 'maneuvers_for_delivery_in_shoulder_dystocia_procedure_freeing_the_posterior_arm_procedure', 'maneuvers_for_delivery_in_shoulder_dystocia_procedure_woods_screw_maneuver_procedure', 'maneuvers_for_delivery_in_shoulder_dystocia_procedure_halfkneeling_position_finding', 'maneuvers_for_delivery_in_shoulder_dystocia_procedure_overig', 'kristeller_maneuver_procedure', 'overig')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/overige_interventies/@enum; allowed=('Pubiotomy_(procedure)', 'Maneuvers_for_delivery_in_shoulder_dystocia_(procedure)', 'Maneuvers_for_delivery_in_shoulder_dystocia_(procedure)_McRobert''s_maneuver_(procedure)', 'Maneuvers_for_delivery_in_shoulder_dystocia_(procedure)_Suprapubic_pressure_on_fetal_shoulder_(procedure)', 'Maneuvers_for_delivery_in_shoulder_dystocia_(procedure)_Freeing_the_posterior_arm_(procedure)', 'Maneuvers_for_delivery_in_shoulder_dystocia_(procedure)_Wood''s_screw_maneuver_(procedure)', 'Maneuvers_for_delivery_in_shoulder_dystocia_(procedure)_Half-kneeling_position_(finding)', 'Maneuvers_for_delivery_in_shoulder_dystocia_(procedure)_Overig', 'Kristeller_maneuver_(procedure)', 'Overig')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -39027,16 +39027,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('birth_trauma_of_fetus_disorder', 'birth_trauma_of_fetus_disorder_subdural_intracranial_hemorrhage_due_to_birth_trauma_disorder', 'birth_trauma_of_fetus_disorder_intracranial_subarachnoid_hemorrhage_due_to_birth_injury_disorder', 'birth_trauma_of_fetus_disorder_tentorial_tear_due_to_birth_trauma_disorder', 'birth_trauma_of_fetus_disorder_overige_bloedingen_geboortetrauma', 'birth_trauma_of_fetus_disorder_paralysis_from_birth_trauma_disorder', 'birth_trauma_of_fetus_disorder_overige_geboortetraumata', 'congenital_infectious_disease_disorder', 'congenital_infectious_disease_disorder_congenital_syphilis_disorder', 'congenital_infectious_disease_disorder_congenital_toxoplasmosis_disorder', 'congenital_infectious_disease_disorder_congenital_cytomegalovirus_infection_disorder', 'congenital_infectious_disease_disorder_congenital_rubella_syndrome_disorder', 'congenital_infectious_disease_disorder_sepsis_of_the_newborn_disorder', 'congenital_infectious_disease_disorder_inflammatory_disease_of_the_central_nervous_system_disorder', 'congenital_infectious_disease_disorder_overige_infecties', 'immunologische_en_haematologische_stoornissen', 'immunologische_en_haematologische_stoornissen_disorder_of_immune_structure_disorder', 'immunologische_en_haematologische_stoornissen_disorder_of_hematopoietic_system_in_newborn_disorder', 'immunologische_en_haematologische_stoornissen_disorder_of_hematopoietic_system_in_newborn_disorder_twintotwin_blood_transfer_disorder', 'immunologische_en_haematologische_stoornissen_disorder_of_hematopoietic_system_in_newborn_disorder_overig_haematologisch', 'nervous_system_and_sense_organ_diseases_disorder', 'nervous_system_and_sense_organ_diseases_disorder_perinatal_intracranial_hemorrhage_disorder', 'nervous_system_and_sense_organ_diseases_disorder_neonatal_cerebral_ischemia_disorder', 'nervous_system_and_sense_organ_diseases_disorder_convulsions_in_the_newborn_disorder', 'nervous_system_and_sense_organ_diseases_disorder_neonatal_hypotonia_disorder', 'nervous_system_and_sense_organ_diseases_disorder_retinopathy_of_prematurity_disorder', 'nervous_system_and_sense_organ_diseases_disorder_congenital_hearing_disorder_disorder', 'neonatal_cardiovascular_disorder_disorder', 'neonatal_cardiovascular_disorder_disorder_neonatal_hypertension_disorder', 'neonatal_cardiovascular_disorder_disorder_neonatal_hypotension_disorder', 'neonatal_cardiovascular_disorder_disorder_hydrops_fetalis_disorder', 'neonatal_cardiovascular_disorder_disorder_overige_circulatoire_problemen', 'neonatal_respiratory_system_disorder_disorder', 'neonatal_respiratory_system_disorder_disorder_respiratory_distress_syndrome_in_the_newborn_disorder', 'neonatal_respiratory_system_disorder_disorder_neonatal_aspiration_syndromes_disorder', 'neonatal_respiratory_system_disorder_disorder_bronchopulmonary_dysplasia_of_newborn_disorder', 'neonatal_respiratory_system_disorder_disorder_overige_respiratoire_problemen', 'stoornissen_tractus_digestivus_en_navel', 'stoornissen_tractus_digestivus_en_navel_neonatal_hyperbilirubinemia_disorder', 'stoornissen_tractus_digestivus_en_navel_overige_stoornissen_tractus_digestivus_en_navel', 'neonatal_metabolic_and_endocrinologic_disorder_disorder', 'neonatal_metabolic_and_endocrinologic_disorder_disorder_neonatal_hypoglycemia_disorder', 'neonatal_metabolic_and_endocrinologic_disorder_disorder_neonatal_hyperglycemia_disorder', 'neonatal_metabolic_and_endocrinologic_disorder_disorder_congenital_hypothyroidism_disorder', 'neonatal_metabolic_and_endocrinologic_disorder_disorder_overige_endocriene_metabole_en_milieu_interieur_stoornissen', 'neonatal_metabolic_and_endocrinologic_disorder_disorder_neonatal_renal_disorder_disorder'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Birth_trauma_of_fetus_(disorder)', 'Birth_trauma_of_fetus_(disorder)_Subdural_intracranial_hemorrhage_due_to_birth_trauma_(disorder)', 'Birth_trauma_of_fetus_(disorder)_Intracranial_subarachnoid_hemorrhage_due_to_birth_injury_(disorder)', 'Birth_trauma_of_fetus_(disorder)_Tentorial_tear_due_to_birth_trauma_(disorder)', 'Birth_trauma_of_fetus_(disorder)_Overige_bloedingen_(geboortetrauma)', 'Birth_trauma_of_fetus_(disorder)_Paralysis_from_birth_trauma_(disorder)', 'Birth_trauma_of_fetus_(disorder)_Overige_geboortetraumata', 'Congenital_infectious_disease_(disorder)', 'Congenital_infectious_disease_(disorder)_Congenital_syphilis_(disorder)', 'Congenital_infectious_disease_(disorder)_Congenital_toxoplasmosis_(disorder)', 'Congenital_infectious_disease_(disorder)_Congenital_cytomegalovirus_infection_(disorder)', 'Congenital_infectious_disease_(disorder)_Congenital_rubella_syndrome_(disorder)', 'Congenital_infectious_disease_(disorder)_Sepsis_of_the_newborn_(disorder)', 'Congenital_infectious_disease_(disorder)_Inflammatory_disease_of_the_central_nervous_system_(disorder)', 'Congenital_infectious_disease_(disorder)_Overige_infecties', 'Immunologische_en_haematologische_stoornissen', 'Immunologische_en_haematologische_stoornissen_Disorder_of_immune_structure_(disorder)', 'Immunologische_en_haematologische_stoornissen_Disorder_of_hematopoietic_system_in_newborn_(disorder)', 'Immunologische_en_haematologische_stoornissen_Disorder_of_hematopoietic_system_in_newborn_(disorder)_Twin-to-twin_blood_transfer_(disorder)', 'Immunologische_en_haematologische_stoornissen_Disorder_of_hematopoietic_system_in_newborn_(disorder)_Overig_haematologisch', 'Nervous_system_and_sense_organ_diseases_(disorder)', 'Nervous_system_and_sense_organ_diseases_(disorder)_Perinatal_intracranial_hemorrhage_(disorder)', 'Nervous_system_and_sense_organ_diseases_(disorder)_Neonatal_cerebral_ischemia_(disorder)', 'Nervous_system_and_sense_organ_diseases_(disorder)_Convulsions_in_the_newborn_(disorder)', 'Nervous_system_and_sense_organ_diseases_(disorder)_Neonatal_hypotonia_(disorder)', 'Nervous_system_and_sense_organ_diseases_(disorder)_Retinopathy_of_prematurity_(disorder)', 'Nervous_system_and_sense_organ_diseases_(disorder)_Congenital_hearing_disorder_(disorder)', 'Neonatal_cardiovascular_disorder_(disorder)', 'Neonatal_cardiovascular_disorder_(disorder)_Neonatal_hypertension_(disorder)', 'Neonatal_cardiovascular_disorder_(disorder)_Neonatal_hypotension_(disorder)', 'Neonatal_cardiovascular_disorder_(disorder)_Hydrops_fetalis_(disorder)', 'Neonatal_cardiovascular_disorder_(disorder)_Overige_circulatoire_problemen', 'Neonatal_respiratory_system_disorder_(disorder)', 'Neonatal_respiratory_system_disorder_(disorder)_Respiratory_distress_syndrome_in_the_newborn_(disorder)', 'Neonatal_respiratory_system_disorder_(disorder)_Neonatal_aspiration_syndromes_(disorder)', 'Neonatal_respiratory_system_disorder_(disorder)_Bronchopulmonary_dysplasia_of_newborn_(disorder)', 'Neonatal_respiratory_system_disorder_(disorder)_Overige_respiratoire_problemen', 'Stoornissen_tractus_digestivus_en_navel', 'Stoornissen_tractus_digestivus_en_navel_Neonatal_hyperbilirubinemia_(disorder)', 'Stoornissen_tractus_digestivus_en_navel_Overige_stoornissen_tractus_digestivus_en_navel', 'Neonatal_metabolic_and_endocrinologic_disorder_(disorder)', 'Neonatal_metabolic_and_endocrinologic_disorder_(disorder)_Neonatal_hypoglycemia_(disorder)', 'Neonatal_metabolic_and_endocrinologic_disorder_(disorder)_Neonatal_hyperglycemia_(disorder)', 'Neonatal_metabolic_and_endocrinologic_disorder_(disorder)_Congenital_hypothyroidism_(disorder)', 'Neonatal_metabolic_and_endocrinologic_disorder_(disorder)_Overige_endocriene,_metabole_en_milieu_interieur_stoornissen', 'Neonatal_metabolic_and_endocrinologic_disorder_(disorder)_Neonatal_renal_disorder_(disorder)'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('birth_trauma_of_fetus_disorder', 'birth_trauma_of_fetus_disorder_subdural_intracranial_hemorrhage_due_to_birth_trauma_disorder', 'birth_trauma_of_fetus_disorder_intracranial_subarachnoid_hemorrhage_due_to_birth_injury_disorder', 'birth_trauma_of_fetus_disorder_tentorial_tear_due_to_birth_trauma_disorder', 'birth_trauma_of_fetus_disorder_overige_bloedingen_geboortetrauma', 'birth_trauma_of_fetus_disorder_paralysis_from_birth_trauma_disorder', 'birth_trauma_of_fetus_disorder_overige_geboortetraumata', 'congenital_infectious_disease_disorder', 'congenital_infectious_disease_disorder_congenital_syphilis_disorder', 'congenital_infectious_disease_disorder_congenital_toxoplasmosis_disorder', 'congenital_infectious_disease_disorder_congenital_cytomegalovirus_infection_disorder', 'congenital_infectious_disease_disorder_congenital_rubella_syndrome_disorder', 'congenital_infectious_disease_disorder_sepsis_of_the_newborn_disorder', 'congenital_infectious_disease_disorder_inflammatory_disease_of_the_central_nervous_system_disorder', 'congenital_infectious_disease_disorder_overige_infecties', 'immunologische_en_haematologische_stoornissen', 'immunologische_en_haematologische_stoornissen_disorder_of_immune_structure_disorder', 'immunologische_en_haematologische_stoornissen_disorder_of_hematopoietic_system_in_newborn_disorder', 'immunologische_en_haematologische_stoornissen_disorder_of_hematopoietic_system_in_newborn_disorder_twintotwin_blood_transfer_disorder', 'immunologische_en_haematologische_stoornissen_disorder_of_hematopoietic_system_in_newborn_disorder_overig_haematologisch', 'nervous_system_and_sense_organ_diseases_disorder', 'nervous_system_and_sense_organ_diseases_disorder_perinatal_intracranial_hemorrhage_disorder', 'nervous_system_and_sense_organ_diseases_disorder_neonatal_cerebral_ischemia_disorder', 'nervous_system_and_sense_organ_diseases_disorder_convulsions_in_the_newborn_disorder', 'nervous_system_and_sense_organ_diseases_disorder_neonatal_hypotonia_disorder', 'nervous_system_and_sense_organ_diseases_disorder_retinopathy_of_prematurity_disorder', 'nervous_system_and_sense_organ_diseases_disorder_congenital_hearing_disorder_disorder', 'neonatal_cardiovascular_disorder_disorder', 'neonatal_cardiovascular_disorder_disorder_neonatal_hypertension_disorder', 'neonatal_cardiovascular_disorder_disorder_neonatal_hypotension_disorder', 'neonatal_cardiovascular_disorder_disorder_hydrops_fetalis_disorder', 'neonatal_cardiovascular_disorder_disorder_overige_circulatoire_problemen', 'neonatal_respiratory_system_disorder_disorder', 'neonatal_respiratory_system_disorder_disorder_respiratory_distress_syndrome_in_the_newborn_disorder', 'neonatal_respiratory_system_disorder_disorder_neonatal_aspiration_syndromes_disorder', 'neonatal_respiratory_system_disorder_disorder_bronchopulmonary_dysplasia_of_newborn_disorder', 'neonatal_respiratory_system_disorder_disorder_overige_respiratoire_problemen', 'stoornissen_tractus_digestivus_en_navel', 'stoornissen_tractus_digestivus_en_navel_neonatal_hyperbilirubinemia_disorder', 'stoornissen_tractus_digestivus_en_navel_overige_stoornissen_tractus_digestivus_en_navel', 'neonatal_metabolic_and_endocrinologic_disorder_disorder', 'neonatal_metabolic_and_endocrinologic_disorder_disorder_neonatal_hypoglycemia_disorder', 'neonatal_metabolic_and_endocrinologic_disorder_disorder_neonatal_hyperglycemia_disorder', 'neonatal_metabolic_and_endocrinologic_disorder_disorder_congenital_hypothyroidism_disorder', 'neonatal_metabolic_and_endocrinologic_disorder_disorder_overige_endocriene_metabole_en_milieu_interieur_stoornissen', 'neonatal_metabolic_and_endocrinologic_disorder_disorder_neonatal_renal_disorder_disorder'))">
+                                test="empty(@enum) or (@enum = ('Birth_trauma_of_fetus_(disorder)', 'Birth_trauma_of_fetus_(disorder)_Subdural_intracranial_hemorrhage_due_to_birth_trauma_(disorder)', 'Birth_trauma_of_fetus_(disorder)_Intracranial_subarachnoid_hemorrhage_due_to_birth_injury_(disorder)', 'Birth_trauma_of_fetus_(disorder)_Tentorial_tear_due_to_birth_trauma_(disorder)', 'Birth_trauma_of_fetus_(disorder)_Overige_bloedingen_(geboortetrauma)', 'Birth_trauma_of_fetus_(disorder)_Paralysis_from_birth_trauma_(disorder)', 'Birth_trauma_of_fetus_(disorder)_Overige_geboortetraumata', 'Congenital_infectious_disease_(disorder)', 'Congenital_infectious_disease_(disorder)_Congenital_syphilis_(disorder)', 'Congenital_infectious_disease_(disorder)_Congenital_toxoplasmosis_(disorder)', 'Congenital_infectious_disease_(disorder)_Congenital_cytomegalovirus_infection_(disorder)', 'Congenital_infectious_disease_(disorder)_Congenital_rubella_syndrome_(disorder)', 'Congenital_infectious_disease_(disorder)_Sepsis_of_the_newborn_(disorder)', 'Congenital_infectious_disease_(disorder)_Inflammatory_disease_of_the_central_nervous_system_(disorder)', 'Congenital_infectious_disease_(disorder)_Overige_infecties', 'Immunologische_en_haematologische_stoornissen', 'Immunologische_en_haematologische_stoornissen_Disorder_of_immune_structure_(disorder)', 'Immunologische_en_haematologische_stoornissen_Disorder_of_hematopoietic_system_in_newborn_(disorder)', 'Immunologische_en_haematologische_stoornissen_Disorder_of_hematopoietic_system_in_newborn_(disorder)_Twin-to-twin_blood_transfer_(disorder)', 'Immunologische_en_haematologische_stoornissen_Disorder_of_hematopoietic_system_in_newborn_(disorder)_Overig_haematologisch', 'Nervous_system_and_sense_organ_diseases_(disorder)', 'Nervous_system_and_sense_organ_diseases_(disorder)_Perinatal_intracranial_hemorrhage_(disorder)', 'Nervous_system_and_sense_organ_diseases_(disorder)_Neonatal_cerebral_ischemia_(disorder)', 'Nervous_system_and_sense_organ_diseases_(disorder)_Convulsions_in_the_newborn_(disorder)', 'Nervous_system_and_sense_organ_diseases_(disorder)_Neonatal_hypotonia_(disorder)', 'Nervous_system_and_sense_organ_diseases_(disorder)_Retinopathy_of_prematurity_(disorder)', 'Nervous_system_and_sense_organ_diseases_(disorder)_Congenital_hearing_disorder_(disorder)', 'Neonatal_cardiovascular_disorder_(disorder)', 'Neonatal_cardiovascular_disorder_(disorder)_Neonatal_hypertension_(disorder)', 'Neonatal_cardiovascular_disorder_(disorder)_Neonatal_hypotension_(disorder)', 'Neonatal_cardiovascular_disorder_(disorder)_Hydrops_fetalis_(disorder)', 'Neonatal_cardiovascular_disorder_(disorder)_Overige_circulatoire_problemen', 'Neonatal_respiratory_system_disorder_(disorder)', 'Neonatal_respiratory_system_disorder_(disorder)_Respiratory_distress_syndrome_in_the_newborn_(disorder)', 'Neonatal_respiratory_system_disorder_(disorder)_Neonatal_aspiration_syndromes_(disorder)', 'Neonatal_respiratory_system_disorder_(disorder)_Bronchopulmonary_dysplasia_of_newborn_(disorder)', 'Neonatal_respiratory_system_disorder_(disorder)_Overige_respiratoire_problemen', 'Stoornissen_tractus_digestivus_en_navel', 'Stoornissen_tractus_digestivus_en_navel_Neonatal_hyperbilirubinemia_(disorder)', 'Stoornissen_tractus_digestivus_en_navel_Overige_stoornissen_tractus_digestivus_en_navel', 'Neonatal_metabolic_and_endocrinologic_disorder_(disorder)', 'Neonatal_metabolic_and_endocrinologic_disorder_(disorder)_Neonatal_hypoglycemia_(disorder)', 'Neonatal_metabolic_and_endocrinologic_disorder_(disorder)_Neonatal_hyperglycemia_(disorder)', 'Neonatal_metabolic_and_endocrinologic_disorder_(disorder)_Congenital_hypothyroidism_(disorder)', 'Neonatal_metabolic_and_endocrinologic_disorder_(disorder)_Overige_endocriene,_metabole_en_milieu_interieur_stoornissen', 'Neonatal_metabolic_and_endocrinologic_disorder_(disorder)_Neonatal_renal_disorder_(disorder)'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Problematiek kind": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/problematiek_kind/@enum; allowed=('birth_trauma_of_fetus_disorder', 'birth_trauma_of_fetus_disorder_subdural_intracranial_hemorrhage_due_to_birth_trauma_disorder', 'birth_trauma_of_fetus_disorder_intracranial_subarachnoid_hemorrhage_due_to_birth_injury_disorder', 'birth_trauma_of_fetus_disorder_tentorial_tear_due_to_birth_trauma_disorder', 'birth_trauma_of_fetus_disorder_overige_bloedingen_geboortetrauma', 'birth_trauma_of_fetus_disorder_paralysis_from_birth_trauma_disorder', 'birth_trauma_of_fetus_disorder_overige_geboortetraumata', 'congenital_infectious_disease_disorder', 'congenital_infectious_disease_disorder_congenital_syphilis_disorder', 'congenital_infectious_disease_disorder_congenital_toxoplasmosis_disorder', 'congenital_infectious_disease_disorder_congenital_cytomegalovirus_infection_disorder', 'congenital_infectious_disease_disorder_congenital_rubella_syndrome_disorder', 'congenital_infectious_disease_disorder_sepsis_of_the_newborn_disorder', 'congenital_infectious_disease_disorder_inflammatory_disease_of_the_central_nervous_system_disorder', 'congenital_infectious_disease_disorder_overige_infecties', 'immunologische_en_haematologische_stoornissen', 'immunologische_en_haematologische_stoornissen_disorder_of_immune_structure_disorder', 'immunologische_en_haematologische_stoornissen_disorder_of_hematopoietic_system_in_newborn_disorder', 'immunologische_en_haematologische_stoornissen_disorder_of_hematopoietic_system_in_newborn_disorder_twintotwin_blood_transfer_disorder', 'immunologische_en_haematologische_stoornissen_disorder_of_hematopoietic_system_in_newborn_disorder_overig_haematologisch', 'nervous_system_and_sense_organ_diseases_disorder', 'nervous_system_and_sense_organ_diseases_disorder_perinatal_intracranial_hemorrhage_disorder', 'nervous_system_and_sense_organ_diseases_disorder_neonatal_cerebral_ischemia_disorder', 'nervous_system_and_sense_organ_diseases_disorder_convulsions_in_the_newborn_disorder', 'nervous_system_and_sense_organ_diseases_disorder_neonatal_hypotonia_disorder', 'nervous_system_and_sense_organ_diseases_disorder_retinopathy_of_prematurity_disorder', 'nervous_system_and_sense_organ_diseases_disorder_congenital_hearing_disorder_disorder', 'neonatal_cardiovascular_disorder_disorder', 'neonatal_cardiovascular_disorder_disorder_neonatal_hypertension_disorder', 'neonatal_cardiovascular_disorder_disorder_neonatal_hypotension_disorder', 'neonatal_cardiovascular_disorder_disorder_hydrops_fetalis_disorder', 'neonatal_cardiovascular_disorder_disorder_overige_circulatoire_problemen', 'neonatal_respiratory_system_disorder_disorder', 'neonatal_respiratory_system_disorder_disorder_respiratory_distress_syndrome_in_the_newborn_disorder', 'neonatal_respiratory_system_disorder_disorder_neonatal_aspiration_syndromes_disorder', 'neonatal_respiratory_system_disorder_disorder_bronchopulmonary_dysplasia_of_newborn_disorder', 'neonatal_respiratory_system_disorder_disorder_overige_respiratoire_problemen', 'stoornissen_tractus_digestivus_en_navel', 'stoornissen_tractus_digestivus_en_navel_neonatal_hyperbilirubinemia_disorder', 'stoornissen_tractus_digestivus_en_navel_overige_stoornissen_tractus_digestivus_en_navel', 'neonatal_metabolic_and_endocrinologic_disorder_disorder', 'neonatal_metabolic_and_endocrinologic_disorder_disorder_neonatal_hypoglycemia_disorder', 'neonatal_metabolic_and_endocrinologic_disorder_disorder_neonatal_hyperglycemia_disorder', 'neonatal_metabolic_and_endocrinologic_disorder_disorder_congenital_hypothyroidism_disorder', 'neonatal_metabolic_and_endocrinologic_disorder_disorder_overige_endocriene_metabole_en_milieu_interieur_stoornissen', 'neonatal_metabolic_and_endocrinologic_disorder_disorder_neonatal_renal_disorder_disorder')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/problematiek_kind/@enum; allowed=('Birth_trauma_of_fetus_(disorder)', 'Birth_trauma_of_fetus_(disorder)_Subdural_intracranial_hemorrhage_due_to_birth_trauma_(disorder)', 'Birth_trauma_of_fetus_(disorder)_Intracranial_subarachnoid_hemorrhage_due_to_birth_injury_(disorder)', 'Birth_trauma_of_fetus_(disorder)_Tentorial_tear_due_to_birth_trauma_(disorder)', 'Birth_trauma_of_fetus_(disorder)_Overige_bloedingen_(geboortetrauma)', 'Birth_trauma_of_fetus_(disorder)_Paralysis_from_birth_trauma_(disorder)', 'Birth_trauma_of_fetus_(disorder)_Overige_geboortetraumata', 'Congenital_infectious_disease_(disorder)', 'Congenital_infectious_disease_(disorder)_Congenital_syphilis_(disorder)', 'Congenital_infectious_disease_(disorder)_Congenital_toxoplasmosis_(disorder)', 'Congenital_infectious_disease_(disorder)_Congenital_cytomegalovirus_infection_(disorder)', 'Congenital_infectious_disease_(disorder)_Congenital_rubella_syndrome_(disorder)', 'Congenital_infectious_disease_(disorder)_Sepsis_of_the_newborn_(disorder)', 'Congenital_infectious_disease_(disorder)_Inflammatory_disease_of_the_central_nervous_system_(disorder)', 'Congenital_infectious_disease_(disorder)_Overige_infecties', 'Immunologische_en_haematologische_stoornissen', 'Immunologische_en_haematologische_stoornissen_Disorder_of_immune_structure_(disorder)', 'Immunologische_en_haematologische_stoornissen_Disorder_of_hematopoietic_system_in_newborn_(disorder)', 'Immunologische_en_haematologische_stoornissen_Disorder_of_hematopoietic_system_in_newborn_(disorder)_Twin-to-twin_blood_transfer_(disorder)', 'Immunologische_en_haematologische_stoornissen_Disorder_of_hematopoietic_system_in_newborn_(disorder)_Overig_haematologisch', 'Nervous_system_and_sense_organ_diseases_(disorder)', 'Nervous_system_and_sense_organ_diseases_(disorder)_Perinatal_intracranial_hemorrhage_(disorder)', 'Nervous_system_and_sense_organ_diseases_(disorder)_Neonatal_cerebral_ischemia_(disorder)', 'Nervous_system_and_sense_organ_diseases_(disorder)_Convulsions_in_the_newborn_(disorder)', 'Nervous_system_and_sense_organ_diseases_(disorder)_Neonatal_hypotonia_(disorder)', 'Nervous_system_and_sense_organ_diseases_(disorder)_Retinopathy_of_prematurity_(disorder)', 'Nervous_system_and_sense_organ_diseases_(disorder)_Congenital_hearing_disorder_(disorder)', 'Neonatal_cardiovascular_disorder_(disorder)', 'Neonatal_cardiovascular_disorder_(disorder)_Neonatal_hypertension_(disorder)', 'Neonatal_cardiovascular_disorder_(disorder)_Neonatal_hypotension_(disorder)', 'Neonatal_cardiovascular_disorder_(disorder)_Hydrops_fetalis_(disorder)', 'Neonatal_cardiovascular_disorder_(disorder)_Overige_circulatoire_problemen', 'Neonatal_respiratory_system_disorder_(disorder)', 'Neonatal_respiratory_system_disorder_(disorder)_Respiratory_distress_syndrome_in_the_newborn_(disorder)', 'Neonatal_respiratory_system_disorder_(disorder)_Neonatal_aspiration_syndromes_(disorder)', 'Neonatal_respiratory_system_disorder_(disorder)_Bronchopulmonary_dysplasia_of_newborn_(disorder)', 'Neonatal_respiratory_system_disorder_(disorder)_Overige_respiratoire_problemen', 'Stoornissen_tractus_digestivus_en_navel', 'Stoornissen_tractus_digestivus_en_navel_Neonatal_hyperbilirubinemia_(disorder)', 'Stoornissen_tractus_digestivus_en_navel_Overige_stoornissen_tractus_digestivus_en_navel', 'Neonatal_metabolic_and_endocrinologic_disorder_(disorder)', 'Neonatal_metabolic_and_endocrinologic_disorder_(disorder)_Neonatal_hypoglycemia_(disorder)', 'Neonatal_metabolic_and_endocrinologic_disorder_(disorder)_Neonatal_hyperglycemia_(disorder)', 'Neonatal_metabolic_and_endocrinologic_disorder_(disorder)_Congenital_hypothyroidism_(disorder)', 'Neonatal_metabolic_and_endocrinologic_disorder_(disorder)_Overige_endocriene,_metabole_en_milieu_interieur_stoornissen', 'Neonatal_metabolic_and_endocrinologic_disorder_(disorder)_Neonatal_renal_disorder_(disorder)')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -39400,16 +39400,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('_1e_lijns_verloskundige', 'klinisch_verloskundige', 'verloskundige_in_opleiding', 'gynaecoloog', 'gynaecoloog_in_opleiding', 'artsassistent', 'coassistent', 'huisarts', 'huisarts_in_opleiding', 'arts_niet_in_opleiding', 'verpleegkundige', 'kraamverzorgende', 'niet_medisch_geschoolde', 'onbekend', 'geen_informatie'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('1e_lijns_verloskundige', 'klinisch_verloskundige', 'verloskundige_in_opleiding', 'gynaecoloog', 'gynaecoloog_in_opleiding', 'arts-assistent', 'co-assistent', 'huisarts', 'huisarts_in_opleiding', 'arts,_niet_in_opleiding', 'verpleegkundige', 'kraamverzorgende', 'niet_medisch_geschoolde', 'onbekend', 'geen_informatie'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('_1e_lijns_verloskundige', 'klinisch_verloskundige', 'verloskundige_in_opleiding', 'gynaecoloog', 'gynaecoloog_in_opleiding', 'artsassistent', 'coassistent', 'huisarts', 'huisarts_in_opleiding', 'arts_niet_in_opleiding', 'verpleegkundige', 'kraamverzorgende', 'niet_medisch_geschoolde', 'onbekend', 'geen_informatie'))">
+                                test="empty(@enum) or (@enum = ('1e_lijns_verloskundige', 'klinisch_verloskundige', 'verloskundige_in_opleiding', 'gynaecoloog', 'gynaecoloog_in_opleiding', 'arts-assistent', 'co-assistent', 'huisarts', 'huisarts_in_opleiding', 'arts,_niet_in_opleiding', 'verpleegkundige', 'kraamverzorgende', 'niet_medisch_geschoolde', 'onbekend', 'geen_informatie'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Rol aanpakker kind": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/aanpakker_kind_groep/rol_aanpakker_kind/@enum; allowed=('_1e_lijns_verloskundige', 'klinisch_verloskundige', 'verloskundige_in_opleiding', 'gynaecoloog', 'gynaecoloog_in_opleiding', 'artsassistent', 'coassistent', 'huisarts', 'huisarts_in_opleiding', 'arts_niet_in_opleiding', 'verpleegkundige', 'kraamverzorgende', 'niet_medisch_geschoolde', 'onbekend', 'geen_informatie')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/aanpakker_kind_groep/rol_aanpakker_kind/@enum; allowed=('1e_lijns_verloskundige', 'klinisch_verloskundige', 'verloskundige_in_opleiding', 'gynaecoloog', 'gynaecoloog_in_opleiding', 'arts-assistent', 'co-assistent', 'huisarts', 'huisarts_in_opleiding', 'arts,_niet_in_opleiding', 'verpleegkundige', 'kraamverzorgende', 'niet_medisch_geschoolde', 'onbekend', 'geen_informatie')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -39620,16 +39620,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('_1e_lijns_verloskundige', 'klinisch_verloskundige', 'gynaecoloog', 'gynaecoloog_in_opleiding', 'artsassistent', 'huisarts', 'geen_informatie'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('1e_lijns_verloskundige', 'klinisch_verloskundige', 'gynaecoloog', 'gynaecoloog_in_opleiding', 'arts-assistent', 'huisarts', 'geen_informatie'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('_1e_lijns_verloskundige', 'klinisch_verloskundige', 'gynaecoloog', 'gynaecoloog_in_opleiding', 'artsassistent', 'huisarts', 'geen_informatie'))">
+                                test="empty(@enum) or (@enum = ('1e_lijns_verloskundige', 'klinisch_verloskundige', 'gynaecoloog', 'gynaecoloog_in_opleiding', 'arts-assistent', 'huisarts', 'geen_informatie'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Rol supervisor": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/supervisor_groep/rol_supervisor/@enum; allowed=('_1e_lijns_verloskundige', 'klinisch_verloskundige', 'gynaecoloog', 'gynaecoloog_in_opleiding', 'artsassistent', 'huisarts', 'geen_informatie')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/supervisor_groep/rol_supervisor/@enum; allowed=('1e_lijns_verloskundige', 'klinisch_verloskundige', 'gynaecoloog', 'gynaecoloog_in_opleiding', 'arts-assistent', 'huisarts', 'geen_informatie')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -39856,16 +39856,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('forceps_delivery_procedure', 'delivery_by_vacuum_extraction_procedure', 'obstetrical_version_with_extraction_procedure', 'partial_breech_extraction_procedure', 'total_breech_extraction_procedure', 'anders', 'geen_informatie'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Forceps_delivery_(procedure)', 'Delivery_by_vacuum_extraction_(procedure)', 'Obstetrical_version_with_extraction_(procedure)', 'Partial_breech_extraction_(procedure)', 'Total_breech_extraction_(procedure)', 'anders', 'geen_informatie'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('forceps_delivery_procedure', 'delivery_by_vacuum_extraction_procedure', 'obstetrical_version_with_extraction_procedure', 'partial_breech_extraction_procedure', 'total_breech_extraction_procedure', 'anders', 'geen_informatie'))">
+                                test="empty(@enum) or (@enum = ('Forceps_delivery_(procedure)', 'Delivery_by_vacuum_extraction_(procedure)', 'Obstetrical_version_with_extraction_(procedure)', 'Partial_breech_extraction_(procedure)', 'Total_breech_extraction_(procedure)', 'anders', 'geen_informatie'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Vaginale kunstverlossing": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/vaginale_kunstverlossing_groep/vaginale_kunstverlossing/@enum; allowed=('forceps_delivery_procedure', 'delivery_by_vacuum_extraction_procedure', 'obstetrical_version_with_extraction_procedure', 'partial_breech_extraction_procedure', 'total_breech_extraction_procedure', 'anders', 'geen_informatie')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/vaginale_kunstverlossing_groep/vaginale_kunstverlossing/@enum; allowed=('Forceps_delivery_(procedure)', 'Delivery_by_vacuum_extraction_(procedure)', 'Obstetrical_version_with_extraction_(procedure)', 'Partial_breech_extraction_(procedure)', 'Total_breech_extraction_(procedure)', 'anders', 'geen_informatie')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -40199,16 +40199,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('tijdens_ontsluiting_besloten', 'tijdens_uitdrijving_besloten', 'geen_informatie'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Tijdens_ontsluiting_besloten', 'Tijdens_uitdrijving_besloten', 'Geen_informatie'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('tijdens_ontsluiting_besloten', 'tijdens_uitdrijving_besloten', 'geen_informatie'))">
+                                test="empty(@enum) or (@enum = ('Tijdens_ontsluiting_besloten', 'Tijdens_uitdrijving_besloten', 'Geen_informatie'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Beslismoment sectio caesarea": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/sectio_caesarea_group/beslismoment_sectio_caesarea/@enum; allowed=('tijdens_ontsluiting_besloten', 'tijdens_uitdrijving_besloten', 'geen_informatie')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/sectio_caesarea_group/beslismoment_sectio_caesarea/@enum; allowed=('Tijdens_ontsluiting_besloten', 'Tijdens_uitdrijving_besloten', 'Geen_informatie')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -40341,16 +40341,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('history_of_third_degree_perineal_laceration_situation', 'history_of_fourth_degree_perineal_laceration_situation', 'abnormal_fetal_presentation_finding', 'suspected_fetal_distress_situation', 'patient_condition_finding_finding', 'maternal_request_for_treatment_finding', 'overig_medische_reden', 'overig_nietmedische_reden', 'geen_informatie'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('History_of_third_degree_perineal_laceration_(situation)', 'History_of_fourth_degree_perineal_laceration_(situation)', 'Abnormal_fetal_presentation_(finding)', 'Suspected_fetal_distress_(situation)', 'Patient_condition_finding_(finding)', 'Maternal_request_for_treatment_(finding)', 'overig,_medische_reden', 'overig,_niet-medische_reden', 'geen_informatie'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('history_of_third_degree_perineal_laceration_situation', 'history_of_fourth_degree_perineal_laceration_situation', 'abnormal_fetal_presentation_finding', 'suspected_fetal_distress_situation', 'patient_condition_finding_finding', 'maternal_request_for_treatment_finding', 'overig_medische_reden', 'overig_nietmedische_reden', 'geen_informatie'))">
+                                test="empty(@enum) or (@enum = ('History_of_third_degree_perineal_laceration_(situation)', 'History_of_fourth_degree_perineal_laceration_(situation)', 'Abnormal_fetal_presentation_(finding)', 'Suspected_fetal_distress_(situation)', 'Patient_condition_finding_(finding)', 'Maternal_request_for_treatment_(finding)', 'overig,_medische_reden', 'overig,_niet-medische_reden', 'geen_informatie'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Indicatie primaire sectio": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/sectio_caesarea_group/indicatie_primaire_sectio/@enum; allowed=('history_of_third_degree_perineal_laceration_situation', 'history_of_fourth_degree_perineal_laceration_situation', 'abnormal_fetal_presentation_finding', 'suspected_fetal_distress_situation', 'patient_condition_finding_finding', 'maternal_request_for_treatment_finding', 'overig_medische_reden', 'overig_nietmedische_reden', 'geen_informatie')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/sectio_caesarea_group/indicatie_primaire_sectio/@enum; allowed=('History_of_third_degree_perineal_laceration_(situation)', 'History_of_fourth_degree_perineal_laceration_(situation)', 'Abnormal_fetal_presentation_(finding)', 'Suspected_fetal_distress_(situation)', 'Patient_condition_finding_(finding)', 'Maternal_request_for_treatment_(finding)', 'overig,_medische_reden', 'overig,_niet-medische_reden', 'geen_informatie')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -40483,16 +40483,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('failure_to_progress_in_first_stage_of_labor_finding', 'failure_to_progress_in_second_stage_of_labor_finding', 'suspected_fetal_distress_situation', 'patient_condition_finding_finding', 'overig_medische_reden', 'overig_nietmedische_reden', 'geen_informatie'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Failure_to_progress_in_first_stage_of_labor_(finding)', 'Failure_to_progress_in_second_stage_of_labor_(finding)', 'Suspected_fetal_distress_(situation)', 'Patient_condition_finding_(finding)', 'Overig,_medische_reden', 'Overig,_niet-medische_reden', 'Geen_informatie'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('failure_to_progress_in_first_stage_of_labor_finding', 'failure_to_progress_in_second_stage_of_labor_finding', 'suspected_fetal_distress_situation', 'patient_condition_finding_finding', 'overig_medische_reden', 'overig_nietmedische_reden', 'geen_informatie'))">
+                                test="empty(@enum) or (@enum = ('Failure_to_progress_in_first_stage_of_labor_(finding)', 'Failure_to_progress_in_second_stage_of_labor_(finding)', 'Suspected_fetal_distress_(situation)', 'Patient_condition_finding_(finding)', 'Overig,_medische_reden', 'Overig,_niet-medische_reden', 'Geen_informatie'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Indicatie secundaire sectio": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/sectio_caesarea_group/indicatie_secundaire_sectio/@enum; allowed=('failure_to_progress_in_first_stage_of_labor_finding', 'failure_to_progress_in_second_stage_of_labor_finding', 'suspected_fetal_distress_situation', 'patient_condition_finding_finding', 'overig_medische_reden', 'overig_nietmedische_reden', 'geen_informatie')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/sectio_caesarea_group/indicatie_secundaire_sectio/@enum; allowed=('Failure_to_progress_in_first_stage_of_labor_(finding)', 'Failure_to_progress_in_second_stage_of_labor_(finding)', 'Suspected_fetal_distress_(situation)', 'Patient_condition_finding_(finding)', 'Overig,_medische_reden', 'Overig,_niet-medische_reden', 'Geen_informatie')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -41368,16 +41368,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('hydrops_foetalis', 'congenital_anomaly_of_nervous_system_disorder', 'congenital_anomaly_of_nervous_system_disorder_fetal_anencephaly_disorder', 'congenital_anomaly_of_nervous_system_disorder_fetal_microcephaly_disorder', 'congenital_anomaly_of_nervous_system_disorder_spina_bifida_occulta_disorder', 'congenital_anomaly_of_nervous_system_disorder_meningomyelocele_disorder', 'congenital_anomaly_of_nervous_system_disorder_meningocele_disorder', 'congenital_anomaly_of_nervous_system_disorder_congenital_hydrocephalus_disorder', 'congenital_anomaly_of_nervous_system_disorder_holoprosencephaly_sequence_disorder', 'congenital_anomaly_of_nervous_system_disorder_encephalocele_disorder', 'congenital_anomaly_of_nervous_system_disorder_neonatal_neuromuscular_disorder_disorder', 'congenital_anomaly_of_nervous_system_disorder_overige_congenitale_afwijkingen_zenuwstelsel', 'zintuigen', 'zintuigen_congenital_anomaly_of_eye_disorder', 'zintuigen_congenital_anomaly_of_eye_disorder_microphthalmos_disorder', 'zintuigen_congenital_anomaly_of_eye_disorder_overige_congenitale_afwijkingen_ogen', 'zintuigen_congenital_anomaly_of_ear_disorder', 'zintuigen_overige_congenitale_afwijkingen_zintuigen', 'congenital_anomaly_of_cardiovascular_system_disorder', 'congenital_anomaly_of_cardiovascular_system_disorder_single_umbilical_artery_disorder', 'congenital_anomaly_of_cardiovascular_system_disorder_discordant_ventriculoarterial_connection_disorder', 'congenital_anomaly_of_cardiovascular_system_disorder_tetralogy_of_fallot_disorder', 'congenital_anomaly_of_cardiovascular_system_disorder_ventricular_septal_defect_disorder', 'congenital_anomaly_of_cardiovascular_system_disorder_hypoplastic_left_heart_syndrome_disorder', 'congenital_anomaly_of_cardiovascular_system_disorder_coarctation_of_aorta_disorder', 'congenital_anomaly_of_cardiovascular_system_disorder_congenital_anomaly_of_tricuspid_valve_disorder', 'congenital_anomaly_of_cardiovascular_system_disorder_multiple_congenital_cardiac_defects_disorder', 'congenital_anomaly_of_cardiovascular_system_disorder_overige_congenitale_afwijking_hart_en_bloedvaten', 'congenital_anomaly_of_digestive_tract_disorder', 'congenital_anomaly_of_digestive_tract_disorder_cleft_lip_disorder', 'congenital_anomaly_of_digestive_tract_disorder_cleft_palate_disorder', 'congenital_anomaly_of_digestive_tract_disorder_congenital_anomaly_of_esophagus_disorder', 'congenital_anomaly_of_digestive_tract_disorder_congenital_atresia_of_small_intestine_disorder', 'congenital_anomaly_of_digestive_tract_disorder_atresia_of_large_intestine_disorder', 'congenital_anomaly_of_digestive_tract_disorder_anal_atresia_disorder', 'congenital_anomaly_of_digestive_tract_disorder_hirschsprungs_disease_disorder', 'congenital_anomaly_of_digestive_tract_disorder_congenital_malrotation_of_intestine_disorder', 'congenital_anomaly_of_digestive_tract_disorder_intestinal_volvulus_disorder', 'congenital_anomaly_of_digestive_tract_disorder_overige_congenitale_afwijking_tractus_digestivus', 'congenital_anomaly_of_respiratory_system_disorder', 'congenital_anomaly_of_respiratory_system_disorder_choanal_atresia_disorder', 'congenital_anomaly_of_respiratory_system_disorder_congenital_anomaly_of_trachea_disorder', 'congenital_anomaly_of_respiratory_system_disorder_congenital_hypoplasia_of_lung_disorder', 'congenital_anomaly_of_respiratory_system_disorder_congenital_lobar_emphysema_disorder', 'congenital_anomaly_of_respiratory_system_disorder_congenital_cystic_adenomatoid_malformation_of_lung_disorder', 'congenital_anomaly_of_respiratory_system_disorder_hydrothorax_disorder', 'congenital_anomaly_of_respiratory_system_disorder_chylothorax_disorder', 'congenital_anomaly_of_respiratory_system_disorder_congenital_diaphragmatic_hernia_disorder', 'congenital_anomaly_of_respiratory_system_disorder_relaxation_of_diaphragm_disorder', 'congenital_anomaly_of_respiratory_system_disorder_overige_congenitale_afwijking_tractus_respiratorius', 'genitourinary_congenital_anomalies_disorder', 'genitourinary_congenital_anomalies_disorder_hypospadias_disorder', 'genitourinary_congenital_anomalies_disorder_epispadias_disorder', 'genitourinary_congenital_anomalies_disorder_undescended_testicle_disorder', 'genitourinary_congenital_anomalies_disorder_exstrophy_of_bladder_sequence_disorder', 'genitourinary_congenital_anomalies_disorder_oligohydramnios_sequence_disorder', 'genitourinary_congenital_anomalies_disorder_congenital_cystic_kidney_disease_disorder', 'genitourinary_congenital_anomalies_disorder_urinary_tract_obstruction_disorder', 'genitourinary_congenital_anomalies_disorder_disorder_of_sexual_differentiation_disorder', 'genitourinary_congenital_anomalies_disorder_overige_congenitale_afwijking_tractus_urogenitalis', 'congenital_anomaly_of_skin_disorder', 'congenital_anomaly_of_skin_disorder_hemangioma_of_skin_disorder', 'congenital_anomaly_of_skin_disorder_congenital_pigmented_melanocytic_nevus_of_skin_disorder', 'congenital_anomaly_of_skin_disorder_overige_congenitale_huidafwijking', 'congenital_anomaly_of_abdominal_wall_disorder', 'congenital_anomaly_of_abdominal_wall_disorder_gastroschisis_disorder', 'congenital_anomaly_of_abdominal_wall_disorder_congenital_omphalocele_disorder', 'congenital_anomaly_of_abdominal_wall_disorder_umbilical_hernia_disorder', 'congenital_anomaly_of_abdominal_wall_disorder_congenital_inguinal_hernia_disorder', 'congenital_anomaly_of_abdominal_wall_disorder_overige_congenitale_afwijking_buikwand', 'congenital_anomaly_of_musculoskeletal_system_disorder', 'congenital_anomaly_of_musculoskeletal_system_disorder_polydactyly_disorder', 'congenital_anomaly_of_musculoskeletal_system_disorder_syndactyly_disorder', 'congenital_anomaly_of_musculoskeletal_system_disorder_congenital_deformity_of_foot_disorder', 'congenital_anomaly_of_musculoskeletal_system_disorder_reduction_deformity_of_upper_limb_disorder', 'congenital_anomaly_of_musculoskeletal_system_disorder_reduction_deformity_of_lower_limb_disorder', 'congenital_anomaly_of_musculoskeletal_system_disorder_overige_congenitale_afwijking_extremiteiten', 'congenital_anomaly_of_musculoskeletal_system_disorder_congenital_subluxation_of_hip_disorder', 'congenital_anomaly_of_musculoskeletal_system_disorder_overige_congenitale_afwijking_skelet_en_spierstelsel', 'multipelesyndromale_congenitale_afwijkingen_niet_chromosomaal', 'multipelesyndromale_congenitale_afwijkingen_niet_chromosomaal_dysmorphism_disorder', 'multipelesyndromale_congenitale_afwijkingen_niet_chromosomaal_situs_inversus_viscerum_disorder', 'multipelesyndromale_congenitale_afwijkingen_niet_chromosomaal_multiple_congenital_anomalies_disorder', 'multipelesyndromale_congenitale_afwijkingen_niet_chromosomaal_multiple_system_malformation_syndrome_disorder', 'multipelesyndromale_congenitale_afwijkingen_niet_chromosomaal_overige_multipelesyndromale_afwijkingen', 'overige_congenitale_afwijkingen', 'overige_congenitale_afwijkingen_congenital_iodine_deficiency_syndrome_disorder', 'overige_congenitale_afwijkingen_andere_endocrinologische_afwijkingen', 'overige_congenitale_afwijkingen_inborn_error_of_metabolism_disorder', 'overige_congenitale_afwijkingen_congenital_malignant_neoplastic_disease_disorder', 'overig', 'geen_informatie'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Hydrops_foetalis', 'Congenital_anomaly_of_nervous_system_(disorder)', 'Congenital_anomaly_of_nervous_system_(disorder)_Fetal_anencephaly_(disorder)', 'Congenital_anomaly_of_nervous_system_(disorder)_Fetal_microcephaly_(disorder)', 'Congenital_anomaly_of_nervous_system_(disorder)_Spina_bifida_occulta_(disorder)', 'Congenital_anomaly_of_nervous_system_(disorder)_Meningomyelocele_(disorder)', 'Congenital_anomaly_of_nervous_system_(disorder)_Meningocele_(disorder)', 'Congenital_anomaly_of_nervous_system_(disorder)_Congenital_hydrocephalus_(disorder)', 'Congenital_anomaly_of_nervous_system_(disorder)_Holoprosencephaly_sequence_(disorder)', 'Congenital_anomaly_of_nervous_system_(disorder)_Encephalocele_(disorder)', 'Congenital_anomaly_of_nervous_system_(disorder)_Neonatal_neuromuscular_disorder_(disorder)', 'Congenital_anomaly_of_nervous_system_(disorder)_Overige_congenitale_afwijkingen_zenuwstelsel', 'Zintuigen', 'Zintuigen_Congenital_anomaly_of_eye_(disorder)', 'Zintuigen_Congenital_anomaly_of_eye_(disorder)_Microphthalmos_(disorder)', 'Zintuigen_Congenital_anomaly_of_eye_(disorder)_Overige_congenitale_afwijkingen_ogen', 'Zintuigen_Congenital_anomaly_of_ear_(disorder)', 'Zintuigen_Overige_congenitale_afwijkingen_zintuigen', 'Congenital_anomaly_of_cardiovascular_system_(disorder)', 'Congenital_anomaly_of_cardiovascular_system_(disorder)_Single_umbilical_artery_(disorder)', 'Congenital_anomaly_of_cardiovascular_system_(disorder)_Discordant_ventriculoarterial_connection_(disorder)', 'Congenital_anomaly_of_cardiovascular_system_(disorder)_Tetralogy_of_Fallot_(disorder)', 'Congenital_anomaly_of_cardiovascular_system_(disorder)_Ventricular_septal_defect_(disorder)', 'Congenital_anomaly_of_cardiovascular_system_(disorder)_Hypoplastic_left_heart_syndrome_(disorder)', 'Congenital_anomaly_of_cardiovascular_system_(disorder)_Coarctation_of_aorta_(disorder)', 'Congenital_anomaly_of_cardiovascular_system_(disorder)_Congenital_anomaly_of_tricuspid_valve_(disorder)', 'Congenital_anomaly_of_cardiovascular_system_(disorder)_Multiple_congenital_cardiac_defects_(disorder)', 'Congenital_anomaly_of_cardiovascular_system_(disorder)_Overige_congenitale_afwijking_hart_en_bloedvaten', 'Congenital_anomaly_of_digestive_tract_(disorder)', 'Congenital_anomaly_of_digestive_tract_(disorder)_Cleft_lip_(disorder)', 'Congenital_anomaly_of_digestive_tract_(disorder)_Cleft_palate_(disorder)', 'Congenital_anomaly_of_digestive_tract_(disorder)_Congenital_anomaly_of_esophagus_(disorder)', 'Congenital_anomaly_of_digestive_tract_(disorder)_Congenital_atresia_of_small_intestine_(disorder)', 'Congenital_anomaly_of_digestive_tract_(disorder)_Atresia_of_large_intestine_(disorder)', 'Congenital_anomaly_of_digestive_tract_(disorder)_Anal_atresia_(disorder)', 'Congenital_anomaly_of_digestive_tract_(disorder)_Hirschsprung''s_disease_(disorder)', 'Congenital_anomaly_of_digestive_tract_(disorder)_Congenital_malrotation_of_intestine_(disorder)', 'Congenital_anomaly_of_digestive_tract_(disorder)_Intestinal_volvulus_(disorder)', 'Congenital_anomaly_of_digestive_tract_(disorder)_Overige_congenitale_afwijking_tractus_digestivus', 'Congenital_anomaly_of_respiratory_system_(disorder)', 'Congenital_anomaly_of_respiratory_system_(disorder)_Choanal_atresia_(disorder)', 'Congenital_anomaly_of_respiratory_system_(disorder)_Congenital_anomaly_of_trachea_(disorder)', 'Congenital_anomaly_of_respiratory_system_(disorder)_Congenital_hypoplasia_of_lung_(disorder)', 'Congenital_anomaly_of_respiratory_system_(disorder)_Congenital_lobar_emphysema_(disorder)', 'Congenital_anomaly_of_respiratory_system_(disorder)_Congenital_cystic_adenomatoid_malformation_of_lung_(disorder)', 'Congenital_anomaly_of_respiratory_system_(disorder)_Hydrothorax_(disorder)', 'Congenital_anomaly_of_respiratory_system_(disorder)_Chylothorax_(disorder)', 'Congenital_anomaly_of_respiratory_system_(disorder)_Congenital_diaphragmatic_hernia_(disorder)', 'Congenital_anomaly_of_respiratory_system_(disorder)_Relaxation_of_diaphragm_(disorder)', 'Congenital_anomaly_of_respiratory_system_(disorder)_Overige_congenitale_afwijking_tractus_respiratorius', 'Genitourinary_congenital_anomalies_(disorder)', 'Genitourinary_congenital_anomalies_(disorder)_Hypospadias_(disorder)', 'Genitourinary_congenital_anomalies_(disorder)_Epispadias_(disorder)', 'Genitourinary_congenital_anomalies_(disorder)_Undescended_testicle_(disorder)', 'Genitourinary_congenital_anomalies_(disorder)_Exstrophy_of_bladder_sequence_(disorder)', 'Genitourinary_congenital_anomalies_(disorder)_Oligohydramnios_sequence_(disorder)', 'Genitourinary_congenital_anomalies_(disorder)_Congenital_cystic_kidney_disease_(disorder)', 'Genitourinary_congenital_anomalies_(disorder)_Urinary_tract_obstruction_(disorder)', 'Genitourinary_congenital_anomalies_(disorder)_Disorder_of_sexual_differentiation_(disorder)', 'Genitourinary_congenital_anomalies_(disorder)_Overige_congenitale_afwijking_tractus_urogenitalis', 'Congenital_anomaly_of_skin_(disorder)', 'Congenital_anomaly_of_skin_(disorder)_Hemangioma_of_skin_(disorder)', 'Congenital_anomaly_of_skin_(disorder)_Congenital_pigmented_melanocytic_nevus_of_skin_(disorder)', 'Congenital_anomaly_of_skin_(disorder)_Overige_congenitale_huidafwijking', 'Congenital_anomaly_of_abdominal_wall_(disorder)', 'Congenital_anomaly_of_abdominal_wall_(disorder)_Gastroschisis_(disorder)', 'Congenital_anomaly_of_abdominal_wall_(disorder)_Congenital_omphalocele_(disorder)', 'Congenital_anomaly_of_abdominal_wall_(disorder)_Umbilical_hernia_(disorder)', 'Congenital_anomaly_of_abdominal_wall_(disorder)_Congenital_inguinal_hernia_(disorder)', 'Congenital_anomaly_of_abdominal_wall_(disorder)_Overige_congenitale_afwijking_buikwand', 'Congenital_anomaly_of_musculoskeletal_system_(disorder)', 'Congenital_anomaly_of_musculoskeletal_system_(disorder)_Polydactyly_(disorder)', 'Congenital_anomaly_of_musculoskeletal_system_(disorder)_Syndactyly_(disorder)', 'Congenital_anomaly_of_musculoskeletal_system_(disorder)_Congenital_deformity_of_foot_(disorder)', 'Congenital_anomaly_of_musculoskeletal_system_(disorder)_Reduction_deformity_of_upper_limb_(disorder)', 'Congenital_anomaly_of_musculoskeletal_system_(disorder)_Reduction_deformity_of_lower_limb_(disorder)', 'Congenital_anomaly_of_musculoskeletal_system_(disorder)_Overige_congenitale_afwijking_extremiteiten', 'Congenital_anomaly_of_musculoskeletal_system_(disorder)_Congenital_subluxation_of_hip_(disorder)', 'Congenital_anomaly_of_musculoskeletal_system_(disorder)_Overige_congenitale_afwijking_skelet_en_spierstelsel', 'Multipele/syndromale_congenitale_afwijkingen_(niet_chromosomaal)', 'Multipele/syndromale_congenitale_afwijkingen_(niet_chromosomaal)_Dysmorphism_(disorder)', 'Multipele/syndromale_congenitale_afwijkingen_(niet_chromosomaal)_Situs_inversus_viscerum_(disorder)', 'Multipele/syndromale_congenitale_afwijkingen_(niet_chromosomaal)_Multiple_congenital_anomalies_(disorder)', 'Multipele/syndromale_congenitale_afwijkingen_(niet_chromosomaal)_Multiple_system_malformation_syndrome_(disorder)', 'Multipele/syndromale_congenitale_afwijkingen_(niet_chromosomaal)_Overige_multipele/syndromale_afwijkingen', 'Overige_congenitale_afwijkingen', 'Overige_congenitale_afwijkingen_Congenital_iodine_deficiency_syndrome_(disorder)', 'Overige_congenitale_afwijkingen_Andere_endocrinologische_afwijkingen', 'Overige_congenitale_afwijkingen_Inborn_error_of_metabolism_(disorder)', 'Overige_congenitale_afwijkingen_Congenital_malignant_neoplastic_disease_(disorder)', 'Overig', 'Geen_informatie'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('hydrops_foetalis', 'congenital_anomaly_of_nervous_system_disorder', 'congenital_anomaly_of_nervous_system_disorder_fetal_anencephaly_disorder', 'congenital_anomaly_of_nervous_system_disorder_fetal_microcephaly_disorder', 'congenital_anomaly_of_nervous_system_disorder_spina_bifida_occulta_disorder', 'congenital_anomaly_of_nervous_system_disorder_meningomyelocele_disorder', 'congenital_anomaly_of_nervous_system_disorder_meningocele_disorder', 'congenital_anomaly_of_nervous_system_disorder_congenital_hydrocephalus_disorder', 'congenital_anomaly_of_nervous_system_disorder_holoprosencephaly_sequence_disorder', 'congenital_anomaly_of_nervous_system_disorder_encephalocele_disorder', 'congenital_anomaly_of_nervous_system_disorder_neonatal_neuromuscular_disorder_disorder', 'congenital_anomaly_of_nervous_system_disorder_overige_congenitale_afwijkingen_zenuwstelsel', 'zintuigen', 'zintuigen_congenital_anomaly_of_eye_disorder', 'zintuigen_congenital_anomaly_of_eye_disorder_microphthalmos_disorder', 'zintuigen_congenital_anomaly_of_eye_disorder_overige_congenitale_afwijkingen_ogen', 'zintuigen_congenital_anomaly_of_ear_disorder', 'zintuigen_overige_congenitale_afwijkingen_zintuigen', 'congenital_anomaly_of_cardiovascular_system_disorder', 'congenital_anomaly_of_cardiovascular_system_disorder_single_umbilical_artery_disorder', 'congenital_anomaly_of_cardiovascular_system_disorder_discordant_ventriculoarterial_connection_disorder', 'congenital_anomaly_of_cardiovascular_system_disorder_tetralogy_of_fallot_disorder', 'congenital_anomaly_of_cardiovascular_system_disorder_ventricular_septal_defect_disorder', 'congenital_anomaly_of_cardiovascular_system_disorder_hypoplastic_left_heart_syndrome_disorder', 'congenital_anomaly_of_cardiovascular_system_disorder_coarctation_of_aorta_disorder', 'congenital_anomaly_of_cardiovascular_system_disorder_congenital_anomaly_of_tricuspid_valve_disorder', 'congenital_anomaly_of_cardiovascular_system_disorder_multiple_congenital_cardiac_defects_disorder', 'congenital_anomaly_of_cardiovascular_system_disorder_overige_congenitale_afwijking_hart_en_bloedvaten', 'congenital_anomaly_of_digestive_tract_disorder', 'congenital_anomaly_of_digestive_tract_disorder_cleft_lip_disorder', 'congenital_anomaly_of_digestive_tract_disorder_cleft_palate_disorder', 'congenital_anomaly_of_digestive_tract_disorder_congenital_anomaly_of_esophagus_disorder', 'congenital_anomaly_of_digestive_tract_disorder_congenital_atresia_of_small_intestine_disorder', 'congenital_anomaly_of_digestive_tract_disorder_atresia_of_large_intestine_disorder', 'congenital_anomaly_of_digestive_tract_disorder_anal_atresia_disorder', 'congenital_anomaly_of_digestive_tract_disorder_hirschsprungs_disease_disorder', 'congenital_anomaly_of_digestive_tract_disorder_congenital_malrotation_of_intestine_disorder', 'congenital_anomaly_of_digestive_tract_disorder_intestinal_volvulus_disorder', 'congenital_anomaly_of_digestive_tract_disorder_overige_congenitale_afwijking_tractus_digestivus', 'congenital_anomaly_of_respiratory_system_disorder', 'congenital_anomaly_of_respiratory_system_disorder_choanal_atresia_disorder', 'congenital_anomaly_of_respiratory_system_disorder_congenital_anomaly_of_trachea_disorder', 'congenital_anomaly_of_respiratory_system_disorder_congenital_hypoplasia_of_lung_disorder', 'congenital_anomaly_of_respiratory_system_disorder_congenital_lobar_emphysema_disorder', 'congenital_anomaly_of_respiratory_system_disorder_congenital_cystic_adenomatoid_malformation_of_lung_disorder', 'congenital_anomaly_of_respiratory_system_disorder_hydrothorax_disorder', 'congenital_anomaly_of_respiratory_system_disorder_chylothorax_disorder', 'congenital_anomaly_of_respiratory_system_disorder_congenital_diaphragmatic_hernia_disorder', 'congenital_anomaly_of_respiratory_system_disorder_relaxation_of_diaphragm_disorder', 'congenital_anomaly_of_respiratory_system_disorder_overige_congenitale_afwijking_tractus_respiratorius', 'genitourinary_congenital_anomalies_disorder', 'genitourinary_congenital_anomalies_disorder_hypospadias_disorder', 'genitourinary_congenital_anomalies_disorder_epispadias_disorder', 'genitourinary_congenital_anomalies_disorder_undescended_testicle_disorder', 'genitourinary_congenital_anomalies_disorder_exstrophy_of_bladder_sequence_disorder', 'genitourinary_congenital_anomalies_disorder_oligohydramnios_sequence_disorder', 'genitourinary_congenital_anomalies_disorder_congenital_cystic_kidney_disease_disorder', 'genitourinary_congenital_anomalies_disorder_urinary_tract_obstruction_disorder', 'genitourinary_congenital_anomalies_disorder_disorder_of_sexual_differentiation_disorder', 'genitourinary_congenital_anomalies_disorder_overige_congenitale_afwijking_tractus_urogenitalis', 'congenital_anomaly_of_skin_disorder', 'congenital_anomaly_of_skin_disorder_hemangioma_of_skin_disorder', 'congenital_anomaly_of_skin_disorder_congenital_pigmented_melanocytic_nevus_of_skin_disorder', 'congenital_anomaly_of_skin_disorder_overige_congenitale_huidafwijking', 'congenital_anomaly_of_abdominal_wall_disorder', 'congenital_anomaly_of_abdominal_wall_disorder_gastroschisis_disorder', 'congenital_anomaly_of_abdominal_wall_disorder_congenital_omphalocele_disorder', 'congenital_anomaly_of_abdominal_wall_disorder_umbilical_hernia_disorder', 'congenital_anomaly_of_abdominal_wall_disorder_congenital_inguinal_hernia_disorder', 'congenital_anomaly_of_abdominal_wall_disorder_overige_congenitale_afwijking_buikwand', 'congenital_anomaly_of_musculoskeletal_system_disorder', 'congenital_anomaly_of_musculoskeletal_system_disorder_polydactyly_disorder', 'congenital_anomaly_of_musculoskeletal_system_disorder_syndactyly_disorder', 'congenital_anomaly_of_musculoskeletal_system_disorder_congenital_deformity_of_foot_disorder', 'congenital_anomaly_of_musculoskeletal_system_disorder_reduction_deformity_of_upper_limb_disorder', 'congenital_anomaly_of_musculoskeletal_system_disorder_reduction_deformity_of_lower_limb_disorder', 'congenital_anomaly_of_musculoskeletal_system_disorder_overige_congenitale_afwijking_extremiteiten', 'congenital_anomaly_of_musculoskeletal_system_disorder_congenital_subluxation_of_hip_disorder', 'congenital_anomaly_of_musculoskeletal_system_disorder_overige_congenitale_afwijking_skelet_en_spierstelsel', 'multipelesyndromale_congenitale_afwijkingen_niet_chromosomaal', 'multipelesyndromale_congenitale_afwijkingen_niet_chromosomaal_dysmorphism_disorder', 'multipelesyndromale_congenitale_afwijkingen_niet_chromosomaal_situs_inversus_viscerum_disorder', 'multipelesyndromale_congenitale_afwijkingen_niet_chromosomaal_multiple_congenital_anomalies_disorder', 'multipelesyndromale_congenitale_afwijkingen_niet_chromosomaal_multiple_system_malformation_syndrome_disorder', 'multipelesyndromale_congenitale_afwijkingen_niet_chromosomaal_overige_multipelesyndromale_afwijkingen', 'overige_congenitale_afwijkingen', 'overige_congenitale_afwijkingen_congenital_iodine_deficiency_syndrome_disorder', 'overige_congenitale_afwijkingen_andere_endocrinologische_afwijkingen', 'overige_congenitale_afwijkingen_inborn_error_of_metabolism_disorder', 'overige_congenitale_afwijkingen_congenital_malignant_neoplastic_disease_disorder', 'overig', 'geen_informatie'))">
+                                test="empty(@enum) or (@enum = ('Hydrops_foetalis', 'Congenital_anomaly_of_nervous_system_(disorder)', 'Congenital_anomaly_of_nervous_system_(disorder)_Fetal_anencephaly_(disorder)', 'Congenital_anomaly_of_nervous_system_(disorder)_Fetal_microcephaly_(disorder)', 'Congenital_anomaly_of_nervous_system_(disorder)_Spina_bifida_occulta_(disorder)', 'Congenital_anomaly_of_nervous_system_(disorder)_Meningomyelocele_(disorder)', 'Congenital_anomaly_of_nervous_system_(disorder)_Meningocele_(disorder)', 'Congenital_anomaly_of_nervous_system_(disorder)_Congenital_hydrocephalus_(disorder)', 'Congenital_anomaly_of_nervous_system_(disorder)_Holoprosencephaly_sequence_(disorder)', 'Congenital_anomaly_of_nervous_system_(disorder)_Encephalocele_(disorder)', 'Congenital_anomaly_of_nervous_system_(disorder)_Neonatal_neuromuscular_disorder_(disorder)', 'Congenital_anomaly_of_nervous_system_(disorder)_Overige_congenitale_afwijkingen_zenuwstelsel', 'Zintuigen', 'Zintuigen_Congenital_anomaly_of_eye_(disorder)', 'Zintuigen_Congenital_anomaly_of_eye_(disorder)_Microphthalmos_(disorder)', 'Zintuigen_Congenital_anomaly_of_eye_(disorder)_Overige_congenitale_afwijkingen_ogen', 'Zintuigen_Congenital_anomaly_of_ear_(disorder)', 'Zintuigen_Overige_congenitale_afwijkingen_zintuigen', 'Congenital_anomaly_of_cardiovascular_system_(disorder)', 'Congenital_anomaly_of_cardiovascular_system_(disorder)_Single_umbilical_artery_(disorder)', 'Congenital_anomaly_of_cardiovascular_system_(disorder)_Discordant_ventriculoarterial_connection_(disorder)', 'Congenital_anomaly_of_cardiovascular_system_(disorder)_Tetralogy_of_Fallot_(disorder)', 'Congenital_anomaly_of_cardiovascular_system_(disorder)_Ventricular_septal_defect_(disorder)', 'Congenital_anomaly_of_cardiovascular_system_(disorder)_Hypoplastic_left_heart_syndrome_(disorder)', 'Congenital_anomaly_of_cardiovascular_system_(disorder)_Coarctation_of_aorta_(disorder)', 'Congenital_anomaly_of_cardiovascular_system_(disorder)_Congenital_anomaly_of_tricuspid_valve_(disorder)', 'Congenital_anomaly_of_cardiovascular_system_(disorder)_Multiple_congenital_cardiac_defects_(disorder)', 'Congenital_anomaly_of_cardiovascular_system_(disorder)_Overige_congenitale_afwijking_hart_en_bloedvaten', 'Congenital_anomaly_of_digestive_tract_(disorder)', 'Congenital_anomaly_of_digestive_tract_(disorder)_Cleft_lip_(disorder)', 'Congenital_anomaly_of_digestive_tract_(disorder)_Cleft_palate_(disorder)', 'Congenital_anomaly_of_digestive_tract_(disorder)_Congenital_anomaly_of_esophagus_(disorder)', 'Congenital_anomaly_of_digestive_tract_(disorder)_Congenital_atresia_of_small_intestine_(disorder)', 'Congenital_anomaly_of_digestive_tract_(disorder)_Atresia_of_large_intestine_(disorder)', 'Congenital_anomaly_of_digestive_tract_(disorder)_Anal_atresia_(disorder)', 'Congenital_anomaly_of_digestive_tract_(disorder)_Hirschsprung''s_disease_(disorder)', 'Congenital_anomaly_of_digestive_tract_(disorder)_Congenital_malrotation_of_intestine_(disorder)', 'Congenital_anomaly_of_digestive_tract_(disorder)_Intestinal_volvulus_(disorder)', 'Congenital_anomaly_of_digestive_tract_(disorder)_Overige_congenitale_afwijking_tractus_digestivus', 'Congenital_anomaly_of_respiratory_system_(disorder)', 'Congenital_anomaly_of_respiratory_system_(disorder)_Choanal_atresia_(disorder)', 'Congenital_anomaly_of_respiratory_system_(disorder)_Congenital_anomaly_of_trachea_(disorder)', 'Congenital_anomaly_of_respiratory_system_(disorder)_Congenital_hypoplasia_of_lung_(disorder)', 'Congenital_anomaly_of_respiratory_system_(disorder)_Congenital_lobar_emphysema_(disorder)', 'Congenital_anomaly_of_respiratory_system_(disorder)_Congenital_cystic_adenomatoid_malformation_of_lung_(disorder)', 'Congenital_anomaly_of_respiratory_system_(disorder)_Hydrothorax_(disorder)', 'Congenital_anomaly_of_respiratory_system_(disorder)_Chylothorax_(disorder)', 'Congenital_anomaly_of_respiratory_system_(disorder)_Congenital_diaphragmatic_hernia_(disorder)', 'Congenital_anomaly_of_respiratory_system_(disorder)_Relaxation_of_diaphragm_(disorder)', 'Congenital_anomaly_of_respiratory_system_(disorder)_Overige_congenitale_afwijking_tractus_respiratorius', 'Genitourinary_congenital_anomalies_(disorder)', 'Genitourinary_congenital_anomalies_(disorder)_Hypospadias_(disorder)', 'Genitourinary_congenital_anomalies_(disorder)_Epispadias_(disorder)', 'Genitourinary_congenital_anomalies_(disorder)_Undescended_testicle_(disorder)', 'Genitourinary_congenital_anomalies_(disorder)_Exstrophy_of_bladder_sequence_(disorder)', 'Genitourinary_congenital_anomalies_(disorder)_Oligohydramnios_sequence_(disorder)', 'Genitourinary_congenital_anomalies_(disorder)_Congenital_cystic_kidney_disease_(disorder)', 'Genitourinary_congenital_anomalies_(disorder)_Urinary_tract_obstruction_(disorder)', 'Genitourinary_congenital_anomalies_(disorder)_Disorder_of_sexual_differentiation_(disorder)', 'Genitourinary_congenital_anomalies_(disorder)_Overige_congenitale_afwijking_tractus_urogenitalis', 'Congenital_anomaly_of_skin_(disorder)', 'Congenital_anomaly_of_skin_(disorder)_Hemangioma_of_skin_(disorder)', 'Congenital_anomaly_of_skin_(disorder)_Congenital_pigmented_melanocytic_nevus_of_skin_(disorder)', 'Congenital_anomaly_of_skin_(disorder)_Overige_congenitale_huidafwijking', 'Congenital_anomaly_of_abdominal_wall_(disorder)', 'Congenital_anomaly_of_abdominal_wall_(disorder)_Gastroschisis_(disorder)', 'Congenital_anomaly_of_abdominal_wall_(disorder)_Congenital_omphalocele_(disorder)', 'Congenital_anomaly_of_abdominal_wall_(disorder)_Umbilical_hernia_(disorder)', 'Congenital_anomaly_of_abdominal_wall_(disorder)_Congenital_inguinal_hernia_(disorder)', 'Congenital_anomaly_of_abdominal_wall_(disorder)_Overige_congenitale_afwijking_buikwand', 'Congenital_anomaly_of_musculoskeletal_system_(disorder)', 'Congenital_anomaly_of_musculoskeletal_system_(disorder)_Polydactyly_(disorder)', 'Congenital_anomaly_of_musculoskeletal_system_(disorder)_Syndactyly_(disorder)', 'Congenital_anomaly_of_musculoskeletal_system_(disorder)_Congenital_deformity_of_foot_(disorder)', 'Congenital_anomaly_of_musculoskeletal_system_(disorder)_Reduction_deformity_of_upper_limb_(disorder)', 'Congenital_anomaly_of_musculoskeletal_system_(disorder)_Reduction_deformity_of_lower_limb_(disorder)', 'Congenital_anomaly_of_musculoskeletal_system_(disorder)_Overige_congenitale_afwijking_extremiteiten', 'Congenital_anomaly_of_musculoskeletal_system_(disorder)_Congenital_subluxation_of_hip_(disorder)', 'Congenital_anomaly_of_musculoskeletal_system_(disorder)_Overige_congenitale_afwijking_skelet_en_spierstelsel', 'Multipele/syndromale_congenitale_afwijkingen_(niet_chromosomaal)', 'Multipele/syndromale_congenitale_afwijkingen_(niet_chromosomaal)_Dysmorphism_(disorder)', 'Multipele/syndromale_congenitale_afwijkingen_(niet_chromosomaal)_Situs_inversus_viscerum_(disorder)', 'Multipele/syndromale_congenitale_afwijkingen_(niet_chromosomaal)_Multiple_congenital_anomalies_(disorder)', 'Multipele/syndromale_congenitale_afwijkingen_(niet_chromosomaal)_Multiple_system_malformation_syndrome_(disorder)', 'Multipele/syndromale_congenitale_afwijkingen_(niet_chromosomaal)_Overige_multipele/syndromale_afwijkingen', 'Overige_congenitale_afwijkingen', 'Overige_congenitale_afwijkingen_Congenital_iodine_deficiency_syndrome_(disorder)', 'Overige_congenitale_afwijkingen_Andere_endocrinologische_afwijkingen', 'Overige_congenitale_afwijkingen_Inborn_error_of_metabolism_(disorder)', 'Overige_congenitale_afwijkingen_Congenital_malignant_neoplastic_disease_(disorder)', 'Overig', 'Geen_informatie'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Specificatie congenitale afwijking": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_congenitale_afwijking_groep/specificatie_congenitale_afwijking/@enum; allowed=('hydrops_foetalis', 'congenital_anomaly_of_nervous_system_disorder', 'congenital_anomaly_of_nervous_system_disorder_fetal_anencephaly_disorder', 'congenital_anomaly_of_nervous_system_disorder_fetal_microcephaly_disorder', 'congenital_anomaly_of_nervous_system_disorder_spina_bifida_occulta_disorder', 'congenital_anomaly_of_nervous_system_disorder_meningomyelocele_disorder', 'congenital_anomaly_of_nervous_system_disorder_meningocele_disorder', 'congenital_anomaly_of_nervous_system_disorder_congenital_hydrocephalus_disorder', 'congenital_anomaly_of_nervous_system_disorder_holoprosencephaly_sequence_disorder', 'congenital_anomaly_of_nervous_system_disorder_encephalocele_disorder', 'congenital_anomaly_of_nervous_system_disorder_neonatal_neuromuscular_disorder_disorder', 'congenital_anomaly_of_nervous_system_disorder_overige_congenitale_afwijkingen_zenuwstelsel', 'zintuigen', 'zintuigen_congenital_anomaly_of_eye_disorder', 'zintuigen_congenital_anomaly_of_eye_disorder_microphthalmos_disorder', 'zintuigen_congenital_anomaly_of_eye_disorder_overige_congenitale_afwijkingen_ogen', 'zintuigen_congenital_anomaly_of_ear_disorder', 'zintuigen_overige_congenitale_afwijkingen_zintuigen', 'congenital_anomaly_of_cardiovascular_system_disorder', 'congenital_anomaly_of_cardiovascular_system_disorder_single_umbilical_artery_disorder', 'congenital_anomaly_of_cardiovascular_system_disorder_discordant_ventriculoarterial_connection_disorder', 'congenital_anomaly_of_cardiovascular_system_disorder_tetralogy_of_fallot_disorder', 'congenital_anomaly_of_cardiovascular_system_disorder_ventricular_septal_defect_disorder', 'congenital_anomaly_of_cardiovascular_system_disorder_hypoplastic_left_heart_syndrome_disorder', 'congenital_anomaly_of_cardiovascular_system_disorder_coarctation_of_aorta_disorder', 'congenital_anomaly_of_cardiovascular_system_disorder_congenital_anomaly_of_tricuspid_valve_disorder', 'congenital_anomaly_of_cardiovascular_system_disorder_multiple_congenital_cardiac_defects_disorder', 'congenital_anomaly_of_cardiovascular_system_disorder_overige_congenitale_afwijking_hart_en_bloedvaten', 'congenital_anomaly_of_digestive_tract_disorder', 'congenital_anomaly_of_digestive_tract_disorder_cleft_lip_disorder', 'congenital_anomaly_of_digestive_tract_disorder_cleft_palate_disorder', 'congenital_anomaly_of_digestive_tract_disorder_congenital_anomaly_of_esophagus_disorder', 'congenital_anomaly_of_digestive_tract_disorder_congenital_atresia_of_small_intestine_disorder', 'congenital_anomaly_of_digestive_tract_disorder_atresia_of_large_intestine_disorder', 'congenital_anomaly_of_digestive_tract_disorder_anal_atresia_disorder', 'congenital_anomaly_of_digestive_tract_disorder_hirschsprungs_disease_disorder', 'congenital_anomaly_of_digestive_tract_disorder_congenital_malrotation_of_intestine_disorder', 'congenital_anomaly_of_digestive_tract_disorder_intestinal_volvulus_disorder', 'congenital_anomaly_of_digestive_tract_disorder_overige_congenitale_afwijking_tractus_digestivus', 'congenital_anomaly_of_respiratory_system_disorder', 'congenital_anomaly_of_respiratory_system_disorder_choanal_atresia_disorder', 'congenital_anomaly_of_respiratory_system_disorder_congenital_anomaly_of_trachea_disorder', 'congenital_anomaly_of_respiratory_system_disorder_congenital_hypoplasia_of_lung_disorder', 'congenital_anomaly_of_respiratory_system_disorder_congenital_lobar_emphysema_disorder', 'congenital_anomaly_of_respiratory_system_disorder_congenital_cystic_adenomatoid_malformation_of_lung_disorder', 'congenital_anomaly_of_respiratory_system_disorder_hydrothorax_disorder', 'congenital_anomaly_of_respiratory_system_disorder_chylothorax_disorder', 'congenital_anomaly_of_respiratory_system_disorder_congenital_diaphragmatic_hernia_disorder', 'congenital_anomaly_of_respiratory_system_disorder_relaxation_of_diaphragm_disorder', 'congenital_anomaly_of_respiratory_system_disorder_overige_congenitale_afwijking_tractus_respiratorius', 'genitourinary_congenital_anomalies_disorder', 'genitourinary_congenital_anomalies_disorder_hypospadias_disorder', 'genitourinary_congenital_anomalies_disorder_epispadias_disorder', 'genitourinary_congenital_anomalies_disorder_undescended_testicle_disorder', 'genitourinary_congenital_anomalies_disorder_exstrophy_of_bladder_sequence_disorder', 'genitourinary_congenital_anomalies_disorder_oligohydramnios_sequence_disorder', 'genitourinary_congenital_anomalies_disorder_congenital_cystic_kidney_disease_disorder', 'genitourinary_congenital_anomalies_disorder_urinary_tract_obstruction_disorder', 'genitourinary_congenital_anomalies_disorder_disorder_of_sexual_differentiation_disorder', 'genitourinary_congenital_anomalies_disorder_overige_congenitale_afwijking_tractus_urogenitalis', 'congenital_anomaly_of_skin_disorder', 'congenital_anomaly_of_skin_disorder_hemangioma_of_skin_disorder', 'congenital_anomaly_of_skin_disorder_congenital_pigmented_melanocytic_nevus_of_skin_disorder', 'congenital_anomaly_of_skin_disorder_overige_congenitale_huidafwijking', 'congenital_anomaly_of_abdominal_wall_disorder', 'congenital_anomaly_of_abdominal_wall_disorder_gastroschisis_disorder', 'congenital_anomaly_of_abdominal_wall_disorder_congenital_omphalocele_disorder', 'congenital_anomaly_of_abdominal_wall_disorder_umbilical_hernia_disorder', 'congenital_anomaly_of_abdominal_wall_disorder_congenital_inguinal_hernia_disorder', 'congenital_anomaly_of_abdominal_wall_disorder_overige_congenitale_afwijking_buikwand', 'congenital_anomaly_of_musculoskeletal_system_disorder', 'congenital_anomaly_of_musculoskeletal_system_disorder_polydactyly_disorder', 'congenital_anomaly_of_musculoskeletal_system_disorder_syndactyly_disorder', 'congenital_anomaly_of_musculoskeletal_system_disorder_congenital_deformity_of_foot_disorder', 'congenital_anomaly_of_musculoskeletal_system_disorder_reduction_deformity_of_upper_limb_disorder', 'congenital_anomaly_of_musculoskeletal_system_disorder_reduction_deformity_of_lower_limb_disorder', 'congenital_anomaly_of_musculoskeletal_system_disorder_overige_congenitale_afwijking_extremiteiten', 'congenital_anomaly_of_musculoskeletal_system_disorder_congenital_subluxation_of_hip_disorder', 'congenital_anomaly_of_musculoskeletal_system_disorder_overige_congenitale_afwijking_skelet_en_spierstelsel', 'multipelesyndromale_congenitale_afwijkingen_niet_chromosomaal', 'multipelesyndromale_congenitale_afwijkingen_niet_chromosomaal_dysmorphism_disorder', 'multipelesyndromale_congenitale_afwijkingen_niet_chromosomaal_situs_inversus_viscerum_disorder', 'multipelesyndromale_congenitale_afwijkingen_niet_chromosomaal_multiple_congenital_anomalies_disorder', 'multipelesyndromale_congenitale_afwijkingen_niet_chromosomaal_multiple_system_malformation_syndrome_disorder', 'multipelesyndromale_congenitale_afwijkingen_niet_chromosomaal_overige_multipelesyndromale_afwijkingen', 'overige_congenitale_afwijkingen', 'overige_congenitale_afwijkingen_congenital_iodine_deficiency_syndrome_disorder', 'overige_congenitale_afwijkingen_andere_endocrinologische_afwijkingen', 'overige_congenitale_afwijkingen_inborn_error_of_metabolism_disorder', 'overige_congenitale_afwijkingen_congenital_malignant_neoplastic_disease_disorder', 'overig', 'geen_informatie')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_congenitale_afwijking_groep/specificatie_congenitale_afwijking/@enum; allowed=('Hydrops_foetalis', 'Congenital_anomaly_of_nervous_system_(disorder)', 'Congenital_anomaly_of_nervous_system_(disorder)_Fetal_anencephaly_(disorder)', 'Congenital_anomaly_of_nervous_system_(disorder)_Fetal_microcephaly_(disorder)', 'Congenital_anomaly_of_nervous_system_(disorder)_Spina_bifida_occulta_(disorder)', 'Congenital_anomaly_of_nervous_system_(disorder)_Meningomyelocele_(disorder)', 'Congenital_anomaly_of_nervous_system_(disorder)_Meningocele_(disorder)', 'Congenital_anomaly_of_nervous_system_(disorder)_Congenital_hydrocephalus_(disorder)', 'Congenital_anomaly_of_nervous_system_(disorder)_Holoprosencephaly_sequence_(disorder)', 'Congenital_anomaly_of_nervous_system_(disorder)_Encephalocele_(disorder)', 'Congenital_anomaly_of_nervous_system_(disorder)_Neonatal_neuromuscular_disorder_(disorder)', 'Congenital_anomaly_of_nervous_system_(disorder)_Overige_congenitale_afwijkingen_zenuwstelsel', 'Zintuigen', 'Zintuigen_Congenital_anomaly_of_eye_(disorder)', 'Zintuigen_Congenital_anomaly_of_eye_(disorder)_Microphthalmos_(disorder)', 'Zintuigen_Congenital_anomaly_of_eye_(disorder)_Overige_congenitale_afwijkingen_ogen', 'Zintuigen_Congenital_anomaly_of_ear_(disorder)', 'Zintuigen_Overige_congenitale_afwijkingen_zintuigen', 'Congenital_anomaly_of_cardiovascular_system_(disorder)', 'Congenital_anomaly_of_cardiovascular_system_(disorder)_Single_umbilical_artery_(disorder)', 'Congenital_anomaly_of_cardiovascular_system_(disorder)_Discordant_ventriculoarterial_connection_(disorder)', 'Congenital_anomaly_of_cardiovascular_system_(disorder)_Tetralogy_of_Fallot_(disorder)', 'Congenital_anomaly_of_cardiovascular_system_(disorder)_Ventricular_septal_defect_(disorder)', 'Congenital_anomaly_of_cardiovascular_system_(disorder)_Hypoplastic_left_heart_syndrome_(disorder)', 'Congenital_anomaly_of_cardiovascular_system_(disorder)_Coarctation_of_aorta_(disorder)', 'Congenital_anomaly_of_cardiovascular_system_(disorder)_Congenital_anomaly_of_tricuspid_valve_(disorder)', 'Congenital_anomaly_of_cardiovascular_system_(disorder)_Multiple_congenital_cardiac_defects_(disorder)', 'Congenital_anomaly_of_cardiovascular_system_(disorder)_Overige_congenitale_afwijking_hart_en_bloedvaten', 'Congenital_anomaly_of_digestive_tract_(disorder)', 'Congenital_anomaly_of_digestive_tract_(disorder)_Cleft_lip_(disorder)', 'Congenital_anomaly_of_digestive_tract_(disorder)_Cleft_palate_(disorder)', 'Congenital_anomaly_of_digestive_tract_(disorder)_Congenital_anomaly_of_esophagus_(disorder)', 'Congenital_anomaly_of_digestive_tract_(disorder)_Congenital_atresia_of_small_intestine_(disorder)', 'Congenital_anomaly_of_digestive_tract_(disorder)_Atresia_of_large_intestine_(disorder)', 'Congenital_anomaly_of_digestive_tract_(disorder)_Anal_atresia_(disorder)', 'Congenital_anomaly_of_digestive_tract_(disorder)_Hirschsprung''s_disease_(disorder)', 'Congenital_anomaly_of_digestive_tract_(disorder)_Congenital_malrotation_of_intestine_(disorder)', 'Congenital_anomaly_of_digestive_tract_(disorder)_Intestinal_volvulus_(disorder)', 'Congenital_anomaly_of_digestive_tract_(disorder)_Overige_congenitale_afwijking_tractus_digestivus', 'Congenital_anomaly_of_respiratory_system_(disorder)', 'Congenital_anomaly_of_respiratory_system_(disorder)_Choanal_atresia_(disorder)', 'Congenital_anomaly_of_respiratory_system_(disorder)_Congenital_anomaly_of_trachea_(disorder)', 'Congenital_anomaly_of_respiratory_system_(disorder)_Congenital_hypoplasia_of_lung_(disorder)', 'Congenital_anomaly_of_respiratory_system_(disorder)_Congenital_lobar_emphysema_(disorder)', 'Congenital_anomaly_of_respiratory_system_(disorder)_Congenital_cystic_adenomatoid_malformation_of_lung_(disorder)', 'Congenital_anomaly_of_respiratory_system_(disorder)_Hydrothorax_(disorder)', 'Congenital_anomaly_of_respiratory_system_(disorder)_Chylothorax_(disorder)', 'Congenital_anomaly_of_respiratory_system_(disorder)_Congenital_diaphragmatic_hernia_(disorder)', 'Congenital_anomaly_of_respiratory_system_(disorder)_Relaxation_of_diaphragm_(disorder)', 'Congenital_anomaly_of_respiratory_system_(disorder)_Overige_congenitale_afwijking_tractus_respiratorius', 'Genitourinary_congenital_anomalies_(disorder)', 'Genitourinary_congenital_anomalies_(disorder)_Hypospadias_(disorder)', 'Genitourinary_congenital_anomalies_(disorder)_Epispadias_(disorder)', 'Genitourinary_congenital_anomalies_(disorder)_Undescended_testicle_(disorder)', 'Genitourinary_congenital_anomalies_(disorder)_Exstrophy_of_bladder_sequence_(disorder)', 'Genitourinary_congenital_anomalies_(disorder)_Oligohydramnios_sequence_(disorder)', 'Genitourinary_congenital_anomalies_(disorder)_Congenital_cystic_kidney_disease_(disorder)', 'Genitourinary_congenital_anomalies_(disorder)_Urinary_tract_obstruction_(disorder)', 'Genitourinary_congenital_anomalies_(disorder)_Disorder_of_sexual_differentiation_(disorder)', 'Genitourinary_congenital_anomalies_(disorder)_Overige_congenitale_afwijking_tractus_urogenitalis', 'Congenital_anomaly_of_skin_(disorder)', 'Congenital_anomaly_of_skin_(disorder)_Hemangioma_of_skin_(disorder)', 'Congenital_anomaly_of_skin_(disorder)_Congenital_pigmented_melanocytic_nevus_of_skin_(disorder)', 'Congenital_anomaly_of_skin_(disorder)_Overige_congenitale_huidafwijking', 'Congenital_anomaly_of_abdominal_wall_(disorder)', 'Congenital_anomaly_of_abdominal_wall_(disorder)_Gastroschisis_(disorder)', 'Congenital_anomaly_of_abdominal_wall_(disorder)_Congenital_omphalocele_(disorder)', 'Congenital_anomaly_of_abdominal_wall_(disorder)_Umbilical_hernia_(disorder)', 'Congenital_anomaly_of_abdominal_wall_(disorder)_Congenital_inguinal_hernia_(disorder)', 'Congenital_anomaly_of_abdominal_wall_(disorder)_Overige_congenitale_afwijking_buikwand', 'Congenital_anomaly_of_musculoskeletal_system_(disorder)', 'Congenital_anomaly_of_musculoskeletal_system_(disorder)_Polydactyly_(disorder)', 'Congenital_anomaly_of_musculoskeletal_system_(disorder)_Syndactyly_(disorder)', 'Congenital_anomaly_of_musculoskeletal_system_(disorder)_Congenital_deformity_of_foot_(disorder)', 'Congenital_anomaly_of_musculoskeletal_system_(disorder)_Reduction_deformity_of_upper_limb_(disorder)', 'Congenital_anomaly_of_musculoskeletal_system_(disorder)_Reduction_deformity_of_lower_limb_(disorder)', 'Congenital_anomaly_of_musculoskeletal_system_(disorder)_Overige_congenitale_afwijking_extremiteiten', 'Congenital_anomaly_of_musculoskeletal_system_(disorder)_Congenital_subluxation_of_hip_(disorder)', 'Congenital_anomaly_of_musculoskeletal_system_(disorder)_Overige_congenitale_afwijking_skelet_en_spierstelsel', 'Multipele/syndromale_congenitale_afwijkingen_(niet_chromosomaal)', 'Multipele/syndromale_congenitale_afwijkingen_(niet_chromosomaal)_Dysmorphism_(disorder)', 'Multipele/syndromale_congenitale_afwijkingen_(niet_chromosomaal)_Situs_inversus_viscerum_(disorder)', 'Multipele/syndromale_congenitale_afwijkingen_(niet_chromosomaal)_Multiple_congenital_anomalies_(disorder)', 'Multipele/syndromale_congenitale_afwijkingen_(niet_chromosomaal)_Multiple_system_malformation_syndrome_(disorder)', 'Multipele/syndromale_congenitale_afwijkingen_(niet_chromosomaal)_Overige_multipele/syndromale_afwijkingen', 'Overige_congenitale_afwijkingen', 'Overige_congenitale_afwijkingen_Congenital_iodine_deficiency_syndrome_(disorder)', 'Overige_congenitale_afwijkingen_Andere_endocrinologische_afwijkingen', 'Overige_congenitale_afwijkingen_Inborn_error_of_metabolism_(disorder)', 'Overige_congenitale_afwijkingen_Congenital_malignant_neoplastic_disease_(disorder)', 'Overig', 'Geen_informatie')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -41588,16 +41588,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('complete_trisomy_21_syndrome_disorder', 'complete_trisomy_18_syndrome_disorder', 'complete_trisomy_13_syndrome_disorder', 'andere_numerieke_chromosomale_afwijkingen', 'overige_chromosomale_afwijkingen', 'geen_informatie'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Complete_trisomy_21_syndrome_(disorder)', 'Complete_trisomy_18_syndrome_(disorder)', 'Complete_trisomy_13_syndrome_(disorder)', 'Andere_numerieke_chromosomale_afwijkingen', 'Overige_chromosomale_afwijkingen', 'Geen_informatie'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('complete_trisomy_21_syndrome_disorder', 'complete_trisomy_18_syndrome_disorder', 'complete_trisomy_13_syndrome_disorder', 'andere_numerieke_chromosomale_afwijkingen', 'overige_chromosomale_afwijkingen', 'geen_informatie'))">
+                                test="empty(@enum) or (@enum = ('Complete_trisomy_21_syndrome_(disorder)', 'Complete_trisomy_18_syndrome_(disorder)', 'Complete_trisomy_13_syndrome_(disorder)', 'Andere_numerieke_chromosomale_afwijkingen', 'Overige_chromosomale_afwijkingen', 'Geen_informatie'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Specificatie chromosomale afwijking": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_chromosomale_afwijking_groep/specificatie_chromosomale_afwijking/@enum; allowed=('complete_trisomy_21_syndrome_disorder', 'complete_trisomy_18_syndrome_disorder', 'complete_trisomy_13_syndrome_disorder', 'andere_numerieke_chromosomale_afwijkingen', 'overige_chromosomale_afwijkingen', 'geen_informatie')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_chromosomale_afwijking_groep/specificatie_chromosomale_afwijking/@enum; allowed=('Complete_trisomy_21_syndrome_(disorder)', 'Complete_trisomy_18_syndrome_(disorder)', 'Complete_trisomy_13_syndrome_(disorder)', 'Andere_numerieke_chromosomale_afwijkingen', 'Overige_chromosomale_afwijkingen', 'Geen_informatie')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -41931,16 +41931,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('maternale_indicatie', 'delivery_problem_finding', 'delivery_problem_finding_fetal_or_neonatal_effect_of_assisted_delivery_disorder', 'delivery_problem_finding_finding_of_malposition_of_foetus_finding', 'delivery_problem_finding_prolonged_rupture_of_membranes_disorder', 'delivery_problem_finding_amniotic_fluid_meconium_stain_finding', 'gestation_abnormality_disorder', 'birth_weight_abnormality_disorder', 'birth_asphyxia_disorder', 'perinatal_respiratory_distress_disorder', 'neonatal_hypoglycemia_disorder', 'suspected_infectious_disease_situation', 'verdenking_op_congenitale_afwijking', 'neonatal_jaundice_disorder', 'verdenking_op_convulsies', 'infant_feeding_problem_finding', 'te_verwachten_onttrekkingsverschijnselen', 'psychosociale_indicatie', 'overig', 'geen_informatie'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Maternale_indicatie', 'Delivery_problem_(finding)', 'Delivery_problem_(finding)_Fetal_or_neonatal_effect_of_assisted_delivery_(disorder)', 'Delivery_problem_(finding)_Finding_of_malposition_of_foetus_(finding)', 'Delivery_problem_(finding)_Prolonged_rupture_of_membranes_(disorder)', 'Delivery_problem_(finding)_Amniotic_fluid_-meconium_stain_(finding)', 'Gestation_abnormality_(disorder)', 'Birth_weight_abnormality_(disorder)', 'Birth_asphyxia_(disorder)', 'Perinatal_respiratory_distress_(disorder)', 'Neonatal_hypoglycemia_(disorder)', 'Suspected_infectious_disease_(situation)', 'Verdenking_op_congenitale_afwijking', 'Neonatal_jaundice_(disorder)', '(verdenking_op)_Convulsies', 'Infant_feeding_problem_(finding)', '(te_verwachten)_Onttrekkingsverschijnselen', 'Psychosociale_indicatie', 'Overig', 'Geen_informatie'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('maternale_indicatie', 'delivery_problem_finding', 'delivery_problem_finding_fetal_or_neonatal_effect_of_assisted_delivery_disorder', 'delivery_problem_finding_finding_of_malposition_of_foetus_finding', 'delivery_problem_finding_prolonged_rupture_of_membranes_disorder', 'delivery_problem_finding_amniotic_fluid_meconium_stain_finding', 'gestation_abnormality_disorder', 'birth_weight_abnormality_disorder', 'birth_asphyxia_disorder', 'perinatal_respiratory_distress_disorder', 'neonatal_hypoglycemia_disorder', 'suspected_infectious_disease_situation', 'verdenking_op_congenitale_afwijking', 'neonatal_jaundice_disorder', 'verdenking_op_convulsies', 'infant_feeding_problem_finding', 'te_verwachten_onttrekkingsverschijnselen', 'psychosociale_indicatie', 'overig', 'geen_informatie'))">
+                                test="empty(@enum) or (@enum = ('Maternale_indicatie', 'Delivery_problem_(finding)', 'Delivery_problem_(finding)_Fetal_or_neonatal_effect_of_assisted_delivery_(disorder)', 'Delivery_problem_(finding)_Finding_of_malposition_of_foetus_(finding)', 'Delivery_problem_(finding)_Prolonged_rupture_of_membranes_(disorder)', 'Delivery_problem_(finding)_Amniotic_fluid_-meconium_stain_(finding)', 'Gestation_abnormality_(disorder)', 'Birth_weight_abnormality_(disorder)', 'Birth_asphyxia_(disorder)', 'Perinatal_respiratory_distress_(disorder)', 'Neonatal_hypoglycemia_(disorder)', 'Suspected_infectious_disease_(situation)', 'Verdenking_op_congenitale_afwijking', 'Neonatal_jaundice_(disorder)', '(verdenking_op)_Convulsies', 'Infant_feeding_problem_(finding)', '(te_verwachten)_Onttrekkingsverschijnselen', 'Psychosociale_indicatie', 'Overig', 'Geen_informatie'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Reden betrokkenheid": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts/reden_betrokkenheid/@enum; allowed=('maternale_indicatie', 'delivery_problem_finding', 'delivery_problem_finding_fetal_or_neonatal_effect_of_assisted_delivery_disorder', 'delivery_problem_finding_finding_of_malposition_of_foetus_finding', 'delivery_problem_finding_prolonged_rupture_of_membranes_disorder', 'delivery_problem_finding_amniotic_fluid_meconium_stain_finding', 'gestation_abnormality_disorder', 'birth_weight_abnormality_disorder', 'birth_asphyxia_disorder', 'perinatal_respiratory_distress_disorder', 'neonatal_hypoglycemia_disorder', 'suspected_infectious_disease_situation', 'verdenking_op_congenitale_afwijking', 'neonatal_jaundice_disorder', 'verdenking_op_convulsies', 'infant_feeding_problem_finding', 'te_verwachten_onttrekkingsverschijnselen', 'psychosociale_indicatie', 'overig', 'geen_informatie')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts/reden_betrokkenheid/@enum; allowed=('Maternale_indicatie', 'Delivery_problem_(finding)', 'Delivery_problem_(finding)_Fetal_or_neonatal_effect_of_assisted_delivery_(disorder)', 'Delivery_problem_(finding)_Finding_of_malposition_of_foetus_(finding)', 'Delivery_problem_(finding)_Prolonged_rupture_of_membranes_(disorder)', 'Delivery_problem_(finding)_Amniotic_fluid_-meconium_stain_(finding)', 'Gestation_abnormality_(disorder)', 'Birth_weight_abnormality_(disorder)', 'Birth_asphyxia_(disorder)', 'Perinatal_respiratory_distress_(disorder)', 'Neonatal_hypoglycemia_(disorder)', 'Suspected_infectious_disease_(situation)', 'Verdenking_op_congenitale_afwijking', 'Neonatal_jaundice_(disorder)', '(verdenking_op)_Convulsies', 'Infant_feeding_problem_(finding)', '(te_verwachten)_Onttrekkingsverschijnselen', 'Psychosociale_indicatie', 'Overig', 'Geen_informatie')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -42927,16 +42927,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('rhesus_d', 'rhesus_c', 'rhesus_e', 'kell', 'duffy', 'kidd', 'overig', 'onbekend'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Rhesus_D', 'Rhesus_c', 'Rhesus_e', 'Kell', 'Duffy', 'Kidd', 'overig', 'onbekend'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('rhesus_d', 'rhesus_c', 'rhesus_e', 'kell', 'duffy', 'kidd', 'overig', 'onbekend'))">
+                                test="empty(@enum) or (@enum = ('Rhesus_D', 'Rhesus_c', 'Rhesus_e', 'Kell', 'Duffy', 'Kidd', 'overig', 'onbekend'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Welke irregulaire antistoffen vrouw aanwezig.": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/psie/welke_irregulaire_antistoffen_vrouw_aanwezig/@enum; allowed=('rhesus_d', 'rhesus_c', 'rhesus_e', 'kell', 'duffy', 'kidd', 'overig', 'onbekend')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/psie/welke_irregulaire_antistoffen_vrouw_aanwezig/@enum; allowed=('Rhesus_D', 'Rhesus_c', 'Rhesus_e', 'Kell', 'Duffy', 'Kidd', 'overig', 'onbekend')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -43456,16 +43456,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('dreigende_eclampsie_verdenking_op_hellpsyndroom_preeclampsia_disorder', 'dreigende_eclampsie_verdenking_op_hellpsyndroom_preeclampsia_added_to_preexisting_hypertension_disorder', 'dreigende_eclampsie_verdenking_op_hellpsyndroom_eclampsia_in_puerperium_disorder', 'dreigende_eclampsie_verdenking_op_hellpsyndroom_hemolysiselevated_liver_enzymeslow_platelet_count_syndrome_disorder', 'postpartum_deep_phlebothrombosis_disorder', 'postpartum_depression_disorder', 'postpartum_psychosis_disorder', 'abnormal_vaginal_bleeding_finding', 'embolism_disorder', 'hematoma_disorder', 'anemia_disorder', 'postnatal_infection_disorder_endometritis_disorder', 'postnatal_infection_disorder_mastitis_disorder', 'postnatal_infection_disorder_urinary_tract_infectious_disease_disorder', 'postnatal_infection_disorder_episiotomy_infection_disorder', 'postnatal_infection_disorder_overige_infecties', 'overig'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('(Dreigende)_eclampsie,_(verdenking_op)_HELLP-syndroom_Pre-eclampsia_(disorder)', '(Dreigende)_eclampsie,_(verdenking_op)_HELLP-syndroom_Pre-eclampsia_added_to_pre-existing_hypertension_(disorder)', '(Dreigende)_eclampsie,_(verdenking_op)_HELLP-syndroom_Eclampsia_in_puerperium_(disorder)', '(Dreigende)_eclampsie,_(verdenking_op)_HELLP-syndroom_Hemolysis-elevated_liver_enzymes-low_platelet_count_syndrome_(disorder)', 'Postpartum_deep_phlebothrombosis_(disorder)', 'Postpartum_depression_(disorder)', 'Postpartum_psychosis_(disorder)', 'Abnormal_vaginal_bleeding_(finding)', 'Embolism_(disorder)', 'Hematoma_(disorder)', 'Anemia_(disorder)', 'Postnatal_infection_(disorder)_Endometritis_(disorder)', 'Postnatal_infection_(disorder)_Mastitis_(disorder)', 'Postnatal_infection_(disorder)_Urinary_tract_infectious_disease_(disorder)', 'Postnatal_infection_(disorder)_Episiotomy_infection_(disorder)', 'Postnatal_infection_(disorder)_Overige_infecties', 'Overig'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('dreigende_eclampsie_verdenking_op_hellpsyndroom_preeclampsia_disorder', 'dreigende_eclampsie_verdenking_op_hellpsyndroom_preeclampsia_added_to_preexisting_hypertension_disorder', 'dreigende_eclampsie_verdenking_op_hellpsyndroom_eclampsia_in_puerperium_disorder', 'dreigende_eclampsie_verdenking_op_hellpsyndroom_hemolysiselevated_liver_enzymeslow_platelet_count_syndrome_disorder', 'postpartum_deep_phlebothrombosis_disorder', 'postpartum_depression_disorder', 'postpartum_psychosis_disorder', 'abnormal_vaginal_bleeding_finding', 'embolism_disorder', 'hematoma_disorder', 'anemia_disorder', 'postnatal_infection_disorder_endometritis_disorder', 'postnatal_infection_disorder_mastitis_disorder', 'postnatal_infection_disorder_urinary_tract_infectious_disease_disorder', 'postnatal_infection_disorder_episiotomy_infection_disorder', 'postnatal_infection_disorder_overige_infecties', 'overig'))">
+                                test="empty(@enum) or (@enum = ('(Dreigende)_eclampsie,_(verdenking_op)_HELLP-syndroom_Pre-eclampsia_(disorder)', '(Dreigende)_eclampsie,_(verdenking_op)_HELLP-syndroom_Pre-eclampsia_added_to_pre-existing_hypertension_(disorder)', '(Dreigende)_eclampsie,_(verdenking_op)_HELLP-syndroom_Eclampsia_in_puerperium_(disorder)', '(Dreigende)_eclampsie,_(verdenking_op)_HELLP-syndroom_Hemolysis-elevated_liver_enzymes-low_platelet_count_syndrome_(disorder)', 'Postpartum_deep_phlebothrombosis_(disorder)', 'Postpartum_depression_(disorder)', 'Postpartum_psychosis_(disorder)', 'Abnormal_vaginal_bleeding_(finding)', 'Embolism_(disorder)', 'Hematoma_(disorder)', 'Anemia_(disorder)', 'Postnatal_infection_(disorder)_Endometritis_(disorder)', 'Postnatal_infection_(disorder)_Mastitis_(disorder)', 'Postnatal_infection_(disorder)_Urinary_tract_infectious_disease_(disorder)', 'Postnatal_infection_(disorder)_Episiotomy_infection_(disorder)', 'Postnatal_infection_(disorder)_Overige_infecties', 'Overig'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Pathologie vrouw": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/postnatale_fase/diagnoseinterventie_postpartum/pathologie_vrouw/@enum; allowed=('dreigende_eclampsie_verdenking_op_hellpsyndroom_preeclampsia_disorder', 'dreigende_eclampsie_verdenking_op_hellpsyndroom_preeclampsia_added_to_preexisting_hypertension_disorder', 'dreigende_eclampsie_verdenking_op_hellpsyndroom_eclampsia_in_puerperium_disorder', 'dreigende_eclampsie_verdenking_op_hellpsyndroom_hemolysiselevated_liver_enzymeslow_platelet_count_syndrome_disorder', 'postpartum_deep_phlebothrombosis_disorder', 'postpartum_depression_disorder', 'postpartum_psychosis_disorder', 'abnormal_vaginal_bleeding_finding', 'embolism_disorder', 'hematoma_disorder', 'anemia_disorder', 'postnatal_infection_disorder_endometritis_disorder', 'postnatal_infection_disorder_mastitis_disorder', 'postnatal_infection_disorder_urinary_tract_infectious_disease_disorder', 'postnatal_infection_disorder_episiotomy_infection_disorder', 'postnatal_infection_disorder_overige_infecties', 'overig')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/postnatale_fase/diagnoseinterventie_postpartum/pathologie_vrouw/@enum; allowed=('(Dreigende)_eclampsie,_(verdenking_op)_HELLP-syndroom_Pre-eclampsia_(disorder)', '(Dreigende)_eclampsie,_(verdenking_op)_HELLP-syndroom_Pre-eclampsia_added_to_pre-existing_hypertension_(disorder)', '(Dreigende)_eclampsie,_(verdenking_op)_HELLP-syndroom_Eclampsia_in_puerperium_(disorder)', '(Dreigende)_eclampsie,_(verdenking_op)_HELLP-syndroom_Hemolysis-elevated_liver_enzymes-low_platelet_count_syndrome_(disorder)', 'Postpartum_deep_phlebothrombosis_(disorder)', 'Postpartum_depression_(disorder)', 'Postpartum_psychosis_(disorder)', 'Abnormal_vaginal_bleeding_(finding)', 'Embolism_(disorder)', 'Hematoma_(disorder)', 'Anemia_(disorder)', 'Postnatal_infection_(disorder)_Endometritis_(disorder)', 'Postnatal_infection_(disorder)_Mastitis_(disorder)', 'Postnatal_infection_(disorder)_Urinary_tract_infectious_disease_(disorder)', 'Postnatal_infection_(disorder)_Episiotomy_infection_(disorder)', 'Postnatal_infection_(disorder)_Overige_infecties', 'Overig')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -43907,16 +43907,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@enum) or (@enum = ('borstvoeding', 'kunstvoeding', 'onbekend', 'geen_informatie'))"/>
+         <xsl:when test="empty(@enum) or (@enum = ('Borstvoeding', 'Kunstvoeding', 'Onbekend', 'Geen_informatie'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@enum) or (@enum = ('borstvoeding', 'kunstvoeding', 'onbekend', 'geen_informatie'))">
+                                test="empty(@enum) or (@enum = ('Borstvoeding', 'Kunstvoeding', 'Onbekend', 'Geen_informatie'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Substantie voeding kind": De waarde "<xsl:text/>
                   <xsl:value-of select="@enum"/>
-                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/postnatale_fase/kindspecifieke_gegevens/voeding_kind_groep/substantie_voeding_kind/@enum; allowed=('borstvoeding', 'kunstvoeding', 'onbekend', 'geen_informatie')]</svrl:text>
+                  <xsl:text/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/postnatale_fase/kindspecifieke_gegevens/voeding_kind_groep/substantie_voeding_kind/@enum; allowed=('Borstvoeding', 'Kunstvoeding', 'Onbekend', 'Geen_informatie')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>

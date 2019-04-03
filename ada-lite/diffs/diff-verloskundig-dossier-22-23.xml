@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<compare-datasets dref-older="file:/C:/Data/Erik/xmldev/Babyconnect/ADA-Lite-Geboortezorg/design/specs-full/verloskundig-dossier-22.xml"
-                  dref-newer="file:/C:/Data/Erik/xmldev/Babyconnect/ADA-Lite-Geboortezorg/design/specs-full/verloskundig-dossier-23.xml">
+<compare-datasets dref-older="file:/C:/Users/Marc/Dropbox/Development/Babyconnect/ADA-Lite-Geboortezorg/design/specs-full/verloskundig-dossier-22.xml"
+                  dref-newer="file:/C:/Users/Marc/Dropbox/Development/Babyconnect/ADA-Lite-Geboortezorg/design/specs-full/verloskundig-dossier-23.xml">
    <child-concepts doc-xpath="/verloskundig_dossier_22">
       <concept-compare signature="shortname:zorgverlenerzorginstelling"
                        shortname="zorgverlenerzorginstelling"

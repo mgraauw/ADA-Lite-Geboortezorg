@@ -243,12 +243,12 @@ SOFTWARE.
                                              <xs:attribute name="enum" use="optional">
                                                 <xs:simpleType>
                                                    <xs:restriction base="xs:string">
-                                                      <xs:enumeration value="geslachtsnaam">
+                                                      <xs:enumeration value="Geslachtsnaam">
                                                          <xs:annotation>
                                                             <xs:documentation source="name" xml:lang="nl-NL">Geslachtsnaam</xs:documentation>
                                                          </xs:annotation>
                                                       </xs:enumeration>
-                                                      <xs:enumeration value="geslachtsnaam_partner">
+                                                      <xs:enumeration value="Geslachtsnaam_partner">
                                                          <xs:annotation>
                                                             <xs:documentation source="name" xml:lang="nl-NL">Geslachtsnaam partner</xs:documentation>
                                                          </xs:annotation>
@@ -429,32 +429,32 @@ SOFTWARE.
                            <xs:attribute name="enum" use="optional">
                               <xs:simpleType>
                                  <xs:restriction base="xs:string">
-                                    <xs:enumeration value="blood_group_a_finding">
+                                    <xs:enumeration value="Blood_group_A_(finding)">
                                        <xs:annotation>
                                           <xs:documentation source="name" xml:lang="nl-NL">A</xs:documentation>
                                        </xs:annotation>
                                     </xs:enumeration>
-                                    <xs:enumeration value="blood_group_b_finding">
+                                    <xs:enumeration value="Blood_group_B_(finding)">
                                        <xs:annotation>
                                           <xs:documentation source="name" xml:lang="nl-NL">B</xs:documentation>
                                        </xs:annotation>
                                     </xs:enumeration>
-                                    <xs:enumeration value="blood_group_ab_finding">
+                                    <xs:enumeration value="Blood_group_AB_(finding)">
                                        <xs:annotation>
                                           <xs:documentation source="name" xml:lang="nl-NL">AB</xs:documentation>
                                        </xs:annotation>
                                     </xs:enumeration>
-                                    <xs:enumeration value="blood_group_o_finding">
+                                    <xs:enumeration value="Blood_group_O_(finding)">
                                        <xs:annotation>
                                           <xs:documentation source="name" xml:lang="nl-NL">0</xs:documentation>
                                        </xs:annotation>
                                     </xs:enumeration>
-                                    <xs:enumeration value="onbekend">
+                                    <xs:enumeration value="Onbekend">
                                        <xs:annotation>
                                           <xs:documentation source="name" xml:lang="nl-NL">Onbekend</xs:documentation>
                                        </xs:annotation>
                                     </xs:enumeration>
-                                    <xs:enumeration value="geen_informatie">
+                                    <xs:enumeration value="Geen_informatie">
                                        <xs:annotation>
                                           <xs:documentation source="name" xml:lang="nl-NL">Geen informatie</xs:documentation>
                                        </xs:annotation>
@@ -533,12 +533,12 @@ SOFTWARE.
                            <xs:attribute name="enum" use="optional">
                               <xs:simpleType>
                                  <xs:restriction base="xs:string">
-                                    <xs:enumeration value="rh_d_positief">
+                                    <xs:enumeration value="Rh_D_Positief">
                                        <xs:annotation>
                                           <xs:documentation source="name" xml:lang="nl-NL">Rh D Positief</xs:documentation>
                                        </xs:annotation>
                                     </xs:enumeration>
-                                    <xs:enumeration value="rh_d_negatief">
+                                    <xs:enumeration value="Rh_D_Negatief">
                                        <xs:annotation>
                                           <xs:documentation source="name" xml:lang="nl-NL">Rh D Negatief</xs:documentation>
                                        </xs:annotation>
@@ -619,17 +619,17 @@ SOFTWARE.
                            <xs:attribute name="enum" use="optional">
                               <xs:simpleType>
                                  <xs:restriction base="xs:string">
-                                    <xs:enumeration value="rhc_positive_finding">
+                                    <xs:enumeration value="Rhc_positive_(finding)">
                                        <xs:annotation>
                                           <xs:documentation source="name" xml:lang="nl-NL">Rh c Positief</xs:documentation>
                                        </xs:annotation>
                                     </xs:enumeration>
-                                    <xs:enumeration value="rhc_negative_finding">
+                                    <xs:enumeration value="Rhc_negative_(finding)">
                                        <xs:annotation>
                                           <xs:documentation source="name" xml:lang="nl-NL">Rh c Negatief</xs:documentation>
                                        </xs:annotation>
                                     </xs:enumeration>
-                                    <xs:enumeration value="geen_informatie">
+                                    <xs:enumeration value="Geen_informatie">
                                        <xs:annotation>
                                           <xs:documentation source="name" xml:lang="nl-NL">Geen informatie</xs:documentation>
                                        </xs:annotation>

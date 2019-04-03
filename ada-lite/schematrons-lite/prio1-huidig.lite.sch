@@ -231,7 +231,7 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <assert test="empty(@displayName) or (@displayName = ('Blood group A (finding)', 'Blood group B (finding)', 'Blood group AB (finding)', 'Blood group O (finding)', 'Onbekend', 'Geen informatie'))">Foutieve informatie voor "Bloedgroep vrouw": De waarde "<value-of select="@displayName"/>" voor attribuut "displayName" is onjuist [/prio1_huidig/vrouw/bloedgroep_vrouw/@displayName; allowed=('Blood group A (finding)', 'Blood group B (finding)', 'Blood group AB (finding)', 'Blood group O (finding)', 'Onbekend', 'Geen informatie')]</assert>
          <!-- == Attribute "enum": == -->
-         <assert test="empty(@enum) or (@enum = ('blood_group_a_finding', 'blood_group_b_finding', 'blood_group_ab_finding', 'blood_group_o_finding', 'onbekend', 'geen_informatie'))">Foutieve informatie voor "Bloedgroep vrouw": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/prio1_huidig/vrouw/bloedgroep_vrouw/@enum; allowed=('blood_group_a_finding', 'blood_group_b_finding', 'blood_group_ab_finding', 'blood_group_o_finding', 'onbekend', 'geen_informatie')]</assert>
+         <assert test="empty(@enum) or (@enum = ('Blood_group_A_(finding)', 'Blood_group_B_(finding)', 'Blood_group_AB_(finding)', 'Blood_group_O_(finding)', 'Onbekend', 'Geen_informatie'))">Foutieve informatie voor "Bloedgroep vrouw": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/prio1_huidig/vrouw/bloedgroep_vrouw/@enum; allowed=('Blood_group_A_(finding)', 'Blood_group_B_(finding)', 'Blood_group_AB_(finding)', 'Blood_group_O_(finding)', 'Onbekend', 'Geen_informatie')]</assert>
          <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Bloedgroep vrouw": Ongeldige attributen aangetroffen [/prio1_huidig/vrouw/bloedgroep_vrouw; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
       </rule>
    </pattern>
@@ -249,7 +249,7 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <assert test="empty(@displayName) or (@displayName = ('Rh D Positief', 'Rh D Negatief', 'onbekend', 'geen informatie'))">Foutieve informatie voor "Rhesus D Factor vrouw": De waarde "<value-of select="@displayName"/>" voor attribuut "displayName" is onjuist [/prio1_huidig/vrouw/rhesus_d_factor_vrouw/@displayName; allowed=('Rh D Positief', 'Rh D Negatief', 'onbekend', 'geen informatie')]</assert>
          <!-- == Attribute "enum": == -->
-         <assert test="empty(@enum) or (@enum = ('rh_d_positief', 'rh_d_negatief', 'onbekend', 'geen_informatie'))">Foutieve informatie voor "Rhesus D Factor vrouw": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/prio1_huidig/vrouw/rhesus_d_factor_vrouw/@enum; allowed=('rh_d_positief', 'rh_d_negatief', 'onbekend', 'geen_informatie')]</assert>
+         <assert test="empty(@enum) or (@enum = ('Rh_D_Positief', 'Rh_D_Negatief', 'onbekend', 'geen_informatie'))">Foutieve informatie voor "Rhesus D Factor vrouw": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/prio1_huidig/vrouw/rhesus_d_factor_vrouw/@enum; allowed=('Rh_D_Positief', 'Rh_D_Negatief', 'onbekend', 'geen_informatie')]</assert>
          <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Rhesus D Factor vrouw": Ongeldige attributen aangetroffen [/prio1_huidig/vrouw/rhesus_d_factor_vrouw; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
       </rule>
    </pattern>
@@ -267,7 +267,7 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <assert test="empty(@displayName) or (@displayName = ('Rhc positive (finding)', 'Rhc negative (finding)', 'Geen informatie'))">Foutieve informatie voor "Rhesus c Factor": De waarde "<value-of select="@displayName"/>" voor attribuut "displayName" is onjuist [/prio1_huidig/vrouw/rhesus_c_factor/@displayName; allowed=('Rhc positive (finding)', 'Rhc negative (finding)', 'Geen informatie')]</assert>
          <!-- == Attribute "enum": == -->
-         <assert test="empty(@enum) or (@enum = ('rhc_positive_finding', 'rhc_negative_finding', 'geen_informatie'))">Foutieve informatie voor "Rhesus c Factor": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/prio1_huidig/vrouw/rhesus_c_factor/@enum; allowed=('rhc_positive_finding', 'rhc_negative_finding', 'geen_informatie')]</assert>
+         <assert test="empty(@enum) or (@enum = ('Rhc_positive_(finding)', 'Rhc_negative_(finding)', 'Geen_informatie'))">Foutieve informatie voor "Rhesus c Factor": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/prio1_huidig/vrouw/rhesus_c_factor/@enum; allowed=('Rhc_positive_(finding)', 'Rhc_negative_(finding)', 'Geen_informatie')]</assert>
          <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Rhesus c Factor": Ongeldige attributen aangetroffen [/prio1_huidig/vrouw/rhesus_c_factor; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
       </rule>
    </pattern>
@@ -330,7 +330,7 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <assert test="empty(@displayName) or (@displayName = ('Geslachtsnaam', 'Geslachtsnaam partner'))">Foutieve informatie voor "Soort naam": De waarde "<value-of select="@displayName"/>" voor attribuut "displayName" is onjuist [/prio1_huidig/vrouw/naamgegevens/achternaam/soort_naam/@displayName; allowed=('Geslachtsnaam', 'Geslachtsnaam partner')]</assert>
          <!-- == Attribute "enum": == -->
-         <assert test="empty(@enum) or (@enum = ('geslachtsnaam', 'geslachtsnaam_partner'))">Foutieve informatie voor "Soort naam": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/prio1_huidig/vrouw/naamgegevens/achternaam/soort_naam/@enum; allowed=('geslachtsnaam', 'geslachtsnaam_partner')]</assert>
+         <assert test="empty(@enum) or (@enum = ('Geslachtsnaam', 'Geslachtsnaam_partner'))">Foutieve informatie voor "Soort naam": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/prio1_huidig/vrouw/naamgegevens/achternaam/soort_naam/@enum; allowed=('Geslachtsnaam', 'Geslachtsnaam_partner')]</assert>
          <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Soort naam": Ongeldige attributen aangetroffen [/prio1_huidig/vrouw/naamgegevens/achternaam/soort_naam; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
       </rule>
    </pattern>
