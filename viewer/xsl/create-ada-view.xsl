@@ -14,10 +14,10 @@
        The system works with simple XPaths:  
        - To set the context for something, simple XPath expressions can be used, e.g. /*/vrouw[1]/geboortedatum[1]
          Accepted are * for all children and [n] for the n-th child.
-       - If you prefix the XPath with # (e.g. #/*/vrouw[1]/geboortedatum[1]) you get the user-friendly name of the element 
-         (as present in the specification).
        - You can set the context (with @context) on almost all elements. 
        - Text nodes can contain theses simple XPath expressions between curly braces, e.g. {vrouw/geboortedatum}
+         - If you prefix this with # (e.g. #/*/vrouw[1]/geboortedatum[1]) you get the user-friendly name of the element 
+           (as present in the specification).       
        - {} will give you the value of the context item, {#} the user-friendly name of the context item
        - Relative paths are always computed based on the context of the parent element.
        
