@@ -108,7 +108,7 @@
   <xsl:variable name="subdir-build-examples-full" as="xs:string" select="'examples-full'"/>
   <xsl:variable name="subdir-build-schematron-full" as="xs:string" select="'schematrons-full'"/>
   <xsl:variable name="subdir-build-schematron-lite" as="xs:string" select="'schematrons-lite'"/>
-  <xsl:variable name="subdir-build-schema" as="xs:string" select="'schemas'"/>
+  <xsl:variable name="subdir-build-schema-art-decor" as="xs:string" select="'schemas-art-decor'"/>
   <xsl:variable name="subdir-build-schema-simple-full" as="xs:string" select="'schemas-simple-full'"/>
   <xsl:variable name="subdir-build-schema-simple-lite" as="xs:string" select="'schemas-simple-lite'"/>
   <xsl:variable name="subdir-build-svrl-xsl" as="xs:string" select="'svrl-xsl'"/>
@@ -122,7 +122,7 @@
   <xsl:variable name="dir-build-examples-full" as="xs:string" select="xtlc:dref-concat(($dir-build-main, $subdir-build-examples-full))"/>
   <xsl:variable name="dir-build-schematron-full" as="xs:string" select="xtlc:dref-concat(($dir-build-main, $subdir-build-schematron-full))"/>
   <xsl:variable name="dir-build-schematron-lite" as="xs:string" select="xtlc:dref-concat(($dir-build-main, $subdir-build-schematron-lite))"/>
-  <xsl:variable name="dir-build-schema" as="xs:string" select="xtlc:dref-concat(($dir-build-main, $subdir-build-schema))"/>
+  <xsl:variable name="dir-build-schema-art-decor" as="xs:string" select="xtlc:dref-concat(($dir-build-main, $subdir-build-schema-art-decor))"/>
   <xsl:variable name="dir-build-schema-simple-full" as="xs:string" select="xtlc:dref-concat(($dir-build-main, $subdir-build-schema-simple-full))"/>
   <xsl:variable name="dir-build-schema-simple-lite" as="xs:string" select="xtlc:dref-concat(($dir-build-main, $subdir-build-schema-simple-lite))"/>
   <xsl:variable name="dir-build-diffs" as="xs:string" select="xtlc:dref-concat(($dir-build-main, $subdir-build-diffs))"/>
@@ -203,7 +203,7 @@
           catch this generated file and write it to the appropriate location. For this we need the name of the generated file which is
           passed in @generated-xsd-filename.
         -->
-        <spec2schema in="{.}" out="{xtlc:dref-concat(($dir-build-schema, xtlc:dref-name-noext(.) || '.xsd'))}"
+        <spec2schema in="{.}" out="{xtlc:dref-concat(($dir-build-schema-art-decor, xtlc:dref-name-noext(.) || '.xsd'))}"
           generated-xsd-filename="{string(doc(.)/*/@shortName) || '.xsd'}"/>
       </xsl:for-each>
 
@@ -275,7 +275,7 @@
       <xsl:for-each select="$filelist-source-examples-lite">
         <xsl:variable name="specification-file" as="xs:string" select="local:get-specification-file-from-transaction-id(doc(.)/*/@transactionRef)"/>
         <xsl:variable name="specification-filename-noext" as="xs:string" select="xtlc:dref-name-noext($specification-file)"/>
-        <xsl:variable name="schema-file" as="xs:string" select="xtlc:dref-concat(($dir-build-schema, $specification-filename-noext || '.xsd'))"/>
+        <xsl:variable name="schema-file" as="xs:string" select="xtlc:dref-concat(($dir-build-schema-art-decor, $specification-filename-noext || '.xsd'))"/>
         <xsl:variable name="schema-file-simple" as="xs:string"
           select="xtlc:dref-concat(($dir-build-schema-simple-lite, $specification-filename-noext || '.simple.lite.xsd'))"/>
         <!-- Remark: Validation of the lite example against the (ART-DECOR generated) schema is disabled because a lite document can 
@@ -289,7 +289,7 @@
         <xsl:variable name="specification-file" as="xs:string" select="local:get-specification-file-from-transaction-id(doc(.)/*/@transactionRef)"/>
         <xsl:variable name="specification-filename-noext" as="xs:string" select="xtlc:dref-name-noext($specification-file)"/>
         <xsl:variable name="examples-full-file" as="xs:string" select="xtlc:dref-concat(($dir-build-examples-full, xtlc:dref-name(.)))"/>
-        <xsl:variable name="schema-file" as="xs:string" select="xtlc:dref-concat(($dir-build-schema, $specification-filename-noext || '.xsd'))"/>
+        <xsl:variable name="schema-file" as="xs:string" select="xtlc:dref-concat(($dir-build-schema-art-decor, $specification-filename-noext || '.xsd'))"/>
         <xsl:variable name="schema-file-simple" as="xs:string"
           select="xtlc:dref-concat(($dir-build-schema-simple-full, $specification-filename-noext || '.simple.full.xsd'))"/>
         <validate-schema in="{$examples-full-file}" schema="{$schema-file}"/>

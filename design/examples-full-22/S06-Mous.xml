@@ -1,0 +1,69 @@
+<adaxml>
+    <meta status="new" created-by="harold" last-update-by="harold" creation-date="2015-07-06T14:40:13.439+02:00" last-update-date="2015-10-12T13:17:28.845+02:00"/>
+    <data>
+        <verwijzing_regulier_bericht app="perinatologie" transactionRef="2.16.840.1.113883.2.4.3.11.60.90.77.4.2401" transactionEffectiveDate="2013-09-10T00:00:00" versionDate="" prefix="peri20-" language="nl-NL" title="Prim met minder leven" id="S06-Mous" shortName="verwijzing_regulier_bericht" formName="reguliere_verwijzing">
+            <zorgverlening conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.4">
+                <datum_start_zorgverantwoordelijkheid conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20290" value="2015-05-01T00:00:00"/>
+                <verwijsdetails conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82012">
+                    <datum_verwijzing value="2015-10-12T10:00:00" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82013"/>
+                    <verwijzing_naar_zorginstelling_specialisme value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82017" code="01.046" codeSystem="2.16.840.1.113883.2.4.15.111" displayName="Gynaecoloog / obstetricus"/>
+                    <verwijzing_naar_zorginstelling_id conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82018"/>
+                    <redenen_van_verwijzing conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82014">
+                        <reden_verwijzing conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82015" value="1" code="1000" codeSystem="2.16.840.1.113883.2.4.3.22.1.2.1" displayName="Indicaties vrouw wegens preëxistente aandoeningen – niet gynaecologisch"/>
+                        <toelichting_reden_verwijzing value="Minder leven voelen" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82016"/>
+                    </redenen_van_verwijzing>
+                </verwijsdetails>
+            </zorgverlening>
+            <zorgverlenerzorginstelling conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.1">
+                <zorgverlener conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10001">
+                    <naam_zorgverlener conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10006" value="Z"/>
+                </zorgverlener>
+                <zorginstelling conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10020">
+                    <naam_zorginstelling conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10026"/>
+                </zorginstelling>
+            </zorgverlenerzorginstelling>
+            <vrouw conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.2">
+                <burgerservicenummer value="456238772" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10030"/>
+                <naamgegevens conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10035">
+                    <voornamen conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10042" value="Truitje"/>
+                    <initialen conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82359" value="T"/>
+                    <roepnaam conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82360"/>
+                    <achternaam conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82361">
+                        <voorvoegsel conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82363"/>
+                        <achternaam conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10043" value="Borstrok"/>
+                    </achternaam>
+                </naamgegevens>
+                <geboortedatum conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10040" value="1992-10-20"/>
+                <adres conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10300">
+                    <straatnaam value="Broeklaan" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10301"/>
+                    <huisnummer value="48" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10302"/>
+                    <huisletterhuisnummertoevoeging conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10303"/>
+                    <postcode value="1567 AB" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10304"/>
+                    <plaatsnaam value="Sokdorp" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10305"/>
+                    <land value="Nederland" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10307"/>
+                </adres>
+                <etniciteit value="3" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10400" code="12" codeSystem="2.16.840.1.113883.2.4.4.13.28" displayName="Kaukasisch"/>
+                <taalvaardigheid_vrouw_nederlandse_taal value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10401" code="G" codeSystem="2.16.840.1.113883.5.61" displayName="Good"/>
+                <accepteert_bloedtransfusieq conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82157" value="true"/>
+                <betrokken_zorgverlenerzorginstelling conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80649">
+                    <specialist conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82024">
+                        <zorgverlener_uzinummer conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82039"/>
+                        <zorgverlener_agbid conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82032"/>
+                        <naam_zorgverlener value="Bosma" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82033"/>
+                        <type_specialist value="Gynaecoloog" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82038"/>
+                        <zorginstelling conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82035">
+                            <zorginstelling_agbid conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82036"/>
+                            <naam_zorginstelling conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82037"/>
+                        </zorginstelling>
+                    </specialist>
+                </betrokken_zorgverlenerzorginstelling>
+                <medicatiegebruikq value="false" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10801"/>
+                <lengte_gemeten conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20212" value="164" unit="cm"/>
+                <vrouwelijke_genitale_verminkingq conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80675" value="false"/>
+                <bloedgroep_vrouw conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10810" value="1" code="112144000" codeSystem="2.16.840.1.113883.6.96" displayName="Blood group A (finding)"/>
+                <rhesus_d_factor_vrouw conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10811" value="1" code="165747007" codeSystem="2.16.840.1.113883.6.96" displayName="Rh D Positief"/>
+                <rhesus_c_factor conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10816" value="1" code="rhcneg" codeSystem="2.16.840.1.113883.2.4.4.13.45" displayName="Rh C Negatief"/>
+            </vrouw>
+        </verwijzing_regulier_bericht>
+    </data>
+</adaxml>

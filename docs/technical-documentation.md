@@ -35,7 +35,7 @@ De `ada-lite/examples-lite` sub-directory bevat voorbeelddocumenten in het ADA L
 
 De ADA Full versie van deze documenten zijn te vinden in de `ada-lite/examples-full` sub-directory.
 
-### Ingevulde voorbeelddocument ADA Full (`ada-lite/schemas`)
+### ART-DECOR Schemas (`ada-lite/schemas-art-decor`)
 
 De `ada-lite/schemas` sub-directory bevat XML schemas waarmee ADA Full documenten gevalideerd kunnen worden. Er is een schema per document type. Bijvoorbeeld `kernset-22.xsd` bevat het schema voor het valideren van Full ADA kernset versie 2.2 documenten. 
 
@@ -49,7 +49,7 @@ Deze schemas zijn intern complex van opzet en voor code generatie waarschijnlijk
 
 De `ada-lite/schemas-simple-full` sub-directory bevat vereenvoudigde schemas waarmee ADA Full documenten gevalideerd kunnen worden. Er is een schema per document type. Bijvoorbeeld `kernset-22.simple.full.xsd` bevat het schema voor het valideren van Full ADA kernset versie 2.2 documenten. 
 
-Vereenvoudigd betekent *niet* dat de validatie onvolledig is, alles wordt gevalideerd. Alleen de opzet van het schema is vereenvoudigd, zodat het simpeler wordt om code generatoren hierop te baseren. 
+Vereenvoudigd betekent *niet* dat de validatie onvolledig is, alles wordt gevalideerd. Alleen de opzet van het schema is vereenvoudigd, zodat het (hopelijk) simpeler wordt om code generatoren hierop te baseren. 
 
 Hoe een validatie met behulp van een schema uitgevoerd moet worden staat beschreven in [Schema validatie](#schema-validatie).
 
