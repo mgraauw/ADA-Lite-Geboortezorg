@@ -122,7 +122,7 @@
   <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 
   <xsl:function name="bc-alg:dref-alg-path" as="xs:string">
-    <!-- Returns the path of a document inside the ADA-Lite-Geboortezorg repo. -->
+    <!-- Returns the path of a document, inside the ADA-Lite-Geboortezorg repo if its there. -->
     <xsl:param name="dref" as="xs:string"/>
 
     <xsl:variable name="repo-path-part" as="xs:string" select="'/' || $bc-alg:repo-name || '/'"/>
@@ -131,7 +131,7 @@
         <xsl:sequence select="fn:substring-after($dref, $repo-path-part)"/>
       </xsl:when>
       <xsl:otherwise>
-        <xsl:sequence select="bc-alg:dref-name($dref)"/>
+        <xsl:sequence select="$dref"/>
       </xsl:otherwise>
     </xsl:choose>
   </xsl:function>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="3.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:map="http://www.w3.org/2005/xpath-functions/map"
   xmlns:array="http://www.w3.org/2005/xpath-functions/array" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:saxon="http://saxon.sf.net/"
-  xmlns:local="#local.mdp_npt_zgb" exclude-result-prefixes="#all" expand-text="true">
+  xmlns:local="#local.mdp_npt_zgb" exclude-result-prefixes="#all" xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg" expand-text="true">
   <!-- ================================================================== -->
   <!-- 
        Compares two versions of a Receive Transaction Dataset (in short: rtd) with each other. 
@@ -39,6 +39,8 @@
   <xsl:output method="xml" indent="yes" encoding="UTF-8"/>
 
   <xsl:mode on-no-match="fail"/>
+  
+  <xsl:include href="../lib/xsl-common.xsl"/>
 
   <!-- ================================================================== -->
   <!-- PARAMETERS: -->
@@ -58,7 +60,7 @@
     <xsl:variable name="root-older-version" as="element(dataset)" select="doc($dref-rtd-older-version)/*"/>
     <xsl:variable name="root-newer-version" as="element(dataset)" select="doc($dref-rtd-newer-version)/*"/>
 
-    <compare-datasets dref-older="{$dref-rtd-older-version}" dref-newer="{$dref-rtd-newer-version}">
+    <compare-datasets dref-older="{bc-alg:dref-alg-path($dref-rtd-older-version)}" dref-newer="{bc-alg:dref-alg-path($dref-rtd-newer-version)}">
       <xsl:if test="$do-add-timestamp">
         <xsl:attribute name="timestamp" select="current-dateTime()"/>
       </xsl:if>
