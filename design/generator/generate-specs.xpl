@@ -364,7 +364,7 @@
   </p:viewport>
 
 
-  <!-- Generate the simple schemas: -->
+  <!-- Generate the simple schemas (nesting is removed): -->
   <p:viewport match="spec2schema-simple">
     <p:variable name="in" select="/*/@in"/>
     <p:variable name="out" select="/*/@out"/>
@@ -378,6 +378,12 @@
         <p:document href="../xsl/ada-rtd2ada-schema-simple.xsl"/>
       </p:input>
       <p:with-param name="ada-lite-version" select="$ada-lite-version"/>
+    </p:xslt>
+    <p:xslt>
+      <p:input port="stylesheet">
+        <p:document href="../xsl/ada-schema-simple-unnest.xsl"/>
+      </p:input>
+      <p:with-param name="null" select="()"/>
     </p:xslt>
     <p:store method="xml" omit-xml-declaration="false" indent="true">
       <p:with-option name="href" select="$out"/>
