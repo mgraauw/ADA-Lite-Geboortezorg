@@ -12,6 +12,8 @@
        error is raised.
        
        This was separated into a library because it was needed on more than on occasion.
+       
+       This module depends on xsl-common.xsl, which must be included before this one.
 	-->
   <!-- ================================================================== -->
   <!-- GLOBAL DECLARATIONS: -->
@@ -22,7 +24,7 @@
 
   <!-- ================================================================== -->
 
-  <xsl:template name="bc-al2af:ada-lite2ada-full">
+  <xsl:template name="bc-al2af:ada-lite2ada-full" as="element()">
     <xsl:param name="ada-lite-root-element" as="element()" required="yes">
       <!-- Root element of the ADA LIte XML. It is assumed this is a valid ADA Lite document. -->
     </xsl:param>

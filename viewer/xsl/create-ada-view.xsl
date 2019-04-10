@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="3.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:map="http://www.w3.org/2005/xpath-functions/map"
   xmlns:array="http://www.w3.org/2005/xpath-functions/array" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:local="#local.vgm_d5w_fhb"
-  exclude-result-prefixes="#all" expand-text="true">
+  xmlns:bc-al2af="https://babyconnect.org/ns/ada-lite2ada-full" exclude-result-prefixes="#all" expand-text="true">
   <!-- ================================================================== -->
   <!-- 
-       This stylesheet combines several inputs to create a user-friendly HTML view of an ADA-full data file.
-       - Main input to the stylesheet is the ADA-full data file
+       This stylesheet combines several inputs to create a user-friendly HTML view of an ADA-lite or ADA-full data file.
+       - Main input to the stylesheet is the ADA-lite or ADA-full data file
+         Default is ADA-lite. If you supply an ADA-full data file, set the input-is-ada-full parameter to true.
        - Parameter dref-viewer-template must point to a viewer-template. A schema for such a template can be found in 
          ../xsd/viewer-template.xsd
        - This file in turn, through its /*/@specification attribute, must point to the appropriate specification 
@@ -19,6 +20,8 @@
          - If you prefix this with # (e.g. #/*/vrouw[1]/geboortedatum[1]) you get the user-friendly name of the element 
            (as present in the specification).       
        - {} will give you the value of the context item, {#} the user-friendly name of the context item
+       - You can add a "specifier" at the end of a curly-braced expression, after a % sign to get additional conversions. The following are defined:
+         - %wd : Convert a number of days into a number of weeks + days (e.g. 240 ==> 34w2d)
        - Relative paths are always computed based on the context of the parent element.
        
   -->
@@ -31,19 +34,26 @@
   <xsl:mode name="mode-do-mixed-contents" on-no-match="shallow-copy"/>
   <xsl:mode name="mode-do-section" on-no-match="fail"/>
 
+  <xsl:include href="../../design/xsl/lib/xsl-common.xsl"/>
+  <xsl:include href="../../design/xsl/lib/ada-lite2ada-full.mod.xsl"/>
+
   <!-- ================================================================== -->
   <!-- PARAMETERS: -->
+
+  <xsl:param name="input-is-ada-full" as="xs:string" required="no" select="string(false())">
+    <!-- Set this to true when the input file is an ADA-full file. -->
+  </xsl:param>
 
   <xsl:param name="dref-viewer-template" as="xs:string" required="yes">
     <!-- Reference to the viewer-template. Prefix this path with file:/  -->
   </xsl:param>
 
-  <xsl:param name="dref-css" as="xs:string" required="no" select="resolve-uri('../data/viewer.css', static-base-uri())"/>
+  <xsl:param name="dref-css" as="xs:string" required="no" select="resolve-uri('../data/viewer.css', static-base-uri())">
+    <!-- Reference to the CSS file used for generating the result.  -->
+  </xsl:param>
 
   <!-- ================================================================== -->
   <!-- GLOBAL DECLARATIONS: -->
-
-  <xsl:variable name="data-root" as="document-node()" select="/"/>
 
   <!-- Get the viewer template on board: -->
   <xsl:variable name="viewer-template-document" as="document-node()?"
@@ -56,6 +66,23 @@
   <xsl:variable name="specification-document" as="document-node()?"
     select="if (doc-available($dref-specification)) then doc($dref-specification) else ()"/>
   <xsl:variable name="specification-root" as="element()?" select="$specification-document/*"/>
+
+  <!-- Get the root of the data. Convert this to ADA-full if the input is ADA-lite: -->
+  <xsl:variable name="data-root" as="document-node()">
+    <xsl:choose>
+      <xsl:when test="xs:boolean($input-is-ada-full)">
+        <xsl:sequence select="/"/>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:document>
+          <xsl:call-template name="bc-al2af:ada-lite2ada-full">
+            <xsl:with-param name="ada-lite-root-element" select="/*"/>
+            <xsl:with-param name="rtd-root-element" select="$specification-root"/>
+          </xsl:call-template>
+        </xsl:document>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:variable>
 
   <!-- ================================================================== -->
   <!-- MAIN TEMPLATES: -->
@@ -228,6 +255,9 @@
         <tr>
           <xsl:for-each select="$effective-item-list">
             <th>
+              <xsl:if test="normalize-space(@width) ne ''">
+                <xsl:attribute name="style" select="'width: ' || @width || ';'"/>
+              </xsl:if>
               <xsl:call-template name="get-item-prompt-contents">
                 <xsl:with-param name="data-contexts" select="$table-view-data-contexts"/>
                 <xsl:with-param name="specification-context" select="$table-view-specification-context"/>
@@ -466,23 +496,68 @@
     <xsl:param name="data-contexts" as="node()*"/>
     <xsl:param name="definition-context" as="element()?"/>
 
+    <!-- Separate the expression into the expression itself and an optional specifier (after a % sign): -->
     <xsl:variable name="expression-normalized-raw" as="xs:string" select="normalize-space($expression)"/>
-    <xsl:variable name="expression-normalized" as="xs:string" select="if ($expression-normalized-raw eq '.') then '' else $expression-normalized-raw"/>
+    <xsl:variable name="expression-contains-specifier" as="xs:boolean" select="contains($expression-normalized-raw, '%')"/>
+    <xsl:variable name="expression-specifier" as="xs:string?"
+      select="if ($expression-contains-specifier) then substring-after($expression-normalized-raw, '%') else ()"/>
+    <xsl:variable name="expression-normalized-raw-no-specifier" as="xs:string"
+      select="if ($expression-contains-specifier) then substring-before($expression-normalized-raw, '%') else $expression-normalized-raw"/>
+    <xsl:variable name="expression-normalized" as="xs:string"
+      select="if ($expression-normalized-raw-no-specifier eq '.') then '' else $expression-normalized-raw-no-specifier"/>
+
     <xsl:choose>
       <xsl:when test="starts-with($expression-normalized, '#')">
+        <xsl:if test="exists($expression-specifier)">
+          <xsl:sequence select="error((), 'Specifier &quot;'|| $expression-specifier || '&quot; not allowed/recognized here')"/>
+        </xsl:if>
         <xsl:variable name="definition-element" as="element()?"
           select="local:resolve-specification-xpath-expression(substring($expression-normalized, 2), $definition-context)"/>
-        <xsl:sequence select="if (empty($definition-element)) then '?' else string($definition-element/name[1])"/>
+        <xsl:variable name="value" as="xs:string" select="if (empty($definition-element)) then '?' else string($definition-element/name[1])"/>
+        <xsl:sequence select="local:apply-expression-specifier($value, $expression-specifier, true())"/>
       </xsl:when>
       <xsl:otherwise>
         <xsl:variable name="value-parts" as="xs:string*">
           <xsl:for-each select="local:resolve-data-xpath-expression($expression-normalized, $data-contexts)">
-            <xsl:sequence select="concat(local:massage-value(string((@displayName, @value, '&#160;')[1])), @unit)"/>
+            <xsl:variable name="value-raw" as="xs:string" select="string((@displayName, @value, '&#160;')[1])"/>
+            <xsl:variable name="value" as="xs:string" select="
+                if ($expression-contains-specifier) then 
+                  local:apply-expression-specifier($value-raw, $expression-specifier, false()) 
+                else 
+                  local:massage-value($value-raw)"/>
+            <xsl:sequence
+              select="concat($value, if (not($expression-contains-specifier)) then @unit else ())"
+            />
           </xsl:for-each>
         </xsl:variable>
         <xsl:sequence select="string-join($value-parts, ' ')"/>
       </xsl:otherwise>
     </xsl:choose>
+  </xsl:function>
+
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+  <xsl:function name="local:apply-expression-specifier" as="xs:string">
+    <xsl:param name="value" as="xs:string?"/>
+    <xsl:param name="expression-specifier" as="xs:string?"/>
+    <xsl:param name="in-prompt" as="xs:boolean"/>
+
+    <xsl:choose>
+      <xsl:when test="normalize-space($expression-specifier) eq ''">
+        <xsl:sequence select="$value"/>
+      </xsl:when>
+      <xsl:when test="not($in-prompt) and exists($value) and ($value castable as xs:integer) and ($expression-specifier eq 'wd')">
+        <!-- Convert a number of days into weeks+days notation -->
+        <xsl:variable name="total-days" as="xs:integer" select="xs:integer($value)"/>
+        <xsl:variable name="weeks" as="xs:integer" select="xs:integer(round($total-days div 7))"/>
+        <xsl:variable name="days" as="xs:integer" select="$total-days - ($weeks * 7)"/>
+        <xsl:sequence select="$weeks || 'w' || (if ($days ne 0) then $days || 'd' else ())"/>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:sequence select="error((), 'Specifier &quot;'|| $expression-specifier || '&quot; not allowed/recognized here')"/>
+      </xsl:otherwise>
+    </xsl:choose>
+
   </xsl:function>
 
   <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->

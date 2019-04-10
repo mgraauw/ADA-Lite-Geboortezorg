@@ -28,7 +28,7 @@
     <title>Zwangerschap</title>
     
     <table-view>
-      <item context="graviditeit"/>
+      <item context="graviditeit" width="10em"/>
       <item context="pariteit_voor_deze_zwangerschap">
         <prompt>Pariteit</prompt>
       </item>
@@ -46,6 +46,9 @@
   <section color="yellow" context="zwangerschap/prenatale_controle">
     
     <table-view>
+      <item context="zwangerschapsduur">
+        <value>{.%wd}</value>
+      </item>
       <auto-items/>
     </table-view>
   </section>

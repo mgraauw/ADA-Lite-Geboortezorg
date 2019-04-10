@@ -35,9 +35,10 @@
     <xs:sequence>
       <xs:element name="header">
         <xs:complexType>
-          <xs:sequence>
-            <xs:group maxOccurs="unbounded" minOccurs="0" ref="g-item-list"/>
-          </xs:sequence>
+          <xs:choice maxOccurs="unbounded" minOccurs="0">
+            <xs:element name="item" type="ct-item"/>
+            <xs:group ref="g-auto-items"/>
+          </xs:choice>
           <xs:attributeGroup ref="ag-context"/>
         </xs:complexType>
       </xs:element>
@@ -70,62 +71,68 @@
     <xs:sequence>
       <xs:element name="table-view">
         <xs:complexType>
-          <xs:sequence>
-            <xs:group ref="g-item-list"/>
-          </xs:sequence>
+          <xs:choice maxOccurs="unbounded" minOccurs="0">
+            <xs:element name="item">
+              <xs:complexType>
+                <xs:complexContent>
+                  <xs:extension base="ct-item">
+                    <xs:attribute name="width" type="xs:string">
+                      <xs:annotation>
+                        <xs:documentation>If set determines the column width</xs:documentation>
+                      </xs:annotation>
+                    </xs:attribute>
+                  </xs:extension>
+                </xs:complexContent>
+              </xs:complexType>
+            </xs:element>
+            <xs:group ref="g-auto-items"/>
+          </xs:choice>
           <xs:attributeGroup ref="ag-context"/>
         </xs:complexType>
       </xs:element>
     </xs:sequence>
   </xs:group>
-  <xs:group name="g-item-list">
+  <xs:group name="g-auto-items">
     <xs:sequence>
-      <xs:choice maxOccurs="unbounded" minOccurs="0">
-        <xs:element name="item">
-          <xs:annotation>
-            <xs:documentation>A single item to display</xs:documentation>
-          </xs:annotation>
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element minOccurs="0" name="prompt">
-                <xs:annotation>
-                  <xs:documentation>Prompt for this item. If missing its the display name of the context {#}</xs:documentation>
-                </xs:annotation>
-                <xs:complexType>
-                  <xs:complexContent>
-                    <xs:extension base="ct-text">
-                      <xs:attributeGroup ref="ag-context"/>
-                    </xs:extension>
-                  </xs:complexContent>
-                </xs:complexType>
-              </xs:element>
-              <xs:element minOccurs="0" name="value">
-                <xs:annotation>
-                  <xs:documentation>The value for tis item. If missing its the value of the context {.}</xs:documentation>
-                </xs:annotation>
-                <xs:complexType>
-                  <xs:complexContent>
-                    <xs:extension base="ct-text">
-                      <xs:attributeGroup ref="ag-context"/>
-                    </xs:extension>
-                  </xs:complexContent>
-                </xs:complexType>
-              </xs:element>
-            </xs:sequence>
-            <xs:attributeGroup ref="ag-context"/>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="auto-items">
-          <xs:annotation>
-            <xs:documentation>Automatically create items (with default prompt/value) for all non-group concepts in the current context</xs:documentation>
-          </xs:annotation>
-          <xs:complexType>
-            <xs:attributeGroup ref="ag-context"/>
-          </xs:complexType>
-        </xs:element>
-      </xs:choice>
+      <xs:element name="auto-items">
+        <xs:annotation>
+          <xs:documentation>Automatically create items (with default prompt/value) for all non-group concepts in the current context</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:attributeGroup ref="ag-context"/>
+        </xs:complexType>
+      </xs:element>
     </xs:sequence>
   </xs:group>
+  <xs:complexType name="ct-item">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="prompt">
+        <xs:annotation>
+          <xs:documentation>Prompt for this item. If missing its the display name of the context {#}</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:extension base="ct-text">
+              <xs:attributeGroup ref="ag-context"/>
+            </xs:extension>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="value">
+        <xs:annotation>
+          <xs:documentation>The value for tis item. If missing its the value of the context {.}</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:extension base="ct-text">
+              <xs:attributeGroup ref="ag-context"/>
+            </xs:extension>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attributeGroup ref="ag-context"/>
+  </xs:complexType>
   <xs:attributeGroup name="ag-context">
     <xs:attribute name="context" type="t-simple-xpath">
       <xs:annotation>
