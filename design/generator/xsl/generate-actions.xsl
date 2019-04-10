@@ -152,6 +152,10 @@
         <xsl:with-param name="dir-target" select="xtlc:dref-concat(($dir-build-xsl, 'lib'))"/>
       </xsl:call-template>
       <xsl:call-template name="generate-action-copy-file">
+        <xsl:with-param name="file-source" select="xtlc:dref-concat(($dir-source-xsl, 'lib', 'ada-lite2ada-full.mod.xsl'))"/>
+        <xsl:with-param name="dir-target" select="xtlc:dref-concat(($dir-build-xsl, 'lib'))"/>
+      </xsl:call-template>
+      <xsl:call-template name="generate-action-copy-file">
         <xsl:with-param name="file-source" select="xtlc:dref-concat(($dir-source-xsl, 'art-decor', 'shortName.xsl'))"/>
         <xsl:with-param name="dir-target" select="xtlc:dref-concat(($dir-build-xsl, 'art-decor'))"/>
       </xsl:call-template>

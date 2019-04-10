@@ -61,7 +61,7 @@ Verdere informatie en gebruik is identiek aan [Vereenvoudigde schemas ADA Full](
 
 ### <a name="schematrons-ada-full"></a>Schematrons ADA Full (`ada-lite/schematrons-full`)
 
-De `ada-lite/schematrons-full` sub-directory bevat Schematron documenten waarmee ADA Full documenten gevalideerd kunnen worden. Er is een Schematron bestand per document type. Bijvoorbeeld `kernset-22.simple.full.sch` is bedoeld voor het het valideren van Full ADA kernset versie 2.2 documenten.   
+De `ada-lite/schematrons-full` sub-directory bevat Schematron documenten waarmee ADA Full documenten gevalideerd kunnen worden. Er is een Schematron bestand per document type. Bijvoorbeeld `kernset-22.full.sch` is bedoeld voor het het valideren van Full ADA kernset versie 2.2 documenten.   
 
 De Schematron validatie is zo opgezet dat deze hetzelfde doet als de schema validatie, alleen zijn de meldingen gebruikersvriendelijker en in het Nederlands.
 
@@ -69,7 +69,7 @@ Hoe een Schematron validatie uitgevoerd moet worden staat beschreven in [Schema 
 
 ### <a name="schematrons-ada-lits"></a>Schematrons ADA Lite (`ada-lite/schematrons-lite`)
 
-De `ada-lite/schematrons-lite` sub-directory bevat Schematron documenten waarmee ADA Lite documenten gevalideerd kunnen worden. Er is een Schematron bestand per document type. Bijvoorbeeld `kernset-22.simple.lite.sch` is bedoeld voor het het valideren van Lite ADA kernset versie 2.2 documenten.   
+De `ada-lite/schematrons-lite` sub-directory bevat Schematron documenten waarmee ADA Lite documenten gevalideerd kunnen worden. Er is een Schematron bestand per document type. Bijvoorbeeld `kernset-22.lite.sch` is bedoeld voor het het valideren van Lite ADA kernset versie 2.2 documenten.   
 
 Verdere informatie en gebruik is identiek aan [Schematrons ADA Full](#schematrons-ada-full) .
 
