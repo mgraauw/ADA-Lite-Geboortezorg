@@ -262,6 +262,9 @@
               <xsl:when test="$datatype eq 't-id'">
                 <xsl:sequence select="'matches(@'|| $attribute-name || ', ' || local:apos($id-type-regexp) || ')'"/>
               </xsl:when>
+              <xsl:when test="$datatype eq 't-datetime'">
+                <xsl:sequence select="'((@' || $attribute-name || ' castable as xs:date) or (@' || $attribute-name || ' castable as xs:dateTime))'"/>
+              </xsl:when>
               <xsl:otherwise>
                 <xsl:sequence
                   select="error((), 'Unrecognized type information for ' || $xpath-to-parent || '/@' || $attribute-name || ': ' || $datatype)"/>

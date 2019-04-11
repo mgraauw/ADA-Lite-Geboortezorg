@@ -205,7 +205,7 @@ Volledig ADA, met conceptId, code en codeSystem en unit is ook toegestaan als aa
 
 In de `ada-lite` sub-directory staan specificaties die van belang zijn voor leveranciers. De documentatie hiervoor is te vinden in de README van deze sub-directory. 
 
-In de folder `design` staan materialen die gebruikt worden om de specificaties te maken; deze zijn niet van belang voor leveranciers.
+In de andere sub-directories staan materialen die gebruikt worden om de specificaties te maken; deze zijn niet van belang voor leveranciers.
 
 Het volledige ADA formaat is gedefinieerd op: [https://www.art-decor.org/mediawiki/index.php/ADA_Documentation](https://www.art-decor.org/mediawiki/index.php/ADA_Documentation)
 
