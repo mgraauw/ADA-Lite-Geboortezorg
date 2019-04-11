@@ -2,6 +2,12 @@
 <verloskundig_dossier_23 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:noNamespaceSchemaLocation="../../ada-lite/schemas-simple-lite/verloskundig-dossier-23.simple.lite.xsd"
   transactionRef="2.16.840.1.113883.2.4.3.11.60.90.77.4.2467">
+  <!-- ================================================================== -->
+  <!--
+    ADA Lite file amended with info so all fields that are relevant display something
+  -->
+  <!-- ================================================================== -->
+  
   <zorgverlenerzorginstelling>
     <zorgverlener>
       <naam_zorgverlener value="H.R. Heilema / 08000208"/>
@@ -72,7 +78,7 @@
       </algemene_anamnese>
       <psychosociale_anamnese>
         <psychosociale_problematiekq value="false"/>
-        <negatieve_seksuele_ervaringenq value="false"/>
+        <negatieve_seksuele_ervaringenq value="true"/>
         <huiselijk_geweldq value="false"/>
       </psychosociale_anamnese>
       <relevante_allergieen value="294914009"/>

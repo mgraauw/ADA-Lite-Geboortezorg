@@ -56,12 +56,14 @@
       </item>
       <item context="anamnese">
         <prompt>Allergiën</prompt>
-        <value>{relevante_allergieen}</value>
-        <value>?Engelse termen ok?</value>
+        <value separator="#br">{relevante_allergieen}</value>
+        <value><i>?Engelse termen ok?</i></value>
       </item>
       <item>
         <prompt>Actuele medicatie</prompt>
-        <value>?</value>
+        <value>{medicatiegebruikq}</value>
+        <value separator="#br">{medicatiegebruik/soort_medicatie}</value>
+        <value><i>?Of is dit alleen een ja/nee veld?</i></value>
       </item>
       <item>
         <prompt>Bloed-transfusie</prompt>
@@ -69,11 +71,11 @@
       </item>
       <item>
         <prompt>BMI</prompt>
-        <value></value>
+        <value>{bmi/bmi_vrouw}</value>
       </item>
       <item>
         <prompt>Negatieve seksuele ervaringen</prompt>
-        <value></value>
+        <value>{anamnese/psychosociale_anamnese/negatieve_seksuele_ervaringenq}</value>
       </item>
     </table-view>
     

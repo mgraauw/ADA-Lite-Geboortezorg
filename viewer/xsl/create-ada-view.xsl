@@ -84,6 +84,10 @@
     </xsl:choose>
   </xsl:variable>
 
+  <xsl:variable name="default-value-separator" as="node()*">
+    <xsl:text> </xsl:text>
+  </xsl:variable>
+
   <!-- ================================================================== -->
   <!-- MAIN TEMPLATES: -->
 
@@ -359,7 +363,8 @@
 
   <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 
-  <xsl:template name="get-item-prompt-contents">
+  <xsl:template name="get-item-prompt-contents" as="node()*">
+    <!-- Processes the item/prompt element (only a single one). -->
     <xsl:param name="item" as="element(item)" required="no" select="."/>
     <xsl:param name="data-contexts" as="node()*" required="yes"/>
     <xsl:param name="specification-context" as="element()?" required="yes"/>
@@ -375,18 +380,34 @@
 
   <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 
-  <xsl:template name="get-item-value-contents">
+  <xsl:template name="get-item-value-contents" as="node()*">
+    <!-- Processes the item/value elements (multiple are allowed!) -->
     <xsl:param name="item" as="element(item)" required="no" select="."/>
     <xsl:param name="data-contexts" as="node()*" required="yes"/>
     <xsl:param name="specification-context" as="element()?" required="yes"/>
 
     <xsl:for-each select="$item/value">
+      <xsl:variable name="separator-attribute-value" as="xs:string?" select="@separator"/>
+      <xsl:variable name="value-separator" as="node()*">
+        <xsl:choose>
+          <xsl:when test="empty($separator-attribute-value)">
+            <xsl:sequence select="$default-value-separator"/>
+          </xsl:when>
+          <xsl:when test="$separator-attribute-value eq '#br'">
+            <br/>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:value-of select="$separator-attribute-value"/>
+          </xsl:otherwise>  
+        </xsl:choose>
+      </xsl:variable>
       <xsl:call-template name="get-item-sub-element-contents">
         <xsl:with-param name="item" select="$item"/>
         <xsl:with-param name="sub-element" select="."/>
         <xsl:with-param name="default-expression" select="'{.}'"/>
         <xsl:with-param name="data-contexts" select="$data-contexts"/>
         <xsl:with-param name="specification-context" select="$specification-context"/>
+        <xsl:with-param name="value-separator" as="node()*" select="$value-separator" tunnel="true"/>
       </xsl:call-template>
       <xsl:if test="position() ne last()">
         <br/>
@@ -454,53 +475,53 @@
   <xsl:template match="text()" mode="mode-do-mixed-contents">
     <xsl:param name="data-contexts" as="node()*" required="yes" tunnel="yes"/>
     <xsl:param name="specification-context" as="element()?" required="yes" tunnel="yes"/>
-    <xsl:value-of select="local:parse-string-for-viewer-xpath-expressions(., $data-contexts, $specification-context)"/>
+    <xsl:param name="value-separator" as="node()*" required="no" tunnel="yes" select="$default-value-separator"/>
+
+    <xsl:copy-of select="local:parse-string-for-viewer-xpath-expressions(string(.), $data-contexts, $specification-context, $value-separator)"/>
   </xsl:template>
 
   <!-- ================================================================== -->
   <!-- VIEWER XPATH EXPRESSION PARSING: -->
 
-  <xsl:function name="local:parse-string-for-viewer-xpath-expressions" as="xs:string">
+  <xsl:function name="local:parse-string-for-viewer-xpath-expressions" as="node()*">
     <!-- Parses a string and tries to resolve optional curly-braced viewer XPath expressions in it.  -->
     <xsl:param name="in" as="xs:string"/>
     <xsl:param name="data-contexts" as="node()*"/>
     <xsl:param name="specification-context" as="element()?"/>
+    <xsl:param name="value-separator" as="node()*"/>
 
+    <xsl:analyze-string select="$in" regex="\{{(.*?)\}}">
 
-    <xsl:variable name="result-parts" as="xs:string*">
-      <xsl:analyze-string select="$in" regex="\{{(.*?)\}}">
+      <!-- Curly-braced expression found: -->
+      <xsl:matching-substring>
+        <xsl:choose>
+          <!-- If the expression starts with a {{ ignore it: -->
+          <xsl:when test="starts-with(., '{{')">
+            <xsl:value-of select="."/>
+          </xsl:when>
+          <!-- Process the expression: -->
+          <xsl:otherwise>
+            <xsl:copy-of select="local:resolve-viewer-xpath-expression(regex-group(1), $data-contexts, $specification-context, $value-separator)"/>
+          </xsl:otherwise>
+        </xsl:choose>
+      </xsl:matching-substring>
 
-        <!-- Curly-braced expression found: -->
-        <xsl:matching-substring>
-          <xsl:choose>
-            <!-- If the expression starts with a { (so the full thing started with {{), ignore it: -->
-            <xsl:when test="starts-with(., '{{')">
-              <xsl:sequence select="."/>
-            </xsl:when>
-            <!-- Process the expression: -->
-            <xsl:otherwise>
-              <xsl:sequence select="local:resolve-viewer-xpath-expression(regex-group(1), $data-contexts, $specification-context)"/>
-            </xsl:otherwise>
-          </xsl:choose>
-        </xsl:matching-substring>
+      <!-- Anything else pass through: -->
+      <xsl:non-matching-substring>
+        <xsl:value-of select="."/>
+      </xsl:non-matching-substring>
 
-        <!-- Anything else pass through: -->
-        <xsl:non-matching-substring>
-          <xsl:sequence select="."/>
-        </xsl:non-matching-substring>
-
-      </xsl:analyze-string>
-    </xsl:variable>
-    <xsl:sequence select="string-join($result-parts, '')"/>
+    </xsl:analyze-string>
   </xsl:function>
 
   <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 
-  <xsl:function name="local:resolve-viewer-xpath-expression" as="xs:string">
+  <xsl:function name="local:resolve-viewer-xpath-expression" as="node()*">
     <!-- Resolves a viewer XPath expression into its value -->
     <xsl:param name="expression" as="xs:string?"/>
     <xsl:param name="data-contexts" as="node()*"/>
     <xsl:param name="definition-context" as="element()?"/>
+    <xsl:param name="value-separator" as="node()*"/>
 
     <!-- Separate the expression into the expression itself and an optional specifier (after a % sign): -->
     <xsl:variable name="expression-normalized-raw" as="xs:string" select="normalize-space($expression)"/>
@@ -513,6 +534,8 @@
       select="if ($expression-normalized-raw-no-specifier eq '.') then '' else $expression-normalized-raw-no-specifier"/>
 
     <xsl:choose>
+
+      <!-- An expression that starts with a # reaches into the definition: -->
       <xsl:when test="starts-with($expression-normalized, '#')">
         <xsl:if test="exists($expression-specifier)">
           <xsl:sequence select="error((), 'Specifier &quot;'|| $expression-specifier || '&quot; not allowed/recognized here')"/>
@@ -520,24 +543,28 @@
         <xsl:variable name="definition-element" as="element()?"
           select="local:resolve-specification-xpath-expression(substring($expression-normalized, 2), $definition-context)"/>
         <xsl:variable name="value" as="xs:string" select="if (empty($definition-element)) then '?' else string($definition-element/name[1])"/>
-        <xsl:sequence select="local:apply-expression-specifier($value, $expression-specifier, true())"/>
+        <xsl:value-of select="local:apply-expression-specifier($value, $expression-specifier, true())"/>
       </xsl:when>
+
+      <!-- Anything else reaches into the data: -->
       <xsl:otherwise>
-        <xsl:variable name="value-parts" as="xs:string*">
-          <xsl:for-each select="local:resolve-data-xpath-expression($expression-normalized, $data-contexts)">
-            <xsl:variable name="value-raw" as="xs:string" select="string((@displayName, @value, '&#160;')[1])"/>
-            <xsl:variable name="value" as="xs:string"
-              select="
+        <xsl:for-each select="local:resolve-data-xpath-expression($expression-normalized, $data-contexts)">
+          <xsl:variable name="value-raw" as="xs:string" select="string((@displayName, @value, '&#160;')[1])"/>
+          <xsl:variable name="value" as="xs:string"
+            select="
                 if ($expression-contains-specifier) then 
                   local:apply-expression-specifier($value-raw, $expression-specifier, false()) 
                 else 
                   local:massage-value($value-raw)"/>
-            <xsl:sequence select="concat($value, if (not($expression-contains-specifier)) then @unit else ())"/>
-          </xsl:for-each>
-        </xsl:variable>
-        <xsl:sequence select="string-join($value-parts, ' ')"/>
+          <xsl:value-of select="concat($value, if (not($expression-contains-specifier)) then @unit else ())"/>
+          <xsl:if test="position() ne last()">
+            <xsl:sequence select="$value-separator"/>
+          </xsl:if>
+        </xsl:for-each>
       </xsl:otherwise>
+
     </xsl:choose>
+
   </xsl:function>
 
   <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->

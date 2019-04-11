@@ -126,6 +126,11 @@
           <xs:complexContent>
             <xs:extension base="ct-text">
               <xs:attributeGroup ref="ag-context"/>
+              <xs:attribute default=" " name="separator" type="xs:string">
+                <xs:annotation>
+                  <xs:documentation>The separator-string to use when there are multiple values. Use #br if you want a line break.</xs:documentation>
+                </xs:annotation>
+              </xs:attribute>
             </xs:extension>
           </xs:complexContent>
         </xs:complexType>
