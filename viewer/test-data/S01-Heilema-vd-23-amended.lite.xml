@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <verloskundig_dossier_23 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:noNamespaceSchemaLocation="../../../ada-lite/schemas-simple-lite/verloskundig-dossier-23.simple.lite.xsd"
+  xsi:noNamespaceSchemaLocation="../../ada-lite/schemas-simple-lite/verloskundig-dossier-23.simple.lite.xsd"
   transactionRef="2.16.840.1.113883.2.4.3.11.60.90.77.4.2467">
   <zorgverlenerzorginstelling>
     <zorgverlener>
       <naam_zorgverlener value="H.R. Heilema / 08000208"/>
+      <telefoon_waar_zorgverlener_is_te_bereiken value="06-12345678"/>
     </zorgverlener>
     <zorginstelling>
+      <zorginstelling_oid value="123456"/>
       <naam_zorginstelling value="Verloskundigenpraktijk Jose en Hugo Heilema"/>
+
       <adres_zorginstelling>
         <straatnaam value="Duke Ellingtonstraat"/>
         <huisnummer value="49"/>
@@ -16,6 +19,7 @@
         <plaatsnaam value="Zaandijk"/>
         <land value="Nederland"/>
       </adres_zorginstelling>
+
       <type_zorginstelling_bij_verwijzing value="Verloskundigenpraktijk"/>
     </zorginstelling>
   </zorgverlenerzorginstelling>
@@ -26,7 +30,7 @@
 
       <roepnaam value="Angelique"/>
       <achternaam>
-
+        <voorvoegsel value="van"/>
         <achternaam value="Jansen"/>
       </achternaam>
     </naamgegevens>
@@ -41,6 +45,7 @@
     </adres>
     <etniciteit value="12"/>
     <taalvaardigheid_vrouw_nederlandse_taal value="G"/>
+    <accepteert_bloedtransfusieq  value="true"/>
     <betrokken_zorgverlenerzorginstelling>
       <huisarts>
         <naam_zorgverlener value="van der Meer"/>
@@ -56,13 +61,14 @@
         </zorginstelling>
       </specialist>
     </betrokken_zorgverlenerzorginstelling>
+    
     <anamnese>
       <onder_behandeling_geweestq value="true"/>
       <algemene_anamnese>
         <bloedtransfusieq value="false"/>
         <overige_aandoeningq value="true"/>
         <overige_aandoening value="overige dermatologische afwijking"/>
-
+        <toelichting_alg_anamnese value="Dit is de toelichting op de algemene anamnese"/>
       </algemene_anamnese>
       <psychosociale_anamnese>
         <psychosociale_problematiekq value="false"/>
@@ -70,6 +76,7 @@
         <huiselijk_geweldq value="false"/>
       </psychosociale_anamnese>
       <relevante_allergieen value="294914009"/>
+      <relevante_allergieen value="300916003"/>
       <familie_anamnese>
         <aandoening>
           <aandoening_details value="diabetes mellitus"/>

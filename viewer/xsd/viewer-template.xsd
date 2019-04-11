@@ -118,7 +118,7 @@
           </xs:complexContent>
         </xs:complexType>
       </xs:element>
-      <xs:element minOccurs="0" name="value">
+      <xs:element minOccurs="0" name="value" maxOccurs="unbounded">
         <xs:annotation>
           <xs:documentation>The value for tis item. If missing its the value of the context {.}</xs:documentation>
         </xs:annotation>

@@ -380,13 +380,19 @@
     <xsl:param name="data-contexts" as="node()*" required="yes"/>
     <xsl:param name="specification-context" as="element()?" required="yes"/>
 
-    <xsl:call-template name="get-item-sub-element-contents">
-      <xsl:with-param name="item" select="$item"/>
-      <xsl:with-param name="sub-element" select="$item/value"/>
-      <xsl:with-param name="default-expression" select="'{.}'"/>
-      <xsl:with-param name="data-contexts" select="$data-contexts"/>
-      <xsl:with-param name="specification-context" select="$specification-context"/>
-    </xsl:call-template>
+    <xsl:for-each select="$item/value">
+      <xsl:call-template name="get-item-sub-element-contents">
+        <xsl:with-param name="item" select="$item"/>
+        <xsl:with-param name="sub-element" select="."/>
+        <xsl:with-param name="default-expression" select="'{.}'"/>
+        <xsl:with-param name="data-contexts" select="$data-contexts"/>
+        <xsl:with-param name="specification-context" select="$specification-context"/>
+      </xsl:call-template>
+      <xsl:if test="position() ne last()">
+        <br/>
+      </xsl:if>
+    </xsl:for-each>
+
   </xsl:template>
 
   <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
@@ -520,14 +526,13 @@
         <xsl:variable name="value-parts" as="xs:string*">
           <xsl:for-each select="local:resolve-data-xpath-expression($expression-normalized, $data-contexts)">
             <xsl:variable name="value-raw" as="xs:string" select="string((@displayName, @value, '&#160;')[1])"/>
-            <xsl:variable name="value" as="xs:string" select="
+            <xsl:variable name="value" as="xs:string"
+              select="
                 if ($expression-contains-specifier) then 
                   local:apply-expression-specifier($value-raw, $expression-specifier, false()) 
                 else 
                   local:massage-value($value-raw)"/>
-            <xsl:sequence
-              select="concat($value, if (not($expression-contains-specifier)) then @unit else ())"
-            />
+            <xsl:sequence select="concat($value, if (not($expression-contains-specifier)) then @unit else ())"/>
           </xsl:for-each>
         </xsl:variable>
         <xsl:sequence select="string-join($value-parts, ' ')"/>
@@ -549,7 +554,7 @@
       <xsl:when test="not($in-prompt) and exists($value) and ($value castable as xs:integer) and ($expression-specifier eq 'wd')">
         <!-- Convert a number of days into weeks+days notation -->
         <xsl:variable name="total-days" as="xs:integer" select="xs:integer($value)"/>
-        <xsl:variable name="weeks" as="xs:integer" select="xs:integer(round($total-days div 7))"/>
+        <xsl:variable name="weeks" as="xs:integer" select="xs:integer(floor($total-days div 7))"/>
         <xsl:variable name="days" as="xs:integer" select="$total-days - ($weeks * 7)"/>
         <xsl:sequence select="$weeks || 'w' || (if ($days ne 0) then $days || 'd' else ())"/>
       </xsl:when>

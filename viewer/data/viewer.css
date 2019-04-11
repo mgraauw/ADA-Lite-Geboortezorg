@@ -27,6 +27,10 @@ table.table-view {
   font-size: 9pt;
 }
 
+table.table-view tr {
+  vertical-align: top;
+}
+
 table.table-view td {
   border: thin solid black;
   font-weight: bold;
@@ -55,9 +59,12 @@ div.child-section {
   padding-right: 5em;
   margin-top: 1em;
   margin-bottom: 0;
-  padding-bottom: 0;
+  padding-left: 1pt;
+  padding-bottom: 1pt;
+  padding-top: 1pt;
   font-size: 12pt;
   font-weight: bold;
+  color: white;
 }
 
 h1.main-title {

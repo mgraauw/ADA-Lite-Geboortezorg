@@ -84,7 +84,7 @@
           <xsl:attribute name="conceptId" select="$concept/@id"/>
 
           <!-- Get the value for this concept:  -->
-          <xsl:variable name="concept-type" as="xs:string" select="$concept/@type"/>
+          <xsl:variable name="concept-type" as="xs:string" select="($concept/@type, 'item')[1]"/>
           <xsl:choose>
             <xsl:when test="($concept-type eq 'item') and (exists(@value) or exists(@enum))">
               <xsl:call-template name="local:handle-concept-value">

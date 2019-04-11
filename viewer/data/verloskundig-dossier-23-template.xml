@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ada-viewer-template xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/viewer-template.xsd"
+  specification="../../design/specs-full/verloskundig-dossier-23.xml">
+
+  <title>Samenvatting verloskundig dossier</title>
+
+  <header >
+    <item context="vrouw/naamgegevens">
+      <prompt>Naam:</prompt>
+      <value>{roepnaam} {achternaam/voorvoegsel} {achternaam/achternaam}</value>
+    </item>
+    <item context="vrouw">
+      <prompt>BSN:</prompt>
+      <value>{burgerservicenummer}</value>
+    </item>
+    <item context="zwangerschap">
+      <prompt>Zwangerschap:</prompt>
+      <value>G/P {graviditeit}/{pariteit}</value>
+    </item>
+    <item context="zwangerschap">
+      <prompt>At. Datum:</prompt>
+      <value>{a_terme_datum_groep/a_terme_datum}</value>
+    </item>
+<!-- Kolom 2 ?!? -->
+    <item context="zorgverlenerzorginstelling/zorgverlener">
+      <prompt>Naam zorgverlener:</prompt>
+      <value>{naam_zorgverlener}</value>
+    </item>
+    <item context="zorgverlenerzorginstelling/zorginstelling">
+      <prompt>Naam zorginstelling:</prompt>
+      <value>{naam_zorginstelling}</value>
+    </item>
+    <item context="zorgverlenerzorginstelling/zorginstelling">
+      <prompt>Zorginstelling OID:</prompt>
+      <value>{zorginstelling_oid}</value>
+    </item>
+    <item context="zorgverlenerzorginstelling/zorgverlener">
+      <prompt>Telefoon:</prompt>
+      <value>{telefoon_waar_zorgverlener_is_te_bereiken}</value>
+    </item>
+  </header>
+  
+  <section color="black">
+    <title>ANAMNESE</title>
+    
+    <table-view context="vrouw">
+      <item context="anamnese">
+        <prompt>Bijzonderheden algemene anamnese</prompt>
+        <value>?ja/nee?</value>
+        <value>{algemene_anamnese/toelichting_alg_anamnese}</value>
+      </item>
+      <item>
+        <prompt>Bijzonderheden obstetrische anamnese</prompt>
+        <value>?ja/nee?</value>
+        <value>?text?</value>
+      </item>
+      <item context="anamnese">
+        <prompt>Allergiën</prompt>
+        <value>{relevante_allergieen}</value>
+        <value>?Engelse termen ok?</value>
+      </item>
+      <item>
+        <prompt>Actuele medicatie</prompt>
+        <value>?</value>
+      </item>
+      <item>
+        <prompt>Bloed-transfusie</prompt>
+        <value>{accepteert_bloedtransfusieq}</value>
+      </item>
+      <item>
+        <prompt>BMI</prompt>
+        <value></value>
+      </item>
+      <item>
+        <prompt>Negatieve seksuele ervaringen</prompt>
+        <value></value>
+      </item>
+    </table-view>
+    
+    
+  </section>
+
+  <!-- <section color="red">
+ 
+    <table-view context="zorgverlening">  
+      <item context="datum_start_zorgverantwoordelijkheid"/>
+      <item context="datum_einde_zorgverantwoordelijkheid"/>
+      <item context="eindverantwoordelijk_in_welke_perinatale_periodeq">
+        <prompt>Perinatale periode</prompt>
+      </item>
+      <item context="conclusie_risicostatus_na_intake">
+        <prompt>Risicostatus</prompt>
+      </item>
+    </table-view>
+
+  </section>
+  
+  <section color="blue" context="zwangerschap">
+    <title>Zwangerschap</title>
+    
+    <table-view>
+      <item context="graviditeit" width="10em"/>
+      <item context="pariteit_voor_deze_zwangerschap">
+        <prompt>Pariteit</prompt>
+      </item>
+      <item>
+        <prompt>A terme datum</prompt>
+        <value>{definitieve_a_terme_datum}</value>
+      </item>
+      <item>
+        <prompt>Voorgenomen lokatie</prompt>
+        <value>{voornemens/voorgenomen_plaats_baring_tijdens_zwangerschap_type_locatie}</value>
+      </item>
+    </table-view>
+  </section>
+  
+  <section color="yellow" context="zwangerschap/prenatale_controle">
+    
+    <table-view>
+      <item context="zwangerschapsduur">
+        <value>{.%wd}</value>
+      </item>
+      <auto-items/>
+    </table-view>
+  </section>-->
+
+</ada-viewer-template>
