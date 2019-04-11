@@ -54,6 +54,7 @@
   <!-- GLOBAL DECLARATIONS: -->
 
   <xsl:variable name="simple-type-name-for-identifier" as="xs:string" select="'t-id'"/>
+  <xsl:variable name="simple-type-name-for-datetime" as="xs:string" select="'t-datetime'"/>
 
   <xsl:variable name="base-type-numeric" as="xs:string" select="'xs:decimal'"/>
   <xsl:variable name="base-type-boolean" as="xs:string" select="'xs:boolean'"/>
@@ -123,7 +124,14 @@
           <xs:pattern value="([0-9]+\.)+([0-9]+)"/>
         </xs:restriction>
       </xs:simpleType>
-
+      
+      <!-- Only add the datetime simple type if it will be used: -->
+      <xsl:if test="exists(//valueDomain[@type eq 'datetime'])">
+        <xs:simpleType name="{$simple-type-name-for-datetime}">
+          <xs:union memberTypes="xs:date xs:dateTime"/>
+        </xs:simpleType>  
+      </xsl:if>
+      
     </xs:schema>
 
   </xsl:template>
@@ -224,7 +232,7 @@
     <!-- Creates the definitions of attributes when there is a <valueDomain> specified. 
          See also https://www.art-decor.org/mediawiki/index.php?title=DECOR-dataset 
     -->
-    <xsl:for-each select="$concept/valueDomain">
+    <xsl:for-each select="$concept/valueDomain[1]">
       <xsl:variable name="valuetype" as="xs:string" select="@type"/>
       <xsl:choose>
 
@@ -256,7 +264,13 @@
         <xsl:when test="$valuetype eq 'code'">
           <xsl:call-template name="create-code-attribute-definitions"/>
         </xsl:when>
-
+        
+        <xsl:when test="$valuetype eq 'datetime'">
+          <xsl:call-template name="create-value-attribute-definition">
+            <xsl:with-param name="base-type" select="$simple-type-name-for-datetime"/>
+          </xsl:call-template>
+        </xsl:when>
+        
         <!-- Anything else we take as a string for now: -->
         <xsl:otherwise>
           <xsl:call-template name="create-value-attribute-definition">

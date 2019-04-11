@@ -45,6 +45,9 @@ SOFTWARE.
          <xs:pattern value="([0-9]+\.)+([0-9]+)"/>
       </xs:restriction>
    </xs:simpleType>
+   <xs:simpleType name="t-datetime">
+      <xs:union memberTypes="xs:date xs:dateTime"/>
+   </xs:simpleType>
    <xs:complexType name="prio1_vorig">
       <xs:sequence>
          <xs:element name="zorgverlenerzorginstelling"
@@ -478,7 +481,7 @@ SOFTWARE.
                     type="t-id"
                     use="required"
                     fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20030"/>
-      <xs:attribute name="value" use="required" type="xs:string"/>
+      <xs:attribute name="value" use="required" type="t-datetime"/>
    </xs:complexType>
    <xs:complexType name="wijze_einde_zwangerschap">
       <xs:attribute name="conceptId"
@@ -603,7 +606,7 @@ SOFTWARE.
                     type="t-id"
                     use="required"
                     fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20540"/>
-      <xs:attribute name="value" use="required" type="xs:string"/>
+      <xs:attribute name="value" use="required" type="t-datetime"/>
    </xs:complexType>
    <xs:complexType name="bevalling">
       <xs:sequence>

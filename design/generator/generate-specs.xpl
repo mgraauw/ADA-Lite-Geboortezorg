@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <p:declare-step xmlns:p="http://www.w3.org/ns/xproc" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:xtlc="http://www.xtpxlib.nl/ns/common"
-  xmlns:svrl="http://purl.oclc.org/dsdl/svrl" xmlns:pxf="http://exproc.org/proposed/steps/file" xmlns:local="#local.e53_j2w_xgb" version="1.0"
-  xpath-version="2.0" exclude-inline-prefixes="#all">
-  
+  xmlns:svrl="http://purl.oclc.org/dsdl/svrl" xmlns:pxf="http://exproc.org/proposed/steps/file" xmlns:cx="http://xmlcalabash.com/ns/extensions"
+  xmlns:local="#local.e53_j2w_xgb" version="1.0" xpath-version="2.0" exclude-inline-prefixes="#all">
+
   <!-- 
     MIT License
   
@@ -70,6 +70,7 @@
   </xtlc:recursive-directory-list>
 
   <!-- Create a list with things to do: -->
+  <cx:message message="Creating action list"/>
   <p:xslt>
     <p:input port="stylesheet">
       <p:document href="xsl/generate-actions.xsl"/>
@@ -80,6 +81,9 @@
   <!-- Check specifications: -->
   <p:viewport match="check-specification">
     <p:variable name="in" select="/*/@in"/>
+    <cx:message>
+      <p:with-option name="message" select="concat('Checking specification for double code/enum entries: ', $in)"/> 
+    </cx:message>
     <p:load dtd-validate="false">
       <p:with-option name="href" select="$in"/>
     </p:load>
@@ -94,6 +98,9 @@
   <!-- Remove the directories we need to remove: -->
   <p:viewport match="remove-dir">
     <p:variable name="dir" select="/*/@path"/>
+    <cx:message>
+      <p:with-option name="message" select="concat('Removing directory: ', $dir)"/> 
+    </cx:message>
     <xtlc:remove-dir>
       <p:with-option name="dref-dir" select="$dir"/>
     </xtlc:remove-dir>
@@ -104,6 +111,9 @@
   <p:viewport match="specs-full2specs-lite">
     <p:variable name="in" select="/*/@in"/>
     <p:variable name="out" select="/*/@out"/>
+    <cx:message>
+      <p:with-option name="message" select="concat('specs-full2specs-lite of: ', $in)"/> 
+    </cx:message>
     <p:identity name="original"/>
     <p:load dtd-validate="false">
       <p:with-option name="href" select="$in"/>
@@ -130,6 +140,9 @@
   <p:viewport match="specs-full2examples-empty">
     <p:variable name="in" select="/*/@in"/>
     <p:variable name="out" select="/*/@out"/>
+    <cx:message>
+      <p:with-option name="message" select="concat('specs-full2examples-empty of: ', $in)"/> 
+    </cx:message>
     <p:identity name="original"/>
     <p:load dtd-validate="false">
       <p:with-option name="href" select="$in"/>
@@ -157,6 +170,9 @@
     <p:variable name="in" select="/*/@in"/>
     <p:variable name="out" select="/*/@out"/>
     <p:variable name="rtd" select="/*/@rtd"/>
+    <cx:message>
+      <p:with-option name="message" select="concat('examples-lite2examples-full of: ', $in)"/> 
+    </cx:message>
     <p:identity name="original"/>
     <p:load dtd-validate="false">
       <p:with-option name="href" select="$in"/>
@@ -185,6 +201,9 @@
     <p:variable name="in" select="/*/@in"/>
     <p:variable name="out" select="/*/@out"/>
     <p:variable name="ada-lite-version" select="/*/@ada-lite-version"/>
+    <cx:message>
+      <p:with-option name="message" select="concat('spec2schematron of: ', $in, ' (lite: ', $ada-lite-version, ')')"/> 
+    </cx:message>
     <p:identity name="original"/>
     <p:load dtd-validate="false">
       <p:with-option name="href" select="$in"/>
@@ -219,6 +238,9 @@
   <p:viewport match="schematron2svrl-xsl">
     <p:variable name="in" select="/*/@in"/>
     <p:variable name="out" select="/*/@out"/>
+    <cx:message>
+      <p:with-option name="message" select="concat('schematron2svrl-xsl of: ', $in)"/> 
+    </cx:message>
     <p:identity name="original"/>
     <p:load dtd-validate="false">
       <p:with-option name="href" select="$in"/>
@@ -266,6 +288,9 @@
     <p:variable name="in" select="/*/@in"/>
     <p:variable name="out" select="/*/@out"/>
     <p:variable name="generated-xsd-filename" select="/*/@generated-xsd-filename"/>
+    <cx:message>
+      <p:with-option name="message" select="concat('ART-DECOR spec2schema of: ', $in)"/> 
+    </cx:message>
     <p:identity name="original"/>
     <p:load dtd-validate="false">
       <p:with-option name="href" select="$in"/>
@@ -322,6 +347,9 @@
     <p:variable name="html-out" select="/*/@html-out"/>
     <p:variable name="xml-out" select="/*/@xml-out"/>
     <p:variable name="description" select="/*/@description"/>
+    <cx:message>
+      <p:with-option name="message" select="concat('specification-diff for: ', $description)"/> 
+    </cx:message>
     <p:identity name="original"/>
     <p:sink/>
     <p:xslt>
@@ -369,6 +397,9 @@
     <p:variable name="in" select="/*/@in"/>
     <p:variable name="out" select="/*/@out"/>
     <p:variable name="ada-lite-version" select="/*/@ada-lite-version"/>
+    <cx:message>
+      <p:with-option name="message" select="concat('spec2schema-simple of: ', $in, ' (lite: ', $ada-lite-version, ')')"/> 
+    </cx:message>
     <p:identity name="original"/>
     <p:load dtd-validate="false">
       <p:with-option name="href" select="$in"/>
@@ -401,6 +432,9 @@
   <p:viewport match="copy-file">
     <p:variable name="source" select="/*/@source"/>
     <p:variable name="target" select="/*/@target"/>
+    <cx:message>
+      <p:with-option name="message" select="concat('copy-file of: ', $source)"/> 
+    </cx:message>
     <p:identity name="original"/>
     <pxf:copy>
       <p:with-option name="href" select="$source"/>
@@ -422,6 +456,9 @@
     <p:variable name="out" select="/*/@out"/>
     <p:variable name="difflist" select="/*/@difflist"/>
     <p:variable name="sitegen" select="/*/@sitegen"/>
+    <cx:message>
+      <p:with-option name="message" select="concat('GitHub Home page generation: ', $in)"/> 
+    </cx:message>
     <p:identity name="original"/>
     <p:xslt>
       <p:input port="source">
@@ -437,7 +474,7 @@
       <p:with-param name="sitegen" select="$sitegen"/>
     </p:xslt>
     <p:store method="text">
-      <p:with-option name="href" select="$out"/> 
+      <p:with-option name="href" select="$out"/>
     </p:store>
     <!-- Get the original input back: -->
     <p:identity>
@@ -452,6 +489,9 @@
   <p:viewport match="validate-schema">
     <p:variable name="in" select="/*/@in"/>
     <p:variable name="schema" select="/*/@schema"/>
+    <cx:message>
+      <p:with-option name="message" select="concat('validate-schema: ', $in, ' - ', $schema)"/> 
+    </cx:message>
     <p:identity name="original"/>
     <!-- Load the schema file: -->
     <p:load dtd-validate="false" name="schema-file">
@@ -504,6 +544,9 @@
   <p:viewport match="validate-schematron">
     <p:variable name="in" select="/*/@in"/>
     <p:variable name="schematron" select="/*/@schematron"/>
+    <cx:message>
+      <p:with-option name="message" select="concat('validate-schematron: ', $in, ' - ', $schematron)"/> 
+    </cx:message>
     <p:identity name="original"/>
     <!-- Load the Schematron file: -->
     <p:load dtd-validate="false" name="schematron-file">

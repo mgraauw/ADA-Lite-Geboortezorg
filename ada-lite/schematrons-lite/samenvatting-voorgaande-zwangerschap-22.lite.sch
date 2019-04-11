@@ -630,6 +630,7 @@ SOFTWARE.
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20540')">Foutieve informatie voor "Datum einde zwangerschap": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20540" [/voorgaande_zwangerschap_samenvatting_22/zwangerschap/datum_einde_zwangerschap/@conceptId]</assert>
          <!-- == Attribute "value": == -->
          <assert test="exists(@value)">Foutieve informatie voor "Datum einde zwangerschap": Attribuut "value" ontbreekt [/voorgaande_zwangerschap_samenvatting_22/zwangerschap/datum_einde_zwangerschap/@value]</assert>
+         <assert test="empty(@value) or ((@value castable as xs:date) or (@value castable as xs:dateTime))">Foutieve informatie voor "Datum einde zwangerschap": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/voorgaande_zwangerschap_samenvatting_22/zwangerschap/datum_einde_zwangerschap/@value; type=t-datetime]</assert>
          <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Datum einde zwangerschap": Ongeldige attributen aangetroffen [/voorgaande_zwangerschap_samenvatting_22/zwangerschap/datum_einde_zwangerschap; allowed=(@conceptId, @value, @xsi:*)]</assert>
       </rule>
    </pattern>
@@ -927,6 +928,7 @@ SOFTWARE.
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82381')">Foutieve informatie voor "Datum": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82381" [/voorgaande_zwangerschap_samenvatting_22/bevalling/diagnose_bevalling/datum/@conceptId]</assert>
          <!-- == Attribute "value": == -->
          <assert test="exists(@value)">Foutieve informatie voor "Datum": Attribuut "value" ontbreekt [/voorgaande_zwangerschap_samenvatting_22/bevalling/diagnose_bevalling/datum/@value]</assert>
+         <assert test="empty(@value) or ((@value castable as xs:date) or (@value castable as xs:dateTime))">Foutieve informatie voor "Datum": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/voorgaande_zwangerschap_samenvatting_22/bevalling/diagnose_bevalling/datum/@value; type=t-datetime]</assert>
          <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Datum": Ongeldige attributen aangetroffen [/voorgaande_zwangerschap_samenvatting_22/bevalling/diagnose_bevalling/datum; allowed=(@conceptId, @value, @xsi:*)]</assert>
       </rule>
    </pattern>
@@ -1206,6 +1208,7 @@ SOFTWARE.
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40050')">Foutieve informatie voor "Geboortedatum": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40050" [/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/demografische_gegevens/geboortedatum/@conceptId]</assert>
          <!-- == Attribute "value": == -->
          <assert test="exists(@value)">Foutieve informatie voor "Geboortedatum": Attribuut "value" ontbreekt [/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/demografische_gegevens/geboortedatum/@value]</assert>
+         <assert test="empty(@value) or ((@value castable as xs:date) or (@value castable as xs:dateTime))">Foutieve informatie voor "Geboortedatum": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/demografische_gegevens/geboortedatum/@value; type=t-datetime]</assert>
          <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Geboortedatum": Ongeldige attributen aangetroffen [/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/demografische_gegevens/geboortedatum; allowed=(@conceptId, @value, @xsi:*)]</assert>
       </rule>
    </pattern>

@@ -29,14 +29,16 @@
       <graviditeit conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20010" value="3"/>
       <pariteit_voor_deze_zwangerschap conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20150" value="1"/>
       <a_terme_datum_groep conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20029">
-         <a_terme_datum conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20030" value=""/>
+         <a_terme_datum conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20030"
+                        value="2019-01-01"/>
       </a_terme_datum_groep>
       <wijze_einde_zwangerschap conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80625"
                                 value="1"
                                 code="1"
                                 codeSystem="2.16.840.1.113883.2.4.4.13.46"
                                 displayName="Partus"/>
-      <datum_einde_zwangerschap conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20540" value=""/>
+      <datum_einde_zwangerschap conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20540"
+                                value="2019-01-01"/>
    </zwangerschap>
    <bevalling conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.6">
       <diagnose_bevalling conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82291">

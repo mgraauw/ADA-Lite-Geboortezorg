@@ -22,10 +22,10 @@
     <graviditeit value="3"/>
     <pariteit_voor_deze_zwangerschap value="1"/>
     <a_terme_datum_groep>
-      <a_terme_datum value=""/>
+      <a_terme_datum value="2019-01-01"/>
     </a_terme_datum_groep>
     <wijze_einde_zwangerschap value="1"/>
-    <datum_einde_zwangerschap value=""/>
+    <datum_einde_zwangerschap value="2019-01-01"/>
   </zwangerschap>
   <bevalling>
     <diagnose_bevalling>

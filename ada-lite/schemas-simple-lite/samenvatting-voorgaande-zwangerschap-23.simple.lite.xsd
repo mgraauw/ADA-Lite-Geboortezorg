@@ -46,6 +46,9 @@ SOFTWARE.
          <xs:pattern value="([0-9]+\.)+([0-9]+)"/>
       </xs:restriction>
    </xs:simpleType>
+   <xs:simpleType name="t-datetime">
+      <xs:union memberTypes="xs:date xs:dateTime"/>
+   </xs:simpleType>
    <xs:complexType name="voorgaande_zwangerschap_samenvatting_23">
       <xs:sequence>
          <xs:element name="zorgverlenerzorginstelling"
@@ -1679,7 +1682,7 @@ SOFTWARE.
                     type="t-id"
                     use="optional"
                     fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20540"/>
-      <xs:attribute name="value" use="required" type="xs:string"/>
+      <xs:attribute name="value" use="required" type="t-datetime"/>
    </xs:complexType>
    <xs:complexType name="bevalling">
       <xs:sequence>
@@ -1784,7 +1787,7 @@ SOFTWARE.
                     type="t-id"
                     use="optional"
                     fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82381"/>
-      <xs:attribute name="value" use="required" type="xs:string"/>
+      <xs:attribute name="value" use="required" type="t-datetime"/>
    </xs:complexType>
    <xs:complexType name="zwangerschapsduur_82382">
       <xs:attribute name="conceptId"
@@ -3122,7 +3125,7 @@ SOFTWARE.
                     type="t-id"
                     use="optional"
                     fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40050"/>
-      <xs:attribute name="value" use="required" type="xs:string"/>
+      <xs:attribute name="value" use="required" type="t-datetime"/>
    </xs:complexType>
    <xs:complexType name="perinatale_sterfte_groep">
       <xs:sequence>

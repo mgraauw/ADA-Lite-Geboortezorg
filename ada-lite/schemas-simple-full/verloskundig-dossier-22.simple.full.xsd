@@ -45,6 +45,9 @@ SOFTWARE.
          <xs:pattern value="([0-9]+\.)+([0-9]+)"/>
       </xs:restriction>
    </xs:simpleType>
+   <xs:simpleType name="t-datetime">
+      <xs:union memberTypes="xs:date xs:dateTime"/>
+   </xs:simpleType>
    <xs:complexType name="verloskundig_dossier_22">
       <xs:sequence>
          <xs:element name="zorgverlenerzorginstelling"
@@ -4957,14 +4960,14 @@ SOFTWARE.
                     type="t-id"
                     use="required"
                     fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20030"/>
-      <xs:attribute name="value" use="required" type="xs:string"/>
+      <xs:attribute name="value" use="required" type="t-datetime"/>
    </xs:complexType>
    <xs:complexType name="datum_bepaling_a_terme_datum">
       <xs:attribute name="conceptId"
                     type="t-id"
                     use="required"
                     fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20040"/>
-      <xs:attribute name="value" use="required" type="xs:string"/>
+      <xs:attribute name="value" use="required" type="t-datetime"/>
    </xs:complexType>
    <xs:complexType name="a_terme_datum_obv">
       <xs:attribute name="conceptId"
@@ -5893,7 +5896,7 @@ SOFTWARE.
                     type="t-id"
                     use="required"
                     fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80737"/>
-      <xs:attribute name="value" use="required" type="xs:string"/>
+      <xs:attribute name="value" use="required" type="t-datetime"/>
    </xs:complexType>
    <xs:complexType name="naam_zorgverlener_80736">
       <xs:attribute name="conceptId"
@@ -7225,7 +7228,7 @@ SOFTWARE.
                     type="t-id"
                     use="required"
                     fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82272"/>
-      <xs:attribute name="value" use="required" type="xs:string"/>
+      <xs:attribute name="value" use="required" type="t-datetime"/>
    </xs:complexType>
    <xs:complexType name="zwangerschapsduur_82285">
       <xs:attribute name="conceptId"
@@ -7664,7 +7667,7 @@ SOFTWARE.
                     type="t-id"
                     use="required"
                     fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82378"/>
-      <xs:attribute name="value" use="required" type="xs:string"/>
+      <xs:attribute name="value" use="required" type="t-datetime"/>
    </xs:complexType>
    <xs:complexType name="zwangerschapsduur_82379">
       <xs:attribute name="conceptId"
@@ -7976,7 +7979,7 @@ SOFTWARE.
                     type="t-id"
                     use="required"
                     fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20680"/>
-      <xs:attribute name="value" use="required" type="xs:string"/>
+      <xs:attribute name="value" use="required" type="t-datetime"/>
    </xs:complexType>
    <xs:complexType name="wijze_einde_zwangerschap">
       <xs:attribute name="conceptId"
@@ -8101,7 +8104,7 @@ SOFTWARE.
                     type="t-id"
                     use="required"
                     fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20540"/>
-      <xs:attribute name="value" use="required" type="xs:string"/>
+      <xs:attribute name="value" use="required" type="t-datetime"/>
    </xs:complexType>
    <xs:complexType name="bijlage">
       <xs:attribute name="conceptId"
@@ -8345,7 +8348,7 @@ SOFTWARE.
                     type="t-id"
                     use="required"
                     fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20455"/>
-      <xs:attribute name="value" use="required" type="xs:string"/>
+      <xs:attribute name="value" use="required" type="t-datetime"/>
    </xs:complexType>
    <xs:complexType name="zorgverlener_82410">
       <xs:sequence>
@@ -8512,7 +8515,7 @@ SOFTWARE.
                     type="t-id"
                     use="required"
                     fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82163"/>
-      <xs:attribute name="value" use="required" type="xs:string"/>
+      <xs:attribute name="value" use="required" type="t-datetime"/>
    </xs:complexType>
    <xs:complexType name="zorgverlener_82419">
       <xs:sequence>
@@ -8932,7 +8935,7 @@ SOFTWARE.
                     type="t-id"
                     use="required"
                     fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82381"/>
-      <xs:attribute name="value" use="required" type="xs:string"/>
+      <xs:attribute name="value" use="required" type="t-datetime"/>
    </xs:complexType>
    <xs:complexType name="zwangerschapsduur_82382">
       <xs:attribute name="conceptId"
@@ -9210,7 +9213,7 @@ SOFTWARE.
                     type="t-id"
                     use="required"
                     fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82383"/>
-      <xs:attribute name="value" use="required" type="xs:string"/>
+      <xs:attribute name="value" use="required" type="t-datetime"/>
    </xs:complexType>
    <xs:complexType name="zwangerschapsduur_82384">
       <xs:attribute name="conceptId"
@@ -9453,7 +9456,7 @@ SOFTWARE.
                     type="t-id"
                     use="required"
                     fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20590"/>
-      <xs:attribute name="value" use="required" type="xs:string"/>
+      <xs:attribute name="value" use="required" type="t-datetime"/>
    </xs:complexType>
    <xs:complexType name="bijstimulatie_toegediendq">
       <xs:attribute name="conceptId"
@@ -9800,7 +9803,7 @@ SOFTWARE.
                     type="t-id"
                     use="required"
                     fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80791"/>
-      <xs:attribute name="value" use="required" type="xs:string"/>
+      <xs:attribute name="value" use="required" type="t-datetime"/>
    </xs:complexType>
    <xs:complexType name="placenta_naar_paq">
       <xs:attribute name="conceptId"
@@ -10499,7 +10502,7 @@ SOFTWARE.
                     type="t-id"
                     use="required"
                     fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20660"/>
-      <xs:attribute name="value" use="required" type="xs:string"/>
+      <xs:attribute name="value" use="required" type="t-datetime"/>
    </xs:complexType>
    <xs:complexType name="uitkomst_per_kind">
       <xs:sequence>
@@ -11457,7 +11460,7 @@ SOFTWARE.
                     type="t-id"
                     use="required"
                     fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40050"/>
-      <xs:attribute name="value" use="required" type="xs:string"/>
+      <xs:attribute name="value" use="required" type="t-datetime"/>
    </xs:complexType>
    <xs:complexType name="geboorteplaats">
       <xs:sequence>
@@ -11650,7 +11653,7 @@ SOFTWARE.
                     type="t-id"
                     use="required"
                     fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40300"/>
-      <xs:attribute name="value" use="required" type="xs:string"/>
+      <xs:attribute name="value" use="required" type="t-datetime"/>
    </xs:complexType>
    <xs:complexType name="foetus_identificatie_zoals_ante_partum_gehanteerd">
       <xs:attribute name="conceptId"
@@ -11999,7 +12002,7 @@ SOFTWARE.
                     type="t-id"
                     use="required"
                     fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80619"/>
-      <xs:attribute name="value" use="required" type="xs:string"/>
+      <xs:attribute name="value" use="required" type="t-datetime"/>
    </xs:complexType>
    <xs:complexType name="kleur_en_consistentie_vruchtwater">
       <xs:attribute name="conceptId"
@@ -12084,7 +12087,7 @@ SOFTWARE.
                     type="t-id"
                     use="required"
                     fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.30030"/>
-      <xs:attribute name="value" use="required" type="xs:string"/>
+      <xs:attribute name="value" use="required" type="t-datetime"/>
    </xs:complexType>
    <xs:complexType name="episiotomieq">
       <xs:attribute name="conceptId"
@@ -12300,7 +12303,7 @@ SOFTWARE.
                     type="t-id"
                     use="required"
                     fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82394"/>
-      <xs:attribute name="value" use="required" type="xs:string"/>
+      <xs:attribute name="value" use="required" type="t-datetime"/>
    </xs:complexType>
    <xs:complexType name="methode_82093">
       <xs:sequence>
@@ -12705,7 +12708,7 @@ SOFTWARE.
                     type="t-id"
                     use="required"
                     fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82395"/>
-      <xs:attribute name="value" use="required" type="xs:string"/>
+      <xs:attribute name="value" use="required" type="t-datetime"/>
    </xs:complexType>
    <xs:complexType name="periode_82100">
       <xs:attribute name="conceptId"
@@ -16932,7 +16935,7 @@ SOFTWARE.
                     type="t-id"
                     use="required"
                     fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82122"/>
-      <xs:attribute name="value" use="required" type="xs:string"/>
+      <xs:attribute name="value" use="required" type="t-datetime"/>
    </xs:complexType>
    <xs:complexType name="reden_betrokkenheid_82123">
       <xs:attribute name="conceptId"
@@ -17570,7 +17573,7 @@ SOFTWARE.
                     type="t-id"
                     use="required"
                     fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.50020"/>
-      <xs:attribute name="value" use="required" type="xs:string"/>
+      <xs:attribute name="value" use="required" type="t-datetime"/>
    </xs:complexType>
    <xs:complexType name="naam_uitvoerder_onderzoek">
       <xs:attribute name="conceptId"
@@ -17951,7 +17954,7 @@ SOFTWARE.
                     type="t-id"
                     use="required"
                     fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.51020"/>
-      <xs:attribute name="value" use="required" type="xs:string"/>
+      <xs:attribute name="value" use="required" type="t-datetime"/>
    </xs:complexType>
    <xs:complexType name="uitslag_screening">
       <xs:sequence>
@@ -20972,7 +20975,7 @@ SOFTWARE.
                     type="t-id"
                     use="required"
                     fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.61010"/>
-      <xs:attribute name="value" use="required" type="xs:string"/>
+      <xs:attribute name="value" use="required" type="t-datetime"/>
    </xs:complexType>
    <xs:complexType name="methode_kansbepaling">
       <xs:attribute name="conceptId"
@@ -21666,7 +21669,7 @@ SOFTWARE.
                     type="t-id"
                     use="required"
                     fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.61280"/>
-      <xs:attribute name="value" use="required" type="xs:string"/>
+      <xs:attribute name="value" use="required" type="t-datetime"/>
    </xs:complexType>
    <xs:complexType name="nt_in_mm_82309">
       <xs:attribute name="conceptId"
@@ -22793,7 +22796,7 @@ SOFTWARE.
                     type="t-id"
                     use="required"
                     fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82074"/>
-      <xs:attribute name="value" use="required" type="xs:string"/>
+      <xs:attribute name="value" use="required" type="t-datetime"/>
    </xs:complexType>
    <xs:complexType name="glucose_80961">
       <xs:attribute name="conceptId"
@@ -24096,7 +24099,7 @@ SOFTWARE.
                     type="t-id"
                     use="required"
                     fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82298"/>
-      <xs:attribute name="value" use="required" type="xs:string"/>
+      <xs:attribute name="value" use="required" type="t-datetime"/>
    </xs:complexType>
    <xs:complexType name="pathologie_vrouwq">
       <xs:attribute name="conceptId"
@@ -24672,7 +24675,7 @@ SOFTWARE.
                     type="t-id"
                     use="required"
                     fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40260"/>
-      <xs:attribute name="value" use="required" type="xs:string"/>
+      <xs:attribute name="value" use="required" type="t-datetime"/>
    </xs:complexType>
    <xs:complexType name="zorgverlenertype_40261">
       <xs:attribute name="conceptId"
@@ -24984,7 +24987,7 @@ SOFTWARE.
                     type="t-id"
                     use="required"
                     fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80846"/>
-      <xs:attribute name="value" use="required" type="xs:string"/>
+      <xs:attribute name="value" use="required" type="t-datetime"/>
    </xs:complexType>
    <xs:complexType name="naam_zorgverlener_80847">
       <xs:attribute name="conceptId"

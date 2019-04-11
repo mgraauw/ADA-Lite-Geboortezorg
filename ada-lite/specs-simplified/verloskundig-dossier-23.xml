@@ -17,7 +17,8 @@
             isMandatory="false"
             shortName="zorgverlenerzorginstelling">
       <name language="nl-NL">Zorgverlener/Zorginstelling</name>
-      <desc language="nl-NL">Persoon (met bijbehorende instelling) die verantwoordelijk of uitvoerder was voor de zorg van de patiënt en aanleveraar van de gegevens.</desc>
+      <desc language="nl-NL">Persoon (met bijbehorende instelling) die verantwoordelijk of uitvoerder was voor de zorg van de patiënt en aanleveraar van
+      de gegevens.</desc>
       <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10001"
                statusCode="draft"
                effectiveDate="2016-09-08T00:00:00"
@@ -156,12 +157,14 @@
                   isMandatory="false"
                   shortName="telefoon_waar_zorgverlener_is_te_bereiken">
             <name language="nl-NL">Telefoon waar zorgverlener is te bereiken</name>
-            <desc language="nl-NL">Het gaat hier uitdrukkelijk niet om het normale praktijknummer, maar het (mobiele) nummer waar de verloskundige bereikbaar is voor vragen in verband met de acute overdracht.<br clear="none"/>
-               <br clear="none"/>Dit is een essentieel gegeven om in de urgente situatie de verwijzer te kunnen bellen voor vragen.<br clear="none"/>
+            <desc language="nl-NL">Het gaat hier uitdrukkelijk niet om het normale praktijknummer, maar het (mobiele) nummer waar de verloskundige
+          bereikbaar is voor vragen in verband met de acute overdracht.<br clear="none"/>
+               <br clear="none"/>Dit is een essentieel gegeven om in de
+          urgente situatie de verwijzer te kunnen bellen voor vragen.<br clear="none"/>
                <br clear="none"/>Verplicht invullen bij acute overdracht.<br clear="none"/>
                <br clear="none"/>
                <br clear="none"/>
-                </desc>
+            </desc>
             <source language="nl-NL">PWD Acute Fase Overdracht item #103<br clear="none"/>
             </source>
             <relationship type="SPEC"
@@ -190,8 +193,10 @@
                   isMandatory="false"
                   shortName="zorginstelling_oid">
             <name language="nl-NL">Zorginstelling OID</name>
-            <desc language="nl-NL">Identificatie van de instelling met behulp van een unieke root-OID (Object Identificatie). <br clear="none"/>Dit gegeven wordt ingesteld in de software van de zorginstelling en dan automatisch meegegeven bij informatie-uitwisseling (met andere woorden: het is géén invulveld voor een zorgverlener). <br clear="none"/>
-                </desc>
+            <desc language="nl-NL">Identificatie van de instelling met behulp van een unieke root-OID (Object Identificatie). <br clear="none"/>Dit
+          gegeven wordt ingesteld in de software van de zorginstelling en dan automatisch meegegeven bij informatie-uitwisseling (met andere woorden:
+          het is géén invulveld voor een zorgverlener). <br clear="none"/>
+            </desc>
             <relationship type="SPEC"
                           ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.4.10021"
                           flexibility="2012-08-06T00:00:00"
@@ -223,7 +228,7 @@
                   shortName="zorginstelling_lvrid">
             <name language="nl-NL">Zorginstelling LVR-ID</name>
             <desc language="nl-NL">Unieke LVR-identificatie van de zorginstelling. <br clear="none"/>
-                </desc>
+            </desc>
             <valueDomain type="identifier">
                <property minLength="4" maxLength="5"/>
             </valueDomain>
@@ -322,7 +327,8 @@
                      isMandatory="false"
                      shortName="plaatsnaam">
                <name language="nl-NL">Plaatsnaam</name>
-               <desc language="nl-NL">Plaatsnaam als onderdeel van het adres; De naam van een stad, dorp of ander woongebied of bezorgcentrum. Merk op: dit is de woonplaats, niet de eventuele gemeente waartoe de woonplaats behoort. Voorbeeld: Haren, gemeente Groningen.</desc>
+               <desc language="nl-NL">Plaatsnaam als onderdeel van het adres; De naam van een stad, dorp of ander woongebied of bezorgcentrum. Merk op: dit
+            is de woonplaats, niet de eventuele gemeente waartoe de woonplaats behoort. Voorbeeld: Haren, gemeente Groningen.</desc>
                <valueDomain type="string"/>
             </concept>
             <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10038"
@@ -394,7 +400,7 @@
                   shortName="type_zorginstelling_bij_verwijzing">
             <name language="nl-NL">Type zorginstelling (bij verwijzing)</name>
             <desc language="nl-NL">Type zorginstelling bij een verwijzing.<br clear="none"/>
-                </desc>
+            </desc>
             <valueDomain type="code">
                <property/>
             </valueDomain>
@@ -427,7 +433,8 @@
                isMandatory="false"
                shortName="burgerservicenummer">
          <name language="nl-NL">Burgerservicenummer</name>
-         <desc language="nl-NL">Het burgerservicenummer (BSN) is een uniek en persoonsgebonden identificerend nummer. Dit nummer wordt automatisch toegekend bij geboorte en wanneer iemand zich inschrijft bij de Basisregistratie personen (BRP). </desc>
+         <desc language="nl-NL">Het burgerservicenummer (BSN) is een uniek en persoonsgebonden identificerend nummer. Dit nummer wordt automatisch
+        toegekend bij geboorte en wanneer iemand zich inschrijft bij de Basisregistratie personen (BRP). </desc>
          <comment language="nl-NL">Modulo 11-proef</comment>
          <comment language="nl-NL">Modulo 11-proef</comment>
          <relationship type="SPEC"
@@ -447,7 +454,8 @@
                isMandatory="false"
                shortName="lokale_persoonsidentificatie">
          <name language="nl-NL">Lokale persoonsidentificatie</name>
-         <desc language="nl-NL">Unieke identificatie van de vrouw binnen de praktijk. Het betreft hier dus bijvoorbeeld het cliëntnummer voor de 1e lijn of het patiëntnummer voor de 2e lijn. </desc>
+         <desc language="nl-NL">Unieke identificatie van de vrouw binnen de praktijk. Het betreft hier dus bijvoorbeeld het cliëntnummer voor de 1e lijn
+        of het patiëntnummer voor de 2e lijn. </desc>
          <valueDomain type="identifier"/>
       </concept>
       <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10035"
@@ -555,7 +563,8 @@
                      shortName="voorvoegsel">
                <name language="nl-NL">Voorvoegsel</name>
                <desc language="nl-NL">Deel van de achternaam dat het voorvoegsel bevat.</desc>
-               <comment language="nl-NL">GBA tabel 36 is een opsomming van te gebruiken voorvoegsels zonder bijbehorende code. Het gebruik wordt aanbevolen, maar is niet verplicht. Bij vulling via de SBV-Z zullen de voorzetsels overeenkomen met tabel 36.</comment>
+               <comment language="nl-NL">GBA tabel 36 is een opsomming van te gebruiken voorvoegsels zonder bijbehorende code. Het gebruik wordt
+            aanbevolen, maar is niet verplicht. Bij vulling via de SBV-Z zullen de voorzetsels overeenkomen met tabel 36.</comment>
                <operationalization language="nl-NL">GBA tabel 36</operationalization>
                <valueDomain type="string">
                   <example>van</example>
@@ -570,7 +579,8 @@
                      isMandatory="false"
                      shortName="achternaam">
                <name language="nl-NL">Achternaam</name>
-               <desc language="nl-NL">De achternaam van een persoon die bij de geboorte is vastgelegd. Afhankeljk van de soort naam is dit de geboortenaam van de persoon of van de partner</desc>
+               <desc language="nl-NL">De achternaam van een persoon die bij de geboorte is vastgelegd. Afhankeljk van de soort naam is dit de geboortenaam
+            van de persoon of van de partner</desc>
                <valueDomain type="string">
                   <example>Putten</example>
                </valueDomain>
@@ -587,8 +597,9 @@
                shortName="geboortedatum">
          <name language="nl-NL">Geboortedatum</name>
          <desc language="nl-NL">Geboortedatum.<br clear="none"/>
-            <br clear="none"/>Indien de dag en/of maand van de geboortedatum niet bekend zijn, vult u dit in als 01-01-xxxx. Wanneer het geboortejaar ook onbekend is, is schatten van het geboortejaar toegestaan.<br clear="none"/>
-            </desc>
+            <br clear="none"/>Indien de dag en/of maand van de geboortedatum niet bekend zijn, vult u
+        dit in als 01-01-xxxx. Wanneer het geboortejaar ook onbekend is, is schatten van het geboortejaar toegestaan.<br clear="none"/>
+         </desc>
          <valueDomain type="date">
             <property timeStampPrecision="YMD"/>
          </valueDomain>
@@ -660,7 +671,8 @@
                   isMandatory="false"
                   shortName="plaatsnaam">
             <name language="nl-NL">Plaatsnaam</name>
-            <desc language="nl-NL">Plaatsnaam als onderdeel van het adres; De naam van een stad, dorp of ander woongebied of bezorgcentrum. Merk op: dit is de woonplaats, niet de eventuele gemeente waartoe de woonplaats behoort. Voorbeeld: Haren, gemeente Groningen.</desc>
+            <desc language="nl-NL">Plaatsnaam als onderdeel van het adres; De naam van een stad, dorp of ander woongebied of bezorgcentrum. Merk op: dit
+          is de woonplaats, niet de eventuele gemeente waartoe de woonplaats behoort. Voorbeeld: Haren, gemeente Groningen.</desc>
             <valueDomain type="string"/>
          </concept>
          <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10307"
@@ -766,10 +778,14 @@
                isMandatory="false"
                shortName="taalvaardigheid_vrouw_nederlandse_taal">
          <name language="nl-NL">Taalvaardigheid vrouw Nederlandse taal</name>
-         <desc language="nl-NL">Dit item is opgenomen om na te gaan in welke mate zorgverlener en zwangere vrouw met elkaar kunnen communiceren. Het gaat om het achterhalen van de kwaliteit van de communicatie. <br clear="none"/>Uitgangspunt is dat de voertaal altijd Nederlands is. Hoewel het mogelijk is dat een zwangere en een zorgverlener beiden dezelfde 'vreemde' taal spreken, zal een zwangere te maken krijgen met verschillende zorgverleners die deze taal waarschijnlijk niet machtig zijn. Het vastleggen van de taalvaardigheid in het Nederlands is daarom de beste benadering voor
-                        de kwaliteit van de communicatie.<br clear="none"/>
-            <br clear="none"/>De communicatietaal van de vrouw kan overigens wél vastgelegd worden in een separaat item (peri22-dataelement-82371).<br clear="none"/>
-            </desc>
+         <desc language="nl-NL">Dit item is opgenomen om na te gaan in welke mate zorgverlener en zwangere vrouw met elkaar kunnen communiceren. Het gaat
+        om het achterhalen van de kwaliteit van de communicatie. <br clear="none"/>Uitgangspunt is dat de voertaal altijd Nederlands is. Hoewel het
+        mogelijk is dat een zwangere en een zorgverlener beiden dezelfde 'vreemde' taal spreken, zal een zwangere te maken krijgen met verschillende
+        zorgverleners die deze taal waarschijnlijk niet machtig zijn. Het vastleggen van de taalvaardigheid in het Nederlands is daarom de beste
+        benadering voor de kwaliteit van de communicatie.<br clear="none"/>
+            <br clear="none"/>De communicatietaal van de vrouw kan overigens wél
+        vastgelegd worden in een separaat item (peri22-dataelement-82371).<br clear="none"/>
+         </desc>
          <source language="nl-NL">PRN dataset 1.3 item #3.1.04</source>
          <relationship type="SPEC"
                        ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.3.10401"
@@ -921,7 +937,7 @@
                shortName="accepteert_bloedtransfusieq">
          <name language="nl-NL">Accepteert bloedtransfusie?</name>
          <desc language="nl-NL">Accepteert de vrouw bloedtransfusie en/of bloedgerelateerde producten?<br clear="none"/>
-            </desc>
+         </desc>
          <valueDomain type="boolean"/>
       </concept>
       <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80649"
@@ -944,7 +960,7 @@
                   shortName="huisarts">
             <name language="nl-NL">Huisarts</name>
             <desc language="nl-NL">Huisarts<br clear="none"/>
-                </desc>
+            </desc>
             <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82027"
                      statusCode="draft"
                      effectiveDate="2016-09-08T00:00:00"
@@ -1088,7 +1104,7 @@
                      shortName="type_specialist">
                <name language="nl-NL">Type specialist</name>
                <desc language="nl-NL">Type specialist<br clear="none"/>
-                    </desc>
+               </desc>
                <valueDomain type="text">
                   <property/>
                   <example type="neutral">Gynaecoloog</example>
@@ -1158,8 +1174,9 @@
                   shortName="onder_behandeling_geweestq">
             <name language="nl-NL">Onder behandeling (geweest)?</name>
             <desc language="nl-NL">Is de vrouw langdurig onder behandeling bij huisarts en/of onder behandeling bij een specialist (geweest)?<br clear="none"/>
-                </desc>
-            <comment language="nl-NL">Wanneer het antwoord op deze vraag 'Nee' is, hoeft 'Algemene anamnese' niet meer door de zorgverlener te worden ingevuld. <br clear="none"/>Hier zijn dan 'geen bijzonderheden'.<br clear="none"/>
+            </desc>
+            <comment language="nl-NL">Wanneer het antwoord op deze vraag 'Nee' is, hoeft 'Algemene anamnese' niet meer door de zorgverlener te worden
+          ingevuld. <br clear="none"/>Hier zijn dan 'geen bijzonderheden'.<br clear="none"/>
             </comment>
             <valueDomain type="boolean"/>
          </concept>
@@ -1172,8 +1189,9 @@
                   isMandatory="false"
                   shortName="algemene_anamnese">
             <name language="nl-NL">Algemene anamnese</name>
-            <desc language="nl-NL">Algemene anamnese. Ziektegeschiedenis van de vrouw.<br clear="none"/>Alleen van toepassing wanneer 'Onder behandeling' waar is.<br clear="none"/>
-                </desc>
+            <desc language="nl-NL">Algemene anamnese. Ziektegeschiedenis van de vrouw.<br clear="none"/>Alleen van toepassing wanneer 'Onder behandeling'
+          waar is.<br clear="none"/>
+            </desc>
             <relationship type="SPEC"
                           ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80904"
                           flexibility="2013-09-10T00:00:00"
@@ -1188,7 +1206,7 @@
                      shortName="autoimmuun_aandoening">
                <name language="nl-NL">Auto-immuun aandoening</name>
                <desc language="nl-NL">Auto-immuun aandoening<br clear="none"/>
-                    </desc>
+               </desc>
                <valueDomain type="code"/>
                <valueSet id="2.16.840.1.113883.2.4.3.11.60.90.77.11.28"
                          statusCode="final"
@@ -1224,7 +1242,7 @@
                      shortName="cardiovasculaire_aandoening">
                <name language="nl-NL">Cardiovasculaire aandoening</name>
                <desc language="nl-NL">Cardiovasculaire aandoening<br clear="none"/>
-                    </desc>
+               </desc>
                <valueDomain type="code"/>
                <valueSet statusCode="final"
                          id="2.16.840.1.113883.2.4.3.11.60.90.77.11.11"
@@ -1270,7 +1288,7 @@
                      shortName="urogenitale_aandoening">
                <name language="nl-NL">Urogenitale aandoening</name>
                <desc language="nl-NL">Urogenitale aandoening<br clear="none"/>
-                    </desc>
+               </desc>
                <valueDomain type="code"/>
                <valueSet id="2.16.840.1.113883.2.4.3.11.60.90.77.11.30"
                          statusCode="final"
@@ -1306,7 +1324,7 @@
                      shortName="oncologische_aandoening">
                <name language="nl-NL">Oncologische aandoening</name>
                <desc language="nl-NL">Oncologische aandoening<br clear="none"/>
-                    </desc>
+               </desc>
                <valueDomain type="code"/>
                <valueSet statusCode="final"
                          id="2.16.840.1.113883.2.4.3.11.60.90.77.11.27"
@@ -1357,7 +1375,7 @@
                      shortName="schildklier_aandoening">
                <name language="nl-NL">Schildklier aandoening</name>
                <desc language="nl-NL">Schildklier aandoening<br clear="none"/>
-                    </desc>
+               </desc>
                <valueDomain type="code">
                   <property/>
                </valueDomain>
@@ -1389,8 +1407,9 @@
                      isMandatory="false"
                      shortName="diabetes_mellitusq">
                <name language="nl-NL">Diabetes mellitus?</name>
-               <desc language="nl-NL">Is er sprake van diabetes mellitus (type I of type II)?<br clear="none"/>Let op: het gaat hier nadrukkelijk niet om zwangerschapsdiabetes (diabetes gravidarum), deze hoort bij de obstetrische anamnese.<br clear="none"/>
-                    </desc>
+               <desc language="nl-NL">Is er sprake van diabetes mellitus (type I of type II)?<br clear="none"/>Let op: het gaat hier nadrukkelijk niet om
+            zwangerschapsdiabetes (diabetes gravidarum), deze hoort bij de obstetrische anamnese.<br clear="none"/>
+               </desc>
                <valueDomain type="boolean"/>
             </concept>
             <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80912"
@@ -1403,7 +1422,7 @@
                      shortName="neurologische_aandoening">
                <name language="nl-NL">Neurologische aandoening</name>
                <desc language="nl-NL">Neurologische aandoening<br clear="none"/>
-                    </desc>
+               </desc>
                <valueDomain type="code"/>
                <valueSet statusCode="final"
                          id="2.16.840.1.113883.2.4.3.11.60.90.77.11.14"
@@ -1459,8 +1478,9 @@
                      shortName="infectieziekte">
                <name language="nl-NL">Infectieziekte</name>
                <desc language="nl-NL">Infectieziekte<br clear="none"/>
-                  <br clear="none"/>Let op! Sommige infectieziekten behoeven extra attentiewaarde bij een verwijzing, bijvoorbeeld: MRSA, HIV, Hepatitis.<br clear="none"/>
-                    </desc>
+                  <br clear="none"/>Let op! Sommige infectieziekten behoeven extra attentiewaarde bij
+            een verwijzing, bijvoorbeeld: MRSA, HIV, Hepatitis.<br clear="none"/>
+               </desc>
                <valueDomain type="code"/>
                <valueSet statusCode="final"
                          id="2.16.840.1.113883.2.4.3.11.60.90.77.11.15"
@@ -1596,7 +1616,7 @@
                      shortName="mdl_aandoening">
                <name language="nl-NL">MDL aandoening</name>
                <desc language="nl-NL">Maag Darm Lever aandoening<br clear="none"/>
-                    </desc>
+               </desc>
                <valueDomain type="code"/>
                <valueSet id="2.16.840.1.113883.2.4.3.11.60.90.77.11.29"
                          statusCode="final"
@@ -1632,7 +1652,7 @@
                      shortName="anemie">
                <name language="nl-NL">Anemie</name>
                <desc language="nl-NL">Anemie<br clear="none"/>
-                    </desc>
+               </desc>
                <valueDomain type="code"/>
                <valueSet id="2.16.840.1.113883.2.4.3.11.60.90.77.11.31"
                          statusCode="final"
@@ -1673,7 +1693,7 @@
                      shortName="longaandoening">
                <name language="nl-NL">Longaandoening</name>
                <desc language="nl-NL">Longaandoening<br clear="none"/>
-                    </desc>
+               </desc>
                <valueDomain type="code"/>
                <valueSet statusCode="final"
                          id="2.16.840.1.113883.2.4.3.11.60.90.77.11.205"
@@ -1719,7 +1739,7 @@
                      shortName="gynaecologische_aandoening">
                <name language="nl-NL">Gynaecologische aandoening</name>
                <desc language="nl-NL">Gynaecologische aandoening met mogelijke consequenties voor de zwangerschap.<br clear="none"/>
-                    </desc>
+               </desc>
                <valueDomain type="code"/>
                <valueSet id="2.16.840.1.113883.2.4.3.11.60.90.77.11.16"
                          statusCode="final"
@@ -1760,7 +1780,7 @@
                      shortName="orthopedische_afwijking">
                <name language="nl-NL">Orthopedische afwijking</name>
                <desc language="nl-NL">Orthopedische afwijking<br clear="none"/>
-                    </desc>
+               </desc>
                <valueDomain type="code"/>
                <valueSet statusCode="final"
                          id="2.16.840.1.113883.2.4.3.11.60.90.77.11.17"
@@ -1809,9 +1829,10 @@
                      shortName="transfusiereactieq">
                <name language="nl-NL">Transfusiereactie?</name>
                <desc language="nl-NL">Heeft vrouw een transfusiereactie gehad?<br clear="none"/>
-                  <br clear="none"/>Alleen van toepassing als Bloedtransfusie? = 'Ja'.<br clear="none"/>
+                  <br clear="none"/>Alleen van toepassing als
+            Bloedtransfusie? = 'Ja'.<br clear="none"/>
                   <br clear="none"/>
-                    </desc>
+               </desc>
                <valueDomain type="boolean">
                   <property/>
                </valueDomain>
@@ -1826,7 +1847,7 @@
                      shortName="type_operatie">
                <name language="nl-NL">Type operatie</name>
                <desc language="nl-NL">Type operatie.<br clear="none"/>
-                    </desc>
+               </desc>
                <valueDomain type="code"/>
                <valueSet statusCode="final"
                          id="2.16.840.1.113883.2.4.3.11.60.90.77.11.18"
@@ -2056,8 +2077,9 @@
                      isMandatory="false"
                      shortName="psychiatrieq">
                <name language="nl-NL">Psychiatrie?</name>
-               <desc language="nl-NL">Is er sprake van een psychiatrische aandoening?<br clear="none"/>Alléén van toepassing bij gediagnostiseerde psychiatrische aandoeningen, niet bij psychosociale problemen<br clear="none"/>
-                    </desc>
+               <desc language="nl-NL">Is er sprake van een psychiatrische aandoening?<br clear="none"/>Alléén van toepassing bij gediagnostiseerde
+            psychiatrische aandoeningen, niet bij psychosociale problemen<br clear="none"/>
+               </desc>
                <valueDomain type="boolean"/>
             </concept>
             <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82332"
@@ -2069,8 +2091,9 @@
                      isMandatory="false"
                      shortName="psychiatrie">
                <name language="nl-NL">Psychiatrie</name>
-               <desc language="nl-NL">Psychiatrie toelichting<br clear="none"/>Alléén van toepassing bij gediagnostiseerde psychiatrische aandoeningen, niet bij psychosociale problemen<br clear="none"/>
-                    </desc>
+               <desc language="nl-NL">Psychiatrie toelichting<br clear="none"/>Alléén van toepassing bij gediagnostiseerde psychiatrische aandoeningen,
+            niet bij psychosociale problemen<br clear="none"/>
+               </desc>
                <valueDomain type="text"/>
             </concept>
             <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82212"
@@ -2083,7 +2106,7 @@
                      shortName="overige_aandoeningq">
                <name language="nl-NL">Overige aandoening?</name>
                <desc language="nl-NL">Overige aandoening?<br clear="none"/>
-                    </desc>
+               </desc>
                <valueDomain type="boolean"/>
             </concept>
             <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80919"
@@ -2096,7 +2119,7 @@
                      shortName="overige_aandoening">
                <name language="nl-NL">Overige aandoening</name>
                <desc language="nl-NL">Overige aandoeningen / afwijkingen uit algemene anamnese vrouw<br clear="none"/>
-                    </desc>
+               </desc>
                <valueDomain type="text"/>
             </concept>
             <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82158"
@@ -2109,7 +2132,7 @@
                      shortName="toelichting_alg_anamnese">
                <name language="nl-NL">Toelichting alg. anamnese</name>
                <desc language="nl-NL">Toelichting over (eventueel positieve) items uit de algemene anamnese<br clear="none"/>
-                    </desc>
+               </desc>
                <valueDomain type="text">
                   <property/>
                </valueDomain>
@@ -2124,8 +2147,9 @@
                   isMandatory="false"
                   shortName="psychosociale_anamnese">
             <name language="nl-NL">Psychosociale anamnese</name>
-            <desc language="nl-NL">Psychosociale anamnese.<br clear="none"/>Alléén van toepassing bij psychosociale problemen, niet bij gediagnostiseerde psychiatrische aandoeningen.<br clear="none"/>
-                </desc>
+            <desc language="nl-NL">Psychosociale anamnese.<br clear="none"/>Alléén van toepassing bij psychosociale problemen, niet bij gediagnostiseerde
+          psychiatrische aandoeningen.<br clear="none"/>
+            </desc>
             <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80681"
                      statusCode="draft"
                      effectiveDate="2016-09-08T00:00:00"
@@ -2135,8 +2159,9 @@
                      isMandatory="false"
                      shortName="psychosociale_problematiekq">
                <name language="nl-NL">Psychosociale problematiek?</name>
-               <desc language="nl-NL">Is er sprake van psychosociale problematiek?<br clear="none"/>Alléén van toepassing bij psychosociale problemen, niet bij gediagnostiseerde psychiatrische aandoeningen.<br clear="none"/>
-                    </desc>
+               <desc language="nl-NL">Is er sprake van psychosociale problematiek?<br clear="none"/>Alléén van toepassing bij psychosociale problemen, niet
+            bij gediagnostiseerde psychiatrische aandoeningen.<br clear="none"/>
+               </desc>
                <valueDomain type="boolean"/>
             </concept>
             <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10803"
@@ -2163,9 +2188,11 @@
                      isMandatory="false"
                      shortName="huiselijk_geweldq">
                <name language="nl-NL">Huiselijk geweld?</name>
-               <desc language="nl-NL">Is er sprake (geweest) van huiselijk geweld?<br clear="none"/>Bij huiselijk geweld dat in het verleden heeft plaatsgevonden, maar nu niet meer actueel is, is er voor deze vrouw toch een verhoogd risico aanwezig.<br clear="none"/>Indien gewenst kan nadere toelichting op deze vraag opgenomen worden in 'Toelichting psychosociale anamnese'.<br clear="none"/>
+               <desc language="nl-NL">Is er sprake (geweest) van huiselijk geweld?<br clear="none"/>Bij huiselijk geweld dat in het verleden heeft
+            plaatsgevonden, maar nu niet meer actueel is, is er voor deze vrouw toch een verhoogd risico aanwezig.<br clear="none"/>Indien gewenst kan
+            nadere toelichting op deze vraag opgenomen worden in 'Toelichting psychosociale anamnese'.<br clear="none"/>
                   <br clear="none"/>
-                    </desc>
+               </desc>
                <valueDomain type="boolean"/>
             </concept>
             <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82333"
@@ -2178,7 +2205,7 @@
                      shortName="toelichting_psychosociale_anamnese">
                <name language="nl-NL">Toelichting psychosociale anamnese</name>
                <desc language="nl-NL">Toelichting psychosociale anamnese<br clear="none"/>
-                    </desc>
+               </desc>
                <valueDomain type="text"/>
             </concept>
          </concept>
@@ -2192,7 +2219,7 @@
                   shortName="relevante_allergieen">
             <name language="nl-NL">Relevante allergieën</name>
             <desc language="nl-NL">Relevante allergieën<br clear="none"/>
-                </desc>
+            </desc>
             <source language="nl-NL">PWD Acute Fase Overdracht item #109</source>
             <valueDomain type="code"/>
             <valueSet name="Allergies"
@@ -2287,8 +2314,9 @@
                         isMandatory="false"
                         shortName="type_verwantschap">
                   <name language="nl-NL">Type verwantschap</name>
-                  <desc language="nl-NL">Type verwantschap.<br clear="none"/>Om de graad van het verwantschap te bepalen wordt er gekeken/uitgegaan van de baby.<br clear="none"/>
-                        </desc>
+                  <desc language="nl-NL">Type verwantschap.<br clear="none"/>Om de graad van het verwantschap te bepalen wordt er gekeken/uitgegaan van de
+                baby.<br clear="none"/>
+                  </desc>
                   <valueDomain type="code"/>
                   <valueSet>
                      <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg"/>
@@ -2306,8 +2334,10 @@
                   shortName="indicatie_prenatale_diagnostiek">
             <name language="nl-NL">Indicatie prenatale diagnostiek</name>
             <desc language="nl-NL">Prenatale diagnostiek. Groep die gegevens bevat over primaire indicatie op basis van anamnese.<br clear="none"/>
-               <br clear="none"/>Voor een aantal indicaties is prenatale diagnostiek (bijvoorbeeld vruchtwateronderzoek, geavanceerd ultrageluidonderzoek, NIPT) een geschikte methode om meer informatie te krijgen over de aanwezigheid van een aangeboren aandoening. Welke methode gebruikt wordt, is afhankelijk van het beleid van de verschillende centra en van de wens van de zwangere. <br clear="none"/>
-                </desc>
+               <br clear="none"/>Voor een aantal indicaties is prenatale diagnostiek (bijvoorbeeld vruchtwateronderzoek, geavanceerd ultrageluidonderzoek,
+          NIPT) een geschikte methode om meer informatie te krijgen over de aanwezigheid van een aangeboren aandoening. Welke methode gebruikt wordt,
+          is afhankelijk van het beleid van de verschillende centra en van de wens van de zwangere. <br clear="none"/>
+            </desc>
             <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80937"
                      statusCode="draft"
                      effectiveDate="2016-09-08T00:00:00"
@@ -2318,7 +2348,7 @@
                      shortName="indicatie_invasieve_prenatale_diagnostiekq">
                <name language="nl-NL">Indicatie invasieve prenatale diagnostiek?</name>
                <desc language="nl-NL">Indicatie invasieve prenatale diagnostiek<br clear="none"/>
-                    </desc>
+               </desc>
                <valueDomain type="boolean"/>
             </concept>
             <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80938"
@@ -2331,7 +2361,7 @@
                      shortName="indicatie_guoq">
                <name language="nl-NL">Indicatie GUO?</name>
                <desc language="nl-NL">Indicatie GUO<br clear="none"/>
-                    </desc>
+               </desc>
                <valueDomain type="boolean"/>
             </concept>
             <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82339"
@@ -2344,7 +2374,7 @@
                      shortName="indicatie_niptq">
                <name language="nl-NL">Indicatie NIPT?</name>
                <desc language="nl-NL">Indicatie NIPT?<br clear="none"/>
-                    </desc>
+               </desc>
                <valueDomain type="boolean"/>
             </concept>
          </concept>
@@ -2358,7 +2388,8 @@
                isMandatory="false"
                shortName="medicatiegebruikq">
          <name language="nl-NL">Medicatiegebruik?</name>
-         <desc language="nl-NL">Wordt er nu medicatie gebruikt wordt en/of is er in de huidige zwangerschap medicatie gebruikt: ja / nee / onbekend</desc>
+         <desc language="nl-NL">Wordt er nu medicatie gebruikt wordt en/of is er in de huidige zwangerschap medicatie gebruikt: ja / nee /
+        onbekend</desc>
          <source language="nl-NL">PWD Acute Fase Overdracht item #110</source>
          <relationship type="SPEC"
                        ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.4.10801"
@@ -2375,7 +2406,8 @@
                isMandatory="false"
                shortName="medicatiegebruik">
          <name language="nl-NL">Medicatiegebruik</name>
-         <desc language="nl-NL">Medicatiegebruik.<br clear="none"/>Het gaat om medicatie die nu gebruikt wordt en/of die in de huidige zwangerschap gebruikt is.</desc>
+         <desc language="nl-NL">Medicatiegebruik.<br clear="none"/>Het gaat om medicatie die nu gebruikt wordt en/of die in de huidige zwangerschap
+        gebruikt is.</desc>
          <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10802"
                   statusCode="draft"
                   effectiveDate="2016-09-08T00:00:00"
@@ -2512,7 +2544,7 @@
                shortName="vrouwelijke_genitale_verminkingq">
          <name language="nl-NL">Vrouwelijke genitale verminking?</name>
          <desc language="nl-NL">Is er sprake van vrouwelijke genitale verminking?<br clear="none"/>
-            </desc>
+         </desc>
          <valueDomain type="boolean"/>
       </concept>
       <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80676"
@@ -2525,7 +2557,7 @@
                shortName="type_vrouwelijke_genitale_verminking">
          <name language="nl-NL">Type vrouwelijke genitale verminking</name>
          <desc language="nl-NL">Type vrouwelijke genitale verminking<br clear="none"/>
-            </desc>
+         </desc>
          <source language="nl-NL">World Health Organization (WHO)<br clear="none"/>
          </source>
          <valueDomain type="code"/>
@@ -2767,8 +2799,9 @@
                   isMandatory="false"
                   shortName="etniciteit">
             <name language="nl-NL">Etniciteit</name>
-            <desc language="nl-NL">Etnische herkomst.<br clear="none"/>Is van belang bij biologische vader in verband met mogelijke erfelijke risicofactoren.<br clear="none"/>
-                </desc>
+            <desc language="nl-NL">Etnische herkomst.<br clear="none"/>Is van belang bij biologische vader in verband met mogelijke erfelijke
+            risicofactoren.<br clear="none"/>
+            </desc>
             <relationship type="SPEC"
                           ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10400"
                           flexibility="2013-09-10T00:00:00"
@@ -2854,9 +2887,13 @@
                shortName="identificatie_van_de_zwangerschap">
          <name language="nl-NL">Identificatie van de zwangerschap</name>
          <desc language="nl-NL">Uniek zwangerschapsnummer</desc>
-         <operationalization language="nl-NL">Voor de identificatie van de zwangerschap van de vrouw wordt eerst de leeftijd van de vrouw in dagen op de datum van conceptie bepaald en dan het aantal episodes van veertien dagen berekend. De volgende formule wordt gebruikt: leeftijd van de vrouw in dagen op de datum van conceptie div 14 (geheeltallige deling). De methode levert voor een conceptiedatum het identificatienummer op in combinatie met het BSN nummer of andere identificatiegegevens van de vrouw. Voorbeeld: conceptiedatum 3. oktober 2011, de vrouw (geboren op 9. april 1985)
-                        is op die datum 9673 dagen oud. De formule /14 levert als identificatie van deze zwangerschap 690.<br clear="none"/>
-            <br clear="none"/>Indien de conceptiedatum niet en de a terme datum wel beschikbaar is kan de conceptiedatum geschat worden door: A terme datum – 267 dagen..</operationalization>
+         <operationalization language="nl-NL">Voor de identificatie van de zwangerschap van de vrouw wordt eerst de leeftijd van de vrouw in dagen op de
+        datum van conceptie bepaald en dan het aantal episodes van veertien dagen berekend. De volgende formule wordt gebruikt: leeftijd van de vrouw
+        in dagen op de datum van conceptie div 14 (geheeltallige deling). De methode levert voor een conceptiedatum het identificatienummer op in
+        combinatie met het BSN nummer of andere identificatiegegevens van de vrouw. Voorbeeld: conceptiedatum 3. oktober 2011, de vrouw (geboren op 9.
+        april 1985) is op die datum 9673 dagen oud. De formule /14 levert als identificatie van deze zwangerschap 690.<br clear="none"/>
+            <br clear="none"/>Indien de conceptiedatum niet en de a terme datum wel beschikbaar is kan de conceptiedatum geschat worden door: A terme datum
+        – 267 dagen..</operationalization>
          <valueDomain type="identifier"/>
       </concept>
       <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80664"
@@ -2868,7 +2905,8 @@
                isMandatory="false"
                shortName="casemanager_naam">
          <name language="nl-NL">Casemanager naam</name>
-         <desc language="nl-NL">De casemanager is een zorgverlener die het eerste aanspreekpunt is voor deze zwangerschap. Deze kan tijdens de zwangerschap wisselen, bijvoorbeeld bij verwijzing tussen 1e en 2e lijn.</desc>
+         <desc language="nl-NL">De casemanager is een zorgverlener die het eerste aanspreekpunt is voor deze zwangerschap. Deze kan tijdens de
+        zwangerschap wisselen, bijvoorbeeld bij verwijzing tussen 1e en 2e lijn.</desc>
          <valueDomain type="complex">
             <property/>
          </valueDomain>
@@ -2898,7 +2936,7 @@
                shortName="pariteit_voor_deze_zwangerschap">
          <name language="nl-NL">Pariteit (vóór deze zwangerschap)</name>
          <desc language="nl-NL">Aantal voorafgaande zwangerschappen vóór deze zwangerschap die eindigden met een partus (&gt;= 16w 0d / 112 dagen).<br clear="none"/>De waarde van dit item is minimaal 1 minder dan graviditeit. <br clear="none"/>
-            </desc>
+         </desc>
          <valueDomain type="count">
             <property minInclude="0" maxInclude="30"/>
          </valueDomain>
@@ -2927,7 +2965,7 @@
                shortName="aantal_levende_kinderen">
          <name language="nl-NL">Aantal levende kinderen</name>
          <desc language="nl-NL">Het aantal kinderen door deze vrouw gebaard én op dit moment in leven.<br clear="none"/>
-            </desc>
+         </desc>
          <valueDomain type="count">
             <property minInclude="0"/>
          </valueDomain>
@@ -2941,8 +2979,9 @@
                isMandatory="false"
                shortName="fetal_loss">
          <name language="nl-NL">Fetal Loss</name>
-         <desc language="nl-NL">Anamnestisch gegeven: het gaat hier om intra-uteriene sterfte bij een zwangerschapsduur van 16 weken of langer. Geteld wordt het aantal overleden foetus, bij een tweeling kan dit dus 2 zijn.<br clear="none"/>
-            </desc>
+         <desc language="nl-NL">Anamnestisch gegeven: het gaat hier om intra-uteriene sterfte bij een zwangerschapsduur van 16 weken of langer. Geteld
+        wordt het aantal overleden foetus, bij een tweeling kan dit dus 2 zijn.<br clear="none"/>
+         </desc>
          <valueDomain type="count"/>
       </concept>
       <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20029"
@@ -2968,7 +3007,8 @@
                   isMandatory="false"
                   shortName="a_terme_datum">
             <name language="nl-NL">A terme datum</name>
-            <desc language="nl-NL">Datum waarop de zwangerschap naar verwachting 40w 0d is (280 dagen). Op meerdere momenten in de zwangerschap kunnen verschillende à terme datum worden gehanteerd. </desc>
+            <desc language="nl-NL">Datum waarop de zwangerschap naar verwachting 40w 0d is (280 dagen). Op meerdere momenten in de zwangerschap kunnen
+          verschillende à terme datum worden gehanteerd. </desc>
             <valueDomain type="datetime">
                <property timeStampPrecision="YMD!"/>
             </valueDomain>
@@ -2982,7 +3022,8 @@
                   isMandatory="false"
                   shortName="datum_bepaling_a_terme_datum">
             <name language="nl-NL">Datum bepaling à terme datum</name>
-            <desc language="nl-NL">Datum waarop de à terme datum is vastgesteld. Hieraan is dan tevens te zien of het bij de eerste controle was of bij (geruime tijd vóór) de partus... </desc>
+            <desc language="nl-NL">Datum waarop de à terme datum is vastgesteld. Hieraan is dan tevens te zien of het bij de eerste controle was of bij
+          (geruime tijd vóór) de partus... </desc>
             <valueDomain type="datetime">
                <property timeStampPrecision="YMD"/>
             </valueDomain>
@@ -3041,7 +3082,8 @@
                   isMandatory="false"
                   shortName="actuele_a_terme_datumq">
             <name language="nl-NL">Actuele à terme datum?</name>
-            <desc language="nl-NL">Dit is een indicator of de betreffende a terme datum actueel is (y/n), er mag en moet maar één a terme datum als actueel gehanteerd worden</desc>
+            <desc language="nl-NL">Dit is een indicator of de betreffende a terme datum actueel is (y/n), er mag en moet maar één a terme datum als
+          actueel gehanteerd worden</desc>
             <valueDomain type="boolean"/>
          </concept>
          <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80669"
@@ -3068,8 +3110,11 @@
                isMandatory="false"
                shortName="definitieve_a_terme_datum">
          <name language="nl-NL">Definitieve à terme datum</name>
-         <desc language="nl-NL">De ‘Definitieve à terme datum’ is de ‘Zekere à terme datum’ bepaald volgens het landelijke protocol "Datering Zwangerschap". Indien er geen ‘Zekere à terme datum’ meer bepaald kan worden op basis van dit protocol is de ‘Definitieve à terme datum’ de à terme datum die voor de rest van de zorgverlening gehanteerd zal worden.<br clear="none"/>Noot: oorzaken van het niet meer kunnen bepalen van 'Zekere à terme datum' volgens het protocol kunnen bijvoorbeeld zijn: miskraam of te lange zwangerschapsduur.<br clear="none"/>
-            </desc>
+         <desc language="nl-NL">De ‘Definitieve à terme datum’ is de ‘Zekere à terme datum’ bepaald volgens het landelijke protocol "Datering
+        Zwangerschap". Indien er geen ‘Zekere à terme datum’ meer bepaald kan worden op basis van dit protocol is de ‘Definitieve à terme datum’ de à
+        terme datum die voor de rest van de zorgverlening gehanteerd zal worden.<br clear="none"/>Noot: oorzaken van het niet meer kunnen bepalen van
+        'Zekere à terme datum' volgens het protocol kunnen bijvoorbeeld zijn: miskraam of te lange zwangerschapsduur.<br clear="none"/>
+         </desc>
          <valueDomain type="date">
             <property timeStampPrecision="YMD"/>
          </valueDomain>
@@ -3218,7 +3263,8 @@
                isMandatory="false"
                shortName="consanguiniteitq">
          <name language="nl-NL">Consanguïniteit?</name>
-         <desc language="nl-NL">Is er sprake van consanguïniteit? <br clear="none"/>ja/nee/onbekend <br clear="none"/>Bij consanguïniteit gaat het om partners die tot de 4e graad verwant zijn aan elkaar. </desc>
+         <desc language="nl-NL">Is er sprake van consanguïniteit? <br clear="none"/>ja/nee/onbekend <br clear="none"/>Bij consanguïniteit gaat het om
+        partners die tot de 4e graad verwant zijn aan elkaar. </desc>
          <valueDomain type="boolean"/>
       </concept>
       <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20060"
@@ -3231,7 +3277,8 @@
                isMandatory="false"
                shortName="vals_positieve_zwangerschapq">
          <name language="nl-NL">Vals positieve zwangerschap?</name>
-         <desc language="nl-NL">De vaststelling dat vrouw toch niet zwanger is. Wordt vooralsnog alleen bij de jonge zwangerschapsecho gevraagd. Zou echter conceptueel goed bij 'Einde zorgverlening' passen. </desc>
+         <desc language="nl-NL">De vaststelling dat vrouw toch niet zwanger is. Wordt vooralsnog alleen bij de jonge zwangerschapsecho gevraagd. Zou
+        echter conceptueel goed bij 'Einde zorgverlening' passen. </desc>
          <valueDomain type="boolean"/>
       </concept>
       <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20080"
@@ -3269,7 +3316,8 @@
                   isMandatory="false"
                   shortName="ovulatieinductie_toegepastq">
             <name language="nl-NL">Ovulatie-inductie toegepast?</name>
-            <desc language="nl-NL">Is bij deze subfertiliteitsbehandeling de eisprong met behulp van medicatie (tabetten, injectie of pomp) gestimuleerd / op gang gebracht? </desc>
+            <desc language="nl-NL">Is bij deze subfertiliteitsbehandeling de eisprong met behulp van medicatie (tabetten, injectie of pomp) gestimuleerd /
+          op gang gebracht? </desc>
             <valueDomain type="boolean"/>
          </concept>
          <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20095"
@@ -3346,7 +3394,7 @@
                shortName="voornemens">
          <name language="nl-NL">Voornemens</name>
          <desc language="nl-NL">Voornemens in de zwangerschap<br clear="none"/>
-            </desc>
+         </desc>
          <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82152"
                   statusCode="draft"
                   effectiveDate="2016-09-08T00:00:00"
@@ -3402,8 +3450,10 @@
                   shortName="voorgenomen_plaats_baring_tijdens_zwangerschap_type_locatie">
             <name language="nl-NL">Voorgenomen plaats baring tijdens zwangerschap (type locatie)</name>
             <desc language="nl-NL">Voorgenomen plaats baring tijdens zwangerschap (type locatie).<br clear="none"/>
-               <br clear="none"/>Het gaat hier primair om de wens van de vrouw die soms beperkt wordt door de risicostatus. Er kan gekozen worden voor 'ziekenhuis' ook als er géén sprake is van een medische indicaite.<br clear="none"/>
-                </desc>
+               <br clear="none"/>Het gaat hier primair
+          om de wens van de vrouw die soms beperkt wordt door de risicostatus. Er kan gekozen worden voor 'ziekenhuis' ook als er géén sprake is van
+          een medische indicaite.<br clear="none"/>
+            </desc>
             <valueDomain type="code"/>
             <valueSet id="2.16.840.1.113883.2.4.11.179"
                       name="VoorgenomenPlaatsBaring"
@@ -3560,7 +3610,7 @@
                   shortName="bevalplan">
             <name language="nl-NL">Bevalplan</name>
             <desc language="nl-NL">Bevalplan. Plan voor bevalling gemaakt door zwangere: omschrijft haar wensen/verwachtingen tijdens bevalling.<br clear="none"/>
-                </desc>
+            </desc>
             <comment language="nl-NL">In sommige systemen zijn dit ingescande documenten, in sommige systemen is dit (opgemaakte) tekst.<br clear="none"/>
             </comment>
             <valueDomain type="blob">
@@ -3618,7 +3668,7 @@
                   shortName="zorgverlenertype">
             <name language="nl-NL">Zorgverlenertype</name>
             <desc language="nl-NL">Zorgverlenertype perinatale controles<br clear="none"/>
-                </desc>
+            </desc>
             <valueDomain type="code"/>
             <valueSet id="2.16.840.1.113883.2.4.11.185"
                       name="RolZorgverlenerPerinataleControle"
@@ -3698,8 +3748,9 @@
                   isMandatory="false"
                   shortName="zwangerschapsduur">
             <name language="nl-NL">Zwangerschapsduur</name>
-            <desc language="nl-NL">Zwangerschapsduur<br clear="none"/>De dataset definieert de zwangerschapsduur in dagen. <br clear="none"/>Zorgverleners zien de zwangerschapsduur het liefste in weken/dagen. Dus bijvoorbeeld: 36w2d of 40+2.<br clear="none"/>
-                </desc>
+            <desc language="nl-NL">Zwangerschapsduur<br clear="none"/>De dataset definieert de zwangerschapsduur in dagen. <br clear="none"/>Zorgverleners
+          zien de zwangerschapsduur het liefste in weken/dagen. Dus bijvoorbeeld: 36w2d of 40+2.<br clear="none"/>
+            </desc>
             <valueDomain type="quantity">
                <property unit="d"/>
             </valueDomain>
@@ -3887,7 +3938,7 @@
             <name language="nl-NL">Drugsgebruik?</name>
             <desc language="nl-NL">Is er sprake van drugsgebruik?<br clear="none"/>
                <br clear="none"/>
-                </desc>
+            </desc>
             <valueDomain type="boolean">
                <property/>
             </valueDomain>
@@ -3902,7 +3953,7 @@
                   shortName="soort_drugs">
             <name language="nl-NL">Soort drugs</name>
             <desc language="nl-NL">Soort drugs<br clear="none"/>
-                </desc>
+            </desc>
             <source language="nl-NL">Codelijst D1 van PRN<br clear="none"/>
             </source>
             <valueDomain type="code"/>
@@ -4116,7 +4167,7 @@
                   shortName="fundusstand">
             <name language="nl-NL">Fundusstand</name>
             <desc language="nl-NL">Fundusstand volgens anatomische referentiepunten.<br clear="none"/>
-                </desc>
+            </desc>
             <valueDomain type="code">
                <property/>
             </valueDomain>
@@ -4287,8 +4338,10 @@
                <name language="nl-NL">Hartactie aanwezig?</name>
                <desc language="nl-NL">Hartactie van de foetus aanwezig?<br clear="none"/>
                   <br clear="none"/>ja/nee/onbekend<br clear="none"/>
-                  <br clear="none"/>Ja -&gt; hartactie waargenomen<br clear="none"/>Nee -&gt; geen hartactie waargenomen, terwijl dit op grond van het onderzoek wél de verwachting was<br clear="none"/>Onbekend -&gt; bijvoorbeeld wanneer de hartactie nog niet waarneembaar is omdat het te vroeg in de zwangerschap is<br clear="none"/>
-                    </desc>
+                  <br clear="none"/>Ja -&gt; hartactie waargenomen<br clear="none"/>Nee -&gt; geen hartactie waargenomen, terwijl dit op grond van het
+            onderzoek wél de verwachting was<br clear="none"/>Onbekend -&gt; bijvoorbeeld wanneer de hartactie nog niet waarneembaar is omdat het te
+            vroeg in de zwangerschap is<br clear="none"/>
+               </desc>
                <comment language="nl-NL">
                   <br clear="none"/>
                </comment>
@@ -4307,7 +4360,7 @@
                      shortName="hartactie">
                <name language="nl-NL">Hartactie</name>
                <desc language="nl-NL">Hartactie van de foetus<br clear="none"/>
-                    </desc>
+               </desc>
                <comment language="nl-NL">Alleen van toepassing wanneer Hartactie aanwezig? = Ja</comment>
                <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82106"
                         statusCode="draft"
@@ -4320,7 +4373,7 @@
                   <name language="nl-NL">Regelmaat hartslag</name>
                   <desc language="nl-NL">Regelmaat van de hartslag van de foetus.<br clear="none"/>
                      <br clear="none"/>
-                        </desc>
+                  </desc>
                   <comment language="nl-NL">
                      <br clear="none"/>
                   </comment>
@@ -4357,7 +4410,7 @@
                         shortName="frequentie_hartslag">
                   <name language="nl-NL">Frequentie hartslag</name>
                   <desc language="nl-NL">Frequentie van de hartslag van de foetus<br clear="none"/>
-                        </desc>
+                  </desc>
                   <valueDomain type="code">
                      <property/>
                   </valueDomain>
@@ -4396,7 +4449,7 @@
                      shortName="hartactie_op_basis_van">
                <name language="nl-NL">Hartactie op basis van</name>
                <desc language="nl-NL">Op basis waarvan is hartactie gemeten<br clear="none"/>
-                    </desc>
+               </desc>
                <valueDomain type="code"/>
                <valueSet name="hartactie_op_basis_van"
                          displayName="Hartactie op basis van"
@@ -4472,7 +4525,7 @@
                shortName="diagnose">
          <name language="nl-NL">Diagnose</name>
          <desc language="nl-NL">Diagnose relevant voor zwangerschap<br clear="none"/>
-            </desc>
+         </desc>
          <relationship type="SPEC"
                        ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82268"
                        flexibility="2014-09-12T14:04:48"
@@ -4487,7 +4540,7 @@
                   shortName="datum">
             <name language="nl-NL">Datum</name>
             <desc language="nl-NL">Datum<br clear="none"/>
-                </desc>
+            </desc>
             <valueDomain type="datetime">
                <property timeStampPrecision="YMD"/>
             </valueDomain>
@@ -4501,8 +4554,9 @@
                   isMandatory="false"
                   shortName="zwangerschapsduur">
             <name language="nl-NL">Zwangerschapsduur</name>
-            <desc language="nl-NL">Zwangerschapsduur<br clear="none"/>De dataset definieert de zwangerschapsduur in dagen. <br clear="none"/>Zorgverleners zien de zwangerschapsduur het liefste in weken/dagen. Dus bijvoorbeeld: 36w2d of 40+2.<br clear="none"/>
-                </desc>
+            <desc language="nl-NL">Zwangerschapsduur<br clear="none"/>De dataset definieert de zwangerschapsduur in dagen. <br clear="none"/>Zorgverleners
+          zien de zwangerschapsduur het liefste in weken/dagen. Dus bijvoorbeeld: 36w2d of 40+2.<br clear="none"/>
+            </desc>
             <valueDomain type="quantity">
                <property unit="d"/>
             </valueDomain>
@@ -4517,7 +4571,7 @@
                   shortName="gynaecologische_aandoening">
             <name language="nl-NL">Gynaecologische aandoening</name>
             <desc language="nl-NL">Gynaecologische aandoening met mogelijke consequenties voor de zwangerschap.<br clear="none"/>
-                </desc>
+            </desc>
             <valueDomain type="code"/>
             <valueSet id="2.16.840.1.113883.2.4.3.11.60.90.77.11.16"
                       statusCode="final"
@@ -4558,7 +4612,7 @@
                   shortName="bloedverliesq">
             <name language="nl-NL">Bloedverlies?</name>
             <desc language="nl-NL">Is er sprake van bloedverlies?<br clear="none"/>
-                </desc>
+            </desc>
             <valueDomain type="boolean"/>
          </concept>
          <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82286"
@@ -4571,8 +4625,9 @@
                   shortName="partiele_molaq">
             <name language="nl-NL">Partiële mola?</name>
             <desc language="nl-NL">Is er sprake van een partiële mola, met intacte zwangerschap?<br clear="none"/>
-               <br clear="none"/>Een mola wordt geregistreerd bij 'wijze einde zwangerschap'.<br clear="none"/>
-                </desc>
+               <br clear="none"/>Een mola wordt
+          geregistreerd bij 'wijze einde zwangerschap'.<br clear="none"/>
+            </desc>
             <valueDomain type="boolean">
                <property/>
             </valueDomain>
@@ -4587,7 +4642,7 @@
                   shortName="cervixinsufficientieq">
             <name language="nl-NL">Cervixinsufficiëntie?</name>
             <desc language="nl-NL">Is er sprake van cervixinsufficiëntie?<br clear="none"/>
-                </desc>
+            </desc>
             <valueDomain type="boolean">
                <property/>
             </valueDomain>
@@ -4602,7 +4657,7 @@
                   shortName="infectie">
             <name language="nl-NL">Infectie</name>
             <desc language="nl-NL">Infectie<br clear="none"/>
-                </desc>
+            </desc>
             <valueDomain type="code"/>
             <valueSet id="2.16.840.1.113883.2.4.3.11.60.90.77.11.204"
                       name="Infectie22"
@@ -4653,7 +4708,7 @@
                   shortName="hyperemesis_gravidarumq">
             <name language="nl-NL">Hyperemesis gravidarum?</name>
             <desc language="nl-NL">Is er sprake van hyperemesis gravidarum?<br clear="none"/>
-                </desc>
+            </desc>
             <valueDomain type="boolean">
                <property/>
             </valueDomain>
@@ -4668,7 +4723,7 @@
                   shortName="hypertensieve_aandoening">
             <name language="nl-NL">Hypertensieve aandoening</name>
             <desc language="nl-NL">Hypertensieve aandoening tijdens zwangerschap<br clear="none"/>
-                </desc>
+            </desc>
             <valueDomain type="code">
                <property/>
             </valueDomain>
@@ -4711,7 +4766,7 @@
                   shortName="zwangerschapscholestaseq">
             <name language="nl-NL">Zwangerschapscholestase?</name>
             <desc language="nl-NL">Is er sprake van zwangerschapscholestase?<br clear="none"/>
-                </desc>
+            </desc>
             <valueDomain type="boolean">
                <property/>
             </valueDomain>
@@ -4726,7 +4781,7 @@
                   shortName="diabetes_gravidarum_met_insulineq">
             <name language="nl-NL">Diabetes gravidarum met insuline?</name>
             <desc language="nl-NL">Is er sprake van diabetes gravidarum met insuline?<br clear="none"/>
-                </desc>
+            </desc>
             <valueDomain type="boolean">
                <property/>
             </valueDomain>
@@ -4741,7 +4796,7 @@
                   shortName="afwijkende_groei_foetus">
             <name language="nl-NL">Afwijkende groei foetus</name>
             <desc language="nl-NL">Afwijkende groei foetus<br clear="none"/>
-                </desc>
+            </desc>
             <valueDomain type="code"/>
             <valueSet statusCode="final"
                       id="2.16.840.1.113883.2.4.3.11.60.90.77.11.37"
@@ -4777,8 +4832,9 @@
                   shortName="dreigende_partus_immaturusq">
             <name language="nl-NL">Dreigende partus immaturus?</name>
             <desc language="nl-NL">Is er sprake van dreigende partus immaturus?<br clear="none"/>
-               <br clear="none"/>Een partus immaturus is van 16w0d tot en met 23w6d.<br clear="none"/>
-                </desc>
+               <br clear="none"/>Een partus immaturus is van 16w0d tot
+          en met 23w6d.<br clear="none"/>
+            </desc>
             <valueDomain type="boolean"/>
          </concept>
          <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82280"
@@ -4791,8 +4847,9 @@
                   shortName="dreigende_partus_prematurusq">
             <name language="nl-NL">Dreigende partus prematurus?</name>
             <desc language="nl-NL">Is er sprake van dreigende partus prematurus?<br clear="none"/>
-               <br clear="none"/>Een partus prematurus is van 24w0d tot en met 36w6d.<br clear="none"/>
-                </desc>
+               <br clear="none"/>Een partus prematurus is van 24w0d tot
+          en met 36w6d.<br clear="none"/>
+            </desc>
             <valueDomain type="boolean"/>
          </concept>
          <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82289"
@@ -4805,7 +4862,7 @@
                   shortName="abruptio_placentaeq">
             <name language="nl-NL">Abruptio placentae?</name>
             <desc language="nl-NL">Abruptio placentae?<br clear="none"/>
-                </desc>
+            </desc>
             <valueDomain type="boolean">
                <property/>
             </valueDomain>
@@ -4820,8 +4877,9 @@
                   shortName="liggingsafwijking">
             <name language="nl-NL">Liggingsafwijking</name>
             <desc language="nl-NL">Liggingsafwijking. <br clear="none"/>
-               <br clear="none"/>Vanaf 34 weken is iedere ligging anders dan 'hoofdligging' een afwijkende ligging.<br clear="none"/>
-                </desc>
+               <br clear="none"/>Vanaf 34 weken is iedere ligging anders dan 'hoofdligging' een
+          afwijkende ligging.<br clear="none"/>
+            </desc>
             <valueDomain type="code">
                <property/>
             </valueDomain>
@@ -4870,7 +4928,7 @@
                shortName="interventie">
          <name language="nl-NL">Interventie</name>
          <desc language="nl-NL">Interventie<br clear="none"/>
-            </desc>
+         </desc>
          <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82378"
                   statusCode="draft"
                   effectiveDate="2016-09-08T00:00:00"
@@ -4881,7 +4939,7 @@
                   shortName="datum">
             <name language="nl-NL">Datum</name>
             <desc language="nl-NL">Datum<br clear="none"/>
-                </desc>
+            </desc>
             <valueDomain type="datetime">
                <property timeStampPrecision="YMD"/>
             </valueDomain>
@@ -4895,8 +4953,9 @@
                   isMandatory="false"
                   shortName="zwangerschapsduur">
             <name language="nl-NL">Zwangerschapsduur</name>
-            <desc language="nl-NL">Zwangerschapsduur<br clear="none"/>De dataset definieert de zwangerschapsduur in dagen. <br clear="none"/>Zorgverleners zien de zwangerschapsduur het liefste in weken/dagen. Dus bijvoorbeeld: 36w2d of 40+2.<br clear="none"/>
-                </desc>
+            <desc language="nl-NL">Zwangerschapsduur<br clear="none"/>De dataset definieert de zwangerschapsduur in dagen. <br clear="none"/>Zorgverleners
+          zien de zwangerschapsduur het liefste in weken/dagen. Dus bijvoorbeeld: 36w2d of 40+2.<br clear="none"/>
+            </desc>
             <valueDomain type="quantity">
                <property unit="d"/>
             </valueDomain>
@@ -4911,7 +4970,7 @@
                   shortName="interventie">
             <name language="nl-NL">Interventie</name>
             <desc language="nl-NL">Interventie<br clear="none"/>
-                </desc>
+            </desc>
             <valueDomain type="code"/>
             <valueSet id="2.16.840.1.113883.2.4.3.11.60.90.77.11.215"
                       name="Interventie22"
@@ -4993,7 +5052,7 @@
                shortName="intrauteriene_behandeling">
          <name language="nl-NL">Intra-uteriene behandeling</name>
          <desc language="nl-NL">Intra-uteriene behandeling<br clear="none"/>
-            </desc>
+         </desc>
          <valueDomain type="code">
             <property/>
          </valueDomain>
@@ -5046,7 +5105,7 @@
                shortName="antenatale_betrokkenheid_kinderartsq">
          <name language="nl-NL">Antenatale betrokkenheid kinderarts?</name>
          <desc language="nl-NL">Is er sprake van antenatale betrokkenheid kinderarts?<br clear="none"/>
-            </desc>
+         </desc>
          <valueDomain type="boolean">
             <property/>
          </valueDomain>
@@ -5061,8 +5120,9 @@
                shortName="reden_antenatale_betrokkenheid_kinderarts">
          <name language="nl-NL">Reden antenatale betrokkenheid kinderarts</name>
          <desc language="nl-NL">Reden antenatale betrokkenheid kinderarts.<br clear="none"/>
-            <br clear="none"/>Er kunnen meerdere redenen van toepassing zijn.<br clear="none"/>
-            </desc>
+            <br clear="none"/>Er kunnen meerdere redenen van toepassing
+          zijn.<br clear="none"/>
+         </desc>
          <relationship type="SPEC"
                        ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82233"
                        flexibility="2014-09-01T15:55:27"
@@ -5134,7 +5194,7 @@
                shortName="datum_maternale_sterfte">
          <name language="nl-NL">Datum maternale sterfte</name>
          <desc language="nl-NL">Datum(tijd) vrouw overleden.<br clear="none"/>
-            </desc>
+         </desc>
          <valueDomain type="datetime">
             <property timeStampPrecision="YMD"/>
          </valueDomain>
@@ -5149,8 +5209,10 @@
                shortName="wijze_einde_zwangerschap">
          <name language="nl-NL">Wijze einde zwangerschap</name>
          <desc language="nl-NL">De wijze waarop de zwangerschap geëindigd is.<br clear="none"/>
-            <br clear="none"/>TOP (Termination of Pregnancy) is zwangerschapsafbreking na 16 weken. Bij TOP wordt hier 'Partus' geregistreerd, zodat dit meegenomen wordt als pariteit. Dit in tegenstelling tot APLA, waarmee een zwangerschapsafbreking (abortus) van minder dan 16 weken wordt bedoeld.<br clear="none"/>
-            </desc>
+            <br clear="none"/>TOP (Termination of Pregnancy) is
+        zwangerschapsafbreking na 16 weken. Bij TOP wordt hier 'Partus' geregistreerd, zodat dit meegenomen wordt als pariteit. Dit in tegenstelling
+        tot APLA, waarmee een zwangerschapsafbreking (abortus) van minder dan 16 weken wordt bedoeld.<br clear="none"/>
+         </desc>
          <valueDomain type="code">
             <property/>
          </valueDomain>
@@ -5227,9 +5289,11 @@
                isMandatory="false"
                shortName="datum_einde_zwangerschap">
          <name language="nl-NL">Datum einde zwangerschap</name>
-         <desc language="nl-NL">Moment (datum en tijd) waarop de zwangerschap medisch gezien is geëindigd, anders dan na een partus (bij een partus wordt dit item niet ingevuld).<br clear="none"/>
-            <br clear="none"/>NB. Bij een partus wordt op een andere plaats in het dossier geregistreerd: geboortedatum per kind én geboortedatum/tijd van de placenta(e).<br clear="none"/>
-            </desc>
+         <desc language="nl-NL">Moment (datum en tijd) waarop de zwangerschap medisch gezien is geëindigd, anders dan na een partus (bij een partus wordt
+        dit item niet ingevuld).<br clear="none"/>
+            <br clear="none"/>NB. Bij een partus wordt op een andere plaats in het dossier geregistreerd:
+        geboortedatum per kind én geboortedatum/tijd van de placenta(e).<br clear="none"/>
+         </desc>
          <valueDomain type="datetime">
             <property timeStampPrecision="YMD"/>
          </valueDomain>
@@ -5244,7 +5308,7 @@
                shortName="bijlage">
          <name language="nl-NL">Bijlage</name>
          <desc language="nl-NL">Bijlage. Bijzonderheden, externe correspondentie, etcetera.<br clear="none"/>
-            </desc>
+         </desc>
          <operationalization language="nl-NL">Bestandsformaat PDF<br clear="none"/>
          </operationalization>
          <valueDomain type="blob">
@@ -5317,7 +5381,7 @@
                shortName="reden_verzending">
          <name language="nl-NL">Reden verzending</name>
          <desc language="nl-NL">Reden verzending counselingsgegevens naar registratie.<br clear="none"/>
-            </desc>
+         </desc>
          <valueDomain type="code"/>
          <valueSet statusCode="final"
                    name="RedenVerzendingCounselingBericht"
@@ -5358,7 +5422,7 @@
                shortName="counseling_combinatietest">
          <name language="nl-NL">Counseling combinatietest</name>
          <desc language="nl-NL">Counselingsgegevens over combinatietest<br clear="none"/>
-            </desc>
+         </desc>
          <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20455"
                   statusCode="final"
                   effectiveDate="2016-09-08T00:00:00"
@@ -5385,7 +5449,7 @@
                   shortName="zorgverlener">
             <name language="nl-NL">Zorgverlener</name>
             <desc language="nl-NL">Zorgverlener die de counseling uitvoert.<br clear="none"/>
-                </desc>
+            </desc>
             <relationship type="SPEC"
                           ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.4.10001"
                           flexibility="2012-08-06T00:00:00"
@@ -5462,8 +5526,9 @@
                   shortName="direct_ipd_gewenstq">
             <name language="nl-NL">Direct IPD gewenst?</name>
             <desc language="nl-NL">Is invasieve prenatale diagnostiek (IPD) door de vrouw gewenst?<br clear="none"/>
-               <br clear="none"/>Dit item is alleen van toepassing wanneer mevrouw een indicatie heeft voor invasieve prenatale diagnostiek (IPD, item 80937) zonder voorafgaande screening.<br clear="none"/>
-                </desc>
+               <br clear="none"/>Dit item is alleen
+          van toepassing wanneer mevrouw een indicatie heeft voor invasieve prenatale diagnostiek (IPD, item 80937) zonder voorafgaande screening.<br clear="none"/>
+            </desc>
             <valueDomain type="boolean"/>
          </concept>
          <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20485"
@@ -5475,7 +5540,9 @@
                   isMandatory="false"
                   shortName="combinatietest_gewenstq">
             <name language="nl-NL">Combinatietest gewenst?</name>
-            <desc language="nl-NL">Hierbij wordt aangegeven of de combinatietest (NT-meting en de 1e trim. bloedtest) door de vrouw gewenst is c.q toestemming voor gegeven heeft. N.B. Dit is dus niet de mening van de zorgverlener! Indien de bloedtest niet wordt uitgevoerd vanwege meerlingzwangerschap, dan geldt alleen de NT-meting. </desc>
+            <desc language="nl-NL">Hierbij wordt aangegeven of de combinatietest (NT-meting en de 1e trim. bloedtest) door de vrouw gewenst is c.q
+          toestemming voor gegeven heeft. N.B. Dit is dus niet de mening van de zorgverlener! Indien de bloedtest niet wordt uitgevoerd vanwege
+          meerlingzwangerschap, dan geldt alleen de NT-meting. </desc>
             <valueDomain type="boolean"/>
          </concept>
       </concept>
@@ -5489,7 +5556,7 @@
                shortName="counseling_seo">
          <name language="nl-NL">Counseling SEO</name>
          <desc language="nl-NL">Counselingsgegevens over SEO<br clear="none"/>
-            </desc>
+         </desc>
          <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82163"
                   statusCode="final"
                   effectiveDate="2016-09-08T00:00:00"
@@ -5516,7 +5583,7 @@
                   shortName="zorgverlener">
             <name language="nl-NL">Zorgverlener</name>
             <desc language="nl-NL">Zorgverlener die de counseling uitvoert.<br clear="none"/>
-                </desc>
+            </desc>
             <relationship type="SPEC"
                           ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.4.10001"
                           flexibility="2012-08-06T00:00:00"
@@ -5593,9 +5660,10 @@
                   shortName="direct_guo_gewenstq">
             <name language="nl-NL">Direct GUO gewenst?</name>
             <desc language="nl-NL">Is de GUO door de vrouw gewenst?<br clear="none"/>
-               <br clear="none"/>Dit item is alleen van toepassing wanneer mevrouw een indicatie heeft voor geavanceerd ultrageluidonderzoekl (GUO, item 80938) zonder voorafgaande screening (SEO).<br clear="none"/>
+               <br clear="none"/>Dit item is alleen van toepassing wanneer mevrouw
+          een indicatie heeft voor geavanceerd ultrageluidonderzoekl (GUO, item 80938) zonder voorafgaande screening (SEO).<br clear="none"/>
                <br clear="none"/>
-                </desc>
+            </desc>
             <valueDomain type="boolean"/>
          </concept>
          <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20495"
@@ -5607,7 +5675,8 @@
                   isMandatory="false"
                   shortName="seo_gewenstq">
             <name language="nl-NL">SEO gewenst?</name>
-            <desc language="nl-NL">Is een structureel echoscopisch onderzoek naar foetale afwijkingen door de vrouw gewenst c.q toestemming voor verkregen? N.B. Dit is dus niet de mening van de zorgverlener! </desc>
+            <desc language="nl-NL">Is een structureel echoscopisch onderzoek naar foetale afwijkingen door de vrouw gewenst c.q toestemming voor
+          verkregen? N.B. Dit is dus niet de mening van de zorgverlener! </desc>
             <valueDomain type="boolean"/>
          </concept>
       </concept>
@@ -5655,7 +5724,7 @@
                shortName="diagnose_bevalling">
          <name language="nl-NL">Diagnose bevalling</name>
          <desc language="nl-NL">Diagnose bevalling<br clear="none"/>
-            </desc>
+         </desc>
          <relationship type="SPEC"
                        ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82291"
                        flexibility="2014-09-15T12:23:55"
@@ -5670,7 +5739,7 @@
                   shortName="datum">
             <name language="nl-NL">Datum</name>
             <desc language="nl-NL">Datum<br clear="none"/>
-                </desc>
+            </desc>
             <valueDomain type="datetime">
                <property timeStampPrecision="YMD"/>
             </valueDomain>
@@ -5684,8 +5753,9 @@
                   isMandatory="false"
                   shortName="zwangerschapsduur">
             <name language="nl-NL">Zwangerschapsduur</name>
-            <desc language="nl-NL">Zwangerschapsduur<br clear="none"/>De dataset definieert de zwangerschapsduur in dagen. <br clear="none"/>Zorgverleners zien de zwangerschapsduur het liefste in weken/dagen. Dus bijvoorbeeld: 36w2d of 40+2.<br clear="none"/>
-                </desc>
+            <desc language="nl-NL">Zwangerschapsduur<br clear="none"/>De dataset definieert de zwangerschapsduur in dagen. <br clear="none"/>Zorgverleners
+          zien de zwangerschapsduur het liefste in weken/dagen. Dus bijvoorbeeld: 36w2d of 40+2.<br clear="none"/>
+            </desc>
             <valueDomain type="quantity">
                <property unit="d"/>
             </valueDomain>
@@ -5700,7 +5770,8 @@
                   shortName="ppromq">
             <name language="nl-NL">PPROM?</name>
             <desc language="nl-NL"> PPROM = Preterm Prelabor Rupture of Membranes.<br clear="none"/>
-               <br clear="none"/>PPROM = Breken van vliezen zonder weeën tot en met 36w6d. </desc>
+               <br clear="none"/>PPROM = Breken van vliezen zonder
+          weeën tot en met 36w6d. </desc>
             <valueDomain type="boolean"/>
          </concept>
          <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82290"
@@ -5713,10 +5784,11 @@
                   shortName="promq">
             <name language="nl-NL">PROM?</name>
             <desc language="nl-NL">PROM = Prelabor Rupture of Membranes<br clear="none"/>
-               <br clear="none"/>PROM = Breken van vliezen zonder weeën 37w0d of later.<br clear="none"/>
+               <br clear="none"/>PROM = Breken van vliezen zonder weeën 37w0d of
+            later.<br clear="none"/>
                <br clear="none"/>
                <br clear="none"/>
-                </desc>
+            </desc>
             <valueDomain type="boolean"/>
          </concept>
          <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82292"
@@ -5729,7 +5801,7 @@
                   shortName="koortsq">
             <name language="nl-NL">Koorts?</name>
             <desc language="nl-NL">Is er sprake van koorts?<br clear="none"/>We spreken van koorts bij een temperatuur &gt;= 38,0 graden Celsius<br clear="none"/>
-                </desc>
+            </desc>
             <valueDomain type="boolean"/>
          </concept>
          <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82293"
@@ -5742,12 +5814,12 @@
                   shortName="niet_vorderende_ontsluitingq">
             <name language="nl-NL">Niet vorderende ontsluiting?</name>
             <desc language="nl-NL">Niet vorderende ontsluiting?<br clear="none"/>Er is sprake van niet vorderende ontsluiting (KNOV richtlijn) wanneer:<br clear="none"/>
-                    <ul>
+               <ul>
                   <li>de latente fase meer dan 8 uur duurt;<br clear="none"/>
                   </li>
                   <li>tijdens de actieve fase de actielijn in het partogram (van de WHO) wordt overschreden.</li>
                </ul>
-                </desc>
+            </desc>
             <valueDomain type="boolean"/>
          </concept>
          <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82294"
@@ -5760,8 +5832,9 @@
                   shortName="niet_vorderende_uitdrijvingq">
             <name language="nl-NL">Niet vorderende uitdrijving?</name>
             <desc language="nl-NL">Niet vorderende uitdrijving?<br clear="none"/>
-               <br clear="none"/>Er is sprake van niet vorderende uitdrijving (NVOG richtlijn) wanneer:<br clear="none"/>
-                    <ul>
+               <br clear="none"/>Er is sprake van niet vorderende uitdrijving (NVOG
+          richtlijn) wanneer:<br clear="none"/>
+               <ul>
                   <li>bij primipara:<ul>
                         <li>zonder regionale anesthesie de uitdrijving langer dan 2 uur duurt</li>
                         <li>met regionale anesthesie de uitdrijving langer dan 3 uur duurt;</li>
@@ -5775,7 +5848,7 @@
                      </ul>
                   </li>
                </ul>
-                </desc>
+            </desc>
             <valueDomain type="boolean"/>
          </concept>
          <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82296"
@@ -5788,13 +5861,13 @@
                   shortName="verdenking_foetale_noodq">
             <name language="nl-NL">Verdenking foetale nood?</name>
             <desc language="nl-NL">Verdenking foetale nood?<br clear="none"/>Er is verdenking foetale nood bij onder andere:<br clear="none"/>
-                    <ul>
+               <ul>
                   <li>meconiumhoudend vruchtwater;</li>
                   <li>cortonen pathologie / CTG - afwijkingen / STAN - afwijkingen;</li>
                   <li>micro bloedonderzoek (MBO) - afwijkingen.<br clear="none"/>
                   </li>
                </ul>
-                </desc>
+            </desc>
             <valueDomain type="boolean"/>
          </concept>
          <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82295"
@@ -5806,8 +5879,9 @@
                   isMandatory="false"
                   shortName="vastzittende_placentaq">
             <name language="nl-NL">Vastzittende placenta?</name>
-            <desc language="nl-NL">Vastzittende placenta?<br clear="none"/>Een placenta zit vast wanneer deze langer dan een uur na de geboorte van het kind nog niet geboren is.<br clear="none"/>
-                </desc>
+            <desc language="nl-NL">Vastzittende placenta?<br clear="none"/>Een placenta zit vast wanneer deze langer dan een uur na de geboorte van het
+          kind nog niet geboren is.<br clear="none"/>
+            </desc>
             <valueDomain type="boolean"/>
          </concept>
          <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82398"
@@ -5819,9 +5893,10 @@
                   isMandatory="false"
                   shortName="fluxus_postpartumq">
             <name language="nl-NL">Fluxus postpartum?</name>
-            <desc language="nl-NL">Is er sprake van een fluxus postpartum? <br clear="none"/>Er is sprake van een fluxus postpartum wanneer er na de geboorte van het kind meer dan 1000 cc bloedverlies is.<br clear="none"/>
+            <desc language="nl-NL">Is er sprake van een fluxus postpartum? <br clear="none"/>Er is sprake van een fluxus postpartum wanneer er na de
+          geboorte van het kind meer dan 1000 cc bloedverlies is.<br clear="none"/>
                <br clear="none"/>Ja/Nee/Onbekend<br clear="none"/>
-                </desc>
+            </desc>
             <valueDomain type="boolean">
                <property/>
             </valueDomain>
@@ -5836,7 +5911,8 @@
                isMandatory="false"
                shortName="aantal_geboren_kinderen">
          <name language="nl-NL">Aantal geboren kinderen</name>
-         <desc language="nl-NL">Het aantal uitkomsten na 16w 0d. Met andere woorden, het aantal kinderen dat inmiddels na de 16e zwangerschapsweek is geboren.</desc>
+         <desc language="nl-NL">Het aantal uitkomsten na 16w 0d. Met andere woorden, het aantal kinderen dat inmiddels na de 16e zwangerschapsweek is
+        geboren.</desc>
          <valueDomain type="count">
             <property minInclude="0" maxInclude="9"/>
          </valueDomain>
@@ -5902,7 +5978,7 @@
          <name language="nl-NL">Interventies begin baring</name>
          <desc language="nl-NL">Interventies begin baring.<br clear="none"/>
             <br clear="none"/>
-            </desc>
+         </desc>
          <relationship type="SPEC"
                        ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20555"
                        flexibility="2013-09-10T00:00:00"
@@ -5918,7 +5994,7 @@
                   shortName="datum">
             <name language="nl-NL">Datum</name>
             <desc language="nl-NL">Datum<br clear="none"/>
-                </desc>
+            </desc>
             <valueDomain type="datetime">
                <property timeStampPrecision="YMD"/>
             </valueDomain>
@@ -5933,8 +6009,9 @@
                   isMandatory="false"
                   shortName="zwangerschapsduur">
             <name language="nl-NL">Zwangerschapsduur</name>
-            <desc language="nl-NL">Zwangerschapsduur<br clear="none"/>De dataset definieert de zwangerschapsduur in dagen. <br clear="none"/>Zorgverleners zien de zwangerschapsduur het liefste in weken/dagen. Dus bijvoorbeeld: 36w2d of 40+2.<br clear="none"/>
-                </desc>
+            <desc language="nl-NL">Zwangerschapsduur<br clear="none"/>De dataset definieert de zwangerschapsduur in dagen. <br clear="none"/>Zorgverleners
+          zien de zwangerschapsduur het liefste in weken/dagen. Dus bijvoorbeeld: 36w2d of 40+2.<br clear="none"/>
+            </desc>
             <valueDomain type="quantity">
                <property unit="d"/>
             </valueDomain>
@@ -5949,7 +6026,9 @@
                   shortName="interventie_begin_baring">
             <name language="nl-NL">Interventie begin baring</name>
             <desc language="nl-NL">Interventie begin baring<br clear="none"/>
-               <br clear="none"/>Een primaire sectio is een geplande sectio en wordt óók als zodanig geregistreerd als deze uitgevoerd wordt wanneer de weeën al zijn begonnen, de vliezen zijn gebroken en/of de uitdrijving is begonnen. </desc>
+               <br clear="none"/>Een primaire sectio is een geplande sectio en wordt óók als
+          zodanig geregistreerd als deze uitgevoerd wordt wanneer de weeën al zijn begonnen, de vliezen zijn gebroken en/of de uitdrijving is
+          begonnen. </desc>
             <valueDomain type="code"/>
             <valueSet id="2.16.840.1.113883.2.4.11.189"
                       statusCode="final"
@@ -6015,8 +6094,9 @@
                   shortName="indicatie_interventie_begin_baring">
             <name language="nl-NL">Indicatie interventie begin baring</name>
             <desc language="nl-NL">Indicatie interventie begin baring.<br clear="none"/>
-               <br clear="none"/>Registreer hier één indicatie: de meest zwaarwegende.<br clear="none"/>
-                </desc>
+               <br clear="none"/>Registreer hier één indicatie: de meest
+            zwaarwegende.<br clear="none"/>
+            </desc>
             <relationship type="SPEC"
                           ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20570"
                           flexibility="2013-09-10T00:00:00"
@@ -6158,13 +6238,13 @@
          <name language="nl-NL">Tijdstip begin actieve ontsluiting</name>
          <desc language="nl-NL">Datum en tijd begin actieve ontsluiting<br clear="none"/>
             <br clear="none"/>KNOV definitie van actieve ontsluting:<br clear="none"/>
-                <ul>
+            <ul>
                <li>dunne verstreken cervix én</li>
                <li>ten minste 3 cm ontsluiting én</li>
                <li>krachtige, pijnlijke weeën om de 2 à 3 minuten.<br clear="none"/>
                </li>
             </ul>
-            </desc>
+         </desc>
          <relationship type="SPEC"
                        ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.1.20590"
                        flexibility="2009-10-01T00:00:00"
@@ -6323,7 +6403,7 @@
                   shortName="natastenq">
             <name language="nl-NL">Natasten?</name>
             <desc language="nl-NL">Is er sprake van natasten?<br clear="none"/>ja/nee/onbekend<br clear="none"/>
-                </desc>
+            </desc>
             <valueDomain type="boolean">
                <property/>
             </valueDomain>
@@ -6393,7 +6473,7 @@
                   shortName="placenta_naar_paq">
             <name language="nl-NL">Placenta naar PA?</name>
             <desc language="nl-NL">Bestemming placenta: betreft dit PA?<br clear="none"/>Ja/Nee/Onbekend<br clear="none"/>
-                </desc>
+            </desc>
             <valueDomain type="boolean"/>
          </concept>
          <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82392"
@@ -6405,8 +6485,9 @@
                   isMandatory="false"
                   shortName="uitslag_placenta_pa">
             <name language="nl-NL">Uitslag placenta PA</name>
-            <desc language="nl-NL">De uitslag over de placenta na onderzoek door PA (pathologie).<br clear="none"/>Alleen van toepassing wanneer 'Placenta naar PA?' waar is.<br clear="none"/>
-                </desc>
+            <desc language="nl-NL">De uitslag over de placenta na onderzoek door PA (pathologie).<br clear="none"/>Alleen van toepassing wanneer 'Placenta
+          naar PA?' waar is.<br clear="none"/>
+            </desc>
             <valueDomain type="text">
                <property/>
             </valueDomain>
@@ -6421,7 +6502,7 @@
                   shortName="bijzonderheden_placenta">
             <name language="nl-NL">Bijzonderheden placenta</name>
             <desc language="nl-NL">Bijzonderheden placenta<br clear="none"/>
-                </desc>
+            </desc>
             <valueDomain type="text">
                <property/>
             </valueDomain>
@@ -6573,7 +6654,7 @@
                shortName="hechtenq">
          <name language="nl-NL">Hechten?</name>
          <desc language="nl-NL">Is er sprake van hechten?<br clear="none"/>
-            </desc>
+         </desc>
          <valueDomain type="boolean">
             <property/>
          </valueDomain>
@@ -6633,7 +6714,7 @@
                shortName="overig_traumaq">
          <name language="nl-NL">Overig trauma?</name>
          <desc language="nl-NL">Is er sprake van overig trauma (anders dan perineum) aangaande het baringskanaal?<br clear="none"/>
-            </desc>
+         </desc>
          <valueDomain type="boolean">
             <property/>
          </valueDomain>
@@ -6648,7 +6729,7 @@
                shortName="overig_trauma">
          <name language="nl-NL">Overig trauma</name>
          <desc language="nl-NL">Overig trauma (anders dan perineum) aangaande het baringskanaal.<br clear="none"/>
-            </desc>
+         </desc>
          <valueDomain type="code">
             <property/>
          </valueDomain>
@@ -6748,7 +6829,7 @@
                shortName="partusassistentieq">
          <name language="nl-NL">Partusassistentie?</name>
          <desc language="nl-NL">Is er partusassistentie geweest?<br clear="none"/>
-            </desc>
+         </desc>
          <valueDomain type="boolean">
             <property/>
          </valueDomain>
@@ -6763,7 +6844,7 @@
                shortName="partusassistentie">
          <name language="nl-NL">Partusassistentie</name>
          <desc language="nl-NL">Partusassistentie<br clear="none"/>
-            </desc>
+         </desc>
          <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20650"
                   statusCode="draft"
                   effectiveDate="2016-09-08T00:00:00"
@@ -6774,7 +6855,7 @@
                   shortName="partusstadium_assistentie_gearriveerd">
             <name language="nl-NL">Partusstadium assistentie gearriveerd</name>
             <desc language="nl-NL">Het stadium van de partus waarin de partusassistent gearriveerd is.<br clear="none"/>
-                </desc>
+            </desc>
             <valueDomain type="code">
                <property/>
             </valueDomain>
@@ -6822,7 +6903,7 @@
                   shortName="rol_partusassistent">
             <name language="nl-NL">Rol partusassistent</name>
             <desc language="nl-NL">Rol van partusassistent<br clear="none"/>
-                </desc>
+            </desc>
             <valueDomain type="code"/>
             <valueSet id="2.16.840.1.113883.2.4.11.194"
                       name="PartusassistentRol"
@@ -6869,7 +6950,7 @@
                shortName="risicostatus_uiteindelijk">
          <name language="nl-NL">Risicostatus uiteindelijk</name>
          <desc language="nl-NL">De uiteindelijke risicostatus die van toepassing was (zoals achteraf vastgesteld).<br clear="none"/>
-            </desc>
+         </desc>
          <valueDomain type="code">
             <property/>
          </valueDomain>
@@ -6921,8 +7002,9 @@
                isMandatory="false"
                shortName="ontslagdatum_post_partum">
          <name language="nl-NL">Ontslagdatum post partum</name>
-         <desc language="nl-NL">Ontslag vrouw uit ziekenhuis ná de partus.<br clear="none"/>Alleen van toepassing bij een klinische partus (in de 2e of 3e lijn)<br clear="none"/>
-            </desc>
+         <desc language="nl-NL">Ontslag vrouw uit ziekenhuis ná de partus.<br clear="none"/>Alleen van toepassing bij een klinische partus (in de 2e of
+        3e lijn)<br clear="none"/>
+         </desc>
          <valueDomain type="datetime">
             <property timeStampPrecision="YMD"/>
          </valueDomain>
@@ -7018,8 +7100,9 @@
                   shortName="ziekenhuis_baring">
             <name language="nl-NL">Ziekenhuis baring</name>
             <desc language="nl-NL">Het ziekenhuis waar baring plaats vond.<br clear="none"/>
-               <br clear="none"/>Alleen van toepassing indien "Werkelijke plaats baring (type locatie)" een ziekenhuis betreft. <br clear="none"/>
-                </desc>
+               <br clear="none"/>Alleen van toepassing indien "Werkelijke
+          plaats baring (type locatie)" een ziekenhuis betreft. <br clear="none"/>
+            </desc>
             <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40005"
                      statusCode="final"
                      effectiveDate="2016-09-08T00:00:00"
@@ -7193,7 +7276,8 @@
                            shortName="voorvoegsel">
                      <name language="nl-NL">Voorvoegsel</name>
                      <desc language="nl-NL">Deel van de achternaam dat het voorvoegsel bevat.</desc>
-                     <comment language="nl-NL">GBA tabel 36 is een opsomming van te gebruiken voorvoegsels zonder bijbehorende code. Het gebruik wordt aanbevolen, maar is niet verplicht. Bij vulling via de SBV-Z zullen de voorzetsels overeenkomen met tabel 36.</comment>
+                     <comment language="nl-NL">GBA tabel 36 is een opsomming van te gebruiken voorvoegsels zonder bijbehorende code. Het gebruik wordt
+                aanbevolen, maar is niet verplicht. Bij vulling via de SBV-Z zullen de voorzetsels overeenkomen met tabel 36.</comment>
                      <operationalization language="nl-NL">GBA tabel 36</operationalization>
                      <valueDomain type="string">
                         <example>van</example>
@@ -7224,8 +7308,9 @@
                      isMandatory="false"
                      shortName="contactgegevens">
                <name language="nl-NL">Contactgegevens</name>
-               <desc language="nl-NL">Contactgegevens zodat contact opgenomen kan worden over het kind. Dit gaat bijvoorbeeld om telefoonnummers van een ouder en/of wettelijk vertegenwoordiger en/of van de persoon bij wie het kind verblijft.<br clear="none"/>
-                    </desc>
+               <desc language="nl-NL">Contactgegevens zodat contact opgenomen kan worden over het kind. Dit gaat bijvoorbeeld om telefoonnummers van een
+            ouder en/of wettelijk vertegenwoordiger en/of van de persoon bij wie het kind verblijft.<br clear="none"/>
+               </desc>
                <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82365"
                         statusCode="draft"
                         effectiveDate="2016-09-08T00:00:00"
@@ -7362,7 +7447,8 @@
                         isMandatory="false"
                         shortName="plaatsnaam">
                   <name language="nl-NL">Plaatsnaam</name>
-                  <desc language="nl-NL">Plaatsnaam als onderdeel van het adres; De naam van een stad, dorp of ander woongebied of bezorgcentrum. Merk op: dit is de woonplaats, niet de eventuele gemeente waartoe de woonplaats behoort. Voorbeeld: Haren, gemeente Groningen.</desc>
+                  <desc language="nl-NL">Plaatsnaam als onderdeel van het adres; De naam van een stad, dorp of ander woongebied of bezorgcentrum. Merk op:
+              dit is de woonplaats, niet de eventuele gemeente waartoe de woonplaats behoort. Voorbeeld: Haren, gemeente Groningen.</desc>
                   <valueDomain type="string"/>
                </concept>
                <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82138"
@@ -7556,7 +7642,8 @@
                         isMandatory="false"
                         shortName="plaatsnaam">
                   <name language="nl-NL">Plaatsnaam</name>
-                  <desc language="nl-NL">Plaatsnaam als onderdeel van het adres; De naam van een stad, dorp of ander woongebied of bezorgcentrum. Merk op: dit is de woonplaats, niet de eventuele gemeente waartoe de woonplaats behoort. Voorbeeld: Haren, gemeente Groningen.</desc>
+                  <desc language="nl-NL">Plaatsnaam als onderdeel van het adres; De naam van een stad, dorp of ander woongebied of bezorgcentrum. Merk op:
+              dit is de woonplaats, niet de eventuele gemeente waartoe de woonplaats behoort. Voorbeeld: Haren, gemeente Groningen.</desc>
                   <valueDomain type="string"/>
                </concept>
                <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80632"
@@ -7581,7 +7668,8 @@
                      isMandatory="false"
                      shortName="meerlingindicatie">
                <name language="nl-NL">Meerlingindicatie</name>
-               <desc language="nl-NL">Aanduiding die aangeeft of de persoon deel van een meerling is. Administratief wordt dit gegeven gebruikt als attentiesignaal om de kans op persoonsverwisseling te verminderen.</desc>
+               <desc language="nl-NL">Aanduiding die aangeeft of de persoon deel van een meerling is. Administratief wordt dit gegeven gebruikt als
+            attentiesignaal om de kans op persoonsverwisseling te verminderen.</desc>
                <valueDomain type="boolean">
                   <example>Nee</example>
                </valueDomain>
@@ -7596,7 +7684,7 @@
                      shortName="rangnummer_kind">
                <name language="nl-NL">Rangnummer kind</name>
                <desc language="nl-NL">Volgnummer van geboorte binnen de betreffende zwangerschap.<br clear="none"/>
-                    </desc>
+               </desc>
                <valueDomain type="count">
                   <property minInclude="1" maxInclude="9"/>
                </valueDomain>
@@ -7688,7 +7776,9 @@
                      isMandatory="false"
                      shortName="foetus_identificatie_zoals_ante_partum_gehanteerd">
                <name language="nl-NL">Foetus identificatie (zoals ante partum gehanteerd)</name>
-               <desc language="nl-NL">Identificatie(s) van de foetus zoals die tijdens de zwangerschap is gehanteerd. De identificatie van de 'eigen' praktijk is verplicht en wordt als eerste genoemd. Indien van toepassing, bekend en mogelijk, worden ook de id's van de foetus van andere zorgaanbieders, zoals echocentra) meegestuurd. </desc>
+               <desc language="nl-NL">Identificatie(s) van de foetus zoals die tijdens de zwangerschap is gehanteerd. De identificatie van de 'eigen'
+            praktijk is verplicht en wordt als eerste genoemd. Indien van toepassing, bekend en mogelijk, worden ook de id's van de foetus van andere
+            zorgaanbieders, zoals echocentra) meegestuurd. </desc>
                <valueDomain type="identifier"/>
             </concept>
             <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40028"
@@ -7700,7 +7790,9 @@
                      isMandatory="false"
                      shortName="foetus_volgletter_zoals_ante_partum_gehanteerd">
                <name language="nl-NL">Foetus volgletter (zoals ante partum gehanteerd)</name>
-               <desc language="nl-NL">Volgletter van de foetus zoals die tijdens de zwangerschap is gehanteerd. Deze is dus in principe niet zorgaanbieder-afhankelijk, maar zou door alle zorgaanbieders in de gehele keten gelijkluidend moeten zijn. Hoewel identificatie meestal niet verder gaat dan 'C' wordt toch een volledige lijst gehanteerd. </desc>
+               <desc language="nl-NL">Volgletter van de foetus zoals die tijdens de zwangerschap is gehanteerd. Deze is dus in principe niet
+            zorgaanbieder-afhankelijk, maar zou door alle zorgaanbieders in de gehele keten gelijkluidend moeten zijn. Hoewel identificatie meestal
+            niet verder gaat dan 'C' wordt toch een volledige lijst gehanteerd. </desc>
                <valueDomain type="code"/>
                <valueSet name="FoetusVolgletter"
                          displayName="FoetusVolgletter"
@@ -7785,8 +7877,9 @@
                      isMandatory="false"
                      shortName="bijstimulatie_toegediendq">
                <name language="nl-NL">Bijstimulatie toegediend?</name>
-               <desc language="nl-NL">Is er na begin van de baring bijstimulatie gegeven?<br clear="none"/>Let op, het gaat hier <i>niet </i>om chemische inleiding. Het gaat hier om bijstimulatie vanwege weeënzwakte en/of stagnerende baring en/of langdurig gebroken vliezen à terme.<br clear="none"/>
-                    </desc>
+               <desc language="nl-NL">Is er na begin van de baring bijstimulatie gegeven?<br clear="none"/>Let op, het gaat hier <i>niet </i>om chemische
+            inleiding. Het gaat hier om bijstimulatie vanwege weeënzwakte en/of stagnerende baring en/of langdurig gebroken vliezen à terme.<br clear="none"/>
+               </desc>
                <relationship type="SPEC"
                              ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.4.20616"
                              flexibility="2012-08-06T00:00:00"
@@ -8061,8 +8154,10 @@
                      shortName="ruggeprik_gewenst_niet_gekregenq">
                <name language="nl-NL">Ruggeprik gewenst, niet gekregen?</name>
                <desc language="nl-NL">Ruggeprik gewenst, maar niet gekregen?<br clear="none"/>Ja/Nee/Onbekend<br clear="none"/>
-                    </desc>
-               <rationale language="nl-NL">Dit item is opgenomen omdat hier een prestatie-indicator op is gebaseerd. De overige items over pijnbestrijding leggen vast wat daadwerkelijk aan pijnbestrijding is gegeven en wanneer en waarom. <br clear="none"/>Deze oplossing houdt het vastleggen van wat er gebeurd is zuiver en geeft tevens de mogelijkheid om toch gegevens voor de prestatie-indicator op te leveren.</rationale>
+               </desc>
+               <rationale language="nl-NL">Dit item is opgenomen omdat hier een prestatie-indicator op is gebaseerd. De overige items over pijnbestrijding
+            leggen vast wat daadwerkelijk aan pijnbestrijding is gegeven en wanneer en waarom. <br clear="none"/>Deze oplossing houdt het vastleggen
+            van wat er gebeurd is zuiver en geeft tevens de mogelijkheid om toch gegevens voor de prestatie-indicator op te leveren.</rationale>
                <valueDomain type="boolean">
                   <property/>
                </valueDomain>
@@ -8078,7 +8173,7 @@
                <name language="nl-NL">Pijnbestrijding?</name>
                <desc language="nl-NL">Is er sprake van pijnbestrijding?<br clear="none"/>Ja/Nee/Onbekend<br clear="none"/>
                   <br clear="none"/>
-                    </desc>
+               </desc>
                <valueDomain type="boolean"/>
             </concept>
             <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82091"
@@ -8090,9 +8185,10 @@
                      isMandatory="false"
                      shortName="pijnbestrijding">
                <name language="nl-NL">Pijnbestrijding</name>
-               <desc language="nl-NL">Pijnbestrijding. Het gaat hier om het moment van starten van de genoemde pijnbestrijding.<br clear="none"/>Alleen van toepassing wanneer Pijnbestrijding? (item 82090) = Ja<br clear="none"/>
+               <desc language="nl-NL">Pijnbestrijding. Het gaat hier om het moment van starten van de genoemde pijnbestrijding.<br clear="none"/>Alleen van
+            toepassing wanneer Pijnbestrijding? (item 82090) = Ja<br clear="none"/>
                   <br clear="none"/>
-                    </desc>
+               </desc>
                <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82394"
                         statusCode="draft"
                         effectiveDate="2016-09-08T00:00:00"
@@ -8104,7 +8200,7 @@
                         shortName="datumtijd">
                   <name language="nl-NL">Datum/tijd</name>
                   <desc language="nl-NL">Datum/tijd van het starten van de pijnbestrijding<br clear="none"/>
-                        </desc>
+                  </desc>
                   <valueDomain type="datetime">
                      <property timeStampPrecision="YMDHM"/>
                      <example type="neutral">3 juni 2015, 14:32 uur</example>
@@ -8130,7 +8226,7 @@
                            shortName="methode">
                      <name language="nl-NL">Methode</name>
                      <desc language="nl-NL">Pijnbestrijdingsmethode<br clear="none"/>
-                            </desc>
+                     </desc>
                      <valueDomain type="code">
                         <property/>
                      </valueDomain>
@@ -8172,9 +8268,10 @@
                            isMandatory="false"
                            shortName="overig_middel">
                      <name language="nl-NL">Overig middel</name>
-                     <desc language="nl-NL">Nadere specificatie overig pijnbestrijdingsmiddel.<br clear="none"/>Alleen van toepassing wanneer Methode = Overig middel.<br clear="none"/>
+                     <desc language="nl-NL">Nadere specificatie overig pijnbestrijdingsmiddel.<br clear="none"/>Alleen van toepassing wanneer Methode =
+                Overig middel.<br clear="none"/>
                         <br clear="none"/>
-                            </desc>
+                     </desc>
                      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82095"
                               statusCode="final"
                               effectiveDate="2016-09-08T00:00:00"
@@ -8185,7 +8282,7 @@
                               shortName="middel">
                         <name language="nl-NL">Middel</name>
                         <desc language="nl-NL">Pijnbestrijdingsmiddel<br clear="none"/>
-                                </desc>
+                        </desc>
                         <valueDomain type="code">
                            <property/>
                         </valueDomain>
@@ -8233,8 +8330,9 @@
                               shortName="toediening">
                         <name language="nl-NL">Toediening</name>
                         <desc language="nl-NL">Toediening<br clear="none"/>
-                                </desc>
-                        <comment language="nl-NL">De functionaliteit van de software dient rekening te houden met enkele restricties tgv valide combinaties van Middel en Toedieningsweg, te weten:<br clear="none"/>
+                        </desc>
+                        <comment language="nl-NL">De functionaliteit van de software dient rekening te houden met enkele restricties tgv valide combinaties
+                  van Middel en Toedieningsweg, te weten:<br clear="none"/>
                            <ul>
                               <li>TENS = Elektroden</li>
                               <li>Entonox = Inhalatie</li>
@@ -8304,7 +8402,7 @@
                         shortName="periode">
                   <name language="nl-NL">Periode</name>
                   <desc language="nl-NL">Periode<br clear="none"/>
-                        </desc>
+                  </desc>
                   <valueDomain type="code">
                      <property/>
                   </valueDomain>
@@ -8352,7 +8450,7 @@
                         shortName="reden">
                   <name language="nl-NL">Reden</name>
                   <desc language="nl-NL">Reden<br clear="none"/>
-                        </desc>
+                  </desc>
                   <valueDomain type="code">
                      <property/>
                   </valueDomain>
@@ -8371,9 +8469,11 @@
                      shortName="sedatieq">
                <name language="nl-NL">Sedatie?</name>
                <desc language="nl-NL">Is er sprake van sedatie?<br clear="none"/>Ja/Nee/Onbekend<br clear="none"/>
-                  <br clear="none"/>Sedatie is geen pijnbestrijding en wordt in principe niet durante partu toegepast. Opiaten, epiduraal of spinaal horen onder pijnbestrijding en dus niet onder sedatie.<br clear="none"/>Onder sedatie valt bijvoorbeeld dormicum of phenergan.<br clear="none"/>
+                  <br clear="none"/>Sedatie is geen
+            pijnbestrijding en wordt in principe niet durante partu toegepast. Opiaten, epiduraal of spinaal horen onder pijnbestrijding en dus niet
+            onder sedatie.<br clear="none"/>Onder sedatie valt bijvoorbeeld dormicum of phenergan.<br clear="none"/>
                   <br clear="none"/>
-                    </desc>
+               </desc>
                <valueDomain type="boolean"/>
             </concept>
             <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82099"
@@ -8387,8 +8487,10 @@
                      shortName="sedatie">
                <name language="nl-NL">Sedatie</name>
                <desc language="nl-NL">Sedatie.<br clear="none"/>
-                  <br clear="none"/>Sedatie is geen pijnbestrijding en wordt in principe niet durante partu toegepast. Opiaten, epiduraal of spinaal horen onder pijnbestrijding en dus niet onder sedatie.<br clear="none"/>Onder sedatie valt bijvoorbeeld dormicum of phenergan.<br clear="none"/>
-                    </desc>
+                  <br clear="none"/>Sedatie is geen pijnbestrijding en wordt in principe niet durante partu
+            toegepast. Opiaten, epiduraal of spinaal horen onder pijnbestrijding en dus niet onder sedatie.<br clear="none"/>Onder sedatie valt
+            bijvoorbeeld dormicum of phenergan.<br clear="none"/>
+               </desc>
                <operationalization language="nl-NL">Alleen van toepassing wanneer Sedatie? = Ja<br clear="none"/>
                </operationalization>
                <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82395"
@@ -8402,7 +8504,7 @@
                         shortName="datumtijd">
                   <name language="nl-NL">Datum/tijd</name>
                   <desc language="nl-NL">Datum/tijd van het starten van de sedatie<br clear="none"/>
-                        </desc>
+                  </desc>
                   <valueDomain type="datetime">
                      <property timeStampPrecision="YMDHM"/>
                      <example type="neutral">3 juni 2015, 14:32 uur</example>
@@ -8419,7 +8521,7 @@
                         shortName="periode">
                   <name language="nl-NL">Periode</name>
                   <desc language="nl-NL">Periode<br clear="none"/>
-                        </desc>
+                  </desc>
                   <valueDomain type="code">
                      <property/>
                   </valueDomain>
@@ -8454,7 +8556,7 @@
                         shortName="reden">
                   <name language="nl-NL">Reden</name>
                   <desc language="nl-NL">Reden<br clear="none"/>
-                        </desc>
+                  </desc>
                   <valueDomain type="code">
                      <property/>
                   </valueDomain>
@@ -8488,9 +8590,11 @@
                      shortName="type_partus">
                <name language="nl-NL">Type partus</name>
                <desc language="nl-NL">Type partus.<br clear="none"/>
-                  <br clear="none"/>Een primaire sectio is een geplande sectio en wordt óók als zodanig geregistreerd als deze uitgevoerd wordt wanneer de weeën al zijn begonnen, de vliezen zijn gebroken en/of de uitdrijving is begonnen.<br clear="none"/>
-                  <br clear="none"/>TOP (Termination of Pregnancy) is zwangerschapsafbreking na 16 weken. Dit in tegenstelling tot APLA, waarmee een zwangerschapsafbreking (abortus) van minder dan 16 weken wordt bedoeld.<br clear="none"/>
-                    </desc>
+                  <br clear="none"/>Een primaire sectio is een geplande sectio en wordt óók als zodanig
+            geregistreerd als deze uitgevoerd wordt wanneer de weeën al zijn begonnen, de vliezen zijn gebroken en/of de uitdrijving is begonnen.<br clear="none"/>
+                  <br clear="none"/>TOP (Termination of Pregnancy) is zwangerschapsafbreking na 16 weken. Dit in tegenstelling tot APLA,
+            waarmee een zwangerschapsafbreking (abortus) van minder dan 16 weken wordt bedoeld.<br clear="none"/>
+               </desc>
                <relationship type="SPEC"
                              ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80626"
                              flexibility="2013-09-10T00:00:00"
@@ -8565,10 +8669,11 @@
                      isMandatory="false"
                      shortName="top_nav_prenataal_onderzoekq">
                <name language="nl-NL">TOP nav prenataal onderzoek?</name>
-               <desc language="nl-NL">TOP (Termination Of Pregnancy, zwangerschapsafbreking ná 16 weken) naar aanleiding van afwijking(en) zoals gebleken uit prenataal onderzoek. (Ja/Nee/Onbekend).<br clear="none"/>
+               <desc language="nl-NL">TOP (Termination Of Pregnancy, zwangerschapsafbreking ná 16 weken) naar aanleiding van afwijking(en) zoals gebleken
+            uit prenataal onderzoek. (Ja/Nee/Onbekend).<br clear="none"/>
                   <br clear="none"/>Alleen van toepassing wanneer 'Type partus' = TOP<br clear="none"/>
                   <br clear="none"/>
-                    </desc>
+               </desc>
                <valueDomain type="boolean"/>
             </concept>
             <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20062"
@@ -8580,13 +8685,15 @@
                      isMandatory="false"
                      shortName="zwangerschapsduur">
                <name language="nl-NL">Zwangerschapsduur</name>
-               <desc language="nl-NL">Zwangerschapsduur in dagen bij geboorte kinderen.<br clear="none"/>De dataset definieert de zwangerschapsduur in dagen.<br clear="none"/>Zorgverleners zien de zwangerschapsduur het liefste in weken/dagen. Dus bijvoorbeeld: 36w2d of 40+2.<br clear="none"/>
-                    </desc>
+               <desc language="nl-NL">Zwangerschapsduur in dagen bij geboorte kinderen.<br clear="none"/>De dataset definieert de zwangerschapsduur in
+              dagen.<br clear="none"/>Zorgverleners zien de zwangerschapsduur het liefste in weken/dagen. Dus bijvoorbeeld: 36w2d of 40+2.<br clear="none"/>
+               </desc>
                <relationship type="SPEC"
                              ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.4.20062"
                              flexibility="2012-08-06T00:00:00"
                              refdisplay="peri21-dataelement-20062"/>
-               <operationalization language="nl-NL">Berekend veld: zwangerschapsduur in dagen bij geboorte kind. Berekend veld ((geboortedatum-atermedatum)+280) geven.</operationalization>
+               <operationalization language="nl-NL">Berekend veld: zwangerschapsduur in dagen bij geboorte kind. Berekend veld
+            ((geboortedatum-atermedatum)+280) geven.</operationalization>
                <valueDomain type="quantity">
                   <property unit="d" minInclude="0"/>
                </valueDomain>
@@ -8808,7 +8915,7 @@
                      shortName="supervisor_groep">
                <name language="nl-NL">Supervisor (groep)</name>
                <desc language="nl-NL">Supervisor bij de bevalling<br clear="none"/>
-                    </desc>
+               </desc>
                <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82059"
                         statusCode="draft"
                         effectiveDate="2016-09-08T00:00:00"
@@ -8973,8 +9080,9 @@
                         shortName="succes_vaginale_kunstverlossingq">
                   <name language="nl-NL">Succes vaginale kunstverlossing?</name>
                   <desc language="nl-NL">Vaginale kunstverlossing geslaagd?<br clear="none"/>
-                     <br clear="none"/>Een vaginale kunstverlossing is geslaagd als het kind daarmee geboren wordt, onafhankelijk van de conditie van het kind.<br clear="none"/>
-                        </desc>
+                     <br clear="none"/>Een vaginale kunstverlossing is geslaagd als
+              het kind daarmee geboren wordt, onafhankelijk van de conditie van het kind.<br clear="none"/>
+                  </desc>
                   <relationship type="SPEC"
                                 ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.1.40200"
                                 flexibility="2009-10-01T00:00:00"
@@ -9090,8 +9198,9 @@
                      isMandatory="false"
                      shortName="overige_interventies">
                <name language="nl-NL">Overige interventies</name>
-               <desc language="nl-NL">Overige interventies bij baring. Dit gaat om de interventies bij baring (eventueel) náást vaginale kunstverlossing en/of sectio.<br clear="none"/>
-                    </desc>
+               <desc language="nl-NL">Overige interventies bij baring. Dit gaat om de interventies bij baring (eventueel) náást vaginale kunstverlossing
+            en/of sectio.<br clear="none"/>
+               </desc>
                <relationship type="SPEC"
                              ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40240"
                              flexibility="2013-09-10T00:00:00"
@@ -9226,7 +9335,7 @@
                   <name language="nl-NL">Afwijkende bevindingen kind?</name>
                   <desc language="nl-NL">Zijn er na uitvoeren van het lichamelijk onderzoek kind (volgens protocol) afwijkende bevindingen geconstateerd?<br clear="none"/>
                      <br clear="none"/>Vervolgens alleen de afwijkende bevindingen invullen.<br clear="none"/>
-                        </desc>
+                  </desc>
                   <valueDomain type="boolean"/>
                </concept>
                <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82207"
@@ -9239,7 +9348,7 @@
                         shortName="afwijkende_bevindingen">
                   <name language="nl-NL">Afwijkende bevindingen</name>
                   <desc language="nl-NL">Afwijkende bevindingen lichamelijk onderzoek kind<br clear="none"/>
-                        </desc>
+                  </desc>
                   <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82168"
                            statusCode="draft"
                            effectiveDate="2016-09-08T00:00:00"
@@ -9250,7 +9359,7 @@
                            shortName="algemene_indruk">
                      <name language="nl-NL">Algemene indruk</name>
                      <desc language="nl-NL">Algemene indruk<br clear="none"/>
-                            </desc>
+                     </desc>
                      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82169"
                               statusCode="draft"
                               effectiveDate="2016-09-08T00:00:00"
@@ -9261,7 +9370,7 @@
                               shortName="zieke_indrukq">
                         <name language="nl-NL">Zieke indruk?</name>
                         <desc language="nl-NL">Maakt het kind een zieke indruk?<br clear="none"/>
-                                </desc>
+                        </desc>
                         <valueDomain type="boolean"/>
                      </concept>
                      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82170"
@@ -9322,7 +9431,7 @@
                            shortName="bijzonderheden_huid">
                      <name language="nl-NL">Bijzonderheden huid</name>
                      <desc language="nl-NL">Bijzonderheden van de huid<br clear="none"/>
-                            </desc>
+                     </desc>
                      <valueDomain type="code">
                         <property/>
                      </valueDomain>
@@ -9640,7 +9749,7 @@
                               shortName="lever__vergrootq">
                         <name language="nl-NL">Lever - vergroot?</name>
                         <desc language="nl-NL">Is de lever vergroot?<br clear="none"/>
-                                </desc>
+                        </desc>
                         <valueDomain type="boolean"/>
                      </concept>
                      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82184"
@@ -9667,7 +9776,7 @@
                               shortName="darmen__afwijkende_peristaltiekq">
                         <name language="nl-NL">Darmen - afwijkende peristaltiek?</name>
                         <desc language="nl-NL">Is er sprake van afwijkende peristaltiek van de darmen?<br clear="none"/>
-                                </desc>
+                        </desc>
                         <valueDomain type="boolean">
                            <property/>
                         </valueDomain>
@@ -9682,7 +9791,7 @@
                               shortName="toelichting_darmen__afwijkende_peristaltiek">
                         <name language="nl-NL">Toelichting darmen - afwijkende peristaltiek</name>
                         <desc language="nl-NL">Darmen - afwijkende peristaltiek, te specificeren in vrije tekst<br clear="none"/>
-                                </desc>
+                        </desc>
                         <valueDomain type="text"/>
                      </concept>
                      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82186"
@@ -9778,7 +9887,7 @@
                            shortName="extremiteiten">
                      <name language="nl-NL">Extremiteiten</name>
                      <desc language="nl-NL">Extremiteiten (armen en/of benen)<br clear="none"/>
-                            </desc>
+                     </desc>
                      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82191"
                               statusCode="draft"
                               effectiveDate="2016-09-08T00:00:00"
@@ -9788,8 +9897,9 @@
                               isMandatory="false"
                               shortName="proportie__afwijkendq">
                         <name language="nl-NL">Proportie - afwijkend?</name>
-                        <desc language="nl-NL">Proportie - afwijkend?<br clear="none"/>Zijn de armen en/of benen naar verhouding afwijkend ten opzichte van de rest van het lichaam?<br clear="none"/>
-                                </desc>
+                        <desc language="nl-NL">Proportie - afwijkend?<br clear="none"/>Zijn de armen en/of benen naar verhouding afwijkend ten opzichte van de
+                  rest van het lichaam?<br clear="none"/>
+                        </desc>
                         <valueDomain type="boolean"/>
                      </concept>
                      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82192"
@@ -9801,8 +9911,9 @@
                               isMandatory="false"
                               shortName="vorm__afwijkendq">
                         <name language="nl-NL">Vorm - afwijkend?</name>
-                        <desc language="nl-NL">Vorm - afwijkend?<br clear="none"/>Het gaat hier bijvoorbeeld om ontbreken of misvorming van een hand, voet of onderarm. <br clear="none"/>
-                                </desc>
+                        <desc language="nl-NL">Vorm - afwijkend?<br clear="none"/>Het gaat hier bijvoorbeeld om ontbreken of misvorming van een hand, voet of
+                  onderarm. <br clear="none"/>
+                        </desc>
                         <valueDomain type="boolean"/>
                      </concept>
                      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82226"
@@ -9815,7 +9926,7 @@
                               shortName="toelichting_afwijkende_vorm">
                         <name language="nl-NL">Toelichting afwijkende vorm</name>
                         <desc language="nl-NL">Toelichting afwijkende vorm<br clear="none"/>
-                                </desc>
+                        </desc>
                         <valueDomain type="text">
                            <property/>
                         </valueDomain>
@@ -10015,7 +10126,8 @@
                         shortName="geboortegewicht">
                   <name language="nl-NL">Geboortegewicht</name>
                   <desc language="nl-NL">Meting van het lichaamsgewicht zo kort mogelijk na de geboorte.</desc>
-                  <comment language="nl-NL">N.B. De hierbij gebruikte LOINC-code is niet uitsluitend beperkt tot het gebruik voor het concept 'neonataal geboortegewicht', maar kan ook gebruikt worden voor het concept 'maternaal lichaamsgewicht, bij de geboorte'.</comment>
+                  <comment language="nl-NL">N.B. De hierbij gebruikte LOINC-code is niet uitsluitend beperkt tot het gebruik voor het concept 'neonataal
+              geboortegewicht', maar kan ook gebruikt worden voor het concept 'maternaal lichaamsgewicht, bij de geboorte'.</comment>
                   <valueDomain type="quantity">
                      <property minInclude="0" unit="gram" fractionDigits="0!"/>
                   </valueDomain>
@@ -10118,7 +10230,8 @@
                         isMandatory="false"
                         shortName="indaling_testes">
                   <name language="nl-NL">Indaling testes</name>
-                  <desc language="nl-NL">Indaling testes. Alleen van toepassing bij mannelijk kind.<br clear="none"/>Wanneer onduidelijk is of de testis is ingedaald, dient gekozen te worden voor 'niet ingedaald'.</desc>
+                  <desc language="nl-NL">Indaling testes. Alleen van toepassing bij mannelijk kind.<br clear="none"/>Wanneer onduidelijk is of de testis is
+              ingedaald, dient gekozen te worden voor 'niet ingedaald'.</desc>
                   <relationship type="SPEC"
                                 ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82385"
                                 flexibility="2016-01-15T12:14:15"
@@ -10218,9 +10331,15 @@
                            shortName="specificatie_congenitale_afwijking">
                      <name language="nl-NL">Specificatie congenitale afwijking</name>
                      <desc language="nl-NL">Aangeboren afwijkingen, conform de lijst PRN, exclusief chromosomale afwijkingen</desc>
-                     <source language="nl-NL">De waardenlijst bevat de lijst van PRN zoals deze afgestemd is met de kinderartsen (Codelijst KA behorende bij Dataset Perinatale Registratie versie 1.4.xls).</source>
-                     <comment language="nl-NL">Niet alle afwijkingen zijn als zodanig te constateren door de verloskundige/gynaecoloog bij uitkomst van het kind.<br clear="none"/>Het kan dan ook volstaan om een hoofdgroep uit deze lijst te kiezen (niveau 0 of soms 1 in waardenlijst), maar áls de zorgverlener meer detail weet (bijvoorbeeld bij lipspleet of microcefalie) dient wél de betreffende (gedetailleerde) waarde gekozen te worden. Gewenst is om te registreren tot op het detail niveau dat de zorgverlener (in dit geval verloskundige of gynaecoloog) dat kan.<br clear="none"/>
-                        <br clear="none"/>Bij anemnestische gegevens (vorige zwangerschappen) is vaak wél bekend welke afwijkingen op een kind van toepassing zijn/waren. Dit kan dan ook gedetailleerd worden vastgelegd.<br clear="none"/>
+                     <source language="nl-NL">De waardenlijst bevat de lijst van PRN zoals deze afgestemd is met de kinderartsen (Codelijst KA behorende bij
+                Dataset Perinatale Registratie versie 1.4.xls).</source>
+                     <comment language="nl-NL">Niet alle afwijkingen zijn als zodanig te constateren door de verloskundige/gynaecoloog bij uitkomst van het
+                  kind.<br clear="none"/>Het kan dan ook volstaan om een hoofdgroep uit deze lijst te kiezen (niveau 0 of soms 1 in waardenlijst),
+                maar áls de zorgverlener meer detail weet (bijvoorbeeld bij lipspleet of microcefalie) dient wél de betreffende (gedetailleerde)
+                waarde gekozen te worden. Gewenst is om te registreren tot op het detail niveau dat de zorgverlener (in dit geval verloskundige of
+                gynaecoloog) dat kan.<br clear="none"/>
+                        <br clear="none"/>Bij anemnestische gegevens (vorige zwangerschappen) is vaak wél bekend welke
+                afwijkingen op een kind van toepassing zijn/waren. Dit kan dan ook gedetailleerd worden vastgelegd.<br clear="none"/>
                      </comment>
                      <relationship type="SPEC"
                                    ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40090"
@@ -10768,8 +10887,10 @@
                            shortName="specificatie_chromosomale_afwijking">
                      <name language="nl-NL">Specificatie chromosomale afwijking</name>
                      <desc language="nl-NL">Specificatie chromosomale afwijking</desc>
-                     <comment language="nl-NL">Bij keuze voor 'overige chromosomale afwijkingen' kan in een vrije tekst veld een nadere specificatie worden meegegeven.</comment>
-                     <comment language="nl-NL">Bij keuze voor 'overige chromosomale afwijkingen' kan in een vrije tekst veld een nadere specificatie worden meegegeven.</comment>
+                     <comment language="nl-NL">Bij keuze voor 'overige chromosomale afwijkingen' kan in een vrije tekst veld een nadere specificatie worden
+                meegegeven.</comment>
+                     <comment language="nl-NL">Bij keuze voor 'overige chromosomale afwijkingen' kan in een vrije tekst veld een nadere specificatie worden
+                meegegeven.</comment>
                      <relationship type="SPEC"
                                    ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40120"
                                    flexibility="2013-09-10T00:00:00"
@@ -10861,7 +10982,7 @@
                      shortName="problematiek_kindq">
                <name language="nl-NL">Problematiek kind?</name>
                <desc language="nl-NL">Is er sprake van problematiek bij het kind?<br clear="none"/>Ja/Nee/Onbekend<br clear="none"/>
-                    </desc>
+               </desc>
                <valueDomain type="boolean">
                   <property/>
                </valueDomain>
@@ -10875,8 +10996,9 @@
                      isMandatory="false"
                      shortName="problematiek_kind">
                <name language="nl-NL">Problematiek kind</name>
-               <desc language="nl-NL">Problematiek kind.<br clear="none"/>Deze lijst is gedetailleerd zodat een rapportage vanuit de kinderarts gestructureerd opgeslagen kan worden in het verloskundig dossier.<br clear="none"/>
-                    </desc>
+               <desc language="nl-NL">Problematiek kind.<br clear="none"/>Deze lijst is gedetailleerd zodat een rapportage vanuit de kinderarts
+            gestructureerd opgeslagen kan worden in het verloskundig dossier.<br clear="none"/>
+               </desc>
                <valueDomain type="code"/>
                <valueSet statusCode="final"
                          id="2.16.840.1.113883.2.4.3.11.60.90.77.11.12"
@@ -11127,7 +11249,7 @@
                      shortName="navelstreng_vaten">
                <name language="nl-NL">Navelstreng vaten</name>
                <desc language="nl-NL">Navelstreng vaten<br clear="none"/>
-                    </desc>
+               </desc>
                <valueDomain type="code">
                   <property/>
                </valueDomain>
@@ -11165,7 +11287,7 @@
                      shortName="vitamine_kq">
                <name language="nl-NL">Vitamine K?</name>
                <desc language="nl-NL">Heeft het kind post partum Vitamine K gehad (binnen 24 uur)?<br clear="none"/>
-                    </desc>
+               </desc>
                <valueDomain type="boolean"/>
             </concept>
             <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82369"
@@ -11178,8 +11300,9 @@
                      shortName="hepatitis_b">
                <name language="nl-NL">Hepatitis B</name>
                <desc language="nl-NL">Hepatitis B vaccinatie / immunisatie.<br clear="none"/>
-                  <br clear="none"/>Alleen van toepassing bij positieve HBsAg van de moeder (volgt uit PSIE).<br clear="none"/>
-                    </desc>
+                  <br clear="none"/>Alleen van toepassing bij positieve HBsAg
+            van de moeder (volgt uit PSIE).<br clear="none"/>
+               </desc>
                <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82368"
                         statusCode="draft"
                         effectiveDate="2016-09-08T00:00:00"
@@ -11190,7 +11313,7 @@
                         shortName="hepatitis_b_immunisatieq">
                   <name language="nl-NL">Hepatitis B immunisatie?</name>
                   <desc language="nl-NL">Heeft het kind Hepatitis B immunisatie gekregen?<br clear="none"/>
-                        </desc>
+                  </desc>
                   <valueDomain type="boolean"/>
                </concept>
                <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82370"
@@ -11203,7 +11326,7 @@
                         shortName="hepatitis_b_vaccinatieq">
                   <name language="nl-NL">Hepatitis B vaccinatie?</name>
                   <desc language="nl-NL">Heeft het kind Hepatitis B vaccinatie gekregen?<br clear="none"/>
-                        </desc>
+                  </desc>
                   <valueDomain type="boolean"/>
                </concept>
             </concept>
@@ -11217,7 +11340,7 @@
                      shortName="kinderarts_betrokkenq">
                <name language="nl-NL">Kinderarts betrokken?</name>
                <desc language="nl-NL">Is een kinderarts betrokken bij het kind?<br clear="none"/>
-                    </desc>
+               </desc>
                <valueDomain type="boolean">
                   <property/>
                </valueDomain>
@@ -11232,7 +11355,7 @@
                      shortName="betrokkenheid_kinderarts">
                <name language="nl-NL">Betrokkenheid kinderarts</name>
                <desc language="nl-NL">Betrokkenheid kinderarts<br clear="none"/>
-                    </desc>
+               </desc>
                <relationship type="SPEC"
                              ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82120"
                              flexibility="2014-01-21T14:24:14"
@@ -11427,7 +11550,7 @@
                         shortName="zorginstelling_lvrid">
                   <name language="nl-NL">Zorginstelling LVR-ID</name>
                   <desc language="nl-NL">Unieke LVR-identificatie van de zorginstelling. <br clear="none"/>
-                        </desc>
+                  </desc>
                   <valueDomain type="identifier">
                      <property minLength="4" maxLength="5"/>
                   </valueDomain>
@@ -11457,7 +11580,7 @@
                      shortName="opmerkingen_baring">
                <name language="nl-NL">Opmerkingen baring</name>
                <desc language="nl-NL">Opmerkingen baring<br clear="none"/>
-                    </desc>
+               </desc>
                <valueDomain type="text">
                   <property/>
                </valueDomain>
@@ -11766,13 +11889,14 @@
                shortName="zwangerschapsduur_op_datum_onderzoek">
          <name language="nl-NL">Zwangerschapsduur op datum onderzoek</name>
          <desc language="nl-NL">Zwangerschapsduur op datum onderzoek.<br clear="none"/>De dataset definieert de zwangerschapsduur in dagen.<br clear="none"/>Zorgverleners zien de zwangerschapsduur het liefste in weken/dagen. Dus bijvoorbeeld: 36w2d of 40+2.<br clear="none"/>
-            </desc>
+         </desc>
          <source language="nl-NL">PWD Acute Fase Overdracht item #105</source>
          <relationship type="SPEC"
                        ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.4.50021"
                        flexibility="2012-08-06T00:00:00"
                        refdisplay="peri21-dataelement-50021"/>
-         <operationalization language="nl-NL">Berekend veld: Duur van de zwangerschap op moment van onderzoek (bijvoorbeeld ultrageluid onderzoek)</operationalization>
+         <operationalization language="nl-NL">Berekend veld: Duur van de zwangerschap op moment van onderzoek (bijvoorbeeld ultrageluid
+        onderzoek)</operationalization>
          <valueDomain type="quantity">
             <property unit="d"/>
          </valueDomain>
@@ -11918,7 +12042,7 @@
                shortName="advies_seo">
          <name language="nl-NL">Advies SEO</name>
          <desc language="nl-NL">Advies SEO<br clear="none"/>
-            </desc>
+         </desc>
          <valueDomain type="code"/>
          <valueSet name="AdviesSEO"
                    displayName="Advies SEO"
@@ -12052,7 +12176,10 @@
                   isMandatory="false"
                   shortName="foetus_volgletter">
             <name language="nl-NL">Foetus volgletter</name>
-            <desc language="nl-NL">Identificerende letter ter aanduiding van de foetus (binnen een zwangerschap). Met name van belang bij meerlingen i.g.v. gedeeltelijke miskraam en selectieve foeticide (uitkomsten vóór 16w 0d) en bevindingen van verschillende zorgaanbieders. In principe is er geen rangschikking, maar initieel geldt ‘1e’ = A; ‘2e’ = B; ‘3e’ = C etc. In de praktijk is dit vaak beperkt tot slechts twee of drie mogelijke waarden. </desc>
+            <desc language="nl-NL">Identificerende letter ter aanduiding van de foetus (binnen een zwangerschap). Met name van belang bij meerlingen
+          i.g.v. gedeeltelijke miskraam en selectieve foeticide (uitkomsten vóór 16w 0d) en bevindingen van verschillende zorgaanbieders. In principe
+          is er geen rangschikking, maar initieel geldt ‘1e’ = A; ‘2e’ = B; ‘3e’ = C etc. In de praktijk is dit vaak beperkt tot slechts twee of drie
+          mogelijke waarden. </desc>
             <comment language="nl-NL">A tot en met I.</comment>
             <valueDomain type="code"/>
             <valueSet name="FoetusVolgletter"
@@ -12133,7 +12260,8 @@
                      isMandatory="false"
                      shortName="crl">
                <name language="nl-NL">CRL</name>
-               <desc language="nl-NL">Kruin-romplengte van de foetus o.b.v. echoscopie. N.B. Bij de maximale waarde van dit element is ook rekening gehouden met metingen à terme. </desc>
+               <desc language="nl-NL">Kruin-romplengte van de foetus o.b.v. echoscopie. N.B. Bij de maximale waarde van dit element is ook rekening
+            gehouden met metingen à terme. </desc>
                <valueDomain type="quantity">
                   <property minInclude="0" unit="mm" fractionDigits="1"/>
                </valueDomain>
@@ -12147,7 +12275,8 @@
                      isMandatory="false"
                      shortName="bpd">
                <name language="nl-NL">BPD</name>
-               <desc language="nl-NL">Bipariëtaal diameter (diameter van de schedel van oor tot oor, ook wel DPB genaamd) van de foetus o.b.v. echoscopie. <br/>N.B. Bij de maximale waarde van dit element is ook rekening gehouden met metingen à terme. </desc>
+               <desc language="nl-NL">Bipariëtaal diameter (diameter van de schedel van oor tot oor, ook wel DPB genaamd) van de foetus o.b.v. echoscopie.
+            <br/>N.B. Bij de maximale waarde van dit element is ook rekening gehouden met metingen à terme. </desc>
                <valueDomain type="quantity">
                   <property minInclude="0" unit="mm" fractionDigits="1"/>
                </valueDomain>
@@ -12161,7 +12290,8 @@
                      isMandatory="false"
                      shortName="bpd_percentiel">
                <name language="nl-NL">BPD percentiel</name>
-               <desc language="nl-NL">Percentiel van de bipariëtale diameter (diameter van de schedel van oor tot oor, ook wel DPB genaamd) van de foetus o.b.v. echoscopie.</desc>
+               <desc language="nl-NL">Percentiel van de bipariëtale diameter (diameter van de schedel van oor tot oor, ook wel DPB genaamd) van de foetus
+            o.b.v. echoscopie.</desc>
                <source language="nl-NL">PWD Acute Fase Overdracht item #139</source>
                <comment language="nl-NL">N.B. Om dit gegeven goed te interpreteren is de à terme datum nodig.</comment>
                <valueDomain type="quantity">
@@ -12249,7 +12379,8 @@
                      isMandatory="false"
                      shortName="ac_percentiel">
                <name language="nl-NL">AC percentiel</name>
-               <desc language="nl-NL">Percentiel van de abdominal circumference (buikomtrek) van de foetus o.b.v. echoscopie. <br/>N.B. Om dit gegeven goed te interpreteren is de à terme datum nodig.</desc>
+               <desc language="nl-NL">Percentiel van de abdominal circumference (buikomtrek) van de foetus o.b.v. echoscopie. <br/>N.B. Om dit gegeven goed
+            te interpreteren is de à terme datum nodig.</desc>
                <source language="nl-NL">PWD Acute Fase Overdracht item #137</source>
                <comment language="nl-NL">N.B. Om dit gegeven goed te interpreteren is de à terme datum nodig.</comment>
                <valueDomain type="quantity">
@@ -12298,7 +12429,7 @@
                <name language="nl-NL">EFW</name>
                <desc language="nl-NL">EFW - Estimated Fetal Weight.<br clear="none"/>Wordt berekend door software.<br clear="none"/>
                   <br clear="none"/>
-                    </desc>
+               </desc>
                <valueDomain type="quantity">
                   <property unit="g" minInclude="1"/>
                </valueDomain>
@@ -12314,8 +12445,10 @@
                <name language="nl-NL">Hartactie aanwezig?</name>
                <desc language="nl-NL">Hartactie van de foetus aanwezig?<br clear="none"/>
                   <br clear="none"/>ja/nee/onbekend<br clear="none"/>
-                  <br clear="none"/>Ja -&gt; hartactie waargenomen<br clear="none"/>Nee -&gt; geen hartactie waargenomen, terwijl dit op grond van het onderzoek wél de verwachting was<br clear="none"/>Onbekend -&gt; bijvoorbeeld wanneer de hartactie nog niet waarneembaar is omdat het te vroeg in de zwangerschap is<br clear="none"/>
-                    </desc>
+                  <br clear="none"/>Ja -&gt; hartactie waargenomen<br clear="none"/>Nee -&gt; geen hartactie waargenomen, terwijl dit op grond van het
+            onderzoek wél de verwachting was<br clear="none"/>Onbekend -&gt; bijvoorbeeld wanneer de hartactie nog niet waarneembaar is omdat het te
+            vroeg in de zwangerschap is<br clear="none"/>
+               </desc>
                <comment language="nl-NL">
                   <br clear="none"/>
                </comment>
@@ -12334,7 +12467,7 @@
                      shortName="hartactie">
                <name language="nl-NL">Hartactie</name>
                <desc language="nl-NL">Hartactie van de foetus<br clear="none"/>
-                    </desc>
+               </desc>
                <comment language="nl-NL">Alleen van toepassing wanneer Hartactie aanwezig? = Ja</comment>
                <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.81007"
                         statusCode="draft"
@@ -12347,7 +12480,7 @@
                   <name language="nl-NL">Regelmaat hartslag</name>
                   <desc language="nl-NL">Regelmaat van de hartslag van de foetus.<br clear="none"/>
                      <br clear="none"/>
-                        </desc>
+                  </desc>
                   <comment language="nl-NL">
                      <br clear="none"/>
                   </comment>
@@ -12384,7 +12517,7 @@
                         shortName="frequentie_hartslag">
                   <name language="nl-NL">Frequentie hartslag</name>
                   <desc language="nl-NL">Frequentie van de hartslag van de foetus<br clear="none"/>
-                        </desc>
+                  </desc>
                   <valueDomain type="code">
                      <property/>
                   </valueDomain>
@@ -12475,7 +12608,7 @@
                      shortName="beweging">
                <name language="nl-NL">Beweging</name>
                <desc language="nl-NL">Kindsbeweging<br clear="none"/>
-                    </desc>
+               </desc>
                <valueDomain type="code">
                   <property/>
                   <example type="neutral">Normaal</example>
@@ -12494,7 +12627,7 @@
                      shortName="vruchtwater">
                <name language="nl-NL">Vruchtwater</name>
                <desc language="nl-NL">Vruchtwater hoeveelheid.<br clear="none"/>
-                    </desc>
+               </desc>
                <valueDomain type="code">
                   <property/>
                </valueDomain>
@@ -12537,7 +12670,7 @@
                      shortName="placentalokalisatie">
                <name language="nl-NL">Placentalokalisatie</name>
                <desc language="nl-NL">Placentalokalisatie<br clear="none"/>
-                    </desc>
+               </desc>
                <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80946"
                         statusCode="draft"
                         effectiveDate="2016-09-08T00:00:00"
@@ -12548,7 +12681,7 @@
                         shortName="placentalokalisatie">
                   <name language="nl-NL">Placentalokalisatie</name>
                   <desc language="nl-NL">Placentalokalisatie<br clear="none"/>
-                        </desc>
+                  </desc>
                   <valueDomain type="code">
                      <property/>
                   </valueDomain>
@@ -12601,7 +12734,7 @@
                         shortName="ostium">
                   <name language="nl-NL">Ostium</name>
                   <desc language="nl-NL">Locatie placenta ten opzichte van ostium.<br clear="none"/>
-                        </desc>
+                  </desc>
                   <valueDomain type="code">
                      <property/>
                   </valueDomain>
@@ -12619,8 +12752,9 @@
                         shortName="over_sectio_littekenq">
                   <name language="nl-NL">Over sectio litteken?</name>
                   <desc language="nl-NL">Ligt de placenta over een sectio litteken?<br clear="none"/>
-                        </desc>
-                  <operationalization language="nl-NL">Dit item is alleen van toepassing wanneer Placentalokalisatie = Ventraal én er sprake is van een sectio in de anamnese.<br clear="none"/>
+                  </desc>
+                  <operationalization language="nl-NL">Dit item is alleen van toepassing wanneer Placentalokalisatie = Ventraal én er sprake is van een
+              sectio in de anamnese.<br clear="none"/>
                   </operationalization>
                   <valueDomain type="boolean">
                      <property/>
@@ -12637,7 +12771,7 @@
                      shortName="afwijking_placentavliezennavelstrengq">
                <name language="nl-NL">Afwijking placenta/vliezen/navelstreng?</name>
                <desc language="nl-NL">Is er een afwijking placenta en/of vliezen en/of navelstreng?<br clear="none"/>
-                    </desc>
+               </desc>
                <valueDomain type="boolean">
                   <example type="neutral">Ja</example>
                   <example type="neutral">Nee</example>
@@ -12654,7 +12788,7 @@
                      shortName="afwijking_placentavliezennavelstreng">
                <name language="nl-NL">Afwijking placenta/vliezen/navelstreng</name>
                <desc language="nl-NL">Specificatie van de afwijking van placenta en/of vliezen en/of navelstreng<br clear="none"/>
-                    </desc>
+               </desc>
                <valueDomain type="code"/>
                <valueSet id="2.16.840.1.113883.2.4.3.11.60.90.77.11.214"
                          effectiveDate="2016-01-25T11:50:42"
@@ -12695,7 +12829,7 @@
                      shortName="cervixlengte">
                <name language="nl-NL">Cervixlengte</name>
                <desc language="nl-NL">Cervixlengte<br clear="none"/>
-                    </desc>
+               </desc>
                <valueDomain type="quantity">
                   <property unit="mm"/>
                </valueDomain>
@@ -12710,7 +12844,7 @@
                      shortName="navelstreng_vaten">
                <name language="nl-NL">Navelstreng vaten</name>
                <desc language="nl-NL">Navelstreng vaten<br clear="none"/>
-                    </desc>
+               </desc>
                <valueDomain type="code">
                   <property/>
                </valueDomain>
@@ -12748,7 +12882,7 @@
                      shortName="opmerkingen">
                <name language="nl-NL">Opmerkingen</name>
                <desc language="nl-NL">Opmerkingen bij echoscopie<br clear="none"/>
-                    </desc>
+               </desc>
                <valueDomain type="text">
                   <property/>
                </valueDomain>
@@ -13228,7 +13362,7 @@
                         shortName="extremiteiten">
                   <name language="nl-NL">Extremiteiten</name>
                   <desc language="nl-NL">Extremiteiten (armen en/of benen)<br clear="none"/>
-                        </desc>
+                  </desc>
                   <valueDomain type="code"/>
                   <valueSet statusCode="draft"
                             name="BeoordelingBevindingen"
@@ -13811,9 +13945,12 @@
                   isMandatory="false"
                   shortName="echoparameters_bpd_hc_ac_fl">
             <name language="nl-NL">Echoparameters BPD, HC, AC, FL</name>
-            <desc language="nl-NL">Echoparameters BPD, HC, AC, FL met aanvullende informatie als percentielen en diagrammen uit de laatste en voorgaande Echo-onderzoeken. Komt als een reeks van parameters en/of grafieken voor. De weergave in een grafiek van de actuele waarden en de p-waarden van de groei van de foetus.</desc>
+            <desc language="nl-NL">Echoparameters BPD, HC, AC, FL met aanvullende informatie als percentielen en diagrammen uit de laatste en voorgaande
+          Echo-onderzoeken. Komt als een reeks van parameters en/of grafieken voor. De weergave in een grafiek van de actuele waarden en de p-waarden
+          van de groei van de foetus.</desc>
             <source language="nl-NL">PWD Acute Fase Overdracht item #133</source>
-            <comment language="nl-NL">Samengesteld groeidiagram van de vier echoparameters BPD, HC, AC, FL, zoals door het echoapparaat gemaakt, in een figuur</comment>
+            <comment language="nl-NL">Samengesteld groeidiagram van de vier echoparameters BPD, HC, AC, FL, zoals door het echoapparaat gemaakt, in een
+          figuur</comment>
             <valueDomain type="blob"/>
          </concept>
          <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82234"
@@ -13936,8 +14073,10 @@
                      isMandatory="false"
                      shortName="a_priori_kans_op_trisomie_21_down">
                <name language="nl-NL">A priori kans op trisomie 21 (Down)</name>
-               <desc language="nl-NL">De kans op trisomie 21, louter op basis van maternale leeftijd en eerdere zwangerschap van foetus met niet erfelijke trisomie.<br/>
-                  <br/>Bij een bekende kans is de teller (value.numerator) altijd 1. Het aantal cijfers van de noemer (value.denominator) is aangegeven in de kolom 'Lengte'. </desc>
+               <desc language="nl-NL">De kans op trisomie 21, louter op basis van maternale leeftijd en eerdere zwangerschap van foetus met niet erfelijke
+            trisomie.<br/>
+                  <br/>Bij een bekende kans is de teller (value.numerator) altijd 1. Het aantal cijfers van de noemer (value.denominator) is
+            aangegeven in de kolom 'Lengte'. </desc>
                <comment language="nl-NL">Spirit 1c - id op spreadsheet:61050 - type:NUMERIEK - format:5</comment>
                <valueDomain type="count"/>
             </concept>
@@ -13950,8 +14089,10 @@
                      isMandatory="false"
                      shortName="a_priori_kans_op_trisomie_18_edwards">
                <name language="nl-NL">A priori kans op trisomie 18 (Edwards)</name>
-               <desc language="nl-NL">De kans op trisomie 18, louter op basis van maternale leeftijd en eerdere zwangerschap van foetus met niet erfelijke trisomie.<br/>
-                  <br/>Bij een bekende kans is de teller (value.numerator) altijd 1. Het aantal cijfers van de noemer (value.denominator) is aangegeven in de kolom 'Lengte'. </desc>
+               <desc language="nl-NL">De kans op trisomie 18, louter op basis van maternale leeftijd en eerdere zwangerschap van foetus met niet erfelijke
+            trisomie.<br/>
+                  <br/>Bij een bekende kans is de teller (value.numerator) altijd 1. Het aantal cijfers van de noemer (value.denominator) is
+            aangegeven in de kolom 'Lengte'. </desc>
                <valueDomain type="count"/>
             </concept>
             <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.61070"
@@ -13963,8 +14104,10 @@
                      isMandatory="false"
                      shortName="a_priori_kans_op_trisomie_13_patau">
                <name language="nl-NL">A priori kans op trisomie 13 (Patau)</name>
-               <desc language="nl-NL">De kans op trisomie 13, louter op basis van maternale leeftijd en eerdere zwangerschap van foetus met niet erfelijke trisomie.<br/>
-                  <br/>Bij een bekende kans is de teller (value.numerator) altijd 1. Het aantal cijfers van de noemer (value.denominator) is aangegeven in de kolom 'Lengte'. </desc>
+               <desc language="nl-NL">De kans op trisomie 13, louter op basis van maternale leeftijd en eerdere zwangerschap van foetus met niet erfelijke
+            trisomie.<br/>
+                  <br/>Bij een bekende kans is de teller (value.numerator) altijd 1. Het aantal cijfers van de noemer (value.denominator) is
+            aangegeven in de kolom 'Lengte'. </desc>
                <valueDomain type="count"/>
             </concept>
             <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.61080"
@@ -13977,7 +14120,8 @@
                      shortName="combinatietest_kans_op_trisomie_21">
                <name language="nl-NL">Combinatietest kans op trisomie 21</name>
                <desc language="nl-NL">Kans op basis van de combinatietest op trisomie 21 van 1:X<br/>
-                  <br/>Bij een bekende kans is de teller (value.numerator) altijd 1. Het aantal cijfers van de noemer (value.denominator) is aangegeven in de kolom 'Lengte'. </desc>
+                  <br/>Bij een bekende kans is de teller
+            (value.numerator) altijd 1. Het aantal cijfers van de noemer (value.denominator) is aangegeven in de kolom 'Lengte'. </desc>
                <valueDomain type="count"/>
             </concept>
             <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.61100"
@@ -13990,7 +14134,8 @@
                      shortName="combinatietest_kans_op_trisomie_18">
                <name language="nl-NL">Combinatietest kans op trisomie 18</name>
                <desc language="nl-NL">Kans op trisomie 18 van 1:X<br/>
-                  <br/>Bij een bekende kans is de teller (value.numerator) altijd 1. Het aantal cijfers van de noemer (value.denominator) is aangegeven in de kolom 'Lengte'. </desc>
+                  <br/>Bij een bekende kans is de teller (value.numerator) altijd 1. Het aantal cijfers
+            van de noemer (value.denominator) is aangegeven in de kolom 'Lengte'. </desc>
                <valueDomain type="count"/>
             </concept>
             <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.61110"
@@ -14003,7 +14148,8 @@
                      shortName="combinatietest_kans_op_trisomie_13">
                <name language="nl-NL">Combinatietest kans op trisomie 13</name>
                <desc language="nl-NL">Kans op trisomie 13 van 1:X<br/>
-                  <br/>Bij een bekende kans is de teller (value.numerator) altijd 1. Het aantal cijfers van de noemer (value.denominator) is aangegeven in de kolom 'Lengte'. </desc>
+                  <br/>Bij een bekende kans is de teller (value.numerator) altijd 1. Het aantal cijfers
+            van de noemer (value.denominator) is aangegeven in de kolom 'Lengte'. </desc>
                <valueDomain type="count"/>
             </concept>
             <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82313"
@@ -14015,7 +14161,8 @@
                      isMandatory="false"
                      shortName="gehanteerde_gegevens">
                <name language="nl-NL">Gehanteerde gegevens</name>
-               <desc language="nl-NL">De gehanteerde gegevens die door de kansberekeningssoftware gebruikt zijn als resultaatbeïnvloedende factor bij het verkregen resultaat.</desc>
+               <desc language="nl-NL">De gehanteerde gegevens die door de kansberekeningssoftware gebruikt zijn als resultaatbeïnvloedende factor bij het
+            verkregen resultaat.</desc>
                <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82300"
                         statusCode="draft"
                         effectiveDate="2016-09-08T00:00:00"
@@ -14026,7 +14173,7 @@
                         shortName="zwangerschapsduur">
                   <name language="nl-NL">Zwangerschapsduur</name>
                   <desc language="nl-NL">Zwangerschapsduur<br clear="none"/>De dataset definieert de zwangerschapsduur in dagen. <br clear="none"/>Zorgverleners zien de zwangerschapsduur het liefste in weken/dagen. Dus bijvoorbeeld: 36w2d of 40+2.<br clear="none"/>
-                        </desc>
+                  </desc>
                   <valueDomain type="quantity">
                      <property unit="d"/>
                   </valueDomain>
@@ -14123,8 +14270,9 @@
                         isMandatory="false"
                         shortName="diabetes_mellitusq">
                   <name language="nl-NL">Diabetes mellitus?</name>
-                  <desc language="nl-NL">Is er sprake van diabetes mellitus (type I of type II)?<br clear="none"/>Let op: het gaat hier nadrukkelijk niet om zwangerschapsdiabetes (diabetes gravidarum), deze hoort bij de obstetrische anamnese.<br clear="none"/>
-                        </desc>
+                  <desc language="nl-NL">Is er sprake van diabetes mellitus (type I of type II)?<br clear="none"/>Let op: het gaat hier nadrukkelijk niet om
+              zwangerschapsdiabetes (diabetes gravidarum), deze hoort bij de obstetrische anamnese.<br clear="none"/>
+                  </desc>
                   <valueDomain type="boolean"/>
                </concept>
                <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82306"
@@ -14161,7 +14309,8 @@
                         isMandatory="false"
                         shortName="gehanteerde_rookgewoonteq">
                   <name language="nl-NL">Gehanteerde rookgewoonte?</name>
-                  <desc language="nl-NL">De rookgewoonte die door de kansberekeningssoftware is gebruikt als resultaatbeïnvloedende factor bij het verkregen resultaat.. </desc>
+                  <desc language="nl-NL">De rookgewoonte die door de kansberekeningssoftware is gebruikt als resultaatbeïnvloedende factor bij het verkregen
+              resultaat.. </desc>
                   <valueDomain type="boolean"/>
                </concept>
                <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82308"
@@ -14238,7 +14387,8 @@
                         isMandatory="false"
                         shortName="gehanteerde_pappa_concentratie_in_m_iul">
                   <name language="nl-NL">Gehanteerde PAPP-A concentratie in mIU/l</name>
-                  <desc language="nl-NL">De PAPP-A concentratie in mIU/l die door de kansberekeningssoftware is gebruikt als resultaatbeïnvloedende factor bij het verkregen resultaat.. </desc>
+                  <desc language="nl-NL">De PAPP-A concentratie in mIU/l die door de kansberekeningssoftware is gebruikt als resultaatbeïnvloedende factor
+              bij het verkregen resultaat.. </desc>
                   <comment language="nl-NL">Spirit 1c - id op spreadsheet:61220 - type:NUMERIEK - format:5 - unit:mIU/l</comment>
                   <valueDomain type="quantity">
                      <property minInclude="0" unit="mIU/l"/>
@@ -14253,7 +14403,8 @@
                         isMandatory="false"
                         shortName="gehanteerde_pappa_in_mo_m">
                   <name language="nl-NL">Gehanteerde PAPP-A in MoM</name>
-                  <desc language="nl-NL">De PAPP-A in MoM die door de kansberekeningssoftware is gebruikt als resultaatbeïnvloedende factor bij het verkregen resultaat.. </desc>
+                  <desc language="nl-NL">De PAPP-A in MoM die door de kansberekeningssoftware is gebruikt als resultaatbeïnvloedende factor bij het
+              verkregen resultaat.. </desc>
                   <valueDomain type="quantity">
                      <property minInclude="0" unit="MoM" fractionDigits="2"/>
                   </valueDomain>
@@ -14267,7 +14418,8 @@
                         isMandatory="false"
                         shortName="gehanteerde_vrij_h_cg_concentratie_in_ngml">
                   <name language="nl-NL">Gehanteerde vrij β-hCG concentratie in ng/ml</name>
-                  <desc language="nl-NL">De vrij β-hCG concentratie in ng/ml die door de kansberekeningssoftware is gebruikt als resultaatbeïnvloedende factor bij het verkregen resultaat.. </desc>
+                  <desc language="nl-NL">De vrij β-hCG concentratie in ng/ml die door de kansberekeningssoftware is gebruikt als resultaatbeïnvloedende
+              factor bij het verkregen resultaat.. </desc>
                   <valueDomain type="quantity">
                      <property minInclude="0" unit="ng/ml" fractionDigits="2"/>
                   </valueDomain>
@@ -14281,7 +14433,8 @@
                         isMandatory="false"
                         shortName="gehanteerde_vrij_h_cg_in_mo_m">
                   <name language="nl-NL">Gehanteerde vrij β-hCG in MoM</name>
-                  <desc language="nl-NL">De vrij β-hCG in MoM die door de kansberekeningssoftware is gebruikt als resultaatbeïnvloedende factor bij het verkregen resultaat.. </desc>
+                  <desc language="nl-NL">De vrij β-hCG in MoM die door de kansberekeningssoftware is gebruikt als resultaatbeïnvloedende factor bij het
+              verkregen resultaat.. </desc>
                   <valueDomain type="quantity">
                      <property minInclude="0" unit="MoM" fractionDigits="2"/>
                   </valueDomain>
@@ -14295,7 +14448,8 @@
                         isMandatory="false"
                         shortName="gehanteerde_corrected_pappa">
                   <name language="nl-NL">Gehanteerde corrected PAPP-A</name>
-                  <desc language="nl-NL">De corrected PAPP-A in MoM die door de kansberekeningssoftware is gebruikt als resultaatbeïnvloedende factor bij het verkregen resultaat.. </desc>
+                  <desc language="nl-NL">De corrected PAPP-A in MoM die door de kansberekeningssoftware is gebruikt als resultaatbeïnvloedende factor bij
+              het verkregen resultaat.. </desc>
                   <valueDomain type="quantity">
                      <property minInclude="0" unit="MoM" fractionDigits="2"/>
                   </valueDomain>
@@ -14309,7 +14463,8 @@
                         isMandatory="false"
                         shortName="gehanteerde_corrected_vrij_h_cg">
                   <name language="nl-NL">Gehanteerde corrected vrij β-hCG</name>
-                  <desc language="nl-NL">De corrected vrij β-hCG in MoMdie door de kansberekeningssoftware is gebruikt als resultaatbeïnvloedende factor bij het verkregen resultaat.. </desc>
+                  <desc language="nl-NL">De corrected vrij β-hCG in MoMdie door de kansberekeningssoftware is gebruikt als resultaatbeïnvloedende factor bij
+              het verkregen resultaat.. </desc>
                   <valueDomain type="quantity">
                      <property minInclude="0" unit="MoM" fractionDigits="2"/>
                   </valueDomain>
@@ -14323,7 +14478,8 @@
                         isMandatory="false"
                         shortName="gehanteerde_datum_ntmeting">
                   <name language="nl-NL">Gehanteerde datum NT-meting</name>
-                  <desc language="nl-NL">De datum NT-meting die door de kansberekeningssoftware is gebruikt als resultaatbeïnvloedende factor bij het verkregen resultaat.. </desc>
+                  <desc language="nl-NL">De datum NT-meting die door de kansberekeningssoftware is gebruikt als resultaatbeïnvloedende factor bij het
+              verkregen resultaat.. </desc>
                   <valueDomain type="datetime">
                      <example>2011-01-28</example>
                   </valueDomain>
@@ -14365,7 +14521,8 @@
                         isMandatory="false"
                         shortName="crl">
                   <name language="nl-NL">CRL</name>
-                  <desc language="nl-NL">Kruin-romplengte van de foetus o.b.v. echoscopie. N.B. Bij de maximale waarde van dit element is ook rekening gehouden met metingen à terme. </desc>
+                  <desc language="nl-NL">Kruin-romplengte van de foetus o.b.v. echoscopie. N.B. Bij de maximale waarde van dit element is ook rekening
+              gehouden met metingen à terme. </desc>
                   <valueDomain type="quantity">
                      <property minInclude="0" unit="mm" fractionDigits="1"/>
                   </valueDomain>
@@ -14380,7 +14537,8 @@
                         isMandatory="false"
                         shortName="bpd">
                   <name language="nl-NL">BPD</name>
-                  <desc language="nl-NL">Bipariëtaal diameter (diameter van de schedel van oor tot oor, ook wel DPB genaamd) van de foetus o.b.v. echoscopie. <br/>N.B. Bij de maximale waarde van dit element is ook rekening gehouden met metingen à terme. </desc>
+                  <desc language="nl-NL">Bipariëtaal diameter (diameter van de schedel van oor tot oor, ook wel DPB genaamd) van de foetus o.b.v.
+              echoscopie. <br/>N.B. Bij de maximale waarde van dit element is ook rekening gehouden met metingen à terme. </desc>
                   <valueDomain type="quantity">
                      <property minInclude="0" unit="mm" fractionDigits="1"/>
                   </valueDomain>
@@ -14443,8 +14601,9 @@
                   shortName="urine_bloed_en_aanvullende_onderzoeken">
             <name language="nl-NL">Urine-, bloed- en aanvullende onderzoeken</name>
             <desc language="nl-NL">Urine-, bloed- en aanvullende onderzoeken<br clear="none"/>
-               <br clear="none"/>Het gaat hier zowel om onderzoeken van bloed, urine en/of een ander monster door het laboratorium, als om onderzoeken die door de zorgverlener of patiënt 'zelf' worden gedaan. <br clear="none"/>Voorbeelden van deze 'zelf'-bepalingen zijn: glucose, Hb en proteïne op basis van strips.<br clear="none"/>
-                </desc>
+               <br clear="none"/>Het gaat hier zowel om onderzoeken van
+          bloed, urine en/of een ander monster door het laboratorium, als om onderzoeken die door de zorgverlener of patiënt 'zelf' worden gedaan. <br clear="none"/>Voorbeelden van deze 'zelf'-bepalingen zijn: glucose, Hb en proteïne op basis van strips.<br clear="none"/>
+            </desc>
             <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80949"
                      statusCode="draft"
                      effectiveDate="2016-09-08T00:00:00"
@@ -14454,7 +14613,8 @@
                      isMandatory="false"
                      shortName="psie">
                <name language="nl-NL">PSIE</name>
-               <desc language="nl-NL"> Bloedonderzoek vrouw in het kader van PSIE (Prenatale Screening Infectieziekten en Erytrocytenimmunisatie). Het gaat hier om het onderzoek dat in principe uitgevoerd wordt vóór de 13e week. </desc>
+               <desc language="nl-NL"> Bloedonderzoek vrouw in het kader van PSIE (Prenatale Screening Infectieziekten en Erytrocytenimmunisatie). Het gaat
+            hier om het onderzoek dat in principe uitgevoerd wordt vóór de 13e week. </desc>
                <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80952"
                         statusCode="draft"
                         effectiveDate="2016-09-08T00:00:00"
@@ -14598,7 +14758,7 @@
                         shortName="hbs_ag">
                   <name language="nl-NL">HBsAg</name>
                   <desc language="nl-NL">HBsAg<br clear="none"/>
-                        </desc>
+                  </desc>
                   <valueDomain type="code"/>
                   <valueSet statusCode="draft"
                             id="2.16.840.1.113883.2.4.3.11.60.90.77.11.5"
@@ -14639,7 +14799,7 @@
                         shortName="hiv">
                   <name language="nl-NL">HIV</name>
                   <desc language="nl-NL">HIV<br clear="none"/>
-                        </desc>
+                  </desc>
                   <valueDomain type="code"/>
                   <valueSet statusCode="draft"
                             name="HIV"
@@ -14680,7 +14840,7 @@
                         shortName="lues">
                   <name language="nl-NL">Lues</name>
                   <desc language="nl-NL">Lues<br clear="none"/>
-                        </desc>
+                  </desc>
                   <valueDomain type="code">
                      <property/>
                   </valueDomain>
@@ -14712,7 +14872,8 @@
                         isMandatory="false"
                         shortName="welke_irregulaire_antistoffen_vrouw_aanwezig">
                   <name language="nl-NL">Welke irregulaire antistoffen vrouw aanwezig.</name>
-                  <desc language="nl-NL">Indien irregulaire antistoffen is ja: Welke irregulaire antistoffen zijn bij de vrouw aanwezig? Meerdere antwoorden mogelijk</desc>
+                  <desc language="nl-NL">Indien irregulaire antistoffen is ja: Welke irregulaire antistoffen zijn bij de vrouw aanwezig? Meerdere antwoorden
+              mogelijk</desc>
                   <source language="nl-NL">PRN dataset 1.3 item #4.1.04.04</source>
                   <valueDomain type="code"/>
                   <valueSet name="BloodGroupAntibodies"
@@ -14775,7 +14936,7 @@
                      shortName="niptq">
                <name language="nl-NL">NIPT?</name>
                <desc language="nl-NL">Is er een NIPT (niet-invasieve prenatale test) uitgevoerd?<br clear="none"/>
-                    </desc>
+               </desc>
                <valueDomain type="boolean">
                   <property/>
                </valueDomain>
@@ -14790,7 +14951,7 @@
                      shortName="nipt__uitslag">
                <name language="nl-NL">NIPT - uitslag</name>
                <desc language="nl-NL">NIPT - uitslag<br clear="none"/>
-                    </desc>
+               </desc>
                <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82229"
                         statusCode="draft"
                         effectiveDate="2016-09-08T00:00:00"
@@ -14801,7 +14962,7 @@
                         shortName="nipt__uitslag">
                   <name language="nl-NL">NIPT - uitslag</name>
                   <desc language="nl-NL">NIPT (niet-invasieve prenatale test) - uitslag<br clear="none"/>
-                        </desc>
+                  </desc>
                   <valueDomain type="code"/>
                   <valueSet statusCode="draft"
                             id="2.16.840.1.113883.2.4.3.11.60.90.77.11.24"
@@ -14940,7 +15101,7 @@
                   <desc language="nl-NL">MCV - Mean Corpuscular Volume in femtoliter<br clear="none"/>
                      <br clear="none"/>
                      <br clear="none"/>
-                        </desc>
+                  </desc>
                   <valueDomain type="quantity">
                      <property unit="fl"/>
                      <example type="neutral">90 fl</example>
@@ -14956,7 +15117,7 @@
                         shortName="hbpathie">
                   <name language="nl-NL">Hb-pathie</name>
                   <desc language="nl-NL">Hb-pathie.<br clear="none"/>
-                        </desc>
+                  </desc>
                   <comment language="nl-NL">Het is mogelijk dat combinaties van de waardeconcepten geconstateerd worden.<br clear="none"/>
                   </comment>
                   <valueDomain type="code">
@@ -14976,7 +15137,7 @@
                         shortName="vit_b12">
                   <name language="nl-NL">Vit. B12</name>
                   <desc language="nl-NL">Vitamine B12<br clear="none"/>
-                        </desc>
+                  </desc>
                   <valueDomain type="quantity">
                      <property unit="pmol/l"/>
                      <example>350 pmol/l</example>
@@ -14992,7 +15153,7 @@
                         shortName="actiefb12">
                   <name language="nl-NL">Actief-B12</name>
                   <desc language="nl-NL">Actief vitamine B12 (Holo-TC)<br clear="none"/>
-                        </desc>
+                  </desc>
                   <valueDomain type="quantity">
                      <property unit="pmol/l"/>
                      <example>75 pmol/l</example>
@@ -15008,7 +15169,7 @@
                         shortName="ferritine">
                   <name language="nl-NL">Ferritine</name>
                   <desc language="nl-NL">Ferritine<br clear="none"/>
-                        </desc>
+                  </desc>
                   <valueDomain type="quantity">
                      <property unit="µg/l"/>
                      <example type="neutral">60 µg/l</example>
@@ -15024,7 +15185,7 @@
                         shortName="foliumzuur">
                   <name language="nl-NL">Foliumzuur</name>
                   <desc language="nl-NL">Foliumzuur<br clear="none"/>
-                        </desc>
+                  </desc>
                   <valueDomain type="quantity">
                      <property unit="nmol/l"/>
                      <example type="neutral">22 nmol/l</example>
@@ -15041,7 +15202,7 @@
                      shortName="diabetes_diagnostiek">
                <name language="nl-NL">Diabetes diagnostiek</name>
                <desc language="nl-NL">Diabetes diagnostiek<br clear="none"/>
-                    </desc>
+               </desc>
                <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82079"
                         statusCode="draft"
                         effectiveDate="2016-09-08T00:00:00"
@@ -15052,7 +15213,7 @@
                         shortName="glucose">
                   <name language="nl-NL">Glucose</name>
                   <desc language="nl-NL">Glucose<br clear="none"/>
-                        </desc>
+                  </desc>
                   <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82074"
                            statusCode="draft"
                            effectiveDate="2016-09-08T00:00:00"
@@ -15063,8 +15224,9 @@
                            shortName="tijd">
                      <name language="nl-NL">Tijd</name>
                      <desc language="nl-NL">Tijd onderzoek<br clear="none"/>
-                            </desc>
-                     <comment language="nl-NL">Tijd is nodig voor dagcurve. De datum komt al mee in het dataset concept 'Datum onderzoek' direct in de groep 'Medisch onderzoek'. Dit item is bedoeld om de tijd mee te geven indien bekend.<br clear="none"/>
+                     </desc>
+                     <comment language="nl-NL">Tijd is nodig voor dagcurve. De datum komt al mee in het dataset concept 'Datum onderzoek' direct in de groep
+                'Medisch onderzoek'. Dit item is bedoeld om de tijd mee te geven indien bekend.<br clear="none"/>
                      </comment>
                      <valueDomain type="datetime">
                         <property timeStampPrecision="YMDHM"/>
@@ -15080,7 +15242,7 @@
                            shortName="glucose">
                      <name language="nl-NL">Glucose</name>
                      <desc language="nl-NL">Glucose<br clear="none"/>
-                            </desc>
+                     </desc>
                      <valueDomain type="quantity">
                         <property unit="mmol/l"/>
                      </valueDomain>
@@ -15096,7 +15258,7 @@
                         shortName="toelichting">
                   <name language="nl-NL">Toelichting</name>
                   <desc language="nl-NL">Toelichting in vrije tekst, bijvoorbeeld te gebruiken om aan te geven welk soort test dit betreft.<br clear="none"/>
-                        </desc>
+                  </desc>
                   <valueDomain type="text">
                      <property/>
                   </valueDomain>
@@ -15112,7 +15274,7 @@
                      shortName="schildklier_diagnostiek">
                <name language="nl-NL">Schildklier diagnostiek</name>
                <desc language="nl-NL">Schildklier diagnostiek<br clear="none"/>
-                    </desc>
+               </desc>
                <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80962"
                         statusCode="draft"
                         effectiveDate="2016-09-08T00:00:00"
@@ -15123,7 +15285,7 @@
                         shortName="tsh_receptor_antistoffen">
                   <name language="nl-NL">TSH receptor antistoffen</name>
                   <desc language="nl-NL">TSH receptor antistoffen<br clear="none"/>
-                        </desc>
+                  </desc>
                   <valueDomain type="quantity">
                      <property unit="iE/l"/>
                   </valueDomain>
@@ -15138,7 +15300,7 @@
                         shortName="vrij_t4">
                   <name language="nl-NL">Vrij T4</name>
                   <desc language="nl-NL">Vrij T4 (FT4)<br clear="none"/>
-                        </desc>
+                  </desc>
                   <valueDomain type="quantity">
                      <property unit="pmol/l"/>
                   </valueDomain>
@@ -15153,7 +15315,7 @@
                         shortName="tsh">
                   <name language="nl-NL">TSH</name>
                   <desc language="nl-NL">TSH<br clear="none"/>
-                        </desc>
+                  </desc>
                   <valueDomain type="quantity">
                      <property unit="mE/l"/>
                   </valueDomain>
@@ -15169,7 +15331,7 @@
                      shortName="torch">
                <name language="nl-NL">TORCH</name>
                <desc language="nl-NL">TORCH<br clear="none"/>
-                    </desc>
+               </desc>
                <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80967"
                         statusCode="draft"
                         effectiveDate="2016-09-08T00:00:00"
@@ -15180,7 +15342,7 @@
                         shortName="toxoplasmose_ig_g">
                   <name language="nl-NL">Toxoplasmose IgG</name>
                   <desc language="nl-NL">Toxoplasmose IgG<br clear="none"/>
-                        </desc>
+                  </desc>
                   <valueDomain type="quantity">
                      <property/>
                   </valueDomain>
@@ -15195,7 +15357,7 @@
                         shortName="toxoplasmose_ig_m">
                   <name language="nl-NL">Toxoplasmose IgM</name>
                   <desc language="nl-NL">Toxoplasmose IgM<br clear="none"/>
-                        </desc>
+                  </desc>
                   <valueDomain type="quantity">
                      <property/>
                   </valueDomain>
@@ -15210,7 +15372,7 @@
                         shortName="rubella_ig_g">
                   <name language="nl-NL">Rubella IgG</name>
                   <desc language="nl-NL">Rubella IgG<br clear="none"/>
-                        </desc>
+                  </desc>
                   <valueDomain type="quantity">
                      <property unit="iE/l"/>
                   </valueDomain>
@@ -15225,7 +15387,7 @@
                         shortName="rubella_ig_m">
                   <name language="nl-NL">Rubella IgM</name>
                   <desc language="nl-NL">Rubella IgM<br clear="none"/>
-                        </desc>
+                  </desc>
                   <valueDomain type="quantity">
                      <property/>
                   </valueDomain>
@@ -15240,7 +15402,7 @@
                         shortName="cmv_ig_g">
                   <name language="nl-NL">CMV IgG</name>
                   <desc language="nl-NL">CMV IgG<br clear="none"/>
-                        </desc>
+                  </desc>
                   <valueDomain type="code">
                      <property/>
                   </valueDomain>
@@ -15258,7 +15420,7 @@
                         shortName="cmv_ig_m">
                   <name language="nl-NL">CMV IgM</name>
                   <desc language="nl-NL">CMV IgM<br clear="none"/>
-                        </desc>
+                  </desc>
                   <valueDomain type="code">
                      <property/>
                   </valueDomain>
@@ -15276,7 +15438,7 @@
                         shortName="herpes_ig_g">
                   <name language="nl-NL">Herpes IgG</name>
                   <desc language="nl-NL">Herpes IgG<br clear="none"/>
-                        </desc>
+                  </desc>
                   <valueDomain type="code">
                      <property/>
                   </valueDomain>
@@ -15294,7 +15456,7 @@
                         shortName="herpes_ig_m">
                   <name language="nl-NL">Herpes IgM</name>
                   <desc language="nl-NL">Herpes IgM<br clear="none"/>
-                        </desc>
+                  </desc>
                   <valueDomain type="code">
                      <property/>
                   </valueDomain>
@@ -15312,7 +15474,7 @@
                         shortName="parvovirus_ig_g">
                   <name language="nl-NL">Parvovirus IgG</name>
                   <desc language="nl-NL">Parvovirus IgG<br clear="none"/>
-                        </desc>
+                  </desc>
                   <valueDomain type="code">
                      <property/>
                   </valueDomain>
@@ -15330,7 +15492,7 @@
                         shortName="parvovirus_ig_m">
                   <name language="nl-NL">Parvovirus IgM</name>
                   <desc language="nl-NL">Parvovirus IgM<br clear="none"/>
-                        </desc>
+                  </desc>
                   <valueDomain type="code">
                      <property/>
                   </valueDomain>
@@ -15410,7 +15572,7 @@
                            shortName="ketonen">
                      <name language="nl-NL">Ketonen</name>
                      <desc language="nl-NL">Ketonen<br clear="none"/>
-                            </desc>
+                     </desc>
                      <valueDomain type="code">
                         <property/>
                      </valueDomain>
@@ -15453,7 +15615,7 @@
                            shortName="nitriet">
                      <name language="nl-NL">Nitriet</name>
                      <desc language="nl-NL">Nitriet<br clear="none"/>
-                            </desc>
+                     </desc>
                      <valueDomain type="code">
                         <property/>
                      </valueDomain>
@@ -15500,7 +15662,7 @@
                         shortName="urinekweek">
                   <name language="nl-NL">Urinekweek</name>
                   <desc language="nl-NL">Urinekweek<br clear="none"/>
-                        </desc>
+                  </desc>
                   <valueDomain type="text">
                      <property/>
                   </valueDomain>
@@ -15530,7 +15692,7 @@
                      shortName="vaginakweek">
                <name language="nl-NL">Vaginakweek</name>
                <desc language="nl-NL">Vaginakweek<br clear="none"/>
-                    </desc>
+               </desc>
                <valueDomain type="text">
                   <property/>
                </valueDomain>
@@ -15546,8 +15708,9 @@
                   shortName="vaginaal_toucher">
             <name language="nl-NL">Vaginaal toucher</name>
             <desc language="nl-NL">Vaginaal toucher / inwendig onderzoek<br clear="none"/>
-               <br clear="none"/>POVIAS = portio, ontsluiting, vliezen, indaling, aard voorliggend deel, stand voorliggend deel<br clear="none"/>
-                </desc>
+               <br clear="none"/>POVIAS = portio, ontsluiting, vliezen,
+          indaling, aard voorliggend deel, stand voorliggend deel<br clear="none"/>
+            </desc>
             <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20612"
                      statusCode="draft"
                      effectiveDate="2016-09-08T00:00:00"
@@ -15601,7 +15764,7 @@
                      shortName="positie_portio">
                <name language="nl-NL">Positie portio</name>
                <desc language="nl-NL">Positie portio<br clear="none"/>
-                    </desc>
+               </desc>
                <valueDomain type="code"/>
                <valueSet id="2.16.840.1.113883.2.4.11.213"
                          name="PositiePortio22"
@@ -15726,8 +15889,9 @@
                      shortName="vliezen">
                <name language="nl-NL">Vliezen</name>
                <desc language="nl-NL">Aanduiding of de vliezen zijn gebroken of nog intact zijn.<br clear="none"/>
-                  <br clear="none"/>Indien het niet duidelijk is of de vliezen gebroken zijn, dient gekozen te worden voor 'Onbekend'.<br clear="none"/>
-                    </desc>
+                  <br clear="none"/>Indien het niet
+            duidelijk is of de vliezen gebroken zijn, dient gekozen te worden voor 'Onbekend'.<br clear="none"/>
+               </desc>
                <source language="nl-NL">PWD Acute Fase Overdracht item #131</source>
                <valueDomain type="code">
                   <property/>
@@ -15995,7 +16159,7 @@
                shortName="diagnoseinterventie_postpartum">
          <name language="nl-NL">Diagnose/interventie postpartum</name>
          <desc language="nl-NL">Diagnose en/of interventie postpartum<br clear="none"/>
-            </desc>
+         </desc>
          <relationship type="SPEC"
                        ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82297"
                        flexibility="2014-09-15T12:36:37"
@@ -16010,7 +16174,7 @@
                   shortName="datum">
             <name language="nl-NL">Datum</name>
             <desc language="nl-NL">Datum<br clear="none"/>
-                </desc>
+            </desc>
             <valueDomain type="datetime">
                <property timeStampPrecision="YMD"/>
             </valueDomain>
@@ -16025,9 +16189,11 @@
                   shortName="pathologie_vrouw">
             <name language="nl-NL">Pathologie vrouw</name>
             <desc language="nl-NL">Specificatie van de pathologie van de vrouw postpartum.<br clear="none"/>
-               <br clear="none"/>Deze lijst is geïnspireerd door VIL Codelijst A Indicaties 6000-6499 met uitzondering van code 6050 (Opname-indicatie voor het kind), en met toevoeging van Depressie en met uitbreiding van een aantal infecties.<br clear="none"/>
+               <br clear="none"/>Deze lijst is geïnspireerd
+          door VIL Codelijst A Indicaties 6000-6499 met uitzondering van code 6050 (Opname-indicatie voor het kind), en met toevoeging van Depressie
+          en met uitbreiding van een aantal infecties.<br clear="none"/>
                <br clear="none"/>
-                </desc>
+            </desc>
             <source language="nl-NL">PRN item 5.7.05.02<br clear="none"/>
             </source>
             <relationship type="SPEC"
@@ -16149,8 +16315,9 @@
                   shortName="interventie">
             <name language="nl-NL">Interventie</name>
             <desc language="nl-NL">Interventies volgende op een diagnose.<br clear="none"/>
-               <br clear="none"/>Alleen van toepassing wanneer "Pathologie vrouw?" 'ja' is.<br clear="none"/>
-                </desc>
+               <br clear="none"/>Alleen van toepassing wanneer "Pathologie
+          vrouw?" 'ja' is.<br clear="none"/>
+            </desc>
             <valueDomain type="code"/>
             <valueSet statusCode="draft"
                       id="2.16.840.1.113883.2.4.3.11.60.90.77.11.217"
@@ -16197,7 +16364,7 @@
                shortName="kraamzorgq">
          <name language="nl-NL">Kraamzorg?</name>
          <desc language="nl-NL">Is er kraamzorg?<br clear="none"/>
-            </desc>
+         </desc>
          <valueDomain type="boolean">
             <property/>
          </valueDomain>
@@ -16212,7 +16379,7 @@
                shortName="kraamzorginstelling">
          <name language="nl-NL">Kraamzorginstelling</name>
          <desc language="nl-NL">Kraamzorginstelling<br clear="none"/>
-            </desc>
+         </desc>
          <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82084"
                   statusCode="draft"
                   effectiveDate="2016-09-08T00:00:00"
@@ -16235,7 +16402,7 @@
                   shortName="telefoonnummer_instelling">
             <name language="nl-NL">Telefoonnummer instelling</name>
             <desc language="nl-NL">Telefoonnummer instelling<br clear="none"/>
-                </desc>
+            </desc>
             <valueDomain type="string">
                <property/>
                <example>0701234567</example>
@@ -16252,7 +16419,7 @@
                shortName="bloedverlies_kraambed">
          <name language="nl-NL">Bloedverlies kraambed</name>
          <desc language="nl-NL">Een inschatting van het bloedverlies tijdens kraambed. Dit betreft niet het bloedverlies direct postpartum.<br clear="none"/>
-            </desc>
+         </desc>
          <valueDomain type="code">
             <example type="neutral">normaal</example>
          </valueDomain>
@@ -16270,7 +16437,7 @@
                shortName="opmerkingen_kraambed">
          <name language="nl-NL">Opmerkingen kraambed</name>
          <desc language="nl-NL">Opmerkingen kraambed<br clear="none"/>
-            </desc>
+         </desc>
          <valueDomain type="text">
             <property/>
          </valueDomain>
@@ -16295,9 +16462,12 @@
                   shortName="voeding_kind_groep">
             <name language="nl-NL">Voeding kind (groep)</name>
             <desc language="nl-NL">Voeding kind (groep).<br clear="none"/>
-               <br clear="none"/>Registratie richtlijn PRN: de voeding van het kind bij voorkeur vastleggen op de zevende dag.<br clear="none"/>
-               <br clear="none"/>De voeding van het kind mag vaker dan één keer (dus op meer dan één datum) worden vastgelegd, soms is dit ook nuttig omdat het verandert. Daarnaast is het ook mogelijk dat een kind op één datum verschillende substanties voeding krijgt (bijvoorbeeld zowel borst- als kunstvoeding). Ook dat kan vastgelegd worden.<br clear="none"/>
-                </desc>
+               <br clear="none"/>Registratie richtlijn PRN: de voeding van het kind bij
+          voorkeur vastleggen op de zevende dag.<br clear="none"/>
+               <br clear="none"/>De voeding van het kind mag vaker dan één keer (dus op meer dan
+          één datum) worden vastgelegd, soms is dit ook nuttig omdat het verandert. Daarnaast is het ook mogelijk dat een kind op één datum
+          verschillende substanties voeding krijgt (bijvoorbeeld zowel borst- als kunstvoeding). Ook dat kan vastgelegd worden.<br clear="none"/>
+            </desc>
             <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.70011"
                      statusCode="final"
                      effectiveDate="2016-09-08T00:00:00"
@@ -16361,7 +16531,7 @@
                   shortName="betrokkenheid_andere_zorgverlenerq">
             <name language="nl-NL">Betrokkenheid andere zorgverlener?</name>
             <desc language="nl-NL">Is er sprake van betrokkenheid van een andere zorgverlener voor het kind?<br clear="none"/>
-                </desc>
+            </desc>
             <valueDomain type="boolean"/>
          </concept>
          <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40249"
@@ -16384,7 +16554,7 @@
                      shortName="type_betrokkenheid">
                <name language="nl-NL">Type betrokkenheid</name>
                <desc language="nl-NL">Op welke wijze is er een andere zorgverlener betrokken bij de zorg voor het kind<br clear="none"/>
-                    </desc>
+               </desc>
                <valueDomain type="code"/>
                <valueSet statusCode="final"
                          name="AndereZorgverlenerBetrokken22"
@@ -16553,7 +16723,7 @@
                shortName="nacontrole">
          <name language="nl-NL">Nacontrole</name>
          <desc language="nl-NL">Nacontrole 6 weken postpartum<br clear="none"/>
-            </desc>
+         </desc>
          <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80846"
                   statusCode="draft"
                   effectiveDate="2016-09-08T00:00:00"
@@ -16564,7 +16734,7 @@
                   shortName="datum_controle">
             <name language="nl-NL">Datum controle</name>
             <desc language="nl-NL">Datum controle<br clear="none"/>
-                </desc>
+            </desc>
             <valueDomain type="datetime">
                <property timeStampPrecision="YMD"/>
             </valueDomain>
@@ -16591,7 +16761,7 @@
                   shortName="zorgverlenertype">
             <name language="nl-NL">Zorgverlenertype</name>
             <desc language="nl-NL">Zorgverlenertype perinatale controles<br clear="none"/>
-                </desc>
+            </desc>
             <valueDomain type="code"/>
             <valueSet id="2.16.840.1.113883.2.4.11.185"
                       name="RolZorgverlenerPerinataleControle"
@@ -16737,7 +16907,7 @@
                   shortName="anticonceptie_besprokenq">
             <name language="nl-NL">Anticonceptie besproken?</name>
             <desc language="nl-NL">Anticonceptie besproken?<br clear="none"/>
-                </desc>
+            </desc>
             <valueDomain type="boolean">
                <property/>
             </valueDomain>
@@ -16752,7 +16922,7 @@
                   shortName="type_anticonceptie">
             <name language="nl-NL">Type anticonceptie</name>
             <desc language="nl-NL">Anticonceptie<br clear="none"/>
-                </desc>
+            </desc>
             <valueDomain type="code"/>
             <valueSet id="2.16.840.1.113883.2.4.11.250"
                       name="type_anticonceptie"
@@ -16833,7 +17003,7 @@
                   shortName="vloeien">
             <name language="nl-NL">Vloeien</name>
             <desc language="nl-NL">Vloeien<br clear="none"/>
-                </desc>
+            </desc>
             <valueDomain type="code">
                <property/>
             </valueDomain>
@@ -16876,7 +17046,7 @@
                   shortName="menstruatieq">
             <name language="nl-NL">Menstruatie?</name>
             <desc language="nl-NL">Menstruatie<br clear="none"/>
-                </desc>
+            </desc>
             <valueDomain type="boolean">
                <property/>
             </valueDomain>
@@ -16891,7 +17061,7 @@
                   shortName="incontinentieq">
             <name language="nl-NL">Incontinentie?</name>
             <desc language="nl-NL">Is er sprake van incontinentie?<br clear="none"/>
-                </desc>
+            </desc>
             <valueDomain type="boolean">
                <property/>
             </valueDomain>
@@ -16906,7 +17076,7 @@
                   shortName="incontinentie">
             <name language="nl-NL">Incontinentie</name>
             <desc language="nl-NL">Incontinentie<br clear="none"/>
-                </desc>
+            </desc>
             <valueDomain type="code"/>
             <valueSet id="2.16.840.1.113883.2.4.11.212"
                       name="Incontinentie22"
@@ -16942,7 +17112,7 @@
                   shortName="episiotomieruptuur">
             <name language="nl-NL">Episiotomie/ruptuur</name>
             <desc language="nl-NL">Episiotomie/ruptuur.<br clear="none"/>Alleen van toepassing wanneer conditie perineum postpartum niet gaaf is.<br clear="none"/>
-                </desc>
+            </desc>
             <valueDomain type="code">
                <property/>
             </valueDomain>
@@ -16978,7 +17148,7 @@
                   shortName="sectiowond">
             <name language="nl-NL">Sectiowond</name>
             <desc language="nl-NL">Sectiowond.<br clear="none"/>Alleen van toepassing wanneer sectio is uitgevoerd.<br clear="none"/>
-                </desc>
+            </desc>
             <valueDomain type="code">
                <property/>
             </valueDomain>
@@ -17037,7 +17207,7 @@
                      shortName="bloeddruk_diastolisch">
                <name language="nl-NL">Bloeddruk diastolisch</name>
                <desc language="nl-NL">Diastolische bloeddruk<br clear="none"/>
-                    </desc>
+               </desc>
                <source language="nl-NL">
                   <br clear="none"/>
                </source>
