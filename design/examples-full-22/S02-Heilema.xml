@@ -1,0 +1,1217 @@
+<adaxml>
+  <meta status="new" created-by="hugo" last-update-by="hugo" creation-date="2015-09-21T09:44:59.623+02:00"
+    last-update-date="2015-10-08T10:33:02.715+02:00"/>
+  <data>
+    <verwijzing_regulier_bericht app="perinatologie" transactionRef="2.16.840.1.113883.2.4.3.11.60.90.77.4.2401"
+      transactionEffectiveDate="2013-09-10T00:00:00" versionDate="" prefix="peri20-" language="nl-NL" title="Leeg om nog in te vullen door Hugo"
+      id="S02-Heilema" shortName="verwijzing_regulier_bericht" formName="reguliere_verwijzing">
+      <zorgverlening conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.4">
+        <datum_start_zorgverantwoordelijkheid conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20290" value="2014-10-14T10:00:00"/>
+        <verwijsdetails conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82012">
+          <datum_verwijzing value="2015-01-13T10:00:00" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82013"/>
+          <verwijzing_naar_zorginstelling_specialisme value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82017" code="01.046"
+            codeSystem="2.16.840.1.113883.2.4.15.111" displayName="Gynaecoloog / obstetricus"/>
+          <verwijzing_naar_zorginstelling_id value="0065" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82018"/>
+          <redenen_van_verwijzing conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82014">
+            <reden_verwijzing value="125" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82015" code="4190"
+              codeSystem="2.16.840.1.113883.2.4.3.22.1.2.1" displayName="Geneesmiddelengebruik mogelijke effect op zwangere en ongeboren vrucht"/>
+            <toelichting_reden_verwijzing value="SSRI gebruik&#xA;11.20uur gesprek" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82016"/>
+          </redenen_van_verwijzing>
+        </verwijsdetails>
+        <verwijsdetails conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82012">
+          <datum_verwijzing value="2015-05-11T12:00:00" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82013"/>
+          <verwijzing_naar_zorginstelling_specialisme value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82017" code="01.046"
+            codeSystem="2.16.840.1.113883.2.4.15.111" displayName="Gynaecoloog / obstetricus"/>
+          <verwijzing_naar_zorginstelling_id value="0065" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82018"/>
+          <redenen_van_verwijzing conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82014">
+            <reden_verwijzing value="173" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82015" code="4500"
+              codeSystem="2.16.840.1.113883.2.4.3.22.1.2.1" displayName="Minder leven"/>
+            <toelichting_reden_verwijzing value="Hele ochtend al geen leven, heeft al twee uur op haar zij gelegen, CT +/reg."
+              conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82016"/>
+          </redenen_van_verwijzing>
+        </verwijsdetails>
+        <verwijsdetails conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82012">
+          <datum_verwijzing value="2015-06-03T06:00:00" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82013"/>
+          <verwijzing_naar_zorginstelling_specialisme value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82017" code="01.046"
+            codeSystem="2.16.840.1.113883.2.4.15.111" displayName="Gynaecoloog / obstetricus"/>
+          <verwijzing_naar_zorginstelling_id value="0065" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82018"/>
+          <redenen_van_verwijzing conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82014">
+            <reden_verwijzing value="189" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82015" code="5120"
+              codeSystem="2.16.840.1.113883.2.4.3.22.1.2.1" displayName="Meconiumhoudend vruchtwater"/>
+            <toelichting_reden_verwijzing value="AROM &gt; 3 cm " conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82016"/>
+          </redenen_van_verwijzing>
+        </verwijsdetails>
+      </zorgverlening>
+      <zorgverlenerzorginstelling conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.1">
+        <zorgverlener conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10001">
+          <naam_zorgverlener value="Heilema 2" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10006"/>
+          <zorgverlenertype value="6" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10010" code="03.000"
+            codeSystem="2.16.840.1.113883.2.4.15.111" displayName="Verloskundige"/>
+        </zorgverlener>
+        <zorginstelling conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10020">
+          <naam_zorginstelling conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10026"/>
+          <adres_zorginstelling conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10027">
+            <straatnaam value="Duke Ellingtonstraat" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10032"/>
+            <huisnummer value="49" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10033"/>
+            <huisletterhuisnummertoevoeging conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10034"/>
+            <postcode value="1544KP" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10041"/>
+            <plaatsnaam value="Zaandijk" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10036"/>
+            <land value="Nederland" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10038"/>
+          </adres_zorginstelling>
+          <type_zorginstelling_bij_verwijzing conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82019" value="Verloskundigenpraktijk"/>
+        </zorginstelling>
+      </zorgverlenerzorginstelling>
+      <vrouw conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.2">
+        <burgerservicenummer value="189135293" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10030"/>
+        <naamgegevens conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10035">
+          <voornamen conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10042" value="Jessica"/>
+          <initialen conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82359" value="J"/>
+          <roepnaam conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82360" value="Jessica"/>
+          <achternaam conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82361">
+            <voorvoegsel conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82363"/>
+            <achternaam conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10043" value="Moon"/>
+          </achternaam>
+        </naamgegevens>
+        <geboortedatum value="2012-12-12" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10040"/>
+        <adres conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10300">
+          <straatnaam conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10301" value="Paukenhof"/>
+          <huisnummer conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10302" value="49"/>
+          <huisletterhuisnummertoevoeging conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10303"/>
+          <postcode conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10304" value="1544KP"/>
+          <plaatsnaam conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10305" value="Zaandijk"/>
+          <land conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10307" value="Nederland"/>
+        </adres>
+        <etniciteit conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10400" value="3" code="12" codeSystem="2.16.840.1.113883.2.4.4.13.28"
+          displayName="Kaukasisch"/>
+        <taalvaardigheid_vrouw_nederlandse_taal conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10401" value="1" code="G"
+          codeSystem="2.16.840.1.113883.5.61" displayName="Good"/>
+        <communicatietaal conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82371"/>
+        <opleidingsniveau conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82155" value="4" code="04" codeSystem="2.16.840.1.113883.2.4.4.30.20"
+          displayName="Middelbaar Algemeen Onderwijs"/>
+        <beroep conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82154" value="Drogiste"/>
+        <geloofsovertuiging value="3" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82156" code="276120001" codeSystem="2.16.840.1.113883.6.96"
+          displayName="Catholic religion"/>
+        <accepteert_bloedtransfusieq value="true" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82157"/>
+        <betrokken_zorgverlenerzorginstelling conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80649">
+          <huisarts conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82022">
+            <zorgverlener_uzinummer conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82027"/>
+            <zorgverlener_agbid conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82028"/>
+            <naam_zorgverlener value="Albrecht" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82029"/>
+          </huisarts>
+          <apotheek conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82023">
+            <zorginstelling_agbid conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82030"/>
+            <naam_zorginstelling value="Guisveld Apotheek" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82031"/>
+          </apotheek>
+          <specialist conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82024">
+            <zorgverlener_uzinummer conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82039"/>
+            <zorgverlener_agbid conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82032"/>
+            <naam_zorgverlener conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82033"/>
+            <type_specialist conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82038"/>
+            <zorginstelling conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82035">
+              <zorginstelling_agbid conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82036"/>
+              <naam_zorginstelling conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82037"/>
+            </zorginstelling>
+          </specialist>
+        </betrokken_zorgverlenerzorginstelling>
+        <anamnese conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80811">
+          <onder_behandeling_geweestq value="true" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82020"/>
+          <algemene_anamnese conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80904">
+            <autoimmuun_aandoeningq value="false" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80905"/>
+            <cardiovasculaire_aandoeningq value="false" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82216"/>
+            <urogenitale_aandoeningq value="true" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80907"/>
+            <urogenitale_aandoening value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82267" code="45816000"
+              codeSystem="2.16.840.1.113883.6.96" displayName="Pyelonephritis (disorder)"/>
+            <oncologische_aandoeningq value="false" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80908"/>
+            <schildklier_aandoeningq value="false" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82217"/>
+            <diabetes_mellitusq value="false" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80910"/>
+            <neurologische_aandoeningq value="false" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82218"/>
+            <infectieziekteq value="true" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80913"/>
+            <infectieziekte value="2" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82210" code="240589008" codeSystem="2.16.840.1.113883.6.96"
+              displayName="Chlamydia trachomatis infection (disorder)"/>
+            <mdl_aandoeningq value="false" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80914"/>
+            <anemieq value="false" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80915"/>
+            <longaandoeningq value="false" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80916"/>
+            <gynaecologische_aandoeningq value="true" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82211"/>
+            <gynaecologische_aandoening value="4" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80917" code="OTH"
+              codeSystem="2.16.840.1.113883.5.1008" displayName="Overig"/>
+            <orthopedische_afwijkingq value="false" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82213"/>
+            <bloedtransfusieq value="false" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10805"/>
+            <operatieq value="false" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80939"/>
+            <stollingsprobleemq value="false" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80940"/>
+            <psychiatrieq value="true" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82159"/>
+            <psychiatrie value="Van jongs af aan depressieve klachten behandeling psych gestopt gaat nu goed dankzij partner"
+              conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82332"/>
+            <overige_aandoeningq value="false" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82212"/>
+            <toelichting_alg_anamnese conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82158"/>
+          </algemene_anamnese>
+          <psychosociale_anamnese conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82021">
+            <psychosociale_problematiekq value="true" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80681"/>
+            <negatieve_seksuele_ervaringenq value="false" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10803"/>
+            <huiselijk_geweldq value="true" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80680"/>
+            <toelichting_psychosociale_anamnese value="Geweld door ex, nu geen problemen" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82333"/>
+          </psychosociale_anamnese>
+          <relevante_allergieen value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10800" code="160244002"
+            codeSystem="2.16.840.1.113883.6.96" displayName="No known allergies (situation)"/>
+          <familie_anamnese conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80727">
+            <aandoening conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80728">
+              <aandoening_details value="dochter van zus van moeder van zwangere is autistisch"
+                conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80729"/>
+              <type_verwantschap value="4e Graad, onbepaald" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80730"/>
+            </aandoening>
+          </familie_anamnese>
+          <indicatie_prenatale_diagnostiek conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80922">
+            <indicatie_invasieve_prenatale_diagnostiekq value="false" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80937"/>
+            <indicatie_guoq value="false" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80938"/>
+            <indicatie_niptq value="false" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82339"/>
+          </indicatie_prenatale_diagnostiek>
+        </anamnese>
+        <medicatiegebruikq value="true" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10801"/>
+        <medicatiegebruik conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80749">
+          <soort_medicatie value="Citolapram 20 mg 1tabl dd" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10802"/>
+          <begindatum conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80751"/>
+          <einddatum conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80752"/>
+          <dosering_medicatie value="20 mg 1tabl dd" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80750"/>
+          <bijzonderheden conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80753"/>
+        </medicatiegebruik>
+        <lengte_gemeten conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20212" value="169" unit="cm"/>
+        <bmi conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80688">
+          <datum_bepaling value="2014-10-31" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80689"/>
+          <bmi_vrouw value="20" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10806"/>
+        </bmi>
+        <bloedgroep_vrouw value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10810" code="112144000" codeSystem="2.16.840.1.113883.6.96"
+          displayName="Blood group A (finding)"/>
+        <rhesus_d_factor_vrouw value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10811" code="165747007"
+          codeSystem="2.16.840.1.113883.6.96" displayName="Rh D Positief"/>
+        <rhesus_c_factor value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10816" code="rhcneg" codeSystem="2.16.840.1.113883.2.4.4.13.45"
+          displayName="Rh C Negatief"/>
+        <partner conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80633">
+          <persoonsnaam conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80638">
+            <voornamen value="Barry" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80639"/>
+            <voorvoegsel conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80640"/>
+            <achternamen value="Gosens" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80641"/>
+          </persoonsnaam>
+          <etniciteit value="3" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80636" code="12" codeSystem="2.16.840.1.113883.2.4.4.13.28"
+            displayName="Kaukasisch"/>
+        </partner>
+      </vrouw>
+      <zwangerschap conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.3">
+        <identificatie_van_de_zwangerschap value="140249" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80627"/>
+        <casemanager_naam value="Hugo Heilema" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80664"/>
+        <graviditeit value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20010"/>
+        <pariteit value="0" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20153"/>
+        <aantal_levende_kinderen value="0" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80617"/>
+        <fetal_loss value="0" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80678"/>
+        <a_terme_datum_groep conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20029">
+          <a_terme_datum value="2015-10-10T10:00:00" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20030"/>
+          <datum_bepaling_a_terme_datum value="2014-12-01T10:00:00" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20040"/>
+          <a_terme_datum_obv value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20050" code="3" codeSystem="2.16.840.1.113883.2.4.4.13.15"
+            displayName="echoscopie"/>
+          <zekerq value="true" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80669"/>
+        </a_terme_datum_groep>
+        <definitieve_a_terme_datum value="2015-06-10" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82160"/>
+        <foliumzuur_gebruik value="Vanaf vastgestelde zwangerschap" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80819"/>
+        <actuele_aantal_foetus value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20025"/>
+        <amnioniciteit value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20130" code="1" codeSystem="2.16.840.1.113883.2.4.4.13.29"
+          displayName="monoamniotisch"/>
+        <chorioniciteit value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20140" code="1" codeSystem="2.16.840.1.113883.2.4.4.13.30"
+          displayName="monochoriaal"/>
+        <consanguiniteitq value="false" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80686"/>
+        <subfertiliteitsbehandelingq value="false" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20080"/>
+        <gewicht_voor_de_zwangerschap value="57" unit="kg" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20210"/>
+        <proteinurie_meting_obv conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20235">
+          <datum_bepaling conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82056"/>
+          <max_aantal_g_proteine_24_uurs conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20240"/>
+          <max_proteine_in_urine_obv_strips conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20241" value="1" code="HHHPOS"
+            codeSystem="2.16.840.1.113883.2.4.4.13.41" displayName="++++"/>
+        </proteinurie_meting_obv>
+        <proteinurie__03_g24u conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20230"/>
+        <voornemens conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80671">
+          <risicostatus_van_de_zwangerschap value="4" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82152" code="4"
+            codeSystem="2.16.840.1.113883.2.4.4.13.26" displayName="1e lijn met plaatsindicatie (VIL D)"/>
+          <voorgenomen_plaats_baring_tijdens_zwangerschap_type_locatie value="2" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20261" code="23"
+            codeSystem="2.16.840.1.113883.2.4.3.22.1.8.7" displayName="Geboortecentrum"/>
+          <afspraken value="PP overname " conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82011"/>
+          <voorgenomen_voeding value="kunstvoeding" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82009"/>
+          <voorgenomen_achternaam value="Gosens" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82010"/>
+          <kraamzorg conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80637">
+            <kraamzorg_aangevraagd value="ja" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20270"/>
+            <kraamzorginstelling value="Kraamvogel" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80642"/>
+          </kraamzorg>
+          <bevalplan value="aanwezig" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80672"/>
+        </voornemens>
+        <prenatale_controle conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80732">
+          <datum_controle value="2015-05-11T10:00:00" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80737"/>
+          <naam_zorgverlener value="Jose Heilema" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80736"/>
+          <zorgverlenertype value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82067" code="11"
+            codeSystem="2.16.840.1.113883.2.4.3.22.1.2.59" displayName="1e lijns verloskundige"/>
+          <zwangerschapsduur value="250" unit="d" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80738"/>
+          <leven_voelen value="2" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80746" code="276372004" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Weak fetal movements (finding)"/>
+          <oedeem value="+" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80740"/>
+          <rookgedrag value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80810" code="1" codeSystem="2.16.840.1.113883.2.4.4.13.58"
+            displayName="niet gerookt"/>
+          <alcoholgebruik value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80747" code="1" codeSystem="2.16.840.1.113883.2.4.4.13.59"
+            displayName="geen"/>
+          <drugsgebruikq value="false" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82102"/>
+          <bloeddruk conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80832">
+            <bloeddruk_systolisch value="102" unit="mm Hg" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80833"/>
+            <bloeddruk_diastolisch value="70" unit="mm Hg" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80834"/>
+          </bloeddruk>
+          <gewicht_gemeten value="63" unit="kg" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20211"/>
+          <fundushoogte value="33" unit="cm" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80741"/>
+          <fundusstand value="3/4 NX" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80742"/>
+          <uitwendig_onderzoek conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80621">
+            <ligging value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80622" code="70028003" codeSystem="2.16.840.1.113883.6.96"
+              displayName="Vertex presentation (finding)"/>
+            <indaling value="bibi" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80744"/>
+            <hartactie_aanwezigq value="true" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82104"/>
+            <hartactie conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82105">
+              <regelmaat_hartslag value="Regelmatig" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82106"/>
+              <frequentie_hartslag value="Normaal" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82107"/>
+            </hartactie>
+            <hartactie_op_basis_van value="Doptone" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80745"/>
+          </uitwendig_onderzoek>
+          <opmerkingen
+            value="Moe. 1-2 dagen vorige weekalleen in de nacht in de  last gehad van jeukende voeten en handen, is nu over. Af en toe wat sterretjes. had dit ook voor de zwangerschap&#xA;advies bellen indien het terug komt"
+            conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80748"/>
+        </prenatale_controle>
+        <prenatale_controle conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80732">
+          <datum_controle value="2014-11-25T10:00:00" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80737"/>
+          <naam_zorgverlener value="Jose Heilema" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80736"/>
+          <zorgverlenertype value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82067" code="11"
+            codeSystem="2.16.840.1.113883.2.4.3.22.1.2.59" displayName="1e lijns verloskundige"/>
+          <zwangerschapsduur value="83" unit="d" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80738"/>
+          <leven_voelen value="4" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80746" code="289432001" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Fetal movements absent (context-dependent category)"/>
+          <oedeem value="-" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80740"/>
+          <rookgedrag value="6" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80810" code="6" codeSystem="2.16.840.1.113883.2.4.4.13.58"
+            displayName="gestopt tijdens huidige zwangerschap"/>
+          <alcoholgebruik value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80747" code="1" codeSystem="2.16.840.1.113883.2.4.4.13.59"
+            displayName="geen"/>
+          <drugsgebruikq value="false" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82102"/>
+          <soort_drugs value="13" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82103" code="NI" codeSystem="2.16.840.1.113883.5.1008"
+            displayName="Geen informatie"/>
+          <bloeddruk conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80832">
+            <bloeddruk_systolisch value="106" unit="mm Hg" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80833"/>
+            <bloeddruk_diastolisch value="64" unit="mm Hg" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80834"/>
+          </bloeddruk>
+          <gewicht_gemeten value="55" unit="kg" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20211"/>
+          <proteine_in_urine_obv_strips conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80836"/>
+          <fundushoogte conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80741"/>
+          <fundusstand conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80742"/>
+          <uitwendig_onderzoek conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80621">
+            <ligging value="6" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80622" code="NI" codeSystem="2.16.840.1.113883.5.1008"
+              displayName="Geen informatie"/>
+            <indaling conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80744"/>
+            <hartactie_aanwezigq value="true" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82104"/>
+            <hartactie conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82105">
+              <regelmaat_hartslag value="Regelmatig" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82106"/>
+              <frequentie_hartslag value="Normaal" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82107"/>
+            </hartactie>
+            <hartactie_op_basis_van value="Doptone" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80745"/>
+          </uitwendig_onderzoek>
+          <opmerkingen value="hoofdpijn&#xA;slaapt veel&#xA;naar AL voor VP" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80748"/>
+        </prenatale_controle>
+        <prenatale_controle conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80732">
+          <datum_controle value="2014-12-27T10:00:00" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80737"/>
+          <naam_zorgverlener value="Jose heilema" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80736"/>
+          <zorgverlenertype value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82067" code="11"
+            codeSystem="2.16.840.1.113883.2.4.3.22.1.2.59" displayName="1e lijns verloskundige"/>
+          <zwangerschapsduur value="115" unit="d" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80738"/>
+          <leven_voelen value="4" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80746" code="289432001" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Fetal movements absent (context-dependent category)"/>
+          <oedeem value="-" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80740"/>
+          <rookgedrag value="6" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80810" code="6" codeSystem="2.16.840.1.113883.2.4.4.13.58"
+            displayName="gestopt tijdens huidige zwangerschap"/>
+          <alcoholgebruik value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80747" code="1" codeSystem="2.16.840.1.113883.2.4.4.13.59"
+            displayName="geen"/>
+          <drugsgebruikq value="false" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82102"/>
+          <soort_drugs value="13" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82103" code="NI" codeSystem="2.16.840.1.113883.5.1008"
+            displayName="Geen informatie"/>
+          <bloeddruk conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80832">
+            <bloeddruk_systolisch value="100" unit="mm Hg" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80833"/>
+            <bloeddruk_diastolisch value="60" unit="mm Hg" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80834"/>
+          </bloeddruk>
+          <gewicht_gemeten value="56" unit="kg" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20211"/>
+          <proteine_in_urine_obv_strips conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80836"/>
+          <fundushoogte conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80741"/>
+          <fundusstand value="2/3 SN" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80742"/>
+          <uitwendig_onderzoek conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80621">
+            <ligging value="6" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80622" code="NI" codeSystem="2.16.840.1.113883.5.1008"
+              displayName="Geen informatie"/>
+            <indaling conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80744"/>
+            <hartactie_aanwezigq value="true" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82104"/>
+            <hartactie conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82105">
+              <regelmaat_hartslag value="Regelmatig" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82106"/>
+              <frequentie_hartslag value="Normaal" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82107"/>
+            </hartactie>
+            <hartactie_op_basis_van value="Doptone" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80745"/>
+          </uitwendig_onderzoek>
+          <opmerkingen conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80748"/>
+        </prenatale_controle>
+        <prenatale_controle conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80732">
+          <datum_controle value="2015-01-23T10:00:00" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80737"/>
+          <naam_zorgverlener value="Jose heilema" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80736"/>
+          <zorgverlenertype value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82067" code="11"
+            codeSystem="2.16.840.1.113883.2.4.3.22.1.2.59" displayName="1e lijns verloskundige"/>
+          <zwangerschapsduur value="142" unit="d" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80738"/>
+          <leven_voelen value="4" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80746" code="289432001" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Fetal movements absent (context-dependent category)"/>
+          <oedeem value="-" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80740"/>
+          <rookgedrag value="6" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80810" code="6" codeSystem="2.16.840.1.113883.2.4.4.13.58"
+            displayName="gestopt tijdens huidige zwangerschap"/>
+          <alcoholgebruik value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80747" code="1" codeSystem="2.16.840.1.113883.2.4.4.13.59"
+            displayName="geen"/>
+          <drugsgebruikq value="false" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82102"/>
+          <soort_drugs value="13" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82103" code="NI" codeSystem="2.16.840.1.113883.5.1008"
+            displayName="Geen informatie"/>
+          <bloeddruk conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80832">
+            <bloeddruk_systolisch value="100" unit="mm Hg" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80833"/>
+            <bloeddruk_diastolisch value="60" unit="mm Hg" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80834"/>
+          </bloeddruk>
+          <gewicht_gemeten value="57" unit="kg" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20211"/>
+          <proteine_in_urine_obv_strips conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80836"/>
+          <fundushoogte conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80741"/>
+          <fundusstand value="N" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80742"/>
+          <uitwendig_onderzoek conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80621">
+            <ligging value="4" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80622" code="7721000146107" codeSystem="2.16.840.1.113883.6.96"
+              displayName="Unstable lie (finding)"/>
+            <indaling conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80744"/>
+            <hartactie_aanwezigq value="true" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82104"/>
+            <hartactie conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82105">
+              <regelmaat_hartslag value="Regelmatig" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82106"/>
+              <frequentie_hartslag value="Normaal" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82107"/>
+            </hartactie>
+            <hartactie_op_basis_van value="Doptone" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80745"/>
+          </uitwendig_onderzoek>
+          <opmerkingen value="Licht incontinent: BB folder mee" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80748"/>
+        </prenatale_controle>
+        <prenatale_controle conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80732">
+          <datum_controle value="2015-02-21T10:00:00" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80737"/>
+          <naam_zorgverlener value="Jose Heilema" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80736"/>
+          <zorgverlenertype value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82067" code="11"
+            codeSystem="2.16.840.1.113883.2.4.3.22.1.2.59" displayName="1e lijns verloskundige"/>
+          <zwangerschapsduur value="171" unit="d" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80738"/>
+          <leven_voelen value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80746" code="289431008" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Fetal movements present (finding)"/>
+          <oedeem value="-" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80740"/>
+          <rookgedrag value="6" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80810" code="6" codeSystem="2.16.840.1.113883.2.4.4.13.58"
+            displayName="gestopt tijdens huidige zwangerschap"/>
+          <alcoholgebruik value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80747" code="1" codeSystem="2.16.840.1.113883.2.4.4.13.59"
+            displayName="geen"/>
+          <drugsgebruikq value="false" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82102"/>
+          <soort_drugs value="13" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82103" code="NI" codeSystem="2.16.840.1.113883.5.1008"
+            displayName="Geen informatie"/>
+          <bloeddruk conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80832">
+            <bloeddruk_systolisch value="100" unit="mm Hg" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80833"/>
+            <bloeddruk_diastolisch value="54" unit="mm Hg" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80834"/>
+          </bloeddruk>
+          <gewicht_gemeten value="59" unit="kg" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20211"/>
+          <proteine_in_urine_obv_strips conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80836"/>
+          <fundushoogte conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80741"/>
+          <fundusstand value="N" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80742"/>
+          <uitwendig_onderzoek conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80621">
+            <ligging value="2" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80622" code="6096002" codeSystem="2.16.840.1.113883.6.96"
+              displayName="Breech presentation (finding)"/>
+            <indaling value="Niet te beoordelen" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80744"/>
+            <hartactie_aanwezigq value="true" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82104"/>
+            <hartactie conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82105">
+              <regelmaat_hartslag value="Regelmatig" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82106"/>
+              <frequentie_hartslag value="Normaal" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82107"/>
+            </hartactie>
+            <hartactie_op_basis_van value="Doptone" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80745"/>
+          </uitwendig_onderzoek>
+          <opmerkingen conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80748"/>
+        </prenatale_controle>
+        <prenatale_controle conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80732">
+          <datum_controle value="2015-03-01T10:00:00" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80737"/>
+          <naam_zorgverlener value="Jose Heilema" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80736"/>
+          <zorgverlenertype value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82067" code="11"
+            codeSystem="2.16.840.1.113883.2.4.3.22.1.2.59" displayName="1e lijns verloskundige"/>
+          <zwangerschapsduur value="179" unit="d" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80738"/>
+          <leven_voelen conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80746"/>
+          <oedeem conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80740"/>
+          <rookgedrag conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80810"/>
+          <alcoholgebruik conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80747"/>
+          <drugsgebruikq value="false" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82102"/>
+          <soort_drugs value="13" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82103" code="NI" codeSystem="2.16.840.1.113883.5.1008"
+            displayName="Geen informatie"/>
+          <bloeddruk conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80832">
+            <bloeddruk_systolisch value="000" unit="mm Hg" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80833"/>
+            <bloeddruk_diastolisch value="000" unit="mm Hg" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80834"/>
+          </bloeddruk>
+          <gewicht_gemeten conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20211"/>
+          <proteine_in_urine_obv_strips conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80836"/>
+          <fundushoogte conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80741"/>
+          <fundusstand conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80742"/>
+          <uitwendig_onderzoek conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80621">
+            <ligging conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80622"/>
+            <indaling conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80744"/>
+            <hartactie_aanwezigq value="false" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82104"/>
+            <hartactie conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82105">
+              <regelmaat_hartslag conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82106"/>
+              <frequentie_hartslag conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82107"/>
+            </hartactie>
+            <hartactie_op_basis_van conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80745"/>
+          </uitwendig_onderzoek>
+          <opmerkingen value="belt , na Indisch gegeten te hebben gevoel dat slokdarm in kramp is"
+            conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80748"/>
+        </prenatale_controle>
+        <prenatale_controle conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80732">
+          <datum_controle value="2015-03-12T10:00:00" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80737"/>
+          <naam_zorgverlener value="Jose heilema" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80736"/>
+          <zorgverlenertype value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82067" code="11"
+            codeSystem="2.16.840.1.113883.2.4.3.22.1.2.59" displayName="1e lijns verloskundige"/>
+          <zwangerschapsduur value="190" unit="d" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80738"/>
+          <leven_voelen value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80746" code="289431008" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Fetal movements present (finding)"/>
+          <oedeem value="-" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80740"/>
+          <rookgedrag value="6" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80810" code="6" codeSystem="2.16.840.1.113883.2.4.4.13.58"
+            displayName="gestopt tijdens huidige zwangerschap"/>
+          <alcoholgebruik value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80747" code="1" codeSystem="2.16.840.1.113883.2.4.4.13.59"
+            displayName="geen"/>
+          <drugsgebruikq value="false" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82102"/>
+          <soort_drugs value="13" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82103" code="NI" codeSystem="2.16.840.1.113883.5.1008"
+            displayName="Geen informatie"/>
+          <bloeddruk conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80832">
+            <bloeddruk_systolisch value="105" unit="mm Hg" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80833"/>
+            <bloeddruk_diastolisch value="55" unit="mm Hg" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80834"/>
+          </bloeddruk>
+          <gewicht_gemeten value="63 " unit="kg" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20211"/>
+          <proteine_in_urine_obv_strips conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80836"/>
+          <fundushoogte value="25" unit="cm" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80741"/>
+          <fundusstand value="N" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80742"/>
+          <uitwendig_onderzoek conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80621">
+            <ligging value="4" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80622" code="7721000146107" codeSystem="2.16.840.1.113883.6.96"
+              displayName="Unstable lie (finding)"/>
+            <indaling conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80744"/>
+            <hartactie_aanwezigq value="true" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82104"/>
+            <hartactie conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82105">
+              <regelmaat_hartslag value="Regelmatig" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82106"/>
+              <frequentie_hartslag value="Normaal" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82107"/>
+            </hartactie>
+            <hartactie_op_basis_van value="Doptone" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80745"/>
+          </uitwendig_onderzoek>
+          <opmerkingen value="Gewicht gemeten op Parkzicht" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80748"/>
+        </prenatale_controle>
+        <prenatale_controle conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80732">
+          <datum_controle value="2015-04-09T10:00:00" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80737"/>
+          <naam_zorgverlener value="Jose Heilema" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80736"/>
+          <zorgverlenertype value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82067" code="11"
+            codeSystem="2.16.840.1.113883.2.4.3.22.1.2.59" displayName="1e lijns verloskundige"/>
+          <zwangerschapsduur value="218" unit="d" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80738"/>
+          <leven_voelen value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80746" code="289431008" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Fetal movements present (finding)"/>
+          <oedeem value="-" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80740"/>
+          <rookgedrag value="6" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80810" code="6" codeSystem="2.16.840.1.113883.2.4.4.13.58"
+            displayName="gestopt tijdens huidige zwangerschap"/>
+          <alcoholgebruik value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80747" code="1" codeSystem="2.16.840.1.113883.2.4.4.13.59"
+            displayName="geen"/>
+          <drugsgebruikq value="false" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82102"/>
+          <soort_drugs value="13" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82103" code="NI" codeSystem="2.16.840.1.113883.5.1008"
+            displayName="Geen informatie"/>
+          <bloeddruk conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80832">
+            <bloeddruk_systolisch value="104" unit="mm Hg" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80833"/>
+            <bloeddruk_diastolisch value="70" unit="mm Hg" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80834"/>
+          </bloeddruk>
+          <gewicht_gemeten value="65" unit="kg" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20211"/>
+          <proteine_in_urine_obv_strips conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80836"/>
+          <fundushoogte value="29" unit="cm" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80741"/>
+          <fundusstand value="1/4 NX" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80742"/>
+          <uitwendig_onderzoek conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80621">
+            <ligging value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80622" code="70028003" codeSystem="2.16.840.1.113883.6.96"
+              displayName="Vertex presentation (finding)"/>
+            <indaling value="bibi" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80744"/>
+            <hartactie_aanwezigq value="true" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82104"/>
+            <hartactie conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82105">
+              <regelmaat_hartslag value="Regelmatig" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82106"/>
+              <frequentie_hartslag value="Normaal" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82107"/>
+            </hartactie>
+            <hartactie_op_basis_van value="Doptone" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80745"/>
+          </uitwendig_onderzoek>
+          <opmerkingen value="parkzicht&#xA;kind is minder druk maar wel vaak genoeg. gaat opletten en belt evt"
+            conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80748"/>
+        </prenatale_controle>
+        <prenatale_controle conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80732">
+          <datum_controle value="2015-04-28T10:00:00" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80737"/>
+          <naam_zorgverlener value="Jose Heilema" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80736"/>
+          <zorgverlenertype value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82067" code="11"
+            codeSystem="2.16.840.1.113883.2.4.3.22.1.2.59" displayName="1e lijns verloskundige"/>
+          <zwangerschapsduur value="237" unit="d" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80738"/>
+          <leven_voelen value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80746" code="289431008" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Fetal movements present (finding)"/>
+          <oedeem value="-" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80740"/>
+          <rookgedrag value="6" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80810" code="6" codeSystem="2.16.840.1.113883.2.4.4.13.58"
+            displayName="gestopt tijdens huidige zwangerschap"/>
+          <alcoholgebruik value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80747" code="1" codeSystem="2.16.840.1.113883.2.4.4.13.59"
+            displayName="geen"/>
+          <drugsgebruikq value="false" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82102"/>
+          <soort_drugs value="13" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82103" code="NI" codeSystem="2.16.840.1.113883.5.1008"
+            displayName="Geen informatie"/>
+          <bloeddruk conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80832">
+            <bloeddruk_systolisch value="112" unit="mm Hg" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80833"/>
+            <bloeddruk_diastolisch value="68" unit="mm Hg" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80834"/>
+          </bloeddruk>
+          <gewicht_gemeten value="64" unit="kg" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20211"/>
+          <proteine_in_urine_obv_strips conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80836"/>
+          <fundushoogte value="33" unit="cm" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80741"/>
+          <fundusstand value="3/4 NX" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80742"/>
+          <uitwendig_onderzoek conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80621">
+            <ligging value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80622" code="70028003" codeSystem="2.16.840.1.113883.6.96"
+              displayName="Vertex presentation (finding)"/>
+            <indaling value="bibi" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80744"/>
+            <hartactie_aanwezigq value="true" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82104"/>
+            <hartactie conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82105">
+              <regelmaat_hartslag value="Regelmatig" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82106"/>
+              <frequentie_hartslag value="Normaal" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82107"/>
+            </hartactie>
+            <hartactie_op_basis_van value="Doptone" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80745"/>
+          </uitwendig_onderzoek>
+          <opmerkingen conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80748"/>
+        </prenatale_controle>
+        <prenatale_controle conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80732">
+          <datum_controle value="2015-05-11T10:00:00" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80737"/>
+          <naam_zorgverlener value="Jose Heilema" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80736"/>
+          <zorgverlenertype value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82067" code="11"
+            codeSystem="2.16.840.1.113883.2.4.3.22.1.2.59" displayName="1e lijns verloskundige"/>
+          <zwangerschapsduur value="250" unit="d" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80738"/>
+          <leven_voelen value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80746" code="289431008" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Fetal movements present (finding)"/>
+          <oedeem value="+" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80740"/>
+          <rookgedrag value="6" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80810" code="6" codeSystem="2.16.840.1.113883.2.4.4.13.58"
+            displayName="gestopt tijdens huidige zwangerschap"/>
+          <alcoholgebruik value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80747" code="1" codeSystem="2.16.840.1.113883.2.4.4.13.59"
+            displayName="geen"/>
+          <drugsgebruikq value="false" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82102"/>
+          <soort_drugs value="13" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82103" code="NI" codeSystem="2.16.840.1.113883.5.1008"
+            displayName="Geen informatie"/>
+          <bloeddruk conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80832">
+            <bloeddruk_systolisch value="102" unit="mm Hg" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80833"/>
+            <bloeddruk_diastolisch value="70" unit="mm Hg" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80834"/>
+          </bloeddruk>
+          <gewicht_gemeten value="63" unit="kg" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20211"/>
+          <proteine_in_urine_obv_strips conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80836"/>
+          <fundushoogte value="33" unit="cm" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80741"/>
+          <fundusstand value="3/4 NX" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80742"/>
+          <uitwendig_onderzoek conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80621">
+            <ligging value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80622" code="70028003" codeSystem="2.16.840.1.113883.6.96"
+              displayName="Vertex presentation (finding)"/>
+            <indaling value="bibi" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80744"/>
+            <hartactie_aanwezigq value="true" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82104"/>
+            <hartactie conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82105">
+              <regelmaat_hartslag value="Regelmatig" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82106"/>
+              <frequentie_hartslag value="Normaal" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82107"/>
+            </hartactie>
+            <hartactie_op_basis_van value="Doptone" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80745"/>
+          </uitwendig_onderzoek>
+          <opmerkingen conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80748"/>
+        </prenatale_controle>
+        <prenatale_controle conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80732">
+          <datum_controle value="2015-05-19T10:51:00" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80737"/>
+          <naam_zorgverlener value="Jose Heilema" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80736"/>
+          <zorgverlenertype value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82067" code="11"
+            codeSystem="2.16.840.1.113883.2.4.3.22.1.2.59" displayName="1e lijns verloskundige"/>
+          <zwangerschapsduur value="258" unit="d" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80738"/>
+          <leven_voelen value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80746" code="289431008" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Fetal movements present (finding)"/>
+          <oedeem conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80740"/>
+          <rookgedrag value="6" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80810" code="6" codeSystem="2.16.840.1.113883.2.4.4.13.58"
+            displayName="gestopt tijdens huidige zwangerschap"/>
+          <alcoholgebruik value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80747" code="1" codeSystem="2.16.840.1.113883.2.4.4.13.59"
+            displayName="geen"/>
+          <drugsgebruikq value="false" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82102"/>
+          <soort_drugs value="13" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82103" code="NI" codeSystem="2.16.840.1.113883.5.1008"
+            displayName="Geen informatie"/>
+          <bloeddruk conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80832">
+            <bloeddruk_systolisch value="102" unit="mm Hg" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80833"/>
+            <bloeddruk_diastolisch value="75" unit="mm Hg" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80834"/>
+          </bloeddruk>
+          <gewicht_gemeten value="63" unit="kg" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20211"/>
+          <proteine_in_urine_obv_strips conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80836"/>
+          <fundushoogte conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80741"/>
+          <fundusstand value="X" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80742"/>
+          <uitwendig_onderzoek conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80621">
+            <ligging value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80622" code="70028003" codeSystem="2.16.840.1.113883.6.96"
+              displayName="Vertex presentation (finding)"/>
+            <indaling value="bibi" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80744"/>
+            <hartactie_aanwezigq value="true" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82104"/>
+            <hartactie conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82105">
+              <regelmaat_hartslag value="Regelmatig" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82106"/>
+              <frequentie_hartslag value="Normaal" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82107"/>
+            </hartactie>
+            <hartactie_op_basis_van value="Doptone" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80745"/>
+          </uitwendig_onderzoek>
+          <opmerkingen
+            value="Moe. 1-2 dagen vorige weekalleen in de nacht in de  last gehad van jeukende voeten en handen, is nu over. Af en toe wat sterretjes. had dit ook voor de zwangerschap&#xA;advies bellen indien het terug komt"
+            conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80748"/>
+        </prenatale_controle>
+        <prenatale_controle conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80732">
+          <datum_controle value="2015-05-27T15:45:00" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80737"/>
+          <naam_zorgverlener value="Hugo Heilema" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80736"/>
+          <zorgverlenertype value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82067" code="11"
+            codeSystem="2.16.840.1.113883.2.4.3.22.1.2.59" displayName="1e lijns verloskundige"/>
+          <zwangerschapsduur value="266" unit="d" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80738"/>
+          <leven_voelen value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80746" code="289431008" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Fetal movements present (finding)"/>
+          <oedeem value="-" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80740"/>
+          <rookgedrag value="6" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80810" code="6" codeSystem="2.16.840.1.113883.2.4.4.13.58"
+            displayName="gestopt tijdens huidige zwangerschap"/>
+          <alcoholgebruik value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80747" code="1" codeSystem="2.16.840.1.113883.2.4.4.13.59"
+            displayName="geen"/>
+          <drugsgebruikq value="false" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82102"/>
+          <soort_drugs value="13" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82103" code="NI" codeSystem="2.16.840.1.113883.5.1008"
+            displayName="Geen informatie"/>
+          <bloeddruk conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80832">
+            <bloeddruk_systolisch value="120" unit="mm Hg" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80833"/>
+            <bloeddruk_diastolisch value="75" unit="mm Hg" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80834"/>
+          </bloeddruk>
+          <gewicht_gemeten value="64" unit="kg" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20211"/>
+          <proteine_in_urine_obv_strips conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80836"/>
+          <fundushoogte value="35" unit="cm" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80741"/>
+          <fundusstand value="X" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80742"/>
+          <uitwendig_onderzoek conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80621">
+            <ligging value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80622" code="70028003" codeSystem="2.16.840.1.113883.6.96"
+              displayName="Vertex presentation (finding)"/>
+            <indaling value="bibi" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80744"/>
+            <hartactie_aanwezigq value="true" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82104"/>
+            <hartactie conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82105">
+              <regelmaat_hartslag value="Regelmatig" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82106"/>
+              <frequentie_hartslag value="Normaal" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82107"/>
+            </hartactie>
+            <hartactie_op_basis_van value="Doptone" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80745"/>
+          </uitwendig_onderzoek>
+          <opmerkingen value="jeukende voeten niet op de zolen" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80748"/>
+        </prenatale_controle>
+        <antenatale_betrokkenheid_kinderartsq value="true" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82232"/>
+        <reden_antenatale_betrokkenheid_kinderarts value="Medicatiegebruik moeder" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82233"/>
+        <maternale_sterfteq value="false" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20670"/>
+        <wijze_einde_zwangerschap value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80625" code="1"
+          codeSystem="2.16.840.1.113883.2.4.4.13.46" displayName="Partus"/>
+        <datum_einde_zwangerschap value="2015-06-03T07:01:00" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20540"/>
+      </zwangerschap>
+      <counseling_prenatale_screening_en_prenatale_diagnostiek conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10">
+        <counseling_prenatale_gewenst value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20120" code="1"
+          codeSystem="2.16.840.1.113883.2.4.4.13.25" displayName="ja"/>
+        <counseling_combinatietest conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82161">
+          <datum_counseling value="2014-10-31T10:00:00" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20455"/>
+          <direct_ipd_gewenstq value="false" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20480"/>
+          <combinatietest_gewenstq value="true" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20485"/>
+        </counseling_combinatietest>
+        <counseling_seo conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82162">
+          <datum_counseling value="2014-12-27T10:00:00" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82163"/>
+          <direct_guo_gewenstq value="false" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20490"/>
+          <seo_gewenstq value="true" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20495"/>
+        </counseling_seo>
+      </counseling_prenatale_screening_en_prenatale_diagnostiek>
+      <bevalling conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.6">
+        <diagnose_bevalling conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82291">
+          <promq value="false" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82290"/>
+          <koortsq value="false" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82292"/>
+          <niet_vorderende_ontsluitingq value="false" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82293"/>
+          <niet_vorderende_uitdrijvingq value="false" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82294"/>
+          <verdenking_foetale_noodq value="true" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82296"/>
+          <vastzittende_placentaq value="false" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82295"/>
+        </diagnose_bevalling>
+        <risicostatus_voor_baring value="3" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20530" code="4"
+          codeSystem="2.16.840.1.113883.2.4.3.22.1.2.25" displayName="1e lijn met plaatsindicatie (VIL D)"/>
+        <wijze_waarop_de_baring_begon value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20550" code="1"
+          codeSystem="2.16.840.1.113883.2.4.3.22.1.2.46" displayName="spontane weeën"/>
+        <interventies_begin_baring_groep conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20555">
+          <interventie_begin_baring value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20560" code="236960006"
+            codeSystem="2.16.840.1.113883.6.96" displayName="Sweeping of membrane (procedure)"/>
+          <indicatie_interventie_begin_baring value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20570" code="10"
+            codeSystem="2.16.840.1.113883.2.4.3.22.1.2.7" displayName="gevaar moeder"/>
+        </interventies_begin_baring_groep>
+        <tijdstip_begin_actieve_ontsluiting value="2015-06-03T02:00:00" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20590"/>
+        <bijstimulatie_toegediendq value="true" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20616"/>
+        <medicatie_nageboortetijdperk_groep conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20619">
+          <medicatie_nageboortetijdperkq value="true" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20620"/>
+          <soort_medicatie_nageboortetijdperk value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20626" code="H01BB02"
+            codeSystem="2.16.840.1.113883.6.73" displayName="Oxytocin"/>
+        </medicatie_nageboortetijdperk_groep>
+        <placenta conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80612">
+          <geboorte_placenta value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20630" code="0" codeSystem="2.16.840.1.113883.2.4.4.13.19"
+            displayName="spontaan"/>
+          <placenta_compleet value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20631" code="249170006" codeSystem="2.16.840.1.113883.6.96"
+            displayName="compleet"/>
+          <datumtijd_geboorte_placenta value="2015-06-03T07:06:00" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80791"/>
+          <placenta_naar_paq value="false" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80803"/>
+          <bijzonderheden_placenta conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80981"/>
+        </placenta>
+        <compleetheid_vliezen value="Compleet" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80792"/>
+        <hoeveelheid_bloedverlies value="200" unit="ml" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20640"/>
+        <conditie_perineum_postpartum value="9" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80673" code="609344008"
+          codeSystem="2.16.840.1.113883.6.96" displayName="Episiotomy wound  (morphologic abnormality)"/>
+        <hechtenq value="true" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82125"/>
+        <wijze_van_hechten value="Intracutaan voortlopend" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80797"/>
+        <overig_traumaq value="true" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82127"/>
+        <overig_trauma value="Labium ruptuur" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82126"/>
+        <partusassistentieq value="true" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82131"/>
+        <partusassistentie conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80839">
+          <partusstadium_assistentie_gearriveerd value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20650" code="6893006"
+            codeSystem="2.16.840.1.113883.6.96" displayName="First stage of labor (finding)"/>
+          <rol_partusassistent value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82132" code="32"
+            codeSystem="2.16.840.1.113883.2.4.3.22.1.2.59" displayName="Kraamverzorgende"/>
+        </partusassistentie>
+        <risicostatus_uiteindelijk value="2" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82057" code="3"
+          codeSystem="2.16.840.1.113883.2.4.3.22.1.2.25" displayName="2e lijn (VIL C)"/>
+        <ontslagdatum_post_partum value="2015-06-06T10:00:00" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20660"/>
+      </bevalling>
+      <uitkomst_per_kind conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.7">
+        <baring conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40002">
+          <werkelijke_plaats_baring_type_locatie value="2" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40003" code="23"
+            codeSystem="2.16.840.1.113883.2.4.3.22.1.8.7" displayName="Geboortecentrum"/>
+          <ziekenhuis_baring conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82114">
+            <ziekenhuisnummer_lvrid value="0065" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40005"/>
+            <zorginstelling_agbid conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82116"/>
+            <naam_zorginstelling conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82117"/>
+          </ziekenhuis_baring>
+          <demografische_gegevens conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40006">
+            <identificaties_kind conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40007">
+              <bsn_kind conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40010"/>
+              <lokale_identificatie_kind conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40011"/>
+              <identificatie_kind_prn_formaat conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40015"/>
+            </identificaties_kind>
+            <naamgegevens_kind conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82051">
+              <voornamen value="Dean" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82353"/>
+              <initialen value="D" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82354"/>
+              <roepnaam value="Dean" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82052"/>
+              <achternaam conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82053">
+                <voorvoegsel conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82054"/>
+                <achternaam value="Gosens" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82055"/>
+              </achternaam>
+            </naamgegevens_kind>
+            <geslacht_medische_observatie value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40041" code="1"
+              codeSystem="2.16.840.1.113883.2.4.4.13.21" displayName="Mannelijk"/>
+            <geboortedatum value="2015-06-03T07:01:00" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40050"/>
+            <geboorteplaats conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40004">
+              <plaatsnaam value="Zaandam" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80630"/>
+              <land value="Nederlans" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80632"/>
+            </geboorteplaats>
+            <meerlingindicatie value="false" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82087"/>
+            <rangnummer_kind conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40025"/>
+            <perinatale_sterfte_groep conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40279">
+              <perinatale_sterfteq value="false" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40280"/>
+              <fase_perinatale_sterfte value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40290" code="237361005"
+                codeSystem="2.16.840.1.113883.6.96" displayName="Antepartum fetal death (event)"/>
+              <datumtijd_vaststelling_perinatale_sterfte conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40300"/>
+            </perinatale_sterfte_groep>
+            <foetus_volgletter_zoals_ante_partum_gehanteerd conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40028" value="1" code="A"
+              codeSystem="2.16.840.1.113883.2.4.4.13.42" displayName="foetus A"/>
+          </demografische_gegevens>
+          <kindspecifieke_maternale_gegevens conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.71">
+            <amniotomie_groep conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20579">
+              <amniotomieq value="true" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20580"/>
+              <fase_amniotomie value="3" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20585" code="2"
+                codeSystem="2.16.840.1.113883.2.4.3.22.1.3.101" displayName="tijdens ontsluitingsperiode &gt; 3 cm"/>
+            </amniotomie_groep>
+            <tijdstip_breken_vliezen value="2015-06-03T06:00:00" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80619"/>
+            <kleur_en_consistentie_vruchtwater value="2" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20610" code="2"
+              codeSystem="2.16.840.1.113883.2.4.4.13.18" displayName="meconium"/>
+            <tijdstip_actief_meepersen value="2015-06-03T06:00:00" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.30030"/>
+            <episiotomieq value="true" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.30050"/>
+            <indicatie_episiotomie value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80794" code="10"
+              codeSystem="2.16.840.1.113883.2.4.4.13.61" displayName="foetale indicatie, versnellen baring"/>
+            <locatie_episiotomie value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.30055" code="1"
+              codeSystem="2.16.840.1.113883.2.4.3.22.1.3.60" displayName="mediolaterale episiotomie"/>
+            <ruggeprik_gewenst_niet_gekregenq value="false" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82089"/>
+            <pijnbestrijdingq value="false" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82090"/>
+            <sedatieq value="false" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80827"/>
+            <sedatie conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82099">
+              <periode conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82100"/>
+              <reden conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82101"/>
+            </sedatie>
+          </kindspecifieke_maternale_gegevens>
+          <kindspecifieke_uitkomstgegevens conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.72">
+            <type_partus value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80626" code="48782003" codeSystem="2.16.840.1.113883.6.96"
+              displayName="Delivery normal (finding)"/>
+            <zwangerschapsduur value="273" unit="d" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20062"/>
+            <apgarscore_na_1_min value="9" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40070"/>
+            <apgarscore_na_5_min value="10" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40071"/>
+            <apgarscore_na_10_min value="10" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80757"/>
+            <ligging_bij_geboorte value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40140" code="37235006"
+              codeSystem="2.16.840.1.113883.6.96" displayName="Occipitoposterior position (finding)"/>
+            <aanpakker_kind_groep conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40149">
+              <naam_zorgverlener value="Gynaecoloog" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82058"/>
+              <rol_aanpakker_kind value="4" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40150" code="01.046"
+                codeSystem="2.16.840.1.113883.2.4.15.111" displayName="gynaecoloog"/>
+            </aanpakker_kind_groep>
+            <supervisor_groep conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40169">
+              <naam_zorgverlener value="Gynaecoloog" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82059"/>
+              <rol_supervisor value="3" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40170" code="01.046"
+                codeSystem="2.16.840.1.113883.2.4.15.111" displayName="gynaecoloog"/>
+            </supervisor_groep>
+            <vaginale_kunstverlossing_groep conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40189">
+              <vaginale_kunstverlossing conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40190" value="1" code="302383004"
+                codeSystem="2.16.840.1.113883.6.96" displayName="Forceps delivery (procedure)"/>
+              <succes_vaginale_kunstverlossingq value="false" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40200"/>
+              <indicatie_vaginale_kunstverlossing conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40210" value="1" code="A"
+                codeSystem="2.16.840.1.113883.2.4.3.22.1.2.54" displayName="Niet vorderende uitdrijving"/>
+            </vaginale_kunstverlossing_groep>
+            <overige_interventies conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40240" value="1" code="32189006"
+              codeSystem="2.16.840.1.113883.6.96" displayName="Pubiotomy (procedure)"/>
+            <lichamelijk_onderzoek_kind conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80766">
+              <afwijkende_bevindingen_kindq value="false" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82206"/>
+              <afwijkende_bevindingen conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82207">
+                <algemene_indruk conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82168">
+                  <zieke_indrukq value="false" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82169"/>
+                  <bewustzijn conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82170"/>
+                  <respiratie conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82171"/>
+                  <dysmorfie conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82173"/>
+                </algemene_indruk>
+                <bijzonderheden_huid conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80769"/>
+                <hoofd conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80770">
+                  <fontanel conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80768"/>
+                  <schedel conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80771"/>
+                  <ogen conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80772"/>
+                  <oren conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80773"/>
+                  <neus conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80774"/>
+                  <mond conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80775"/>
+                  <kin__standafwijkingq value="false" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80776"/>
+                </hoofd>
+                <bijzonderheden_hals conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80777"/>
+                <thorax conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80778">
+                  <inspectie conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80784"/>
+                  <skelet conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82176">
+                    <claviculae_fractuur conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82177"/>
+                    <overige_afwijkingen_ribbensternum conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82178"/>
+                  </skelet>
+                  <mamma conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82179"/>
+                  <hart conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80786"/>
+                  <longen conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82180"/>
+                </thorax>
+                <abdomen conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80779">
+                  <inspectie conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82181"/>
+                  <buikwand conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82182"/>
+                  <lever__vergrootq value="false" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82183"/>
+                  <milt_palpabelq value="false" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82184"/>
+                  <darmen__afwijkende_peristaltiekq value="false" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82225"/>
+                  <toelichting_darmen__afwijkende_peristaltiek conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82185"/>
+                  <anus__atresiefistelq value="false" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82186"/>
+                  <andere_palpabele_weerstandenq value="false" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82187"/>
+                  <toelichting_palpabele_weerstanden conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82188"/>
+                </abdomen>
+                <rug conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80780">
+                  <inspectie__palpatie conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82189"/>
+                  <overige_bevindingen conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82190"/>
+                </rug>
+                <extremiteiten conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80781">
+                  <proportie__afwijkendq value="false" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82191"/>
+                  <vorm__afwijkendq value="false" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82192"/>
+                  <toelichting_afwijkende_vorm conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82226"/>
+                  <heupen__asymmetrisch__asymmetrische_plooienq value="false" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82193"/>
+                  <beweeglijkheid conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82194"/>
+                  <handen conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82195"/>
+                  <voeten conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82196"/>
+                </extremiteiten>
+                <genitalia conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80782">
+                  <manlijk conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82197">
+                    <niet_ingedaalde_testes conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80762"/>
+                    <penis conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82198"/>
+                  </manlijk>
+                  <vrouwlijk conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82199"/>
+                  <geslacht_niet_conclusief conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82200"/>
+                </genitalia>
+                <neurologie conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82201">
+                  <tonus conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82202"/>
+                  <beweeglijkheid__asymmetrischq value="false" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82203"/>
+                  <reflexen__moro__asymmetrischq value="false" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82204"/>
+                </neurologie>
+              </afwijkende_bevindingen>
+              <geboortegewicht value="3385" unit="gram" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40060"/>
+              <percentiel_van_het_geboortegewicht value="4" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80670" code="4"
+                codeSystem="2.16.840.1.113883.2.4.4.13.50" displayName="50 ≤ P &lt; 90"/>
+              <lengte conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80759"/>
+              <percentiel_lengte value="20" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80787"/>
+              <schedelomtrek conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80760"/>
+              <percentiel_schedelomtrek value="20" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82205"/>
+              <bijzonderheden_lichamelijk_onderzoek_kind value="Geen manifeste congenitale afwijkingen. "
+                conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80788"/>
+            </lichamelijk_onderzoek_kind>
+            <congenitale_afwijkingenq value="false" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40080"/>
+            <problematiek_kind value="28" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80789" code="363696006"
+              codeSystem="2.16.840.1.113883.6.96" displayName="Neonatal cardiovascular disorder (disorder)"/>
+            <navelstreng_vaten value="3" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80793"/>
+            <vitamine_kq value="true" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80761"/>
+            <kinderarts_betrokkenq value="true" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82119"/>
+            <betrokkenheid_kinderarts conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82120">
+              <datum_betrokkenheid value="2015-06-05T10:00:00" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82122"/>
+              <reden_betrokkenheid value="7" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82123" code="364737004"
+                codeSystem="2.16.840.1.113883.6.96" displayName="Finding of neonatal condition (finding)"/>
+              <type_betrokkenheid value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82121" code="1"
+                codeSystem="2.16.840.1.113883.2.4.4.13.17" displayName="consultatie"/>
+            </betrokkenheid_kinderarts>
+            <bijzonderheden_kind value="48 uur observatie ivm Citolapram gebruik moeder&#xA;5/6 trage hartslag wv langer observatie, tevens fladderig"
+              conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80790"/>
+            <opmerkingen_baring conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80980"/>
+          </kindspecifieke_uitkomstgegevens>
+        </baring>
+      </uitkomst_per_kind>
+      <medisch_onderzoek conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.14">
+        <datum_onderzoek value="2015-01-20T10:00:00" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.50020"/>
+        <naam_uitvoerder_onderzoek value="WAZ" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80754"/>
+        <zorgverlenertype value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82068" code="AA.001" codeSystem="2.16.840.1.113883.2.4.98.111"
+          displayName="echoscopist"/>
+        <zwangerschapsduur_op_datum_onderzoek value="139" unit="d" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.50021"/>
+        <uitslag_screening conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80809">
+          <indicatie_prenatale_diagnostiek_obv_screening conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20470"/>
+        </uitslag_screening>
+        <foetusspecifieke_onderzoeksgegevens conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.141">
+          <foetus_volgletter value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.60010" code="A" codeSystem="2.16.840.1.113883.2.4.4.13.42"
+            displayName="foetus A"/>
+          <echoscopie conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82235">
+            <crl conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.60020"/>
+            <bpd value="49.6" unit="mm" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.60030"/>
+            <bpd_percentiel value="79" unit="%" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.60031"/>
+            <nt_in_mm conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.60040"/>
+            <hc value="176.3" unit="mm" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.60060"/>
+            <hc_percentiel value="86" unit="%" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.60061"/>
+            <tcd value="20.1" unit="mm" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.60070"/>
+            <ac value="151.3" unit="mm" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.60080"/>
+            <ac_percentiel value="68" unit="%" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.60081"/>
+            <fl value="32.5" unit="mm" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.60100"/>
+            <fl_percentiel value="76" unit="%" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.60101"/>
+            <echoparameters_bpd_hc_ac_fl conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.60102"/>
+            <hartactie_aanwezigq value="true" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80943"/>
+            <hartactie conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.81006">
+              <regelmaat_hartslag value="Regelmatig" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.81007"/>
+              <frequentie_hartslag value="Normaal" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.81008"/>
+            </hartactie>
+            <ligging value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80944" code="70028003" codeSystem="2.16.840.1.113883.6.96"
+              displayName="Vertex presentation (finding)"/>
+            <beweging conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80985"/>
+            <vruchtwater value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80945" code="278092006" codeSystem="2.16.840.1.113883.6.96"
+              displayName="Normal liquor volume (finding)"/>
+            <placentalokalisatie conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82069">
+              <placentalokalisatie value="4" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80946" code="6951000146104"
+                codeSystem="2.16.840.1.113883.6.96" displayName="Dorsal position of placenta (finding)"/>
+              <ostium conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82071"/>
+              <over_sectio_littekenq value="false" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82072"/>
+            </placentalokalisatie>
+            <placenta_afwijkingq value="false" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82287"/>
+            <placenta_afwijking conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82288"/>
+            <cervixlengte value="6" unit="mm" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82073"/>
+            <navelstreng_vaten value="3" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80947"/>
+            <opmerkingen conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80948"/>
+            <bevindingen conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82236">
+              <algehele_beoordeling value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.60200" code="1"
+                codeSystem="2.16.840.1.113883.2.4.4.13.36" displayName="normaal/geen bijzonderheden"/>
+              <neuraalbuis_van_de_wervelkolom value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82237" code="1"
+                codeSystem="2.16.840.1.113883.2.4.4.13.55" displayName="Geen bijzonderheden"/>
+              <hersenen_neuraalbuisdefect value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82240" code="1"
+                codeSystem="2.16.840.1.113883.2.4.4.13.55" displayName="Geen bijzonderheden"/>
+              <hersenen_overige value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82241" code="1"
+                codeSystem="2.16.840.1.113883.2.4.4.13.55" displayName="Geen bijzonderheden"/>
+              <aangezicht value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82242" code="1" codeSystem="2.16.840.1.113883.2.4.4.13.55"
+                displayName="Geen bijzonderheden"/>
+              <nek__huid value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82243" code="1" codeSystem="2.16.840.1.113883.2.4.4.13.55"
+                displayName="Geen bijzonderheden"/>
+              <hart value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82244" code="1" codeSystem="2.16.840.1.113883.2.4.4.13.55"
+                displayName="Geen bijzonderheden"/>
+              <longen value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82245" code="1" codeSystem="2.16.840.1.113883.2.4.4.13.55"
+                displayName="Geen bijzonderheden"/>
+              <diafragma value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82246" code="1" codeSystem="2.16.840.1.113883.2.4.4.13.55"
+                displayName="Geen bijzonderheden"/>
+              <buikwand value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82247" code="1" codeSystem="2.16.840.1.113883.2.4.4.13.55"
+                displayName="Geen bijzonderheden"/>
+              <maagdarm value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82248" code="1" codeSystem="2.16.840.1.113883.2.4.4.13.55"
+                displayName="Geen bijzonderheden"/>
+              <nierenblaas value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82249" code="1" codeSystem="2.16.840.1.113883.2.4.4.13.55"
+                displayName="Geen bijzonderheden"/>
+              <extremiteiten value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82250" code="1" codeSystem="2.16.840.1.113883.2.4.4.13.55"
+                displayName="Geen bijzonderheden"/>
+              <skelet value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82251" code="1" codeSystem="2.16.840.1.113883.2.4.4.13.55"
+                displayName="Geen bijzonderheden"/>
+              <sonomarkers conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82238">
+                <echodense_focus_in_het_hart value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82239" code="1"
+                  codeSystem="2.16.840.1.113883.2.4.4.13.54" displayName="Geen sonomarker geconstateerd"/>
+                <plexus_choroideus_cysten value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82258" code="1"
+                  codeSystem="2.16.840.1.113883.2.4.4.13.54" displayName="Geen sonomarker geconstateerd"/>
+                <verdikte_nekplooi__nekhuid value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82259" code="1"
+                  codeSystem="2.16.840.1.113883.2.4.4.13.54" displayName="Geen sonomarker geconstateerd"/>
+                <echodense_darmen value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82260" code="1"
+                  codeSystem="2.16.840.1.113883.2.4.4.13.54" displayName="Geen sonomarker geconstateerd"/>
+                <milde_ventriculomegalie value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82261" code="1"
+                  codeSystem="2.16.840.1.113883.2.4.4.13.54" displayName="Geen sonomarker geconstateerd"/>
+                <pyelectasie value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82262" code="1" codeSystem="2.16.840.1.113883.2.4.4.13.54"
+                  displayName="Geen sonomarker geconstateerd"/>
+                <kort_femur value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82263" code="1" codeSystem="2.16.840.1.113883.2.4.4.13.54"
+                  displayName="Geen sonomarker geconstateerd"/>
+                <_2_navelstrengvaten value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82264" code="1"
+                  codeSystem="2.16.840.1.113883.2.4.4.13.54" displayName="Geen sonomarker geconstateerd"/>
+              </sonomarkers>
+              <biometrie conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82252"/>
+              <vruchtwatercompartiment value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82253" code="1"
+                codeSystem="2.16.840.1.113883.2.4.4.13.55" displayName="Geen bijzonderheden"/>
+              <navelstreng value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82254" code="1" codeSystem="2.16.840.1.113883.2.4.4.13.55"
+                displayName="Geen bijzonderheden"/>
+              <placenta_afwijkingen value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82255" code="1"
+                codeSystem="2.16.840.1.113883.2.4.4.13.55" displayName="Geen bijzonderheden"/>
+              <wervelkolom_neuraalbuisdefect value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82256" code="1"
+                codeSystem="2.16.840.1.113883.2.4.4.13.55" displayName="Geen bijzonderheden"/>
+              <wervelkolom_overige value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82257" code="1"
+                codeSystem="2.16.840.1.113883.2.4.4.13.55" displayName="Geen bijzonderheden"/>
+            </bevindingen>
+          </echoscopie>
+          <combinatietest conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82234">
+            <datum_kansbepaling value="2014-12-01T10:00:00" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.61010"/>
+            <combinatietest_kans_op_trisomie_21 value="5000" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.61080"/>
+            <combinatietest_kans_op_trisomie_18 value="5000" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.61100"/>
+            <combinatietest_kans_op_trisomie_13 value="5000" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.61110"/>
+          </combinatietest>
+          <invasieve_prenatale_diagnostiek conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82227" value="1" code="303720006"
+            codeSystem="2.16.840.1.113883.6.96" displayName="Sampling of chorionic villus (procedure)"/>
+        </foetusspecifieke_onderzoeksgegevens>
+        <maternale_onderzoeksgegevens conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.142">
+          <urine_bloed_en_aanvullende_onderzoeken conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80959">
+            <psie conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80949">
+              <bloedgroep_vrouw value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80952" code="112144000"
+                codeSystem="2.16.840.1.113883.6.96" displayName="Blood group A (finding)"/>
+              <rhesus_d_factor_vrouw value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80953" code="165747007"
+                codeSystem="2.16.840.1.113883.6.96" displayName="Rh D Positief"/>
+              <rhesus_c_factor value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80954" code="rhcneg"
+                codeSystem="2.16.840.1.113883.2.4.4.13.45" displayName="Rh C Negatief"/>
+              <hbsag value="3" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80955" code="406010001" codeSystem="2.16.840.1.113883.6.96"
+                displayName="Hepatitis B surface antigen negative (finding)"/>
+              <hiv value="3" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80956" code="165815009" codeSystem="2.16.840.1.113883.6.96"
+                displayName="Human immunodeficiency virus (HIV) negative (finding)"/>
+              <lues value="negatief" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80957"/>
+              <irregulaire_antistoffenq value="false" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10812"/>
+              <welke_irregulaire_antistoffen_vrouw_aanwezig value="2" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10813" code="8362009"
+                codeSystem="2.16.840.1.113883.6.96" displayName="Rhesus c"/>
+            </psie>
+            <niptq value="false" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82228"/>
+            <nipt__uitslag conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82374">
+              <nipt__uitslag conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82229" value="1"
+                code="441742003:363714003=7751000146103,363713009=17621005" codeSystem="2.16.840.1.113883.6.96"
+                displayName="Normal non-invasive prenatal test finding (finding)"/>
+              <nipt__geslacht conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82375" value="1" code="1" codeSystem="2.16.840.1.113883.2.4.4.13.21"
+                displayName="Mannelijk"/>
+            </nipt__uitslag>
+            <hb value="8.5" unit="mmol/L" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10814"/>
+            <anemie conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80991">
+              <mcv value="92" unit="fl" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80951"/>
+              <hbpathie conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80992"/>
+              <vit_b12 conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80993"/>
+              <actiefb12 conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80994"/>
+              <ferritine conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80995"/>
+              <foliumzuur conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80996"/>
+            </anemie>
+            <diabetes_diagnostiek conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80960">
+              <glucose conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82079">
+                <tijd conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82074"/>
+                <glucose conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80961"/>
+              </glucose>
+              <toelichting conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82075"/>
+            </diabetes_diagnostiek>
+            <schildklier_diagnostiek conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80963">
+              <tsh_receptor_antistoffen conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80962"/>
+              <vrij_t4 conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80964"/>
+              <tsh conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80965"/>
+            </schildklier_diagnostiek>
+            <torch conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80966">
+              <toxoplasmose_igg value="12" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80967"/>
+              <toxoplasmose_igm value="12" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80968"/>
+              <rubella_igg conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80969"/>
+              <rubella_igm value="12" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80970"/>
+              <cmv_igg conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80971"/>
+              <cmv_igm conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80972"/>
+              <herpes_igg conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80973"/>
+              <herpes_igm conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80974"/>
+              <parvovirus_igg conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80975"/>
+              <parvovirus_igm conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80976"/>
+            </torch>
+            <rhesus_d_factor_foetus value="4" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40051" code="NI"
+              codeSystem="2.16.840.1.113883.5.1008" displayName="geen informatie"/>
+            <urine conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82076">
+              <sedimentstick conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82078">
+                <ketonen conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82077"/>
+                <nitriet conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82080"/>
+                <aantal_g_proteine_24_uurs conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82082"/>
+                <proteine_in_urine conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20243"/>
+              </sedimentstick>
+              <urinekweek conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80977"/>
+            </urine>
+            <eiwitcreatinineratio conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20242"/>
+            <vaginakweek conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80978"/>
+          </urine_bloed_en_aanvullende_onderzoeken>
+          <vaginaal_toucher conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.1421">
+            <portio value="3" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20612" code="19337000" codeSystem="2.16.840.1.113883.6.96"
+              displayName="Fully effaced cervix"/>
+            <positie_portio value="overig" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82372"/>
+            <ontsluiting value="2" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20613" code="320003" codeSystem="2.16.840.1.113883.6.96"
+              displayName="Cervical dilatation, 1cm"/>
+            <vliezen value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20614" code="46914009" codeSystem="2.16.840.1.113883.6.96"
+              displayName="Intact fetal membranes (finding)"/>
+            <indaling_hodge value="3" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20615" code="289381000" codeSystem="2.16.840.1.113883.6.96"
+              displayName="-1 level of presenting part in relation to ischial spines"/>
+            <aard_van_het_voorliggend_deel value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80616" code="70028003"
+              codeSystem="2.16.840.1.113883.6.96" displayName="Vertex presentation"/>
+            <stand value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80618" code="1" codeSystem="2.16.840.1.113883.2.4.4.13.48"
+              displayName="Voor"/>
+          </vaginaal_toucher>
+        </maternale_onderzoeksgegevens>
+      </medisch_onderzoek>
+      <postnatale_fase conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.16">
+        <diagnose_postpartum conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82297">
+          <datum value="2015-06-05T10:00:00" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82298"/>
+          <pathologie_vrouwq value="true" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82208"/>
+          <pathologie_vrouw value="7" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82209" code="58703003" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Postpartum depression (disorder)"/>
+        </diagnose_postpartum>
+        <kraamzorgq value="true" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80843"/>
+        <kraamzorginstelling conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82083">
+          <naam_zorginstelling value="Kraamvogel" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82084"/>
+          <telefoonnummer_instelling value="020-99955533" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82085"/>
+        </kraamzorginstelling>
+        <bloedverlies_kraambed value="10" unit="ml" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82124"/>
+        <opmerkingen_kraambed
+          value="Mv. liet vanmorgen ineens ontlasting lopen, was ook dun &gt; besproken en BB-folder achtergelaten, fysio besproken indien geen verbetering.&#xA;Dean heeft 2 nachten veel last gehad van krampjes, gisteren gestart met Infacol en nu de nacht heerlijk doorgeslapen!&#xA;Gaat hier allemaal goed, kr.zorg nog niet aanwezig &gt; nog geen controles gedaan. Belinstr+ bij bijzonderheden. "
+          conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80982"/>
+        <kindspecifieke_gegevens conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.161">
+          <voeding_kind_groep conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.70009">
+            <voeding_kind_datum value="2015-06-09" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.70011"/>
+            <substantie_voeding_kind value="2" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.70030" code="2"
+              codeSystem="2.16.840.1.113883.2.4.3.22.1.4.8" displayName="kunstvoeding"/>
+          </voeding_kind_groep>
+          <betrokkenheid_andere_zorgverlenerq value="false" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82118"/>
+          <betrokkenheid_andere_zorgverlener conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40249">
+            <type_betrokkenheid value="2" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40250" code="2"
+              codeSystem="2.16.840.1.113883.2.4.4.13.17" displayName="overdracht"/>
+            <datum_betrokkenheid value="2015-06-11T10:00:00" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40260"/>
+            <zorgverlenertype value="3" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40261" code="OTH" codeSystem="2.16.840.1.113883.5.1008"
+              displayName="Overig"/>
+            <reden_betrokkenheid value="10" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80765" code="OTH" codeSystem="2.16.840.1.113883.5.1008"
+              displayName="Overig"/>
+          </betrokkenheid_andere_zorgverlener>
+        </kindspecifieke_gegevens>
+        <nacontrole conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80844">
+          <datum_controle value="2015-07-20T17:00:00" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80846"/>
+          <naam_zorgverlener value="Hugo Heilema" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80847"/>
+          <zorgverlenertype value="1" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82086" code="11"
+            codeSystem="2.16.840.1.113883.2.4.3.22.1.2.59" displayName="1e lijns verloskundige"/>
+          <kindspecifieke_kraamperiodegegevens conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80848">
+            <substantie_voeding_kind value="2" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80851" code="2"
+              codeSystem="2.16.840.1.113883.2.4.3.22.1.4.8" displayName="kunstvoeding"/>
+            <bijzonderheden_kind_kraamperiode value="Even gebeld vlgs afspr: alles gaat goed, geen vragen. Zijn ah genieten!"
+              conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80865"/>
+          </kindspecifieke_kraamperiodegegevens>
+          <anticonceptie_besprokenq value="true" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80983"/>
+          <type_anticonceptie value="OAC" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80856"/>
+          <vloeien value="Gestopt" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80857"/>
+          <menstruatieq value="false" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80858"/>
+          <incontinentieq value="false" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80986"/>
+          <incontinentie conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80859"/>
+          <episiotomieruptuur value="Goed genezen" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80860"/>
+          <sectiowond conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80984"/>
+          <bloeddruk conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80852">
+            <bloeddruk_systolisch value="110" unit="mm Hg" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80853"/>
+            <bloeddruk_diastolisch value="66" unit="mm Hg" conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80854"/>
+          </bloeddruk>
+          <hb conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80855"/>
+          <bijzonderheden conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80863"/>
+        </nacontrole>
+      </postnatale_fase>
+    </verwijzing_regulier_bericht>
+  </data>
+</adaxml>
