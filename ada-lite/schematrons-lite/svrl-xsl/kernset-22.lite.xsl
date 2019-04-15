@@ -6697,6 +6697,22 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
+         <xsl:when test="empty(@value) or ((@value castable as xs:date) or (@value castable as xs:dateTime))"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="empty(@value) or ((@value castable as xs:date) or (@value castable as xs:dateTime))">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Geboortedatum": De waarde "<xsl:text/>
+                  <xsl:value-of select="@value"/>
+                  <xsl:text/>" voor attribuut "value" heeft een onjuist formaat [/kernset_aanleverbericht/vrouw/geboortedatum/@value; type=t-datetime]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+
+		    <!--ASSERT -->
+      <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -12490,6 +12506,22 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
+         <xsl:when test="empty(@value) or ((@value castable as xs:date) or (@value castable as xs:dateTime))"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="empty(@value) or ((@value castable as xs:date) or (@value castable as xs:dateTime))">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Definitieve à terme datum": De waarde "<xsl:text/>
+                  <xsl:value-of select="@value"/>
+                  <xsl:text/>" voor attribuut "value" heeft een onjuist formaat [/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/definitieve_a_terme_datum/@value; type=t-datetime]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+
+		    <!--ASSERT -->
+      <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -16734,6 +16766,22 @@ SOFTWARE.
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Definitieve à terme datum": Attribuut "value" ontbreekt [/kernset_aanleverbericht/zwangerschap/definitieve_a_terme_datum/@value]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="empty(@value) or ((@value castable as xs:date) or (@value castable as xs:dateTime))"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="empty(@value) or ((@value castable as xs:date) or (@value castable as xs:dateTime))">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Definitieve à terme datum": De waarde "<xsl:text/>
+                  <xsl:value-of select="@value"/>
+                  <xsl:text/>" voor attribuut "value" heeft een onjuist formaat [/kernset_aanleverbericht/zwangerschap/definitieve_a_terme_datum/@value; type=t-datetime]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -33876,6 +33924,22 @@ SOFTWARE.
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Voeding kind (datum)": Attribuut "value" ontbreekt [/kernset_aanleverbericht/postnatale_fase/kindspecifieke_gegevens/voeding_kind_groep/voeding_kind_datum/@value]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="empty(@value) or ((@value castable as xs:date) or (@value castable as xs:dateTime))"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="empty(@value) or ((@value castable as xs:date) or (@value castable as xs:dateTime))">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Voeding kind (datum)": De waarde "<xsl:text/>
+                  <xsl:value-of select="@value"/>
+                  <xsl:text/>" voor attribuut "value" heeft een onjuist formaat [/kernset_aanleverbericht/postnatale_fase/kindspecifieke_gegevens/voeding_kind_groep/voeding_kind_datum/@value; type=t-datetime]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
