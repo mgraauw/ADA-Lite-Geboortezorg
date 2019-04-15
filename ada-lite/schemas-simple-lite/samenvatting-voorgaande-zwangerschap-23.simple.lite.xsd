@@ -842,7 +842,7 @@ SOFTWARE.
                     type="t-id"
                     use="optional"
                     fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10040"/>
-      <xs:attribute name="value" use="required" type="xs:string"/>
+      <xs:attribute name="value" use="required" type="t-datetime"/>
    </xs:complexType>
    <xs:complexType name="zwangerschap">
       <xs:sequence>
@@ -960,7 +960,7 @@ SOFTWARE.
                     type="t-id"
                     use="optional"
                     fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82160"/>
-      <xs:attribute name="value" use="required" type="xs:string"/>
+      <xs:attribute name="value" use="required" type="t-datetime"/>
    </xs:complexType>
    <xs:complexType name="diagnose">
       <xs:sequence>

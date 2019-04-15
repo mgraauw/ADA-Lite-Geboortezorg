@@ -265,7 +265,7 @@
           <xsl:call-template name="create-code-attribute-definitions"/>
         </xsl:when>
         
-        <xsl:when test="$valuetype eq 'datetime'">
+        <xsl:when test="$valuetype = ('date', 'datetime')">
           <xsl:call-template name="create-value-attribute-definition">
             <xsl:with-param name="base-type" select="$simple-type-name-for-datetime"/>
           </xsl:call-template>
