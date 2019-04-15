@@ -2,20 +2,26 @@
 <verloskundig_dossier_23 transactionRef="2.16.840.1.113883.2.4.3.11.60.90.77.4.2467" transactionEffectiveDate="2019-03-13T11:57:08">
   <zorgverlenerzorginstelling>
     <zorgverlener>
-      <zorgverlener_uzinummer value=""/>
-      <zorgverlener_agbid value=""/>
-      <zorgverlener_lvr1id value=""/>
-      <naam_zorgverlener value=""/>
-      <zorgverlenertype value=""/>
-      <telefoon_waar_zorgverlener_is_te_bereiken value=""/>
+      <!--<zorgverlener_uzinummer value=""/>-->
+      <zorgverlener_agbid>
+        <hl7v2-value segment-name="OBR" fieldgroup-index="32" component-index="1" subcomponent-index="9" required="false"/>
+      </zorgverlener_agbid>
+      <!--<zorgverlener_lvr1id value=""/>-->
+      <naam_zorgverlener>
+        <hl7v2-value segment-name="OBR" fieldgroup-index="32" component-index="1" subcomponent-index="1" required="false"/>
+      </naam_zorgverlener>
+      <!-- <zorgverlenertype value=""/>
+      <telefoon_waar_zorgverlener_is_te_bereiken value=""/>-->
     </zorgverlener>
     <zorginstelling>
-      <zorginstelling_oid value=""/>
+      <!--<zorginstelling_oid value=""/>
       <zorginstelling_agbid value=""/>
       <zorginstelling_lvrid value=""/>
-      <zorginstelling_ura value=""/>
-      <naam_zorginstelling value=""/>
-      <adres_zorginstelling>
+      <zorginstelling_ura value=""/>-->
+      <naam_zorginstelling>
+        <hl7v2-value segment-name="PV1" field1="1" fieldgroup-index="3" component-index="1" required="false"/>
+      </naam_zorginstelling>
+      <!-- <adres_zorginstelling>
         <straatnaam value=""/>
         <huisnummer value=""/>
         <huisletterhuisnummertoevoeging value=""/>
@@ -24,7 +30,7 @@
         <land value=""/>
       </adres_zorginstelling>
       <type_zorginstelling value=""/>
-      <type_zorginstelling_bij_verwijzing value=""/>
+      <type_zorginstelling_bij_verwijzing value=""/>-->
     </zorginstelling>
   </zorgverlenerzorginstelling>
   <vrouw>
@@ -48,24 +54,34 @@
       </achternaam>
     </naamgegevens>
     <geboortedatum>
-      <hl7v2-value segment-name="PID" fieldgroup-index="7" component-index="1"/>
+      <hl7v2-value segment-name="PID" fieldgroup-index="7" component-index="1" conversion="datetime"/>
     </geboortedatum>
     <adres>
-      <straatnaam value=""/>
-      <huisnummer value=""/>
-      <huisletterhuisnummertoevoeging value=""/>
-      <postcode value=""/>
-      <plaatsnaam value=""/>
-      <land value=""/>
-      <adrestype value=""/>
+      <straatnaam>
+        <hl7v2-value segment-name="PID" fieldgroup-index="11" component-index="1" required="false"/>
+      </straatnaam>
+      <!--<huisnummer value=""/>-->
+      <!--<huisletterhuisnummertoevoeging value=""/>-->
+      <postcode>
+        <hl7v2-value segment-name="PID" fieldgroup-index="11" component-index="5" required="false"/>
+      </postcode>
+      <plaatsnaam>
+        <hl7v2-value segment-name="PID" fieldgroup-index="11" component-index="3" required="false"/>
+      </plaatsnaam>
+      <land>
+        <hl7v2-value segment-name="PID" fieldgroup-index="11" component-index="6" required="false"/>
+      </land>
+      <!--<adrestype value=""/>-->
     </adres>
-    <etniciteit value=""/>
-    <taalvaardigheid_vrouw_nederlandse_taal value=""/>
+    <!--<etniciteit>
+      <hl7v2-value segment-name="PID" fieldgroup-index="22" component-index="1" required="false"/>
+    </etniciteit>-->
+    <!--<taalvaardigheid_vrouw_nederlandse_taal value=""/>
     <communicatietaal value=""/>
     <opleidingsniveau value=""/>
     <beroep value=""/>
-    <accepteert_bloedtransfusieq value=""/>
-    <betrokken_zorgverlenerzorginstelling>
+    <accepteert_bloedtransfusieq value=""/>-->
+    <!--<betrokken_zorgverlenerzorginstelling>
       <huisarts>
         <zorgverlener_uzinummer value=""/>
         <zorgverlener_agbid value=""/>
@@ -85,8 +101,8 @@
           <naam_zorginstelling value=""/>
         </zorginstelling>
       </specialist>
-    </betrokken_zorgverlenerzorginstelling>
-    <anamnese>
+    </betrokken_zorgverlenerzorginstelling>-->
+    <!--<anamnese>
       <onder_behandeling_geweestq value=""/>
       <algemene_anamnese>
         <autoimmuun_aandoening value=""/>
@@ -130,8 +146,8 @@
         <indicatie_guoq value=""/>
         <indicatie_niptq value=""/>
       </indicatie_prenatale_diagnostiek>
-    </anamnese>
-    <medicatiegebruikq value=""/>
+    </anamnese>-->
+    <!--<medicatiegebruikq value=""/>
     <medicatiegebruik>
       <soort_medicatie value=""/>
       <begindatum value=""/>
@@ -156,24 +172,30 @@
         <achternamen value=""/>
       </persoonsnaam>
       <etniciteit value=""/>
-    </partner>
+    </partner>-->
   </vrouw>
   <zwangerschap>
-    <identificatie_van_de_zwangerschap value=""/>
-    <casemanager_naam value=""/>
-    <graviditeit value=""/>
+    <!--<identificatie_van_de_zwangerschap value=""/>
+    <casemanager_naam value=""/>-->
+    <graviditeit>
+      <hl7v2-value segment-name="OBX" field3="GRAVIDA" fieldgroup-index="5" required="false"/>
+    </graviditeit>
     <pariteit_voor_deze_zwangerschap value=""/>
-    <pariteit value=""/>
+    <pariteit>
+      <hl7v2-value segment-name="OBX" field3="PARITY" fieldgroup-index="5" required="false"/>
+    </pariteit>
     <aantal_levende_kinderen value=""/>
     <fetal_loss value=""/>
     <a_terme_datum_groep>
-      <a_terme_datum value=""/>
-      <datum_bepaling_a_terme_datum value=""/>
+      <a_terme_datum>
+        <hl7v2-value segment-name="OBX" field3="DUE_DATE" fieldgroup-index="5" required="false" conversion="datetime"/>
+      </a_terme_datum>
+      <!--<datum_bepaling_a_terme_datum value=""/>
       <a_terme_datum_obv value=""/>
       <actuele_a_terme_datumq value=""/>
-      <zekerq value=""/>
+      <zekerq value=""/>-->
     </a_terme_datum_groep>
-    <definitieve_a_terme_datum value=""/>
+    <!--<definitieve_a_terme_datum value=""/>
     <foliumzuur_gebruik value=""/>
     <hoeveelling value=""/>
     <amnioniciteit value=""/>
@@ -185,8 +207,8 @@
       <ovulatieinductie_toegepastq value=""/>
       <geassisteerde_conceptie value=""/>
     </soort_subfertiliteitsbehandeling_groep>
-    <trisomie_in_de_anamneseq value=""/>
-    <voornemens>
+    <trisomie_in_de_anamneseq value=""/>-->
+    <!--<voornemens>
       <risicostatus_van_de_zwangerschap value=""/>
       <voorgenomen_plaats_baring_tijdens_zwangerschap_type_locatie value=""/>
       <afspraken value=""/>
@@ -197,12 +219,16 @@
         <kraamzorginstelling value=""/>
       </kraamzorg>
       <bevalplan value=""/>
-    </voornemens>
+    </voornemens>-->
     <prenatale_controle>
-      <datum_controle value=""/>
+      <datum_controle>
+        <hl7v2-value segment-name="OBR"  fieldgroup-index="7" component-index="1" required="false" conversion="datetime"/>
+      </datum_controle>
       <naam_zorgverlener value=""/>
       <zorgverlenertype value=""/>
-      <zwangerschapsduur value=""/>
+      <zwangerschapsduur>
+        <hl7v2-value segment-name="OBX" field3="GESTATIONAL_AGE" fieldgroup-index="5" required="false" conversion="weekdays"/>
+      </zwangerschapsduur>
       <leven_voelen value=""/>
       <ernst_oedeem value=""/>
       <rookgedrag value=""/>
@@ -582,7 +608,9 @@
   </uitkomst_per_kind>
   <medisch_onderzoek>
     <onderzoek_identificatie value=""/>
-    <datum_onderzoek value=""/>
+    <datum_onderzoek>
+      <hl7v2-value segment-name="OBR" fieldgroup-index="7" component-index="1" required="true" conversion="datetime"/>
+    </datum_onderzoek>
     <naam_uitvoerder_onderzoek value=""/>
     <zorgverlenertype value=""/>
     <zwangerschapsduur_op_datum_onderzoek value=""/>
@@ -598,75 +626,104 @@
     <uitslag_screening>
       <indicatie_prenatale_diagnostiek_obv_screening value=""/>
     </uitslag_screening>
-    <foetusspecifieke_onderzoeksgegevens>
-      <foetus_identificatie value=""/>
-      <foetus_volgletter value=""/>
-      <echoscopie>
-        <crl value=""/>
-        <bpd value=""/>
-        <bpd_percentiel value=""/>
-        <nt_in_mm value=""/>
-        <hc value=""/>
-        <hc_percentiel value=""/>
-        <tcd value=""/>
-        <ac value=""/>
-        <ac_percentiel value=""/>
-        <fl value=""/>
-        <fl_percentiel value=""/>
-        <efw value=""/>
-        <hartactie_aanwezigq value=""/>
-        <hartactie>
-          <regelmaat_hartslag value=""/>
-          <frequentie_hartslag value=""/>
-        </hartactie>
-        <ligging value=""/>
-        <beweging value=""/>
-        <vruchtwater value=""/>
-        <placentalokalisatie>
-          <placentalokalisatie value=""/>
-          <ostium value=""/>
-          <over_sectio_littekenq value=""/>
-        </placentalokalisatie>
-        <afwijking_placentavliezennavelstrengq value=""/>
-        <afwijking_placentavliezennavelstreng value=""/>
-        <cervixlengte value=""/>
-        <navelstreng_vaten value=""/>
-        <opmerkingen value=""/>
-        <bevindingen>
-          <algehele_beoordeling value=""/>
-          <neuraalbuis_van_de_wervelkolom value=""/>
-          <hersenen_neuraalbuisdefect value=""/>
-          <hersenen_overige value=""/>
-          <aangezicht value=""/>
-          <nek__huid value=""/>
-          <hart value=""/>
-          <longen value=""/>
-          <diafragma value=""/>
-          <buikwand value=""/>
-          <maagdarm value=""/>
-          <nierenblaas value=""/>
-          <extremiteiten value=""/>
-          <skelet value=""/>
-          <sonomarkers>
-            <echodense_focus_in_het_hart value=""/>
-            <plexus_choroideus_cysten value=""/>
-            <verdikte_nekplooi__nekhuid value=""/>
-            <echodense_darmen value=""/>
-            <milde_ventriculomegalie value=""/>
-            <pyelectasie value=""/>
-            <kort_femur value=""/>
-            <_2_navelstrengvaten value=""/>
-          </sonomarkers>
-          <biometrie value=""/>
-          <vruchtwatercompartiment value=""/>
-          <navelstreng value=""/>
-          <placenta_afwijkingen value=""/>
-          <wervelkolom_neuraalbuisdefect value=""/>
-          <wervelkolom_overige value=""/>
-        </bevindingen>
-      </echoscopie>
-      <echoparameters_bpd_hc_ac_fl value=""/>
-      <combinatietest>
+    <hl7v2-repeat segment-name="OBX" field-index="4">
+      <foetusspecifieke_onderzoeksgegevens>
+        <foetus_identificatie>
+          <hl7v2-repeat-char/>
+        </foetus_identificatie>
+        <foetus_volgletter>
+          <hl7v2-repeat-char/>
+        </foetus_volgletter>
+        <echoscopie>
+          <crl value=""/>
+          <bpd>
+            <hl7v2-value segment-name="OBX" field3="BPD" fieldgroup-index="5"  repeat-field-index="4" required="false"/>
+          </bpd>
+          <bpd_percentiel>
+            <hl7v2-value segment-name="OBX" field3="BPDp" fieldgroup-index="5"  repeat-field-index="4" required="false"/>
+          </bpd_percentiel>
+          <nt_in_mm value=""/>
+          <hc>
+            <hl7v2-value segment-name="OBX" field3="HC" fieldgroup-index="5"  repeat-field-index="4" required="false"/>
+          </hc>
+          <hc_percentiel>
+            <hl7v2-value segment-name="OBX" field3="HCp" fieldgroup-index="5"  repeat-field-index="4" required="false"/>
+          </hc_percentiel>
+          <tcd>
+            <hl7v2-value segment-name="OBX" field3="TCD" fieldgroup-index="5"  repeat-field-index="4" required="false"/>
+          </tcd>
+          <ac>
+            <hl7v2-value segment-name="OBX" field3="AC" fieldgroup-index="5"  repeat-field-index="4" required="false"/>
+          </ac>
+          <ac_percentiel>
+            <hl7v2-value segment-name="OBX" field3="ACp" fieldgroup-index="5"  repeat-field-index="4" required="false"/>
+          </ac_percentiel>
+          <fl>
+            <hl7v2-value segment-name="OBX" field3="FL" fieldgroup-index="5"  repeat-field-index="4" required="false"/>
+          </fl>
+          <fl_percentiel>
+            <hl7v2-value segment-name="OBX" field3="FLp" fieldgroup-index="5"  repeat-field-index="4" required="false"/>
+          </fl_percentiel>
+          <efw>
+            <hl7v2-value segment-name="OBX" field3="WEIGHT" fieldgroup-index="5"  repeat-field-index="4" required="false"/>
+          </efw>
+          <hartactie_aanwezigq value=""/>
+          <hartactie>
+            <regelmaat_hartslag value=""/>
+            <frequentie_hartslag value=""/>
+          </hartactie>
+          <ligging>
+            <hl7v2-value segment-name="OBX" field3="LIGGING" fieldgroup-index="5"  repeat-field-index="4" required="false"/>
+          </ligging>
+          <beweging value=""/>
+          <vruchtwater value=""/>
+          <placentalokalisatie>
+            <placentalokalisatie>
+              <hl7v2-value segment-name="OBX" field3="PLACENTALOC" fieldgroup-index="5"  repeat-field-index="4" required="false"/>
+            </placentalokalisatie>
+            <!--<ostium value=""/>
+            <over_sectio_littekenq value=""/>-->
+          </placentalokalisatie>
+          <afwijking_placentavliezennavelstrengq value=""/>
+          <afwijking_placentavliezennavelstreng value=""/>
+          <cervixlengte value=""/>
+          <navelstreng_vaten value=""/>
+          <opmerkingen value=""/>
+          <!--<bevindingen>
+            <algehele_beoordeling value=""/>
+            <neuraalbuis_van_de_wervelkolom value=""/>
+            <hersenen_neuraalbuisdefect value=""/>
+            <hersenen_overige value=""/>
+            <aangezicht value=""/>
+            <nek__huid value=""/>
+            <hart value=""/>
+            <longen value=""/>
+            <diafragma value=""/>
+            <buikwand value=""/>
+            <maagdarm value=""/>
+            <nierenblaas value=""/>
+            <extremiteiten value=""/>
+            <skelet value=""/>
+            <sonomarkers>
+              <echodense_focus_in_het_hart value=""/>
+              <plexus_choroideus_cysten value=""/>
+              <verdikte_nekplooi__nekhuid value=""/>
+              <echodense_darmen value=""/>
+              <milde_ventriculomegalie value=""/>
+              <pyelectasie value=""/>
+              <kort_femur value=""/>
+              <_2_navelstrengvaten value=""/>
+            </sonomarkers>
+            <biometrie value=""/>
+            <vruchtwatercompartiment value=""/>
+            <navelstreng value=""/>
+            <placenta_afwijkingen value=""/>
+            <wervelkolom_neuraalbuisdefect value=""/>
+            <wervelkolom_overige value=""/>
+          </bevindingen>-->
+        </echoscopie>
+        <!--<echoparameters_bpd_hc_ac_fl value=""/>-->
+        <!--<combinatietest>
         <datum_kansbepaling value=""/>
         <methode_kansbepaling value=""/>
         <software_kansbepaling>
@@ -702,10 +759,11 @@
           <crl value=""/>
           <bpd value=""/>
         </gehanteerde_gegevens>
-      </combinatietest>
-      <invasieve_prenatale_diagnostiek value=""/>
-    </foetusspecifieke_onderzoeksgegevens>
-    <maternale_onderzoeksgegevens>
+      </combinatietest>-->
+        <!--<invasieve_prenatale_diagnostiek value=""/>-->
+      </foetusspecifieke_onderzoeksgegevens>
+    </hl7v2-repeat>
+    <!--<maternale_onderzoeksgegevens>
       <urine_bloed_en_aanvullende_onderzoeken>
         <psie>
           <bloedgroep_vrouw value=""/>
@@ -777,7 +835,7 @@
         <aard_van_het_voorliggend_deel value=""/>
         <stand value=""/>
       </vaginaal_toucher>
-    </maternale_onderzoeksgegevens>
+    </maternale_onderzoeksgegevens>-->
   </medisch_onderzoek>
   <postnatale_fase>
     <diagnoseinterventie_postpartum>

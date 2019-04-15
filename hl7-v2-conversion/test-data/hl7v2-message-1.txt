@@ -8,6 +8,7 @@ OBX|2|NM|PARITY||1||||||F
 OBX|3|TS|DUE_DATE||20180703000000||||||F
 OBX|4|ST|GESTATIONAL_AGE||20w3d||||||F
 OBX|5|NM|HC|1|180|mm|||||F
+OBX|5|NM|HC|2|181|mm|||||F
 OBX|6|NM|HCp|1|68.4|perc^Verburg|||||F
 OBX|7|NM|AC|1|165|mm|||||F
 OBX|8|NM|ACp|1|90.5|perc^Verburg|||||F
