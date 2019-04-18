@@ -28,7 +28,7 @@
   <!-- ================================================================== -->
   <!-- SETUP: -->
 
-  <xsl:output method="html" indent="no" encoding="UTF-8"/>
+  <xsl:output method="html" indent="yes" encoding="UTF-8"/>
 
   <xsl:mode on-no-match="fail"/>
   <xsl:mode name="mode-do-mixed-contents" on-no-match="shallow-copy"/>
@@ -68,7 +68,7 @@
   <xsl:variable name="specification-root" as="element()?" select="$specification-document/*"/>
 
   <!-- Get the root of the data. Convert this to ADA-full if the input is ADA-lite: -->
-  <xsl:variable name="data-root" as="document-node()">
+  <xsl:variable name="full-data-document" as="document-node()">
     <xsl:choose>
       <xsl:when test="xs:boolean($input-is-ada-full)">
         <xsl:sequence select="/"/>
@@ -103,7 +103,7 @@
 
     <!-- Establish the main context: -->
     <xsl:variable name="initial-context" as="xs:string" select="($viewer-template-root/@context, '/*')[1]"/>
-    <xsl:variable name="initial-data-contexts" as="node()*" select="local:resolve-data-xpath-expression($initial-context, $data-root)"/>
+    <xsl:variable name="initial-data-contexts" as="node()*" select="local:resolve-data-xpath-expression($initial-context, $full-data-document)"/>
     <xsl:variable name="initial-specification-context" as="element()?" select="local:resolve-specification-xpath-expression($initial-context, ())"/>
 
     <!-- Get the title: -->
@@ -185,28 +185,69 @@
 
     <div class="header">
       <table class="header-table">
-        <xsl:for-each select="local:effective-item-list($header, $header-specification-context)">
-          <tr>
-            <td>
-              <xsl:call-template name="get-item-prompt-contents">
-                <xsl:with-param name="item" select="."/>
-                <xsl:with-param name="data-contexts" select="$header-data-contexts"/>
-                <xsl:with-param name="specification-context" select="$header-specification-context"/>
-              </xsl:call-template>
-              <xsl:text>&#160;</xsl:text>
-            </td>
-            <td>
-              <xsl:call-template name="get-item-value-contents">
-                <xsl:with-param name="item" select="."/>
-                <xsl:with-param name="data-contexts" select="$header-data-contexts"/>
-                <xsl:with-param name="specification-context" select="$header-specification-context"/>
-              </xsl:call-template>
-            </td>
-          </tr>
-        </xsl:for-each>
+        <xsl:choose>
+          <xsl:when test="exists($header/col1) and exists($header/col2)">
+            <table width="100%">
+              <tr valign="top">
+                <td width="50%">
+                  <xsl:call-template name="create-header-table">
+                    <xsl:with-param name="parent" select="$header/col1"/>
+                    <xsl:with-param name="parent-data-contexts" select="$header-data-contexts"/>
+                    <xsl:with-param name="parent-specification-context" select="$header-specification-context"/>
+                  </xsl:call-template>
+                </td>
+                <td width="50%">
+                  <xsl:call-template name="create-header-table">
+                    <xsl:with-param name="parent" select="$header/col2"/>
+                    <xsl:with-param name="parent-data-contexts" select="$header-data-contexts"/>
+                    <xsl:with-param name="parent-specification-context" select="$header-specification-context"/>
+                  </xsl:call-template>
+                </td>
+              </tr>
+            </table>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:call-template name="create-header-table">
+              <xsl:with-param name="parent" select="$header"/>
+              <xsl:with-param name="parent-data-contexts" select="$header-data-contexts"/>
+              <xsl:with-param name="parent-specification-context" select="$header-specification-context"/>
+            </xsl:call-template>
+          </xsl:otherwise>
+        </xsl:choose>
       </table>
     </div>
   </xsl:template>
+
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+  <xsl:template name="create-header-table">
+    <xsl:param name="parent" as="element()" required="yes"/>
+    <xsl:param name="parent-data-contexts" as="node()*" required="yes"/>
+    <xsl:param name="parent-specification-context" as="element()?" required="yes"/>
+
+    <table class="header-table">
+      <xsl:for-each select="local:effective-item-list($parent, $parent-specification-context)">
+        <tr>
+          <td>
+            <xsl:call-template name="get-item-prompt-contents">
+              <xsl:with-param name="item" select="."/>
+              <xsl:with-param name="data-contexts" select="$parent-data-contexts"/>
+              <xsl:with-param name="specification-context" select="$parent-specification-context"/>
+            </xsl:call-template>
+            <xsl:text>&#160;</xsl:text>
+          </td>
+          <td>
+            <xsl:call-template name="get-item-value-contents">
+              <xsl:with-param name="item" select="."/>
+              <xsl:with-param name="data-contexts" select="$parent-data-contexts"/>
+              <xsl:with-param name="specification-context" select="$parent-specification-context"/>
+            </xsl:call-template>
+          </td>
+        </tr>
+      </xsl:for-each>
+    </table>
+  </xsl:template>
+
 
   <!-- ================================================================== -->
   <!-- SECTION -->
@@ -398,7 +439,7 @@
           </xsl:when>
           <xsl:otherwise>
             <xsl:value-of select="$separator-attribute-value"/>
-          </xsl:otherwise>  
+          </xsl:otherwise>
         </xsl:choose>
       </xsl:variable>
       <xsl:call-template name="get-item-sub-element-contents">
@@ -631,7 +672,7 @@
     <xsl:param name="data-contexts" as="node()*"/>
 
     <xsl:variable name="expression-parts" as="xs:string*" select="tokenize($expression, '/')[normalize-space(.) ne '']"/>
-    <xsl:variable name="start-contexts" as="node()*" select="if (starts-with($expression, '/')) then $data-root else $data-contexts"/>
+    <xsl:variable name="start-contexts" as="node()*" select="if (starts-with($expression, '/')) then $full-data-document else $data-contexts"/>
     <xsl:sequence select="local:resolve-data-xpath-expression-by-parts($expression-parts, $start-contexts)"/>
   </xsl:function>
 

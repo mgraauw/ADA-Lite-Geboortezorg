@@ -4,45 +4,90 @@
 
   <title>Samenvatting verloskundig dossier</title>
 
-  <header >
-    <item context="vrouw/naamgegevens">
-      <prompt>Naam:</prompt>
-      <value>{roepnaam} {achternaam/voorvoegsel} {achternaam/achternaam}</value>
-    </item>
-    <item context="vrouw">
-      <prompt>BSN:</prompt>
-      <value>{burgerservicenummer}</value>
-    </item>
-    <item context="zwangerschap">
-      <prompt>Zwangerschap:</prompt>
-      <value>G/P {graviditeit}/{pariteit}</value>
-    </item>
-    <item context="zwangerschap">
-      <prompt>At. Datum:</prompt>
-      <value>{a_terme_datum_groep/a_terme_datum}</value>
-    </item>
-<!-- Kolom 2 ?!? -->
-    <item context="zorgverlenerzorginstelling/zorgverlener">
-      <prompt>Naam zorgverlener:</prompt>
-      <value>{naam_zorgverlener}</value>
-    </item>
-    <item context="zorgverlenerzorginstelling/zorginstelling">
-      <prompt>Naam zorginstelling:</prompt>
-      <value>{naam_zorginstelling}</value>
-    </item>
-    <item context="zorgverlenerzorginstelling/zorginstelling">
-      <prompt>Zorginstelling OID:</prompt>
-      <value>{zorginstelling_oid}</value>
-    </item>
-    <item context="zorgverlenerzorginstelling/zorgverlener">
-      <prompt>Telefoon:</prompt>
-      <value>{telefoon_waar_zorgverlener_is_te_bereiken}</value>
-    </item>
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+  <header>
+    <col1>
+      <item context="vrouw/naamgegevens">
+        <prompt>Naam:</prompt>
+        <value>{roepnaam} {achternaam/voorvoegsel} {achternaam/achternaam}</value>
+      </item>
+      <item context="vrouw">
+        <prompt>BSN:</prompt>
+        <value>{burgerservicenummer}</value>
+      </item>
+      <item context="zwangerschap">
+        <prompt>Zwangerschap:</prompt>
+        <value>G/P {graviditeit}/{pariteit}</value>
+      </item>
+      <item context="zwangerschap">
+        <prompt>At. Datum:</prompt>
+        <value>{a_terme_datum_groep/a_terme_datum}</value>
+      </item>
+    </col1>
+    <col2>
+      <item context="zorgverlenerzorginstelling/zorgverlener">
+        <prompt>Naam zorgverlener:</prompt>
+        <value>{naam_zorgverlener}</value>
+      </item>
+      <item context="zorgverlenerzorginstelling/zorginstelling">
+        <prompt>Naam zorginstelling:</prompt>
+        <value>{naam_zorginstelling}</value>
+      </item>
+      <item context="zorgverlenerzorginstelling/zorginstelling">
+        <prompt>Zorginstelling OID:</prompt>
+        <value>{zorginstelling_oid}</value>
+      </item>
+      <item context="zorgverlenerzorginstelling/zorgverlener">
+        <prompt>Telefoon:</prompt>
+        <value>{telefoon_waar_zorgverlener_is_te_bereiken}</value>
+      </item>
+    </col2>
   </header>
-  
+
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
   <section color="black">
+    <title>OVERDRACHT GEBOORTEZORG PER ?DATUM?</title>
+
+    <table-view>
+      <item width="20%">
+        <prompt>Reden overdracht</prompt>
+        <value>?20365?/20372</value>
+      </item>
+      <item>
+        <prompt>Toelichting</prompt>
+        <value>?20365/20373?</value>
+      </item>
+    </table-view>
+
+    <table-view>
+      <item width="20%">
+        <prompt>Bloedverlies</prompt>
+        <value>?20633?</value>
+      </item>
+      <item>
+        <prompt>Actuele bloeddruk</prompt>
+        <value>?10807/10808/10809</value>
+      </item>
+      <item>
+        <prompt>Intra-uteriene vruchtdood</prompt>
+        <value>?80613/80614?</value>
+      </item>
+      <item>
+        <prompt>Taalvaardigheid</prompt>
+        <value>?10401?</value>
+      </item>
+
+    </table-view>
+
+  </section>
+
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+  <section color="grey">
     <title>ANAMNESE</title>
-    
+
     <table-view context="vrouw">
       <item context="anamnese">
         <prompt>Bijzonderheden algemene anamnese</prompt>
@@ -62,8 +107,8 @@
       <item>
         <prompt>Actuele medicatie</prompt>
         <value>{medicatiegebruikq}</value>
-        <value separator="#br">{medicatiegebruik/soort_medicatie}</value>
-        <value><i>?Of is dit alleen een ja/nee veld?</i></value>
+        <!-- Onderstaande gegevens zijn er wel maar staan iet in oorspronkelijke voorbeeld: -->
+        <!--<value separator="#br">{medicatiegebruik/soort_medicatie}</value>-->
       </item>
       <item>
         <prompt>Bloed-transfusie</prompt>
@@ -78,8 +123,8 @@
         <value>{anamnese/psychosociale_anamnese/negatieve_seksuele_ervaringenq}</value>
       </item>
     </table-view>
-    
-    
+
+
   </section>
 
   <!-- <section color="red">

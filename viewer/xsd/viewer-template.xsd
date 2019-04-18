@@ -35,9 +35,20 @@
     <xs:sequence>
       <xs:element name="header">
         <xs:complexType>
-          <xs:choice maxOccurs="unbounded" minOccurs="0">
-            <xs:element name="item" type="ct-item"/>
-            <xs:group ref="g-auto-items"/>
+          <xs:choice>
+            <xs:group ref="g-items-or-auto-items"/>
+            <xs:sequence>
+              <xs:element name="col1">
+                <xs:complexType>
+                  <xs:group ref="g-items-or-auto-items"/>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="col2">
+                <xs:complexType>
+                  <xs:group ref="g-items-or-auto-items"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
           </xs:choice>
           <xs:attributeGroup ref="ag-context"/>
         </xs:complexType>
@@ -76,11 +87,7 @@
               <xs:complexType>
                 <xs:complexContent>
                   <xs:extension base="ct-item">
-                    <xs:attribute name="width" type="xs:string">
-                      <xs:annotation>
-                        <xs:documentation>If set determines the column width</xs:documentation>
-                      </xs:annotation>
-                    </xs:attribute>
+                    <xs:attribute name="width" type="xs:string"/>
                   </xs:extension>
                 </xs:complexContent>
               </xs:complexType>
@@ -102,6 +109,14 @@
           <xs:attributeGroup ref="ag-context"/>
         </xs:complexType>
       </xs:element>
+    </xs:sequence>
+  </xs:group>
+  <xs:group name="g-items-or-auto-items">
+    <xs:sequence>
+      <xs:choice maxOccurs="unbounded" minOccurs="0">
+        <xs:element name="item" type="ct-item"/>
+        <xs:group ref="g-auto-items"/>
+      </xs:choice>
     </xs:sequence>
   </xs:group>
   <xs:complexType name="ct-item">
