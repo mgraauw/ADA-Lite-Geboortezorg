@@ -114,42 +114,58 @@
                            code="01.000"
                            codeSystem="2.16.840.1.113883.2.4.15.111"
                            displayName="Arts"
-                           value="01.000"/>
+                           value="01.000">
+                     <name language="nl-NL">Arts</name>
+                  </concept>
                   <concept localId="2"
                            code="01.015"
                            codeSystem="2.16.840.1.113883.2.4.15.111"
                            displayName="Huisarts"
-                           value="01.015"/>
+                           value="01.015">
+                     <name language="nl-NL">Huisarts</name>
+                  </concept>
                   <concept localId="3"
                            code="01.019"
                            codeSystem="2.16.840.1.113883.2.4.15.111"
                            displayName="Kinderarts"
-                           value="01.019"/>
+                           value="01.019">
+                     <name language="nl-NL">Kinderarts</name>
+                  </concept>
                   <concept localId="4"
                            code="01.020"
                            codeSystem="2.16.840.1.113883.2.4.15.111"
                            displayName="Arts klinische chemie"
-                           value="01.020"/>
+                           value="01.020">
+                     <name language="nl-NL">Arts klinische chemie</name>
+                  </concept>
                   <concept localId="5"
                            code="01.046"
                            codeSystem="2.16.840.1.113883.2.4.15.111"
                            displayName="Gynaecoloog / obstetricus"
-                           value="01.046"/>
+                           value="01.046">
+                     <name language="nl-NL">Gynaecoloog / obstetricus</name>
+                  </concept>
                   <concept localId="6"
                            code="03.000"
                            codeSystem="2.16.840.1.113883.2.4.15.111"
                            displayName="Verloskundige"
-                           value="03.000"/>
+                           value="03.000">
+                     <name language="nl-NL">Verloskundige</name>
+                  </concept>
                   <concept localId="7"
                            code="AA.001"
                            codeSystem="2.16.840.1.113883.2.4.98.111"
                            displayName="Echoscopist"
-                           value="AA.001"/>
+                           value="AA.001">
+                     <name language="nl-NL">Echoscopist</name>
+                  </concept>
                   <concept localId="8"
                            code="AA.002"
                            codeSystem="2.16.840.1.113883.2.4.98.111"
                            displayName="Analist"
-                           value="AA.002"/>
+                           value="AA.002">
+                     <name language="nl-NL">Analist</name>
+                  </concept>
                </conceptList>
             </valueSet>
          </concept>
@@ -454,12 +470,16 @@
                               code="BR"
                               codeSystem="2.16.840.1.113883.5.43"
                               displayName="Geslachtsnaam"
-                              value="BR"/>
+                              value="BR">
+                        <name language="nl-NL">Geslachtsnaam</name>
+                     </concept>
                      <concept localId="2"
                               code="SP"
                               codeSystem="2.16.840.1.113883.5.43"
                               displayName="Geslachtsnaam partner"
-                              value="SP"/>
+                              value="SP">
+                        <name language="nl-NL">Geslachtsnaam partner</name>
+                     </concept>
                   </conceptList>
                </valueSet>
             </concept>
@@ -625,22 +645,30 @@
                            code="129103003"
                            codeSystem="2.16.840.1.113883.6.96"
                            displayName="Endometriosis (disorder)"
-                           value="129103003"/>
+                           value="129103003">
+                     <name language="nl-NL">Endometriose</name>
+                  </concept>
                   <concept localId="2"
                            code="95315005"
                            codeSystem="2.16.840.1.113883.6.96"
                            displayName="Uterine leiomyoma (disorder)"
-                           value="95315005"/>
+                           value="95315005">
+                     <name language="nl-NL">Uterus myomatosus</name>
+                  </concept>
                   <concept localId="3"
                            code="37849005"
                            codeSystem="2.16.840.1.113883.6.96"
                            displayName="Congenital uterine anomaly (disorder)"
-                           value="37849005"/>
+                           value="37849005">
+                     <name language="nl-NL">Uterus anomalie</name>
+                  </concept>
                   <exception localId="4"
                              code="OTH"
                              codeSystem="2.16.840.1.113883.5.1008"
                              displayName="Overig"
-                             value="OTH"/>
+                             value="OTH">
+                     <name language="nl-NL">Overig</name>
+                  </exception>
                </conceptList>
             </valueSet>
          </concept>
@@ -697,32 +725,44 @@
                            code="301775005"
                            codeSystem="2.16.840.1.113883.6.96"
                            displayName="Infection of uterus (disorder)"
-                           value="301775005"/>
+                           value="301775005">
+                     <name language="nl-NL">Intra-uterien</name>
+                  </concept>
                   <concept localId="2"
                            code="307534009"
                            codeSystem="2.16.840.1.113883.6.96"
                            displayName="Urinary tract infection in pregnancy (disorder)"
-                           value="307534009"/>
+                           value="307534009">
+                     <name language="nl-NL">Urineweg infectie</name>
+                  </concept>
                   <concept localId="3"
                            code="45816000"
                            codeSystem="2.16.840.1.113883.6.96"
                            displayName="Pyelonephritis (disorder)"
-                           value="45816000"/>
+                           value="45816000">
+                     <name language="nl-NL">Pyelonefritis</name>
+                  </concept>
                   <concept localId="4"
                            code="186156007"
                            codeSystem="2.16.840.1.113883.6.96"
                            displayName="Infectious colitis, enteritis and gastroenteritis (disorder)"
-                           value="186156007"/>
+                           value="186156007">
+                     <name language="nl-NL">Gastro-enteritis</name>
+                  </concept>
                   <exception localId="5"
                              code="OTH"
                              codeSystem="2.16.840.1.113883.5.1008"
                              displayName="Overig"
-                             value="OTH"/>
+                             value="OTH">
+                     <name language="nl-NL">Overig</name>
+                  </exception>
                   <exception localId="6"
                              code="NI"
                              codeSystem="2.16.840.1.113883.5.1008"
                              displayName="Geen informatie"
-                             value="NI"/>
+                             value="NI">
+                     <name language="nl-NL">Geen informatie</name>
+                  </exception>
                </conceptList>
             </valueSet>
          </concept>
@@ -767,22 +807,30 @@
                            code="48194001"
                            codeSystem="2.16.840.1.113883.6.96"
                            displayName="Pregnancy-induced hypertension (disorder)"
-                           value="48194001"/>
+                           value="48194001">
+                     <name language="nl-NL">Zwangerschapshypertensie</name>
+                  </concept>
                   <concept localId="2"
                            code="398254007"
                            codeSystem="2.16.840.1.113883.6.96"
                            displayName="Pre-eclampsia (disorder)"
-                           value="398254007"/>
+                           value="398254007">
+                     <name language="nl-NL">Preeclampsie</name>
+                  </concept>
                   <concept localId="3"
                            code="95605009"
                            codeSystem="2.16.840.1.113883.6.96"
                            displayName="Hemolysis-elevated liver enzymes-low platelet count syndrome (disorder)"
-                           value="95605009"/>
+                           value="95605009">
+                     <name language="nl-NL">HELPP</name>
+                  </concept>
                   <concept localId="4"
                            code="15938005"
                            codeSystem="2.16.840.1.113883.6.96"
                            displayName="Eclampsia (disorder)"
-                           value="15938005"/>
+                           value="15938005">
+                     <name language="nl-NL">Eclampsie</name>
+                  </concept>
                </conceptList>
             </valueSet>
          </concept>
@@ -841,17 +889,23 @@
                            code="199616008"
                            codeSystem="2.16.840.1.113883.6.96"
                            displayName="Large-for-dates fetus (disorder)"
-                           value="199616008"/>
+                           value="199616008">
+                     <name language="nl-NL">Macrosomie</name>
+                  </concept>
                   <concept localId="2"
                            code="267258002"
                            codeSystem="2.16.840.1.113883.6.96"
                            displayName="Small for gestational age fetus (disorder)"
-                           value="267258002"/>
+                           value="267258002">
+                     <name language="nl-NL">Dysmaturiteit</name>
+                  </concept>
                   <exception localId="3"
                              code="NI"
                              codeSystem="2.16.840.1.113883.5.1008"
                              displayName="Geen informatie"
-                             value="NI"/>
+                             value="NI">
+                     <name language="nl-NL">Geen informatie</name>
+                  </exception>
                </conceptList>
             </valueSet>
          </concept>
@@ -928,57 +982,79 @@
                         code="1"
                         codeSystem="2.16.840.1.113883.2.4.4.13.46"
                         displayName="Partus"
-                        value="1"/>
+                        value="1">
+                  <name language="nl-NL">Partus</name>
+               </concept>
                <concept localId="2"
                         code="2"
                         codeSystem="2.16.840.1.113883.2.4.4.13.46"
                         displayName="Miskraam"
-                        value="2"/>
+                        value="2">
+                  <name language="nl-NL">Miskraam</name>
+               </concept>
                <concept localId="3"
                         code="21"
                         codeSystem="2.16.840.1.113883.2.4.4.13.46"
                         displayName="Spontaan"
-                        value="21"/>
+                        value="21">
+                  <name language="nl-NL">Spontaan</name>
+               </concept>
                <concept localId="4"
                         code="22"
                         codeSystem="2.16.840.1.113883.2.4.4.13.46"
                         displayName="Medicamenteus"
-                        value="22"/>
+                        value="22">
+                  <name language="nl-NL">Medicamenteus</name>
+               </concept>
                <concept localId="5"
                         code="23"
                         codeSystem="2.16.840.1.113883.2.4.4.13.46"
                         displayName="Instrumenteel"
-                        value="23"/>
+                        value="23">
+                  <name language="nl-NL">Instrumenteel</name>
+               </concept>
                <concept localId="6"
                         code="3"
                         codeSystem="2.16.840.1.113883.2.4.4.13.46"
                         displayName="APLA"
-                        value="3"/>
+                        value="3">
+                  <name language="nl-NL">APLA</name>
+               </concept>
                <concept localId="7"
                         code="31"
                         codeSystem="2.16.840.1.113883.2.4.4.13.46"
                         displayName="Medicamenteus"
-                        value="31"/>
+                        value="31">
+                  <name language="nl-NL">Medicamenteus</name>
+               </concept>
                <concept localId="8"
                         code="32"
                         codeSystem="2.16.840.1.113883.2.4.4.13.46"
                         displayName="Instrumenteel"
-                        value="32"/>
+                        value="32">
+                  <name language="nl-NL">Instrumenteel</name>
+               </concept>
                <concept localId="9"
                         code="4"
                         codeSystem="2.16.840.1.113883.2.4.4.13.46"
                         displayName="EUG - behandeld"
-                        value="4"/>
+                        value="4">
+                  <name language="nl-NL">EUG</name>
+               </concept>
                <concept localId="10"
                         code="5"
                         codeSystem="2.16.840.1.113883.2.4.4.13.46"
                         displayName="(partiële) Mola - behandeld"
-                        value="5"/>
+                        value="5">
+                  <name language="nl-NL">(Partiële) Mola</name>
+               </concept>
                <exception localId="11"
                           code="NI"
                           codeSystem="2.16.840.1.113883.5.1008"
                           displayName="geen informatie"
-                          value="NI"/>
+                          value="NI">
+                  <name language="nl-NL">geen informatie</name>
+               </exception>
             </conceptList>
          </valueSet>
       </concept>
@@ -1095,27 +1171,37 @@
                         code="1"
                         codeSystem="2.16.840.1.113883.2.4.3.22.1.2.46"
                         displayName="spontane weeën"
-                        value="1"/>
+                        value="1">
+                  <name language="nl-NL">Spontane weeën</name>
+               </concept>
                <concept localId="2"
                         code="2"
                         codeSystem="2.16.840.1.113883.2.4.3.22.1.2.46"
                         displayName="spontane vliesscheur"
-                        value="2"/>
+                        value="2">
+                  <name language="nl-NL">Spontane vliesscheur</name>
+               </concept>
                <concept localId="3"
                         code="3"
                         codeSystem="2.16.840.1.113883.2.4.3.22.1.2.46"
                         displayName="interventie om baring op gang te brengen"
-                        value="3"/>
+                        value="3">
+                  <name language="nl-NL">Interventie om baring op gang te brengen</name>
+               </concept>
                <exception localId="4"
                           code="UNK"
                           codeSystem="2.16.840.1.113883.5.1008"
                           displayName="onbekend"
-                          value="UNK"/>
+                          value="UNK">
+                  <name language="nl-NL">Onbekend</name>
+               </exception>
                <exception localId="5"
                           code="NI"
                           codeSystem="2.16.840.1.113883.5.1008"
                           displayName="geen informatie"
-                          value="NI"/>
+                          value="NI">
+                  <name language="nl-NL">geen informatie</name>
+               </exception>
             </conceptList>
          </valueSet>
       </concept>
@@ -1159,47 +1245,65 @@
                            code="236960006"
                            codeSystem="2.16.840.1.113883.6.96"
                            displayName="Sweeping of membrane (procedure)"
-                           value="236960006"/>
+                           value="236960006">
+                     <name language="nl-NL">Strippen</name>
+                  </concept>
                   <concept localId="2"
                            code="408818004"
                            codeSystem="2.16.840.1.113883.6.96"
                            displayName="Induction of labour by artificial rupture of membranes (procedure)"
-                           value="408818004"/>
+                           value="408818004">
+                     <name language="nl-NL">Amniotomie</name>
+                  </concept>
                   <concept localId="3"
                            code="425861005"
                            codeSystem="2.16.840.1.113883.6.96"
                            displayName="Cervical ripening with balloon (procedure)"
-                           value="425861005"/>
+                           value="425861005">
+                     <name language="nl-NL">Primen ballon</name>
+                  </concept>
                   <concept localId="4"
                            code="236966000"
                            codeSystem="2.16.840.1.113883.6.96"
                            displayName="Cervical ripening with Prostaglandin E2 (procedure)"
-                           value="236966000"/>
+                           value="236966000">
+                     <name language="nl-NL">Primen prostaglandine</name>
+                  </concept>
                   <concept localId="5"
                            code="177135005"
                            codeSystem="2.16.840.1.113883.6.96"
                            displayName="Oxytocin induction of labour (procedure)"
-                           value="177135005"/>
+                           value="177135005">
+                     <name language="nl-NL">Inleiden oxytocine</name>
+                  </concept>
                   <concept localId="6"
                            code="177136006"
                            codeSystem="2.16.840.1.113883.6.96"
                            displayName="Prostaglandin induction of labour (procedure)"
-                           value="177136006"/>
+                           value="177136006">
+                     <name language="nl-NL">Inleiden prostaglandine</name>
+                  </concept>
                   <concept localId="7"
                            code="177141003"
                            codeSystem="2.16.840.1.113883.6.96"
                            displayName="Elective caesarean section (procedure)"
-                           value="177141003"/>
+                           value="177141003">
+                     <name language="nl-NL">Primaire sectio caesarea</name>
+                  </concept>
                   <exception localId="8"
                              code="OTH"
                              codeSystem="2.16.840.1.113883.5.1008"
                              displayName="Overig"
-                             value="OTH"/>
+                             value="OTH">
+                     <name language="nl-NL">Overig</name>
+                  </exception>
                   <exception localId="9"
                              code="NI"
                              codeSystem="2.16.840.1.113883.5.1008"
                              displayName="Geen informatie"
-                             value="NI"/>
+                             value="NI">
+                     <name language="nl-NL">Geen informatie</name>
+                  </exception>
                </conceptList>
             </valueSet>
          </concept>
@@ -1227,72 +1331,100 @@
                            code="10"
                            codeSystem="2.16.840.1.113883.2.4.3.22.1.2.7"
                            displayName="gevaar moeder"
-                           value="10"/>
+                           value="10">
+                     <name language="nl-NL">gevaar moeder</name>
+                  </concept>
                   <concept localId="2"
                            code="1"
                            codeSystem="2.16.840.1.113883.2.4.3.22.1.2.7"
                            displayName="acuut levensbedreigend"
-                           value="1"/>
+                           value="1">
+                     <name language="nl-NL">acuut levensbedreigend</name>
+                  </concept>
                   <concept localId="3"
                            code="3"
                            codeSystem="2.16.840.1.113883.2.4.3.22.1.2.7"
                            displayName="niet levensbedreigend"
-                           value="3"/>
+                           value="3">
+                     <name language="nl-NL">niet levensbedreigend</name>
+                  </concept>
                   <concept localId="4"
                            code="8"
                            codeSystem="2.16.840.1.113883.2.4.3.22.1.2.7"
                            displayName="onbekend"
-                           value="8"/>
+                           value="8">
+                     <name language="nl-NL">onbekend</name>
+                  </concept>
                   <concept localId="5"
                            code="20"
                            codeSystem="2.16.840.1.113883.2.4.3.22.1.2.7"
                            displayName="gevaar kind"
-                           value="20"/>
+                           value="20">
+                     <name language="nl-NL">gevaar kind</name>
+                  </concept>
                   <concept localId="6"
                            code="2"
                            codeSystem="2.16.840.1.113883.2.4.3.22.1.2.7"
                            displayName="acuut levensbedreigend"
-                           value="2"/>
+                           value="2">
+                     <name language="nl-NL">acuut levensbedreigend</name>
+                  </concept>
                   <concept localId="7"
                            code="4"
                            codeSystem="2.16.840.1.113883.2.4.3.22.1.2.7"
                            displayName="niet levensbedreigend"
-                           value="4"/>
+                           value="4">
+                     <name language="nl-NL">niet levensbedreigend</name>
+                  </concept>
                   <concept localId="8"
                            code="9"
                            codeSystem="2.16.840.1.113883.2.4.3.22.1.2.7"
                            displayName="onbekend"
-                           value="9"/>
+                           value="9">
+                     <name language="nl-NL">onbekend</name>
+                  </concept>
                   <concept localId="9"
                            code="5"
                            codeSystem="2.16.840.1.113883.2.4.3.22.1.2.7"
                            displayName="baring op korte termijn geïndiceerd door zorgverlener"
-                           value="5"/>
+                           value="5">
+                     <name language="nl-NL">baring op korte termijn geïndiceerd door zorgverlener</name>
+                  </concept>
                   <concept localId="10"
                            code="6"
                            codeSystem="2.16.840.1.113883.2.4.3.22.1.2.7"
                            displayName="wens zorgverlener (incl: wetenschappelijk onderzoek)"
-                           value="6"/>
+                           value="6">
+                     <name language="nl-NL">wens zorgverlener (incl: wetenschappelijk onderzoek)</name>
+                  </concept>
                   <concept localId="11"
                            code="7"
                            codeSystem="2.16.840.1.113883.2.4.3.22.1.2.7"
                            displayName="wens patiënt"
-                           value="7"/>
+                           value="7">
+                     <name language="nl-NL">wens patiënt</name>
+                  </concept>
                   <exception localId="12"
                              code="OTH"
                              codeSystem="2.16.840.1.113883.5.1008"
                              displayName="overig"
-                             value="OTH"/>
+                             value="OTH">
+                     <name language="nl-NL">overig</name>
+                  </exception>
                   <exception localId="13"
                              code="UNK"
                              codeSystem="2.16.840.1.113883.5.1008"
                              displayName="onbekend"
-                             value="UNK"/>
+                             value="UNK">
+                     <name language="nl-NL">onbekend</name>
+                  </exception>
                   <exception localId="14"
                              code="NI"
                              codeSystem="2.16.840.1.113883.5.1008"
                              displayName="geen informatie"
-                             value="NI"/>
+                             value="NI">
+                     <name language="nl-NL">geen informatie</name>
+                  </exception>
                </conceptList>
             </valueSet>
          </concept>
@@ -1330,37 +1462,51 @@
                            code="0"
                            codeSystem="2.16.840.1.113883.2.4.4.13.19"
                            displayName="Spontaan"
-                           value="0"/>
+                           value="0">
+                     <name language="nl-NL">Spontaan</name>
+                  </concept>
                   <concept localId="2"
                            code="2"
                            codeSystem="2.16.840.1.113883.2.4.4.13.19"
                            displayName="Controlled cord traction"
-                           value="2"/>
+                           value="2">
+                     <name language="nl-NL">Controlled cord traction</name>
+                  </concept>
                   <concept localId="3"
                            code="3"
                            codeSystem="2.16.840.1.113883.2.4.4.13.19"
                            displayName="Manuele placentaverwijdering"
-                           value="3"/>
+                           value="3">
+                     <name language="nl-NL">Manuele placentaverwijdering</name>
+                  </concept>
                   <concept localId="4"
                            code="4"
                            codeSystem="2.16.840.1.113883.2.4.4.13.19"
                            displayName="Placentaverwijdering bij SC"
-                           value="4"/>
+                           value="4">
+                     <name language="nl-NL">Placentaverwijdering bij SC</name>
+                  </concept>
                   <exception localId="5"
                              code="OTH"
                              codeSystem="2.16.840.1.113883.5.1008"
                              displayName="Overig"
-                             value="OTH"/>
+                             value="OTH">
+                     <name language="nl-NL">Overig</name>
+                  </exception>
                   <exception localId="6"
                              code="NI"
                              codeSystem="2.16.840.1.113883.5.1008"
                              displayName="Geen informatie"
-                             value="NI"/>
+                             value="NI">
+                     <name language="nl-NL">Geen informatie</name>
+                  </exception>
                   <exception localId="7"
                              code="UNK"
                              codeSystem="2.16.840.1.113883.5.1008"
                              displayName="Onbekend"
-                             value="UNK"/>
+                             value="UNK">
+                     <name language="nl-NL">Onbekend</name>
+                  </exception>
                </conceptList>
             </valueSet>
          </concept>
@@ -1402,62 +1548,86 @@
                         code="289854007"
                         codeSystem="2.16.840.1.113883.6.96"
                         displayName="Perineum intact  (finding)"
-                        value="289854007"/>
+                        value="289854007">
+                  <name language="nl-NL">Gaaf</name>
+               </concept>
                <concept localId="2"
                         code="199916005"
                         codeSystem="2.16.840.1.113883.6.96"
                         displayName="First degree perineal tear during delivery - delivered (disorder)"
-                        value="199916005"/>
+                        value="199916005">
+                  <name language="nl-NL">1e graads perineumruptuur</name>
+               </concept>
                <concept localId="3"
                         code="199925004"
                         codeSystem="2.16.840.1.113883.6.96"
                         displayName="Second degree perineal tear during delivery - delivered  (disorder)"
-                        value="199925004"/>
+                        value="199925004">
+                  <name language="nl-NL">2e graads perineumruptuur</name>
+               </concept>
                <concept localId="4"
                         code="199930000"
                         codeSystem="2.16.840.1.113883.6.96"
                         displayName="Third degree perineal tear during delivery - delivered  (disorder)"
-                        value="199930000"/>
+                        value="199930000">
+                  <name language="nl-NL">3e graads ruptuur</name>
+               </concept>
                <concept localId="5"
                         code="449807005"
                         codeSystem="2.16.840.1.113883.6.96"
                         displayName="Type 3a third degree laceration of perineum  (disorder)"
-                        value="449807005"/>
+                        value="449807005">
+                  <name language="nl-NL">3a - sfincterlaesie externum &lt; 50%</name>
+               </concept>
                <concept localId="6"
                         code="449808000"
                         codeSystem="2.16.840.1.113883.6.96"
                         displayName="Type 3b third degree laceration of perineum (disorder)"
-                        value="449808000"/>
+                        value="449808000">
+                  <name language="nl-NL">3b - sfincterlaesie externum ≥ 50%</name>
+               </concept>
                <concept localId="7"
                         code="449809008"
                         codeSystem="2.16.840.1.113883.6.96"
                         displayName="Type 3c third degree laceration of perineum (disorder)"
-                        value="449809008"/>
+                        value="449809008">
+                  <name language="nl-NL">3c - sfincterlaesie externum en internum</name>
+               </concept>
                <concept localId="8"
                         code="199934009"
                         codeSystem="2.16.840.1.113883.6.96"
                         displayName="Fourth degree perineal tear during delivery - delivered  (disorder)"
-                        value="199934009"/>
+                        value="199934009">
+                  <name language="nl-NL">4e graads ruptuur</name>
+               </concept>
                <concept localId="9"
                         code="609344008"
                         codeSystem="2.16.840.1.113883.6.96"
                         displayName="Episiotomy wound  (morphologic abnormality)"
-                        value="609344008"/>
+                        value="609344008">
+                  <name language="nl-NL">Episiotomiewond</name>
+               </concept>
                <exception localId="10"
                           code="OTH"
                           codeSystem="2.16.840.1.113883.5.1008"
                           displayName="Anders"
-                          value="OTH"/>
+                          value="OTH">
+                  <name language="nl-NL">Anders</name>
+               </exception>
                <exception localId="11"
                           code="UNK"
                           codeSystem="2.16.840.1.113883.5.1008"
                           displayName="Onbekend"
-                          value="UNK"/>
+                          value="UNK">
+                  <name language="nl-NL">Onbekend</name>
+               </exception>
                <exception localId="12"
                           code="NI"
                           codeSystem="2.16.840.1.113883.5.1008"
                           displayName="Geen informatie"
-                          value="NI"/>
+                          value="NI">
+                  <name language="nl-NL">Geen informatie</name>
+               </exception>
             </conceptList>
          </valueSet>
       </concept>
@@ -1508,32 +1678,44 @@
                            code="169813005"
                            codeSystem="2.16.840.1.113883.6.96"
                            displayName="Home birth (finding)"
-                           value="169813005"/>
+                           value="169813005">
+                     <name language="nl-NL">Thuis</name>
+                  </concept>
                   <concept localId="2"
                            code="23"
                            codeSystem="2.16.840.1.113883.2.4.3.22.1.8.7"
                            displayName="Geboortecentrum"
-                           value="23"/>
+                           value="23">
+                     <name language="nl-NL">Geboortecentrum</name>
+                  </concept>
                   <concept localId="3"
                            code="22232009"
                            codeSystem="2.16.840.1.113883.6.96"
                            displayName="Hospital (environment)"
-                           value="22232009"/>
+                           value="22232009">
+                     <name language="nl-NL">Ziekenhuis</name>
+                  </concept>
                   <concept localId="4"
                            code="40"
                            codeSystem="2.16.840.1.113883.2.4.3.22.1.8.7"
                            displayName="Onderweg"
-                           value="40"/>
+                           value="40">
+                     <name language="nl-NL">Onderweg</name>
+                  </concept>
                   <exception localId="5"
                              code="UNK"
                              codeSystem="2.16.840.1.113883.5.1008"
                              displayName="Onbekend"
-                             value="UNK"/>
+                             value="UNK">
+                     <name language="nl-NL">Onbekend</name>
+                  </exception>
                   <exception localId="6"
                              code="NI"
                              codeSystem="2.16.840.1.113883.5.1008"
                              displayName="Geen informatie"
-                             value="NI"/>
+                             value="NI">
+                     <name language="nl-NL">Geen informatie</name>
+                  </exception>
                </conceptList>
             </valueSet>
          </concept>
@@ -1699,27 +1881,37 @@
                               code="1"
                               codeSystem="2.16.840.1.113883.2.4.4.13.21"
                               displayName="Mannelijk"
-                              value="1"/>
+                              value="1">
+                        <name language="nl-NL">mannelijk</name>
+                     </concept>
                      <concept localId="2"
                               code="2"
                               codeSystem="2.16.840.1.113883.2.4.4.13.21"
                               displayName="Vrouwelijk"
-                              value="2"/>
+                              value="2">
+                        <name language="nl-NL">vrouwelijk</name>
+                     </concept>
                      <concept localId="3"
                               code="3"
                               codeSystem="2.16.840.1.113883.2.4.4.13.21"
                               displayName="Niet conclusief"
-                              value="3"/>
+                              value="3">
+                        <name language="nl-NL">niet conclusief</name>
+                     </concept>
                      <exception localId="4"
                                 code="UNK"
                                 codeSystem="2.16.840.1.113883.5.1008"
                                 displayName="Onbekend"
-                                value="UNK"/>
+                                value="UNK">
+                        <name language="nl-NL">onbekend</name>
+                     </exception>
                      <exception localId="5"
                                 code="NI"
                                 codeSystem="2.16.840.1.113883.5.1008"
                                 displayName="Geen informatie"
-                                value="NI"/>
+                                value="NI">
+                        <name language="nl-NL">Geen informatie</name>
+                     </exception>
                   </conceptList>
                </valueSet>
             </concept>
@@ -1784,22 +1976,30 @@
                                  code="237361005"
                                  codeSystem="2.16.840.1.113883.6.96"
                                  displayName="Antepartum fetal death (event)"
-                                 value="237361005"/>
+                                 value="237361005">
+                           <name language="nl-NL">Antepartum</name>
+                        </concept>
                         <concept localId="2"
                                  code="237362003"
                                  codeSystem="2.16.840.1.113883.6.96"
                                  displayName="Intrapartum fetal death (event)"
-                                 value="237362003"/>
+                                 value="237362003">
+                           <name language="nl-NL">Durante partu</name>
+                        </concept>
                         <concept localId="3"
                                  code="276506001"
                                  codeSystem="2.16.840.1.113883.6.96"
                                  displayName="Newborn death (event)"
-                                 value="276506001"/>
+                                 value="276506001">
+                           <name language="nl-NL">Postpartum</name>
+                        </concept>
                         <exception localId="4"
                                    code="NI"
                                    codeSystem="2.16.840.1.113883.5.1008"
                                    displayName="Geen informatie"
-                                   value="NI"/>
+                                   value="NI">
+                           <name language="nl-NL">Geen informatie</name>
+                        </exception>
                      </conceptList>
                   </valueSet>
                </concept>
@@ -1841,42 +2041,58 @@
                               code="48782003"
                               codeSystem="2.16.840.1.113883.6.96"
                               displayName="Delivery normal (finding)"
-                              value="48782003"/>
+                              value="48782003">
+                        <name language="nl-NL">Spontaan</name>
+                     </concept>
                      <concept localId="2"
                               code="8561000146109"
                               codeSystem="2.16.840.1.113883.6.96"
                               displayName="Assisted delivery of fetus (finding)"
-                              value="8561000146109"/>
+                              value="8561000146109">
+                        <name language="nl-NL">Vaginale kunstverlossing</name>
+                     </concept>
                      <concept localId="3"
                               code="200146002"
                               codeSystem="2.16.840.1.113883.6.96"
                               displayName="Cesarean delivery - delivered (finding)"
-                              value="200146002"/>
+                              value="200146002">
+                        <name language="nl-NL">Sectio Caesarea</name>
+                     </concept>
                      <concept localId="4"
                               code="200148001"
                               codeSystem="2.16.840.1.113883.6.96"
                               displayName="Delivery by elective cesarean section (finding)"
-                              value="200148001"/>
+                              value="200148001">
+                        <name language="nl-NL">Primair</name>
+                     </concept>
                      <concept localId="5"
                               code="200149009"
                               codeSystem="2.16.840.1.113883.6.96"
                               displayName="Delivery by emergency cesarean section (finding)"
-                              value="200149009"/>
+                              value="200149009">
+                        <name language="nl-NL">Secundair</name>
+                     </concept>
                      <concept localId="6"
                               code="39406005"
                               codeSystem="2.16.840.1.113883.6.96"
                               displayName="Legally induced abortion (disorder)"
-                              value="39406005"/>
+                              value="39406005">
+                        <name language="nl-NL">Termination Of Pregnancy (TOP)</name>
+                     </concept>
                      <exception localId="7"
                                 code="UNK"
                                 codeSystem="2.16.840.1.113883.5.1008"
                                 displayName="onbekend"
-                                value="UNK"/>
+                                value="UNK">
+                        <name language="nl-NL">onbekend</name>
+                     </exception>
                      <exception localId="8"
                                 code="NI"
                                 codeSystem="2.16.840.1.113883.5.1008"
                                 displayName="geen informatie"
-                                value="NI"/>
+                                value="NI">
+                        <name language="nl-NL">geen informatie</name>
+                     </exception>
                   </conceptList>
                </valueSet>
             </concept>
@@ -1955,37 +2171,51 @@
                                  code="302383004"
                                  codeSystem="2.16.840.1.113883.6.96"
                                  displayName="Forceps delivery (procedure)"
-                                 value="302383004"/>
+                                 value="302383004">
+                           <name language="nl-NL">Forceps</name>
+                        </concept>
                         <concept localId="2"
                                  code="61586001"
                                  codeSystem="2.16.840.1.113883.6.96"
                                  displayName="Delivery by vacuum extraction (procedure)"
-                                 value="61586001"/>
+                                 value="61586001">
+                           <name language="nl-NL">Vacuüm</name>
+                        </concept>
                         <concept localId="3"
                                  code="699999008"
                                  codeSystem="2.16.840.1.113883.6.96"
                                  displayName="Obstetrical version with extraction (procedure)"
-                                 value="699999008"/>
+                                 value="699999008">
+                           <name language="nl-NL">Versie en extractie</name>
+                        </concept>
                         <concept localId="4"
                                  code="359940006"
                                  codeSystem="2.16.840.1.113883.6.96"
                                  displayName="Partial breech extraction (procedure)"
-                                 value="359940006"/>
+                                 value="359940006">
+                           <name language="nl-NL">Partiële stuitextractie</name>
+                        </concept>
                         <concept localId="5"
                                  code="416055001"
                                  codeSystem="2.16.840.1.113883.6.96"
                                  displayName="Total breech extraction (procedure)"
-                                 value="416055001"/>
+                                 value="416055001">
+                           <name language="nl-NL">Stuitextractie</name>
+                        </concept>
                         <exception localId="6"
                                    code="OTH"
                                    codeSystem="2.16.840.1.113883.5.1008"
                                    displayName="anders"
-                                   value="OTH"/>
+                                   value="OTH">
+                           <name language="nl-NL">anders</name>
+                        </exception>
                         <exception localId="7"
                                    code="NI"
                                    codeSystem="2.16.840.1.113883.5.1008"
                                    displayName="geen informatie"
-                                   value="NI"/>
+                                   value="NI">
+                           <name language="nl-NL">geen informatie</name>
+                        </exception>
                      </conceptList>
                   </valueSet>
                </concept>
@@ -2027,17 +2257,23 @@
                                  code="2"
                                  codeSystem="2.16.840.1.113883.2.4.3.22.1.3.5"
                                  displayName="Tijdens ontsluiting besloten"
-                                 value="2"/>
+                                 value="2">
+                           <name language="nl-NL">Tijdens ontsluiting besloten</name>
+                        </concept>
                         <concept localId="2"
                                  code="3"
                                  codeSystem="2.16.840.1.113883.2.4.3.22.1.3.5"
                                  displayName="Tijdens uitdrijving besloten"
-                                 value="3"/>
+                                 value="3">
+                           <name language="nl-NL">Tijdens uitdrijving besloten</name>
+                        </concept>
                         <exception localId="3"
                                    code="NI"
                                    codeSystem="2.16.840.1.113883.5.1008"
                                    displayName="Geen informatie"
-                                   value="NI"/>
+                                   value="NI">
+                           <name language="nl-NL">Geen informatie</name>
+                        </exception>
                      </conceptList>
                   </valueSet>
                </concept>
@@ -2065,57 +2301,79 @@
                                  code="312850006:246090004=10217006"
                                  codeSystem="2.16.840.1.113883.6.96"
                                  displayName="History of third degree perineal laceration (situation)"
-                                 value="312850006:246090004=10217006"/>
+                                 value="312850006:246090004=10217006">
+                           <name language="nl-NL">3e graads ruptuur in anamnese</name>
+                        </concept>
                         <concept localId="2"
                                  code="312850006:24609004=399031001"
                                  codeSystem="2.16.840.1.113883.6.96"
                                  displayName="History of fourth degree perineal laceration (situation)"
-                                 value="312850006:24609004=399031001"/>
+                                 value="312850006:24609004=399031001">
+                           <name language="nl-NL">4e graads ruptuur in anamnese</name>
+                        </concept>
                         <concept localId="3"
                                  code="15028002"
                                  codeSystem="2.16.840.1.113883.6.96"
                                  displayName="Abnormal fetal presentation (finding)"
-                                 value="15028002"/>
+                                 value="15028002">
+                           <name language="nl-NL">stuit of liggingsafwijking</name>
+                        </concept>
                         <concept localId="4"
                                  code="237320005"
                                  codeSystem="2.16.840.1.113883.6.96"
                                  displayName="Failure to progress in first stage of labor (finding)"
-                                 value="237320005"/>
+                                 value="237320005">
+                           <name language="nl-NL">niet vorderende ontsluiting</name>
+                        </concept>
                         <concept localId="5"
                                  code="249166003"
                                  codeSystem="2.16.840.1.113883.6.96"
                                  displayName="Failure to progress in second stage of labor (finding)"
-                                 value="249166003"/>
+                                 value="249166003">
+                           <name language="nl-NL">niet vorderende uitdrijving</name>
+                        </concept>
                         <concept localId="6"
                                  code="444433005:246090004=130955003"
                                  codeSystem="2.16.840.1.113883.6.96"
                                  displayName="Suspected fetal distress (situation) "
-                                 value="444433005:246090004=130955003"/>
+                                 value="444433005:246090004=130955003">
+                           <name language="nl-NL">verdenking foetale nood</name>
+                        </concept>
                         <concept localId="7"
                                  code="418138009"
                                  codeSystem="2.16.840.1.113883.6.96"
                                  displayName="Patient condition finding (finding)"
-                                 value="418138009"/>
+                                 value="418138009">
+                           <name language="nl-NL">maternale conditie</name>
+                        </concept>
                         <concept localId="8"
                                  code="408854000"
                                  codeSystem="2.16.840.1.113883.6.96"
                                  displayName="Maternal request for treatment (finding)"
-                                 value="408854000"/>
+                                 value="408854000">
+                           <name language="nl-NL">verzoek moeder</name>
+                        </concept>
                         <concept localId="9"
                                  code="E"
                                  codeSystem="2.16.840.1.113883.2.4.3.22.1.2.55"
                                  displayName="overig, medische reden"
-                                 value="E"/>
+                                 value="E">
+                           <name language="nl-NL">overig, medische reden</name>
+                        </concept>
                         <concept localId="10"
                                  code="F"
                                  codeSystem="2.16.840.1.113883.2.4.3.22.1.2.55"
                                  displayName="overig, niet-medische reden"
-                                 value="F"/>
+                                 value="F">
+                           <name language="nl-NL">overig, niet-medische reden</name>
+                        </concept>
                         <exception localId="11"
                                    code="NI"
                                    codeSystem="2.16.840.1.113883.5.1008"
                                    displayName="geen informatie"
-                                   value="NI"/>
+                                   value="NI">
+                           <name language="nl-NL">geen informatie</name>
+                        </exception>
                      </conceptList>
                   </valueSet>
                </concept>
@@ -2145,22 +2403,30 @@
                               code="32189006"
                               codeSystem="2.16.840.1.113883.6.96"
                               displayName="Pubiotomy (procedure)"
-                              value="32189006"/>
+                              value="32189006">
+                        <name language="nl-NL">Symfysiotomie</name>
+                     </concept>
                      <concept localId="2"
                               code="237008007"
                               codeSystem="2.16.840.1.113883.6.96"
                               displayName="Maneuvers for delivery in shoulder dystocia (procedure)"
-                              value="237008007"/>
+                              value="237008007">
+                        <name language="nl-NL">Opheffen schouderdystocie</name>
+                     </concept>
                      <concept localId="3"
                               code="40792007"
                               codeSystem="2.16.840.1.113883.6.96"
                               displayName="Kristeller maneuver (procedure)"
-                              value="40792007"/>
+                              value="40792007">
+                        <name language="nl-NL">Fundusexpressie</name>
+                     </concept>
                      <exception localId="4"
                                 code="OTH"
                                 codeSystem="2.16.840.1.113883.5.1008"
                                 displayName="overig"
-                                value="OTH"/>
+                                value="OTH">
+                        <name language="nl-NL">Overig</name>
+                     </exception>
                   </conceptList>
                </valueSet>
             </concept>
@@ -2220,37 +2486,51 @@
                                  code="1"
                                  codeSystem="2.16.840.1.113883.2.4.4.13.50"
                                  displayName="&lt; p2,3"
-                                 value="1"/>
+                                 value="1">
+                           <name language="nl-NL">&lt; p2,3</name>
+                        </concept>
                         <concept localId="2"
                                  code="2"
                                  codeSystem="2.16.840.1.113883.2.4.4.13.50"
                                  displayName="p2,3 tot p10"
-                                 value="2"/>
+                                 value="2">
+                           <name language="nl-NL">p2,3 tot p10</name>
+                        </concept>
                         <concept localId="3"
                                  code="3"
                                  codeSystem="2.16.840.1.113883.2.4.4.13.50"
                                  displayName="p10 tot p50"
-                                 value="3"/>
+                                 value="3">
+                           <name language="nl-NL">p10 tot p50</name>
+                        </concept>
                         <concept localId="4"
                                  code="4"
                                  codeSystem="2.16.840.1.113883.2.4.4.13.50"
                                  displayName="p50 tot p90"
-                                 value="4"/>
+                                 value="4">
+                           <name language="nl-NL">p50 tot p90</name>
+                        </concept>
                         <concept localId="5"
                                  code="5"
                                  codeSystem="2.16.840.1.113883.2.4.4.13.50"
                                  displayName="p90 tot p97,7"
-                                 value="5"/>
+                                 value="5">
+                           <name language="nl-NL">p90 tot p97,7</name>
+                        </concept>
                         <concept localId="6"
                                  code="6"
                                  codeSystem="2.16.840.1.113883.2.4.4.13.50"
                                  displayName="&gt;= p97,7"
-                                 value="6"/>
+                                 value="6">
+                           <name language="nl-NL">&gt;= p97,7</name>
+                        </concept>
                         <exception localId="7"
                                    code="NI"
                                    codeSystem="2.16.840.1.113883.5.1008"
                                    displayName="Geen informatie"
-                                   value="NI"/>
+                                   value="NI">
+                           <name language="nl-NL">Geen informatie</name>
+                        </exception>
                      </conceptList>
                   </valueSet>
                </concept>
@@ -2326,457 +2606,639 @@
                                     code="88425004"
                                     codeSystem="2.16.840.1.113883.6.96"
                                     displayName="Congenital anomaly of nervous system (disorder)"
-                                    value="88425004"/>
+                                    value="88425004">
+                              <name language="nl-NL">zenuwstelsel</name>
+                           </concept>
                            <concept localId="2"
                                     code="609417004"
                                     codeSystem="2.16.840.1.113883.6.96"
                                     displayName="Fetal anencephaly (disorder)"
-                                    value="609417004"/>
+                                    value="609417004">
+                              <name language="nl-NL">anencefalie</name>
+                           </concept>
                            <concept localId="3"
                                     code="431265009"
                                     codeSystem="2.16.840.1.113883.6.96"
                                     displayName="Fetal microcephaly (disorder)"
-                                    value="431265009"/>
+                                    value="431265009">
+                              <name language="nl-NL">microcefalie</name>
+                           </concept>
                            <concept localId="4"
                                     code="76916001"
                                     codeSystem="2.16.840.1.113883.6.96"
                                     displayName="Spina bifida occulta (disorder)"
-                                    value="76916001"/>
+                                    value="76916001">
+                              <name language="nl-NL">spina bifida occulta</name>
+                           </concept>
                            <concept localId="5"
                                     code="414667000"
                                     codeSystem="2.16.840.1.113883.6.96"
                                     displayName="Meningomyelocele (disorder)"
-                                    value="414667000"/>
+                                    value="414667000">
+                              <name language="nl-NL">meningomyelokèle</name>
+                           </concept>
                            <concept localId="6"
                                     code="171131006"
                                     codeSystem="2.16.840.1.113883.6.96"
                                     displayName="Meningocele (disorder)"
-                                    value="171131006"/>
+                                    value="171131006">
+                              <name language="nl-NL">meningokèle</name>
+                           </concept>
                            <concept localId="7"
                                     code="47032000"
                                     codeSystem="2.16.840.1.113883.6.96"
                                     displayName="Congenital hydrocephalus (disorder)"
-                                    value="47032000"/>
+                                    value="47032000">
+                              <name language="nl-NL">hydrocefalie</name>
+                           </concept>
                            <concept localId="8"
                                     code="30915001"
                                     codeSystem="2.16.840.1.113883.6.96"
                                     displayName="Holoprosencephaly sequence (disorder)"
-                                    value="30915001"/>
+                                    value="30915001">
+                              <name language="nl-NL">holoprosencefalie zonder defect neurale buis</name>
+                           </concept>
                            <concept localId="9"
                                     code="55999004"
                                     codeSystem="2.16.840.1.113883.6.96"
                                     displayName="Encephalocele (disorder)"
-                                    value="55999004"/>
+                                    value="55999004">
+                              <name language="nl-NL">encefalokèle</name>
+                           </concept>
                            <concept localId="10"
                                     code="363222009"
                                     codeSystem="2.16.840.1.113883.6.96"
                                     displayName="Neonatal neuromuscular disorder (disorder)"
-                                    value="363222009"/>
+                                    value="363222009">
+                              <name language="nl-NL">neuromusculaire afwijkingen</name>
+                           </concept>
                            <concept localId="11"
                                     code="09"
                                     codeSystem="2.16.840.1.113883.2.4.4.13.8"
                                     displayName="overige congenitale afwijkingen zenuwstelsel"
-                                    value="09"/>
+                                    value="09">
+                              <name language="nl-NL">overige congenitale afwijkingen zenuwstelsel</name>
+                           </concept>
                            <concept localId="12"
                                     code="B"
                                     codeSystem="2.16.840.1.113883.2.4.4.13.8"
                                     displayName="zintuigen"
-                                    value="B"/>
+                                    value="B">
+                              <name language="nl-NL">zintuigen</name>
+                           </concept>
                            <concept localId="13"
                                     code="19416009"
                                     codeSystem="2.16.840.1.113883.6.96"
                                     displayName="Congenital anomaly of eye (disorder)"
-                                    value="19416009"/>
+                                    value="19416009">
+                              <name language="nl-NL">ogen</name>
+                           </concept>
                            <concept localId="14"
                                     code="61142002"
                                     codeSystem="2.16.840.1.113883.6.96"
                                     displayName="Microphthalmos (disorder)"
-                                    value="61142002"/>
+                                    value="61142002">
+                              <name language="nl-NL">microphtalmie</name>
+                           </concept>
                            <concept localId="15"
                                     code="11"
                                     codeSystem="2.16.840.1.113883.2.4.4.13.8"
                                     displayName="overige congenitale afwijkingen ogen"
-                                    value="11"/>
+                                    value="11">
+                              <name language="nl-NL">overige congenitale afwijkingen ogen</name>
+                           </concept>
                            <concept localId="16"
                                     code="8380000"
                                     codeSystem="2.16.840.1.113883.6.96"
                                     displayName="Congenital anomaly of ear (disorder)"
-                                    value="8380000"/>
+                                    value="8380000">
+                              <name language="nl-NL">congenitale afwijkingen oren</name>
+                           </concept>
                            <concept localId="17"
                                     code="13"
                                     codeSystem="2.16.840.1.113883.2.4.4.13.8"
                                     displayName="overige congenitale afwijkingen zintuigen"
-                                    value="13"/>
+                                    value="13">
+                              <name language="nl-NL">overige congenitale afwijkingen zintuigen</name>
+                           </concept>
                            <concept localId="18"
                                     code="9904008"
                                     codeSystem="2.16.840.1.113883.6.96"
                                     displayName="Congenital anomaly of cardiovascular system (disorder)"
-                                    value="9904008"/>
+                                    value="9904008">
+                              <name language="nl-NL">hart en bloedvaten</name>
+                           </concept>
                            <concept localId="19"
                                     code="204470001"
                                     codeSystem="2.16.840.1.113883.6.96"
                                     displayName="Single umbilical artery (disorder)"
-                                    value="204470001"/>
+                                    value="204470001">
+                              <name language="nl-NL">ontbreken van 1 navelstrengarterie</name>
+                           </concept>
                            <concept localId="20"
                                     code="204296002"
                                     codeSystem="2.16.840.1.113883.6.96"
                                     displayName="Discordant ventriculoarterial connection (disorder)"
-                                    value="204296002"/>
+                                    value="204296002">
+                              <name language="nl-NL">transpositie v/d grote vaten</name>
+                           </concept>
                            <concept localId="21"
                                     code="86299006"
                                     codeSystem="2.16.840.1.113883.6.96"
                                     displayName="Tetralogy of Fallot (disorder)"
-                                    value="86299006"/>
+                                    value="86299006">
+                              <name language="nl-NL">tetralogie van Fallot</name>
+                           </concept>
                            <concept localId="22"
                                     code="30288003"
                                     codeSystem="2.16.840.1.113883.6.96"
                                     displayName="Ventricular septal defect (disorder)"
-                                    value="30288003"/>
+                                    value="30288003">
+                              <name language="nl-NL">ventrikelseptumdefect</name>
+                           </concept>
                            <concept localId="23"
                                     code="62067003"
                                     codeSystem="2.16.840.1.113883.6.96"
                                     displayName="Hypoplastic left heart syndrome (disorder)"
-                                    value="62067003"/>
+                                    value="62067003">
+                              <name language="nl-NL">hypoplastisch linker hart</name>
+                           </concept>
                            <concept localId="24"
                                     code="7305005"
                                     codeSystem="2.16.840.1.113883.6.96"
                                     displayName="Coarctation of aorta (disorder)"
-                                    value="7305005"/>
+                                    value="7305005">
+                              <name language="nl-NL">coarctatio aortae</name>
+                           </concept>
                            <concept localId="25"
                                     code="4374004"
                                     codeSystem="2.16.840.1.113883.6.96"
                                     displayName="Congenital anomaly of tricuspid valve (disorder)"
-                                    value="4374004"/>
+                                    value="4374004">
+                              <name language="nl-NL">tricuspidalisatresie/stenose</name>
+                           </concept>
                            <concept localId="26"
                                     code="94702005"
                                     codeSystem="2.16.840.1.113883.6.96"
                                     displayName="Multiple congenital cardiac defects (disorder)"
-                                    value="94702005"/>
+                                    value="94702005">
+                              <name language="nl-NL">gecompliceerd vitium</name>
+                           </concept>
                            <concept localId="27"
                                     code="22"
                                     codeSystem="2.16.840.1.113883.2.4.4.13.8"
                                     displayName="overige congenitale afwijking hart en bloedvaten"
-                                    value="22"/>
+                                    value="22">
+                              <name language="nl-NL">overige congenitale afwijking hart en bloedvaten</name>
+                           </concept>
                            <concept localId="28"
                                     code="95470009"
                                     codeSystem="2.16.840.1.113883.6.96"
                                     displayName="Congenital anomaly of digestive tract (disorder)"
-                                    value="95470009"/>
+                                    value="95470009">
+                              <name language="nl-NL">tractus digestivus</name>
+                           </concept>
                            <concept localId="29"
                                     code="80281008"
                                     codeSystem="2.16.840.1.113883.6.96"
                                     displayName="Cleft lip (disorder)"
-                                    value="80281008"/>
+                                    value="80281008">
+                              <name language="nl-NL">lipspleet met of zonder verhemeltespleet</name>
+                           </concept>
                            <concept localId="30"
                                     code="87979003"
                                     codeSystem="2.16.840.1.113883.6.96"
                                     displayName="Cleft palate (disorder)"
-                                    value="87979003"/>
+                                    value="87979003">
+                              <name language="nl-NL">verhemeltespleet zonder lipspleet</name>
+                           </concept>
                            <concept localId="31"
                                     code="69771008"
                                     codeSystem="2.16.840.1.113883.6.96"
                                     displayName="Congenital anomaly of esophagus (disorder)"
-                                    value="69771008"/>
+                                    value="69771008">
+                              <name language="nl-NL">oesofagus atresie/stenose/fistel</name>
+                           </concept>
                            <concept localId="32"
                                     code="84296002"
                                     codeSystem="2.16.840.1.113883.6.96"
                                     displayName="Congenital atresia of small intestine (disorder)"
-                                    value="84296002"/>
+                                    value="84296002">
+                              <name language="nl-NL">atresie dunne darm</name>
+                           </concept>
                            <concept localId="33"
                                     code="204711007"
                                     codeSystem="2.16.840.1.113883.6.96"
                                     displayName="Atresia of large intestine (disorder)"
-                                    value="204711007"/>
+                                    value="204711007">
+                              <name language="nl-NL">atresie dikke darm</name>
+                           </concept>
                            <concept localId="34"
                                     code="204712000"
                                     codeSystem="2.16.840.1.113883.6.96"
                                     displayName="Anal atresia (disorder)"
-                                    value="204712000"/>
+                                    value="204712000">
+                              <name language="nl-NL">atresie anus</name>
+                           </concept>
                            <concept localId="35"
                                     code="204739008"
                                     codeSystem="2.16.840.1.113883.6.96"
                                     displayName="Hirschsprung's disease (disorder)"
-                                    value="204739008"/>
+                                    value="204739008">
+                              <name language="nl-NL">morbus Hirschsprung</name>
+                           </concept>
                            <concept localId="36"
                                     code="29980002"
                                     codeSystem="2.16.840.1.113883.6.96"
                                     displayName="Congenital malrotation of intestine (disorder)"
-                                    value="29980002"/>
+                                    value="29980002">
+                              <name language="nl-NL">malrotatie</name>
+                           </concept>
                            <concept localId="37"
                                     code="9707006"
                                     codeSystem="2.16.840.1.113883.6.96"
                                     displayName="Intestinal volvulus (disorder)"
-                                    value="9707006"/>
+                                    value="9707006">
+                              <name language="nl-NL">volvulus</name>
+                           </concept>
                            <concept localId="38"
                                     code="30"
                                     codeSystem="2.16.840.1.113883.2.4.4.13.8"
                                     displayName="overige congenitale afwijking tractus digestivus"
-                                    value="30"/>
+                                    value="30">
+                              <name language="nl-NL">overige congenitale afwijking tractus digestivus</name>
+                           </concept>
                            <concept localId="39"
                                     code="77868001"
                                     codeSystem="2.16.840.1.113883.6.96"
                                     displayName="Congenital anomaly of respiratory system (disorder)"
-                                    value="77868001"/>
+                                    value="77868001">
+                              <name language="nl-NL">tractus respiratorius</name>
+                           </concept>
                            <concept localId="40"
                                     code="204508009"
                                     codeSystem="2.16.840.1.113883.6.96"
                                     displayName="Choanal atresia (disorder)"
-                                    value="204508009"/>
+                                    value="204508009">
+                              <name language="nl-NL">choanaal atresie</name>
+                           </concept>
                            <concept localId="41"
                                     code="14532008"
                                     codeSystem="2.16.840.1.113883.6.96"
                                     displayName="Congenital anomaly of trachea (disorder)"
-                                    value="14532008"/>
+                                    value="14532008">
+                              <name language="nl-NL">congenitale afwijking trachea</name>
+                           </concept>
                            <concept localId="42"
                                     code="80825009"
                                     codeSystem="2.16.840.1.113883.6.96"
                                     displayName="Congenital hypoplasia of lung (disorder)"
-                                    value="80825009"/>
+                                    value="80825009">
+                              <name language="nl-NL">longhypoplasie</name>
+                           </concept>
                            <concept localId="43"
                                     code="66987001"
                                     codeSystem="2.16.840.1.113883.6.96"
                                     displayName="Congenital lobar emphysema (disorder)"
-                                    value="66987001"/>
+                                    value="66987001">
+                              <name language="nl-NL">congenitaal lobair emfyseem</name>
+                           </concept>
                            <concept localId="44"
                                     code="111318005"
                                     codeSystem="2.16.840.1.113883.6.96"
                                     displayName="Congenital cystic adenomatoid malformation of lung (disorder)"
-                                    value="111318005"/>
+                                    value="111318005">
+                              <name language="nl-NL">congenitale cysteuze adenomatoïde malformatie</name>
+                           </concept>
                            <concept localId="45"
                                     code="79231000"
                                     codeSystem="2.16.840.1.113883.6.96"
                                     displayName="Hydrothorax (disorder)"
-                                    value="79231000"/>
+                                    value="79231000">
+                              <name language="nl-NL">hydrothorax</name>
+                           </concept>
                            <concept localId="46"
                                     code="83035003"
                                     codeSystem="2.16.840.1.113883.6.96"
                                     displayName="Chylothorax (disorder)"
-                                    value="83035003"/>
+                                    value="83035003">
+                              <name language="nl-NL">chylothorax</name>
+                           </concept>
                            <concept localId="47"
                                     code="17190001"
                                     codeSystem="2.16.840.1.113883.6.96"
                                     displayName="Congenital diaphragmatic hernia (disorder)"
-                                    value="17190001"/>
+                                    value="17190001">
+                              <name language="nl-NL">hernia diaphragmatica</name>
+                           </concept>
                            <concept localId="48"
                                     code="21524000"
                                     codeSystem="2.16.840.1.113883.6.96"
                                     displayName="Relaxation of diaphragm (disorder)"
-                                    value="21524000"/>
+                                    value="21524000">
+                              <name language="nl-NL">relaxatie diafragma</name>
+                           </concept>
                            <concept localId="49"
                                     code="38"
                                     codeSystem="2.16.840.1.113883.2.4.4.13.8"
                                     displayName="overige congenitale afwijking tractus respiratorius"
-                                    value="38"/>
+                                    value="38">
+                              <name language="nl-NL">overige congenitale afwijking tractus respiratorius</name>
+                           </concept>
                            <concept localId="50"
                                     code="287085006"
                                     codeSystem="2.16.840.1.113883.6.96"
                                     displayName="Genitourinary congenital anomalies (disorder)"
-                                    value="287085006"/>
+                                    value="287085006">
+                              <name language="nl-NL">tractus urogenitalis</name>
+                           </concept>
                            <concept localId="51"
                                     code="416010008"
                                     codeSystem="2.16.840.1.113883.6.96"
                                     displayName="Hypospadias (disorder)"
-                                    value="416010008"/>
+                                    value="416010008">
+                              <name language="nl-NL">hypospadie</name>
+                           </concept>
                            <concept localId="52"
                                     code="406476007"
                                     codeSystem="2.16.840.1.113883.6.96"
                                     displayName="Epispadias (disorder)"
-                                    value="406476007"/>
+                                    value="406476007">
+                              <name language="nl-NL">epispadie</name>
+                           </concept>
                            <concept localId="53"
                                     code="204878001"
                                     codeSystem="2.16.840.1.113883.6.96"
                                     displayName="Undescended testicle (disorder)"
-                                    value="204878001"/>
+                                    value="204878001">
+                              <name language="nl-NL">cryptorchisme</name>
+                           </concept>
                            <concept localId="54"
                                     code="61758007"
                                     codeSystem="2.16.840.1.113883.6.96"
                                     displayName="Exstrophy of bladder sequence (disorder)"
-                                    value="61758007"/>
+                                    value="61758007">
+                              <name language="nl-NL">exstrophia vesicae</name>
+                           </concept>
                            <concept localId="55"
                                     code="41962002"
                                     codeSystem="2.16.840.1.113883.6.96"
                                     displayName="Oligohydramnios sequence (disorder)"
-                                    value="41962002"/>
+                                    value="41962002">
+                              <name language="nl-NL">dubbelzijdige nieragenesie (Potter)</name>
+                           </concept>
                            <concept localId="56"
                                     code="82525005"
                                     codeSystem="2.16.840.1.113883.6.96"
                                     displayName="Congenital cystic kidney disease (disorder)"
-                                    value="82525005"/>
+                                    value="82525005">
+                              <name language="nl-NL">congenitale cystenier</name>
+                           </concept>
                            <concept localId="57"
                                     code="7163005"
                                     codeSystem="2.16.840.1.113883.6.96"
                                     displayName="Urinary tract obstruction (disorder)"
-                                    value="7163005"/>
+                                    value="7163005">
+                              <name language="nl-NL">obstructieve uropathie</name>
+                           </concept>
                            <concept localId="58"
                                     code="39179006"
                                     codeSystem="2.16.840.1.113883.6.96"
                                     displayName="Disorder of sexual differentiation (disorder)"
-                                    value="39179006"/>
+                                    value="39179006">
+                              <name language="nl-NL">onduidelijk geslacht</name>
+                           </concept>
                            <concept localId="59"
                                     code="69"
                                     codeSystem="2.16.840.1.113883.2.4.4.13.8"
                                     displayName="overige congenitale afwijking tractus urogenitalis"
-                                    value="69"/>
+                                    value="69">
+                              <name language="nl-NL">overige congenitale afwijking tractus urogenitalis</name>
+                           </concept>
                            <concept localId="60"
                                     code="199879009"
                                     codeSystem="2.16.840.1.113883.6.96"
                                     displayName="Congenital anomaly of skin (disorder)"
-                                    value="199879009"/>
+                                    value="199879009">
+                              <name language="nl-NL">huid</name>
+                           </concept>
                            <concept localId="61"
                                     code="93471006"
                                     codeSystem="2.16.840.1.113883.6.96"
                                     displayName="Hemangioma of skin (disorder)"
-                                    value="93471006"/>
+                                    value="93471006">
+                              <name language="nl-NL">hemangioom (&gt; 4 cm2)</name>
+                           </concept>
                            <concept localId="62"
                                     code="398943008"
                                     codeSystem="2.16.840.1.113883.6.96"
                                     displayName="Congenital pigmented melanocytic nevus of skin (disorder)"
-                                    value="398943008"/>
+                                    value="398943008">
+                              <name language="nl-NL">naevus pigmentosus</name>
+                           </concept>
                            <concept localId="63"
                                     code="74"
                                     codeSystem="2.16.840.1.113883.2.4.4.13.8"
                                     displayName="overige congenitale huidafwijking"
-                                    value="74"/>
+                                    value="74">
+                              <name language="nl-NL">overige congenitale huidafwijking</name>
+                           </concept>
                            <concept localId="64"
                                     code="81336004"
                                     codeSystem="2.16.840.1.113883.6.96"
                                     displayName="Congenital anomaly of abdominal wall (disorder)"
-                                    value="81336004"/>
+                                    value="81336004">
+                              <name language="nl-NL">buikwand</name>
+                           </concept>
                            <concept localId="65"
                                     code="72951007"
                                     codeSystem="2.16.840.1.113883.6.96"
                                     displayName="Gastroschisis (disorder)"
-                                    value="72951007"/>
+                                    value="72951007">
+                              <name language="nl-NL">gastroschizis</name>
+                           </concept>
                            <concept localId="66"
                                     code="18735004"
                                     codeSystem="2.16.840.1.113883.6.96"
                                     displayName="Congenital omphalocele (disorder)"
-                                    value="18735004"/>
+                                    value="18735004">
+                              <name language="nl-NL">omfalokèle</name>
+                           </concept>
                            <concept localId="67"
                                     code="396347007"
                                     codeSystem="2.16.840.1.113883.6.96"
                                     displayName="Umbilical hernia (disorder)"
-                                    value="396347007"/>
+                                    value="396347007">
+                              <name language="nl-NL">hernia umbilicalis</name>
+                           </concept>
                            <concept localId="68"
                                     code="429200006"
                                     codeSystem="2.16.840.1.113883.6.96"
                                     displayName="Congenital inguinal hernia (disorder)"
-                                    value="429200006"/>
+                                    value="429200006">
+                              <name language="nl-NL">hernia inguinalis</name>
+                           </concept>
                            <concept localId="69"
                                     code="85"
                                     codeSystem="2.16.840.1.113883.2.4.4.13.8"
                                     displayName="overige congenitale afwijking buikwand"
-                                    value="85"/>
+                                    value="85">
+                              <name language="nl-NL">overige congenitale afwijking buikwand</name>
+                           </concept>
                            <concept localId="70"
                                     code="73573004"
                                     codeSystem="2.16.840.1.113883.6.96"
                                     displayName="Congenital anomaly of musculoskeletal system (disorder)"
-                                    value="73573004"/>
+                                    value="73573004">
+                              <name language="nl-NL">skelet en spierstelsel</name>
+                           </concept>
                            <concept localId="71"
                                     code="367506006"
                                     codeSystem="2.16.840.1.113883.6.96"
                                     displayName="Polydactyly (disorder)"
-                                    value="367506006"/>
+                                    value="367506006">
+                              <name language="nl-NL">polydactylie</name>
+                           </concept>
                            <concept localId="72"
                                     code="373413006"
                                     codeSystem="2.16.840.1.113883.6.96"
                                     displayName="Syndactyly (disorder)"
-                                    value="373413006"/>
+                                    value="373413006">
+                              <name language="nl-NL">syndactylie</name>
+                           </concept>
                            <concept localId="73"
                                     code="302297009"
                                     codeSystem="2.16.840.1.113883.6.96"
                                     displayName="Congenital deformity of foot (disorder)"
-                                    value="302297009"/>
+                                    value="302297009">
+                              <name language="nl-NL">standafwijking voet(en)</name>
+                           </concept>
                            <concept localId="74"
                                     code="45806008"
                                     codeSystem="2.16.840.1.113883.6.96"
                                     displayName="Reduction deformity of upper limb (disorder)"
-                                    value="45806008"/>
+                                    value="45806008">
+                              <name language="nl-NL">reductiedeformiteit armen</name>
+                           </concept>
                            <concept localId="75"
                                     code="77595004"
                                     codeSystem="2.16.840.1.113883.6.96"
                                     displayName="Reduction deformity of lower limb (disorder)"
-                                    value="77595004"/>
+                                    value="77595004">
+                              <name language="nl-NL">reductiedeformiteit benen</name>
+                           </concept>
                            <concept localId="76"
                                     code="96"
                                     codeSystem="2.16.840.1.113883.2.4.4.13.8"
                                     displayName="overige congenitale afwijking extremiteiten"
-                                    value="96"/>
+                                    value="96">
+                              <name language="nl-NL">overige congenitale afwijking extremiteiten</name>
+                           </concept>
                            <concept localId="77"
                                     code="36172001"
                                     codeSystem="2.16.840.1.113883.6.96"
                                     displayName="Congenital subluxation of hip (disorder)"
-                                    value="36172001"/>
+                                    value="36172001">
+                              <name language="nl-NL">congenitale heupluxatie</name>
+                           </concept>
                            <concept localId="78"
                                     code="98"
                                     codeSystem="2.16.840.1.113883.2.4.4.13.8"
                                     displayName="overige congenitale afwijking skelet en spierstelsel"
-                                    value="98"/>
+                                    value="98">
+                              <name language="nl-NL">overige congenitale afwijking skelet en spierstelsel</name>
+                           </concept>
                            <concept localId="79"
                                     code="J"
                                     codeSystem="2.16.840.1.113883.2.4.4.13.8"
                                     displayName="multipele/syndromale congenitale afwijkingen (niet chromosomaal)"
-                                    value="J"/>
+                                    value="J">
+                              <name language="nl-NL">multipele/syndromale congenitale afwijkingen (niet chromosomaal)</name>
+                           </concept>
                            <concept localId="80"
                                     code="276720006"
                                     codeSystem="2.16.840.1.113883.6.96"
                                     displayName="Dysmorphism (disorder)"
-                                    value="276720006"/>
+                                    value="276720006">
+                              <name language="nl-NL">dysmorfie (uitwendig)</name>
+                           </concept>
                            <concept localId="81"
                                     code="43876007"
                                     codeSystem="2.16.840.1.113883.6.96"
                                     displayName="Situs inversus viscerum (disorder)"
-                                    value="43876007"/>
+                                    value="43876007">
+                              <name language="nl-NL">situs inversus</name>
+                           </concept>
                            <concept localId="82"
                                     code="444406006"
                                     codeSystem="2.16.840.1.113883.6.96"
                                     displayName="Multiple congenital anomalies (disorder)"
-                                    value="444406006"/>
+                                    value="444406006">
+                              <name language="nl-NL">multipele afwijkingen, geen syndroom</name>
+                           </concept>
                            <concept localId="83"
                                     code="82354003"
                                     codeSystem="2.16.840.1.113883.6.96"
                                     displayName="Multiple system malformation syndrome (disorder)"
-                                    value="82354003"/>
+                                    value="82354003">
+                              <name language="nl-NL">multipele afwijkingen, wel syndroom</name>
+                           </concept>
                            <concept localId="84"
                                     code="104"
                                     codeSystem="2.16.840.1.113883.2.4.4.13.8"
                                     displayName="overige multipele/syndromale afwijkingen"
-                                    value="104"/>
+                                    value="104">
+                              <name language="nl-NL">overige multipele/syndromale afwijkingen</name>
+                           </concept>
                            <concept localId="85"
                                     code="K"
                                     codeSystem="2.16.840.1.113883.2.4.4.13.8"
                                     displayName="overige congenitale afwijkingen"
-                                    value="K"/>
+                                    value="K">
+                              <name language="nl-NL">overige congenitale afwijkingen</name>
+                           </concept>
                            <concept localId="86"
                                     code="217710005"
                                     codeSystem="2.16.840.1.113883.6.96"
                                     displayName="Congenital iodine deficiency syndrome (disorder)"
-                                    value="217710005"/>
+                                    value="217710005">
+                              <name language="nl-NL">congenitale hypothyreoïdie</name>
+                           </concept>
                            <concept localId="87"
                                     code="86095007"
                                     codeSystem="2.16.840.1.113883.6.96"
                                     displayName="Inborn error of metabolism (disorder)"
-                                    value="86095007"/>
+                                    value="86095007">
+                              <name language="nl-NL">inborn errors</name>
+                           </concept>
                            <concept localId="88"
                                     code="112"
                                     codeSystem="2.16.840.1.113883.2.4.4.13.8"
                                     displayName="andere endocrinologische afwijkingen"
-                                    value="112"/>
+                                    value="112">
+                              <name language="nl-NL">andere endocrinologische afwijkingen</name>
+                           </concept>
                            <concept localId="89"
                                     code="363346000:246454002=255399007"
                                     codeSystem="2.16.840.1.113883.6.96"
                                     displayName="Congenital malignant neoplastic disease (disorder)"
-                                    value="363346000:246454002=255399007"/>
+                                    value="363346000:246454002=255399007">
+                              <name language="nl-NL">congenitale maligniteit</name>
+                           </concept>
                            <exception localId="90"
                                       code="OTH"
                                       codeSystem="2.16.840.1.113883.5.1008"
                                       displayName="overig"
-                                      value="OTH"/>
+                                      value="OTH">
+                              <name language="nl-NL">overige congenitale afwijkingen</name>
+                           </exception>
                            <exception localId="91"
                                       code="NI"
                                       codeSystem="2.16.840.1.113883.5.1008"
                                       displayName="geen informatie"
-                                      value="NI"/>
+                                      value="NI">
+                              <name language="nl-NL">geen informatie</name>
+                           </exception>
                         </conceptList>
                      </valueSet>
                   </concept>
@@ -2830,37 +3292,51 @@
                                     code="41040004"
                                     codeSystem="2.16.840.1.113883.6.96"
                                     displayName="Complete trisomy 21 syndrome (disorder)"
-                                    value="41040004"/>
+                                    value="41040004">
+                              <name language="nl-NL">trisomie 21</name>
+                           </concept>
                            <concept localId="2"
                                     code="51500006"
                                     codeSystem="2.16.840.1.113883.6.96"
                                     displayName="Complete trisomy 18 syndrome (disorder)"
-                                    value="51500006"/>
+                                    value="51500006">
+                              <name language="nl-NL">trisomie 18</name>
+                           </concept>
                            <concept localId="3"
                                     code="21111006"
                                     codeSystem="2.16.840.1.113883.6.96"
                                     displayName="Complete trisomy 13 syndrome (disorder)"
-                                    value="21111006"/>
+                                    value="21111006">
+                              <name language="nl-NL">trisomie 13</name>
+                           </concept>
                            <concept localId="4"
                                     code="7"
                                     codeSystem="2.16.840.1.113883.2.4.4.13.22"
                                     displayName="Andere numerieke chromosomale afwijkingen"
-                                    value="7"/>
+                                    value="7">
+                              <name language="nl-NL">andere numerieke chromosomale afwijkingen</name>
+                           </concept>
                            <exception localId="5"
                                       code="OTH"
                                       codeSystem="2.16.840.1.113883.5.1008"
                                       displayName="Overige chromosomale afwijkingen"
-                                      value="OTH"/>
+                                      value="OTH">
+                              <name language="nl-NL">overige chromosomale afwijkingen</name>
+                           </exception>
                            <exception localId="6"
                                       code="UNK"
                                       codeSystem="2.16.840.1.113883.5.1008"
                                       displayName="Onbekend"
-                                      value="UNK"/>
+                                      value="UNK">
+                              <name language="nl-NL">Onbekend</name>
+                           </exception>
                            <exception localId="7"
                                       code="NI"
                                       codeSystem="2.16.840.1.113883.5.1008"
                                       displayName="Geen informatie"
-                                      value="NI"/>
+                                      value="NI">
+                              <name language="nl-NL">Geen informatie</name>
+                           </exception>
                         </conceptList>
                      </valueSet>
                   </concept>

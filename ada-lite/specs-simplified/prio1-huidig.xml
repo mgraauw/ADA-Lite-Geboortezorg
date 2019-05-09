@@ -159,12 +159,16 @@
                               code="BR"
                               codeSystem="2.16.840.1.113883.5.43"
                               displayName="Geslachtsnaam"
-                              value="BR"/>
+                              value="BR">
+                        <name language="nl-NL">Geslachtsnaam</name>
+                     </concept>
                      <concept localId="2"
                               code="SP"
                               codeSystem="2.16.840.1.113883.5.43"
                               displayName="Geslachtsnaam partner"
-                              value="SP"/>
+                              value="SP">
+                        <name language="nl-NL">Geslachtsnaam partner</name>
+                     </concept>
                   </conceptList>
                </valueSet>
             </concept>
@@ -237,32 +241,44 @@
                         code="112144000"
                         codeSystem="2.16.840.1.113883.6.96"
                         displayName="Blood group A (finding)"
-                        value="112144000"/>
+                        value="112144000">
+                  <name language="nl-NL">A</name>
+               </concept>
                <concept localId="2"
                         code="112149005"
                         codeSystem="2.16.840.1.113883.6.96"
                         displayName="Blood group B (finding)"
-                        value="112149005"/>
+                        value="112149005">
+                  <name language="nl-NL">B</name>
+               </concept>
                <concept localId="3"
                         code="165743006"
                         codeSystem="2.16.840.1.113883.6.96"
                         displayName="Blood group AB (finding)"
-                        value="165743006"/>
+                        value="165743006">
+                  <name language="nl-NL">AB</name>
+               </concept>
                <concept localId="4"
                         code="58460004"
                         codeSystem="2.16.840.1.113883.6.96"
                         displayName="Blood group O (finding)"
-                        value="58460004"/>
+                        value="58460004">
+                  <name language="nl-NL">0</name>
+               </concept>
                <exception localId="5"
                           code="UNK"
                           codeSystem="2.16.840.1.113883.5.1008"
                           displayName="Onbekend"
-                          value="UNK"/>
+                          value="UNK">
+                  <name language="nl-NL">Onbekend</name>
+               </exception>
                <exception localId="6"
                           code="NI"
                           codeSystem="2.16.840.1.113883.5.1008"
                           displayName="Geen informatie"
-                          value="NI"/>
+                          value="NI">
+                  <name language="nl-NL">Geen informatie</name>
+               </exception>
             </conceptList>
          </valueSet>
       </concept>
@@ -289,22 +305,30 @@
                         code="165747007"
                         codeSystem="2.16.840.1.113883.6.96"
                         displayName="Rh D Positief"
-                        value="165747007"/>
+                        value="165747007">
+                  <name language="nl-NL">Rh D Positief</name>
+               </concept>
                <concept localId="2"
                         code="165746003"
                         codeSystem="2.16.840.1.113883.6.96"
                         displayName="Rh D Negatief"
-                        value="165746003"/>
+                        value="165746003">
+                  <name language="nl-NL">Rh D Negatief</name>
+               </concept>
                <exception localId="3"
                           code="UNK"
                           codeSystem="2.16.840.1.113883.5.1008"
                           displayName="onbekend"
-                          value="UNK"/>
+                          value="UNK">
+                  <name language="nl-NL">onbekend</name>
+               </exception>
                <exception localId="4"
                           code="NI"
                           codeSystem="2.16.840.1.113883.5.1008"
                           displayName="geen informatie"
-                          value="NI"/>
+                          value="NI">
+                  <name language="nl-NL">geen informatie</name>
+               </exception>
             </conceptList>
          </valueSet>
       </concept>
@@ -336,17 +360,23 @@
                         code="733120009"
                         codeSystem="2.16.840.1.113883.6.96"
                         displayName="Rhc positive (finding)"
-                        value="733120009"/>
+                        value="733120009">
+                  <name language="nl-NL">Rh c Positief</name>
+               </concept>
                <concept localId="2"
                         code="733119003"
                         codeSystem="2.16.840.1.113883.6.96"
                         displayName="Rhc negative (finding)"
-                        value="733119003"/>
+                        value="733119003">
+                  <name language="nl-NL">Rh c Negatief</name>
+               </concept>
                <exception localId="3"
                           code="NI"
                           codeSystem="2.16.840.1.113883.5.1008"
                           displayName="Geen informatie"
-                          value="NI"/>
+                          value="NI">
+                  <name language="nl-NL">Geen informatie</name>
+               </exception>
             </conceptList>
          </valueSet>
       </concept>
