@@ -71,8 +71,8 @@
       </head>
       <body>
         <h1>{ $page-title }</h1>
-        <p>Oude dataset: <code>{ bc-alg:dref-alg-path(/*/@dref-older) }</code></p>
-        <p>Nieuwe dataset: <code>{ bc-alg:dref-alg-path(/*/@dref-newer) }</code></p>
+          <p>Oude dataset: <a href="{ bc-alg:dref-alg-path(/*/@dref-older) }">{/*/meta/older/@shortName/string()}</a></p>
+          <p>Nieuwe dataset: <a href="{ bc-alg:dref-alg-path(/*/@dref-newer) }">{/*/meta/newer/@shortName/string()}</a></p>
         <xsl:if test="$do-add-timestamp and (exists(/*/@timestamp))">
           <p>Tijdstip vergelijking: { replace(substring(/*/@timestamp, 1, 19), 'T', ' ') }</p>
         </xsl:if>

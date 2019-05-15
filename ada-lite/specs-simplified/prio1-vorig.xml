@@ -159,12 +159,16 @@
                               code="BR"
                               codeSystem="2.16.840.1.113883.5.43"
                               displayName="Geslachtsnaam"
-                              value="BR"/>
+                              value="BR">
+                        <name language="nl-NL">Geslachtsnaam</name>
+                     </concept>
                      <concept localId="2"
                               code="SP"
                               codeSystem="2.16.840.1.113883.5.43"
                               displayName="Geslachtsnaam partner"
-                              value="SP"/>
+                              value="SP">
+                        <name language="nl-NL">Geslachtsnaam partner</name>
+                     </concept>
                   </conceptList>
                </valueSet>
             </concept>
@@ -299,57 +303,79 @@
                         code="1"
                         codeSystem="2.16.840.1.113883.2.4.4.13.46"
                         displayName="Partus"
-                        value="1"/>
+                        value="1">
+                  <name language="nl-NL">Partus</name>
+               </concept>
                <concept localId="2"
                         code="2"
                         codeSystem="2.16.840.1.113883.2.4.4.13.46"
                         displayName="Miskraam"
-                        value="2"/>
+                        value="2">
+                  <name language="nl-NL">Miskraam</name>
+               </concept>
                <concept localId="3"
                         code="21"
                         codeSystem="2.16.840.1.113883.2.4.4.13.46"
                         displayName="Spontaan"
-                        value="21"/>
+                        value="21">
+                  <name language="nl-NL">Spontaan</name>
+               </concept>
                <concept localId="4"
                         code="22"
                         codeSystem="2.16.840.1.113883.2.4.4.13.46"
                         displayName="Medicamenteus"
-                        value="22"/>
+                        value="22">
+                  <name language="nl-NL">Medicamenteus</name>
+               </concept>
                <concept localId="5"
                         code="23"
                         codeSystem="2.16.840.1.113883.2.4.4.13.46"
                         displayName="Instrumenteel"
-                        value="23"/>
+                        value="23">
+                  <name language="nl-NL">Instrumenteel</name>
+               </concept>
                <concept localId="6"
                         code="3"
                         codeSystem="2.16.840.1.113883.2.4.4.13.46"
                         displayName="APLA"
-                        value="3"/>
+                        value="3">
+                  <name language="nl-NL">APLA</name>
+               </concept>
                <concept localId="7"
                         code="31"
                         codeSystem="2.16.840.1.113883.2.4.4.13.46"
                         displayName="Medicamenteus"
-                        value="31"/>
+                        value="31">
+                  <name language="nl-NL">Medicamenteus</name>
+               </concept>
                <concept localId="8"
                         code="32"
                         codeSystem="2.16.840.1.113883.2.4.4.13.46"
                         displayName="Instrumenteel"
-                        value="32"/>
+                        value="32">
+                  <name language="nl-NL">Instrumenteel</name>
+               </concept>
                <concept localId="9"
                         code="4"
                         codeSystem="2.16.840.1.113883.2.4.4.13.46"
                         displayName="EUG - behandeld"
-                        value="4"/>
+                        value="4">
+                  <name language="nl-NL">EUG</name>
+               </concept>
                <concept localId="10"
                         code="5"
                         codeSystem="2.16.840.1.113883.2.4.4.13.46"
                         displayName="(partiële) Mola - behandeld"
-                        value="5"/>
+                        value="5">
+                  <name language="nl-NL">(Partiële) Mola</name>
+               </concept>
                <exception localId="11"
                           code="NI"
                           codeSystem="2.16.840.1.113883.5.1008"
                           displayName="geen informatie"
-                          value="NI"/>
+                          value="NI">
+                  <name language="nl-NL">geen informatie</name>
+               </exception>
             </conceptList>
          </valueSet>
       </concept>
@@ -448,62 +474,86 @@
                         code="289854007"
                         codeSystem="2.16.840.1.113883.6.96"
                         displayName="Perineum intact  (finding)"
-                        value="289854007"/>
+                        value="289854007">
+                  <name language="nl-NL">Gaaf</name>
+               </concept>
                <concept localId="2"
                         code="199916005"
                         codeSystem="2.16.840.1.113883.6.96"
                         displayName="First degree perineal tear during delivery - delivered (disorder)"
-                        value="199916005"/>
+                        value="199916005">
+                  <name language="nl-NL">1e graads perineumruptuur</name>
+               </concept>
                <concept localId="3"
                         code="199925004"
                         codeSystem="2.16.840.1.113883.6.96"
                         displayName="Second degree perineal tear during delivery - delivered  (disorder)"
-                        value="199925004"/>
+                        value="199925004">
+                  <name language="nl-NL">2e graads perineumruptuur</name>
+               </concept>
                <concept localId="4"
                         code="199930000"
                         codeSystem="2.16.840.1.113883.6.96"
                         displayName="Third degree perineal tear during delivery - delivered  (disorder)"
-                        value="199930000"/>
+                        value="199930000">
+                  <name language="nl-NL">3e graads ruptuur</name>
+               </concept>
                <concept localId="5"
                         code="449807005"
                         codeSystem="2.16.840.1.113883.6.96"
                         displayName="Type 3a third degree laceration of perineum  (disorder)"
-                        value="449807005"/>
+                        value="449807005">
+                  <name language="nl-NL">3a - sfincterlaesie externum &lt; 50%</name>
+               </concept>
                <concept localId="6"
                         code="449808000"
                         codeSystem="2.16.840.1.113883.6.96"
                         displayName="Type 3b third degree laceration of perineum (disorder)"
-                        value="449808000"/>
+                        value="449808000">
+                  <name language="nl-NL">3b - sfincterlaesie externum ≥ 50%</name>
+               </concept>
                <concept localId="7"
                         code="449809008"
                         codeSystem="2.16.840.1.113883.6.96"
                         displayName="Type 3c third degree laceration of perineum (disorder)"
-                        value="449809008"/>
+                        value="449809008">
+                  <name language="nl-NL">3c - sfincterlaesie externum en internum</name>
+               </concept>
                <concept localId="8"
                         code="199934009"
                         codeSystem="2.16.840.1.113883.6.96"
                         displayName="Fourth degree perineal tear during delivery - delivered  (disorder)"
-                        value="199934009"/>
+                        value="199934009">
+                  <name language="nl-NL">4e graads ruptuur</name>
+               </concept>
                <concept localId="9"
                         code="609344008"
                         codeSystem="2.16.840.1.113883.6.96"
                         displayName="Episiotomy wound  (morphologic abnormality)"
-                        value="609344008"/>
+                        value="609344008">
+                  <name language="nl-NL">Episiotomiewond</name>
+               </concept>
                <exception localId="10"
                           code="OTH"
                           codeSystem="2.16.840.1.113883.5.1008"
                           displayName="Anders"
-                          value="OTH"/>
+                          value="OTH">
+                  <name language="nl-NL">Anders</name>
+               </exception>
                <exception localId="11"
                           code="UNK"
                           codeSystem="2.16.840.1.113883.5.1008"
                           displayName="Onbekend"
-                          value="UNK"/>
+                          value="UNK">
+                  <name language="nl-NL">Onbekend</name>
+               </exception>
                <exception localId="12"
                           code="NI"
                           codeSystem="2.16.840.1.113883.5.1008"
                           displayName="Geen informatie"
-                          value="NI"/>
+                          value="NI">
+                  <name language="nl-NL">Geen informatie</name>
+               </exception>
             </conceptList>
          </valueSet>
       </concept>
@@ -578,42 +628,58 @@
                               code="48782003"
                               codeSystem="2.16.840.1.113883.6.96"
                               displayName="Delivery normal (finding)"
-                              value="48782003"/>
+                              value="48782003">
+                        <name language="nl-NL">Spontaan</name>
+                     </concept>
                      <concept localId="2"
                               code="8561000146109"
                               codeSystem="2.16.840.1.113883.6.96"
                               displayName="Assisted delivery of fetus (finding)"
-                              value="8561000146109"/>
+                              value="8561000146109">
+                        <name language="nl-NL">Vaginale kunstverlossing</name>
+                     </concept>
                      <concept localId="3"
                               code="200146002"
                               codeSystem="2.16.840.1.113883.6.96"
                               displayName="Cesarean delivery - delivered (finding)"
-                              value="200146002"/>
+                              value="200146002">
+                        <name language="nl-NL">Sectio Caesarea</name>
+                     </concept>
                      <concept localId="4"
                               code="200148001"
                               codeSystem="2.16.840.1.113883.6.96"
                               displayName="Delivery by elective cesarean section (finding)"
-                              value="200148001"/>
+                              value="200148001">
+                        <name language="nl-NL">Primair</name>
+                     </concept>
                      <concept localId="5"
                               code="200149009"
                               codeSystem="2.16.840.1.113883.6.96"
                               displayName="Delivery by emergency cesarean section (finding)"
-                              value="200149009"/>
+                              value="200149009">
+                        <name language="nl-NL">Secundair</name>
+                     </concept>
                      <concept localId="6"
                               code="39406005"
                               codeSystem="2.16.840.1.113883.6.96"
                               displayName="Legally induced abortion (disorder)"
-                              value="39406005"/>
+                              value="39406005">
+                        <name language="nl-NL">Termination Of Pregnancy (TOP)</name>
+                     </concept>
                      <exception localId="7"
                                 code="UNK"
                                 codeSystem="2.16.840.1.113883.5.1008"
                                 displayName="onbekend"
-                                value="UNK"/>
+                                value="UNK">
+                        <name language="nl-NL">onbekend</name>
+                     </exception>
                      <exception localId="8"
                                 code="NI"
                                 codeSystem="2.16.840.1.113883.5.1008"
                                 displayName="geen informatie"
-                                value="NI"/>
+                                value="NI">
+                        <name language="nl-NL">geen informatie</name>
+                     </exception>
                   </conceptList>
                </valueSet>
             </concept>
@@ -692,37 +758,51 @@
                                  code="302383004"
                                  codeSystem="2.16.840.1.113883.6.96"
                                  displayName="Forceps delivery (procedure)"
-                                 value="302383004"/>
+                                 value="302383004">
+                           <name language="nl-NL">Forceps</name>
+                        </concept>
                         <concept localId="2"
                                  code="61586001"
                                  codeSystem="2.16.840.1.113883.6.96"
                                  displayName="Delivery by vacuum extraction (procedure)"
-                                 value="61586001"/>
+                                 value="61586001">
+                           <name language="nl-NL">Vacuüm</name>
+                        </concept>
                         <concept localId="3"
                                  code="699999008"
                                  codeSystem="2.16.840.1.113883.6.96"
                                  displayName="Obstetrical version with extraction (procedure)"
-                                 value="699999008"/>
+                                 value="699999008">
+                           <name language="nl-NL">Versie en extractie</name>
+                        </concept>
                         <concept localId="4"
                                  code="359940006"
                                  codeSystem="2.16.840.1.113883.6.96"
                                  displayName="Partial breech extraction (procedure)"
-                                 value="359940006"/>
+                                 value="359940006">
+                           <name language="nl-NL">Partiële stuitextractie</name>
+                        </concept>
                         <concept localId="5"
                                  code="416055001"
                                  codeSystem="2.16.840.1.113883.6.96"
                                  displayName="Total breech extraction (procedure)"
-                                 value="416055001"/>
+                                 value="416055001">
+                           <name language="nl-NL">Stuitextractie</name>
+                        </concept>
                         <exception localId="6"
                                    code="OTH"
                                    codeSystem="2.16.840.1.113883.5.1008"
                                    displayName="anders"
-                                   value="OTH"/>
+                                   value="OTH">
+                           <name language="nl-NL">anders</name>
+                        </exception>
                         <exception localId="7"
                                    code="NI"
                                    codeSystem="2.16.840.1.113883.5.1008"
                                    displayName="geen informatie"
-                                   value="NI"/>
+                                   value="NI">
+                           <name language="nl-NL">geen informatie</name>
+                        </exception>
                      </conceptList>
                   </valueSet>
                </concept>
