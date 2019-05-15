@@ -64,7 +64,19 @@
       <xsl:if test="$do-add-timestamp">
         <xsl:attribute name="timestamp" select="current-dateTime()"/>
       </xsl:if>
-      <xsl:call-template name="compare-child-concepts">
+        <meta>
+            <older>
+                <xsl:copy-of select="$root-older-version/@shortName"/>
+                <xsl:copy-of select="$root-older-version/@id"/>
+                <xsl:copy-of select="$root-older-version/@effectiveDate"/>
+            </older>
+            <newer>
+                <xsl:copy-of select="$root-newer-version/@shortName"/>
+                <xsl:copy-of select="$root-newer-version/@id"/>
+                <xsl:copy-of select="$root-newer-version/@effectiveDate"/>
+            </newer>
+        </meta>      
+        <xsl:call-template name="compare-child-concepts">
         <xsl:with-param name="parent-elm-older" select="$root-older-version"/>
         <xsl:with-param name="parent-elm-newer" select="$root-newer-version"/>
       </xsl:call-template>

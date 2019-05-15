@@ -7588,7 +7588,7 @@ SOFTWARE.
                     type="t-id"
                     use="optional"
                     fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10040"/>
-      <xs:attribute name="value" use="required" type="xs:string"/>
+      <xs:attribute name="value" use="required" type="t-datetime"/>
    </xs:complexType>
    <xs:complexType name="adres">
       <xs:sequence>
@@ -10465,7 +10465,7 @@ SOFTWARE.
                     type="t-id"
                     use="optional"
                     fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82337"/>
-      <xs:attribute name="value" use="required" type="xs:string"/>
+      <xs:attribute name="value" use="required" type="t-datetime"/>
    </xs:complexType>
    <xs:complexType name="diagnose_82314">
       <xs:sequence>
@@ -11791,7 +11791,7 @@ SOFTWARE.
                     type="t-id"
                     use="optional"
                     fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82160"/>
-      <xs:attribute name="value" use="required" type="xs:string"/>
+      <xs:attribute name="value" use="required" type="t-datetime"/>
    </xs:complexType>
    <xs:complexType name="voornemens">
       <xs:sequence>
@@ -20571,7 +20571,7 @@ SOFTWARE.
                     type="t-id"
                     use="optional"
                     fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.70011"/>
-      <xs:attribute name="value" use="required" type="xs:string"/>
+      <xs:attribute name="value" use="required" type="t-datetime"/>
    </xs:complexType>
    <xs:complexType name="substantie_voeding_kind">
       <xs:attribute name="conceptId"

@@ -82,6 +82,7 @@
           <xsl:copy>
             <xsl:copy-of select="(@localId, @code, @codeSystem, @displayName)"/>
             <xsl:attribute name="value" select="@code"/>
+            <xsl:copy-of select="name"/>
           </xsl:copy>
         </xsl:for-each>
       </conceptList>

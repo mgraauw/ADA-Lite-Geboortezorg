@@ -425,6 +425,7 @@ SOFTWARE.
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10040')">Foutieve informatie voor "Geboortedatum": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10040" [/voorgaande_zwangerschap_samenvatting_22/vrouw/geboortedatum/@conceptId]</assert>
          <!-- == Attribute "value": == -->
          <assert test="exists(@value)">Foutieve informatie voor "Geboortedatum": Attribuut "value" ontbreekt [/voorgaande_zwangerschap_samenvatting_22/vrouw/geboortedatum/@value]</assert>
+         <assert test="empty(@value) or ((@value castable as xs:date) or (@value castable as xs:dateTime))">Foutieve informatie voor "Geboortedatum": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/voorgaande_zwangerschap_samenvatting_22/vrouw/geboortedatum/@value; type=t-datetime]</assert>
          <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Geboortedatum": Ongeldige attributen aangetroffen [/voorgaande_zwangerschap_samenvatting_22/vrouw/geboortedatum; allowed=(@conceptId, @value, @xsi:*)]</assert>
       </rule>
    </pattern>
@@ -594,6 +595,7 @@ SOFTWARE.
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82160')">Foutieve informatie voor "Definitieve à terme datum": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82160" [/voorgaande_zwangerschap_samenvatting_22/zwangerschap/definitieve_a_terme_datum/@conceptId]</assert>
          <!-- == Attribute "value": == -->
          <assert test="exists(@value)">Foutieve informatie voor "Definitieve à terme datum": Attribuut "value" ontbreekt [/voorgaande_zwangerschap_samenvatting_22/zwangerschap/definitieve_a_terme_datum/@value]</assert>
+         <assert test="empty(@value) or ((@value castable as xs:date) or (@value castable as xs:dateTime))">Foutieve informatie voor "Definitieve à terme datum": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/voorgaande_zwangerschap_samenvatting_22/zwangerschap/definitieve_a_terme_datum/@value; type=t-datetime]</assert>
          <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Definitieve à terme datum": Ongeldige attributen aangetroffen [/voorgaande_zwangerschap_samenvatting_22/zwangerschap/definitieve_a_terme_datum; allowed=(@conceptId, @value, @xsi:*)]</assert>
       </rule>
    </pattern>
