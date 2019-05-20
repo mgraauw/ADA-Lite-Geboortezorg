@@ -239,7 +239,7 @@
       </xsl:for-each>
 
       <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-      <!-- DOcumentation and GitHub pages: -->
+      <!-- Documentation and GitHub pages: -->
 
       <xsl:variable name="dref-sitegen" as="xs:string" select="xtlc:dref-canonical(resolve-uri('../data/sitegen.xml', static-base-uri()))"/>
       <xsl:if test="not(doc-available($dref-sitegen))">
@@ -258,6 +258,10 @@
       <xsl:for-each select="$difflist-root/diff[@newer][@older][@output]">
         <xsl:call-template name="generate-action-copy-file">
           <xsl:with-param name="file-source" select="xtlc:dref-concat(($dir-build-diffs, @output || '.html'))"/>
+          <xsl:with-param name="dir-target" select="xtlc:dref-concat(($dir-docs-main, 'diffs'))"/>
+        </xsl:call-template>
+        <xsl:call-template name="generate-action-copy-file">
+          <xsl:with-param name="file-source" select="xtlc:dref-concat(($dir-build-diffs, @output || '.limited.html'))"/>
           <xsl:with-param name="dir-target" select="xtlc:dref-concat(($dir-docs-main, 'diffs'))"/>
         </xsl:call-template>
       </xsl:for-each>
