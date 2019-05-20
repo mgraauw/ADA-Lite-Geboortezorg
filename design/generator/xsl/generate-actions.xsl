@@ -225,10 +225,17 @@
         <xsl:sequence select="error((), 'Could not find the difflist xml ' || xtlc:q($dref-difflist))"/>
       </xsl:if>
       <xsl:variable name="difflist-root" as="element(difflist)" select="doc($dref-difflist)/*"/>
+      <!-- Full diffs: -->
       <xsl:for-each select="$difflist-root/diff[@newer][@older][@output]">
         <specification-diff older="{xtlc:dref-concat(($dir-source-specs-full, @older))}" newer="{xtlc:dref-concat(($dir-source-specs-full, @newer))}"
           html-out="{xtlc:dref-concat(($dir-build-diffs, @output || '.html'))}" xml-out="{xtlc:dref-concat(($dir-build-diffs, @output || '.xml'))}"
-          description="{@description}"/>
+          description="{@description}" limited="false"/>
+      </xsl:for-each>
+      <!-- Limited diffs: -->
+      <xsl:for-each select="$difflist-root/diff[@newer][@older][@output]">
+        <specification-diff older="{xtlc:dref-concat(($dir-source-specs-full, @older))}" newer="{xtlc:dref-concat(($dir-source-specs-full, @newer))}"
+          html-out="{xtlc:dref-concat(($dir-build-diffs, @output || '.limited.html'))}" xml-out="{xtlc:dref-concat(($dir-build-diffs, @output || '.xml'))}"
+          description="{@description}" limited="true"/>
       </xsl:for-each>
 
       <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->

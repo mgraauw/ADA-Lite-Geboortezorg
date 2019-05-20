@@ -50,7 +50,7 @@
   <xsl:param name="add-timestamp" as="xs:string" required="false" select="string(true())"/>
   <xsl:variable name="do-add-timestamp" as="xs:boolean" select="xs:boolean($add-timestamp)"/>
 
-  <xsl:param name="limited-view" as="xs:string" required="no" select="'true'"/>
+  <xsl:param name="limited-view" as="xs:string" required="no" select="'false'"/>
   <xsl:variable name="full-view" as="xs:boolean" select="not(xs:boolean($limited-view))"/>
 
   <!-- ================================================================== -->
