@@ -71,8 +71,8 @@
         <xsl:with-param name="link" select="'diffs/' || @output || '.html'"/>
       </xsl:call-template>
       <xsl:call-template name="create-link-entry">
-        <xsl:with-param name="name" select="(@description, @output)[1]  || ' (beperkt)'"/>
-        <xsl:with-param name="link" select="'diffs/' || @output || '.limited.html'"/>
+        <xsl:with-param name="name" select="(@description, @output)[1]  || ' (vereenvoudigd)'"/>
+        <xsl:with-param name="link" select="'diffs/' || @output || '-limited.html'"/>
       </xsl:call-template>
     </xsl:for-each>
   </xsl:variable>
