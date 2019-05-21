@@ -1,0 +1,93 @@
+<zwangerschapsecho transactionRef="2.16.840.1.113883.2.4.3.11.60.90.77.4.2480">
+  <!-- == Generated empty ADA Lite document for zwangerschapsecho == -->
+  <!-- == Source: hl7-v2-conversion/data/spec-zwangerschapsecho-draft.xml == -->
+  <!-- == Generator: design/xsl/ada-rtd2example-empty.xsl == -->
+  <!-- == IMPORTANT REMARK: When elements in have both a value and an enum attribute, use only one of them, not both! == -->
+  <zorgverlening>
+    <verwijsdetails>
+      <verwijzing_van>
+        <zorginstelling>
+          <zorgaanbieder_identificatie_nummer value=""/>
+        </zorginstelling>
+      </verwijzing_van>
+    </verwijsdetails>
+  </zorgverlening>
+  <zorgverlenerzorginstelling>
+    <zorgverlener>
+      <zorgverlener_agbid value=""/>
+      <naam_zorgverlener value=""/>
+    </zorgverlener>
+    <zorginstelling>
+      <naam_zorginstelling value=""/>
+    </zorginstelling>
+  </zorgverlenerzorginstelling>
+  <vrouw>
+    <burgerservicenummer value=""/>
+    <lokale_persoonsidentificatie value=""/>
+    <naamgegevens>
+      <voornamen value=""/>
+      <initialen value=""/>
+      <roepnaam value=""/>
+      <achternaam>
+        <soort_naam value="" enum=""/>
+        <voorvoegsel value=""/>
+        <achternaam value=""/>
+      </achternaam>
+    </naamgegevens>
+    <geboortedatum value=""/>
+    <adres>
+      <straatnaam value=""/>
+      <huisnummer value=""/>
+      <huisletterhuisnummertoevoeging value=""/>
+      <postcode value=""/>
+      <plaatsnaam value=""/>
+      <gemeentenaam value=""/>
+      <land value=""/>
+      <adrestype value="" enum=""/>
+    </adres>
+    <contactgegevens>
+      <telefoonnummers>
+        <telefoonnummer value=""/>
+        <telecom_type value="" enum=""/>
+        <nummer_soort value="" enum=""/>
+      </telefoonnummers>
+      <email_adressen>
+        <email_adres value=""/>
+        <email_soort value="" enum=""/>
+      </email_adressen>
+    </contactgegevens>
+  </vrouw>
+  <zwangerschap>
+    <graviditeit value=""/>
+    <pariteit value=""/>
+    <a_terme_datum_groep>
+      <a_terme_datum value=""/>
+      <datum_bepaling_a_terme_datum value=""/>
+      <a_terme_datum_obv value="" enum=""/>
+    </a_terme_datum_groep>
+  </zwangerschap>
+  <medisch_onderzoek>
+    <datum_onderzoek value=""/>
+    <zwangerschapsduur_op_datum_onderzoek value=""/>
+    <foetusspecifieke_onderzoeksgegevens>
+      <echoscopie>
+        <bpd value=""/>
+        <bpd_percentiel value=""/>
+        <hc value=""/>
+        <hc_percentiel value=""/>
+        <tcd value=""/>
+        <ac value=""/>
+        <ac_percentiel value=""/>
+        <fl value=""/>
+        <fl_percentiel value=""/>
+        <efw value=""/>
+        <ligging value="" enum=""/>
+        <placentalokalisatie>
+          <placentalokalisatie value="" enum=""/>
+        </placentalokalisatie>
+        <opmerkingen value=""/>
+      </echoscopie>
+      <echoparameters_bpd_hc_ac_fl value=""/>
+    </foetusspecifieke_onderzoeksgegevens>
+  </medisch_onderzoek>
+</zwangerschapsecho>

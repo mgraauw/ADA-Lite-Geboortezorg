@@ -2,7 +2,7 @@ MSH|^~\&|ASTRAIA|SO12029^CAFBF95BC1692FCA040B4A97E3E5B358287C2B2270DC25C6CD91B35
 PID|||999999999^^^^NNNLD||Test^Zorg||19800101|F|||dam  1^^amsterdam^^1000AA||0619056431^^^bas.buddingh@sorgsaem.nl
 PV1|1||code  testlocatie
 ORC|RE||||||||20180216084000
-OBR|||1324^ASTRAIA|^OBS|||20180216084000|||||||||praktijkcode^Verloskundigenpraktijk TEST|||||code   testlocatie||||F|||||||dr faber&&&&&&&&1111177728
+OBR|||1324^ASTRAIA|^OBS|||20180216084000|||||||||praktijkcode^Verloskundigenpraktijk TEST|||||code   testlocatie||||F|||||||dr faber&&&&&&&&12345678
 OBX|1|NM|GRAVIDA||1||||||F
 OBX|2|NM|PARITY||1||||||F
 OBX|3|TS|DUE_DATE||20180703000000||||||F

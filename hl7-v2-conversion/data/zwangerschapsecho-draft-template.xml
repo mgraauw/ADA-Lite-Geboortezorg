@@ -1,0 +1,186 @@
+<zwangerschapsecho transactionRef="2.16.840.1.113883.2.4.3.11.60.90.77.4.2480">
+  <!-- ================================================================== -->
+  <!--
+      TBD    
+  -->
+  <!-- ================================================================== -->
+  <zorgverlening>
+    <verwijsdetails>
+      <verwijzing_van>
+        <zorginstelling>
+          <zorgaanbieder_identificatie_nummer>
+            <hl7v2-value segment-name="OBR" fieldgroup-index="16" required="true"/>
+          </zorgaanbieder_identificatie_nummer>
+        </zorginstelling>
+      </verwijzing_van>
+    </verwijsdetails>
+  </zorgverlening>
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+  <zorgverlenerzorginstelling>
+    <zorgverlener>
+      <zorgverlener_agbid>
+        <hl7v2-value segment-name="OBR" fieldgroup-index="32" component-index="1" subcomponent-index="9" required="true"/>
+      </zorgverlener_agbid>
+      <naam_zorgverlener>
+        <hl7v2-value segment-name="OBR" fieldgroup-index="32" component-index="1" subcomponent-index="1" required="false"/>
+      </naam_zorgverlener>
+    </zorgverlener>
+    <zorginstelling>
+      <naam_zorginstelling>
+        <hl7v2-value segment-name="PV1" field1="1" fieldgroup-index="3" component-index="1" required="false"/>
+      </naam_zorginstelling>
+    </zorginstelling>
+  </zorgverlenerzorginstelling>
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+  <vrouw>
+    <burgerservicenummer>
+      <hl7v2-value segment-name="PID" fieldgroup-index="3" component-index="1"/>
+    </burgerservicenummer>
+    <lokale_persoonsidentificatie/>
+    <naamgegevens>
+      <voornamen>
+        <hl7v2-value segment-name="PID" fieldgroup-index="5" component-index="2" required="false"/>
+        <hl7v2-value segment-name="PID" fieldgroup-index="5" component-index="3" required="false"/>
+      </voornamen>
+      <initialen/>
+      <roepnaam/>
+      <achternaam>
+        <soort_naam/>
+        <voorvoegsel/>
+        <achternaam>
+          <hl7v2-value segment-name="PID" fieldgroup-index="5" component-index="1"/>
+        </achternaam>
+      </achternaam>
+    </naamgegevens>
+    <geboortedatum>
+      <hl7v2-value segment-name="PID" fieldgroup-index="7" component-index="1" conversion="datetime"/>
+    </geboortedatum>
+    <adres>
+      <straatnaam>
+        <hl7v2-value segment-name="PID" fieldgroup-index="11" component-index="1" required="false"/>
+      </straatnaam>
+      <huisnummer/>
+      <huisletterhuisnummertoevoeging/>
+      <postcode>
+        <hl7v2-value segment-name="PID" fieldgroup-index="11" component-index="5" required="false"/>
+      </postcode>
+      <plaatsnaam>
+        <hl7v2-value segment-name="PID" fieldgroup-index="11" component-index="3" required="false"/>
+      </plaatsnaam>
+      <land>
+        <hl7v2-value segment-name="PID" fieldgroup-index="11" component-index="6" required="false"/>
+      </land>
+      <adrestype/>
+    </adres>
+    <contactgegevens>
+      <telefoonnummers>
+        <telefoonnummer>
+          <hl7v2-value segment-name="PID" fieldgroup-index="13" component-index="1" required="false"/>
+        </telefoonnummer>
+        <telecom_type />
+        <nummer_soort />
+      </telefoonnummers>
+      <email_adressen>
+        <email_adres>
+          <hl7v2-value segment-name="PID" fieldgroup-index="13" component-index="4" required="false"/>
+        </email_adres>
+        <email_soort enum=""/>
+      </email_adressen>
+    </contactgegevens>
+  </vrouw>
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+  <zwangerschap>
+    <graviditeit>
+      <hl7v2-value segment-name="OBX" field3="GRAVIDA" fieldgroup-index="5" required="false"/>
+    </graviditeit>
+    <pariteit>
+      <hl7v2-value segment-name="OBX" field3="PARITY" fieldgroup-index="5" required="false"/>
+    </pariteit>
+    <a_terme_datum_groep>
+      <a_terme_datum>
+        <hl7v2-value segment-name="OBX" field3="DUE_DATE" fieldgroup-index="5" required="true" conversion="datetime"/>
+      </a_terme_datum>
+      <datum_bepaling_a_terme_datum>
+        <!-- Er is geen aparte datum voor het vaststellen van de a-terme datum. Dit veld is wel verplicht, dus we nemen maar even de 
+          onderzoeksdatum. Correct? -->
+        <hl7v2-value segment-name="OBR" fieldgroup-index="7" component-index="1" required="false" conversion="datetime"/>
+      </datum_bepaling_a_terme_datum>
+      <a_terme_datum_obv enum="Date_of_delivery_estimation_based_on_diagnostic_ultrasonography_(finding)">
+        <!-- Eigenlijk zou je hier "Onbekend" willen hebben, maar dat is geen geldige waarde. Volgens Marc moet het dit zijn. -->
+      </a_terme_datum_obv>
+      <actuele_a_terme_datumq/>
+      <zekerq/>
+    </a_terme_datum_groep>
+  </zwangerschap>
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+  <medisch_onderzoek>
+    <datum_onderzoek>
+      <hl7v2-value segment-name="OBR" fieldgroup-index="7" component-index="1" required="false" conversion="datetime"/>
+    </datum_onderzoek>
+    <zwangerschapsduur_op_datum_onderzoek>
+      <hl7v2-value segment-name="OBX" field3="GESTATIONAL_AGE" fieldgroup-index="5" required="false" conversion="weekdays"/>
+    </zwangerschapsduur_op_datum_onderzoek>
+    <hl7v2-repeat segment-name="OBX" field-index="4">
+      <foetusspecifieke_onderzoeksgegevens>
+        <echoscopie>
+          <bpd>
+            <hl7v2-value segment-name="OBX" field3="BPD" fieldgroup-index="5" repeat-field-index="4" required="false"/>
+          </bpd>
+          <bpd_percentiel>
+            <hl7v2-value segment-name="OBX" field3="BPDp" fieldgroup-index="5" repeat-field-index="4" required="false"/>
+          </bpd_percentiel>
+          <nt_in_mm value=""/>
+          <hc>
+            <hl7v2-value segment-name="OBX" field3="HC" fieldgroup-index="5" repeat-field-index="4" required="false"/>
+          </hc>
+          <hc_percentiel>
+            <hl7v2-value segment-name="OBX" field3="HCp" fieldgroup-index="5" repeat-field-index="4" required="false"/>
+          </hc_percentiel>
+          <tcd>
+            <hl7v2-value segment-name="OBX" field3="TCD" fieldgroup-index="5" repeat-field-index="4" required="false"/>
+          </tcd>
+          <ac>
+            <hl7v2-value segment-name="OBX" field3="AC" fieldgroup-index="5" repeat-field-index="4" required="false"/>
+          </ac>
+          <ac_percentiel>
+            <hl7v2-value segment-name="OBX" field3="ACp" fieldgroup-index="5" repeat-field-index="4" required="false"/>
+          </ac_percentiel>
+          <fl>
+            <hl7v2-value segment-name="OBX" field3="FL" fieldgroup-index="5" repeat-field-index="4" required="false"/>
+          </fl>
+          <fl_percentiel>
+            <hl7v2-value segment-name="OBX" field3="FLp" fieldgroup-index="5" repeat-field-index="4" required="false"/>
+          </fl_percentiel>
+          <efw>
+            <hl7v2-value segment-name="OBX" field3="WEIGHT" fieldgroup-index="5" repeat-field-index="4" required="false"/>
+          </efw>
+          <ligging>
+            <hl7v2-value segment-name="OBX" field3="LIGGING" fieldgroup-index="5" repeat-field-index="4" required="false" add-as-enum="true">
+              <translations nomatch-error="true">
+                <!-- TBD - BOGUS NOW -->
+                <translate source="hoofdligging" target="Vertex_presentation_(finding)"/>
+                <translate source="*" target="Onbekend"/>
+              </translations>
+            </hl7v2-value>
+          </ligging>
+          <placentalokalisatie>
+            <placentalokalisatie>
+              <hl7v2-value segment-name="OBX" field3="PLACENTALOC" fieldgroup-index="5" repeat-field-index="4" required="false" add-as-enum="true">
+                <translations nomatch-error="true">
+                  <!-- TBD - BOGUS NOW -->
+                  <translate source="anterior rechts" target="Right_lateral_position_of_placenta_(finding)"/>
+                  <translate source="*" target="Onbekend"/>
+                </translations>
+              </hl7v2-value>
+            </placentalokalisatie>
+          </placentalokalisatie>
+          <opmerkingen>
+            <hl7v2-value segment-name="OBX" field3="DIAGNOSIS" fieldgroup-index="5"  required="false" prefix="DIAGNOSE: "/>
+            <hl7v2-value segment-name="OBX" field3="CONCLUSION" fieldgroup-index="5" repeat-field-index="4" required="false" prefix="CONCLUSIE: "/>
+          </opmerkingen>
+        </echoscopie>
+        <echoparameters_bpd_hc_ac_fl/>
+      </foetusspecifieke_onderzoeksgegevens>
+    </hl7v2-repeat>
+  </medisch_onderzoek>
+</zwangerschapsecho>

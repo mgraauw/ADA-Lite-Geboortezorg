@@ -32,22 +32,39 @@
 
   <xsl:variable name="a-code" as="xs:integer" select="string-to-codepoints('A')"/>
 
+  <xsl:variable name="newline-string-indicator" as="xs:string" select="'/'">
+    <!-- Some values can contain newlines. But the values ar stored in attributes in which newlines probably disappear because of
+      normalization. Therefore we insert this string for every newline.
+    -->
+  </xsl:variable>
   <!-- ================================================================== -->
-  
+
   <xsl:template match="/">
-  
+
     <xsl:variable name="conversion-result" as="element()">
       <xsl:apply-templates select="/*"/>
     </xsl:variable>
 
-  <xsl:call-template name="cleanup">
-    <xsl:with-param name="elm" select="$conversion-result"/>
-  </xsl:call-template>
+    <xsl:call-template name="cleanup">
+      <xsl:with-param name="elm" select="$conversion-result"/>
+    </xsl:call-template>
 
   </xsl:template>
-  
+
   <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-  
+
+  <xsl:template match="/*">
+    <xsl:copy>
+      <xsl:copy-of select="@*"/>
+      <xsl:apply-templates select="*"/>
+      <!--<xsl:comment> == ********************************************************** == </xsl:comment>
+      <xsl:copy-of select="$hl7v2-structured"/>-->
+    </xsl:copy>
+
+  </xsl:template>
+
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
   <xsl:template match="*[exists(hl7v2-value)]">
     <xsl:param name="repeat-index" as="xs:integer?" required="no" select="()" tunnel="yes"/>
 
@@ -56,7 +73,7 @@
         <xsl:variable name="elm" as="element(subcomponent)?" select="local:get-subcomponent-element(., $repeat-index)"/>
         <xsl:choose>
           <xsl:when test="string($elm) ne ''">
-            <xsl:sequence select="local:value-convert(string($elm), @conversion)"/>
+            <xsl:sequence select="@prefix || local:value-convert(local:elm-to-string($elm), @conversion)"/>
           </xsl:when>
           <xsl:otherwise/>
         </xsl:choose>
@@ -65,8 +82,11 @@
 
     <xsl:choose>
       <xsl:when test="exists($values)">
+        <xsl:variable name="attribute-name" as="xs:string" select="if (xs:boolean(hl7v2-value/@add-as-enum)) then 'enum' else 'value'"/>
+        <xsl:variable name="value" as="xs:string" select="string-join($values, $newline-string-indicator)"/>
+        <xsl:variable name="translated-value" as="xs:string" select="local:translate-value($value, hl7v2-value/translations, local-name(.))"/>
         <xsl:copy>
-          <xsl:attribute name="value" select="string-join($values, ' ')"/>
+          <xsl:attribute name="{$attribute-name}" select="$translated-value"/>
         </xsl:copy>
       </xsl:when>
       <xsl:otherwise>
@@ -118,22 +138,63 @@
   <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 
   <xsl:template match="comment()"/>
-  
+
   <!-- ================================================================== -->
   <!-- FINAL CLEANUP: -->
-  
+
   <xsl:template name="cleanup">
     <xsl:param name="elm" as="element()" required="yes"/>
-    
+
     <xsl:apply-templates select="$elm" mode="mode-cleanup"/>
   </xsl:template>
-  
-  <xsl:template match="*[exists(@value)][@value eq '']" mode="mode-cleanup"/>
-  <xsl:template match="*[empty(@value)][empty(.//*[exists(@value)][@value ne ''])]" mode="mode-cleanup"/>
+
+  <xsl:template match="hl7v2-structured" mode="mode-cleanup" priority="10">
+    <xsl:copy-of select="."/>
+  </xsl:template>
+  <xsl:template match="*[exists(@value) or exists(@enum)][(string(@value) eq '') and (string(@enum) eq '')]" mode="mode-cleanup"/>
+  <xsl:template
+    match="*[empty(@value) and empty(@enum)][empty(.//*[exists(@value) or exists(@enum)])][(string(@value) eq '') and (string(@enum) eq '')]"
+    mode="mode-cleanup"/>
   <xsl:template match="text()[normalize-space() eq '']" mode="mode-cleanup"/>
-    
+
   <!-- ================================================================== -->
   <!-- SUPPORT: -->
+
+  <xsl:function name="local:translate-value" as="xs:string">
+    <xsl:param name="source" as="xs:string"/>
+    <xsl:param name="translations" as="element(translations)?"/>
+    <xsl:param name="base-element-name" as="xs:string"/>
+
+    <xsl:variable name="nomatch-error" as="xs:boolean?" select="xs:boolean($translations/@nomatch-error)"/>
+    <xsl:variable name="match-translate" as="element(translate)?"
+      select="($translations/translate[@source eq $source], $translations/translate[@source eq '*'])[1]"/>
+    <xsl:choose>
+      <xsl:when test="empty($translations)">
+        <xsl:sequence select="$source"/>
+      </xsl:when>
+      <xsl:when test="exists($match-translate)">
+        <xsl:sequence select="$match-translate/@target"/>
+      </xsl:when>
+      <xsl:when test="$nomatch-error">
+        <xsl:sequence select="error((), 'Missing translation for value ' || local:q($source) || ' on element ' || $base-element-name)"/>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:sequence select="$source"/>
+      </xsl:otherwise>
+    </xsl:choose>
+
+  </xsl:function>
+
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+  <xsl:function name="local:elm-to-string" as="xs:string">
+    <xsl:param name="elm" as="element()"/>
+
+    <xsl:variable name="text-parts" as="xs:string*" select="$elm//text()[normalize-space(.) ne '']"/>
+    <xsl:sequence select="string-join($text-parts, $newline-string-indicator)"/>
+  </xsl:function>
+
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 
   <xsl:function name="local:value-convert" as="xs:string">
     <xsl:param name="value" as="xs:string"/>
@@ -237,6 +298,7 @@
       "
     />
   </xsl:function>
+
   <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 
   <xsl:function name="local:get-int" as="xs:integer">
