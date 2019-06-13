@@ -39,7 +39,7 @@
   <xsl:output method="xml" indent="yes" encoding="UTF-8"/>
 
   <xsl:mode on-no-match="fail"/>
-  
+
   <xsl:include href="../lib/xsl-common.xsl"/>
 
   <!-- ================================================================== -->
@@ -64,19 +64,19 @@
       <xsl:if test="$do-add-timestamp">
         <xsl:attribute name="timestamp" select="current-dateTime()"/>
       </xsl:if>
-        <meta>
-            <older>
-                <xsl:copy-of select="$root-older-version/@shortName"/>
-                <xsl:copy-of select="$root-older-version/@id"/>
-                <xsl:copy-of select="$root-older-version/@effectiveDate"/>
-            </older>
-            <newer>
-                <xsl:copy-of select="$root-newer-version/@shortName"/>
-                <xsl:copy-of select="$root-newer-version/@id"/>
-                <xsl:copy-of select="$root-newer-version/@effectiveDate"/>
-            </newer>
-        </meta>      
-        <xsl:call-template name="compare-child-concepts">
+      <meta>
+        <older>
+          <xsl:copy-of select="$root-older-version/@shortName"/>
+          <xsl:copy-of select="$root-older-version/@id"/>
+          <xsl:copy-of select="$root-older-version/@effectiveDate"/>
+        </older>
+        <newer>
+          <xsl:copy-of select="$root-newer-version/@shortName"/>
+          <xsl:copy-of select="$root-newer-version/@id"/>
+          <xsl:copy-of select="$root-newer-version/@effectiveDate"/>
+        </newer>
+      </meta>
+      <xsl:call-template name="compare-child-concepts">
         <xsl:with-param name="parent-elm-older" select="$root-older-version"/>
         <xsl:with-param name="parent-elm-newer" select="$root-newer-version"/>
       </xsl:call-template>
@@ -92,7 +92,7 @@
 
     <xsl:where-populated>
       <child-concepts doc-xpath="{local:get-doc-xpath($parent-elm-older)}">
-
+     
         <!-- First check and report on any child objects without a shortname: -->
         <xsl:call-template name="report-child-concepts-without-shortname">
           <xsl:with-param name="parent" select="$parent-elm-older"/>
@@ -108,7 +108,7 @@
           <xsl:variable name="index-older" as="xs:integer" select="position()"/>
           <xsl:variable name="signature-older" as="xs:string" select="local:concept-signature(.)"/>
           <concept-compare signature="{$signature-older}" shortname="{@shortName}" doc-xpath="{local:get-doc-xpath(.)}"
-            rtd-xpath-older="{local:get-rtd-xpath(.)}" id-older="{@id}" index-older="{$index-older}" value-type="{valueDomain/@type}">
+            rtd-xpath-older="{local:get-rtd-xpath(.)}" id-older="{@id}" index-older="{$index-older}" type-old="{local:create-value-type-indicator(.)}">
             <xsl:variable name="corresponding-concept-newer" as="element(concept)*"
               select="$parent-elm-newer/concept[local:concept-has-shortname(.)][local:concept-signature(.) eq $signature-older]"/>
             <xsl:choose>
@@ -125,10 +125,19 @@
                 <xsl:attribute name="index-newer" select="$index-newer"/>
                 <xsl:attribute name="rtd-xpath-newer" select="local:get-rtd-xpath($corresponding-concept-newer)"/>
                 <xsl:attribute name="id-newer" select="$corresponding-concept-newer/@id"/>
-                <xsl:attribute name="value-type" select="(valueDomain/@type, $corresponding-concept-newer/valueDomain/@type)[1]"/>
+                <xsl:attribute name="type-new" select="local:create-value-type-indicator($corresponding-concept-newer)"/>
                 <xsl:if test="$index-older ne $index-newer">
                   <diff type="concept-moved" index-older="{$index-older}" index-newer="{$index-newer}"/>
                 </xsl:if>
+                <xsl:call-template name="add-conceptlist">
+                  <xsl:with-param name="parent-element-suffix" select="'-old'"/>
+                  <xsl:with-param name="conceptlist" select="valueSet/conceptList"/>
+                </xsl:call-template>
+                <xsl:call-template name="add-conceptlist">
+                  <xsl:with-param name="parent-element-suffix" select="'-new'"/>
+                  <xsl:with-param name="conceptlist" select="$corresponding-concept-newer/valueSet/conceptList"/>
+                </xsl:call-template>
+                
                 <xsl:call-template name="compare-concepts">
                   <xsl:with-param name="concept-older" select="."/>
                   <xsl:with-param name="concept-newer" select="$corresponding-concept-newer"/>
@@ -137,7 +146,11 @@
 
               <!-- No newer concept for this signature: -->
               <xsl:otherwise>
-                <diff type="concept-deleted"/>
+                <xsl:call-template name="create-singular-child-concepts-entry">
+                  <xsl:with-param name="parent-concept" select="."/>
+                  <xsl:with-param name="reason" select="'deleted'"/>
+                </xsl:call-template>
+                <diff type="concept-deleted"/> 
               </xsl:otherwise>
 
             </xsl:choose>
@@ -162,7 +175,11 @@
             <xsl:otherwise>
               <concept-compare signature="{$signature-newer}" shortname="{@shortName}" doc-xpath="{local:get-doc-xpath(.)}"
                 rtd-xpath-newer="{local:get-rtd-xpath(.)}" index-newer="{$index-newer}" id-newer="{@id}" value-type="{valueDomain/@type}">
-                <diff type="concept-new"/>
+                <xsl:call-template name="create-singular-child-concepts-entry">
+                  <xsl:with-param name="parent-concept" select="."/>
+                  <xsl:with-param name="reason" select="'new'"/>
+                </xsl:call-template>
+                <diff type="concept-new"/> 
               </concept-compare>
             </xsl:otherwise>
           </xsl:choose>
@@ -295,7 +312,23 @@
     </xsl:where-populated>
 
   </xsl:template>
+  
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+  
+  <xsl:template name="add-conceptlist">
+    <xsl:param name="parent-element-suffix" as="xs:string" required="no" select="''"/>
+    <xsl:param name="conceptlist" as="element(conceptList)?" required="yes"/>
 
+    <xsl:where-populated>
+      <xsl:element name="conceptcodelist{$parent-element-suffix}">
+        <xsl:for-each select="$conceptlist/(concept | extension)">
+          <code type="{local-name(.)}" code="{@code}" displayname="{@displayName}"/> 
+        </xsl:for-each>
+      </xsl:element>
+    </xsl:where-populated>
+    
+  </xsl:template>
+  
   <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 
   <xsl:template name="report-child-concepts-without-shortname">
@@ -311,6 +344,35 @@
         </xsl:for-each>
       </concepts-no-shortname>
     </xsl:where-populated>
+  </xsl:template>
+
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+  <xsl:template name="create-singular-child-concepts-entry">
+    <!-- Creates a child-concepts element for the special cases when a group is deleted or created -->
+    <xsl:param name="parent-concept" as="element(concept)" required="yes"/>
+    <xsl:param name="reason" as="xs:string" required="yes">
+      <!-- Use either deleted or new -->
+    </xsl:param>
+
+    <xsl:for-each select="$parent-concept[@type eq 'group']">
+
+      <child-concepts doc-xpath="{local:get-doc-xpath(.)}" reason="{$reason}">
+        <xsl:for-each select="concept[local:concept-has-shortname(.)]">
+          <xsl:variable name="signature" as="xs:string" select="local:concept-signature(.)"/>
+          <concept-compare signature="{$signature}" shortname="{@shortName}" doc-xpath="{local:get-doc-xpath(.)}"
+            rtd-xpath-older="{local:get-rtd-xpath(.)}" id="{@id}" type="{local:create-value-type-indicator(.)}">
+            <xsl:call-template name="add-conceptlist">
+              <xsl:with-param name="conceptlist" select="valueSet/conceptList"/>
+            </xsl:call-template>
+            <xsl:call-template name="create-singular-child-concepts-entry">
+              <xsl:with-param name="parent-concept" select="."/>
+              <xsl:with-param name="reason" select="$reason"/>
+            </xsl:call-template>
+          </concept-compare>
+        </xsl:for-each>
+      </child-concepts>
+    </xsl:for-each>
   </xsl:template>
 
   <!-- ================================================================== -->
@@ -346,17 +408,6 @@
   <xsl:function name="local:concept-signature" as="xs:string?">
     <!-- Computes a signature string for an concept. If these strings are the same, the concepts are supposed to be about the same  -->
     <xsl:param name="concept" as="element(concept)"/>
-    <!-- <xsl:choose>
-      <xsl:when test="exists($concept/inherit/@ref)">
-        <xsl:sequence select="'inherit-ref:' || $concept/inherit/@ref"/>
-      </xsl:when>
-      <xsl:when test="local:concept-has-shortname($concept)">
-        <xsl:sequence select="'shortname:' || $concept/@shortName"/>
-      </xsl:when>
-      <xsl:otherwise>
-        <xsl:sequence select="()"/>
-      </xsl:otherwise>
-    </xsl:choose>-->
     <xsl:sequence select="'shortname:' || $concept/@shortName"/>
   </xsl:function>
 
@@ -434,5 +485,16 @@
     <xsl:sequence select="if (exists($seq-nr)) then concat('[', $seq-nr, ']') else ()"/>
   </xsl:function>
 
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+  <xsl:function name="local:create-value-type-indicator" as="xs:string">
+    <xsl:param name="concept" as="element(concept)"/>
+
+    <xsl:variable name="parts" as="xs:string+">
+      <xsl:sequence select="if ($concept/@type eq 'group') then 'group' else $concept/valueDomain/@type"/>
+      <xsl:sequence select="' ' || string-join(($concept/@minimumMultiplicity, $concept/@maximumMultiplicity), '..')"/>
+    </xsl:variable>
+    <xsl:sequence select="string-join($parts)"/>
+  </xsl:function>
 
 </xsl:stylesheet>

@@ -67,14 +67,16 @@
   <xsl:variable name="diff-md-text-parts" as="xs:string*">
     <xsl:for-each select="$diffspecs">
       <xsl:call-template name="create-link-entry">
-        <xsl:with-param name="name" select="(@description, @output)[1]"/>
+        <xsl:with-param name="name" select="(@description, @output)[1]  || ' (volledig)'"/>
         <xsl:with-param name="link" select="'diffs/' || @output || '.html'"/>
+      </xsl:call-template>
+      <xsl:call-template name="create-link-entry">
+        <xsl:with-param name="name" select="(@description, @output)[1]  || ' (vereenvoudigd)'"/>
+        <xsl:with-param name="link" select="'diffs/' || @output || '-limited.html'"/>
       </xsl:call-template>
     </xsl:for-each>
   </xsl:variable>
   <xsl:variable name="diff-md-text" as="xs:string" select="fn:string-join($diff-md-text-parts)"/>
-
-
 
   <!-- ================================================================== -->
   <!-- MAIN TEMPLATES: -->
