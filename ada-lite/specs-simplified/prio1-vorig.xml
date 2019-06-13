@@ -563,7 +563,7 @@
             effectiveDate="2013-09-10T00:00:00"
             type="group"
             minimumMultiplicity="0"
-            maximumMultiplicity="1"
+            maximumMultiplicity="*"
             conformance="R"
             isMandatory="false"
             shortName="uitkomst_per_kind">

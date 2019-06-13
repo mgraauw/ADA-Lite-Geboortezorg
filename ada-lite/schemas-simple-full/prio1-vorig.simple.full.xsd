@@ -82,7 +82,7 @@ SOFTWARE.
          </xs:element>
          <xs:element name="uitkomst_per_kind"
                      minOccurs="0"
-                     maxOccurs="1"
+                     maxOccurs="unbounded"
                      type="uitkomst_per_kind">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">Uitkomst (per kind)</xs:documentation>

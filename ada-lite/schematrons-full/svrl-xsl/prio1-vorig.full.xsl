@@ -973,16 +973,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="(count(uitkomst_per_kind) ge 0) and (count(uitkomst_per_kind) le 1)"/>
+         <xsl:when test="count(uitkomst_per_kind) ge 0"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="(count(uitkomst_per_kind) ge 0) and (count(uitkomst_per_kind) le 1)">
+                                test="count(uitkomst_per_kind) ge 0">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Fout aantal voorkomens van "Uitkomst (per kind)": <xsl:text/>
                   <xsl:value-of select="count(uitkomst_per_kind)"/>
-                  <xsl:text/> (verwacht: 0..1) [/prio1_vorig/uitkomst_per_kind]</svrl:text>
+                  <xsl:text/> (verwacht: 0 of meer) [/prio1_vorig/uitkomst_per_kind]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>

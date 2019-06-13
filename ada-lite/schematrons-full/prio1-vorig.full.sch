@@ -62,7 +62,7 @@ SOFTWARE.
          <assert test="count(vrouw) eq 1">Fout aantal voorkomens van "Vrouw": <value-of select="count(vrouw)"/> (verwacht: 1) [/prio1_vorig/vrouw]</assert>
          <assert test="(count(zwangerschap) ge 0) and (count(zwangerschap) le 1)">Fout aantal voorkomens van "Zwangerschap": <value-of select="count(zwangerschap)"/> (verwacht: 0..1) [/prio1_vorig/zwangerschap]</assert>
          <assert test="(count(bevalling) ge 0) and (count(bevalling) le 1)">Fout aantal voorkomens van "Bevalling": <value-of select="count(bevalling)"/> (verwacht: 0..1) [/prio1_vorig/bevalling]</assert>
-         <assert test="(count(uitkomst_per_kind) ge 0) and (count(uitkomst_per_kind) le 1)">Fout aantal voorkomens van "Uitkomst (per kind)": <value-of select="count(uitkomst_per_kind)"/> (verwacht: 0..1) [/prio1_vorig/uitkomst_per_kind]</assert>
+         <assert test="count(uitkomst_per_kind) ge 0">Fout aantal voorkomens van "Uitkomst (per kind)": <value-of select="count(uitkomst_per_kind)"/> (verwacht: 0 of meer) [/prio1_vorig/uitkomst_per_kind]</assert>
          <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/prio1_vorig/adaextension]</assert>
       </rule>
    </pattern>
