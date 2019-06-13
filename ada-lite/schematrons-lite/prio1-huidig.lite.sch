@@ -58,12 +58,13 @@ SOFTWARE.
          <assert test="(count(zorgverlenerzorginstelling) ge 0) and (count(zorgverlenerzorginstelling) le 1)">Fout aantal voorkomens van "Zorgverlener/Zorginstelling": <value-of select="count(zorgverlenerzorginstelling)"/> (verwacht: 0..1) [/prio1_huidig/zorgverlenerzorginstelling]</assert>
          <assert test="count(vrouw) eq 1">Fout aantal voorkomens van "Vrouw": <value-of select="count(vrouw)"/> (verwacht: 1) [/prio1_huidig/vrouw]</assert>
          <assert test="(count(zwangerschap) ge 0) and (count(zwangerschap) le 1)">Fout aantal voorkomens van "Zwangerschap": <value-of select="count(zwangerschap)"/> (verwacht: 0..1) [/prio1_huidig/zwangerschap]</assert>
+         <assert test="count(a_terme_datum_groep) eq 1">Fout aantal voorkomens van "A terme datum (groep)": <value-of select="count(a_terme_datum_groep)"/> (verwacht: 1) [/prio1_huidig/a_terme_datum_groep]</assert>
          <assert test="count(medisch_onderzoek) ge 0">Fout aantal voorkomens van "Medisch onderzoek": <value-of select="count(medisch_onderzoek)"/> (verwacht: 0 of meer) [/prio1_huidig/medisch_onderzoek]</assert>
          <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/prio1_huidig/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /prio1_huidig: == -->
-      <rule context="/prio1_huidig/*[not(self::zorgverlenerzorginstelling)][not(self::vrouw)][not(self::zwangerschap)][not(self::medisch_onderzoek)][not(self::adaextension)]">
+      <rule context="/prio1_huidig/*[not(self::zorgverlenerzorginstelling)][not(self::vrouw)][not(self::zwangerschap)][not(self::a_terme_datum_groep)][not(self::medisch_onderzoek)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/prio1_huidig/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -89,6 +90,14 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Zwangerschap": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/prio1_huidig/zwangerschap/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.3')">Foutieve informatie voor "Zwangerschap": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.5.3" [/prio1_huidig/zwangerschap/@conceptId]</assert>
          <assert test="empty(@* except (@conceptId, @xsi:*))">Foutieve informatie voor "Zwangerschap": Ongeldige attributen aangetroffen [/prio1_huidig/zwangerschap; allowed=(@conceptId, @xsi:*)]</assert>
+      </rule>
+   </pattern>
+   <!-- == Check attributes of /prio1_huidig/a_terme_datum_groep: == -->
+   <pattern>
+      <rule context="/prio1_huidig/a_terme_datum_groep"><!-- == Attribute "conceptId": == -->
+         <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "A terme datum (groep)": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/prio1_huidig/a_terme_datum_groep/@conceptId; type=t-id]</assert>
+         <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20029')">Foutieve informatie voor "A terme datum (groep)": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20029" [/prio1_huidig/a_terme_datum_groep/@conceptId]</assert>
+         <assert test="empty(@* except (@conceptId, @xsi:*))">Foutieve informatie voor "A terme datum (groep)": Ongeldige attributen aangetroffen [/prio1_huidig/a_terme_datum_groep; allowed=(@conceptId, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /prio1_huidig/medisch_onderzoek: == -->
@@ -405,6 +414,29 @@ SOFTWARE.
       </rule>
    </pattern>
    <!-- == Any attributes allowed on /prio1_huidig/zwangerschap/adaextension == -->
+   <pattern>
+      <rule context="/prio1_huidig/a_terme_datum_groep"><!-- == Check occurrences of children of /prio1_huidig/a_terme_datum_groep: == -->
+         <assert test="count(a_terme_datum) eq 1">Fout aantal voorkomens van "A terme datum": <value-of select="count(a_terme_datum)"/> (verwacht: 1) [/prio1_huidig/a_terme_datum_groep/a_terme_datum]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/prio1_huidig/a_terme_datum_groep/adaextension]</assert>
+      </rule>
+   </pattern>
+   <pattern><!-- == Check for any unexpected elements in /prio1_huidig/a_terme_datum_groep: == -->
+      <rule context="/prio1_huidig/a_terme_datum_groep/*[not(self::a_terme_datum)][not(self::adaextension)]">
+         <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/prio1_huidig/a_terme_datum_groep/<value-of select="name(.)"/>]</report>
+      </rule>
+   </pattern>
+   <!-- == Check attributes of /prio1_huidig/a_terme_datum_groep/a_terme_datum: == -->
+   <pattern>
+      <rule context="/prio1_huidig/a_terme_datum_groep/a_terme_datum"><!-- == Attribute "conceptId": == -->
+         <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "A terme datum": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/prio1_huidig/a_terme_datum_groep/a_terme_datum/@conceptId; type=t-id]</assert>
+         <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20030')">Foutieve informatie voor "A terme datum": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20030" [/prio1_huidig/a_terme_datum_groep/a_terme_datum/@conceptId]</assert>
+         <!-- == Attribute "value": == -->
+         <assert test="exists(@value)">Foutieve informatie voor "A terme datum": Attribuut "value" ontbreekt [/prio1_huidig/a_terme_datum_groep/a_terme_datum/@value]</assert>
+         <assert test="empty(@value) or ((@value castable as xs:date) or (@value castable as xs:dateTime))">Foutieve informatie voor "A terme datum": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/prio1_huidig/a_terme_datum_groep/a_terme_datum/@value; type=t-datetime]</assert>
+         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "A terme datum": Ongeldige attributen aangetroffen [/prio1_huidig/a_terme_datum_groep/a_terme_datum; allowed=(@conceptId, @value, @xsi:*)]</assert>
+      </rule>
+   </pattern>
+   <!-- == Any attributes allowed on /prio1_huidig/a_terme_datum_groep/adaextension == -->
    <pattern>
       <rule context="/prio1_huidig/medisch_onderzoek"><!-- == Check occurrences of children of /prio1_huidig/medisch_onderzoek: == -->
          <assert test="(count(maternale_onderzoeksgegevens) ge 0) and (count(maternale_onderzoeksgegevens) le 1)">Fout aantal voorkomens van "Maternale onderzoeksgegevens": <value-of select="count(maternale_onderzoeksgegevens)"/> (verwacht: 0..1) [/prio1_huidig/medisch_onderzoek/maternale_onderzoeksgegevens]</assert>

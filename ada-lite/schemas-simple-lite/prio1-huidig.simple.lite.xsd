@@ -45,6 +45,9 @@ SOFTWARE.
          <xs:pattern value="([0-9]+\.)+([0-9]+)"/>
       </xs:restriction>
    </xs:simpleType>
+   <xs:simpleType name="t-datetime">
+      <xs:union memberTypes="xs:date xs:dateTime"/>
+   </xs:simpleType>
    <xs:complexType name="prio1_huidig">
       <xs:sequence>
          <xs:element name="zorgverlenerzorginstelling"
@@ -69,6 +72,14 @@ SOFTWARE.
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">Zwangerschap</xs:documentation>
                <xs:documentation source="desc" xml:lang="nl-NL">De al dan niet afgesloten zwangerschap waarop de gegevens betrekking hebben.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="a_terme_datum_groep"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="a_terme_datum_groep">
+            <xs:annotation>
+               <xs:documentation source="name" xml:lang="nl-NL">A terme datum (groep)</xs:documentation>
             </xs:annotation>
          </xs:element>
          <xs:element name="medisch_onderzoek"
@@ -752,6 +763,35 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
+   </xs:complexType>
+   <xs:complexType name="a_terme_datum_groep">
+      <xs:sequence>
+         <xs:element name="a_terme_datum"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="a_terme_datum">
+            <xs:annotation>
+               <xs:documentation source="name" xml:lang="nl-NL">A terme datum</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">Datum waarop de zwangerschap naar verwachting 40w 0d is (280 dagen). Op meerdere momenten in de zwangerschap kunnen verschillende à terme datum worden gehanteerd.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element minOccurs="0" name="adaextension" type="adaextension">
+            <xs:annotation>
+               <xs:documentation>Optionele extensie informatie</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+      <xs:attribute name="conceptId"
+                    type="t-id"
+                    use="optional"
+                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20029"/>
+   </xs:complexType>
+   <xs:complexType name="a_terme_datum">
+      <xs:attribute name="conceptId"
+                    type="t-id"
+                    use="optional"
+                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20030"/>
+      <xs:attribute name="value" use="required" type="t-datetime"/>
    </xs:complexType>
    <xs:complexType name="medisch_onderzoek">
       <xs:sequence>

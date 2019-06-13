@@ -67,6 +67,16 @@ SOFTWARE.
                      type="zwangerschap_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_5_3"
                      minOccurs="0"
                      maxOccurs="1"/>
+         <xs:element name="a_terme_datum_groep-start" minOccurs="0" maxOccurs="1">
+            <xs:complexType>
+               <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20029"/>
+               <xs:attribute name="hidden" fixed="true"/>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="a_terme_datum_groep"
+                     type="a_terme_datum_groep_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_5_20029"
+                     minOccurs="1"
+                     maxOccurs="1"/>
          <xs:element name="medisch_onderzoek-start" minOccurs="0" maxOccurs="1">
             <xs:complexType>
                <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.14"/>
@@ -415,6 +425,34 @@ SOFTWARE.
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.3"/>
       <xs:attribute name="comment" type="xs:string" use="optional"/>
    </xs:complexType>
+   <xs:complexType name="a_terme_datum_groep_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_5_20029">
+      <xs:annotation>
+         <xs:documentation>Type for concept group: A terme datum (groep)</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="a_terme_datum-start" minOccurs="0" maxOccurs="1">
+            <xs:complexType>
+               <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20030"/>
+               <xs:attribute name="hidden" fixed="true"/>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="a_terme_datum"
+                     type="a_terme_datum_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_5_20030"
+                     minOccurs="1"
+                     maxOccurs="1"/>
+         <xs:element name="adaextension-start" minOccurs="0" maxOccurs="1">
+            <xs:complexType>
+               <xs:attribute name="hidden" fixed="true"/>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="adaextension"
+                     type="adaextension_type"
+                     minOccurs="0"
+                     maxOccurs="1"/>
+      </xs:sequence>
+      <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20029"/>
+      <xs:attribute name="comment" type="xs:string" use="optional"/>
+   </xs:complexType>
    <xs:complexType name="medisch_onderzoek_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_5_14">
       <xs:annotation>
          <xs:documentation>Type for concept group: Medisch onderzoek</xs:documentation>
@@ -698,6 +736,24 @@ SOFTWARE.
          <xs:minInclusive value="0"/>
          <xs:maxInclusive value="30"/>
       </xs:restriction>
+   </xs:simpleType>
+   <xs:annotation>
+      <xs:documentation>Type for concept item: A terme datum - 1..1 </xs:documentation>
+   </xs:annotation>
+   <xs:complexType name="a_terme_datum_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_5_20030">
+      <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20030"/>
+      <xs:attribute name="value">
+         <xs:simpleType>
+            <xs:union memberTypes="a_terme_datum_1_datatype_2_16_840_1_113883_2_4_3_11_60_90_77_2_5_20030 "/>
+         </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
+   </xs:complexType>
+   <xs:annotation>
+      <xs:documentation>simpleType for valueDomain: A terme datum: datetime</xs:documentation>
+   </xs:annotation>
+   <xs:simpleType name="a_terme_datum_1_datatype_2_16_840_1_113883_2_4_3_11_60_90_77_2_5_20030">
+      <xs:restriction base="xs:date"/>
    </xs:simpleType>
    <xs:annotation>
       <xs:documentation>Type for concept item: Hb - 0..1 R</xs:documentation>
