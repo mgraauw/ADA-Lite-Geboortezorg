@@ -67,16 +67,6 @@ SOFTWARE.
                      type="zwangerschap_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_5_3"
                      minOccurs="0"
                      maxOccurs="1"/>
-         <xs:element name="a_terme_datum_groep-start" minOccurs="0" maxOccurs="1">
-            <xs:complexType>
-               <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20029"/>
-               <xs:attribute name="hidden" fixed="true"/>
-            </xs:complexType>
-         </xs:element>
-         <xs:element name="a_terme_datum_groep"
-                     type="a_terme_datum_groep_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_5_20029"
-                     minOccurs="1"
-                     maxOccurs="1"/>
          <xs:element name="medisch_onderzoek-start" minOccurs="0" maxOccurs="1">
             <xs:complexType>
                <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.14"/>
@@ -411,6 +401,16 @@ SOFTWARE.
          <xs:element name="pariteit"
                      type="pariteit_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_5_20153"
                      minOccurs="0"
+                     maxOccurs="1"/>
+         <xs:element name="a_terme_datum_groep-start" minOccurs="0" maxOccurs="1">
+            <xs:complexType>
+               <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20029"/>
+               <xs:attribute name="hidden" fixed="true"/>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="a_terme_datum_groep"
+                     type="a_terme_datum_groep_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_5_20029"
+                     minOccurs="1"
                      maxOccurs="1"/>
          <xs:element name="adaextension-start" minOccurs="0" maxOccurs="1">
             <xs:complexType>

@@ -74,14 +74,6 @@ SOFTWARE.
                <xs:documentation source="desc" xml:lang="nl-NL">De al dan niet afgesloten zwangerschap waarop de gegevens betrekking hebben.</xs:documentation>
             </xs:annotation>
          </xs:element>
-         <xs:element name="a_terme_datum_groep"
-                     minOccurs="1"
-                     maxOccurs="1"
-                     type="a_terme_datum_groep">
-            <xs:annotation>
-               <xs:documentation source="name" xml:lang="nl-NL">A terme datum (groep)</xs:documentation>
-            </xs:annotation>
-         </xs:element>
          <xs:element name="medisch_onderzoek"
                      minOccurs="0"
                      maxOccurs="unbounded"
@@ -624,6 +616,14 @@ SOFTWARE.
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">Pariteit</xs:documentation>
                <xs:documentation source="desc" xml:lang="nl-NL">Aantal zwangerschappen die eindigden met een partus (&gt;= 16w 0d / 112 dagen)</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="a_terme_datum_groep"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="a_terme_datum_groep">
+            <xs:annotation>
+               <xs:documentation source="name" xml:lang="nl-NL">A terme datum (groep)</xs:documentation>
             </xs:annotation>
          </xs:element>
          <xs:element minOccurs="0" name="adaextension" type="adaextension">

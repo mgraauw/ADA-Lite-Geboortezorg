@@ -26,10 +26,10 @@
    <zwangerschap>
       <graviditeit value=""/>
       <pariteit value=""/>
+      <a_terme_datum_groep>
+         <a_terme_datum value=""/>
+      </a_terme_datum_groep>
    </zwangerschap>
-   <a_terme_datum_groep>
-      <a_terme_datum value=""/>
-   </a_terme_datum_groep>
    <medisch_onderzoek>
       <maternale_onderzoeksgegevens>
          <urine_bloed_en_aanvullende_onderzoeken>
