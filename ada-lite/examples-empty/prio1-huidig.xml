@@ -26,6 +26,9 @@
    <zwangerschap>
       <graviditeit value=""/>
       <pariteit value=""/>
+      <a_terme_datum_groep>
+         <a_terme_datum value=""/>
+      </a_terme_datum_groep>
    </zwangerschap>
    <medisch_onderzoek>
       <maternale_onderzoeksgegevens>

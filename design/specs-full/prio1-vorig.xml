@@ -435,7 +435,7 @@
             <terminologyAssociation conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.8.5.80673.0" effectiveDate="2016-08-30T11:34:38" valueSet="2.16.840.1.113883.2.4.11.192" flexibility="2014-01-22T11:04:47" valueSetName="Conditie perineum (2.2)"></terminologyAssociation>
         </concept>
     </concept>
-    <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.7" statusCode="final" effectiveDate="2013-09-10T00:00:00" versionLabel="22" type="group" minimumMultiplicity="0" maximumMultiplicity="1" conformance="R" isMandatory="false" iddisplay="peri22-dataelement-7" shortName="uitkomst_per_kind">
+    <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.7" statusCode="final" effectiveDate="2013-09-10T00:00:00" versionLabel="22" type="group" minimumMultiplicity="0" maximumMultiplicity="*" conformance="R" isMandatory="false" iddisplay="peri22-dataelement-7" shortName="uitkomst_per_kind">
         <name language="nl-NL">Uitkomst (per kind)</name>
         <desc language="nl-NL">Groepering om de gegevens van elke uitkomst (kind) samen te vatten.</desc>
         <implementation shortName="uitkomst_per_kind"></implementation>

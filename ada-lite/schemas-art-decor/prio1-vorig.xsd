@@ -86,7 +86,7 @@ SOFTWARE.
          <xs:element name="uitkomst_per_kind"
                      type="uitkomst_per_kind_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_5_7"
                      minOccurs="0"
-                     maxOccurs="1"/>
+                     maxOccurs="unbounded"/>
          <xs:element name="adaextension-start" minOccurs="0" maxOccurs="1">
             <xs:complexType>
                <xs:attribute name="hidden" fixed="true"/>

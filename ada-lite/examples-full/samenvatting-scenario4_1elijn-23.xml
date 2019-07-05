@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<voorgaande_zwangerschap_samenvatting_23 transactionRef="2.16.840.1.113883.2.4.3.11.60.90.77.4.2469"
+                                         transactionEffectiveDate="2019-03-13T11:59:46"
+                                         versionDate="2019-01-01T00:00:00"
+                                         prefix="peri20-"><!-- == ADA full format document generated from lite format document == --><!-- == Source: design/examples-lite/samenvatting-scenario4_1elijn-23.xml == --><!-- == Specification used: design/specs-full/samenvatting-voorgaande-zwangerschap-23.xml == --><!-- == Generator: design/xsl/lib/ada-lite2ada-full.mod.xsl == -->
+   <zorgverlenerzorginstelling conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.1">
+      <zorginstelling conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10020">
+         <zorginstelling_lvrid conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10023" value="1410"/>
+      </zorginstelling>
+   </zorgverlenerzorginstelling>
+   <vrouw conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.2">
+      <burgerservicenummer conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10030"
+                           value="850810711"/>
+      <geboortedatum conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10040"
+                     value="1991-08-06"/>
+   </vrouw>
+   <zwangerschap conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.3">
+      <graviditeit conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20010" value="1"/>
+      <pariteit_voor_deze_zwangerschap conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20150" value="0"/>
+      <definitieve_a_terme_datum conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82160"
+                                 value="2018-08-18"/>
+      <wijze_einde_zwangerschap conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80625"
+                                value="1"
+                                code="1"
+                                codeSystem="2.16.840.1.113883.2.4.4.13.46"
+                                displayName="Partus"/>
+   </zwangerschap>
+   <bevalling conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.6">
+      <wijze_waarop_de_baring_begon conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20550"
+                                    value="2"
+                                    code="2"
+                                    codeSystem="2.16.840.1.113883.2.4.3.22.1.2.46"
+                                    displayName="spontane vliesscheur"/>
+      <placenta conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80612">
+         <geboorte_placenta conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20630"
+                            value="1"
+                            code="0"
+                            codeSystem="2.16.840.1.113883.2.4.4.13.19"
+                            displayName="Spontaan"/>
+      </placenta>
+      <hoeveelheid_bloedverlies conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20640"
+                                value="1120"
+                                unit="ml"/>
+      <conditie_perineum_postpartum conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80673"
+                                    value="4"
+                                    code="199930000"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="Third degree perineal tear during delivery - delivered  (disorder)"/>
+   </bevalling>
+   <uitkomst_per_kind conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.7">
+      <baring conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40002">
+         <werkelijke_plaats_baring_type_locatie conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40003"
+                                                value="3"
+                                                code="22232009"
+                                                codeSystem="2.16.840.1.113883.6.96"
+                                                displayName="Hospital (environment)"/>
+         <ziekenhuis_baring conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82114">
+            <ziekenhuisnummer_lvrid conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40005" value="0010"/>
+         </ziekenhuis_baring>
+         <demografische_gegevens conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40006">
+            <geslacht_medische_observatie conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40041"
+                                          value="2"
+                                          code="2"
+                                          codeSystem="2.16.840.1.113883.2.4.4.13.21"
+                                          displayName="Vrouwelijk"/>
+            <geboortedatum conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40050"
+                           value="2018-08-04T23:35:00"/>
+            <perinatale_sterfte_groep conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40279">
+               <perinatale_sterfteq conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40280" value="false"/>
+            </perinatale_sterfte_groep>
+         </demografische_gegevens>
+         <kindspecifieke_uitkomstgegevens conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.72">
+            <type_partus conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80626"
+                         value="2"
+                         code="3311000146109"
+                         codeSystem="2.16.840.1.113883.6.96"
+                         displayName="Assisted delivery of fetus (procedure)"/>
+            <vaginale_kunstverlossing_groep conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40189">
+               <vaginale_kunstverlossing conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40190"
+                                         value="1"
+                                         code="302383004"
+                                         codeSystem="2.16.840.1.113883.6.96"
+                                         displayName="Forceps delivery (procedure)"/>
+            </vaginale_kunstverlossing_groep>
+            <lichamelijk_onderzoek_kind conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80766">
+               <geboortegewicht conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40060"
+                                value="4205"
+                                unit="gram"/>
+            </lichamelijk_onderzoek_kind>
+            <congenitale_afwijkingenq conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40080" value="false"/>
+         </kindspecifieke_uitkomstgegevens>
+      </baring>
+   </uitkomst_per_kind>
+</voorgaande_zwangerschap_samenvatting_23>

@@ -423,6 +423,31 @@
             <property minInclude="0" maxInclude="30"/>
          </valueDomain>
       </concept>
+      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20029"
+               statusCode="final"
+               effectiveDate="2013-09-10T00:00:00"
+               type="group"
+               minimumMultiplicity="1"
+               maximumMultiplicity="1"
+               isMandatory="false"
+               shortName="a_terme_datum_groep">
+         <name language="nl-NL">A terme datum (groep)</name>
+         <desc language="nl-NL">A terme datum (groep)</desc>
+         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20030"
+                  statusCode="final"
+                  effectiveDate="2013-09-10T00:00:00"
+                  type="item"
+                  minimumMultiplicity="1"
+                  maximumMultiplicity="1"
+                  isMandatory="false"
+                  shortName="a_terme_datum">
+            <name language="nl-NL">A terme datum</name>
+            <desc language="nl-NL">Datum waarop de zwangerschap naar verwachting 40w 0d is (280 dagen). Op meerdere momenten in de zwangerschap kunnen verschillende à terme datum worden gehanteerd. </desc>
+            <valueDomain type="datetime">
+               <property timeStampPrecision="YMD!"/>
+            </valueDomain>
+         </concept>
+      </concept>
    </concept>
    <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.14"
             statusCode="final"

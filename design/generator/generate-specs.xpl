@@ -347,8 +347,9 @@
     <p:variable name="html-out" select="/*/@html-out"/>
     <p:variable name="xml-out" select="/*/@xml-out"/>
     <p:variable name="description" select="/*/@description"/>
+    <p:variable name="limited" select="/*/@limited"/>
     <cx:message>
-      <p:with-option name="message" select="concat('specification-diff for: ', $description)"/> 
+      <p:with-option name="message" select="concat('specification-diff for: ', $description, ' limited=', $limited)"/> 
     </cx:message>
     <p:identity name="original"/>
     <p:sink/>
@@ -378,8 +379,9 @@
       </p:input>
       <p:with-param name="add-timestamp" select="false()"/>
       <p:with-param name="description" select="$description"/>
+      <p:with-param name="limited-view" select="$limited"/>
     </p:xslt>
-    <p:store method="xhtml">
+    <p:store method="html" version="4.0">
       <p:with-option name="href" select="$html-out"/>
     </p:store>
     <!-- Get the original input back: -->
@@ -390,7 +392,6 @@
     </p:identity>
     <p:add-attribute attribute-name="status" attribute-value="success" match="/*"/>
   </p:viewport>
-
 
   <!-- Generate the simple schemas (nesting is removed): -->
   <p:viewport match="spec2schema-simple">

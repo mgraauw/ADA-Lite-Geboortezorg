@@ -45,6 +45,9 @@ SOFTWARE.
          <xs:pattern value="([0-9]+\.)+([0-9]+)"/>
       </xs:restriction>
    </xs:simpleType>
+   <xs:simpleType name="t-datetime">
+      <xs:union memberTypes="xs:date xs:dateTime"/>
+   </xs:simpleType>
    <xs:complexType name="prio1_huidig">
       <xs:sequence>
          <xs:element name="zorgverlenerzorginstelling"
@@ -368,14 +371,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="required">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Geslachtsnaam"/>
-               <xs:enumeration value="Geslachtsnaam partner"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="voorvoegsel">
       <xs:attribute name="conceptId"
@@ -469,18 +465,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="required">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Blood group A (finding)"/>
-               <xs:enumeration value="Blood group B (finding)"/>
-               <xs:enumeration value="Blood group AB (finding)"/>
-               <xs:enumeration value="Blood group O (finding)"/>
-               <xs:enumeration value="Onbekend"/>
-               <xs:enumeration value="Geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="rhesus_d_factor_vrouw">
       <xs:attribute name="conceptId"
@@ -533,16 +518,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="required">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Rh D Positief"/>
-               <xs:enumeration value="Rh D Negatief"/>
-               <xs:enumeration value="onbekend"/>
-               <xs:enumeration value="geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="rhesus_c_factor">
       <xs:attribute name="conceptId"
@@ -588,15 +564,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="required">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Rhc positive (finding)"/>
-               <xs:enumeration value="Rhc negative (finding)"/>
-               <xs:enumeration value="Geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="zwangerschap">
       <xs:sequence>
@@ -613,6 +581,14 @@ SOFTWARE.
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">Pariteit</xs:documentation>
                <xs:documentation source="desc" xml:lang="nl-NL">Aantal zwangerschappen die eindigden met een partus (&gt;= 16w 0d / 112 dagen)</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="a_terme_datum_groep"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="a_terme_datum_groep">
+            <xs:annotation>
+               <xs:documentation source="name" xml:lang="nl-NL">A terme datum (groep)</xs:documentation>
             </xs:annotation>
          </xs:element>
          <xs:element minOccurs="0" name="adaextension" type="adaextension">
@@ -653,6 +629,35 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
+   </xs:complexType>
+   <xs:complexType name="a_terme_datum_groep">
+      <xs:sequence>
+         <xs:element name="a_terme_datum"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="a_terme_datum">
+            <xs:annotation>
+               <xs:documentation source="name" xml:lang="nl-NL">A terme datum</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">Datum waarop de zwangerschap naar verwachting 40w 0d is (280 dagen). Op meerdere momenten in de zwangerschap kunnen verschillende à terme datum worden gehanteerd.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element minOccurs="0" name="adaextension" type="adaextension">
+            <xs:annotation>
+               <xs:documentation>Optionele extensie informatie</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+      <xs:attribute name="conceptId"
+                    type="t-id"
+                    use="required"
+                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20029"/>
+   </xs:complexType>
+   <xs:complexType name="a_terme_datum">
+      <xs:attribute name="conceptId"
+                    type="t-id"
+                    use="required"
+                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20030"/>
+      <xs:attribute name="value" use="required" type="t-datetime"/>
    </xs:complexType>
    <xs:complexType name="medisch_onderzoek">
       <xs:sequence>

@@ -2954,22 +2954,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@displayName) or (@displayName = ('Arts', 'Huisarts', 'Kinderarts', 'Arts klinische chemie', 'Gynaecoloog / obstetricus', 'Verloskundige', 'Echoscopist', 'Analist'))"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@displayName) or (@displayName = ('Arts', 'Huisarts', 'Kinderarts', 'Arts klinische chemie', 'Gynaecoloog / obstetricus', 'Verloskundige', 'Echoscopist', 'Analist'))">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Zorgverlenertype": De waarde "<xsl:text/>
-                  <xsl:value-of select="@displayName"/>
-                  <xsl:text/>" voor attribuut "displayName" is onjuist [/voorgaande_zwangerschap_samenvatting_22/zorgverlenerzorginstelling/zorgverlener/zorgverlenertype/@displayName; allowed=('Arts', 'Huisarts', 'Kinderarts', 'Arts klinische chemie', 'Gynaecoloog / obstetricus', 'Verloskundige', 'Echoscopist', 'Analist')]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('Arts', 'Huisarts', 'Kinderarts', 'Arts_klinische_chemie', 'Gynaecoloog_/_obstetricus', 'Verloskundige', 'Echoscopist', 'Analist'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -5284,22 +5268,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@displayName) or (@displayName = ('Geslachtsnaam', 'Geslachtsnaam partner'))"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@displayName) or (@displayName = ('Geslachtsnaam', 'Geslachtsnaam partner'))">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Soort naam": De waarde "<xsl:text/>
-                  <xsl:value-of select="@displayName"/>
-                  <xsl:text/>" voor attribuut "displayName" is onjuist [/voorgaande_zwangerschap_samenvatting_22/vrouw/naamgegevens/achternaam/soort_naam/@displayName; allowed=('Geslachtsnaam', 'Geslachtsnaam partner')]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('Geslachtsnaam', 'Geslachtsnaam_partner'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -6223,22 +6191,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@displayName) or (@displayName = ('Partus', 'Miskraam', 'Spontaan', 'Medicamenteus', 'Instrumenteel', 'APLA', 'Medicamenteus', 'Instrumenteel', 'EUG - behandeld', '(partiële) Mola - behandeld', 'geen informatie'))"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@displayName) or (@displayName = ('Partus', 'Miskraam', 'Spontaan', 'Medicamenteus', 'Instrumenteel', 'APLA', 'Medicamenteus', 'Instrumenteel', 'EUG - behandeld', '(partiële) Mola - behandeld', 'geen informatie'))">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Wijze einde zwangerschap": De waarde "<xsl:text/>
-                  <xsl:value-of select="@displayName"/>
-                  <xsl:text/>" voor attribuut "displayName" is onjuist [/voorgaande_zwangerschap_samenvatting_22/zwangerschap/wijze_einde_zwangerschap/@displayName; allowed=('Partus', 'Miskraam', 'Spontaan', 'Medicamenteus', 'Instrumenteel', 'APLA', 'Medicamenteus', 'Instrumenteel', 'EUG - behandeld', '(partiële) Mola - behandeld', 'geen informatie')]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('Partus', 'Miskraam', 'Miskraam_Spontaan', 'Miskraam_Medicamenteus', 'Miskraam_Instrumenteel', 'APLA', 'APLA_Medicamenteus', 'APLA_Instrumenteel', 'EUG_-_behandeld', '(partiële)_Mola_-_behandeld', 'geen_informatie'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -6710,22 +6662,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@displayName) or (@displayName = ('Endometriosis (disorder)', 'Uterine leiomyoma (disorder)', 'Congenital uterine anomaly (disorder)', 'Overig'))"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@displayName) or (@displayName = ('Endometriosis (disorder)', 'Uterine leiomyoma (disorder)', 'Congenital uterine anomaly (disorder)', 'Overig'))">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Gynaecologische aandoening": De waarde "<xsl:text/>
-                  <xsl:value-of select="@displayName"/>
-                  <xsl:text/>" voor attribuut "displayName" is onjuist [/voorgaande_zwangerschap_samenvatting_22/zwangerschap/diagnose/gynaecologische_aandoening/@displayName; allowed=('Endometriosis (disorder)', 'Uterine leiomyoma (disorder)', 'Congenital uterine anomaly (disorder)', 'Overig')]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('Endometriosis_(disorder)', 'Uterine_leiomyoma_(disorder)', 'Congenital_uterine_anomaly_(disorder)', 'Overig'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -7034,22 +6970,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@displayName) or (@displayName = ('Infection of uterus (disorder)', 'Urinary tract infection in pregnancy (disorder)', 'Pyelonephritis (disorder)', 'Infectious colitis, enteritis and gastroenteritis (disorder)', 'Overig', 'Geen informatie'))"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@displayName) or (@displayName = ('Infection of uterus (disorder)', 'Urinary tract infection in pregnancy (disorder)', 'Pyelonephritis (disorder)', 'Infectious colitis, enteritis and gastroenteritis (disorder)', 'Overig', 'Geen informatie'))">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Infectie": De waarde "<xsl:text/>
-                  <xsl:value-of select="@displayName"/>
-                  <xsl:text/>" voor attribuut "displayName" is onjuist [/voorgaande_zwangerschap_samenvatting_22/zwangerschap/diagnose/infectie/@displayName; allowed=('Infection of uterus (disorder)', 'Urinary tract infection in pregnancy (disorder)', 'Pyelonephritis (disorder)', 'Infectious colitis, enteritis and gastroenteritis (disorder)', 'Overig', 'Geen informatie')]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('Infection_of_uterus_(disorder)', 'Urinary_tract_infection_in_pregnancy_(disorder)', 'Pyelonephritis_(disorder)', 'Infectious_colitis,_enteritis_and_gastroenteritis_(disorder)', 'Overig', 'Geen_informatie'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -7261,22 +7181,6 @@ SOFTWARE.
                <svrl:text>Foutieve informatie voor "Hypertensieve aandoening": De waarde "<xsl:text/>
                   <xsl:value-of select="@codeSystem"/>
                   <xsl:text/>" voor attribuut "codeSystem" is onjuist [/voorgaande_zwangerschap_samenvatting_22/zwangerschap/diagnose/hypertensieve_aandoening/@codeSystem; allowed=('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96')]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
-         <xsl:when test="empty(@displayName) or (@displayName = ('Pregnancy-induced hypertension (disorder)', 'Pre-eclampsia (disorder)', 'Hemolysis-elevated liver enzymes-low platelet count syndrome (disorder)', 'Eclampsia (disorder)'))"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@displayName) or (@displayName = ('Pregnancy-induced hypertension (disorder)', 'Pre-eclampsia (disorder)', 'Hemolysis-elevated liver enzymes-low platelet count syndrome (disorder)', 'Eclampsia (disorder)'))">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Hypertensieve aandoening": De waarde "<xsl:text/>
-                  <xsl:value-of select="@displayName"/>
-                  <xsl:text/>" voor attribuut "displayName" is onjuist [/voorgaande_zwangerschap_samenvatting_22/zwangerschap/diagnose/hypertensieve_aandoening/@displayName; allowed=('Pregnancy-induced hypertension (disorder)', 'Pre-eclampsia (disorder)', 'Hemolysis-elevated liver enzymes-low platelet count syndrome (disorder)', 'Eclampsia (disorder)')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -7585,22 +7489,6 @@ SOFTWARE.
                <svrl:text>Foutieve informatie voor "Afwijkende groei foetus": De waarde "<xsl:text/>
                   <xsl:value-of select="@codeSystem"/>
                   <xsl:text/>" voor attribuut "codeSystem" is onjuist [/voorgaande_zwangerschap_samenvatting_22/zwangerschap/diagnose/afwijkende_groei_foetus/@codeSystem; allowed=('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.5.1008')]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
-         <xsl:when test="empty(@displayName) or (@displayName = ('Large-for-dates fetus (disorder)', 'Small for gestational age fetus (disorder)', 'Geen informatie'))"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@displayName) or (@displayName = ('Large-for-dates fetus (disorder)', 'Small for gestational age fetus (disorder)', 'Geen informatie'))">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Afwijkende groei foetus": De waarde "<xsl:text/>
-                  <xsl:value-of select="@displayName"/>
-                  <xsl:text/>" voor attribuut "displayName" is onjuist [/voorgaande_zwangerschap_samenvatting_22/zwangerschap/diagnose/afwijkende_groei_foetus/@displayName; allowed=('Large-for-dates fetus (disorder)', 'Small for gestational age fetus (disorder)', 'Geen informatie')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -8226,22 +8114,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@displayName) or (@displayName = ('spontane weeën', 'spontane vliesscheur', 'interventie om baring op gang te brengen', 'onbekend', 'geen informatie'))"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@displayName) or (@displayName = ('spontane weeën', 'spontane vliesscheur', 'interventie om baring op gang te brengen', 'onbekend', 'geen informatie'))">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Wijze waarop de baring begon": De waarde "<xsl:text/>
-                  <xsl:value-of select="@displayName"/>
-                  <xsl:text/>" voor attribuut "displayName" is onjuist [/voorgaande_zwangerschap_samenvatting_22/bevalling/wijze_waarop_de_baring_begon/@displayName; allowed=('spontane weeën', 'spontane vliesscheur', 'interventie om baring op gang te brengen', 'onbekend', 'geen informatie')]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('spontane_weeën', 'spontane_vliesscheur', 'interventie_om_baring_op_gang_te_brengen', 'onbekend', 'geen_informatie'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -8593,22 +8465,6 @@ SOFTWARE.
                <svrl:text>Foutieve informatie voor "Conditie perineum postpartum": De waarde "<xsl:text/>
                   <xsl:value-of select="@codeSystem"/>
                   <xsl:text/>" voor attribuut "codeSystem" is onjuist [/voorgaande_zwangerschap_samenvatting_22/bevalling/conditie_perineum_postpartum/@codeSystem; allowed=('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008')]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
-         <xsl:when test="empty(@displayName) or (@displayName = ('Perineum intact  (finding)', 'First degree perineal tear during delivery - delivered (disorder)', 'Second degree perineal tear during delivery - delivered  (disorder)', 'Third degree perineal tear during delivery - delivered  (disorder)', 'Type 3a third degree laceration of perineum  (disorder)', 'Type 3b third degree laceration of perineum (disorder)', 'Type 3c third degree laceration of perineum (disorder)', 'Fourth degree perineal tear during delivery - delivered  (disorder)', 'Episiotomy wound  (morphologic abnormality)', 'Anders', 'Onbekend', 'Geen informatie'))"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@displayName) or (@displayName = ('Perineum intact (finding)', 'First degree perineal tear during delivery - delivered (disorder)', 'Second degree perineal tear during delivery - delivered (disorder)', 'Third degree perineal tear during delivery - delivered (disorder)', 'Type 3a third degree laceration of perineum (disorder)', 'Type 3b third degree laceration of perineum (disorder)', 'Type 3c third degree laceration of perineum (disorder)', 'Fourth degree perineal tear during delivery - delivered (disorder)', 'Episiotomy wound (morphologic abnormality)', 'Anders', 'Onbekend', 'Geen informatie'))">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Conditie perineum postpartum": De waarde "<xsl:text/>
-                  <xsl:value-of select="@displayName"/>
-                  <xsl:text/>" voor attribuut "displayName" is onjuist [/voorgaande_zwangerschap_samenvatting_22/bevalling/conditie_perineum_postpartum/@displayName; allowed=('Perineum intact  (finding)', 'First degree perineal tear during delivery - delivered (disorder)', 'Second degree perineal tear during delivery - delivered  (disorder)', 'Third degree perineal tear during delivery - delivered  (disorder)', 'Type 3a third degree laceration of perineum  (disorder)', 'Type 3b third degree laceration of perineum (disorder)', 'Type 3c third degree laceration of perineum (disorder)', 'Fourth degree perineal tear during delivery - delivered  (disorder)', 'Episiotomy wound  (morphologic abnormality)', 'Anders', 'Onbekend', 'Geen informatie')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -9234,22 +9090,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@displayName) or (@displayName = ('Sweeping of membrane (procedure)', 'Induction of labour by artificial rupture of membranes (procedure)', 'Cervical ripening with balloon (procedure)', 'Cervical ripening with Prostaglandin E2 (procedure)', 'Oxytocin induction of labour (procedure)', 'Prostaglandin induction of labour (procedure)', 'Elective caesarean section (procedure)', 'Overig', 'Geen informatie'))"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@displayName) or (@displayName = ('Sweeping of membrane (procedure)', 'Induction of labour by artificial rupture of membranes (procedure)', 'Cervical ripening with balloon (procedure)', 'Cervical ripening with Prostaglandin E2 (procedure)', 'Oxytocin induction of labour (procedure)', 'Prostaglandin induction of labour (procedure)', 'Elective caesarean section (procedure)', 'Overig', 'Geen informatie'))">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Interventie begin baring": De waarde "<xsl:text/>
-                  <xsl:value-of select="@displayName"/>
-                  <xsl:text/>" voor attribuut "displayName" is onjuist [/voorgaande_zwangerschap_samenvatting_22/bevalling/interventies_begin_baring_groep/interventie_begin_baring/@displayName; allowed=('Sweeping of membrane (procedure)', 'Induction of labour by artificial rupture of membranes (procedure)', 'Cervical ripening with balloon (procedure)', 'Cervical ripening with Prostaglandin E2 (procedure)', 'Oxytocin induction of labour (procedure)', 'Prostaglandin induction of labour (procedure)', 'Elective caesarean section (procedure)', 'Overig', 'Geen informatie')]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('Sweeping_of_membrane_(procedure)', 'Induction_of_labour_by_artificial_rupture_of_membranes_(procedure)', 'Cervical_ripening_with_balloon_(procedure)', 'Cervical_ripening_with_Prostaglandin_E2_(procedure)', 'Oxytocin_induction_of_labour_(procedure)', 'Prostaglandin_induction_of_labour_(procedure)', 'Elective_caesarean_section_(procedure)', 'Overig', 'Geen_informatie'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -9370,22 +9210,6 @@ SOFTWARE.
                <svrl:text>Foutieve informatie voor "Indicatie interventie begin baring": De waarde "<xsl:text/>
                   <xsl:value-of select="@codeSystem"/>
                   <xsl:text/>" voor attribuut "codeSystem" is onjuist [/voorgaande_zwangerschap_samenvatting_22/bevalling/interventies_begin_baring_groep/indicatie_interventie_begin_baring/@codeSystem; allowed=('2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008')]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
-         <xsl:when test="empty(@displayName) or (@displayName = ('acuut levensbedreigend', 'niet levensbedreigend', 'onbekend', 'acuut levensbedreigend', 'niet levensbedreigend', 'onbekend', 'baring op korte termijn geïndiceerd door zorgverlener', 'wens zorgverlener (incl: wetenschappelijk onderzoek)', 'wens patiënt', 'overig', 'onbekend', 'geen informatie'))"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@displayName) or (@displayName = ('acuut levensbedreigend', 'niet levensbedreigend', 'onbekend', 'acuut levensbedreigend', 'niet levensbedreigend', 'onbekend', 'baring op korte termijn geïndiceerd door zorgverlener', 'wens zorgverlener (incl: wetenschappelijk onderzoek)', 'wens patiënt', 'overig', 'onbekend', 'geen informatie'))">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Indicatie interventie begin baring": De waarde "<xsl:text/>
-                  <xsl:value-of select="@displayName"/>
-                  <xsl:text/>" voor attribuut "displayName" is onjuist [/voorgaande_zwangerschap_samenvatting_22/bevalling/interventies_begin_baring_groep/indicatie_interventie_begin_baring/@displayName; allowed=('acuut levensbedreigend', 'niet levensbedreigend', 'onbekend', 'acuut levensbedreigend', 'niet levensbedreigend', 'onbekend', 'baring op korte termijn geïndiceerd door zorgverlener', 'wens zorgverlener (incl: wetenschappelijk onderzoek)', 'wens patiënt', 'overig', 'onbekend', 'geen informatie')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -9590,22 +9414,6 @@ SOFTWARE.
                <svrl:text>Foutieve informatie voor "Geboorte placenta": De waarde "<xsl:text/>
                   <xsl:value-of select="@codeSystem"/>
                   <xsl:text/>" voor attribuut "codeSystem" is onjuist [/voorgaande_zwangerschap_samenvatting_22/bevalling/placenta/geboorte_placenta/@codeSystem; allowed=('2.16.840.1.113883.2.4.4.13.19', '2.16.840.1.113883.2.4.4.13.19', '2.16.840.1.113883.2.4.4.13.19', '2.16.840.1.113883.2.4.4.13.19', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008')]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
-         <xsl:when test="empty(@displayName) or (@displayName = ('Spontaan', 'Controlled cord traction', 'Manuele placentaverwijdering', 'Placentaverwijdering bij SC', 'Overig', 'Geen informatie', 'Onbekend'))"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@displayName) or (@displayName = ('Spontaan', 'Controlled cord traction', 'Manuele placentaverwijdering', 'Placentaverwijdering bij SC', 'Overig', 'Geen informatie', 'Onbekend'))">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Geboorte placenta": De waarde "<xsl:text/>
-                  <xsl:value-of select="@displayName"/>
-                  <xsl:text/>" voor attribuut "displayName" is onjuist [/voorgaande_zwangerschap_samenvatting_22/bevalling/placenta/geboorte_placenta/@displayName; allowed=('Spontaan', 'Controlled cord traction', 'Manuele placentaverwijdering', 'Placentaverwijdering bij SC', 'Overig', 'Geen informatie', 'Onbekend')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -9998,22 +9806,6 @@ SOFTWARE.
                <svrl:text>Foutieve informatie voor "Werkelijke plaats baring (type locatie)": De waarde "<xsl:text/>
                   <xsl:value-of select="@codeSystem"/>
                   <xsl:text/>" voor attribuut "codeSystem" is onjuist [/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/werkelijke_plaats_baring_type_locatie/@codeSystem; allowed=('2.16.840.1.113883.6.96', '2.16.840.1.113883.2.4.3.22.1.8.7', '2.16.840.1.113883.6.96', '2.16.840.1.113883.2.4.3.22.1.8.7', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008')]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
-         <xsl:when test="empty(@displayName) or (@displayName = ('Home birth (finding)', 'Geboortecentrum', 'Hospital (environment)', 'Onderweg', 'Onbekend', 'Geen informatie'))"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@displayName) or (@displayName = ('Home birth (finding)', 'Geboortecentrum', 'Hospital (environment)', 'Onderweg', 'Onbekend', 'Geen informatie'))">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Werkelijke plaats baring (type locatie)": De waarde "<xsl:text/>
-                  <xsl:value-of select="@displayName"/>
-                  <xsl:text/>" voor attribuut "displayName" is onjuist [/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/werkelijke_plaats_baring_type_locatie/@displayName; allowed=('Home birth (finding)', 'Geboortecentrum', 'Hospital (environment)', 'Onderweg', 'Onbekend', 'Geen informatie')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -10913,22 +10705,6 @@ SOFTWARE.
                <svrl:text>Foutieve informatie voor "Geslacht (medische observatie)": De waarde "<xsl:text/>
                   <xsl:value-of select="@codeSystem"/>
                   <xsl:text/>" voor attribuut "codeSystem" is onjuist [/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/demografische_gegevens/geslacht_medische_observatie/@codeSystem; allowed=('2.16.840.1.113883.2.4.4.13.21', '2.16.840.1.113883.2.4.4.13.21', '2.16.840.1.113883.2.4.4.13.21', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008')]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
-         <xsl:when test="empty(@displayName) or (@displayName = ('Mannelijk', 'Vrouwelijk', 'Niet conclusief', 'Onbekend', 'Geen informatie'))"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@displayName) or (@displayName = ('Mannelijk', 'Vrouwelijk', 'Niet conclusief', 'Onbekend', 'Geen informatie'))">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Geslacht (medische observatie)": De waarde "<xsl:text/>
-                  <xsl:value-of select="@displayName"/>
-                  <xsl:text/>" voor attribuut "displayName" is onjuist [/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/demografische_gegevens/geslacht_medische_observatie/@displayName; allowed=('Mannelijk', 'Vrouwelijk', 'Niet conclusief', 'Onbekend', 'Geen informatie')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -11873,22 +11649,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@displayName) or (@displayName = ('Antepartum fetal death (event)', 'Intrapartum fetal death (event)', 'Newborn death (event)', 'Geen informatie'))"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@displayName) or (@displayName = ('Antepartum fetal death (event)', 'Intrapartum fetal death (event)', 'Newborn death (event)', 'Geen informatie'))">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Fase perinatale sterfte": De waarde "<xsl:text/>
-                  <xsl:value-of select="@displayName"/>
-                  <xsl:text/>" voor attribuut "displayName" is onjuist [/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/demografische_gegevens/perinatale_sterfte_groep/fase_perinatale_sterfte/@displayName; allowed=('Antepartum fetal death (event)', 'Intrapartum fetal death (event)', 'Newborn death (event)', 'Geen informatie')]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('Antepartum_fetal_death_(event)', 'Intrapartum_fetal_death_(event)', 'Newborn_death_(event)', 'Geen_informatie'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -12231,22 +11991,6 @@ SOFTWARE.
                <svrl:text>Foutieve informatie voor "Type partus": De waarde "<xsl:text/>
                   <xsl:value-of select="@codeSystem"/>
                   <xsl:text/>" voor attribuut "codeSystem" is onjuist [/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/type_partus/@codeSystem; allowed=('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008')]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
-         <xsl:when test="empty(@displayName) or (@displayName = ('Delivery normal (finding)', 'Assisted delivery of fetus (finding)', 'Cesarean delivery - delivered (finding)', 'Delivery by elective cesarean section (finding)', 'Delivery by emergency cesarean section (finding)', 'Legally induced abortion (disorder)', 'onbekend', 'geen informatie'))"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@displayName) or (@displayName = ('Delivery normal (finding)', 'Assisted delivery of fetus (finding)', 'Cesarean delivery - delivered (finding)', 'Delivery by elective cesarean section (finding)', 'Delivery by emergency cesarean section (finding)', 'Legally induced abortion (disorder)', 'onbekend', 'geen informatie'))">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Type partus": De waarde "<xsl:text/>
-                  <xsl:value-of select="@displayName"/>
-                  <xsl:text/>" voor attribuut "displayName" is onjuist [/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/type_partus/@displayName; allowed=('Delivery normal (finding)', 'Assisted delivery of fetus (finding)', 'Cesarean delivery - delivered (finding)', 'Delivery by elective cesarean section (finding)', 'Delivery by emergency cesarean section (finding)', 'Legally induced abortion (disorder)', 'onbekend', 'geen informatie')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -12749,22 +12493,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@displayName) or (@displayName = ('Pubiotomy (procedure)', 'Maneuvers for delivery in shoulder dystocia (procedure)', 'Kristeller maneuver (procedure)', 'overig'))"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@displayName) or (@displayName = ('Pubiotomy (procedure)', 'Maneuvers for delivery in shoulder dystocia (procedure)', 'Kristeller maneuver (procedure)', 'overig'))">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Overige interventies": De waarde "<xsl:text/>
-                  <xsl:value-of select="@displayName"/>
-                  <xsl:text/>" voor attribuut "displayName" is onjuist [/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/overige_interventies/@displayName; allowed=('Pubiotomy (procedure)', 'Maneuvers for delivery in shoulder dystocia (procedure)', 'Kristeller maneuver (procedure)', 'overig')]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('Pubiotomy_(procedure)', 'Maneuvers_for_delivery_in_shoulder_dystocia_(procedure)', 'Kristeller_maneuver_(procedure)', 'overig'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -13259,22 +12987,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@displayName) or (@displayName = ('Forceps delivery (procedure)', 'Delivery by vacuum extraction (procedure)', 'Obstetrical version with extraction (procedure)', 'Partial breech extraction (procedure)', 'Total breech extraction (procedure)', 'anders', 'geen informatie'))"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@displayName) or (@displayName = ('Forceps delivery (procedure)', 'Delivery by vacuum extraction (procedure)', 'Obstetrical version with extraction (procedure)', 'Partial breech extraction (procedure)', 'Total breech extraction (procedure)', 'anders', 'geen informatie'))">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Vaginale kunstverlossing": De waarde "<xsl:text/>
-                  <xsl:value-of select="@displayName"/>
-                  <xsl:text/>" voor attribuut "displayName" is onjuist [/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/vaginale_kunstverlossing_groep/vaginale_kunstverlossing/@displayName; allowed=('Forceps delivery (procedure)', 'Delivery by vacuum extraction (procedure)', 'Obstetrical version with extraction (procedure)', 'Partial breech extraction (procedure)', 'Total breech extraction (procedure)', 'anders', 'geen informatie')]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('Forceps_delivery_(procedure)', 'Delivery_by_vacuum_extraction_(procedure)', 'Obstetrical_version_with_extraction_(procedure)', 'Partial_breech_extraction_(procedure)', 'Total_breech_extraction_(procedure)', 'anders', 'geen_informatie'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -13495,22 +13207,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@displayName) or (@displayName = ('Tijdens ontsluiting besloten', 'Tijdens uitdrijving besloten', 'Geen informatie'))"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@displayName) or (@displayName = ('Tijdens ontsluiting besloten', 'Tijdens uitdrijving besloten', 'Geen informatie'))">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Beslismoment sectio caesarea": De waarde "<xsl:text/>
-                  <xsl:value-of select="@displayName"/>
-                  <xsl:text/>" voor attribuut "displayName" is onjuist [/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/sectio_caesarea_group/beslismoment_sectio_caesarea/@displayName; allowed=('Tijdens ontsluiting besloten', 'Tijdens uitdrijving besloten', 'Geen informatie')]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('Tijdens_ontsluiting_besloten', 'Tijdens_uitdrijving_besloten', 'Geen_informatie'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -13631,22 +13327,6 @@ SOFTWARE.
                <svrl:text>Foutieve informatie voor "Indicatie sectio caesarea": De waarde "<xsl:text/>
                   <xsl:value-of select="@codeSystem"/>
                   <xsl:text/>" voor attribuut "codeSystem" is onjuist [/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/sectio_caesarea_group/indicatie_sectio_caesarea/@codeSystem; allowed=('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.2.4.3.22.1.2.55', '2.16.840.1.113883.2.4.3.22.1.2.55', '2.16.840.1.113883.5.1008')]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
-         <xsl:when test="empty(@displayName) or (@displayName = ('History of third degree perineal laceration (situation)', 'History of fourth degree perineal laceration (situation)', 'Abnormal fetal presentation (finding)', 'Failure to progress in first stage of labor (finding)', 'Failure to progress in second stage of labor (finding)', 'Suspected fetal distress (situation) ', 'Patient condition finding (finding)', 'Maternal request for treatment (finding)', 'overig, medische reden', 'overig, niet-medische reden', 'geen informatie'))"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@displayName) or (@displayName = ('History of third degree perineal laceration (situation)', 'History of fourth degree perineal laceration (situation)', 'Abnormal fetal presentation (finding)', 'Failure to progress in first stage of labor (finding)', 'Failure to progress in second stage of labor (finding)', 'Suspected fetal distress (situation) ', 'Patient condition finding (finding)', 'Maternal request for treatment (finding)', 'overig, medische reden', 'overig, niet-medische reden', 'geen informatie'))">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Indicatie sectio caesarea": De waarde "<xsl:text/>
-                  <xsl:value-of select="@displayName"/>
-                  <xsl:text/>" voor attribuut "displayName" is onjuist [/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/sectio_caesarea_group/indicatie_sectio_caesarea/@displayName; allowed=('History of third degree perineal laceration (situation)', 'History of fourth degree perineal laceration (situation)', 'Abnormal fetal presentation (finding)', 'Failure to progress in first stage of labor (finding)', 'Failure to progress in second stage of labor (finding)', 'Suspected fetal distress (situation) ', 'Patient condition finding (finding)', 'Maternal request for treatment (finding)', 'overig, medische reden', 'overig, niet-medische reden', 'geen informatie')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -13990,22 +13670,6 @@ SOFTWARE.
                <svrl:text>Foutieve informatie voor "Percentiel van het geboortegewicht": De waarde "<xsl:text/>
                   <xsl:value-of select="@codeSystem"/>
                   <xsl:text/>" voor attribuut "codeSystem" is onjuist [/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/percentiel_van_het_geboortegewicht/@codeSystem; allowed=('2.16.840.1.113883.2.4.4.13.50', '2.16.840.1.113883.2.4.4.13.50', '2.16.840.1.113883.2.4.4.13.50', '2.16.840.1.113883.2.4.4.13.50', '2.16.840.1.113883.2.4.4.13.50', '2.16.840.1.113883.2.4.4.13.50', '2.16.840.1.113883.5.1008')]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
-         <xsl:when test="empty(@displayName) or (@displayName = ('&lt; p2,3', 'p2,3 tot p10', 'p10 tot p50', 'p50 tot p90', 'p90 tot p97,7', '&gt;= p97,7', 'Geen informatie'))"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@displayName) or (@displayName = ('&lt; p2,3', 'p2,3 tot p10', 'p10 tot p50', 'p50 tot p90', 'p90 tot p97,7', '&gt;= p97,7', 'Geen informatie'))">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Percentiel van het geboortegewicht": De waarde "<xsl:text/>
-                  <xsl:value-of select="@displayName"/>
-                  <xsl:text/>" voor attribuut "displayName" is onjuist [/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/percentiel_van_het_geboortegewicht/@displayName; allowed=('&lt; p2,3', 'p2,3 tot p10', 'p10 tot p50', 'p50 tot p90', 'p90 tot p97,7', '&gt;= p97,7', 'Geen informatie')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -14541,22 +14205,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@displayName) or (@displayName = ('Congenital anomaly of nervous system (disorder)', 'Fetal anencephaly (disorder)', 'Fetal microcephaly (disorder)', 'Spina bifida occulta (disorder)', 'Meningomyelocele (disorder)', 'Meningocele (disorder)', 'Congenital hydrocephalus (disorder)', 'Holoprosencephaly sequence (disorder)', 'Encephalocele (disorder)', 'Neonatal neuromuscular disorder (disorder)', 'overige congenitale afwijkingen zenuwstelsel', 'zintuigen', 'Congenital anomaly of eye (disorder)', 'Microphthalmos (disorder)', 'overige congenitale afwijkingen ogen', 'Congenital anomaly of ear (disorder)', 'overige congenitale afwijkingen zintuigen', 'Congenital anomaly of cardiovascular system (disorder)', 'Single umbilical artery (disorder)', 'Discordant ventriculoarterial connection (disorder)', 'Tetralogy of Fallot (disorder)', 'Ventricular septal defect (disorder)', 'Hypoplastic left heart syndrome (disorder)', 'Coarctation of aorta (disorder)', 'Congenital anomaly of tricuspid valve (disorder)', 'Multiple congenital cardiac defects (disorder)', 'overige congenitale afwijking hart en bloedvaten', 'Congenital anomaly of digestive tract (disorder)', 'Cleft lip (disorder)', 'Cleft palate (disorder)', 'Congenital anomaly of esophagus (disorder)', 'Congenital atresia of small intestine (disorder)', 'Atresia of large intestine (disorder)', 'Anal atresia (disorder)', 'Hirschsprung''s disease (disorder)', 'Congenital malrotation of intestine (disorder)', 'Intestinal volvulus (disorder)', 'overige congenitale afwijking tractus digestivus', 'Congenital anomaly of respiratory system (disorder)', 'Choanal atresia (disorder)', 'Congenital anomaly of trachea (disorder)', 'Congenital hypoplasia of lung (disorder)', 'Congenital lobar emphysema (disorder)', 'Congenital cystic adenomatoid malformation of lung (disorder)', 'Hydrothorax (disorder)', 'Chylothorax (disorder)', 'Congenital diaphragmatic hernia (disorder)', 'Relaxation of diaphragm (disorder)', 'overige congenitale afwijking tractus respiratorius', 'Genitourinary congenital anomalies (disorder)', 'Hypospadias (disorder)', 'Epispadias (disorder)', 'Undescended testicle (disorder)', 'Exstrophy of bladder sequence (disorder)', 'Oligohydramnios sequence (disorder)', 'Congenital cystic kidney disease (disorder)', 'Urinary tract obstruction (disorder)', 'Disorder of sexual differentiation (disorder)', 'overige congenitale afwijking tractus urogenitalis', 'Congenital anomaly of skin (disorder)', 'Hemangioma of skin (disorder)', 'Congenital pigmented melanocytic nevus of skin (disorder)', 'overige congenitale huidafwijking', 'Congenital anomaly of abdominal wall (disorder)', 'Gastroschisis (disorder)', 'Congenital omphalocele (disorder)', 'Umbilical hernia (disorder)', 'Congenital inguinal hernia (disorder)', 'overige congenitale afwijking buikwand', 'Congenital anomaly of musculoskeletal system (disorder)', 'Polydactyly (disorder)', 'Syndactyly (disorder)', 'Congenital deformity of foot (disorder)', 'Reduction deformity of upper limb (disorder)', 'Reduction deformity of lower limb (disorder)', 'overige congenitale afwijking extremiteiten', 'Congenital subluxation of hip (disorder)', 'overige congenitale afwijking skelet en spierstelsel', 'multipele/syndromale congenitale afwijkingen (niet chromosomaal)', 'Dysmorphism (disorder)', 'Situs inversus viscerum (disorder)', 'Multiple congenital anomalies (disorder)', 'Multiple system malformation syndrome (disorder)', 'overige multipele/syndromale afwijkingen', 'overige congenitale afwijkingen', 'Congenital iodine deficiency syndrome (disorder)', 'Inborn error of metabolism (disorder)', 'andere endocrinologische afwijkingen', 'Congenital malignant neoplastic disease (disorder)', 'overig', 'geen informatie'))"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@displayName) or (@displayName = ('Congenital anomaly of nervous system (disorder)', 'Fetal anencephaly (disorder)', 'Fetal microcephaly (disorder)', 'Spina bifida occulta (disorder)', 'Meningomyelocele (disorder)', 'Meningocele (disorder)', 'Congenital hydrocephalus (disorder)', 'Holoprosencephaly sequence (disorder)', 'Encephalocele (disorder)', 'Neonatal neuromuscular disorder (disorder)', 'overige congenitale afwijkingen zenuwstelsel', 'zintuigen', 'Congenital anomaly of eye (disorder)', 'Microphthalmos (disorder)', 'overige congenitale afwijkingen ogen', 'Congenital anomaly of ear (disorder)', 'overige congenitale afwijkingen zintuigen', 'Congenital anomaly of cardiovascular system (disorder)', 'Single umbilical artery (disorder)', 'Discordant ventriculoarterial connection (disorder)', 'Tetralogy of Fallot (disorder)', 'Ventricular septal defect (disorder)', 'Hypoplastic left heart syndrome (disorder)', 'Coarctation of aorta (disorder)', 'Congenital anomaly of tricuspid valve (disorder)', 'Multiple congenital cardiac defects (disorder)', 'overige congenitale afwijking hart en bloedvaten', 'Congenital anomaly of digestive tract (disorder)', 'Cleft lip (disorder)', 'Cleft palate (disorder)', 'Congenital anomaly of esophagus (disorder)', 'Congenital atresia of small intestine (disorder)', 'Atresia of large intestine (disorder)', 'Anal atresia (disorder)', 'Hirschsprung''s disease (disorder)', 'Congenital malrotation of intestine (disorder)', 'Intestinal volvulus (disorder)', 'overige congenitale afwijking tractus digestivus', 'Congenital anomaly of respiratory system (disorder)', 'Choanal atresia (disorder)', 'Congenital anomaly of trachea (disorder)', 'Congenital hypoplasia of lung (disorder)', 'Congenital lobar emphysema (disorder)', 'Congenital cystic adenomatoid malformation of lung (disorder)', 'Hydrothorax (disorder)', 'Chylothorax (disorder)', 'Congenital diaphragmatic hernia (disorder)', 'Relaxation of diaphragm (disorder)', 'overige congenitale afwijking tractus respiratorius', 'Genitourinary congenital anomalies (disorder)', 'Hypospadias (disorder)', 'Epispadias (disorder)', 'Undescended testicle (disorder)', 'Exstrophy of bladder sequence (disorder)', 'Oligohydramnios sequence (disorder)', 'Congenital cystic kidney disease (disorder)', 'Urinary tract obstruction (disorder)', 'Disorder of sexual differentiation (disorder)', 'overige congenitale afwijking tractus urogenitalis', 'Congenital anomaly of skin (disorder)', 'Hemangioma of skin (disorder)', 'Congenital pigmented melanocytic nevus of skin (disorder)', 'overige congenitale huidafwijking', 'Congenital anomaly of abdominal wall (disorder)', 'Gastroschisis (disorder)', 'Congenital omphalocele (disorder)', 'Umbilical hernia (disorder)', 'Congenital inguinal hernia (disorder)', 'overige congenitale afwijking buikwand', 'Congenital anomaly of musculoskeletal system (disorder)', 'Polydactyly (disorder)', 'Syndactyly (disorder)', 'Congenital deformity of foot (disorder)', 'Reduction deformity of upper limb (disorder)', 'Reduction deformity of lower limb (disorder)', 'overige congenitale afwijking extremiteiten', 'Congenital subluxation of hip (disorder)', 'overige congenitale afwijking skelet en spierstelsel', 'multipele/syndromale congenitale afwijkingen (niet chromosomaal)', 'Dysmorphism (disorder)', 'Situs inversus viscerum (disorder)', 'Multiple congenital anomalies (disorder)', 'Multiple system malformation syndrome (disorder)', 'overige multipele/syndromale afwijkingen', 'overige congenitale afwijkingen', 'Congenital iodine deficiency syndrome (disorder)', 'Inborn error of metabolism (disorder)', 'andere endocrinologische afwijkingen', 'Congenital malignant neoplastic disease (disorder)', 'overig', 'geen informatie'))">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Specificatie congenitale afwijking": De waarde "<xsl:text/>
-                  <xsl:value-of select="@displayName"/>
-                  <xsl:text/>" voor attribuut "displayName" is onjuist [/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_congenitale_afwijking_groep/specificatie_congenitale_afwijking/@displayName; allowed=('Congenital anomaly of nervous system (disorder)', 'Fetal anencephaly (disorder)', 'Fetal microcephaly (disorder)', 'Spina bifida occulta (disorder)', 'Meningomyelocele (disorder)', 'Meningocele (disorder)', 'Congenital hydrocephalus (disorder)', 'Holoprosencephaly sequence (disorder)', 'Encephalocele (disorder)', 'Neonatal neuromuscular disorder (disorder)', 'overige congenitale afwijkingen zenuwstelsel', 'zintuigen', 'Congenital anomaly of eye (disorder)', 'Microphthalmos (disorder)', 'overige congenitale afwijkingen ogen', 'Congenital anomaly of ear (disorder)', 'overige congenitale afwijkingen zintuigen', 'Congenital anomaly of cardiovascular system (disorder)', 'Single umbilical artery (disorder)', 'Discordant ventriculoarterial connection (disorder)', 'Tetralogy of Fallot (disorder)', 'Ventricular septal defect (disorder)', 'Hypoplastic left heart syndrome (disorder)', 'Coarctation of aorta (disorder)', 'Congenital anomaly of tricuspid valve (disorder)', 'Multiple congenital cardiac defects (disorder)', 'overige congenitale afwijking hart en bloedvaten', 'Congenital anomaly of digestive tract (disorder)', 'Cleft lip (disorder)', 'Cleft palate (disorder)', 'Congenital anomaly of esophagus (disorder)', 'Congenital atresia of small intestine (disorder)', 'Atresia of large intestine (disorder)', 'Anal atresia (disorder)', 'Hirschsprung''s disease (disorder)', 'Congenital malrotation of intestine (disorder)', 'Intestinal volvulus (disorder)', 'overige congenitale afwijking tractus digestivus', 'Congenital anomaly of respiratory system (disorder)', 'Choanal atresia (disorder)', 'Congenital anomaly of trachea (disorder)', 'Congenital hypoplasia of lung (disorder)', 'Congenital lobar emphysema (disorder)', 'Congenital cystic adenomatoid malformation of lung (disorder)', 'Hydrothorax (disorder)', 'Chylothorax (disorder)', 'Congenital diaphragmatic hernia (disorder)', 'Relaxation of diaphragm (disorder)', 'overige congenitale afwijking tractus respiratorius', 'Genitourinary congenital anomalies (disorder)', 'Hypospadias (disorder)', 'Epispadias (disorder)', 'Undescended testicle (disorder)', 'Exstrophy of bladder sequence (disorder)', 'Oligohydramnios sequence (disorder)', 'Congenital cystic kidney disease (disorder)', 'Urinary tract obstruction (disorder)', 'Disorder of sexual differentiation (disorder)', 'overige congenitale afwijking tractus urogenitalis', 'Congenital anomaly of skin (disorder)', 'Hemangioma of skin (disorder)', 'Congenital pigmented melanocytic nevus of skin (disorder)', 'overige congenitale huidafwijking', 'Congenital anomaly of abdominal wall (disorder)', 'Gastroschisis (disorder)', 'Congenital omphalocele (disorder)', 'Umbilical hernia (disorder)', 'Congenital inguinal hernia (disorder)', 'overige congenitale afwijking buikwand', 'Congenital anomaly of musculoskeletal system (disorder)', 'Polydactyly (disorder)', 'Syndactyly (disorder)', 'Congenital deformity of foot (disorder)', 'Reduction deformity of upper limb (disorder)', 'Reduction deformity of lower limb (disorder)', 'overige congenitale afwijking extremiteiten', 'Congenital subluxation of hip (disorder)', 'overige congenitale afwijking skelet en spierstelsel', 'multipele/syndromale congenitale afwijkingen (niet chromosomaal)', 'Dysmorphism (disorder)', 'Situs inversus viscerum (disorder)', 'Multiple congenital anomalies (disorder)', 'Multiple system malformation syndrome (disorder)', 'overige multipele/syndromale afwijkingen', 'overige congenitale afwijkingen', 'Congenital iodine deficiency syndrome (disorder)', 'Inborn error of metabolism (disorder)', 'andere endocrinologische afwijkingen', 'Congenital malignant neoplastic disease (disorder)', 'overig', 'geen informatie')]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('Congenital_anomaly_of_nervous_system_(disorder)', 'Congenital_anomaly_of_nervous_system_(disorder)_Fetal_anencephaly_(disorder)', 'Congenital_anomaly_of_nervous_system_(disorder)_Fetal_microcephaly_(disorder)', 'Congenital_anomaly_of_nervous_system_(disorder)_Spina_bifida_occulta_(disorder)', 'Congenital_anomaly_of_nervous_system_(disorder)_Meningomyelocele_(disorder)', 'Congenital_anomaly_of_nervous_system_(disorder)_Meningocele_(disorder)', 'Congenital_anomaly_of_nervous_system_(disorder)_Congenital_hydrocephalus_(disorder)', 'Congenital_anomaly_of_nervous_system_(disorder)_Holoprosencephaly_sequence_(disorder)', 'Congenital_anomaly_of_nervous_system_(disorder)_Encephalocele_(disorder)', 'Congenital_anomaly_of_nervous_system_(disorder)_Neonatal_neuromuscular_disorder_(disorder)', 'Congenital_anomaly_of_nervous_system_(disorder)_overige_congenitale_afwijkingen_zenuwstelsel', 'zintuigen', 'zintuigen_Congenital_anomaly_of_eye_(disorder)', 'zintuigen_Congenital_anomaly_of_eye_(disorder)_Microphthalmos_(disorder)', 'zintuigen_Congenital_anomaly_of_eye_(disorder)_overige_congenitale_afwijkingen_ogen', 'zintuigen_Congenital_anomaly_of_ear_(disorder)', 'zintuigen_overige_congenitale_afwijkingen_zintuigen', 'Congenital_anomaly_of_cardiovascular_system_(disorder)', 'Congenital_anomaly_of_cardiovascular_system_(disorder)_Single_umbilical_artery_(disorder)', 'Congenital_anomaly_of_cardiovascular_system_(disorder)_Discordant_ventriculoarterial_connection_(disorder)', 'Congenital_anomaly_of_cardiovascular_system_(disorder)_Tetralogy_of_Fallot_(disorder)', 'Congenital_anomaly_of_cardiovascular_system_(disorder)_Ventricular_septal_defect_(disorder)', 'Congenital_anomaly_of_cardiovascular_system_(disorder)_Hypoplastic_left_heart_syndrome_(disorder)', 'Congenital_anomaly_of_cardiovascular_system_(disorder)_Coarctation_of_aorta_(disorder)', 'Congenital_anomaly_of_cardiovascular_system_(disorder)_Congenital_anomaly_of_tricuspid_valve_(disorder)', 'Congenital_anomaly_of_cardiovascular_system_(disorder)_Multiple_congenital_cardiac_defects_(disorder)', 'Congenital_anomaly_of_cardiovascular_system_(disorder)_overige_congenitale_afwijking_hart_en_bloedvaten', 'Congenital_anomaly_of_digestive_tract_(disorder)', 'Congenital_anomaly_of_digestive_tract_(disorder)_Cleft_lip_(disorder)', 'Congenital_anomaly_of_digestive_tract_(disorder)_Cleft_palate_(disorder)', 'Congenital_anomaly_of_digestive_tract_(disorder)_Congenital_anomaly_of_esophagus_(disorder)', 'Congenital_anomaly_of_digestive_tract_(disorder)_Congenital_atresia_of_small_intestine_(disorder)', 'Congenital_anomaly_of_digestive_tract_(disorder)_Atresia_of_large_intestine_(disorder)', 'Congenital_anomaly_of_digestive_tract_(disorder)_Anal_atresia_(disorder)', 'Congenital_anomaly_of_digestive_tract_(disorder)_Hirschsprung''s_disease_(disorder)', 'Congenital_anomaly_of_digestive_tract_(disorder)_Congenital_malrotation_of_intestine_(disorder)', 'Congenital_anomaly_of_digestive_tract_(disorder)_Intestinal_volvulus_(disorder)', 'Congenital_anomaly_of_digestive_tract_(disorder)_overige_congenitale_afwijking_tractus_digestivus', 'Congenital_anomaly_of_respiratory_system_(disorder)', 'Congenital_anomaly_of_respiratory_system_(disorder)_Choanal_atresia_(disorder)', 'Congenital_anomaly_of_respiratory_system_(disorder)_Congenital_anomaly_of_trachea_(disorder)', 'Congenital_anomaly_of_respiratory_system_(disorder)_Congenital_hypoplasia_of_lung_(disorder)', 'Congenital_anomaly_of_respiratory_system_(disorder)_Congenital_lobar_emphysema_(disorder)', 'Congenital_anomaly_of_respiratory_system_(disorder)_Congenital_cystic_adenomatoid_malformation_of_lung_(disorder)', 'Congenital_anomaly_of_respiratory_system_(disorder)_Hydrothorax_(disorder)', 'Congenital_anomaly_of_respiratory_system_(disorder)_Chylothorax_(disorder)', 'Congenital_anomaly_of_respiratory_system_(disorder)_Congenital_diaphragmatic_hernia_(disorder)', 'Congenital_anomaly_of_respiratory_system_(disorder)_Relaxation_of_diaphragm_(disorder)', 'Congenital_anomaly_of_respiratory_system_(disorder)_overige_congenitale_afwijking_tractus_respiratorius', 'Genitourinary_congenital_anomalies_(disorder)', 'Genitourinary_congenital_anomalies_(disorder)_Hypospadias_(disorder)', 'Genitourinary_congenital_anomalies_(disorder)_Epispadias_(disorder)', 'Genitourinary_congenital_anomalies_(disorder)_Undescended_testicle_(disorder)', 'Genitourinary_congenital_anomalies_(disorder)_Exstrophy_of_bladder_sequence_(disorder)', 'Genitourinary_congenital_anomalies_(disorder)_Oligohydramnios_sequence_(disorder)', 'Genitourinary_congenital_anomalies_(disorder)_Congenital_cystic_kidney_disease_(disorder)', 'Genitourinary_congenital_anomalies_(disorder)_Urinary_tract_obstruction_(disorder)', 'Genitourinary_congenital_anomalies_(disorder)_Disorder_of_sexual_differentiation_(disorder)', 'Genitourinary_congenital_anomalies_(disorder)_overige_congenitale_afwijking_tractus_urogenitalis', 'Congenital_anomaly_of_skin_(disorder)', 'Congenital_anomaly_of_skin_(disorder)_Hemangioma_of_skin_(disorder)', 'Congenital_anomaly_of_skin_(disorder)_Congenital_pigmented_melanocytic_nevus_of_skin_(disorder)', 'Congenital_anomaly_of_skin_(disorder)_overige_congenitale_huidafwijking', 'Congenital_anomaly_of_abdominal_wall_(disorder)', 'Congenital_anomaly_of_abdominal_wall_(disorder)_Gastroschisis_(disorder)', 'Congenital_anomaly_of_abdominal_wall_(disorder)_Congenital_omphalocele_(disorder)', 'Congenital_anomaly_of_abdominal_wall_(disorder)_Umbilical_hernia_(disorder)', 'Congenital_anomaly_of_abdominal_wall_(disorder)_Congenital_inguinal_hernia_(disorder)', 'Congenital_anomaly_of_abdominal_wall_(disorder)_overige_congenitale_afwijking_buikwand', 'Congenital_anomaly_of_musculoskeletal_system_(disorder)', 'Congenital_anomaly_of_musculoskeletal_system_(disorder)_Polydactyly_(disorder)', 'Congenital_anomaly_of_musculoskeletal_system_(disorder)_Syndactyly_(disorder)', 'Congenital_anomaly_of_musculoskeletal_system_(disorder)_Congenital_deformity_of_foot_(disorder)', 'Congenital_anomaly_of_musculoskeletal_system_(disorder)_Reduction_deformity_of_upper_limb_(disorder)', 'Congenital_anomaly_of_musculoskeletal_system_(disorder)_Reduction_deformity_of_lower_limb_(disorder)', 'Congenital_anomaly_of_musculoskeletal_system_(disorder)_overige_congenitale_afwijking_extremiteiten', 'Congenital_anomaly_of_musculoskeletal_system_(disorder)_Congenital_subluxation_of_hip_(disorder)', 'Congenital_anomaly_of_musculoskeletal_system_(disorder)_overige_congenitale_afwijking_skelet_en_spierstelsel', 'multipele/syndromale_congenitale_afwijkingen_(niet_chromosomaal)', 'multipele/syndromale_congenitale_afwijkingen_(niet_chromosomaal)_Dysmorphism_(disorder)', 'multipele/syndromale_congenitale_afwijkingen_(niet_chromosomaal)_Situs_inversus_viscerum_(disorder)', 'multipele/syndromale_congenitale_afwijkingen_(niet_chromosomaal)_Multiple_congenital_anomalies_(disorder)', 'multipele/syndromale_congenitale_afwijkingen_(niet_chromosomaal)_Multiple_system_malformation_syndrome_(disorder)', 'multipele/syndromale_congenitale_afwijkingen_(niet_chromosomaal)_overige_multipele/syndromale_afwijkingen', 'overige_congenitale_afwijkingen', 'overige_congenitale_afwijkingen_Congenital_iodine_deficiency_syndrome_(disorder)', 'overige_congenitale_afwijkingen_Inborn_error_of_metabolism_(disorder)', 'overige_congenitale_afwijkingen_andere_endocrinologische_afwijkingen', 'overige_congenitale_afwijkingen_Congenital_malignant_neoplastic_disease_(disorder)', 'overig', 'geen_informatie'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -14755,22 +14403,6 @@ SOFTWARE.
                <svrl:text>Foutieve informatie voor "Specificatie chromosomale afwijking": De waarde "<xsl:text/>
                   <xsl:value-of select="@codeSystem"/>
                   <xsl:text/>" voor attribuut "codeSystem" is onjuist [/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_chromosomale_afwijking_groep/specificatie_chromosomale_afwijking/@codeSystem; allowed=('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.2.4.4.13.22', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008')]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
-         <xsl:when test="empty(@displayName) or (@displayName = ('Complete trisomy 21 syndrome (disorder)', 'Complete trisomy 18 syndrome (disorder)', 'Complete trisomy 13 syndrome (disorder)', 'Andere numerieke chromosomale afwijkingen', 'Overige chromosomale afwijkingen', 'Onbekend', 'Geen informatie'))"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@displayName) or (@displayName = ('Complete trisomy 21 syndrome (disorder)', 'Complete trisomy 18 syndrome (disorder)', 'Complete trisomy 13 syndrome (disorder)', 'Andere numerieke chromosomale afwijkingen', 'Overige chromosomale afwijkingen', 'Onbekend', 'Geen informatie'))">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Specificatie chromosomale afwijking": De waarde "<xsl:text/>
-                  <xsl:value-of select="@displayName"/>
-                  <xsl:text/>" voor attribuut "displayName" is onjuist [/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_chromosomale_afwijking_groep/specificatie_chromosomale_afwijking/@displayName; allowed=('Complete trisomy 21 syndrome (disorder)', 'Complete trisomy 18 syndrome (disorder)', 'Complete trisomy 13 syndrome (disorder)', 'Andere numerieke chromosomale afwijkingen', 'Overige chromosomale afwijkingen', 'Onbekend', 'Geen informatie')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
