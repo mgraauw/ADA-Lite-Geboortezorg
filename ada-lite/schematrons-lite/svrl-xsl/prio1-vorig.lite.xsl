@@ -2513,22 +2513,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@displayName) or (@displayName = ('Geslachtsnaam', 'Geslachtsnaam partner'))"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@displayName) or (@displayName = ('Geslachtsnaam', 'Geslachtsnaam partner'))">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Soort naam": De waarde "<xsl:text/>
-                  <xsl:value-of select="@displayName"/>
-                  <xsl:text/>" voor attribuut "displayName" is onjuist [/prio1_vorig/vrouw/naamgegevens/achternaam/soort_naam/@displayName; allowed=('Geslachtsnaam', 'Geslachtsnaam partner')]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('Geslachtsnaam', 'Geslachtsnaam_partner'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -3253,22 +3237,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@displayName) or (@displayName = ('Partus', 'Miskraam', 'Spontaan', 'Medicamenteus', 'Instrumenteel', 'APLA', 'Medicamenteus', 'Instrumenteel', 'EUG - behandeld', '(partiële) Mola - behandeld', 'geen informatie'))"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@displayName) or (@displayName = ('Partus', 'Miskraam', 'Spontaan', 'Medicamenteus', 'Instrumenteel', 'APLA', 'Medicamenteus', 'Instrumenteel', 'EUG - behandeld', '(partiële) Mola - behandeld', 'geen informatie'))">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Wijze einde zwangerschap": De waarde "<xsl:text/>
-                  <xsl:value-of select="@displayName"/>
-                  <xsl:text/>" voor attribuut "displayName" is onjuist [/prio1_vorig/zwangerschap/wijze_einde_zwangerschap/@displayName; allowed=('Partus', 'Miskraam', 'Spontaan', 'Medicamenteus', 'Instrumenteel', 'APLA', 'Medicamenteus', 'Instrumenteel', 'EUG - behandeld', '(partiële) Mola - behandeld', 'geen informatie')]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('Partus', 'Miskraam', 'Miskraam_Spontaan', 'Miskraam_Medicamenteus', 'Miskraam_Instrumenteel', 'APLA', 'APLA_Medicamenteus', 'APLA_Instrumenteel', 'EUG_-_behandeld', '(partiële)_Mola_-_behandeld', 'geen_informatie'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -3926,22 +3894,6 @@ SOFTWARE.
                <svrl:text>Foutieve informatie voor "Conditie perineum postpartum": De waarde "<xsl:text/>
                   <xsl:value-of select="@codeSystem"/>
                   <xsl:text/>" voor attribuut "codeSystem" is onjuist [/prio1_vorig/bevalling/conditie_perineum_postpartum/@codeSystem; allowed=('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008')]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
-         <xsl:when test="empty(@displayName) or (@displayName = ('Perineum intact  (finding)', 'First degree perineal tear during delivery - delivered (disorder)', 'Second degree perineal tear during delivery - delivered  (disorder)', 'Third degree perineal tear during delivery - delivered  (disorder)', 'Type 3a third degree laceration of perineum  (disorder)', 'Type 3b third degree laceration of perineum (disorder)', 'Type 3c third degree laceration of perineum (disorder)', 'Fourth degree perineal tear during delivery - delivered  (disorder)', 'Episiotomy wound  (morphologic abnormality)', 'Anders', 'Onbekend', 'Geen informatie'))"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@displayName) or (@displayName = ('Perineum intact (finding)', 'First degree perineal tear during delivery - delivered (disorder)', 'Second degree perineal tear during delivery - delivered (disorder)', 'Third degree perineal tear during delivery - delivered (disorder)', 'Type 3a third degree laceration of perineum (disorder)', 'Type 3b third degree laceration of perineum (disorder)', 'Type 3c third degree laceration of perineum (disorder)', 'Fourth degree perineal tear during delivery - delivered (disorder)', 'Episiotomy wound (morphologic abnormality)', 'Anders', 'Onbekend', 'Geen informatie'))">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Conditie perineum postpartum": De waarde "<xsl:text/>
-                  <xsl:value-of select="@displayName"/>
-                  <xsl:text/>" voor attribuut "displayName" is onjuist [/prio1_vorig/bevalling/conditie_perineum_postpartum/@displayName; allowed=('Perineum intact  (finding)', 'First degree perineal tear during delivery - delivered (disorder)', 'Second degree perineal tear during delivery - delivered  (disorder)', 'Third degree perineal tear during delivery - delivered  (disorder)', 'Type 3a third degree laceration of perineum  (disorder)', 'Type 3b third degree laceration of perineum (disorder)', 'Type 3c third degree laceration of perineum (disorder)', 'Fourth degree perineal tear during delivery - delivered  (disorder)', 'Episiotomy wound  (morphologic abnormality)', 'Anders', 'Onbekend', 'Geen informatie')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -4819,22 +4771,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@displayName) or (@displayName = ('Delivery normal (finding)', 'Assisted delivery of fetus (finding)', 'Cesarean delivery - delivered (finding)', 'Delivery by elective cesarean section (finding)', 'Delivery by emergency cesarean section (finding)', 'Legally induced abortion (disorder)', 'onbekend', 'geen informatie'))"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@displayName) or (@displayName = ('Delivery normal (finding)', 'Assisted delivery of fetus (finding)', 'Cesarean delivery - delivered (finding)', 'Delivery by elective cesarean section (finding)', 'Delivery by emergency cesarean section (finding)', 'Legally induced abortion (disorder)', 'onbekend', 'geen informatie'))">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Type partus": De waarde "<xsl:text/>
-                  <xsl:value-of select="@displayName"/>
-                  <xsl:text/>" voor attribuut "displayName" is onjuist [/prio1_vorig/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/type_partus/@displayName; allowed=('Delivery normal (finding)', 'Assisted delivery of fetus (finding)', 'Cesarean delivery - delivered (finding)', 'Delivery by elective cesarean section (finding)', 'Delivery by emergency cesarean section (finding)', 'Legally induced abortion (disorder)', 'onbekend', 'geen informatie')]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('Delivery_normal_(finding)', 'Assisted_delivery_of_fetus_(finding)', 'Cesarean_delivery_-_delivered_(finding)', 'Cesarean_delivery_-_delivered_(finding)_Delivery_by_elective_cesarean_section_(finding)', 'Cesarean_delivery_-_delivered_(finding)_Delivery_by_emergency_cesarean_section_(finding)', 'Legally_induced_abortion_(disorder)', 'onbekend', 'geen_informatie'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -5403,22 +5339,6 @@ SOFTWARE.
                <svrl:text>Foutieve informatie voor "Vaginale kunstverlossing": De waarde "<xsl:text/>
                   <xsl:value-of select="@codeSystem"/>
                   <xsl:text/>" voor attribuut "codeSystem" is onjuist [/prio1_vorig/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/vaginale_kunstverlossing_groep/vaginale_kunstverlossing/@codeSystem; allowed=('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008')]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
-         <xsl:when test="empty(@displayName) or (@displayName = ('Forceps delivery (procedure)', 'Delivery by vacuum extraction (procedure)', 'Obstetrical version with extraction (procedure)', 'Partial breech extraction (procedure)', 'Total breech extraction (procedure)', 'anders', 'geen informatie'))"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@displayName) or (@displayName = ('Forceps delivery (procedure)', 'Delivery by vacuum extraction (procedure)', 'Obstetrical version with extraction (procedure)', 'Partial breech extraction (procedure)', 'Total breech extraction (procedure)', 'anders', 'geen informatie'))">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Vaginale kunstverlossing": De waarde "<xsl:text/>
-                  <xsl:value-of select="@displayName"/>
-                  <xsl:text/>" voor attribuut "displayName" is onjuist [/prio1_vorig/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/vaginale_kunstverlossing_groep/vaginale_kunstverlossing/@displayName; allowed=('Forceps delivery (procedure)', 'Delivery by vacuum extraction (procedure)', 'Obstetrical version with extraction (procedure)', 'Partial breech extraction (procedure)', 'Total breech extraction (procedure)', 'anders', 'geen informatie')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>

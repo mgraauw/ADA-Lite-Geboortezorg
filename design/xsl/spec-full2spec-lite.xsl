@@ -79,10 +79,10 @@
       <xsl:apply-templates select="name | desc"/>
       <conceptList>
         <xsl:for-each select="conceptList/*">
-          <xsl:copy>
-            <xsl:copy-of select="(@localId, @code, @codeSystem, @displayName)"/>
-            <xsl:attribute name="value" select="@code"/>
-            <xsl:copy-of select="name"/>
+          <xsl:copy copy-namespaces="no">
+              <xsl:copy-of select="(@localId, @code, @codeSystem, @displayName)" copy-namespaces="no"/>
+               <xsl:attribute name="value" select="@code"/>
+              <xsl:copy-of select="name" copy-namespaces="no"/>
           </xsl:copy>
         </xsl:for-each>
       </conceptList>
@@ -92,7 +92,7 @@
   <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 
   <xsl:template match="@*|*">
-    <xsl:copy>
+      <xsl:copy copy-namespaces="no">
       <xsl:apply-templates select="@*|node()"/>
     </xsl:copy>
   </xsl:template>

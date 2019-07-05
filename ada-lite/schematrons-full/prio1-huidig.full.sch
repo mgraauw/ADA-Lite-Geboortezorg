@@ -248,7 +248,6 @@ SOFTWARE.
          <assert test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008'))">Foutieve informatie voor "Bloedgroep vrouw": De waarde "<value-of select="@codeSystem"/>" voor attribuut "codeSystem" is onjuist [/prio1_huidig/vrouw/bloedgroep_vrouw/@codeSystem; allowed=('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008')]</assert>
          <!-- == Attribute "displayName": == -->
          <assert test="exists(@displayName)">Foutieve informatie voor "Bloedgroep vrouw": Attribuut "displayName" ontbreekt [/prio1_huidig/vrouw/bloedgroep_vrouw/@displayName]</assert>
-         <assert test="empty(@displayName) or (@displayName = ('Blood group A (finding)', 'Blood group B (finding)', 'Blood group AB (finding)', 'Blood group O (finding)', 'Onbekend', 'Geen informatie'))">Foutieve informatie voor "Bloedgroep vrouw": De waarde "<value-of select="@displayName"/>" voor attribuut "displayName" is onjuist [/prio1_huidig/vrouw/bloedgroep_vrouw/@displayName; allowed=('Blood group A (finding)', 'Blood group B (finding)', 'Blood group AB (finding)', 'Blood group O (finding)', 'Onbekend', 'Geen informatie')]</assert>
          <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @xsi:*))">Foutieve informatie voor "Bloedgroep vrouw": Ongeldige attributen aangetroffen [/prio1_huidig/vrouw/bloedgroep_vrouw; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @xsi:*)]</assert>
       </rule>
    </pattern>
@@ -269,7 +268,6 @@ SOFTWARE.
          <assert test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008'))">Foutieve informatie voor "Rhesus D Factor vrouw": De waarde "<value-of select="@codeSystem"/>" voor attribuut "codeSystem" is onjuist [/prio1_huidig/vrouw/rhesus_d_factor_vrouw/@codeSystem; allowed=('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008')]</assert>
          <!-- == Attribute "displayName": == -->
          <assert test="exists(@displayName)">Foutieve informatie voor "Rhesus D Factor vrouw": Attribuut "displayName" ontbreekt [/prio1_huidig/vrouw/rhesus_d_factor_vrouw/@displayName]</assert>
-         <assert test="empty(@displayName) or (@displayName = ('Rh D Positief', 'Rh D Negatief', 'onbekend', 'geen informatie'))">Foutieve informatie voor "Rhesus D Factor vrouw": De waarde "<value-of select="@displayName"/>" voor attribuut "displayName" is onjuist [/prio1_huidig/vrouw/rhesus_d_factor_vrouw/@displayName; allowed=('Rh D Positief', 'Rh D Negatief', 'onbekend', 'geen informatie')]</assert>
          <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @xsi:*))">Foutieve informatie voor "Rhesus D Factor vrouw": Ongeldige attributen aangetroffen [/prio1_huidig/vrouw/rhesus_d_factor_vrouw; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @xsi:*)]</assert>
       </rule>
    </pattern>
@@ -290,7 +288,6 @@ SOFTWARE.
          <assert test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.5.1008'))">Foutieve informatie voor "Rhesus c Factor": De waarde "<value-of select="@codeSystem"/>" voor attribuut "codeSystem" is onjuist [/prio1_huidig/vrouw/rhesus_c_factor/@codeSystem; allowed=('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.5.1008')]</assert>
          <!-- == Attribute "displayName": == -->
          <assert test="exists(@displayName)">Foutieve informatie voor "Rhesus c Factor": Attribuut "displayName" ontbreekt [/prio1_huidig/vrouw/rhesus_c_factor/@displayName]</assert>
-         <assert test="empty(@displayName) or (@displayName = ('Rhc positive (finding)', 'Rhc negative (finding)', 'Geen informatie'))">Foutieve informatie voor "Rhesus c Factor": De waarde "<value-of select="@displayName"/>" voor attribuut "displayName" is onjuist [/prio1_huidig/vrouw/rhesus_c_factor/@displayName; allowed=('Rhc positive (finding)', 'Rhc negative (finding)', 'Geen informatie')]</assert>
          <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @xsi:*))">Foutieve informatie voor "Rhesus c Factor": Ongeldige attributen aangetroffen [/prio1_huidig/vrouw/rhesus_c_factor; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @xsi:*)]</assert>
       </rule>
    </pattern>
@@ -358,7 +355,6 @@ SOFTWARE.
          <assert test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.5.43', '2.16.840.1.113883.5.43'))">Foutieve informatie voor "Soort naam": De waarde "<value-of select="@codeSystem"/>" voor attribuut "codeSystem" is onjuist [/prio1_huidig/vrouw/naamgegevens/achternaam/soort_naam/@codeSystem; allowed=('2.16.840.1.113883.5.43', '2.16.840.1.113883.5.43')]</assert>
          <!-- == Attribute "displayName": == -->
          <assert test="exists(@displayName)">Foutieve informatie voor "Soort naam": Attribuut "displayName" ontbreekt [/prio1_huidig/vrouw/naamgegevens/achternaam/soort_naam/@displayName]</assert>
-         <assert test="empty(@displayName) or (@displayName = ('Geslachtsnaam', 'Geslachtsnaam partner'))">Foutieve informatie voor "Soort naam": De waarde "<value-of select="@displayName"/>" voor attribuut "displayName" is onjuist [/prio1_huidig/vrouw/naamgegevens/achternaam/soort_naam/@displayName; allowed=('Geslachtsnaam', 'Geslachtsnaam partner')]</assert>
          <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @xsi:*))">Foutieve informatie voor "Soort naam": Ongeldige attributen aangetroffen [/prio1_huidig/vrouw/naamgegevens/achternaam/soort_naam; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @xsi:*)]</assert>
       </rule>
    </pattern>

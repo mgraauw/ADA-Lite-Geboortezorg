@@ -388,7 +388,8 @@
     </xsl:call-template>
     <xsl:call-template name="add-value-restricted-attribute-definition">
       <xsl:with-param name="attribute-name" select="'displayName'"/>
-      <xsl:with-param name="attribute-allowed-values" select="data($base-concept-elements/@displayName)"/>
+      <xsl:with-param name="attribute-allowed-values" select="()"/>
+      <!--<xsl:with-param name="attribute-allowed-values" select="data($base-concept-elements/@displayName)"/>-->
     </xsl:call-template>
 
     <!-- For the lite version, add the @enum alternative as well: -->

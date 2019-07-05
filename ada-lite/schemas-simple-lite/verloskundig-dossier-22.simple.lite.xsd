@@ -355,20 +355,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Arts"/>
-               <xs:enumeration value="Huisarts"/>
-               <xs:enumeration value="Kinderarts"/>
-               <xs:enumeration value="Arts klinische chemie"/>
-               <xs:enumeration value="Gynaecoloog / obstetricus"/>
-               <xs:enumeration value="Verloskundige"/>
-               <xs:enumeration value="Echoscopist"/>
-               <xs:enumeration value="Analist"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -727,17 +714,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Huisartsenpraktijk"/>
-               <xs:enumeration value="Verloskundigenpraktijk"/>
-               <xs:enumeration value="Ziekenhuis"/>
-               <xs:enumeration value="Echocentrum"/>
-               <xs:enumeration value="Laboratorium"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -1147,14 +1124,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Geslachtsnaam"/>
-               <xs:enumeration value="Geslachtsnaam partner"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -1404,21 +1374,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Latijns Amerikaans"/>
-               <xs:enumeration value="Hindoestaans"/>
-               <xs:enumeration value="Kaukasisch"/>
-               <xs:enumeration value="Noord-Afrikaans"/>
-               <xs:enumeration value="Overig Afrikaans"/>
-               <xs:enumeration value="Turks"/>
-               <xs:enumeration value="Overig Aziatisch"/>
-               <xs:enumeration value="Meervoudige afkomst / Overig"/>
-               <xs:enumeration value="onbekend"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -1522,16 +1478,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Good"/>
-               <xs:enumeration value="Poor"/>
-               <xs:enumeration value="None"/>
-               <xs:enumeration value="geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -1672,22 +1619,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Geen opleiding"/>
-               <xs:enumeration value="Lager Algemeen Onderwijs"/>
-               <xs:enumeration value="Lager Beroepsonderwijs"/>
-               <xs:enumeration value="Middelbaar Algemeen Onderwijs"/>
-               <xs:enumeration value="Middelbaar Beroepsonderwijs"/>
-               <xs:enumeration value="Hoger Algemeen Onderwijs"/>
-               <xs:enumeration value="Hoger Beroepsonderwijs"/>
-               <xs:enumeration value="Wetenschappelijk onderwijs"/>
-               <xs:enumeration value="Onbekend"/>
-               <xs:enumeration value="Anders, namelijk"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -2516,15 +2448,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Systemic lupus erythematosus (disorder)"/>
-               <xs:enumeration value="Rheumatism (disorder)"/>
-               <xs:enumeration value="Overig"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -2612,17 +2536,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Hypertensive disorder, systemic arterial (disorder)"/>
-               <xs:enumeration value="Cardiomyopathy (disorder)"/>
-               <xs:enumeration value="Cardiac arrhythmia (disorder)"/>
-               <xs:enumeration value="Structural disorder of heart (disorder)"/>
-               <xs:enumeration value="Overig"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -2706,15 +2620,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Pyelonephritis (disorder)"/>
-               <xs:enumeration value="Bacteriuria (finding)"/>
-               <xs:enumeration value="Chronic renal impairment (disorder)"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -2809,18 +2715,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Primary malignant neoplasm of female breast (disorder)"/>
-               <xs:enumeration value="Carcinoma of cervix (disorder)"/>
-               <xs:enumeration value="Leukemia, disease (disorder)"/>
-               <xs:enumeration value="Primary malignant neoplasm of lung (disorder)"/>
-               <xs:enumeration value="Malignant melanoma (disorder)"/>
-               <xs:enumeration value="other"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -2902,14 +2797,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Hypothyroidism (disorder)"/>
-               <xs:enumeration value="Hyperthyroidism (disorder)"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -3013,19 +2901,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Epilepsy (disorder)"/>
-               <xs:enumeration value="Cerebrovascular accident (disorder)"/>
-               <xs:enumeration value="Multiple sclerosis (disorder)"/>
-               <xs:enumeration value="Migraine (disorder)"/>
-               <xs:enumeration value="Herniation of nucleus pulposus (disorder)"/>
-               <xs:enumeration value="Disease of pituitary gland (disorder)"/>
-               <xs:enumeration value="Overig"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -3238,32 +3114,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Chlamydia trachomatis infection (disorder)"/>
-               <xs:enumeration value="Gonorrhea (disorder)"/>
-               <xs:enumeration value="Streptococcus agalactiae infection (disorder)"/>
-               <xs:enumeration value="Methicillin resistant Staphylococcus aureus infection (disorder)"/>
-               <xs:enumeration value="Tuberculosis (disorder)"/>
-               <xs:enumeration value="Cytomegalovirus infection (disorder)"/>
-               <xs:enumeration value="Herpesvirus infection (disorder)"/>
-               <xs:enumeration value="Hepatitis B surface antigen positive (finding)"/>
-               <xs:enumeration value="Human immunodeficiency virus infection (disorder)"/>
-               <xs:enumeration value="Type B viral hepatitis (disorder)"/>
-               <xs:enumeration value="Viral hepatitis C (disorder)"/>
-               <xs:enumeration value="Rubella (disorder)"/>
-               <xs:enumeration value="Varicella-zoster virus infection (disorder)"/>
-               <xs:enumeration value="Parvovirus infection (disorder)"/>
-               <xs:enumeration value="Syphilis (disorder)"/>
-               <xs:enumeration value="Toxoplasmosis (disorder)"/>
-               <xs:enumeration value="Lyme disease (disorder)"/>
-               <xs:enumeration value="Malaria (disorder)"/>
-               <xs:enumeration value="Infection by Trichomonas (disorder)"/>
-               <xs:enumeration value="Overig"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -3422,15 +3273,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Chronic liver disease (disorder)"/>
-               <xs:enumeration value="Ulcerative colitis (disorder)"/>
-               <xs:enumeration value="Crohn's disease (disorder)"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -3511,16 +3354,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Iron deficiency anemia (disorder)"/>
-               <xs:enumeration value="Hemoglobinopathy (disorder)"/>
-               <xs:enumeration value="Hereditary hemoglobinopathy disorder homozygous for hemoglobin S (disorder)"/>
-               <xs:enumeration value="Thalassemia (disorder)"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -3613,17 +3447,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Asthma (disorder)"/>
-               <xs:enumeration value="Chronic obstructive lung disease (disorder)"/>
-               <xs:enumeration value="Sarcoidosis (disorder)"/>
-               <xs:enumeration value="Overig"/>
-               <xs:enumeration value="Geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -3714,16 +3538,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Endometriosis (disorder)"/>
-               <xs:enumeration value="Uterine leiomyoma (disorder)"/>
-               <xs:enumeration value="Congenital uterine anomaly (disorder)"/>
-               <xs:enumeration value="Overig"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -3802,15 +3617,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Congenital dislocation of hip (disorder)"/>
-               <xs:enumeration value="Pelvic injury (disorder)"/>
-               <xs:enumeration value="Overig"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -4045,36 +3852,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Operation on female genital organs (procedure)"/>
-               <xs:enumeration value="Curettage (procedure)"/>
-               <xs:enumeration value="Cesarean section (procedure)"/>
-               <xs:enumeration value="Manual removal of retained placenta (procedure)"/>
-               <xs:enumeration value="Operation on uterus (procedure)"/>
-               <xs:enumeration value="Uterine myomectomy (procedure)"/>
-               <xs:enumeration value="Operation on ovary (procedure)"/>
-               <xs:enumeration value="Operation on musculoskeletal system (procedure)"/>
-               <xs:enumeration value="Operative procedure on pelvis (procedure)"/>
-               <xs:enumeration value="Operation on back (procedure)"/>
-               <xs:enumeration value="Operation on abdominal region (procedure)"/>
-               <xs:enumeration value="Laparotomy (procedure)"/>
-               <xs:enumeration value="Appendectomy (procedure)"/>
-               <xs:enumeration value="Abdominoplasty (procedure)"/>
-               <xs:enumeration value="Operation on intestine (procedure)"/>
-               <xs:enumeration value="Operation on breast (procedure)"/>
-               <xs:enumeration value="Operation on organ (procedure)"/>
-               <xs:enumeration value="Kidney operation (procedure)"/>
-               <xs:enumeration value="Operation on thyroid gland (procedure)"/>
-               <xs:enumeration value="Operation on heart (procedure)"/>
-               <xs:enumeration value="Operation on adrenal gland (procedure)"/>
-               <xs:enumeration value="Operation on nervous system (procedure)"/>
-               <xs:enumeration value="Onbekend"/>
-               <xs:enumeration value="Overig"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -4330,26 +4108,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="von Willebrand disorder (disorder)"/>
-               <xs:enumeration value="Hemophilia (disorder)"/>
-               <xs:enumeration value="Thrombocytopenic disorder (disorder)"/>
-               <xs:enumeration value="Disseminated intravascular coagulation (disorder)"/>
-               <xs:enumeration value="Thrombophilia (disorder)"/>
-               <xs:enumeration value="Antithrombin III deficiency (disorder)"/>
-               <xs:enumeration value="Protein C deficiency disease (disorder)"/>
-               <xs:enumeration value="Protein S deficiency disease (disorder)"/>
-               <xs:enumeration value="Heterozygous Factor V Leiden mutation (disorder)"/>
-               <xs:enumeration value="Homozygous Factor V Leiden mutation (disorder)"/>
-               <xs:enumeration value="Factor XII deficiency disease (disorder)"/>
-               <xs:enumeration value="Deep venous thrombosis (disorder)"/>
-               <xs:enumeration value="Pulmonary embolism (disorder)"/>
-               <xs:enumeration value="Overig"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -4617,20 +4376,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="No known allergies (situation)"/>
-               <xs:enumeration value="Latex allergy (disorder)"/>
-               <xs:enumeration value="Iodine allergy (disorder)"/>
-               <xs:enumeration value="Adverse reaction to drug (disorder)"/>
-               <xs:enumeration value="Anti-infectives adverse reaction (disorder)"/>
-               <xs:enumeration value="overig"/>
-               <xs:enumeration value="onbekend"/>
-               <xs:enumeration value="geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -5036,18 +4782,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Female genital mutilation type 1 (disorder)"/>
-               <xs:enumeration value="Female genital mutilation type 2 (disorder)"/>
-               <xs:enumeration value="Female genital mutilation type 3 (disorder)"/>
-               <xs:enumeration value="Female genital mutilation type 4 (disorder)"/>
-               <xs:enumeration value="onbekend"/>
-               <xs:enumeration value="geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -5150,18 +4885,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Blood group A (finding)"/>
-               <xs:enumeration value="Blood group B (finding)"/>
-               <xs:enumeration value="Blood group AB (finding)"/>
-               <xs:enumeration value="Blood group O (finding)"/>
-               <xs:enumeration value="Onbekend"/>
-               <xs:enumeration value="Geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -5250,16 +4974,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Rh D Positief"/>
-               <xs:enumeration value="Rh D Negatief"/>
-               <xs:enumeration value="onbekend"/>
-               <xs:enumeration value="geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -5331,15 +5046,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Rhc positive (finding)"/>
-               <xs:enumeration value="Rhc negative (finding)"/>
-               <xs:enumeration value="Geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -5538,21 +5245,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Latijns Amerikaans"/>
-               <xs:enumeration value="Hindoestaans"/>
-               <xs:enumeration value="Kaukasisch"/>
-               <xs:enumeration value="Noord-Afrikaans"/>
-               <xs:enumeration value="Overig Afrikaans"/>
-               <xs:enumeration value="Turks"/>
-               <xs:enumeration value="Overig Aziatisch"/>
-               <xs:enumeration value="Meervoudige afkomst / Overig"/>
-               <xs:enumeration value="onbekend"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -6080,17 +5773,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Echoscopie"/>
-               <xs:enumeration value="Laatste menstruatie"/>
-               <xs:enumeration value="Ovulatie"/>
-               <xs:enumeration value="Anders"/>
-               <xs:enumeration value="Geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -6195,16 +5878,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="No dietary intake of folate before conception (finding)"/>
-               <xs:enumeration value="Dietary intake of folate before conception (finding)"/>
-               <xs:enumeration value="Dietary intake of folate since confirmed pregnancy (finding)"/>
-               <xs:enumeration value="Onbekend"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -6290,15 +5964,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Monoamniotisch"/>
-               <xs:enumeration value="Diamniotisch"/>
-               <xs:enumeration value="Geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -6365,15 +6031,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Monochoriaal"/>
-               <xs:enumeration value="Dichoriaal"/>
-               <xs:enumeration value="Geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -6520,18 +6178,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Artificial insemination by donor (procedure)"/>
-               <xs:enumeration value="Intrauterine artificial insemination (procedure)"/>
-               <xs:enumeration value="Test tube ovum fertilization (procedure)"/>
-               <xs:enumeration value="IVF - In vitro fertilisation with intracytoplasmic sperm injection (ICSI)"/>
-               <xs:enumeration value="Onbekend"/>
-               <xs:enumeration value="Geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -6702,17 +6349,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="1e lijn (VIL A)"/>
-               <xs:enumeration value="overlegsituatie (VIL B)"/>
-               <xs:enumeration value="2e lijn (VIL C)"/>
-               <xs:enumeration value="1e lijn met plaatsindicatie (VIL D)"/>
-               <xs:enumeration value="3e lijns zorg"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -6817,19 +6454,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Home birth (finding)"/>
-               <xs:enumeration value="Geboortecentrum"/>
-               <xs:enumeration value="Hospital (environment)"/>
-               <xs:enumeration value="Nog niet bepaald"/>
-               <xs:enumeration value="Geen voorkeur"/>
-               <xs:enumeration value="Onbekend"/>
-               <xs:enumeration value="Geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -6923,15 +6548,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Feeding intention - breast (finding)"/>
-               <xs:enumeration value="Feeding intention - bottle (finding)"/>
-               <xs:enumeration value="Feeding intention - unsure (finding)"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -7293,24 +6910,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="1e lijns Verloskundige"/>
-               <xs:enumeration value="Klinisch verloskundige"/>
-               <xs:enumeration value="Verloskundige in opleiding"/>
-               <xs:enumeration value="Gynaecoloog"/>
-               <xs:enumeration value="Gynaecoloog in opleiding"/>
-               <xs:enumeration value="Arts-assistent"/>
-               <xs:enumeration value="Co-assistent"/>
-               <xs:enumeration value="Huisarts"/>
-               <xs:enumeration value="Huisarts in opleiding"/>
-               <xs:enumeration value="Verpleegkundige"/>
-               <xs:enumeration value="Onbekend"/>
-               <xs:enumeration value="Geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -7437,16 +7037,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Fetal movements present (finding)"/>
-               <xs:enumeration value="Weak fetal movements (finding)"/>
-               <xs:enumeration value="Reduced fetal movement (finding)"/>
-               <xs:enumeration value="Fetal movements absent (context-dependent category)"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -7558,19 +7149,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="niet gerookt"/>
-               <xs:enumeration value="1 - 10 per dag"/>
-               <xs:enumeration value="11 - 20 per dag"/>
-               <xs:enumeration value="meer dan 20 per dag"/>
-               <xs:enumeration value="gestopt vóór huidige zwangerschap"/>
-               <xs:enumeration value="gestopt tijdens huidige zwangerschap"/>
-               <xs:enumeration value="Unknown"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -7657,15 +7236,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="geen"/>
-               <xs:enumeration value="&lt; 2 eenheden per dag"/>
-               <xs:enumeration value="≥ 2 eenheden per dag"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -7809,25 +7380,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Cannabis (substance)"/>
-               <xs:enumeration value="Cocaine (substance)"/>
-               <xs:enumeration value="Cocaine freebase (substance)"/>
-               <xs:enumeration value="Methylenedioxymethamphetamine (substance)"/>
-               <xs:enumeration value="Amphetamine (substance)"/>
-               <xs:enumeration value="Heroin (substance)"/>
-               <xs:enumeration value="Methadone (substance)"/>
-               <xs:enumeration value="Sodium Oxybutyrate (substance)"/>
-               <xs:enumeration value="Amyl nitrate - non-pharmaceutical (substance)"/>
-               <xs:enumeration value="Lysergic acid diethylamide (substance)"/>
-               <xs:enumeration value="Hallucinogenic mushrooms (substance)"/>
-               <xs:enumeration value="Overig"/>
-               <xs:enumeration value="Geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -8046,19 +7599,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="++++"/>
-               <xs:enumeration value="+++"/>
-               <xs:enumeration value="++"/>
-               <xs:enumeration value="+"/>
-               <xs:enumeration value="(+) / trace"/>
-               <xs:enumeration value="-"/>
-               <xs:enumeration value="geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -8195,21 +7736,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Fundal height of uterus not palpable (situation)"/>
-               <xs:enumeration value="Uterine fundus at symphysis pubis (finding)"/>
-               <xs:enumeration value="Uterine fundus above symphysis pubis (finding)"/>
-               <xs:enumeration value="Uterine fundus below umbilicus (finding)"/>
-               <xs:enumeration value="Uterine fundus at umbilicus (finding)"/>
-               <xs:enumeration value="Uterine fundus above umbilicus (finding)"/>
-               <xs:enumeration value="Uterine fundus between umbilicus and xiphisternum (finding)"/>
-               <xs:enumeration value="Uterine fundus below xiphisternum (finding)"/>
-               <xs:enumeration value="Uterine fundus at xiphisternum (finding)"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -8379,18 +7906,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Vertex presentation (finding)"/>
-               <xs:enumeration value="Breech presentation (finding)"/>
-               <xs:enumeration value="Transverse/oblique lie (finding)"/>
-               <xs:enumeration value="Unstable lie (finding)"/>
-               <xs:enumeration value="Onbekend"/>
-               <xs:enumeration value="Geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -8479,16 +7995,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="On examination - presenting part engaged (finding)"/>
-               <xs:enumeration value="On examination - partial engagement - 2/5 (finding)"/>
-               <xs:enumeration value="On examination - PP free - not engaged (finding)"/>
-               <xs:enumeration value="Fetal engagement cannot be assessed (finding)"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -8591,14 +8098,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Regular fetal heart rhythm (finding)"/>
-               <xs:enumeration value="Irregular fetal heart rhythm (finding)"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -8660,15 +8160,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Bradycardia - baseline fetal heart rate (finding)"/>
-               <xs:enumeration value="Normal baseline fetal heart rate (finding)"/>
-               <xs:enumeration value="Tachycardia - baseline fetal heart rate (finding)"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -8742,16 +8234,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Fetal heart monitoring using hand held doppler (regime/therapy)"/>
-               <xs:enumeration value="Fetal heart monitoring using ultrasound transducer (regime/therapy)"/>
-               <xs:enumeration value="Fetal heart monitoring with Pinard stethoscope (regime/therapy)"/>
-               <xs:enumeration value="Cardiotochogram (regime/therapy)"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -9013,16 +8496,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Endometriosis (disorder)"/>
-               <xs:enumeration value="Uterine leiomyoma (disorder)"/>
-               <xs:enumeration value="Congenital uterine anomaly (disorder)"/>
-               <xs:enumeration value="Overig"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -9136,18 +8610,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Infection of uterus (disorder)"/>
-               <xs:enumeration value="Urinary tract infection in pregnancy (disorder)"/>
-               <xs:enumeration value="Pyelonephritis (disorder)"/>
-               <xs:enumeration value="Infectious colitis, enteritis and gastroenteritis (disorder)"/>
-               <xs:enumeration value="Overig"/>
-               <xs:enumeration value="Geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -9243,16 +8706,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Pregnancy-induced hypertension (disorder)"/>
-               <xs:enumeration value="Pre-eclampsia (disorder)"/>
-               <xs:enumeration value="Hemolysis-elevated liver enzymes-low platelet count syndrome (disorder)"/>
-               <xs:enumeration value="Eclampsia (disorder)"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -9338,15 +8792,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Large-for-dates fetus (disorder)"/>
-               <xs:enumeration value="Small for gestational age fetus (disorder)"/>
-               <xs:enumeration value="Geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -9448,17 +8894,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Breech presentation (finding)"/>
-               <xs:enumeration value="Transverse/oblique lie (finding)"/>
-               <xs:enumeration value="Unstable lie (finding)"/>
-               <xs:enumeration value="Onbekend"/>
-               <xs:enumeration value="Geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -9648,24 +9084,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Cerclage of cervix (procedure)"/>
-               <xs:enumeration value="Insertion of pessary into vagina (procedure)"/>
-               <xs:enumeration value="Cerclage of cervix during pregnancy by abdominal approach (procedure)"/>
-               <xs:enumeration value="Cerclage of cervix during pregnancy by vaginal approach (procedure)"/>
-               <xs:enumeration value="Obstetrical version (procedure)"/>
-               <xs:enumeration value="Hospital admission (procedure)"/>
-               <xs:enumeration value="Administration of drug or medicament (procedure)"/>
-               <xs:enumeration value="Operatie anders dan obstetrisch"/>
-               <xs:enumeration value="Cardiotochogram (regime/therapy)"/>
-               <xs:enumeration value="Antenatal/postnatal care (regime/therapy)"/>
-               <xs:enumeration value="Overig"/>
-               <xs:enumeration value="Geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -9798,18 +9217,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Intrauterine transfusion (procedure)"/>
-               <xs:enumeration value="Selective destruction of fetus (procedure)"/>
-               <xs:enumeration value="Operation on fetus (procedure)"/>
-               <xs:enumeration value="Therapeutic drainage of amniotic fluid (procedure)"/>
-               <xs:enumeration value="Operation on placenta (procedure)"/>
-               <xs:enumeration value="Overig"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -9920,18 +9328,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Maternal drug use (disorder)"/>
-               <xs:enumeration value="Ultrasound obstetric scan abnormal (finding)"/>
-               <xs:enumeration value="Pre-existing maternal disease complicating pregnancy (disorder)|     "/>
-               <xs:enumeration value="Complication occurring during pregnancy (disorder)"/>
-               <xs:enumeration value="Psychological disorder during pregnancy (disorder)|"/>
-               <xs:enumeration value="Other"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -10084,23 +9481,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Partus"/>
-               <xs:enumeration value="Miskraam"/>
-               <xs:enumeration value="Spontaan"/>
-               <xs:enumeration value="Medicamenteus"/>
-               <xs:enumeration value="Instrumenteel"/>
-               <xs:enumeration value="APLA"/>
-               <xs:enumeration value="Medicamenteus"/>
-               <xs:enumeration value="Instrumenteel"/>
-               <xs:enumeration value="EUG - behandeld"/>
-               <xs:enumeration value="(partiële) Mola - behandeld"/>
-               <xs:enumeration value="geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -10284,17 +9665,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="ja"/>
-               <xs:enumeration value="nee"/>
-               <xs:enumeration value="weet het nog niet"/>
-               <xs:enumeration value="niet gevraagd"/>
-               <xs:enumeration value="n.v.t."/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -10378,16 +9749,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Aanmelding zwangerschap"/>
-               <xs:enumeration value="Definitieve à terme datum"/>
-               <xs:enumeration value="24 weken zwanger"/>
-               <xs:enumeration value="Update na 24 weken"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -11201,18 +10563,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="1e lijn (VIL A)"/>
-               <xs:enumeration value="2e lijn (VIL C)"/>
-               <xs:enumeration value="1e lijn met plaatsindicatie (VIL D)"/>
-               <xs:enumeration value="3e lijn"/>
-               <xs:enumeration value="Onbekend"/>
-               <xs:enumeration value="Geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -11308,17 +10659,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="spontane weeën"/>
-               <xs:enumeration value="spontane vliesscheur"/>
-               <xs:enumeration value="interventie om baring op gang te brengen"/>
-               <xs:enumeration value="onbekend"/>
-               <xs:enumeration value="geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -11497,21 +10838,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Sweeping of membrane (procedure)"/>
-               <xs:enumeration value="Induction of labour by artificial rupture of membranes (procedure)"/>
-               <xs:enumeration value="Cervical ripening with balloon (procedure)"/>
-               <xs:enumeration value="Cervical ripening with Prostaglandin E2 (procedure)"/>
-               <xs:enumeration value="Oxytocin induction of labour (procedure)"/>
-               <xs:enumeration value="Prostaglandin induction of labour (procedure)"/>
-               <xs:enumeration value="Elective caesarean section (procedure)"/>
-               <xs:enumeration value="Overig"/>
-               <xs:enumeration value="Geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -11671,24 +10998,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="acuut levensbedreigend"/>
-               <xs:enumeration value="niet levensbedreigend"/>
-               <xs:enumeration value="onbekend"/>
-               <xs:enumeration value="acuut levensbedreigend"/>
-               <xs:enumeration value="niet levensbedreigend"/>
-               <xs:enumeration value="onbekend"/>
-               <xs:enumeration value="baring op korte termijn geïndiceerd door zorgverlener"/>
-               <xs:enumeration value="wens zorgverlener (incl: wetenschappelijk onderzoek)"/>
-               <xs:enumeration value="wens patiënt"/>
-               <xs:enumeration value="overig"/>
-               <xs:enumeration value="onbekend"/>
-               <xs:enumeration value="geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -11864,17 +11174,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Oxytocin"/>
-               <xs:enumeration value="Prostaglandins"/>
-               <xs:enumeration value="Ergot alkaloids"/>
-               <xs:enumeration value="Overig"/>
-               <xs:enumeration value="Onbekend"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -12051,19 +11351,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Spontaan"/>
-               <xs:enumeration value="Controlled cord traction"/>
-               <xs:enumeration value="Manuele placentaverwijdering"/>
-               <xs:enumeration value="Placentaverwijdering bij SC"/>
-               <xs:enumeration value="Overig"/>
-               <xs:enumeration value="Geen informatie"/>
-               <xs:enumeration value="Onbekend"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -12164,16 +11452,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="compleet"/>
-               <xs:enumeration value="niet compleet"/>
-               <xs:enumeration value="dubieus compleet"/>
-               <xs:enumeration value="onbekend"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -12280,16 +11559,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Membranes complete (finding)"/>
-               <xs:enumeration value="Membranes incomplete (finding)"/>
-               <xs:enumeration value="Completeness of membranes debatable (finding)"/>
-               <xs:enumeration value="Onbekend"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -12438,24 +11708,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Perineum intact  (finding)"/>
-               <xs:enumeration value="First degree perineal tear during delivery - delivered (disorder)"/>
-               <xs:enumeration value="Second degree perineal tear during delivery - delivered  (disorder)"/>
-               <xs:enumeration value="Third degree perineal tear during delivery - delivered  (disorder)"/>
-               <xs:enumeration value="Type 3a third degree laceration of perineum  (disorder)"/>
-               <xs:enumeration value="Type 3b third degree laceration of perineum (disorder)"/>
-               <xs:enumeration value="Type 3c third degree laceration of perineum (disorder)"/>
-               <xs:enumeration value="Fourth degree perineal tear during delivery - delivered  (disorder)"/>
-               <xs:enumeration value="Episiotomy wound  (morphologic abnormality)"/>
-               <xs:enumeration value="Anders"/>
-               <xs:enumeration value="Onbekend"/>
-               <xs:enumeration value="Geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -12588,17 +11841,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Intracutaneous continuous suture of skin (procedure)"/>
-               <xs:enumeration value="Transcutaneous continuous suture of skin (procedure)"/>
-               <xs:enumeration value="Suture of skin with intracutaneous knots (procedure)"/>
-               <xs:enumeration value="Suture of skin with transcutaneous knots (procedure)"/>
-               <xs:enumeration value="Onbekend"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -12696,17 +11939,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Labial tear (disorder)"/>
-               <xs:enumeration value="Tear of vaginal wall (disorder)"/>
-               <xs:enumeration value="Cervical laceration (disorder)"/>
-               <xs:enumeration value="Laceration of uterus (disorder)"/>
-               <xs:enumeration value="Overig"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -12894,17 +12127,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="First stage of labor (finding)"/>
-               <xs:enumeration value="Second stage of labor (finding)"/>
-               <xs:enumeration value="Na geboorte gearriveerd"/>
-               <xs:enumeration value="Onbekend"/>
-               <xs:enumeration value="Geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -12995,17 +12218,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Kraamverzorgende"/>
-               <xs:enumeration value="Verpleegkundige"/>
-               <xs:enumeration value="Gespecialiseerd verpleegkundige"/>
-               <xs:enumeration value="Overig"/>
-               <xs:enumeration value="Geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -13103,18 +12316,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="1e lijn (VIL A)"/>
-               <xs:enumeration value="2e lijn (VIL C)"/>
-               <xs:enumeration value="1e lijn met plaatsindicatie (VIL D)"/>
-               <xs:enumeration value="3e lijn"/>
-               <xs:enumeration value="Onbekend"/>
-               <xs:enumeration value="Geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -13306,18 +12508,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Home birth (finding)"/>
-               <xs:enumeration value="Geboortecentrum"/>
-               <xs:enumeration value="Hospital (environment)"/>
-               <xs:enumeration value="Onderweg"/>
-               <xs:enumeration value="Onbekend"/>
-               <xs:enumeration value="Geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -13841,16 +13032,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Telefoonnummer thuis"/>
-               <xs:enumeration value="Tijdelijk telefoonnummer"/>
-               <xs:enumeration value="Telefoonnummer op werk"/>
-               <xs:enumeration value="Mobiele telefoonnummer"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -14092,16 +13274,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Male"/>
-               <xs:enumeration value="Female"/>
-               <xs:enumeration value="Undifferentiated"/>
-               <xs:enumeration value="Unknown"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -14189,17 +13362,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Mannelijk"/>
-               <xs:enumeration value="Vrouwelijk"/>
-               <xs:enumeration value="Niet conclusief"/>
-               <xs:enumeration value="Onbekend"/>
-               <xs:enumeration value="Geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -14414,16 +13577,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Antepartum fetal death (event)"/>
-               <xs:enumeration value="Intrapartum fetal death (event)"/>
-               <xs:enumeration value="Newborn death (event)"/>
-               <xs:enumeration value="Geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -14558,22 +13712,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="foetus A"/>
-               <xs:enumeration value="foetus B"/>
-               <xs:enumeration value="foetus C"/>
-               <xs:enumeration value="foetus D"/>
-               <xs:enumeration value="foetus E"/>
-               <xs:enumeration value="foetus F"/>
-               <xs:enumeration value="foetus G"/>
-               <xs:enumeration value="foetus H"/>
-               <xs:enumeration value="foetus I"/>
-               <xs:enumeration value="onbekend"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -14843,18 +13982,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Als interventie begin baring"/>
-               <xs:enumeration value="Tijdens ontsluitingsperiode &lt;= 3 cm"/>
-               <xs:enumeration value="Tijdens ontsluitingsperiode &gt; 3 cm"/>
-               <xs:enumeration value="Tijdens uitdrijving"/>
-               <xs:enumeration value="Bij sectio"/>
-               <xs:enumeration value="Geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -14964,18 +14092,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="kleurloos"/>
-               <xs:enumeration value="meconium"/>
-               <xs:enumeration value="bloederig"/>
-               <xs:enumeration value="overig"/>
-               <xs:enumeration value="geen informatie"/>
-               <xs:enumeration value="onbekend"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -15099,19 +14216,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Foetale indicatie"/>
-               <xs:enumeration value="Maternale indicatie"/>
-               <xs:enumeration value="Preventie ruptuur"/>
-               <xs:enumeration value="Gesloten vulva tgv besnijdenis"/>
-               <xs:enumeration value="Kunstverlossing (routine handeling)"/>
-               <xs:enumeration value="Overig"/>
-               <xs:enumeration value="Geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -15205,16 +14310,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="mediolaterale episiotomie"/>
-               <xs:enumeration value="mediane episiotomie"/>
-               <xs:enumeration value="onbekend"/>
-               <xs:enumeration value="geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -15382,16 +14478,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Local anesthetic intrathecal block (procedure)"/>
-               <xs:enumeration value="Epidural anesthesia (procedure)"/>
-               <xs:enumeration value="General anesthesia (procedure)"/>
-               <xs:enumeration value="Overig"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -15501,17 +14588,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Administration of morphinomimetic analgesic (procedure)"/>
-               <xs:enumeration value="Sterile water injection (procedure)"/>
-               <xs:enumeration value="Transcutaneous electrical nerve stimulation (regime/therapy)"/>
-               <xs:enumeration value="Nitrous oxide and oxygen gas analgesia in labor (procedure)"/>
-               <xs:enumeration value="overig"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -15623,20 +14700,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Administration of substance via oral route (procedure)"/>
-               <xs:enumeration value="Neurostimulation procedure (procedure)"/>
-               <xs:enumeration value="Medication administration: intramuscular (procedure)"/>
-               <xs:enumeration value="Administration of substance via intravenous route (procedure)"/>
-               <xs:enumeration value="Administration of substance via subcutaneous route (procedure)"/>
-               <xs:enumeration value="Patient controlled analgesia (procedure)"/>
-               <xs:enumeration value="Inhalational analgesia (procedure)"/>
-               <xs:enumeration value="overig"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -15742,17 +14806,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="tijdens ontsluitingsperiode &lt;= 3 cm"/>
-               <xs:enumeration value="tijdens ontsluitingsperiode &gt; 3 cm"/>
-               <xs:enumeration value="tijdens uitdrijving"/>
-               <xs:enumeration value="tijdens sectio"/>
-               <xs:enumeration value="na geboorte kind"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -15880,14 +14934,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Sedation procedure whilst cervical dilatation is less than or equal to 3cm (procedure) "/>
-               <xs:enumeration value="Sedation procedure whilst cervical dilatation is more than 3cm (procedure) "/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -16214,20 +15261,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Delivery normal (finding)"/>
-               <xs:enumeration value="Assisted delivery of fetus (finding)"/>
-               <xs:enumeration value="Cesarean delivery - delivered (finding)"/>
-               <xs:enumeration value="Delivery by elective cesarean section (finding)"/>
-               <xs:enumeration value="Delivery by emergency cesarean section (finding)"/>
-               <xs:enumeration value="Legally induced abortion (disorder)"/>
-               <xs:enumeration value="onbekend"/>
-               <xs:enumeration value="geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -16438,23 +15472,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Occipitoposterior position (finding)"/>
-               <xs:enumeration value="Vertex presentation (finding)"/>
-               <xs:enumeration value="Fontanelles presenting (finding)"/>
-               <xs:enumeration value="Face presentation (finding)"/>
-               <xs:enumeration value="Brow presentation (finding)"/>
-               <xs:enumeration value="Complete breech presentation (finding)"/>
-               <xs:enumeration value="Incomplete breech presentation (finding)"/>
-               <xs:enumeration value="Frank breech presentation (finding)"/>
-               <xs:enumeration value="Overig"/>
-               <xs:enumeration value="Onbekend"/>
-               <xs:enumeration value="Geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -16690,27 +15708,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="1e lijns verloskundige"/>
-               <xs:enumeration value="klinisch verloskundige"/>
-               <xs:enumeration value="verloskundige in opleiding"/>
-               <xs:enumeration value="gynaecoloog"/>
-               <xs:enumeration value="gynaecoloog in opleiding"/>
-               <xs:enumeration value="arts-assistent"/>
-               <xs:enumeration value="co-assistent"/>
-               <xs:enumeration value="huisarts"/>
-               <xs:enumeration value="huisarts in opleiding"/>
-               <xs:enumeration value="arts, niet in opleiding"/>
-               <xs:enumeration value="verpleegkundige"/>
-               <xs:enumeration value="kraamverzorgende"/>
-               <xs:enumeration value="niet medisch geschoolde"/>
-               <xs:enumeration value="onbekend"/>
-               <xs:enumeration value="geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -16916,19 +15914,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="1e lijns verloskundige"/>
-               <xs:enumeration value="klinisch verloskundige"/>
-               <xs:enumeration value="gynaecoloog"/>
-               <xs:enumeration value="gynaecoloog in opleiding"/>
-               <xs:enumeration value="arts-assistent"/>
-               <xs:enumeration value="huisarts"/>
-               <xs:enumeration value="geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -17088,19 +16074,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Forceps delivery (procedure)"/>
-               <xs:enumeration value="Delivery by vacuum extraction (procedure)"/>
-               <xs:enumeration value="Obstetrical version with extraction (procedure)"/>
-               <xs:enumeration value="Partial breech extraction (procedure)"/>
-               <xs:enumeration value="Total breech extraction (procedure)"/>
-               <xs:enumeration value="anders"/>
-               <xs:enumeration value="geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -17208,17 +16182,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Niet vorderende uitdrijving"/>
-               <xs:enumeration value="Verdenking foetale nood"/>
-               <xs:enumeration value="Persverbod vrouw"/>
-               <xs:enumeration value="Overig"/>
-               <xs:enumeration value="Geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -17326,15 +16290,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Tijdens ontsluiting besloten"/>
-               <xs:enumeration value="Tijdens uitdrijving besloten"/>
-               <xs:enumeration value="Geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -17457,23 +16413,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="History of third degree perineal laceration (situation)"/>
-               <xs:enumeration value="History of fourth degree perineal laceration (situation)"/>
-               <xs:enumeration value="Abnormal fetal presentation (finding)"/>
-               <xs:enumeration value="Failure to progress in first stage of labor (finding)"/>
-               <xs:enumeration value="Failure to progress in second stage of labor (finding)"/>
-               <xs:enumeration value="Suspected fetal distress (situation) "/>
-               <xs:enumeration value="Patient condition finding (finding)"/>
-               <xs:enumeration value="Maternal request for treatment (finding)"/>
-               <xs:enumeration value="overig, medische reden"/>
-               <xs:enumeration value="overig, niet-medische reden"/>
-               <xs:enumeration value="geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -17587,16 +16527,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Pubiotomy (procedure)"/>
-               <xs:enumeration value="Maneuvers for delivery in shoulder dystocia (procedure)"/>
-               <xs:enumeration value="Kristeller maneuver (procedure)"/>
-               <xs:enumeration value="overig"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -18728,19 +17659,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="&lt; p2,3"/>
-               <xs:enumeration value="p2,3 tot p10"/>
-               <xs:enumeration value="p10 tot p50"/>
-               <xs:enumeration value="p50 tot p90"/>
-               <xs:enumeration value="p90 tot p97,7"/>
-               <xs:enumeration value="&gt;= p97,7"/>
-               <xs:enumeration value="Geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -18861,14 +17780,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Testicle in scrotum (finding)"/>
-               <xs:enumeration value="Undescended testicle (disorder)"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -18923,14 +17835,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Testicle in scrotum (finding)"/>
-               <xs:enumeration value="Undescended testicle (disorder)"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -19691,103 +18596,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Congenital anomaly of nervous system (disorder)"/>
-               <xs:enumeration value="Fetal anencephaly (disorder)"/>
-               <xs:enumeration value="Fetal microcephaly (disorder)"/>
-               <xs:enumeration value="Spina bifida occulta (disorder)"/>
-               <xs:enumeration value="Meningomyelocele (disorder)"/>
-               <xs:enumeration value="Meningocele (disorder)"/>
-               <xs:enumeration value="Congenital hydrocephalus (disorder)"/>
-               <xs:enumeration value="Holoprosencephaly sequence (disorder)"/>
-               <xs:enumeration value="Encephalocele (disorder)"/>
-               <xs:enumeration value="Neonatal neuromuscular disorder (disorder)"/>
-               <xs:enumeration value="overige congenitale afwijkingen zenuwstelsel"/>
-               <xs:enumeration value="zintuigen"/>
-               <xs:enumeration value="Congenital anomaly of eye (disorder)"/>
-               <xs:enumeration value="Microphthalmos (disorder)"/>
-               <xs:enumeration value="overige congenitale afwijkingen ogen"/>
-               <xs:enumeration value="Congenital anomaly of ear (disorder)"/>
-               <xs:enumeration value="overige congenitale afwijkingen zintuigen"/>
-               <xs:enumeration value="Congenital anomaly of cardiovascular system (disorder)"/>
-               <xs:enumeration value="Single umbilical artery (disorder)"/>
-               <xs:enumeration value="Discordant ventriculoarterial connection (disorder)"/>
-               <xs:enumeration value="Tetralogy of Fallot (disorder)"/>
-               <xs:enumeration value="Ventricular septal defect (disorder)"/>
-               <xs:enumeration value="Hypoplastic left heart syndrome (disorder)"/>
-               <xs:enumeration value="Coarctation of aorta (disorder)"/>
-               <xs:enumeration value="Congenital anomaly of tricuspid valve (disorder)"/>
-               <xs:enumeration value="Multiple congenital cardiac defects (disorder)"/>
-               <xs:enumeration value="overige congenitale afwijking hart en bloedvaten"/>
-               <xs:enumeration value="Congenital anomaly of digestive tract (disorder)"/>
-               <xs:enumeration value="Cleft lip (disorder)"/>
-               <xs:enumeration value="Cleft palate (disorder)"/>
-               <xs:enumeration value="Congenital anomaly of esophagus (disorder)"/>
-               <xs:enumeration value="Congenital atresia of small intestine (disorder)"/>
-               <xs:enumeration value="Atresia of large intestine (disorder)"/>
-               <xs:enumeration value="Anal atresia (disorder)"/>
-               <xs:enumeration value="Hirschsprung's disease (disorder)"/>
-               <xs:enumeration value="Congenital malrotation of intestine (disorder)"/>
-               <xs:enumeration value="Intestinal volvulus (disorder)"/>
-               <xs:enumeration value="overige congenitale afwijking tractus digestivus"/>
-               <xs:enumeration value="Congenital anomaly of respiratory system (disorder)"/>
-               <xs:enumeration value="Choanal atresia (disorder)"/>
-               <xs:enumeration value="Congenital anomaly of trachea (disorder)"/>
-               <xs:enumeration value="Congenital hypoplasia of lung (disorder)"/>
-               <xs:enumeration value="Congenital lobar emphysema (disorder)"/>
-               <xs:enumeration value="Congenital cystic adenomatoid malformation of lung (disorder)"/>
-               <xs:enumeration value="Hydrothorax (disorder)"/>
-               <xs:enumeration value="Chylothorax (disorder)"/>
-               <xs:enumeration value="Congenital diaphragmatic hernia (disorder)"/>
-               <xs:enumeration value="Relaxation of diaphragm (disorder)"/>
-               <xs:enumeration value="overige congenitale afwijking tractus respiratorius"/>
-               <xs:enumeration value="Genitourinary congenital anomalies (disorder)"/>
-               <xs:enumeration value="Hypospadias (disorder)"/>
-               <xs:enumeration value="Epispadias (disorder)"/>
-               <xs:enumeration value="Undescended testicle (disorder)"/>
-               <xs:enumeration value="Exstrophy of bladder sequence (disorder)"/>
-               <xs:enumeration value="Oligohydramnios sequence (disorder)"/>
-               <xs:enumeration value="Congenital cystic kidney disease (disorder)"/>
-               <xs:enumeration value="Urinary tract obstruction (disorder)"/>
-               <xs:enumeration value="Disorder of sexual differentiation (disorder)"/>
-               <xs:enumeration value="overige congenitale afwijking tractus urogenitalis"/>
-               <xs:enumeration value="Congenital anomaly of skin (disorder)"/>
-               <xs:enumeration value="Hemangioma of skin (disorder)"/>
-               <xs:enumeration value="Congenital pigmented melanocytic nevus of skin (disorder)"/>
-               <xs:enumeration value="overige congenitale huidafwijking"/>
-               <xs:enumeration value="Congenital anomaly of abdominal wall (disorder)"/>
-               <xs:enumeration value="Gastroschisis (disorder)"/>
-               <xs:enumeration value="Congenital omphalocele (disorder)"/>
-               <xs:enumeration value="Umbilical hernia (disorder)"/>
-               <xs:enumeration value="Congenital inguinal hernia (disorder)"/>
-               <xs:enumeration value="overige congenitale afwijking buikwand"/>
-               <xs:enumeration value="Congenital anomaly of musculoskeletal system (disorder)"/>
-               <xs:enumeration value="Polydactyly (disorder)"/>
-               <xs:enumeration value="Syndactyly (disorder)"/>
-               <xs:enumeration value="Congenital deformity of foot (disorder)"/>
-               <xs:enumeration value="Reduction deformity of upper limb (disorder)"/>
-               <xs:enumeration value="Reduction deformity of lower limb (disorder)"/>
-               <xs:enumeration value="overige congenitale afwijking extremiteiten"/>
-               <xs:enumeration value="Congenital subluxation of hip (disorder)"/>
-               <xs:enumeration value="overige congenitale afwijking skelet en spierstelsel"/>
-               <xs:enumeration value="multipele/syndromale congenitale afwijkingen (niet chromosomaal)"/>
-               <xs:enumeration value="Dysmorphism (disorder)"/>
-               <xs:enumeration value="Situs inversus viscerum (disorder)"/>
-               <xs:enumeration value="Multiple congenital anomalies (disorder)"/>
-               <xs:enumeration value="Multiple system malformation syndrome (disorder)"/>
-               <xs:enumeration value="overige multipele/syndromale afwijkingen"/>
-               <xs:enumeration value="overige congenitale afwijkingen"/>
-               <xs:enumeration value="Congenital iodine deficiency syndrome (disorder)"/>
-               <xs:enumeration value="Inborn error of metabolism (disorder)"/>
-               <xs:enumeration value="andere endocrinologische afwijkingen"/>
-               <xs:enumeration value="Congenital malignant neoplastic disease (disorder)"/>
-               <xs:enumeration value="overig"/>
-               <xs:enumeration value="geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -20294,15 +19103,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Stated with uncertainty"/>
-               <xs:enumeration value="Stated with no assertion of uncertainty"/>
-               <xs:enumeration value="Geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -20434,19 +19235,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Complete trisomy 21 syndrome (disorder)"/>
-               <xs:enumeration value="Complete trisomy 18 syndrome (disorder)"/>
-               <xs:enumeration value="Complete trisomy 13 syndrome (disorder)"/>
-               <xs:enumeration value="Andere numerieke chromosomale afwijkingen"/>
-               <xs:enumeration value="Overige chromosomale afwijkingen"/>
-               <xs:enumeration value="Onbekend"/>
-               <xs:enumeration value="Geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -20533,15 +19322,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Stated with uncertainty"/>
-               <xs:enumeration value="Stated with no assertion of uncertainty"/>
-               <xs:enumeration value="Geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -20916,58 +19697,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Birth trauma of fetus (disorder)"/>
-               <xs:enumeration value="Subdural intracranial hemorrhage due to birth trauma (disorder)"/>
-               <xs:enumeration value="Intracranial subarachnoid hemorrhage due to birth injury (disorder)"/>
-               <xs:enumeration value="Tentorial tear due to birth trauma (disorder)"/>
-               <xs:enumeration value="Overige bloedingen (geboortetrauma)"/>
-               <xs:enumeration value="Paralysis from birth trauma (disorder)"/>
-               <xs:enumeration value="Overige geboortetraumata"/>
-               <xs:enumeration value="Congenital infectious disease (disorder)"/>
-               <xs:enumeration value="Congenital syphilis (disorder)"/>
-               <xs:enumeration value="Congenital toxoplasmosis (disorder)"/>
-               <xs:enumeration value="Congenital cytomegalovirus infection (disorder)"/>
-               <xs:enumeration value="Congenital rubella syndrome (disorder)"/>
-               <xs:enumeration value="Sepsis of the newborn (disorder)"/>
-               <xs:enumeration value="Inflammatory disease of the central nervous system (disorder)"/>
-               <xs:enumeration value="Overige infecties"/>
-               <xs:enumeration value="Immunologische en haematologische stoornissen"/>
-               <xs:enumeration value="Disorder of immune structure (disorder)"/>
-               <xs:enumeration value="Disorder of hematopoietic system in newborn (disorder)"/>
-               <xs:enumeration value="Twin-to-twin blood transfer (disorder)"/>
-               <xs:enumeration value="Overig haematologisch"/>
-               <xs:enumeration value="Nervous system and sense organ diseases (disorder)"/>
-               <xs:enumeration value="Perinatal intracranial hemorrhage (disorder)"/>
-               <xs:enumeration value="Neonatal cerebral ischemia (disorder)"/>
-               <xs:enumeration value="Convulsions in the newborn (disorder)"/>
-               <xs:enumeration value="Neonatal hypotonia (disorder)"/>
-               <xs:enumeration value="Retinopathy of prematurity (disorder)"/>
-               <xs:enumeration value="Congenital hearing disorder (disorder)"/>
-               <xs:enumeration value="Neonatal cardiovascular disorder (disorder)"/>
-               <xs:enumeration value="Neonatal hypertension (disorder)"/>
-               <xs:enumeration value="Neonatal hypotension (disorder)"/>
-               <xs:enumeration value="Hydrops fetalis (disorder)"/>
-               <xs:enumeration value="Overige circulatoire problemen"/>
-               <xs:enumeration value="Neonatal respiratory system disorder (disorder)"/>
-               <xs:enumeration value="Respiratory distress syndrome in the newborn (disorder)"/>
-               <xs:enumeration value="Neonatal aspiration syndromes (disorder)"/>
-               <xs:enumeration value="Bronchopulmonary dysplasia of newborn (disorder)"/>
-               <xs:enumeration value="Overige respiratoire problemen"/>
-               <xs:enumeration value="Stoornissen tractus digestivus en navel"/>
-               <xs:enumeration value="Neonatal hyperbilirubinemia (disorder)"/>
-               <xs:enumeration value="Overige stoornissen tractus digestivus en navel"/>
-               <xs:enumeration value="Neonatal metabolic and endocrinologic disorder (disorder)"/>
-               <xs:enumeration value="Neonatal hypoglycemia (disorder)"/>
-               <xs:enumeration value="Neonatal hyperglycemia (disorder)"/>
-               <xs:enumeration value="Congenital hypothyroidism (disorder)"/>
-               <xs:enumeration value="Overige endocriene, metabole en milieu interieur stoornissen"/>
-               <xs:enumeration value="Neonatal renal disorder (disorder)"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -21249,15 +19979,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Three vessels in umbilical cord (finding)"/>
-               <xs:enumeration value="Absent blood vessel in umbilical cord (disorder)"/>
-               <xs:enumeration value="Onbekend"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -21536,29 +20258,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Gestation abnormality (disorder)"/>
-               <xs:enumeration value="Birth weight abnormality (disorder)"/>
-               <xs:enumeration value="Delivery problem (finding)"/>
-               <xs:enumeration value="Fetal or neonatal effect of assisted delivery (disorder)"/>
-               <xs:enumeration value="Finding of malposition of foetus (finding)"/>
-               <xs:enumeration value="Prolonged rupture of membranes (disorder)"/>
-               <xs:enumeration value="Finding of neonatal condition (finding)"/>
-               <xs:enumeration value="Amniotic fluid -meconium stain (finding)"/>
-               <xs:enumeration value="Neonatal jaundice (disorder)"/>
-               <xs:enumeration value="Infant feeding problem (finding)"/>
-               <xs:enumeration value="Suspected infectious disease (situation)"/>
-               <xs:enumeration value="Suspected heart disease (situation)"/>
-               <xs:enumeration value="Maternal history of disorder (situation)"/>
-               <xs:enumeration value="Maternal drug use (disorder)"/>
-               <xs:enumeration value="Overig"/>
-               <xs:enumeration value="Onbekend"/>
-               <xs:enumeration value="geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -21702,16 +20402,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="consultatie"/>
-               <xs:enumeration value="overdracht"/>
-               <xs:enumeration value="onbekend"/>
-               <xs:enumeration value="geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -21923,20 +20614,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Arts"/>
-               <xs:enumeration value="Huisarts"/>
-               <xs:enumeration value="Kinderarts"/>
-               <xs:enumeration value="Arts klinische chemie"/>
-               <xs:enumeration value="Gynaecoloog / obstetricus"/>
-               <xs:enumeration value="Verloskundige"/>
-               <xs:enumeration value="Echoscopist"/>
-               <xs:enumeration value="Analist"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -22316,25 +20994,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Echoscopist"/>
-               <xs:enumeration value="1e lijns Verloskundige"/>
-               <xs:enumeration value="Klinisch verloskundige"/>
-               <xs:enumeration value="Verloskundige in opleiding"/>
-               <xs:enumeration value="Gynaecoloog"/>
-               <xs:enumeration value="Gynaecoloog in opleiding"/>
-               <xs:enumeration value="Arts-assistent"/>
-               <xs:enumeration value="Co-assistent"/>
-               <xs:enumeration value="Huisarts"/>
-               <xs:enumeration value="Huisarts in opleiding"/>
-               <xs:enumeration value="Verpleegkundige"/>
-               <xs:enumeration value="Onbekend"/>
-               <xs:enumeration value="Geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -22519,15 +21179,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="primair onderzoek"/>
-               <xs:enumeration value="herhalingsonderzoek"/>
-               <xs:enumeration value="vervolgonderzoek"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -22594,15 +21246,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Geen bijzonderheden"/>
-               <xs:enumeration value="Verdenking afwijking"/>
-               <xs:enumeration value="Incompleet onderzoek"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -22676,16 +21320,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Geen verder onderzoek"/>
-               <xs:enumeration value="Herhalingsonderzoek"/>
-               <xs:enumeration value="Vervolgonderzoek voor pyelectasie"/>
-               <xs:enumeration value="Verwijzing GUO"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -22800,17 +21435,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="o.b.v. NT-meting - verhoogde kans"/>
-               <xs:enumeration value="o.b.v. Combinatietest - verhoogde kans"/>
-               <xs:enumeration value="o.b.v. SEO"/>
-               <xs:enumeration value="(vermoedelijke) Afwijking "/>
-               <xs:enumeration value="Niet beoordeelbaar"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -23005,22 +21630,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="foetus A"/>
-               <xs:enumeration value="foetus B"/>
-               <xs:enumeration value="foetus C"/>
-               <xs:enumeration value="foetus D"/>
-               <xs:enumeration value="foetus E"/>
-               <xs:enumeration value="foetus F"/>
-               <xs:enumeration value="foetus G"/>
-               <xs:enumeration value="foetus H"/>
-               <xs:enumeration value="foetus I"/>
-               <xs:enumeration value="onbekend"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -23502,14 +22112,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Regular fetal heart rhythm (finding)"/>
-               <xs:enumeration value="Irregular fetal heart rhythm (finding)"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -23571,15 +22174,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Bradycardia - baseline fetal heart rate (finding)"/>
-               <xs:enumeration value="Normal baseline fetal heart rate (finding)"/>
-               <xs:enumeration value="Tachycardia - baseline fetal heart rate (finding)"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -23667,18 +22262,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Vertex presentation (finding)"/>
-               <xs:enumeration value="Breech presentation (finding)"/>
-               <xs:enumeration value="Transverse/oblique lie (finding)"/>
-               <xs:enumeration value="Unstable lie (finding)"/>
-               <xs:enumeration value="Onbekend"/>
-               <xs:enumeration value="Geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -23779,16 +22363,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Normal liquor volume (finding)"/>
-               <xs:enumeration value="Oligohydramnios (disorder)"/>
-               <xs:enumeration value="Polyhydramnios (disorder)"/>
-               <xs:enumeration value="Anhydramnios (disorder)"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -23917,18 +22492,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Right lateral position of placenta (finding)"/>
-               <xs:enumeration value="Left lateral position of placenta (finding)"/>
-               <xs:enumeration value="Ventral position of placenta (finding)"/>
-               <xs:enumeration value="Dorsal position of placenta (finding)"/>
-               <xs:enumeration value="Fundal position of placenta (finding)"/>
-               <xs:enumeration value="Onbekend"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -24043,16 +22607,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Vasa previa (disorder)"/>
-               <xs:enumeration value="Twin placenta (disorder)"/>
-               <xs:enumeration value="Velamentous insertion of umbilical cord (disorder)"/>
-               <xs:enumeration value="Overig"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -24132,15 +22687,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Three vessels in umbilical cord (finding)"/>
-               <xs:enumeration value="Absent blood vessel in umbilical cord (disorder)"/>
-               <xs:enumeration value="Onbekend"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -24394,18 +22941,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="normaal/geen bijzonderheden"/>
-               <xs:enumeration value="afwijkend"/>
-               <xs:enumeration value="niet conclusief"/>
-               <xs:enumeration value="niet beoordeeld/beoordeelbaar"/>
-               <xs:enumeration value="verdenking afwijking"/>
-               <xs:enumeration value="sonomarker geconstateerd"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -24487,15 +23023,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Geen bijzonderheden"/>
-               <xs:enumeration value="Verdenking afwijking"/>
-               <xs:enumeration value="Niet beoordeeld/beoordeelbaar"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -24562,15 +23090,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Geen bijzonderheden"/>
-               <xs:enumeration value="Verdenking afwijking"/>
-               <xs:enumeration value="Niet beoordeeld/beoordeelbaar"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -24637,15 +23157,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Geen bijzonderheden"/>
-               <xs:enumeration value="Verdenking afwijking"/>
-               <xs:enumeration value="Niet beoordeeld/beoordeelbaar"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -24712,15 +23224,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Geen bijzonderheden"/>
-               <xs:enumeration value="Verdenking afwijking"/>
-               <xs:enumeration value="Niet beoordeeld/beoordeelbaar"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -24787,15 +23291,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Geen bijzonderheden"/>
-               <xs:enumeration value="Verdenking afwijking"/>
-               <xs:enumeration value="Niet beoordeeld/beoordeelbaar"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -24862,15 +23358,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Geen bijzonderheden"/>
-               <xs:enumeration value="Verdenking afwijking"/>
-               <xs:enumeration value="Niet beoordeeld/beoordeelbaar"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -24937,15 +23425,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Geen bijzonderheden"/>
-               <xs:enumeration value="Verdenking afwijking"/>
-               <xs:enumeration value="Niet beoordeeld/beoordeelbaar"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -25012,15 +23492,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Geen bijzonderheden"/>
-               <xs:enumeration value="Verdenking afwijking"/>
-               <xs:enumeration value="Niet beoordeeld/beoordeelbaar"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -25087,15 +23559,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Geen bijzonderheden"/>
-               <xs:enumeration value="Verdenking afwijking"/>
-               <xs:enumeration value="Niet beoordeeld/beoordeelbaar"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -25162,15 +23626,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Geen bijzonderheden"/>
-               <xs:enumeration value="Verdenking afwijking"/>
-               <xs:enumeration value="Niet beoordeeld/beoordeelbaar"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -25237,15 +23693,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Geen bijzonderheden"/>
-               <xs:enumeration value="Verdenking afwijking"/>
-               <xs:enumeration value="Niet beoordeeld/beoordeelbaar"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -25312,15 +23760,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Geen bijzonderheden"/>
-               <xs:enumeration value="Verdenking afwijking"/>
-               <xs:enumeration value="Niet beoordeeld/beoordeelbaar"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -25387,15 +23827,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Geen bijzonderheden"/>
-               <xs:enumeration value="Verdenking afwijking"/>
-               <xs:enumeration value="Niet beoordeeld/beoordeelbaar"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -25536,15 +23968,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Geen sonomarker geconstateerd"/>
-               <xs:enumeration value="Sonomarker geconstateerd"/>
-               <xs:enumeration value="Niet beoordeeld/beoordeelbaar"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -25611,15 +24035,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Geen sonomarker geconstateerd"/>
-               <xs:enumeration value="Sonomarker geconstateerd"/>
-               <xs:enumeration value="Niet beoordeeld/beoordeelbaar"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -25686,15 +24102,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Geen sonomarker geconstateerd"/>
-               <xs:enumeration value="Sonomarker geconstateerd"/>
-               <xs:enumeration value="Niet beoordeeld/beoordeelbaar"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -25761,15 +24169,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Geen sonomarker geconstateerd"/>
-               <xs:enumeration value="Sonomarker geconstateerd"/>
-               <xs:enumeration value="Niet beoordeeld/beoordeelbaar"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -25836,15 +24236,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Geen sonomarker geconstateerd"/>
-               <xs:enumeration value="Sonomarker geconstateerd"/>
-               <xs:enumeration value="Niet beoordeeld/beoordeelbaar"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -25911,15 +24303,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Geen sonomarker geconstateerd"/>
-               <xs:enumeration value="Sonomarker geconstateerd"/>
-               <xs:enumeration value="Niet beoordeeld/beoordeelbaar"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -25986,15 +24370,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Geen sonomarker geconstateerd"/>
-               <xs:enumeration value="Sonomarker geconstateerd"/>
-               <xs:enumeration value="Niet beoordeeld/beoordeelbaar"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -26061,15 +24437,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Geen sonomarker geconstateerd"/>
-               <xs:enumeration value="Sonomarker geconstateerd"/>
-               <xs:enumeration value="Niet beoordeeld/beoordeelbaar"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -26148,15 +24516,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Geen bijzonderheden"/>
-               <xs:enumeration value="Verdenking afwijking"/>
-               <xs:enumeration value="Niet beoordeeld/beoordeelbaar"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -26223,15 +24583,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Geen bijzonderheden"/>
-               <xs:enumeration value="Verdenking afwijking"/>
-               <xs:enumeration value="Niet beoordeeld/beoordeelbaar"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -26298,15 +24650,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Geen bijzonderheden"/>
-               <xs:enumeration value="Verdenking afwijking"/>
-               <xs:enumeration value="Niet beoordeeld/beoordeelbaar"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -26373,15 +24717,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Geen bijzonderheden"/>
-               <xs:enumeration value="Verdenking afwijking"/>
-               <xs:enumeration value="Niet beoordeeld/beoordeelbaar"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -26448,15 +24784,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Geen bijzonderheden"/>
-               <xs:enumeration value="Verdenking afwijking"/>
-               <xs:enumeration value="Niet beoordeeld/beoordeelbaar"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -26632,14 +24960,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Elipse"/>
-               <xs:enumeration value="FMF"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -26725,14 +25046,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="LifeCycle"/>
-               <xs:enumeration value="Astraia"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -27062,15 +25376,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Monochoriaal"/>
-               <xs:enumeration value="Dichoriaal"/>
-               <xs:enumeration value="Geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -27230,21 +25536,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Latijns Amerikaans"/>
-               <xs:enumeration value="Hindoestaans"/>
-               <xs:enumeration value="Kaukasisch"/>
-               <xs:enumeration value="Noord-Afrikaans"/>
-               <xs:enumeration value="Overig Afrikaans"/>
-               <xs:enumeration value="Turks"/>
-               <xs:enumeration value="Overig Aziatisch"/>
-               <xs:enumeration value="Meervoudige afkomst / Overig"/>
-               <xs:enumeration value="onbekend"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -27497,15 +25789,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Sampling of chorionic villus (procedure)"/>
-               <xs:enumeration value="Amniocentesis (procedure)"/>
-               <xs:enumeration value="Intrauterine cordocentesis (procedure)"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -27794,18 +26078,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Blood group A (finding)"/>
-               <xs:enumeration value="Blood group B (finding)"/>
-               <xs:enumeration value="Blood group AB (finding)"/>
-               <xs:enumeration value="Blood group O (finding)"/>
-               <xs:enumeration value="Onbekend"/>
-               <xs:enumeration value="Geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -27894,16 +26167,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Rh D Positief"/>
-               <xs:enumeration value="Rh D Negatief"/>
-               <xs:enumeration value="onbekend"/>
-               <xs:enumeration value="geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -27975,15 +26239,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Rhc positive (finding)"/>
-               <xs:enumeration value="Rhc negative (finding)"/>
-               <xs:enumeration value="Geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -28057,16 +26313,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Hepatitis B surface antigen undetermined (finding)"/>
-               <xs:enumeration value="Hepatitis B surface antigen positive (finding)"/>
-               <xs:enumeration value="Hepatitis B surface antigen negative (finding)"/>
-               <xs:enumeration value="onbekend"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -28145,16 +26392,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Human immunodeficiency virus (HIV) undetermined (finding)"/>
-               <xs:enumeration value="Human immunodeficiency virus (HIV) positive (finding)"/>
-               <xs:enumeration value="Human immunodeficiency virus (HIV) negative (finding)"/>
-               <xs:enumeration value="onbekend"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -28280,20 +26518,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Rhesus D"/>
-               <xs:enumeration value="Rhesus c"/>
-               <xs:enumeration value="Rhesus e"/>
-               <xs:enumeration value="Kell"/>
-               <xs:enumeration value="Duffy"/>
-               <xs:enumeration value="Kidd"/>
-               <xs:enumeration value="overig"/>
-               <xs:enumeration value="onbekend"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -28464,21 +26689,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Normal non-invasive prenatal test finding (finding)"/>
-               <xs:enumeration value="Inconclusive evaluation finding (finding)"/>
-               <xs:enumeration value="Fetus normal (finding)"/>
-               <xs:enumeration value="Fetus with chromosomal abnormality (disorder)"/>
-               <xs:enumeration value="Fetus with complete trisomy 13 syndrome (disorder)"/>
-               <xs:enumeration value="Fetus with complete trisomy 18 syndrome (disorder)"/>
-               <xs:enumeration value="Fetus with complete trisomy 21 syndrome (disorder)"/>
-               <xs:enumeration value="Overig afwijkend"/>
-               <xs:enumeration value="Inconclusive non-invasive prenatal test finding (finding)"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -28589,17 +26800,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Mannelijk"/>
-               <xs:enumeration value="Vrouwelijk"/>
-               <xs:enumeration value="Niet conclusief"/>
-               <xs:enumeration value="Onbekend"/>
-               <xs:enumeration value="Geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -29116,16 +27317,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Rh D Positief"/>
-               <xs:enumeration value="Rh D Negatief"/>
-               <xs:enumeration value="onbekend"/>
-               <xs:enumeration value="geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -29270,16 +27462,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="No ketones present in urine (finding)"/>
-               <xs:enumeration value="Ketonuria + (finding)"/>
-               <xs:enumeration value="Ketonuria ++ (finding)"/>
-               <xs:enumeration value="Ketonuria +++ (finding)"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -29472,16 +27655,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Uneffaced cervix"/>
-               <xs:enumeration value="Partially effaced cervix"/>
-               <xs:enumeration value="Fully effaced cervix"/>
-               <xs:enumeration value="geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -29560,16 +27734,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Cervix central (finding)"/>
-               <xs:enumeration value="Cervix posterior (finding)"/>
-               <xs:enumeration value="Cervix mid-posterior (finding)"/>
-               <xs:enumeration value="Onbekend"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -29704,24 +27869,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Cervix undilated"/>
-               <xs:enumeration value="Cervical dilatation, 1cm"/>
-               <xs:enumeration value="Cervical dilatation, 2cm"/>
-               <xs:enumeration value="Cervical dilatation, 3cm"/>
-               <xs:enumeration value="Cervical dilatation, 4cm"/>
-               <xs:enumeration value="Cervical dilatation, 5cm"/>
-               <xs:enumeration value="Cervical dilatation, 6cm"/>
-               <xs:enumeration value="Cervical dilatation, 7cm"/>
-               <xs:enumeration value="Cervical dilatation, 8cm"/>
-               <xs:enumeration value="Cervical dilatation, 9cm"/>
-               <xs:enumeration value="Cervix fully dilated"/>
-               <xs:enumeration value="Geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -29847,17 +27995,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Intact fetal membranes (finding)"/>
-               <xs:enumeration value="Gebroken"/>
-               <xs:enumeration value="Spontaneous hindwater rupture of membranes (finding)"/>
-               <xs:enumeration value="onbekend"/>
-               <xs:enumeration value="geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -29948,17 +28086,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="-5 level of presenting part in relation to ischial spines"/>
-               <xs:enumeration value="-3 level of presenting part in relation to ischial spines"/>
-               <xs:enumeration value="-1 level of presenting part in relation to ischial spines"/>
-               <xs:enumeration value="0 level of presenting part in relation to ischial spines"/>
-               <xs:enumeration value="3 level of presenting part in relation to ischial spines"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -30098,24 +28226,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Vertex presentation"/>
-               <xs:enumeration value="Posterior fontanelle presenting"/>
-               <xs:enumeration value="Both fontanelles presenting"/>
-               <xs:enumeration value="Anterior fontanelle presenting"/>
-               <xs:enumeration value="Face presentation"/>
-               <xs:enumeration value="Asynclitism"/>
-               <xs:enumeration value="Breech presentation"/>
-               <xs:enumeration value="Fetal foot palpable vaginally"/>
-               <xs:enumeration value="Transverse/oblique lie"/>
-               <xs:enumeration value="overig"/>
-               <xs:enumeration value="onbekend"/>
-               <xs:enumeration value="geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -30276,22 +28387,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Voor"/>
-               <xs:enumeration value="Links voor"/>
-               <xs:enumeration value="Links dwars"/>
-               <xs:enumeration value="Links achter"/>
-               <xs:enumeration value="Achter"/>
-               <xs:enumeration value="Rechts voor"/>
-               <xs:enumeration value="Rechts dwars"/>
-               <xs:enumeration value="Rechts achter"/>
-               <xs:enumeration value="Niet te beoordelen"/>
-               <xs:enumeration value="geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -30619,29 +28715,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Pre-eclampsia (disorder)"/>
-               <xs:enumeration value="Pre-eclampsia added to pre-existing hypertension (disorder)"/>
-               <xs:enumeration value="Eclampsia in puerperium (disorder)"/>
-               <xs:enumeration value="Hemolysis-elevated liver enzymes-low platelet count syndrome (disorder)"/>
-               <xs:enumeration value="Postpartum deep phlebothrombosis (disorder)"/>
-               <xs:enumeration value="Postpartum depression (disorder)"/>
-               <xs:enumeration value="Postpartum psychosis (disorder)"/>
-               <xs:enumeration value="Abnormal vaginal bleeding (finding)"/>
-               <xs:enumeration value="Embolism (disorder)"/>
-               <xs:enumeration value="Hematoma (disorder)"/>
-               <xs:enumeration value="Transfusion of blood product (procedure)"/>
-               <xs:enumeration value="Endometritis (disorder)"/>
-               <xs:enumeration value="Mastitis (disorder)"/>
-               <xs:enumeration value="Urinary tract infectious disease (disorder)"/>
-               <xs:enumeration value="Episiotomy infection (disorder)"/>
-               <xs:enumeration value="Overige infecties"/>
-               <xs:enumeration value="Overig"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -30792,17 +28866,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Transfusion of blood product (procedure)"/>
-               <xs:enumeration value="Hospital admission (procedure)"/>
-               <xs:enumeration value="Administration of drug or medicament (procedure)"/>
-               <xs:enumeration value="Surgical procedure (procedure)"/>
-               <xs:enumeration value="Overig"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -31033,16 +29097,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Borstvoeding"/>
-               <xs:enumeration value="Kunstvoeding"/>
-               <xs:enumeration value="Onbekend"/>
-               <xs:enumeration value="Geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -31177,16 +29232,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="consultatie"/>
-               <xs:enumeration value="overdracht"/>
-               <xs:enumeration value="onbekend"/>
-               <xs:enumeration value="geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -31272,16 +29318,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Huisarts"/>
-               <xs:enumeration value="Kinderarts"/>
-               <xs:enumeration value="Overig"/>
-               <xs:enumeration value="Geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -31402,22 +29439,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Finding of neonatal condition (finding)"/>
-               <xs:enumeration value="Excessive weight loss (finding)"/>
-               <xs:enumeration value="Neonatal jaundice (disorder)"/>
-               <xs:enumeration value="Infant feeding problem (finding)"/>
-               <xs:enumeration value="Suspected infectious disease (situation)"/>
-               <xs:enumeration value="Suspected heart disease (context-dependent category)"/>
-               <xs:enumeration value="Congenital anomaly (disorder)"/>
-               <xs:enumeration value="Neonatal hypoglycemia (disorder)"/>
-               <xs:enumeration value="Overig"/>
-               <xs:enumeration value="Onbekend"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -31729,24 +29751,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="1e lijns Verloskundige"/>
-               <xs:enumeration value="Klinisch verloskundige"/>
-               <xs:enumeration value="Verloskundige in opleiding"/>
-               <xs:enumeration value="Gynaecoloog"/>
-               <xs:enumeration value="Gynaecoloog in opleiding"/>
-               <xs:enumeration value="Arts-assistent"/>
-               <xs:enumeration value="Co-assistent"/>
-               <xs:enumeration value="Huisarts"/>
-               <xs:enumeration value="Huisarts in opleiding"/>
-               <xs:enumeration value="Verpleegkundige"/>
-               <xs:enumeration value="Onbekend"/>
-               <xs:enumeration value="Geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -31895,16 +29900,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Borstvoeding"/>
-               <xs:enumeration value="Kunstvoeding"/>
-               <xs:enumeration value="Onbekend"/>
-               <xs:enumeration value="Geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -32053,24 +30049,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Combined oral contraceptive - use (finding)"/>
-               <xs:enumeration value="Progestogen only oral contraceptive (finding)"/>
-               <xs:enumeration value="Uses hormone releasing intrauterine device contraception (finding)"/>
-               <xs:enumeration value="Uses copper intrauterine device contraception (finding)"/>
-               <xs:enumeration value="Uses vaginal hormone releasing ring (finding)"/>
-               <xs:enumeration value="Depot contraception (finding)"/>
-               <xs:enumeration value="Sheath contraception (finding)"/>
-               <xs:enumeration value="Subcutaneous contraceptive implant present (finding)"/>
-               <xs:enumeration value="Female sterility (finding)"/>
-               <xs:enumeration value="Male sterility (finding)"/>
-               <xs:enumeration value="Unprotected sexual intercourse (finding)"/>
-               <xs:enumeration value="Overig"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -32189,16 +30168,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Lochia ceased (finding)"/>
-               <xs:enumeration value="Lochia reducing (finding)"/>
-               <xs:enumeration value="Lochia irregular (finding)"/>
-               <xs:enumeration value="Lochia heavy (finding)"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -32284,15 +30254,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Urinary incontinence (finding)"/>
-               <xs:enumeration value="Incontinence of feces (finding)"/>
-               <xs:enumeration value="Unable to control flatus (finding)"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -32352,14 +30314,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Wound healed (finding)"/>
-               <xs:enumeration value="Impaired wound healing (finding)"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -32414,14 +30369,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Wound healed (finding)"/>
-               <xs:enumeration value="Impaired wound healing (finding)"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<voorgaande_zwangerschap_samenvatting_23 transactionRef="2.16.840.1.113883.2.4.3.11.60.90.77.4.2469">
+   <zorgverlenerzorginstelling>
+      <zorginstelling>
+         <zorginstelling_agbid value="12345678"/>
+         <zorginstelling_lvrid value="0110"/>
+      </zorginstelling>
+   </zorgverlenerzorginstelling>
+   <vrouw>
+      <burgerservicenummer value="100202020"/>
+      <geboortedatum value="1988-01-01"/>
+   </vrouw>
+   <zwangerschap>
+      <graviditeit value="2"/>
+      <pariteit_voor_deze_zwangerschap value="1"/>
+      <definitieve_a_terme_datum value="2018-10-02"/>
+      <diagnose>
+         <gynaecologische_aandoening value="OTH" displayName="Overig"/>
+         <bloedverliesq value="false"/>
+         <cervixinsufficientieq value="false"/>
+         <hyperemesis_gravidarumq value="false"/>
+         <zwangerschapscholestaseq value="false"/>
+         <diabetes_gravidarum_met_insulineq value="false"/>
+         <afwijkende_groei_foetus value="267258002" displayName="Dysmaturiteit"/>
+         <dreigende_partus_immaturusq value="false"/>
+         <dreigende_partus_prematurusq value="false"/>
+         <abruptio_placentaeq value="false"/>
+      </diagnose>
+      <wijze_einde_zwangerschap value="1" displayName="Partus"/>
+   </zwangerschap>
+   <bevalling>
+      <diagnose_bevalling>
+         <fluxus_postpartumq value="true"/>
+      </diagnose_bevalling>
+      <interventies_begin_baring>
+         <interventie_begin_baring value="236966000" displayName="Primen prostaglandine"/>
+         <indicatie_interventie_begin_baring value="3" displayName="niet levensbedreigend"/>
+      </interventies_begin_baring>
+      <wijze_waarop_de_baring_begon value="1" displayName="Spontane weeën"/>
+      <placenta>
+         <geboorte_placenta value="0" displayName="Spontaan"/>
+      </placenta>
+      <hoeveelheid_bloedverlies value="650" unit="ml"/>
+      <conditie_perineum_postpartum value="199916005" displayName="1e graads perineumruptuur"/>
+      <conditie_perineum_postpartum value="609344008" displayName="Episiotomiewond"/>
+   </bevalling>
+   <uitkomst_per_kind>
+      <baring>
+         <werkelijke_plaats_baring_type_locatie value="23" displayName="Geboortecentrum"/>
+         <ziekenhuis_baring>
+            <ziekenhuisnummer_lvrid value="0803"/>
+         </ziekenhuis_baring>
+         <demografische_gegevens>
+            <geslacht_medische_observatie value="1" displayName="mannelijk"/>
+            <geboortedatum value="2018-10-15"/>
+            <perinatale_sterfte_groep>
+               <perinatale_sterfteq value="false"/>
+            </perinatale_sterfte_groep>
+         </demografische_gegevens>
+         <kindspecifieke_uitkomstgegevens>
+            <type_partus value="3311000146109" displayName="Vaginale kunstverlossing"/>
+            <vaginale_kunstverlossing_groep>
+               <vaginale_kunstverlossing value="61586001" displayName="Vacuüm"/>
+            </vaginale_kunstverlossing_groep>
+            <lichamelijk_onderzoek_kind>
+               <apgarscore_na_5_min value="9"/>
+               <geboortegewicht value="3550" unit="gram"/>
+            </lichamelijk_onderzoek_kind>
+            <congenitale_afwijkingenq value="true"/>
+            <congenitale_afwijkingen_groep>
+               <specificatie_congenitale_afwijking_groep>
+                  <specificatie_congenitale_afwijking value="74" displayName="overige congenitale huidafwijking"/>
+               </specificatie_congenitale_afwijking_groep>
+               <chromosomale_afwijkingenq value="false"/>
+            </congenitale_afwijkingen_groep>
+         </kindspecifieke_uitkomstgegevens>
+      </baring>
+   </uitkomst_per_kind>
+   <medisch_onderzoek>
+      <maternale_onderzoeksgegevens>
+         <urine_bloed_en_aanvullende_onderzoeken>
+            <psie>
+               <irregulaire_antistoffenq value="false"/>
+            </psie>
+         </urine_bloed_en_aanvullende_onderzoeken>
+      </maternale_onderzoeksgegevens>
+   </medisch_onderzoek>
+</voorgaande_zwangerschap_samenvatting_23>

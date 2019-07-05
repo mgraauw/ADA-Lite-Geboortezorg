@@ -371,14 +371,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Geslachtsnaam"/>
-               <xs:enumeration value="Geslachtsnaam partner"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -488,18 +481,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Blood group A (finding)"/>
-               <xs:enumeration value="Blood group B (finding)"/>
-               <xs:enumeration value="Blood group AB (finding)"/>
-               <xs:enumeration value="Blood group O (finding)"/>
-               <xs:enumeration value="Onbekend"/>
-               <xs:enumeration value="Geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -588,16 +570,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Rh D Positief"/>
-               <xs:enumeration value="Rh D Negatief"/>
-               <xs:enumeration value="onbekend"/>
-               <xs:enumeration value="geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -669,15 +642,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="optional">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Rhc positive (finding)"/>
-               <xs:enumeration value="Rhc negative (finding)"/>
-               <xs:enumeration value="Geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
