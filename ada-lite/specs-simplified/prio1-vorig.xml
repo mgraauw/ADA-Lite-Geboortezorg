@@ -154,7 +154,7 @@
                          displayName="Achternaam soort"
                          effectiveDate="2013-03-25T14:13:00"
                          statusCode="final">
-                  <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                  <conceptList>
                      <concept localId="1"
                               code="BR"
                               codeSystem="2.16.840.1.113883.5.43"
@@ -298,7 +298,7 @@
                    name="WijzeEindeZwangerschap"
                    displayName="WijzeEindeZwangerschap"
                    statusCode="final">
-            <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+            <conceptList>
                <concept localId="1"
                         code="1"
                         codeSystem="2.16.840.1.113883.2.4.4.13.46"
@@ -469,7 +469,7 @@
                    name="Conditieperineum22"
                    displayName="Conditie perineum (2.2)"
                    effectiveDate="2014-01-22T11:04:47">
-            <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+            <conceptList>
                <concept localId="1"
                         code="289854007"
                         codeSystem="2.16.840.1.113883.6.96"
@@ -623,7 +623,7 @@
                          displayName="TypePartus22"
                          effectiveDate="2014-01-02T13:08:11"
                          id="2.16.840.1.113883.2.4.11.182">
-                  <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                  <conceptList>
                      <concept localId="1"
                               code="48782003"
                               codeSystem="2.16.840.1.113883.6.96"
@@ -753,7 +753,7 @@
                             id="2.16.840.1.113883.2.4.11.181"
                             statusCode="final"
                             effectiveDate="2014-01-02T00:00:00">
-                     <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                     <conceptList>
                         <concept localId="1"
                                  code="302383004"
                                  codeSystem="2.16.840.1.113883.6.96"

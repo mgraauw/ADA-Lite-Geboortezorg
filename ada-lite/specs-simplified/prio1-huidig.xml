@@ -154,7 +154,7 @@
                          displayName="Achternaam soort"
                          effectiveDate="2013-03-25T14:13:00"
                          statusCode="final">
-                  <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                  <conceptList>
                      <concept localId="1"
                               code="BR"
                               codeSystem="2.16.840.1.113883.5.43"
@@ -236,7 +236,7 @@
                    effectiveDate="2012-03-17T00:00:00"
                    id="2.16.840.1.113883.2.4.11.155"
                    statusCode="final">
-            <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+            <conceptList>
                <concept localId="1"
                         code="112144000"
                         codeSystem="2.16.840.1.113883.6.96"
@@ -300,7 +300,7 @@
                    effectiveDate="2012-03-17T00:00:00"
                    id="2.16.840.1.113883.2.4.11.156"
                    statusCode="final">
-            <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+            <conceptList>
                <concept localId="1"
                         code="165747007"
                         codeSystem="2.16.840.1.113883.6.96"
@@ -355,7 +355,7 @@
                    effectiveDate="2016-12-16T15:02:44"
                    statusCode="draft"
                    strength="required">
-            <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+            <conceptList>
                <concept localId="1"
                         code="733120009"
                         codeSystem="2.16.840.1.113883.6.96"
