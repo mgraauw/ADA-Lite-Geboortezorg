@@ -41,6 +41,10 @@
 
   <xsl:template match="/">
 
+    <xsl:result-document href="../temp/v2asxml.xml">
+        <xsl:copy-of select="$hl7v2-structured"></xsl:copy-of>
+    </xsl:result-document>
+
     <xsl:variable name="conversion-result" as="element()">
       <xsl:apply-templates select="/*"/>
     </xsl:variable>
