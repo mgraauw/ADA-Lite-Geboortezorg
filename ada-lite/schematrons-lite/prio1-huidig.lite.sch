@@ -229,7 +229,6 @@ SOFTWARE.
          <!-- == Attribute "codeSystem": == -->
          <assert test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008'))">Foutieve informatie voor "Bloedgroep vrouw": De waarde "<value-of select="@codeSystem"/>" voor attribuut "codeSystem" is onjuist [/prio1_huidig/vrouw/bloedgroep_vrouw/@codeSystem; allowed=('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008')]</assert>
          <!-- == Attribute "displayName": == -->
-         <assert test="empty(@displayName) or (@displayName = ('Blood group A (finding)', 'Blood group B (finding)', 'Blood group AB (finding)', 'Blood group O (finding)', 'Onbekend', 'Geen informatie'))">Foutieve informatie voor "Bloedgroep vrouw": De waarde "<value-of select="@displayName"/>" voor attribuut "displayName" is onjuist [/prio1_huidig/vrouw/bloedgroep_vrouw/@displayName; allowed=('Blood group A (finding)', 'Blood group B (finding)', 'Blood group AB (finding)', 'Blood group O (finding)', 'Onbekend', 'Geen informatie')]</assert>
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Blood_group_A_(finding)', 'Blood_group_B_(finding)', 'Blood_group_AB_(finding)', 'Blood_group_O_(finding)', 'Onbekend', 'Geen_informatie'))">Foutieve informatie voor "Bloedgroep vrouw": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/prio1_huidig/vrouw/bloedgroep_vrouw/@enum; allowed=('Blood_group_A_(finding)', 'Blood_group_B_(finding)', 'Blood_group_AB_(finding)', 'Blood_group_O_(finding)', 'Onbekend', 'Geen_informatie')]</assert>
          <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Bloedgroep vrouw": Ongeldige attributen aangetroffen [/prio1_huidig/vrouw/bloedgroep_vrouw; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
@@ -247,7 +246,6 @@ SOFTWARE.
          <!-- == Attribute "codeSystem": == -->
          <assert test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008'))">Foutieve informatie voor "Rhesus D Factor vrouw": De waarde "<value-of select="@codeSystem"/>" voor attribuut "codeSystem" is onjuist [/prio1_huidig/vrouw/rhesus_d_factor_vrouw/@codeSystem; allowed=('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008')]</assert>
          <!-- == Attribute "displayName": == -->
-         <assert test="empty(@displayName) or (@displayName = ('Rh D Positief', 'Rh D Negatief', 'onbekend', 'geen informatie'))">Foutieve informatie voor "Rhesus D Factor vrouw": De waarde "<value-of select="@displayName"/>" voor attribuut "displayName" is onjuist [/prio1_huidig/vrouw/rhesus_d_factor_vrouw/@displayName; allowed=('Rh D Positief', 'Rh D Negatief', 'onbekend', 'geen informatie')]</assert>
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Rh_D_Positief', 'Rh_D_Negatief', 'onbekend', 'geen_informatie'))">Foutieve informatie voor "Rhesus D Factor vrouw": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/prio1_huidig/vrouw/rhesus_d_factor_vrouw/@enum; allowed=('Rh_D_Positief', 'Rh_D_Negatief', 'onbekend', 'geen_informatie')]</assert>
          <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Rhesus D Factor vrouw": Ongeldige attributen aangetroffen [/prio1_huidig/vrouw/rhesus_d_factor_vrouw; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
@@ -265,7 +263,6 @@ SOFTWARE.
          <!-- == Attribute "codeSystem": == -->
          <assert test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.5.1008'))">Foutieve informatie voor "Rhesus c Factor": De waarde "<value-of select="@codeSystem"/>" voor attribuut "codeSystem" is onjuist [/prio1_huidig/vrouw/rhesus_c_factor/@codeSystem; allowed=('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.5.1008')]</assert>
          <!-- == Attribute "displayName": == -->
-         <assert test="empty(@displayName) or (@displayName = ('Rhc positive (finding)', 'Rhc negative (finding)', 'Geen informatie'))">Foutieve informatie voor "Rhesus c Factor": De waarde "<value-of select="@displayName"/>" voor attribuut "displayName" is onjuist [/prio1_huidig/vrouw/rhesus_c_factor/@displayName; allowed=('Rhc positive (finding)', 'Rhc negative (finding)', 'Geen informatie')]</assert>
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Rhc_positive_(finding)', 'Rhc_negative_(finding)', 'Geen_informatie'))">Foutieve informatie voor "Rhesus c Factor": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/prio1_huidig/vrouw/rhesus_c_factor/@enum; allowed=('Rhc_positive_(finding)', 'Rhc_negative_(finding)', 'Geen_informatie')]</assert>
          <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Rhesus c Factor": Ongeldige attributen aangetroffen [/prio1_huidig/vrouw/rhesus_c_factor; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
@@ -328,7 +325,6 @@ SOFTWARE.
          <!-- == Attribute "codeSystem": == -->
          <assert test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.5.43', '2.16.840.1.113883.5.43'))">Foutieve informatie voor "Soort naam": De waarde "<value-of select="@codeSystem"/>" voor attribuut "codeSystem" is onjuist [/prio1_huidig/vrouw/naamgegevens/achternaam/soort_naam/@codeSystem; allowed=('2.16.840.1.113883.5.43', '2.16.840.1.113883.5.43')]</assert>
          <!-- == Attribute "displayName": == -->
-         <assert test="empty(@displayName) or (@displayName = ('Geslachtsnaam', 'Geslachtsnaam partner'))">Foutieve informatie voor "Soort naam": De waarde "<value-of select="@displayName"/>" voor attribuut "displayName" is onjuist [/prio1_huidig/vrouw/naamgegevens/achternaam/soort_naam/@displayName; allowed=('Geslachtsnaam', 'Geslachtsnaam partner')]</assert>
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Geslachtsnaam', 'Geslachtsnaam_partner'))">Foutieve informatie voor "Soort naam": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/prio1_huidig/vrouw/naamgegevens/achternaam/soort_naam/@enum; allowed=('Geslachtsnaam', 'Geslachtsnaam_partner')]</assert>
          <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Soort naam": Ongeldige attributen aangetroffen [/prio1_huidig/vrouw/naamgegevens/achternaam/soort_naam; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
@@ -370,11 +366,12 @@ SOFTWARE.
       <rule context="/prio1_huidig/zwangerschap"><!-- == Check occurrences of children of /prio1_huidig/zwangerschap: == -->
          <assert test="(count(graviditeit) ge 0) and (count(graviditeit) le 1)">Fout aantal voorkomens van "Graviditeit": <value-of select="count(graviditeit)"/> (verwacht: 0..1) [/prio1_huidig/zwangerschap/graviditeit]</assert>
          <assert test="(count(pariteit) ge 0) and (count(pariteit) le 1)">Fout aantal voorkomens van "Pariteit": <value-of select="count(pariteit)"/> (verwacht: 0..1) [/prio1_huidig/zwangerschap/pariteit]</assert>
+         <assert test="count(a_terme_datum_groep) eq 1">Fout aantal voorkomens van "A terme datum (groep)": <value-of select="count(a_terme_datum_groep)"/> (verwacht: 1) [/prio1_huidig/zwangerschap/a_terme_datum_groep]</assert>
          <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/prio1_huidig/zwangerschap/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /prio1_huidig/zwangerschap: == -->
-      <rule context="/prio1_huidig/zwangerschap/*[not(self::graviditeit)][not(self::pariteit)][not(self::adaextension)]">
+      <rule context="/prio1_huidig/zwangerschap/*[not(self::graviditeit)][not(self::pariteit)][not(self::a_terme_datum_groep)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/prio1_huidig/zwangerschap/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -404,7 +401,38 @@ SOFTWARE.
          <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Pariteit": Ongeldige attributen aangetroffen [/prio1_huidig/zwangerschap/pariteit; allowed=(@conceptId, @value, @xsi:*)]</assert>
       </rule>
    </pattern>
+   <!-- == Check attributes of /prio1_huidig/zwangerschap/a_terme_datum_groep: == -->
+   <pattern>
+      <rule context="/prio1_huidig/zwangerschap/a_terme_datum_groep"><!-- == Attribute "conceptId": == -->
+         <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "A terme datum (groep)": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/prio1_huidig/zwangerschap/a_terme_datum_groep/@conceptId; type=t-id]</assert>
+         <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20029')">Foutieve informatie voor "A terme datum (groep)": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20029" [/prio1_huidig/zwangerschap/a_terme_datum_groep/@conceptId]</assert>
+         <assert test="empty(@* except (@conceptId, @xsi:*))">Foutieve informatie voor "A terme datum (groep)": Ongeldige attributen aangetroffen [/prio1_huidig/zwangerschap/a_terme_datum_groep; allowed=(@conceptId, @xsi:*)]</assert>
+      </rule>
+   </pattern>
    <!-- == Any attributes allowed on /prio1_huidig/zwangerschap/adaextension == -->
+   <pattern>
+      <rule context="/prio1_huidig/zwangerschap/a_terme_datum_groep"><!-- == Check occurrences of children of /prio1_huidig/zwangerschap/a_terme_datum_groep: == -->
+         <assert test="count(a_terme_datum) eq 1">Fout aantal voorkomens van "A terme datum": <value-of select="count(a_terme_datum)"/> (verwacht: 1) [/prio1_huidig/zwangerschap/a_terme_datum_groep/a_terme_datum]</assert>
+         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/prio1_huidig/zwangerschap/a_terme_datum_groep/adaextension]</assert>
+      </rule>
+   </pattern>
+   <pattern><!-- == Check for any unexpected elements in /prio1_huidig/zwangerschap/a_terme_datum_groep: == -->
+      <rule context="/prio1_huidig/zwangerschap/a_terme_datum_groep/*[not(self::a_terme_datum)][not(self::adaextension)]">
+         <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/prio1_huidig/zwangerschap/a_terme_datum_groep/<value-of select="name(.)"/>]</report>
+      </rule>
+   </pattern>
+   <!-- == Check attributes of /prio1_huidig/zwangerschap/a_terme_datum_groep/a_terme_datum: == -->
+   <pattern>
+      <rule context="/prio1_huidig/zwangerschap/a_terme_datum_groep/a_terme_datum"><!-- == Attribute "conceptId": == -->
+         <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "A terme datum": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/prio1_huidig/zwangerschap/a_terme_datum_groep/a_terme_datum/@conceptId; type=t-id]</assert>
+         <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20030')">Foutieve informatie voor "A terme datum": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20030" [/prio1_huidig/zwangerschap/a_terme_datum_groep/a_terme_datum/@conceptId]</assert>
+         <!-- == Attribute "value": == -->
+         <assert test="exists(@value)">Foutieve informatie voor "A terme datum": Attribuut "value" ontbreekt [/prio1_huidig/zwangerschap/a_terme_datum_groep/a_terme_datum/@value]</assert>
+         <assert test="empty(@value) or ((@value castable as xs:date) or (@value castable as xs:dateTime))">Foutieve informatie voor "A terme datum": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/prio1_huidig/zwangerschap/a_terme_datum_groep/a_terme_datum/@value; type=t-datetime]</assert>
+         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "A terme datum": Ongeldige attributen aangetroffen [/prio1_huidig/zwangerschap/a_terme_datum_groep/a_terme_datum; allowed=(@conceptId, @value, @xsi:*)]</assert>
+      </rule>
+   </pattern>
+   <!-- == Any attributes allowed on /prio1_huidig/zwangerschap/a_terme_datum_groep/adaextension == -->
    <pattern>
       <rule context="/prio1_huidig/medisch_onderzoek"><!-- == Check occurrences of children of /prio1_huidig/medisch_onderzoek: == -->
          <assert test="(count(maternale_onderzoeksgegevens) ge 0) and (count(maternale_onderzoeksgegevens) le 1)">Fout aantal voorkomens van "Maternale onderzoeksgegevens": <value-of select="count(maternale_onderzoeksgegevens)"/> (verwacht: 0..1) [/prio1_huidig/medisch_onderzoek/maternale_onderzoeksgegevens]</assert>

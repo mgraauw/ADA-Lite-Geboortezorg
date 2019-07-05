@@ -15,6 +15,7 @@ De `ada-lite/diffs` sub-directory bevat overzichten van de verschillen tussen de
 Bijvoorbeeld de bestanden `diff-kernset-22-23.xml` en `diff-kernset-22-23.html` bevatten een overzicht van de versieverschillen tussen de ADA kernset versie 2.3 en versie 2.3.
 
 - De HTML bestanden geven een leesbaar overzicht van de verschillen.
+- Van de HTML bestanden zijn er twee versies: Een volledige en een vereenvoudigde. De bestandsnamen van de vereenvoudigde versies eindigen op `-limited.html`.
 - De XML bestanden bevatten dit overzicht in XML formaat en bevatten iets meer (technische) informatie. Ze zijn bedoeld als invoer voor eventuele  (semi-)automatische versie convertors. 
 
 ### Lege voorbeelddocumenten ADA Lite (`ada-lite/examples-empty`)

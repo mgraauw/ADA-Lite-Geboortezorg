@@ -320,22 +320,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="required">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="start /intake zwangerschapszorg"/>
-               <xs:enumeration value="zwangerschap vervolg"/>
-               <xs:enumeration value="start baring/ontsluiting"/>
-               <xs:enumeration value="uitdrijving"/>
-               <xs:enumeration value="nageboortetijdperk"/>
-               <xs:enumeration value="1e 24 uur postpartum"/>
-               <xs:enumeration value="2e - 7e dag postpartum"/>
-               <xs:enumeration value="follow-up eerste 6 wkn postpartum"/>
-               <xs:enumeration value="onbekend"/>
-               <xs:enumeration value="geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="conclusie_risicostatus_na_intake">
       <xs:attribute name="conceptId"
@@ -395,17 +380,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="required">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="1e lijn (VIL A)"/>
-               <xs:enumeration value="overlegsituatie (VIL B)"/>
-               <xs:enumeration value="2e lijn (VIL C)"/>
-               <xs:enumeration value="1e lijn met plaatsindicatie (VIL D)"/>
-               <xs:enumeration value="3e lijns zorg"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="zorgverzoekdetails">
       <xs:sequence>
@@ -2226,257 +2201,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="required">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Epilepsie zonder medicatie"/>
-               <xs:enumeration value="Epilepsie met medicatie"/>
-               <xs:enumeration value="Neurologische bloedingen: o.a. subarachnoidale bloedingen/aneurysma pre-existent"/>
-               <xs:enumeration value="Sclerose multiple preëxistente"/>
-               <xs:enumeration value="Hernia nuclei pulposi preëxistente"/>
-               <xs:enumeration value="Longfunctiestoornis/COPD preëxistente"/>
-               <xs:enumeration value="Astma preëxistente"/>
-               <xs:enumeration value="Tuberculose met behandeling preëxistente"/>
-               <xs:enumeration value="Tuberculose in de anamnese"/>
-               <xs:enumeration value="HIV-infectie preëxistente"/>
-               <xs:enumeration value="HBsAg-dragerschap preëxistente"/>
-               <xs:enumeration value="Hepatitis C preëxistente"/>
-               <xs:enumeration value="Hartafwijking met hemodynamische consequenties moeder"/>
-               <xs:enumeration value="Trombose diep veneuse /longembolie preëxistente"/>
-               <xs:enumeration value="Stollingsstoornissen preëxistente"/>
-               <xs:enumeration value="Nierfunctiestoornissen preëxistente"/>
-               <xs:enumeration value="Hypertensie, preëxistente"/>
-               <xs:enumeration value="Diabetes mellitus Type I preëxistente"/>
-               <xs:enumeration value="Diabetes mellitus Type II preëxistente"/>
-               <xs:enumeration value="Hyperthyreoidie, geen medicatie, afwezig TSH-receptor antistoffen"/>
-               <xs:enumeration value="Hyperthyreoidie, geen medicatie, aanwezig TSH-receptor antistoffen"/>
-               <xs:enumeration value="Hyperthyreoidie, met medicatie preëxistente"/>
-               <xs:enumeration value="Hypothyreoidie na chirurgische C67 of I-131 goed ingesteld, afwezig TSH-receptor antistoffen"/>
-               <xs:enumeration value="Hypothyreoidie na chirurgische of I-131 goed ingesteld, aanwezig TSH-receptor antistoffen"/>
-               <xs:enumeration value="Hypothyreoidie, Ziekte Hashimoto, goed ingesteld"/>
-               <xs:enumeration value="Hemoglobinopathie preëxistente"/>
-               <xs:enumeration value="Inflammatory Bowel Disease (Colitis ulcerosa, M. Crohn)"/>
-               <xs:enumeration value="Systeemziekten en zeldzame aandoeningen"/>
-               <xs:enumeration value="Harddrugs gebruik (heroïne, methadon, cocaïne, XTC en dergelijke)"/>
-               <xs:enumeration value="Alcoholmisbruik preëxistente"/>
-               <xs:enumeration value="Psychiatrische stoornissen preëxistente"/>
-               <xs:enumeration value="GBS-dragerschap preëxistente"/>
-               <xs:enumeration value="Adipositas (morbide = BMI &gt; 35)"/>
-               <xs:enumeration value="Reumatoïde artritis"/>
-               <xs:enumeration value="Maligniteit in anamnese"/>
-               <xs:enumeration value="Overige preëxistente aandoeningen vrouw, niet gynaecologisch"/>
-               <xs:enumeration value="Bekkenbodem reconstructie"/>
-               <xs:enumeration value="Portio amputatie"/>
-               <xs:enumeration value="Exconisatie"/>
-               <xs:enumeration value="Cryo- en lisbehandeling"/>
-               <xs:enumeration value="Myoom enucleatie"/>
-               <xs:enumeration value="Cervixcytologie afwijkend (diagnostiek, follow-up)"/>
-               <xs:enumeration value="DES-dochter (onbehandeld en onder controle)"/>
-               <xs:enumeration value="IUD Niet te verwijderen"/>
-               <xs:enumeration value="IUD Status nadat het IUD verwijderd is"/>
-               <xs:enumeration value="Fertiliteit (sub) behandeling in anamnese"/>
-               <xs:enumeration value="Bekkenafwijking (trauma, symfyseruptuur, rachitis)"/>
-               <xs:enumeration value="Besnijdenis/ernstige anatomische afwijking"/>
-               <xs:enumeration value="Overige indicaties vrouw wegens preëxistente aandoeningen, gynaecologisch"/>
-               <xs:enumeration value="Rhesus, Kell, Duffy, Kidd"/>
-               <xs:enumeration value="ABO-antagonisme"/>
-               <xs:enumeration value="Zwangerschapshypertensie in de vorige zwangerschap"/>
-               <xs:enumeration value="(Pre-)eclampsie/HELLP–syndroom in de vorige zwangerschap"/>
-               <xs:enumeration value="Miskraam herhaald"/>
-               <xs:enumeration value="MOLA in anamnese"/>
-               <xs:enumeration value="abortus provocatus in anamnese"/>
-               <xs:enumeration value="Vroeggeboorte (&lt;33 weken), vorige zwangerschap"/>
-               <xs:enumeration value="Vroeggeboorte (&gt;=33 weken), vorige zwangerschap"/>
-               <xs:enumeration value="Cervixinsufficiëntie en/of cerclage"/>
-               <xs:enumeration value="Abruptio placentae (Solutio) in anamnese"/>
-               <xs:enumeration value="Kunstverlossing vaginaal (forcipale extractie/vacuumextractie) in anamnese"/>
-               <xs:enumeration value="Sectio caesarea in anamnese"/>
-               <xs:enumeration value="Sectio Caesarea i.a, litteken OUS in anamnese"/>
-               <xs:enumeration value="Sectio Caesarea i.a., litteken corporeel in anamnese"/>
-               <xs:enumeration value="Geboortegewicht &lt;p5 in anamnese"/>
-               <xs:enumeration value="Geboortegewicht &lt;p2.3 in anamnese"/>
-               <xs:enumeration value="Asfyxie (Apgar score 5min &lt;7) in anamnese"/>
-               <xs:enumeration value="Perinatale sterfte in anamnese"/>
-               <xs:enumeration value="Aangeboren afwijkingen en/of erfelijke afwijking eerder kind"/>
-               <xs:enumeration value="Haemorrhagia / bloedverlies post partum ten gevolge van episiotomie in anamnese"/>
-               <xs:enumeration value="Haemorrhagia/ bloedverlies post partum ten gevolge van cervixruptuur in anamnese"/>
-               <xs:enumeration value="Haemorrhagia / bloedverlies post partum, andere oorzaken (&gt;1000 cc) in anamnese"/>
-               <xs:enumeration value="Placentaverwijdering manuele in de anamnese"/>
-               <xs:enumeration value="Placenta accreta in anamnese"/>
-               <xs:enumeration value="Ruptuur totaal in anamnese (wel/geen functioneel herstel)"/>
-               <xs:enumeration value="Symfysiolyse in anamnese"/>
-               <xs:enumeration value="Depressie post-partum in anamnese"/>
-               <xs:enumeration value="Psychose post-partum in anamnese"/>
-               <xs:enumeration value="Multipara Grande in anamnese"/>
-               <xs:enumeration value="Serotiniteit in anamnese"/>
-               <xs:enumeration value="GBS-ziekte eerder kind in anamnese"/>
-               <xs:enumeration value="Traumatische partus in de anamnese"/>
-               <xs:enumeration value="schouderdystocie in anamnese"/>
-               <xs:enumeration value="Overige indicaties vrouw wegens obstetrische anamnese"/>
-               <xs:enumeration value="Termijndiscussie"/>
-               <xs:enumeration value="Anemie (Hb &lt; 5,6 mmol/l) tijdens zwangerschap"/>
-               <xs:enumeration value="Recidiverende urineweginfecties (2x) in de zwangerschap"/>
-               <xs:enumeration value="Pyelitis tijdens zwangerschap"/>
-               <xs:enumeration value="Toxoplasmose, diagnostiek en therapie tijdens zwangerschap"/>
-               <xs:enumeration value="Rubella tijdens zwangerschap"/>
-               <xs:enumeration value="Cytomegalie tijdens zwangerschap"/>
-               <xs:enumeration value="Herpes genitalis (primo-infect) tijdens zwangerschap"/>
-               <xs:enumeration value="Herpes genitalis (recidief) tijdens zwangerschap"/>
-               <xs:enumeration value="Herpes labialis tijdens zwangerschap"/>
-               <xs:enumeration value="Parvovirusinfectie tijdens zwangerschap"/>
-               <xs:enumeration value="Varicella/Zostervirusinfectie tijdens zwangerschap"/>
-               <xs:enumeration value="HBsAg-dragerschap tijdens zwangerschap"/>
-               <xs:enumeration value="Hepatitis virale A, B, C, D of E tijdens zwangerschap"/>
-               <xs:enumeration value="Tuberculose tijdens zwangerschap"/>
-               <xs:enumeration value="HIV-infectie / Aids tijdens zwangerschap"/>
-               <xs:enumeration value="Infectieverdenking overig"/>
-               <xs:enumeration value="Lues positieve serologie en behandeld tijdens zwangerschap"/>
-               <xs:enumeration value="Lues positieve serologie en onbehandeld tijdens zwangerschap"/>
-               <xs:enumeration value="Lues primo infectie tijdens zwangerschap"/>
-               <xs:enumeration value="HNP ontstaan tijdens zwangerschap"/>
-               <xs:enumeration value="Laparotomie tijdens zwangerschap"/>
-               <xs:enumeration value="Cervixcytologie PAP III A of hoger tijdens zwangerschap"/>
-               <xs:enumeration value="Geneesmiddelengebruik mogelijke effect op zwangere en ongeboren vrucht"/>
-               <xs:enumeration value="Harddrugs gebruik (heroïne, methadon, cocaïne, XTC en dergelijke)"/>
-               <xs:enumeration value="Alcoholmisbruik tijdens zwangerschap"/>
-               <xs:enumeration value="Psychiatrische aandoeningen (neurosen/psychosen) tijdens zwangerschap"/>
-               <xs:enumeration value="Hyperemesis gravidarum"/>
-               <xs:enumeration value="Extra-uteriene graviditeit (EUG)"/>
-               <xs:enumeration value="Prenatale diagnostiek met riscio op aangeboren afwijkingen"/>
-               <xs:enumeration value="Vruchtwaterverlies (&lt;37 weken amenorroe) tijdens zwangerschap"/>
-               <xs:enumeration value="Diabetes Mellitus Type I tijdens zwangerschap"/>
-               <xs:enumeration value="Diabetes Mellitus type II tijdens zwangerschap"/>
-               <xs:enumeration value="Diabetes gravidarum, zonder medicatie"/>
-               <xs:enumeration value="Diabetes gravidarum + dieet"/>
-               <xs:enumeration value="Diabetes gravidarum met insuline"/>
-               <xs:enumeration value="Zwangerschapshypertensie, diastolische RR &gt;= 90 en &lt; 95 mm Hg"/>
-               <xs:enumeration value="Zwangerschapshypertensie, diastolische RR &gt;= 95 en &lt; 100 mm Hg"/>
-               <xs:enumeration value="Zwangerschapshypertensie, diastolische RR &gt;= 100 mm Hg"/>
-               <xs:enumeration value="Zwangerschapshypertensie, systolische RR &gt;140 mm Hg"/>
-               <xs:enumeration value="Pre-eclampsie tijdens zwangerschap"/>
-               <xs:enumeration value="Pre-eclampsie gesuperponeerde tijdens zwangerschap"/>
-               <xs:enumeration value="HELLP-syndroom tijdens zwangerschap"/>
-               <xs:enumeration value="Eclampsie"/>
-               <xs:enumeration value="Trombose, diepveneus tijdens de zwangerschap"/>
-               <xs:enumeration value="Rhesus, Kell, Duffy, Kidd"/>
-               <xs:enumeration value="ABO-antagonisme"/>
-               <xs:enumeration value="Stollingsstoornissen tijdens zwangerschap"/>
-               <xs:enumeration value="Bloedverlies persisterend voor 16 weken tijdens zwangerschap"/>
-               <xs:enumeration value="Bloedverlies na 16 weken deze zwangerschap"/>
-               <xs:enumeration value="Abruptio placentae deze zwangerschap"/>
-               <xs:enumeration value="Placenta praevia tijdens de zwangerschap"/>
-               <xs:enumeration value="Groeivertraging foetus tijdens zwangerschap (verdenking op)"/>
-               <xs:enumeration value="Positieve dyscongruentie (evaluatie van)"/>
-               <xs:enumeration value="Serotiniteit ( &gt; 294 dagen amenorroe)"/>
-               <xs:enumeration value="Vroeggeboorte (dreigende) deze zwangerschap"/>
-               <xs:enumeration value="Cervixinsufficiëntie tijdens deze zwangerschap"/>
-               <xs:enumeration value="Bekkenklachten in deze zwangerschap"/>
-               <xs:enumeration value="Meerlingzwangerschap deze zwangerschap"/>
-               <xs:enumeration value="Liggingsafwijking à terme (waaronder stuitligging)"/>
-               <xs:enumeration value="Niet ingedaalde schedel à terme"/>
-               <xs:enumeration value="Niet ingedaalde schedel na het breken van de vliezen (a terme)"/>
-               <xs:enumeration value="Zorg geen voorgaande prenatale zorg (± à terme)"/>
-               <xs:enumeration value="Afstandskind"/>
-               <xs:enumeration value="Intrauteriene vruchtdood"/>
-               <xs:enumeration value="Obstetrisch relevante uterus myomatosus"/>
-               <xs:enumeration value="Mola deze zwangerschap"/>
-               <xs:enumeration value="Minder leven"/>
-               <xs:enumeration value="Foetale hartritmestoornis tijdens zwangerschap"/>
-               <xs:enumeration value="Overige indicaties vrouw ontstaan/vastgesteld tijdens de zwangerschap"/>
-               <xs:enumeration value="Ligging afwijkend van het kind"/>
-               <xs:enumeration value="Foetale nood tekenen van"/>
-               <xs:enumeration value="Foetale sterfte durante partu"/>
-               <xs:enumeration value="Gebroken vliezen zonder weeën"/>
-               <xs:enumeration value="Niet-vorderende ontsluiting"/>
-               <xs:enumeration value="Niet-vorderende uitdrijving"/>
-               <xs:enumeration value="Bloedverlies overmatig tijdens de baring volgens inschatting zorgverlener"/>
-               <xs:enumeration value="Haemorragia/bloedverlies postpartum deze baring"/>
-               <xs:enumeration value="Abruptio placentae tijdens de baring"/>
-               <xs:enumeration value="Vasa praevia tijdens de baring"/>
-               <xs:enumeration value="Retentio placentae, vastzittende placenta"/>
-               <xs:enumeration value="Ruptuur totaal deze baring"/>
-               <xs:enumeration value="Meconiumhoudend vruchtwater"/>
-               <xs:enumeration value="Koorts tijdens de baring"/>
-               <xs:enumeration value="Pijnbestrijding/sedatie tijdens de baring"/>
-               <xs:enumeration value="Vulvahematoom"/>
-               <xs:enumeration value="Symfysiolyse"/>
-               <xs:enumeration value="Prenatale zorg geen voorafgaande aan tijdens de baring"/>
-               <xs:enumeration value="Placenta Previa tijdens de baring"/>
-               <xs:enumeration value="Uterusdehiscentie littekendehiscentie"/>
-               <xs:enumeration value="Uterusruptuur (met spill in buikholte)"/>
-               <xs:enumeration value="Vaginawandruptuur deze baring"/>
-               <xs:enumeration value="Overige indicaties vrouw ontstaan tijdens de bevalling"/>
-               <xs:enumeration value="Pre-eclampsie tijdens kraamperiode"/>
-               <xs:enumeration value="Pre-eclampsie gesuperponeerde tijdens kraamperiode"/>
-               <xs:enumeration value="HELLP-syndroom tijdens kraamperiode"/>
-               <xs:enumeration value="Trombose diep veneuze tijdens kraamperiode"/>
-               <xs:enumeration value="Psychose tijdens kraamperiode"/>
-               <xs:enumeration value="Bloedverlies abnormaal vaginaal tijdens kraamperiode"/>
-               <xs:enumeration value="Opname-indicatie voor het kind"/>
-               <xs:enumeration value="Embolie tijdens kraamperiode"/>
-               <xs:enumeration value="Hematoom postpartum"/>
-               <xs:enumeration value="Bloedtransfusie postpartum"/>
-               <xs:enumeration value="Mastitis tijdens kraamperiode"/>
-               <xs:enumeration value="Endometritis tijdens kraamperiode"/>
-               <xs:enumeration value="Cystitis en/of urineweg infectie tijdens kraamperiode"/>
-               <xs:enumeration value="Overige indicaties vrouw tijdens de kraamperiode"/>
-               <xs:enumeration value="Zwangerschaps duur als opname indicatie kind"/>
-               <xs:enumeration value="Geboortegewicht als opname indicatie kind"/>
-               <xs:enumeration value="Kunstverlossing (problemen partus) als opname indicatie kind"/>
-               <xs:enumeration value="Liggingsafwijkingen (problemen partus) als opname indicatie kind"/>
-               <xs:enumeration value="Langdurig gebroken vliezen (problemen partus) als opname indicatie kind"/>
-               <xs:enumeration value="Problemen partus overig als opname indicatie kind"/>
-               <xs:enumeration value="Icterus neonatorum"/>
-               <xs:enumeration value="Voedingsproblemen/ diarrhee kind"/>
-               <xs:enumeration value="Infectieverdenking kind"/>
-               <xs:enumeration value="Hartafwijking kind verdenking op"/>
-               <xs:enumeration value="Ademhalingsproblemen kind"/>
-               <xs:enumeration value="Hypoglycemie"/>
-               <xs:enumeration value="Slechte start (verdenking Asfyxie)"/>
-               <xs:enumeration value="Aangeboren afwijkingen kind"/>
-               <xs:enumeration value="Convulsies kind"/>
-               <xs:enumeration value="Huilen Excessief"/>
-               <xs:enumeration value="Thrive failure to"/>
-               <xs:enumeration value="Klinische condities kind overig"/>
-               <xs:enumeration value="Overige indicaties kind voor opname"/>
-               <xs:enumeration value="HELLP syndroom"/>
-               <xs:enumeration value="Preeclampsie ernstig"/>
-               <xs:enumeration value="Obstetrische complicatie ernstig"/>
-               <xs:enumeration value="Maternale OHC indicaties overig"/>
-               <xs:enumeration value="Foetale groeivertraging met geschat gewicht &lt; 1200 g en/of &lt;32wk"/>
-               <xs:enumeration value="Dreigende vroeggeboorte &lt; 32 weken"/>
-               <xs:enumeration value="Alle zwangerschappen met hoog-complexe zorg voor foetus"/>
-               <xs:enumeration value="Congenitaal afwijkend kind"/>
-               <xs:enumeration value="Foetale hartritmestoornis met specifieke bewakingsbehoefte"/>
-               <xs:enumeration value="Grote meerling (&gt;= 3)"/>
-               <xs:enumeration value="Transfuseur-transfusée syndroom"/>
-               <xs:enumeration value="Uitstelprocedure bij meerling (getemporiseerde partus)"/>
-               <xs:enumeration value="Overige foetale OHC indicaties"/>
-               <xs:enumeration value="kraambed wegens neonaat op NICU"/>
-               <xs:enumeration value="kraambed wegens neonaat op intensieve zorg anders dan NICU (bv chirurgie)"/>
-               <xs:enumeration value="Overige indicaties vrouw/kind voor Obstetrische High Care"/>
-               <xs:enumeration value="Begin zorgverlening"/>
-               <xs:enumeration value="Zorgverlening afgesloten"/>
-               <xs:enumeration value="Adviesconsult"/>
-               <xs:enumeration value="Verhuizing e.a. logistieke redenen patient"/>
-               <xs:enumeration value="Eigen keuze/verzoek patiënt"/>
-               <xs:enumeration value="Overige niet medische redenen patiënt"/>
-               <xs:enumeration value="Uitbesteding zorg 1e lijn ivm capaciteitstekort"/>
-               <xs:enumeration value="Uitbesteding zorg 1e lijn overige redenen"/>
-               <xs:enumeration value="Uitbesteding zorg 2e lijn ivm capaciteitstekort"/>
-               <xs:enumeration value="Uitbesteding zorg 2e lijn overige redenen"/>
-               <xs:enumeration value="Uitbesteding zorg 3e lijn ivm capaciteitstekort"/>
-               <xs:enumeration value="Uitbesteding zorg 3e lijn overige redenen"/>
-               <xs:enumeration value="Uitbesteding zorg Pediatrie ivm capaciteitstekort"/>
-               <xs:enumeration value="Uitbesteding zorg Pediatrie overige redenen"/>
-               <xs:enumeration value="Overige niet medische indicaties vrouw en kind"/>
-               <xs:enumeration value="onbekend"/>
-               <xs:enumeration value="geen informatie"/>
-               <xs:enumeration value="tijdelijk niet beschikbaar"/>
-               <xs:enumeration value="anders"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="is_er_sprake_van_overdracht_aanq">
       <xs:attribute name="conceptId"
@@ -2599,16 +2324,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="required">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Gynaecoloog / obstetricus"/>
-               <xs:enumeration value="Kinderarts"/>
-               <xs:enumeration value="Onbekend"/>
-               <xs:enumeration value="Geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="overdracht_aan_zorginstelling_id">
       <xs:attribute name="conceptId"
@@ -2738,26 +2454,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="required">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Na eerste controle"/>
-               <xs:enumeration value="Voor 28e week"/>
-               <xs:enumeration value="28e tot en met 36e week"/>
-               <xs:enumeration value="Vanaf 37e week"/>
-               <xs:enumeration value="Tijdens ontsluiting"/>
-               <xs:enumeration value="Tijdens uitdrijving"/>
-               <xs:enumeration value="Nageboortetijdperk"/>
-               <xs:enumeration value="Direct postpartum"/>
-               <xs:enumeration value="Tijdens kraambed"/>
-               <xs:enumeration value="Binnen 24 uur"/>
-               <xs:enumeration value="2e t/m 7e dag"/>
-               <xs:enumeration value="2e week of later"/>
-               <xs:enumeration value="Onbekend"/>
-               <xs:enumeration value="Geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="redenen_van_overdracht_aan">
       <xs:sequence>
@@ -4519,257 +4216,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="required">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Epilepsie zonder medicatie"/>
-               <xs:enumeration value="Epilepsie met medicatie"/>
-               <xs:enumeration value="Neurologische bloedingen: o.a. subarachnoidale bloedingen/aneurysma pre-existent"/>
-               <xs:enumeration value="Sclerose multiple preëxistente"/>
-               <xs:enumeration value="Hernia nuclei pulposi preëxistente"/>
-               <xs:enumeration value="Longfunctiestoornis/COPD preëxistente"/>
-               <xs:enumeration value="Astma preëxistente"/>
-               <xs:enumeration value="Tuberculose met behandeling preëxistente"/>
-               <xs:enumeration value="Tuberculose in de anamnese"/>
-               <xs:enumeration value="HIV-infectie preëxistente"/>
-               <xs:enumeration value="HBsAg-dragerschap preëxistente"/>
-               <xs:enumeration value="Hepatitis C preëxistente"/>
-               <xs:enumeration value="Hartafwijking met hemodynamische consequenties moeder"/>
-               <xs:enumeration value="Trombose diep veneuse /longembolie preëxistente"/>
-               <xs:enumeration value="Stollingsstoornissen preëxistente"/>
-               <xs:enumeration value="Nierfunctiestoornissen preëxistente"/>
-               <xs:enumeration value="Hypertensie, preëxistente"/>
-               <xs:enumeration value="Diabetes mellitus Type I preëxistente"/>
-               <xs:enumeration value="Diabetes mellitus Type II preëxistente"/>
-               <xs:enumeration value="Hyperthyreoidie, geen medicatie, afwezig TSH-receptor antistoffen"/>
-               <xs:enumeration value="Hyperthyreoidie, geen medicatie, aanwezig TSH-receptor antistoffen"/>
-               <xs:enumeration value="Hyperthyreoidie, met medicatie preëxistente"/>
-               <xs:enumeration value="Hypothyreoidie na chirurgische C67 of I-131 goed ingesteld, afwezig TSH-receptor antistoffen"/>
-               <xs:enumeration value="Hypothyreoidie na chirurgische of I-131 goed ingesteld, aanwezig TSH-receptor antistoffen"/>
-               <xs:enumeration value="Hypothyreoidie, Ziekte Hashimoto, goed ingesteld"/>
-               <xs:enumeration value="Hemoglobinopathie preëxistente"/>
-               <xs:enumeration value="Inflammatory Bowel Disease (Colitis ulcerosa, M. Crohn)"/>
-               <xs:enumeration value="Systeemziekten en zeldzame aandoeningen"/>
-               <xs:enumeration value="Harddrugs gebruik (heroïne, methadon, cocaïne, XTC en dergelijke)"/>
-               <xs:enumeration value="Alcoholmisbruik preëxistente"/>
-               <xs:enumeration value="Psychiatrische stoornissen preëxistente"/>
-               <xs:enumeration value="GBS-dragerschap preëxistente"/>
-               <xs:enumeration value="Adipositas (morbide = BMI &gt; 35)"/>
-               <xs:enumeration value="Reumatoïde artritis"/>
-               <xs:enumeration value="Maligniteit in anamnese"/>
-               <xs:enumeration value="Overige preëxistente aandoeningen vrouw, niet gynaecologisch"/>
-               <xs:enumeration value="Bekkenbodem reconstructie"/>
-               <xs:enumeration value="Portio amputatie"/>
-               <xs:enumeration value="Exconisatie"/>
-               <xs:enumeration value="Cryo- en lisbehandeling"/>
-               <xs:enumeration value="Myoom enucleatie"/>
-               <xs:enumeration value="Cervixcytologie afwijkend (diagnostiek, follow-up)"/>
-               <xs:enumeration value="DES-dochter (onbehandeld en onder controle)"/>
-               <xs:enumeration value="IUD Niet te verwijderen"/>
-               <xs:enumeration value="IUD Status nadat het IUD verwijderd is"/>
-               <xs:enumeration value="Fertiliteit (sub) behandeling in anamnese"/>
-               <xs:enumeration value="Bekkenafwijking (trauma, symfyseruptuur, rachitis)"/>
-               <xs:enumeration value="Besnijdenis/ernstige anatomische afwijking"/>
-               <xs:enumeration value="Overige indicaties vrouw wegens preëxistente aandoeningen, gynaecologisch"/>
-               <xs:enumeration value="Rhesus, Kell, Duffy, Kidd"/>
-               <xs:enumeration value="ABO-antagonisme"/>
-               <xs:enumeration value="Zwangerschapshypertensie in de vorige zwangerschap"/>
-               <xs:enumeration value="(Pre-)eclampsie/HELLP–syndroom in de vorige zwangerschap"/>
-               <xs:enumeration value="Miskraam herhaald"/>
-               <xs:enumeration value="MOLA in anamnese"/>
-               <xs:enumeration value="abortus provocatus in anamnese"/>
-               <xs:enumeration value="Vroeggeboorte (&lt;33 weken), vorige zwangerschap"/>
-               <xs:enumeration value="Vroeggeboorte (&gt;=33 weken), vorige zwangerschap"/>
-               <xs:enumeration value="Cervixinsufficiëntie en/of cerclage"/>
-               <xs:enumeration value="Abruptio placentae (Solutio) in anamnese"/>
-               <xs:enumeration value="Kunstverlossing vaginaal (forcipale extractie/vacuumextractie) in anamnese"/>
-               <xs:enumeration value="Sectio caesarea in anamnese"/>
-               <xs:enumeration value="Sectio Caesarea i.a, litteken OUS in anamnese"/>
-               <xs:enumeration value="Sectio Caesarea i.a., litteken corporeel in anamnese"/>
-               <xs:enumeration value="Geboortegewicht &lt;p5 in anamnese"/>
-               <xs:enumeration value="Geboortegewicht &lt;p2.3 in anamnese"/>
-               <xs:enumeration value="Asfyxie (Apgar score 5min &lt;7) in anamnese"/>
-               <xs:enumeration value="Perinatale sterfte in anamnese"/>
-               <xs:enumeration value="Aangeboren afwijkingen en/of erfelijke afwijking eerder kind"/>
-               <xs:enumeration value="Haemorrhagia / bloedverlies post partum ten gevolge van episiotomie in anamnese"/>
-               <xs:enumeration value="Haemorrhagia/ bloedverlies post partum ten gevolge van cervixruptuur in anamnese"/>
-               <xs:enumeration value="Haemorrhagia / bloedverlies post partum, andere oorzaken (&gt;1000 cc) in anamnese"/>
-               <xs:enumeration value="Placentaverwijdering manuele in de anamnese"/>
-               <xs:enumeration value="Placenta accreta in anamnese"/>
-               <xs:enumeration value="Ruptuur totaal in anamnese (wel/geen functioneel herstel)"/>
-               <xs:enumeration value="Symfysiolyse in anamnese"/>
-               <xs:enumeration value="Depressie post-partum in anamnese"/>
-               <xs:enumeration value="Psychose post-partum in anamnese"/>
-               <xs:enumeration value="Multipara Grande in anamnese"/>
-               <xs:enumeration value="Serotiniteit in anamnese"/>
-               <xs:enumeration value="GBS-ziekte eerder kind in anamnese"/>
-               <xs:enumeration value="Traumatische partus in de anamnese"/>
-               <xs:enumeration value="schouderdystocie in anamnese"/>
-               <xs:enumeration value="Overige indicaties vrouw wegens obstetrische anamnese"/>
-               <xs:enumeration value="Termijndiscussie"/>
-               <xs:enumeration value="Anemie (Hb &lt; 5,6 mmol/l) tijdens zwangerschap"/>
-               <xs:enumeration value="Recidiverende urineweginfecties (2x) in de zwangerschap"/>
-               <xs:enumeration value="Pyelitis tijdens zwangerschap"/>
-               <xs:enumeration value="Toxoplasmose, diagnostiek en therapie tijdens zwangerschap"/>
-               <xs:enumeration value="Rubella tijdens zwangerschap"/>
-               <xs:enumeration value="Cytomegalie tijdens zwangerschap"/>
-               <xs:enumeration value="Herpes genitalis (primo-infect) tijdens zwangerschap"/>
-               <xs:enumeration value="Herpes genitalis (recidief) tijdens zwangerschap"/>
-               <xs:enumeration value="Herpes labialis tijdens zwangerschap"/>
-               <xs:enumeration value="Parvovirusinfectie tijdens zwangerschap"/>
-               <xs:enumeration value="Varicella/Zostervirusinfectie tijdens zwangerschap"/>
-               <xs:enumeration value="HBsAg-dragerschap tijdens zwangerschap"/>
-               <xs:enumeration value="Hepatitis virale A, B, C, D of E tijdens zwangerschap"/>
-               <xs:enumeration value="Tuberculose tijdens zwangerschap"/>
-               <xs:enumeration value="HIV-infectie / Aids tijdens zwangerschap"/>
-               <xs:enumeration value="Infectieverdenking overig"/>
-               <xs:enumeration value="Lues positieve serologie en behandeld tijdens zwangerschap"/>
-               <xs:enumeration value="Lues positieve serologie en onbehandeld tijdens zwangerschap"/>
-               <xs:enumeration value="Lues primo infectie tijdens zwangerschap"/>
-               <xs:enumeration value="HNP ontstaan tijdens zwangerschap"/>
-               <xs:enumeration value="Laparotomie tijdens zwangerschap"/>
-               <xs:enumeration value="Cervixcytologie PAP III A of hoger tijdens zwangerschap"/>
-               <xs:enumeration value="Geneesmiddelengebruik mogelijke effect op zwangere en ongeboren vrucht"/>
-               <xs:enumeration value="Harddrugs gebruik (heroïne, methadon, cocaïne, XTC en dergelijke)"/>
-               <xs:enumeration value="Alcoholmisbruik tijdens zwangerschap"/>
-               <xs:enumeration value="Psychiatrische aandoeningen (neurosen/psychosen) tijdens zwangerschap"/>
-               <xs:enumeration value="Hyperemesis gravidarum"/>
-               <xs:enumeration value="Extra-uteriene graviditeit (EUG)"/>
-               <xs:enumeration value="Prenatale diagnostiek met riscio op aangeboren afwijkingen"/>
-               <xs:enumeration value="Vruchtwaterverlies (&lt;37 weken amenorroe) tijdens zwangerschap"/>
-               <xs:enumeration value="Diabetes Mellitus Type I tijdens zwangerschap"/>
-               <xs:enumeration value="Diabetes Mellitus type II tijdens zwangerschap"/>
-               <xs:enumeration value="Diabetes gravidarum, zonder medicatie"/>
-               <xs:enumeration value="Diabetes gravidarum + dieet"/>
-               <xs:enumeration value="Diabetes gravidarum met insuline"/>
-               <xs:enumeration value="Zwangerschapshypertensie, diastolische RR &gt;= 90 en &lt; 95 mm Hg"/>
-               <xs:enumeration value="Zwangerschapshypertensie, diastolische RR &gt;= 95 en &lt; 100 mm Hg"/>
-               <xs:enumeration value="Zwangerschapshypertensie, diastolische RR &gt;= 100 mm Hg"/>
-               <xs:enumeration value="Zwangerschapshypertensie, systolische RR &gt;140 mm Hg"/>
-               <xs:enumeration value="Pre-eclampsie tijdens zwangerschap"/>
-               <xs:enumeration value="Pre-eclampsie gesuperponeerde tijdens zwangerschap"/>
-               <xs:enumeration value="HELLP-syndroom tijdens zwangerschap"/>
-               <xs:enumeration value="Eclampsie"/>
-               <xs:enumeration value="Trombose, diepveneus tijdens de zwangerschap"/>
-               <xs:enumeration value="Rhesus, Kell, Duffy, Kidd"/>
-               <xs:enumeration value="ABO-antagonisme"/>
-               <xs:enumeration value="Stollingsstoornissen tijdens zwangerschap"/>
-               <xs:enumeration value="Bloedverlies persisterend voor 16 weken tijdens zwangerschap"/>
-               <xs:enumeration value="Bloedverlies na 16 weken deze zwangerschap"/>
-               <xs:enumeration value="Abruptio placentae deze zwangerschap"/>
-               <xs:enumeration value="Placenta praevia tijdens de zwangerschap"/>
-               <xs:enumeration value="Groeivertraging foetus tijdens zwangerschap (verdenking op)"/>
-               <xs:enumeration value="Positieve dyscongruentie (evaluatie van)"/>
-               <xs:enumeration value="Serotiniteit ( &gt; 294 dagen amenorroe)"/>
-               <xs:enumeration value="Vroeggeboorte (dreigende) deze zwangerschap"/>
-               <xs:enumeration value="Cervixinsufficiëntie tijdens deze zwangerschap"/>
-               <xs:enumeration value="Bekkenklachten in deze zwangerschap"/>
-               <xs:enumeration value="Meerlingzwangerschap deze zwangerschap"/>
-               <xs:enumeration value="Liggingsafwijking à terme (waaronder stuitligging)"/>
-               <xs:enumeration value="Niet ingedaalde schedel à terme"/>
-               <xs:enumeration value="Niet ingedaalde schedel na het breken van de vliezen (a terme)"/>
-               <xs:enumeration value="Zorg geen voorgaande prenatale zorg (± à terme)"/>
-               <xs:enumeration value="Afstandskind"/>
-               <xs:enumeration value="Intrauteriene vruchtdood"/>
-               <xs:enumeration value="Obstetrisch relevante uterus myomatosus"/>
-               <xs:enumeration value="Mola deze zwangerschap"/>
-               <xs:enumeration value="Minder leven"/>
-               <xs:enumeration value="Foetale hartritmestoornis tijdens zwangerschap"/>
-               <xs:enumeration value="Overige indicaties vrouw ontstaan/vastgesteld tijdens de zwangerschap"/>
-               <xs:enumeration value="Ligging afwijkend van het kind"/>
-               <xs:enumeration value="Foetale nood tekenen van"/>
-               <xs:enumeration value="Foetale sterfte durante partu"/>
-               <xs:enumeration value="Gebroken vliezen zonder weeën"/>
-               <xs:enumeration value="Niet-vorderende ontsluiting"/>
-               <xs:enumeration value="Niet-vorderende uitdrijving"/>
-               <xs:enumeration value="Bloedverlies overmatig tijdens de baring volgens inschatting zorgverlener"/>
-               <xs:enumeration value="Haemorragia/bloedverlies postpartum deze baring"/>
-               <xs:enumeration value="Abruptio placentae tijdens de baring"/>
-               <xs:enumeration value="Vasa praevia tijdens de baring"/>
-               <xs:enumeration value="Retentio placentae, vastzittende placenta"/>
-               <xs:enumeration value="Ruptuur totaal deze baring"/>
-               <xs:enumeration value="Meconiumhoudend vruchtwater"/>
-               <xs:enumeration value="Koorts tijdens de baring"/>
-               <xs:enumeration value="Pijnbestrijding/sedatie tijdens de baring"/>
-               <xs:enumeration value="Vulvahematoom"/>
-               <xs:enumeration value="Symfysiolyse"/>
-               <xs:enumeration value="Prenatale zorg geen voorafgaande aan tijdens de baring"/>
-               <xs:enumeration value="Placenta Previa tijdens de baring"/>
-               <xs:enumeration value="Uterusdehiscentie littekendehiscentie"/>
-               <xs:enumeration value="Uterusruptuur (met spill in buikholte)"/>
-               <xs:enumeration value="Vaginawandruptuur deze baring"/>
-               <xs:enumeration value="Overige indicaties vrouw ontstaan tijdens de bevalling"/>
-               <xs:enumeration value="Pre-eclampsie tijdens kraamperiode"/>
-               <xs:enumeration value="Pre-eclampsie gesuperponeerde tijdens kraamperiode"/>
-               <xs:enumeration value="HELLP-syndroom tijdens kraamperiode"/>
-               <xs:enumeration value="Trombose diep veneuze tijdens kraamperiode"/>
-               <xs:enumeration value="Psychose tijdens kraamperiode"/>
-               <xs:enumeration value="Bloedverlies abnormaal vaginaal tijdens kraamperiode"/>
-               <xs:enumeration value="Opname-indicatie voor het kind"/>
-               <xs:enumeration value="Embolie tijdens kraamperiode"/>
-               <xs:enumeration value="Hematoom postpartum"/>
-               <xs:enumeration value="Bloedtransfusie postpartum"/>
-               <xs:enumeration value="Mastitis tijdens kraamperiode"/>
-               <xs:enumeration value="Endometritis tijdens kraamperiode"/>
-               <xs:enumeration value="Cystitis en/of urineweg infectie tijdens kraamperiode"/>
-               <xs:enumeration value="Overige indicaties vrouw tijdens de kraamperiode"/>
-               <xs:enumeration value="Zwangerschaps duur als opname indicatie kind"/>
-               <xs:enumeration value="Geboortegewicht als opname indicatie kind"/>
-               <xs:enumeration value="Kunstverlossing (problemen partus) als opname indicatie kind"/>
-               <xs:enumeration value="Liggingsafwijkingen (problemen partus) als opname indicatie kind"/>
-               <xs:enumeration value="Langdurig gebroken vliezen (problemen partus) als opname indicatie kind"/>
-               <xs:enumeration value="Problemen partus overig als opname indicatie kind"/>
-               <xs:enumeration value="Icterus neonatorum"/>
-               <xs:enumeration value="Voedingsproblemen/ diarrhee kind"/>
-               <xs:enumeration value="Infectieverdenking kind"/>
-               <xs:enumeration value="Hartafwijking kind verdenking op"/>
-               <xs:enumeration value="Ademhalingsproblemen kind"/>
-               <xs:enumeration value="Hypoglycemie"/>
-               <xs:enumeration value="Slechte start (verdenking Asfyxie)"/>
-               <xs:enumeration value="Aangeboren afwijkingen kind"/>
-               <xs:enumeration value="Convulsies kind"/>
-               <xs:enumeration value="Huilen Excessief"/>
-               <xs:enumeration value="Thrive failure to"/>
-               <xs:enumeration value="Klinische condities kind overig"/>
-               <xs:enumeration value="Overige indicaties kind voor opname"/>
-               <xs:enumeration value="HELLP syndroom"/>
-               <xs:enumeration value="Preeclampsie ernstig"/>
-               <xs:enumeration value="Obstetrische complicatie ernstig"/>
-               <xs:enumeration value="Maternale OHC indicaties overig"/>
-               <xs:enumeration value="Foetale groeivertraging met geschat gewicht &lt; 1200 g en/of &lt;32wk"/>
-               <xs:enumeration value="Dreigende vroeggeboorte &lt; 32 weken"/>
-               <xs:enumeration value="Alle zwangerschappen met hoog-complexe zorg voor foetus"/>
-               <xs:enumeration value="Congenitaal afwijkend kind"/>
-               <xs:enumeration value="Foetale hartritmestoornis met specifieke bewakingsbehoefte"/>
-               <xs:enumeration value="Grote meerling (&gt;= 3)"/>
-               <xs:enumeration value="Transfuseur-transfusée syndroom"/>
-               <xs:enumeration value="Uitstelprocedure bij meerling (getemporiseerde partus)"/>
-               <xs:enumeration value="Overige foetale OHC indicaties"/>
-               <xs:enumeration value="kraambed wegens neonaat op NICU"/>
-               <xs:enumeration value="kraambed wegens neonaat op intensieve zorg anders dan NICU (bv chirurgie)"/>
-               <xs:enumeration value="Overige indicaties vrouw/kind voor Obstetrische High Care"/>
-               <xs:enumeration value="Begin zorgverlening"/>
-               <xs:enumeration value="Zorgverlening afgesloten"/>
-               <xs:enumeration value="Adviesconsult"/>
-               <xs:enumeration value="Verhuizing e.a. logistieke redenen patient"/>
-               <xs:enumeration value="Eigen keuze/verzoek patiënt"/>
-               <xs:enumeration value="Overige niet medische redenen patiënt"/>
-               <xs:enumeration value="Uitbesteding zorg 1e lijn ivm capaciteitstekort"/>
-               <xs:enumeration value="Uitbesteding zorg 1e lijn overige redenen"/>
-               <xs:enumeration value="Uitbesteding zorg 2e lijn ivm capaciteitstekort"/>
-               <xs:enumeration value="Uitbesteding zorg 2e lijn overige redenen"/>
-               <xs:enumeration value="Uitbesteding zorg 3e lijn ivm capaciteitstekort"/>
-               <xs:enumeration value="Uitbesteding zorg 3e lijn overige redenen"/>
-               <xs:enumeration value="Uitbesteding zorg Pediatrie ivm capaciteitstekort"/>
-               <xs:enumeration value="Uitbesteding zorg Pediatrie overige redenen"/>
-               <xs:enumeration value="Overige niet medische indicaties vrouw en kind"/>
-               <xs:enumeration value="onbekend"/>
-               <xs:enumeration value="geen informatie"/>
-               <xs:enumeration value="tijdelijk niet beschikbaar"/>
-               <xs:enumeration value="anders"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="zorgverlenerzorginstelling">
       <xs:sequence>
@@ -5051,21 +4498,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="required">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Latijns Amerikaans"/>
-               <xs:enumeration value="Hindoestaans"/>
-               <xs:enumeration value="Kaukasisch"/>
-               <xs:enumeration value="Noord-Afrikaans"/>
-               <xs:enumeration value="Overig Afrikaans"/>
-               <xs:enumeration value="Turks"/>
-               <xs:enumeration value="Overig Aziatisch"/>
-               <xs:enumeration value="Meervoudige afkomst / Overig"/>
-               <xs:enumeration value="onbekend"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="anamnese">
       <xs:sequence>
@@ -5454,15 +4887,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="required">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Systemic lupus erythematosus (disorder)"/>
-               <xs:enumeration value="Rheumatism (disorder)"/>
-               <xs:enumeration value="Overig"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="cardiovasculaire_aandoeningq">
       <xs:attribute name="conceptId"
@@ -5529,17 +4954,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="required">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Hypertensive disorder, systemic arterial (disorder)"/>
-               <xs:enumeration value="Cardiomyopathy (disorder)"/>
-               <xs:enumeration value="Cardiac arrhythmia (disorder)"/>
-               <xs:enumeration value="Structural disorder of heart (disorder)"/>
-               <xs:enumeration value="Overig"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="urogenitale_aandoeningq">
       <xs:attribute name="conceptId"
@@ -5592,15 +5007,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="required">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Pyelonephritis (disorder)"/>
-               <xs:enumeration value="Bacteriuria (finding)"/>
-               <xs:enumeration value="Chronic renal impairment (disorder)"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="oncologische_aandoeningq">
       <xs:attribute name="conceptId"
@@ -5674,18 +5081,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="required">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Primary malignant neoplasm of female breast (disorder)"/>
-               <xs:enumeration value="Carcinoma of cervix (disorder)"/>
-               <xs:enumeration value="Leukemia, disease (disorder)"/>
-               <xs:enumeration value="Primary malignant neoplasm of lung (disorder)"/>
-               <xs:enumeration value="Malignant melanoma (disorder)"/>
-               <xs:enumeration value="other"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="schildklier_aandoeningq">
       <xs:attribute name="conceptId"
@@ -5731,14 +5127,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="required">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Hypothyroidism (disorder)"/>
-               <xs:enumeration value="Hyperthyroidism (disorder)"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="diabetes_mellitusq">
       <xs:attribute name="conceptId"
@@ -5826,19 +5215,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="required">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Epilepsy (disorder)"/>
-               <xs:enumeration value="Cerebrovascular accident (disorder)"/>
-               <xs:enumeration value="Multiple sclerosis (disorder)"/>
-               <xs:enumeration value="Migraine (disorder)"/>
-               <xs:enumeration value="Herniation of nucleus pulposus (disorder)"/>
-               <xs:enumeration value="Disease of pituitary gland (disorder)"/>
-               <xs:enumeration value="Overig"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="infectieziekteq">
       <xs:attribute name="conceptId"
@@ -6010,32 +5387,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="required">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Chlamydia trachomatis infection (disorder)"/>
-               <xs:enumeration value="Gonorrhea (disorder)"/>
-               <xs:enumeration value="Streptococcus agalactiae infection (disorder)"/>
-               <xs:enumeration value="Methicillin resistant Staphylococcus aureus infection (disorder)"/>
-               <xs:enumeration value="Tuberculosis (disorder)"/>
-               <xs:enumeration value="Cytomegalovirus infection (disorder)"/>
-               <xs:enumeration value="Herpesvirus infection (disorder)"/>
-               <xs:enumeration value="Hepatitis B surface antigen positive (finding)"/>
-               <xs:enumeration value="Human immunodeficiency virus infection (disorder)"/>
-               <xs:enumeration value="Type B viral hepatitis (disorder)"/>
-               <xs:enumeration value="Viral hepatitis C (disorder)"/>
-               <xs:enumeration value="Rubella (disorder)"/>
-               <xs:enumeration value="Varicella-zoster virus infection (disorder)"/>
-               <xs:enumeration value="Parvovirus infection (disorder)"/>
-               <xs:enumeration value="Syphilis (disorder)"/>
-               <xs:enumeration value="Toxoplasmosis (disorder)"/>
-               <xs:enumeration value="Lyme disease (disorder)"/>
-               <xs:enumeration value="Malaria (disorder)"/>
-               <xs:enumeration value="Infection by Trichomonas (disorder)"/>
-               <xs:enumeration value="Overig"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="mdl_aandoeningq">
       <xs:attribute name="conceptId"
@@ -6088,15 +5440,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="required">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Chronic liver disease (disorder)"/>
-               <xs:enumeration value="Ulcerative colitis (disorder)"/>
-               <xs:enumeration value="Crohn's disease (disorder)"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="anemieq">
       <xs:attribute name="conceptId"
@@ -6156,16 +5500,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="required">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Iron deficiency anemia (disorder)"/>
-               <xs:enumeration value="Hemoglobinopathy (disorder)"/>
-               <xs:enumeration value="Hereditary hemoglobinopathy disorder homozygous for hemoglobin S (disorder)"/>
-               <xs:enumeration value="Thalassemia (disorder)"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="longaandoeningq">
       <xs:attribute name="conceptId"
@@ -6232,17 +5567,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="required">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Asthma (disorder)"/>
-               <xs:enumeration value="Chronic obstructive lung disease (disorder)"/>
-               <xs:enumeration value="Sarcoidosis (disorder)"/>
-               <xs:enumeration value="Overig"/>
-               <xs:enumeration value="Geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="gynaecologische_aandoeningq">
       <xs:attribute name="conceptId"
@@ -6302,16 +5627,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="required">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Endometriosis (disorder)"/>
-               <xs:enumeration value="Uterine leiomyoma (disorder)"/>
-               <xs:enumeration value="Congenital uterine anomaly (disorder)"/>
-               <xs:enumeration value="Overig"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="orthopedische_afwijkingq">
       <xs:attribute name="conceptId"
@@ -6364,15 +5680,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="required">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Congenital dislocation of hip (disorder)"/>
-               <xs:enumeration value="Pelvic injury (disorder)"/>
-               <xs:enumeration value="Overig"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="bloedtransfusieq">
       <xs:attribute name="conceptId"
@@ -6586,36 +5894,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="required">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Operation on female genital organs (procedure)"/>
-               <xs:enumeration value="Curettage (procedure)"/>
-               <xs:enumeration value="Cesarean section (procedure)"/>
-               <xs:enumeration value="Manual removal of retained placenta (procedure)"/>
-               <xs:enumeration value="Operation on uterus (procedure)"/>
-               <xs:enumeration value="Uterine myomectomy (procedure)"/>
-               <xs:enumeration value="Operation on ovary (procedure)"/>
-               <xs:enumeration value="Operation on musculoskeletal system (procedure)"/>
-               <xs:enumeration value="Operative procedure on pelvis (procedure)"/>
-               <xs:enumeration value="Operation on back (procedure)"/>
-               <xs:enumeration value="Operation on abdominal region (procedure)"/>
-               <xs:enumeration value="Laparotomy (procedure)"/>
-               <xs:enumeration value="Appendectomy (procedure)"/>
-               <xs:enumeration value="Abdominoplasty (procedure)"/>
-               <xs:enumeration value="Operation on intestine (procedure)"/>
-               <xs:enumeration value="Operation on breast (procedure)"/>
-               <xs:enumeration value="Operation on organ (procedure)"/>
-               <xs:enumeration value="Kidney operation (procedure)"/>
-               <xs:enumeration value="Operation on thyroid gland (procedure)"/>
-               <xs:enumeration value="Operation on heart (procedure)"/>
-               <xs:enumeration value="Operation on adrenal gland (procedure)"/>
-               <xs:enumeration value="Operation on nervous system (procedure)"/>
-               <xs:enumeration value="Onbekend"/>
-               <xs:enumeration value="Overig"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="stollingsprobleemq">
       <xs:attribute name="conceptId"
@@ -6745,26 +6024,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="required">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="von Willebrand disorder (disorder)"/>
-               <xs:enumeration value="Hemophilia (disorder)"/>
-               <xs:enumeration value="Thrombocytopenic disorder (disorder)"/>
-               <xs:enumeration value="Disseminated intravascular coagulation (disorder)"/>
-               <xs:enumeration value="Thrombophilia (disorder)"/>
-               <xs:enumeration value="Antithrombin III deficiency (disorder)"/>
-               <xs:enumeration value="Protein C deficiency disease (disorder)"/>
-               <xs:enumeration value="Protein S deficiency disease (disorder)"/>
-               <xs:enumeration value="Heterozygous Factor V Leiden mutation (disorder)"/>
-               <xs:enumeration value="Homozygous Factor V Leiden mutation (disorder)"/>
-               <xs:enumeration value="Factor XII deficiency disease (disorder)"/>
-               <xs:enumeration value="Deep venous thrombosis (disorder)"/>
-               <xs:enumeration value="Pulmonary embolism (disorder)"/>
-               <xs:enumeration value="Overig"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="psychiatrieq">
       <xs:attribute name="conceptId"
@@ -6874,18 +6134,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="required">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Female genital mutilation type 1 (disorder)"/>
-               <xs:enumeration value="Female genital mutilation type 2 (disorder)"/>
-               <xs:enumeration value="Female genital mutilation type 3 (disorder)"/>
-               <xs:enumeration value="Female genital mutilation type 4 (disorder)"/>
-               <xs:enumeration value="onbekend"/>
-               <xs:enumeration value="geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap">
       <xs:sequence>
@@ -7044,23 +6293,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="required">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Partus"/>
-               <xs:enumeration value="Miskraam"/>
-               <xs:enumeration value="Spontaan"/>
-               <xs:enumeration value="Medicamenteus"/>
-               <xs:enumeration value="Instrumenteel"/>
-               <xs:enumeration value="APLA"/>
-               <xs:enumeration value="Medicamenteus"/>
-               <xs:enumeration value="Instrumenteel"/>
-               <xs:enumeration value="EUG - behandeld"/>
-               <xs:enumeration value="(partiële) Mola - behandeld"/>
-               <xs:enumeration value="geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="definitieve_a_terme_datum_82337">
       <xs:attribute name="conceptId"
@@ -7238,16 +6471,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="required">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Endometriosis (disorder)"/>
-               <xs:enumeration value="Uterine leiomyoma (disorder)"/>
-               <xs:enumeration value="Congenital uterine anomaly (disorder)"/>
-               <xs:enumeration value="Overig"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="bloedverliesq_82318">
       <xs:attribute name="conceptId"
@@ -7328,18 +6552,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="required">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Infection of uterus (disorder)"/>
-               <xs:enumeration value="Urinary tract infection in pregnancy (disorder)"/>
-               <xs:enumeration value="Pyelonephritis (disorder)"/>
-               <xs:enumeration value="Infectious colitis, enteritis and gastroenteritis (disorder)"/>
-               <xs:enumeration value="Overig"/>
-               <xs:enumeration value="Geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="hyperemesis_gravidarumq_82322">
       <xs:attribute name="conceptId"
@@ -7399,16 +6612,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="required">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Pregnancy-induced hypertension (disorder)"/>
-               <xs:enumeration value="Pre-eclampsia (disorder)"/>
-               <xs:enumeration value="Hemolysis-elevated liver enzymes-low platelet count syndrome (disorder)"/>
-               <xs:enumeration value="Eclampsia (disorder)"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="zwangerschapscholestaseq_82324">
       <xs:attribute name="conceptId"
@@ -7468,15 +6672,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="required">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Large-for-dates fetus (disorder)"/>
-               <xs:enumeration value="Small for gestational age fetus (disorder)"/>
-               <xs:enumeration value="Geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="dreigende_partus_immaturusq_82327">
       <xs:attribute name="conceptId"
@@ -7639,19 +6835,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="required">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Spontaan"/>
-               <xs:enumeration value="Controlled cord traction"/>
-               <xs:enumeration value="Manuele placentaverwijdering"/>
-               <xs:enumeration value="Placentaverwijdering bij SC"/>
-               <xs:enumeration value="Overig"/>
-               <xs:enumeration value="Geen informatie"/>
-               <xs:enumeration value="Onbekend"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="hoeveelheid_bloedverlies_10598">
       <xs:attribute name="conceptId"
@@ -7882,20 +7066,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="required">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Delivery normal (finding)"/>
-               <xs:enumeration value="Assisted delivery of fetus (finding)"/>
-               <xs:enumeration value="Cesarean delivery - delivered (finding)"/>
-               <xs:enumeration value="Delivery by elective cesarean section (finding)"/>
-               <xs:enumeration value="Delivery by emergency cesarean section (finding)"/>
-               <xs:enumeration value="Legally induced abortion (disorder)"/>
-               <xs:enumeration value="onbekend"/>
-               <xs:enumeration value="geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="percentiel_van_het_geboortegewicht">
       <xs:attribute name="conceptId"
@@ -7969,19 +7140,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="required">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="&lt; 2,3"/>
-               <xs:enumeration value="2,3 ≤ P &lt; 10"/>
-               <xs:enumeration value="10 ≤ P &lt; 50"/>
-               <xs:enumeration value="50 ≤ P &lt; 90"/>
-               <xs:enumeration value="90 ≤ P ≤ 97,7"/>
-               <xs:enumeration value="&gt; 97,7"/>
-               <xs:enumeration value="Geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="apgarscore_na_5_min_10606">
       <xs:attribute name="conceptId"
@@ -8252,19 +7411,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="required">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Home birth (finding)"/>
-               <xs:enumeration value="Geboortecentrum"/>
-               <xs:enumeration value="Hospital (environment)"/>
-               <xs:enumeration value="Nog niet bepaald"/>
-               <xs:enumeration value="Geen voorkeur"/>
-               <xs:enumeration value="Onbekend"/>
-               <xs:enumeration value="Geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="prenatale_controle">
       <xs:sequence>
@@ -8402,16 +7549,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="required">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Fetal movements present (finding)"/>
-               <xs:enumeration value="Weak fetal movements (finding)"/>
-               <xs:enumeration value="Reduced fetal movement (finding)"/>
-               <xs:enumeration value="Fetal movements absent (context-dependent category)"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="rookgedrag">
       <xs:attribute name="conceptId"
@@ -8485,19 +7623,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="required">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="niet gerookt"/>
-               <xs:enumeration value="1 - 10 per dag"/>
-               <xs:enumeration value="11 - 20 per dag"/>
-               <xs:enumeration value="meer dan 20 per dag"/>
-               <xs:enumeration value="gestopt vóór huidige zwangerschap"/>
-               <xs:enumeration value="gestopt tijdens huidige zwangerschap"/>
-               <xs:enumeration value="Unknown"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="alcoholgebruik">
       <xs:attribute name="conceptId"
@@ -8543,15 +7669,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="required">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="geen"/>
-               <xs:enumeration value="&lt; 2 eenheden per dag"/>
-               <xs:enumeration value="≥ 2 eenheden per dag"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="drugsgebruikq">
       <xs:attribute name="conceptId"
@@ -8782,16 +7900,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="required">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Endometriosis (disorder)"/>
-               <xs:enumeration value="Uterine leiomyoma (disorder)"/>
-               <xs:enumeration value="Congenital uterine anomaly (disorder)"/>
-               <xs:enumeration value="Overig"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="bloedverliesq_82270">
       <xs:attribute name="conceptId"
@@ -8879,18 +7988,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="required">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Infection of uterus (disorder)"/>
-               <xs:enumeration value="Urinary tract infection in pregnancy (disorder)"/>
-               <xs:enumeration value="Pyelonephritis (disorder)"/>
-               <xs:enumeration value="Infectious colitis, enteritis and gastroenteritis (disorder)"/>
-               <xs:enumeration value="Overig"/>
-               <xs:enumeration value="Geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="hyperemesis_gravidarumq_82274">
       <xs:attribute name="conceptId"
@@ -8950,16 +8048,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="required">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Pregnancy-induced hypertension (disorder)"/>
-               <xs:enumeration value="Pre-eclampsia (disorder)"/>
-               <xs:enumeration value="Hemolysis-elevated liver enzymes-low platelet count syndrome (disorder)"/>
-               <xs:enumeration value="Eclampsia (disorder)"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="zwangerschapscholestaseq_82276">
       <xs:attribute name="conceptId"
@@ -9019,15 +8108,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="required">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Large-for-dates fetus (disorder)"/>
-               <xs:enumeration value="Small for gestational age fetus (disorder)"/>
-               <xs:enumeration value="Geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="dreigende_partus_immaturusq_82279">
       <xs:attribute name="conceptId"
@@ -9115,18 +8196,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="required">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Intrauterine transfusion (procedure)"/>
-               <xs:enumeration value="Selective destruction of fetus (procedure)"/>
-               <xs:enumeration value="Operation on fetus (procedure)"/>
-               <xs:enumeration value="Therapeutic drainage of amniotic fluid (procedure)"/>
-               <xs:enumeration value="Operation on placenta (procedure)"/>
-               <xs:enumeration value="Overig"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="maternale_sterfteq">
       <xs:attribute name="conceptId"
@@ -9235,23 +8305,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="required">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Partus"/>
-               <xs:enumeration value="Miskraam"/>
-               <xs:enumeration value="Spontaan"/>
-               <xs:enumeration value="Medicamenteus"/>
-               <xs:enumeration value="Instrumenteel"/>
-               <xs:enumeration value="APLA"/>
-               <xs:enumeration value="Medicamenteus"/>
-               <xs:enumeration value="Instrumenteel"/>
-               <xs:enumeration value="EUG - behandeld"/>
-               <xs:enumeration value="(partiële) Mola - behandeld"/>
-               <xs:enumeration value="geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="bevalling">
       <xs:sequence>
@@ -9580,18 +8634,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="required">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="1e lijn (VIL A)"/>
-               <xs:enumeration value="2e lijn (VIL C)"/>
-               <xs:enumeration value="1e lijn met plaatsindicatie (VIL D)"/>
-               <xs:enumeration value="3e lijn"/>
-               <xs:enumeration value="Onbekend"/>
-               <xs:enumeration value="Geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="wijze_waarop_de_baring_begon">
       <xs:attribute name="conceptId"
@@ -9651,17 +8694,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="required">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="spontane weeën"/>
-               <xs:enumeration value="spontane vliesscheur"/>
-               <xs:enumeration value="interventie om baring op gang te brengen"/>
-               <xs:enumeration value="onbekend"/>
-               <xs:enumeration value="geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="interventies_begin_baring_groep">
       <xs:sequence>
@@ -9780,21 +8813,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="required">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Sweeping of membrane (procedure)"/>
-               <xs:enumeration value="Induction of labour by artificial rupture of membranes (procedure)"/>
-               <xs:enumeration value="Cervical ripening with balloon (procedure)"/>
-               <xs:enumeration value="Cervical ripening with Prostaglandin E2 (procedure)"/>
-               <xs:enumeration value="Oxytocin induction of labour (procedure)"/>
-               <xs:enumeration value="Prostaglandin induction of labour (procedure)"/>
-               <xs:enumeration value="Elective caesarean section (procedure)"/>
-               <xs:enumeration value="Overig"/>
-               <xs:enumeration value="Geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="indicatie_interventie_begin_baring">
       <xs:attribute name="conceptId"
@@ -9903,24 +8922,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="required">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="acuut levensbedreigend"/>
-               <xs:enumeration value="niet levensbedreigend"/>
-               <xs:enumeration value="onbekend"/>
-               <xs:enumeration value="acuut levensbedreigend"/>
-               <xs:enumeration value="niet levensbedreigend"/>
-               <xs:enumeration value="onbekend"/>
-               <xs:enumeration value="baring op korte termijn geïndiceerd door zorgverlener"/>
-               <xs:enumeration value="wens zorgverlener (incl: wetenschappelijk onderzoek)"/>
-               <xs:enumeration value="wens patiënt"/>
-               <xs:enumeration value="overig"/>
-               <xs:enumeration value="onbekend"/>
-               <xs:enumeration value="geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="tijdstip_begin_actieve_ontsluiting">
       <xs:attribute name="conceptId"
@@ -10030,17 +9032,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="required">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Oxytocin"/>
-               <xs:enumeration value="Prostaglandins"/>
-               <xs:enumeration value="Ergot alkaloids"/>
-               <xs:enumeration value="Overig"/>
-               <xs:enumeration value="Onbekend"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="placenta_80612">
       <xs:sequence>
@@ -10136,19 +9128,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="required">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Spontaan"/>
-               <xs:enumeration value="Controlled cord traction"/>
-               <xs:enumeration value="Manuele placentaverwijdering"/>
-               <xs:enumeration value="Placentaverwijdering bij SC"/>
-               <xs:enumeration value="Overig"/>
-               <xs:enumeration value="Geen informatie"/>
-               <xs:enumeration value="Onbekend"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="hoeveelheid_bloedverlies_20640">
       <xs:attribute name="conceptId"
@@ -10271,24 +9251,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="required">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Perineum intact  (finding)"/>
-               <xs:enumeration value="First degree perineal tear during delivery - delivered (disorder)"/>
-               <xs:enumeration value="Second degree perineal tear during delivery - delivered  (disorder)"/>
-               <xs:enumeration value="Third degree perineal tear during delivery - delivered  (disorder)"/>
-               <xs:enumeration value="Type 3a third degree laceration of perineum  (disorder)"/>
-               <xs:enumeration value="Type 3b third degree laceration of perineum (disorder)"/>
-               <xs:enumeration value="Type 3c third degree laceration of perineum (disorder)"/>
-               <xs:enumeration value="Fourth degree perineal tear during delivery - delivered  (disorder)"/>
-               <xs:enumeration value="Episiotomy wound  (morphologic abnormality)"/>
-               <xs:enumeration value="Anders"/>
-               <xs:enumeration value="Onbekend"/>
-               <xs:enumeration value="Geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="uitkomst_per_kind">
       <xs:sequence>
@@ -10429,18 +9392,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="required">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Home birth (finding)"/>
-               <xs:enumeration value="Geboortecentrum"/>
-               <xs:enumeration value="Hospital (environment)"/>
-               <xs:enumeration value="Onderweg"/>
-               <xs:enumeration value="Onbekend"/>
-               <xs:enumeration value="Geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="ziekenhuis_baring">
       <xs:sequence>
@@ -10618,17 +9570,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="required">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Mannelijk"/>
-               <xs:enumeration value="Vrouwelijk"/>
-               <xs:enumeration value="Niet conclusief"/>
-               <xs:enumeration value="Onbekend"/>
-               <xs:enumeration value="Geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="geboortedatum_40050">
       <xs:attribute name="conceptId"
@@ -10748,16 +9690,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="required">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Antepartum fetal death (event)"/>
-               <xs:enumeration value="Intrapartum fetal death (event)"/>
-               <xs:enumeration value="Newborn death (event)"/>
-               <xs:enumeration value="Geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="datumtijd_vaststelling_perinatale_sterfte">
       <xs:attribute name="conceptId"
@@ -10925,18 +9858,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="required">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="kleurloos"/>
-               <xs:enumeration value="meconium"/>
-               <xs:enumeration value="bloederig"/>
-               <xs:enumeration value="overig"/>
-               <xs:enumeration value="geen informatie"/>
-               <xs:enumeration value="onbekend"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="tijdstip_actief_meepersen">
       <xs:attribute name="conceptId"
@@ -11003,16 +9925,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="required">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="mediolaterale episiotomie"/>
-               <xs:enumeration value="mediane episiotomie"/>
-               <xs:enumeration value="onbekend"/>
-               <xs:enumeration value="geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="ruggeprik_gewenst_niet_gekregenq">
       <xs:attribute name="conceptId"
@@ -11130,16 +10043,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="required">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Local anesthetic intrathecal block (procedure)"/>
-               <xs:enumeration value="Epidural anesthesia (procedure)"/>
-               <xs:enumeration value="General anesthesia (procedure)"/>
-               <xs:enumeration value="Overig"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="overig_middel">
       <xs:sequence>
@@ -11223,17 +10127,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="required">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Administration of morphinomimetic analgesic (procedure)"/>
-               <xs:enumeration value="Sterile water injection (procedure)"/>
-               <xs:enumeration value="Transcutaneous electrical nerve stimulation (regime/therapy)"/>
-               <xs:enumeration value="Nitrous oxide and oxygen gas analgesia in labor (procedure)"/>
-               <xs:enumeration value="overig"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="toediening">
       <xs:attribute name="conceptId"
@@ -11314,20 +10208,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="required">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Administration of substance via oral route (procedure)"/>
-               <xs:enumeration value="Neurostimulation procedure (procedure)"/>
-               <xs:enumeration value="Medication administration: intramuscular (procedure)"/>
-               <xs:enumeration value="Administration of substance via intravenous route (procedure)"/>
-               <xs:enumeration value="Administration of substance via subcutaneous route (procedure)"/>
-               <xs:enumeration value="Patient controlled analgesia (procedure)"/>
-               <xs:enumeration value="Inhalational analgesia (procedure)"/>
-               <xs:enumeration value="overig"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="periode">
       <xs:attribute name="conceptId"
@@ -11387,17 +10268,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="required">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="tijdens ontsluitingsperiode &lt;= 3 cm"/>
-               <xs:enumeration value="tijdens ontsluitingsperiode &gt; 3 cm"/>
-               <xs:enumeration value="tijdens uitdrijving"/>
-               <xs:enumeration value="tijdens sectio"/>
-               <xs:enumeration value="na geboorte kind"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="sedatieq">
       <xs:attribute name="conceptId"
@@ -11626,20 +10497,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="required">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Delivery normal (finding)"/>
-               <xs:enumeration value="Assisted delivery of fetus (finding)"/>
-               <xs:enumeration value="Cesarean delivery - delivered (finding)"/>
-               <xs:enumeration value="Delivery by elective cesarean section (finding)"/>
-               <xs:enumeration value="Delivery by emergency cesarean section (finding)"/>
-               <xs:enumeration value="Legally induced abortion (disorder)"/>
-               <xs:enumeration value="onbekend"/>
-               <xs:enumeration value="geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="apgarscore_na_5_min_40071">
       <xs:attribute name="conceptId"
@@ -11755,23 +10613,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="required">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Occipitoposterior position (finding)"/>
-               <xs:enumeration value="Vertex presentation (finding)"/>
-               <xs:enumeration value="Fontanelles presenting (finding)"/>
-               <xs:enumeration value="Face presentation (finding)"/>
-               <xs:enumeration value="Brow presentation (finding)"/>
-               <xs:enumeration value="Complete breech presentation (finding)"/>
-               <xs:enumeration value="Incomplete breech presentation (finding)"/>
-               <xs:enumeration value="Frank breech presentation (finding)"/>
-               <xs:enumeration value="Overig"/>
-               <xs:enumeration value="Onbekend"/>
-               <xs:enumeration value="Geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="aanpakker_kind_groep">
       <xs:sequence>
@@ -11922,27 +10764,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="required">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="1e lijns verloskundige"/>
-               <xs:enumeration value="klinisch verloskundige"/>
-               <xs:enumeration value="verloskundige in opleiding"/>
-               <xs:enumeration value="gynaecoloog"/>
-               <xs:enumeration value="gynaecoloog in opleiding"/>
-               <xs:enumeration value="arts-assistent"/>
-               <xs:enumeration value="co-assistent"/>
-               <xs:enumeration value="huisarts"/>
-               <xs:enumeration value="huisarts in opleiding"/>
-               <xs:enumeration value="arts, niet in opleiding"/>
-               <xs:enumeration value="verpleegkundige"/>
-               <xs:enumeration value="kraamverzorgende"/>
-               <xs:enumeration value="niet medisch geschoolde"/>
-               <xs:enumeration value="onbekend"/>
-               <xs:enumeration value="geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="supervisor_groep">
       <xs:sequence>
@@ -12037,19 +10859,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="required">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="1e lijns verloskundige"/>
-               <xs:enumeration value="klinisch verloskundige"/>
-               <xs:enumeration value="gynaecoloog"/>
-               <xs:enumeration value="gynaecoloog in opleiding"/>
-               <xs:enumeration value="arts-assistent"/>
-               <xs:enumeration value="huisarts"/>
-               <xs:enumeration value="geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="vaginale_kunstverlossing_groep">
       <xs:sequence>
@@ -12153,19 +10963,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="required">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Forceps delivery (procedure)"/>
-               <xs:enumeration value="Delivery by vacuum extraction (procedure)"/>
-               <xs:enumeration value="Obstetrical version with extraction (procedure)"/>
-               <xs:enumeration value="Partial breech extraction (procedure)"/>
-               <xs:enumeration value="Total breech extraction (procedure)"/>
-               <xs:enumeration value="anders"/>
-               <xs:enumeration value="geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="succes_vaginale_kunstverlossingq">
       <xs:attribute name="conceptId"
@@ -12249,15 +11047,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="required">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Tijdens ontsluiting besloten"/>
-               <xs:enumeration value="Tijdens uitdrijving besloten"/>
-               <xs:enumeration value="Geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="indicatie_sectio_caesarea">
       <xs:attribute name="conceptId"
@@ -12359,23 +11149,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="required">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="History of third degree perineal laceration (situation)"/>
-               <xs:enumeration value="History of fourth degree perineal laceration (situation)"/>
-               <xs:enumeration value="Abnormal fetal presentation (finding)"/>
-               <xs:enumeration value="Failure to progress in first stage of labor (finding)"/>
-               <xs:enumeration value="Failure to progress in second stage of labor (finding)"/>
-               <xs:enumeration value="Suspected fetal distress (situation) "/>
-               <xs:enumeration value="Patient condition finding (finding)"/>
-               <xs:enumeration value="Maternal request for treatment (finding)"/>
-               <xs:enumeration value="overig, medische reden"/>
-               <xs:enumeration value="overig, niet-medische reden"/>
-               <xs:enumeration value="geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="overige_interventies">
       <xs:attribute name="conceptId"
@@ -12428,16 +11202,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="required">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Pubiotomy (procedure)"/>
-               <xs:enumeration value="Maneuvers for delivery in shoulder dystocia (procedure)"/>
-               <xs:enumeration value="Kristeller maneuver (procedure)"/>
-               <xs:enumeration value="overig"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="lichamelijk_onderzoek_kind">
       <xs:sequence>
@@ -13203,103 +11968,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="required">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Congenital anomaly of nervous system (disorder)"/>
-               <xs:enumeration value="Fetal anencephaly (disorder)"/>
-               <xs:enumeration value="Fetal microcephaly (disorder)"/>
-               <xs:enumeration value="Spina bifida occulta (disorder)"/>
-               <xs:enumeration value="Meningomyelocele (disorder)"/>
-               <xs:enumeration value="Meningocele (disorder)"/>
-               <xs:enumeration value="Congenital hydrocephalus (disorder)"/>
-               <xs:enumeration value="Holoprosencephaly sequence (disorder)"/>
-               <xs:enumeration value="Encephalocele (disorder)"/>
-               <xs:enumeration value="Neonatal neuromuscular disorder (disorder)"/>
-               <xs:enumeration value="overige congenitale afwijkingen zenuwstelsel"/>
-               <xs:enumeration value="zintuigen"/>
-               <xs:enumeration value="Congenital anomaly of eye (disorder)"/>
-               <xs:enumeration value="Microphthalmos (disorder)"/>
-               <xs:enumeration value="overige congenitale afwijkingen ogen"/>
-               <xs:enumeration value="Congenital anomaly of ear (disorder)"/>
-               <xs:enumeration value="overige congenitale afwijkingen zintuigen"/>
-               <xs:enumeration value="Congenital anomaly of cardiovascular system (disorder)"/>
-               <xs:enumeration value="Single umbilical artery (disorder)"/>
-               <xs:enumeration value="Discordant ventriculoarterial connection (disorder)"/>
-               <xs:enumeration value="Tetralogy of Fallot (disorder)"/>
-               <xs:enumeration value="Ventricular septal defect (disorder)"/>
-               <xs:enumeration value="Hypoplastic left heart syndrome (disorder)"/>
-               <xs:enumeration value="Coarctation of aorta (disorder)"/>
-               <xs:enumeration value="Congenital anomaly of tricuspid valve (disorder)"/>
-               <xs:enumeration value="Multiple congenital cardiac defects (disorder)"/>
-               <xs:enumeration value="overige congenitale afwijking hart en bloedvaten"/>
-               <xs:enumeration value="Congenital anomaly of digestive tract (disorder)"/>
-               <xs:enumeration value="Cleft lip (disorder)"/>
-               <xs:enumeration value="Cleft palate (disorder)"/>
-               <xs:enumeration value="Congenital anomaly of esophagus (disorder)"/>
-               <xs:enumeration value="Congenital atresia of small intestine (disorder)"/>
-               <xs:enumeration value="Atresia of large intestine (disorder)"/>
-               <xs:enumeration value="Anal atresia (disorder)"/>
-               <xs:enumeration value="Hirschsprung's disease (disorder)"/>
-               <xs:enumeration value="Congenital malrotation of intestine (disorder)"/>
-               <xs:enumeration value="Intestinal volvulus (disorder)"/>
-               <xs:enumeration value="overige congenitale afwijking tractus digestivus"/>
-               <xs:enumeration value="Congenital anomaly of respiratory system (disorder)"/>
-               <xs:enumeration value="Choanal atresia (disorder)"/>
-               <xs:enumeration value="Congenital anomaly of trachea (disorder)"/>
-               <xs:enumeration value="Congenital hypoplasia of lung (disorder)"/>
-               <xs:enumeration value="Congenital lobar emphysema (disorder)"/>
-               <xs:enumeration value="Congenital cystic adenomatoid malformation of lung (disorder)"/>
-               <xs:enumeration value="Hydrothorax (disorder)"/>
-               <xs:enumeration value="Chylothorax (disorder)"/>
-               <xs:enumeration value="Congenital diaphragmatic hernia (disorder)"/>
-               <xs:enumeration value="Relaxation of diaphragm (disorder)"/>
-               <xs:enumeration value="overige congenitale afwijking tractus respiratorius"/>
-               <xs:enumeration value="Genitourinary congenital anomalies (disorder)"/>
-               <xs:enumeration value="Hypospadias (disorder)"/>
-               <xs:enumeration value="Epispadias (disorder)"/>
-               <xs:enumeration value="Undescended testicle (disorder)"/>
-               <xs:enumeration value="Exstrophy of bladder sequence (disorder)"/>
-               <xs:enumeration value="Oligohydramnios sequence (disorder)"/>
-               <xs:enumeration value="Congenital cystic kidney disease (disorder)"/>
-               <xs:enumeration value="Urinary tract obstruction (disorder)"/>
-               <xs:enumeration value="Disorder of sexual differentiation (disorder)"/>
-               <xs:enumeration value="overige congenitale afwijking tractus urogenitalis"/>
-               <xs:enumeration value="Congenital anomaly of skin (disorder)"/>
-               <xs:enumeration value="Hemangioma of skin (disorder)"/>
-               <xs:enumeration value="Congenital pigmented melanocytic nevus of skin (disorder)"/>
-               <xs:enumeration value="overige congenitale huidafwijking"/>
-               <xs:enumeration value="Congenital anomaly of abdominal wall (disorder)"/>
-               <xs:enumeration value="Gastroschisis (disorder)"/>
-               <xs:enumeration value="Congenital omphalocele (disorder)"/>
-               <xs:enumeration value="Umbilical hernia (disorder)"/>
-               <xs:enumeration value="Congenital inguinal hernia (disorder)"/>
-               <xs:enumeration value="overige congenitale afwijking buikwand"/>
-               <xs:enumeration value="Congenital anomaly of musculoskeletal system (disorder)"/>
-               <xs:enumeration value="Polydactyly (disorder)"/>
-               <xs:enumeration value="Syndactyly (disorder)"/>
-               <xs:enumeration value="Congenital deformity of foot (disorder)"/>
-               <xs:enumeration value="Reduction deformity of upper limb (disorder)"/>
-               <xs:enumeration value="Reduction deformity of lower limb (disorder)"/>
-               <xs:enumeration value="overige congenitale afwijking extremiteiten"/>
-               <xs:enumeration value="Congenital subluxation of hip (disorder)"/>
-               <xs:enumeration value="overige congenitale afwijking skelet en spierstelsel"/>
-               <xs:enumeration value="multipele/syndromale congenitale afwijkingen (niet chromosomaal)"/>
-               <xs:enumeration value="Dysmorphism (disorder)"/>
-               <xs:enumeration value="Situs inversus viscerum (disorder)"/>
-               <xs:enumeration value="Multiple congenital anomalies (disorder)"/>
-               <xs:enumeration value="Multiple system malformation syndrome (disorder)"/>
-               <xs:enumeration value="overige multipele/syndromale afwijkingen"/>
-               <xs:enumeration value="overige congenitale afwijkingen"/>
-               <xs:enumeration value="Congenital iodine deficiency syndrome (disorder)"/>
-               <xs:enumeration value="Inborn error of metabolism (disorder)"/>
-               <xs:enumeration value="andere endocrinologische afwijkingen"/>
-               <xs:enumeration value="Congenital malignant neoplastic disease (disorder)"/>
-               <xs:enumeration value="overig"/>
-               <xs:enumeration value="geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="chromosomale_afwijkingenq_40110">
       <xs:attribute name="conceptId"
@@ -13401,19 +12070,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="required">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Complete trisomy 21 syndrome (disorder)"/>
-               <xs:enumeration value="Complete trisomy 18 syndrome (disorder)"/>
-               <xs:enumeration value="Complete trisomy 13 syndrome (disorder)"/>
-               <xs:enumeration value="Andere numerieke chromosomale afwijkingen"/>
-               <xs:enumeration value="Overige chromosomale afwijkingen"/>
-               <xs:enumeration value="Onbekend"/>
-               <xs:enumeration value="Geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="problematiek_kindq">
       <xs:attribute name="conceptId"
@@ -13767,58 +12424,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="required">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Birth trauma of fetus (disorder)"/>
-               <xs:enumeration value="Subdural intracranial hemorrhage due to birth trauma (disorder)"/>
-               <xs:enumeration value="Intracranial subarachnoid hemorrhage due to birth injury (disorder)"/>
-               <xs:enumeration value="Tentorial tear due to birth trauma (disorder)"/>
-               <xs:enumeration value="Overige bloedingen (geboortetrauma)"/>
-               <xs:enumeration value="Paralysis from birth trauma (disorder)"/>
-               <xs:enumeration value="Overige geboortetraumata"/>
-               <xs:enumeration value="Congenital infectious disease (disorder)"/>
-               <xs:enumeration value="Congenital syphilis (disorder)"/>
-               <xs:enumeration value="Congenital toxoplasmosis (disorder)"/>
-               <xs:enumeration value="Congenital cytomegalovirus infection (disorder)"/>
-               <xs:enumeration value="Congenital rubella syndrome (disorder)"/>
-               <xs:enumeration value="Sepsis of the newborn (disorder)"/>
-               <xs:enumeration value="Inflammatory disease of the central nervous system (disorder)"/>
-               <xs:enumeration value="Overige infecties"/>
-               <xs:enumeration value="Immunologische en haematologische stoornissen"/>
-               <xs:enumeration value="Disorder of immune structure (disorder)"/>
-               <xs:enumeration value="Disorder of hematopoietic system in newborn (disorder)"/>
-               <xs:enumeration value="Twin-to-twin blood transfer (disorder)"/>
-               <xs:enumeration value="Overig haematologisch"/>
-               <xs:enumeration value="Nervous system and sense organ diseases (disorder)"/>
-               <xs:enumeration value="Perinatal intracranial hemorrhage (disorder)"/>
-               <xs:enumeration value="Neonatal cerebral ischemia (disorder)"/>
-               <xs:enumeration value="Convulsions in the newborn (disorder)"/>
-               <xs:enumeration value="Neonatal hypotonia (disorder)"/>
-               <xs:enumeration value="Retinopathy of prematurity (disorder)"/>
-               <xs:enumeration value="Congenital hearing disorder (disorder)"/>
-               <xs:enumeration value="Neonatal cardiovascular disorder (disorder)"/>
-               <xs:enumeration value="Neonatal hypertension (disorder)"/>
-               <xs:enumeration value="Neonatal hypotension (disorder)"/>
-               <xs:enumeration value="Hydrops fetalis (disorder)"/>
-               <xs:enumeration value="Overige circulatoire problemen"/>
-               <xs:enumeration value="Neonatal respiratory system disorder (disorder)"/>
-               <xs:enumeration value="Respiratory distress syndrome in the newborn (disorder)"/>
-               <xs:enumeration value="Neonatal aspiration syndromes (disorder)"/>
-               <xs:enumeration value="Bronchopulmonary dysplasia of newborn (disorder)"/>
-               <xs:enumeration value="Overige respiratoire problemen"/>
-               <xs:enumeration value="Stoornissen tractus digestivus en navel"/>
-               <xs:enumeration value="Neonatal hyperbilirubinemia (disorder)"/>
-               <xs:enumeration value="Overige stoornissen tractus digestivus en navel"/>
-               <xs:enumeration value="Neonatal metabolic and endocrinologic disorder (disorder)"/>
-               <xs:enumeration value="Neonatal hypoglycemia (disorder)"/>
-               <xs:enumeration value="Neonatal hyperglycemia (disorder)"/>
-               <xs:enumeration value="Congenital hypothyroidism (disorder)"/>
-               <xs:enumeration value="Overige endocriene, metabole en milieu interieur stoornissen"/>
-               <xs:enumeration value="Neonatal renal disorder (disorder)"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="kinderarts_betrokkenq">
       <xs:attribute name="conceptId"
@@ -14024,29 +12630,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="required">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Gestation abnormality (disorder)"/>
-               <xs:enumeration value="Birth weight abnormality (disorder)"/>
-               <xs:enumeration value="Delivery problem (finding)"/>
-               <xs:enumeration value="Fetal or neonatal effect of assisted delivery (disorder)"/>
-               <xs:enumeration value="Finding of malposition of foetus (finding)"/>
-               <xs:enumeration value="Prolonged rupture of membranes (disorder)"/>
-               <xs:enumeration value="Finding of neonatal condition (finding)"/>
-               <xs:enumeration value="Amniotic fluid -meconium stain (finding)"/>
-               <xs:enumeration value="Neonatal jaundice (disorder)"/>
-               <xs:enumeration value="Infant feeding problem (finding)"/>
-               <xs:enumeration value="Suspected infectious disease (situation)"/>
-               <xs:enumeration value="Suspected heart disease (situation)"/>
-               <xs:enumeration value="Maternal history of disorder (situation)"/>
-               <xs:enumeration value="Maternal drug use (disorder)"/>
-               <xs:enumeration value="Overig"/>
-               <xs:enumeration value="Onbekend"/>
-               <xs:enumeration value="geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="type_betrokkenheid">
       <xs:attribute name="conceptId"
@@ -14099,16 +12683,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="required">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="consultatie"/>
-               <xs:enumeration value="overdracht"/>
-               <xs:enumeration value="onbekend"/>
-               <xs:enumeration value="geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="zorginstelling_lvrid_82335">
       <xs:attribute name="conceptId"
@@ -14303,20 +12878,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="required">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Rhesus D"/>
-               <xs:enumeration value="Rhesus c"/>
-               <xs:enumeration value="Rhesus e"/>
-               <xs:enumeration value="Kell"/>
-               <xs:enumeration value="Duffy"/>
-               <xs:enumeration value="Kidd"/>
-               <xs:enumeration value="overig"/>
-               <xs:enumeration value="onbekend"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="postnatale_fase">
       <xs:sequence>
@@ -14539,29 +13101,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="required">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Pre-eclampsia (disorder)"/>
-               <xs:enumeration value="Pre-eclampsia added to pre-existing hypertension (disorder)"/>
-               <xs:enumeration value="Eclampsia in puerperium (disorder)"/>
-               <xs:enumeration value="Hemolysis-elevated liver enzymes-low platelet count syndrome (disorder)"/>
-               <xs:enumeration value="Postpartum deep phlebothrombosis (disorder)"/>
-               <xs:enumeration value="Postpartum depression (disorder)"/>
-               <xs:enumeration value="Postpartum psychosis (disorder)"/>
-               <xs:enumeration value="Abnormal vaginal bleeding (finding)"/>
-               <xs:enumeration value="Embolism (disorder)"/>
-               <xs:enumeration value="Hematoma (disorder)"/>
-               <xs:enumeration value="Transfusion of blood product (procedure)"/>
-               <xs:enumeration value="Endometritis (disorder)"/>
-               <xs:enumeration value="Mastitis (disorder)"/>
-               <xs:enumeration value="Urinary tract infectious disease (disorder)"/>
-               <xs:enumeration value="Episiotomy infection (disorder)"/>
-               <xs:enumeration value="Overige infecties"/>
-               <xs:enumeration value="Overig"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="kindspecifieke_gegevens">
       <xs:sequence>
@@ -14673,16 +13213,7 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="displayName" use="required">
-         <xs:simpleType>
-            <xs:restriction base="xs:string">
-               <xs:enumeration value="Borstvoeding"/>
-               <xs:enumeration value="Kunstvoeding"/>
-               <xs:enumeration value="Onbekend"/>
-               <xs:enumeration value="Geen informatie"/>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
+      <xs:attribute name="displayName" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="adaextension">
       <xs:sequence>

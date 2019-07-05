@@ -307,6 +307,28 @@
             </valueDomain>
             <terminologyAssociation conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.4.20153" effectiveDate="2014-10-20T17:06:58" code="364325004" displayName="Parity (observable entity)" codeSystem="2.16.840.1.113883.6.96" codeSystemName="Snomed"></terminologyAssociation>
         </concept>
+        <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20029" statusCode="final" effectiveDate="2013-09-10T00:00:00" versionLabel="22" type="group" minimumMultiplicity="1" maximumMultiplicity="1" isMandatory="false" iddisplay="peri22-dataelement-20029" shortName="a_terme_datum_groep">
+            <inherit ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.3.20029" effectiveDate="2012-05-21T00:00:00" prefix="peri20-" datasetId="2.16.840.1.113883.2.4.3.11.60.90.77.1.3" datasetEffectiveDate="2012-01-01T00:00:00" datasetStatusCode="deprecated" iType="group" iStatusCode="final" iEffectiveDate="2012-05-21T00:00:00" refdisplay="peri20-dataelement-20029"></inherit>
+            <name language="nl-NL">A terme datum (groep)</name>
+            <desc language="nl-NL">A terme datum (groep)</desc>
+            <implementation shortName="a_terme_datum_groep"></implementation>
+            <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20030" statusCode="final" effectiveDate="2013-09-10T00:00:00" versionLabel="22" type="item" minimumMultiplicity="1" maximumMultiplicity="1" isMandatory="false" iddisplay="peri22-dataelement-20030" shortName="a_terme_datum">
+                <inherit ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.1.20030" effectiveDate="2009-10-01T00:00:00" prefix="peri20-" datasetId="2.16.840.1.113883.2.4.3.11.60.90.77.1.1" datasetEffectiveDate="2009-10-01T00:00:00" datasetStatusCode="deprecated" iType="item" iStatusCode="final" iEffectiveDate="2009-10-01T00:00:00" refdisplay="spirit1a-dataelement-20030"></inherit>
+                <name language="nl-NL">A terme datum</name>
+                <desc language="nl-NL">Datum waarop de zwangerschap naar verwachting 40w 0d is (280 dagen). Op meerdere momenten in de zwangerschap kunnen verschillende à terme datum worden gehanteerd. </desc>
+                <community name="prn">
+                    <data type="prn13info" label="PRN dataset 1.3 info" datatype="text">I: item wordt gekoppeld aan het tijdstip van aanleveren waardoor 'tijdens zwangerschap' wordt afgeleid. Dit kan meerdere keren per zwangerschap via Append CP worden aangeleverd. Via de combinatie met het start zorg moment kan dit mogelijk worden geinterpreteerd als bij eerste controle.<br clear="none" />De interpretatie van dit item wordt gekoppeld aan het tijdstip van aanleveren en de HL7 interactie. <br clear="none" />De à terme datum in het bericht start zorgverlening betreft de à terme datum van de eerste zwangerschapscontrole. Dit komt binnen via Activate Care Provision met datum Start Zorg. Periode start zorg = 1, is de eerste controle. <br clear="none" />De à terme datum bij de bevalling komt binnen via de Append Care Provision met datum 'Aanleverbericht' en levert de op dat moment geldende (vigerende) à terme datum. <br clear="none" />vanaf fase 1b kunnen meerdere instances van de à terme datum worden meegeven. Daarbij moet ook worden aangeven welke de actuele of vigerende à terme datum is. In het setje à terme datum gegevens zitten normaal de datum en waarop die is gebaseerd en de datum van de bepaling zelf. Daarbij komt dan in dit geval nog of het de actuele is.<br clear="none" />
+                    </data>
+                    <data type="prn13HL7" label="PRN dataset 1.3 mapping HL7" datatype="text">codeCode: EDD&#160; OID: 2.16.840.1.113883.2.4.4.13 <br clear="none" />Uitsplitsing via: &lt;valueDomain type="datetime"&gt; &lt;example&gt;2011-01-28&lt;/example&gt; &lt;/valueDomain&gt; <br clear="none" />
+                    </data>
+                </community>
+                <implementation shortName="a_terme_datum"></implementation>
+                <valueDomain type="datetime">
+                    <property timeStampPrecision="YMD!"></property>
+                </valueDomain>
+                <terminologyAssociation conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.1.20030" code="EDD" codeSystem="2.16.840.1.113883.2.4.4.13" codeSystemName="Perinatologische observatiecodes"></terminologyAssociation>
+            </concept>
+        </concept>
     </concept>
     <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.14" statusCode="final" effectiveDate="2013-09-10T00:00:00" versionLabel="22" type="group" minimumMultiplicity="0" maximumMultiplicity="*" conformance="R" isMandatory="false" iddisplay="peri22-dataelement-14" shortName="medisch_onderzoek">
         <name language="nl-NL">Medisch onderzoek</name>

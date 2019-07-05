@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <compare-datasets dref-older="design/specs-full/samenvatting-voorgaande-zwangerschap-22.xml"
                   dref-newer="design/specs-full/samenvatting-voorgaande-zwangerschap-23.xml">
+   <meta>
+      <older shortName="voorgaande_zwangerschap_samenvatting_22"
+             id="2.16.840.1.113883.2.4.3.11.60.90.77.1.5"
+             effectiveDate="2013-09-10T00:00:00"/>
+      <newer shortName="voorgaande_zwangerschap_samenvatting_23"
+             id="2.16.840.1.113883.2.4.3.11.60.90.77.1.6"
+             effectiveDate="2016-09-08T00:00:00"/>
+   </meta>
    <child-concepts doc-xpath="/voorgaande_zwangerschap_samenvatting_22">
       <concept-compare signature="shortname:zorgverlenerzorginstelling"
                        shortname="zorgverlenerzorginstelling"
@@ -8,10 +16,11 @@
                        rtd-xpath-older="/dataset/concept[1]"
                        id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.1"
                        index-older="1"
-                       value-type=""
+                       type-old="group 1..1"
                        index-newer="1"
                        rtd-xpath-newer="/dataset/concept[1]"
-                       id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.1">
+                       id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.1"
+                       type-new="group 1..1">
          <inherit-equals/>
          <child-concepts doc-xpath="/voorgaande_zwangerschap_samenvatting_22/zorgverlenerzorginstelling">
             <concept-compare signature="shortname:zorgverlener"
@@ -20,10 +29,11 @@
                              rtd-xpath-older="/dataset/concept[1]/concept[1]"
                              id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10001"
                              index-older="1"
-                             value-type=""
+                             type-old="group 1..1"
                              index-newer="1"
                              rtd-xpath-newer="/dataset/concept[1]/concept[1]"
-                             id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10001">
+                             id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10001"
+                             type-new="group 1..1">
                <inherit-equals/>
                <child-concepts doc-xpath="/voorgaande_zwangerschap_samenvatting_22/zorgverlenerzorginstelling/zorgverlener">
                   <concept-compare signature="shortname:zorgverlener_uzinummer"
@@ -32,10 +42,11 @@
                                    rtd-xpath-older="/dataset/concept[1]/concept[1]/concept[1]"
                                    id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10002"
                                    index-older="1"
-                                   value-type="identifier"
+                                   type-old="identifier 0..1"
                                    index-newer="1"
                                    rtd-xpath-newer="/dataset/concept[1]/concept[1]/concept[1]"
-                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10002">
+                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10002"
+                                   type-new="identifier 0..1">
                      <inherit-equals/>
                   </concept-compare>
                   <concept-compare signature="shortname:zorgverlener_agbid"
@@ -44,10 +55,11 @@
                                    rtd-xpath-older="/dataset/concept[1]/concept[1]/concept[2]"
                                    id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10003"
                                    index-older="2"
-                                   value-type="identifier"
+                                   type-old="identifier 0..1"
                                    index-newer="2"
                                    rtd-xpath-newer="/dataset/concept[1]/concept[1]/concept[2]"
-                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10003">
+                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10003"
+                                   type-new="identifier 0..1">
                      <inherit-equals/>
                   </concept-compare>
                   <concept-compare signature="shortname:zorgverlener_lvr1id"
@@ -56,10 +68,11 @@
                                    rtd-xpath-older="/dataset/concept[1]/concept[1]/concept[3]"
                                    id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10004"
                                    index-older="3"
-                                   value-type="identifier"
+                                   type-old="identifier 0..1"
                                    index-newer="3"
                                    rtd-xpath-newer="/dataset/concept[1]/concept[1]/concept[3]"
-                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10004">
+                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10004"
+                                   type-new="identifier 0..1">
                      <inherit-equals/>
                   </concept-compare>
                   <concept-compare signature="shortname:naam_zorgverlener"
@@ -68,10 +81,11 @@
                                    rtd-xpath-older="/dataset/concept[1]/concept[1]/concept[4]"
                                    id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10006"
                                    index-older="4"
-                                   value-type="complex"
+                                   type-old="complex 0..1"
                                    index-newer="4"
                                    rtd-xpath-newer="/dataset/concept[1]/concept[1]/concept[4]"
-                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10006">
+                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10006"
+                                   type-new="complex 0..1">
                      <inherit-equals/>
                   </concept-compare>
                   <concept-compare signature="shortname:zorgverlenertype"
@@ -80,10 +94,35 @@
                                    rtd-xpath-older="/dataset/concept[1]/concept[1]/concept[5]"
                                    id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10010"
                                    index-older="5"
-                                   value-type="code"
+                                   type-old="code 0..1"
                                    index-newer="5"
                                    rtd-xpath-newer="/dataset/concept[1]/concept[1]/concept[5]"
-                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10010">
+                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10010"
+                                   type-new="code 0..1">
+                     <conceptcodelist-old>
+                        <code type="concept" code="01.000" displayname="Arts"/>
+                        <code type="concept" code="01.015" displayname="Huisarts"/>
+                        <code type="concept" code="01.019" displayname="Kinderarts"/>
+                        <code type="concept" code="01.020" displayname="Arts klinische chemie"/>
+                        <code type="concept"
+                              code="01.046"
+                              displayname="Gynaecoloog / obstetricus"/>
+                        <code type="concept" code="03.000" displayname="Verloskundige"/>
+                        <code type="concept" code="AA.001" displayname="Echoscopist"/>
+                        <code type="concept" code="AA.002" displayname="Analist"/>
+                     </conceptcodelist-old>
+                     <conceptcodelist-new>
+                        <code type="concept" code="01.000" displayname="Arts"/>
+                        <code type="concept" code="01.015" displayname="Huisarts"/>
+                        <code type="concept" code="01.019" displayname="Kinderarts"/>
+                        <code type="concept" code="01.020" displayname="Arts klinische chemie"/>
+                        <code type="concept"
+                              code="01.046"
+                              displayname="Gynaecoloog / obstetricus"/>
+                        <code type="concept" code="03.000" displayname="Verloskundige"/>
+                        <code type="concept" code="AA.001" displayname="Echoscopist"/>
+                        <code type="concept" code="AA.002" displayname="Analist"/>
+                     </conceptcodelist-new>
                      <inherit-equals/>
                   </concept-compare>
                </child-concepts>
@@ -94,10 +133,11 @@
                              rtd-xpath-older="/dataset/concept[1]/concept[2]"
                              id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10020"
                              index-older="2"
-                             value-type=""
+                             type-old="group 1..1"
                              index-newer="2"
                              rtd-xpath-newer="/dataset/concept[1]/concept[2]"
-                             id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10020">
+                             id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10020"
+                             type-new="group 1..1">
                <child-concepts doc-xpath="/voorgaande_zwangerschap_samenvatting_22/zorgverlenerzorginstelling/zorginstelling">
                   <concept-compare signature="shortname:zorginstelling_oid"
                                    shortname="zorginstelling_oid"
@@ -105,20 +145,22 @@
                                    rtd-xpath-older="/dataset/concept[1]/concept[2]/concept[1]"
                                    id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10021"
                                    index-older="1"
-                                   value-type="identifier"
+                                   type-old="identifier 0..1"
                                    index-newer="1"
                                    rtd-xpath-newer="/dataset/concept[1]/concept[2]/concept[1]"
-                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10021"/>
+                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10021"
+                                   type-new="identifier 0..1"/>
                   <concept-compare signature="shortname:zorginstelling_agbid"
                                    shortname="zorginstelling_agbid"
                                    doc-xpath="/voorgaande_zwangerschap_samenvatting_22/zorgverlenerzorginstelling/zorginstelling/zorginstelling_agbid"
                                    rtd-xpath-older="/dataset/concept[1]/concept[2]/concept[2]"
                                    id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10022"
                                    index-older="2"
-                                   value-type="identifier"
+                                   type-old="identifier 0..1"
                                    index-newer="2"
                                    rtd-xpath-newer="/dataset/concept[1]/concept[2]/concept[2]"
-                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10022">
+                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10022"
+                                   type-new="identifier 0..1">
                      <inherit-equals/>
                   </concept-compare>
                   <concept-compare signature="shortname:zorginstelling_lvrid"
@@ -127,20 +169,22 @@
                                    rtd-xpath-older="/dataset/concept[1]/concept[2]/concept[3]"
                                    id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10023"
                                    index-older="3"
-                                   value-type="identifier"
+                                   type-old="identifier 0..1"
                                    index-newer="3"
                                    rtd-xpath-newer="/dataset/concept[1]/concept[2]/concept[3]"
-                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10023"/>
+                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10023"
+                                   type-new="identifier 0..1"/>
                   <concept-compare signature="shortname:zorginstelling_ura"
                                    shortname="zorginstelling_ura"
                                    doc-xpath="/voorgaande_zwangerschap_samenvatting_22/zorgverlenerzorginstelling/zorginstelling/zorginstelling_ura"
                                    rtd-xpath-older="/dataset/concept[1]/concept[2]/concept[4]"
                                    id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10024"
                                    index-older="4"
-                                   value-type="identifier"
+                                   type-old="identifier 0..1"
                                    index-newer="4"
                                    rtd-xpath-newer="/dataset/concept[1]/concept[2]/concept[4]"
-                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10024">
+                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10024"
+                                   type-new="identifier 0..1">
                      <inherit-equals/>
                   </concept-compare>
                   <concept-compare signature="shortname:naam_zorginstelling"
@@ -149,10 +193,11 @@
                                    rtd-xpath-older="/dataset/concept[1]/concept[2]/concept[5]"
                                    id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10026"
                                    index-older="5"
-                                   value-type="complex"
+                                   type-old="complex 0..1"
                                    index-newer="5"
                                    rtd-xpath-newer="/dataset/concept[1]/concept[2]/concept[5]"
-                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10026">
+                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10026"
+                                   type-new="complex 0..1">
                      <inherit-equals/>
                   </concept-compare>
                   <concept-compare signature="shortname:adres_zorginstelling"
@@ -161,10 +206,11 @@
                                    rtd-xpath-older="/dataset/concept[1]/concept[2]/concept[6]"
                                    id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10027"
                                    index-older="6"
-                                   value-type=""
+                                   type-old="group 0..1"
                                    index-newer="6"
                                    rtd-xpath-newer="/dataset/concept[1]/concept[2]/concept[6]"
-                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10027">
+                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10027"
+                                   type-new="group 0..1">
                      <inherit-equals/>
                      <child-concepts doc-xpath="/voorgaande_zwangerschap_samenvatting_22/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling">
                         <concept-compare signature="shortname:straatnaam"
@@ -173,10 +219,11 @@
                                          rtd-xpath-older="/dataset/concept[1]/concept[2]/concept[6]/concept[1]"
                                          id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10032"
                                          index-older="1"
-                                         value-type="string"
+                                         type-old="string 1..1"
                                          index-newer="1"
                                          rtd-xpath-newer="/dataset/concept[1]/concept[2]/concept[6]/concept[1]"
-                                         id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10032">
+                                         id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10032"
+                                         type-new="string 1..1">
                            <inherit-equals/>
                         </concept-compare>
                         <concept-compare signature="shortname:huisnummer"
@@ -185,10 +232,11 @@
                                          rtd-xpath-older="/dataset/concept[1]/concept[2]/concept[6]/concept[2]"
                                          id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10033"
                                          index-older="2"
-                                         value-type="string"
+                                         type-old="string 1..1"
                                          index-newer="2"
                                          rtd-xpath-newer="/dataset/concept[1]/concept[2]/concept[6]/concept[2]"
-                                         id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10033">
+                                         id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10033"
+                                         type-new="string 1..1">
                            <inherit-equals/>
                         </concept-compare>
                         <concept-compare signature="shortname:huisletterhuisnummertoevoeging"
@@ -197,10 +245,11 @@
                                          rtd-xpath-older="/dataset/concept[1]/concept[2]/concept[6]/concept[3]"
                                          id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10034"
                                          index-older="3"
-                                         value-type="string"
+                                         type-old="string 0..1"
                                          index-newer="3"
                                          rtd-xpath-newer="/dataset/concept[1]/concept[2]/concept[6]/concept[3]"
-                                         id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10034">
+                                         id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10034"
+                                         type-new="string 0..1">
                            <inherit-equals/>
                         </concept-compare>
                         <concept-compare signature="shortname:postcode"
@@ -209,10 +258,11 @@
                                          rtd-xpath-older="/dataset/concept[1]/concept[2]/concept[6]/concept[4]"
                                          id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10041"
                                          index-older="4"
-                                         value-type="string"
+                                         type-old="string 1..1"
                                          index-newer="4"
                                          rtd-xpath-newer="/dataset/concept[1]/concept[2]/concept[6]/concept[4]"
-                                         id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10041">
+                                         id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10041"
+                                         type-new="string 1..1">
                            <inherit-equals/>
                         </concept-compare>
                         <concept-compare signature="shortname:plaatsnaam"
@@ -221,10 +271,11 @@
                                          rtd-xpath-older="/dataset/concept[1]/concept[2]/concept[6]/concept[5]"
                                          id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10036"
                                          index-older="5"
-                                         value-type="string"
+                                         type-old="string 1..1"
                                          index-newer="5"
                                          rtd-xpath-newer="/dataset/concept[1]/concept[2]/concept[6]/concept[5]"
-                                         id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10036">
+                                         id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10036"
+                                         type-new="string 1..1">
                            <inherit-equals/>
                         </concept-compare>
                         <concept-compare signature="shortname:land"
@@ -233,10 +284,11 @@
                                          rtd-xpath-older="/dataset/concept[1]/concept[2]/concept[6]/concept[6]"
                                          id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10038"
                                          index-older="6"
-                                         value-type="string"
+                                         type-old="string 0..1"
                                          index-newer="6"
                                          rtd-xpath-newer="/dataset/concept[1]/concept[2]/concept[6]/concept[6]"
-                                         id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10038">
+                                         id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10038"
+                                         type-new="string 0..1">
                            <inherit-equals/>
                         </concept-compare>
                      </child-concepts>
@@ -251,10 +303,11 @@
                        rtd-xpath-older="/dataset/concept[2]"
                        id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.2"
                        index-older="2"
-                       value-type=""
+                       type-old="group 1..1"
                        index-newer="2"
                        rtd-xpath-newer="/dataset/concept[2]"
-                       id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.2">
+                       id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.2"
+                       type-new="group 1..1">
          <child-concepts doc-xpath="/voorgaande_zwangerschap_samenvatting_22/vrouw">
             <concept-compare signature="shortname:burgerservicenummer"
                              shortname="burgerservicenummer"
@@ -262,20 +315,22 @@
                              rtd-xpath-older="/dataset/concept[2]/concept[1]"
                              id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10030"
                              index-older="1"
-                             value-type="identifier"
+                             type-old="identifier 0..1"
                              index-newer="1"
                              rtd-xpath-newer="/dataset/concept[2]/concept[1]"
-                             id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10030"/>
+                             id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10030"
+                             type-new="identifier 0..1"/>
             <concept-compare signature="shortname:naamgegevens"
                              shortname="naamgegevens"
                              doc-xpath="/voorgaande_zwangerschap_samenvatting_22/vrouw/naamgegevens"
                              rtd-xpath-older="/dataset/concept[2]/concept[2]"
                              id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10035"
                              index-older="2"
-                             value-type=""
+                             type-old="group 1..2"
                              index-newer="2"
                              rtd-xpath-newer="/dataset/concept[2]/concept[2]"
-                             id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10035">
+                             id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10035"
+                             type-new="group 1..2">
                <child-concepts doc-xpath="/voorgaande_zwangerschap_samenvatting_22/vrouw/naamgegevens">
                   <concept-compare signature="shortname:voornamen"
                                    shortname="voornamen"
@@ -283,10 +338,11 @@
                                    rtd-xpath-older="/dataset/concept[2]/concept[2]/concept[1]"
                                    id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10042"
                                    index-older="1"
-                                   value-type="string"
+                                   type-old="string 0..1"
                                    index-newer="1"
                                    rtd-xpath-newer="/dataset/concept[2]/concept[2]/concept[1]"
-                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10042">
+                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10042"
+                                   type-new="string 0..1">
                      <inherit-equals/>
                   </concept-compare>
                   <concept-compare signature="shortname:initialen"
@@ -295,10 +351,11 @@
                                    rtd-xpath-older="/dataset/concept[2]/concept[2]/concept[2]"
                                    id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82359"
                                    index-older="2"
-                                   value-type="string"
+                                   type-old="string 0..1"
                                    index-newer="2"
                                    rtd-xpath-newer="/dataset/concept[2]/concept[2]/concept[2]"
-                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82359">
+                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82359"
+                                   type-new="string 0..1">
                      <inherit-equals/>
                   </concept-compare>
                   <concept-compare signature="shortname:roepnaam"
@@ -307,10 +364,11 @@
                                    rtd-xpath-older="/dataset/concept[2]/concept[2]/concept[3]"
                                    id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82360"
                                    index-older="3"
-                                   value-type="string"
+                                   type-old="string 0..1"
                                    index-newer="3"
                                    rtd-xpath-newer="/dataset/concept[2]/concept[2]/concept[3]"
-                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82360">
+                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82360"
+                                   type-new="string 0..1">
                      <inherit-equals/>
                   </concept-compare>
                   <concept-compare signature="shortname:achternaam"
@@ -319,10 +377,11 @@
                                    rtd-xpath-older="/dataset/concept[2]/concept[2]/concept[4]"
                                    id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82361"
                                    index-older="4"
-                                   value-type=""
+                                   type-old="group 0..1"
                                    index-newer="4"
                                    rtd-xpath-newer="/dataset/concept[2]/concept[2]/concept[4]"
-                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82361">
+                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82361"
+                                   type-new="group 0..1">
                      <inherit-equals/>
                      <child-concepts doc-xpath="/voorgaande_zwangerschap_samenvatting_22/vrouw/naamgegevens/achternaam">
                         <concept-compare signature="shortname:soort_naam"
@@ -331,10 +390,19 @@
                                          rtd-xpath-older="/dataset/concept[2]/concept[2]/concept[4]/concept[1]"
                                          id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82362"
                                          index-older="1"
-                                         value-type="code"
+                                         type-old="code 0..1"
                                          index-newer="1"
                                          rtd-xpath-newer="/dataset/concept[2]/concept[2]/concept[4]/concept[1]"
-                                         id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82362">
+                                         id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82362"
+                                         type-new="code 0..1">
+                           <conceptcodelist-old>
+                              <code type="concept" code="BR" displayname="Geslachtsnaam"/>
+                              <code type="concept" code="SP" displayname="Geslachtsnaam partner"/>
+                           </conceptcodelist-old>
+                           <conceptcodelist-new>
+                              <code type="concept" code="BR" displayname="Geslachtsnaam"/>
+                              <code type="concept" code="SP" displayname="Geslachtsnaam partner"/>
+                           </conceptcodelist-new>
                            <inherit-equals/>
                         </concept-compare>
                         <concept-compare signature="shortname:voorvoegsel"
@@ -343,10 +411,11 @@
                                          rtd-xpath-older="/dataset/concept[2]/concept[2]/concept[4]/concept[2]"
                                          id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82363"
                                          index-older="2"
-                                         value-type="string"
+                                         type-old="string 0..1"
                                          index-newer="2"
                                          rtd-xpath-newer="/dataset/concept[2]/concept[2]/concept[4]/concept[2]"
-                                         id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82363">
+                                         id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82363"
+                                         type-new="string 0..1">
                            <inherit-equals/>
                         </concept-compare>
                         <concept-compare signature="shortname:achternaam"
@@ -355,10 +424,11 @@
                                          rtd-xpath-older="/dataset/concept[2]/concept[2]/concept[4]/concept[3]"
                                          id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10043"
                                          index-older="3"
-                                         value-type="string"
+                                         type-old="string 0..1"
                                          index-newer="3"
                                          rtd-xpath-newer="/dataset/concept[2]/concept[2]/concept[4]/concept[3]"
-                                         id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10043">
+                                         id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10043"
+                                         type-new="string 0..1">
                            <inherit-equals/>
                         </concept-compare>
                      </child-concepts>
@@ -371,10 +441,11 @@
                              rtd-xpath-older="/dataset/concept[2]/concept[3]"
                              id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10040"
                              index-older="3"
-                             value-type="date"
+                             type-old="date 0..1"
                              index-newer="3"
                              rtd-xpath-newer="/dataset/concept[2]/concept[3]"
-                             id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10040"/>
+                             id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10040"
+                             type-new="date 0..1"/>
          </child-concepts>
       </concept-compare>
       <concept-compare signature="shortname:zwangerschap"
@@ -383,10 +454,11 @@
                        rtd-xpath-older="/dataset/concept[3]"
                        id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.3"
                        index-older="3"
-                       value-type=""
+                       type-old="group 1..1"
                        index-newer="3"
                        rtd-xpath-newer="/dataset/concept[3]"
-                       id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.3">
+                       id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.3"
+                       type-new="group 1..1">
          <child-concepts doc-xpath="/voorgaande_zwangerschap_samenvatting_22/zwangerschap">
             <concept-compare signature="shortname:identificatie_van_de_zwangerschap"
                              shortname="identificatie_van_de_zwangerschap"
@@ -394,10 +466,11 @@
                              rtd-xpath-older="/dataset/concept[3]/concept[1]"
                              id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80627"
                              index-older="1"
-                             value-type="identifier"
+                             type-old="identifier 0..1"
                              index-newer="1"
                              rtd-xpath-newer="/dataset/concept[3]/concept[1]"
-                             id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80627">
+                             id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80627"
+                             type-new="identifier 0..1">
                <inherit-equals/>
             </concept-compare>
             <concept-compare signature="shortname:graviditeit"
@@ -406,10 +479,11 @@
                              rtd-xpath-older="/dataset/concept[3]/concept[2]"
                              id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20010"
                              index-older="2"
-                             value-type="count"
+                             type-old="count 0..1"
                              index-newer="2"
                              rtd-xpath-newer="/dataset/concept[3]/concept[2]"
-                             id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20010">
+                             id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20010"
+                             type-new="count 0..1">
                <inherit-equals/>
             </concept-compare>
             <concept-compare signature="shortname:pariteit_voor_deze_zwangerschap"
@@ -418,30 +492,33 @@
                              rtd-xpath-older="/dataset/concept[3]/concept[3]"
                              id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20150"
                              index-older="3"
-                             value-type="count"
+                             type-old="count 0..1"
                              index-newer="3"
                              rtd-xpath-newer="/dataset/concept[3]/concept[3]"
-                             id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20150"/>
+                             id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20150"
+                             type-new="count 0..1"/>
             <concept-compare signature="shortname:definitieve_a_terme_datum"
                              shortname="definitieve_a_terme_datum"
                              doc-xpath="/voorgaande_zwangerschap_samenvatting_22/zwangerschap/definitieve_a_terme_datum"
                              rtd-xpath-older="/dataset/concept[3]/concept[4]"
                              id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82160"
                              index-older="4"
-                             value-type="date"
+                             type-old="date 0..1"
                              index-newer="4"
                              rtd-xpath-newer="/dataset/concept[3]/concept[4]"
-                             id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82160"/>
+                             id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82160"
+                             type-new="date 0..1"/>
             <concept-compare signature="shortname:diagnose"
                              shortname="diagnose"
                              doc-xpath="/voorgaande_zwangerschap_samenvatting_22/zwangerschap/diagnose"
                              rtd-xpath-older="/dataset/concept[3]/concept[5]"
                              id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82268"
                              index-older="5"
-                             value-type=""
+                             type-old="group 0..*"
                              index-newer="5"
                              rtd-xpath-newer="/dataset/concept[3]/concept[5]"
-                             id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82268">
+                             id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82268"
+                             type-new="group 0..*">
                <child-concepts doc-xpath="/voorgaande_zwangerschap_samenvatting_22/zwangerschap/diagnose">
                   <concept-compare signature="shortname:gynaecologische_aandoening"
                                    shortname="gynaecologische_aandoening"
@@ -449,10 +526,33 @@
                                    rtd-xpath-older="/dataset/concept[3]/concept[5]/concept[1]"
                                    id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82269"
                                    index-older="1"
-                                   value-type="code"
+                                   type-old="code 0..1"
                                    index-newer="1"
                                    rtd-xpath-newer="/dataset/concept[3]/concept[5]/concept[1]"
-                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82269">
+                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82269"
+                                   type-new="code 0..1">
+                     <conceptcodelist-old>
+                        <code type="concept"
+                              code="129103003"
+                              displayname="Endometriosis (disorder)"/>
+                        <code type="concept"
+                              code="95315005"
+                              displayname="Uterine leiomyoma (disorder)"/>
+                        <code type="concept"
+                              code="37849005"
+                              displayname="Congenital uterine anomaly (disorder)"/>
+                     </conceptcodelist-old>
+                     <conceptcodelist-new>
+                        <code type="concept"
+                              code="129103003"
+                              displayname="Endometriosis (disorder)"/>
+                        <code type="concept"
+                              code="95315005"
+                              displayname="Uterine leiomyoma (disorder)"/>
+                        <code type="concept"
+                              code="37849005"
+                              displayname="Congenital uterine anomaly (disorder)"/>
+                     </conceptcodelist-new>
                      <inherit-equals/>
                   </concept-compare>
                   <concept-compare signature="shortname:bloedverliesq"
@@ -461,110 +561,192 @@
                                    rtd-xpath-older="/dataset/concept[3]/concept[5]/concept[2]"
                                    id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82270"
                                    index-older="2"
-                                   value-type="boolean"
+                                   type-old="boolean 0..1"
                                    index-newer="2"
                                    rtd-xpath-newer="/dataset/concept[3]/concept[5]/concept[2]"
-                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82270"/>
+                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82270"
+                                   type-new="boolean 0..1"/>
                   <concept-compare signature="shortname:cervixinsufficientieq"
                                    shortname="cervixinsufficientieq"
                                    doc-xpath="/voorgaande_zwangerschap_samenvatting_22/zwangerschap/diagnose/cervixinsufficientieq"
                                    rtd-xpath-older="/dataset/concept[3]/concept[5]/concept[3]"
                                    id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82271"
                                    index-older="3"
-                                   value-type="boolean"
+                                   type-old="boolean 0..1"
                                    index-newer="3"
                                    rtd-xpath-newer="/dataset/concept[3]/concept[5]/concept[3]"
-                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82271"/>
+                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82271"
+                                   type-new="boolean 0..1"/>
                   <concept-compare signature="shortname:infectie"
                                    shortname="infectie"
                                    doc-xpath="/voorgaande_zwangerschap_samenvatting_22/zwangerschap/diagnose/infectie"
                                    rtd-xpath-older="/dataset/concept[3]/concept[5]/concept[4]"
                                    id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82273"
                                    index-older="4"
-                                   value-type="code"
+                                   type-old="code 0..1"
                                    index-newer="4"
                                    rtd-xpath-newer="/dataset/concept[3]/concept[5]/concept[4]"
-                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82273"/>
+                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82273"
+                                   type-new="code 0..1">
+                     <conceptcodelist-old>
+                        <code type="concept"
+                              code="301775005"
+                              displayname="Infection of uterus (disorder)"/>
+                        <code type="concept"
+                              code="307534009"
+                              displayname="Urinary tract infection in pregnancy (disorder)"/>
+                        <code type="concept"
+                              code="45816000"
+                              displayname="Pyelonephritis (disorder)"/>
+                        <code type="concept"
+                              code="186156007"
+                              displayname="Infectious colitis, enteritis and gastroenteritis (disorder)"/>
+                     </conceptcodelist-old>
+                     <conceptcodelist-new>
+                        <code type="concept"
+                              code="301775005"
+                              displayname="Infection of uterus (disorder)"/>
+                        <code type="concept"
+                              code="307534009"
+                              displayname="Urinary tract infection in pregnancy (disorder)"/>
+                        <code type="concept"
+                              code="45816000"
+                              displayname="Pyelonephritis (disorder)"/>
+                        <code type="concept"
+                              code="186156007"
+                              displayname="Infectious colitis, enteritis and gastroenteritis (disorder)"/>
+                     </conceptcodelist-new>
+                  </concept-compare>
                   <concept-compare signature="shortname:hyperemesis_gravidarumq"
                                    shortname="hyperemesis_gravidarumq"
                                    doc-xpath="/voorgaande_zwangerschap_samenvatting_22/zwangerschap/diagnose/hyperemesis_gravidarumq"
                                    rtd-xpath-older="/dataset/concept[3]/concept[5]/concept[5]"
                                    id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82274"
                                    index-older="5"
-                                   value-type="boolean"
+                                   type-old="boolean 0..1"
                                    index-newer="5"
                                    rtd-xpath-newer="/dataset/concept[3]/concept[5]/concept[5]"
-                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82274"/>
+                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82274"
+                                   type-new="boolean 0..1"/>
                   <concept-compare signature="shortname:hypertensieve_aandoening"
                                    shortname="hypertensieve_aandoening"
                                    doc-xpath="/voorgaande_zwangerschap_samenvatting_22/zwangerschap/diagnose/hypertensieve_aandoening"
                                    rtd-xpath-older="/dataset/concept[3]/concept[5]/concept[6]"
                                    id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82275"
                                    index-older="6"
-                                   value-type="code"
+                                   type-old="code 0..1"
                                    index-newer="6"
                                    rtd-xpath-newer="/dataset/concept[3]/concept[5]/concept[6]"
-                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82275"/>
+                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82275"
+                                   type-new="code 0..1">
+                     <conceptcodelist-old>
+                        <code type="concept"
+                              code="48194001"
+                              displayname="Pregnancy-induced hypertension (disorder)"/>
+                        <code type="concept"
+                              code="398254007"
+                              displayname="Pre-eclampsia (disorder)"/>
+                        <code type="concept"
+                              code="95605009"
+                              displayname="Hemolysis-elevated liver enzymes-low platelet count syndrome (disorder)"/>
+                        <code type="concept" code="15938005" displayname="Eclampsia (disorder)"/>
+                     </conceptcodelist-old>
+                     <conceptcodelist-new>
+                        <code type="concept"
+                              code="48194001"
+                              displayname="Pregnancy-induced hypertension (disorder)"/>
+                        <code type="concept"
+                              code="398254007"
+                              displayname="Pre-eclampsia (disorder)"/>
+                        <code type="concept"
+                              code="95605009"
+                              displayname="Hemolysis-elevated liver enzymes-low platelet count syndrome (disorder)"/>
+                        <code type="concept" code="15938005" displayname="Eclampsia (disorder)"/>
+                     </conceptcodelist-new>
+                  </concept-compare>
                   <concept-compare signature="shortname:zwangerschapscholestaseq"
                                    shortname="zwangerschapscholestaseq"
                                    doc-xpath="/voorgaande_zwangerschap_samenvatting_22/zwangerschap/diagnose/zwangerschapscholestaseq"
                                    rtd-xpath-older="/dataset/concept[3]/concept[5]/concept[7]"
                                    id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82276"
                                    index-older="7"
-                                   value-type="boolean"
+                                   type-old="boolean 0..1"
                                    index-newer="7"
                                    rtd-xpath-newer="/dataset/concept[3]/concept[5]/concept[7]"
-                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82276"/>
+                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82276"
+                                   type-new="boolean 0..1"/>
                   <concept-compare signature="shortname:diabetes_gravidarum_met_insulineq"
                                    shortname="diabetes_gravidarum_met_insulineq"
                                    doc-xpath="/voorgaande_zwangerschap_samenvatting_22/zwangerschap/diagnose/diabetes_gravidarum_met_insulineq"
                                    rtd-xpath-older="/dataset/concept[3]/concept[5]/concept[8]"
                                    id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82277"
                                    index-older="8"
-                                   value-type="boolean"
+                                   type-old="boolean 0..1"
                                    index-newer="8"
                                    rtd-xpath-newer="/dataset/concept[3]/concept[5]/concept[8]"
-                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82277"/>
+                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82277"
+                                   type-new="boolean 0..1"/>
                   <concept-compare signature="shortname:afwijkende_groei_foetus"
                                    shortname="afwijkende_groei_foetus"
                                    doc-xpath="/voorgaande_zwangerschap_samenvatting_22/zwangerschap/diagnose/afwijkende_groei_foetus"
                                    rtd-xpath-older="/dataset/concept[3]/concept[5]/concept[9]"
                                    id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82278"
                                    index-older="9"
-                                   value-type="code"
+                                   type-old="code 0..1"
                                    index-newer="9"
                                    rtd-xpath-newer="/dataset/concept[3]/concept[5]/concept[9]"
-                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82278"/>
+                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82278"
+                                   type-new="code 0..1">
+                     <conceptcodelist-old>
+                        <code type="concept"
+                              code="199616008"
+                              displayname="Large-for-dates fetus (disorder)"/>
+                        <code type="concept"
+                              code="267258002"
+                              displayname="Small for gestational age fetus (disorder)"/>
+                     </conceptcodelist-old>
+                     <conceptcodelist-new>
+                        <code type="concept"
+                              code="199616008"
+                              displayname="Large-for-dates fetus (disorder)"/>
+                        <code type="concept"
+                              code="267258002"
+                              displayname="Small for gestational age fetus (disorder)"/>
+                     </conceptcodelist-new>
+                  </concept-compare>
                   <concept-compare signature="shortname:dreigende_partus_immaturusq"
                                    shortname="dreigende_partus_immaturusq"
                                    doc-xpath="/voorgaande_zwangerschap_samenvatting_22/zwangerschap/diagnose/dreigende_partus_immaturusq"
                                    rtd-xpath-older="/dataset/concept[3]/concept[5]/concept[10]"
                                    id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82279"
                                    index-older="10"
-                                   value-type="boolean"
+                                   type-old="boolean 0..1"
                                    index-newer="10"
                                    rtd-xpath-newer="/dataset/concept[3]/concept[5]/concept[10]"
-                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82279"/>
+                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82279"
+                                   type-new="boolean 0..1"/>
                   <concept-compare signature="shortname:dreigende_partus_prematurusq"
                                    shortname="dreigende_partus_prematurusq"
                                    doc-xpath="/voorgaande_zwangerschap_samenvatting_22/zwangerschap/diagnose/dreigende_partus_prematurusq"
                                    rtd-xpath-older="/dataset/concept[3]/concept[5]/concept[11]"
                                    id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82280"
                                    index-older="11"
-                                   value-type="boolean"
+                                   type-old="boolean 0..1"
                                    index-newer="11"
                                    rtd-xpath-newer="/dataset/concept[3]/concept[5]/concept[11]"
-                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82280"/>
+                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82280"
+                                   type-new="boolean 0..1"/>
                   <concept-compare signature="shortname:abruptio_placentaeq"
                                    shortname="abruptio_placentaeq"
                                    doc-xpath="/voorgaande_zwangerschap_samenvatting_22/zwangerschap/diagnose/abruptio_placentaeq"
                                    rtd-xpath-older="/dataset/concept[3]/concept[5]/concept[12]"
                                    id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82289"
                                    index-older="12"
-                                   value-type="boolean"
+                                   type-old="boolean 0..1"
                                    index-newer="12"
                                    rtd-xpath-newer="/dataset/concept[3]/concept[5]/concept[12]"
-                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82289"/>
+                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82289"
+                                   type-new="boolean 0..1"/>
                </child-concepts>
             </concept-compare>
             <concept-compare signature="shortname:wijze_einde_zwangerschap"
@@ -573,10 +755,35 @@
                              rtd-xpath-older="/dataset/concept[3]/concept[6]"
                              id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80625"
                              index-older="6"
-                             value-type="code"
+                             type-old="code 0..1"
                              index-newer="6"
                              rtd-xpath-newer="/dataset/concept[3]/concept[6]"
-                             id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80625">
+                             id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80625"
+                             type-new="code 0..1">
+               <conceptcodelist-old>
+                  <code type="concept" code="1" displayname="Partus"/>
+                  <code type="concept" code="2" displayname="Miskraam"/>
+                  <code type="concept" code="21" displayname="Spontaan"/>
+                  <code type="concept" code="22" displayname="Medicamenteus"/>
+                  <code type="concept" code="23" displayname="Instrumenteel"/>
+                  <code type="concept" code="3" displayname="APLA"/>
+                  <code type="concept" code="31" displayname="Medicamenteus"/>
+                  <code type="concept" code="32" displayname="Instrumenteel"/>
+                  <code type="concept" code="4" displayname="EUG - behandeld"/>
+                  <code type="concept" code="5" displayname="(partiële) Mola - behandeld"/>
+               </conceptcodelist-old>
+               <conceptcodelist-new>
+                  <code type="concept" code="1" displayname="Partus"/>
+                  <code type="concept" code="2" displayname="Miskraam"/>
+                  <code type="concept" code="21" displayname="Spontaan"/>
+                  <code type="concept" code="22" displayname="Medicamenteus"/>
+                  <code type="concept" code="23" displayname="Instrumenteel"/>
+                  <code type="concept" code="3" displayname="APLA"/>
+                  <code type="concept" code="31" displayname="Medicamenteus"/>
+                  <code type="concept" code="32" displayname="Instrumenteel"/>
+                  <code type="concept" code="4" displayname="EUG - behandeld"/>
+                  <code type="concept" code="5" displayname="(partiële) Mola - behandeld"/>
+               </conceptcodelist-new>
                <inherit-equals/>
             </concept-compare>
             <concept-compare signature="shortname:datum_einde_zwangerschap"
@@ -585,10 +792,11 @@
                              rtd-xpath-older="/dataset/concept[3]/concept[7]"
                              id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20540"
                              index-older="7"
-                             value-type="datetime"
+                             type-old="datetime 0..1"
                              index-newer="7"
                              rtd-xpath-newer="/dataset/concept[3]/concept[7]"
-                             id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20540"/>
+                             id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20540"
+                             type-new="datetime 0..1"/>
          </child-concepts>
       </concept-compare>
       <concept-compare signature="shortname:bevalling"
@@ -597,10 +805,11 @@
                        rtd-xpath-older="/dataset/concept[4]"
                        id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.6"
                        index-older="4"
-                       value-type=""
+                       type-old="group 0..1"
                        index-newer="4"
                        rtd-xpath-newer="/dataset/concept[4]"
-                       id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.6">
+                       id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.6"
+                       type-new="group 0..1">
          <child-concepts doc-xpath="/voorgaande_zwangerschap_samenvatting_22/bevalling">
             <concept-compare signature="shortname:diagnose_bevalling"
                              shortname="diagnose_bevalling"
@@ -608,10 +817,11 @@
                              rtd-xpath-older="/dataset/concept[4]/concept[1]"
                              id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82291"
                              index-older="1"
-                             value-type=""
+                             type-old="group 0..1"
                              index-newer="1"
                              rtd-xpath-newer="/dataset/concept[4]/concept[1]"
-                             id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82291">
+                             id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82291"
+                             type-new="group 0..1">
                <child-concepts doc-xpath="/voorgaande_zwangerschap_samenvatting_22/bevalling/diagnose_bevalling">
                   <concept-compare signature="shortname:datum"
                                    shortname="datum"
@@ -619,10 +829,11 @@
                                    rtd-xpath-older="/dataset/concept[4]/concept[1]/concept[1]"
                                    id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82381"
                                    index-older="1"
-                                   value-type="datetime"
+                                   type-old="datetime 0..1"
                                    index-newer="1"
                                    rtd-xpath-newer="/dataset/concept[4]/concept[1]/concept[1]"
-                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82381">
+                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82381"
+                                   type-new="datetime 0..1">
                      <inherit-equals/>
                   </concept-compare>
                   <concept-compare signature="shortname:zwangerschapsduur"
@@ -631,10 +842,11 @@
                                    rtd-xpath-older="/dataset/concept[4]/concept[1]/concept[2]"
                                    id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82382"
                                    index-older="2"
-                                   value-type="quantity"
+                                   type-old="quantity 0..1"
                                    index-newer="2"
                                    rtd-xpath-newer="/dataset/concept[4]/concept[1]/concept[2]"
-                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82382">
+                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82382"
+                                   type-new="quantity 0..1">
                      <inherit-equals/>
                   </concept-compare>
                   <concept-compare signature="shortname:fluxus_postpartumq"
@@ -643,10 +855,11 @@
                                    rtd-xpath-older="/dataset/concept[4]/concept[1]/concept[3]"
                                    id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82398"
                                    index-older="3"
-                                   value-type="boolean"
+                                   type-old="boolean 0..1"
                                    index-newer="3"
                                    rtd-xpath-newer="/dataset/concept[4]/concept[1]/concept[3]"
-                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82398"/>
+                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82398"
+                                   type-new="boolean 0..1"/>
                </child-concepts>
             </concept-compare>
             <concept-compare signature="shortname:wijze_waarop_de_baring_begon"
@@ -655,11 +868,26 @@
                              rtd-xpath-older="/dataset/concept[4]/concept[2]"
                              id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20550"
                              index-older="2"
-                             value-type="code"
+                             type-old="code 0..1"
                              index-newer="3"
                              rtd-xpath-newer="/dataset/concept[4]/concept[3]"
-                             id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20550">
+                             id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20550"
+                             type-new="code 0..1">
                <diff type="concept-moved" index-older="2" index-newer="3"/>
+               <conceptcodelist-old>
+                  <code type="concept" code="1" displayname="spontane weeën"/>
+                  <code type="concept" code="2" displayname="spontane vliesscheur"/>
+                  <code type="concept"
+                        code="3"
+                        displayname="interventie om baring op gang te brengen"/>
+               </conceptcodelist-old>
+               <conceptcodelist-new>
+                  <code type="concept" code="1" displayname="spontane weeën"/>
+                  <code type="concept" code="2" displayname="spontane vliesscheur"/>
+                  <code type="concept"
+                        code="3"
+                        displayname="interventie om baring op gang te brengen"/>
+               </conceptcodelist-new>
                <inherit-equals/>
             </concept-compare>
             <concept-compare signature="shortname:interventies_begin_baring_groep"
@@ -668,7 +896,64 @@
                              rtd-xpath-older="/dataset/concept[4]/concept[3]"
                              id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20555"
                              index-older="3"
-                             value-type="">
+                             type-old="group 0..*">
+               <child-concepts doc-xpath="/voorgaande_zwangerschap_samenvatting_22/bevalling/interventies_begin_baring_groep"
+                               reason="deleted">
+                  <concept-compare signature="shortname:interventie_begin_baring"
+                                   shortname="interventie_begin_baring"
+                                   doc-xpath="/voorgaande_zwangerschap_samenvatting_22/bevalling/interventies_begin_baring_groep/interventie_begin_baring"
+                                   rtd-xpath-older="/dataset/concept[4]/concept[3]/concept[1]"
+                                   id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20560"
+                                   type="code 1..1">
+                     <conceptcodelist>
+                        <code type="concept"
+                              code="236960006"
+                              displayname="Sweeping of membrane (procedure)"/>
+                        <code type="concept"
+                              code="408818004"
+                              displayname="Induction of labour by artificial rupture of membranes (procedure)"/>
+                        <code type="concept"
+                              code="425861005"
+                              displayname="Cervical ripening with balloon (procedure)"/>
+                        <code type="concept"
+                              code="236966000"
+                              displayname="Cervical ripening with Prostaglandin E2 (procedure)"/>
+                        <code type="concept"
+                              code="177135005"
+                              displayname="Oxytocin induction of labour (procedure)"/>
+                        <code type="concept"
+                              code="177136006"
+                              displayname="Prostaglandin induction of labour (procedure)"/>
+                        <code type="concept"
+                              code="177141003"
+                              displayname="Elective caesarean section (procedure)"/>
+                     </conceptcodelist>
+                  </concept-compare>
+                  <concept-compare signature="shortname:indicatie_interventie_begin_baring"
+                                   shortname="indicatie_interventie_begin_baring"
+                                   doc-xpath="/voorgaande_zwangerschap_samenvatting_22/bevalling/interventies_begin_baring_groep/indicatie_interventie_begin_baring"
+                                   rtd-xpath-older="/dataset/concept[4]/concept[3]/concept[2]"
+                                   id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20570"
+                                   type="code 0..1">
+                     <conceptcodelist>
+                        <code type="concept" code="10" displayname="gevaar moeder"/>
+                        <code type="concept" code="1" displayname="acuut levensbedreigend"/>
+                        <code type="concept" code="3" displayname="niet levensbedreigend"/>
+                        <code type="concept" code="8" displayname="onbekend"/>
+                        <code type="concept" code="20" displayname="gevaar kind"/>
+                        <code type="concept" code="2" displayname="acuut levensbedreigend"/>
+                        <code type="concept" code="4" displayname="niet levensbedreigend"/>
+                        <code type="concept" code="9" displayname="onbekend"/>
+                        <code type="concept"
+                              code="5"
+                              displayname="baring op korte termijn geïndiceerd door zorgverlener"/>
+                        <code type="concept"
+                              code="6"
+                              displayname="wens zorgverlener (incl: wetenschappelijk onderzoek)"/>
+                        <code type="concept" code="7" displayname="wens patiënt"/>
+                     </conceptcodelist>
+                  </concept-compare>
+               </child-concepts>
                <diff type="concept-deleted"/>
             </concept-compare>
             <concept-compare signature="shortname:placenta"
@@ -677,10 +962,11 @@
                              rtd-xpath-older="/dataset/concept[4]/concept[4]"
                              id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80612"
                              index-older="4"
-                             value-type=""
+                             type-old="group 0..1"
                              index-newer="4"
                              rtd-xpath-newer="/dataset/concept[4]/concept[4]"
-                             id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80612">
+                             id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80612"
+                             type-new="group 0..1">
                <child-concepts doc-xpath="/voorgaande_zwangerschap_samenvatting_22/bevalling/placenta">
                   <concept-compare signature="shortname:geboorte_placenta"
                                    shortname="geboorte_placenta"
@@ -688,10 +974,24 @@
                                    rtd-xpath-older="/dataset/concept[4]/concept[4]/concept"
                                    id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20630"
                                    index-older="1"
-                                   value-type="code"
+                                   type-old="code 0..1"
                                    index-newer="1"
                                    rtd-xpath-newer="/dataset/concept[4]/concept[4]/concept"
-                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20630"/>
+                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20630"
+                                   type-new="code 0..1">
+                     <conceptcodelist-old>
+                        <code type="concept" code="0" displayname="Spontaan"/>
+                        <code type="concept" code="2" displayname="Controlled cord traction"/>
+                        <code type="concept" code="3" displayname="Manuele placentaverwijdering"/>
+                        <code type="concept" code="4" displayname="Placentaverwijdering bij SC"/>
+                     </conceptcodelist-old>
+                     <conceptcodelist-new>
+                        <code type="concept" code="0" displayname="Spontaan"/>
+                        <code type="concept" code="2" displayname="Controlled cord traction"/>
+                        <code type="concept" code="3" displayname="Manuele placentaverwijdering"/>
+                        <code type="concept" code="4" displayname="Placentaverwijdering bij SC"/>
+                     </conceptcodelist-new>
+                  </concept-compare>
                </child-concepts>
             </concept-compare>
             <concept-compare signature="shortname:hoeveelheid_bloedverlies"
@@ -700,20 +1000,81 @@
                              rtd-xpath-older="/dataset/concept[4]/concept[5]"
                              id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20640"
                              index-older="5"
-                             value-type="quantity"
+                             type-old="quantity 0..1"
                              index-newer="5"
                              rtd-xpath-newer="/dataset/concept[4]/concept[5]"
-                             id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20640"/>
+                             id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20640"
+                             type-new="quantity 0..1"/>
             <concept-compare signature="shortname:conditie_perineum_postpartum"
                              shortname="conditie_perineum_postpartum"
                              doc-xpath="/voorgaande_zwangerschap_samenvatting_22/bevalling/conditie_perineum_postpartum"
                              rtd-xpath-older="/dataset/concept[4]/concept[6]"
                              id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80673"
                              index-older="6"
-                             value-type="code"
+                             type-old="code 0..1"
                              index-newer="6"
                              rtd-xpath-newer="/dataset/concept[4]/concept[6]"
-                             id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80673"/>
+                             id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80673"
+                             type-new="code 0..1">
+               <conceptcodelist-old>
+                  <code type="concept"
+                        code="289854007"
+                        displayname="Perineum intact  (finding)"/>
+                  <code type="concept"
+                        code="199916005"
+                        displayname="First degree perineal tear during delivery - delivered (disorder)"/>
+                  <code type="concept"
+                        code="199925004"
+                        displayname="Second degree perineal tear during delivery - delivered  (disorder)"/>
+                  <code type="concept"
+                        code="199930000"
+                        displayname="Third degree perineal tear during delivery - delivered  (disorder)"/>
+                  <code type="concept"
+                        code="449807005"
+                        displayname="Type 3a third degree laceration of perineum  (disorder)"/>
+                  <code type="concept"
+                        code="449808000"
+                        displayname="Type 3b third degree laceration of perineum (disorder)"/>
+                  <code type="concept"
+                        code="449809008"
+                        displayname="Type 3c third degree laceration of perineum (disorder)"/>
+                  <code type="concept"
+                        code="199934009"
+                        displayname="Fourth degree perineal tear during delivery - delivered  (disorder)"/>
+                  <code type="concept"
+                        code="609344008"
+                        displayname="Episiotomy wound  (morphologic abnormality)"/>
+               </conceptcodelist-old>
+               <conceptcodelist-new>
+                  <code type="concept"
+                        code="289854007"
+                        displayname="Perineum intact  (finding)"/>
+                  <code type="concept"
+                        code="199916005"
+                        displayname="First degree perineal tear during delivery - delivered (disorder)"/>
+                  <code type="concept"
+                        code="199925004"
+                        displayname="Second degree perineal tear during delivery - delivered  (disorder)"/>
+                  <code type="concept"
+                        code="199930000"
+                        displayname="Third degree perineal tear during delivery - delivered  (disorder)"/>
+                  <code type="concept"
+                        code="449807005"
+                        displayname="Type 3a third degree laceration of perineum  (disorder)"/>
+                  <code type="concept"
+                        code="449808000"
+                        displayname="Type 3b third degree laceration of perineum (disorder)"/>
+                  <code type="concept"
+                        code="449809008"
+                        displayname="Type 3c third degree laceration of perineum (disorder)"/>
+                  <code type="concept"
+                        code="199934009"
+                        displayname="Fourth degree perineal tear during delivery - delivered  (disorder)"/>
+                  <code type="concept"
+                        code="609344008"
+                        displayname="Episiotomy wound  (morphologic abnormality)"/>
+               </conceptcodelist-new>
+            </concept-compare>
             <concept-compare signature="shortname:interventies_begin_baring"
                              shortname="interventies_begin_baring"
                              doc-xpath="/voorgaande_zwangerschap_samenvatting_23/bevalling/interventies_begin_baring"
@@ -721,6 +1082,63 @@
                              index-newer="2"
                              id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20555"
                              value-type="">
+               <child-concepts doc-xpath="/voorgaande_zwangerschap_samenvatting_23/bevalling/interventies_begin_baring"
+                               reason="new">
+                  <concept-compare signature="shortname:interventie_begin_baring"
+                                   shortname="interventie_begin_baring"
+                                   doc-xpath="/voorgaande_zwangerschap_samenvatting_23/bevalling/interventies_begin_baring/interventie_begin_baring"
+                                   rtd-xpath-older="/dataset/concept[4]/concept[2]/concept[1]"
+                                   id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20560"
+                                   type="code 1..1">
+                     <conceptcodelist>
+                        <code type="concept"
+                              code="236960006"
+                              displayname="Sweeping of membrane (procedure)"/>
+                        <code type="concept"
+                              code="408818004"
+                              displayname="Induction of labour by artificial rupture of membranes (procedure)"/>
+                        <code type="concept"
+                              code="425861005"
+                              displayname="Cervical ripening with balloon (procedure)"/>
+                        <code type="concept"
+                              code="236966000"
+                              displayname="Cervical ripening with Prostaglandin E2 (procedure)"/>
+                        <code type="concept"
+                              code="177135005"
+                              displayname="Oxytocin induction of labour (procedure)"/>
+                        <code type="concept"
+                              code="177136006"
+                              displayname="Prostaglandin induction of labour (procedure)"/>
+                        <code type="concept"
+                              code="177141003"
+                              displayname="Elective caesarean section (procedure)"/>
+                     </conceptcodelist>
+                  </concept-compare>
+                  <concept-compare signature="shortname:indicatie_interventie_begin_baring"
+                                   shortname="indicatie_interventie_begin_baring"
+                                   doc-xpath="/voorgaande_zwangerschap_samenvatting_23/bevalling/interventies_begin_baring/indicatie_interventie_begin_baring"
+                                   rtd-xpath-older="/dataset/concept[4]/concept[2]/concept[2]"
+                                   id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20570"
+                                   type="code 0..1">
+                     <conceptcodelist>
+                        <code type="concept" code="10" displayname="Conditie moeder"/>
+                        <code type="concept" code="1" displayname="Acuut levensbedreigend"/>
+                        <code type="concept" code="3" displayname="Niet levensbedreigend"/>
+                        <code type="concept" code="8" displayname="Onbekend"/>
+                        <code type="concept" code="20" displayname="Conditie kind"/>
+                        <code type="concept" code="2" displayname="Foetale nood"/>
+                        <code type="concept" code="4" displayname="Niet levensbedreigend"/>
+                        <code type="concept"
+                              code="23"
+                              displayname="Inleiding vanwege congenitale afwijking"/>
+                        <code type="concept" code="9" displayname="Onbekend"/>
+                        <code type="concept"
+                              code="6"
+                              displayname="Interventie in het kader van wetenschappelijk onderzoek"/>
+                        <code type="concept" code="7" displayname="Wens patiënt"/>
+                     </conceptcodelist>
+                  </concept-compare>
+               </child-concepts>
                <diff type="concept-new"/>
             </concept-compare>
          </child-concepts>
@@ -731,10 +1149,11 @@
                        rtd-xpath-older="/dataset/concept[5]"
                        id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.7"
                        index-older="5"
-                       value-type=""
+                       type-old="group 0..*"
                        index-newer="5"
                        rtd-xpath-newer="/dataset/concept[5]"
-                       id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.7">
+                       id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.7"
+                       type-new="group 0..*">
          <child-concepts doc-xpath="/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind">
             <concept-compare signature="shortname:baring"
                              shortname="baring"
@@ -742,10 +1161,11 @@
                              rtd-xpath-older="/dataset/concept[5]/concept"
                              id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40002"
                              index-older="1"
-                             value-type=""
+                             type-old="group 0..1"
                              index-newer="1"
                              rtd-xpath-newer="/dataset/concept[5]/concept"
-                             id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40002">
+                             id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40002"
+                             type-new="group 0..1">
                <child-concepts doc-xpath="/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring">
                   <concept-compare signature="shortname:werkelijke_plaats_baring_type_locatie"
                                    shortname="werkelijke_plaats_baring_type_locatie"
@@ -753,20 +1173,35 @@
                                    rtd-xpath-older="/dataset/concept[5]/concept/concept[1]"
                                    id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40003"
                                    index-older="1"
-                                   value-type="code"
+                                   type-old="code 0..1"
                                    index-newer="1"
                                    rtd-xpath-newer="/dataset/concept[5]/concept/concept[1]"
-                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40003"/>
+                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40003"
+                                   type-new="code 0..1">
+                     <conceptcodelist-old>
+                        <code type="concept" code="169813005" displayname="Home birth (finding)"/>
+                        <code type="concept" code="23" displayname="Geboortecentrum"/>
+                        <code type="concept" code="22232009" displayname="Hospital (environment)"/>
+                        <code type="concept" code="40" displayname="Onderweg"/>
+                     </conceptcodelist-old>
+                     <conceptcodelist-new>
+                        <code type="concept" code="169813005" displayname="Home birth (finding)"/>
+                        <code type="concept" code="23" displayname="Geboortecentrum"/>
+                        <code type="concept" code="22232009" displayname="Hospital (environment)"/>
+                        <code type="concept" code="40" displayname="Onderweg"/>
+                     </conceptcodelist-new>
+                  </concept-compare>
                   <concept-compare signature="shortname:ziekenhuis_baring"
                                    shortname="ziekenhuis_baring"
                                    doc-xpath="/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/ziekenhuis_baring"
                                    rtd-xpath-older="/dataset/concept[5]/concept/concept[2]"
                                    id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82114"
                                    index-older="2"
-                                   value-type=""
+                                   type-old="group 0..1"
                                    index-newer="2"
                                    rtd-xpath-newer="/dataset/concept[5]/concept/concept[2]"
-                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82114">
+                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82114"
+                                   type-new="group 0..1">
                      <inherit-equals/>
                      <child-concepts doc-xpath="/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/ziekenhuis_baring">
                         <concept-compare signature="shortname:ziekenhuisnummer_lvrid"
@@ -775,10 +1210,11 @@
                                          rtd-xpath-older="/dataset/concept[5]/concept/concept[2]/concept[1]"
                                          id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40005"
                                          index-older="1"
-                                         value-type="identifier"
+                                         type-old="identifier 0..1"
                                          index-newer="1"
                                          rtd-xpath-newer="/dataset/concept[5]/concept/concept[2]/concept[1]"
-                                         id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40005">
+                                         id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40005"
+                                         type-new="identifier 0..1">
                            <inherit-equals/>
                         </concept-compare>
                         <concept-compare signature="shortname:zorginstelling_agbid"
@@ -787,10 +1223,11 @@
                                          rtd-xpath-older="/dataset/concept[5]/concept/concept[2]/concept[2]"
                                          id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82116"
                                          index-older="2"
-                                         value-type="identifier"
+                                         type-old="identifier 0..1"
                                          index-newer="2"
                                          rtd-xpath-newer="/dataset/concept[5]/concept/concept[2]/concept[2]"
-                                         id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82116">
+                                         id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82116"
+                                         type-new="identifier 0..1">
                            <inherit-equals/>
                         </concept-compare>
                         <concept-compare signature="shortname:naam_zorginstelling"
@@ -799,10 +1236,11 @@
                                          rtd-xpath-older="/dataset/concept[5]/concept/concept[2]/concept[3]"
                                          id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82117"
                                          index-older="3"
-                                         value-type="complex"
+                                         type-old="complex 0..1"
                                          index-newer="3"
                                          rtd-xpath-newer="/dataset/concept[5]/concept/concept[2]/concept[3]"
-                                         id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82117">
+                                         id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82117"
+                                         type-new="complex 0..1">
                            <inherit-equals/>
                         </concept-compare>
                      </child-concepts>
@@ -813,10 +1251,11 @@
                                    rtd-xpath-older="/dataset/concept[5]/concept/concept[3]"
                                    id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40006"
                                    index-older="3"
-                                   value-type=""
+                                   type-old="group 0..1"
                                    index-newer="3"
                                    rtd-xpath-newer="/dataset/concept[5]/concept/concept[3]"
-                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40006">
+                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40006"
+                                   type-new="group 0..1">
                      <child-concepts doc-xpath="/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/demografische_gegevens">
                         <concept-compare signature="shortname:naamgegevens_kind"
                                          shortname="naamgegevens_kind"
@@ -824,10 +1263,11 @@
                                          rtd-xpath-older="/dataset/concept[5]/concept/concept[3]/concept[1]"
                                          id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82051"
                                          index-older="1"
-                                         value-type=""
+                                         type-old="group 0..1"
                                          index-newer="1"
                                          rtd-xpath-newer="/dataset/concept[5]/concept/concept[3]/concept[1]"
-                                         id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82051">
+                                         id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82051"
+                                         type-new="group 0..1">
                            <child-concepts doc-xpath="/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/demografische_gegevens/naamgegevens_kind">
                               <concept-compare signature="shortname:voornamen"
                                                shortname="voornamen"
@@ -835,10 +1275,11 @@
                                                rtd-xpath-older="/dataset/concept[5]/concept/concept[3]/concept[1]/concept[1]"
                                                id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82353"
                                                index-older="1"
-                                               value-type="string"
+                                               type-old="string 0..*"
                                                index-newer="1"
                                                rtd-xpath-newer="/dataset/concept[5]/concept/concept[3]/concept[1]/concept[1]"
-                                               id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82353">
+                                               id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82353"
+                                               type-new="string 0..*">
                                  <inherit-equals/>
                               </concept-compare>
                               <concept-compare signature="shortname:achternaam"
@@ -847,10 +1288,11 @@
                                                rtd-xpath-older="/dataset/concept[5]/concept/concept[3]/concept[1]/concept[2]"
                                                id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82053"
                                                index-older="2"
-                                               value-type=""
+                                               type-old="group 0..1"
                                                index-newer="2"
                                                rtd-xpath-newer="/dataset/concept[5]/concept/concept[3]/concept[1]/concept[2]"
-                                               id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82053">
+                                               id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82053"
+                                               type-new="group 0..1">
                                  <inherit-equals/>
                                  <child-concepts doc-xpath="/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/demografische_gegevens/naamgegevens_kind/achternaam">
                                     <concept-compare signature="shortname:voorvoegsel"
@@ -859,10 +1301,11 @@
                                                      rtd-xpath-older="/dataset/concept[5]/concept/concept[3]/concept[1]/concept[2]/concept[1]"
                                                      id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82054"
                                                      index-older="1"
-                                                     value-type="string"
+                                                     type-old="string 0..1"
                                                      index-newer="1"
                                                      rtd-xpath-newer="/dataset/concept[5]/concept/concept[3]/concept[1]/concept[2]/concept[1]"
-                                                     id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82054">
+                                                     id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82054"
+                                                     type-new="string 0..1">
                                        <inherit-equals/>
                                     </concept-compare>
                                     <concept-compare signature="shortname:achternaam"
@@ -871,10 +1314,11 @@
                                                      rtd-xpath-older="/dataset/concept[5]/concept/concept[3]/concept[1]/concept[2]/concept[2]"
                                                      id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82055"
                                                      index-older="2"
-                                                     value-type="string"
+                                                     type-old="string 0..1"
                                                      index-newer="2"
                                                      rtd-xpath-newer="/dataset/concept[5]/concept/concept[3]/concept[1]/concept[2]/concept[2]"
-                                                     id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82055"/>
+                                                     id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82055"
+                                                     type-new="string 0..1"/>
                                  </child-concepts>
                               </concept-compare>
                            </child-concepts>
@@ -885,20 +1329,33 @@
                                          rtd-xpath-older="/dataset/concept[5]/concept/concept[3]/concept[2]"
                                          id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40041"
                                          index-older="2"
-                                         value-type="code"
+                                         type-old="code 0..1"
                                          index-newer="2"
                                          rtd-xpath-newer="/dataset/concept[5]/concept/concept[3]/concept[2]"
-                                         id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40041"/>
+                                         id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40041"
+                                         type-new="code 0..1">
+                           <conceptcodelist-old>
+                              <code type="concept" code="1" displayname="Mannelijk"/>
+                              <code type="concept" code="2" displayname="Vrouwelijk"/>
+                              <code type="concept" code="3" displayname="Niet conclusief"/>
+                           </conceptcodelist-old>
+                           <conceptcodelist-new>
+                              <code type="concept" code="1" displayname="Mannelijk"/>
+                              <code type="concept" code="2" displayname="Vrouwelijk"/>
+                              <code type="concept" code="3" displayname="Niet conclusief"/>
+                           </conceptcodelist-new>
+                        </concept-compare>
                         <concept-compare signature="shortname:geboortedatum"
                                          shortname="geboortedatum"
                                          doc-xpath="/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/demografische_gegevens/geboortedatum"
                                          rtd-xpath-older="/dataset/concept[5]/concept/concept[3]/concept[3]"
                                          id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40050"
                                          index-older="3"
-                                         value-type="datetime"
+                                         type-old="datetime 0..1"
                                          index-newer="3"
                                          rtd-xpath-newer="/dataset/concept[5]/concept/concept[3]/concept[3]"
-                                         id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40050">
+                                         id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40050"
+                                         type-new="datetime 0..1">
                            <inherit-equals/>
                         </concept-compare>
                         <concept-compare signature="shortname:perinatale_sterfte_groep"
@@ -907,10 +1364,11 @@
                                          rtd-xpath-older="/dataset/concept[5]/concept/concept[3]/concept[4]"
                                          id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40279"
                                          index-older="4"
-                                         value-type=""
+                                         type-old="group 0..1"
                                          index-newer="4"
                                          rtd-xpath-newer="/dataset/concept[5]/concept/concept[3]/concept[4]"
-                                         id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40279">
+                                         id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40279"
+                                         type-new="group 0..1">
                            <inherit-equals/>
                            <child-concepts doc-xpath="/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/demografische_gegevens/perinatale_sterfte_groep">
                               <concept-compare signature="shortname:perinatale_sterfteq"
@@ -919,10 +1377,11 @@
                                                rtd-xpath-older="/dataset/concept[5]/concept/concept[3]/concept[4]/concept[1]"
                                                id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40280"
                                                index-older="1"
-                                               value-type="boolean"
+                                               type-old="boolean 0..1"
                                                index-newer="1"
                                                rtd-xpath-newer="/dataset/concept[5]/concept/concept[3]/concept[4]/concept[1]"
-                                               id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40280">
+                                               id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40280"
+                                               type-new="boolean 0..1">
                                  <inherit-equals/>
                               </concept-compare>
                               <concept-compare signature="shortname:fase_perinatale_sterfte"
@@ -931,10 +1390,30 @@
                                                rtd-xpath-older="/dataset/concept[5]/concept/concept[3]/concept[4]/concept[2]"
                                                id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40290"
                                                index-older="2"
-                                               value-type="code"
+                                               type-old="code 0..1"
                                                index-newer="2"
                                                rtd-xpath-newer="/dataset/concept[5]/concept/concept[3]/concept[4]/concept[2]"
-                                               id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40290"/>
+                                               id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40290"
+                                               type-new="code 0..1">
+                                 <conceptcodelist-old>
+                                    <code type="concept"
+                                          code="237361005"
+                                          displayname="Antepartum fetal death (event)"/>
+                                    <code type="concept"
+                                          code="237362003"
+                                          displayname="Intrapartum fetal death (event)"/>
+                                    <code type="concept" code="276506001" displayname="Newborn death (event)"/>
+                                 </conceptcodelist-old>
+                                 <conceptcodelist-new>
+                                    <code type="concept"
+                                          code="237361005"
+                                          displayname="Antepartum fetal death (event)"/>
+                                    <code type="concept"
+                                          code="237362003"
+                                          displayname="Intrapartum fetal death (event)"/>
+                                    <code type="concept" code="276506001" displayname="Newborn death (event)"/>
+                                 </conceptcodelist-new>
+                              </concept-compare>
                            </child-concepts>
                         </concept-compare>
                      </child-concepts>
@@ -945,10 +1424,11 @@
                                    rtd-xpath-older="/dataset/concept[5]/concept/concept[4]"
                                    id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.72"
                                    index-older="4"
-                                   value-type=""
+                                   type-old="group 0..1"
                                    index-newer="4"
                                    rtd-xpath-newer="/dataset/concept[5]/concept/concept[4]"
-                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.72">
+                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.72"
+                                   type-new="group 0..1">
                      <child-concepts doc-xpath="/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens">
                         <concept-compare signature="shortname:type_partus"
                                          shortname="type_partus"
@@ -956,10 +1436,58 @@
                                          rtd-xpath-older="/dataset/concept[5]/concept/concept[4]/concept[1]"
                                          id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80626"
                                          index-older="1"
-                                         value-type="code"
+                                         type-old="code 0..1"
                                          index-newer="1"
                                          rtd-xpath-newer="/dataset/concept[5]/concept/concept[4]/concept[1]"
-                                         id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80626">
+                                         id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80626"
+                                         type-new="code 0..1">
+                           <conceptcodelist-old>
+                              <code type="concept"
+                                    code="48782003"
+                                    displayname="Delivery normal (finding)"/>
+                              <code type="concept"
+                                    code="8561000146109"
+                                    displayname="Assisted delivery of fetus (finding)"/>
+                              <code type="concept"
+                                    code="200146002"
+                                    displayname="Cesarean delivery - delivered (finding)"/>
+                              <code type="concept"
+                                    code="200148001"
+                                    displayname="Delivery by elective cesarean section (finding)"/>
+                              <code type="concept"
+                                    code="200149009"
+                                    displayname="Delivery by emergency cesarean section (finding)"/>
+                              <code type="concept"
+                                    code="39406005"
+                                    displayname="Legally induced abortion (disorder)"/>
+                           </conceptcodelist-old>
+                           <conceptcodelist-new>
+                              <code type="concept"
+                                    code="177184002"
+                                    displayname="Normal delivery procedure (procedure)"/>
+                              <code type="concept"
+                                    code="3311000146109"
+                                    displayname="Assisted delivery of fetus (procedure)"/>
+                              <code type="concept"
+                                    code="11466000"
+                                    displayname="Cesarean section (procedure)"/>
+                              <code type="concept"
+                                    code="177141003"
+                                    displayname="Elective cesarian delivery (procedure)"/>
+                              <code type="concept"
+                                    code="274130007"
+                                    displayname="Emergency cesarian section (procedure)"/>
+                              <code type="concept"
+                                    code="10"
+                                    displayname="Termination of Pregnancy (TOP)"/>
+                              <code type="concept"
+                                    code="447972007"
+                                    displayname="Medical termination of pregnancy using prostaglandin (procedure)"/>
+                              <code type="concept"
+                                    code="236990004"
+                                    displayname="Postmortem cesarean section (procedure)"/>
+                              <code type="concept" code="9" displayname="Overig"/>
+                           </conceptcodelist-new>
                            <diff type="conceptlist">
                               <diff type="code-deleted"
                                     code-older="48782003"
@@ -1029,17 +1557,18 @@
                                          rtd-xpath-older="/dataset/concept[5]/concept/concept[4]/concept[2]"
                                          id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20062"
                                          index-older="2"
-                                         value-type="quantity"
+                                         type-old="quantity 0..1"
                                          index-newer="2"
                                          rtd-xpath-newer="/dataset/concept[5]/concept/concept[4]/concept[2]"
-                                         id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20062"/>
+                                         id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20062"
+                                         type-new="quantity 0..1"/>
                         <concept-compare signature="shortname:apgarscore_na_5_min"
                                          shortname="apgarscore_na_5_min"
                                          doc-xpath="/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/apgarscore_na_5_min"
                                          rtd-xpath-older="/dataset/concept[5]/concept/concept[4]/concept[3]"
                                          id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40071"
                                          index-older="3"
-                                         value-type="count">
+                                         type-old="count 0..1">
                            <diff type="concept-deleted"/>
                         </concept-compare>
                         <concept-compare signature="shortname:vaginale_kunstverlossing_groep"
@@ -1048,10 +1577,11 @@
                                          rtd-xpath-older="/dataset/concept[5]/concept/concept[4]/concept[4]"
                                          id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40189"
                                          index-older="4"
-                                         value-type=""
+                                         type-old="group 0..1"
                                          index-newer="3"
                                          rtd-xpath-newer="/dataset/concept[5]/concept/concept[4]/concept[3]"
-                                         id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40189">
+                                         id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40189"
+                                         type-new="group 0..1">
                            <diff type="concept-moved" index-older="4" index-newer="3"/>
                            <child-concepts doc-xpath="/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/vaginale_kunstverlossing_groep">
                               <concept-compare signature="shortname:vaginale_kunstverlossing"
@@ -1060,10 +1590,46 @@
                                                rtd-xpath-older="/dataset/concept[5]/concept/concept[4]/concept[4]/concept"
                                                id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40190"
                                                index-older="1"
-                                               value-type="code"
+                                               type-old="code 0..1"
                                                index-newer="1"
                                                rtd-xpath-newer="/dataset/concept[5]/concept/concept[4]/concept[3]/concept"
-                                               id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40190"/>
+                                               id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40190"
+                                               type-new="code 0..1">
+                                 <conceptcodelist-old>
+                                    <code type="concept"
+                                          code="302383004"
+                                          displayname="Forceps delivery (procedure)"/>
+                                    <code type="concept"
+                                          code="61586001"
+                                          displayname="Delivery by vacuum extraction (procedure)"/>
+                                    <code type="concept"
+                                          code="699999008"
+                                          displayname="Obstetrical version with extraction (procedure)"/>
+                                    <code type="concept"
+                                          code="359940006"
+                                          displayname="Partial breech extraction (procedure)"/>
+                                    <code type="concept"
+                                          code="416055001"
+                                          displayname="Total breech extraction (procedure)"/>
+                                 </conceptcodelist-old>
+                                 <conceptcodelist-new>
+                                    <code type="concept"
+                                          code="302383004"
+                                          displayname="Forceps delivery (procedure)"/>
+                                    <code type="concept"
+                                          code="61586001"
+                                          displayname="Delivery by vacuum extraction (procedure)"/>
+                                    <code type="concept"
+                                          code="699999008"
+                                          displayname="Obstetrical version with extraction (procedure)"/>
+                                    <code type="concept"
+                                          code="359940006"
+                                          displayname="Partial breech extraction (procedure)"/>
+                                    <code type="concept"
+                                          code="416055001"
+                                          displayname="Total breech extraction (procedure)"/>
+                                 </conceptcodelist-new>
+                              </concept-compare>
                            </child-concepts>
                         </concept-compare>
                         <concept-compare signature="shortname:sectio_caesarea_group"
@@ -1072,10 +1638,11 @@
                                          rtd-xpath-older="/dataset/concept[5]/concept/concept[4]/concept[5]"
                                          id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40219"
                                          index-older="5"
-                                         value-type=""
+                                         type-old="group 0..1"
                                          index-newer="4"
                                          rtd-xpath-newer="/dataset/concept[5]/concept/concept[4]/concept[4]"
-                                         id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40219">
+                                         id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40219"
+                                         type-new="group 0..1">
                            <diff type="concept-moved" index-older="5" index-newer="4"/>
                            <child-concepts doc-xpath="/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/sectio_caesarea_group">
                               <concept-compare signature="shortname:beslismoment_sectio_caesarea"
@@ -1084,17 +1651,27 @@
                                                rtd-xpath-older="/dataset/concept[5]/concept/concept[4]/concept[5]/concept[1]"
                                                id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40225"
                                                index-older="1"
-                                               value-type="code"
+                                               type-old="code 0..1"
                                                index-newer="1"
                                                rtd-xpath-newer="/dataset/concept[5]/concept/concept[4]/concept[4]/concept"
-                                               id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40225"/>
+                                               id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40225"
+                                               type-new="code 0..1">
+                                 <conceptcodelist-old>
+                                    <code type="concept" code="2" displayname="Tijdens ontsluiting besloten"/>
+                                    <code type="concept" code="3" displayname="Tijdens uitdrijving besloten"/>
+                                 </conceptcodelist-old>
+                                 <conceptcodelist-new>
+                                    <code type="concept" code="2" displayname="Tijdens ontsluiting besloten"/>
+                                    <code type="concept" code="3" displayname="Tijdens uitdrijving besloten"/>
+                                 </conceptcodelist-new>
+                              </concept-compare>
                               <concept-compare signature="shortname:indicatie_sectio_caesarea"
                                                shortname="indicatie_sectio_caesarea"
                                                doc-xpath="/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/sectio_caesarea_group/indicatie_sectio_caesarea"
                                                rtd-xpath-older="/dataset/concept[5]/concept/concept[4]/concept[5]/concept[2]"
                                                id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40230"
                                                index-older="2"
-                                               value-type="code">
+                                               type-old="code 0..1">
                                  <diff type="concept-deleted"/>
                               </concept-compare>
                            </child-concepts>
@@ -1105,11 +1682,46 @@
                                          rtd-xpath-older="/dataset/concept[5]/concept/concept[4]/concept[6]"
                                          id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40240"
                                          index-older="6"
-                                         value-type="code"
+                                         type-old="code 0..*"
                                          index-newer="5"
                                          rtd-xpath-newer="/dataset/concept[5]/concept/concept[4]/concept[5]"
-                                         id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40240">
+                                         id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40240"
+                                         type-new="code 0..*">
                            <diff type="concept-moved" index-older="6" index-newer="5"/>
+                           <conceptcodelist-old>
+                              <code type="concept" code="32189006" displayname="Pubiotomy (procedure)"/>
+                              <code type="concept"
+                                    code="237008007"
+                                    displayname="Maneuvers for delivery in shoulder dystocia (procedure)"/>
+                              <code type="concept"
+                                    code="40792007"
+                                    displayname="Kristeller maneuver (procedure)"/>
+                           </conceptcodelist-old>
+                           <conceptcodelist-new>
+                              <code type="concept" code="32189006" displayname="Pubiotomy (procedure)"/>
+                              <code type="concept"
+                                    code="237008007"
+                                    displayname="Maneuvers for delivery in shoulder dystocia (procedure)"/>
+                              <code type="concept"
+                                    code="237009004"
+                                    displayname="McRobert's maneuver (procedure)"/>
+                              <code type="concept"
+                                    code="237010009"
+                                    displayname="Suprapubic pressure on fetal shoulder (procedure)"/>
+                              <code type="concept"
+                                    code="237012001"
+                                    displayname="Freeing the posterior arm (procedure)"/>
+                              <code type="concept"
+                                    code="237011008"
+                                    displayname="Wood's screw maneuver (procedure)"/>
+                              <code type="concept"
+                                    code="272541000"
+                                    displayname="Half-kneeling position (finding)"/>
+                              <code type="concept" code="9" displayname="Overig"/>
+                              <code type="concept"
+                                    code="40792007"
+                                    displayname="Kristeller maneuver (procedure)"/>
+                           </conceptcodelist-new>
                            <diff type="conceptlist">
                               <diff type="code-new"
                                     code-newer="237009004"
@@ -1143,10 +1755,11 @@
                                          rtd-xpath-older="/dataset/concept[5]/concept/concept[4]/concept[7]"
                                          id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80766"
                                          index-older="7"
-                                         value-type=""
+                                         type-old="group 0..1"
                                          index-newer="6"
                                          rtd-xpath-newer="/dataset/concept[5]/concept/concept[4]/concept[6]"
-                                         id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80766">
+                                         id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80766"
+                                         type-new="group 0..1">
                            <diff type="concept-moved" index-older="7" index-newer="6"/>
                            <child-concepts doc-xpath="/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind">
                               <concept-compare signature="shortname:geboortegewicht"
@@ -1155,10 +1768,11 @@
                                                rtd-xpath-older="/dataset/concept[5]/concept/concept[4]/concept[7]/concept[1]"
                                                id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40060"
                                                index-older="1"
-                                               value-type="quantity"
+                                               type-old="quantity 0..1"
                                                index-newer="2"
                                                rtd-xpath-newer="/dataset/concept[5]/concept/concept[4]/concept[6]/concept[2]"
-                                               id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40060">
+                                               id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40060"
+                                               type-new="quantity 0..1">
                                  <diff type="concept-moved" index-older="1" index-newer="2"/>
                                  <inherit-equals/>
                               </concept-compare>
@@ -1168,11 +1782,28 @@
                                                rtd-xpath-older="/dataset/concept[5]/concept/concept[4]/concept[7]/concept[2]"
                                                id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80670"
                                                index-older="2"
-                                               value-type="code"
+                                               type-old="code 0..1"
                                                index-newer="3"
                                                rtd-xpath-newer="/dataset/concept[5]/concept/concept[4]/concept[6]/concept[3]"
-                                               id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80670">
+                                               id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80670"
+                                               type-new="code 0..1">
                                  <diff type="concept-moved" index-older="2" index-newer="3"/>
+                                 <conceptcodelist-old>
+                                    <code type="concept" code="1" displayname="&lt; p2,3"/>
+                                    <code type="concept" code="2" displayname="p2,3 tot p10"/>
+                                    <code type="concept" code="3" displayname="p10 tot p50"/>
+                                    <code type="concept" code="4" displayname="p50 tot p90"/>
+                                    <code type="concept" code="5" displayname="p90 tot p97,7"/>
+                                    <code type="concept" code="6" displayname="&gt;= p97,7"/>
+                                 </conceptcodelist-old>
+                                 <conceptcodelist-new>
+                                    <code type="concept" code="1" displayname="&lt; p2,3"/>
+                                    <code type="concept" code="2" displayname="p2,3 tot p10"/>
+                                    <code type="concept" code="3" displayname="p10 tot p50"/>
+                                    <code type="concept" code="4" displayname="p50 tot p90"/>
+                                    <code type="concept" code="5" displayname="p90 tot p97,7"/>
+                                    <code type="concept" code="6" displayname="&gt;= p97,7"/>
+                                 </conceptcodelist-new>
                               </concept-compare>
                               <concept-compare signature="shortname:apgarscore_na_5_min"
                                                shortname="apgarscore_na_5_min"
@@ -1191,10 +1822,11 @@
                                          rtd-xpath-older="/dataset/concept[5]/concept/concept[4]/concept[8]"
                                          id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40080"
                                          index-older="8"
-                                         value-type="boolean"
+                                         type-old="boolean 0..1"
                                          index-newer="7"
                                          rtd-xpath-newer="/dataset/concept[5]/concept/concept[4]/concept[7]"
-                                         id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40080">
+                                         id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40080"
+                                         type-new="boolean 0..1">
                            <diff type="concept-moved" index-older="8" index-newer="7"/>
                         </concept-compare>
                         <concept-compare signature="shortname:congenitale_afwijkingen_groep"
@@ -1203,10 +1835,11 @@
                                          rtd-xpath-older="/dataset/concept[5]/concept/concept[4]/concept[9]"
                                          id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40081"
                                          index-older="9"
-                                         value-type=""
+                                         type-old="group 0..1"
                                          index-newer="8"
                                          rtd-xpath-newer="/dataset/concept[5]/concept/concept[4]/concept[8]"
-                                         id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40081">
+                                         id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40081"
+                                         type-new="group 0..*">
                            <diff type="concept-moved" index-older="9" index-newer="8"/>
                            <diff type="maximumMultiplicity" value-older="1" value-newer="*"/>
                            <child-concepts doc-xpath="/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep">
@@ -1216,10 +1849,11 @@
                                                rtd-xpath-older="/dataset/concept[5]/concept/concept[4]/concept[9]/concept[1]"
                                                id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40082"
                                                index-older="1"
-                                               value-type=""
+                                               type-old="group 0..1"
                                                index-newer="1"
                                                rtd-xpath-newer="/dataset/concept[5]/concept/concept[4]/concept[8]/concept[1]"
-                                               id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40082">
+                                               id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40082"
+                                               type-new="group 0..1">
                                  <child-concepts doc-xpath="/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_congenitale_afwijking_groep">
                                     <concept-compare signature="shortname:specificatie_congenitale_afwijking"
                                                      shortname="specificatie_congenitale_afwijking"
@@ -1227,10 +1861,526 @@
                                                      rtd-xpath-older="/dataset/concept[5]/concept/concept[4]/concept[9]/concept[1]/concept"
                                                      id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40090"
                                                      index-older="1"
-                                                     value-type="code"
+                                                     type-old="code 0..1"
                                                      index-newer="1"
                                                      rtd-xpath-newer="/dataset/concept[5]/concept/concept[4]/concept[8]/concept[1]/concept"
-                                                     id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40090">
+                                                     id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40090"
+                                                     type-new="code 0..1">
+                                       <conceptcodelist-old>
+                                          <code type="concept"
+                                                code="88425004"
+                                                displayname="Congenital anomaly of nervous system (disorder)"/>
+                                          <code type="concept"
+                                                code="609417004"
+                                                displayname="Fetal anencephaly (disorder)"/>
+                                          <code type="concept"
+                                                code="431265009"
+                                                displayname="Fetal microcephaly (disorder)"/>
+                                          <code type="concept"
+                                                code="76916001"
+                                                displayname="Spina bifida occulta (disorder)"/>
+                                          <code type="concept"
+                                                code="414667000"
+                                                displayname="Meningomyelocele (disorder)"/>
+                                          <code type="concept"
+                                                code="171131006"
+                                                displayname="Meningocele (disorder)"/>
+                                          <code type="concept"
+                                                code="47032000"
+                                                displayname="Congenital hydrocephalus (disorder)"/>
+                                          <code type="concept"
+                                                code="30915001"
+                                                displayname="Holoprosencephaly sequence (disorder)"/>
+                                          <code type="concept"
+                                                code="55999004"
+                                                displayname="Encephalocele (disorder)"/>
+                                          <code type="concept"
+                                                code="363222009"
+                                                displayname="Neonatal neuromuscular disorder (disorder)"/>
+                                          <code type="concept"
+                                                code="09"
+                                                displayname="overige congenitale afwijkingen zenuwstelsel"/>
+                                          <code type="concept" code="B" displayname="zintuigen"/>
+                                          <code type="concept"
+                                                code="19416009"
+                                                displayname="Congenital anomaly of eye (disorder)"/>
+                                          <code type="concept"
+                                                code="61142002"
+                                                displayname="Microphthalmos (disorder)"/>
+                                          <code type="concept"
+                                                code="11"
+                                                displayname="overige congenitale afwijkingen ogen"/>
+                                          <code type="concept"
+                                                code="8380000"
+                                                displayname="Congenital anomaly of ear (disorder)"/>
+                                          <code type="concept"
+                                                code="13"
+                                                displayname="overige congenitale afwijkingen zintuigen"/>
+                                          <code type="concept"
+                                                code="9904008"
+                                                displayname="Congenital anomaly of cardiovascular system (disorder)"/>
+                                          <code type="concept"
+                                                code="204470001"
+                                                displayname="Single umbilical artery (disorder)"/>
+                                          <code type="concept"
+                                                code="204296002"
+                                                displayname="Discordant ventriculoarterial connection (disorder)"/>
+                                          <code type="concept"
+                                                code="86299006"
+                                                displayname="Tetralogy of Fallot (disorder)"/>
+                                          <code type="concept"
+                                                code="30288003"
+                                                displayname="Ventricular septal defect (disorder)"/>
+                                          <code type="concept"
+                                                code="62067003"
+                                                displayname="Hypoplastic left heart syndrome (disorder)"/>
+                                          <code type="concept"
+                                                code="7305005"
+                                                displayname="Coarctation of aorta (disorder)"/>
+                                          <code type="concept"
+                                                code="4374004"
+                                                displayname="Congenital anomaly of tricuspid valve (disorder)"/>
+                                          <code type="concept"
+                                                code="94702005"
+                                                displayname="Multiple congenital cardiac defects (disorder)"/>
+                                          <code type="concept"
+                                                code="22"
+                                                displayname="overige congenitale afwijking hart en bloedvaten"/>
+                                          <code type="concept"
+                                                code="95470009"
+                                                displayname="Congenital anomaly of digestive tract (disorder)"/>
+                                          <code type="concept" code="80281008" displayname="Cleft lip (disorder)"/>
+                                          <code type="concept"
+                                                code="87979003"
+                                                displayname="Cleft palate (disorder)"/>
+                                          <code type="concept"
+                                                code="69771008"
+                                                displayname="Congenital anomaly of esophagus (disorder)"/>
+                                          <code type="concept"
+                                                code="84296002"
+                                                displayname="Congenital atresia of small intestine (disorder)"/>
+                                          <code type="concept"
+                                                code="204711007"
+                                                displayname="Atresia of large intestine (disorder)"/>
+                                          <code type="concept"
+                                                code="204712000"
+                                                displayname="Anal atresia (disorder)"/>
+                                          <code type="concept"
+                                                code="204739008"
+                                                displayname="Hirschsprung's disease (disorder)"/>
+                                          <code type="concept"
+                                                code="29980002"
+                                                displayname="Congenital malrotation of intestine (disorder)"/>
+                                          <code type="concept"
+                                                code="9707006"
+                                                displayname="Intestinal volvulus (disorder)"/>
+                                          <code type="concept"
+                                                code="30"
+                                                displayname="overige congenitale afwijking tractus digestivus"/>
+                                          <code type="concept"
+                                                code="77868001"
+                                                displayname="Congenital anomaly of respiratory system (disorder)"/>
+                                          <code type="concept"
+                                                code="204508009"
+                                                displayname="Choanal atresia (disorder)"/>
+                                          <code type="concept"
+                                                code="14532008"
+                                                displayname="Congenital anomaly of trachea (disorder)"/>
+                                          <code type="concept"
+                                                code="80825009"
+                                                displayname="Congenital hypoplasia of lung (disorder)"/>
+                                          <code type="concept"
+                                                code="66987001"
+                                                displayname="Congenital lobar emphysema (disorder)"/>
+                                          <code type="concept"
+                                                code="111318005"
+                                                displayname="Congenital cystic adenomatoid malformation of lung (disorder)"/>
+                                          <code type="concept" code="79231000" displayname="Hydrothorax (disorder)"/>
+                                          <code type="concept" code="83035003" displayname="Chylothorax (disorder)"/>
+                                          <code type="concept"
+                                                code="17190001"
+                                                displayname="Congenital diaphragmatic hernia (disorder)"/>
+                                          <code type="concept"
+                                                code="21524000"
+                                                displayname="Relaxation of diaphragm (disorder)"/>
+                                          <code type="concept"
+                                                code="38"
+                                                displayname="overige congenitale afwijking tractus respiratorius"/>
+                                          <code type="concept"
+                                                code="287085006"
+                                                displayname="Genitourinary congenital anomalies (disorder)"/>
+                                          <code type="concept"
+                                                code="416010008"
+                                                displayname="Hypospadias (disorder)"/>
+                                          <code type="concept" code="406476007" displayname="Epispadias (disorder)"/>
+                                          <code type="concept"
+                                                code="204878001"
+                                                displayname="Undescended testicle (disorder)"/>
+                                          <code type="concept"
+                                                code="61758007"
+                                                displayname="Exstrophy of bladder sequence (disorder)"/>
+                                          <code type="concept"
+                                                code="41962002"
+                                                displayname="Oligohydramnios sequence (disorder)"/>
+                                          <code type="concept"
+                                                code="82525005"
+                                                displayname="Congenital cystic kidney disease (disorder)"/>
+                                          <code type="concept"
+                                                code="7163005"
+                                                displayname="Urinary tract obstruction (disorder)"/>
+                                          <code type="concept"
+                                                code="39179006"
+                                                displayname="Disorder of sexual differentiation (disorder)"/>
+                                          <code type="concept"
+                                                code="69"
+                                                displayname="overige congenitale afwijking tractus urogenitalis"/>
+                                          <code type="concept"
+                                                code="199879009"
+                                                displayname="Congenital anomaly of skin (disorder)"/>
+                                          <code type="concept"
+                                                code="93471006"
+                                                displayname="Hemangioma of skin (disorder)"/>
+                                          <code type="concept"
+                                                code="398943008"
+                                                displayname="Congenital pigmented melanocytic nevus of skin (disorder)"/>
+                                          <code type="concept"
+                                                code="74"
+                                                displayname="overige congenitale huidafwijking"/>
+                                          <code type="concept"
+                                                code="81336004"
+                                                displayname="Congenital anomaly of abdominal wall (disorder)"/>
+                                          <code type="concept"
+                                                code="72951007"
+                                                displayname="Gastroschisis (disorder)"/>
+                                          <code type="concept"
+                                                code="18735004"
+                                                displayname="Congenital omphalocele (disorder)"/>
+                                          <code type="concept"
+                                                code="396347007"
+                                                displayname="Umbilical hernia (disorder)"/>
+                                          <code type="concept"
+                                                code="429200006"
+                                                displayname="Congenital inguinal hernia (disorder)"/>
+                                          <code type="concept"
+                                                code="85"
+                                                displayname="overige congenitale afwijking buikwand"/>
+                                          <code type="concept"
+                                                code="73573004"
+                                                displayname="Congenital anomaly of musculoskeletal system (disorder)"/>
+                                          <code type="concept"
+                                                code="367506006"
+                                                displayname="Polydactyly (disorder)"/>
+                                          <code type="concept" code="373413006" displayname="Syndactyly (disorder)"/>
+                                          <code type="concept"
+                                                code="302297009"
+                                                displayname="Congenital deformity of foot (disorder)"/>
+                                          <code type="concept"
+                                                code="45806008"
+                                                displayname="Reduction deformity of upper limb (disorder)"/>
+                                          <code type="concept"
+                                                code="77595004"
+                                                displayname="Reduction deformity of lower limb (disorder)"/>
+                                          <code type="concept"
+                                                code="96"
+                                                displayname="overige congenitale afwijking extremiteiten"/>
+                                          <code type="concept"
+                                                code="36172001"
+                                                displayname="Congenital subluxation of hip (disorder)"/>
+                                          <code type="concept"
+                                                code="98"
+                                                displayname="overige congenitale afwijking skelet en spierstelsel"/>
+                                          <code type="concept"
+                                                code="J"
+                                                displayname="multipele/syndromale congenitale afwijkingen (niet chromosomaal)"/>
+                                          <code type="concept"
+                                                code="276720006"
+                                                displayname="Dysmorphism (disorder)"/>
+                                          <code type="concept"
+                                                code="43876007"
+                                                displayname="Situs inversus viscerum (disorder)"/>
+                                          <code type="concept"
+                                                code="444406006"
+                                                displayname="Multiple congenital anomalies (disorder)"/>
+                                          <code type="concept"
+                                                code="82354003"
+                                                displayname="Multiple system malformation syndrome (disorder)"/>
+                                          <code type="concept"
+                                                code="104"
+                                                displayname="overige multipele/syndromale afwijkingen"/>
+                                          <code type="concept"
+                                                code="K"
+                                                displayname="overige congenitale afwijkingen"/>
+                                          <code type="concept"
+                                                code="217710005"
+                                                displayname="Congenital iodine deficiency syndrome (disorder)"/>
+                                          <code type="concept"
+                                                code="86095007"
+                                                displayname="Inborn error of metabolism (disorder)"/>
+                                          <code type="concept"
+                                                code="112"
+                                                displayname="andere endocrinologische afwijkingen"/>
+                                          <code type="concept"
+                                                code="363346000:246454002=255399007"
+                                                displayname="Congenital malignant neoplastic disease (disorder)"/>
+                                       </conceptcodelist-old>
+                                       <conceptcodelist-new>
+                                          <code type="concept" code="276508000" displayname="Hydrops foetalis"/>
+                                          <code type="concept"
+                                                code="88425004"
+                                                displayname="Congenital anomaly of nervous system (disorder)"/>
+                                          <code type="concept"
+                                                code="609417004"
+                                                displayname="Fetal anencephaly (disorder)"/>
+                                          <code type="concept"
+                                                code="431265009"
+                                                displayname="Fetal microcephaly (disorder)"/>
+                                          <code type="concept"
+                                                code="76916001"
+                                                displayname="Spina bifida occulta (disorder)"/>
+                                          <code type="concept"
+                                                code="414667000"
+                                                displayname="Meningomyelocele (disorder)"/>
+                                          <code type="concept"
+                                                code="171131006"
+                                                displayname="Meningocele (disorder)"/>
+                                          <code type="concept"
+                                                code="47032000"
+                                                displayname="Congenital hydrocephalus (disorder)"/>
+                                          <code type="concept"
+                                                code="30915001"
+                                                displayname="Holoprosencephaly sequence (disorder)"/>
+                                          <code type="concept"
+                                                code="55999004"
+                                                displayname="Encephalocele (disorder)"/>
+                                          <code type="concept"
+                                                code="363222009"
+                                                displayname="Neonatal neuromuscular disorder (disorder)"/>
+                                          <code type="concept"
+                                                code="09"
+                                                displayname="Overige congenitale afwijkingen zenuwstelsel"/>
+                                          <code type="concept" code="B" displayname="Zintuigen"/>
+                                          <code type="concept"
+                                                code="19416009"
+                                                displayname="Congenital anomaly of eye (disorder)"/>
+                                          <code type="concept"
+                                                code="61142002"
+                                                displayname="Microphthalmos (disorder)"/>
+                                          <code type="concept"
+                                                code="11"
+                                                displayname="Overige congenitale afwijkingen ogen"/>
+                                          <code type="concept"
+                                                code="8380000"
+                                                displayname="Congenital anomaly of ear (disorder)"/>
+                                          <code type="concept"
+                                                code="13"
+                                                displayname="Overige congenitale afwijkingen zintuigen"/>
+                                          <code type="concept"
+                                                code="9904008"
+                                                displayname="Congenital anomaly of cardiovascular system (disorder)"/>
+                                          <code type="concept"
+                                                code="204470001"
+                                                displayname="Single umbilical artery (disorder)"/>
+                                          <code type="concept"
+                                                code="204296002"
+                                                displayname="Discordant ventriculoarterial connection (disorder)"/>
+                                          <code type="concept"
+                                                code="86299006"
+                                                displayname="Tetralogy of Fallot (disorder)"/>
+                                          <code type="concept"
+                                                code="30288003"
+                                                displayname="Ventricular septal defect (disorder)"/>
+                                          <code type="concept"
+                                                code="62067003"
+                                                displayname="Hypoplastic left heart syndrome (disorder)"/>
+                                          <code type="concept"
+                                                code="7305005"
+                                                displayname="Coarctation of aorta (disorder)"/>
+                                          <code type="concept"
+                                                code="4374004"
+                                                displayname="Congenital anomaly of tricuspid valve (disorder)"/>
+                                          <code type="concept"
+                                                code="94702005"
+                                                displayname="Multiple congenital cardiac defects (disorder)"/>
+                                          <code type="concept"
+                                                code="22"
+                                                displayname="Overige congenitale afwijking hart en bloedvaten"/>
+                                          <code type="concept"
+                                                code="95470009"
+                                                displayname="Congenital anomaly of digestive tract (disorder)"/>
+                                          <code type="concept" code="80281008" displayname="Cleft lip (disorder)"/>
+                                          <code type="concept"
+                                                code="87979003"
+                                                displayname="Cleft palate (disorder)"/>
+                                          <code type="concept"
+                                                code="69771008"
+                                                displayname="Congenital anomaly of esophagus (disorder)"/>
+                                          <code type="concept"
+                                                code="84296002"
+                                                displayname="Congenital atresia of small intestine (disorder)"/>
+                                          <code type="concept"
+                                                code="204711007"
+                                                displayname="Atresia of large intestine (disorder)"/>
+                                          <code type="concept"
+                                                code="204712000"
+                                                displayname="Anal atresia (disorder)"/>
+                                          <code type="concept"
+                                                code="204739008"
+                                                displayname="Hirschsprung's disease (disorder)"/>
+                                          <code type="concept"
+                                                code="29980002"
+                                                displayname="Congenital malrotation of intestine (disorder)"/>
+                                          <code type="concept"
+                                                code="9707006"
+                                                displayname="Intestinal volvulus (disorder)"/>
+                                          <code type="concept"
+                                                code="30"
+                                                displayname="Overige congenitale afwijking tractus digestivus"/>
+                                          <code type="concept"
+                                                code="77868001"
+                                                displayname="Congenital anomaly of respiratory system (disorder)"/>
+                                          <code type="concept"
+                                                code="204508009"
+                                                displayname="Choanal atresia (disorder)"/>
+                                          <code type="concept"
+                                                code="14532008"
+                                                displayname="Congenital anomaly of trachea (disorder)"/>
+                                          <code type="concept"
+                                                code="80825009"
+                                                displayname="Congenital hypoplasia of lung (disorder)"/>
+                                          <code type="concept"
+                                                code="66987001"
+                                                displayname="Congenital lobar emphysema (disorder)"/>
+                                          <code type="concept"
+                                                code="111318005"
+                                                displayname="Congenital cystic adenomatoid malformation of lung (disorder)"/>
+                                          <code type="concept" code="79231000" displayname="Hydrothorax (disorder)"/>
+                                          <code type="concept" code="83035003" displayname="Chylothorax (disorder)"/>
+                                          <code type="concept"
+                                                code="17190001"
+                                                displayname="Congenital diaphragmatic hernia (disorder)"/>
+                                          <code type="concept"
+                                                code="21524000"
+                                                displayname="Relaxation of diaphragm (disorder)"/>
+                                          <code type="concept"
+                                                code="38"
+                                                displayname="Overige congenitale afwijking tractus respiratorius"/>
+                                          <code type="concept"
+                                                code="287085006"
+                                                displayname="Genitourinary congenital anomalies (disorder)"/>
+                                          <code type="concept"
+                                                code="416010008"
+                                                displayname="Hypospadias (disorder)"/>
+                                          <code type="concept" code="406476007" displayname="Epispadias (disorder)"/>
+                                          <code type="concept"
+                                                code="204878001"
+                                                displayname="Undescended testicle (disorder)"/>
+                                          <code type="concept"
+                                                code="61758007"
+                                                displayname="Exstrophy of bladder sequence (disorder)"/>
+                                          <code type="concept"
+                                                code="41962002"
+                                                displayname="Oligohydramnios sequence (disorder)"/>
+                                          <code type="concept"
+                                                code="82525005"
+                                                displayname="Congenital cystic kidney disease (disorder)"/>
+                                          <code type="concept"
+                                                code="7163005"
+                                                displayname="Urinary tract obstruction (disorder)"/>
+                                          <code type="concept"
+                                                code="39179006"
+                                                displayname="Disorder of sexual differentiation (disorder)"/>
+                                          <code type="concept"
+                                                code="69"
+                                                displayname="Overige congenitale afwijking tractus urogenitalis"/>
+                                          <code type="concept"
+                                                code="199879009"
+                                                displayname="Congenital anomaly of skin (disorder)"/>
+                                          <code type="concept"
+                                                code="93471006"
+                                                displayname="Hemangioma of skin (disorder)"/>
+                                          <code type="concept"
+                                                code="398943008"
+                                                displayname="Congenital pigmented melanocytic nevus of skin (disorder)"/>
+                                          <code type="concept"
+                                                code="74"
+                                                displayname="Overige congenitale huidafwijking"/>
+                                          <code type="concept"
+                                                code="81336004"
+                                                displayname="Congenital anomaly of abdominal wall (disorder)"/>
+                                          <code type="concept"
+                                                code="72951007"
+                                                displayname="Gastroschisis (disorder)"/>
+                                          <code type="concept"
+                                                code="18735004"
+                                                displayname="Congenital omphalocele (disorder)"/>
+                                          <code type="concept"
+                                                code="396347007"
+                                                displayname="Umbilical hernia (disorder)"/>
+                                          <code type="concept"
+                                                code="429200006"
+                                                displayname="Congenital inguinal hernia (disorder)"/>
+                                          <code type="concept"
+                                                code="85"
+                                                displayname="Overige congenitale afwijking buikwand"/>
+                                          <code type="concept"
+                                                code="73573004"
+                                                displayname="Congenital anomaly of musculoskeletal system (disorder)"/>
+                                          <code type="concept"
+                                                code="367506006"
+                                                displayname="Polydactyly (disorder)"/>
+                                          <code type="concept" code="373413006" displayname="Syndactyly (disorder)"/>
+                                          <code type="concept"
+                                                code="302297009"
+                                                displayname="Congenital deformity of foot (disorder)"/>
+                                          <code type="concept"
+                                                code="45806008"
+                                                displayname="Reduction deformity of upper limb (disorder)"/>
+                                          <code type="concept"
+                                                code="77595004"
+                                                displayname="Reduction deformity of lower limb (disorder)"/>
+                                          <code type="concept"
+                                                code="96"
+                                                displayname="Overige congenitale afwijking extremiteiten"/>
+                                          <code type="concept"
+                                                code="36172001"
+                                                displayname="Congenital subluxation of hip (disorder)"/>
+                                          <code type="concept"
+                                                code="98"
+                                                displayname="Overige congenitale afwijking skelet en spierstelsel"/>
+                                          <code type="concept"
+                                                code="J"
+                                                displayname="Multipele/syndromale congenitale afwijkingen (niet chromosomaal)"/>
+                                          <code type="concept"
+                                                code="276720006"
+                                                displayname="Dysmorphism (disorder)"/>
+                                          <code type="concept"
+                                                code="43876007"
+                                                displayname="Situs inversus viscerum (disorder)"/>
+                                          <code type="concept"
+                                                code="444406006"
+                                                displayname="Multiple congenital anomalies (disorder)"/>
+                                          <code type="concept"
+                                                code="82354003"
+                                                displayname="Multiple system malformation syndrome (disorder)"/>
+                                          <code type="concept"
+                                                code="104"
+                                                displayname="Overige multipele/syndromale afwijkingen"/>
+                                          <code type="concept"
+                                                code="K"
+                                                displayname="Overige congenitale afwijkingen"/>
+                                          <code type="concept"
+                                                code="217710005"
+                                                displayname="Congenital iodine deficiency syndrome (disorder)"/>
+                                          <code type="concept"
+                                                code="112"
+                                                displayname="Andere endocrinologische afwijkingen"/>
+                                          <code type="concept"
+                                                code="86095007"
+                                                displayname="Inborn error of metabolism (disorder)"/>
+                                          <code type="concept"
+                                                code="363346000:246454002=255399007"
+                                                displayname="Congenital malignant neoplastic disease (disorder)"/>
+                                       </conceptcodelist-new>
                                        <diff type="conceptlist">
                                           <diff type="code-new"
                                                 code-newer="276508000"
@@ -1246,20 +2396,22 @@
                                                rtd-xpath-older="/dataset/concept[5]/concept/concept[4]/concept[9]/concept[2]"
                                                id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40110"
                                                index-older="2"
-                                               value-type="boolean"
+                                               type-old="boolean 0..1"
                                                index-newer="2"
                                                rtd-xpath-newer="/dataset/concept[5]/concept/concept[4]/concept[8]/concept[2]"
-                                               id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40110"/>
+                                               id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40110"
+                                               type-new="boolean 0..1"/>
                               <concept-compare signature="shortname:specificatie_chromosomale_afwijking_groep"
                                                shortname="specificatie_chromosomale_afwijking_groep"
                                                doc-xpath="/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_chromosomale_afwijking_groep"
                                                rtd-xpath-older="/dataset/concept[5]/concept/concept[4]/concept[9]/concept[3]"
                                                id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40111"
                                                index-older="3"
-                                               value-type=""
+                                               type-old="group 0..1"
                                                index-newer="3"
                                                rtd-xpath-newer="/dataset/concept[5]/concept/concept[4]/concept[8]/concept[3]"
-                                               id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40111">
+                                               id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40111"
+                                               type-new="group 0..1">
                                  <child-concepts doc-xpath="/voorgaande_zwangerschap_samenvatting_22/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_chromosomale_afwijking_groep">
                                     <concept-compare signature="shortname:specificatie_chromosomale_afwijking"
                                                      shortname="specificatie_chromosomale_afwijking"
@@ -1267,10 +2419,40 @@
                                                      rtd-xpath-older="/dataset/concept[5]/concept/concept[4]/concept[9]/concept[3]/concept"
                                                      id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40120"
                                                      index-older="1"
-                                                     value-type="code"
+                                                     type-old="code 0..1"
                                                      index-newer="1"
                                                      rtd-xpath-newer="/dataset/concept[5]/concept/concept[4]/concept[8]/concept[3]/concept"
-                                                     id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40120"/>
+                                                     id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40120"
+                                                     type-new="code 0..1">
+                                       <conceptcodelist-old>
+                                          <code type="concept"
+                                                code="41040004"
+                                                displayname="Complete trisomy 21 syndrome (disorder)"/>
+                                          <code type="concept"
+                                                code="51500006"
+                                                displayname="Complete trisomy 18 syndrome (disorder)"/>
+                                          <code type="concept"
+                                                code="21111006"
+                                                displayname="Complete trisomy 13 syndrome (disorder)"/>
+                                          <code type="concept"
+                                                code="7"
+                                                displayname="Andere numerieke chromosomale afwijkingen"/>
+                                       </conceptcodelist-old>
+                                       <conceptcodelist-new>
+                                          <code type="concept"
+                                                code="41040004"
+                                                displayname="Complete trisomy 21 syndrome (disorder)"/>
+                                          <code type="concept"
+                                                code="51500006"
+                                                displayname="Complete trisomy 18 syndrome (disorder)"/>
+                                          <code type="concept"
+                                                code="21111006"
+                                                displayname="Complete trisomy 13 syndrome (disorder)"/>
+                                          <code type="concept"
+                                                code="7"
+                                                displayname="Andere numerieke chromosomale afwijkingen"/>
+                                       </conceptcodelist-new>
+                                    </concept-compare>
                                  </child-concepts>
                               </concept-compare>
                            </child-concepts>
@@ -1281,10 +2463,11 @@
                                          rtd-xpath-older="/dataset/concept[5]/concept/concept[4]/concept[10]"
                                          id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80790"
                                          index-older="10"
-                                         value-type="text"
+                                         type-old="text 0..1"
                                          index-newer="9"
                                          rtd-xpath-newer="/dataset/concept[5]/concept/concept[4]/concept[9]"
-                                         id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80790">
+                                         id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80790"
+                                         type-new="text 0..1">
                            <diff type="concept-moved" index-older="10" index-newer="9"/>
                            <inherit-equals/>
                         </concept-compare>
@@ -1300,10 +2483,11 @@
                        rtd-xpath-older="/dataset/concept[6]"
                        id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.14"
                        index-older="6"
-                       value-type=""
+                       type-old="group 0..1"
                        index-newer="6"
                        rtd-xpath-newer="/dataset/concept[6]"
-                       id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.14">
+                       id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.14"
+                       type-new="group 0..1">
          <child-concepts doc-xpath="/voorgaande_zwangerschap_samenvatting_22/medisch_onderzoek">
             <concept-compare signature="shortname:maternale_onderzoeksgegevens"
                              shortname="maternale_onderzoeksgegevens"
@@ -1311,10 +2495,11 @@
                              rtd-xpath-older="/dataset/concept[6]/concept"
                              id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.142"
                              index-older="1"
-                             value-type=""
+                             type-old="group 0..1"
                              index-newer="1"
                              rtd-xpath-newer="/dataset/concept[6]/concept"
-                             id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.142">
+                             id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.142"
+                             type-new="group 0..1">
                <child-concepts doc-xpath="/voorgaande_zwangerschap_samenvatting_22/medisch_onderzoek/maternale_onderzoeksgegevens">
                   <concept-compare signature="shortname:urine_bloed_en_aanvullende_onderzoeken"
                                    shortname="urine_bloed_en_aanvullende_onderzoeken"
@@ -1322,10 +2507,11 @@
                                    rtd-xpath-older="/dataset/concept[6]/concept/concept"
                                    id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80959"
                                    index-older="1"
-                                   value-type=""
+                                   type-old="group 0..1"
                                    index-newer="1"
                                    rtd-xpath-newer="/dataset/concept[6]/concept/concept"
-                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80959">
+                                   id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80959"
+                                   type-new="group 0..1">
                      <child-concepts doc-xpath="/voorgaande_zwangerschap_samenvatting_22/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken">
                         <concept-compare signature="shortname:psie"
                                          shortname="psie"
@@ -1333,10 +2519,11 @@
                                          rtd-xpath-older="/dataset/concept[6]/concept/concept/concept"
                                          id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80949"
                                          index-older="1"
-                                         value-type=""
+                                         type-old="group 0..1"
                                          index-newer="1"
                                          rtd-xpath-newer="/dataset/concept[6]/concept/concept/concept"
-                                         id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80949">
+                                         id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80949"
+                                         type-new="group 0..1">
                            <child-concepts doc-xpath="/voorgaande_zwangerschap_samenvatting_22/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/psie">
                               <concept-compare signature="shortname:irregulaire_antistoffenq"
                                                shortname="irregulaire_antistoffenq"
@@ -1344,10 +2531,11 @@
                                                rtd-xpath-older="/dataset/concept[6]/concept/concept/concept/concept"
                                                id-older="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10812"
                                                index-older="1"
-                                               value-type="boolean"
+                                               type-old="boolean 0..1"
                                                index-newer="1"
                                                rtd-xpath-newer="/dataset/concept[6]/concept/concept/concept/concept"
-                                               id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10812"/>
+                                               id-newer="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10812"
+                                               type-new="boolean 0..1"/>
                            </child-concepts>
                         </concept-compare>
                      </child-concepts>

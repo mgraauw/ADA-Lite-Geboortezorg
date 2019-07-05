@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<voorgaande_zwangerschap_samenvatting_23 transactionRef="2.16.840.1.113883.2.4.3.11.60.90.77.4.2469">
+   <zorgverlenerzorginstelling>
+      <zorginstelling>
+         <zorginstelling_lvrid value="1410"/>
+      </zorginstelling>
+   </zorgverlenerzorginstelling>
+   <vrouw>
+      <burgerservicenummer value="850810711"/>
+      <geboortedatum value="1991-08-06"/>
+   </vrouw>
+   <zwangerschap>
+      <graviditeit value="1"/>
+      <pariteit_voor_deze_zwangerschap value="0"/>
+      <definitieve_a_terme_datum value="2018-08-18"/>
+      <wijze_einde_zwangerschap value="1" displayName="Partus"/>
+   </zwangerschap>
+   <bevalling>
+      <wijze_waarop_de_baring_begon value="2" displayName="Spontane vliesscheur"/>
+      <placenta>
+         <geboorte_placenta value="0" displayName="Spontaan"/>
+      </placenta>
+      <hoeveelheid_bloedverlies value="1120" unit="ml"/>
+      <conditie_perineum_postpartum value="199930000" displayName="3e graads ruptuur"/>
+   </bevalling>
+   <uitkomst_per_kind>
+      <baring>
+         <werkelijke_plaats_baring_type_locatie value="22232009" displayName="Ziekenhuis"/>
+         <ziekenhuis_baring>
+            <ziekenhuisnummer_lvrid value="0010"/>
+         </ziekenhuis_baring>
+         <demografische_gegevens>
+            <geslacht_medische_observatie value="2" displayName="vrouwelijk"/>
+            <geboortedatum value="2018-08-04T23:35:00"/>
+            <perinatale_sterfte_groep>
+               <perinatale_sterfteq value="false"/>
+            </perinatale_sterfte_groep>
+         </demografische_gegevens>
+         <kindspecifieke_uitkomstgegevens>
+            <type_partus value="3311000146109" displayName="Vaginale kunstverlossing"/>
+            <vaginale_kunstverlossing_groep>
+               <vaginale_kunstverlossing value="302383004" displayName="Forceps"/>
+            </vaginale_kunstverlossing_groep>
+            <lichamelijk_onderzoek_kind>
+               <geboortegewicht value="4205" unit="gram"/>
+            </lichamelijk_onderzoek_kind>
+            <congenitale_afwijkingenq value="false"/>
+         </kindspecifieke_uitkomstgegevens>
+      </baring>
+   </uitkomst_per_kind>
+</voorgaande_zwangerschap_samenvatting_23>

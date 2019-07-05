@@ -225,14 +225,21 @@
         <xsl:sequence select="error((), 'Could not find the difflist xml ' || xtlc:q($dref-difflist))"/>
       </xsl:if>
       <xsl:variable name="difflist-root" as="element(difflist)" select="doc($dref-difflist)/*"/>
+      <!-- Full diffs: -->
       <xsl:for-each select="$difflist-root/diff[@newer][@older][@output]">
         <specification-diff older="{xtlc:dref-concat(($dir-source-specs-full, @older))}" newer="{xtlc:dref-concat(($dir-source-specs-full, @newer))}"
           html-out="{xtlc:dref-concat(($dir-build-diffs, @output || '.html'))}" xml-out="{xtlc:dref-concat(($dir-build-diffs, @output || '.xml'))}"
-          description="{@description}"/>
+          description="{@description}" limited="false"/>
+      </xsl:for-each>
+      <!-- Limited diffs: -->
+      <xsl:for-each select="$difflist-root/diff[@newer][@older][@output]">
+        <specification-diff older="{xtlc:dref-concat(($dir-source-specs-full, @older))}" newer="{xtlc:dref-concat(($dir-source-specs-full, @newer))}"
+          html-out="{xtlc:dref-concat(($dir-build-diffs, @output || '-limited.html'))}" xml-out="{xtlc:dref-concat(($dir-build-diffs, @output || '.xml'))}"
+          description="{@description}" limited="true"/>
       </xsl:for-each>
 
       <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-      <!-- DOcumentation and GitHub pages: -->
+      <!-- Documentation and GitHub pages: -->
 
       <xsl:variable name="dref-sitegen" as="xs:string" select="xtlc:dref-canonical(resolve-uri('../data/sitegen.xml', static-base-uri()))"/>
       <xsl:if test="not(doc-available($dref-sitegen))">
@@ -251,6 +258,10 @@
       <xsl:for-each select="$difflist-root/diff[@newer][@older][@output]">
         <xsl:call-template name="generate-action-copy-file">
           <xsl:with-param name="file-source" select="xtlc:dref-concat(($dir-build-diffs, @output || '.html'))"/>
+          <xsl:with-param name="dir-target" select="xtlc:dref-concat(($dir-docs-main, 'diffs'))"/>
+        </xsl:call-template>
+        <xsl:call-template name="generate-action-copy-file">
+          <xsl:with-param name="file-source" select="xtlc:dref-concat(($dir-build-diffs, @output || '-limited.html'))"/>
           <xsl:with-param name="dir-target" select="xtlc:dref-concat(($dir-docs-main, 'diffs'))"/>
         </xsl:call-template>
       </xsl:for-each>
