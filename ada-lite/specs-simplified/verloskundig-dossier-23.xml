@@ -103,7 +103,7 @@
                       effectiveDate="2011-01-28T00:00:00"
                       id="2.16.840.1.113883.2.4.11.58"
                       statusCode="final">
-               <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+               <conceptList>
                   <concept localId="1"
                            code="01.000"
                            codeSystem="2.16.840.1.113883.2.4.15.111"
@@ -377,7 +377,7 @@
                       effectiveDate="2011-01-28T00:00:00"
                       id="2.16.840.1.113883.2.4.11.59"
                       statusCode="final">
-               <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+               <conceptList>
                   <concept localId="1"
                            code="Z3"
                            codeSystem="2.16.840.1.113883.2.4.15.1060"
@@ -431,7 +431,7 @@
                <property/>
             </valueDomain>
             <valueSet>
-               <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg"/>
+               <conceptList/>
             </valueSet>
          </concept>
       </concept>
@@ -565,7 +565,7 @@
                          displayName="Achternaam soort"
                          effectiveDate="2013-03-25T14:13:00"
                          statusCode="final">
-                  <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                  <conceptList>
                      <concept localId="1"
                               code="BR"
                               codeSystem="2.16.840.1.113883.5.43"
@@ -730,7 +730,7 @@
             <desc language="nl-NL">Adrestype</desc>
             <valueDomain type="code"/>
             <valueSet>
-               <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg"/>
+               <conceptList/>
             </valueSet>
          </concept>
       </concept>
@@ -750,7 +750,7 @@
                    effectiveDate="2014-05-19T14:35:30"
                    name="EthnicGroup"
                    displayName="EthnicGroup">
-            <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+            <conceptList>
                <concept localId="1"
                         code="14"
                         codeSystem="2.16.840.1.113883.2.4.4.13.28"
@@ -845,7 +845,7 @@
                    name="LanguageAbilityProficiency2"
                    displayName="Language Ability Proficiency"
                    statusCode="final">
-            <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+            <conceptList>
                <concept localId="1"
                         code="G"
                         codeSystem="2.16.840.1.113883.5.61"
@@ -892,7 +892,7 @@
             <example>Duits</example>
          </valueDomain>
          <valueSet>
-            <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg"/>
+            <conceptList/>
          </valueSet>
       </concept>
       <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82155"
@@ -914,7 +914,7 @@
                    effectiveDate="2013-05-24T15:56:54"
                    statusCode="final">
             <desc language="nl-NL">NHG Tabel 20 - Code opleiding versie 1 d.d. november 2004</desc>
-            <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+            <conceptList>
                <concept localId="1"
                         code="01"
                         codeSystem="2.16.840.1.113883.2.4.4.30.20"
@@ -1289,7 +1289,7 @@
                          name="AutoImmuunAandoening22"
                          displayName="Auto-immuun aandoening (2.2)"
                          effectiveDate="2014-09-19T14:13:40">
-                  <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                  <conceptList>
                      <concept localId="1"
                               code="55464009"
                               codeSystem="2.16.840.1.113883.6.96"
@@ -1331,7 +1331,7 @@
                          name="CardiovascAandoening"
                          displayName="Cardiovasculaire aandoeningen"
                          effectiveDate="2014-08-14T13:32:40">
-                  <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                  <conceptList>
                      <concept localId="1"
                               code="38341003"
                               codeSystem="2.16.840.1.113883.6.96"
@@ -1387,7 +1387,7 @@
                          name="UrogenitaleAandoening22"
                          displayName="Urogenitale aandoening (2.2)"
                          effectiveDate="2014-09-19T21:18:42">
-                  <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                  <conceptList>
                      <concept localId="1"
                               code="45816000"
                               codeSystem="2.16.840.1.113883.6.96"
@@ -1429,7 +1429,7 @@
                          name="OncologischeAandoening22"
                          displayName="Oncologische aandoening (2.2)"
                          effectiveDate="2014-09-19T13:18:21">
-                  <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                  <conceptList>
                      <concept localId="1"
                               code="93796005"
                               codeSystem="2.16.840.1.113883.6.96"
@@ -1494,7 +1494,7 @@
                          name="Schildklieraandoening"
                          displayName="Schildklieraandoeningen"
                          effectiveDate="2014-08-14T13:40:02">
-                  <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                  <conceptList>
                      <concept localId="1"
                               code="40930008"
                               codeSystem="2.16.840.1.113883.6.96"
@@ -1543,7 +1543,7 @@
                          name="NeurologischAandoening"
                          displayName="Neurologische aandoeningen"
                          effectiveDate="2014-08-14T13:41:40">
-                  <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                  <conceptList>
                      <concept localId="1"
                               code="84757009"
                               codeSystem="2.16.840.1.113883.6.96"
@@ -1615,7 +1615,7 @@
                          name="Infectieziekte"
                          displayName="Infectieziekten"
                          effectiveDate="2014-08-14T13:43:41">
-                  <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                  <conceptList>
                      <concept localId="1"
                               code="87628006"
                               codeSystem="2.16.840.1.113883.6.96"
@@ -1797,7 +1797,7 @@
                          name="MaagDarmLeveraandoening22"
                          displayName="Maag Darm Lever aandoening (2.2)"
                          effectiveDate="2014-09-19T14:40:15">
-                  <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                  <conceptList>
                      <concept localId="1"
                               code="328383001"
                               codeSystem="2.16.840.1.113883.6.96"
@@ -1839,7 +1839,7 @@
                          name="Anemie22"
                          displayName="Anemie (2.2)"
                          effectiveDate="2014-09-22T09:54:44">
-                  <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                  <conceptList>
                      <concept localId="1"
                               code="87522002"
                               codeSystem="2.16.840.1.113883.6.96"
@@ -1888,7 +1888,7 @@
                          name="Longaandoening"
                          displayName="Longaandoening"
                          effectiveDate="2014-10-27T14:17:46">
-                  <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                  <conceptList>
                      <concept localId="1"
                               code="195967001"
                               codeSystem="2.16.840.1.113883.6.96"
@@ -1944,7 +1944,7 @@
                          name="GynaecologischAandoening"
                          displayName="Gynaecologische aandoeningen"
                          effectiveDate="2014-08-14T13:45:44">
-                  <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                  <conceptList>
                      <concept localId="1"
                               code="129103003"
                               codeSystem="2.16.840.1.113883.6.96"
@@ -1993,7 +1993,7 @@
                          name="OrthopedischAfwijking"
                          displayName="Orthopedische afwijkingen"
                          effectiveDate="2014-08-14T13:46:42">
-                  <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                  <conceptList>
                      <concept localId="1"
                               code="48334007"
                               codeSystem="2.16.840.1.113883.6.96"
@@ -2066,7 +2066,7 @@
                          name="TypeOperatie"
                          displayName="Type operatie"
                          effectiveDate="2014-08-14T14:30:51">
-                  <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                  <conceptList>
                      <concept localId="1"
                               code="12658000"
                               codeSystem="2.16.840.1.113883.6.96"
@@ -2254,7 +2254,7 @@
                          name="TypeStollingsprobleem"
                          displayName="Type stollingsprobleem"
                          effectiveDate="2014-08-14T14:42:07">
-                  <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                  <conceptList>
                      <concept localId="1"
                               code="128105004"
                               codeSystem="2.16.840.1.113883.6.96"
@@ -2515,7 +2515,7 @@
                       effectiveDate="2013-03-20T00:00:00"
                       id="2.16.840.1.113883.2.4.11.154"
                       statusCode="final">
-               <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+               <conceptList>
                   <concept localId="1"
                            code="160244002"
                            codeSystem="2.16.840.1.113883.6.96"
@@ -2623,7 +2623,7 @@
                   </desc>
                   <valueDomain type="code"/>
                   <valueSet>
-                     <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg"/>
+                     <conceptList/>
                   </valueSet>
                </concept>
             </concept>
@@ -2870,7 +2870,7 @@
                    statusCode="final"
                    name="TypeVrouwelijkeGenitaleVerminking"
                    displayName="Type vrouwelijke genitale verminking">
-            <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+            <conceptList>
                <concept localId="1"
                         code="130631000119108"
                         codeSystem="2.16.840.1.113883.6.96"
@@ -2933,7 +2933,7 @@
                    effectiveDate="2012-03-17T00:00:00"
                    id="2.16.840.1.113883.2.4.11.155"
                    statusCode="final">
-            <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+            <conceptList>
                <concept localId="1"
                         code="112144000"
                         codeSystem="2.16.840.1.113883.6.96"
@@ -2996,7 +2996,7 @@
                    effectiveDate="2012-03-17T00:00:00"
                    id="2.16.840.1.113883.2.4.11.156"
                    statusCode="final">
-            <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+            <conceptList>
                <concept localId="1"
                         code="165747007"
                         codeSystem="2.16.840.1.113883.6.96"
@@ -3050,7 +3050,7 @@
                    effectiveDate="2016-12-16T15:02:44"
                    statusCode="draft"
                    strength="required">
-            <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+            <conceptList>
                <concept localId="1"
                         code="733120009"
                         codeSystem="2.16.840.1.113883.6.96"
@@ -3154,7 +3154,7 @@
                       effectiveDate="2014-05-19T14:35:30"
                       name="EthnicGroup"
                       displayName="EthnicGroup">
-               <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+               <conceptList>
                   <concept localId="1"
                            code="14"
                            codeSystem="2.16.840.1.113883.2.4.4.13.28"
@@ -3408,7 +3408,7 @@
                       id="2.16.840.1.113883.2.4.11.240"
                       effectiveDate="2017-06-08T15:30:50"
                       statusCode="draft">
-               <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+               <conceptList>
                   <concept localId="1"
                            code="31541000146106"
                            codeSystem="2.16.840.1.113883.6.96"
@@ -3503,7 +3503,7 @@
                    displayName="Foliumzuur gebruik"
                    statusCode="final"
                    effectiveDate="2017-02-01T13:46:22">
-            <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+            <conceptList>
                <concept localId="1"
                         code="30391000146101"
                         codeSystem="2.16.840.1.113883.6.96"
@@ -3571,7 +3571,7 @@
                    displayName="Amnioniciteit"
                    statusCode="final"
                    effectiveDate="2013-01-10T13:10:31">
-            <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+            <conceptList>
                <concept localId="1"
                         code="1"
                         codeSystem="2.16.840.1.113883.2.4.4.13.29"
@@ -3617,7 +3617,7 @@
                    displayName="Chorioniciteit"
                    statusCode="final"
                    effectiveDate="2013-01-10T13:12:07">
-            <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+            <conceptList>
                <concept localId="1"
                         code="1"
                         codeSystem="2.16.840.1.113883.2.4.4.13.30"
@@ -3724,7 +3724,7 @@
                       displayName="GeassConceptie"
                       statusCode="final"
                       effectiveDate="2014-01-28T00:00:00">
-               <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+               <conceptList>
                   <concept localId="1"
                            code="236896006"
                            codeSystem="2.16.840.1.113883.6.96"
@@ -3811,7 +3811,7 @@
                       effectiveDate="2009-10-01T00:00:00"
                       id="2.16.840.1.113883.2.4.11.12"
                       statusCode="final">
-               <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+               <conceptList>
                   <concept localId="1"
                            code="1"
                            codeSystem="2.16.840.1.113883.2.4.4.13.26"
@@ -3870,7 +3870,7 @@
                       displayName="VoorgenomenPlaatsBaring"
                       statusCode="final"
                       effectiveDate="2013-12-30T00:00:00">
-               <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+               <conceptList>
                   <concept localId="1"
                            code="169813005"
                            codeSystem="2.16.840.1.113883.6.96"
@@ -3955,7 +3955,7 @@
                       displayName="Voorgenomen voeding"
                       effectiveDate="2017-02-01T14:06:44"
                       statusCode="draft">
-               <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+               <conceptList>
                   <concept localId="1"
                            code="169643005"
                            codeSystem="2.16.840.1.113883.6.96"
@@ -4105,7 +4105,7 @@
                       displayName="RolZorgverlener perinatale controle"
                       effectiveDate="2014-01-02T00:00:00"
                       statusCode="draft">
-               <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+               <conceptList>
                   <concept localId="1"
                            code="11"
                            codeSystem="2.16.840.1.113883.2.4.3.22.1.2.59"
@@ -4227,7 +4227,7 @@
                       name="FetalMovement"
                       displayName="Leven voelen"
                       effectiveDate="2014-11-09T16:42:19">
-               <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+               <conceptList>
                   <concept localId="1"
                            code="289431008"
                            codeSystem="2.16.840.1.113883.6.96"
@@ -4279,7 +4279,7 @@
                       displayName="Ernst van de aandoening"
                       effectiveDate="2018-11-19T18:25:47"
                       statusCode="draft">
-               <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+               <conceptList>
                   <concept localId="1"
                            code="6736007"
                            codeSystem="2.16.840.1.113883.6.96"
@@ -4317,7 +4317,7 @@
                       effectiveDate="2014-05-19T15:56:59"
                       id="2.16.840.1.113883.2.4.3.11.60.90.77.11.2"
                       statusCode="pending">
-               <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+               <conceptList>
                   <concept localId="1"
                            code="1"
                            codeSystem="2.16.840.1.113883.2.4.4.13.58"
@@ -4388,7 +4388,7 @@
                       id="2.16.840.1.113883.2.4.3.11.60.90.77.11.203"
                       statusCode="final"
                       effectiveDate="2014-10-20T15:56:59">
-               <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+               <conceptList>
                   <concept localId="1"
                            code="1"
                            codeSystem="2.16.840.1.113883.2.4.4.13.59"
@@ -4448,7 +4448,7 @@
                       displayName="TypeOfDrugs"
                       effectiveDate="2014-07-22T14:48:49"
                       id="2.16.840.1.113883.2.4.3.11.60.90.77.11.3">
-               <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+               <conceptList>
                   <concept localId="1"
                            code="398705004"
                            codeSystem="2.16.840.1.113883.6.96"
@@ -4616,7 +4616,7 @@
                       displayName="ProteineTestStripResult"
                       statusCode="final"
                       effectiveDate="2013-01-10T13:45:48">
-               <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+               <conceptList>
                   <concept localId="1"
                            code="HHHPOS"
                            codeSystem="2.16.840.1.113883.2.4.4.13.41"
@@ -4702,7 +4702,7 @@
                       id="2.16.840.1.113883.2.4.11.226"
                       effectiveDate="2016-12-16T16:29:23"
                       statusCode="draft">
-               <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+               <conceptList>
                   <concept localId="1"
                            code="21881000146104"
                            codeSystem="2.16.840.1.113883.6.96"
@@ -4797,7 +4797,7 @@
                          effectiveDate="2014-01-02T00:00:00"
                          name="Ligging"
                          displayName="Ligging">
-                  <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                  <conceptList>
                      <concept localId="1"
                               code="70028003"
                               codeSystem="2.16.840.1.113883.6.96"
@@ -4859,7 +4859,7 @@
                          displayName="Indaling (2.3)"
                          effectiveDate="2017-03-28T15:27:04"
                          statusCode="draft">
-                  <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                  <conceptList>
                      <concept localId="1"
                               code="275969005"
                               codeSystem="2.16.840.1.113883.6.96"
@@ -4950,7 +4950,7 @@
                             id="2.16.840.1.113883.2.4.11.234"
                             effectiveDate="2017-02-03T16:13:04"
                             statusCode="draft">
-                     <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                     <conceptList>
                         <concept localId="1"
                                  code="289443009"
                                  codeSystem="2.16.840.1.113883.6.96"
@@ -4987,7 +4987,7 @@
                             id="2.16.840.1.113883.2.4.11.235"
                             effectiveDate="2017-02-03T16:14:46"
                             statusCode="draft">
-                     <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                     <conceptList>
                         <concept localId="1"
                                  code="421656001"
                                  codeSystem="2.16.840.1.113883.6.96"
@@ -5030,7 +5030,7 @@
                          id="2.16.840.1.113883.2.4.11.236"
                          effectiveDate="2017-02-03T16:16:59"
                          statusCode="draft">
-                  <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                  <conceptList>
                      <concept localId="1"
                               code="408806008"
                               codeSystem="2.16.840.1.113883.6.96"
@@ -5160,7 +5160,7 @@
                       name="GynaecologischAandoening"
                       displayName="Gynaecologische aandoeningen"
                       effectiveDate="2014-08-14T13:45:44">
-               <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+               <conceptList>
                   <concept localId="1"
                            code="129103003"
                            codeSystem="2.16.840.1.113883.6.96"
@@ -5254,7 +5254,7 @@
                       displayName="Infectie (2.2)"
                       statusCode="final"
                       effectiveDate="2014-10-21T11:45:54">
-               <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+               <conceptList>
                   <concept localId="1"
                            code="301775005"
                            codeSystem="2.16.840.1.113883.6.96"
@@ -5334,7 +5334,7 @@
                       name="HypertensieveAandoening"
                       displayName="Hypertensieve aandoening"
                       effectiveDate="2014-10-20T14:55:18">
-               <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+               <conceptList>
                   <concept localId="1"
                            code="48194001"
                            codeSystem="2.16.840.1.113883.6.96"
@@ -5413,7 +5413,7 @@
                       name="GroeiAfwijkend"
                       displayName="Groei afwijkend"
                       effectiveDate="2014-10-20T15:12:52">
-               <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+               <conceptList>
                   <concept localId="1"
                            code="199616008"
                            codeSystem="2.16.840.1.113883.6.96"
@@ -5504,7 +5504,7 @@
                       name="LiggingAfwijkend"
                       displayName="Ligging (afwijkend)"
                       effectiveDate="2015-10-19T16:43:13">
-               <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+               <conceptList>
                   <concept localId="1"
                            code="6096002"
                            codeSystem="2.16.840.1.113883.6.96"
@@ -5603,7 +5603,7 @@
                       displayName="Interventie (2.2)"
                       effectiveDate="2016-02-19T11:29:37"
                       statusCode="draft">
-               <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+               <conceptList>
                   <concept localId="1"
                            code="265636007"
                            codeSystem="2.16.840.1.113883.6.96"
@@ -5711,7 +5711,7 @@
                    name="IntraUterieneBehandeling22"
                    displayName="Intra-uteriene behandeling (2.2)"
                    effectiveDate="2014-09-19T11:58:14">
-            <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+            <conceptList>
                <concept localId="1"
                         code="45460008"
                         codeSystem="2.16.840.1.113883.6.96"
@@ -5795,7 +5795,7 @@
                    displayName="Reden antenatale betrokkenheid kinderarts"
                    effectiveDate="2017-06-08T15:54:20"
                    statusCode="draft">
-            <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+            <conceptList>
                <concept localId="1"
                         code="95607001"
                         codeSystem="2.16.840.1.113883.6.96"
@@ -5897,7 +5897,7 @@
                    name="WijzeEindeZwangerschap"
                    displayName="WijzeEindeZwangerschap"
                    statusCode="final">
-            <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+            <conceptList>
                <concept localId="1"
                         code="1"
                         codeSystem="2.16.840.1.113883.2.4.4.13.46"
@@ -6040,7 +6040,7 @@
                    effectiveDate="2009-10-01T00:00:00"
                    id="2.16.840.1.113883.2.4.11.7"
                    statusCode="final">
-            <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+            <conceptList>
                <concept localId="1"
                         code="1"
                         codeSystem="2.16.840.1.113883.2.4.4.13.25"
@@ -6096,7 +6096,7 @@
                    displayName="Reden Verzending Counseling Bericht"
                    id="2.16.840.1.113883.2.4.3.11.60.90.77.11.1"
                    effectiveDate="2014-04-14T14:30:59">
-            <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+            <conceptList>
                <concept localId="1"
                         code="aan"
                         codeSystem="2.16.840.1.113883.2.4.4.13.53"
@@ -6649,7 +6649,7 @@
                    id="2.16.840.1.113883.2.4.11.180"
                    statusCode="final"
                    effectiveDate="2014-01-02T00:00:00">
-            <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+            <conceptList>
                <concept localId="1"
                         code="1"
                         codeSystem="2.16.840.1.113883.2.4.3.22.1.2.25"
@@ -6763,7 +6763,7 @@
                       name="InterventieBeginBaring22"
                       displayName="Interventie begin baring (2.2)"
                       effectiveDate="2014-01-20T14:20:52">
-               <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+               <conceptList>
                   <concept localId="1"
                            code="236960006"
                            codeSystem="2.16.840.1.113883.6.96"
@@ -6853,7 +6853,7 @@
                       displayName="Indicatie interventie"
                       effectiveDate="2016-11-06T16:37:58"
                       statusCode="draft">
-               <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+               <conceptList>
                   <concept localId="1"
                            code="10"
                            codeSystem="2.16.840.1.113883.2.4.3.22.1.2.7"
@@ -6972,7 +6972,7 @@
                    name="WijzeBaringBegin"
                    displayName="WijzeBaringBegin"
                    statusCode="final">
-            <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+            <conceptList>
                <concept localId="1"
                         code="1"
                         codeSystem="2.16.840.1.113883.2.4.3.22.1.2.46"
@@ -7059,7 +7059,7 @@
             <desc language="nl-NL">Medicatie nageboortetijdperk?</desc>
             <valueDomain type="boolean"/>
             <valueSet>
-               <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg"/>
+               <conceptList/>
             </valueSet>
          </concept>
          <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20626"
@@ -7082,7 +7082,7 @@
                       name="MedicatieNageboorte"
                       displayName="Medicatie nageboortetijdperk"
                       effectiveDate="2014-08-01T13:10:28">
-               <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+               <conceptList>
                   <concept localId="1"
                            code="H01BB02"
                            codeSystem="2.16.840.1.113883.6.73"
@@ -7148,7 +7148,7 @@
                       displayName="GeboortePlacenta"
                       effectiveDate="2014-07-31T16:09:54"
                       statusCode="draft">
-               <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+               <conceptList>
                   <concept localId="1"
                            code="0"
                            codeSystem="2.16.840.1.113883.2.4.4.13.19"
@@ -7233,7 +7233,7 @@
                       effectiveDate="2012-03-17T00:00:00"
                       id="2.16.840.1.113883.2.4.11.160"
                       statusCode="final">
-               <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+               <conceptList>
                   <concept localId="1"
                            code="249170006"
                            codeSystem="2.16.840.1.113883.6.96"
@@ -7342,7 +7342,7 @@
                    displayName="Compleetheid vliezen"
                    effectiveDate="2017-02-01T16:20:16"
                    statusCode="draft">
-            <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+            <conceptList>
                <concept localId="1"
                         code="249181009"
                         codeSystem="2.16.840.1.113883.6.96"
@@ -7404,7 +7404,7 @@
                    name="Conditieperineum22"
                    displayName="Conditie perineum (2.2)"
                    effectiveDate="2014-01-22T11:04:47">
-            <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+            <conceptList>
                <concept localId="1"
                         code="289854007"
                         codeSystem="2.16.840.1.113883.6.96"
@@ -7523,7 +7523,7 @@
                    displayName="Wijze van hechten (2.2)"
                    effectiveDate="2017-02-03T13:49:10"
                    statusCode="draft">
-            <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+            <conceptList>
                <concept localId="1"
                         code="29701000146104"
                         codeSystem="2.16.840.1.113883.6.96"
@@ -7596,7 +7596,7 @@
                    statusCode="draft"
                    name="OverigTraumaBaringskanaal22"
                    displayName="Overig trauma (anders dan perineum) aangaande het baringskanaal (2.2)">
-            <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+            <conceptList>
                <concept localId="1"
                         code="249221003"
                         codeSystem="2.16.840.1.113883.6.96"
@@ -7732,7 +7732,7 @@
                       displayName="Partus stadium"
                       effectiveDate="2014-01-02T00:00:00"
                       statusCode="draft">
-               <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+               <conceptList>
                   <concept localId="1"
                            code="6893006"
                            codeSystem="2.16.840.1.113883.6.96"
@@ -7788,7 +7788,7 @@
                       displayName="Partusassistent rol"
                       effectiveDate="2014-01-02T00:00:00"
                       statusCode="draft">
-               <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+               <conceptList>
                   <concept localId="1"
                            code="32"
                            codeSystem="2.16.840.1.113883.2.4.3.22.1.2.59"
@@ -7847,7 +7847,7 @@
                    id="2.16.840.1.113883.2.4.11.180"
                    statusCode="final"
                    effectiveDate="2014-01-02T00:00:00">
-            <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+            <conceptList>
                <concept localId="1"
                         code="1"
                         codeSystem="2.16.840.1.113883.2.4.3.22.1.2.25"
@@ -7956,7 +7956,7 @@
                       displayName="WerkelijkePlaatsBaring22"
                       statusCode="final"
                       effectiveDate="2013-12-30T00:00:00">
-               <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+               <conceptList>
                   <concept localId="1"
                            code="169813005"
                            codeSystem="2.16.840.1.113883.6.96"
@@ -8252,7 +8252,7 @@
                                displayName="Nummer soort"
                                effectiveDate="2013-03-25T14:13:00"
                                statusCode="final">
-                        <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                        <conceptList>
                            <concept localId="1"
                                     code="HP"
                                     codeSystem="2.16.840.1.113883.5.1119"
@@ -8396,7 +8396,7 @@
                   <desc language="nl-NL">Adrestype</desc>
                   <valueDomain type="code"/>
                   <valueSet>
-                     <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg"/>
+                     <conceptList/>
                   </valueSet>
                </concept>
             </concept>
@@ -8447,7 +8447,7 @@
                   <desc language="de-DE">Administrative Gender codes from HL7 with addition of null flavor UNK</desc>
                   <desc language="de-AT">Administrative Gender codes from HL7 with addition of null flavor UNK</desc>
                   <desc language="da-DK">Administrative Gender codes from HL7 with addition of null flavor UNK</desc>
-                  <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                  <conceptList>
                      <concept localId="1"
                               code="M"
                               codeSystem="2.16.840.1.113883.5.1"
@@ -8495,7 +8495,7 @@
                          name="GenderMedisch"
                          displayName="GenderMedisch"
                          effectiveDate="2014-01-21T09:17:10">
-                  <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                  <conceptList>
                      <concept localId="1"
                               code="1"
                               codeSystem="2.16.840.1.113883.2.4.4.13.21"
@@ -8665,7 +8665,7 @@
                             name="FasePerinataleSterfte22"
                             displayName="Fase Perinatale Sterfte (2.2)"
                             effectiveDate="2014-08-13T09:40:49">
-                     <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                     <conceptList>
                         <concept localId="1"
                                  code="237361005"
                                  codeSystem="2.16.840.1.113883.6.96"
@@ -8745,7 +8745,7 @@
                          effectiveDate="2011-01-28T00:00:00"
                          id="2.16.840.1.113883.2.4.11.72"
                          statusCode="final">
-                  <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                  <conceptList>
                      <concept localId="1"
                               code="A"
                               codeSystem="2.16.840.1.113883.2.4.4.13.42"
@@ -8890,7 +8890,7 @@
                             displayName="AmniotomieMoment"
                             effectiveDate="2014-12-22T11:30:40"
                             statusCode="draft">
-                     <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                     <conceptList>
                         <concept localId="1"
                                  code="4"
                                  codeSystem="2.16.840.1.113883.2.4.3.22.1.3.101"
@@ -8967,7 +8967,7 @@
                          name="KleurVruchtwater"
                          displayName="KleurVruchtwater"
                          statusCode="final">
-                  <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                  <conceptList>
                      <concept localId="1"
                               code="1"
                               codeSystem="2.16.840.1.113883.2.4.4.13.18"
@@ -9055,7 +9055,7 @@
                          displayName="Indicatie episiotomie"
                          statusCode="final"
                          effectiveDate="2014-12-22T15:41:15">
-                  <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                  <conceptList>
                      <concept localId="1"
                               code="10"
                               codeSystem="2.16.840.1.113883.2.4.4.13.61"
@@ -9124,7 +9124,7 @@
                          displayName="EpisiotomieType"
                          statusCode="final"
                          effectiveDate="2013-01-10T13:26:16">
-                  <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                  <conceptList>
                      <concept localId="1"
                               code="1"
                               codeSystem="2.16.840.1.113883.2.4.3.22.1.3.60"
@@ -9247,7 +9247,7 @@
                                name="PainManagementMethod"
                                displayName="PainManagementMethod"
                                effectiveDate="2014-07-22T17:14:28">
-                        <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                        <conceptList>
                            <concept localId="1"
                                     code="231249005"
                                     codeSystem="2.16.840.1.113883.6.96"
@@ -9311,7 +9311,7 @@
                                   name="PainManagementAlternativeMethod"
                                   displayName="PainManagementAlternativeMethod"
                                   effectiveDate="2014-07-23T14:52:51">
-                           <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                           <conceptList>
                               <concept localId="1"
                                        code="52685006:363701004=404642006"
                                        codeSystem="2.16.840.1.113883.6.96"
@@ -9376,7 +9376,7 @@
                                   name="RouteofAdministration"
                                   displayName="Administration"
                                   effectiveDate="2014-07-23T15:19:35">
-                           <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                           <conceptList>
                               <concept localId="1"
                                        code="434589000"
                                        codeSystem="2.16.840.1.113883.6.96"
@@ -9457,7 +9457,7 @@
                             name="PijnbestrijdingPeriode"
                             displayName="Pijnbestrijding periode"
                             effectiveDate="2014-11-13T15:57:07">
-                     <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                     <conceptList>
                         <concept localId="1"
                                  code="OntLt3"
                                  codeSystem="2.16.840.1.113883.2.4.4.13.60"
@@ -9511,7 +9511,7 @@
                      <property/>
                   </valueDomain>
                   <valueSet>
-                     <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg"/>
+                     <conceptList/>
                   </valueSet>
                </concept>
             </concept>
@@ -9587,7 +9587,7 @@
                             effectiveDate="2018-09-07T16:34:59"
                             statusCode="draft"
                             strength="required">
-                     <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                     <conceptList>
                         <concept localId="1"
                                  code="31771000146108"
                                  codeSystem="2.16.840.1.113883.6.96"
@@ -9621,7 +9621,7 @@
                      <property/>
                   </valueDomain>
                   <valueSet>
-                     <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg"/>
+                     <conceptList/>
                   </valueSet>
                </concept>
             </concept>
@@ -9665,7 +9665,7 @@
                          displayName="TypePartus"
                          statusCode="final"
                          effectiveDate="2016-11-22T14:00:45">
-                  <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                  <conceptList>
                      <concept localId="1"
                               code="177184002"
                               codeSystem="2.16.840.1.113883.6.96"
@@ -9794,7 +9794,7 @@
                          name="LiggingBijGeboorte22"
                          displayName="LiggingBijGeboorte22"
                          effectiveDate="2013-12-24T00:00:00">
-                  <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                  <conceptList>
                      <concept localId="1"
                               code="37235006"
                               codeSystem="2.16.840.1.113883.6.96"
@@ -9913,7 +9913,7 @@
                             name="RolZorgverlener22"
                             displayName="RolZorgverlener22"
                             statusCode="final">
-                     <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                     <conceptList>
                         <concept localId="1"
                                  code="11"
                                  codeSystem="2.16.840.1.113883.2.4.3.22.1.2.59"
@@ -10078,7 +10078,7 @@
                             id="2.16.840.1.113883.2.4.11.193"
                             statusCode="final"
                             effectiveDate="2014-01-02T00:00:00">
-                     <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                     <conceptList>
                         <concept localId="1"
                                  code="11"
                                  codeSystem="2.16.840.1.113883.2.4.3.22.1.2.59"
@@ -10177,7 +10177,7 @@
                             id="2.16.840.1.113883.2.4.11.181"
                             statusCode="final"
                             effectiveDate="2014-01-02T00:00:00">
-                     <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                     <conceptList>
                         <concept localId="1"
                                  code="302383004"
                                  codeSystem="2.16.840.1.113883.6.96"
@@ -10265,7 +10265,7 @@
                             displayName="KunstverlossingIndicatie"
                             statusCode="final"
                             effectiveDate="2013-01-10T13:30:18">
-                     <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                     <conceptList>
                         <concept localId="1"
                                  code="A"
                                  codeSystem="2.16.840.1.113883.2.4.3.22.1.2.54"
@@ -10339,7 +10339,7 @@
                             displayName="BesluitSC"
                             statusCode="final"
                             effectiveDate="2014-11-06T15:34:16">
-                     <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                     <conceptList>
                         <concept localId="1"
                                  code="2"
                                  codeSystem="2.16.840.1.113883.2.4.3.22.1.3.5"
@@ -10387,7 +10387,7 @@
                          id="2.16.840.1.113883.2.4.3.11.60.90.77.11.20"
                          effectiveDate="2016-11-23T20:45:23"
                          statusCode="final">
-                  <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                  <conceptList>
                      <concept localId="1"
                               code="32189006"
                               codeSystem="2.16.840.1.113883.6.96"
@@ -10581,7 +10581,7 @@
                         <desc language="nl-NL">Bewustzijn</desc>
                         <valueDomain type="code"/>
                         <valueSet>
-                           <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg"/>
+                           <conceptList/>
                         </valueSet>
                      </concept>
                      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82171"
@@ -10596,7 +10596,7 @@
                         <desc language="nl-NL">Respiratie</desc>
                         <valueDomain type="code"/>
                         <valueSet>
-                           <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg"/>
+                           <conceptList/>
                         </valueSet>
                      </concept>
                      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82173"
@@ -10613,7 +10613,7 @@
                            <property/>
                         </valueDomain>
                         <valueSet>
-                           <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg"/>
+                           <conceptList/>
                         </valueSet>
                      </concept>
                   </concept>
@@ -10632,7 +10632,7 @@
                         <property/>
                      </valueDomain>
                      <valueSet>
-                        <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg"/>
+                        <conceptList/>
                      </valueSet>
                   </concept>
                   <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80770"
@@ -10659,7 +10659,7 @@
                            <property/>
                         </valueDomain>
                         <valueSet>
-                           <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg"/>
+                           <conceptList/>
                         </valueSet>
                      </concept>
                      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80771"
@@ -10674,7 +10674,7 @@
                         <desc language="nl-NL">Schedel bevindingen</desc>
                         <valueDomain type="code"/>
                         <valueSet>
-                           <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg"/>
+                           <conceptList/>
                         </valueSet>
                      </concept>
                      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80772"
@@ -10691,7 +10691,7 @@
                            <property/>
                         </valueDomain>
                         <valueSet>
-                           <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg"/>
+                           <conceptList/>
                         </valueSet>
                      </concept>
                      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80773"
@@ -10706,7 +10706,7 @@
                         <desc language="nl-NL">Oren </desc>
                         <valueDomain type="code"/>
                         <valueSet>
-                           <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg"/>
+                           <conceptList/>
                         </valueSet>
                      </concept>
                      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80774"
@@ -10737,7 +10737,7 @@
                            <property/>
                         </valueDomain>
                         <valueSet>
-                           <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg"/>
+                           <conceptList/>
                         </valueSet>
                      </concept>
                      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80776"
@@ -10767,7 +10767,7 @@
                         <property/>
                      </valueDomain>
                      <valueSet>
-                        <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg"/>
+                        <conceptList/>
                      </valueSet>
                   </concept>
                   <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80778"
@@ -10794,7 +10794,7 @@
                            <property/>
                         </valueDomain>
                         <valueSet>
-                           <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg"/>
+                           <conceptList/>
                         </valueSet>
                      </concept>
                      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82176"
@@ -10821,7 +10821,7 @@
                               <property/>
                            </valueDomain>
                            <valueSet>
-                              <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg"/>
+                              <conceptList/>
                            </valueSet>
                         </concept>
                         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82178"
@@ -10853,7 +10853,7 @@
                            <property/>
                         </valueDomain>
                         <valueSet>
-                           <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg"/>
+                           <conceptList/>
                         </valueSet>
                      </concept>
                      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80786"
@@ -10870,7 +10870,7 @@
                            <property/>
                         </valueDomain>
                         <valueSet>
-                           <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg"/>
+                           <conceptList/>
                         </valueSet>
                      </concept>
                      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82180"
@@ -10887,7 +10887,7 @@
                            <property/>
                         </valueDomain>
                         <valueSet>
-                           <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg"/>
+                           <conceptList/>
                         </valueSet>
                      </concept>
                   </concept>
@@ -10915,7 +10915,7 @@
                            <property/>
                         </valueDomain>
                         <valueSet>
-                           <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg"/>
+                           <conceptList/>
                         </valueSet>
                      </concept>
                      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82182"
@@ -10932,7 +10932,7 @@
                            <property/>
                         </valueDomain>
                         <valueSet>
-                           <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg"/>
+                           <conceptList/>
                         </valueSet>
                      </concept>
                      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82183"
@@ -11055,7 +11055,7 @@
                            <property/>
                         </valueDomain>
                         <valueSet>
-                           <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg"/>
+                           <conceptList/>
                         </valueSet>
                      </concept>
                      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82190"
@@ -11153,7 +11153,7 @@
                            <property/>
                         </valueDomain>
                         <valueSet>
-                           <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg"/>
+                           <conceptList/>
                         </valueSet>
                      </concept>
                      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82195"
@@ -11170,7 +11170,7 @@
                            <property/>
                         </valueDomain>
                         <valueSet>
-                           <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg"/>
+                           <conceptList/>
                         </valueSet>
                      </concept>
                      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82196"
@@ -11187,7 +11187,7 @@
                            <property/>
                         </valueDomain>
                         <valueSet>
-                           <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg"/>
+                           <conceptList/>
                         </valueSet>
                      </concept>
                   </concept>
@@ -11225,7 +11225,7 @@
                               <property/>
                            </valueDomain>
                            <valueSet>
-                              <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg"/>
+                              <conceptList/>
                            </valueSet>
                         </concept>
                      </concept>
@@ -11241,7 +11241,7 @@
                         <desc language="nl-NL">Vrouwelijk</desc>
                         <valueDomain type="code"/>
                         <valueSet>
-                           <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg"/>
+                           <conceptList/>
                         </valueSet>
                      </concept>
                      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82200"
@@ -11283,7 +11283,7 @@
                            <property/>
                         </valueDomain>
                         <valueSet>
-                           <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg"/>
+                           <conceptList/>
                         </valueSet>
                      </concept>
                      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82203"
@@ -11349,7 +11349,7 @@
                             displayName="PercentielGeboortegewicht"
                             effectiveDate="2016-07-20T00:00:00"
                             statusCode="draft">
-                     <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                     <conceptList>
                         <concept localId="1"
                                  code="1"
                                  codeSystem="2.16.840.1.113883.2.4.4.13.50"
@@ -11452,7 +11452,7 @@
                             displayName="Indaling testes"
                             effectiveDate="2018-11-19T20:01:51"
                             statusCode="draft">
-                     <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                     <conceptList>
                         <concept localId="1"
                                  code="56141000146107"
                                  codeSystem="2.16.840.1.113883.6.96"
@@ -11569,7 +11569,7 @@
                                displayName="Congenitale afwijking"
                                statusCode="final"
                                effectiveDate="2016-11-10T14:40:18">
-                        <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                        <conceptList>
                            <concept localId="1"
                                     code="276508000"
                                     codeSystem="2.16.840.1.113883.6.96"
@@ -12233,7 +12233,7 @@
                                displayName="UncertaintyCode"
                                statusCode="final"
                                effectiveDate="2013-01-18T11:08:03">
-                        <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                        <conceptList>
                            <concept localId="1"
                                     code="U"
                                     codeSystem="2.16.840.1.113883.5.1053"
@@ -12309,7 +12309,7 @@
                                displayName="ChromosomaleAfwijkingen"
                                statusCode="final"
                                effectiveDate="2016-10-26T16:44:18">
-                        <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                        <conceptList>
                            <concept localId="1"
                                     code="41040004"
                                     codeSystem="2.16.840.1.113883.6.96"
@@ -12371,7 +12371,7 @@
                                displayName="UncertaintyCode"
                                statusCode="final"
                                effectiveDate="2013-01-18T11:08:03">
-                        <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                        <conceptList>
                            <concept localId="1"
                                     code="U"
                                     codeSystem="2.16.840.1.113883.5.1053"
@@ -12431,7 +12431,7 @@
                          name="ProblematiekKind"
                          displayName="Problematiek kind"
                          effectiveDate="2014-08-14T13:38:06">
-                  <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                  <conceptList>
                      <concept localId="1"
                               code="56110009"
                               codeSystem="2.16.840.1.113883.6.96"
@@ -12776,7 +12776,7 @@
                          displayName="Navelstreng vaten"
                          effectiveDate="2017-02-01T16:41:26"
                          statusCode="draft">
-                  <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                  <conceptList>
                      <concept localId="1"
                               code="29691000146104"
                               codeSystem="2.16.840.1.113883.6.96"
@@ -12918,7 +12918,7 @@
                             displayName="Pediatrische verwijsindicatie"
                             effectiveDate="2016-11-23T21:34:13"
                             statusCode="draft">
-                     <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                     <conceptList>
                         <concept localId="1"
                                  code="10"
                                  codeSystem="2.16.840.1.113883.2.4.4.13.52"
@@ -13080,7 +13080,7 @@
                             displayName="AndereZorgverlenerBetrokken22"
                             id="2.16.840.1.113883.2.4.11.183"
                             effectiveDate="2014-01-02T00:00:00">
-                     <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                     <conceptList>
                         <concept localId="1"
                                  code="1"
                                  codeSystem="2.16.840.1.113883.2.4.4.13.17"
@@ -13215,7 +13215,7 @@
                          effectiveDate="2011-01-28T00:00:00"
                          id="2.16.840.1.113883.2.4.11.58"
                          statusCode="final">
-                  <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                  <conceptList>
                      <concept localId="1"
                               code="01.000"
                               codeSystem="2.16.840.1.113883.2.4.15.111"
@@ -13398,7 +13398,7 @@
                    displayName="RolZorgverlener Medisch Onderzoek"
                    effectiveDate="2014-01-02T00:00:00"
                    statusCode="draft">
-            <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+            <conceptList>
                <concept localId="1"
                         code="AA.001"
                         codeSystem="2.16.840.1.113883.2.4.98.111"
@@ -13592,7 +13592,7 @@
                    effectiveDate="2011-01-28T00:00:00"
                    id="2.16.840.1.113883.2.4.11.74"
                    statusCode="final">
-            <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+            <conceptList>
                <concept localId="1"
                         code="1"
                         codeSystem="2.16.840.1.113883.2.4.4.13.33"
@@ -13633,7 +13633,7 @@
                    displayName="Conclusie SEO"
                    effectiveDate="2014-09-04T00:00:00"
                    id="2.16.840.1.113883.2.4.3.11.60.90.77.11.32">
-            <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+            <conceptList>
                <concept localId="1"
                         code="1"
                         codeSystem="2.16.840.1.113883.2.4.4.13.56"
@@ -13675,7 +13675,7 @@
                    effectiveDate="2014-09-04T00:00:00"
                    id="2.16.840.1.113883.2.4.3.11.60.90.77.11.33"
                    statusCode="draft">
-            <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+            <conceptList>
                <concept localId="1"
                         code="1"
                         codeSystem="2.16.840.1.113883.2.4.4.13.57"
@@ -13749,7 +13749,7 @@
                       displayName="Indicatie prenatale diagnostiek obv screening"
                       effectiveDate="2017-02-01T16:10:25"
                       statusCode="draft">
-               <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+               <conceptList>
                   <concept localId="1"
                            code="1"
                            codeSystem="2.16.840.1.113883.2.4.4.13.64"
@@ -13831,7 +13831,7 @@
                       effectiveDate="2011-01-28T00:00:00"
                       id="2.16.840.1.113883.2.4.11.72"
                       statusCode="final">
-               <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+               <conceptList>
                   <concept localId="1"
                            code="A"
                            codeSystem="2.16.840.1.113883.2.4.4.13.42"
@@ -14157,7 +14157,7 @@
                             id="2.16.840.1.113883.2.4.11.234"
                             effectiveDate="2017-02-03T16:13:04"
                             statusCode="draft">
-                     <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                     <conceptList>
                         <concept localId="1"
                                  code="289443009"
                                  codeSystem="2.16.840.1.113883.6.96"
@@ -14194,7 +14194,7 @@
                             id="2.16.840.1.113883.2.4.11.235"
                             effectiveDate="2017-02-03T16:14:46"
                             statusCode="draft">
-                     <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                     <conceptList>
                         <concept localId="1"
                                  code="421656001"
                                  codeSystem="2.16.840.1.113883.6.96"
@@ -14238,7 +14238,7 @@
                          effectiveDate="2014-01-02T00:00:00"
                          name="Ligging"
                          displayName="Ligging">
-                  <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                  <conceptList>
                      <concept localId="1"
                               code="70028003"
                               codeSystem="2.16.840.1.113883.6.96"
@@ -14300,7 +14300,7 @@
                   <example type="neutral">Normaal</example>
                </valueDomain>
                <valueSet>
-                  <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg"/>
+                  <conceptList/>
                </valueSet>
             </concept>
             <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80945"
@@ -14322,7 +14322,7 @@
                          statusCode="draft"
                          name="Vruchtwater"
                          displayName="Vruchtwater">
-                  <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                  <conceptList>
                      <concept localId="1"
                               code="278092006"
                               codeSystem="2.16.840.1.113883.6.96"
@@ -14384,7 +14384,7 @@
                             effectiveDate="2014-11-28T12:53:56"
                             name="Placentalokalisatie22"
                             displayName="Placentalokalisatie (2.2)">
-                     <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                     <conceptList>
                         <concept localId="1"
                                  code="7401000146107"
                                  codeSystem="2.16.840.1.113883.6.96"
@@ -14445,7 +14445,7 @@
                      <property/>
                   </valueDomain>
                   <valueSet>
-                     <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg"/>
+                     <conceptList/>
                   </valueSet>
                </concept>
                <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82072"
@@ -14501,7 +14501,7 @@
                          statusCode="draft"
                          name="AfwijkingPlacenta_ed22"
                          displayName="Specificatie van de afwijking van placenta en/of vliezen en/of navelstreng (2.2)">
-                  <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                  <conceptList>
                      <concept localId="1"
                               code="79668009"
                               codeSystem="2.16.840.1.113883.6.96"
@@ -14567,7 +14567,7 @@
                          displayName="Navelstreng vaten"
                          effectiveDate="2017-02-01T16:41:26"
                          statusCode="draft">
-                  <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                  <conceptList>
                      <concept localId="1"
                               code="29691000146104"
                               codeSystem="2.16.840.1.113883.6.96"
@@ -14633,7 +14633,7 @@
                             effectiveDate="2012-06-02T00:00:00"
                             id="2.16.840.1.113883.2.4.11.75"
                             statusCode="rejected">
-                     <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                     <conceptList>
                         <concept localId="1"
                                  code="1"
                                  codeSystem="2.16.840.1.113883.2.4.4.13.36"
@@ -14695,7 +14695,7 @@
                             displayName="Beoordeling Bevindingen"
                             effectiveDate="2014-09-04T00:00:00"
                             id="2.16.840.1.113883.2.4.3.11.60.90.77.11.23">
-                     <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                     <conceptList>
                         <concept localId="1"
                                  code="1"
                                  codeSystem="2.16.840.1.113883.2.4.4.13.55"
@@ -14738,7 +14738,7 @@
                             displayName="Beoordeling Bevindingen"
                             effectiveDate="2014-09-04T00:00:00"
                             id="2.16.840.1.113883.2.4.3.11.60.90.77.11.23">
-                     <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                     <conceptList>
                         <concept localId="1"
                                  code="1"
                                  codeSystem="2.16.840.1.113883.2.4.4.13.55"
@@ -14781,7 +14781,7 @@
                             displayName="Beoordeling Bevindingen"
                             effectiveDate="2014-09-04T00:00:00"
                             id="2.16.840.1.113883.2.4.3.11.60.90.77.11.23">
-                     <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                     <conceptList>
                         <concept localId="1"
                                  code="1"
                                  codeSystem="2.16.840.1.113883.2.4.4.13.55"
@@ -14824,7 +14824,7 @@
                             displayName="Beoordeling Bevindingen"
                             effectiveDate="2014-09-04T00:00:00"
                             id="2.16.840.1.113883.2.4.3.11.60.90.77.11.23">
-                     <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                     <conceptList>
                         <concept localId="1"
                                  code="1"
                                  codeSystem="2.16.840.1.113883.2.4.4.13.55"
@@ -14867,7 +14867,7 @@
                             displayName="Beoordeling Bevindingen"
                             effectiveDate="2014-09-04T00:00:00"
                             id="2.16.840.1.113883.2.4.3.11.60.90.77.11.23">
-                     <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                     <conceptList>
                         <concept localId="1"
                                  code="1"
                                  codeSystem="2.16.840.1.113883.2.4.4.13.55"
@@ -14910,7 +14910,7 @@
                             displayName="Beoordeling Bevindingen"
                             effectiveDate="2014-09-04T00:00:00"
                             id="2.16.840.1.113883.2.4.3.11.60.90.77.11.23">
-                     <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                     <conceptList>
                         <concept localId="1"
                                  code="1"
                                  codeSystem="2.16.840.1.113883.2.4.4.13.55"
@@ -14953,7 +14953,7 @@
                             displayName="Beoordeling Bevindingen"
                             effectiveDate="2014-09-04T00:00:00"
                             id="2.16.840.1.113883.2.4.3.11.60.90.77.11.23">
-                     <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                     <conceptList>
                         <concept localId="1"
                                  code="1"
                                  codeSystem="2.16.840.1.113883.2.4.4.13.55"
@@ -14996,7 +14996,7 @@
                             displayName="Beoordeling Bevindingen"
                             effectiveDate="2014-09-04T00:00:00"
                             id="2.16.840.1.113883.2.4.3.11.60.90.77.11.23">
-                     <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                     <conceptList>
                         <concept localId="1"
                                  code="1"
                                  codeSystem="2.16.840.1.113883.2.4.4.13.55"
@@ -15039,7 +15039,7 @@
                             displayName="Beoordeling Bevindingen"
                             effectiveDate="2014-09-04T00:00:00"
                             id="2.16.840.1.113883.2.4.3.11.60.90.77.11.23">
-                     <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                     <conceptList>
                         <concept localId="1"
                                  code="1"
                                  codeSystem="2.16.840.1.113883.2.4.4.13.55"
@@ -15082,7 +15082,7 @@
                             displayName="Beoordeling Bevindingen"
                             effectiveDate="2014-09-04T00:00:00"
                             id="2.16.840.1.113883.2.4.3.11.60.90.77.11.23">
-                     <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                     <conceptList>
                         <concept localId="1"
                                  code="1"
                                  codeSystem="2.16.840.1.113883.2.4.4.13.55"
@@ -15125,7 +15125,7 @@
                             displayName="Beoordeling Bevindingen"
                             effectiveDate="2014-09-04T00:00:00"
                             id="2.16.840.1.113883.2.4.3.11.60.90.77.11.23">
-                     <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                     <conceptList>
                         <concept localId="1"
                                  code="1"
                                  codeSystem="2.16.840.1.113883.2.4.4.13.55"
@@ -15167,7 +15167,7 @@
                             displayName="Beoordeling Bevindingen"
                             effectiveDate="2014-09-04T00:00:00"
                             id="2.16.840.1.113883.2.4.3.11.60.90.77.11.23">
-                     <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                     <conceptList>
                         <concept localId="1"
                                  code="1"
                                  codeSystem="2.16.840.1.113883.2.4.4.13.55"
@@ -15210,7 +15210,7 @@
                             displayName="Beoordeling Bevindingen"
                             effectiveDate="2014-09-04T00:00:00"
                             id="2.16.840.1.113883.2.4.3.11.60.90.77.11.23">
-                     <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                     <conceptList>
                         <concept localId="1"
                                  code="1"
                                  codeSystem="2.16.840.1.113883.2.4.4.13.55"
@@ -15263,7 +15263,7 @@
                                displayName="Beoordeling Sonomarkers"
                                effectiveDate="2014-09-04T00:00:00"
                                id="2.16.840.1.113883.2.4.3.11.60.90.77.11.22">
-                        <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                        <conceptList>
                            <concept localId="1"
                                     code="1"
                                     codeSystem="2.16.840.1.113883.2.4.4.13.54"
@@ -15306,7 +15306,7 @@
                                displayName="Beoordeling Sonomarkers"
                                effectiveDate="2014-09-04T00:00:00"
                                id="2.16.840.1.113883.2.4.3.11.60.90.77.11.22">
-                        <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                        <conceptList>
                            <concept localId="1"
                                     code="1"
                                     codeSystem="2.16.840.1.113883.2.4.4.13.54"
@@ -15349,7 +15349,7 @@
                                displayName="Beoordeling Sonomarkers"
                                effectiveDate="2014-09-04T00:00:00"
                                id="2.16.840.1.113883.2.4.3.11.60.90.77.11.22">
-                        <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                        <conceptList>
                            <concept localId="1"
                                     code="1"
                                     codeSystem="2.16.840.1.113883.2.4.4.13.54"
@@ -15392,7 +15392,7 @@
                                displayName="Beoordeling Sonomarkers"
                                effectiveDate="2014-09-04T00:00:00"
                                id="2.16.840.1.113883.2.4.3.11.60.90.77.11.22">
-                        <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                        <conceptList>
                            <concept localId="1"
                                     code="1"
                                     codeSystem="2.16.840.1.113883.2.4.4.13.54"
@@ -15435,7 +15435,7 @@
                                displayName="Beoordeling Sonomarkers"
                                effectiveDate="2014-09-04T00:00:00"
                                id="2.16.840.1.113883.2.4.3.11.60.90.77.11.22">
-                        <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                        <conceptList>
                            <concept localId="1"
                                     code="1"
                                     codeSystem="2.16.840.1.113883.2.4.4.13.54"
@@ -15478,7 +15478,7 @@
                                displayName="Beoordeling Sonomarkers"
                                effectiveDate="2014-09-04T00:00:00"
                                id="2.16.840.1.113883.2.4.3.11.60.90.77.11.22">
-                        <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                        <conceptList>
                            <concept localId="1"
                                     code="1"
                                     codeSystem="2.16.840.1.113883.2.4.4.13.54"
@@ -15521,7 +15521,7 @@
                                displayName="Beoordeling Sonomarkers"
                                effectiveDate="2014-09-04T00:00:00"
                                id="2.16.840.1.113883.2.4.3.11.60.90.77.11.22">
-                        <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                        <conceptList>
                            <concept localId="1"
                                     code="1"
                                     codeSystem="2.16.840.1.113883.2.4.4.13.54"
@@ -15564,7 +15564,7 @@
                                displayName="Beoordeling Sonomarkers"
                                effectiveDate="2014-09-04T00:00:00"
                                id="2.16.840.1.113883.2.4.3.11.60.90.77.11.22">
-                        <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                        <conceptList>
                            <concept localId="1"
                                     code="1"
                                     codeSystem="2.16.840.1.113883.2.4.4.13.54"
@@ -15604,7 +15604,7 @@
                      <property/>
                   </valueDomain>
                   <valueSet>
-                     <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg"/>
+                     <conceptList/>
                   </valueSet>
                </concept>
                <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82253"
@@ -15625,7 +15625,7 @@
                             displayName="Beoordeling Bevindingen"
                             effectiveDate="2014-09-04T00:00:00"
                             id="2.16.840.1.113883.2.4.3.11.60.90.77.11.23">
-                     <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                     <conceptList>
                         <concept localId="1"
                                  code="1"
                                  codeSystem="2.16.840.1.113883.2.4.4.13.55"
@@ -15668,7 +15668,7 @@
                             displayName="Beoordeling Bevindingen"
                             effectiveDate="2014-09-04T00:00:00"
                             id="2.16.840.1.113883.2.4.3.11.60.90.77.11.23">
-                     <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                     <conceptList>
                         <concept localId="1"
                                  code="1"
                                  codeSystem="2.16.840.1.113883.2.4.4.13.55"
@@ -15711,7 +15711,7 @@
                             displayName="Beoordeling Bevindingen"
                             effectiveDate="2014-09-04T00:00:00"
                             id="2.16.840.1.113883.2.4.3.11.60.90.77.11.23">
-                     <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                     <conceptList>
                         <concept localId="1"
                                  code="1"
                                  codeSystem="2.16.840.1.113883.2.4.4.13.55"
@@ -15754,7 +15754,7 @@
                             displayName="Beoordeling Bevindingen"
                             effectiveDate="2014-09-04T00:00:00"
                             id="2.16.840.1.113883.2.4.3.11.60.90.77.11.23">
-                     <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                     <conceptList>
                         <concept localId="1"
                                  code="1"
                                  codeSystem="2.16.840.1.113883.2.4.4.13.55"
@@ -15797,7 +15797,7 @@
                             displayName="Beoordeling Bevindingen"
                             effectiveDate="2014-09-04T00:00:00"
                             id="2.16.840.1.113883.2.4.3.11.60.90.77.11.23">
-                     <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                     <conceptList>
                         <concept localId="1"
                                  code="1"
                                  codeSystem="2.16.840.1.113883.2.4.4.13.55"
@@ -15881,7 +15881,7 @@
                          effectiveDate="2011-01-28T00:00:00"
                          id="2.16.840.1.113883.2.4.11.78"
                          statusCode="final">
-                  <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                  <conceptList>
                      <concept localId="1"
                               code="1"
                               codeSystem="2.16.840.1.113883.2.4.4.13.39"
@@ -15925,7 +15925,7 @@
                             effectiveDate="2011-01-28T00:00:00"
                             id="2.16.840.1.113883.2.4.11.79"
                             statusCode="final">
-                     <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                     <conceptList>
                         <concept localId="1"
                                  code="1"
                                  codeSystem="2.16.840.1.113883.2.4.4.13.40"
@@ -16106,7 +16106,7 @@
                             displayName="Chorioniciteit"
                             statusCode="final"
                             effectiveDate="2013-01-10T13:12:07">
-                     <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                     <conceptList>
                         <concept localId="1"
                                  code="1"
                                  codeSystem="2.16.840.1.113883.2.4.4.13.30"
@@ -16231,7 +16231,7 @@
                             effectiveDate="2014-05-19T14:35:30"
                             name="EthnicGroup"
                             displayName="EthnicGroup">
-                     <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                     <conceptList>
                         <concept localId="1"
                                  code="14"
                                  codeSystem="2.16.840.1.113883.2.4.4.13.28"
@@ -16481,7 +16481,7 @@
                       statusCode="draft"
                       name="InvasievePrenataleDiagnostiek22"
                       displayName="Invasieve prenatale diagnostiek (2.2)">
-               <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+               <conceptList>
                   <concept localId="1"
                            code="303720006"
                            codeSystem="2.16.840.1.113883.6.96"
@@ -16558,7 +16558,7 @@
                             effectiveDate="2012-03-17T00:00:00"
                             id="2.16.840.1.113883.2.4.11.155"
                             statusCode="final">
-                     <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                     <conceptList>
                         <concept localId="1"
                                  code="112144000"
                                  codeSystem="2.16.840.1.113883.6.96"
@@ -16621,7 +16621,7 @@
                             effectiveDate="2012-03-17T00:00:00"
                             id="2.16.840.1.113883.2.4.11.156"
                             statusCode="final">
-                     <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                     <conceptList>
                         <concept localId="1"
                                  code="165747007"
                                  codeSystem="2.16.840.1.113883.6.96"
@@ -16675,7 +16675,7 @@
                             effectiveDate="2016-12-16T15:02:44"
                             statusCode="draft"
                             strength="required">
-                     <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                     <conceptList>
                         <concept localId="1"
                                  code="733120009"
                                  codeSystem="2.16.840.1.113883.6.96"
@@ -16717,7 +16717,7 @@
                             effectiveDate="2014-07-22T16:36:41"
                             name="HBsAg"
                             displayName="HBsAg">
-                     <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                     <conceptList>
                         <concept localId="1"
                                  code="441742003:363713009=373068000,363714003=47758006"
                                  codeSystem="2.16.840.1.113883.6.96"
@@ -16766,7 +16766,7 @@
                             displayName="HIV"
                             effectiveDate="2014-07-22T16:09:40"
                             id="2.16.840.1.113883.2.4.3.11.60.90.77.11.4">
-                     <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                     <conceptList>
                         <concept localId="1"
                                  code="365866002:363713009=373068000,363714003=165813002"
                                  codeSystem="2.16.840.1.113883.6.96"
@@ -16813,7 +16813,7 @@
                      <property/>
                   </valueDomain>
                   <valueSet>
-                     <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg"/>
+                     <conceptList/>
                   </valueSet>
                </concept>
                <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10812"
@@ -16849,7 +16849,7 @@
                             effectiveDate="2012-03-17T00:00:00"
                             id="2.16.840.1.113883.2.4.11.157"
                             statusCode="final">
-                     <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                     <conceptList>
                         <concept localId="1"
                                  code="112162009"
                                  codeSystem="2.16.840.1.113883.6.96"
@@ -16953,7 +16953,7 @@
                             effectiveDate="2014-09-19T11:13:06"
                             name="NIPTuitslag22"
                             displayName="NIPT-uitslag (2.2)">
-                     <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                     <conceptList>
                         <concept localId="1"
                                  code="441742003:363714003=7751000146103,363713009=17621005"
                                  codeSystem="2.16.840.1.113883.6.96"
@@ -17036,7 +17036,7 @@
                             name="GenderMedisch"
                             displayName="GenderMedisch"
                             effectiveDate="2014-01-21T09:17:10">
-                     <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                     <conceptList>
                         <concept localId="1"
                                  code="1"
                                  codeSystem="2.16.840.1.113883.2.4.4.13.21"
@@ -17136,7 +17136,7 @@
                      <property/>
                   </valueDomain>
                   <valueSet>
-                     <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg"/>
+                     <conceptList/>
                   </valueSet>
                </concept>
                <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80993"
@@ -17419,7 +17419,7 @@
                      <property/>
                   </valueDomain>
                   <valueSet>
-                     <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg"/>
+                     <conceptList/>
                   </valueSet>
                </concept>
                <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80972"
@@ -17437,7 +17437,7 @@
                      <property/>
                   </valueDomain>
                   <valueSet>
-                     <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg"/>
+                     <conceptList/>
                   </valueSet>
                </concept>
                <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80973"
@@ -17455,7 +17455,7 @@
                      <property/>
                   </valueDomain>
                   <valueSet>
-                     <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg"/>
+                     <conceptList/>
                   </valueSet>
                </concept>
                <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80974"
@@ -17473,7 +17473,7 @@
                      <property/>
                   </valueDomain>
                   <valueSet>
-                     <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg"/>
+                     <conceptList/>
                   </valueSet>
                </concept>
                <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80975"
@@ -17491,7 +17491,7 @@
                      <property/>
                   </valueDomain>
                   <valueSet>
-                     <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg"/>
+                     <conceptList/>
                   </valueSet>
                </concept>
                <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80976"
@@ -17509,7 +17509,7 @@
                      <property/>
                   </valueDomain>
                   <valueSet>
-                     <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg"/>
+                     <conceptList/>
                   </valueSet>
                </concept>
             </concept>
@@ -17530,7 +17530,7 @@
                          effectiveDate="2012-03-17T00:00:00"
                          id="2.16.840.1.113883.2.4.11.156"
                          statusCode="final">
-                  <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                  <conceptList>
                      <concept localId="1"
                               code="165747007"
                               codeSystem="2.16.840.1.113883.6.96"
@@ -17601,7 +17601,7 @@
                                id="2.16.840.1.113883.2.4.11.237"
                                effectiveDate="2017-02-06T16:54:07"
                                statusCode="draft">
-                        <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                        <conceptList>
                            <concept localId="1"
                                     code="29781000146108"
                                     codeSystem="2.16.840.1.113883.6.96"
@@ -17648,7 +17648,7 @@
                         <property/>
                      </valueDomain>
                      <valueSet>
-                        <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg"/>
+                        <conceptList/>
                      </valueSet>
                   </concept>
                   <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82082"
@@ -17758,7 +17758,7 @@
                          effectiveDate="2012-03-17T00:00:00"
                          id="2.16.840.1.113883.2.4.11.158"
                          statusCode="final">
-                  <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                  <conceptList>
                      <concept localId="1"
                               code="278056007"
                               codeSystem="2.16.840.1.113883.6.96"
@@ -17807,7 +17807,7 @@
                          displayName="Positie portio (2.2)"
                          effectiveDate="2016-04-25T12:20:48"
                          statusCode="draft">
-                  <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                  <conceptList>
                      <concept localId="1"
                               code="289783000"
                               codeSystem="2.16.840.1.113883.6.96"
@@ -17859,7 +17859,7 @@
                          name="CervicalDilatation"
                          displayName="Cervical dilatation"
                          statusCode="final">
-                  <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                  <conceptList>
                      <concept localId="1"
                               code="289764007"
                               codeSystem="2.16.840.1.113883.6.96"
@@ -17969,7 +17969,7 @@
                          name="Vliezen"
                          displayName="Vliezen"
                          statusCode="final">
-                  <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                  <conceptList>
                      <concept localId="1"
                               code="46914009"
                               codeSystem="2.16.840.1.113883.6.96"
@@ -18025,7 +18025,7 @@
                          name="HodgePlanes"
                          displayName="Hodge Planes"
                          statusCode="final">
-                  <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                  <conceptList>
                      <concept localId="1"
                               code="289377000"
                               codeSystem="2.16.840.1.113883.6.96"
@@ -18082,7 +18082,7 @@
                          name="PresentationOfFetus"
                          displayName="Presentation of fetus"
                          statusCode="final">
-                  <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                  <conceptList>
                      <concept localId="1"
                               code="70028003"
                               codeSystem="2.16.840.1.113883.6.96"
@@ -18190,7 +18190,7 @@
                          statusCode="draft"
                          name="Stand"
                          displayName="Stand">
-                  <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                  <conceptList>
                      <concept localId="1"
                               code="1"
                               codeSystem="2.16.840.1.113883.2.4.4.13.48"
@@ -18338,7 +18338,7 @@
                       id="2.16.840.1.113883.2.4.3.11.60.90.77.11.34"
                       statusCode="final"
                       effectiveDate="2016-11-24T13:06:58">
-               <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+               <conceptList>
                   <concept localId="1"
                            code="6010"
                            codeSystem="2.16.840.1.113883.2.4.3.22.1.2.1"
@@ -18494,7 +18494,7 @@
                       effectiveDate="2016-01-29T13:04:52"
                       name="InterventiesVolgendeOpEenDiagnose22"
                       displayName="Interventies volgende op een diagnose (2.2)">
-               <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+               <conceptList>
                   <concept localId="1"
                            code="116859006"
                            codeSystem="2.16.840.1.113883.6.96"
@@ -18604,7 +18604,7 @@
             <example type="neutral">normaal</example>
          </valueDomain>
          <valueSet>
-            <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg"/>
+            <conceptList/>
          </valueSet>
       </concept>
       <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80982"
@@ -18676,7 +18676,7 @@
                          displayName="Substantie voeding kind"
                          statusCode="final"
                          effectiveDate="2015-06-10T09:55:27">
-                  <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                  <conceptList>
                      <concept localId="1"
                               code="1"
                               codeSystem="2.16.840.1.113883.2.4.3.22.1.4.8"
@@ -18749,7 +18749,7 @@
                          displayName="AndereZorgverlenerBetrokken22"
                          id="2.16.840.1.113883.2.4.11.183"
                          effectiveDate="2014-01-02T00:00:00">
-                  <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                  <conceptList>
                      <concept localId="1"
                               code="1"
                               codeSystem="2.16.840.1.113883.2.4.4.13.17"
@@ -18813,7 +18813,7 @@
                          effectiveDate="2014-01-02T00:00:00"
                          id="2.16.840.1.113883.2.4.11.184"
                          statusCode="draft">
-                  <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                  <conceptList>
                      <concept localId="1"
                               code="01.015"
                               codeSystem="2.16.840.1.113883.2.4.15.111"
@@ -18861,7 +18861,7 @@
                          effectiveDate="2015-06-04T16:44:16"
                          name="VerwijsindicatieKind"
                          displayName="Verwijsindicatie kind">
-                  <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                  <conceptList>
                      <concept localId="1"
                               code="364737004"
                               codeSystem="2.16.840.1.113883.6.96"
@@ -18992,7 +18992,7 @@
                       displayName="RolZorgverlener perinatale controle"
                       effectiveDate="2014-01-02T00:00:00"
                       statusCode="draft">
-               <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+               <conceptList>
                   <concept localId="1"
                            code="11"
                            codeSystem="2.16.840.1.113883.2.4.3.22.1.2.59"
@@ -19106,7 +19106,7 @@
                          displayName="Substantie voeding kind"
                          statusCode="final"
                          effectiveDate="2015-06-10T09:55:27">
-                  <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+                  <conceptList>
                      <concept localId="1"
                               code="1"
                               codeSystem="2.16.840.1.113883.2.4.3.22.1.4.8"
@@ -19185,7 +19185,7 @@
                       displayName="Type anticonceptie"
                       effectiveDate="2018-11-19T17:15:38"
                       statusCode="draft">
-               <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+               <conceptList>
                   <concept localId="1"
                            code="268458002"
                            codeSystem="2.16.840.1.113883.6.96"
@@ -19292,7 +19292,7 @@
                       displayName="Vloeien"
                       effectiveDate="2018-11-19T17:11:03"
                       statusCode="draft">
-               <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+               <conceptList>
                   <concept localId="1"
                            code="289579003"
                            codeSystem="2.16.840.1.113883.6.96"
@@ -19371,7 +19371,7 @@
                       displayName="Incontinentie (2.2)"
                       effectiveDate="2016-04-25T12:05:24"
                       statusCode="draft">
-               <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+               <conceptList>
                   <concept localId="1"
                            code="165232002"
                            codeSystem="2.16.840.1.113883.6.96"
@@ -19418,7 +19418,7 @@
                       strength="required">
                <desc language="nl-NL">Wond</desc>
                <desc language="en-US">Wound</desc>
-               <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+               <conceptList>
                   <concept localId="1"
                            code="298006005"
                            codeSystem="2.16.840.1.113883.6.96"
@@ -19457,7 +19457,7 @@
                       statusCode="draft">
                <desc language="nl-NL">Wond</desc>
                <desc language="en-US">Wound</desc>
-               <conceptList xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+               <conceptList>
                   <concept localId="1"
                            code="298006005"
                            codeSystem="2.16.840.1.113883.6.96"

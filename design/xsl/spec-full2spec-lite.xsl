@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg">
+<xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:bc-alg="https://babyconnect.org/ns/ada-lite-geboortezorg"
+  exclude-result-prefixes="#all">
   <!-- ================================================================== -->
   <!-- 
     Converts a full blown ADA Retrieve Transaction Dataset file into its light version
@@ -32,7 +33,7 @@
     SOFTWARE.
   -->
   <!-- ================================================================== -->
-  
+
   <xsl:output method="xml" indent="yes"/>
 
   <xsl:include href="lib/xsl-common.xsl"/>
@@ -80,9 +81,9 @@
       <conceptList>
         <xsl:for-each select="conceptList/*">
           <xsl:copy copy-namespaces="no">
-              <xsl:copy-of select="(@localId, @code, @codeSystem, @displayName)" copy-namespaces="no"/>
-               <xsl:attribute name="value" select="@code"/>
-              <xsl:copy-of select="name" copy-namespaces="no"/>
+            <xsl:copy-of select="(@localId, @code, @codeSystem, @displayName)" copy-namespaces="no"/>
+            <xsl:attribute name="value" select="@code"/>
+            <xsl:copy-of select="name" copy-namespaces="no"/>
           </xsl:copy>
         </xsl:for-each>
       </conceptList>
@@ -92,7 +93,7 @@
   <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 
   <xsl:template match="@*|*">
-      <xsl:copy copy-namespaces="no">
+    <xsl:copy copy-namespaces="no">
       <xsl:apply-templates select="@*|node()"/>
     </xsl:copy>
   </xsl:template>
