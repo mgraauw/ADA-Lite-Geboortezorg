@@ -86,10 +86,10 @@
                statusCode="final"
                effectiveDate="2013-09-10T00:00:00"
                type="item"
-               minimumMultiplicity="1"
+               minimumMultiplicity="0"
                maximumMultiplicity="1"
-               conformance="M"
-               isMandatory="true"
+               conformance="R"
+               isMandatory="false"
                shortName="burgerservicenummer">
          <name language="nl-NL">Burgerservicenummer</name>
          <desc language="nl-NL">Uniek identificatienummer voor iedereen die een meervoudige relatie met de Nederlandse overheid heeft, goed te identificeren is en opgenomen is in de Gemeentelijke Basisadministratie Persoonsgegevens (GBA) of in de Registratie Niet Ingezetenen (RNI). </desc>
@@ -102,13 +102,43 @@
                statusCode="final"
                effectiveDate="2013-09-10T00:00:00"
                type="group"
-               minimumMultiplicity="0"
-               maximumMultiplicity="1"
+               minimumMultiplicity="1"
+               maximumMultiplicity="2"
                conformance="R"
                isMandatory="false"
                shortName="naamgegevens">
          <name language="nl-NL">Naamgegevens</name>
          <desc language="nl-NL">Naamgegevens van de vrouw.</desc>
+         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10042"
+                  statusCode="final"
+                  effectiveDate="2013-09-10T00:00:00"
+                  type="item"
+                  minimumMultiplicity="0"
+                  maximumMultiplicity="1"
+                  conformance="R"
+                  isMandatory="false"
+                  shortName="voornamen">
+            <name language="nl-NL">Voornamen</name>
+            <desc language="nl-NL">De verzameling officiële voornamen die bij de geboorte zijn vastgelegd.</desc>
+            <valueDomain type="string">
+               <example>Johanna Henriette Maria</example>
+            </valueDomain>
+         </concept>
+         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82359"
+                  statusCode="final"
+                  effectiveDate="2014-11-21T10:53:00"
+                  type="item"
+                  minimumMultiplicity="0"
+                  maximumMultiplicity="1"
+                  conformance="R"
+                  isMandatory="false"
+                  shortName="initialen">
+            <name language="nl-NL">Initialen</name>
+            <desc language="nl-NL">Voorletters gebaseerd op de voornamen van de persoon.</desc>
+            <valueDomain type="string">
+               <example>J.H.M.</example>
+            </valueDomain>
+         </concept>
          <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82360"
                   statusCode="final"
                   effectiveDate="2014-11-21T10:53:32"
@@ -206,17 +236,22 @@
             </concept>
          </concept>
       </concept>
-      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80811"
+      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10040"
                statusCode="final"
                effectiveDate="2013-09-10T00:00:00"
-               type="group"
+               type="item"
                minimumMultiplicity="0"
                maximumMultiplicity="1"
                conformance="R"
                isMandatory="false"
-               shortName="anamnese">
-         <name language="nl-NL">Anamnese</name>
-         <desc language="nl-NL">Anamnese</desc>
+               shortName="geboortedatum">
+         <name language="nl-NL">Geboortedatum</name>
+         <desc language="nl-NL">Geboortedatum.<br clear="none"/>
+            <br clear="none"/>Indien de dag en/of maand van de geboortedatum niet bekend zijn, vult u dit in als 01-01-xxxx. Wanneer het geboortejaar ook onbekend is, is schatten van het geboortejaar toegestaan.<br clear="none"/>
+            </desc>
+         <valueDomain type="date">
+            <property timeStampPrecision="YMD"/>
+         </valueDomain>
       </concept>
       <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10810"
                statusCode="final"

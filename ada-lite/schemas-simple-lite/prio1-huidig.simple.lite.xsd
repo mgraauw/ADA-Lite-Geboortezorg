@@ -189,7 +189,7 @@ SOFTWARE.
    <xs:complexType name="vrouw">
       <xs:sequence>
          <xs:element name="burgerservicenummer"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="1"
                      type="burgerservicenummer">
             <xs:annotation>
@@ -198,17 +198,21 @@ SOFTWARE.
             </xs:annotation>
          </xs:element>
          <xs:element name="naamgegevens"
-                     minOccurs="0"
-                     maxOccurs="1"
+                     minOccurs="1"
+                     maxOccurs="2"
                      type="naamgegevens">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">Naamgegevens</xs:documentation>
                <xs:documentation source="desc" xml:lang="nl-NL">Naamgegevens van de vrouw.</xs:documentation>
             </xs:annotation>
          </xs:element>
-         <xs:element name="anamnese" minOccurs="0" maxOccurs="1" type="anamnese">
+         <xs:element name="geboortedatum"
+                     minOccurs="0"
+                     maxOccurs="1"
+                     type="geboortedatum">
             <xs:annotation>
-               <xs:documentation source="name" xml:lang="nl-NL">Anamnese</xs:documentation>
+               <xs:documentation source="name" xml:lang="nl-NL">Geboortedatum</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">Geboortedatum.Indien de dag en/of maand van de geboortedatum niet bekend zijn, vult u dit in als 01-01-xxxx. Wanneer het geboortejaar ook onbekend is, is schatten van het geboortejaar toegestaan.</xs:documentation>
             </xs:annotation>
          </xs:element>
          <xs:element name="bloedgroep_vrouw"
@@ -265,6 +269,18 @@ SOFTWARE.
    </xs:complexType>
    <xs:complexType name="naamgegevens">
       <xs:sequence>
+         <xs:element name="voornamen" minOccurs="0" maxOccurs="1" type="voornamen">
+            <xs:annotation>
+               <xs:documentation source="name" xml:lang="nl-NL">Voornamen</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">De verzameling officiële voornamen die bij de geboorte zijn vastgelegd.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="initialen" minOccurs="0" maxOccurs="1" type="initialen">
+            <xs:annotation>
+               <xs:documentation source="name" xml:lang="nl-NL">Initialen</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">Voorletters gebaseerd op de voornamen van de persoon.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
          <xs:element name="roepnaam" minOccurs="0" maxOccurs="1" type="roepnaam">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">Roepnaam</xs:documentation>
@@ -289,6 +305,20 @@ SOFTWARE.
                     type="t-id"
                     use="optional"
                     fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10035"/>
+   </xs:complexType>
+   <xs:complexType name="voornamen">
+      <xs:attribute name="conceptId"
+                    type="t-id"
+                    use="optional"
+                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10042"/>
+      <xs:attribute name="value" use="required" type="xs:string"/>
+   </xs:complexType>
+   <xs:complexType name="initialen">
+      <xs:attribute name="conceptId"
+                    type="t-id"
+                    use="optional"
+                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82359"/>
+      <xs:attribute name="value" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="roepnaam">
       <xs:attribute name="conceptId"
@@ -403,18 +433,12 @@ SOFTWARE.
                     fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10043"/>
       <xs:attribute name="value" use="required" type="xs:string"/>
    </xs:complexType>
-   <xs:complexType name="anamnese">
-      <xs:sequence>
-         <xs:element minOccurs="0" name="adaextension" type="adaextension">
-            <xs:annotation>
-               <xs:documentation>Optionele extensie informatie</xs:documentation>
-            </xs:annotation>
-         </xs:element>
-      </xs:sequence>
+   <xs:complexType name="geboortedatum">
       <xs:attribute name="conceptId"
                     type="t-id"
                     use="optional"
-                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80811"/>
+                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10040"/>
+      <xs:attribute name="value" use="required" type="t-datetime"/>
    </xs:complexType>
    <xs:complexType name="bloedgroep_vrouw">
       <xs:attribute name="conceptId"

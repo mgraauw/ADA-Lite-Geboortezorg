@@ -186,9 +186,9 @@ SOFTWARE.
    <!-- == Any attributes allowed on /prio1_huidig/zorgverlenerzorginstelling/zorginstelling/adaextension == -->
    <pattern>
       <rule context="/prio1_huidig/vrouw"><!-- == Check occurrences of children of /prio1_huidig/vrouw: == -->
-         <assert test="count(burgerservicenummer) eq 1">Fout aantal voorkomens van "Burgerservicenummer": <value-of select="count(burgerservicenummer)"/> (verwacht: 1) [/prio1_huidig/vrouw/burgerservicenummer]</assert>
-         <assert test="(count(naamgegevens) ge 0) and (count(naamgegevens) le 1)">Fout aantal voorkomens van "Naamgegevens": <value-of select="count(naamgegevens)"/> (verwacht: 0..1) [/prio1_huidig/vrouw/naamgegevens]</assert>
-         <assert test="(count(anamnese) ge 0) and (count(anamnese) le 1)">Fout aantal voorkomens van "Anamnese": <value-of select="count(anamnese)"/> (verwacht: 0..1) [/prio1_huidig/vrouw/anamnese]</assert>
+         <assert test="(count(burgerservicenummer) ge 0) and (count(burgerservicenummer) le 1)">Fout aantal voorkomens van "Burgerservicenummer": <value-of select="count(burgerservicenummer)"/> (verwacht: 0..1) [/prio1_huidig/vrouw/burgerservicenummer]</assert>
+         <assert test="(count(naamgegevens) ge 1) and (count(naamgegevens) le 2)">Fout aantal voorkomens van "Naamgegevens": <value-of select="count(naamgegevens)"/> (verwacht: 1..2) [/prio1_huidig/vrouw/naamgegevens]</assert>
+         <assert test="(count(geboortedatum) ge 0) and (count(geboortedatum) le 1)">Fout aantal voorkomens van "Geboortedatum": <value-of select="count(geboortedatum)"/> (verwacht: 0..1) [/prio1_huidig/vrouw/geboortedatum]</assert>
          <assert test="(count(bloedgroep_vrouw) ge 0) and (count(bloedgroep_vrouw) le 1)">Fout aantal voorkomens van "Bloedgroep vrouw": <value-of select="count(bloedgroep_vrouw)"/> (verwacht: 0..1) [/prio1_huidig/vrouw/bloedgroep_vrouw]</assert>
          <assert test="(count(rhesus_d_factor_vrouw) ge 0) and (count(rhesus_d_factor_vrouw) le 1)">Fout aantal voorkomens van "Rhesus D Factor vrouw": <value-of select="count(rhesus_d_factor_vrouw)"/> (verwacht: 0..1) [/prio1_huidig/vrouw/rhesus_d_factor_vrouw]</assert>
          <assert test="(count(rhesus_c_factor) ge 0) and (count(rhesus_c_factor) le 1)">Fout aantal voorkomens van "Rhesus c Factor": <value-of select="count(rhesus_c_factor)"/> (verwacht: 0..1) [/prio1_huidig/vrouw/rhesus_c_factor]</assert>
@@ -196,7 +196,7 @@ SOFTWARE.
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /prio1_huidig/vrouw: == -->
-      <rule context="/prio1_huidig/vrouw/*[not(self::burgerservicenummer)][not(self::naamgegevens)][not(self::anamnese)][not(self::bloedgroep_vrouw)][not(self::rhesus_d_factor_vrouw)][not(self::rhesus_c_factor)][not(self::adaextension)]">
+      <rule context="/prio1_huidig/vrouw/*[not(self::burgerservicenummer)][not(self::naamgegevens)][not(self::geboortedatum)][not(self::bloedgroep_vrouw)][not(self::rhesus_d_factor_vrouw)][not(self::rhesus_c_factor)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/prio1_huidig/vrouw/<value-of select="name(.)"/>]</report>
       </rule>
    </pattern>
@@ -222,13 +222,16 @@ SOFTWARE.
          <assert test="empty(@* except (@conceptId, @xsi:*))">Foutieve informatie voor "Naamgegevens": Ongeldige attributen aangetroffen [/prio1_huidig/vrouw/naamgegevens; allowed=(@conceptId, @xsi:*)]</assert>
       </rule>
    </pattern>
-   <!-- == Check attributes of /prio1_huidig/vrouw/anamnese: == -->
+   <!-- == Check attributes of /prio1_huidig/vrouw/geboortedatum: == -->
    <pattern>
-      <rule context="/prio1_huidig/vrouw/anamnese"><!-- == Attribute "conceptId": == -->
-         <assert test="exists(@conceptId)">Foutieve informatie voor "Anamnese": Attribuut "conceptId" ontbreekt [/prio1_huidig/vrouw/anamnese/@conceptId]</assert>
-         <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Anamnese": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/prio1_huidig/vrouw/anamnese/@conceptId; type=t-id]</assert>
-         <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80811')">Foutieve informatie voor "Anamnese": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80811" [/prio1_huidig/vrouw/anamnese/@conceptId]</assert>
-         <assert test="empty(@* except (@conceptId, @xsi:*))">Foutieve informatie voor "Anamnese": Ongeldige attributen aangetroffen [/prio1_huidig/vrouw/anamnese; allowed=(@conceptId, @xsi:*)]</assert>
+      <rule context="/prio1_huidig/vrouw/geboortedatum"><!-- == Attribute "conceptId": == -->
+         <assert test="exists(@conceptId)">Foutieve informatie voor "Geboortedatum": Attribuut "conceptId" ontbreekt [/prio1_huidig/vrouw/geboortedatum/@conceptId]</assert>
+         <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Geboortedatum": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/prio1_huidig/vrouw/geboortedatum/@conceptId; type=t-id]</assert>
+         <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10040')">Foutieve informatie voor "Geboortedatum": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10040" [/prio1_huidig/vrouw/geboortedatum/@conceptId]</assert>
+         <!-- == Attribute "value": == -->
+         <assert test="exists(@value)">Foutieve informatie voor "Geboortedatum": Attribuut "value" ontbreekt [/prio1_huidig/vrouw/geboortedatum/@value]</assert>
+         <assert test="empty(@value) or ((@value castable as xs:date) or (@value castable as xs:dateTime))">Foutieve informatie voor "Geboortedatum": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/prio1_huidig/vrouw/geboortedatum/@value; type=t-datetime]</assert>
+         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Geboortedatum": Ongeldige attributen aangetroffen [/prio1_huidig/vrouw/geboortedatum; allowed=(@conceptId, @value, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /prio1_huidig/vrouw/bloedgroep_vrouw: == -->
@@ -294,14 +297,38 @@ SOFTWARE.
    <!-- == Any attributes allowed on /prio1_huidig/vrouw/adaextension == -->
    <pattern>
       <rule context="/prio1_huidig/vrouw/naamgegevens"><!-- == Check occurrences of children of /prio1_huidig/vrouw/naamgegevens: == -->
+         <assert test="(count(voornamen) ge 0) and (count(voornamen) le 1)">Fout aantal voorkomens van "Voornamen": <value-of select="count(voornamen)"/> (verwacht: 0..1) [/prio1_huidig/vrouw/naamgegevens/voornamen]</assert>
+         <assert test="(count(initialen) ge 0) and (count(initialen) le 1)">Fout aantal voorkomens van "Initialen": <value-of select="count(initialen)"/> (verwacht: 0..1) [/prio1_huidig/vrouw/naamgegevens/initialen]</assert>
          <assert test="(count(roepnaam) ge 0) and (count(roepnaam) le 1)">Fout aantal voorkomens van "Roepnaam": <value-of select="count(roepnaam)"/> (verwacht: 0..1) [/prio1_huidig/vrouw/naamgegevens/roepnaam]</assert>
          <assert test="(count(achternaam) ge 0) and (count(achternaam) le 1)">Fout aantal voorkomens van "Achternaam": <value-of select="count(achternaam)"/> (verwacht: 0..1) [/prio1_huidig/vrouw/naamgegevens/achternaam]</assert>
          <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/prio1_huidig/vrouw/naamgegevens/adaextension]</assert>
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /prio1_huidig/vrouw/naamgegevens: == -->
-      <rule context="/prio1_huidig/vrouw/naamgegevens/*[not(self::roepnaam)][not(self::achternaam)][not(self::adaextension)]">
+      <rule context="/prio1_huidig/vrouw/naamgegevens/*[not(self::voornamen)][not(self::initialen)][not(self::roepnaam)][not(self::achternaam)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/prio1_huidig/vrouw/naamgegevens/<value-of select="name(.)"/>]</report>
+      </rule>
+   </pattern>
+   <!-- == Check attributes of /prio1_huidig/vrouw/naamgegevens/voornamen: == -->
+   <pattern>
+      <rule context="/prio1_huidig/vrouw/naamgegevens/voornamen"><!-- == Attribute "conceptId": == -->
+         <assert test="exists(@conceptId)">Foutieve informatie voor "Voornamen": Attribuut "conceptId" ontbreekt [/prio1_huidig/vrouw/naamgegevens/voornamen/@conceptId]</assert>
+         <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Voornamen": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/prio1_huidig/vrouw/naamgegevens/voornamen/@conceptId; type=t-id]</assert>
+         <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10042')">Foutieve informatie voor "Voornamen": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10042" [/prio1_huidig/vrouw/naamgegevens/voornamen/@conceptId]</assert>
+         <!-- == Attribute "value": == -->
+         <assert test="exists(@value)">Foutieve informatie voor "Voornamen": Attribuut "value" ontbreekt [/prio1_huidig/vrouw/naamgegevens/voornamen/@value]</assert>
+         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Voornamen": Ongeldige attributen aangetroffen [/prio1_huidig/vrouw/naamgegevens/voornamen; allowed=(@conceptId, @value, @xsi:*)]</assert>
+      </rule>
+   </pattern>
+   <!-- == Check attributes of /prio1_huidig/vrouw/naamgegevens/initialen: == -->
+   <pattern>
+      <rule context="/prio1_huidig/vrouw/naamgegevens/initialen"><!-- == Attribute "conceptId": == -->
+         <assert test="exists(@conceptId)">Foutieve informatie voor "Initialen": Attribuut "conceptId" ontbreekt [/prio1_huidig/vrouw/naamgegevens/initialen/@conceptId]</assert>
+         <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Initialen": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/prio1_huidig/vrouw/naamgegevens/initialen/@conceptId; type=t-id]</assert>
+         <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82359')">Foutieve informatie voor "Initialen": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82359" [/prio1_huidig/vrouw/naamgegevens/initialen/@conceptId]</assert>
+         <!-- == Attribute "value": == -->
+         <assert test="exists(@value)">Foutieve informatie voor "Initialen": Attribuut "value" ontbreekt [/prio1_huidig/vrouw/naamgegevens/initialen/@value]</assert>
+         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Initialen": Ongeldige attributen aangetroffen [/prio1_huidig/vrouw/naamgegevens/initialen; allowed=(@conceptId, @value, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /prio1_huidig/vrouw/naamgegevens/roepnaam: == -->
@@ -381,17 +408,6 @@ SOFTWARE.
       </rule>
    </pattern>
    <!-- == Any attributes allowed on /prio1_huidig/vrouw/naamgegevens/achternaam/adaextension == -->
-   <pattern>
-      <rule context="/prio1_huidig/vrouw/anamnese"><!-- == Check occurrences of children of /prio1_huidig/vrouw/anamnese: == -->
-         <assert test="(count(adaextension) ge 0) and (count(adaextension) le 1)">Fout aantal voorkomens van "adaextension": <value-of select="count(adaextension)"/> (verwacht: 0..1) [/prio1_huidig/vrouw/anamnese/adaextension]</assert>
-      </rule>
-   </pattern>
-   <pattern><!-- == Check for any unexpected elements in /prio1_huidig/vrouw/anamnese: == -->
-      <rule context="/prio1_huidig/vrouw/anamnese/*[not(self::adaextension)]">
-         <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/prio1_huidig/vrouw/anamnese/<value-of select="name(.)"/>]</report>
-      </rule>
-   </pattern>
-   <!-- == Any attributes allowed on /prio1_huidig/vrouw/anamnese/adaextension == -->
    <pattern>
       <rule context="/prio1_huidig/zwangerschap"><!-- == Check occurrences of children of /prio1_huidig/zwangerschap: == -->
          <assert test="(count(graviditeit) ge 0) and (count(graviditeit) le 1)">Fout aantal voorkomens van "Graviditeit": <value-of select="count(graviditeit)"/> (verwacht: 0..1) [/prio1_huidig/zwangerschap/graviditeit]</assert>

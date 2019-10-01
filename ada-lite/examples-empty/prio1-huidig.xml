@@ -11,6 +11,8 @@
    <vrouw>
       <burgerservicenummer value=""/>
       <naamgegevens>
+         <voornamen value=""/>
+         <initialen value=""/>
          <roepnaam value=""/>
          <achternaam>
             <soort_naam value="" enum=""/>
@@ -18,7 +20,7 @@
             <achternaam value=""/>
          </achternaam>
       </naamgegevens>
-      <anamnese/>
+      <geboortedatum value=""/>
       <bloedgroep_vrouw value="" enum=""/>
       <rhesus_d_factor_vrouw value="" enum=""/>
       <rhesus_c_factor value="" enum=""/>
