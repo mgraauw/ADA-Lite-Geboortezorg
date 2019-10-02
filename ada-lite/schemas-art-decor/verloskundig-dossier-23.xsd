@@ -108,7 +108,7 @@ SOFTWARE.
          <xs:element name="medisch_onderzoek"
                      type="medisch_onderzoek_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_14"
                      minOccurs="0"
-                     maxOccurs="unbounded"/>
+                     maxOccurs="1"/>
          <xs:element name="postnatale_fase-start" minOccurs="0" maxOccurs="1">
             <xs:complexType>
                <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.16"/>
@@ -374,7 +374,7 @@ SOFTWARE.
          </xs:element>
          <xs:element name="straatnaam"
                      type="straatnaam_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_10032"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="1"/>
          <xs:element name="huisnummer-start" minOccurs="0" maxOccurs="1">
             <xs:complexType>
@@ -384,7 +384,7 @@ SOFTWARE.
          </xs:element>
          <xs:element name="huisnummer"
                      type="huisnummer_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_10033"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="1"/>
          <xs:element name="huisletterhuisnummertoevoeging-start"
                      minOccurs="0"
@@ -406,7 +406,7 @@ SOFTWARE.
          </xs:element>
          <xs:element name="postcode"
                      type="postcode_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_10041"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="1"/>
          <xs:element name="plaatsnaam-start" minOccurs="0" maxOccurs="1">
             <xs:complexType>
@@ -416,7 +416,7 @@ SOFTWARE.
          </xs:element>
          <xs:element name="plaatsnaam"
                      type="plaatsnaam_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_10036"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="1"/>
          <xs:element name="land-start" minOccurs="0" maxOccurs="1">
             <xs:complexType>
@@ -426,7 +426,7 @@ SOFTWARE.
          </xs:element>
          <xs:element name="land"
                      type="land_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_10038"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="1"/>
          <xs:element name="adaextension-start" minOccurs="0" maxOccurs="1">
             <xs:complexType>
@@ -498,6 +498,16 @@ SOFTWARE.
                      type="adres_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_10300"
                      minOccurs="0"
                      maxOccurs="1"/>
+         <xs:element name="contactgegevens-start" minOccurs="0" maxOccurs="1">
+            <xs:complexType>
+               <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82694"/>
+               <xs:attribute name="hidden" fixed="true"/>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="contactgegevens"
+                     type="contactgegevens_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82694"
+                     minOccurs="0"
+                     maxOccurs="1"/>
          <xs:element name="etniciteit-start" minOccurs="0" maxOccurs="1">
             <xs:complexType>
                <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10400"/>
@@ -520,14 +530,14 @@ SOFTWARE.
                      type="taalvaardigheid_vrouw_nederlandse_taal_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_10401"
                      minOccurs="0"
                      maxOccurs="1"/>
-         <xs:element name="communicatietaal-start" minOccurs="0" maxOccurs="1">
+         <xs:element name="communicatie_taal-start" minOccurs="0" maxOccurs="1">
             <xs:complexType>
                <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82371"/>
                <xs:attribute name="hidden" fixed="true"/>
             </xs:complexType>
          </xs:element>
-         <xs:element name="communicatietaal"
-                     type="communicatietaal_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82371"
+         <xs:element name="communicatie_taal"
+                     type="communicatie_taal_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82371"
                      minOccurs="0"
                      maxOccurs="unbounded"/>
          <xs:element name="opleidingsniveau-start" minOccurs="0" maxOccurs="1">
@@ -592,7 +602,7 @@ SOFTWARE.
          </xs:element>
          <xs:element name="medicatiegebruikq"
                      type="medicatiegebruikq_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_10801"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="1"/>
          <xs:element name="medicatiegebruik-start" minOccurs="0" maxOccurs="1">
             <xs:complexType>
@@ -602,7 +612,7 @@ SOFTWARE.
          </xs:element>
          <xs:element name="medicatiegebruik"
                      type="medicatiegebruik_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_80749"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="unbounded"/>
          <xs:element name="lengte_gemeten-start" minOccurs="0" maxOccurs="1">
             <xs:complexType>
@@ -895,6 +905,130 @@ SOFTWARE.
                      maxOccurs="1"/>
       </xs:sequence>
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10300"/>
+      <xs:attribute name="comment" type="xs:string" use="optional"/>
+   </xs:complexType>
+   <xs:complexType name="contactgegevens_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82694">
+      <xs:annotation>
+         <xs:documentation>Type for concept group: Contactgegevens</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="telefoonnummers-start" minOccurs="0" maxOccurs="1">
+            <xs:complexType>
+               <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82695"/>
+               <xs:attribute name="hidden" fixed="true"/>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="telefoonnummers"
+                     type="telefoonnummers_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82695"
+                     minOccurs="0"
+                     maxOccurs="1"/>
+         <xs:element name="email_adressen-start" minOccurs="0" maxOccurs="1">
+            <xs:complexType>
+               <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82699"/>
+               <xs:attribute name="hidden" fixed="true"/>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="email_adressen"
+                     type="email_adressen_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82699"
+                     minOccurs="0"
+                     maxOccurs="1"/>
+         <xs:element name="adaextension-start" minOccurs="0" maxOccurs="1">
+            <xs:complexType>
+               <xs:attribute name="hidden" fixed="true"/>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="adaextension"
+                     type="adaextension_type"
+                     minOccurs="0"
+                     maxOccurs="1"/>
+      </xs:sequence>
+      <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82694"/>
+      <xs:attribute name="comment" type="xs:string" use="optional"/>
+   </xs:complexType>
+   <xs:complexType name="telefoonnummers_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82695">
+      <xs:annotation>
+         <xs:documentation>Type for concept group: Telefoonnummers</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="telefoonnummer-start" minOccurs="0" maxOccurs="1">
+            <xs:complexType>
+               <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82696"/>
+               <xs:attribute name="hidden" fixed="true"/>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="telefoonnummer"
+                     type="telefoonnummer_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82696"
+                     minOccurs="0"
+                     maxOccurs="1"/>
+         <xs:element name="telecom_type-start" minOccurs="0" maxOccurs="1">
+            <xs:complexType>
+               <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82697"/>
+               <xs:attribute name="hidden" fixed="true"/>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="telecom_type"
+                     type="telecom_type_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82697"
+                     minOccurs="0"
+                     maxOccurs="1"/>
+         <xs:element name="nummer_soort-start" minOccurs="0" maxOccurs="1">
+            <xs:complexType>
+               <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82698"/>
+               <xs:attribute name="hidden" fixed="true"/>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="nummer_soort"
+                     type="nummer_soort_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82698"
+                     minOccurs="0"
+                     maxOccurs="1"/>
+         <xs:element name="adaextension-start" minOccurs="0" maxOccurs="1">
+            <xs:complexType>
+               <xs:attribute name="hidden" fixed="true"/>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="adaextension"
+                     type="adaextension_type"
+                     minOccurs="0"
+                     maxOccurs="1"/>
+      </xs:sequence>
+      <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82695"/>
+      <xs:attribute name="comment" type="xs:string" use="optional"/>
+   </xs:complexType>
+   <xs:complexType name="email_adressen_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82699">
+      <xs:annotation>
+         <xs:documentation>Type for concept group: EmailAdressen</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="email_adres-start" minOccurs="0" maxOccurs="1">
+            <xs:complexType>
+               <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82700"/>
+               <xs:attribute name="hidden" fixed="true"/>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="email_adres"
+                     type="email_adres_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82700"
+                     minOccurs="0"
+                     maxOccurs="1"/>
+         <xs:element name="email_soort-start" minOccurs="0" maxOccurs="1">
+            <xs:complexType>
+               <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82701"/>
+               <xs:attribute name="hidden" fixed="true"/>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="email_soort"
+                     type="email_soort_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82701"
+                     minOccurs="0"
+                     maxOccurs="1"/>
+         <xs:element name="adaextension-start" minOccurs="0" maxOccurs="1">
+            <xs:complexType>
+               <xs:attribute name="hidden" fixed="true"/>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="adaextension"
+                     type="adaextension_type"
+                     minOccurs="0"
+                     maxOccurs="1"/>
+      </xs:sequence>
+      <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82699"/>
       <xs:attribute name="comment" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:complexType name="betrokken_zorgverlenerzorginstelling_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_80649">
@@ -1728,7 +1862,7 @@ SOFTWARE.
          </xs:element>
          <xs:element name="bmi_vrouw"
                      type="bmi_vrouw_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_10806"
-                     minOccurs="0"
+                     minOccurs="1"
                      maxOccurs="1"/>
          <xs:element name="adaextension-start" minOccurs="0" maxOccurs="1">
             <xs:complexType>
@@ -1844,7 +1978,7 @@ SOFTWARE.
          </xs:element>
          <xs:element name="identificatie_van_de_zwangerschap"
                      type="identificatie_van_de_zwangerschap_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_80627"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="1"/>
          <xs:element name="casemanager_naam-start" minOccurs="0" maxOccurs="1">
             <xs:complexType>
@@ -1886,7 +2020,7 @@ SOFTWARE.
          </xs:element>
          <xs:element name="pariteit"
                      type="pariteit_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_20153"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="1"/>
          <xs:element name="aantal_levende_kinderen-start" minOccurs="0" maxOccurs="1">
             <xs:complexType>
@@ -1916,7 +2050,7 @@ SOFTWARE.
          </xs:element>
          <xs:element name="a_terme_datum_groep"
                      type="a_terme_datum_groep_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_20029"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="1"/>
          <xs:element name="definitieve_a_terme_datum-start" minOccurs="0" maxOccurs="1">
             <xs:complexType>
@@ -1946,7 +2080,7 @@ SOFTWARE.
          </xs:element>
          <xs:element name="hoeveelling"
                      type="hoeveelling_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_20020"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="1"/>
          <xs:element name="amnioniciteit-start" minOccurs="0" maxOccurs="1">
             <xs:complexType>
@@ -2022,8 +2156,8 @@ SOFTWARE.
          </xs:element>
          <xs:element name="trisomie_in_de_anamneseq"
                      type="trisomie_in_de_anamneseq_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_20170"
-                     minOccurs="1"
-                     maxOccurs="unbounded"/>
+                     minOccurs="0"
+                     maxOccurs="1"/>
          <xs:element name="voornemens-start" minOccurs="0" maxOccurs="1">
             <xs:complexType>
                <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80671"/>
@@ -2500,8 +2634,8 @@ SOFTWARE.
          </xs:element>
          <xs:element name="soort_drugs"
                      type="soort_drugs_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82103"
-                     minOccurs="1"
-                     maxOccurs="unbounded"/>
+                     minOccurs="0"
+                     maxOccurs="1"/>
          <xs:element name="bloeddruk-start" minOccurs="0" maxOccurs="1">
             <xs:complexType>
                <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80832"/>
@@ -2960,7 +3094,7 @@ SOFTWARE.
          </xs:element>
          <xs:element name="interventie"
                      type="interventie_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82376"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="1"/>
          <xs:element name="adaextension-start" minOccurs="0" maxOccurs="1">
             <xs:complexType>
@@ -3000,7 +3134,7 @@ SOFTWARE.
          </xs:element>
          <xs:element name="reden_verzending"
                      type="reden_verzending_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82088"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="1"/>
          <xs:element name="counseling_combinatietest-start" minOccurs="0" maxOccurs="1">
             <xs:complexType>
@@ -3448,7 +3582,7 @@ SOFTWARE.
          </xs:element>
          <xs:element name="immunisatie"
                      type="immunisatie_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_80799"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="unbounded"/>
          <xs:element name="partusassistentieq-start" minOccurs="0" maxOccurs="1">
             <xs:complexType>
@@ -4100,7 +4234,7 @@ SOFTWARE.
          </xs:element>
          <xs:element name="contactgegevens"
                      type="contactgegevens_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82364"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="1"/>
          <xs:element name="adres_tbv_hielprik-start" minOccurs="0" maxOccurs="1">
             <xs:complexType>
@@ -4110,7 +4244,7 @@ SOFTWARE.
          </xs:element>
          <xs:element name="adres_tbv_hielprik"
                      type="adres_tbv_hielprik_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_40032"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="1"/>
          <xs:element name="adres-start" minOccurs="0" maxOccurs="1">
             <xs:complexType>
@@ -4130,7 +4264,7 @@ SOFTWARE.
          </xs:element>
          <xs:element name="geslacht_administratief"
                      type="geslacht_administratief_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_40040"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="1"/>
          <xs:element name="geslacht_medische_observatie-start"
                      minOccurs="0"
@@ -4390,8 +4524,8 @@ SOFTWARE.
          </xs:element>
          <xs:element name="telefoonnummers"
                      type="telefoonnummers_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82365"
-                     minOccurs="1"
-                     maxOccurs="unbounded"/>
+                     minOccurs="0"
+                     maxOccurs="1"/>
          <xs:element name="adaextension-start" minOccurs="0" maxOccurs="1">
             <xs:complexType>
                <xs:attribute name="hidden" fixed="true"/>
@@ -4428,7 +4562,7 @@ SOFTWARE.
          </xs:element>
          <xs:element name="telefoonnummer"
                      type="telefoonnummer_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82367"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="1"/>
          <xs:element name="adaextension-start" minOccurs="0" maxOccurs="1">
             <xs:complexType>
@@ -4456,7 +4590,7 @@ SOFTWARE.
          </xs:element>
          <xs:element name="straatnaam"
                      type="straatnaam_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82133"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="1"/>
          <xs:element name="huisnummer-start" minOccurs="0" maxOccurs="1">
             <xs:complexType>
@@ -4466,7 +4600,7 @@ SOFTWARE.
          </xs:element>
          <xs:element name="huisnummer"
                      type="huisnummer_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82134"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="1"/>
          <xs:element name="huisletterhuisnummertoevoeging-start"
                      minOccurs="0"
@@ -4488,7 +4622,7 @@ SOFTWARE.
          </xs:element>
          <xs:element name="postcode"
                      type="postcode_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82136"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="1"/>
          <xs:element name="plaatsnaam-start" minOccurs="0" maxOccurs="1">
             <xs:complexType>
@@ -4498,7 +4632,7 @@ SOFTWARE.
          </xs:element>
          <xs:element name="plaatsnaam"
                      type="plaatsnaam_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82137"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="1"/>
          <xs:element name="land-start" minOccurs="0" maxOccurs="1">
             <xs:complexType>
@@ -4872,7 +5006,7 @@ SOFTWARE.
          </xs:element>
          <xs:element name="methode"
                      type="methode_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82093"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="1"/>
          <xs:element name="periode-start" minOccurs="0" maxOccurs="1">
             <xs:complexType>
@@ -4892,8 +5026,8 @@ SOFTWARE.
          </xs:element>
          <xs:element name="reden"
                      type="reden_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82098"
-                     minOccurs="1"
-                     maxOccurs="unbounded"/>
+                     minOccurs="0"
+                     maxOccurs="1"/>
          <xs:element name="adaextension-start" minOccurs="0" maxOccurs="1">
             <xs:complexType>
                <xs:attribute name="hidden" fixed="true"/>
@@ -4920,7 +5054,7 @@ SOFTWARE.
          </xs:element>
          <xs:element name="methode"
                      type="methode_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82092"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="1"/>
          <xs:element name="overig_middel-start" minOccurs="0" maxOccurs="1">
             <xs:complexType>
@@ -4930,8 +5064,8 @@ SOFTWARE.
          </xs:element>
          <xs:element name="overig_middel"
                      type="overig_middel_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82094"
-                     minOccurs="1"
-                     maxOccurs="unbounded"/>
+                     minOccurs="0"
+                     maxOccurs="1"/>
          <xs:element name="adaextension-start" minOccurs="0" maxOccurs="1">
             <xs:complexType>
                <xs:attribute name="hidden" fixed="true"/>
@@ -4958,7 +5092,7 @@ SOFTWARE.
          </xs:element>
          <xs:element name="middel"
                      type="middel_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82095"
-                     minOccurs="0"
+                     minOccurs="1"
                      maxOccurs="1"/>
          <xs:element name="toediening-start" minOccurs="0" maxOccurs="1">
             <xs:complexType>
@@ -6392,7 +6526,7 @@ SOFTWARE.
          </xs:element>
          <xs:element name="specificatie_congenitale_afwijking"
                      type="specificatie_congenitale_afwijking_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_40090"
-                     minOccurs="0"
+                     minOccurs="1"
                      maxOccurs="1"/>
          <xs:element name="waarschijnlijkheid_congenitale_afwijking-start"
                      minOccurs="0"
@@ -6688,7 +6822,7 @@ SOFTWARE.
          </xs:element>
          <xs:element name="datum_onderzoek"
                      type="datum_onderzoek_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_50020"
-                     minOccurs="0"
+                     minOccurs="1"
                      maxOccurs="1"/>
          <xs:element name="naam_uitvoerder_onderzoek-start" minOccurs="0" maxOccurs="1">
             <xs:complexType>
@@ -6742,7 +6876,7 @@ SOFTWARE.
          </xs:element>
          <xs:element name="onderzoektype_ntmeting"
                      type="onderzoektype_ntmeting_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_50110"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="1"/>
          <xs:element name="onderzoektype_seo-start" minOccurs="0" maxOccurs="1">
             <xs:complexType>
@@ -6752,7 +6886,7 @@ SOFTWARE.
          </xs:element>
          <xs:element name="onderzoektype_seo"
                      type="onderzoektype_seo_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_50120"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="1"/>
          <xs:element name="onderzoektype_guo-start" minOccurs="0" maxOccurs="1">
             <xs:complexType>
@@ -6762,7 +6896,7 @@ SOFTWARE.
          </xs:element>
          <xs:element name="onderzoektype_guo"
                      type="onderzoektype_guo_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_50130"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="1"/>
          <xs:element name="onderzoektype_kansbepaling_combinatietest-start"
                      minOccurs="0"
@@ -6774,7 +6908,7 @@ SOFTWARE.
          </xs:element>
          <xs:element name="onderzoektype_kansbepaling_combinatietest"
                      type="onderzoektype_kansbepaling_combinatietest_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_50140"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="1"/>
          <xs:element name="seotype-start" minOccurs="0" maxOccurs="1">
             <xs:complexType>
@@ -6784,7 +6918,7 @@ SOFTWARE.
          </xs:element>
          <xs:element name="seotype"
                      type="seotype_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_51010"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="1"/>
          <xs:element name="conclusie_seo-start" minOccurs="0" maxOccurs="1">
             <xs:complexType>
@@ -6794,7 +6928,7 @@ SOFTWARE.
          </xs:element>
          <xs:element name="conclusie_seo"
                      type="conclusie_seo_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82330"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="1"/>
          <xs:element name="advies_seo-start" minOccurs="0" maxOccurs="1">
             <xs:complexType>
@@ -6804,7 +6938,7 @@ SOFTWARE.
          </xs:element>
          <xs:element name="advies_seo"
                      type="advies_seo_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82331"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="1"/>
          <xs:element name="conclusie_a_terme_datum-start" minOccurs="0" maxOccurs="1">
             <xs:complexType>
@@ -6837,7 +6971,7 @@ SOFTWARE.
          <xs:element name="foetusspecifieke_onderzoeksgegevens"
                      type="foetusspecifieke_onderzoeksgegevens_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_141"
                      minOccurs="0"
-                     maxOccurs="unbounded"/>
+                     maxOccurs="1"/>
          <xs:element name="maternale_onderzoeksgegevens-start"
                      minOccurs="0"
                      maxOccurs="1">
@@ -6906,7 +7040,7 @@ SOFTWARE.
          </xs:element>
          <xs:element name="foetus_identificatie"
                      type="foetus_identificatie_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_60005"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="1"/>
          <xs:element name="foetus_volgletter-start" minOccurs="0" maxOccurs="1">
             <xs:complexType>
@@ -6961,7 +7095,7 @@ SOFTWARE.
          <xs:element name="invasieve_prenatale_diagnostiek"
                      type="invasieve_prenatale_diagnostiek_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82227"
                      minOccurs="0"
-                     maxOccurs="unbounded"/>
+                     maxOccurs="1"/>
          <xs:element name="adaextension-start" minOccurs="0" maxOccurs="1">
             <xs:complexType>
                <xs:attribute name="hidden" fixed="true"/>
@@ -6989,7 +7123,7 @@ SOFTWARE.
          <xs:element name="crl"
                      type="crl_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_60020"
                      minOccurs="0"
-                     maxOccurs="unbounded"/>
+                     maxOccurs="1"/>
          <xs:element name="bpd-start" minOccurs="0" maxOccurs="1">
             <xs:complexType>
                <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.60030"/>
@@ -6999,7 +7133,7 @@ SOFTWARE.
          <xs:element name="bpd"
                      type="bpd_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_60030"
                      minOccurs="0"
-                     maxOccurs="unbounded"/>
+                     maxOccurs="1"/>
          <xs:element name="bpd_percentiel-start" minOccurs="0" maxOccurs="1">
             <xs:complexType>
                <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.60031"/>
@@ -7009,7 +7143,7 @@ SOFTWARE.
          <xs:element name="bpd_percentiel"
                      type="bpd_percentiel_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_60031"
                      minOccurs="0"
-                     maxOccurs="unbounded"/>
+                     maxOccurs="1"/>
          <xs:element name="nt_in_mm-start" minOccurs="0" maxOccurs="1">
             <xs:complexType>
                <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.60040"/>
@@ -7678,7 +7812,7 @@ SOFTWARE.
          </xs:element>
          <xs:element name="methode_kansbepaling"
                      type="methode_kansbepaling_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_61040"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="1"/>
          <xs:element name="software_kansbepaling-start" minOccurs="0" maxOccurs="1">
             <xs:complexType>
@@ -7688,7 +7822,7 @@ SOFTWARE.
          </xs:element>
          <xs:element name="software_kansbepaling"
                      type="software_kansbepaling_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_61020"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="1"/>
          <xs:element name="a_priori_kans_op_trisomie_21_down-start"
                      minOccurs="0"
@@ -7700,7 +7834,7 @@ SOFTWARE.
          </xs:element>
          <xs:element name="a_priori_kans_op_trisomie_21_down"
                      type="a_priori_kans_op_trisomie_21_down_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_61050"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="1"/>
          <xs:element name="a_priori_kans_op_trisomie_18_edwards-start"
                      minOccurs="0"
@@ -7770,7 +7904,7 @@ SOFTWARE.
          </xs:element>
          <xs:element name="gehanteerde_gegevens"
                      type="gehanteerde_gegevens_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82313"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="1"/>
          <xs:element name="adaextension-start" minOccurs="0" maxOccurs="1">
             <xs:complexType>
@@ -7800,7 +7934,7 @@ SOFTWARE.
          </xs:element>
          <xs:element name="naam_kansbepaling_softwareapplicatie"
                      type="naam_kansbepaling_softwareapplicatie_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_61025"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="1"/>
          <xs:element name="versie_softwareapplicatie-start" minOccurs="0" maxOccurs="1">
             <xs:complexType>
@@ -7810,7 +7944,7 @@ SOFTWARE.
          </xs:element>
          <xs:element name="versie_softwareapplicatie"
                      type="versie_softwareapplicatie_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_61030"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="1"/>
          <xs:element name="adaextension-start" minOccurs="0" maxOccurs="1">
             <xs:complexType>
@@ -7838,7 +7972,7 @@ SOFTWARE.
          </xs:element>
          <xs:element name="zwangerschapsduur"
                      type="zwangerschapsduur_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82300"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="1"/>
          <xs:element name="actuele_aantal_foetus-start" minOccurs="0" maxOccurs="1">
             <xs:complexType>
@@ -8089,7 +8223,7 @@ SOFTWARE.
          <xs:element name="vaginaal_toucher"
                      type="vaginaal_toucher_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_1421"
                      minOccurs="0"
-                     maxOccurs="unbounded"/>
+                     maxOccurs="1"/>
          <xs:element name="adaextension-start" minOccurs="0" maxOccurs="1">
             <xs:complexType>
                <xs:attribute name="hidden" fixed="true"/>
@@ -8137,7 +8271,7 @@ SOFTWARE.
          <xs:element name="nipt__uitslag"
                      type="nipt__uitslag_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82374"
                      minOccurs="0"
-                     maxOccurs="unbounded"/>
+                     maxOccurs="1"/>
          <xs:element name="hb-start" minOccurs="0" maxOccurs="1">
             <xs:complexType>
                <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10814"/>
@@ -8197,7 +8331,7 @@ SOFTWARE.
          <xs:element name="rhesus_d_factor_foetus"
                      type="rhesus_d_factor_foetus_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_40051"
                      minOccurs="0"
-                     maxOccurs="unbounded"/>
+                     maxOccurs="1"/>
          <xs:element name="urine-start" minOccurs="0" maxOccurs="1">
             <xs:complexType>
                <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82076"/>
@@ -8327,7 +8461,7 @@ SOFTWARE.
          <xs:element name="welke_irregulaire_antistoffen_vrouw_aanwezig"
                      type="welke_irregulaire_antistoffen_vrouw_aanwezig_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_10813"
                      minOccurs="0"
-                     maxOccurs="unbounded"/>
+                     maxOccurs="1"/>
          <xs:element name="adaextension-start" minOccurs="0" maxOccurs="1">
             <xs:complexType>
                <xs:attribute name="hidden" fixed="true"/>
@@ -8471,7 +8605,7 @@ SOFTWARE.
          <xs:element name="glucose"
                      type="glucose_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82079"
                      minOccurs="0"
-                     maxOccurs="unbounded"/>
+                     maxOccurs="1"/>
          <xs:element name="toelichting-start" minOccurs="0" maxOccurs="1">
             <xs:complexType>
                <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82075"/>
@@ -8808,7 +8942,7 @@ SOFTWARE.
          </xs:element>
          <xs:element name="portio"
                      type="portio_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_20612"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="1"/>
          <xs:element name="positie_portio-start" minOccurs="0" maxOccurs="1">
             <xs:complexType>
@@ -8828,7 +8962,7 @@ SOFTWARE.
          </xs:element>
          <xs:element name="ontsluiting"
                      type="ontsluiting_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_20613"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="1"/>
          <xs:element name="vliezen-start" minOccurs="0" maxOccurs="1">
             <xs:complexType>
@@ -8838,7 +8972,7 @@ SOFTWARE.
          </xs:element>
          <xs:element name="vliezen"
                      type="vliezen_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_20614"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="1"/>
          <xs:element name="indaling_hodge-start" minOccurs="0" maxOccurs="1">
             <xs:complexType>
@@ -8848,7 +8982,7 @@ SOFTWARE.
          </xs:element>
          <xs:element name="indaling_hodge"
                      type="indaling_hodge_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_20615"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="1"/>
          <xs:element name="aard_van_het_voorliggend_deel-start"
                      minOccurs="0"
@@ -9656,7 +9790,7 @@ SOFTWARE.
       <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Straatnaam - 1..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Straatnaam - 0..1 </xs:documentation>
    </xs:annotation>
    <xs:complexType name="straatnaam_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_10032">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10032"/>
@@ -9668,7 +9802,7 @@ SOFTWARE.
       <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Huisnummer - 1..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Huisnummer - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="huisnummer_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_10033">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10033"/>
@@ -9692,7 +9826,7 @@ SOFTWARE.
       <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Postcode - 1..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Postcode - 0..1 </xs:documentation>
    </xs:annotation>
    <xs:complexType name="postcode_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_10041">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10041"/>
@@ -9704,7 +9838,7 @@ SOFTWARE.
       <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Plaatsnaam - 1..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Plaatsnaam - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="plaatsnaam_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_10036">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10036"/>
@@ -9716,7 +9850,7 @@ SOFTWARE.
       <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Land - 1..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Land - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="land_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_10038">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10038"/>
@@ -9981,6 +10115,81 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
+      <xs:documentation>Type for concept item: Telefoonnummer - 0..1 R</xs:documentation>
+   </xs:annotation>
+   <xs:complexType name="telefoonnummer_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82696">
+      <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82696"/>
+      <xs:attribute name="value">
+         <xs:simpleType>
+            <xs:restriction base="xs:string"/>
+         </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
+   </xs:complexType>
+   <xs:annotation>
+      <xs:documentation>Type for concept item: TelecomType - 0..1 R</xs:documentation>
+   </xs:annotation>
+   <xs:complexType name="telecom_type_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82697">
+      <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82697"/>
+      <xs:attribute name="value">
+         <xs:simpleType>
+            <xs:restriction base="xs:string"/>
+         </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="displayName" type="xs:string" use="optional"/>
+      <xs:attribute name="code" type="xs:string"/>
+      <xs:attribute name="codeSystem" type="xs:string"/>
+      <xs:attribute name="codeSystemName" type="xs:string" use="optional"/>
+      <xs:attribute name="codeSystemVersion" type="xs:string" use="optional"/>
+      <xs:attribute name="originalText" type="xs:string" use="optional"/>
+   </xs:complexType>
+   <xs:annotation>
+      <xs:documentation>Type for concept item: NummerSoort - 0..1 R</xs:documentation>
+   </xs:annotation>
+   <xs:complexType name="nummer_soort_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82698">
+      <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82698"/>
+      <xs:attribute name="value">
+         <xs:simpleType>
+            <xs:restriction base="xs:string"/>
+         </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="displayName" type="xs:string" use="optional"/>
+      <xs:attribute name="code" type="xs:string"/>
+      <xs:attribute name="codeSystem" type="xs:string"/>
+      <xs:attribute name="codeSystemName" type="xs:string" use="optional"/>
+      <xs:attribute name="codeSystemVersion" type="xs:string" use="optional"/>
+      <xs:attribute name="originalText" type="xs:string" use="optional"/>
+   </xs:complexType>
+   <xs:annotation>
+      <xs:documentation>Type for concept item: EmailAdres - 0..1 R</xs:documentation>
+   </xs:annotation>
+   <xs:complexType name="email_adres_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82700">
+      <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82700"/>
+      <xs:attribute name="value">
+         <xs:simpleType>
+            <xs:restriction base="xs:string"/>
+         </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
+   </xs:complexType>
+   <xs:annotation>
+      <xs:documentation>Type for concept item: EmailSoort - 0..1 R</xs:documentation>
+   </xs:annotation>
+   <xs:complexType name="email_soort_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82701">
+      <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82701"/>
+      <xs:attribute name="value">
+         <xs:simpleType>
+            <xs:restriction base="xs:string"/>
+         </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="displayName" type="xs:string" use="optional"/>
+      <xs:attribute name="code" type="xs:string"/>
+      <xs:attribute name="codeSystem" type="xs:string"/>
+      <xs:attribute name="codeSystemName" type="xs:string" use="optional"/>
+      <xs:attribute name="codeSystemVersion" type="xs:string" use="optional"/>
+      <xs:attribute name="originalText" type="xs:string" use="optional"/>
+   </xs:complexType>
+   <xs:annotation>
       <xs:documentation>Type for concept item: Etniciteit - 0..1 </xs:documentation>
    </xs:annotation>
    <xs:complexType name="etniciteit_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_10400">
@@ -10015,9 +10224,9 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Communicatietaal - 0..* </xs:documentation>
+      <xs:documentation>Type for concept item: CommunicatieTaal - 0..* </xs:documentation>
    </xs:annotation>
-   <xs:complexType name="communicatietaal_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82371">
+   <xs:complexType name="communicatie_taal_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82371">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82371"/>
       <xs:attribute name="value">
          <xs:simpleType>
@@ -11053,7 +11262,7 @@ SOFTWARE.
       <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Medicatiegebruik? - 1..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Medicatiegebruik? - 0..1 </xs:documentation>
    </xs:annotation>
    <xs:complexType name="medicatiegebruikq_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_10801">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10801"/>
@@ -11207,13 +11416,13 @@ SOFTWARE.
       <xs:restriction base="xs:date"/>
    </xs:simpleType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: BMI vrouw - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: BMI vrouw - 1..1 </xs:documentation>
    </xs:annotation>
    <xs:complexType name="bmi_vrouw_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_10806">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10806"/>
       <xs:attribute name="value">
          <xs:simpleType>
-            <xs:union memberTypes="bmi_vrouw_1_datatype_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_10806 empty_string"/>
+            <xs:union memberTypes="bmi_vrouw_1_datatype_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_10806 "/>
          </xs:simpleType>
       </xs:attribute>
       <xs:attribute name="unit">
@@ -11389,7 +11598,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Identificatie van de zwangerschap - 1..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Identificatie van de zwangerschap - 0..1 </xs:documentation>
    </xs:annotation>
    <xs:complexType name="identificatie_van_de_zwangerschap_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_80627">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80627"/>
@@ -11456,13 +11665,13 @@ SOFTWARE.
       </xs:restriction>
    </xs:simpleType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Pariteit - 1..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Pariteit - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="pariteit_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_20153">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20153"/>
       <xs:attribute name="value">
          <xs:simpleType>
-            <xs:union memberTypes="pariteit_1_datatype_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_20153 "/>
+            <xs:union memberTypes="pariteit_1_datatype_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_20153 empty_string"/>
          </xs:simpleType>
       </xs:attribute>
       <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
@@ -11669,13 +11878,13 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Hoeveelling - 1..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Hoeveelling - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="hoeveelling_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_20020">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20020"/>
       <xs:attribute name="value">
          <xs:simpleType>
-            <xs:union memberTypes="hoeveelling_1_datatype_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_20020 "/>
+            <xs:union memberTypes="hoeveelling_1_datatype_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_20020 empty_string"/>
          </xs:simpleType>
       </xs:attribute>
       <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
@@ -11885,7 +12094,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Trisomie in de anamnese? - 1..* </xs:documentation>
+      <xs:documentation>Type for concept item: Trisomie in de anamnese? - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="trisomie_in_de_anamneseq_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_20170">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20170"/>
@@ -12196,7 +12405,7 @@ SOFTWARE.
       <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Soort drugs - 1..* </xs:documentation>
+      <xs:documentation>Type for concept item: Soort drugs - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="soort_drugs_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82103">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82103"/>
@@ -13008,7 +13217,7 @@ SOFTWARE.
       <xs:restriction base="xs:decimal"/>
    </xs:simpleType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Interventie - 1..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Interventie - 0..1 </xs:documentation>
    </xs:annotation>
    <xs:complexType name="interventie_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82376">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82376"/>
@@ -13213,7 +13422,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Reden verzending - 1..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Reden verzending - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="reden_verzending_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82088">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82088"/>
@@ -14803,7 +15012,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Telefoonnummer - 1..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Telefoonnummer - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="telefoonnummer_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82367">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82367"/>
@@ -14815,7 +15024,7 @@ SOFTWARE.
       <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Straatnaam - 1..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Straatnaam - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="straatnaam_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82133">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82133"/>
@@ -14827,7 +15036,7 @@ SOFTWARE.
       <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Huisnummer - 1..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Huisnummer - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="huisnummer_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82134">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82134"/>
@@ -14839,7 +15048,7 @@ SOFTWARE.
       <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Huisletter/huisnummertoevoeging - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Huisletter/huisnummertoevoeging - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="huisletterhuisnummertoevoeging_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82135">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82135"/>
@@ -14851,7 +15060,7 @@ SOFTWARE.
       <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Postcode - 1..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Postcode - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="postcode_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82136">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82136"/>
@@ -14863,7 +15072,7 @@ SOFTWARE.
       <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Plaatsnaam - 1..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Plaatsnaam - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="plaatsnaam_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82137">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82137"/>
@@ -14875,7 +15084,7 @@ SOFTWARE.
       <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Land - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Land - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="land_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82138">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82138"/>
@@ -14916,7 +15125,7 @@ SOFTWARE.
       <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Geslacht (administratief) - 1..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Geslacht (administratief) - 0..1 </xs:documentation>
    </xs:annotation>
    <xs:complexType name="geslacht_administratief_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_40040">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40040"/>
@@ -15464,7 +15673,7 @@ SOFTWARE.
       <xs:restriction base="xs:dateTime"/>
    </xs:simpleType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Methode - 1..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Methode - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="methode_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82092">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82092"/>
@@ -15481,7 +15690,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Middel - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Middel - 1..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="middel_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82095">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82095"/>
@@ -15498,7 +15707,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Toediening - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Toediening - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="toediening_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82096">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82096"/>
@@ -15532,7 +15741,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Reden - 1..* </xs:documentation>
+      <xs:documentation>Type for concept item: Reden - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="reden_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82098">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82098"/>
@@ -17104,7 +17313,7 @@ SOFTWARE.
       <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Specificatie congenitale afwijking - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Specificatie congenitale afwijking - 1..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="specificatie_congenitale_afwijking_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_40090">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40090"/>
@@ -17617,13 +17826,13 @@ SOFTWARE.
       <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Datum onderzoek - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Datum onderzoek - 1..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="datum_onderzoek_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_50020">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.50020"/>
       <xs:attribute name="value">
          <xs:simpleType>
-            <xs:union memberTypes="datum_onderzoek_1_datatype_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_50020 empty_string"/>
+            <xs:union memberTypes="datum_onderzoek_1_datatype_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_50020 "/>
          </xs:simpleType>
       </xs:attribute>
       <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
@@ -17635,7 +17844,7 @@ SOFTWARE.
       <xs:union memberTypes="xs:date xs:dateTime"/>
    </xs:simpleType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Naam uitvoerder onderzoek - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Naam uitvoerder onderzoek - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="naam_uitvoerder_onderzoek_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_80754">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80754"/>
@@ -17647,7 +17856,7 @@ SOFTWARE.
       <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Zorgverlenertype - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Zorgverlenertype - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="zorgverlenertype_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82068">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82068"/>
@@ -17664,7 +17873,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Zwangerschapsduur op datum onderzoek - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Zwangerschapsduur op datum onderzoek - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="zwangerschapsduur_op_datum_onderzoek_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_50021">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.50021"/>
@@ -17706,7 +17915,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Onderzoektype 'NT-meting' - 1..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Onderzoektype 'NT-meting' - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="onderzoektype_ntmeting_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_50110">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.50110"/>
@@ -17723,7 +17932,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Onderzoektype 'SEO' - 1..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Onderzoektype 'SEO' - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="onderzoektype_seo_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_50120">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.50120"/>
@@ -17740,7 +17949,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Onderzoektype 'GUO' - 1..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Onderzoektype 'GUO' - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="onderzoektype_guo_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_50130">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.50130"/>
@@ -17757,7 +17966,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Onderzoektype 'Kansbepaling combinatietest' - 1..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Onderzoektype 'Kansbepaling combinatietest' - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="onderzoektype_kansbepaling_combinatietest_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_50140">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.50140"/>
@@ -17774,7 +17983,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: SEO-type - 1..1 </xs:documentation>
+      <xs:documentation>Type for concept item: SEO-type - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="seotype_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_51010">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.51010"/>
@@ -17791,7 +18000,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Conclusie SEO - 1..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Conclusie SEO - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="conclusie_seo_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82330">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82330"/>
@@ -17808,7 +18017,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Advies SEO - 1..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Advies SEO - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="advies_seo_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82331">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82331"/>
@@ -17843,7 +18052,7 @@ SOFTWARE.
       <xs:union memberTypes="xs:date xs:dateTime"/>
    </xs:simpleType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Indicatie prenatale diagnostiek obv screening - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Indicatie prenatale diagnostiek obv screening - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="indicatie_prenatale_diagnostiek_obv_screening_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_20470">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20470"/>
@@ -17860,7 +18069,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Foetus identificatie - 1..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Foetus identificatie - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="foetus_identificatie_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_60005">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.60005"/>
@@ -17873,7 +18082,7 @@ SOFTWARE.
       <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Foetus volgletter - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Foetus volgletter - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="foetus_volgletter_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_60010">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.60010"/>
@@ -17890,7 +18099,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: CRL - 0..* </xs:documentation>
+      <xs:documentation>Type for concept item: CRL - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="crl_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_60020">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.60020"/>
@@ -17917,7 +18126,7 @@ SOFTWARE.
       </xs:restriction>
    </xs:simpleType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: BPD - 0..* </xs:documentation>
+      <xs:documentation>Type for concept item: BPD - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="bpd_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_60030">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.60030"/>
@@ -17944,7 +18153,7 @@ SOFTWARE.
       </xs:restriction>
    </xs:simpleType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: BPD percentiel - 0..* </xs:documentation>
+      <xs:documentation>Type for concept item: BPD percentiel - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="bpd_percentiel_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_60031">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.60031"/>
@@ -17969,7 +18178,7 @@ SOFTWARE.
       <xs:restriction base="xs:decimal"/>
    </xs:simpleType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: NT in mm - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: NT in mm - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="nt_in_mm_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_60040">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.60040"/>
@@ -17996,7 +18205,7 @@ SOFTWARE.
       </xs:restriction>
    </xs:simpleType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: HC - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: HC - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="hc_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_60060">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.60060"/>
@@ -18023,7 +18232,7 @@ SOFTWARE.
       </xs:restriction>
    </xs:simpleType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: HC percentiel - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: HC percentiel - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="hc_percentiel_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_60061">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.60061"/>
@@ -18048,7 +18257,7 @@ SOFTWARE.
       <xs:restriction base="xs:decimal"/>
    </xs:simpleType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: TCD - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: TCD - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="tcd_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_60070">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.60070"/>
@@ -18075,7 +18284,7 @@ SOFTWARE.
       </xs:restriction>
    </xs:simpleType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: AC - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: AC - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="ac_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_60080">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.60080"/>
@@ -18102,7 +18311,7 @@ SOFTWARE.
       </xs:restriction>
    </xs:simpleType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: AC percentiel - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: AC percentiel - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="ac_percentiel_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_60081">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.60081"/>
@@ -18127,7 +18336,7 @@ SOFTWARE.
       <xs:restriction base="xs:decimal"/>
    </xs:simpleType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: FL - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: FL - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="fl_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_60100">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.60100"/>
@@ -18154,7 +18363,7 @@ SOFTWARE.
       </xs:restriction>
    </xs:simpleType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: FL percentiel - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: FL percentiel - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="fl_percentiel_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_60101">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.60101"/>
@@ -18206,7 +18415,7 @@ SOFTWARE.
       </xs:restriction>
    </xs:simpleType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Hartactie aanwezig? - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Hartactie aanwezig? - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="hartactie_aanwezigq_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_80943">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80943"/>
@@ -18242,7 +18451,7 @@ SOFTWARE.
       <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Regelmaat hartslag - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Regelmaat hartslag - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="regelmaat_hartslag_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_81007">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.81007"/>
@@ -18259,7 +18468,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Frequentie hartslag - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Frequentie hartslag - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="frequentie_hartslag_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_81008">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.81008"/>
@@ -18276,7 +18485,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Ligging - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Ligging - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="ligging_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_80944">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80944"/>
@@ -18293,7 +18502,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Beweging - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Beweging - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="beweging_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_80985">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80985"/>
@@ -18310,7 +18519,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Vruchtwater - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Vruchtwater - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="vruchtwater_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_80945">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80945"/>
@@ -18327,7 +18536,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Placentalokalisatie - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Placentalokalisatie - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="placentalokalisatie_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_80946">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80946"/>
@@ -18344,7 +18553,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Ostium - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Ostium - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="ostium_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82071">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82071"/>
@@ -18361,7 +18570,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Over sectio litteken? - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Over sectio litteken? - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="over_sectio_littekenq_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82072">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82072"/>
@@ -18397,7 +18606,7 @@ SOFTWARE.
       <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Afwijking placenta/vliezen/navelstreng? - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Afwijking placenta/vliezen/navelstreng? - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="afwijking_placentavliezennavelstrengq_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82287">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82287"/>
@@ -18433,7 +18642,7 @@ SOFTWARE.
       <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Afwijking placenta/vliezen/navelstreng - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Afwijking placenta/vliezen/navelstreng - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="afwijking_placentavliezennavelstreng_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82288">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82288"/>
@@ -18450,7 +18659,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Cervixlengte - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Cervixlengte - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="cervixlengte_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82073">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82073"/>
@@ -18475,7 +18684,7 @@ SOFTWARE.
       <xs:restriction base="xs:decimal"/>
    </xs:simpleType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Navelstreng vaten - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Navelstreng vaten - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="navelstreng_vaten_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_80947">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80947"/>
@@ -18492,7 +18701,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Opmerkingen - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Opmerkingen - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="opmerkingen_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_80948">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80948"/>
@@ -18504,7 +18713,7 @@ SOFTWARE.
       <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Algehele beoordeling - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Algehele beoordeling - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="algehele_beoordeling_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_60200">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.60200"/>
@@ -18521,7 +18730,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Neuraalbuis van de wervelkolom - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Neuraalbuis van de wervelkolom - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="neuraalbuis_van_de_wervelkolom_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82237">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82237"/>
@@ -18538,7 +18747,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Hersenen neuraalbuisdefect - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Hersenen neuraalbuisdefect - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="hersenen_neuraalbuisdefect_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82240">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82240"/>
@@ -18555,7 +18764,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Hersenen overige - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Hersenen overige - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="hersenen_overige_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82241">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82241"/>
@@ -18572,7 +18781,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Aangezicht - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Aangezicht - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="aangezicht_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82242">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82242"/>
@@ -18589,7 +18798,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Nek / huid - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Nek / huid - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="nek__huid_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82243">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82243"/>
@@ -18606,7 +18815,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Hart - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Hart - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="hart_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82244">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82244"/>
@@ -18623,7 +18832,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Longen - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Longen - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="longen_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82245">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82245"/>
@@ -18640,7 +18849,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Diafragma - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Diafragma - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="diafragma_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82246">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82246"/>
@@ -18657,7 +18866,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Buikwand - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Buikwand - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="buikwand_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82247">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82247"/>
@@ -18674,7 +18883,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Maag-darm - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Maag-darm - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="maagdarm_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82248">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82248"/>
@@ -18691,7 +18900,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Nieren-blaas - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Nieren-blaas - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="nierenblaas_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82249">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82249"/>
@@ -18708,7 +18917,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Extremiteiten - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Extremiteiten - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="extremiteiten_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82250">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82250"/>
@@ -18725,7 +18934,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Skelet - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Skelet - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="skelet_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82251">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82251"/>
@@ -18742,7 +18951,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Echodense focus in het hart - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Echodense focus in het hart - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="echodense_focus_in_het_hart_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82239">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82239"/>
@@ -18759,7 +18968,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Plexus choroideus cysten - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Plexus choroideus cysten - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="plexus_choroideus_cysten_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82258">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82258"/>
@@ -18776,7 +18985,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Verdikte nekplooi / nekhuid - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Verdikte nekplooi / nekhuid - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="verdikte_nekplooi__nekhuid_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82259">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82259"/>
@@ -18793,7 +19002,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Echodense darmen - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Echodense darmen - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="echodense_darmen_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82260">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82260"/>
@@ -18810,7 +19019,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Milde ventriculomegalie - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Milde ventriculomegalie - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="milde_ventriculomegalie_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82261">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82261"/>
@@ -18827,7 +19036,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Pyelectasie - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Pyelectasie - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="pyelectasie_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82262">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82262"/>
@@ -18844,7 +19053,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Kort femur - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Kort femur - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="kort_femur_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82263">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82263"/>
@@ -18861,7 +19070,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: 2 navelstrengvaten - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: 2 navelstrengvaten - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="_2_navelstrengvaten_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82264">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82264"/>
@@ -18878,7 +19087,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Biometrie - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Biometrie - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="biometrie_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82252">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82252"/>
@@ -18895,7 +19104,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Vruchtwatercompartiment - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Vruchtwatercompartiment - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="vruchtwatercompartiment_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82253">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82253"/>
@@ -18912,7 +19121,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Navelstreng - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Navelstreng - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="navelstreng_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82254">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82254"/>
@@ -18929,7 +19138,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Placenta afwijkingen - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Placenta afwijkingen - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="placenta_afwijkingen_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82255">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82255"/>
@@ -18946,7 +19155,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Wervelkolom neuraalbuisdefect - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Wervelkolom neuraalbuisdefect - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="wervelkolom_neuraalbuisdefect_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82256">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82256"/>
@@ -18963,7 +19172,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Wervelkolom overige - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Wervelkolom overige - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="wervelkolom_overige_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82257">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82257"/>
@@ -18980,7 +19189,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Echoparameters BPD, HC, AC, FL - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Echoparameters BPD, HC, AC, FL - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="echoparameters_bpd_hc_ac_fl_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_60102">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.60102"/>
@@ -18992,7 +19201,7 @@ SOFTWARE.
       <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Datum kansbepaling - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Datum kansbepaling - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="datum_kansbepaling_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_61010">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.61010"/>
@@ -19004,7 +19213,7 @@ SOFTWARE.
       <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Methode kansbepaling - 1..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Methode kansbepaling - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="methode_kansbepaling_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_61040">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.61040"/>
@@ -19021,7 +19230,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Naam kansbepaling softwareapplicatie - 1..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Naam kansbepaling softwareapplicatie - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="naam_kansbepaling_softwareapplicatie_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_61025">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.61025"/>
@@ -19038,13 +19247,13 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Versie softwareapplicatie - 1..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Versie softwareapplicatie - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="versie_softwareapplicatie_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_61030">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.61030"/>
       <xs:attribute name="value">
          <xs:simpleType>
-            <xs:union memberTypes="versie_softwareapplicatie_1_datatype_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_61030 "/>
+            <xs:union memberTypes="versie_softwareapplicatie_1_datatype_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_61030 empty_string"/>
          </xs:simpleType>
       </xs:attribute>
       <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
@@ -19059,7 +19268,7 @@ SOFTWARE.
       </xs:restriction>
    </xs:simpleType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: A priori kans op trisomie 21 (Down) - 1..1 </xs:documentation>
+      <xs:documentation>Type for concept item: A priori kans op trisomie 21 (Down) - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="a_priori_kans_op_trisomie_21_down_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_61050">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.61050"/>
@@ -19071,7 +19280,7 @@ SOFTWARE.
       <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: A priori kans op trisomie 18 (Edwards) - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: A priori kans op trisomie 18 (Edwards) - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="a_priori_kans_op_trisomie_18_edwards_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_61060">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.61060"/>
@@ -19083,7 +19292,7 @@ SOFTWARE.
       <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: A priori kans op trisomie 13 (Patau) - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: A priori kans op trisomie 13 (Patau) - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="a_priori_kans_op_trisomie_13_patau_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_61070">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.61070"/>
@@ -19095,7 +19304,7 @@ SOFTWARE.
       <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Combinatietest kans op trisomie 21 - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Combinatietest kans op trisomie 21 - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="combinatietest_kans_op_trisomie_21_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_61080">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.61080"/>
@@ -19107,7 +19316,7 @@ SOFTWARE.
       <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Combinatietest kans op trisomie 18 - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Combinatietest kans op trisomie 18 - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="combinatietest_kans_op_trisomie_18_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_61100">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.61100"/>
@@ -19119,7 +19328,7 @@ SOFTWARE.
       <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Combinatietest kans op trisomie 13 - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Combinatietest kans op trisomie 13 - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="combinatietest_kans_op_trisomie_13_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_61110">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.61110"/>
@@ -19131,13 +19340,13 @@ SOFTWARE.
       <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Zwangerschapsduur - 1..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Zwangerschapsduur - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="zwangerschapsduur_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82300">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82300"/>
       <xs:attribute name="value">
          <xs:simpleType>
-            <xs:union memberTypes="zwangerschapsduur_1_datatype_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82300 "/>
+            <xs:union memberTypes="zwangerschapsduur_1_datatype_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82300 empty_string"/>
          </xs:simpleType>
       </xs:attribute>
       <xs:attribute name="unit">
@@ -19156,7 +19365,7 @@ SOFTWARE.
       <xs:restriction base="xs:decimal"/>
    </xs:simpleType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Actuele aantal foetus - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Actuele aantal foetus - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="actuele_aantal_foetus_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82301">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82301"/>
@@ -19182,7 +19391,7 @@ SOFTWARE.
       </xs:restriction>
    </xs:simpleType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Chorioniciteit - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Chorioniciteit - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="chorioniciteit_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82302">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82302"/>
@@ -19199,7 +19408,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Lengte - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Lengte - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="lengte_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82303">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82303"/>
@@ -19224,7 +19433,7 @@ SOFTWARE.
       <xs:restriction base="xs:decimal"/>
    </xs:simpleType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Gewicht (gemeten) - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Gewicht (gemeten) - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="gewicht_gemeten_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82304">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82304"/>
@@ -19252,7 +19461,7 @@ SOFTWARE.
       </xs:restriction>
    </xs:simpleType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Diabetes mellitus? - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Diabetes mellitus? - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="diabetes_mellitusq_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82305">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82305"/>
@@ -19288,7 +19497,7 @@ SOFTWARE.
       <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: IVF / ICSI graviditeit? - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: IVF / ICSI graviditeit? - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="ivf__icsi_graviditeitq_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82306">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82306"/>
@@ -19324,7 +19533,7 @@ SOFTWARE.
       <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Trisomie in de anamnese? - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Trisomie in de anamnese? - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="trisomie_in_de_anamneseq_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82307">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82307"/>
@@ -19360,7 +19569,7 @@ SOFTWARE.
       <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Gehanteerde rookgewoonte? - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Gehanteerde rookgewoonte? - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="gehanteerde_rookgewoonteq_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_61200">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.61200"/>
@@ -19396,7 +19605,7 @@ SOFTWARE.
       <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Etniciteit - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Etniciteit - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="etniciteit_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82308">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82308"/>
@@ -19413,7 +19622,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Gehanteerde PAPP-A concentratie in mIU/l - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Gehanteerde PAPP-A concentratie in mIU/l - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="gehanteerde_pappa_concentratie_in_m_iul_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_61220">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.61220"/>
@@ -19440,7 +19649,7 @@ SOFTWARE.
       </xs:restriction>
    </xs:simpleType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Gehanteerde PAPP-A in MoM - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Gehanteerde PAPP-A in MoM - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="gehanteerde_pappa_in_mo_m_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_61230">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.61230"/>
@@ -19467,7 +19676,7 @@ SOFTWARE.
       </xs:restriction>
    </xs:simpleType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Gehanteerde vrij β-hCG concentratie in ng/ml - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Gehanteerde vrij β-hCG concentratie in ng/ml - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="gehanteerde_vrij_h_cg_concentratie_in_ngml_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_61240">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.61240"/>
@@ -19494,7 +19703,7 @@ SOFTWARE.
       </xs:restriction>
    </xs:simpleType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Gehanteerde vrij β-hCG in MoM - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Gehanteerde vrij β-hCG in MoM - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="gehanteerde_vrij_h_cg_in_mo_m_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_61250">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.61250"/>
@@ -19521,7 +19730,7 @@ SOFTWARE.
       </xs:restriction>
    </xs:simpleType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Gehanteerde corrected PAPP-A - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Gehanteerde corrected PAPP-A - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="gehanteerde_corrected_pappa_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_61260">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.61260"/>
@@ -19548,7 +19757,7 @@ SOFTWARE.
       </xs:restriction>
    </xs:simpleType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Gehanteerde corrected vrij β-hCG - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Gehanteerde corrected vrij β-hCG - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="gehanteerde_corrected_vrij_h_cg_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_61270">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.61270"/>
@@ -19575,7 +19784,7 @@ SOFTWARE.
       </xs:restriction>
    </xs:simpleType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Gehanteerde datum NT-meting - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Gehanteerde datum NT-meting - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="gehanteerde_datum_ntmeting_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_61280">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.61280"/>
@@ -19587,7 +19796,7 @@ SOFTWARE.
       <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: NT in mm - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: NT in mm - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="nt_in_mm_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82309">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82309"/>
@@ -19614,7 +19823,7 @@ SOFTWARE.
       </xs:restriction>
    </xs:simpleType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: NT in MoM - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: NT in MoM - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="nt_in_mo_m_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82310">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82310"/>
@@ -19641,7 +19850,7 @@ SOFTWARE.
       </xs:restriction>
    </xs:simpleType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: CRL - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: CRL - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="crl_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82311">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82311"/>
@@ -19695,7 +19904,7 @@ SOFTWARE.
       </xs:restriction>
    </xs:simpleType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Invasieve prenatale diagnostiek - 0..* </xs:documentation>
+      <xs:documentation>Type for concept item: Invasieve prenatale diagnostiek - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="invasieve_prenatale_diagnostiek_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82227">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82227"/>
@@ -19712,7 +19921,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Bloedgroep vrouw - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Bloedgroep vrouw - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="bloedgroep_vrouw_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_80952">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80952"/>
@@ -19729,7 +19938,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Rhesus D Factor vrouw - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Rhesus D Factor vrouw - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="rhesus_d_factor_vrouw_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_80953">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80953"/>
@@ -19746,7 +19955,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Rhesus c Factor - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Rhesus c Factor - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="rhesus_c_factor_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_80954">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80954"/>
@@ -19763,7 +19972,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: HBsAg - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: HBsAg - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="hbs_ag_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_80955">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80955"/>
@@ -19780,7 +19989,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: HIV - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: HIV - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="hiv_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_80956">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80956"/>
@@ -19797,7 +20006,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Lues - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Lues - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="lues_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_80957">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80957"/>
@@ -19814,7 +20023,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Irregulaire antistoffen? - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Irregulaire antistoffen? - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="irregulaire_antistoffenq_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_10812">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10812"/>
@@ -19850,7 +20059,7 @@ SOFTWARE.
       <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Welke irregulaire antistoffen vrouw aanwezig. - 0..* </xs:documentation>
+      <xs:documentation>Type for concept item: Welke irregulaire antistoffen vrouw aanwezig. - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="welke_irregulaire_antistoffen_vrouw_aanwezig_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_10813">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10813"/>
@@ -19867,7 +20076,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: NIPT? - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: NIPT? - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="niptq_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82228">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82228"/>
@@ -19903,7 +20112,7 @@ SOFTWARE.
       <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: NIPT - uitslag - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: NIPT - uitslag - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="nipt__uitslag_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82229">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82229"/>
@@ -19920,7 +20129,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: NIPT - geslacht - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: NIPT - geslacht - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="nipt__geslacht_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82375">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82375"/>
@@ -19937,7 +20146,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Hb - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Hb - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="hb_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_10814">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10814"/>
@@ -19964,7 +20173,7 @@ SOFTWARE.
       </xs:restriction>
    </xs:simpleType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: MCV - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: MCV - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="mcv_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_80951">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80951"/>
@@ -19989,7 +20198,7 @@ SOFTWARE.
       <xs:restriction base="xs:decimal"/>
    </xs:simpleType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Hb-pathie - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Hb-pathie - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="hbpathie_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_80992">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80992"/>
@@ -20006,7 +20215,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Vit. B12 - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Vit. B12 - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="vit_b12_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_80993">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80993"/>
@@ -20031,7 +20240,7 @@ SOFTWARE.
       <xs:restriction base="xs:decimal"/>
    </xs:simpleType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Actief-B12 - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Actief-B12 - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="actiefb12_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_80994">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80994"/>
@@ -20056,7 +20265,7 @@ SOFTWARE.
       <xs:restriction base="xs:decimal"/>
    </xs:simpleType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Ferritine - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Ferritine - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="ferritine_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_80995">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80995"/>
@@ -20081,7 +20290,7 @@ SOFTWARE.
       <xs:restriction base="xs:decimal"/>
    </xs:simpleType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Foliumzuur - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Foliumzuur - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="foliumzuur_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_80996">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80996"/>
@@ -20106,7 +20315,7 @@ SOFTWARE.
       <xs:restriction base="xs:decimal"/>
    </xs:simpleType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Tijd - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Tijd - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="tijd_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82074">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82074"/>
@@ -20124,7 +20333,7 @@ SOFTWARE.
       <xs:restriction base="xs:dateTime"/>
    </xs:simpleType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Glucose - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Glucose - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="glucose_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_80961">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80961"/>
@@ -20149,7 +20358,7 @@ SOFTWARE.
       <xs:restriction base="xs:decimal"/>
    </xs:simpleType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Toelichting - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Toelichting - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="toelichting_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82075">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82075"/>
@@ -20161,7 +20370,7 @@ SOFTWARE.
       <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: TSH receptor antistoffen - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: TSH receptor antistoffen - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="tsh_receptor_antistoffen_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_80962">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80962"/>
@@ -20186,7 +20395,7 @@ SOFTWARE.
       <xs:restriction base="xs:decimal"/>
    </xs:simpleType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Vrij T4 - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Vrij T4 - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="vrij_t4_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_80964">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80964"/>
@@ -20211,7 +20420,7 @@ SOFTWARE.
       <xs:restriction base="xs:decimal"/>
    </xs:simpleType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: TSH - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: TSH - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="tsh_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_80965">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80965"/>
@@ -20236,7 +20445,7 @@ SOFTWARE.
       <xs:restriction base="xs:decimal"/>
    </xs:simpleType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Toxoplasmose IgG - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Toxoplasmose IgG - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="toxoplasmose_ig_g_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_80967">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80967"/>
@@ -20253,7 +20462,7 @@ SOFTWARE.
       <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Toxoplasmose IgM - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Toxoplasmose IgM - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="toxoplasmose_ig_m_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_80968">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80968"/>
@@ -20270,7 +20479,7 @@ SOFTWARE.
       <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Rubella IgG - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Rubella IgG - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="rubella_ig_g_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_80969">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80969"/>
@@ -20295,7 +20504,7 @@ SOFTWARE.
       <xs:restriction base="xs:decimal"/>
    </xs:simpleType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Rubella IgM - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Rubella IgM - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="rubella_ig_m_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_80970">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80970"/>
@@ -20312,7 +20521,7 @@ SOFTWARE.
       <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: CMV IgG - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: CMV IgG - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="cmv_ig_g_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_80971">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80971"/>
@@ -20329,7 +20538,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: CMV IgM - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: CMV IgM - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="cmv_ig_m_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_80972">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80972"/>
@@ -20346,7 +20555,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Herpes IgG - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Herpes IgG - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="herpes_ig_g_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_80973">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80973"/>
@@ -20363,7 +20572,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Herpes IgM - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Herpes IgM - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="herpes_ig_m_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_80974">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80974"/>
@@ -20380,7 +20589,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Parvovirus IgG - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Parvovirus IgG - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="parvovirus_ig_g_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_80975">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80975"/>
@@ -20397,7 +20606,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Parvovirus IgM - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Parvovirus IgM - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="parvovirus_ig_m_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_80976">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80976"/>
@@ -20414,7 +20623,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Rhesus D Factor foetus - 0..* </xs:documentation>
+      <xs:documentation>Type for concept item: Rhesus D Factor foetus - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="rhesus_d_factor_foetus_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_40051">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40051"/>
@@ -20431,7 +20640,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Ketonen - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Ketonen - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="ketonen_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82077">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82077"/>
@@ -20448,7 +20657,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Nitriet - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Nitriet - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="nitriet_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82080">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82080"/>
@@ -20465,7 +20674,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Aantal g proteïne, 24 uurs - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Aantal g proteïne, 24 uurs - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="aantal_g_proteine_24_uurs_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82082">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82082"/>
@@ -20490,7 +20699,7 @@ SOFTWARE.
       <xs:restriction base="xs:decimal"/>
    </xs:simpleType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Proteïne in urine - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Proteïne in urine - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="proteine_in_urine_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_20243">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20243"/>
@@ -20515,7 +20724,7 @@ SOFTWARE.
       <xs:restriction base="xs:decimal"/>
    </xs:simpleType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Urinekweek - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Urinekweek - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="urinekweek_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_80977">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80977"/>
@@ -20527,7 +20736,7 @@ SOFTWARE.
       <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Eiwit/creatinineratio - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Eiwit/creatinineratio - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="eiwitcreatinineratio_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_20242">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20242"/>
@@ -20552,7 +20761,7 @@ SOFTWARE.
       <xs:restriction base="xs:decimal"/>
    </xs:simpleType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Vaginakweek - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Vaginakweek - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="vaginakweek_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_80978">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80978"/>
@@ -20564,7 +20773,7 @@ SOFTWARE.
       <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Portio - 1..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Portio - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="portio_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_20612">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20612"/>
@@ -20581,7 +20790,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Positie portio - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Positie portio - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="positie_portio_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_82372">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82372"/>
@@ -20598,7 +20807,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Ontsluiting - 1..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Ontsluiting - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="ontsluiting_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_20613">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20613"/>
@@ -20615,7 +20824,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Vliezen - 1..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Vliezen - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="vliezen_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_20614">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20614"/>
@@ -20632,7 +20841,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Indaling Hodge - 1..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Indaling Hodge - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="indaling_hodge_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_20615">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20615"/>
@@ -20649,7 +20858,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Aard van het voorliggend deel - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Aard van het voorliggend deel - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="aard_van_het_voorliggend_deel_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_80616">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80616"/>
@@ -20666,7 +20875,7 @@ SOFTWARE.
       <xs:attribute name="originalText" type="xs:string" use="optional"/>
    </xs:complexType>
    <xs:annotation>
-      <xs:documentation>Type for concept item: Stand - 0..1 </xs:documentation>
+      <xs:documentation>Type for concept item: Stand - 0..1 R</xs:documentation>
    </xs:annotation>
    <xs:complexType name="stand_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_80618">
       <xs:attribute name="conceptId" fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80618"/>

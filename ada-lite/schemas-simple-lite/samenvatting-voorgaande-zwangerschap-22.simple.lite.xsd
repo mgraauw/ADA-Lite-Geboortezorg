@@ -877,7 +877,7 @@ SOFTWARE.
                      type="wijze_einde_zwangerschap">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">Wijze einde zwangerschap</xs:documentation>
-               <xs:documentation source="desc" xml:lang="nl-NL">De wijze waarop de zwangerschap geëindigd is.TOP (Termination of Pregnancy) is zwangerschapsafbreking na 16 weken. Bij TOP wordt hier 'Partus' geregistreerd, zodat dit meegenomen wordt als pariteit. Dit in tegenstelling tot APLA, waarmee een zwangerschapsafbreking (abortus) van minder dan 16 weken wordt bedoeld.</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">De wijze waarop de zwangerschap geëindigd is.TOP (Termination of Pregnancy) is zwangerschapsafbreking na 16+0 weken (16w0d). Bij TOP wordt hier 'Partus' geregistreerd, zodat dit meegenomen wordt als pariteit. Dit in tegenstelling tot APLA, waarmee een zwangerschapsafbreking (abortus) van minder dan 16 weken wordt bedoeld.</xs:documentation>
             </xs:annotation>
          </xs:element>
          <xs:element name="datum_einde_zwangerschap"

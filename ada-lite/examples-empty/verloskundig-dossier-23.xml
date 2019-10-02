@@ -50,9 +50,20 @@
          <land value=""/>
          <adrestype value="" enum=""/>
       </adres>
+      <contactgegevens>
+         <telefoonnummers>
+            <telefoonnummer value=""/>
+            <telecom_type value="" enum=""/>
+            <nummer_soort value="" enum=""/>
+         </telefoonnummers>
+         <email_adressen>
+            <email_adres value=""/>
+            <email_soort value="" enum=""/>
+         </email_adressen>
+      </contactgegevens>
       <etniciteit value="" enum=""/>
       <taalvaardigheid_vrouw_nederlandse_taal value="" enum=""/>
-      <communicatietaal value="" enum=""/>
+      <communicatie_taal value="" enum=""/>
       <opleidingsniveau value="" enum=""/>
       <beroep value=""/>
       <accepteert_bloedtransfusieq value=""/>

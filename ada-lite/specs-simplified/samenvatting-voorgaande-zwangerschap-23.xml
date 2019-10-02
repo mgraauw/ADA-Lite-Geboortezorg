@@ -5,6 +5,9 @@
          prefix="peri20-"
          transactionId="2.16.840.1.113883.2.4.3.11.60.90.77.4.2469"
          transactionEffectiveDate="2019-03-13T11:59:46"
+         transactionStatusCode="draft"
+         transactionType="stationary"
+         transactionIddisplay="peri-transaction-2469"
          shortName="voorgaande_zwangerschap_samenvatting_23"><!-- == Generated lite version of specification from full version for voorgaande_zwangerschap_samenvatting_23 == --><!-- == Source: design/specs-full/samenvatting-voorgaande-zwangerschap-23.xml == --><!-- == Generator: design/xsl/spec-full2spec-lite.xsl == -->
    <name language="nl-NL">Voorgaande zwangerschap samenvatting (2.3) </name>
    <desc language="nl-NL"/>
@@ -196,7 +199,16 @@
             <relationship type="SPEC"
                           ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.4.10021"
                           flexibility="2012-08-06T00:00:00"
-                          refdisplay="peri21-dataelement-10021"/>
+                          prefix="peri20-"
+                          datasetId="2.16.840.1.113883.2.4.3.11.60.90.77.1.4"
+                          datasetEffectiveDate="2012-08-06T00:00:00"
+                          datasetStatusCode="final"
+                          iType="item"
+                          iStatusCode="final"
+                          iEffectiveDate="2012-08-06T00:00:00"
+                          refdisplay="peri21-dataelement-10021">
+               <name language="nl-NL">Zorginstelling OID</name>
+            </relationship>
             <valueDomain type="identifier"/>
          </concept>
          <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10022"
@@ -366,7 +378,17 @@
       <relationship type="SPEC"
                     ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.2"
                     flexibility="2013-09-10T00:00:00"
-                    refdisplay="peri22-dataelement-2"/>
+                    prefix="peri20-"
+                    datasetId="2.16.840.1.113883.2.4.3.11.60.90.77.1.5"
+                    datasetEffectiveDate="2013-09-10T00:00:00"
+                    datasetStatusCode="final"
+                    iType="group"
+                    iStatusCode="final"
+                    iEffectiveDate="2013-09-10T00:00:00"
+                    iVersionLabel="22"
+                    refdisplay="peri22-dataelement-2">
+         <name language="nl-NL">Vrouw</name>
+      </relationship>
       <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10030"
                statusCode="final"
                effectiveDate="2016-09-08T00:00:00"
@@ -383,7 +405,16 @@
          <relationship type="SPEC"
                        ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.1.10030"
                        flexibility="2009-10-01T00:00:00"
-                       refdisplay="spirit1a-dataelement-10030"/>
+                       prefix="peri20-"
+                       datasetId="2.16.840.1.113883.2.4.3.11.60.90.77.1.1"
+                       datasetEffectiveDate="2009-10-01T00:00:00"
+                       datasetStatusCode="deprecated"
+                       iType="item"
+                       iStatusCode="final"
+                       iEffectiveDate="2009-10-01T00:00:00"
+                       refdisplay="spirit1a-dataelement-10030">
+            <name language="nl-NL">Burgerservicenummer</name>
+         </relationship>
          <valueDomain type="identifier">
             <property minLength="9" maxLength="9"/>
          </valueDomain>
@@ -558,7 +589,17 @@
       <relationship type="SPEC"
                     ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.3"
                     flexibility="2013-09-10T00:00:00"
-                    refdisplay="peri22-dataelement-3"/>
+                    prefix="peri20-"
+                    datasetId="2.16.840.1.113883.2.4.3.11.60.90.77.1.5"
+                    datasetEffectiveDate="2013-09-10T00:00:00"
+                    datasetStatusCode="final"
+                    iType="group"
+                    iStatusCode="final"
+                    iEffectiveDate="2013-09-10T00:00:00"
+                    iVersionLabel="22"
+                    refdisplay="peri22-dataelement-3">
+         <name language="nl-NL">Zwangerschap</name>
+      </relationship>
       <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80627"
                statusCode="draft"
                effectiveDate="2016-09-08T00:00:00"
@@ -638,7 +679,17 @@
          <relationship type="SPEC"
                        ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82268"
                        flexibility="2014-09-12T14:04:48"
-                       refdisplay="peri22-dataelement-82268"/>
+                       prefix="peri20-"
+                       datasetId="2.16.840.1.113883.2.4.3.11.60.90.77.1.5"
+                       datasetEffectiveDate="2013-09-10T00:00:00"
+                       datasetStatusCode="final"
+                       iType="group"
+                       iStatusCode="final"
+                       iEffectiveDate="2014-09-12T14:04:48"
+                       iVersionLabel="22"
+                       refdisplay="peri22-dataelement-82268">
+            <name language="nl-NL">Diagnose</name>
+         </relationship>
          <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82269"
                   statusCode="final"
                   effectiveDate="2016-09-08T00:00:00"
@@ -984,7 +1035,7 @@
                shortName="wijze_einde_zwangerschap">
          <name language="nl-NL">Wijze einde zwangerschap</name>
          <desc language="nl-NL">De wijze waarop de zwangerschap geëindigd is.<br clear="none"/>
-            <br clear="none"/>TOP (Termination of Pregnancy) is zwangerschapsafbreking na 16 weken. Bij TOP wordt hier 'Partus' geregistreerd, zodat dit meegenomen wordt als pariteit. Dit in tegenstelling tot APLA, waarmee een zwangerschapsafbreking (abortus) van minder dan 16 weken wordt bedoeld.<br clear="none"/>
+            <br clear="none"/>TOP (Termination of Pregnancy) is zwangerschapsafbreking na 16+0 weken (16w0d). Bij TOP wordt hier 'Partus' geregistreerd, zodat dit meegenomen wordt als pariteit. Dit in tegenstelling tot APLA, waarmee een zwangerschapsafbreking (abortus) van minder dan 16 weken wordt bedoeld.<br clear="none"/>
             </desc>
          <valueDomain type="code">
             <property/>
@@ -1107,7 +1158,17 @@
       <relationship type="SPEC"
                     ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.6"
                     flexibility="2013-09-10T00:00:00"
-                    refdisplay="peri22-dataelement-6"/>
+                    prefix="peri20-"
+                    datasetId="2.16.840.1.113883.2.4.3.11.60.90.77.1.5"
+                    datasetEffectiveDate="2013-09-10T00:00:00"
+                    datasetStatusCode="final"
+                    iType="group"
+                    iStatusCode="final"
+                    iEffectiveDate="2013-09-10T00:00:00"
+                    iVersionLabel="22"
+                    refdisplay="peri22-dataelement-6">
+         <name language="nl-NL">Bevalling</name>
+      </relationship>
       <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82291"
                statusCode="draft"
                effectiveDate="2016-09-08T00:00:00"
@@ -1123,7 +1184,17 @@
          <relationship type="SPEC"
                        ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82291"
                        flexibility="2014-09-15T12:23:55"
-                       refdisplay="peri22-dataelement-82291"/>
+                       prefix="peri20-"
+                       datasetId="2.16.840.1.113883.2.4.3.11.60.90.77.1.5"
+                       datasetEffectiveDate="2013-09-10T00:00:00"
+                       datasetStatusCode="final"
+                       iType="group"
+                       iStatusCode="final"
+                       iEffectiveDate="2014-09-15T12:23:55"
+                       iVersionLabel="22"
+                       refdisplay="peri22-dataelement-82291">
+            <name language="nl-NL">Diagnose bevalling</name>
+         </relationship>
          <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82381"
                   statusCode="draft"
                   effectiveDate="2016-09-08T00:00:00"
@@ -1190,7 +1261,17 @@
          <relationship type="SPEC"
                        ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20555"
                        flexibility="2013-09-10T00:00:00"
-                       refdisplay="peri22-dataelement-20555"/>
+                       prefix="peri20-"
+                       datasetId="2.16.840.1.113883.2.4.3.11.60.90.77.1.5"
+                       datasetEffectiveDate="2013-09-10T00:00:00"
+                       datasetStatusCode="final"
+                       iType="group"
+                       iStatusCode="final"
+                       iEffectiveDate="2013-09-10T00:00:00"
+                       iVersionLabel="22"
+                       refdisplay="peri22-dataelement-20555">
+            <name language="nl-NL">Interventies begin baring (groep)</name>
+         </relationship>
          <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20560"
                   statusCode="final"
                   effectiveDate="2016-09-08T00:00:00"
@@ -1292,7 +1373,16 @@
             <relationship type="SPEC"
                           ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20570"
                           flexibility="2013-09-10T00:00:00"
-                          refdisplay="peri22-dataelement-20570"/>
+                          prefix="peri20-"
+                          datasetId="2.16.840.1.113883.2.4.3.11.60.90.77.1.5"
+                          datasetEffectiveDate="2013-09-10T00:00:00"
+                          datasetStatusCode="final"
+                          iType="item"
+                          iStatusCode="final"
+                          iEffectiveDate="2013-09-10T00:00:00"
+                          refdisplay="peri22-dataelement-20570">
+               <name language="nl-NL">Indicatie interventie begin baring</name>
+            </relationship>
             <valueDomain type="code"/>
             <valueSet id="2.16.840.1.113883.2.4.11.190"
                       name="IndicatieInterventie"
@@ -1675,7 +1765,17 @@
       <relationship type="SPEC"
                     ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.7"
                     flexibility="2013-09-10T00:00:00"
-                    refdisplay="peri22-dataelement-7"/>
+                    prefix="peri20-"
+                    datasetId="2.16.840.1.113883.2.4.3.11.60.90.77.1.5"
+                    datasetEffectiveDate="2013-09-10T00:00:00"
+                    datasetStatusCode="final"
+                    iType="group"
+                    iStatusCode="final"
+                    iEffectiveDate="2013-09-10T00:00:00"
+                    iVersionLabel="22"
+                    refdisplay="peri22-dataelement-7">
+         <name language="nl-NL">Uitkomst (per kind)</name>
+      </relationship>
       <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40002"
                statusCode="draft"
                effectiveDate="2016-09-08T00:00:00"
@@ -1690,7 +1790,17 @@
          <relationship type="SPEC"
                        ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40002"
                        flexibility="2013-09-10T00:00:00"
-                       refdisplay="peri22-dataelement-40002"/>
+                       prefix="peri20-"
+                       datasetId="2.16.840.1.113883.2.4.3.11.60.90.77.1.5"
+                       datasetEffectiveDate="2013-09-10T00:00:00"
+                       datasetStatusCode="final"
+                       iType="group"
+                       iStatusCode="final"
+                       iEffectiveDate="2013-09-10T00:00:00"
+                       iVersionLabel="22"
+                       refdisplay="peri22-dataelement-40002">
+            <name language="nl-NL">Baring</name>
+         </relationship>
          <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40003"
                   statusCode="final"
                   effectiveDate="2016-09-08T00:00:00"
@@ -2056,7 +2166,17 @@
             <relationship type="SPEC"
                           ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.72"
                           flexibility="2013-09-10T00:00:00"
-                          refdisplay="peri22-dataelement-72"/>
+                          prefix="peri20-"
+                          datasetId="2.16.840.1.113883.2.4.3.11.60.90.77.1.5"
+                          datasetEffectiveDate="2013-09-10T00:00:00"
+                          datasetStatusCode="final"
+                          iType="group"
+                          iStatusCode="final"
+                          iEffectiveDate="2013-09-10T00:00:00"
+                          iVersionLabel="22"
+                          refdisplay="peri22-dataelement-72">
+               <name language="nl-NL">Kindspecifieke uitkomstgegevens</name>
+            </relationship>
             <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80626"
                      statusCode="final"
                      effectiveDate="2016-09-08T00:00:00"
@@ -2074,7 +2194,16 @@
                <relationship type="SPEC"
                              ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80626"
                              flexibility="2013-09-10T00:00:00"
-                             refdisplay="peri22-dataelement-80626"/>
+                             prefix="peri20-"
+                             datasetId="2.16.840.1.113883.2.4.3.11.60.90.77.1.5"
+                             datasetEffectiveDate="2013-09-10T00:00:00"
+                             datasetStatusCode="final"
+                             iType="item"
+                             iStatusCode="final"
+                             iEffectiveDate="2013-09-10T00:00:00"
+                             refdisplay="peri22-dataelement-80626">
+                  <name language="nl-NL">Type partus</name>
+               </relationship>
                <valueDomain type="code"/>
                <valueSet id="2.16.840.1.113883.2.4.11.182"
                          name="TypePartus22"
@@ -2170,7 +2299,16 @@
                <relationship type="SPEC"
                              ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.4.20062"
                              flexibility="2012-08-06T00:00:00"
-                             refdisplay="peri21-dataelement-20062"/>
+                             prefix="peri20-"
+                             datasetId="2.16.840.1.113883.2.4.3.11.60.90.77.1.4"
+                             datasetEffectiveDate="2012-08-06T00:00:00"
+                             datasetStatusCode="final"
+                             iType="item"
+                             iStatusCode="final"
+                             iEffectiveDate="2012-08-06T00:00:00"
+                             refdisplay="peri21-dataelement-20062">
+                  <name language="nl-NL">Zwangerschapsduur</name>
+               </relationship>
                <operationalization language="nl-NL">Berekend veld: zwangerschapsduur in dagen bij geboorte kind. Berekend veld ((geboortedatum-atermedatum)+280) geven.</operationalization>
                <valueDomain type="quantity">
                   <property unit="d" minInclude="0"/>
@@ -2190,7 +2328,16 @@
                <relationship type="SPEC"
                              ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.4.40189"
                              flexibility="2012-08-06T00:00:00"
-                             refdisplay="peri21-dataelement-40189"/>
+                             prefix="peri20-"
+                             datasetId="2.16.840.1.113883.2.4.3.11.60.90.77.1.4"
+                             datasetEffectiveDate="2012-08-06T00:00:00"
+                             datasetStatusCode="final"
+                             iType="group"
+                             iStatusCode="final"
+                             iEffectiveDate="2012-08-06T00:00:00"
+                             refdisplay="peri21-dataelement-40189">
+                  <name language="nl-NL">Vaginale kunstverlossing (groep)</name>
+               </relationship>
                <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40190"
                         statusCode="final"
                         effectiveDate="2016-09-08T00:00:00"
@@ -2278,7 +2425,17 @@
                <relationship type="SPEC"
                              ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40219"
                              flexibility="2013-09-10T00:00:00"
-                             refdisplay="peri22-dataelement-40219"/>
+                             prefix="peri20-"
+                             datasetId="2.16.840.1.113883.2.4.3.11.60.90.77.1.5"
+                             datasetEffectiveDate="2013-09-10T00:00:00"
+                             datasetStatusCode="final"
+                             iType="group"
+                             iStatusCode="final"
+                             iEffectiveDate="2013-09-10T00:00:00"
+                             iVersionLabel="22"
+                             refdisplay="peri22-dataelement-40219">
+                  <name language="nl-NL">Sectio caesarea (group)</name>
+               </relationship>
                <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40225"
                         statusCode="final"
                         effectiveDate="2016-09-08T00:00:00"
@@ -2341,7 +2498,16 @@
                <relationship type="SPEC"
                              ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40240"
                              flexibility="2013-09-10T00:00:00"
-                             refdisplay="peri22-dataelement-40240"/>
+                             prefix="peri20-"
+                             datasetId="2.16.840.1.113883.2.4.3.11.60.90.77.1.5"
+                             datasetEffectiveDate="2013-09-10T00:00:00"
+                             datasetStatusCode="final"
+                             iType="item"
+                             iStatusCode="final"
+                             iEffectiveDate="2013-09-10T00:00:00"
+                             refdisplay="peri22-dataelement-40240">
+                  <name language="nl-NL">Overige interventies</name>
+               </relationship>
                <valueDomain type="code"/>
                <valueSet name="OverigeInterventies22"
                          displayName="Overige interventies"
@@ -2438,7 +2604,17 @@
                <relationship type="SPEC"
                              ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80766"
                              flexibility="2013-09-10T00:00:00"
-                             refdisplay="peri22-dataelement-80766"/>
+                             prefix="peri20-"
+                             datasetId="2.16.840.1.113883.2.4.3.11.60.90.77.1.5"
+                             datasetEffectiveDate="2013-09-10T00:00:00"
+                             datasetStatusCode="final"
+                             iType="group"
+                             iStatusCode="final"
+                             iEffectiveDate="2013-09-10T00:00:00"
+                             iVersionLabel="22"
+                             refdisplay="peri22-dataelement-80766">
+                  <name language="nl-NL">Lichamelijk onderzoek kind</name>
+               </relationship>
                <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40071"
                         statusCode="final"
                         effectiveDate="2016-09-08T00:00:00"
@@ -2485,7 +2661,16 @@
                   <relationship type="SPEC"
                                 ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.4.10605"
                                 flexibility="2013-11-08T00:00:00"
-                                refdisplay="peri21-dataelement-10605"/>
+                                prefix="peri20-"
+                                datasetId="2.16.840.1.113883.2.4.3.11.60.90.77.1.4"
+                                datasetEffectiveDate="2012-08-06T00:00:00"
+                                datasetStatusCode="final"
+                                iType="item"
+                                iStatusCode="final"
+                                iEffectiveDate="2013-11-08T00:00:00"
+                                refdisplay="peri21-dataelement-10605">
+                     <name language="nl-NL">Percentiel van het geboortegewicht</name>
+                  </relationship>
                   <valueDomain type="code"/>
                   <valueSet id="2.16.840.1.113883.2.4.11.176"
                             name="PercentielGeboortegewicht"
@@ -2573,7 +2758,17 @@
                <relationship type="SPEC"
                              ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40081"
                              flexibility="2013-09-10T00:00:00"
-                             refdisplay="peri22-dataelement-40081"/>
+                             prefix="peri20-"
+                             datasetId="2.16.840.1.113883.2.4.3.11.60.90.77.1.5"
+                             datasetEffectiveDate="2013-09-10T00:00:00"
+                             datasetStatusCode="final"
+                             iType="group"
+                             iStatusCode="final"
+                             iEffectiveDate="2013-09-10T00:00:00"
+                             iVersionLabel="22"
+                             refdisplay="peri22-dataelement-40081">
+                  <name language="nl-NL">Congenitale afwijkingen (groep)</name>
+               </relationship>
                <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40082"
                         statusCode="draft"
                         effectiveDate="2016-09-08T00:00:00"
@@ -2588,7 +2783,17 @@
                   <relationship type="SPEC"
                                 ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40082"
                                 flexibility="2013-09-10T00:00:00"
-                                refdisplay="peri22-dataelement-40082"/>
+                                prefix="peri20-"
+                                datasetId="2.16.840.1.113883.2.4.3.11.60.90.77.1.5"
+                                datasetEffectiveDate="2013-09-10T00:00:00"
+                                datasetStatusCode="final"
+                                iType="group"
+                                iStatusCode="final"
+                                iEffectiveDate="2013-09-10T00:00:00"
+                                iVersionLabel="22"
+                                refdisplay="peri22-dataelement-40082">
+                     <name language="nl-NL">Specificatie congenitale afwijking (groep)</name>
+                  </relationship>
                   <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40090"
                            statusCode="final"
                            effectiveDate="2016-09-08T00:00:00"
@@ -2607,7 +2812,16 @@
                      <relationship type="SPEC"
                                    ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40090"
                                    flexibility="2013-09-10T00:00:00"
-                                   refdisplay="peri22-dataelement-40090"/>
+                                   prefix="peri20-"
+                                   datasetId="2.16.840.1.113883.2.4.3.11.60.90.77.1.5"
+                                   datasetEffectiveDate="2013-09-10T00:00:00"
+                                   datasetStatusCode="final"
+                                   iType="item"
+                                   iStatusCode="final"
+                                   iEffectiveDate="2013-09-10T00:00:00"
+                                   refdisplay="peri22-dataelement-40090">
+                        <name language="nl-NL">Specificatie congenitale afwijking</name>
+                     </relationship>
                      <valueDomain type="code"/>
                      <valueSet id="2.16.840.1.113883.2.4.11.196"
                                name="CongenitaleAfwijking22"
@@ -3290,7 +3504,17 @@
                   <relationship type="SPEC"
                                 ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40111"
                                 flexibility="2013-09-10T00:00:00"
-                                refdisplay="peri22-dataelement-40111"/>
+                                prefix="peri20-"
+                                datasetId="2.16.840.1.113883.2.4.3.11.60.90.77.1.5"
+                                datasetEffectiveDate="2013-09-10T00:00:00"
+                                datasetStatusCode="final"
+                                iType="group"
+                                iStatusCode="final"
+                                iEffectiveDate="2013-09-10T00:00:00"
+                                iVersionLabel="22"
+                                refdisplay="peri22-dataelement-40111">
+                     <name language="nl-NL">Specificatie chromosomale afwijking (groep)</name>
+                  </relationship>
                   <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40120"
                            statusCode="final"
                            effectiveDate="2016-09-08T00:00:00"
@@ -3307,7 +3531,16 @@
                      <relationship type="SPEC"
                                    ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40120"
                                    flexibility="2013-09-10T00:00:00"
-                                   refdisplay="peri22-dataelement-40120"/>
+                                   prefix="peri20-"
+                                   datasetId="2.16.840.1.113883.2.4.3.11.60.90.77.1.5"
+                                   datasetEffectiveDate="2013-09-10T00:00:00"
+                                   datasetStatusCode="final"
+                                   iType="item"
+                                   iStatusCode="final"
+                                   iEffectiveDate="2013-09-10T00:00:00"
+                                   refdisplay="peri22-dataelement-40120">
+                        <name language="nl-NL">Specificatie chromosomale afwijking</name>
+                     </relationship>
                      <valueDomain type="code"/>
                      <valueSet id="2.16.840.1.113883.2.4.11.198"
                                name="ChromosomaleAfwijkingen22"

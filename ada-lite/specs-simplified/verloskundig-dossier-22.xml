@@ -5,6 +5,9 @@
          prefix="peri20-"
          transactionId="2.16.840.1.113883.2.4.3.11.60.90.77.4.2462"
          transactionEffectiveDate="2019-03-07T15:19:31"
+         transactionStatusCode="draft"
+         transactionType="stationary"
+         transactionIddisplay="peri-transaction-2462"
          shortName="verloskundig_dossier_22"><!-- == Generated lite version of specification from full version for verloskundig_dossier_22 == --><!-- == Source: design/specs-full/verloskundig-dossier-22.xml == --><!-- == Generator: design/xsl/spec-full2spec-lite.xsl == -->
    <name language="nl-NL">Verloskundig dossier (2.2) </name>
    <desc language="nl-NL"/>
@@ -183,7 +186,16 @@
             <relationship type="SPEC"
                           ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.3.10012"
                           flexibility="2011-12-06T00:00:00"
-                          refdisplay="peri20-dataelement-10012"/>
+                          prefix="peri20-"
+                          datasetId="2.16.840.1.113883.2.4.3.11.60.90.77.1.3"
+                          datasetEffectiveDate="2012-01-01T00:00:00"
+                          datasetStatusCode="deprecated"
+                          iType="item"
+                          iStatusCode="final"
+                          iEffectiveDate="2011-12-06T00:00:00"
+                          refdisplay="peri20-dataelement-10012">
+               <name language="nl-NL">Telefoon waar zorgverlener is te bereiken</name>
+            </relationship>
             <valueDomain type="string"/>
          </concept>
       </concept>
@@ -211,7 +223,16 @@
             <relationship type="SPEC"
                           ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.4.10021"
                           flexibility="2012-08-06T00:00:00"
-                          refdisplay="peri21-dataelement-10021"/>
+                          prefix="peri20-"
+                          datasetId="2.16.840.1.113883.2.4.3.11.60.90.77.1.4"
+                          datasetEffectiveDate="2012-08-06T00:00:00"
+                          datasetStatusCode="final"
+                          iType="item"
+                          iStatusCode="final"
+                          iEffectiveDate="2012-08-06T00:00:00"
+                          refdisplay="peri21-dataelement-10021">
+               <name language="nl-NL">Zorginstelling OID</name>
+            </relationship>
             <valueDomain type="identifier"/>
          </concept>
          <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10022"
@@ -813,7 +834,16 @@
          <relationship type="SPEC"
                        ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.3.10401"
                        flexibility="2011-12-06T00:00:00"
-                       refdisplay="peri20-dataelement-10401"/>
+                       prefix="peri20-"
+                       datasetId="2.16.840.1.113883.2.4.3.11.60.90.77.1.3"
+                       datasetEffectiveDate="2012-01-01T00:00:00"
+                       datasetStatusCode="deprecated"
+                       iType="item"
+                       iStatusCode="final"
+                       iEffectiveDate="2011-12-06T00:00:00"
+                       refdisplay="peri20-dataelement-10401">
+            <name language="nl-NL">Taalvaardigheid vrouw Nederlandse taal</name>
+         </relationship>
          <valueDomain type="code"/>
          <valueSet id="2.16.840.1.113883.2.4.11.141"
                    effectiveDate="2013-03-20T00:00:00"
@@ -2855,7 +2885,16 @@
          <relationship type="SPEC"
                        ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.4.10801"
                        flexibility="2012-08-06T00:00:00"
-                       refdisplay="peri21-dataelement-10801"/>
+                       prefix="peri20-"
+                       datasetId="2.16.840.1.113883.2.4.3.11.60.90.77.1.4"
+                       datasetEffectiveDate="2012-08-06T00:00:00"
+                       datasetStatusCode="final"
+                       iType="item"
+                       iStatusCode="final"
+                       iEffectiveDate="2012-08-06T00:00:00"
+                       refdisplay="peri21-dataelement-10801">
+            <name language="nl-NL">Actueel Medicatiegebruik?</name>
+         </relationship>
          <valueDomain type="boolean"/>
       </concept>
       <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80749"
@@ -3198,7 +3237,16 @@
          <relationship type="SPEC"
                        ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.3.10816"
                        flexibility="2011-12-06T00:00:00"
-                       refdisplay="peri20-dataelement-10816"/>
+                       prefix="peri20-"
+                       datasetId="2.16.840.1.113883.2.4.3.11.60.90.77.1.3"
+                       datasetEffectiveDate="2012-01-01T00:00:00"
+                       datasetStatusCode="deprecated"
+                       iType="item"
+                       iStatusCode="final"
+                       iEffectiveDate="2011-12-06T00:00:00"
+                       refdisplay="peri20-dataelement-10816">
+            <name language="nl-NL">Rhesus c Factor</name>
+         </relationship>
          <valueDomain type="code"/>
          <valueSet id="2.16.840.1.113883.2.4.11.164"
                    name="RhesuscFactor"
@@ -3302,7 +3350,17 @@
             <relationship type="SPEC"
                           ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10400"
                           flexibility="2013-09-10T00:00:00"
-                          refdisplay="peri22-dataelement-10400"/>
+                          prefix="peri20-"
+                          datasetId="2.16.840.1.113883.2.4.3.11.60.90.77.1.5"
+                          datasetEffectiveDate="2013-09-10T00:00:00"
+                          datasetStatusCode="final"
+                          iType="item"
+                          iStatusCode="final"
+                          iEffectiveDate="2013-09-10T00:00:00"
+                          iVersionLabel="22"
+                          refdisplay="peri22-dataelement-10400">
+               <name language="nl-NL">Etniciteit</name>
+            </relationship>
             <valueDomain type="code"/>
             <valueSet statusCode="final"
                       id="2.16.840.1.113883.2.4.11.3"
@@ -3701,7 +3759,16 @@
          <relationship type="SPEC"
                        ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.4.20130"
                        flexibility="2012-08-06T00:00:00"
-                       refdisplay="peri21-dataelement-20130"/>
+                       prefix="peri20-"
+                       datasetId="2.16.840.1.113883.2.4.3.11.60.90.77.1.4"
+                       datasetEffectiveDate="2012-08-06T00:00:00"
+                       datasetStatusCode="final"
+                       iType="item"
+                       iStatusCode="final"
+                       iEffectiveDate="2012-08-06T00:00:00"
+                       refdisplay="peri21-dataelement-20130">
+            <name language="nl-NL">Amnioniciteit</name>
+         </relationship>
          <operationalization language="nl-NL">Dit item wordt alleen aangegeven als er sprake van een meerling is</operationalization>
          <valueDomain type="code"/>
          <valueSet id="2.16.840.1.113883.2.4.11.8"
@@ -3747,7 +3814,16 @@
          <relationship type="SPEC"
                        ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.4.20140"
                        flexibility="2012-08-06T00:00:00"
-                       refdisplay="peri21-dataelement-20140"/>
+                       prefix="peri20-"
+                       datasetId="2.16.840.1.113883.2.4.3.11.60.90.77.1.4"
+                       datasetEffectiveDate="2012-08-06T00:00:00"
+                       datasetStatusCode="final"
+                       iType="item"
+                       iStatusCode="final"
+                       iEffectiveDate="2012-08-06T00:00:00"
+                       refdisplay="peri21-dataelement-20140">
+            <name language="nl-NL">Chorioniciteit</name>
+         </relationship>
          <operationalization language="nl-NL">Dit item wordt alleen aangegeven als er sprake van een meerling is</operationalization>
          <valueDomain type="code"/>
          <valueSet id="2.16.840.1.113883.2.4.11.9"
@@ -3830,7 +3906,16 @@
          <relationship type="SPEC"
                        ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.4.20081"
                        flexibility="2012-09-20T00:00:00"
-                       refdisplay="peri21-dataelement-20081"/>
+                       prefix="peri20-"
+                       datasetId="2.16.840.1.113883.2.4.3.11.60.90.77.1.4"
+                       datasetEffectiveDate="2012-08-06T00:00:00"
+                       datasetStatusCode="final"
+                       iType="group"
+                       iStatusCode="final"
+                       iEffectiveDate="2012-09-20T00:00:00"
+                       refdisplay="peri21-dataelement-20081">
+            <name language="nl-NL">Soort subfertiliteitsbehandeling (groep)</name>
+         </relationship>
          <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20091"
                   statusCode="final"
                   effectiveDate="2013-09-10T00:00:00"
@@ -5182,7 +5267,16 @@
             <relationship type="SPEC"
                           ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.2.20025"
                           flexibility="2011-01-28T00:00:00"
-                          refdisplay="spirit1c-dataelement-20025"/>
+                          prefix="peri20-"
+                          datasetId="2.16.840.1.113883.2.4.3.11.60.90.77.1.2"
+                          datasetEffectiveDate="2011-01-28T00:00:00"
+                          datasetStatusCode="deprecated"
+                          iType="item"
+                          iStatusCode="final"
+                          iEffectiveDate="2011-01-28T00:00:00"
+                          refdisplay="spirit1c-dataelement-20025">
+               <name language="nl-NL">Actuele aantal foetus</name>
+            </relationship>
             <valueDomain type="quantity">
                <property minInclude="0" maxInclude="9"/>
             </valueDomain>
@@ -5970,7 +6064,7 @@
                shortName="wijze_einde_zwangerschap">
          <name language="nl-NL">Wijze einde zwangerschap</name>
          <desc language="nl-NL">De wijze waarop de zwangerschap geëindigd is.<br clear="none"/>
-            <br clear="none"/>TOP (Termination of Pregnancy) is zwangerschapsafbreking na 16 weken. Bij TOP wordt hier 'Partus' geregistreerd, zodat dit meegenomen wordt als pariteit. Dit in tegenstelling tot APLA, waarmee een zwangerschapsafbreking (abortus) van minder dan 16 weken wordt bedoeld.<br clear="none"/>
+            <br clear="none"/>TOP (Termination of Pregnancy) is zwangerschapsafbreking na 16+0 weken (16w0d). Bij TOP wordt hier 'Partus' geregistreerd, zodat dit meegenomen wordt als pariteit. Dit in tegenstelling tot APLA, waarmee een zwangerschapsafbreking (abortus) van minder dan 16 weken wordt bedoeld.<br clear="none"/>
             </desc>
          <valueDomain type="code">
             <property/>
@@ -6250,7 +6344,16 @@
             <relationship type="SPEC"
                           ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.4.10001"
                           flexibility="2012-08-06T00:00:00"
-                          refdisplay="peri21-dataelement-10001"/>
+                          prefix="peri20-"
+                          datasetId="2.16.840.1.113883.2.4.3.11.60.90.77.1.4"
+                          datasetEffectiveDate="2012-08-06T00:00:00"
+                          datasetStatusCode="final"
+                          iType="group"
+                          iStatusCode="final"
+                          iEffectiveDate="2012-08-06T00:00:00"
+                          refdisplay="peri21-dataelement-10001">
+               <name language="nl-NL">Zorgverlener</name>
+            </relationship>
             <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82411"
                      statusCode="final"
                      effectiveDate="2016-04-13T17:24:42"
@@ -6381,7 +6484,17 @@
             <relationship type="SPEC"
                           ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82410"
                           flexibility="2016-04-13T17:23:34"
-                          refdisplay="peri22-dataelement-82410"/>
+                          prefix="peri20-"
+                          datasetId="2.16.840.1.113883.2.4.3.11.60.90.77.1.5"
+                          datasetEffectiveDate="2013-09-10T00:00:00"
+                          datasetStatusCode="final"
+                          iType="group"
+                          iStatusCode="final"
+                          iEffectiveDate="2016-04-13T17:23:34"
+                          iVersionLabel="22"
+                          refdisplay="peri22-dataelement-82410">
+               <name language="nl-NL">Zorgverlener</name>
+            </relationship>
             <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82420"
                      statusCode="final"
                      effectiveDate="2016-04-18T08:55:11"
@@ -6497,7 +6610,16 @@
          <relationship type="SPEC"
                        ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.1.20500"
                        flexibility="2009-10-01T00:00:00"
-                       refdisplay="spirit1a-dataelement-20500"/>
+                       prefix="peri20-"
+                       datasetId="2.16.840.1.113883.2.4.3.11.60.90.77.1.1"
+                       datasetEffectiveDate="2009-10-01T00:00:00"
+                       datasetStatusCode="deprecated"
+                       iType="item"
+                       iStatusCode="final"
+                       iEffectiveDate="2009-10-01T00:00:00"
+                       refdisplay="spirit1a-dataelement-20500">
+            <name language="nl-NL">Partusnummer</name>
+         </relationship>
          <valueDomain type="identifier">
             <property minLength="1" maxLength="30"/>
          </valueDomain>
@@ -6826,7 +6948,16 @@
          <relationship type="SPEC"
                        ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.4.20555"
                        flexibility="2012-08-06T00:00:00"
-                       refdisplay="peri21-dataelement-20555"/>
+                       prefix="peri20-"
+                       datasetId="2.16.840.1.113883.2.4.3.11.60.90.77.1.4"
+                       datasetEffectiveDate="2012-08-06T00:00:00"
+                       datasetStatusCode="final"
+                       iType="group"
+                       iStatusCode="final"
+                       iEffectiveDate="2012-08-06T00:00:00"
+                       refdisplay="peri21-dataelement-20555">
+            <name language="nl-NL">Interventies begin baring (groep)</name>
+         </relationship>
          <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82383"
                   statusCode="final"
                   effectiveDate="2015-10-19T18:40:27"
@@ -7085,7 +7216,16 @@
          <relationship type="SPEC"
                        ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.1.20590"
                        flexibility="2009-10-01T00:00:00"
-                       refdisplay="spirit1a-dataelement-20590"/>
+                       prefix="peri20-"
+                       datasetId="2.16.840.1.113883.2.4.3.11.60.90.77.1.1"
+                       datasetEffectiveDate="2009-10-01T00:00:00"
+                       datasetStatusCode="deprecated"
+                       iType="item"
+                       iStatusCode="final"
+                       iEffectiveDate="2009-10-01T00:00:00"
+                       refdisplay="spirit1a-dataelement-20590">
+            <name language="nl-NL">Tijdstip begin actieve ontsluiting</name>
+         </relationship>
          <valueDomain type="datetime">
             <property timeStampPrecision="YMDHM"/>
          </valueDomain>
@@ -7104,7 +7244,16 @@
          <relationship type="SPEC"
                        ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.4.20616"
                        flexibility="2012-08-06T00:00:00"
-                       refdisplay="peri21-dataelement-20616"/>
+                       prefix="peri20-"
+                       datasetId="2.16.840.1.113883.2.4.3.11.60.90.77.1.4"
+                       datasetEffectiveDate="2012-08-06T00:00:00"
+                       datasetStatusCode="final"
+                       iType="item"
+                       iStatusCode="final"
+                       iEffectiveDate="2012-08-06T00:00:00"
+                       refdisplay="peri21-dataelement-20616">
+            <name language="nl-NL">Bijstimulatie toegediend?</name>
+         </relationship>
          <valueDomain type="boolean"/>
       </concept>
       <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20619"
@@ -9533,8 +9682,35 @@
                   <valueDomain type="code">
                      <property/>
                   </valueDomain>
-                  <valueSet>
-                     <conceptList/>
+                  <valueSet id="2.16.840.1.113883.2.4.11.273"
+                            name="RedenPijnbestrijding"
+                            displayName="Reden Pijnbestrijding"
+                            effectiveDate="2019-09-25T13:10:16"
+                            statusCode="draft"
+                            strength="required">
+                     <conceptList>
+                        <concept localId="1"
+                                 code="30421000146106"
+                                 codeSystem="2.16.840.1.113883.6.96"
+                                 displayName="Health care professional advised to perform treatment (situation)"
+                                 value="30421000146106">
+                           <name language="nl-NL">Advies zorgverlener</name>
+                        </concept>
+                        <concept localId="2"
+                                 code="183995001"
+                                 codeSystem="2.16.840.1.113883.6.96"
+                                 displayName="Patient requested procedure (context-dependent category)"
+                                 value="183995001">
+                           <name language="nl-NL">Wens patiënt</name>
+                        </concept>
+                        <exception localId="3"
+                                   code="OTH"
+                                   codeSystem="2.16.840.1.113883.5.1008"
+                                   displayName="Overig"
+                                   value="OTH">
+                           <name language="nl-NL">Overig</name>
+                        </exception>
+                     </conceptList>
                   </valueSet>
                </concept>
             </concept>
@@ -9639,8 +9815,35 @@
                   <valueDomain type="code">
                      <property/>
                   </valueDomain>
-                  <valueSet>
-                     <conceptList/>
+                  <valueSet id="2.16.840.1.113883.2.4.11.273"
+                            name="RedenPijnbestrijding"
+                            displayName="Reden Pijnbestrijding"
+                            effectiveDate="2019-09-25T13:10:16"
+                            statusCode="draft"
+                            strength="required">
+                     <conceptList>
+                        <concept localId="1"
+                                 code="30421000146106"
+                                 codeSystem="2.16.840.1.113883.6.96"
+                                 displayName="Health care professional advised to perform treatment (situation)"
+                                 value="30421000146106">
+                           <name language="nl-NL">Advies zorgverlener</name>
+                        </concept>
+                        <concept localId="2"
+                                 code="183995001"
+                                 codeSystem="2.16.840.1.113883.6.96"
+                                 displayName="Patient requested procedure (context-dependent category)"
+                                 value="183995001">
+                           <name language="nl-NL">Wens patiënt</name>
+                        </concept>
+                        <exception localId="3"
+                                   code="OTH"
+                                   codeSystem="2.16.840.1.113883.5.1008"
+                                   displayName="Overig"
+                                   value="OTH">
+                           <name language="nl-NL">Overig</name>
+                        </exception>
+                     </conceptList>
                   </valueSet>
                </concept>
             </concept>
@@ -9764,7 +9967,16 @@
                <relationship type="SPEC"
                              ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.4.20062"
                              flexibility="2012-08-06T00:00:00"
-                             refdisplay="peri21-dataelement-20062"/>
+                             prefix="peri20-"
+                             datasetId="2.16.840.1.113883.2.4.3.11.60.90.77.1.4"
+                             datasetEffectiveDate="2012-08-06T00:00:00"
+                             datasetStatusCode="final"
+                             iType="item"
+                             iStatusCode="final"
+                             iEffectiveDate="2012-08-06T00:00:00"
+                             refdisplay="peri21-dataelement-20062">
+                  <name language="nl-NL">Zwangerschapsduur</name>
+               </relationship>
                <operationalization language="nl-NL">Berekend veld: zwangerschapsduur in dagen bij geboorte kind. Berekend veld ((geboortedatum-atermedatum)+280) geven.</operationalization>
                <valueDomain type="quantity">
                   <property unit="d" minInclude="0"/>
@@ -10193,7 +10405,16 @@
                <relationship type="SPEC"
                              ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.4.40189"
                              flexibility="2012-08-06T00:00:00"
-                             refdisplay="peri21-dataelement-40189"/>
+                             prefix="peri20-"
+                             datasetId="2.16.840.1.113883.2.4.3.11.60.90.77.1.4"
+                             datasetEffectiveDate="2012-08-06T00:00:00"
+                             datasetStatusCode="final"
+                             iType="group"
+                             iStatusCode="final"
+                             iEffectiveDate="2012-08-06T00:00:00"
+                             refdisplay="peri21-dataelement-40189">
+                  <name language="nl-NL">Vaginale kunstverlossing (groep)</name>
+               </relationship>
                <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40190"
                         statusCode="final"
                         effectiveDate="2013-09-10T00:00:00"
@@ -10280,7 +10501,16 @@
                   <relationship type="SPEC"
                                 ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.1.40200"
                                 flexibility="2009-10-01T00:00:00"
-                                refdisplay="spirit1a-dataelement-40200"/>
+                                prefix="peri20-"
+                                datasetId="2.16.840.1.113883.2.4.3.11.60.90.77.1.1"
+                                datasetEffectiveDate="2009-10-01T00:00:00"
+                                datasetStatusCode="deprecated"
+                                iType="item"
+                                iStatusCode="final"
+                                iEffectiveDate="2009-10-01T00:00:00"
+                                refdisplay="spirit1a-dataelement-40200">
+                     <name language="nl-NL">Succes vaginale kunstverlossing?</name>
+                  </relationship>
                   <valueDomain type="boolean"/>
                </concept>
                <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40210"
@@ -11376,7 +11606,16 @@
                   <relationship type="SPEC"
                                 ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.4.10605"
                                 flexibility="2013-11-08T00:00:00"
-                                refdisplay="peri21-dataelement-10605"/>
+                                prefix="peri20-"
+                                datasetId="2.16.840.1.113883.2.4.3.11.60.90.77.1.4"
+                                datasetEffectiveDate="2012-08-06T00:00:00"
+                                datasetStatusCode="final"
+                                iType="item"
+                                iStatusCode="final"
+                                iEffectiveDate="2013-11-08T00:00:00"
+                                refdisplay="peri21-dataelement-10605">
+                     <name language="nl-NL">Percentiel van het geboortegewicht</name>
+                  </relationship>
                   <valueDomain type="code"/>
                   <valueSet id="2.16.840.1.113883.2.4.11.176"
                             name="PercentielGeboortegewicht"
@@ -13510,7 +13749,16 @@
          <relationship type="SPEC"
                        ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.4.50021"
                        flexibility="2012-08-06T00:00:00"
-                       refdisplay="peri21-dataelement-50021"/>
+                       prefix="peri20-"
+                       datasetId="2.16.840.1.113883.2.4.3.11.60.90.77.1.4"
+                       datasetEffectiveDate="2012-08-06T00:00:00"
+                       datasetStatusCode="final"
+                       iType="item"
+                       iStatusCode="final"
+                       iEffectiveDate="2012-08-06T00:00:00"
+                       refdisplay="peri21-dataelement-50021">
+            <name language="nl-NL">Zwangerschapsduur op datum onderzoek</name>
+         </relationship>
          <operationalization language="nl-NL">Berekend veld: Duur van de zwangerschap op moment van onderzoek (bijvoorbeeld ultrageluid onderzoek)</operationalization>
          <valueDomain type="quantity">
             <property unit="d"/>
@@ -13994,7 +14242,7 @@
                      isMandatory="false"
                      shortName="hc_percentiel">
                <name language="nl-NL">HC percentiel</name>
-               <desc language="nl-NL">Percentiel van head circumference (schedelaomtrek) van de foetus o.b.v. echoscopie.</desc>
+               <desc language="nl-NL">Percentiel van head circumference (schedelomtrek) van de foetus o.b.v. echoscopie.</desc>
                <source language="nl-NL">PWD Acute Fase Overdracht item #136</source>
                <comment language="nl-NL">N.B. Om dit gegeven goed te interpreteren is de à terme datum nodig.</comment>
                <valueDomain type="quantity">
@@ -14436,8 +14684,35 @@
                   <valueDomain type="code">
                      <property/>
                   </valueDomain>
-                  <valueSet>
-                     <conceptList/>
+                  <valueSet id="2.16.840.1.113883.2.4.11.272"
+                            name="Ostium"
+                            displayName="Ostium"
+                            effectiveDate="2019-09-25T12:28:34"
+                            statusCode="draft"
+                            strength="required">
+                     <conceptList>
+                        <concept localId="1"
+                                 code="62531004"
+                                 codeSystem="2.16.840.1.113883.6.96"
+                                 displayName="Placenta previa marginalis (disorder)"
+                                 value="62531004">
+                           <name language="nl-NL">tot 2cm</name>
+                        </concept>
+                        <concept localId="2"
+                                 code="24095001"
+                                 codeSystem="2.16.840.1.113883.6.96"
+                                 displayName="Placenta previa partialis (disorder)"
+                                 value="24095001">
+                           <name language="nl-NL">&gt; 2cm</name>
+                        </concept>
+                        <concept localId="3"
+                                 code="15663008"
+                                 codeSystem="2.16.840.1.113883.6.96"
+                                 displayName="Placenta previa centralis (disorder)"
+                                 value="15663008">
+                           <name language="nl-NL">over ostium</name>
+                        </concept>
+                     </conceptList>
                   </valueSet>
                </concept>
                <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82072"
@@ -16632,7 +16907,16 @@
                   <relationship type="SPEC"
                                 ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.3.10816"
                                 flexibility="2011-12-06T00:00:00"
-                                refdisplay="peri20-dataelement-10816"/>
+                                prefix="peri20-"
+                                datasetId="2.16.840.1.113883.2.4.3.11.60.90.77.1.3"
+                                datasetEffectiveDate="2012-01-01T00:00:00"
+                                datasetStatusCode="deprecated"
+                                iType="item"
+                                iStatusCode="final"
+                                iEffectiveDate="2011-12-06T00:00:00"
+                                refdisplay="peri20-dataelement-10816">
+                     <name language="nl-NL">Rhesus c Factor</name>
+                  </relationship>
                   <valueDomain type="code"/>
                   <valueSet id="2.16.840.1.113883.2.4.11.164"
                             name="RhesuscFactor"
@@ -18144,7 +18428,16 @@
                <relationship type="SPEC"
                              ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.4.80618"
                              flexibility="2012-12-18T11:48:09"
-                             refdisplay="peri21-dataelement-80618"/>
+                             prefix="peri20-"
+                             datasetId="2.16.840.1.113883.2.4.3.11.60.90.77.1.4"
+                             datasetEffectiveDate="2012-08-06T00:00:00"
+                             datasetStatusCode="final"
+                             iType="item"
+                             iStatusCode="final"
+                             iEffectiveDate="2012-12-18T11:48:09"
+                             refdisplay="peri21-dataelement-80618">
+                  <name language="nl-NL">Stand</name>
+               </relationship>
                <valueDomain type="code"/>
                <valueSet id="2.16.840.1.113883.2.4.11.174"
                          effectiveDate="2015-10-19T20:56:20"

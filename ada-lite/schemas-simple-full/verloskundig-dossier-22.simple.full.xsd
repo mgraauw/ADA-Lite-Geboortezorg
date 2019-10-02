@@ -4485,7 +4485,7 @@ SOFTWARE.
                      type="wijze_einde_zwangerschap">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">Wijze einde zwangerschap</xs:documentation>
-               <xs:documentation source="desc" xml:lang="nl-NL">De wijze waarop de zwangerschap geëindigd is.TOP (Termination of Pregnancy) is zwangerschapsafbreking na 16 weken. Bij TOP wordt hier 'Partus' geregistreerd, zodat dit meegenomen wordt als pariteit. Dit in tegenstelling tot APLA, waarmee een zwangerschapsafbreking (abortus) van minder dan 16 weken wordt bedoeld.</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">De wijze waarop de zwangerschap geëindigd is.TOP (Termination of Pregnancy) is zwangerschapsafbreking na 16+0 weken (16w0d). Bij TOP wordt hier 'Partus' geregistreerd, zodat dit meegenomen wordt als pariteit. Dit in tegenstelling tot APLA, waarmee een zwangerschapsafbreking (abortus) van minder dan 16 weken wordt bedoeld.</xs:documentation>
             </xs:annotation>
          </xs:element>
          <xs:element name="datum_einde_zwangerschap"
@@ -11712,10 +11712,45 @@ SOFTWARE.
                     type="t-id"
                     use="required"
                     fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82098"/>
-      <!-- == *** No conceptList entries found for concept reden == -->
-      <xs:attribute name="value" use="required" type="xs:string"/>
-      <xs:attribute name="code" use="required" type="xs:string"/>
-      <xs:attribute name="codeSystem" use="required" type="xs:string"/>
+      <xs:attribute name="value" use="required">
+         <xs:simpleType>
+            <xs:restriction base="xs:string">
+               <xs:enumeration value="1">
+                  <xs:annotation>
+                     <xs:documentation source="name" xml:lang="nl-NL">Advies zorgverlener</xs:documentation>
+                  </xs:annotation>
+               </xs:enumeration>
+               <xs:enumeration value="2">
+                  <xs:annotation>
+                     <xs:documentation source="name" xml:lang="nl-NL">Wens patiënt</xs:documentation>
+                  </xs:annotation>
+               </xs:enumeration>
+               <xs:enumeration value="3">
+                  <xs:annotation>
+                     <xs:documentation source="name" xml:lang="nl-NL">Overig</xs:documentation>
+                  </xs:annotation>
+               </xs:enumeration>
+            </xs:restriction>
+         </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="code" use="required">
+         <xs:simpleType>
+            <xs:restriction base="xs:string">
+               <xs:enumeration value="30421000146106"/>
+               <xs:enumeration value="183995001"/>
+               <xs:enumeration value="OTH"/>
+            </xs:restriction>
+         </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="codeSystem" use="required">
+         <xs:simpleType>
+            <xs:restriction base="xs:string">
+               <xs:enumeration value="2.16.840.1.113883.6.96"/>
+               <xs:enumeration value="2.16.840.1.113883.6.96"/>
+               <xs:enumeration value="2.16.840.1.113883.5.1008"/>
+            </xs:restriction>
+         </xs:simpleType>
+      </xs:attribute>
       <xs:attribute name="displayName" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="sedatieq">
@@ -11808,10 +11843,45 @@ SOFTWARE.
                     type="t-id"
                     use="required"
                     fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82101"/>
-      <!-- == *** No conceptList entries found for concept reden == -->
-      <xs:attribute name="value" use="required" type="xs:string"/>
-      <xs:attribute name="code" use="required" type="xs:string"/>
-      <xs:attribute name="codeSystem" use="required" type="xs:string"/>
+      <xs:attribute name="value" use="required">
+         <xs:simpleType>
+            <xs:restriction base="xs:string">
+               <xs:enumeration value="1">
+                  <xs:annotation>
+                     <xs:documentation source="name" xml:lang="nl-NL">Advies zorgverlener</xs:documentation>
+                  </xs:annotation>
+               </xs:enumeration>
+               <xs:enumeration value="2">
+                  <xs:annotation>
+                     <xs:documentation source="name" xml:lang="nl-NL">Wens patiënt</xs:documentation>
+                  </xs:annotation>
+               </xs:enumeration>
+               <xs:enumeration value="3">
+                  <xs:annotation>
+                     <xs:documentation source="name" xml:lang="nl-NL">Overig</xs:documentation>
+                  </xs:annotation>
+               </xs:enumeration>
+            </xs:restriction>
+         </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="code" use="required">
+         <xs:simpleType>
+            <xs:restriction base="xs:string">
+               <xs:enumeration value="30421000146106"/>
+               <xs:enumeration value="183995001"/>
+               <xs:enumeration value="OTH"/>
+            </xs:restriction>
+         </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="codeSystem" use="required">
+         <xs:simpleType>
+            <xs:restriction base="xs:string">
+               <xs:enumeration value="2.16.840.1.113883.6.96"/>
+               <xs:enumeration value="2.16.840.1.113883.6.96"/>
+               <xs:enumeration value="2.16.840.1.113883.5.1008"/>
+            </xs:restriction>
+         </xs:simpleType>
+      </xs:attribute>
       <xs:attribute name="displayName" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="kindspecifieke_uitkomstgegevens">
@@ -16881,7 +16951,7 @@ SOFTWARE.
                      type="hc_percentiel">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">HC percentiel</xs:documentation>
-               <xs:documentation source="desc" xml:lang="nl-NL">Percentiel van head circumference (schedelaomtrek) van de foetus o.b.v. echoscopie.</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">Percentiel van head circumference (schedelomtrek) van de foetus o.b.v. echoscopie.</xs:documentation>
             </xs:annotation>
          </xs:element>
          <xs:element name="tcd" minOccurs="0" maxOccurs="1" type="tcd">
@@ -17548,10 +17618,45 @@ SOFTWARE.
                     type="t-id"
                     use="required"
                     fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82071"/>
-      <!-- == *** No conceptList entries found for concept ostium == -->
-      <xs:attribute name="value" use="required" type="xs:string"/>
-      <xs:attribute name="code" use="required" type="xs:string"/>
-      <xs:attribute name="codeSystem" use="required" type="xs:string"/>
+      <xs:attribute name="value" use="required">
+         <xs:simpleType>
+            <xs:restriction base="xs:string">
+               <xs:enumeration value="1">
+                  <xs:annotation>
+                     <xs:documentation source="name" xml:lang="nl-NL">tot 2cm</xs:documentation>
+                  </xs:annotation>
+               </xs:enumeration>
+               <xs:enumeration value="2">
+                  <xs:annotation>
+                     <xs:documentation source="name" xml:lang="nl-NL">&gt; 2cm</xs:documentation>
+                  </xs:annotation>
+               </xs:enumeration>
+               <xs:enumeration value="3">
+                  <xs:annotation>
+                     <xs:documentation source="name" xml:lang="nl-NL">over ostium</xs:documentation>
+                  </xs:annotation>
+               </xs:enumeration>
+            </xs:restriction>
+         </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="code" use="required">
+         <xs:simpleType>
+            <xs:restriction base="xs:string">
+               <xs:enumeration value="62531004"/>
+               <xs:enumeration value="24095001"/>
+               <xs:enumeration value="15663008"/>
+            </xs:restriction>
+         </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="codeSystem" use="required">
+         <xs:simpleType>
+            <xs:restriction base="xs:string">
+               <xs:enumeration value="2.16.840.1.113883.6.96"/>
+               <xs:enumeration value="2.16.840.1.113883.6.96"/>
+               <xs:enumeration value="2.16.840.1.113883.6.96"/>
+            </xs:restriction>
+         </xs:simpleType>
+      </xs:attribute>
       <xs:attribute name="displayName" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="over_sectio_littekenq">

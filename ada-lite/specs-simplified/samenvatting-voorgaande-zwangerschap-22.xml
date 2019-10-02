@@ -5,6 +5,9 @@
          prefix="peri20-"
          transactionId="2.16.840.1.113883.2.4.3.11.60.90.77.4.2465"
          transactionEffectiveDate="2019-03-07T15:23:44"
+         transactionStatusCode="draft"
+         transactionType="stationary"
+         transactionIddisplay="peri-transaction-2465"
          shortName="voorgaande_zwangerschap_samenvatting_22"><!-- == Generated lite version of specification from full version for voorgaande_zwangerschap_samenvatting_22 == --><!-- == Source: design/specs-full/samenvatting-voorgaande-zwangerschap-22.xml == --><!-- == Generator: design/xsl/spec-full2spec-lite.xsl == -->
    <name language="nl-NL">Voorgaande zwangerschap samenvatting (2.2)</name>
    <desc language="nl-NL"/>
@@ -196,7 +199,16 @@
             <relationship type="SPEC"
                           ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.4.10021"
                           flexibility="2012-08-06T00:00:00"
-                          refdisplay="peri21-dataelement-10021"/>
+                          prefix="peri20-"
+                          datasetId="2.16.840.1.113883.2.4.3.11.60.90.77.1.4"
+                          datasetEffectiveDate="2012-08-06T00:00:00"
+                          datasetStatusCode="final"
+                          iType="item"
+                          iStatusCode="final"
+                          iEffectiveDate="2012-08-06T00:00:00"
+                          refdisplay="peri21-dataelement-10021">
+               <name language="nl-NL">Zorginstelling OID</name>
+            </relationship>
             <valueDomain type="identifier"/>
          </concept>
          <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10022"
@@ -967,7 +979,7 @@
                shortName="wijze_einde_zwangerschap">
          <name language="nl-NL">Wijze einde zwangerschap</name>
          <desc language="nl-NL">De wijze waarop de zwangerschap geëindigd is.<br clear="none"/>
-            <br clear="none"/>TOP (Termination of Pregnancy) is zwangerschapsafbreking na 16 weken. Bij TOP wordt hier 'Partus' geregistreerd, zodat dit meegenomen wordt als pariteit. Dit in tegenstelling tot APLA, waarmee een zwangerschapsafbreking (abortus) van minder dan 16 weken wordt bedoeld.<br clear="none"/>
+            <br clear="none"/>TOP (Termination of Pregnancy) is zwangerschapsafbreking na 16+0 weken (16w0d). Bij TOP wordt hier 'Partus' geregistreerd, zodat dit meegenomen wordt als pariteit. Dit in tegenstelling tot APLA, waarmee een zwangerschapsafbreking (abortus) van minder dan 16 weken wordt bedoeld.<br clear="none"/>
             </desc>
          <valueDomain type="code">
             <property/>
@@ -1221,7 +1233,16 @@
          <relationship type="SPEC"
                        ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.4.20555"
                        flexibility="2012-08-06T00:00:00"
-                       refdisplay="peri21-dataelement-20555"/>
+                       prefix="peri20-"
+                       datasetId="2.16.840.1.113883.2.4.3.11.60.90.77.1.4"
+                       datasetEffectiveDate="2012-08-06T00:00:00"
+                       datasetStatusCode="final"
+                       iType="group"
+                       iStatusCode="final"
+                       iEffectiveDate="2012-08-06T00:00:00"
+                       refdisplay="peri21-dataelement-20555">
+            <name language="nl-NL">Interventies begin baring (groep)</name>
+         </relationship>
          <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20560"
                   statusCode="final"
                   effectiveDate="2013-09-10T00:00:00"
@@ -2111,7 +2132,16 @@
                <relationship type="SPEC"
                              ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.4.20062"
                              flexibility="2012-08-06T00:00:00"
-                             refdisplay="peri21-dataelement-20062"/>
+                             prefix="peri20-"
+                             datasetId="2.16.840.1.113883.2.4.3.11.60.90.77.1.4"
+                             datasetEffectiveDate="2012-08-06T00:00:00"
+                             datasetStatusCode="final"
+                             iType="item"
+                             iStatusCode="final"
+                             iEffectiveDate="2012-08-06T00:00:00"
+                             refdisplay="peri21-dataelement-20062">
+                  <name language="nl-NL">Zwangerschapsduur</name>
+               </relationship>
                <operationalization language="nl-NL">Berekend veld: zwangerschapsduur in dagen bij geboorte kind. Berekend veld ((geboortedatum-atermedatum)+280) geven.</operationalization>
                <valueDomain type="quantity">
                   <property unit="d" minInclude="0"/>
@@ -2146,7 +2176,16 @@
                <relationship type="SPEC"
                              ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.4.40189"
                              flexibility="2012-08-06T00:00:00"
-                             refdisplay="peri21-dataelement-40189"/>
+                             prefix="peri20-"
+                             datasetId="2.16.840.1.113883.2.4.3.11.60.90.77.1.4"
+                             datasetEffectiveDate="2012-08-06T00:00:00"
+                             datasetStatusCode="final"
+                             iType="group"
+                             iStatusCode="final"
+                             iEffectiveDate="2012-08-06T00:00:00"
+                             refdisplay="peri21-dataelement-40189">
+                  <name language="nl-NL">Vaginale kunstverlossing (groep)</name>
+               </relationship>
                <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40190"
                         statusCode="final"
                         effectiveDate="2013-09-10T00:00:00"
@@ -2474,7 +2513,16 @@
                   <relationship type="SPEC"
                                 ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.4.10605"
                                 flexibility="2013-11-08T00:00:00"
-                                refdisplay="peri21-dataelement-10605"/>
+                                prefix="peri20-"
+                                datasetId="2.16.840.1.113883.2.4.3.11.60.90.77.1.4"
+                                datasetEffectiveDate="2012-08-06T00:00:00"
+                                datasetStatusCode="final"
+                                iType="item"
+                                iStatusCode="final"
+                                iEffectiveDate="2013-11-08T00:00:00"
+                                refdisplay="peri21-dataelement-10605">
+                     <name language="nl-NL">Percentiel van het geboortegewicht</name>
+                  </relationship>
                   <valueDomain type="code"/>
                   <valueSet id="2.16.840.1.113883.2.4.11.176"
                             name="PercentielGeboortegewicht"
@@ -2557,18 +2605,15 @@
                      conformance="C"
                      isMandatory="false"
                      shortName="congenitale_afwijkingen_groep">
-               <name language="nl-NL">Congenitale afwijkingen (groep)</name>
-               <desc language="nl-NL">Congenitale afwijkingen (groep)</desc>
-               <condition minimumMultiplicity="0"
-                          maximumMultiplicity="1"
-                          conformance=""
-                          isMandatory="false">
+               <condition minimumMultiplicity="0" maximumMultiplicity="1" isMandatory="false">
                   <desc language="nl-NL">Als congenitale afwijkingen? is 'Ja'</desc>
                </condition>
                <condition minimumMultiplicity="0"
                           maximumMultiplicity="0"
                           conformance="NP"
                           isMandatory="false"/>
+               <name language="nl-NL">Congenitale afwijkingen (groep)</name>
+               <desc language="nl-NL">Congenitale afwijkingen (groep)</desc>
                <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40082"
                         statusCode="final"
                         effectiveDate="2013-09-10T00:00:00"

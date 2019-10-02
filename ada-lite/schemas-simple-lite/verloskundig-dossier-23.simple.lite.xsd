@@ -100,7 +100,7 @@ SOFTWARE.
          </xs:element>
          <xs:element name="medisch_onderzoek"
                      minOccurs="0"
-                     maxOccurs="unbounded"
+                     maxOccurs="1"
                      type="medisch_onderzoek">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">Medisch onderzoek</xs:documentation>
@@ -554,7 +554,7 @@ SOFTWARE.
    <xs:complexType name="adres_zorginstelling">
       <xs:sequence>
          <xs:element name="straatnaam"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="1"
                      type="straatnaam_10032">
             <xs:annotation>
@@ -563,7 +563,7 @@ SOFTWARE.
             </xs:annotation>
          </xs:element>
          <xs:element name="huisnummer"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="1"
                      type="huisnummer_10033">
             <xs:annotation>
@@ -581,7 +581,7 @@ SOFTWARE.
             </xs:annotation>
          </xs:element>
          <xs:element name="postcode"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="1"
                      type="postcode_10041">
             <xs:annotation>
@@ -590,7 +590,7 @@ SOFTWARE.
             </xs:annotation>
          </xs:element>
          <xs:element name="plaatsnaam"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="1"
                      type="plaatsnaam_10036">
             <xs:annotation>
@@ -598,7 +598,7 @@ SOFTWARE.
                <xs:documentation source="desc" xml:lang="nl-NL">Plaatsnaam als onderdeel van het adres; De naam van een stad, dorp of ander woongebied of bezorgcentrum. Merk op: dit is de woonplaats, niet de eventuele gemeente waartoe de woonplaats behoort. Voorbeeld: Haren, gemeente Groningen.</xs:documentation>
             </xs:annotation>
          </xs:element>
-         <xs:element name="land" minOccurs="1" maxOccurs="1" type="land_10038">
+         <xs:element name="land" minOccurs="0" maxOccurs="1" type="land_10038">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">Land</xs:documentation>
             </xs:annotation>
@@ -802,6 +802,15 @@ SOFTWARE.
                <xs:documentation source="name" xml:lang="nl-NL">Adres</xs:documentation>
             </xs:annotation>
          </xs:element>
+         <xs:element name="contactgegevens"
+                     minOccurs="0"
+                     maxOccurs="1"
+                     type="contactgegevens_82694">
+            <xs:annotation>
+               <xs:documentation source="name" xml:lang="nl-NL">Contactgegevens</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">Rootconcept van de sub-bouwsteen Contactgegevens. Dit rootconcept bevat alle gegevenselementen van de sub-bouwsteen Contactgegevens.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
          <xs:element name="etniciteit"
                      minOccurs="0"
                      maxOccurs="1"
@@ -820,13 +829,13 @@ SOFTWARE.
                <xs:documentation source="desc" xml:lang="nl-NL">Dit item is opgenomen om na te gaan in welke mate zorgverlener en zwangere vrouw met elkaar kunnen communiceren. Het gaat om het achterhalen van de kwaliteit van de communicatie. Uitgangspunt is dat de voertaal altijd Nederlands is. Hoewel het mogelijk is dat een zwangere en een zorgverlener beiden dezelfde 'vreemde' taal spreken, zal een zwangere te maken krijgen met verschillende zorgverleners die deze taal waarschijnlijk niet machtig zijn. Het vastleggen van de taalvaardigheid in het Nederlands is daarom de beste benadering voor de kwaliteit van de communicatie.De communicatietaal van de vrouw kan overigens wél vastgelegd worden in een separaat item (peri22-dataelement-82371).</xs:documentation>
             </xs:annotation>
          </xs:element>
-         <xs:element name="communicatietaal"
+         <xs:element name="communicatie_taal"
                      minOccurs="0"
                      maxOccurs="unbounded"
-                     type="communicatietaal">
+                     type="communicatie_taal">
             <xs:annotation>
-               <xs:documentation source="name" xml:lang="nl-NL">Communicatietaal</xs:documentation>
-               <xs:documentation source="desc" xml:lang="nl-NL">Gegeven dat aangeeft wat de voorkeurs communicatietaal van de persoon is</xs:documentation>
+               <xs:documentation source="name" xml:lang="nl-NL">CommunicatieTaal</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">De taal waarin de communicatie plaatsvindt.</xs:documentation>
             </xs:annotation>
          </xs:element>
          <xs:element name="opleidingsniveau"
@@ -868,7 +877,7 @@ SOFTWARE.
             </xs:annotation>
          </xs:element>
          <xs:element name="medicatiegebruikq"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="1"
                      type="medicatiegebruikq">
             <xs:annotation>
@@ -877,7 +886,7 @@ SOFTWARE.
             </xs:annotation>
          </xs:element>
          <xs:element name="medicatiegebruik"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="unbounded"
                      type="medicatiegebruik">
             <xs:annotation>
@@ -1288,6 +1297,323 @@ SOFTWARE.
       <xs:attribute name="displayName" use="optional" type="xs:string"/>
       <xs:attribute name="enum" use="optional" type="xs:string"/>
    </xs:complexType>
+   <xs:complexType name="contactgegevens_82694">
+      <xs:sequence>
+         <xs:element name="telefoonnummers"
+                     minOccurs="0"
+                     maxOccurs="1"
+                     type="telefoonnummers_82695">
+            <xs:annotation>
+               <xs:documentation source="name" xml:lang="nl-NL">Telefoonnummers</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">Container van het concept Telefoonnummers. Deze container bevat alle gegevenselementen van het concept Telefoonnummers.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="email_adressen"
+                     minOccurs="0"
+                     maxOccurs="1"
+                     type="email_adressen">
+            <xs:annotation>
+               <xs:documentation source="name" xml:lang="nl-NL">EmailAdressen</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">Container van het concept EmailAdressen. Deze container bevat alle gegevenselementen van het concept Emailadressen.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element minOccurs="0" name="adaextension" type="adaextension">
+            <xs:annotation>
+               <xs:documentation>Optionele extensie informatie</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+      <xs:attribute name="conceptId"
+                    type="t-id"
+                    use="optional"
+                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82694"/>
+   </xs:complexType>
+   <xs:complexType name="telefoonnummers_82695">
+      <xs:sequence>
+         <xs:element name="telefoonnummer"
+                     minOccurs="0"
+                     maxOccurs="1"
+                     type="telefoonnummer_82696">
+            <xs:annotation>
+               <xs:documentation source="name" xml:lang="nl-NL">Telefoonnummer</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">Een telefoonnummer van de persoon.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="telecom_type"
+                     minOccurs="0"
+                     maxOccurs="1"
+                     type="telecom_type">
+            <xs:annotation>
+               <xs:documentation source="name" xml:lang="nl-NL">TelecomType</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">Het type netwerk of apparaat waar het telefoonummer aan verbonden is</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="nummer_soort"
+                     minOccurs="0"
+                     maxOccurs="1"
+                     type="nummer_soort">
+            <xs:annotation>
+               <xs:documentation source="name" xml:lang="nl-NL">NummerSoort</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">Met NummerSoort kan aangegeven worden of het om een vast, tijdelijk, werk nummer gaat.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element minOccurs="0" name="adaextension" type="adaextension">
+            <xs:annotation>
+               <xs:documentation>Optionele extensie informatie</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+      <xs:attribute name="conceptId"
+                    type="t-id"
+                    use="optional"
+                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82695"/>
+   </xs:complexType>
+   <xs:complexType name="telefoonnummer_82696">
+      <xs:attribute name="conceptId"
+                    type="t-id"
+                    use="optional"
+                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82696"/>
+      <xs:attribute name="value" use="required" type="xs:string"/>
+   </xs:complexType>
+   <xs:complexType name="telecom_type">
+      <xs:attribute name="conceptId"
+                    type="t-id"
+                    use="optional"
+                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82697"/>
+      <xs:attribute name="value" use="optional">
+         <xs:simpleType>
+            <xs:restriction base="xs:string">
+               <xs:enumeration value="LL">
+                  <xs:annotation>
+                     <xs:documentation source="name" xml:lang="nl-NL">Vast telefoonnummer</xs:documentation>
+                  </xs:annotation>
+               </xs:enumeration>
+               <xs:enumeration value="FAX">
+                  <xs:annotation>
+                     <xs:documentation source="name" xml:lang="nl-NL">Fax</xs:documentation>
+                  </xs:annotation>
+               </xs:enumeration>
+               <xs:enumeration value="MC">
+                  <xs:annotation>
+                     <xs:documentation source="name" xml:lang="nl-NL">Mobiel telefoonnummer</xs:documentation>
+                  </xs:annotation>
+               </xs:enumeration>
+               <xs:enumeration value="PG">
+                  <xs:annotation>
+                     <xs:documentation source="name" xml:lang="nl-NL">Pieper</xs:documentation>
+                  </xs:annotation>
+               </xs:enumeration>
+            </xs:restriction>
+         </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="code" use="optional">
+         <xs:simpleType>
+            <xs:restriction base="xs:string">
+               <xs:enumeration value="LL"/>
+               <xs:enumeration value="FAX"/>
+               <xs:enumeration value="MC"/>
+               <xs:enumeration value="PG"/>
+            </xs:restriction>
+         </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="codeSystem" use="optional">
+         <xs:simpleType>
+            <xs:restriction base="xs:string">
+               <xs:enumeration value="2.16.840.1.113883.2.4.3.11.60.40.4.22.1"/>
+               <xs:enumeration value="2.16.840.1.113883.2.4.3.11.60.40.4.22.1"/>
+               <xs:enumeration value="2.16.840.1.113883.5.1119"/>
+               <xs:enumeration value="2.16.840.1.113883.5.1119"/>
+            </xs:restriction>
+         </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
+      <xs:attribute name="enum" use="optional">
+         <xs:simpleType>
+            <xs:restriction base="xs:string">
+               <xs:enumeration value="Land_Line">
+                  <xs:annotation>
+                     <xs:documentation source="name" xml:lang="nl-NL">Vast telefoonnummer</xs:documentation>
+                  </xs:annotation>
+               </xs:enumeration>
+               <xs:enumeration value="Fax">
+                  <xs:annotation>
+                     <xs:documentation source="name" xml:lang="nl-NL">Fax</xs:documentation>
+                  </xs:annotation>
+               </xs:enumeration>
+               <xs:enumeration value="Mobile_Phone">
+                  <xs:annotation>
+                     <xs:documentation source="name" xml:lang="nl-NL">Mobiel telefoonnummer</xs:documentation>
+                  </xs:annotation>
+               </xs:enumeration>
+               <xs:enumeration value="Pager">
+                  <xs:annotation>
+                     <xs:documentation source="name" xml:lang="nl-NL">Pieper</xs:documentation>
+                  </xs:annotation>
+               </xs:enumeration>
+            </xs:restriction>
+         </xs:simpleType>
+      </xs:attribute>
+   </xs:complexType>
+   <xs:complexType name="nummer_soort">
+      <xs:attribute name="conceptId"
+                    type="t-id"
+                    use="optional"
+                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82698"/>
+      <xs:attribute name="value" use="optional">
+         <xs:simpleType>
+            <xs:restriction base="xs:string">
+               <xs:enumeration value="HP">
+                  <xs:annotation>
+                     <xs:documentation source="name" xml:lang="nl-NL">Telefoonnummer thuis</xs:documentation>
+                  </xs:annotation>
+               </xs:enumeration>
+               <xs:enumeration value="TMP">
+                  <xs:annotation>
+                     <xs:documentation source="name" xml:lang="nl-NL">Tijdelijk telefoonnummer</xs:documentation>
+                  </xs:annotation>
+               </xs:enumeration>
+               <xs:enumeration value="WP">
+                  <xs:annotation>
+                     <xs:documentation source="name" xml:lang="nl-NL">Zakelijk telefoonnummer</xs:documentation>
+                  </xs:annotation>
+               </xs:enumeration>
+            </xs:restriction>
+         </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="code" use="optional">
+         <xs:simpleType>
+            <xs:restriction base="xs:string">
+               <xs:enumeration value="HP"/>
+               <xs:enumeration value="TMP"/>
+               <xs:enumeration value="WP"/>
+            </xs:restriction>
+         </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="codeSystem" use="optional">
+         <xs:simpleType>
+            <xs:restriction base="xs:string">
+               <xs:enumeration value="2.16.840.1.113883.5.1119"/>
+               <xs:enumeration value="2.16.840.1.113883.5.1119"/>
+               <xs:enumeration value="2.16.840.1.113883.5.1119"/>
+            </xs:restriction>
+         </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
+      <xs:attribute name="enum" use="optional">
+         <xs:simpleType>
+            <xs:restriction base="xs:string">
+               <xs:enumeration value="Primary_Home">
+                  <xs:annotation>
+                     <xs:documentation source="name" xml:lang="nl-NL">Telefoonnummer thuis</xs:documentation>
+                  </xs:annotation>
+               </xs:enumeration>
+               <xs:enumeration value="Tempory_Address">
+                  <xs:annotation>
+                     <xs:documentation source="name" xml:lang="nl-NL">Tijdelijk telefoonnummer</xs:documentation>
+                  </xs:annotation>
+               </xs:enumeration>
+               <xs:enumeration value="Work_Place">
+                  <xs:annotation>
+                     <xs:documentation source="name" xml:lang="nl-NL">Zakelijk telefoonnummer</xs:documentation>
+                  </xs:annotation>
+               </xs:enumeration>
+            </xs:restriction>
+         </xs:simpleType>
+      </xs:attribute>
+   </xs:complexType>
+   <xs:complexType name="email_adressen">
+      <xs:sequence>
+         <xs:element name="email_adres"
+                     minOccurs="0"
+                     maxOccurs="1"
+                     type="email_adres">
+            <xs:annotation>
+               <xs:documentation source="name" xml:lang="nl-NL">EmailAdres</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">Een e-mailadres van de persoon</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="email_soort"
+                     minOccurs="0"
+                     maxOccurs="1"
+                     type="email_soort">
+            <xs:annotation>
+               <xs:documentation source="name" xml:lang="nl-NL">EmailSoort</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">Met EmailSoort kan aangegeven worden of het om een prive of zakelijk e-mail adres gaat.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element minOccurs="0" name="adaextension" type="adaextension">
+            <xs:annotation>
+               <xs:documentation>Optionele extensie informatie</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+      <xs:attribute name="conceptId"
+                    type="t-id"
+                    use="optional"
+                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82699"/>
+   </xs:complexType>
+   <xs:complexType name="email_adres">
+      <xs:attribute name="conceptId"
+                    type="t-id"
+                    use="optional"
+                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82700"/>
+      <xs:attribute name="value" use="required" type="xs:string"/>
+   </xs:complexType>
+   <xs:complexType name="email_soort">
+      <xs:attribute name="conceptId"
+                    type="t-id"
+                    use="optional"
+                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82701"/>
+      <xs:attribute name="value" use="optional">
+         <xs:simpleType>
+            <xs:restriction base="xs:string">
+               <xs:enumeration value="HP">
+                  <xs:annotation>
+                     <xs:documentation source="name" xml:lang="nl-NL">Privé e-mailadres</xs:documentation>
+                  </xs:annotation>
+               </xs:enumeration>
+               <xs:enumeration value="WP">
+                  <xs:annotation>
+                     <xs:documentation source="name" xml:lang="nl-NL">Zakelijk e-mailadres</xs:documentation>
+                  </xs:annotation>
+               </xs:enumeration>
+            </xs:restriction>
+         </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="code" use="optional">
+         <xs:simpleType>
+            <xs:restriction base="xs:string">
+               <xs:enumeration value="HP"/>
+               <xs:enumeration value="WP"/>
+            </xs:restriction>
+         </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="codeSystem" use="optional">
+         <xs:simpleType>
+            <xs:restriction base="xs:string">
+               <xs:enumeration value="2.16.840.1.113883.5.1119"/>
+               <xs:enumeration value="2.16.840.1.113883.5.1119"/>
+            </xs:restriction>
+         </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="displayName" use="optional" type="xs:string"/>
+      <xs:attribute name="enum" use="optional">
+         <xs:simpleType>
+            <xs:restriction base="xs:string">
+               <xs:enumeration value="Primary_Home">
+                  <xs:annotation>
+                     <xs:documentation source="name" xml:lang="nl-NL">Privé e-mailadres</xs:documentation>
+                  </xs:annotation>
+               </xs:enumeration>
+               <xs:enumeration value="Work_Place">
+                  <xs:annotation>
+                     <xs:documentation source="name" xml:lang="nl-NL">Zakelijk e-mailadres</xs:documentation>
+                  </xs:annotation>
+               </xs:enumeration>
+            </xs:restriction>
+         </xs:simpleType>
+      </xs:attribute>
+   </xs:complexType>
    <xs:complexType name="etniciteit_10400">
       <xs:attribute name="conceptId"
                     type="t-id"
@@ -1506,12 +1832,12 @@ SOFTWARE.
          </xs:simpleType>
       </xs:attribute>
    </xs:complexType>
-   <xs:complexType name="communicatietaal">
+   <xs:complexType name="communicatie_taal">
       <xs:attribute name="conceptId"
                     type="t-id"
                     use="optional"
                     fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82371"/>
-      <!-- == *** No conceptList entries found for concept communicatietaal == -->
+      <!-- == *** No conceptList entries found for concept communicatie_taal == -->
       <xs:attribute name="value" use="optional" type="xs:string"/>
       <xs:attribute name="code" use="optional" type="xs:string"/>
       <xs:attribute name="codeSystem" use="optional" type="xs:string"/>
@@ -4456,7 +4782,7 @@ SOFTWARE.
                <xs:documentation source="name" xml:lang="nl-NL">Datum bepaling</xs:documentation>
             </xs:annotation>
          </xs:element>
-         <xs:element name="bmi_vrouw" minOccurs="0" maxOccurs="1" type="bmi_vrouw">
+         <xs:element name="bmi_vrouw" minOccurs="1" maxOccurs="1" type="bmi_vrouw">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">BMI vrouw</xs:documentation>
                <xs:documentation source="desc" xml:lang="nl-NL">Body Mass Index vrouw (berekend)</xs:documentation>
@@ -5084,7 +5410,7 @@ SOFTWARE.
    <xs:complexType name="zwangerschap">
       <xs:sequence>
          <xs:element name="identificatie_van_de_zwangerschap"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="1"
                      type="identificatie_van_de_zwangerschap">
             <xs:annotation>
@@ -5119,7 +5445,7 @@ SOFTWARE.
                <xs:documentation source="desc" xml:lang="nl-NL">Aantal voorafgaande zwangerschappen vóór deze zwangerschap die eindigden met een partus (&gt;= 16w 0d / 112 dagen).De waarde van dit item is minimaal 1 minder dan graviditeit.</xs:documentation>
             </xs:annotation>
          </xs:element>
-         <xs:element name="pariteit" minOccurs="1" maxOccurs="1" type="pariteit">
+         <xs:element name="pariteit" minOccurs="0" maxOccurs="1" type="pariteit">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">Pariteit</xs:documentation>
                <xs:documentation source="desc" xml:lang="nl-NL">Aantal zwangerschappen die eindigden met een partus (&gt;= 16w 0d / 112 dagen)</xs:documentation>
@@ -5141,7 +5467,7 @@ SOFTWARE.
             </xs:annotation>
          </xs:element>
          <xs:element name="a_terme_datum_groep"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="1"
                      type="a_terme_datum_groep">
             <xs:annotation>
@@ -5166,7 +5492,7 @@ SOFTWARE.
             </xs:annotation>
          </xs:element>
          <xs:element name="hoeveelling"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="1"
                      type="hoeveelling">
             <xs:annotation>
@@ -5228,8 +5554,8 @@ SOFTWARE.
             </xs:annotation>
          </xs:element>
          <xs:element name="trisomie_in_de_anamneseq"
-                     minOccurs="1"
-                     maxOccurs="unbounded"
+                     minOccurs="0"
+                     maxOccurs="1"
                      type="trisomie_in_de_anamneseq_20170">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">Trisomie in de anamnese?</xs:documentation>
@@ -5321,7 +5647,7 @@ SOFTWARE.
                      type="wijze_einde_zwangerschap">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">Wijze einde zwangerschap</xs:documentation>
-               <xs:documentation source="desc" xml:lang="nl-NL">De wijze waarop de zwangerschap geëindigd is.TOP (Termination of Pregnancy) is zwangerschapsafbreking na 16 weken. Bij TOP wordt hier 'Partus' geregistreerd, zodat dit meegenomen wordt als pariteit. Dit in tegenstelling tot APLA, waarmee een zwangerschapsafbreking (abortus) van minder dan 16 weken wordt bedoeld.</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">De wijze waarop de zwangerschap geëindigd is.TOP (Termination of Pregnancy) is zwangerschapsafbreking na 16+0 weken (16w0d). Bij TOP wordt hier 'Partus' geregistreerd, zodat dit meegenomen wordt als pariteit. Dit in tegenstelling tot APLA, waarmee een zwangerschapsafbreking (abortus) van minder dan 16 weken wordt bedoeld.</xs:documentation>
             </xs:annotation>
          </xs:element>
          <xs:element name="datum_einde_zwangerschap"
@@ -6477,8 +6803,8 @@ SOFTWARE.
             </xs:annotation>
          </xs:element>
          <xs:element name="soort_drugs"
-                     minOccurs="1"
-                     maxOccurs="unbounded"
+                     minOccurs="0"
+                     maxOccurs="1"
                      type="soort_drugs">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">Soort drugs</xs:documentation>
@@ -8761,7 +9087,7 @@ SOFTWARE.
             </xs:annotation>
          </xs:element>
          <xs:element name="interventie"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="1"
                      type="interventie_82376">
             <xs:annotation>
@@ -9399,7 +9725,7 @@ SOFTWARE.
             </xs:annotation>
          </xs:element>
          <xs:element name="reden_verzending"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="1"
                      type="reden_verzending">
             <xs:annotation>
@@ -10076,7 +10402,7 @@ SOFTWARE.
             </xs:annotation>
          </xs:element>
          <xs:element name="immunisatie"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="unbounded"
                      type="immunisatie">
             <xs:annotation>
@@ -12453,16 +12779,16 @@ SOFTWARE.
             </xs:annotation>
          </xs:element>
          <xs:element name="contactgegevens"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="1"
-                     type="contactgegevens">
+                     type="contactgegevens_82364">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">Contactgegevens</xs:documentation>
                <xs:documentation source="desc" xml:lang="nl-NL">Contactgegevens zodat contact opgenomen kan worden over het kind. Dit gaat bijvoorbeeld om telefoonnummers van een ouder en/of wettelijk vertegenwoordiger en/of van de persoon bij wie het kind verblijft.</xs:documentation>
             </xs:annotation>
          </xs:element>
          <xs:element name="adres_tbv_hielprik"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="1"
                      type="adres_tbv_hielprik">
             <xs:annotation>
@@ -12477,7 +12803,7 @@ SOFTWARE.
             </xs:annotation>
          </xs:element>
          <xs:element name="geslacht_administratief"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="1"
                      type="geslacht_administratief">
             <xs:annotation>
@@ -12743,12 +13069,12 @@ SOFTWARE.
                     fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82055"/>
       <xs:attribute name="value" use="required" type="xs:string"/>
    </xs:complexType>
-   <xs:complexType name="contactgegevens">
+   <xs:complexType name="contactgegevens_82364">
       <xs:sequence>
          <xs:element name="telefoonnummers"
-                     minOccurs="1"
-                     maxOccurs="unbounded"
-                     type="telefoonnummers">
+                     minOccurs="0"
+                     maxOccurs="1"
+                     type="telefoonnummers_82365">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">Telefoonnummers</xs:documentation>
             </xs:annotation>
@@ -12764,7 +13090,7 @@ SOFTWARE.
                     use="optional"
                     fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82364"/>
    </xs:complexType>
-   <xs:complexType name="telefoonnummers">
+   <xs:complexType name="telefoonnummers_82365">
       <xs:sequence>
          <xs:element name="soort_telefoonnummer"
                      minOccurs="0"
@@ -12776,9 +13102,9 @@ SOFTWARE.
             </xs:annotation>
          </xs:element>
          <xs:element name="telefoonnummer"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="1"
-                     type="telefoonnummer">
+                     type="telefoonnummer_82367">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">Telefoonnummer</xs:documentation>
             </xs:annotation>
@@ -12873,7 +13199,7 @@ SOFTWARE.
          </xs:simpleType>
       </xs:attribute>
    </xs:complexType>
-   <xs:complexType name="telefoonnummer">
+   <xs:complexType name="telefoonnummer_82367">
       <xs:attribute name="conceptId"
                     type="t-id"
                     use="optional"
@@ -12883,7 +13209,7 @@ SOFTWARE.
    <xs:complexType name="adres_tbv_hielprik">
       <xs:sequence>
          <xs:element name="straatnaam"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="1"
                      type="straatnaam_82133">
             <xs:annotation>
@@ -12892,7 +13218,7 @@ SOFTWARE.
             </xs:annotation>
          </xs:element>
          <xs:element name="huisnummer"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="1"
                      type="huisnummer_82134">
             <xs:annotation>
@@ -12910,7 +13236,7 @@ SOFTWARE.
             </xs:annotation>
          </xs:element>
          <xs:element name="postcode"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="1"
                      type="postcode_82136">
             <xs:annotation>
@@ -12919,7 +13245,7 @@ SOFTWARE.
             </xs:annotation>
          </xs:element>
          <xs:element name="plaatsnaam"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="1"
                      type="plaatsnaam_82137">
             <xs:annotation>
@@ -14192,7 +14518,7 @@ SOFTWARE.
                <xs:documentation source="desc" xml:lang="nl-NL">Datum/tijd van het starten van de pijnbestrijding</xs:documentation>
             </xs:annotation>
          </xs:element>
-         <xs:element name="methode" minOccurs="1" maxOccurs="1" type="methode_82093">
+         <xs:element name="methode" minOccurs="0" maxOccurs="1" type="methode_82093">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">Methode</xs:documentation>
             </xs:annotation>
@@ -14202,10 +14528,7 @@ SOFTWARE.
                <xs:documentation source="name" xml:lang="nl-NL">Periode</xs:documentation>
             </xs:annotation>
          </xs:element>
-         <xs:element name="reden"
-                     minOccurs="1"
-                     maxOccurs="unbounded"
-                     type="reden_82098">
+         <xs:element name="reden" minOccurs="0" maxOccurs="1" type="reden_82098">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">Reden</xs:documentation>
             </xs:annotation>
@@ -14230,15 +14553,15 @@ SOFTWARE.
    </xs:complexType>
    <xs:complexType name="methode_82093">
       <xs:sequence>
-         <xs:element name="methode" minOccurs="1" maxOccurs="1" type="methode_82092">
+         <xs:element name="methode" minOccurs="0" maxOccurs="1" type="methode_82092">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">Methode</xs:documentation>
                <xs:documentation source="desc" xml:lang="nl-NL">Pijnbestrijdingsmethode</xs:documentation>
             </xs:annotation>
          </xs:element>
          <xs:element name="overig_middel"
-                     minOccurs="1"
-                     maxOccurs="unbounded"
+                     minOccurs="0"
+                     maxOccurs="1"
                      type="overig_middel">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">Overig middel</xs:documentation>
@@ -14337,7 +14660,7 @@ SOFTWARE.
    </xs:complexType>
    <xs:complexType name="overig_middel">
       <xs:sequence>
-         <xs:element name="middel" minOccurs="0" maxOccurs="1" type="middel">
+         <xs:element name="middel" minOccurs="1" maxOccurs="1" type="middel">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">Middel</xs:documentation>
                <xs:documentation source="desc" xml:lang="nl-NL">Pijnbestrijdingsmiddel</xs:documentation>
@@ -14673,12 +14996,67 @@ SOFTWARE.
                     type="t-id"
                     use="optional"
                     fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82098"/>
-      <!-- == *** No conceptList entries found for concept reden == -->
-      <xs:attribute name="value" use="optional" type="xs:string"/>
-      <xs:attribute name="code" use="optional" type="xs:string"/>
-      <xs:attribute name="codeSystem" use="optional" type="xs:string"/>
+      <xs:attribute name="value" use="optional">
+         <xs:simpleType>
+            <xs:restriction base="xs:string">
+               <xs:enumeration value="30421000146106">
+                  <xs:annotation>
+                     <xs:documentation source="name" xml:lang="nl-NL">Advies zorgverlener</xs:documentation>
+                  </xs:annotation>
+               </xs:enumeration>
+               <xs:enumeration value="183995001">
+                  <xs:annotation>
+                     <xs:documentation source="name" xml:lang="nl-NL">Wens patiënt</xs:documentation>
+                  </xs:annotation>
+               </xs:enumeration>
+               <xs:enumeration value="OTH">
+                  <xs:annotation>
+                     <xs:documentation source="name" xml:lang="nl-NL">Overig</xs:documentation>
+                  </xs:annotation>
+               </xs:enumeration>
+            </xs:restriction>
+         </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="code" use="optional">
+         <xs:simpleType>
+            <xs:restriction base="xs:string">
+               <xs:enumeration value="30421000146106"/>
+               <xs:enumeration value="183995001"/>
+               <xs:enumeration value="OTH"/>
+            </xs:restriction>
+         </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="codeSystem" use="optional">
+         <xs:simpleType>
+            <xs:restriction base="xs:string">
+               <xs:enumeration value="2.16.840.1.113883.6.96"/>
+               <xs:enumeration value="2.16.840.1.113883.6.96"/>
+               <xs:enumeration value="2.16.840.1.113883.5.1008"/>
+            </xs:restriction>
+         </xs:simpleType>
+      </xs:attribute>
       <xs:attribute name="displayName" use="optional" type="xs:string"/>
-      <xs:attribute name="enum" use="optional" type="xs:string"/>
+      <xs:attribute name="enum" use="optional">
+         <xs:simpleType>
+            <xs:restriction base="xs:string">
+               <xs:enumeration value="Health_care_professional_advised_to_perform_treatment_(situation)">
+                  <xs:annotation>
+                     <xs:documentation source="name" xml:lang="nl-NL">Advies zorgverlener</xs:documentation>
+                  </xs:annotation>
+               </xs:enumeration>
+               <xs:enumeration value="Patient_requested_procedure_(context-dependent_category)">
+                  <xs:annotation>
+                     <xs:documentation source="name" xml:lang="nl-NL">Wens patiënt</xs:documentation>
+                  </xs:annotation>
+               </xs:enumeration>
+               <xs:enumeration value="Overig">
+                  <xs:annotation>
+                     <xs:documentation source="name" xml:lang="nl-NL">Overig</xs:documentation>
+                  </xs:annotation>
+               </xs:enumeration>
+            </xs:restriction>
+         </xs:simpleType>
+      </xs:attribute>
    </xs:complexType>
    <xs:complexType name="sedatieq">
       <xs:attribute name="conceptId"
@@ -14786,12 +15164,67 @@ SOFTWARE.
                     type="t-id"
                     use="optional"
                     fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82101"/>
-      <!-- == *** No conceptList entries found for concept reden == -->
-      <xs:attribute name="value" use="optional" type="xs:string"/>
-      <xs:attribute name="code" use="optional" type="xs:string"/>
-      <xs:attribute name="codeSystem" use="optional" type="xs:string"/>
+      <xs:attribute name="value" use="optional">
+         <xs:simpleType>
+            <xs:restriction base="xs:string">
+               <xs:enumeration value="30421000146106">
+                  <xs:annotation>
+                     <xs:documentation source="name" xml:lang="nl-NL">Advies zorgverlener</xs:documentation>
+                  </xs:annotation>
+               </xs:enumeration>
+               <xs:enumeration value="183995001">
+                  <xs:annotation>
+                     <xs:documentation source="name" xml:lang="nl-NL">Wens patiënt</xs:documentation>
+                  </xs:annotation>
+               </xs:enumeration>
+               <xs:enumeration value="OTH">
+                  <xs:annotation>
+                     <xs:documentation source="name" xml:lang="nl-NL">Overig</xs:documentation>
+                  </xs:annotation>
+               </xs:enumeration>
+            </xs:restriction>
+         </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="code" use="optional">
+         <xs:simpleType>
+            <xs:restriction base="xs:string">
+               <xs:enumeration value="30421000146106"/>
+               <xs:enumeration value="183995001"/>
+               <xs:enumeration value="OTH"/>
+            </xs:restriction>
+         </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="codeSystem" use="optional">
+         <xs:simpleType>
+            <xs:restriction base="xs:string">
+               <xs:enumeration value="2.16.840.1.113883.6.96"/>
+               <xs:enumeration value="2.16.840.1.113883.6.96"/>
+               <xs:enumeration value="2.16.840.1.113883.5.1008"/>
+            </xs:restriction>
+         </xs:simpleType>
+      </xs:attribute>
       <xs:attribute name="displayName" use="optional" type="xs:string"/>
-      <xs:attribute name="enum" use="optional" type="xs:string"/>
+      <xs:attribute name="enum" use="optional">
+         <xs:simpleType>
+            <xs:restriction base="xs:string">
+               <xs:enumeration value="Health_care_professional_advised_to_perform_treatment_(situation)">
+                  <xs:annotation>
+                     <xs:documentation source="name" xml:lang="nl-NL">Advies zorgverlener</xs:documentation>
+                  </xs:annotation>
+               </xs:enumeration>
+               <xs:enumeration value="Patient_requested_procedure_(context-dependent_category)">
+                  <xs:annotation>
+                     <xs:documentation source="name" xml:lang="nl-NL">Wens patiënt</xs:documentation>
+                  </xs:annotation>
+               </xs:enumeration>
+               <xs:enumeration value="Overig">
+                  <xs:annotation>
+                     <xs:documentation source="name" xml:lang="nl-NL">Overig</xs:documentation>
+                  </xs:annotation>
+               </xs:enumeration>
+            </xs:restriction>
+         </xs:simpleType>
+      </xs:attribute>
    </xs:complexType>
    <xs:complexType name="kindspecifieke_uitkomstgegevens">
       <xs:sequence>
@@ -17607,7 +18040,7 @@ SOFTWARE.
    <xs:complexType name="specificatie_congenitale_afwijking_groep">
       <xs:sequence>
          <xs:element name="specificatie_congenitale_afwijking"
-                     minOccurs="0"
+                     minOccurs="1"
                      maxOccurs="1"
                      type="specificatie_congenitale_afwijking">
             <xs:annotation>
@@ -20451,7 +20884,7 @@ SOFTWARE.
             </xs:annotation>
          </xs:element>
          <xs:element name="datum_onderzoek"
-                     minOccurs="0"
+                     minOccurs="1"
                      maxOccurs="1"
                      type="datum_onderzoek">
             <xs:annotation>
@@ -20496,7 +20929,7 @@ SOFTWARE.
             </xs:annotation>
          </xs:element>
          <xs:element name="onderzoektype_ntmeting"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="1"
                      type="onderzoektype_ntmeting">
             <xs:annotation>
@@ -20505,7 +20938,7 @@ SOFTWARE.
             </xs:annotation>
          </xs:element>
          <xs:element name="onderzoektype_seo"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="1"
                      type="onderzoektype_seo">
             <xs:annotation>
@@ -20514,7 +20947,7 @@ SOFTWARE.
             </xs:annotation>
          </xs:element>
          <xs:element name="onderzoektype_guo"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="1"
                      type="onderzoektype_guo">
             <xs:annotation>
@@ -20523,7 +20956,7 @@ SOFTWARE.
             </xs:annotation>
          </xs:element>
          <xs:element name="onderzoektype_kansbepaling_combinatietest"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="1"
                      type="onderzoektype_kansbepaling_combinatietest">
             <xs:annotation>
@@ -20531,21 +20964,21 @@ SOFTWARE.
                <xs:documentation source="desc" xml:lang="nl-NL">Doelstelling onderzoek</xs:documentation>
             </xs:annotation>
          </xs:element>
-         <xs:element name="seotype" minOccurs="1" maxOccurs="1" type="seotype">
+         <xs:element name="seotype" minOccurs="0" maxOccurs="1" type="seotype">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">SEO-type</xs:documentation>
                <xs:documentation source="desc" xml:lang="nl-NL">Aanduiding van het soort structureel echoscopisch onderzoek.</xs:documentation>
             </xs:annotation>
          </xs:element>
          <xs:element name="conclusie_seo"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="1"
                      type="conclusie_seo">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">Conclusie SEO</xs:documentation>
             </xs:annotation>
          </xs:element>
-         <xs:element name="advies_seo" minOccurs="1" maxOccurs="1" type="advies_seo">
+         <xs:element name="advies_seo" minOccurs="0" maxOccurs="1" type="advies_seo">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">Advies SEO</xs:documentation>
             </xs:annotation>
@@ -20569,7 +21002,7 @@ SOFTWARE.
          </xs:element>
          <xs:element name="foetusspecifieke_onderzoeksgegevens"
                      minOccurs="0"
-                     maxOccurs="unbounded"
+                     maxOccurs="1"
                      type="foetusspecifieke_onderzoeksgegevens">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">Foetusspecifieke (onderzoeks)gegevens</xs:documentation>
@@ -21206,7 +21639,7 @@ SOFTWARE.
    <xs:complexType name="foetusspecifieke_onderzoeksgegevens">
       <xs:sequence>
          <xs:element name="foetus_identificatie"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="1"
                      type="foetus_identificatie">
             <xs:annotation>
@@ -21247,7 +21680,7 @@ SOFTWARE.
          </xs:element>
          <xs:element name="invasieve_prenatale_diagnostiek"
                      minOccurs="0"
-                     maxOccurs="unbounded"
+                     maxOccurs="1"
                      type="invasieve_prenatale_diagnostiek">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">Invasieve prenatale diagnostiek</xs:documentation>
@@ -21425,13 +21858,13 @@ SOFTWARE.
    </xs:complexType>
    <xs:complexType name="echoscopie">
       <xs:sequence>
-         <xs:element name="crl" minOccurs="0" maxOccurs="unbounded" type="crl_60020">
+         <xs:element name="crl" minOccurs="0" maxOccurs="1" type="crl_60020">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">CRL</xs:documentation>
                <xs:documentation source="desc" xml:lang="nl-NL">Kruin-romplengte van de foetus o.b.v. echoscopie. N.B. Bij de maximale waarde van dit element is ook rekening gehouden met metingen à terme.</xs:documentation>
             </xs:annotation>
          </xs:element>
-         <xs:element name="bpd" minOccurs="0" maxOccurs="unbounded" type="bpd_60030">
+         <xs:element name="bpd" minOccurs="0" maxOccurs="1" type="bpd_60030">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">BPD</xs:documentation>
                <xs:documentation source="desc" xml:lang="nl-NL">Bipariëtaal diameter (diameter van de schedel van oor tot oor, ook wel DPB genaamd) van de foetus o.b.v. echoscopie. N.B. Bij de maximale waarde van dit element is ook rekening gehouden met metingen à terme.</xs:documentation>
@@ -21439,7 +21872,7 @@ SOFTWARE.
          </xs:element>
          <xs:element name="bpd_percentiel"
                      minOccurs="0"
-                     maxOccurs="unbounded"
+                     maxOccurs="1"
                      type="bpd_percentiel">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">BPD percentiel</xs:documentation>
@@ -21467,7 +21900,7 @@ SOFTWARE.
                      type="hc_percentiel">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">HC percentiel</xs:documentation>
-               <xs:documentation source="desc" xml:lang="nl-NL">Percentiel van head circumference (schedelaomtrek) van de foetus o.b.v. echoscopie.</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">Percentiel van head circumference (schedelomtrek) van de foetus o.b.v. echoscopie.</xs:documentation>
             </xs:annotation>
          </xs:element>
          <xs:element name="tcd" minOccurs="0" maxOccurs="1" type="tcd">
@@ -22270,12 +22703,67 @@ SOFTWARE.
                     type="t-id"
                     use="optional"
                     fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82071"/>
-      <!-- == *** No conceptList entries found for concept ostium == -->
-      <xs:attribute name="value" use="optional" type="xs:string"/>
-      <xs:attribute name="code" use="optional" type="xs:string"/>
-      <xs:attribute name="codeSystem" use="optional" type="xs:string"/>
+      <xs:attribute name="value" use="optional">
+         <xs:simpleType>
+            <xs:restriction base="xs:string">
+               <xs:enumeration value="62531004">
+                  <xs:annotation>
+                     <xs:documentation source="name" xml:lang="nl-NL">tot 2cm</xs:documentation>
+                  </xs:annotation>
+               </xs:enumeration>
+               <xs:enumeration value="24095001">
+                  <xs:annotation>
+                     <xs:documentation source="name" xml:lang="nl-NL">&gt; 2cm</xs:documentation>
+                  </xs:annotation>
+               </xs:enumeration>
+               <xs:enumeration value="15663008">
+                  <xs:annotation>
+                     <xs:documentation source="name" xml:lang="nl-NL">over ostium</xs:documentation>
+                  </xs:annotation>
+               </xs:enumeration>
+            </xs:restriction>
+         </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="code" use="optional">
+         <xs:simpleType>
+            <xs:restriction base="xs:string">
+               <xs:enumeration value="62531004"/>
+               <xs:enumeration value="24095001"/>
+               <xs:enumeration value="15663008"/>
+            </xs:restriction>
+         </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="codeSystem" use="optional">
+         <xs:simpleType>
+            <xs:restriction base="xs:string">
+               <xs:enumeration value="2.16.840.1.113883.6.96"/>
+               <xs:enumeration value="2.16.840.1.113883.6.96"/>
+               <xs:enumeration value="2.16.840.1.113883.6.96"/>
+            </xs:restriction>
+         </xs:simpleType>
+      </xs:attribute>
       <xs:attribute name="displayName" use="optional" type="xs:string"/>
-      <xs:attribute name="enum" use="optional" type="xs:string"/>
+      <xs:attribute name="enum" use="optional">
+         <xs:simpleType>
+            <xs:restriction base="xs:string">
+               <xs:enumeration value="Placenta_previa_marginalis_(disorder)">
+                  <xs:annotation>
+                     <xs:documentation source="name" xml:lang="nl-NL">tot 2cm</xs:documentation>
+                  </xs:annotation>
+               </xs:enumeration>
+               <xs:enumeration value="Placenta_previa_partialis_(disorder)">
+                  <xs:annotation>
+                     <xs:documentation source="name" xml:lang="nl-NL">&gt; 2cm</xs:documentation>
+                  </xs:annotation>
+               </xs:enumeration>
+               <xs:enumeration value="Placenta_previa_centralis_(disorder)">
+                  <xs:annotation>
+                     <xs:documentation source="name" xml:lang="nl-NL">over ostium</xs:documentation>
+                  </xs:annotation>
+               </xs:enumeration>
+            </xs:restriction>
+         </xs:simpleType>
+      </xs:attribute>
    </xs:complexType>
    <xs:complexType name="over_sectio_littekenq">
       <xs:attribute name="conceptId"
@@ -24561,7 +25049,7 @@ SOFTWARE.
             </xs:annotation>
          </xs:element>
          <xs:element name="methode_kansbepaling"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="1"
                      type="methode_kansbepaling">
             <xs:annotation>
@@ -24570,7 +25058,7 @@ SOFTWARE.
             </xs:annotation>
          </xs:element>
          <xs:element name="software_kansbepaling"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="1"
                      type="software_kansbepaling">
             <xs:annotation>
@@ -24578,7 +25066,7 @@ SOFTWARE.
             </xs:annotation>
          </xs:element>
          <xs:element name="a_priori_kans_op_trisomie_21_down"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="1"
                      type="a_priori_kans_op_trisomie_21_down">
             <xs:annotation>
@@ -24632,7 +25120,7 @@ SOFTWARE.
             </xs:annotation>
          </xs:element>
          <xs:element name="gehanteerde_gegevens"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="1"
                      type="gehanteerde_gegevens">
             <xs:annotation>
@@ -24716,7 +25204,7 @@ SOFTWARE.
    <xs:complexType name="software_kansbepaling">
       <xs:sequence>
          <xs:element name="naam_kansbepaling_softwareapplicatie"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="1"
                      type="naam_kansbepaling_softwareapplicatie">
             <xs:annotation>
@@ -24725,7 +25213,7 @@ SOFTWARE.
             </xs:annotation>
          </xs:element>
          <xs:element name="versie_softwareapplicatie"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="1"
                      type="versie_softwareapplicatie">
             <xs:annotation>
@@ -24858,7 +25346,7 @@ SOFTWARE.
    <xs:complexType name="gehanteerde_gegevens">
       <xs:sequence>
          <xs:element name="zwangerschapsduur"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="1"
                      type="zwangerschapsduur_82300">
             <xs:annotation>
@@ -25560,7 +26048,7 @@ SOFTWARE.
          </xs:element>
          <xs:element name="vaginaal_toucher"
                      minOccurs="0"
-                     maxOccurs="unbounded"
+                     maxOccurs="1"
                      type="vaginaal_toucher">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">Vaginaal toucher</xs:documentation>
@@ -25594,7 +26082,7 @@ SOFTWARE.
          </xs:element>
          <xs:element name="nipt__uitslag"
                      minOccurs="0"
-                     maxOccurs="unbounded"
+                     maxOccurs="1"
                      type="nipt__uitslag_82374">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">NIPT - uitslag</xs:documentation>
@@ -25635,7 +26123,7 @@ SOFTWARE.
          </xs:element>
          <xs:element name="rhesus_d_factor_foetus"
                      minOccurs="0"
-                     maxOccurs="unbounded"
+                     maxOccurs="1"
                      type="rhesus_d_factor_foetus">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">Rhesus D Factor foetus</xs:documentation>
@@ -25730,7 +26218,7 @@ SOFTWARE.
          </xs:element>
          <xs:element name="welke_irregulaire_antistoffen_vrouw_aanwezig"
                      minOccurs="0"
-                     maxOccurs="unbounded"
+                     maxOccurs="1"
                      type="welke_irregulaire_antistoffen_vrouw_aanwezig">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">Welke irregulaire antistoffen vrouw aanwezig.</xs:documentation>
@@ -26683,10 +27171,7 @@ SOFTWARE.
    </xs:complexType>
    <xs:complexType name="diabetes_diagnostiek">
       <xs:sequence>
-         <xs:element name="glucose"
-                     minOccurs="0"
-                     maxOccurs="unbounded"
-                     type="glucose_82079">
+         <xs:element name="glucose" minOccurs="0" maxOccurs="1" type="glucose_82079">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">Glucose</xs:documentation>
             </xs:annotation>
@@ -27277,7 +27762,7 @@ SOFTWARE.
    </xs:complexType>
    <xs:complexType name="vaginaal_toucher">
       <xs:sequence>
-         <xs:element name="portio" minOccurs="1" maxOccurs="1" type="portio">
+         <xs:element name="portio" minOccurs="0" maxOccurs="1" type="portio">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">Portio</xs:documentation>
                <xs:documentation source="desc" xml:lang="nl-NL">De portio tijdens het vaginaal toucher</xs:documentation>
@@ -27292,7 +27777,7 @@ SOFTWARE.
             </xs:annotation>
          </xs:element>
          <xs:element name="ontsluiting"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="1"
                      type="ontsluiting">
             <xs:annotation>
@@ -27300,14 +27785,14 @@ SOFTWARE.
                <xs:documentation source="desc" xml:lang="nl-NL">Ontsluiting in volledige centimeters (tussen 0 en 10)</xs:documentation>
             </xs:annotation>
          </xs:element>
-         <xs:element name="vliezen" minOccurs="1" maxOccurs="1" type="vliezen">
+         <xs:element name="vliezen" minOccurs="0" maxOccurs="1" type="vliezen">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">Vliezen</xs:documentation>
                <xs:documentation source="desc" xml:lang="nl-NL">Aanduiding of de vliezen zijn gebroken of nog intact zijn.Indien het niet duidelijk is of de vliezen gebroken zijn, dient gekozen te worden voor 'Onbekend'.</xs:documentation>
             </xs:annotation>
          </xs:element>
          <xs:element name="indaling_hodge"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="1"
                      type="indaling_hodge">
             <xs:annotation>
