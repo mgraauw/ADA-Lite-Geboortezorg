@@ -5,11 +5,11 @@
     <xsl:output method="xml" indent="yes" />
     
     <!-- Hernoemen naar juiste root node -->
-    <xsl:template match="/">
+<!--    <xsl:template match="/">
         <kernset_geboortezorg>
             <xsl:apply-templates select="*/*"/>
         </kernset_geboortezorg>
-    </xsl:template>
+    </xsl:template>-->
     
     <!-- Items zonder @value weggooien -->
     <xsl:template match="*[@value][string-length(@value/string())=0]"/>
