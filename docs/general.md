@@ -222,8 +222,10 @@ De volgende transacties worden gebruikt:
 
 ### Op ART-DECOR
 
-Deze transacties zijn te vinden bij Nictiz (behalve de twee voorbeelden):
+Deze transacties zijn te vinden bij Nictiz:
 
+* [Prio1 huidig](https://decor.nictiz.nl/decor/services/RetrieveTransaction?id=2.16.840.1.113883.2.4.3.11.60.90.77.4.2493&language=nl-NL&effectiveDate=2020-01-08T13:13:15&format=html&hidecolumns=56bcdefghijklmnop)
+* [Prio1 vorig](https://decor.nictiz.nl/decor/services/RetrieveTransaction?id=2.16.840.1.113883.2.4.3.11.60.90.77.4.2499&language=nl-NL&effectiveDate=2020-01-08T13:47:27&format=html&hidecolumns=56bcdefghijklmnop)
 * [Kernset PWD 2.2](https://decor.nictiz.nl/decor/services/RetrieveTransaction?id=2.16.840.1.113883.2.4.3.11.60.90.77.4.2410&effectiveDate=2014-10-20T00:00:00&language=nl-NL&ui=nl-NL&version=2018-11-09T12:31:45&format=html&hidecolumns=45ghijklmnop)
 * [Samenvatting voorgaande zwangerschap PWD 2.2](https://decor.nictiz.nl/decor/services/RetrieveTransaction?id=2.16.840.1.113883.2.4.3.11.60.90.77.4.2465&effectiveDate=2019-03-07T15:23:44&language=nl-NL&ui=nl-NL&version=2019-09-26T16:35:41&format=html&hidecolumns=45ghijklmnop)
 * [Verloskundig dossier PWD 2.2](https://decor.nictiz.nl/decor/services/RetrieveTransaction?id=2.16.840.1.113883.2.4.3.11.60.90.77.4.2462&effectiveDate=2019-03-07T15:19:31&language=nl-NL&ui=nl-NL&version=2019-09-26T16:35:41&format=html&hidecolumns=45ghijklmnop)

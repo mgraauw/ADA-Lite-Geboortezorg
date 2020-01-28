@@ -143,7 +143,7 @@
 
     <xsl:variable name="value-domain" as="element(valueDomain)" select="$concept/valueDomain"/>
     <xsl:variable name="value-domain-type" as="xs:string" select="$value-domain/@type"/>
-    
+
     <xsl:if test="exists($root)">
       <xsl:attribute name="root" select="$root"/>
     </xsl:if>
@@ -174,7 +174,7 @@
               </xsl:choose>
             </xsl:when>
             <xsl:when test="exists($value)">
-                <xsl:sequence select="($valueset-concept-or-exception-elements[@code eq $value])[1]"/>
+              <xsl:sequence select="($valueset-concept-or-exception-elements[@code eq $value])[1]"/>
             </xsl:when>
             <xsl:when test="exists($enum)">
               <xsl:sequence select="($valueset-concept-or-exception-elements[bc-alg:value-to-enum(.) eq $enum])[1]"/>

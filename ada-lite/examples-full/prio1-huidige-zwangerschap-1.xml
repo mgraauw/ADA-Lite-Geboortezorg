@@ -41,6 +41,7 @@
    </vrouw>
    <zwangerschap conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.3">
       <graviditeit conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20010" value="2"/>
+      <!-- == *** No concept found for element prio1_huidig/zwangerschap/pariteit_voor_deze_zwangerschap in design/specs-full/prio1-huidig.xml == -->
       <a_terme_datum_groep conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20029">
          <a_terme_datum conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20030"
                         value="2016-08-03"/>

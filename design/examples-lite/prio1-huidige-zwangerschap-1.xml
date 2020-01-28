@@ -22,9 +22,10 @@
   </vrouw>
   <zwangerschap>
     <graviditeit value="2"/>
-      <a_terme_datum_groep>
-          <a_terme_datum value="2016-08-03"/>
-      </a_terme_datum_groep>
+    <pariteit_voor_deze_zwangerschap value="2"/>
+    <a_terme_datum_groep>
+        <a_terme_datum value="2016-08-03"/>
+    </a_terme_datum_groep>
   </zwangerschap>
   <medisch_onderzoek>
     <maternale_onderzoeksgegevens>

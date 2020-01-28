@@ -2617,6 +2617,7 @@ SOFTWARE.
    <!-- == Any attributes allowed on /kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/congenitale_afwijkingen_groep/adaextension == -->
    <pattern>
       <rule context="/kernset_geboortezorg/zwangerschap"><!-- == Check occurrences of children of /kernset_geboortezorg/zwangerschap: == -->
+         <assert test="(count(identificatie_van_de_zwangerschap) ge 0) and (count(identificatie_van_de_zwangerschap) le 1)">Fout aantal voorkomens van "Identificatie van de zwangerschap": <value-of select="count(identificatie_van_de_zwangerschap)"/> (verwacht: 0..1) [/kernset_geboortezorg/zwangerschap/identificatie_van_de_zwangerschap]</assert>
          <assert test="(count(graviditeit) ge 0) and (count(graviditeit) le 1)">Fout aantal voorkomens van "Graviditeit": <value-of select="count(graviditeit)"/> (verwacht: 0..1) [/kernset_geboortezorg/zwangerschap/graviditeit]</assert>
          <assert test="(count(pariteit_voor_deze_zwangerschap) ge 0) and (count(pariteit_voor_deze_zwangerschap) le 1)">Fout aantal voorkomens van "Pariteit (vóór deze zwangerschap)": <value-of select="count(pariteit_voor_deze_zwangerschap)"/> (verwacht: 0..1) [/kernset_geboortezorg/zwangerschap/pariteit_voor_deze_zwangerschap]</assert>
          <assert test="(count(definitieve_a_terme_datum) ge 0) and (count(definitieve_a_terme_datum) le 1)">Fout aantal voorkomens van "Definitieve à terme datum": <value-of select="count(definitieve_a_terme_datum)"/> (verwacht: 0..1) [/kernset_geboortezorg/zwangerschap/definitieve_a_terme_datum]</assert>
@@ -2630,8 +2631,18 @@ SOFTWARE.
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /kernset_geboortezorg/zwangerschap: == -->
-      <rule context="/kernset_geboortezorg/zwangerschap/*[not(self::graviditeit)][not(self::pariteit_voor_deze_zwangerschap)][not(self::definitieve_a_terme_datum)][not(self::voornemens)][not(self::prenatale_controle)][not(self::diagnose)][not(self::intrauteriene_behandeling)][not(self::maternale_sterfteq)][not(self::wijze_einde_zwangerschap)][not(self::adaextension)]">
+      <rule context="/kernset_geboortezorg/zwangerschap/*[not(self::identificatie_van_de_zwangerschap)][not(self::graviditeit)][not(self::pariteit_voor_deze_zwangerschap)][not(self::definitieve_a_terme_datum)][not(self::voornemens)][not(self::prenatale_controle)][not(self::diagnose)][not(self::intrauteriene_behandeling)][not(self::maternale_sterfteq)][not(self::wijze_einde_zwangerschap)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/kernset_geboortezorg/zwangerschap/<value-of select="name(.)"/>]</report>
+      </rule>
+   </pattern>
+   <!-- == Check attributes of /kernset_geboortezorg/zwangerschap/identificatie_van_de_zwangerschap: == -->
+   <pattern>
+      <rule context="/kernset_geboortezorg/zwangerschap/identificatie_van_de_zwangerschap"><!-- == Attribute "conceptId": == -->
+         <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Identificatie van de zwangerschap": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/zwangerschap/identificatie_van_de_zwangerschap/@conceptId; type=t-id]</assert>
+         <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80627')">Foutieve informatie voor "Identificatie van de zwangerschap": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80627" [/kernset_geboortezorg/zwangerschap/identificatie_van_de_zwangerschap/@conceptId]</assert>
+         <!-- == Attribute "value": == -->
+         <assert test="exists(@value)">Foutieve informatie voor "Identificatie van de zwangerschap": Attribuut "value" ontbreekt [/kernset_geboortezorg/zwangerschap/identificatie_van_de_zwangerschap/@value]</assert>
+         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Identificatie van de zwangerschap": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zwangerschap/identificatie_van_de_zwangerschap; allowed=(@conceptId, @value, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zwangerschap/graviditeit: == -->

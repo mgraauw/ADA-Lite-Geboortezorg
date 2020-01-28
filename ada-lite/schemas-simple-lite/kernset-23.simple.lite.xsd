@@ -8912,6 +8912,15 @@ SOFTWARE.
    </xs:complexType>
    <xs:complexType name="zwangerschap_3">
       <xs:sequence>
+         <xs:element name="identificatie_van_de_zwangerschap"
+                     minOccurs="0"
+                     maxOccurs="1"
+                     type="identificatie_van_de_zwangerschap">
+            <xs:annotation>
+               <xs:documentation source="name" xml:lang="nl-NL">Identificatie van de zwangerschap</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">Uniek zwangerschapsnummer</xs:documentation>
+            </xs:annotation>
+         </xs:element>
          <xs:element name="graviditeit"
                      minOccurs="0"
                      maxOccurs="1"
@@ -8999,6 +9008,13 @@ SOFTWARE.
                     type="t-id"
                     use="optional"
                     fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.3"/>
+   </xs:complexType>
+   <xs:complexType name="identificatie_van_de_zwangerschap">
+      <xs:attribute name="conceptId"
+                    type="t-id"
+                    use="optional"
+                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80627"/>
+      <xs:attribute name="value" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="graviditeit">
       <xs:attribute name="conceptId"

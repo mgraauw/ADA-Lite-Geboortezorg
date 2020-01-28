@@ -3339,6 +3339,13 @@ SOFTWARE.
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M450"/>
+         <svrl:active-pattern>
+            <xsl:attribute name="document">
+               <xsl:value-of select="document-uri(/)"/>
+            </xsl:attribute>
+            <xsl:apply-templates/>
+         </svrl:active-pattern>
+         <xsl:apply-templates select="/" mode="M451"/>
       </svrl:schematron-output>
    </xsl:template>
 
@@ -28345,6 +28352,22 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
+         <xsl:when test="(count(identificatie_van_de_zwangerschap) ge 0) and (count(identificatie_van_de_zwangerschap) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(identificatie_van_de_zwangerschap) ge 0) and (count(identificatie_van_de_zwangerschap) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "Identificatie van de zwangerschap": <xsl:text/>
+                  <xsl:value-of select="count(identificatie_van_de_zwangerschap)"/>
+                  <xsl:text/> (verwacht: 0..1) [/kernset_geboortezorg/zwangerschap/identificatie_van_de_zwangerschap]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+
+		    <!--ASSERT -->
+      <xsl:choose>
          <xsl:when test="(count(graviditeit) ge 0) and (count(graviditeit) le 1)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -28512,11 +28535,11 @@ SOFTWARE.
 
 
 	  <!--RULE -->
-   <xsl:template match="/kernset_geboortezorg/zwangerschap/*[not(self::graviditeit)][not(self::pariteit_voor_deze_zwangerschap)][not(self::definitieve_a_terme_datum)][not(self::voornemens)][not(self::prenatale_controle)][not(self::diagnose)][not(self::intrauteriene_behandeling)][not(self::maternale_sterfteq)][not(self::wijze_einde_zwangerschap)][not(self::adaextension)]"
+   <xsl:template match="/kernset_geboortezorg/zwangerschap/*[not(self::identificatie_van_de_zwangerschap)][not(self::graviditeit)][not(self::pariteit_voor_deze_zwangerschap)][not(self::definitieve_a_terme_datum)][not(self::voornemens)][not(self::prenatale_controle)][not(self::diagnose)][not(self::intrauteriene_behandeling)][not(self::maternale_sterfteq)][not(self::wijze_einde_zwangerschap)][not(self::adaextension)]"
                  priority="1000"
                  mode="M233">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/kernset_geboortezorg/zwangerschap/*[not(self::graviditeit)][not(self::pariteit_voor_deze_zwangerschap)][not(self::definitieve_a_terme_datum)][not(self::voornemens)][not(self::prenatale_controle)][not(self::diagnose)][not(self::intrauteriene_behandeling)][not(self::maternale_sterfteq)][not(self::wijze_einde_zwangerschap)][not(self::adaextension)]"/>
+                       context="/kernset_geboortezorg/zwangerschap/*[not(self::identificatie_van_de_zwangerschap)][not(self::graviditeit)][not(self::pariteit_voor_deze_zwangerschap)][not(self::definitieve_a_terme_datum)][not(self::voornemens)][not(self::prenatale_controle)][not(self::diagnose)][not(self::intrauteriene_behandeling)][not(self::maternale_sterfteq)][not(self::wijze_einde_zwangerschap)][not(self::adaextension)]"/>
 
 		    <!--REPORT -->
       <xsl:if test="true()">
@@ -28542,9 +28565,97 @@ SOFTWARE.
 
 
 	  <!--RULE -->
-   <xsl:template match="/kernset_geboortezorg/zwangerschap/graviditeit"
+   <xsl:template match="/kernset_geboortezorg/zwangerschap/identificatie_van_de_zwangerschap"
                  priority="1000"
                  mode="M234">
+      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                       context="/kernset_geboortezorg/zwangerschap/identificatie_van_de_zwangerschap"/>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="exists(@conceptId)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@conceptId)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Identificatie van de zwangerschap": Attribuut "conceptId" ontbreekt [/kernset_geboortezorg/zwangerschap/identificatie_van_de_zwangerschap/@conceptId]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Identificatie van de zwangerschap": De waarde "<xsl:text/>
+                  <xsl:value-of select="@conceptId"/>
+                  <xsl:text/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/zwangerschap/identificatie_van_de_zwangerschap/@conceptId; type=t-id]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80627')"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80627')">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Identificatie van de zwangerschap": De waarde "<xsl:text/>
+                  <xsl:value-of select="@conceptId"/>
+                  <xsl:text/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80627" [/kernset_geboortezorg/zwangerschap/identificatie_van_de_zwangerschap/@conceptId]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="exists(@value)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Identificatie van de zwangerschap": Attribuut "value" ontbreekt [/kernset_geboortezorg/zwangerschap/identificatie_van_de_zwangerschap/@value]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Identificatie van de zwangerschap": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zwangerschap/identificatie_van_de_zwangerschap; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <xsl:apply-templates select="*" mode="M234"/>
+   </xsl:template>
+   <xsl:template match="text()" priority="-1" mode="M234"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M234">
+      <xsl:apply-templates select="*" mode="M234"/>
+   </xsl:template>
+
+   <!--PATTERN -->
+
+
+	  <!--RULE -->
+   <xsl:template match="/kernset_geboortezorg/zwangerschap/graviditeit"
+                 priority="1000"
+                 mode="M235">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/zwangerschap/graviditeit"/>
 
@@ -28667,11 +28778,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M234"/>
+      <xsl:apply-templates select="*" mode="M235"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M234"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M234">
-      <xsl:apply-templates select="*" mode="M234"/>
+   <xsl:template match="text()" priority="-1" mode="M235"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M235">
+      <xsl:apply-templates select="*" mode="M235"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -28680,7 +28791,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/zwangerschap/pariteit_voor_deze_zwangerschap"
                  priority="1000"
-                 mode="M235">
+                 mode="M236">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/zwangerschap/pariteit_voor_deze_zwangerschap"/>
 
@@ -28803,11 +28914,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M235"/>
+      <xsl:apply-templates select="*" mode="M236"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M235"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M235">
-      <xsl:apply-templates select="*" mode="M235"/>
+   <xsl:template match="text()" priority="-1" mode="M236"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M236">
+      <xsl:apply-templates select="*" mode="M236"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -28816,7 +28927,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/zwangerschap/definitieve_a_terme_datum"
                  priority="1000"
-                 mode="M236">
+                 mode="M237">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/zwangerschap/definitieve_a_terme_datum"/>
 
@@ -28907,11 +29018,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M236"/>
+      <xsl:apply-templates select="*" mode="M237"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M236"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M236">
-      <xsl:apply-templates select="*" mode="M236"/>
+   <xsl:template match="text()" priority="-1" mode="M237"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M237">
+      <xsl:apply-templates select="*" mode="M237"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -28920,7 +29031,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/zwangerschap/voornemens"
                  priority="1000"
-                 mode="M237">
+                 mode="M238">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/zwangerschap/voornemens"/>
 
@@ -28982,11 +29093,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M237"/>
+      <xsl:apply-templates select="*" mode="M238"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M237"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M237">
-      <xsl:apply-templates select="*" mode="M237"/>
+   <xsl:template match="text()" priority="-1" mode="M238"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M238">
+      <xsl:apply-templates select="*" mode="M238"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -28995,7 +29106,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/zwangerschap/prenatale_controle"
                  priority="1000"
-                 mode="M238">
+                 mode="M239">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/zwangerschap/prenatale_controle"/>
 
@@ -29057,11 +29168,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M238"/>
+      <xsl:apply-templates select="*" mode="M239"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M238"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M238">
-      <xsl:apply-templates select="*" mode="M238"/>
+   <xsl:template match="text()" priority="-1" mode="M239"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M239">
+      <xsl:apply-templates select="*" mode="M239"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -29070,7 +29181,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/zwangerschap/diagnose"
                  priority="1000"
-                 mode="M239">
+                 mode="M240">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/zwangerschap/diagnose"/>
 
@@ -29132,11 +29243,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M239"/>
+      <xsl:apply-templates select="*" mode="M240"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M239"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M239">
-      <xsl:apply-templates select="*" mode="M239"/>
+   <xsl:template match="text()" priority="-1" mode="M240"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M240">
+      <xsl:apply-templates select="*" mode="M240"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -29145,7 +29256,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/zwangerschap/intrauteriene_behandeling"
                  priority="1000"
-                 mode="M240">
+                 mode="M241">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/zwangerschap/intrauteriene_behandeling"/>
 
@@ -29307,11 +29418,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M240"/>
+      <xsl:apply-templates select="*" mode="M241"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M240"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M240">
-      <xsl:apply-templates select="*" mode="M240"/>
+   <xsl:template match="text()" priority="-1" mode="M241"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M241">
+      <xsl:apply-templates select="*" mode="M241"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -29320,7 +29431,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/zwangerschap/maternale_sterfteq"
                  priority="1000"
-                 mode="M241">
+                 mode="M242">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/zwangerschap/maternale_sterfteq"/>
 
@@ -29411,11 +29522,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M241"/>
+      <xsl:apply-templates select="*" mode="M242"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M241"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M241">
-      <xsl:apply-templates select="*" mode="M241"/>
+   <xsl:template match="text()" priority="-1" mode="M242"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M242">
+      <xsl:apply-templates select="*" mode="M242"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -29424,7 +29535,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/zwangerschap/wijze_einde_zwangerschap"
                  priority="1000"
-                 mode="M242">
+                 mode="M243">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/zwangerschap/wijze_einde_zwangerschap"/>
 
@@ -29586,11 +29697,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M242"/>
+      <xsl:apply-templates select="*" mode="M243"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M242"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M242">
-      <xsl:apply-templates select="*" mode="M242"/>
+   <xsl:template match="text()" priority="-1" mode="M243"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M243">
+      <xsl:apply-templates select="*" mode="M243"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -29599,7 +29710,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/zwangerschap/voornemens"
                  priority="1000"
-                 mode="M243">
+                 mode="M244">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/zwangerschap/voornemens"/>
 
@@ -29634,11 +29745,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M243"/>
+      <xsl:apply-templates select="*" mode="M244"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M243"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M243">
-      <xsl:apply-templates select="*" mode="M243"/>
+   <xsl:template match="text()" priority="-1" mode="M244"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M244">
+      <xsl:apply-templates select="*" mode="M244"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -29647,7 +29758,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/zwangerschap/voornemens/*[not(self::voorgenomen_plaats_baring_tijdens_zwangerschap_type_locatie)][not(self::adaextension)]"
                  priority="1000"
-                 mode="M244">
+                 mode="M245">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/zwangerschap/voornemens/*[not(self::voorgenomen_plaats_baring_tijdens_zwangerschap_type_locatie)][not(self::adaextension)]"/>
 
@@ -29664,11 +29775,11 @@ SOFTWARE.
                <xsl:text/>]</svrl:text>
          </svrl:successful-report>
       </xsl:if>
-      <xsl:apply-templates select="*" mode="M244"/>
+      <xsl:apply-templates select="*" mode="M245"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M244"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M244">
-      <xsl:apply-templates select="*" mode="M244"/>
+   <xsl:template match="text()" priority="-1" mode="M245"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M245">
+      <xsl:apply-templates select="*" mode="M245"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -29677,7 +29788,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/zwangerschap/voornemens/voorgenomen_plaats_baring_tijdens_zwangerschap_type_locatie"
                  priority="1000"
-                 mode="M245">
+                 mode="M246">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/zwangerschap/voornemens/voorgenomen_plaats_baring_tijdens_zwangerschap_type_locatie"/>
 
@@ -29839,11 +29950,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M245"/>
+      <xsl:apply-templates select="*" mode="M246"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M245"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M245">
-      <xsl:apply-templates select="*" mode="M245"/>
+   <xsl:template match="text()" priority="-1" mode="M246"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M246">
+      <xsl:apply-templates select="*" mode="M246"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -29852,7 +29963,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/zwangerschap/prenatale_controle"
                  priority="1000"
-                 mode="M246">
+                 mode="M247">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/zwangerschap/prenatale_controle"/>
 
@@ -29983,11 +30094,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M246"/>
+      <xsl:apply-templates select="*" mode="M247"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M246"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M246">
-      <xsl:apply-templates select="*" mode="M246"/>
+   <xsl:template match="text()" priority="-1" mode="M247"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M247">
+      <xsl:apply-templates select="*" mode="M247"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -29996,7 +30107,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/zwangerschap/prenatale_controle/*[not(self::datum_controle)][not(self::zwangerschapsduur)][not(self::leven_voelen)][not(self::rookgedrag)][not(self::alcoholgebruik)][not(self::drugsgebruikq)][not(self::gewicht_gemeten)][not(self::adaextension)]"
                  priority="1000"
-                 mode="M247">
+                 mode="M248">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/zwangerschap/prenatale_controle/*[not(self::datum_controle)][not(self::zwangerschapsduur)][not(self::leven_voelen)][not(self::rookgedrag)][not(self::alcoholgebruik)][not(self::drugsgebruikq)][not(self::gewicht_gemeten)][not(self::adaextension)]"/>
 
@@ -30013,11 +30124,11 @@ SOFTWARE.
                <xsl:text/>]</svrl:text>
          </svrl:successful-report>
       </xsl:if>
-      <xsl:apply-templates select="*" mode="M247"/>
+      <xsl:apply-templates select="*" mode="M248"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M247"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M247">
-      <xsl:apply-templates select="*" mode="M247"/>
+   <xsl:template match="text()" priority="-1" mode="M248"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M248">
+      <xsl:apply-templates select="*" mode="M248"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -30026,7 +30137,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/zwangerschap/prenatale_controle/datum_controle"
                  priority="1000"
-                 mode="M248">
+                 mode="M249">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/zwangerschap/prenatale_controle/datum_controle"/>
 
@@ -30117,11 +30228,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M248"/>
+      <xsl:apply-templates select="*" mode="M249"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M248"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M248">
-      <xsl:apply-templates select="*" mode="M248"/>
+   <xsl:template match="text()" priority="-1" mode="M249"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M249">
+      <xsl:apply-templates select="*" mode="M249"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -30130,7 +30241,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/zwangerschap/prenatale_controle/zwangerschapsduur"
                  priority="1000"
-                 mode="M249">
+                 mode="M250">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/zwangerschap/prenatale_controle/zwangerschapsduur"/>
 
@@ -30250,11 +30361,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M249"/>
+      <xsl:apply-templates select="*" mode="M250"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M249"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M249">
-      <xsl:apply-templates select="*" mode="M249"/>
+   <xsl:template match="text()" priority="-1" mode="M250"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M250">
+      <xsl:apply-templates select="*" mode="M250"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -30263,7 +30374,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/zwangerschap/prenatale_controle/leven_voelen"
                  priority="1000"
-                 mode="M250">
+                 mode="M251">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/zwangerschap/prenatale_controle/leven_voelen"/>
 
@@ -30425,11 +30536,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M250"/>
+      <xsl:apply-templates select="*" mode="M251"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M250"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M250">
-      <xsl:apply-templates select="*" mode="M250"/>
+   <xsl:template match="text()" priority="-1" mode="M251"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M251">
+      <xsl:apply-templates select="*" mode="M251"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -30438,7 +30549,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/zwangerschap/prenatale_controle/rookgedrag"
                  priority="1000"
-                 mode="M251">
+                 mode="M252">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/zwangerschap/prenatale_controle/rookgedrag"/>
 
@@ -30600,11 +30711,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M251"/>
+      <xsl:apply-templates select="*" mode="M252"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M251"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M251">
-      <xsl:apply-templates select="*" mode="M251"/>
+   <xsl:template match="text()" priority="-1" mode="M252"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M252">
+      <xsl:apply-templates select="*" mode="M252"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -30613,7 +30724,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/zwangerschap/prenatale_controle/alcoholgebruik"
                  priority="1000"
-                 mode="M252">
+                 mode="M253">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/zwangerschap/prenatale_controle/alcoholgebruik"/>
 
@@ -30775,11 +30886,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M252"/>
+      <xsl:apply-templates select="*" mode="M253"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M252"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M252">
-      <xsl:apply-templates select="*" mode="M252"/>
+   <xsl:template match="text()" priority="-1" mode="M253"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M253">
+      <xsl:apply-templates select="*" mode="M253"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -30788,7 +30899,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/zwangerschap/prenatale_controle/drugsgebruikq"
                  priority="1000"
-                 mode="M253">
+                 mode="M254">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/zwangerschap/prenatale_controle/drugsgebruikq"/>
 
@@ -30879,11 +30990,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M253"/>
+      <xsl:apply-templates select="*" mode="M254"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M253"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M253">
-      <xsl:apply-templates select="*" mode="M253"/>
+   <xsl:template match="text()" priority="-1" mode="M254"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M254">
+      <xsl:apply-templates select="*" mode="M254"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -30892,7 +31003,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/zwangerschap/prenatale_controle/gewicht_gemeten"
                  priority="1000"
-                 mode="M254">
+                 mode="M255">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/zwangerschap/prenatale_controle/gewicht_gemeten"/>
 
@@ -31044,11 +31155,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M254"/>
+      <xsl:apply-templates select="*" mode="M255"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M254"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M254">
-      <xsl:apply-templates select="*" mode="M254"/>
+   <xsl:template match="text()" priority="-1" mode="M255"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M255">
+      <xsl:apply-templates select="*" mode="M255"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -31057,7 +31168,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/zwangerschap/diagnose"
                  priority="1000"
-                 mode="M255">
+                 mode="M256">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/zwangerschap/diagnose"/>
 
@@ -31364,11 +31475,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M255"/>
+      <xsl:apply-templates select="*" mode="M256"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M255"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M255">
-      <xsl:apply-templates select="*" mode="M255"/>
+   <xsl:template match="text()" priority="-1" mode="M256"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M256">
+      <xsl:apply-templates select="*" mode="M256"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -31377,7 +31488,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/zwangerschap/diagnose/*[not(self::datum)][not(self::zwangerschapsduur)][not(self::gynaecologische_aandoening)][not(self::bloedverliesq)][not(self::partiele_molaq)][not(self::cervixinsufficientieq)][not(self::infectie)][not(self::hyperemesis_gravidarumq)][not(self::hypertensieve_aandoening)][not(self::zwangerschapscholestaseq)][not(self::diabetes_gravidarum_met_insulineq)][not(self::afwijkende_groei_foetus)][not(self::dreigende_partus_immaturusq)][not(self::dreigende_partus_prematurusq)][not(self::abruptio_placentaeq)][not(self::navelstrengprolapsq)][not(self::liggingsafwijking)][not(self::intrauteriene_vruchtdood)][not(self::adaextension)]"
                  priority="1000"
-                 mode="M256">
+                 mode="M257">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/zwangerschap/diagnose/*[not(self::datum)][not(self::zwangerschapsduur)][not(self::gynaecologische_aandoening)][not(self::bloedverliesq)][not(self::partiele_molaq)][not(self::cervixinsufficientieq)][not(self::infectie)][not(self::hyperemesis_gravidarumq)][not(self::hypertensieve_aandoening)][not(self::zwangerschapscholestaseq)][not(self::diabetes_gravidarum_met_insulineq)][not(self::afwijkende_groei_foetus)][not(self::dreigende_partus_immaturusq)][not(self::dreigende_partus_prematurusq)][not(self::abruptio_placentaeq)][not(self::navelstrengprolapsq)][not(self::liggingsafwijking)][not(self::intrauteriene_vruchtdood)][not(self::adaextension)]"/>
 
@@ -31394,11 +31505,11 @@ SOFTWARE.
                <xsl:text/>]</svrl:text>
          </svrl:successful-report>
       </xsl:if>
-      <xsl:apply-templates select="*" mode="M256"/>
+      <xsl:apply-templates select="*" mode="M257"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M256"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M256">
-      <xsl:apply-templates select="*" mode="M256"/>
+   <xsl:template match="text()" priority="-1" mode="M257"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M257">
+      <xsl:apply-templates select="*" mode="M257"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -31407,7 +31518,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/zwangerschap/diagnose/datum"
                  priority="1000"
-                 mode="M257">
+                 mode="M258">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/zwangerschap/diagnose/datum"/>
 
@@ -31498,11 +31609,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M257"/>
+      <xsl:apply-templates select="*" mode="M258"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M257"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M257">
-      <xsl:apply-templates select="*" mode="M257"/>
+   <xsl:template match="text()" priority="-1" mode="M258"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M258">
+      <xsl:apply-templates select="*" mode="M258"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -31511,7 +31622,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/zwangerschap/diagnose/zwangerschapsduur"
                  priority="1000"
-                 mode="M258">
+                 mode="M259">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/zwangerschap/diagnose/zwangerschapsduur"/>
 
@@ -31631,11 +31742,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M258"/>
+      <xsl:apply-templates select="*" mode="M259"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M258"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M258">
-      <xsl:apply-templates select="*" mode="M258"/>
+   <xsl:template match="text()" priority="-1" mode="M259"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M259">
+      <xsl:apply-templates select="*" mode="M259"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -31644,7 +31755,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/zwangerschap/diagnose/gynaecologische_aandoening"
                  priority="1000"
-                 mode="M259">
+                 mode="M260">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/zwangerschap/diagnose/gynaecologische_aandoening"/>
 
@@ -31806,11 +31917,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M259"/>
+      <xsl:apply-templates select="*" mode="M260"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M259"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M259">
-      <xsl:apply-templates select="*" mode="M259"/>
+   <xsl:template match="text()" priority="-1" mode="M260"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M260">
+      <xsl:apply-templates select="*" mode="M260"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -31819,7 +31930,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/zwangerschap/diagnose/bloedverliesq"
                  priority="1000"
-                 mode="M260">
+                 mode="M261">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/zwangerschap/diagnose/bloedverliesq"/>
 
@@ -31910,11 +32021,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M260"/>
+      <xsl:apply-templates select="*" mode="M261"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M260"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M260">
-      <xsl:apply-templates select="*" mode="M260"/>
+   <xsl:template match="text()" priority="-1" mode="M261"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M261">
+      <xsl:apply-templates select="*" mode="M261"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -31923,7 +32034,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/zwangerschap/diagnose/partiele_molaq"
                  priority="1000"
-                 mode="M261">
+                 mode="M262">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/zwangerschap/diagnose/partiele_molaq"/>
 
@@ -32014,11 +32125,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M261"/>
+      <xsl:apply-templates select="*" mode="M262"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M261"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M261">
-      <xsl:apply-templates select="*" mode="M261"/>
+   <xsl:template match="text()" priority="-1" mode="M262"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M262">
+      <xsl:apply-templates select="*" mode="M262"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -32027,7 +32138,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/zwangerschap/diagnose/cervixinsufficientieq"
                  priority="1000"
-                 mode="M262">
+                 mode="M263">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/zwangerschap/diagnose/cervixinsufficientieq"/>
 
@@ -32118,11 +32229,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M262"/>
+      <xsl:apply-templates select="*" mode="M263"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M262"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M262">
-      <xsl:apply-templates select="*" mode="M262"/>
+   <xsl:template match="text()" priority="-1" mode="M263"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M263">
+      <xsl:apply-templates select="*" mode="M263"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -32131,7 +32242,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/zwangerschap/diagnose/infectie"
                  priority="1000"
-                 mode="M263">
+                 mode="M264">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/zwangerschap/diagnose/infectie"/>
 
@@ -32293,11 +32404,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M263"/>
+      <xsl:apply-templates select="*" mode="M264"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M263"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M263">
-      <xsl:apply-templates select="*" mode="M263"/>
+   <xsl:template match="text()" priority="-1" mode="M264"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M264">
+      <xsl:apply-templates select="*" mode="M264"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -32306,7 +32417,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/zwangerschap/diagnose/hyperemesis_gravidarumq"
                  priority="1000"
-                 mode="M264">
+                 mode="M265">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/zwangerschap/diagnose/hyperemesis_gravidarumq"/>
 
@@ -32397,11 +32508,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M264"/>
+      <xsl:apply-templates select="*" mode="M265"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M264"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M264">
-      <xsl:apply-templates select="*" mode="M264"/>
+   <xsl:template match="text()" priority="-1" mode="M265"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M265">
+      <xsl:apply-templates select="*" mode="M265"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -32410,7 +32521,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/zwangerschap/diagnose/hypertensieve_aandoening"
                  priority="1000"
-                 mode="M265">
+                 mode="M266">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/zwangerschap/diagnose/hypertensieve_aandoening"/>
 
@@ -32572,11 +32683,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M265"/>
+      <xsl:apply-templates select="*" mode="M266"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M265"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M265">
-      <xsl:apply-templates select="*" mode="M265"/>
+   <xsl:template match="text()" priority="-1" mode="M266"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M266">
+      <xsl:apply-templates select="*" mode="M266"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -32585,7 +32696,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/zwangerschap/diagnose/zwangerschapscholestaseq"
                  priority="1000"
-                 mode="M266">
+                 mode="M267">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/zwangerschap/diagnose/zwangerschapscholestaseq"/>
 
@@ -32676,11 +32787,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M266"/>
+      <xsl:apply-templates select="*" mode="M267"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M266"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M266">
-      <xsl:apply-templates select="*" mode="M266"/>
+   <xsl:template match="text()" priority="-1" mode="M267"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M267">
+      <xsl:apply-templates select="*" mode="M267"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -32689,7 +32800,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/zwangerschap/diagnose/diabetes_gravidarum_met_insulineq"
                  priority="1000"
-                 mode="M267">
+                 mode="M268">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/zwangerschap/diagnose/diabetes_gravidarum_met_insulineq"/>
 
@@ -32780,11 +32891,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M267"/>
+      <xsl:apply-templates select="*" mode="M268"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M267"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M267">
-      <xsl:apply-templates select="*" mode="M267"/>
+   <xsl:template match="text()" priority="-1" mode="M268"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M268">
+      <xsl:apply-templates select="*" mode="M268"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -32793,7 +32904,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/zwangerschap/diagnose/afwijkende_groei_foetus"
                  priority="1000"
-                 mode="M268">
+                 mode="M269">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/zwangerschap/diagnose/afwijkende_groei_foetus"/>
 
@@ -32955,11 +33066,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M268"/>
+      <xsl:apply-templates select="*" mode="M269"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M268"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M268">
-      <xsl:apply-templates select="*" mode="M268"/>
+   <xsl:template match="text()" priority="-1" mode="M269"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M269">
+      <xsl:apply-templates select="*" mode="M269"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -32968,7 +33079,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/zwangerschap/diagnose/dreigende_partus_immaturusq"
                  priority="1000"
-                 mode="M269">
+                 mode="M270">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/zwangerschap/diagnose/dreigende_partus_immaturusq"/>
 
@@ -33059,11 +33170,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M269"/>
+      <xsl:apply-templates select="*" mode="M270"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M269"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M269">
-      <xsl:apply-templates select="*" mode="M269"/>
+   <xsl:template match="text()" priority="-1" mode="M270"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M270">
+      <xsl:apply-templates select="*" mode="M270"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -33072,7 +33183,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/zwangerschap/diagnose/dreigende_partus_prematurusq"
                  priority="1000"
-                 mode="M270">
+                 mode="M271">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/zwangerschap/diagnose/dreigende_partus_prematurusq"/>
 
@@ -33163,11 +33274,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M270"/>
+      <xsl:apply-templates select="*" mode="M271"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M270"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M270">
-      <xsl:apply-templates select="*" mode="M270"/>
+   <xsl:template match="text()" priority="-1" mode="M271"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M271">
+      <xsl:apply-templates select="*" mode="M271"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -33176,7 +33287,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/zwangerschap/diagnose/abruptio_placentaeq"
                  priority="1000"
-                 mode="M271">
+                 mode="M272">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/zwangerschap/diagnose/abruptio_placentaeq"/>
 
@@ -33267,11 +33378,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M271"/>
+      <xsl:apply-templates select="*" mode="M272"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M271"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M271">
-      <xsl:apply-templates select="*" mode="M271"/>
+   <xsl:template match="text()" priority="-1" mode="M272"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M272">
+      <xsl:apply-templates select="*" mode="M272"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -33280,7 +33391,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/zwangerschap/diagnose/navelstrengprolapsq"
                  priority="1000"
-                 mode="M272">
+                 mode="M273">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/zwangerschap/diagnose/navelstrengprolapsq"/>
 
@@ -33371,11 +33482,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M272"/>
+      <xsl:apply-templates select="*" mode="M273"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M272"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M272">
-      <xsl:apply-templates select="*" mode="M272"/>
+   <xsl:template match="text()" priority="-1" mode="M273"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M273">
+      <xsl:apply-templates select="*" mode="M273"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -33384,7 +33495,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/zwangerschap/diagnose/liggingsafwijking"
                  priority="1000"
-                 mode="M273">
+                 mode="M274">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/zwangerschap/diagnose/liggingsafwijking"/>
 
@@ -33546,11 +33657,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M273"/>
+      <xsl:apply-templates select="*" mode="M274"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M273"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M273">
-      <xsl:apply-templates select="*" mode="M273"/>
+   <xsl:template match="text()" priority="-1" mode="M274"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M274">
+      <xsl:apply-templates select="*" mode="M274"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -33559,7 +33670,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/zwangerschap/diagnose/intrauteriene_vruchtdood"
                  priority="1000"
-                 mode="M274">
+                 mode="M275">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/zwangerschap/diagnose/intrauteriene_vruchtdood"/>
 
@@ -33621,11 +33732,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M274"/>
+      <xsl:apply-templates select="*" mode="M275"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M274"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M274">
-      <xsl:apply-templates select="*" mode="M274"/>
+   <xsl:template match="text()" priority="-1" mode="M275"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M275">
+      <xsl:apply-templates select="*" mode="M275"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -33634,7 +33745,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/zwangerschap/diagnose/intrauteriene_vruchtdood"
                  priority="1000"
-                 mode="M275">
+                 mode="M276">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/zwangerschap/diagnose/intrauteriene_vruchtdood"/>
 
@@ -33685,11 +33796,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M275"/>
+      <xsl:apply-templates select="*" mode="M276"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M275"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M275">
-      <xsl:apply-templates select="*" mode="M275"/>
+   <xsl:template match="text()" priority="-1" mode="M276"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M276">
+      <xsl:apply-templates select="*" mode="M276"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -33698,7 +33809,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/zwangerschap/diagnose/intrauteriene_vruchtdood/*[not(self::vermoeden_intrauteriene_vruchtdoodq)][not(self::vermoeden_iuvd_op_basis_van)][not(self::adaextension)]"
                  priority="1000"
-                 mode="M276">
+                 mode="M277">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/zwangerschap/diagnose/intrauteriene_vruchtdood/*[not(self::vermoeden_intrauteriene_vruchtdoodq)][not(self::vermoeden_iuvd_op_basis_van)][not(self::adaextension)]"/>
 
@@ -33715,11 +33826,11 @@ SOFTWARE.
                <xsl:text/>]</svrl:text>
          </svrl:successful-report>
       </xsl:if>
-      <xsl:apply-templates select="*" mode="M276"/>
+      <xsl:apply-templates select="*" mode="M277"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M276"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M276">
-      <xsl:apply-templates select="*" mode="M276"/>
+   <xsl:template match="text()" priority="-1" mode="M277"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M277">
+      <xsl:apply-templates select="*" mode="M277"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -33728,7 +33839,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/zwangerschap/diagnose/intrauteriene_vruchtdood/vermoeden_intrauteriene_vruchtdoodq"
                  priority="1000"
-                 mode="M277">
+                 mode="M278">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/zwangerschap/diagnose/intrauteriene_vruchtdood/vermoeden_intrauteriene_vruchtdoodq"/>
 
@@ -33819,11 +33930,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M277"/>
+      <xsl:apply-templates select="*" mode="M278"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M277"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M277">
-      <xsl:apply-templates select="*" mode="M277"/>
+   <xsl:template match="text()" priority="-1" mode="M278"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M278">
+      <xsl:apply-templates select="*" mode="M278"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -33832,7 +33943,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/zwangerschap/diagnose/intrauteriene_vruchtdood/vermoeden_iuvd_op_basis_van"
                  priority="1000"
-                 mode="M278">
+                 mode="M279">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/zwangerschap/diagnose/intrauteriene_vruchtdood/vermoeden_iuvd_op_basis_van"/>
 
@@ -33994,18 +34105,18 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M278"/>
+      <xsl:apply-templates select="*" mode="M279"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M278"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M278">
-      <xsl:apply-templates select="*" mode="M278"/>
+   <xsl:template match="text()" priority="-1" mode="M279"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M279">
+      <xsl:apply-templates select="*" mode="M279"/>
    </xsl:template>
 
    <!--PATTERN -->
 
 
 	  <!--RULE -->
-   <xsl:template match="/kernset_geboortezorg/bevalling" priority="1000" mode="M279">
+   <xsl:template match="/kernset_geboortezorg/bevalling" priority="1000" mode="M280">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/bevalling"/>
 
@@ -34200,11 +34311,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M279"/>
+      <xsl:apply-templates select="*" mode="M280"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M279"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M279">
-      <xsl:apply-templates select="*" mode="M279"/>
+   <xsl:template match="text()" priority="-1" mode="M280"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M280">
+      <xsl:apply-templates select="*" mode="M280"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -34213,7 +34324,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/bevalling/*[not(self::partusnummer)][not(self::diagnose_bevalling)][not(self::aantal_geboren_kinderen)][not(self::risicostatus_voor_baring)][not(self::interventies_begin_baring)][not(self::wijze_waarop_de_baring_begon)][not(self::tijdstip_begin_actieve_ontsluiting)][not(self::medicatie_nageboortetijdperk_groep)][not(self::placenta)][not(self::hoeveelheid_bloedverlies)][not(self::conditie_perineum_postpartum)][not(self::adaextension)]"
                  priority="1000"
-                 mode="M280">
+                 mode="M281">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/bevalling/*[not(self::partusnummer)][not(self::diagnose_bevalling)][not(self::aantal_geboren_kinderen)][not(self::risicostatus_voor_baring)][not(self::interventies_begin_baring)][not(self::wijze_waarop_de_baring_begon)][not(self::tijdstip_begin_actieve_ontsluiting)][not(self::medicatie_nageboortetijdperk_groep)][not(self::placenta)][not(self::hoeveelheid_bloedverlies)][not(self::conditie_perineum_postpartum)][not(self::adaextension)]"/>
 
@@ -34230,11 +34341,11 @@ SOFTWARE.
                <xsl:text/>]</svrl:text>
          </svrl:successful-report>
       </xsl:if>
-      <xsl:apply-templates select="*" mode="M280"/>
+      <xsl:apply-templates select="*" mode="M281"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M280"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M280">
-      <xsl:apply-templates select="*" mode="M280"/>
+   <xsl:template match="text()" priority="-1" mode="M281"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M281">
+      <xsl:apply-templates select="*" mode="M281"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -34243,7 +34354,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/bevalling/partusnummer"
                  priority="1000"
-                 mode="M281">
+                 mode="M282">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/bevalling/partusnummer"/>
 
@@ -34350,11 +34461,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M281"/>
+      <xsl:apply-templates select="*" mode="M282"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M281"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M281">
-      <xsl:apply-templates select="*" mode="M281"/>
+   <xsl:template match="text()" priority="-1" mode="M282"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M282">
+      <xsl:apply-templates select="*" mode="M282"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -34363,7 +34474,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/bevalling/diagnose_bevalling"
                  priority="1000"
-                 mode="M282">
+                 mode="M283">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/bevalling/diagnose_bevalling"/>
 
@@ -34425,11 +34536,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M282"/>
+      <xsl:apply-templates select="*" mode="M283"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M282"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M282">
-      <xsl:apply-templates select="*" mode="M282"/>
+   <xsl:template match="text()" priority="-1" mode="M283"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M283">
+      <xsl:apply-templates select="*" mode="M283"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -34438,7 +34549,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/bevalling/aantal_geboren_kinderen"
                  priority="1000"
-                 mode="M283">
+                 mode="M284">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/bevalling/aantal_geboren_kinderen"/>
 
@@ -34561,11 +34672,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M283"/>
+      <xsl:apply-templates select="*" mode="M284"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M283"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M283">
-      <xsl:apply-templates select="*" mode="M283"/>
+   <xsl:template match="text()" priority="-1" mode="M284"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M284">
+      <xsl:apply-templates select="*" mode="M284"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -34574,7 +34685,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/bevalling/risicostatus_voor_baring"
                  priority="1000"
-                 mode="M284">
+                 mode="M285">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/bevalling/risicostatus_voor_baring"/>
 
@@ -34736,11 +34847,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M284"/>
+      <xsl:apply-templates select="*" mode="M285"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M284"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M284">
-      <xsl:apply-templates select="*" mode="M284"/>
+   <xsl:template match="text()" priority="-1" mode="M285"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M285">
+      <xsl:apply-templates select="*" mode="M285"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -34749,7 +34860,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/bevalling/interventies_begin_baring"
                  priority="1000"
-                 mode="M285">
+                 mode="M286">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/bevalling/interventies_begin_baring"/>
 
@@ -34811,11 +34922,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M285"/>
+      <xsl:apply-templates select="*" mode="M286"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M285"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M285">
-      <xsl:apply-templates select="*" mode="M285"/>
+   <xsl:template match="text()" priority="-1" mode="M286"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M286">
+      <xsl:apply-templates select="*" mode="M286"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -34824,7 +34935,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/bevalling/wijze_waarop_de_baring_begon"
                  priority="1000"
-                 mode="M286">
+                 mode="M287">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/bevalling/wijze_waarop_de_baring_begon"/>
 
@@ -34986,11 +35097,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M286"/>
+      <xsl:apply-templates select="*" mode="M287"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M286"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M286">
-      <xsl:apply-templates select="*" mode="M286"/>
+   <xsl:template match="text()" priority="-1" mode="M287"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M287">
+      <xsl:apply-templates select="*" mode="M287"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -34999,7 +35110,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/bevalling/tijdstip_begin_actieve_ontsluiting"
                  priority="1000"
-                 mode="M287">
+                 mode="M288">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/bevalling/tijdstip_begin_actieve_ontsluiting"/>
 
@@ -35090,11 +35201,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M287"/>
+      <xsl:apply-templates select="*" mode="M288"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M287"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M287">
-      <xsl:apply-templates select="*" mode="M287"/>
+   <xsl:template match="text()" priority="-1" mode="M288"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M288">
+      <xsl:apply-templates select="*" mode="M288"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -35103,7 +35214,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/bevalling/medicatie_nageboortetijdperk_groep"
                  priority="1000"
-                 mode="M288">
+                 mode="M289">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/bevalling/medicatie_nageboortetijdperk_groep"/>
 
@@ -35165,11 +35276,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M288"/>
+      <xsl:apply-templates select="*" mode="M289"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M288"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M288">
-      <xsl:apply-templates select="*" mode="M288"/>
+   <xsl:template match="text()" priority="-1" mode="M289"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M289">
+      <xsl:apply-templates select="*" mode="M289"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -35178,7 +35289,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/bevalling/placenta"
                  priority="1000"
-                 mode="M289">
+                 mode="M290">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/bevalling/placenta"/>
 
@@ -35240,11 +35351,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M289"/>
+      <xsl:apply-templates select="*" mode="M290"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M289"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M289">
-      <xsl:apply-templates select="*" mode="M289"/>
+   <xsl:template match="text()" priority="-1" mode="M290"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M290">
+      <xsl:apply-templates select="*" mode="M290"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -35253,7 +35364,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/bevalling/hoeveelheid_bloedverlies"
                  priority="1000"
-                 mode="M290">
+                 mode="M291">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/bevalling/hoeveelheid_bloedverlies"/>
 
@@ -35373,11 +35484,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M290"/>
+      <xsl:apply-templates select="*" mode="M291"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M290"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M290">
-      <xsl:apply-templates select="*" mode="M290"/>
+   <xsl:template match="text()" priority="-1" mode="M291"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M291">
+      <xsl:apply-templates select="*" mode="M291"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -35386,7 +35497,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/bevalling/conditie_perineum_postpartum"
                  priority="1000"
-                 mode="M291">
+                 mode="M292">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/bevalling/conditie_perineum_postpartum"/>
 
@@ -35548,11 +35659,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M291"/>
+      <xsl:apply-templates select="*" mode="M292"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M291"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M291">
-      <xsl:apply-templates select="*" mode="M291"/>
+   <xsl:template match="text()" priority="-1" mode="M292"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M292">
+      <xsl:apply-templates select="*" mode="M292"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -35561,7 +35672,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/bevalling/diagnose_bevalling"
                  priority="1000"
-                 mode="M292">
+                 mode="M293">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/bevalling/diagnose_bevalling"/>
 
@@ -35724,11 +35835,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M292"/>
+      <xsl:apply-templates select="*" mode="M293"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M292"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M292">
-      <xsl:apply-templates select="*" mode="M292"/>
+   <xsl:template match="text()" priority="-1" mode="M293"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M293">
+      <xsl:apply-templates select="*" mode="M293"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -35737,7 +35848,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/bevalling/diagnose_bevalling/*[not(self::ppromq)][not(self::promq)][not(self::koortsq)][not(self::niet_vorderende_ontsluitingq)][not(self::niet_vorderende_uitdrijvingq)][not(self::verdenking_foetale_noodq)][not(self::intrauteriene_vruchtdood)][not(self::vastzittende_placentaq)][not(self::fluxus_postpartumq)][not(self::adaextension)]"
                  priority="1000"
-                 mode="M293">
+                 mode="M294">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/bevalling/diagnose_bevalling/*[not(self::ppromq)][not(self::promq)][not(self::koortsq)][not(self::niet_vorderende_ontsluitingq)][not(self::niet_vorderende_uitdrijvingq)][not(self::verdenking_foetale_noodq)][not(self::intrauteriene_vruchtdood)][not(self::vastzittende_placentaq)][not(self::fluxus_postpartumq)][not(self::adaextension)]"/>
 
@@ -35754,11 +35865,11 @@ SOFTWARE.
                <xsl:text/>]</svrl:text>
          </svrl:successful-report>
       </xsl:if>
-      <xsl:apply-templates select="*" mode="M293"/>
+      <xsl:apply-templates select="*" mode="M294"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M293"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M293">
-      <xsl:apply-templates select="*" mode="M293"/>
+   <xsl:template match="text()" priority="-1" mode="M294"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M294">
+      <xsl:apply-templates select="*" mode="M294"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -35767,7 +35878,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/bevalling/diagnose_bevalling/ppromq"
                  priority="1000"
-                 mode="M294">
+                 mode="M295">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/bevalling/diagnose_bevalling/ppromq"/>
 
@@ -35858,11 +35969,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M294"/>
+      <xsl:apply-templates select="*" mode="M295"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M294"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M294">
-      <xsl:apply-templates select="*" mode="M294"/>
+   <xsl:template match="text()" priority="-1" mode="M295"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M295">
+      <xsl:apply-templates select="*" mode="M295"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -35871,7 +35982,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/bevalling/diagnose_bevalling/promq"
                  priority="1000"
-                 mode="M295">
+                 mode="M296">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/bevalling/diagnose_bevalling/promq"/>
 
@@ -35962,11 +36073,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M295"/>
+      <xsl:apply-templates select="*" mode="M296"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M295"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M295">
-      <xsl:apply-templates select="*" mode="M295"/>
+   <xsl:template match="text()" priority="-1" mode="M296"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M296">
+      <xsl:apply-templates select="*" mode="M296"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -35975,7 +36086,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/bevalling/diagnose_bevalling/koortsq"
                  priority="1000"
-                 mode="M296">
+                 mode="M297">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/bevalling/diagnose_bevalling/koortsq"/>
 
@@ -36066,11 +36177,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M296"/>
+      <xsl:apply-templates select="*" mode="M297"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M296"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M296">
-      <xsl:apply-templates select="*" mode="M296"/>
+   <xsl:template match="text()" priority="-1" mode="M297"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M297">
+      <xsl:apply-templates select="*" mode="M297"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -36079,7 +36190,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/bevalling/diagnose_bevalling/niet_vorderende_ontsluitingq"
                  priority="1000"
-                 mode="M297">
+                 mode="M298">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/bevalling/diagnose_bevalling/niet_vorderende_ontsluitingq"/>
 
@@ -36170,11 +36281,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M297"/>
+      <xsl:apply-templates select="*" mode="M298"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M297"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M297">
-      <xsl:apply-templates select="*" mode="M297"/>
+   <xsl:template match="text()" priority="-1" mode="M298"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M298">
+      <xsl:apply-templates select="*" mode="M298"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -36183,7 +36294,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/bevalling/diagnose_bevalling/niet_vorderende_uitdrijvingq"
                  priority="1000"
-                 mode="M298">
+                 mode="M299">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/bevalling/diagnose_bevalling/niet_vorderende_uitdrijvingq"/>
 
@@ -36274,11 +36385,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M298"/>
+      <xsl:apply-templates select="*" mode="M299"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M298"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M298">
-      <xsl:apply-templates select="*" mode="M298"/>
+   <xsl:template match="text()" priority="-1" mode="M299"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M299">
+      <xsl:apply-templates select="*" mode="M299"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -36287,7 +36398,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/bevalling/diagnose_bevalling/verdenking_foetale_noodq"
                  priority="1000"
-                 mode="M299">
+                 mode="M300">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/bevalling/diagnose_bevalling/verdenking_foetale_noodq"/>
 
@@ -36378,11 +36489,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M299"/>
+      <xsl:apply-templates select="*" mode="M300"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M299"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M299">
-      <xsl:apply-templates select="*" mode="M299"/>
+   <xsl:template match="text()" priority="-1" mode="M300"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M300">
+      <xsl:apply-templates select="*" mode="M300"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -36391,7 +36502,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/bevalling/diagnose_bevalling/intrauteriene_vruchtdood"
                  priority="1000"
-                 mode="M300">
+                 mode="M301">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/bevalling/diagnose_bevalling/intrauteriene_vruchtdood"/>
 
@@ -36453,11 +36564,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M300"/>
+      <xsl:apply-templates select="*" mode="M301"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M300"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M300">
-      <xsl:apply-templates select="*" mode="M300"/>
+   <xsl:template match="text()" priority="-1" mode="M301"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M301">
+      <xsl:apply-templates select="*" mode="M301"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -36466,7 +36577,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/bevalling/diagnose_bevalling/vastzittende_placentaq"
                  priority="1000"
-                 mode="M301">
+                 mode="M302">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/bevalling/diagnose_bevalling/vastzittende_placentaq"/>
 
@@ -36557,11 +36668,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M301"/>
+      <xsl:apply-templates select="*" mode="M302"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M301"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M301">
-      <xsl:apply-templates select="*" mode="M301"/>
+   <xsl:template match="text()" priority="-1" mode="M302"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M302">
+      <xsl:apply-templates select="*" mode="M302"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -36570,7 +36681,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/bevalling/diagnose_bevalling/fluxus_postpartumq"
                  priority="1000"
-                 mode="M302">
+                 mode="M303">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/bevalling/diagnose_bevalling/fluxus_postpartumq"/>
 
@@ -36661,11 +36772,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M302"/>
+      <xsl:apply-templates select="*" mode="M303"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M302"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M302">
-      <xsl:apply-templates select="*" mode="M302"/>
+   <xsl:template match="text()" priority="-1" mode="M303"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M303">
+      <xsl:apply-templates select="*" mode="M303"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -36674,7 +36785,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/bevalling/diagnose_bevalling/intrauteriene_vruchtdood"
                  priority="1000"
-                 mode="M303">
+                 mode="M304">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/bevalling/diagnose_bevalling/intrauteriene_vruchtdood"/>
 
@@ -36725,11 +36836,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M303"/>
+      <xsl:apply-templates select="*" mode="M304"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M303"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M303">
-      <xsl:apply-templates select="*" mode="M303"/>
+   <xsl:template match="text()" priority="-1" mode="M304"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M304">
+      <xsl:apply-templates select="*" mode="M304"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -36738,7 +36849,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/bevalling/diagnose_bevalling/intrauteriene_vruchtdood/*[not(self::vermoeden_intrauteriene_vruchtdoodq)][not(self::vermoeden_iuvd_op_basis_van)][not(self::adaextension)]"
                  priority="1000"
-                 mode="M304">
+                 mode="M305">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/bevalling/diagnose_bevalling/intrauteriene_vruchtdood/*[not(self::vermoeden_intrauteriene_vruchtdoodq)][not(self::vermoeden_iuvd_op_basis_van)][not(self::adaextension)]"/>
 
@@ -36755,11 +36866,11 @@ SOFTWARE.
                <xsl:text/>]</svrl:text>
          </svrl:successful-report>
       </xsl:if>
-      <xsl:apply-templates select="*" mode="M304"/>
+      <xsl:apply-templates select="*" mode="M305"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M304"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M304">
-      <xsl:apply-templates select="*" mode="M304"/>
+   <xsl:template match="text()" priority="-1" mode="M305"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M305">
+      <xsl:apply-templates select="*" mode="M305"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -36768,7 +36879,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/bevalling/diagnose_bevalling/intrauteriene_vruchtdood/vermoeden_intrauteriene_vruchtdoodq"
                  priority="1000"
-                 mode="M305">
+                 mode="M306">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/bevalling/diagnose_bevalling/intrauteriene_vruchtdood/vermoeden_intrauteriene_vruchtdoodq"/>
 
@@ -36859,11 +36970,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M305"/>
+      <xsl:apply-templates select="*" mode="M306"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M305"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M305">
-      <xsl:apply-templates select="*" mode="M305"/>
+   <xsl:template match="text()" priority="-1" mode="M306"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M306">
+      <xsl:apply-templates select="*" mode="M306"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -36872,7 +36983,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/bevalling/diagnose_bevalling/intrauteriene_vruchtdood/vermoeden_iuvd_op_basis_van"
                  priority="1000"
-                 mode="M306">
+                 mode="M307">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/bevalling/diagnose_bevalling/intrauteriene_vruchtdood/vermoeden_iuvd_op_basis_van"/>
 
@@ -37034,11 +37145,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M306"/>
+      <xsl:apply-templates select="*" mode="M307"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M306"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M306">
-      <xsl:apply-templates select="*" mode="M306"/>
+   <xsl:template match="text()" priority="-1" mode="M307"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M307">
+      <xsl:apply-templates select="*" mode="M307"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -37047,7 +37158,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/bevalling/interventies_begin_baring"
                  priority="1000"
-                 mode="M307">
+                 mode="M308">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/bevalling/interventies_begin_baring"/>
 
@@ -37098,11 +37209,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M307"/>
+      <xsl:apply-templates select="*" mode="M308"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M307"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M307">
-      <xsl:apply-templates select="*" mode="M307"/>
+   <xsl:template match="text()" priority="-1" mode="M308"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M308">
+      <xsl:apply-templates select="*" mode="M308"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -37111,7 +37222,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/bevalling/interventies_begin_baring/*[not(self::interventie_begin_baring)][not(self::indicatie_interventie_begin_baring)][not(self::adaextension)]"
                  priority="1000"
-                 mode="M308">
+                 mode="M309">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/bevalling/interventies_begin_baring/*[not(self::interventie_begin_baring)][not(self::indicatie_interventie_begin_baring)][not(self::adaextension)]"/>
 
@@ -37128,11 +37239,11 @@ SOFTWARE.
                <xsl:text/>]</svrl:text>
          </svrl:successful-report>
       </xsl:if>
-      <xsl:apply-templates select="*" mode="M308"/>
+      <xsl:apply-templates select="*" mode="M309"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M308"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M308">
-      <xsl:apply-templates select="*" mode="M308"/>
+   <xsl:template match="text()" priority="-1" mode="M309"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M309">
+      <xsl:apply-templates select="*" mode="M309"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -37141,7 +37252,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/bevalling/interventies_begin_baring/interventie_begin_baring"
                  priority="1000"
-                 mode="M309">
+                 mode="M310">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/bevalling/interventies_begin_baring/interventie_begin_baring"/>
 
@@ -37303,11 +37414,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M309"/>
+      <xsl:apply-templates select="*" mode="M310"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M309"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M309">
-      <xsl:apply-templates select="*" mode="M309"/>
+   <xsl:template match="text()" priority="-1" mode="M310"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M310">
+      <xsl:apply-templates select="*" mode="M310"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -37316,7 +37427,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/bevalling/interventies_begin_baring/indicatie_interventie_begin_baring"
                  priority="1000"
-                 mode="M310">
+                 mode="M311">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/bevalling/interventies_begin_baring/indicatie_interventie_begin_baring"/>
 
@@ -37478,11 +37589,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M310"/>
+      <xsl:apply-templates select="*" mode="M311"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M310"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M310">
-      <xsl:apply-templates select="*" mode="M310"/>
+   <xsl:template match="text()" priority="-1" mode="M311"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M311">
+      <xsl:apply-templates select="*" mode="M311"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -37491,7 +37602,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/bevalling/medicatie_nageboortetijdperk_groep"
                  priority="1000"
-                 mode="M311">
+                 mode="M312">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/bevalling/medicatie_nageboortetijdperk_groep"/>
 
@@ -37542,11 +37653,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M311"/>
+      <xsl:apply-templates select="*" mode="M312"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M311"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M311">
-      <xsl:apply-templates select="*" mode="M311"/>
+   <xsl:template match="text()" priority="-1" mode="M312"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M312">
+      <xsl:apply-templates select="*" mode="M312"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -37555,7 +37666,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/bevalling/medicatie_nageboortetijdperk_groep/*[not(self::medicatie_nageboortetijdperkq)][not(self::soort_medicatie_nageboortetijdperk)][not(self::adaextension)]"
                  priority="1000"
-                 mode="M312">
+                 mode="M313">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/bevalling/medicatie_nageboortetijdperk_groep/*[not(self::medicatie_nageboortetijdperkq)][not(self::soort_medicatie_nageboortetijdperk)][not(self::adaextension)]"/>
 
@@ -37572,11 +37683,11 @@ SOFTWARE.
                <xsl:text/>]</svrl:text>
          </svrl:successful-report>
       </xsl:if>
-      <xsl:apply-templates select="*" mode="M312"/>
+      <xsl:apply-templates select="*" mode="M313"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M312"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M312">
-      <xsl:apply-templates select="*" mode="M312"/>
+   <xsl:template match="text()" priority="-1" mode="M313"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M313">
+      <xsl:apply-templates select="*" mode="M313"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -37585,7 +37696,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/bevalling/medicatie_nageboortetijdperk_groep/medicatie_nageboortetijdperkq"
                  priority="1000"
-                 mode="M313">
+                 mode="M314">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/bevalling/medicatie_nageboortetijdperk_groep/medicatie_nageboortetijdperkq"/>
 
@@ -37676,11 +37787,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M313"/>
+      <xsl:apply-templates select="*" mode="M314"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M313"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M313">
-      <xsl:apply-templates select="*" mode="M313"/>
+   <xsl:template match="text()" priority="-1" mode="M314"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M314">
+      <xsl:apply-templates select="*" mode="M314"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -37689,7 +37800,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/bevalling/medicatie_nageboortetijdperk_groep/soort_medicatie_nageboortetijdperk"
                  priority="1000"
-                 mode="M314">
+                 mode="M315">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/bevalling/medicatie_nageboortetijdperk_groep/soort_medicatie_nageboortetijdperk"/>
 
@@ -37851,11 +37962,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M314"/>
+      <xsl:apply-templates select="*" mode="M315"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M314"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M314">
-      <xsl:apply-templates select="*" mode="M314"/>
+   <xsl:template match="text()" priority="-1" mode="M315"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M315">
+      <xsl:apply-templates select="*" mode="M315"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -37864,7 +37975,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/bevalling/placenta"
                  priority="1000"
-                 mode="M315">
+                 mode="M316">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/bevalling/placenta"/>
 
@@ -37899,11 +38010,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M315"/>
+      <xsl:apply-templates select="*" mode="M316"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M315"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M315">
-      <xsl:apply-templates select="*" mode="M315"/>
+   <xsl:template match="text()" priority="-1" mode="M316"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M316">
+      <xsl:apply-templates select="*" mode="M316"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -37912,7 +38023,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/bevalling/placenta/*[not(self::geboorte_placenta)][not(self::adaextension)]"
                  priority="1000"
-                 mode="M316">
+                 mode="M317">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/bevalling/placenta/*[not(self::geboorte_placenta)][not(self::adaextension)]"/>
 
@@ -37929,11 +38040,11 @@ SOFTWARE.
                <xsl:text/>]</svrl:text>
          </svrl:successful-report>
       </xsl:if>
-      <xsl:apply-templates select="*" mode="M316"/>
+      <xsl:apply-templates select="*" mode="M317"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M316"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M316">
-      <xsl:apply-templates select="*" mode="M316"/>
+   <xsl:template match="text()" priority="-1" mode="M317"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M317">
+      <xsl:apply-templates select="*" mode="M317"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -37942,7 +38053,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/bevalling/placenta/geboorte_placenta"
                  priority="1000"
-                 mode="M317">
+                 mode="M318">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/bevalling/placenta/geboorte_placenta"/>
 
@@ -38104,11 +38215,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M317"/>
+      <xsl:apply-templates select="*" mode="M318"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M317"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M317">
-      <xsl:apply-templates select="*" mode="M317"/>
+   <xsl:template match="text()" priority="-1" mode="M318"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M318">
+      <xsl:apply-templates select="*" mode="M318"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -38117,7 +38228,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind"
                  priority="1000"
-                 mode="M318">
+                 mode="M319">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind"/>
 
@@ -38152,11 +38263,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M318"/>
+      <xsl:apply-templates select="*" mode="M319"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M318"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M318">
-      <xsl:apply-templates select="*" mode="M318"/>
+   <xsl:template match="text()" priority="-1" mode="M319"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M319">
+      <xsl:apply-templates select="*" mode="M319"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -38165,7 +38276,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/*[not(self::baring)][not(self::adaextension)]"
                  priority="1000"
-                 mode="M319">
+                 mode="M320">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/*[not(self::baring)][not(self::adaextension)]"/>
 
@@ -38182,11 +38293,11 @@ SOFTWARE.
                <xsl:text/>]</svrl:text>
          </svrl:successful-report>
       </xsl:if>
-      <xsl:apply-templates select="*" mode="M319"/>
+      <xsl:apply-templates select="*" mode="M320"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M319"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M319">
-      <xsl:apply-templates select="*" mode="M319"/>
+   <xsl:template match="text()" priority="-1" mode="M320"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M320">
+      <xsl:apply-templates select="*" mode="M320"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -38195,7 +38306,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring"
                  priority="1000"
-                 mode="M320">
+                 mode="M321">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring"/>
 
@@ -38257,11 +38368,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M320"/>
+      <xsl:apply-templates select="*" mode="M321"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M320"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M320">
-      <xsl:apply-templates select="*" mode="M320"/>
+   <xsl:template match="text()" priority="-1" mode="M321"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M321">
+      <xsl:apply-templates select="*" mode="M321"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -38270,7 +38381,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring"
                  priority="1000"
-                 mode="M321">
+                 mode="M322">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring"/>
 
@@ -38369,11 +38480,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M321"/>
+      <xsl:apply-templates select="*" mode="M322"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M321"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M321">
-      <xsl:apply-templates select="*" mode="M321"/>
+   <xsl:template match="text()" priority="-1" mode="M322"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M322">
+      <xsl:apply-templates select="*" mode="M322"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -38382,7 +38493,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/*[not(self::werkelijke_plaats_baring_type_locatie)][not(self::ziekenhuis_baring)][not(self::demografische_gegevens)][not(self::kindspecifieke_maternale_gegevens)][not(self::kindspecifieke_uitkomstgegevens)][not(self::adaextension)]"
                  priority="1000"
-                 mode="M322">
+                 mode="M323">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/*[not(self::werkelijke_plaats_baring_type_locatie)][not(self::ziekenhuis_baring)][not(self::demografische_gegevens)][not(self::kindspecifieke_maternale_gegevens)][not(self::kindspecifieke_uitkomstgegevens)][not(self::adaextension)]"/>
 
@@ -38399,11 +38510,11 @@ SOFTWARE.
                <xsl:text/>]</svrl:text>
          </svrl:successful-report>
       </xsl:if>
-      <xsl:apply-templates select="*" mode="M322"/>
+      <xsl:apply-templates select="*" mode="M323"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M322"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M322">
-      <xsl:apply-templates select="*" mode="M322"/>
+   <xsl:template match="text()" priority="-1" mode="M323"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M323">
+      <xsl:apply-templates select="*" mode="M323"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -38412,7 +38523,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/werkelijke_plaats_baring_type_locatie"
                  priority="1000"
-                 mode="M323">
+                 mode="M324">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/werkelijke_plaats_baring_type_locatie"/>
 
@@ -38574,11 +38685,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M323"/>
+      <xsl:apply-templates select="*" mode="M324"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M323"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M323">
-      <xsl:apply-templates select="*" mode="M323"/>
+   <xsl:template match="text()" priority="-1" mode="M324"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M324">
+      <xsl:apply-templates select="*" mode="M324"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -38587,7 +38698,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/ziekenhuis_baring"
                  priority="1000"
-                 mode="M324">
+                 mode="M325">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/ziekenhuis_baring"/>
 
@@ -38649,11 +38760,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M324"/>
+      <xsl:apply-templates select="*" mode="M325"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M324"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M324">
-      <xsl:apply-templates select="*" mode="M324"/>
+   <xsl:template match="text()" priority="-1" mode="M325"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M325">
+      <xsl:apply-templates select="*" mode="M325"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -38662,7 +38773,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens"
                  priority="1000"
-                 mode="M325">
+                 mode="M326">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens"/>
 
@@ -38724,11 +38835,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M325"/>
+      <xsl:apply-templates select="*" mode="M326"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M325"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M325">
-      <xsl:apply-templates select="*" mode="M325"/>
+   <xsl:template match="text()" priority="-1" mode="M326"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M326">
+      <xsl:apply-templates select="*" mode="M326"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -38737,7 +38848,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens"
                  priority="1000"
-                 mode="M326">
+                 mode="M327">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens"/>
 
@@ -38799,11 +38910,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M326"/>
+      <xsl:apply-templates select="*" mode="M327"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M326"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M326">
-      <xsl:apply-templates select="*" mode="M326"/>
+   <xsl:template match="text()" priority="-1" mode="M327"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M327">
+      <xsl:apply-templates select="*" mode="M327"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -38812,7 +38923,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens"
                  priority="1000"
-                 mode="M327">
+                 mode="M328">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens"/>
 
@@ -38874,11 +38985,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M327"/>
+      <xsl:apply-templates select="*" mode="M328"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M327"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M327">
-      <xsl:apply-templates select="*" mode="M327"/>
+   <xsl:template match="text()" priority="-1" mode="M328"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M328">
+      <xsl:apply-templates select="*" mode="M328"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -38887,7 +38998,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/ziekenhuis_baring"
                  priority="1000"
-                 mode="M328">
+                 mode="M329">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/ziekenhuis_baring"/>
 
@@ -38922,11 +39033,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M328"/>
+      <xsl:apply-templates select="*" mode="M329"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M328"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M328">
-      <xsl:apply-templates select="*" mode="M328"/>
+   <xsl:template match="text()" priority="-1" mode="M329"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M329">
+      <xsl:apply-templates select="*" mode="M329"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -38935,7 +39046,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/ziekenhuis_baring/*[not(self::ziekenhuisnummer_lvrid)][not(self::adaextension)]"
                  priority="1000"
-                 mode="M329">
+                 mode="M330">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/ziekenhuis_baring/*[not(self::ziekenhuisnummer_lvrid)][not(self::adaextension)]"/>
 
@@ -38952,11 +39063,11 @@ SOFTWARE.
                <xsl:text/>]</svrl:text>
          </svrl:successful-report>
       </xsl:if>
-      <xsl:apply-templates select="*" mode="M329"/>
+      <xsl:apply-templates select="*" mode="M330"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M329"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M329">
-      <xsl:apply-templates select="*" mode="M329"/>
+   <xsl:template match="text()" priority="-1" mode="M330"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M330">
+      <xsl:apply-templates select="*" mode="M330"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -38965,7 +39076,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/ziekenhuis_baring/ziekenhuisnummer_lvrid"
                  priority="1000"
-                 mode="M330">
+                 mode="M331">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/ziekenhuis_baring/ziekenhuisnummer_lvrid"/>
 
@@ -39072,11 +39183,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M330"/>
+      <xsl:apply-templates select="*" mode="M331"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M330"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M330">
-      <xsl:apply-templates select="*" mode="M330"/>
+   <xsl:template match="text()" priority="-1" mode="M331"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M331">
+      <xsl:apply-templates select="*" mode="M331"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -39085,7 +39196,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens"
                  priority="1000"
-                 mode="M331">
+                 mode="M332">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens"/>
 
@@ -39184,11 +39295,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M331"/>
+      <xsl:apply-templates select="*" mode="M332"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M331"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M331">
-      <xsl:apply-templates select="*" mode="M331"/>
+   <xsl:template match="text()" priority="-1" mode="M332"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M332">
+      <xsl:apply-templates select="*" mode="M332"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -39197,7 +39308,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/*[not(self::identificaties_kind)][not(self::geslacht_medische_observatie)][not(self::geboortedatum)][not(self::rangnummer_kind)][not(self::perinatale_sterfte_groep)][not(self::adaextension)]"
                  priority="1000"
-                 mode="M332">
+                 mode="M333">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/*[not(self::identificaties_kind)][not(self::geslacht_medische_observatie)][not(self::geboortedatum)][not(self::rangnummer_kind)][not(self::perinatale_sterfte_groep)][not(self::adaextension)]"/>
 
@@ -39214,11 +39325,11 @@ SOFTWARE.
                <xsl:text/>]</svrl:text>
          </svrl:successful-report>
       </xsl:if>
-      <xsl:apply-templates select="*" mode="M332"/>
+      <xsl:apply-templates select="*" mode="M333"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M332"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M332">
-      <xsl:apply-templates select="*" mode="M332"/>
+   <xsl:template match="text()" priority="-1" mode="M333"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M333">
+      <xsl:apply-templates select="*" mode="M333"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -39227,7 +39338,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/identificaties_kind"
                  priority="1000"
-                 mode="M333">
+                 mode="M334">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/identificaties_kind"/>
 
@@ -39289,11 +39400,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M333"/>
+      <xsl:apply-templates select="*" mode="M334"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M333"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M333">
-      <xsl:apply-templates select="*" mode="M333"/>
+   <xsl:template match="text()" priority="-1" mode="M334"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M334">
+      <xsl:apply-templates select="*" mode="M334"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -39302,7 +39413,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/geslacht_medische_observatie"
                  priority="1000"
-                 mode="M334">
+                 mode="M335">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/geslacht_medische_observatie"/>
 
@@ -39464,11 +39575,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M334"/>
+      <xsl:apply-templates select="*" mode="M335"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M334"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M334">
-      <xsl:apply-templates select="*" mode="M334"/>
+   <xsl:template match="text()" priority="-1" mode="M335"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M335">
+      <xsl:apply-templates select="*" mode="M335"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -39477,7 +39588,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/geboortedatum"
                  priority="1000"
-                 mode="M335">
+                 mode="M336">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/geboortedatum"/>
 
@@ -39568,11 +39679,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M335"/>
+      <xsl:apply-templates select="*" mode="M336"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M335"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M335">
-      <xsl:apply-templates select="*" mode="M335"/>
+   <xsl:template match="text()" priority="-1" mode="M336"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M336">
+      <xsl:apply-templates select="*" mode="M336"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -39581,7 +39692,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/rangnummer_kind"
                  priority="1000"
-                 mode="M336">
+                 mode="M337">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/rangnummer_kind"/>
 
@@ -39704,11 +39815,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M336"/>
+      <xsl:apply-templates select="*" mode="M337"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M336"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M336">
-      <xsl:apply-templates select="*" mode="M336"/>
+   <xsl:template match="text()" priority="-1" mode="M337"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M337">
+      <xsl:apply-templates select="*" mode="M337"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -39717,7 +39828,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/perinatale_sterfte_groep"
                  priority="1000"
-                 mode="M337">
+                 mode="M338">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/perinatale_sterfte_groep"/>
 
@@ -39779,11 +39890,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M337"/>
+      <xsl:apply-templates select="*" mode="M338"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M337"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M337">
-      <xsl:apply-templates select="*" mode="M337"/>
+   <xsl:template match="text()" priority="-1" mode="M338"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M338">
+      <xsl:apply-templates select="*" mode="M338"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -39792,7 +39903,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/identificaties_kind"
                  priority="1000"
-                 mode="M338">
+                 mode="M339">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/identificaties_kind"/>
 
@@ -39827,11 +39938,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M338"/>
+      <xsl:apply-templates select="*" mode="M339"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M338"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M338">
-      <xsl:apply-templates select="*" mode="M338"/>
+   <xsl:template match="text()" priority="-1" mode="M339"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M339">
+      <xsl:apply-templates select="*" mode="M339"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -39840,7 +39951,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/identificaties_kind/*[not(self::bsn_kind)][not(self::adaextension)]"
                  priority="1000"
-                 mode="M339">
+                 mode="M340">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/identificaties_kind/*[not(self::bsn_kind)][not(self::adaextension)]"/>
 
@@ -39857,11 +39968,11 @@ SOFTWARE.
                <xsl:text/>]</svrl:text>
          </svrl:successful-report>
       </xsl:if>
-      <xsl:apply-templates select="*" mode="M339"/>
+      <xsl:apply-templates select="*" mode="M340"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M339"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M339">
-      <xsl:apply-templates select="*" mode="M339"/>
+   <xsl:template match="text()" priority="-1" mode="M340"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M340">
+      <xsl:apply-templates select="*" mode="M340"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -39870,7 +39981,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/identificaties_kind/bsn_kind"
                  priority="1000"
-                 mode="M340">
+                 mode="M341">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/identificaties_kind/bsn_kind"/>
 
@@ -39945,11 +40056,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M340"/>
+      <xsl:apply-templates select="*" mode="M341"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M340"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M340">
-      <xsl:apply-templates select="*" mode="M340"/>
+   <xsl:template match="text()" priority="-1" mode="M341"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M341">
+      <xsl:apply-templates select="*" mode="M341"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -39958,7 +40069,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/perinatale_sterfte_groep"
                  priority="1000"
-                 mode="M341">
+                 mode="M342">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/perinatale_sterfte_groep"/>
 
@@ -40025,11 +40136,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M341"/>
+      <xsl:apply-templates select="*" mode="M342"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M341"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M341">
-      <xsl:apply-templates select="*" mode="M341"/>
+   <xsl:template match="text()" priority="-1" mode="M342"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M342">
+      <xsl:apply-templates select="*" mode="M342"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -40038,7 +40149,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/perinatale_sterfte_groep/*[not(self::perinatale_sterfteq)][not(self::fase_perinatale_sterfte)][not(self::datumtijd_vaststelling_perinatale_sterfte)][not(self::adaextension)]"
                  priority="1000"
-                 mode="M342">
+                 mode="M343">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/perinatale_sterfte_groep/*[not(self::perinatale_sterfteq)][not(self::fase_perinatale_sterfte)][not(self::datumtijd_vaststelling_perinatale_sterfte)][not(self::adaextension)]"/>
 
@@ -40055,11 +40166,11 @@ SOFTWARE.
                <xsl:text/>]</svrl:text>
          </svrl:successful-report>
       </xsl:if>
-      <xsl:apply-templates select="*" mode="M342"/>
+      <xsl:apply-templates select="*" mode="M343"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M342"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M342">
-      <xsl:apply-templates select="*" mode="M342"/>
+   <xsl:template match="text()" priority="-1" mode="M343"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M343">
+      <xsl:apply-templates select="*" mode="M343"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -40068,7 +40179,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/perinatale_sterfte_groep/perinatale_sterfteq"
                  priority="1000"
-                 mode="M343">
+                 mode="M344">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/perinatale_sterfte_groep/perinatale_sterfteq"/>
 
@@ -40159,11 +40270,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M343"/>
+      <xsl:apply-templates select="*" mode="M344"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M343"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M343">
-      <xsl:apply-templates select="*" mode="M343"/>
+   <xsl:template match="text()" priority="-1" mode="M344"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M344">
+      <xsl:apply-templates select="*" mode="M344"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -40172,7 +40283,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/perinatale_sterfte_groep/fase_perinatale_sterfte"
                  priority="1000"
-                 mode="M344">
+                 mode="M345">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/perinatale_sterfte_groep/fase_perinatale_sterfte"/>
 
@@ -40334,11 +40445,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M344"/>
+      <xsl:apply-templates select="*" mode="M345"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M344"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M344">
-      <xsl:apply-templates select="*" mode="M344"/>
+   <xsl:template match="text()" priority="-1" mode="M345"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M345">
+      <xsl:apply-templates select="*" mode="M345"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -40347,7 +40458,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/perinatale_sterfte_groep/datumtijd_vaststelling_perinatale_sterfte"
                  priority="1000"
-                 mode="M345">
+                 mode="M346">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/perinatale_sterfte_groep/datumtijd_vaststelling_perinatale_sterfte"/>
 
@@ -40438,11 +40549,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M345"/>
+      <xsl:apply-templates select="*" mode="M346"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M345"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M345">
-      <xsl:apply-templates select="*" mode="M345"/>
+   <xsl:template match="text()" priority="-1" mode="M346"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M346">
+      <xsl:apply-templates select="*" mode="M346"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -40451,7 +40562,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens"
                  priority="1000"
-                 mode="M346">
+                 mode="M347">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens"/>
 
@@ -40646,11 +40757,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M346"/>
+      <xsl:apply-templates select="*" mode="M347"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M346"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M346">
-      <xsl:apply-templates select="*" mode="M346"/>
+   <xsl:template match="text()" priority="-1" mode="M347"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M347">
+      <xsl:apply-templates select="*" mode="M347"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -40659,7 +40770,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/*[not(self::bijstimulatie_toegediendq)][not(self::tijdstip_breken_vliezen)][not(self::kleur_en_consistentie_vruchtwater)][not(self::tijdstip_actief_meepersen)][not(self::episiotomieq)][not(self::indicatie_episiotomie)][not(self::locatie_episiotomie)][not(self::ruggeprik_gewenst_niet_gekregenq)][not(self::pijnbestrijdingq)][not(self::pijnbestrijding)][not(self::sedatieq)][not(self::adaextension)]"
                  priority="1000"
-                 mode="M347">
+                 mode="M348">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/*[not(self::bijstimulatie_toegediendq)][not(self::tijdstip_breken_vliezen)][not(self::kleur_en_consistentie_vruchtwater)][not(self::tijdstip_actief_meepersen)][not(self::episiotomieq)][not(self::indicatie_episiotomie)][not(self::locatie_episiotomie)][not(self::ruggeprik_gewenst_niet_gekregenq)][not(self::pijnbestrijdingq)][not(self::pijnbestrijding)][not(self::sedatieq)][not(self::adaextension)]"/>
 
@@ -40676,11 +40787,11 @@ SOFTWARE.
                <xsl:text/>]</svrl:text>
          </svrl:successful-report>
       </xsl:if>
-      <xsl:apply-templates select="*" mode="M347"/>
+      <xsl:apply-templates select="*" mode="M348"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M347"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M347">
-      <xsl:apply-templates select="*" mode="M347"/>
+   <xsl:template match="text()" priority="-1" mode="M348"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M348">
+      <xsl:apply-templates select="*" mode="M348"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -40689,7 +40800,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/bijstimulatie_toegediendq"
                  priority="1000"
-                 mode="M348">
+                 mode="M349">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/bijstimulatie_toegediendq"/>
 
@@ -40780,11 +40891,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M348"/>
+      <xsl:apply-templates select="*" mode="M349"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M348"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M348">
-      <xsl:apply-templates select="*" mode="M348"/>
+   <xsl:template match="text()" priority="-1" mode="M349"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M349">
+      <xsl:apply-templates select="*" mode="M349"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -40793,7 +40904,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/tijdstip_breken_vliezen"
                  priority="1000"
-                 mode="M349">
+                 mode="M350">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/tijdstip_breken_vliezen"/>
 
@@ -40884,11 +40995,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M349"/>
+      <xsl:apply-templates select="*" mode="M350"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M349"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M349">
-      <xsl:apply-templates select="*" mode="M349"/>
+   <xsl:template match="text()" priority="-1" mode="M350"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M350">
+      <xsl:apply-templates select="*" mode="M350"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -40897,7 +41008,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/kleur_en_consistentie_vruchtwater"
                  priority="1000"
-                 mode="M350">
+                 mode="M351">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/kleur_en_consistentie_vruchtwater"/>
 
@@ -41059,11 +41170,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M350"/>
+      <xsl:apply-templates select="*" mode="M351"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M350"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M350">
-      <xsl:apply-templates select="*" mode="M350"/>
+   <xsl:template match="text()" priority="-1" mode="M351"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M351">
+      <xsl:apply-templates select="*" mode="M351"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -41072,7 +41183,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/tijdstip_actief_meepersen"
                  priority="1000"
-                 mode="M351">
+                 mode="M352">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/tijdstip_actief_meepersen"/>
 
@@ -41163,11 +41274,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M351"/>
+      <xsl:apply-templates select="*" mode="M352"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M351"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M351">
-      <xsl:apply-templates select="*" mode="M351"/>
+   <xsl:template match="text()" priority="-1" mode="M352"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M352">
+      <xsl:apply-templates select="*" mode="M352"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -41176,7 +41287,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/episiotomieq"
                  priority="1000"
-                 mode="M352">
+                 mode="M353">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/episiotomieq"/>
 
@@ -41267,11 +41378,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M352"/>
+      <xsl:apply-templates select="*" mode="M353"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M352"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M352">
-      <xsl:apply-templates select="*" mode="M352"/>
+   <xsl:template match="text()" priority="-1" mode="M353"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M353">
+      <xsl:apply-templates select="*" mode="M353"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -41280,7 +41391,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/indicatie_episiotomie"
                  priority="1000"
-                 mode="M353">
+                 mode="M354">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/indicatie_episiotomie"/>
 
@@ -41442,11 +41553,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M353"/>
+      <xsl:apply-templates select="*" mode="M354"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M353"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M353">
-      <xsl:apply-templates select="*" mode="M353"/>
+   <xsl:template match="text()" priority="-1" mode="M354"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M354">
+      <xsl:apply-templates select="*" mode="M354"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -41455,7 +41566,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/locatie_episiotomie"
                  priority="1000"
-                 mode="M354">
+                 mode="M355">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/locatie_episiotomie"/>
 
@@ -41617,11 +41728,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M354"/>
+      <xsl:apply-templates select="*" mode="M355"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M354"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M354">
-      <xsl:apply-templates select="*" mode="M354"/>
+   <xsl:template match="text()" priority="-1" mode="M355"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M355">
+      <xsl:apply-templates select="*" mode="M355"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -41630,7 +41741,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/ruggeprik_gewenst_niet_gekregenq"
                  priority="1000"
-                 mode="M355">
+                 mode="M356">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/ruggeprik_gewenst_niet_gekregenq"/>
 
@@ -41721,11 +41832,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M355"/>
+      <xsl:apply-templates select="*" mode="M356"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M355"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M355">
-      <xsl:apply-templates select="*" mode="M355"/>
+   <xsl:template match="text()" priority="-1" mode="M356"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M356">
+      <xsl:apply-templates select="*" mode="M356"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -41734,7 +41845,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijdingq"
                  priority="1000"
-                 mode="M356">
+                 mode="M357">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijdingq"/>
 
@@ -41825,11 +41936,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M356"/>
+      <xsl:apply-templates select="*" mode="M357"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M356"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M356">
-      <xsl:apply-templates select="*" mode="M356"/>
+   <xsl:template match="text()" priority="-1" mode="M357"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M357">
+      <xsl:apply-templates select="*" mode="M357"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -41838,7 +41949,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding"
                  priority="1000"
-                 mode="M357">
+                 mode="M358">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding"/>
 
@@ -41900,11 +42011,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M357"/>
+      <xsl:apply-templates select="*" mode="M358"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M357"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M357">
-      <xsl:apply-templates select="*" mode="M357"/>
+   <xsl:template match="text()" priority="-1" mode="M358"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M358">
+      <xsl:apply-templates select="*" mode="M358"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -41913,7 +42024,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/sedatieq"
                  priority="1000"
-                 mode="M358">
+                 mode="M359">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/sedatieq"/>
 
@@ -42004,11 +42115,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M358"/>
+      <xsl:apply-templates select="*" mode="M359"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M358"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M358">
-      <xsl:apply-templates select="*" mode="M358"/>
+   <xsl:template match="text()" priority="-1" mode="M359"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M359">
+      <xsl:apply-templates select="*" mode="M359"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -42017,7 +42128,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding"
                  priority="1000"
-                 mode="M359">
+                 mode="M360">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding"/>
 
@@ -42067,11 +42178,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M359"/>
+      <xsl:apply-templates select="*" mode="M360"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M359"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M359">
-      <xsl:apply-templates select="*" mode="M359"/>
+   <xsl:template match="text()" priority="-1" mode="M360"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M360">
+      <xsl:apply-templates select="*" mode="M360"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -42080,7 +42191,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/*[not(self::methode)][not(self::periode)][not(self::adaextension)]"
                  priority="1000"
-                 mode="M360">
+                 mode="M361">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/*[not(self::methode)][not(self::periode)][not(self::adaextension)]"/>
 
@@ -42097,11 +42208,11 @@ SOFTWARE.
                <xsl:text/>]</svrl:text>
          </svrl:successful-report>
       </xsl:if>
-      <xsl:apply-templates select="*" mode="M360"/>
+      <xsl:apply-templates select="*" mode="M361"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M360"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M360">
-      <xsl:apply-templates select="*" mode="M360"/>
+   <xsl:template match="text()" priority="-1" mode="M361"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M361">
+      <xsl:apply-templates select="*" mode="M361"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -42110,7 +42221,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode"
                  priority="1000"
-                 mode="M361">
+                 mode="M362">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode"/>
 
@@ -42172,11 +42283,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M361"/>
+      <xsl:apply-templates select="*" mode="M362"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M361"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M361">
-      <xsl:apply-templates select="*" mode="M361"/>
+   <xsl:template match="text()" priority="-1" mode="M362"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M362">
+      <xsl:apply-templates select="*" mode="M362"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -42185,7 +42296,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/periode"
                  priority="1000"
-                 mode="M362">
+                 mode="M363">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/periode"/>
 
@@ -42347,11 +42458,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M362"/>
+      <xsl:apply-templates select="*" mode="M363"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M362"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M362">
-      <xsl:apply-templates select="*" mode="M362"/>
+   <xsl:template match="text()" priority="-1" mode="M363"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M363">
+      <xsl:apply-templates select="*" mode="M363"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -42360,7 +42471,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode"
                  priority="1000"
-                 mode="M363">
+                 mode="M364">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode"/>
 
@@ -42410,11 +42521,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M363"/>
+      <xsl:apply-templates select="*" mode="M364"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M363"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M363">
-      <xsl:apply-templates select="*" mode="M363"/>
+   <xsl:template match="text()" priority="-1" mode="M364"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M364">
+      <xsl:apply-templates select="*" mode="M364"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -42423,7 +42534,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode/*[not(self::methode)][not(self::overig_middel)][not(self::adaextension)]"
                  priority="1000"
-                 mode="M364">
+                 mode="M365">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode/*[not(self::methode)][not(self::overig_middel)][not(self::adaextension)]"/>
 
@@ -42440,11 +42551,11 @@ SOFTWARE.
                <xsl:text/>]</svrl:text>
          </svrl:successful-report>
       </xsl:if>
-      <xsl:apply-templates select="*" mode="M364"/>
+      <xsl:apply-templates select="*" mode="M365"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M364"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M364">
-      <xsl:apply-templates select="*" mode="M364"/>
+   <xsl:template match="text()" priority="-1" mode="M365"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M365">
+      <xsl:apply-templates select="*" mode="M365"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -42453,7 +42564,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode/methode"
                  priority="1000"
-                 mode="M365">
+                 mode="M366">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode/methode"/>
 
@@ -42615,11 +42726,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M365"/>
+      <xsl:apply-templates select="*" mode="M366"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M365"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M365">
-      <xsl:apply-templates select="*" mode="M365"/>
+   <xsl:template match="text()" priority="-1" mode="M366"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M366">
+      <xsl:apply-templates select="*" mode="M366"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -42628,7 +42739,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode/overig_middel"
                  priority="1000"
-                 mode="M366">
+                 mode="M367">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode/overig_middel"/>
 
@@ -42690,11 +42801,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M366"/>
+      <xsl:apply-templates select="*" mode="M367"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M366"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M366">
-      <xsl:apply-templates select="*" mode="M366"/>
+   <xsl:template match="text()" priority="-1" mode="M367"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M367">
+      <xsl:apply-templates select="*" mode="M367"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -42703,7 +42814,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode/overig_middel"
                  priority="1000"
-                 mode="M367">
+                 mode="M368">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode/overig_middel"/>
 
@@ -42754,11 +42865,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M367"/>
+      <xsl:apply-templates select="*" mode="M368"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M367"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M367">
-      <xsl:apply-templates select="*" mode="M367"/>
+   <xsl:template match="text()" priority="-1" mode="M368"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M368">
+      <xsl:apply-templates select="*" mode="M368"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -42767,7 +42878,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode/overig_middel/*[not(self::middel)][not(self::toediening)][not(self::adaextension)]"
                  priority="1000"
-                 mode="M368">
+                 mode="M369">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode/overig_middel/*[not(self::middel)][not(self::toediening)][not(self::adaextension)]"/>
 
@@ -42784,11 +42895,11 @@ SOFTWARE.
                <xsl:text/>]</svrl:text>
          </svrl:successful-report>
       </xsl:if>
-      <xsl:apply-templates select="*" mode="M368"/>
+      <xsl:apply-templates select="*" mode="M369"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M368"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M368">
-      <xsl:apply-templates select="*" mode="M368"/>
+   <xsl:template match="text()" priority="-1" mode="M369"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M369">
+      <xsl:apply-templates select="*" mode="M369"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -42797,7 +42908,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode/overig_middel/middel"
                  priority="1000"
-                 mode="M369">
+                 mode="M370">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode/overig_middel/middel"/>
 
@@ -42959,11 +43070,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M369"/>
+      <xsl:apply-templates select="*" mode="M370"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M369"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M369">
-      <xsl:apply-templates select="*" mode="M369"/>
+   <xsl:template match="text()" priority="-1" mode="M370"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M370">
+      <xsl:apply-templates select="*" mode="M370"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -42972,7 +43083,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode/overig_middel/toediening"
                  priority="1000"
-                 mode="M370">
+                 mode="M371">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode/overig_middel/toediening"/>
 
@@ -43134,11 +43245,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M370"/>
+      <xsl:apply-templates select="*" mode="M371"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M370"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M370">
-      <xsl:apply-templates select="*" mode="M370"/>
+   <xsl:template match="text()" priority="-1" mode="M371"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M371">
+      <xsl:apply-templates select="*" mode="M371"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -43147,7 +43258,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens"
                  priority="1000"
-                 mode="M371">
+                 mode="M372">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens"/>
 
@@ -43390,11 +43501,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M371"/>
+      <xsl:apply-templates select="*" mode="M372"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M371"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M371">
-      <xsl:apply-templates select="*" mode="M371"/>
+   <xsl:template match="text()" priority="-1" mode="M372"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M372">
+      <xsl:apply-templates select="*" mode="M372"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -43403,7 +43514,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/*[not(self::type_partus)][not(self::ligging_bij_geboorte)][not(self::aanpakker_kind_groep)][not(self::supervisor_groep)][not(self::vaginale_kunstverlossing_groep)][not(self::sectio_caesarea_group)][not(self::overige_interventies)][not(self::lichamelijk_onderzoek_kind)][not(self::congenitale_afwijkingenq)][not(self::congenitale_afwijkingen_groep)][not(self::problematiek_kindq)][not(self::problematiek_kind)][not(self::kinderarts_betrokkenq)][not(self::betrokkenheid_kinderarts)][not(self::adaextension)]"
                  priority="1000"
-                 mode="M372">
+                 mode="M373">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/*[not(self::type_partus)][not(self::ligging_bij_geboorte)][not(self::aanpakker_kind_groep)][not(self::supervisor_groep)][not(self::vaginale_kunstverlossing_groep)][not(self::sectio_caesarea_group)][not(self::overige_interventies)][not(self::lichamelijk_onderzoek_kind)][not(self::congenitale_afwijkingenq)][not(self::congenitale_afwijkingen_groep)][not(self::problematiek_kindq)][not(self::problematiek_kind)][not(self::kinderarts_betrokkenq)][not(self::betrokkenheid_kinderarts)][not(self::adaextension)]"/>
 
@@ -43420,11 +43531,11 @@ SOFTWARE.
                <xsl:text/>]</svrl:text>
          </svrl:successful-report>
       </xsl:if>
-      <xsl:apply-templates select="*" mode="M372"/>
+      <xsl:apply-templates select="*" mode="M373"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M372"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M372">
-      <xsl:apply-templates select="*" mode="M372"/>
+   <xsl:template match="text()" priority="-1" mode="M373"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M373">
+      <xsl:apply-templates select="*" mode="M373"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -43433,7 +43544,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/type_partus"
                  priority="1000"
-                 mode="M373">
+                 mode="M374">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/type_partus"/>
 
@@ -43595,11 +43706,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M373"/>
+      <xsl:apply-templates select="*" mode="M374"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M373"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M373">
-      <xsl:apply-templates select="*" mode="M373"/>
+   <xsl:template match="text()" priority="-1" mode="M374"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M374">
+      <xsl:apply-templates select="*" mode="M374"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -43608,7 +43719,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/ligging_bij_geboorte"
                  priority="1000"
-                 mode="M374">
+                 mode="M375">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/ligging_bij_geboorte"/>
 
@@ -43770,11 +43881,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M374"/>
+      <xsl:apply-templates select="*" mode="M375"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M374"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M374">
-      <xsl:apply-templates select="*" mode="M374"/>
+   <xsl:template match="text()" priority="-1" mode="M375"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M375">
+      <xsl:apply-templates select="*" mode="M375"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -43783,7 +43894,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/aanpakker_kind_groep"
                  priority="1000"
-                 mode="M375">
+                 mode="M376">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/aanpakker_kind_groep"/>
 
@@ -43845,11 +43956,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M375"/>
+      <xsl:apply-templates select="*" mode="M376"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M375"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M375">
-      <xsl:apply-templates select="*" mode="M375"/>
+   <xsl:template match="text()" priority="-1" mode="M376"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M376">
+      <xsl:apply-templates select="*" mode="M376"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -43858,7 +43969,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/supervisor_groep"
                  priority="1000"
-                 mode="M376">
+                 mode="M377">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/supervisor_groep"/>
 
@@ -43920,11 +44031,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M376"/>
+      <xsl:apply-templates select="*" mode="M377"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M376"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M376">
-      <xsl:apply-templates select="*" mode="M376"/>
+   <xsl:template match="text()" priority="-1" mode="M377"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M377">
+      <xsl:apply-templates select="*" mode="M377"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -43933,7 +44044,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/vaginale_kunstverlossing_groep"
                  priority="1000"
-                 mode="M377">
+                 mode="M378">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/vaginale_kunstverlossing_groep"/>
 
@@ -43995,11 +44106,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M377"/>
+      <xsl:apply-templates select="*" mode="M378"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M377"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M377">
-      <xsl:apply-templates select="*" mode="M377"/>
+   <xsl:template match="text()" priority="-1" mode="M378"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M378">
+      <xsl:apply-templates select="*" mode="M378"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -44008,7 +44119,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/sectio_caesarea_group"
                  priority="1000"
-                 mode="M378">
+                 mode="M379">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/sectio_caesarea_group"/>
 
@@ -44070,11 +44181,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M378"/>
+      <xsl:apply-templates select="*" mode="M379"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M378"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M378">
-      <xsl:apply-templates select="*" mode="M378"/>
+   <xsl:template match="text()" priority="-1" mode="M379"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M379">
+      <xsl:apply-templates select="*" mode="M379"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -44083,7 +44194,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/overige_interventies"
                  priority="1000"
-                 mode="M379">
+                 mode="M380">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/overige_interventies"/>
 
@@ -44245,11 +44356,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M379"/>
+      <xsl:apply-templates select="*" mode="M380"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M379"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M379">
-      <xsl:apply-templates select="*" mode="M379"/>
+   <xsl:template match="text()" priority="-1" mode="M380"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M380">
+      <xsl:apply-templates select="*" mode="M380"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -44258,7 +44369,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind"
                  priority="1000"
-                 mode="M380">
+                 mode="M381">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind"/>
 
@@ -44320,11 +44431,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M380"/>
+      <xsl:apply-templates select="*" mode="M381"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M380"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M380">
-      <xsl:apply-templates select="*" mode="M380"/>
+   <xsl:template match="text()" priority="-1" mode="M381"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M381">
+      <xsl:apply-templates select="*" mode="M381"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -44333,7 +44444,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingenq"
                  priority="1000"
-                 mode="M381">
+                 mode="M382">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingenq"/>
 
@@ -44424,11 +44535,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M381"/>
+      <xsl:apply-templates select="*" mode="M382"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M381"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M381">
-      <xsl:apply-templates select="*" mode="M381"/>
+   <xsl:template match="text()" priority="-1" mode="M382"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M382">
+      <xsl:apply-templates select="*" mode="M382"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -44437,7 +44548,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep"
                  priority="1000"
-                 mode="M382">
+                 mode="M383">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep"/>
 
@@ -44499,11 +44610,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M382"/>
+      <xsl:apply-templates select="*" mode="M383"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M382"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M382">
-      <xsl:apply-templates select="*" mode="M382"/>
+   <xsl:template match="text()" priority="-1" mode="M383"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M383">
+      <xsl:apply-templates select="*" mode="M383"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -44512,7 +44623,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/problematiek_kindq"
                  priority="1000"
-                 mode="M383">
+                 mode="M384">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/problematiek_kindq"/>
 
@@ -44603,11 +44714,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M383"/>
+      <xsl:apply-templates select="*" mode="M384"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M383"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M383">
-      <xsl:apply-templates select="*" mode="M383"/>
+   <xsl:template match="text()" priority="-1" mode="M384"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M384">
+      <xsl:apply-templates select="*" mode="M384"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -44616,7 +44727,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/problematiek_kind"
                  priority="1000"
-                 mode="M384">
+                 mode="M385">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/problematiek_kind"/>
 
@@ -44778,11 +44889,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M384"/>
+      <xsl:apply-templates select="*" mode="M385"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M384"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M384">
-      <xsl:apply-templates select="*" mode="M384"/>
+   <xsl:template match="text()" priority="-1" mode="M385"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M385">
+      <xsl:apply-templates select="*" mode="M385"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -44791,7 +44902,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/kinderarts_betrokkenq"
                  priority="1000"
-                 mode="M385">
+                 mode="M386">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/kinderarts_betrokkenq"/>
 
@@ -44882,11 +44993,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M385"/>
+      <xsl:apply-templates select="*" mode="M386"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M385"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M385">
-      <xsl:apply-templates select="*" mode="M385"/>
+   <xsl:template match="text()" priority="-1" mode="M386"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M386">
+      <xsl:apply-templates select="*" mode="M386"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -44895,7 +45006,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts"
                  priority="1000"
-                 mode="M386">
+                 mode="M387">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts"/>
 
@@ -44957,11 +45068,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M386"/>
+      <xsl:apply-templates select="*" mode="M387"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M386"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M386">
-      <xsl:apply-templates select="*" mode="M386"/>
+   <xsl:template match="text()" priority="-1" mode="M387"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M387">
+      <xsl:apply-templates select="*" mode="M387"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -44970,7 +45081,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/aanpakker_kind_groep"
                  priority="1000"
-                 mode="M387">
+                 mode="M388">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/aanpakker_kind_groep"/>
 
@@ -45005,11 +45116,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M387"/>
+      <xsl:apply-templates select="*" mode="M388"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M387"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M387">
-      <xsl:apply-templates select="*" mode="M387"/>
+   <xsl:template match="text()" priority="-1" mode="M388"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M388">
+      <xsl:apply-templates select="*" mode="M388"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -45018,7 +45129,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/aanpakker_kind_groep/*[not(self::rol_aanpakker_kind)][not(self::adaextension)]"
                  priority="1000"
-                 mode="M388">
+                 mode="M389">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/aanpakker_kind_groep/*[not(self::rol_aanpakker_kind)][not(self::adaextension)]"/>
 
@@ -45035,11 +45146,11 @@ SOFTWARE.
                <xsl:text/>]</svrl:text>
          </svrl:successful-report>
       </xsl:if>
-      <xsl:apply-templates select="*" mode="M388"/>
+      <xsl:apply-templates select="*" mode="M389"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M388"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M388">
-      <xsl:apply-templates select="*" mode="M388"/>
+   <xsl:template match="text()" priority="-1" mode="M389"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M389">
+      <xsl:apply-templates select="*" mode="M389"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -45048,7 +45159,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/aanpakker_kind_groep/rol_aanpakker_kind"
                  priority="1000"
-                 mode="M389">
+                 mode="M390">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/aanpakker_kind_groep/rol_aanpakker_kind"/>
 
@@ -45210,11 +45321,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M389"/>
+      <xsl:apply-templates select="*" mode="M390"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M389"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M389">
-      <xsl:apply-templates select="*" mode="M389"/>
+   <xsl:template match="text()" priority="-1" mode="M390"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M390">
+      <xsl:apply-templates select="*" mode="M390"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -45223,7 +45334,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/supervisor_groep"
                  priority="1000"
-                 mode="M390">
+                 mode="M391">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/supervisor_groep"/>
 
@@ -45258,11 +45369,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M390"/>
+      <xsl:apply-templates select="*" mode="M391"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M390"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M390">
-      <xsl:apply-templates select="*" mode="M390"/>
+   <xsl:template match="text()" priority="-1" mode="M391"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M391">
+      <xsl:apply-templates select="*" mode="M391"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -45271,7 +45382,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/supervisor_groep/*[not(self::rol_supervisor)][not(self::adaextension)]"
                  priority="1000"
-                 mode="M391">
+                 mode="M392">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/supervisor_groep/*[not(self::rol_supervisor)][not(self::adaextension)]"/>
 
@@ -45288,11 +45399,11 @@ SOFTWARE.
                <xsl:text/>]</svrl:text>
          </svrl:successful-report>
       </xsl:if>
-      <xsl:apply-templates select="*" mode="M391"/>
+      <xsl:apply-templates select="*" mode="M392"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M391"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M391">
-      <xsl:apply-templates select="*" mode="M391"/>
+   <xsl:template match="text()" priority="-1" mode="M392"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M392">
+      <xsl:apply-templates select="*" mode="M392"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -45301,7 +45412,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/supervisor_groep/rol_supervisor"
                  priority="1000"
-                 mode="M392">
+                 mode="M393">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/supervisor_groep/rol_supervisor"/>
 
@@ -45463,11 +45574,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M392"/>
+      <xsl:apply-templates select="*" mode="M393"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M392"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M392">
-      <xsl:apply-templates select="*" mode="M392"/>
+   <xsl:template match="text()" priority="-1" mode="M393"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M393">
+      <xsl:apply-templates select="*" mode="M393"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -45476,7 +45587,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/vaginale_kunstverlossing_groep"
                  priority="1000"
-                 mode="M393">
+                 mode="M394">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/vaginale_kunstverlossing_groep"/>
 
@@ -45527,11 +45638,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M393"/>
+      <xsl:apply-templates select="*" mode="M394"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M393"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M393">
-      <xsl:apply-templates select="*" mode="M393"/>
+   <xsl:template match="text()" priority="-1" mode="M394"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M394">
+      <xsl:apply-templates select="*" mode="M394"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -45540,7 +45651,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/vaginale_kunstverlossing_groep/*[not(self::vaginale_kunstverlossing)][not(self::succes_vaginale_kunstverlossingq)][not(self::adaextension)]"
                  priority="1000"
-                 mode="M394">
+                 mode="M395">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/vaginale_kunstverlossing_groep/*[not(self::vaginale_kunstverlossing)][not(self::succes_vaginale_kunstverlossingq)][not(self::adaextension)]"/>
 
@@ -45557,11 +45668,11 @@ SOFTWARE.
                <xsl:text/>]</svrl:text>
          </svrl:successful-report>
       </xsl:if>
-      <xsl:apply-templates select="*" mode="M394"/>
+      <xsl:apply-templates select="*" mode="M395"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M394"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M394">
-      <xsl:apply-templates select="*" mode="M394"/>
+   <xsl:template match="text()" priority="-1" mode="M395"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M395">
+      <xsl:apply-templates select="*" mode="M395"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -45570,7 +45681,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/vaginale_kunstverlossing_groep/vaginale_kunstverlossing"
                  priority="1000"
-                 mode="M395">
+                 mode="M396">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/vaginale_kunstverlossing_groep/vaginale_kunstverlossing"/>
 
@@ -45732,11 +45843,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M395"/>
+      <xsl:apply-templates select="*" mode="M396"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M395"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M395">
-      <xsl:apply-templates select="*" mode="M395"/>
+   <xsl:template match="text()" priority="-1" mode="M396"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M396">
+      <xsl:apply-templates select="*" mode="M396"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -45745,7 +45856,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/vaginale_kunstverlossing_groep/succes_vaginale_kunstverlossingq"
                  priority="1000"
-                 mode="M396">
+                 mode="M397">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/vaginale_kunstverlossing_groep/succes_vaginale_kunstverlossingq"/>
 
@@ -45836,11 +45947,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M396"/>
+      <xsl:apply-templates select="*" mode="M397"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M396"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M396">
-      <xsl:apply-templates select="*" mode="M396"/>
+   <xsl:template match="text()" priority="-1" mode="M397"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M397">
+      <xsl:apply-templates select="*" mode="M397"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -45849,7 +45960,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/sectio_caesarea_group"
                  priority="1000"
-                 mode="M397">
+                 mode="M398">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/sectio_caesarea_group"/>
 
@@ -45916,11 +46027,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M397"/>
+      <xsl:apply-templates select="*" mode="M398"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M397"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M397">
-      <xsl:apply-templates select="*" mode="M397"/>
+   <xsl:template match="text()" priority="-1" mode="M398"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M398">
+      <xsl:apply-templates select="*" mode="M398"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -45929,7 +46040,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/sectio_caesarea_group/*[not(self::beslismoment_sectio_caesarea)][not(self::indicatie_primaire_sectio)][not(self::indicatie_secundaire_sectio)][not(self::adaextension)]"
                  priority="1000"
-                 mode="M398">
+                 mode="M399">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/sectio_caesarea_group/*[not(self::beslismoment_sectio_caesarea)][not(self::indicatie_primaire_sectio)][not(self::indicatie_secundaire_sectio)][not(self::adaextension)]"/>
 
@@ -45946,11 +46057,11 @@ SOFTWARE.
                <xsl:text/>]</svrl:text>
          </svrl:successful-report>
       </xsl:if>
-      <xsl:apply-templates select="*" mode="M398"/>
+      <xsl:apply-templates select="*" mode="M399"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M398"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M398">
-      <xsl:apply-templates select="*" mode="M398"/>
+   <xsl:template match="text()" priority="-1" mode="M399"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M399">
+      <xsl:apply-templates select="*" mode="M399"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -45959,7 +46070,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/sectio_caesarea_group/beslismoment_sectio_caesarea"
                  priority="1000"
-                 mode="M399">
+                 mode="M400">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/sectio_caesarea_group/beslismoment_sectio_caesarea"/>
 
@@ -46121,11 +46232,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M399"/>
+      <xsl:apply-templates select="*" mode="M400"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M399"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M399">
-      <xsl:apply-templates select="*" mode="M399"/>
+   <xsl:template match="text()" priority="-1" mode="M400"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M400">
+      <xsl:apply-templates select="*" mode="M400"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -46134,7 +46245,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/sectio_caesarea_group/indicatie_primaire_sectio"
                  priority="1000"
-                 mode="M400">
+                 mode="M401">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/sectio_caesarea_group/indicatie_primaire_sectio"/>
 
@@ -46296,11 +46407,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M400"/>
+      <xsl:apply-templates select="*" mode="M401"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M400"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M400">
-      <xsl:apply-templates select="*" mode="M400"/>
+   <xsl:template match="text()" priority="-1" mode="M401"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M401">
+      <xsl:apply-templates select="*" mode="M401"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -46309,7 +46420,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/sectio_caesarea_group/indicatie_secundaire_sectio"
                  priority="1000"
-                 mode="M401">
+                 mode="M402">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/sectio_caesarea_group/indicatie_secundaire_sectio"/>
 
@@ -46471,11 +46582,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M401"/>
+      <xsl:apply-templates select="*" mode="M402"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M401"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M401">
-      <xsl:apply-templates select="*" mode="M401"/>
+   <xsl:template match="text()" priority="-1" mode="M402"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M402">
+      <xsl:apply-templates select="*" mode="M402"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -46484,7 +46595,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind"
                  priority="1000"
-                 mode="M402">
+                 mode="M403">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind"/>
 
@@ -46535,11 +46646,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M402"/>
+      <xsl:apply-templates select="*" mode="M403"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M402"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M402">
-      <xsl:apply-templates select="*" mode="M402"/>
+   <xsl:template match="text()" priority="-1" mode="M403"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M403">
+      <xsl:apply-templates select="*" mode="M403"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -46548,7 +46659,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/*[not(self::apgarscore_na_5_min)][not(self::geboortegewicht)][not(self::adaextension)]"
                  priority="1000"
-                 mode="M403">
+                 mode="M404">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/*[not(self::apgarscore_na_5_min)][not(self::geboortegewicht)][not(self::adaextension)]"/>
 
@@ -46565,11 +46676,11 @@ SOFTWARE.
                <xsl:text/>]</svrl:text>
          </svrl:successful-report>
       </xsl:if>
-      <xsl:apply-templates select="*" mode="M403"/>
+      <xsl:apply-templates select="*" mode="M404"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M403"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M403">
-      <xsl:apply-templates select="*" mode="M403"/>
+   <xsl:template match="text()" priority="-1" mode="M404"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M404">
+      <xsl:apply-templates select="*" mode="M404"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -46578,7 +46689,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/apgarscore_na_5_min"
                  priority="1000"
-                 mode="M404">
+                 mode="M405">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/apgarscore_na_5_min"/>
 
@@ -46701,11 +46812,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M404"/>
+      <xsl:apply-templates select="*" mode="M405"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M404"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M404">
-      <xsl:apply-templates select="*" mode="M404"/>
+   <xsl:template match="text()" priority="-1" mode="M405"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M405">
+      <xsl:apply-templates select="*" mode="M405"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -46714,7 +46825,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/geboortegewicht"
                  priority="1000"
-                 mode="M405">
+                 mode="M406">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/geboortegewicht"/>
 
@@ -46850,11 +46961,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M405"/>
+      <xsl:apply-templates select="*" mode="M406"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M405"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M405">
-      <xsl:apply-templates select="*" mode="M405"/>
+   <xsl:template match="text()" priority="-1" mode="M406"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M406">
+      <xsl:apply-templates select="*" mode="M406"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -46863,7 +46974,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep"
                  priority="1000"
-                 mode="M406">
+                 mode="M407">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep"/>
 
@@ -46930,11 +47041,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M406"/>
+      <xsl:apply-templates select="*" mode="M407"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M406"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M406">
-      <xsl:apply-templates select="*" mode="M406"/>
+   <xsl:template match="text()" priority="-1" mode="M407"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M407">
+      <xsl:apply-templates select="*" mode="M407"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -46943,7 +47054,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/*[not(self::specificatie_congenitale_afwijking_groep)][not(self::chromosomale_afwijkingenq)][not(self::specificatie_chromosomale_afwijking_groep)][not(self::adaextension)]"
                  priority="1000"
-                 mode="M407">
+                 mode="M408">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/*[not(self::specificatie_congenitale_afwijking_groep)][not(self::chromosomale_afwijkingenq)][not(self::specificatie_chromosomale_afwijking_groep)][not(self::adaextension)]"/>
 
@@ -46960,11 +47071,11 @@ SOFTWARE.
                <xsl:text/>]</svrl:text>
          </svrl:successful-report>
       </xsl:if>
-      <xsl:apply-templates select="*" mode="M407"/>
+      <xsl:apply-templates select="*" mode="M408"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M407"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M407">
-      <xsl:apply-templates select="*" mode="M407"/>
+   <xsl:template match="text()" priority="-1" mode="M408"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M408">
+      <xsl:apply-templates select="*" mode="M408"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -46973,7 +47084,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_congenitale_afwijking_groep"
                  priority="1000"
-                 mode="M408">
+                 mode="M409">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_congenitale_afwijking_groep"/>
 
@@ -47035,11 +47146,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M408"/>
+      <xsl:apply-templates select="*" mode="M409"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M408"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M408">
-      <xsl:apply-templates select="*" mode="M408"/>
+   <xsl:template match="text()" priority="-1" mode="M409"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M409">
+      <xsl:apply-templates select="*" mode="M409"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -47048,7 +47159,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/chromosomale_afwijkingenq"
                  priority="1000"
-                 mode="M409">
+                 mode="M410">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/chromosomale_afwijkingenq"/>
 
@@ -47139,11 +47250,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M409"/>
+      <xsl:apply-templates select="*" mode="M410"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M409"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M409">
-      <xsl:apply-templates select="*" mode="M409"/>
+   <xsl:template match="text()" priority="-1" mode="M410"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M410">
+      <xsl:apply-templates select="*" mode="M410"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -47152,7 +47263,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_chromosomale_afwijking_groep"
                  priority="1000"
-                 mode="M410">
+                 mode="M411">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_chromosomale_afwijking_groep"/>
 
@@ -47214,11 +47325,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M410"/>
+      <xsl:apply-templates select="*" mode="M411"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M410"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M410">
-      <xsl:apply-templates select="*" mode="M410"/>
+   <xsl:template match="text()" priority="-1" mode="M411"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M411">
+      <xsl:apply-templates select="*" mode="M411"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -47227,7 +47338,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_congenitale_afwijking_groep"
                  priority="1000"
-                 mode="M411">
+                 mode="M412">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_congenitale_afwijking_groep"/>
 
@@ -47262,11 +47373,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M411"/>
+      <xsl:apply-templates select="*" mode="M412"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M411"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M411">
-      <xsl:apply-templates select="*" mode="M411"/>
+   <xsl:template match="text()" priority="-1" mode="M412"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M412">
+      <xsl:apply-templates select="*" mode="M412"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -47275,7 +47386,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_congenitale_afwijking_groep/*[not(self::specificatie_congenitale_afwijking)][not(self::adaextension)]"
                  priority="1000"
-                 mode="M412">
+                 mode="M413">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_congenitale_afwijking_groep/*[not(self::specificatie_congenitale_afwijking)][not(self::adaextension)]"/>
 
@@ -47292,11 +47403,11 @@ SOFTWARE.
                <xsl:text/>]</svrl:text>
          </svrl:successful-report>
       </xsl:if>
-      <xsl:apply-templates select="*" mode="M412"/>
+      <xsl:apply-templates select="*" mode="M413"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M412"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M412">
-      <xsl:apply-templates select="*" mode="M412"/>
+   <xsl:template match="text()" priority="-1" mode="M413"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M413">
+      <xsl:apply-templates select="*" mode="M413"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -47305,7 +47416,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_congenitale_afwijking_groep/specificatie_congenitale_afwijking"
                  priority="1000"
-                 mode="M413">
+                 mode="M414">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_congenitale_afwijking_groep/specificatie_congenitale_afwijking"/>
 
@@ -47467,11 +47578,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M413"/>
+      <xsl:apply-templates select="*" mode="M414"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M413"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M413">
-      <xsl:apply-templates select="*" mode="M413"/>
+   <xsl:template match="text()" priority="-1" mode="M414"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M414">
+      <xsl:apply-templates select="*" mode="M414"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -47480,7 +47591,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_chromosomale_afwijking_groep"
                  priority="1000"
-                 mode="M414">
+                 mode="M415">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_chromosomale_afwijking_groep"/>
 
@@ -47515,11 +47626,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M414"/>
+      <xsl:apply-templates select="*" mode="M415"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M414"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M414">
-      <xsl:apply-templates select="*" mode="M414"/>
+   <xsl:template match="text()" priority="-1" mode="M415"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M415">
+      <xsl:apply-templates select="*" mode="M415"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -47528,7 +47639,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_chromosomale_afwijking_groep/*[not(self::specificatie_chromosomale_afwijking)][not(self::adaextension)]"
                  priority="1000"
-                 mode="M415">
+                 mode="M416">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_chromosomale_afwijking_groep/*[not(self::specificatie_chromosomale_afwijking)][not(self::adaextension)]"/>
 
@@ -47545,11 +47656,11 @@ SOFTWARE.
                <xsl:text/>]</svrl:text>
          </svrl:successful-report>
       </xsl:if>
-      <xsl:apply-templates select="*" mode="M415"/>
+      <xsl:apply-templates select="*" mode="M416"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M415"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M415">
-      <xsl:apply-templates select="*" mode="M415"/>
+   <xsl:template match="text()" priority="-1" mode="M416"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M416">
+      <xsl:apply-templates select="*" mode="M416"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -47558,7 +47669,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_chromosomale_afwijking_groep/specificatie_chromosomale_afwijking"
                  priority="1000"
-                 mode="M416">
+                 mode="M417">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_chromosomale_afwijking_groep/specificatie_chromosomale_afwijking"/>
 
@@ -47720,11 +47831,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M416"/>
+      <xsl:apply-templates select="*" mode="M417"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M416"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M416">
-      <xsl:apply-templates select="*" mode="M416"/>
+   <xsl:template match="text()" priority="-1" mode="M417"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M417">
+      <xsl:apply-templates select="*" mode="M417"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -47733,7 +47844,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts"
                  priority="1000"
-                 mode="M417">
+                 mode="M418">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts"/>
 
@@ -47816,11 +47927,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M417"/>
+      <xsl:apply-templates select="*" mode="M418"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M417"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M417">
-      <xsl:apply-templates select="*" mode="M417"/>
+   <xsl:template match="text()" priority="-1" mode="M418"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M418">
+      <xsl:apply-templates select="*" mode="M418"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -47829,7 +47940,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts/*[not(self::datum_betrokkenheid)][not(self::reden_betrokkenheid)][not(self::type_betrokkenheid)][not(self::zorginstelling_lvrid)][not(self::adaextension)]"
                  priority="1000"
-                 mode="M418">
+                 mode="M419">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts/*[not(self::datum_betrokkenheid)][not(self::reden_betrokkenheid)][not(self::type_betrokkenheid)][not(self::zorginstelling_lvrid)][not(self::adaextension)]"/>
 
@@ -47846,11 +47957,11 @@ SOFTWARE.
                <xsl:text/>]</svrl:text>
          </svrl:successful-report>
       </xsl:if>
-      <xsl:apply-templates select="*" mode="M418"/>
+      <xsl:apply-templates select="*" mode="M419"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M418"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M418">
-      <xsl:apply-templates select="*" mode="M418"/>
+   <xsl:template match="text()" priority="-1" mode="M419"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M419">
+      <xsl:apply-templates select="*" mode="M419"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -47859,7 +47970,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts/datum_betrokkenheid"
                  priority="1000"
-                 mode="M419">
+                 mode="M420">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts/datum_betrokkenheid"/>
 
@@ -47950,11 +48061,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M419"/>
+      <xsl:apply-templates select="*" mode="M420"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M419"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M419">
-      <xsl:apply-templates select="*" mode="M419"/>
+   <xsl:template match="text()" priority="-1" mode="M420"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M420">
+      <xsl:apply-templates select="*" mode="M420"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -47963,7 +48074,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts/reden_betrokkenheid"
                  priority="1000"
-                 mode="M420">
+                 mode="M421">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts/reden_betrokkenheid"/>
 
@@ -48125,11 +48236,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M420"/>
+      <xsl:apply-templates select="*" mode="M421"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M420"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M420">
-      <xsl:apply-templates select="*" mode="M420"/>
+   <xsl:template match="text()" priority="-1" mode="M421"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M421">
+      <xsl:apply-templates select="*" mode="M421"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -48138,7 +48249,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts/type_betrokkenheid"
                  priority="1000"
-                 mode="M421">
+                 mode="M422">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts/type_betrokkenheid"/>
 
@@ -48300,11 +48411,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M421"/>
+      <xsl:apply-templates select="*" mode="M422"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M421"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M421">
-      <xsl:apply-templates select="*" mode="M421"/>
+   <xsl:template match="text()" priority="-1" mode="M422"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M422">
+      <xsl:apply-templates select="*" mode="M422"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -48313,7 +48424,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts/zorginstelling_lvrid"
                  priority="1000"
-                 mode="M422">
+                 mode="M423">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts/zorginstelling_lvrid"/>
 
@@ -48420,11 +48531,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M422"/>
+      <xsl:apply-templates select="*" mode="M423"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M422"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M422">
-      <xsl:apply-templates select="*" mode="M422"/>
+   <xsl:template match="text()" priority="-1" mode="M423"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M423">
+      <xsl:apply-templates select="*" mode="M423"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -48433,7 +48544,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/medisch_onderzoek"
                  priority="1000"
-                 mode="M423">
+                 mode="M424">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/medisch_onderzoek"/>
 
@@ -48468,11 +48579,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M423"/>
+      <xsl:apply-templates select="*" mode="M424"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M423"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M423">
-      <xsl:apply-templates select="*" mode="M423"/>
+   <xsl:template match="text()" priority="-1" mode="M424"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M424">
+      <xsl:apply-templates select="*" mode="M424"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -48481,7 +48592,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/medisch_onderzoek/*[not(self::maternale_onderzoeksgegevens)][not(self::adaextension)]"
                  priority="1000"
-                 mode="M424">
+                 mode="M425">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/medisch_onderzoek/*[not(self::maternale_onderzoeksgegevens)][not(self::adaextension)]"/>
 
@@ -48498,11 +48609,11 @@ SOFTWARE.
                <xsl:text/>]</svrl:text>
          </svrl:successful-report>
       </xsl:if>
-      <xsl:apply-templates select="*" mode="M424"/>
+      <xsl:apply-templates select="*" mode="M425"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M424"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M424">
-      <xsl:apply-templates select="*" mode="M424"/>
+   <xsl:template match="text()" priority="-1" mode="M425"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M425">
+      <xsl:apply-templates select="*" mode="M425"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -48511,7 +48622,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/medisch_onderzoek/maternale_onderzoeksgegevens"
                  priority="1000"
-                 mode="M425">
+                 mode="M426">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/medisch_onderzoek/maternale_onderzoeksgegevens"/>
 
@@ -48573,11 +48684,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M425"/>
+      <xsl:apply-templates select="*" mode="M426"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M425"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M425">
-      <xsl:apply-templates select="*" mode="M425"/>
+   <xsl:template match="text()" priority="-1" mode="M426"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M426">
+      <xsl:apply-templates select="*" mode="M426"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -48586,7 +48697,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/medisch_onderzoek/maternale_onderzoeksgegevens"
                  priority="1000"
-                 mode="M426">
+                 mode="M427">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/medisch_onderzoek/maternale_onderzoeksgegevens"/>
 
@@ -48621,11 +48732,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M426"/>
+      <xsl:apply-templates select="*" mode="M427"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M426"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M426">
-      <xsl:apply-templates select="*" mode="M426"/>
+   <xsl:template match="text()" priority="-1" mode="M427"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M427">
+      <xsl:apply-templates select="*" mode="M427"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -48634,7 +48745,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/medisch_onderzoek/maternale_onderzoeksgegevens/*[not(self::urine_bloed_en_aanvullende_onderzoeken)][not(self::adaextension)]"
                  priority="1000"
-                 mode="M427">
+                 mode="M428">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/medisch_onderzoek/maternale_onderzoeksgegevens/*[not(self::urine_bloed_en_aanvullende_onderzoeken)][not(self::adaextension)]"/>
 
@@ -48651,11 +48762,11 @@ SOFTWARE.
                <xsl:text/>]</svrl:text>
          </svrl:successful-report>
       </xsl:if>
-      <xsl:apply-templates select="*" mode="M427"/>
+      <xsl:apply-templates select="*" mode="M428"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M427"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M427">
-      <xsl:apply-templates select="*" mode="M427"/>
+   <xsl:template match="text()" priority="-1" mode="M428"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M428">
+      <xsl:apply-templates select="*" mode="M428"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -48664,7 +48775,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken"
                  priority="1000"
-                 mode="M428">
+                 mode="M429">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken"/>
 
@@ -48726,11 +48837,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M428"/>
+      <xsl:apply-templates select="*" mode="M429"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M428"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M428">
-      <xsl:apply-templates select="*" mode="M428"/>
+   <xsl:template match="text()" priority="-1" mode="M429"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M429">
+      <xsl:apply-templates select="*" mode="M429"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -48739,7 +48850,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken"
                  priority="1000"
-                 mode="M429">
+                 mode="M430">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken"/>
 
@@ -48774,11 +48885,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M429"/>
+      <xsl:apply-templates select="*" mode="M430"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M429"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M429">
-      <xsl:apply-templates select="*" mode="M429"/>
+   <xsl:template match="text()" priority="-1" mode="M430"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M430">
+      <xsl:apply-templates select="*" mode="M430"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -48787,7 +48898,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/*[not(self::psie)][not(self::adaextension)]"
                  priority="1000"
-                 mode="M430">
+                 mode="M431">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/*[not(self::psie)][not(self::adaextension)]"/>
 
@@ -48804,11 +48915,11 @@ SOFTWARE.
                <xsl:text/>]</svrl:text>
          </svrl:successful-report>
       </xsl:if>
-      <xsl:apply-templates select="*" mode="M430"/>
+      <xsl:apply-templates select="*" mode="M431"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M430"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M430">
-      <xsl:apply-templates select="*" mode="M430"/>
+   <xsl:template match="text()" priority="-1" mode="M431"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M431">
+      <xsl:apply-templates select="*" mode="M431"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -48817,7 +48928,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/psie"
                  priority="1000"
-                 mode="M431">
+                 mode="M432">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/psie"/>
 
@@ -48879,11 +48990,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M431"/>
+      <xsl:apply-templates select="*" mode="M432"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M431"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M431">
-      <xsl:apply-templates select="*" mode="M431"/>
+   <xsl:template match="text()" priority="-1" mode="M432"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M432">
+      <xsl:apply-templates select="*" mode="M432"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -48892,7 +49003,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/psie"
                  priority="1000"
-                 mode="M432">
+                 mode="M433">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/psie"/>
 
@@ -48943,11 +49054,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M432"/>
+      <xsl:apply-templates select="*" mode="M433"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M432"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M432">
-      <xsl:apply-templates select="*" mode="M432"/>
+   <xsl:template match="text()" priority="-1" mode="M433"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M433">
+      <xsl:apply-templates select="*" mode="M433"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -48956,7 +49067,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/psie/*[not(self::irregulaire_antistoffenq)][not(self::welke_irregulaire_antistoffen_vrouw_aanwezig)][not(self::adaextension)]"
                  priority="1000"
-                 mode="M433">
+                 mode="M434">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/psie/*[not(self::irregulaire_antistoffenq)][not(self::welke_irregulaire_antistoffen_vrouw_aanwezig)][not(self::adaextension)]"/>
 
@@ -48973,11 +49084,11 @@ SOFTWARE.
                <xsl:text/>]</svrl:text>
          </svrl:successful-report>
       </xsl:if>
-      <xsl:apply-templates select="*" mode="M433"/>
+      <xsl:apply-templates select="*" mode="M434"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M433"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M433">
-      <xsl:apply-templates select="*" mode="M433"/>
+   <xsl:template match="text()" priority="-1" mode="M434"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M434">
+      <xsl:apply-templates select="*" mode="M434"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -48986,7 +49097,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/psie/irregulaire_antistoffenq"
                  priority="1000"
-                 mode="M434">
+                 mode="M435">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/psie/irregulaire_antistoffenq"/>
 
@@ -49077,11 +49188,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M434"/>
+      <xsl:apply-templates select="*" mode="M435"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M434"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M434">
-      <xsl:apply-templates select="*" mode="M434"/>
+   <xsl:template match="text()" priority="-1" mode="M435"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M435">
+      <xsl:apply-templates select="*" mode="M435"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -49090,7 +49201,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/psie/welke_irregulaire_antistoffen_vrouw_aanwezig"
                  priority="1000"
-                 mode="M435">
+                 mode="M436">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/psie/welke_irregulaire_antistoffen_vrouw_aanwezig"/>
 
@@ -49252,11 +49363,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M435"/>
+      <xsl:apply-templates select="*" mode="M436"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M435"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M435">
-      <xsl:apply-templates select="*" mode="M435"/>
+   <xsl:template match="text()" priority="-1" mode="M436"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M436">
+      <xsl:apply-templates select="*" mode="M436"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -49265,7 +49376,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/postnatale_fase"
                  priority="1000"
-                 mode="M436">
+                 mode="M437">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/postnatale_fase"/>
 
@@ -49316,11 +49427,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M436"/>
+      <xsl:apply-templates select="*" mode="M437"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M436"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M436">
-      <xsl:apply-templates select="*" mode="M436"/>
+   <xsl:template match="text()" priority="-1" mode="M437"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M437">
+      <xsl:apply-templates select="*" mode="M437"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -49329,7 +49440,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/postnatale_fase/*[not(self::diagnoseinterventie_postpartum)][not(self::kindspecifieke_gegevens)][not(self::adaextension)]"
                  priority="1000"
-                 mode="M437">
+                 mode="M438">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/postnatale_fase/*[not(self::diagnoseinterventie_postpartum)][not(self::kindspecifieke_gegevens)][not(self::adaextension)]"/>
 
@@ -49346,11 +49457,11 @@ SOFTWARE.
                <xsl:text/>]</svrl:text>
          </svrl:successful-report>
       </xsl:if>
-      <xsl:apply-templates select="*" mode="M437"/>
+      <xsl:apply-templates select="*" mode="M438"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M437"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M437">
-      <xsl:apply-templates select="*" mode="M437"/>
+   <xsl:template match="text()" priority="-1" mode="M438"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M438">
+      <xsl:apply-templates select="*" mode="M438"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -49359,7 +49470,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/postnatale_fase/diagnoseinterventie_postpartum"
                  priority="1000"
-                 mode="M438">
+                 mode="M439">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/postnatale_fase/diagnoseinterventie_postpartum"/>
 
@@ -49421,11 +49532,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M438"/>
+      <xsl:apply-templates select="*" mode="M439"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M438"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M438">
-      <xsl:apply-templates select="*" mode="M438"/>
+   <xsl:template match="text()" priority="-1" mode="M439"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M439">
+      <xsl:apply-templates select="*" mode="M439"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -49434,7 +49545,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/postnatale_fase/kindspecifieke_gegevens"
                  priority="1000"
-                 mode="M439">
+                 mode="M440">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/postnatale_fase/kindspecifieke_gegevens"/>
 
@@ -49496,11 +49607,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M439"/>
+      <xsl:apply-templates select="*" mode="M440"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M439"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M439">
-      <xsl:apply-templates select="*" mode="M439"/>
+   <xsl:template match="text()" priority="-1" mode="M440"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M440">
+      <xsl:apply-templates select="*" mode="M440"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -49509,7 +49620,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/postnatale_fase/diagnoseinterventie_postpartum"
                  priority="1000"
-                 mode="M440">
+                 mode="M441">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/postnatale_fase/diagnoseinterventie_postpartum"/>
 
@@ -49560,11 +49671,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M440"/>
+      <xsl:apply-templates select="*" mode="M441"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M440"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M440">
-      <xsl:apply-templates select="*" mode="M440"/>
+   <xsl:template match="text()" priority="-1" mode="M441"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M441">
+      <xsl:apply-templates select="*" mode="M441"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -49573,7 +49684,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/postnatale_fase/diagnoseinterventie_postpartum/*[not(self::datum)][not(self::pathologie_vrouw)][not(self::adaextension)]"
                  priority="1000"
-                 mode="M441">
+                 mode="M442">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/postnatale_fase/diagnoseinterventie_postpartum/*[not(self::datum)][not(self::pathologie_vrouw)][not(self::adaextension)]"/>
 
@@ -49590,11 +49701,11 @@ SOFTWARE.
                <xsl:text/>]</svrl:text>
          </svrl:successful-report>
       </xsl:if>
-      <xsl:apply-templates select="*" mode="M441"/>
+      <xsl:apply-templates select="*" mode="M442"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M441"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M441">
-      <xsl:apply-templates select="*" mode="M441"/>
+   <xsl:template match="text()" priority="-1" mode="M442"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M442">
+      <xsl:apply-templates select="*" mode="M442"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -49603,7 +49714,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/postnatale_fase/diagnoseinterventie_postpartum/datum"
                  priority="1000"
-                 mode="M442">
+                 mode="M443">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/postnatale_fase/diagnoseinterventie_postpartum/datum"/>
 
@@ -49694,11 +49805,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M442"/>
+      <xsl:apply-templates select="*" mode="M443"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M442"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M442">
-      <xsl:apply-templates select="*" mode="M442"/>
+   <xsl:template match="text()" priority="-1" mode="M443"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M443">
+      <xsl:apply-templates select="*" mode="M443"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -49707,7 +49818,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/postnatale_fase/diagnoseinterventie_postpartum/pathologie_vrouw"
                  priority="1000"
-                 mode="M443">
+                 mode="M444">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/postnatale_fase/diagnoseinterventie_postpartum/pathologie_vrouw"/>
 
@@ -49869,11 +49980,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M443"/>
+      <xsl:apply-templates select="*" mode="M444"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M443"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M443">
-      <xsl:apply-templates select="*" mode="M443"/>
+   <xsl:template match="text()" priority="-1" mode="M444"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M444">
+      <xsl:apply-templates select="*" mode="M444"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -49882,7 +49993,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/postnatale_fase/kindspecifieke_gegevens"
                  priority="1000"
-                 mode="M444">
+                 mode="M445">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/postnatale_fase/kindspecifieke_gegevens"/>
 
@@ -49917,11 +50028,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M444"/>
+      <xsl:apply-templates select="*" mode="M445"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M444"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M444">
-      <xsl:apply-templates select="*" mode="M444"/>
+   <xsl:template match="text()" priority="-1" mode="M445"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M445">
+      <xsl:apply-templates select="*" mode="M445"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -49930,7 +50041,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/postnatale_fase/kindspecifieke_gegevens/*[not(self::voeding_kind_groep)][not(self::adaextension)]"
                  priority="1000"
-                 mode="M445">
+                 mode="M446">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/postnatale_fase/kindspecifieke_gegevens/*[not(self::voeding_kind_groep)][not(self::adaextension)]"/>
 
@@ -49947,11 +50058,11 @@ SOFTWARE.
                <xsl:text/>]</svrl:text>
          </svrl:successful-report>
       </xsl:if>
-      <xsl:apply-templates select="*" mode="M445"/>
+      <xsl:apply-templates select="*" mode="M446"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M445"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M445">
-      <xsl:apply-templates select="*" mode="M445"/>
+   <xsl:template match="text()" priority="-1" mode="M446"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M446">
+      <xsl:apply-templates select="*" mode="M446"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -49960,7 +50071,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/postnatale_fase/kindspecifieke_gegevens/voeding_kind_groep"
                  priority="1000"
-                 mode="M446">
+                 mode="M447">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/postnatale_fase/kindspecifieke_gegevens/voeding_kind_groep"/>
 
@@ -50022,11 +50133,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M446"/>
+      <xsl:apply-templates select="*" mode="M447"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M446"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M446">
-      <xsl:apply-templates select="*" mode="M446"/>
+   <xsl:template match="text()" priority="-1" mode="M447"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M447">
+      <xsl:apply-templates select="*" mode="M447"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -50035,7 +50146,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/postnatale_fase/kindspecifieke_gegevens/voeding_kind_groep"
                  priority="1000"
-                 mode="M447">
+                 mode="M448">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/postnatale_fase/kindspecifieke_gegevens/voeding_kind_groep"/>
 
@@ -50086,11 +50197,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M447"/>
+      <xsl:apply-templates select="*" mode="M448"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M447"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M447">
-      <xsl:apply-templates select="*" mode="M447"/>
+   <xsl:template match="text()" priority="-1" mode="M448"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M448">
+      <xsl:apply-templates select="*" mode="M448"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -50099,7 +50210,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/postnatale_fase/kindspecifieke_gegevens/voeding_kind_groep/*[not(self::voeding_kind_datum)][not(self::substantie_voeding_kind)][not(self::adaextension)]"
                  priority="1000"
-                 mode="M448">
+                 mode="M449">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/postnatale_fase/kindspecifieke_gegevens/voeding_kind_groep/*[not(self::voeding_kind_datum)][not(self::substantie_voeding_kind)][not(self::adaextension)]"/>
 
@@ -50116,11 +50227,11 @@ SOFTWARE.
                <xsl:text/>]</svrl:text>
          </svrl:successful-report>
       </xsl:if>
-      <xsl:apply-templates select="*" mode="M448"/>
+      <xsl:apply-templates select="*" mode="M449"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M448"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M448">
-      <xsl:apply-templates select="*" mode="M448"/>
+   <xsl:template match="text()" priority="-1" mode="M449"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M449">
+      <xsl:apply-templates select="*" mode="M449"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -50129,7 +50240,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/postnatale_fase/kindspecifieke_gegevens/voeding_kind_groep/voeding_kind_datum"
                  priority="1000"
-                 mode="M449">
+                 mode="M450">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/postnatale_fase/kindspecifieke_gegevens/voeding_kind_groep/voeding_kind_datum"/>
 
@@ -50220,11 +50331,11 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M449"/>
+      <xsl:apply-templates select="*" mode="M450"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M449"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M449">
-      <xsl:apply-templates select="*" mode="M449"/>
+   <xsl:template match="text()" priority="-1" mode="M450"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M450">
+      <xsl:apply-templates select="*" mode="M450"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -50233,7 +50344,7 @@ SOFTWARE.
 	  <!--RULE -->
    <xsl:template match="/kernset_geboortezorg/postnatale_fase/kindspecifieke_gegevens/voeding_kind_groep/substantie_voeding_kind"
                  priority="1000"
-                 mode="M450">
+                 mode="M451">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_geboortezorg/postnatale_fase/kindspecifieke_gegevens/voeding_kind_groep/substantie_voeding_kind"/>
 
@@ -50395,10 +50506,10 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M450"/>
+      <xsl:apply-templates select="*" mode="M451"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M450"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M450">
-      <xsl:apply-templates select="*" mode="M450"/>
+   <xsl:template match="text()" priority="-1" mode="M451"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M451">
+      <xsl:apply-templates select="*" mode="M451"/>
    </xsl:template>
 </xsl:stylesheet>

@@ -191,6 +191,7 @@
       </eerdere_bevalling>
    </obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap>
    <zwangerschap>
+      <identificatie_van_de_zwangerschap value=""/>
       <graviditeit value=""/>
       <pariteit_voor_deze_zwangerschap value=""/>
       <definitieve_a_terme_datum value=""/>
