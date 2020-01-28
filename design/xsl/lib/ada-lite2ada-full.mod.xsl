@@ -90,7 +90,11 @@
               <xsl:call-template name="local:handle-concept-value">
                 <xsl:with-param name="concept" select="$concept"/>
                 <xsl:with-param name="value" select="@value"/>
+                <xsl:with-param name="code" select="@code"/>
+                <xsl:with-param name="codeSystem" select="@codeSystem"/>
                 <xsl:with-param name="enum" select="@enum"/>
+                <xsl:with-param name="root" select="@root"/>
+                <xsl:with-param name="nullFlavor" select="@nullFlavor"/>
                 <xsl:with-param name="full-elm-path" select="$full-elm-path"/>
               </xsl:call-template>
             </xsl:when>
@@ -129,13 +133,24 @@
 
   <xsl:template name="local:handle-concept-value">
     <xsl:param name="concept" as="element(concept)" required="yes"/>
+    <xsl:param name="code" as="xs:string?" required="yes"/>
+    <xsl:param name="codeSystem" as="xs:string?" required="yes"/>
     <xsl:param name="value" as="xs:string?" required="yes"/>
     <xsl:param name="enum" as="xs:string?" required="yes"/>
+    <xsl:param name="root" as="xs:string?" required="yes"/>
+    <xsl:param name="nullFlavor" as="xs:string?" required="yes"/>
     <xsl:param name="full-elm-path" as="xs:string" required="yes"/>
 
     <xsl:variable name="value-domain" as="element(valueDomain)" select="$concept/valueDomain"/>
     <xsl:variable name="value-domain-type" as="xs:string" select="$value-domain/@type"/>
 
+    <xsl:if test="exists($root)">
+      <xsl:attribute name="root" select="$root"/>
+    </xsl:if>
+    <xsl:if test="exists($nullFlavor)">
+      <xsl:attribute name="nullFlavor" select="$nullFlavor"/>
+    </xsl:if>
+    
     <xsl:choose>
 
       <!-- Code: Lookup the value in the code list of the concept. The actual value is the @localId. -->
@@ -143,6 +158,21 @@
         <xsl:variable name="valueset-concept-or-exception-elements" as="element()*" select="$concept/valueSet/conceptList/(concept | exception)"/>
         <xsl:variable name="code-element" as="element()?">
           <xsl:choose>
+            <xsl:when test="exists($code) and exists($codeSystem)">
+              <xsl:sequence select="($valueset-concept-or-exception-elements[@codeSystem eq $codeSystem][@code eq $code])[1]"/>
+            </xsl:when>
+            <xsl:when test="exists($code)">
+              <xsl:variable name="foundCodes" select="($valueset-concept-or-exception-elements[@code eq $code])"/>
+              <xsl:choose>
+                <xsl:when test="count($foundCodes) > 1">
+                  <!-- If this happens, the specs are wrong for ADA Lite use -->
+                  <xsl:sequence select="error((), ' == *** More than one code found for code=' || $code ||  ' and no codeSystem present == ')"/>
+                </xsl:when>
+                <xsl:otherwise>
+                  <xsl:sequence select="$foundCodes"/>
+                </xsl:otherwise>
+              </xsl:choose>
+            </xsl:when>
             <xsl:when test="exists($value)">
               <xsl:sequence select="($valueset-concept-or-exception-elements[@code eq $value])[1]"/>
             </xsl:when>
