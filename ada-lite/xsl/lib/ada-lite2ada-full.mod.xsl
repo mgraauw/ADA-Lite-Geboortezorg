@@ -93,6 +93,8 @@
                 <xsl:with-param name="code" select="@code"/>
                 <xsl:with-param name="codeSystem" select="@codeSystem"/>
                 <xsl:with-param name="enum" select="@enum"/>
+                <xsl:with-param name="root" select="@root"/>
+                <xsl:with-param name="nullFlavor" select="@nullFlavor"/>
                 <xsl:with-param name="full-elm-path" select="$full-elm-path"/>
               </xsl:call-template>
             </xsl:when>
@@ -135,11 +137,20 @@
     <xsl:param name="codeSystem" as="xs:string?" required="yes"/>
     <xsl:param name="value" as="xs:string?" required="yes"/>
     <xsl:param name="enum" as="xs:string?" required="yes"/>
+    <xsl:param name="root" as="xs:string?" required="yes"/>
+    <xsl:param name="nullFlavor" as="xs:string?" required="yes"/>
     <xsl:param name="full-elm-path" as="xs:string" required="yes"/>
 
     <xsl:variable name="value-domain" as="element(valueDomain)" select="$concept/valueDomain"/>
     <xsl:variable name="value-domain-type" as="xs:string" select="$value-domain/@type"/>
-
+    
+    <xsl:if test="exists($root)">
+      <xsl:attribute name="root" select="$root"/>
+    </xsl:if>
+    <xsl:if test="exists($nullFlavor)">
+      <xsl:attribute name="nullFlavor" select="$nullFlavor"/>
+    </xsl:if>
+    
     <xsl:choose>
 
       <!-- Code: Lookup the value in the code list of the concept. The actual value is the @localId. -->
