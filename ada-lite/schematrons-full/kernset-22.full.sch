@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schema xmlns="http://purl.oclc.org/dsdl/schematron"
-        xmlns:local="#local"
+<schema xmlns:local="#local"
         xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+        xmlns="http://purl.oclc.org/dsdl/schematron"
         queryBinding="xslt2"
         xml:lang="nl-NL">
 <!--
@@ -27,7 +27,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 -->
-<!-- == Generated Schematron file for validating ADA Full kernset_aanleverbericht documents == --><!-- == Source: design/specs-full/kernset-22.xml == --><!-- == Generator(s): design/xsl/ada-rtd2ada-schema-simple.xsl; design/xsl/ada-schema-simple2ada-schematron.xsl == -->   <ns uri="http://www.w3.org/2001/XMLSchema-instance" prefix="xsi"/>
+<!-- == Generated Schematron file for validating ADA Full kernset_aanleverbericht documents == --><!-- == Source: design/specs-full/kernset-22.xml == --><!-- == Generator(s): design/xsl/ada-rtd2ada-schema-simple.xsl; design/xsl/ada-schema-simple2ada-schematron.xsl == -->
+   <ns uri="http://www.w3.org/2001/XMLSchema-instance" prefix="xsi"/>
    <ns uri="#local" prefix="local"/>
    <xsl:function name="local:decimal-convert" as="xs:decimal">
       <xsl:param name="in" as="xs:string"/>

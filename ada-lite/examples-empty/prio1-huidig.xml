@@ -1,11 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<prio1_huidig transactionRef="2.16.840.1.113883.2.4.3.11.60.90.77.4.2453"><!-- == Generated empty ADA Lite document for prio1_huidig == --><!-- == Source: design/specs-full/prio1-huidig.xml == --><!-- == Generator: design/xsl/ada-rtd2example-empty.xsl == --><!-- == IMPORTANT REMARK: When elements in have both a value and an enum attribute, use only one of them, not both! == -->
+<prio1_huidige_zwangerschap transactionRef="2.16.840.1.113883.2.4.3.11.60.90.77.4.2493"><!-- == Generated empty ADA Lite document for prio1_huidige_zwangerschap == --><!-- == Source: design/specs-full/prio1-huidig.xml == --><!-- == Generator: design/xsl/ada-rtd2example-empty.xsl == --><!-- == IMPORTANT REMARK: When elements in have both a value and an enum attribute, use only one of them, not both! == -->
    <zorgverlenerzorginstelling>
-      <zorgverlener>
-         <naam_zorgverlener value=""/>
-      </zorgverlener>
       <zorginstelling>
+         <zorginstelling_oid value=""/>
+         <zorginstelling_agbid value=""/>
+         <zorginstelling_lvrid value=""/>
+         <zorginstelling_ura value=""/>
          <naam_zorginstelling value=""/>
+         <adres_zorginstelling>
+            <straatnaam value=""/>
+            <huisnummer value=""/>
+            <huisletterhuisnummertoevoeging value=""/>
+            <postcode value=""/>
+            <plaatsnaam value=""/>
+            <gemeentenaam value=""/>
+            <land value=""/>
+            <adrestype value="" enum=""/>
+         </adres_zorginstelling>
+         <type_zorginstelling value="" enum=""/>
+         <type_zorginstelling_bij_verwijzing value="" enum=""/>
       </zorginstelling>
    </zorgverlenerzorginstelling>
    <vrouw>
@@ -20,7 +33,6 @@
             <achternaam value=""/>
          </achternaam>
       </naamgegevens>
-      <geboortedatum value=""/>
       <bloedgroep_vrouw value="" enum=""/>
       <rhesus_d_factor_vrouw value="" enum=""/>
       <rhesus_c_factor value="" enum=""/>
@@ -33,10 +45,11 @@
       </a_terme_datum_groep>
    </zwangerschap>
    <medisch_onderzoek>
+      <datum_onderzoek value=""/>
       <maternale_onderzoeksgegevens>
          <urine_bloed_en_aanvullende_onderzoeken>
             <hb value=""/>
          </urine_bloed_en_aanvullende_onderzoeken>
       </maternale_onderzoeksgegevens>
    </medisch_onderzoek>
-</prio1_huidig>
+</prio1_huidige_zwangerschap>

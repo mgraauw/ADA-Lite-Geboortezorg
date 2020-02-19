@@ -1,117 +1,391 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dataset id="2.16.840.1.113883.2.4.3.11.60.90.77.1.5"
-         effectiveDate="2013-09-10T00:00:00"
-         statusCode="final"
+<dataset id="2.16.840.1.113883.2.4.3.11.60.90.77.1.6"
+         effectiveDate="2016-09-08T00:00:00"
+         statusCode="draft"
          prefix="peri20-"
-         transactionId="2.16.840.1.113883.2.4.3.11.60.90.77.4.2453"
-         transactionEffectiveDate="2018-12-17T15:21:25"
+         transactionId="2.16.840.1.113883.2.4.3.11.60.90.77.4.2493"
+         transactionEffectiveDate="2020-01-08T13:13:15"
          transactionStatusCode="draft"
-         shortName="prio1_huidig"><!-- == Generated lite version of specification from full version for prio1_huidig == --><!-- == Source: design/specs-full/prio1-huidig.xml == --><!-- == Generator: design/xsl/spec-full2spec-lite.xsl == -->
-   <name language="nl-NL">Prio1 huidig</name>
+         transactionType="stationary"
+         transactionIddisplay="peri-transaction-2493"
+         shortName="prio1_huidige_zwangerschap"><!-- == Generated lite version of specification from full version for prio1_huidige_zwangerschap == --><!-- == Source: design/specs-full/prio1-huidig.xml == --><!-- == Generator: design/xsl/spec-full2spec-lite.xsl == -->
+   <name language="nl-NL">Prio1 huidige zwangerschap</name>
    <desc language="nl-NL"/>
-   <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.1"
-            statusCode="final"
-            effectiveDate="2013-09-10T00:00:00"
+   <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.1"
+            statusCode="draft"
+            effectiveDate="2016-09-08T00:00:00"
             type="group"
-            minimumMultiplicity="0"
+            minimumMultiplicity="1"
             maximumMultiplicity="1"
             conformance="R"
             isMandatory="false"
             shortName="zorgverlenerzorginstelling">
       <name language="nl-NL">Zorgverlener/Zorginstelling</name>
       <desc language="nl-NL">Persoon (met bijbehorende instelling) die verantwoordelijk of uitvoerder was voor de zorg van de patiënt en aanleveraar van de gegevens.</desc>
-      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10001"
-               statusCode="final"
-               effectiveDate="2013-09-10T00:00:00"
+      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10020"
+               statusCode="draft"
+               effectiveDate="2016-09-08T00:00:00"
                type="group"
-               minimumMultiplicity="0"
+               minimumMultiplicity="1"
                maximumMultiplicity="1"
                conformance="R"
                isMandatory="false"
-               shortName="zorgverlener">
-         <name language="nl-NL">Zorgverlener</name>
-         <desc language="nl-NL">Zorgverlener</desc>
-         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10006"
+               shortName="zorginstelling">
+         <name language="nl-NL">Zorginstelling</name>
+         <desc language="nl-NL">Organisatie (instelling) die de zorg levert / heeft geleverd</desc>
+         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10021"
                   statusCode="final"
-                  effectiveDate="2013-09-10T00:00:00"
+                  effectiveDate="2016-09-08T00:00:00"
                   type="item"
                   minimumMultiplicity="0"
                   maximumMultiplicity="1"
                   conformance="R"
                   isMandatory="false"
-                  shortName="naam_zorgverlener">
-            <name language="nl-NL">Naam zorgverlener</name>
-            <desc language="nl-NL">Naam zorgverlener</desc>
-            <valueDomain type="complex"/>
+                  shortName="zorginstelling_oid">
+            <name language="nl-NL">Zorginstelling OID</name>
+            <desc language="nl-NL">Identificatie van de instelling met behulp van een unieke root-OID (Object Identificatie). <br clear="none"/>Dit gegeven wordt ingesteld in de software van de zorginstelling en dan automatisch meegegeven bij informatie-uitwisseling (met andere woorden: het is géén invulveld voor een zorgverlener). <br clear="none"/>
+            </desc>
+            <relationship type="SPEC"
+                          ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.4.10021"
+                          flexibility="2012-08-06T00:00:00"
+                          prefix="peri20-"
+                          datasetId="2.16.840.1.113883.2.4.3.11.60.90.77.1.4"
+                          datasetEffectiveDate="2012-08-06T00:00:00"
+                          datasetStatusCode="final"
+                          iType="item"
+                          iStatusCode="final"
+                          iEffectiveDate="2012-08-06T00:00:00"
+                          refdisplay="peri21-dataelement-10021">
+               <name language="nl-NL">Zorginstelling OID</name>
+            </relationship>
+            <valueDomain type="identifier"/>
          </concept>
-      </concept>
-      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10020"
-               statusCode="final"
-               effectiveDate="2013-09-10T00:00:00"
-               type="group"
-               minimumMultiplicity="1"
-               maximumMultiplicity="1"
-               conformance="M"
-               isMandatory="true"
-               shortName="zorginstelling">
-         <name language="nl-NL">Zorginstelling</name>
-         <desc language="nl-NL">Organisatie (instelling) die de zorg levert / heeft geleverd</desc>
-         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10026"
+         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10022"
                   statusCode="final"
-                  effectiveDate="2013-09-10T00:00:00"
+                  effectiveDate="2016-09-08T00:00:00"
                   type="item"
-                  minimumMultiplicity="1"
+                  minimumMultiplicity="0"
                   maximumMultiplicity="1"
-                  conformance="M"
-                  isMandatory="true"
+                  conformance="R"
+                  isMandatory="false"
+                  shortName="zorginstelling_agbid">
+            <name language="nl-NL">Zorginstelling AGB-ID</name>
+            <desc language="nl-NL">Unieke AGB-ID van de instelling</desc>
+            <operationalization language="nl-NL">Vektis AGB-codelijst</operationalization>
+            <valueDomain type="identifier">
+               <property minLength="8" maxLength="8"/>
+            </valueDomain>
+         </concept>
+         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10023"
+                  statusCode="final"
+                  effectiveDate="2016-09-08T00:00:00"
+                  type="item"
+                  minimumMultiplicity="0"
+                  maximumMultiplicity="1"
+                  conformance="R"
+                  isMandatory="false"
+                  shortName="zorginstelling_lvrid">
+            <name language="nl-NL">Zorginstelling LVR-ID</name>
+            <desc language="nl-NL">Unieke LVR-identificatie van de zorginstelling. <br clear="none"/>
+            </desc>
+            <valueDomain type="identifier">
+               <property minLength="4" maxLength="5"/>
+            </valueDomain>
+         </concept>
+         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10024"
+                  statusCode="final"
+                  effectiveDate="2016-09-08T00:00:00"
+                  type="item"
+                  minimumMultiplicity="0"
+                  maximumMultiplicity="1"
+                  conformance="R"
+                  isMandatory="false"
+                  shortName="zorginstelling_ura">
+            <name language="nl-NL">Zorginstelling URA</name>
+            <desc language="nl-NL">Unieke UZI-register abonneenummer van de instelling</desc>
+            <operationalization language="nl-NL">UZI-register abonneenummer</operationalization>
+            <valueDomain type="identifier">
+               <property minLength="8" maxLength="8"/>
+            </valueDomain>
+         </concept>
+         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10026"
+                  statusCode="final"
+                  effectiveDate="2016-09-08T00:00:00"
+                  type="item"
+                  minimumMultiplicity="0"
+                  maximumMultiplicity="1"
+                  conformance="R"
+                  isMandatory="false"
                   shortName="naam_zorginstelling">
             <name language="nl-NL">Naam zorginstelling</name>
             <desc language="nl-NL">Naam van de instelling</desc>
             <valueDomain type="complex"/>
          </concept>
+         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10027"
+                  statusCode="draft"
+                  effectiveDate="2016-09-08T00:00:00"
+                  type="group"
+                  minimumMultiplicity="0"
+                  maximumMultiplicity="1"
+                  conformance="R"
+                  isMandatory="false"
+                  shortName="adres_zorginstelling">
+            <name language="nl-NL">Adres zorginstelling</name>
+            <desc language="nl-NL">Adres van de instelling</desc>
+            <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10032"
+                     statusCode="draft"
+                     effectiveDate="2016-09-08T00:00:00"
+                     type="item"
+                     minimumMultiplicity="0"
+                     maximumMultiplicity="1"
+                     conformance="R"
+                     isMandatory="false"
+                     shortName="straatnaam">
+               <name language="nl-NL">Straatnaam</name>
+               <desc language="nl-NL">Straatnaam (zonder nummer) van het adres</desc>
+               <valueDomain type="string"/>
+            </concept>
+            <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10033"
+                     statusCode="draft"
+                     effectiveDate="2016-09-08T00:00:00"
+                     type="item"
+                     minimumMultiplicity="0"
+                     maximumMultiplicity="1"
+                     conformance="R"
+                     isMandatory="false"
+                     shortName="huisnummer">
+               <name language="nl-NL">Huisnummer</name>
+               <desc language="nl-NL">Huisnummer van het adres. Het is verplicht indien de straatnaam ook wordt doorgegeven.</desc>
+               <valueDomain type="string"/>
+            </concept>
+            <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10034"
+                     statusCode="draft"
+                     effectiveDate="2016-09-08T00:00:00"
+                     type="item"
+                     minimumMultiplicity="0"
+                     maximumMultiplicity="1"
+                     conformance="R"
+                     isMandatory="false"
+                     shortName="huisletterhuisnummertoevoeging">
+               <name language="nl-NL">Huisletter/huisnummertoevoeging</name>
+               <desc language="nl-NL">Huisletter/huisnummertoevoeging van het huisnummer</desc>
+               <valueDomain type="string"/>
+            </concept>
+            <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10041"
+                     statusCode="draft"
+                     effectiveDate="2016-09-08T00:00:00"
+                     type="item"
+                     minimumMultiplicity="0"
+                     maximumMultiplicity="1"
+                     conformance="R"
+                     isMandatory="false"
+                     shortName="postcode">
+               <name language="nl-NL">Postcode</name>
+               <desc language="nl-NL">Postcode van het adres</desc>
+               <valueDomain type="string"/>
+            </concept>
+            <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10036"
+                     statusCode="draft"
+                     effectiveDate="2016-09-08T00:00:00"
+                     type="item"
+                     minimumMultiplicity="0"
+                     maximumMultiplicity="1"
+                     conformance="R"
+                     isMandatory="false"
+                     shortName="plaatsnaam">
+               <name language="nl-NL">Plaatsnaam</name>
+               <desc language="nl-NL">Plaatsnaam als onderdeel van het adres; De naam van een stad, dorp of ander woongebied of bezorgcentrum. Merk op: dit is de woonplaats, niet de eventuele gemeente waartoe de woonplaats behoort. Voorbeeld: Haren, gemeente Groningen.</desc>
+               <valueDomain type="string"/>
+            </concept>
+            <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10037"
+                     statusCode="draft"
+                     effectiveDate="2016-09-08T00:00:00"
+                     type="item"
+                     minimumMultiplicity="0"
+                     maximumMultiplicity="1"
+                     conformance="R"
+                     isMandatory="false"
+                     shortName="gemeentenaam">
+               <name language="nl-NL">Gemeentenaam</name>
+               <desc language="nl-NL">Gemeentenaam als onderdeel van het adres; In Nederland wordt dit element gebruikt om de gemeente door te geven (in andere landen kan een ander type administratieve eenheid binnen een staat/provincie gebruikt worden). De gemeente kan, maar hoeft niet, overeen te komen met de stad. Sommige gemeenten, bijvoorbeeld "Waterland", hebben een naam die geheel afwijkt van de steden die erin gelegen zijn. </desc>
+               <valueDomain type="string"/>
+            </concept>
+            <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10038"
+                     statusCode="draft"
+                     effectiveDate="2016-09-08T00:00:00"
+                     type="item"
+                     minimumMultiplicity="0"
+                     maximumMultiplicity="1"
+                     conformance="R"
+                     isMandatory="false"
+                     shortName="land">
+               <name language="nl-NL">Land</name>
+               <desc language="nl-NL">Land</desc>
+               <valueDomain type="string"/>
+            </concept>
+            <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10039"
+                     statusCode="draft"
+                     effectiveDate="2016-09-08T00:00:00"
+                     type="item"
+                     minimumMultiplicity="0"
+                     maximumMultiplicity="1"
+                     conformance="R"
+                     isMandatory="false"
+                     shortName="adrestype">
+               <name language="nl-NL">Adrestype</name>
+               <desc language="nl-NL">Adrestype</desc>
+               <valueDomain type="code"/>
+               <valueSet>
+                  <conceptList/>
+               </valueSet>
+            </concept>
+         </concept>
+         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10029"
+                  statusCode="draft"
+                  effectiveDate="2016-09-08T00:00:00"
+                  type="item"
+                  minimumMultiplicity="0"
+                  maximumMultiplicity="1"
+                  conformance="R"
+                  isMandatory="false"
+                  shortName="type_zorginstelling">
+            <name language="nl-NL">Type zorginstelling</name>
+            <desc language="nl-NL">Aanduiding van het type van de zorginstelling</desc>
+            <valueDomain type="code"/>
+            <valueSet name="ZorgaanbiederType"
+                      displayName="ZorgaanbiederType"
+                      effectiveDate="2011-01-28T00:00:00"
+                      id="2.16.840.1.113883.2.4.11.59"
+                      statusCode="final">
+               <conceptList>
+                  <concept localId="1"
+                           code="Z3"
+                           codeSystem="2.16.840.1.113883.2.4.15.1060"
+                           displayName="Huisartsenpraktijk"
+                           value="Z3">
+                     <name language="nl-NL">Huisartsenpraktijk</name>
+                  </concept>
+                  <concept localId="2"
+                           code="G3"
+                           codeSystem="2.16.840.1.113883.2.4.15.1060"
+                           displayName="Verloskundigenpraktijk"
+                           value="G3">
+                     <name language="nl-NL">Verloskundigenpraktijk</name>
+                  </concept>
+                  <concept localId="3"
+                           code="V4"
+                           codeSystem="2.16.840.1.113883.2.4.15.1060"
+                           displayName="Ziekenhuis"
+                           value="V4">
+                     <name language="nl-NL">Ziekenhuis</name>
+                  </concept>
+                  <concept localId="4"
+                           code="B2"
+                           codeSystem="2.16.840.1.113883.2.4.15.1060"
+                           displayName="Echocentrum"
+                           value="B2">
+                     <name language="nl-NL">Echocentrum</name>
+                  </concept>
+                  <concept localId="5"
+                           code="L1"
+                           codeSystem="2.16.840.1.113883.2.4.15.1060"
+                           displayName="Laboratorium"
+                           value="L1">
+                     <name language="nl-NL">Laboratorium</name>
+                  </concept>
+               </conceptList>
+            </valueSet>
+         </concept>
+         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82019"
+                  statusCode="draft"
+                  effectiveDate="2016-09-08T00:00:00"
+                  type="item"
+                  minimumMultiplicity="0"
+                  maximumMultiplicity="1"
+                  conformance="R"
+                  isMandatory="false"
+                  shortName="type_zorginstelling_bij_verwijzing">
+            <name language="nl-NL">Type zorginstelling (bij verwijzing)</name>
+            <desc language="nl-NL">Type zorginstelling bij een verwijzing.<br clear="none"/>
+            </desc>
+            <valueDomain type="code">
+               <property/>
+            </valueDomain>
+            <valueSet>
+               <conceptList/>
+            </valueSet>
+         </concept>
       </concept>
    </concept>
-   <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.2"
-            statusCode="final"
-            effectiveDate="2013-09-10T00:00:00"
+   <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.2"
+            statusCode="draft"
+            effectiveDate="2016-09-08T00:00:00"
             type="group"
             minimumMultiplicity="1"
             maximumMultiplicity="1"
-            conformance="M"
-            isMandatory="true"
+            conformance="R"
+            isMandatory="false"
             shortName="vrouw">
       <name language="nl-NL">Vrouw</name>
       <desc language="nl-NL">Vrouw die obstetrische zorgdiensten afneemt / heeft afgenomen.</desc>
-      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10030"
+      <relationship type="SPEC"
+                    ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.2"
+                    flexibility="2013-09-10T00:00:00"
+                    prefix="peri20-"
+                    datasetId="2.16.840.1.113883.2.4.3.11.60.90.77.1.5"
+                    datasetEffectiveDate="2013-09-10T00:00:00"
+                    datasetStatusCode="final"
+                    iType="group"
+                    iStatusCode="final"
+                    iEffectiveDate="2013-09-10T00:00:00"
+                    iVersionLabel="22"
+                    refdisplay="peri22-dataelement-2">
+         <name language="nl-NL">Vrouw</name>
+      </relationship>
+      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10030"
                statusCode="final"
-               effectiveDate="2013-09-10T00:00:00"
+               effectiveDate="2016-09-08T00:00:00"
                type="item"
-               minimumMultiplicity="0"
+               minimumMultiplicity="1"
                maximumMultiplicity="1"
                conformance="R"
                isMandatory="false"
                shortName="burgerservicenummer">
          <name language="nl-NL">Burgerservicenummer</name>
-         <desc language="nl-NL">Uniek identificatienummer voor iedereen die een meervoudige relatie met de Nederlandse overheid heeft, goed te identificeren is en opgenomen is in de Gemeentelijke Basisadministratie Persoonsgegevens (GBA) of in de Registratie Niet Ingezetenen (RNI). </desc>
+         <desc language="nl-NL">Het burgerservicenummer (BSN) is een uniek en persoonsgebonden identificerend nummer. Dit nummer wordt automatisch toegekend bij geboorte en wanneer iemand zich inschrijft bij de Basisregistratie personen (BRP). </desc>
          <comment language="nl-NL">Modulo 11-proef</comment>
+         <comment language="nl-NL">Modulo 11-proef</comment>
+         <relationship type="SPEC"
+                       ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.1.10030"
+                       flexibility="2009-10-01T00:00:00"
+                       prefix="peri20-"
+                       datasetId="2.16.840.1.113883.2.4.3.11.60.90.77.1.1"
+                       datasetEffectiveDate="2009-10-01T00:00:00"
+                       datasetStatusCode="deprecated"
+                       iType="item"
+                       iStatusCode="final"
+                       iEffectiveDate="2009-10-01T00:00:00"
+                       refdisplay="spirit1a-dataelement-10030">
+            <name language="nl-NL">Burgerservicenummer</name>
+         </relationship>
          <valueDomain type="identifier">
             <property minLength="9" maxLength="9"/>
          </valueDomain>
       </concept>
-      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10035"
-               statusCode="final"
-               effectiveDate="2013-09-10T00:00:00"
+      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10035"
+               statusCode="draft"
+               effectiveDate="2016-09-08T00:00:00"
                type="group"
                minimumMultiplicity="1"
-               maximumMultiplicity="2"
+               maximumMultiplicity="1"
                conformance="R"
                isMandatory="false"
                shortName="naamgegevens">
          <name language="nl-NL">Naamgegevens</name>
          <desc language="nl-NL">Naamgegevens van de vrouw.</desc>
-         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10042"
+         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10042"
                   statusCode="final"
-                  effectiveDate="2013-09-10T00:00:00"
+                  effectiveDate="2016-09-08T00:00:00"
                   type="item"
                   minimumMultiplicity="0"
                   maximumMultiplicity="1"
@@ -124,9 +398,9 @@
                <example>Johanna Henriette Maria</example>
             </valueDomain>
          </concept>
-         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82359"
-                  statusCode="final"
-                  effectiveDate="2014-11-21T10:53:00"
+         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82359"
+                  statusCode="draft"
+                  effectiveDate="2016-09-08T00:00:00"
                   type="item"
                   minimumMultiplicity="0"
                   maximumMultiplicity="1"
@@ -139,9 +413,9 @@
                <example>J.H.M.</example>
             </valueDomain>
          </concept>
-         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82360"
-                  statusCode="final"
-                  effectiveDate="2014-11-21T10:53:32"
+         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82360"
+                  statusCode="draft"
+                  effectiveDate="2016-09-08T00:00:00"
                   type="item"
                   minimumMultiplicity="0"
                   maximumMultiplicity="1"
@@ -154,20 +428,20 @@
                <example>Jet</example>
             </valueDomain>
          </concept>
-         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82361"
+         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82361"
                   statusCode="final"
-                  effectiveDate="2014-11-21T10:54:06"
+                  effectiveDate="2016-09-08T00:00:00"
                   type="group"
-                  minimumMultiplicity="0"
+                  minimumMultiplicity="1"
                   maximumMultiplicity="1"
                   conformance="R"
                   isMandatory="false"
                   shortName="achternaam">
             <name language="nl-NL">Achternaam</name>
             <desc language="nl-NL"/>
-            <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82362"
+            <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82362"
                      statusCode="final"
-                     effectiveDate="2014-11-21T10:54:23"
+                     effectiveDate="2016-09-08T00:00:00"
                      type="item"
                      minimumMultiplicity="0"
                      maximumMultiplicity="1"
@@ -202,9 +476,9 @@
                   </conceptList>
                </valueSet>
             </concept>
-            <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82363"
+            <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82363"
                      statusCode="final"
-                     effectiveDate="2014-11-21T10:54:23"
+                     effectiveDate="2016-09-08T00:00:00"
                      type="item"
                      minimumMultiplicity="0"
                      maximumMultiplicity="1"
@@ -219,11 +493,11 @@
                   <example>van</example>
                </valueDomain>
             </concept>
-            <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10043"
+            <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10043"
                      statusCode="final"
-                     effectiveDate="2013-09-10T00:00:00"
+                     effectiveDate="2016-09-08T00:00:00"
                      type="item"
-                     minimumMultiplicity="0"
+                     minimumMultiplicity="1"
                      maximumMultiplicity="1"
                      conformance="R"
                      isMandatory="false"
@@ -236,26 +510,9 @@
             </concept>
          </concept>
       </concept>
-      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10040"
-               statusCode="final"
-               effectiveDate="2013-09-10T00:00:00"
-               type="item"
-               minimumMultiplicity="0"
-               maximumMultiplicity="1"
-               conformance="R"
-               isMandatory="false"
-               shortName="geboortedatum">
-         <name language="nl-NL">Geboortedatum</name>
-         <desc language="nl-NL">Geboortedatum.<br clear="none"/>
-            <br clear="none"/>Indien de dag en/of maand van de geboortedatum niet bekend zijn, vult u dit in als 01-01-xxxx. Wanneer het geboortejaar ook onbekend is, is schatten van het geboortejaar toegestaan.<br clear="none"/>
-            </desc>
-         <valueDomain type="date">
-            <property timeStampPrecision="YMD"/>
-         </valueDomain>
-      </concept>
-      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10810"
-               statusCode="final"
-               effectiveDate="2013-09-10T00:00:00"
+      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10810"
+               statusCode="draft"
+               effectiveDate="2016-09-08T00:00:00"
                type="item"
                minimumMultiplicity="0"
                maximumMultiplicity="1"
@@ -317,9 +574,9 @@
             </conceptList>
          </valueSet>
       </concept>
-      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10811"
-               statusCode="final"
-               effectiveDate="2013-09-10T00:00:00"
+      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10811"
+               statusCode="draft"
+               effectiveDate="2016-09-08T00:00:00"
                type="item"
                minimumMultiplicity="0"
                maximumMultiplicity="1"
@@ -367,9 +624,9 @@
             </conceptList>
          </valueSet>
       </concept>
-      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10816"
-               statusCode="final"
-               effectiveDate="2013-09-10T00:00:00"
+      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10816"
+               statusCode="draft"
+               effectiveDate="2016-09-08T00:00:00"
                type="item"
                minimumMultiplicity="0"
                maximumMultiplicity="1"
@@ -382,7 +639,16 @@
          <relationship type="SPEC"
                        ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.3.10816"
                        flexibility="2011-12-06T00:00:00"
-                       refdisplay="peri20-dataelement-10816"/>
+                       prefix="peri20-"
+                       datasetId="2.16.840.1.113883.2.4.3.11.60.90.77.1.3"
+                       datasetEffectiveDate="2012-01-01T00:00:00"
+                       datasetStatusCode="deprecated"
+                       iType="item"
+                       iStatusCode="final"
+                       iEffectiveDate="2011-12-06T00:00:00"
+                       refdisplay="peri20-dataelement-10816">
+            <name language="nl-NL">Rhesus c Factor</name>
+         </relationship>
          <valueDomain type="code"/>
          <valueSet id="2.16.840.1.113883.2.4.11.164"
                    name="RhesuscFactor"
@@ -416,22 +682,36 @@
          </valueSet>
       </concept>
    </concept>
-   <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.3"
-            statusCode="final"
-            effectiveDate="2013-09-10T00:00:00"
+   <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.3"
+            statusCode="draft"
+            effectiveDate="2016-09-08T00:00:00"
             type="group"
-            minimumMultiplicity="0"
+            minimumMultiplicity="1"
             maximumMultiplicity="1"
             conformance="R"
             isMandatory="false"
             shortName="zwangerschap">
       <name language="nl-NL">Zwangerschap</name>
       <desc language="nl-NL">De al dan niet afgesloten zwangerschap waarop de gegevens betrekking hebben.</desc>
-      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20010"
+      <relationship type="SPEC"
+                    ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.3"
+                    flexibility="2013-09-10T00:00:00"
+                    prefix="peri20-"
+                    datasetId="2.16.840.1.113883.2.4.3.11.60.90.77.1.5"
+                    datasetEffectiveDate="2013-09-10T00:00:00"
+                    datasetStatusCode="final"
+                    iType="group"
+                    iStatusCode="final"
+                    iEffectiveDate="2013-09-10T00:00:00"
+                    iVersionLabel="22"
+                    refdisplay="peri22-dataelement-3">
+         <name language="nl-NL">Zwangerschap</name>
+      </relationship>
+      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20010"
                statusCode="final"
-               effectiveDate="2013-09-10T00:00:00"
+               effectiveDate="2016-09-08T00:00:00"
                type="item"
-               minimumMultiplicity="0"
+               minimumMultiplicity="1"
                maximumMultiplicity="1"
                conformance="R"
                isMandatory="false"
@@ -443,11 +723,11 @@
             <property minInclude="1" maxInclude="75"/>
          </valueDomain>
       </concept>
-      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20153"
-               statusCode="final"
-               effectiveDate="2013-09-10T00:00:00"
+      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20153"
+               statusCode="draft"
+               effectiveDate="2016-09-08T00:00:00"
                type="item"
-               minimumMultiplicity="0"
+               minimumMultiplicity="1"
                maximumMultiplicity="1"
                conformance="R"
                isMandatory="false"
@@ -458,22 +738,37 @@
             <property minInclude="0" maxInclude="30"/>
          </valueDomain>
       </concept>
-      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20029"
-               statusCode="final"
-               effectiveDate="2013-09-10T00:00:00"
+      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20029"
+               statusCode="draft"
+               effectiveDate="2016-09-08T00:00:00"
                type="group"
                minimumMultiplicity="1"
                maximumMultiplicity="1"
+               conformance="R"
                isMandatory="false"
                shortName="a_terme_datum_groep">
          <name language="nl-NL">A terme datum (groep)</name>
          <desc language="nl-NL">A terme datum (groep)</desc>
-         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20030"
-                  statusCode="final"
-                  effectiveDate="2013-09-10T00:00:00"
+         <relationship type="SPEC"
+                       ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.3.20029"
+                       flexibility="2012-05-21T00:00:00"
+                       prefix="peri20-"
+                       datasetId="2.16.840.1.113883.2.4.3.11.60.90.77.1.3"
+                       datasetEffectiveDate="2012-01-01T00:00:00"
+                       datasetStatusCode="deprecated"
+                       iType="group"
+                       iStatusCode="final"
+                       iEffectiveDate="2012-05-21T00:00:00"
+                       refdisplay="peri20-dataelement-20029">
+            <name language="nl-NL">A terme datum (groep)</name>
+         </relationship>
+         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20030"
+                  statusCode="draft"
+                  effectiveDate="2016-09-08T00:00:00"
                   type="item"
                   minimumMultiplicity="1"
                   maximumMultiplicity="1"
+                  conformance="R"
                   isMandatory="false"
                   shortName="a_terme_datum">
             <name language="nl-NL">A terme datum</name>
@@ -484,9 +779,9 @@
          </concept>
       </concept>
    </concept>
-   <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.14"
-            statusCode="final"
-            effectiveDate="2013-09-10T00:00:00"
+   <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.14"
+            effectiveDate="2016-09-08T00:00:00"
+            statusCode="draft"
             type="group"
             minimumMultiplicity="0"
             maximumMultiplicity="*"
@@ -495,35 +790,93 @@
             shortName="medisch_onderzoek">
       <name language="nl-NL">Medisch onderzoek</name>
       <desc language="nl-NL">Medisch onderzoek</desc>
-      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.142"
-               statusCode="final"
-               effectiveDate="2013-09-10T00:00:00"
+      <relationship type="SPEC"
+                    ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.14"
+                    flexibility="2013-09-10T00:00:00"
+                    prefix="peri20-"
+                    datasetId="2.16.840.1.113883.2.4.3.11.60.90.77.1.5"
+                    datasetEffectiveDate="2013-09-10T00:00:00"
+                    datasetStatusCode="final"
+                    iType="group"
+                    iStatusCode="final"
+                    iEffectiveDate="2013-09-10T00:00:00"
+                    iVersionLabel="22"
+                    refdisplay="peri22-dataelement-14">
+         <name language="nl-NL">Medisch onderzoek</name>
+      </relationship>
+      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.50020"
+               statusCode="draft"
+               effectiveDate="2016-09-08T00:00:00"
+               type="item"
+               minimumMultiplicity="1"
+               maximumMultiplicity="1"
+               conformance="R"
+               isMandatory="false"
+               shortName="datum_onderzoek">
+         <name language="nl-NL">Datum onderzoek</name>
+         <desc language="nl-NL">Datum waarop het onderzoek heeft plaatsgevonden.</desc>
+         <valueDomain type="datetime">
+            <property timeStampPrecision="YMD"/>
+            <example>2011-01-28</example>
+         </valueDomain>
+      </concept>
+      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.142"
+               effectiveDate="2016-09-08T00:00:00"
+               statusCode="draft"
                type="group"
-               minimumMultiplicity="0"
+               minimumMultiplicity="1"
                maximumMultiplicity="1"
                conformance="R"
                isMandatory="false"
                shortName="maternale_onderzoeksgegevens">
          <name language="nl-NL">Maternale onderzoeksgegevens</name>
          <desc language="nl-NL">Maternale onderzoeksgegevens</desc>
-         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80959"
-                  statusCode="final"
-                  effectiveDate="2013-09-10T00:00:00"
+         <relationship type="SPEC"
+                       ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.142"
+                       flexibility="2013-09-10T00:00:00"
+                       prefix="peri20-"
+                       datasetId="2.16.840.1.113883.2.4.3.11.60.90.77.1.5"
+                       datasetEffectiveDate="2013-09-10T00:00:00"
+                       datasetStatusCode="final"
+                       iType="group"
+                       iStatusCode="final"
+                       iEffectiveDate="2013-09-10T00:00:00"
+                       iVersionLabel="22"
+                       refdisplay="peri22-dataelement-142">
+            <name language="nl-NL">Maternale onderzoeksgegevens</name>
+         </relationship>
+         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80959"
+                  effectiveDate="2016-09-08T00:00:00"
+                  statusCode="draft"
                   type="group"
-                  minimumMultiplicity="0"
+                  minimumMultiplicity="1"
                   maximumMultiplicity="1"
                   conformance="R"
                   isMandatory="false"
                   shortName="urine_bloed_en_aanvullende_onderzoeken">
             <name language="nl-NL">Urine-, bloed- en aanvullende onderzoeken</name>
             <desc language="nl-NL">Urine-, bloed- en aanvullende onderzoeken<br clear="none"/>
-                            <br clear="none"/>Het gaat hier zowel om onderzoeken van bloed, urine en/of een ander monster door het laboratorium, als om onderzoeken die door de zorgverlener of patiënt 'zelf' worden gedaan. <br clear="none"/>Voorbeelden van deze 'zelf'-bepalingen zijn: glucose, Hb en proteïne op basis van strips.<br clear="none"/>
-                        </desc>
-            <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10814"
-                     statusCode="final"
-                     effectiveDate="2013-09-10T00:00:00"
+               <br clear="none"/>Het gaat hier zowel om onderzoeken van bloed, urine en/of een ander monster door het laboratorium, als om onderzoeken die door de zorgverlener of patiënt 'zelf' worden gedaan. <br clear="none"/>Voorbeelden van deze 'zelf'-bepalingen zijn: glucose, Hb en proteïne op basis van strips.<br clear="none"/>
+            </desc>
+            <relationship type="SPEC"
+                          ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80959"
+                          flexibility="2013-09-10T00:00:00"
+                          prefix="peri20-"
+                          datasetId="2.16.840.1.113883.2.4.3.11.60.90.77.1.5"
+                          datasetEffectiveDate="2013-09-10T00:00:00"
+                          datasetStatusCode="final"
+                          iType="group"
+                          iStatusCode="final"
+                          iEffectiveDate="2013-09-10T00:00:00"
+                          iVersionLabel="22"
+                          refdisplay="peri22-dataelement-80959">
+               <name language="nl-NL">Urine-, bloed- en aanvullende onderzoeken</name>
+            </relationship>
+            <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10814"
+                     statusCode="draft"
+                     effectiveDate="2016-09-08T00:00:00"
                      type="item"
-                     minimumMultiplicity="0"
+                     minimumMultiplicity="1"
                      maximumMultiplicity="1"
                      conformance="R"
                      isMandatory="false"

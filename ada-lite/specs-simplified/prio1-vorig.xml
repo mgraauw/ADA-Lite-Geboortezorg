@@ -1,262 +1,381 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dataset id="2.16.840.1.113883.2.4.3.11.60.90.77.1.5"
-         effectiveDate="2013-09-10T00:00:00"
-         statusCode="final"
+<dataset id="2.16.840.1.113883.2.4.3.11.60.90.77.1.6"
+         effectiveDate="2016-09-08T00:00:00"
+         statusCode="draft"
          prefix="peri20-"
-         transactionId="2.16.840.1.113883.2.4.3.11.60.90.77.4.2456"
-         transactionEffectiveDate="2019-02-20T11:05:00"
+         transactionId="2.16.840.1.113883.2.4.3.11.60.90.77.4.2499"
+         transactionEffectiveDate="2020-01-08T13:47:27"
          transactionStatusCode="draft"
-         shortName="prio1_vorig"><!-- == Generated lite version of specification from full version for prio1_vorig == --><!-- == Source: design/specs-full/prio1-vorig.xml == --><!-- == Generator: design/xsl/spec-full2spec-lite.xsl == -->
-   <name language="nl-NL">Prio1 vorig</name>
+         transactionType="initial"
+         transactionIddisplay="peri-transaction-2499"
+         shortName="prio1_vorige_zwangerschap"><!-- == Generated lite version of specification from full version for prio1_vorige_zwangerschap == --><!-- == Source: design/specs-full/prio1-vorig.xml == --><!-- == Generator: design/xsl/spec-full2spec-lite.xsl == -->
+   <name language="nl-NL">Prio1 vorige zwangerschap</name>
    <desc language="nl-NL"/>
-   <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.1"
-            statusCode="final"
-            effectiveDate="2013-09-10T00:00:00"
+   <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.1"
+            statusCode="draft"
+            effectiveDate="2016-09-08T00:00:00"
             type="group"
-            minimumMultiplicity="0"
+            minimumMultiplicity="1"
             maximumMultiplicity="1"
             conformance="R"
             isMandatory="false"
             shortName="zorgverlenerzorginstelling">
       <name language="nl-NL">Zorgverlener/Zorginstelling</name>
       <desc language="nl-NL">Persoon (met bijbehorende instelling) die verantwoordelijk of uitvoerder was voor de zorg van de patiënt en aanleveraar van de gegevens.</desc>
-      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10001"
-               statusCode="final"
-               effectiveDate="2013-09-10T00:00:00"
+      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10020"
+               statusCode="draft"
+               effectiveDate="2016-09-08T00:00:00"
                type="group"
-               minimumMultiplicity="0"
+               minimumMultiplicity="1"
                maximumMultiplicity="1"
                conformance="R"
                isMandatory="false"
-               shortName="zorgverlener">
-         <name language="nl-NL">Zorgverlener</name>
-         <desc language="nl-NL">Zorgverlener</desc>
-         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10006"
+               shortName="zorginstelling">
+         <name language="nl-NL">Zorginstelling</name>
+         <desc language="nl-NL">Organisatie (instelling) die de zorg levert / heeft geleverd</desc>
+         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10021"
                   statusCode="final"
-                  effectiveDate="2013-09-10T00:00:00"
+                  effectiveDate="2016-09-08T00:00:00"
                   type="item"
                   minimumMultiplicity="0"
                   maximumMultiplicity="1"
                   conformance="R"
                   isMandatory="false"
-                  shortName="naam_zorgverlener">
-            <name language="nl-NL">Naam zorgverlener</name>
-            <desc language="nl-NL">Naam zorgverlener</desc>
-            <valueDomain type="complex"/>
+                  shortName="zorginstelling_oid">
+            <name language="nl-NL">Zorginstelling OID</name>
+            <desc language="nl-NL">Identificatie van de instelling met behulp van een unieke root-OID (Object Identificatie). <br clear="none"/>Dit gegeven wordt ingesteld in de software van de zorginstelling en dan automatisch meegegeven bij informatie-uitwisseling (met andere woorden: het is géén invulveld voor een zorgverlener). <br clear="none"/>
+            </desc>
+            <relationship type="SPEC"
+                          ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.4.10021"
+                          flexibility="2012-08-06T00:00:00"
+                          prefix="peri20-"
+                          datasetId="2.16.840.1.113883.2.4.3.11.60.90.77.1.4"
+                          datasetEffectiveDate="2012-08-06T00:00:00"
+                          datasetStatusCode="final"
+                          iType="item"
+                          iStatusCode="final"
+                          iEffectiveDate="2012-08-06T00:00:00"
+                          refdisplay="peri21-dataelement-10021">
+               <name language="nl-NL">Zorginstelling OID</name>
+            </relationship>
+            <valueDomain type="identifier"/>
          </concept>
-      </concept>
-      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10020"
-               statusCode="final"
-               effectiveDate="2013-09-10T00:00:00"
-               type="group"
-               minimumMultiplicity="1"
-               maximumMultiplicity="1"
-               conformance="M"
-               isMandatory="true"
-               shortName="zorginstelling">
-         <name language="nl-NL">Zorginstelling</name>
-         <desc language="nl-NL">Organisatie (instelling) die de zorg levert / heeft geleverd</desc>
-         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10026"
+         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10022"
                   statusCode="final"
-                  effectiveDate="2013-09-10T00:00:00"
+                  effectiveDate="2016-09-08T00:00:00"
                   type="item"
-                  minimumMultiplicity="1"
+                  minimumMultiplicity="0"
                   maximumMultiplicity="1"
-                  conformance="M"
-                  isMandatory="true"
+                  conformance="R"
+                  isMandatory="false"
+                  shortName="zorginstelling_agbid">
+            <name language="nl-NL">Zorginstelling AGB-ID</name>
+            <desc language="nl-NL">Unieke AGB-ID van de instelling</desc>
+            <operationalization language="nl-NL">Vektis AGB-codelijst</operationalization>
+            <valueDomain type="identifier">
+               <property minLength="8" maxLength="8"/>
+            </valueDomain>
+         </concept>
+         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10023"
+                  statusCode="final"
+                  effectiveDate="2016-09-08T00:00:00"
+                  type="item"
+                  minimumMultiplicity="0"
+                  maximumMultiplicity="1"
+                  conformance="R"
+                  isMandatory="false"
+                  shortName="zorginstelling_lvrid">
+            <name language="nl-NL">Zorginstelling LVR-ID</name>
+            <desc language="nl-NL">Unieke LVR-identificatie van de zorginstelling. <br clear="none"/>
+            </desc>
+            <valueDomain type="identifier">
+               <property minLength="4" maxLength="5"/>
+            </valueDomain>
+         </concept>
+         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10024"
+                  statusCode="final"
+                  effectiveDate="2016-09-08T00:00:00"
+                  type="item"
+                  minimumMultiplicity="0"
+                  maximumMultiplicity="1"
+                  conformance="R"
+                  isMandatory="false"
+                  shortName="zorginstelling_ura">
+            <name language="nl-NL">Zorginstelling URA</name>
+            <desc language="nl-NL">Unieke UZI-register abonneenummer van de instelling</desc>
+            <operationalization language="nl-NL">UZI-register abonneenummer</operationalization>
+            <valueDomain type="identifier">
+               <property minLength="8" maxLength="8"/>
+            </valueDomain>
+         </concept>
+         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10026"
+                  statusCode="final"
+                  effectiveDate="2016-09-08T00:00:00"
+                  type="item"
+                  minimumMultiplicity="0"
+                  maximumMultiplicity="1"
+                  conformance="R"
+                  isMandatory="false"
                   shortName="naam_zorginstelling">
             <name language="nl-NL">Naam zorginstelling</name>
             <desc language="nl-NL">Naam van de instelling</desc>
             <valueDomain type="complex"/>
          </concept>
-      </concept>
-   </concept>
-   <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.2"
-            statusCode="final"
-            effectiveDate="2013-09-10T00:00:00"
-            type="group"
-            minimumMultiplicity="1"
-            maximumMultiplicity="1"
-            conformance="M"
-            isMandatory="true"
-            shortName="vrouw">
-      <name language="nl-NL">Vrouw</name>
-      <desc language="nl-NL">Vrouw die obstetrische zorgdiensten afneemt / heeft afgenomen.</desc>
-      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10030"
-               statusCode="final"
-               effectiveDate="2013-09-10T00:00:00"
-               type="item"
-               minimumMultiplicity="0"
-               maximumMultiplicity="1"
-               conformance="R"
-               isMandatory="false"
-               shortName="burgerservicenummer">
-         <name language="nl-NL">Burgerservicenummer</name>
-         <desc language="nl-NL">Uniek identificatienummer voor iedereen die een meervoudige relatie met de Nederlandse overheid heeft, goed te identificeren is en opgenomen is in de Gemeentelijke Basisadministratie Persoonsgegevens (GBA) of in de Registratie Niet Ingezetenen (RNI). </desc>
-         <comment language="nl-NL">Modulo 11-proef</comment>
-         <valueDomain type="identifier">
-            <property minLength="9" maxLength="9"/>
-         </valueDomain>
-      </concept>
-      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10035"
-               statusCode="final"
-               effectiveDate="2013-09-10T00:00:00"
-               type="group"
-               minimumMultiplicity="1"
-               maximumMultiplicity="2"
-               conformance="R"
-               isMandatory="false"
-               shortName="naamgegevens">
-         <name language="nl-NL">Naamgegevens</name>
-         <desc language="nl-NL">Naamgegevens van de vrouw.</desc>
-         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10042"
-                  statusCode="final"
-                  effectiveDate="2013-09-10T00:00:00"
-                  type="item"
-                  minimumMultiplicity="0"
-                  maximumMultiplicity="1"
-                  conformance="R"
-                  isMandatory="false"
-                  shortName="voornamen">
-            <name language="nl-NL">Voornamen</name>
-            <desc language="nl-NL">De verzameling officiële voornamen die bij de geboorte zijn vastgelegd.</desc>
-            <valueDomain type="string">
-               <example>Johanna Henriette Maria</example>
-            </valueDomain>
-         </concept>
-         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82359"
-                  statusCode="final"
-                  effectiveDate="2014-11-21T10:53:00"
-                  type="item"
-                  minimumMultiplicity="0"
-                  maximumMultiplicity="1"
-                  conformance="R"
-                  isMandatory="false"
-                  shortName="initialen">
-            <name language="nl-NL">Initialen</name>
-            <desc language="nl-NL">Voorletters gebaseerd op de voornamen van de persoon.</desc>
-            <valueDomain type="string">
-               <example>J.H.M.</example>
-            </valueDomain>
-         </concept>
-         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82360"
-                  statusCode="final"
-                  effectiveDate="2014-11-21T10:53:32"
-                  type="item"
-                  minimumMultiplicity="0"
-                  maximumMultiplicity="1"
-                  conformance="R"
-                  isMandatory="false"
-                  shortName="roepnaam">
-            <name language="nl-NL">Roepnaam</name>
-            <desc language="nl-NL">Naam, die de persoon voert en die niet de officiële naam is.</desc>
-            <valueDomain type="string">
-               <example>Jet</example>
-            </valueDomain>
-         </concept>
-         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82361"
-                  statusCode="final"
-                  effectiveDate="2014-11-21T10:54:06"
+         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10027"
+                  statusCode="draft"
+                  effectiveDate="2016-09-08T00:00:00"
                   type="group"
                   minimumMultiplicity="0"
                   maximumMultiplicity="1"
                   conformance="R"
                   isMandatory="false"
-                  shortName="achternaam">
-            <name language="nl-NL">Achternaam</name>
-            <desc language="nl-NL"/>
-            <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82362"
-                     statusCode="final"
-                     effectiveDate="2014-11-21T10:54:23"
+                  shortName="adres_zorginstelling">
+            <name language="nl-NL">Adres zorginstelling</name>
+            <desc language="nl-NL">Adres van de instelling</desc>
+            <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10032"
+                     statusCode="draft"
+                     effectiveDate="2016-09-08T00:00:00"
                      type="item"
                      minimumMultiplicity="0"
                      maximumMultiplicity="1"
                      conformance="R"
                      isMandatory="false"
-                     shortName="soort_naam">
-               <name language="nl-NL">Soort naam</name>
-               <desc language="nl-NL">Aanduiding die aangeeft welke functie de naam heeft.</desc>
-               <valueDomain type="code">
-                  <example>Geboortenaam partner</example>
-               </valueDomain>
-               <valueSet id="2.16.840.1.113883.2.4.3.11.60.101.11.9"
-                         name="AchternaamSoort"
-                         displayName="Achternaam soort"
-                         effectiveDate="2013-03-25T14:13:00"
-                         statusCode="final">
-                  <conceptList>
-                     <concept localId="1"
-                              code="BR"
-                              codeSystem="2.16.840.1.113883.5.43"
-                              displayName="Geslachtsnaam"
-                              value="BR">
-                        <name language="nl-NL">Geslachtsnaam</name>
-                     </concept>
-                     <concept localId="2"
-                              code="SP"
-                              codeSystem="2.16.840.1.113883.5.43"
-                              displayName="Geslachtsnaam partner"
-                              value="SP">
-                        <name language="nl-NL">Geslachtsnaam partner</name>
-                     </concept>
-                  </conceptList>
+                     shortName="straatnaam">
+               <name language="nl-NL">Straatnaam</name>
+               <desc language="nl-NL">Straatnaam (zonder nummer) van het adres</desc>
+               <valueDomain type="string"/>
+            </concept>
+            <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10033"
+                     statusCode="draft"
+                     effectiveDate="2016-09-08T00:00:00"
+                     type="item"
+                     minimumMultiplicity="0"
+                     maximumMultiplicity="1"
+                     conformance="R"
+                     isMandatory="false"
+                     shortName="huisnummer">
+               <name language="nl-NL">Huisnummer</name>
+               <desc language="nl-NL">Huisnummer van het adres. Het is verplicht indien de straatnaam ook wordt doorgegeven.</desc>
+               <valueDomain type="string"/>
+            </concept>
+            <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10034"
+                     statusCode="draft"
+                     effectiveDate="2016-09-08T00:00:00"
+                     type="item"
+                     minimumMultiplicity="0"
+                     maximumMultiplicity="1"
+                     conformance="R"
+                     isMandatory="false"
+                     shortName="huisletterhuisnummertoevoeging">
+               <name language="nl-NL">Huisletter/huisnummertoevoeging</name>
+               <desc language="nl-NL">Huisletter/huisnummertoevoeging van het huisnummer</desc>
+               <valueDomain type="string"/>
+            </concept>
+            <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10041"
+                     statusCode="draft"
+                     effectiveDate="2016-09-08T00:00:00"
+                     type="item"
+                     minimumMultiplicity="0"
+                     maximumMultiplicity="1"
+                     conformance="R"
+                     isMandatory="false"
+                     shortName="postcode">
+               <name language="nl-NL">Postcode</name>
+               <desc language="nl-NL">Postcode van het adres</desc>
+               <valueDomain type="string"/>
+            </concept>
+            <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10036"
+                     statusCode="draft"
+                     effectiveDate="2016-09-08T00:00:00"
+                     type="item"
+                     minimumMultiplicity="0"
+                     maximumMultiplicity="1"
+                     conformance="R"
+                     isMandatory="false"
+                     shortName="plaatsnaam">
+               <name language="nl-NL">Plaatsnaam</name>
+               <desc language="nl-NL">Plaatsnaam als onderdeel van het adres; De naam van een stad, dorp of ander woongebied of bezorgcentrum. Merk op: dit is de woonplaats, niet de eventuele gemeente waartoe de woonplaats behoort. Voorbeeld: Haren, gemeente Groningen.</desc>
+               <valueDomain type="string"/>
+            </concept>
+            <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10037"
+                     statusCode="draft"
+                     effectiveDate="2016-09-08T00:00:00"
+                     type="item"
+                     minimumMultiplicity="0"
+                     maximumMultiplicity="1"
+                     conformance="R"
+                     isMandatory="false"
+                     shortName="gemeentenaam">
+               <name language="nl-NL">Gemeentenaam</name>
+               <desc language="nl-NL">Gemeentenaam als onderdeel van het adres; In Nederland wordt dit element gebruikt om de gemeente door te geven (in andere landen kan een ander type administratieve eenheid binnen een staat/provincie gebruikt worden). De gemeente kan, maar hoeft niet, overeen te komen met de stad. Sommige gemeenten, bijvoorbeeld "Waterland", hebben een naam die geheel afwijkt van de steden die erin gelegen zijn. </desc>
+               <valueDomain type="string"/>
+            </concept>
+            <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10038"
+                     statusCode="draft"
+                     effectiveDate="2016-09-08T00:00:00"
+                     type="item"
+                     minimumMultiplicity="0"
+                     maximumMultiplicity="1"
+                     conformance="R"
+                     isMandatory="false"
+                     shortName="land">
+               <name language="nl-NL">Land</name>
+               <desc language="nl-NL">Land</desc>
+               <valueDomain type="string"/>
+            </concept>
+            <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10039"
+                     statusCode="draft"
+                     effectiveDate="2016-09-08T00:00:00"
+                     type="item"
+                     minimumMultiplicity="0"
+                     maximumMultiplicity="1"
+                     conformance="R"
+                     isMandatory="false"
+                     shortName="adrestype">
+               <name language="nl-NL">Adrestype</name>
+               <desc language="nl-NL">Adrestype</desc>
+               <valueDomain type="code"/>
+               <valueSet>
+                  <conceptList/>
                </valueSet>
             </concept>
-            <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82363"
-                     statusCode="final"
-                     effectiveDate="2014-11-21T10:54:23"
-                     type="item"
-                     minimumMultiplicity="0"
-                     maximumMultiplicity="1"
-                     conformance="R"
-                     isMandatory="false"
-                     shortName="voorvoegsel">
-               <name language="nl-NL">Voorvoegsel</name>
-               <desc language="nl-NL">Deel van de achternaam dat het voorvoegsel bevat.</desc>
-               <comment language="nl-NL">GBA tabel 36 is een opsomming van te gebruiken voorvoegsels zonder bijbehorende code. Het gebruik wordt aanbevolen, maar is niet verplicht. Bij vulling via de SBV-Z zullen de voorzetsels overeenkomen met tabel 36.</comment>
-               <operationalization language="nl-NL">GBA tabel 36</operationalization>
-               <valueDomain type="string">
-                  <example>van</example>
-               </valueDomain>
-            </concept>
-            <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10043"
-                     statusCode="final"
-                     effectiveDate="2013-09-10T00:00:00"
-                     type="item"
-                     minimumMultiplicity="0"
-                     maximumMultiplicity="1"
-                     conformance="R"
-                     isMandatory="false"
-                     shortName="achternaam">
-               <name language="nl-NL">Achternaam</name>
-               <desc language="nl-NL">De achternaam van een persoon die bij de geboorte is vastgelegd. Afhankeljk van de soort naam is dit de geboortenaam van de persoon of van de partner</desc>
-               <valueDomain type="string">
-                  <example>Putten</example>
-               </valueDomain>
-            </concept>
+         </concept>
+         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10029"
+                  statusCode="draft"
+                  effectiveDate="2016-09-08T00:00:00"
+                  type="item"
+                  minimumMultiplicity="0"
+                  maximumMultiplicity="1"
+                  conformance="R"
+                  isMandatory="false"
+                  shortName="type_zorginstelling">
+            <name language="nl-NL">Type zorginstelling</name>
+            <desc language="nl-NL">Aanduiding van het type van de zorginstelling</desc>
+            <valueDomain type="code"/>
+            <valueSet name="ZorgaanbiederType"
+                      displayName="ZorgaanbiederType"
+                      effectiveDate="2011-01-28T00:00:00"
+                      id="2.16.840.1.113883.2.4.11.59"
+                      statusCode="final">
+               <conceptList>
+                  <concept localId="1"
+                           code="Z3"
+                           codeSystem="2.16.840.1.113883.2.4.15.1060"
+                           displayName="Huisartsenpraktijk"
+                           value="Z3">
+                     <name language="nl-NL">Huisartsenpraktijk</name>
+                  </concept>
+                  <concept localId="2"
+                           code="G3"
+                           codeSystem="2.16.840.1.113883.2.4.15.1060"
+                           displayName="Verloskundigenpraktijk"
+                           value="G3">
+                     <name language="nl-NL">Verloskundigenpraktijk</name>
+                  </concept>
+                  <concept localId="3"
+                           code="V4"
+                           codeSystem="2.16.840.1.113883.2.4.15.1060"
+                           displayName="Ziekenhuis"
+                           value="V4">
+                     <name language="nl-NL">Ziekenhuis</name>
+                  </concept>
+                  <concept localId="4"
+                           code="B2"
+                           codeSystem="2.16.840.1.113883.2.4.15.1060"
+                           displayName="Echocentrum"
+                           value="B2">
+                     <name language="nl-NL">Echocentrum</name>
+                  </concept>
+                  <concept localId="5"
+                           code="L1"
+                           codeSystem="2.16.840.1.113883.2.4.15.1060"
+                           displayName="Laboratorium"
+                           value="L1">
+                     <name language="nl-NL">Laboratorium</name>
+                  </concept>
+               </conceptList>
+            </valueSet>
+         </concept>
+         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82019"
+                  statusCode="draft"
+                  effectiveDate="2016-09-08T00:00:00"
+                  type="item"
+                  minimumMultiplicity="0"
+                  maximumMultiplicity="1"
+                  conformance="R"
+                  isMandatory="false"
+                  shortName="type_zorginstelling_bij_verwijzing">
+            <name language="nl-NL">Type zorginstelling (bij verwijzing)</name>
+            <desc language="nl-NL">Type zorginstelling bij een verwijzing.<br clear="none"/>
+            </desc>
+            <valueDomain type="code">
+               <property/>
+            </valueDomain>
+            <valueSet>
+               <conceptList/>
+            </valueSet>
          </concept>
       </concept>
-      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10040"
+   </concept>
+   <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.2"
+            statusCode="draft"
+            effectiveDate="2016-09-08T00:00:00"
+            type="group"
+            minimumMultiplicity="1"
+            maximumMultiplicity="1"
+            conformance="R"
+            isMandatory="false"
+            shortName="vrouw">
+      <name language="nl-NL">Vrouw</name>
+      <desc language="nl-NL">Vrouw die obstetrische zorgdiensten afneemt / heeft afgenomen.</desc>
+      <relationship type="SPEC"
+                    ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.2"
+                    flexibility="2013-09-10T00:00:00"
+                    prefix="peri20-"
+                    datasetId="2.16.840.1.113883.2.4.3.11.60.90.77.1.5"
+                    datasetEffectiveDate="2013-09-10T00:00:00"
+                    datasetStatusCode="final"
+                    iType="group"
+                    iStatusCode="final"
+                    iEffectiveDate="2013-09-10T00:00:00"
+                    iVersionLabel="22"
+                    refdisplay="peri22-dataelement-2">
+         <name language="nl-NL">Vrouw</name>
+      </relationship>
+      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10030"
                statusCode="final"
-               effectiveDate="2013-09-10T00:00:00"
+               effectiveDate="2016-09-08T00:00:00"
                type="item"
-               minimumMultiplicity="0"
+               minimumMultiplicity="1"
                maximumMultiplicity="1"
                conformance="R"
                isMandatory="false"
-               shortName="geboortedatum">
-         <name language="nl-NL">Geboortedatum</name>
-         <desc language="nl-NL">Geboortedatum.<br clear="none"/>
-            <br clear="none"/>Indien de dag en/of maand van de geboortedatum niet bekend zijn, vult u dit in als 01-01-xxxx. Wanneer het geboortejaar ook onbekend is, is schatten van het geboortejaar toegestaan.<br clear="none"/>
-            </desc>
-         <valueDomain type="date">
-            <property timeStampPrecision="YMD"/>
+               shortName="burgerservicenummer">
+         <name language="nl-NL">Burgerservicenummer</name>
+         <desc language="nl-NL">Het burgerservicenummer (BSN) is een uniek en persoonsgebonden identificerend nummer. Dit nummer wordt automatisch toegekend bij geboorte en wanneer iemand zich inschrijft bij de Basisregistratie personen (BRP). </desc>
+         <comment language="nl-NL">Modulo 11-proef</comment>
+         <comment language="nl-NL">Modulo 11-proef</comment>
+         <relationship type="SPEC"
+                       ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.1.10030"
+                       flexibility="2009-10-01T00:00:00"
+                       prefix="peri20-"
+                       datasetId="2.16.840.1.113883.2.4.3.11.60.90.77.1.1"
+                       datasetEffectiveDate="2009-10-01T00:00:00"
+                       datasetStatusCode="deprecated"
+                       iType="item"
+                       iStatusCode="final"
+                       iEffectiveDate="2009-10-01T00:00:00"
+                       refdisplay="spirit1a-dataelement-10030">
+            <name language="nl-NL">Burgerservicenummer</name>
+         </relationship>
+         <valueDomain type="identifier">
+            <property minLength="9" maxLength="9"/>
          </valueDomain>
       </concept>
    </concept>
-   <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.3"
-            statusCode="final"
-            effectiveDate="2013-09-10T00:00:00"
+   <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.3"
+            statusCode="draft"
+            effectiveDate="2016-09-08T00:00:00"
             type="group"
             minimumMultiplicity="0"
             maximumMultiplicity="1"
@@ -265,9 +384,23 @@
             shortName="zwangerschap">
       <name language="nl-NL">Zwangerschap</name>
       <desc language="nl-NL">De al dan niet afgesloten zwangerschap waarop de gegevens betrekking hebben.</desc>
-      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20010"
+      <relationship type="SPEC"
+                    ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.3"
+                    flexibility="2013-09-10T00:00:00"
+                    prefix="peri20-"
+                    datasetId="2.16.840.1.113883.2.4.3.11.60.90.77.1.5"
+                    datasetEffectiveDate="2013-09-10T00:00:00"
+                    datasetStatusCode="final"
+                    iType="group"
+                    iStatusCode="final"
+                    iEffectiveDate="2013-09-10T00:00:00"
+                    iVersionLabel="22"
+                    refdisplay="peri22-dataelement-3">
+         <name language="nl-NL">Zwangerschap</name>
+      </relationship>
+      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20010"
                statusCode="final"
-               effectiveDate="2013-09-10T00:00:00"
+               effectiveDate="2016-09-08T00:00:00"
                type="item"
                minimumMultiplicity="0"
                maximumMultiplicity="1"
@@ -281,9 +414,9 @@
             <property minInclude="1" maxInclude="75"/>
          </valueDomain>
       </concept>
-      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20150"
+      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20150"
                statusCode="final"
-               effectiveDate="2013-09-10T00:00:00"
+               effectiveDate="2016-09-08T00:00:00"
                type="item"
                minimumMultiplicity="0"
                maximumMultiplicity="1"
@@ -292,41 +425,14 @@
                shortName="pariteit_voor_deze_zwangerschap">
          <name language="nl-NL">Pariteit (vóór deze zwangerschap)</name>
          <desc language="nl-NL">Aantal voorafgaande zwangerschappen vóór deze zwangerschap die eindigden met een partus (&gt;= 16w 0d / 112 dagen).<br clear="none"/>De waarde van dit item is minimaal 1 minder dan graviditeit. <br clear="none"/>
-                    </desc>
+         </desc>
          <valueDomain type="count">
             <property minInclude="0" maxInclude="30"/>
          </valueDomain>
       </concept>
-      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20029"
+      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80625"
                statusCode="final"
-               effectiveDate="2013-09-10T00:00:00"
-               type="group"
-               minimumMultiplicity="1"
-               maximumMultiplicity="1"
-               conformance="R"
-               isMandatory="false"
-               shortName="a_terme_datum_groep">
-         <name language="nl-NL">A terme datum (groep)</name>
-         <desc language="nl-NL">A terme datum (groep)</desc>
-         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20030"
-                  statusCode="final"
-                  effectiveDate="2013-09-10T00:00:00"
-                  type="item"
-                  minimumMultiplicity="0"
-                  maximumMultiplicity="1"
-                  conformance="R"
-                  isMandatory="false"
-                  shortName="a_terme_datum">
-            <name language="nl-NL">A terme datum</name>
-            <desc language="nl-NL">Datum waarop de zwangerschap naar verwachting 40w 0d is (280 dagen). Op meerdere momenten in de zwangerschap kunnen verschillende à terme datum worden gehanteerd. </desc>
-            <valueDomain type="datetime">
-               <property timeStampPrecision="YMD!"/>
-            </valueDomain>
-         </concept>
-      </concept>
-      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80625"
-               statusCode="final"
-               effectiveDate="2013-09-10T00:00:00"
+               effectiveDate="2016-09-08T00:00:00"
                type="item"
                minimumMultiplicity="0"
                maximumMultiplicity="1"
@@ -335,8 +441,8 @@
                shortName="wijze_einde_zwangerschap">
          <name language="nl-NL">Wijze einde zwangerschap</name>
          <desc language="nl-NL">De wijze waarop de zwangerschap geëindigd is.<br clear="none"/>
-                        <br clear="none"/>TOP (Termination of Pregnancy) is zwangerschapsafbreking na 16 weken. Bij TOP wordt hier 'Partus' geregistreerd, zodat dit meegenomen wordt als pariteit. Dit in tegenstelling tot APLA, waarmee een zwangerschapsafbreking (abortus) van minder dan 16 weken wordt bedoeld.<br clear="none"/>
-                    </desc>
+            <br clear="none"/>TOP (Termination of Pregnancy) is zwangerschapsafbreking na 16+0 weken (16w0d). Bij TOP wordt hier 'Partus' geregistreerd, zodat dit meegenomen wordt als pariteit. Dit in tegenstelling tot APLA, waarmee een zwangerschapsafbreking (abortus) van minder dan 16 weken wordt bedoeld.<br clear="none"/>
+         </desc>
          <valueDomain type="code">
             <property/>
          </valueDomain>
@@ -363,23 +469,23 @@
                <concept localId="3"
                         code="21"
                         codeSystem="2.16.840.1.113883.2.4.4.13.46"
-                        displayName="Spontaan"
+                        displayName="Miskraam - Spontaan"
                         value="21">
-                  <name language="nl-NL">Spontaan</name>
+                  <name language="nl-NL">Miskraam - Spontaan</name>
                </concept>
                <concept localId="4"
                         code="22"
                         codeSystem="2.16.840.1.113883.2.4.4.13.46"
-                        displayName="Medicamenteus"
+                        displayName="Miskraam - Medicamenteus"
                         value="22">
-                  <name language="nl-NL">Medicamenteus</name>
+                  <name language="nl-NL">Miskraam - Medicamenteus</name>
                </concept>
                <concept localId="5"
                         code="23"
                         codeSystem="2.16.840.1.113883.2.4.4.13.46"
-                        displayName="Instrumenteel"
+                        displayName="Miskraam - Instrumenteel"
                         value="23">
-                  <name language="nl-NL">Instrumenteel</name>
+                  <name language="nl-NL">Miskraam - Instrumenteel</name>
                </concept>
                <concept localId="6"
                         code="3"
@@ -391,16 +497,16 @@
                <concept localId="7"
                         code="31"
                         codeSystem="2.16.840.1.113883.2.4.4.13.46"
-                        displayName="Medicamenteus"
+                        displayName="APLA - Medicamenteus"
                         value="31">
-                  <name language="nl-NL">Medicamenteus</name>
+                  <name language="nl-NL">APLA - Medicamenteus</name>
                </concept>
                <concept localId="8"
                         code="32"
                         codeSystem="2.16.840.1.113883.2.4.4.13.46"
-                        displayName="Instrumenteel"
+                        displayName="APLA - Instrumenteel"
                         value="32">
-                  <name language="nl-NL">Instrumenteel</name>
+                  <name language="nl-NL">APLA - Instrumenteel</name>
                </concept>
                <concept localId="9"
                         code="4"
@@ -426,9 +532,9 @@
             </conceptList>
          </valueSet>
       </concept>
-      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20540"
-               statusCode="final"
-               effectiveDate="2013-09-10T00:00:00"
+      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20540"
+               statusCode="draft"
+               effectiveDate="2016-09-08T00:00:00"
                type="item"
                minimumMultiplicity="0"
                maximumMultiplicity="1"
@@ -437,16 +543,16 @@
                shortName="datum_einde_zwangerschap">
          <name language="nl-NL">Datum einde zwangerschap</name>
          <desc language="nl-NL">Moment (datum en tijd) waarop de zwangerschap medisch gezien is geëindigd, anders dan na een partus (bij een partus wordt dit item niet ingevuld).<br clear="none"/>
-                        <br clear="none"/>NB. Bij een partus wordt op een andere plaats in het dossier geregistreerd: geboortedatum per kind én geboortedatum/tijd van de placenta(e).<br clear="none"/>
-                    </desc>
+            <br clear="none"/>NB. Bij een partus wordt op een andere plaats in het dossier geregistreerd: geboortedatum per kind én geboortedatum/tijd van de placenta(e).<br clear="none"/>
+         </desc>
          <valueDomain type="datetime">
             <property timeStampPrecision="YMD"/>
          </valueDomain>
       </concept>
    </concept>
-   <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.6"
-            statusCode="final"
-            effectiveDate="2013-09-10T00:00:00"
+   <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.6"
+            statusCode="draft"
+            effectiveDate="2016-09-08T00:00:00"
             type="group"
             minimumMultiplicity="0"
             maximumMultiplicity="1"
@@ -455,38 +561,76 @@
             shortName="bevalling">
       <name language="nl-NL">Bevalling</name>
       <desc language="nl-NL">Gegevens over de partus</desc>
-      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82291"
+      <relationship type="SPEC"
+                    ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.6"
+                    flexibility="2013-09-10T00:00:00"
+                    prefix="peri20-"
+                    datasetId="2.16.840.1.113883.2.4.3.11.60.90.77.1.5"
+                    datasetEffectiveDate="2013-09-10T00:00:00"
+                    datasetStatusCode="final"
+                    iType="group"
+                    iStatusCode="final"
+                    iEffectiveDate="2013-09-10T00:00:00"
+                    iVersionLabel="22"
+                    refdisplay="peri22-dataelement-6">
+         <name language="nl-NL">Bevalling</name>
+      </relationship>
+      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20590"
                statusCode="final"
-               effectiveDate="2014-09-15T12:23:55"
-               type="group"
+               effectiveDate="2016-09-08T00:00:00"
+               type="item"
                minimumMultiplicity="0"
                maximumMultiplicity="1"
                conformance="R"
                isMandatory="false"
-               shortName="diagnose_bevalling">
-         <name language="nl-NL">Diagnose bevalling</name>
-         <desc language="nl-NL">Diagnose bevalling<br clear="none"/>
-                    </desc>
-         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82382"
-                  statusCode="final"
-                  effectiveDate="2015-10-19T17:24:25"
-                  type="item"
-                  minimumMultiplicity="0"
-                  maximumMultiplicity="1"
-                  conformance="R"
-                  isMandatory="false"
-                  shortName="zwangerschapsduur">
-            <name language="nl-NL">Zwangerschapsduur</name>
-            <desc language="nl-NL">Zwangerschapsduur<br clear="none"/>De dataset definieert de zwangerschapsduur in dagen. <br clear="none"/>Zorgverleners zien de zwangerschapsduur het liefste in weken/dagen. Dus bijvoorbeeld: 36w2d of 40+2.<br clear="none"/>
-                        </desc>
-            <valueDomain type="quantity">
-               <property unit="d"/>
-            </valueDomain>
-         </concept>
+               shortName="tijdstip_begin_actieve_ontsluiting">
+         <name language="nl-NL">Tijdstip begin actieve ontsluiting</name>
+         <desc language="nl-NL">Datum en tijd begin actieve ontsluiting<br clear="none"/>
+            <br clear="none"/>KNOV definitie van actieve ontsluting:<br clear="none"/>
+            <ul>
+               <li>dunne verstreken cervix én</li>
+               <li>ten minste 3 cm ontsluiting én</li>
+               <li>krachtige, pijnlijke weeën om de 2 à 3 minuten.<br clear="none"/>
+               </li>
+            </ul>
+         </desc>
+         <relationship type="SPEC"
+                       ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.1.20590"
+                       flexibility="2009-10-01T00:00:00"
+                       prefix="peri20-"
+                       datasetId="2.16.840.1.113883.2.4.3.11.60.90.77.1.1"
+                       datasetEffectiveDate="2009-10-01T00:00:00"
+                       datasetStatusCode="deprecated"
+                       iType="item"
+                       iStatusCode="final"
+                       iEffectiveDate="2009-10-01T00:00:00"
+                       refdisplay="spirit1a-dataelement-20590">
+            <name language="nl-NL">Tijdstip begin actieve ontsluiting</name>
+         </relationship>
+         <valueDomain type="datetime">
+            <property timeStampPrecision="YMDHM"/>
+         </valueDomain>
       </concept>
-      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20640"
+      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82869"
+               effectiveDate="2020-01-24T11:34:59"
+               statusCode="draft"
+               type="item"
+               minimumMultiplicity="0"
+               maximumMultiplicity="1"
+               conformance="R"
+               isMandatory="false"
+               shortName="duur_actieve_ontsluitingsfase_ontsluitingsduur">
+         <name language="nl-NL">Duur actieve ontsluitingsfase (Ontsluitingsduur)</name>
+         <desc language="nl-NL">Ontsluitingsduur in uren</desc>
+         <source language="nl-NL">PRN dataset 1.3 item #5.6.02.02</source>
+         <operationalization language="nl-NL">Berekend veld: duur vanaf ontsluitingsfase baring tot duur actief meepersen.</operationalization>
+         <valueDomain type="quantity">
+            <property unit="h" minInclude="0"/>
+         </valueDomain>
+      </concept>
+      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20640"
                statusCode="final"
-               effectiveDate="2013-09-10T00:00:00"
+               effectiveDate="2016-09-08T00:00:00"
                type="item"
                minimumMultiplicity="0"
                maximumMultiplicity="1"
@@ -499,9 +643,9 @@
             <property unit="ml" fractionDigits="0!"/>
          </valueDomain>
       </concept>
-      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80673"
+      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80673"
                statusCode="final"
-               effectiveDate="2013-09-10T00:00:00"
+               effectiveDate="2016-09-08T00:00:00"
                type="item"
                minimumMultiplicity="0"
                maximumMultiplicity="1"
@@ -605,9 +749,9 @@
          </valueSet>
       </concept>
    </concept>
-   <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.7"
-            statusCode="final"
-            effectiveDate="2013-09-10T00:00:00"
+   <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.7"
+            statusCode="draft"
+            effectiveDate="2016-09-08T00:00:00"
             type="group"
             minimumMultiplicity="0"
             maximumMultiplicity="*"
@@ -616,20 +760,75 @@
             shortName="uitkomst_per_kind">
       <name language="nl-NL">Uitkomst (per kind)</name>
       <desc language="nl-NL">Groepering om de gegevens van elke uitkomst (kind) samen te vatten.</desc>
-      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40002"
-               statusCode="final"
-               effectiveDate="2013-09-10T00:00:00"
+      <relationship type="SPEC"
+                    ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.7"
+                    flexibility="2013-09-10T00:00:00"
+                    prefix="peri20-"
+                    datasetId="2.16.840.1.113883.2.4.3.11.60.90.77.1.5"
+                    datasetEffectiveDate="2013-09-10T00:00:00"
+                    datasetStatusCode="final"
+                    iType="group"
+                    iStatusCode="final"
+                    iEffectiveDate="2013-09-10T00:00:00"
+                    iVersionLabel="22"
+                    refdisplay="peri22-dataelement-7">
+         <name language="nl-NL">Uitkomst (per kind)</name>
+      </relationship>
+      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40002"
+               statusCode="draft"
+               effectiveDate="2016-09-08T00:00:00"
                type="group"
-               minimumMultiplicity="0"
+               minimumMultiplicity="1"
                maximumMultiplicity="1"
                conformance="R"
                isMandatory="false"
                shortName="baring">
          <name language="nl-NL">Baring</name>
          <desc language="nl-NL">Baring is het geboren laten worden van één uitkomst (kind).</desc>
-         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.71"
-                  statusCode="final"
-                  effectiveDate="2013-09-10T00:00:00"
+         <relationship type="SPEC"
+                       ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40002"
+                       flexibility="2013-09-10T00:00:00"
+                       prefix="peri20-"
+                       datasetId="2.16.840.1.113883.2.4.3.11.60.90.77.1.5"
+                       datasetEffectiveDate="2013-09-10T00:00:00"
+                       datasetStatusCode="final"
+                       iType="group"
+                       iStatusCode="final"
+                       iEffectiveDate="2013-09-10T00:00:00"
+                       iVersionLabel="22"
+                       refdisplay="peri22-dataelement-40002">
+            <name language="nl-NL">Baring</name>
+         </relationship>
+         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40006"
+                  statusCode="draft"
+                  effectiveDate="2016-09-08T00:00:00"
+                  type="group"
+                  minimumMultiplicity="0"
+                  maximumMultiplicity="1"
+                  conformance="R"
+                  isMandatory="false"
+                  shortName="demografische_gegevens">
+            <name language="nl-NL">Demografische gegevens</name>
+            <desc language="nl-NL">Demografische gegevens</desc>
+            <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40050"
+                     statusCode="final"
+                     effectiveDate="2016-09-08T00:00:00"
+                     type="item"
+                     minimumMultiplicity="0"
+                     maximumMultiplicity="1"
+                     conformance="R"
+                     isMandatory="false"
+                     shortName="geboortedatum">
+               <name language="nl-NL">Geboortedatum</name>
+               <desc language="nl-NL">Moment van geboorte. Datum en (zo mogelijk) tijd</desc>
+               <valueDomain type="datetime">
+                  <property timeStampPrecision="YMD"/>
+               </valueDomain>
+            </concept>
+         </concept>
+         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.71"
+                  statusCode="draft"
+                  effectiveDate="2016-09-08T00:00:00"
                   type="group"
                   minimumMultiplicity="0"
                   maximumMultiplicity="1"
@@ -638,10 +837,55 @@
                   shortName="kindspecifieke_maternale_gegevens">
             <name language="nl-NL">Kindspecifieke maternale gegevens</name>
             <desc language="nl-NL">Kindspecifieke maternale gegevens</desc>
+            <relationship type="SPEC"
+                          ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.71"
+                          flexibility="2013-09-10T00:00:00"
+                          prefix="peri20-"
+                          datasetId="2.16.840.1.113883.2.4.3.11.60.90.77.1.5"
+                          datasetEffectiveDate="2013-09-10T00:00:00"
+                          datasetStatusCode="final"
+                          iType="group"
+                          iStatusCode="final"
+                          iEffectiveDate="2013-09-10T00:00:00"
+                          iVersionLabel="22"
+                          refdisplay="peri22-dataelement-71">
+               <name language="nl-NL">Kindspecifieke maternale gegevens</name>
+            </relationship>
+            <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.30030"
+                     statusCode="final"
+                     effectiveDate="2016-09-08T00:00:00"
+                     type="item"
+                     minimumMultiplicity="0"
+                     maximumMultiplicity="1"
+                     conformance="R"
+                     isMandatory="false"
+                     shortName="tijdstip_actief_meepersen">
+               <name language="nl-NL">Tijdstip actief meepersen</name>
+               <desc language="nl-NL">Tijdstip actief meepersen</desc>
+               <valueDomain type="datetime">
+                  <property timeStampPrecision="YMDHM"/>
+               </valueDomain>
+            </concept>
+            <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82870"
+                     effectiveDate="2020-01-24T11:45:27"
+                     statusCode="draft"
+                     type="item"
+                     minimumMultiplicity="0"
+                     maximumMultiplicity="1"
+                     conformance="R"
+                     isMandatory="false"
+                     shortName="duur_uitdrijving_vanaf_actief_meepersen">
+               <name language="nl-NL">Duur uitdrijving vanaf actief meepersen</name>
+               <desc language="nl-NL">Duur uitdrijving in minuten.</desc>
+               <operationalization language="nl-NL">Indien bekend in systeem berekend veld: baringsduur vanaf actief meepersen tot en met de geboorte van het kind.</operationalization>
+               <valueDomain type="quantity">
+                  <property unit="min" minInclude="0"/>
+               </valueDomain>
+            </concept>
          </concept>
-         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.72"
-                  statusCode="final"
-                  effectiveDate="2013-09-10T00:00:00"
+         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.72"
+                  statusCode="draft"
+                  effectiveDate="2016-09-08T00:00:00"
                   type="group"
                   minimumMultiplicity="0"
                   maximumMultiplicity="1"
@@ -650,9 +894,23 @@
                   shortName="kindspecifieke_uitkomstgegevens">
             <name language="nl-NL">Kindspecifieke uitkomstgegevens</name>
             <desc language="nl-NL">Kindspecifieke uitkomstgegevens</desc>
-            <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80626"
+            <relationship type="SPEC"
+                          ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.72"
+                          flexibility="2013-09-10T00:00:00"
+                          prefix="peri20-"
+                          datasetId="2.16.840.1.113883.2.4.3.11.60.90.77.1.5"
+                          datasetEffectiveDate="2013-09-10T00:00:00"
+                          datasetStatusCode="final"
+                          iType="group"
+                          iStatusCode="final"
+                          iEffectiveDate="2013-09-10T00:00:00"
+                          iVersionLabel="22"
+                          refdisplay="peri22-dataelement-72">
+               <name language="nl-NL">Kindspecifieke uitkomstgegevens</name>
+            </relationship>
+            <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80626"
                      statusCode="final"
-                     effectiveDate="2013-09-10T00:00:00"
+                     effectiveDate="2016-09-08T00:00:00"
                      type="item"
                      minimumMultiplicity="0"
                      maximumMultiplicity="1"
@@ -661,78 +919,105 @@
                      shortName="type_partus">
                <name language="nl-NL">Type partus</name>
                <desc language="nl-NL">Type partus.<br clear="none"/>
-                                <br clear="none"/>Een primaire sectio is een geplande sectio en wordt óók als zodanig geregistreerd als deze uitgevoerd wordt wanneer de weeën al zijn begonnen, de vliezen zijn gebroken en/of de uitdrijving is begonnen.<br clear="none"/>
-                                <br clear="none"/>TOP (Termination of Pregnancy) is zwangerschapsafbreking na 16 weken. Dit in tegenstelling tot APLA, waarmee een zwangerschapsafbreking (abortus) van minder dan 16 weken wordt bedoeld.<br clear="none"/>
-                            </desc>
+                  <br clear="none"/>Een primaire sectio is een geplande sectio en wordt óók als zodanig geregistreerd als deze uitgevoerd wordt wanneer de weeën al zijn begonnen, de vliezen zijn gebroken en/of de uitdrijving is begonnen.<br clear="none"/>
+                  <br clear="none"/>TOP (Termination of Pregnancy) is zwangerschapsafbreking na 16 weken. Dit in tegenstelling tot APLA, waarmee een zwangerschapsafbreking (abortus) van minder dan 16 weken wordt bedoeld.<br clear="none"/>
+               </desc>
+               <relationship type="SPEC"
+                             ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80626"
+                             flexibility="2013-09-10T00:00:00"
+                             prefix="peri20-"
+                             datasetId="2.16.840.1.113883.2.4.3.11.60.90.77.1.5"
+                             datasetEffectiveDate="2013-09-10T00:00:00"
+                             datasetStatusCode="final"
+                             iType="item"
+                             iStatusCode="final"
+                             iEffectiveDate="2013-09-10T00:00:00"
+                             refdisplay="peri22-dataelement-80626">
+                  <name language="nl-NL">Type partus</name>
+               </relationship>
                <valueDomain type="code"/>
-               <valueSet statusCode="final"
+               <valueSet id="2.16.840.1.113883.2.4.11.182"
                          name="TypePartus22"
-                         displayName="TypePartus22"
-                         effectiveDate="2014-01-02T13:08:11"
-                         id="2.16.840.1.113883.2.4.11.182">
+                         displayName="TypePartus"
+                         statusCode="final"
+                         effectiveDate="2016-11-22T14:00:45">
                   <conceptList>
                      <concept localId="1"
-                              code="48782003"
+                              code="177184002"
                               codeSystem="2.16.840.1.113883.6.96"
-                              displayName="Delivery normal (finding)"
-                              value="48782003">
+                              displayName="Normal delivery procedure (procedure)"
+                              value="177184002">
                         <name language="nl-NL">Spontaan</name>
                      </concept>
                      <concept localId="2"
-                              code="8561000146109"
+                              code="3311000146109"
                               codeSystem="2.16.840.1.113883.6.96"
-                              displayName="Assisted delivery of fetus (finding)"
-                              value="8561000146109">
+                              displayName="Assisted delivery of fetus (procedure)"
+                              value="3311000146109">
                         <name language="nl-NL">Vaginale kunstverlossing</name>
                      </concept>
                      <concept localId="3"
-                              code="200146002"
+                              code="11466000"
                               codeSystem="2.16.840.1.113883.6.96"
-                              displayName="Cesarean delivery - delivered (finding)"
-                              value="200146002">
+                              displayName="Cesarean section (procedure)"
+                              value="11466000">
                         <name language="nl-NL">Sectio Caesarea</name>
                      </concept>
                      <concept localId="4"
-                              code="200148001"
+                              code="177141003"
                               codeSystem="2.16.840.1.113883.6.96"
-                              displayName="Delivery by elective cesarean section (finding)"
-                              value="200148001">
+                              displayName="Elective cesarian delivery (procedure)"
+                              value="177141003">
                         <name language="nl-NL">Primair</name>
                      </concept>
                      <concept localId="5"
-                              code="200149009"
+                              code="274130007"
                               codeSystem="2.16.840.1.113883.6.96"
-                              displayName="Delivery by emergency cesarean section (finding)"
-                              value="200149009">
+                              displayName="Emergency cesarian section (procedure)"
+                              value="274130007">
                         <name language="nl-NL">Secundair</name>
                      </concept>
                      <concept localId="6"
-                              code="39406005"
-                              codeSystem="2.16.840.1.113883.6.96"
-                              displayName="Legally induced abortion (disorder)"
-                              value="39406005">
+                              code="10"
+                              codeSystem="2.16.840.1.113883.2.4.4.14"
+                              displayName="Termination of Pregnancy (TOP)"
+                              value="10">
                         <name language="nl-NL">Termination Of Pregnancy (TOP)</name>
                      </concept>
-                     <exception localId="7"
-                                code="UNK"
-                                codeSystem="2.16.840.1.113883.5.1008"
-                                displayName="onbekend"
-                                value="UNK">
-                        <name language="nl-NL">onbekend</name>
-                     </exception>
-                     <exception localId="8"
+                     <concept localId="7"
+                              code="447972007"
+                              codeSystem="2.16.840.1.113883.6.96"
+                              displayName="Medical termination of pregnancy using prostaglandin (procedure)"
+                              value="447972007">
+                        <name language="nl-NL">Chemische inleiding</name>
+                     </concept>
+                     <concept localId="8"
+                              code="236990004"
+                              codeSystem="2.16.840.1.113883.6.96"
+                              displayName="Postmortem cesarean section (procedure)"
+                              value="236990004">
+                        <name language="nl-NL">Sectio Caesarea</name>
+                     </concept>
+                     <concept localId="9"
+                              code="9"
+                              codeSystem="2.16.840.1.113883.2.4.4.14.10"
+                              displayName="Overig"
+                              value="9">
+                        <name language="nl-NL">Overig</name>
+                     </concept>
+                     <exception localId="10"
                                 code="NI"
                                 codeSystem="2.16.840.1.113883.5.1008"
-                                displayName="geen informatie"
+                                displayName="Geen informatie"
                                 value="NI">
-                        <name language="nl-NL">geen informatie</name>
+                        <name language="nl-NL">Geen informatie</name>
                      </exception>
                   </conceptList>
                </valueSet>
             </concept>
-            <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20062"
-                     statusCode="final"
-                     effectiveDate="2013-09-10T00:00:00"
+            <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20062"
+                     statusCode="draft"
+                     effectiveDate="2016-09-08T00:00:00"
                      type="item"
                      minimumMultiplicity="0"
                      maximumMultiplicity="1"
@@ -741,34 +1026,28 @@
                      shortName="zwangerschapsduur">
                <name language="nl-NL">Zwangerschapsduur</name>
                <desc language="nl-NL">Zwangerschapsduur in dagen bij geboorte kinderen.<br clear="none"/>De dataset definieert de zwangerschapsduur in dagen.<br clear="none"/>Zorgverleners zien de zwangerschapsduur het liefste in weken/dagen. Dus bijvoorbeeld: 36w2d of 40+2.<br clear="none"/>
-                            </desc>
+               </desc>
                <relationship type="SPEC"
                              ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.4.20062"
                              flexibility="2012-08-06T00:00:00"
-                             refdisplay="peri21-dataelement-20062"/>
+                             prefix="peri20-"
+                             datasetId="2.16.840.1.113883.2.4.3.11.60.90.77.1.4"
+                             datasetEffectiveDate="2012-08-06T00:00:00"
+                             datasetStatusCode="final"
+                             iType="item"
+                             iStatusCode="final"
+                             iEffectiveDate="2012-08-06T00:00:00"
+                             refdisplay="peri21-dataelement-20062">
+                  <name language="nl-NL">Zwangerschapsduur</name>
+               </relationship>
                <operationalization language="nl-NL">Berekend veld: zwangerschapsduur in dagen bij geboorte kind. Berekend veld ((geboortedatum-atermedatum)+280) geven.</operationalization>
                <valueDomain type="quantity">
                   <property unit="d" minInclude="0"/>
                </valueDomain>
             </concept>
-            <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40071"
-                     statusCode="final"
-                     effectiveDate="2013-09-10T00:00:00"
-                     type="item"
-                     minimumMultiplicity="0"
-                     maximumMultiplicity="1"
-                     conformance="R"
-                     isMandatory="false"
-                     shortName="apgarscore_na_5_min">
-               <name language="nl-NL">Apgarscore na 5 min.</name>
-               <desc language="nl-NL">Apgarscore na 5 min.</desc>
-               <valueDomain type="count">
-                  <property minInclude="0" maxInclude="10"/>
-               </valueDomain>
-            </concept>
-            <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40189"
-                     statusCode="final"
-                     effectiveDate="2013-09-10T00:00:00"
+            <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40189"
+                     statusCode="draft"
+                     effectiveDate="2016-09-08T00:00:00"
                      type="group"
                      minimumMultiplicity="0"
                      maximumMultiplicity="1"
@@ -780,10 +1059,19 @@
                <relationship type="SPEC"
                              ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.4.40189"
                              flexibility="2012-08-06T00:00:00"
-                             refdisplay="peri21-dataelement-40189"/>
-               <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40190"
+                             prefix="peri20-"
+                             datasetId="2.16.840.1.113883.2.4.3.11.60.90.77.1.4"
+                             datasetEffectiveDate="2012-08-06T00:00:00"
+                             datasetStatusCode="final"
+                             iType="group"
+                             iStatusCode="final"
+                             iEffectiveDate="2012-08-06T00:00:00"
+                             refdisplay="peri21-dataelement-40189">
+                  <name language="nl-NL">Vaginale kunstverlossing (groep)</name>
+               </relationship>
+               <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40190"
                         statusCode="final"
-                        effectiveDate="2013-09-10T00:00:00"
+                        effectiveDate="2016-09-08T00:00:00"
                         type="item"
                         minimumMultiplicity="0"
                         maximumMultiplicity="1"
@@ -854,9 +1142,9 @@
                   </valueSet>
                </concept>
             </concept>
-            <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80766"
-                     statusCode="final"
-                     effectiveDate="2013-09-10T00:00:00"
+            <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80766"
+                     statusCode="draft"
+                     effectiveDate="2016-09-08T00:00:00"
                      type="group"
                      minimumMultiplicity="0"
                      maximumMultiplicity="1"
@@ -867,9 +1155,38 @@
                <desc language="nl-NL">Lichamelijk onderzoek pasgeborene direct postpartum </desc>
                <source language="nl-NL">Mede gebaseerd op LESA richtlijn<br clear="none"/>
                </source>
-               <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40060"
+               <relationship type="SPEC"
+                             ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80766"
+                             flexibility="2013-09-10T00:00:00"
+                             prefix="peri20-"
+                             datasetId="2.16.840.1.113883.2.4.3.11.60.90.77.1.5"
+                             datasetEffectiveDate="2013-09-10T00:00:00"
+                             datasetStatusCode="final"
+                             iType="group"
+                             iStatusCode="final"
+                             iEffectiveDate="2013-09-10T00:00:00"
+                             iVersionLabel="22"
+                             refdisplay="peri22-dataelement-80766">
+                  <name language="nl-NL">Lichamelijk onderzoek kind</name>
+               </relationship>
+               <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40071"
                         statusCode="final"
-                        effectiveDate="2013-09-10T00:00:00"
+                        effectiveDate="2016-09-08T00:00:00"
+                        type="item"
+                        minimumMultiplicity="0"
+                        maximumMultiplicity="1"
+                        conformance="R"
+                        isMandatory="false"
+                        shortName="apgarscore_na_5_min">
+                  <name language="nl-NL">Apgarscore na 5 min.</name>
+                  <desc language="nl-NL">Apgarscore na 5 min.</desc>
+                  <valueDomain type="count">
+                     <property minInclude="0" maxInclude="10"/>
+                  </valueDomain>
+               </concept>
+               <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40060"
+                        statusCode="final"
+                        effectiveDate="2016-09-08T00:00:00"
                         type="item"
                         minimumMultiplicity="0"
                         maximumMultiplicity="1"

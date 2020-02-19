@@ -41,20 +41,14 @@ SOFTWARE.
    <xsl:variable name="document-uri">
       <xsl:value-of select="document-uri(/)"/>
    </xsl:variable>
-
    <!--PHASES-->
-
-
    <!--PROLOG-->
    <xsl:output xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                method="xml"
                omit-xml-declaration="no"
                standalone="yes"
                indent="yes"/>
-
    <!--XSD TYPES FOR XSLT2-->
-
-
    <!--KEYS AND FUNCTIONS-->
    <xsl:function xmlns="http://purl.oclc.org/dsdl/schematron"
                  name="local:decimal-convert"
@@ -62,16 +56,12 @@ SOFTWARE.
       <xsl:param name="in" as="xs:string"/>
       <xsl:sequence select="if ($in castable as xs:decimal) then xs:decimal($in) else xs:decimal(0)"/>
    </xsl:function>
-
    <!--DEFAULT RULES-->
-
-
    <!--MODE: SCHEMATRON-SELECT-FULL-PATH-->
    <!--This mode can be used to generate an ugly though full XPath for locators-->
    <xsl:template match="*" mode="schematron-select-full-path">
       <xsl:apply-templates select="." mode="schematron-get-full-path"/>
    </xsl:template>
-
    <!--MODE: SCHEMATRON-FULL-PATH-->
    <!--This mode can be used to generate an ugly though full XPath for locators-->
    <xsl:template match="*" mode="schematron-get-full-path">
@@ -110,7 +100,6 @@ SOFTWARE.
          </xsl:otherwise>
       </xsl:choose>
    </xsl:template>
-
    <!--MODE: SCHEMATRON-FULL-PATH-2-->
    <!--This mode can be used to generate prefixed XPath for humans-->
    <xsl:template match="node() | @*" mode="schematron-get-full-path-2">
@@ -144,7 +133,6 @@ SOFTWARE.
          <xsl:text/>/@<xsl:value-of select="name(.)"/>
       </xsl:if>
    </xsl:template>
-
    <!--MODE: GENERATE-ID-FROM-PATH -->
    <xsl:template match="/" mode="generate-id-from-path"/>
    <xsl:template match="text()" mode="generate-id-from-path">
@@ -168,7 +156,6 @@ SOFTWARE.
       <xsl:text>.</xsl:text>
       <xsl:value-of select="concat('.',name(),'-',1+count(preceding-sibling::*[name()=name(current())]),'-')"/>
    </xsl:template>
-
    <!--MODE: GENERATE-ID-2 -->
    <xsl:template match="/" mode="generate-id-2">U</xsl:template>
    <xsl:template match="*" mode="generate-id-2" priority="2">
@@ -191,7 +178,6 @@ SOFTWARE.
    </xsl:template>
    <!--Strip characters-->
    <xsl:template match="text()" priority="-1"/>
-
    <!--SCHEMA SETUP-->
    <xsl:template match="/">
       <svrl:schematron-output xmlns:svrl="http://purl.oclc.org/dsdl/svrl" title="" schemaVersion="">
@@ -581,30 +567,116 @@ SOFTWARE.
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M56"/>
+         <svrl:active-pattern>
+            <xsl:attribute name="document">
+               <xsl:value-of select="document-uri(/)"/>
+            </xsl:attribute>
+            <xsl:apply-templates/>
+         </svrl:active-pattern>
+         <xsl:apply-templates select="/" mode="M57"/>
+         <svrl:active-pattern>
+            <xsl:attribute name="document">
+               <xsl:value-of select="document-uri(/)"/>
+            </xsl:attribute>
+            <xsl:apply-templates/>
+         </svrl:active-pattern>
+         <xsl:apply-templates select="/" mode="M58"/>
+         <svrl:active-pattern>
+            <xsl:attribute name="document">
+               <xsl:value-of select="document-uri(/)"/>
+            </xsl:attribute>
+            <xsl:apply-templates/>
+         </svrl:active-pattern>
+         <xsl:apply-templates select="/" mode="M59"/>
+         <svrl:active-pattern>
+            <xsl:attribute name="document">
+               <xsl:value-of select="document-uri(/)"/>
+            </xsl:attribute>
+            <xsl:apply-templates/>
+         </svrl:active-pattern>
+         <xsl:apply-templates select="/" mode="M60"/>
+         <svrl:active-pattern>
+            <xsl:attribute name="document">
+               <xsl:value-of select="document-uri(/)"/>
+            </xsl:attribute>
+            <xsl:apply-templates/>
+         </svrl:active-pattern>
+         <xsl:apply-templates select="/" mode="M61"/>
+         <svrl:active-pattern>
+            <xsl:attribute name="document">
+               <xsl:value-of select="document-uri(/)"/>
+            </xsl:attribute>
+            <xsl:apply-templates/>
+         </svrl:active-pattern>
+         <xsl:apply-templates select="/" mode="M62"/>
+         <svrl:active-pattern>
+            <xsl:attribute name="document">
+               <xsl:value-of select="document-uri(/)"/>
+            </xsl:attribute>
+            <xsl:apply-templates/>
+         </svrl:active-pattern>
+         <xsl:apply-templates select="/" mode="M63"/>
+         <svrl:active-pattern>
+            <xsl:attribute name="document">
+               <xsl:value-of select="document-uri(/)"/>
+            </xsl:attribute>
+            <xsl:apply-templates/>
+         </svrl:active-pattern>
+         <xsl:apply-templates select="/" mode="M64"/>
+         <svrl:active-pattern>
+            <xsl:attribute name="document">
+               <xsl:value-of select="document-uri(/)"/>
+            </xsl:attribute>
+            <xsl:apply-templates/>
+         </svrl:active-pattern>
+         <xsl:apply-templates select="/" mode="M65"/>
+         <svrl:active-pattern>
+            <xsl:attribute name="document">
+               <xsl:value-of select="document-uri(/)"/>
+            </xsl:attribute>
+            <xsl:apply-templates/>
+         </svrl:active-pattern>
+         <xsl:apply-templates select="/" mode="M66"/>
+         <svrl:active-pattern>
+            <xsl:attribute name="document">
+               <xsl:value-of select="document-uri(/)"/>
+            </xsl:attribute>
+            <xsl:apply-templates/>
+         </svrl:active-pattern>
+         <xsl:apply-templates select="/" mode="M67"/>
+         <svrl:active-pattern>
+            <xsl:attribute name="document">
+               <xsl:value-of select="document-uri(/)"/>
+            </xsl:attribute>
+            <xsl:apply-templates/>
+         </svrl:active-pattern>
+         <xsl:apply-templates select="/" mode="M68"/>
+         <svrl:active-pattern>
+            <xsl:attribute name="document">
+               <xsl:value-of select="document-uri(/)"/>
+            </xsl:attribute>
+            <xsl:apply-templates/>
+         </svrl:active-pattern>
+         <xsl:apply-templates select="/" mode="M69"/>
       </svrl:schematron-output>
    </xsl:template>
-
    <!--SCHEMATRON PATTERNS-->
-
-
    <!--PATTERN -->
-
-
-	  <!--RULE -->
+   <!--RULE -->
    <xsl:template match="/" priority="1000" mode="M3">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="/"/>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="count(prio1_huidig) eq 1"/>
+         <xsl:when test="count(prio1_huidige_zwangerschap) eq 1"/>
          <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="count(prio1_huidig) eq 1">
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="count(prio1_huidige_zwangerschap) eq 1">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Fout aantal voorkomens van "Prio1 huidig": <xsl:text/>
-                  <xsl:value-of select="count(prio1_huidig)"/>
-                  <xsl:text/> (verwacht: 1) [/prio1_huidig]</svrl:text>
+               <svrl:text>Fout aantal voorkomens van "Prio1 huidige zwangerschap": <xsl:text/>
+                  <xsl:value-of select="count(prio1_huidige_zwangerschap)"/>
+                  <xsl:text/> (verwacht: 1) [/prio1_huidige_zwangerschap]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -614,15 +686,12 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M3">
       <xsl:apply-templates select="*" mode="M3"/>
    </xsl:template>
-
    <!--PATTERN -->
-
-
-	  <!--RULE -->
-   <xsl:template match="/prio1_huidig" priority="1000" mode="M4">
-      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="/prio1_huidig"/>
-
-		    <!--ASSERT -->
+   <!--RULE -->
+   <xsl:template match="/prio1_huidige_zwangerschap" priority="1000" mode="M4">
+      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                       context="/prio1_huidige_zwangerschap"/>
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@transactionRef)"/>
          <xsl:otherwise>
@@ -630,12 +699,11 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Prio1 huidig": Attribuut "transactionRef" ontbreekt [/prio1_huidig/@transactionRef]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Prio1 huidige zwangerschap": Attribuut "transactionRef" ontbreekt [/prio1_huidige_zwangerschap/@transactionRef]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@transactionRef) or matches(@transactionRef, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -644,30 +712,28 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Prio1 huidig": De waarde "<xsl:text/>
+               <svrl:text>Foutieve informatie voor "Prio1 huidige zwangerschap": De waarde "<xsl:text/>
                   <xsl:value-of select="@transactionRef"/>
-                  <xsl:text/>" voor attribuut "transactionRef" heeft een onjuist formaat [/prio1_huidig/@transactionRef; type=t-id]</svrl:text>
+                  <xsl:text/>" voor attribuut "transactionRef" heeft een onjuist formaat [/prio1_huidige_zwangerschap/@transactionRef; type=t-id]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@transactionRef) or (@transactionRef eq '2.16.840.1.113883.2.4.3.11.60.90.77.4.2453')"/>
+         <xsl:when test="empty(@transactionRef) or (@transactionRef eq '2.16.840.1.113883.2.4.3.11.60.90.77.4.2493')"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@transactionRef) or (@transactionRef eq '2.16.840.1.113883.2.4.3.11.60.90.77.4.2453')">
+                                test="empty(@transactionRef) or (@transactionRef eq '2.16.840.1.113883.2.4.3.11.60.90.77.4.2493')">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Prio1 huidig": De waarde "<xsl:text/>
+               <svrl:text>Foutieve informatie voor "Prio1 huidige zwangerschap": De waarde "<xsl:text/>
                   <xsl:value-of select="@transactionRef"/>
-                  <xsl:text/>" voor attribuut "transactionRef" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.4.2453" [/prio1_huidig/@transactionRef]</svrl:text>
+                  <xsl:text/>" voor attribuut "transactionRef" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.4.2493" [/prio1_huidige_zwangerschap/@transactionRef]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@transactionEffectiveDate)"/>
          <xsl:otherwise>
@@ -676,12 +742,11 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Prio1 huidig": Attribuut "transactionEffectiveDate" ontbreekt [/prio1_huidig/@transactionEffectiveDate]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Prio1 huidige zwangerschap": Attribuut "transactionEffectiveDate" ontbreekt [/prio1_huidige_zwangerschap/@transactionEffectiveDate]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@transactionEffectiveDate) or (@transactionEffectiveDate castable as xs:dateTime)"/>
          <xsl:otherwise>
@@ -690,30 +755,28 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Prio1 huidig": De waarde "<xsl:text/>
+               <svrl:text>Foutieve informatie voor "Prio1 huidige zwangerschap": De waarde "<xsl:text/>
                   <xsl:value-of select="@transactionEffectiveDate"/>
-                  <xsl:text/>" voor attribuut "transactionEffectiveDate" heeft een onjuist formaat [/prio1_huidig/@transactionEffectiveDate; type=xs:dateTime]</svrl:text>
+                  <xsl:text/>" voor attribuut "transactionEffectiveDate" heeft een onjuist formaat [/prio1_huidige_zwangerschap/@transactionEffectiveDate; type=xs:dateTime]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@transactionEffectiveDate) or (@transactionEffectiveDate eq '2018-12-17T15:21:25')"/>
+         <xsl:when test="empty(@transactionEffectiveDate) or (@transactionEffectiveDate eq '2020-01-08T13:13:15')"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@transactionEffectiveDate) or (@transactionEffectiveDate eq '2018-12-17T15:21:25')">
+                                test="empty(@transactionEffectiveDate) or (@transactionEffectiveDate eq '2020-01-08T13:13:15')">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Prio1 huidig": De waarde "<xsl:text/>
+               <svrl:text>Foutieve informatie voor "Prio1 huidige zwangerschap": De waarde "<xsl:text/>
                   <xsl:value-of select="@transactionEffectiveDate"/>
-                  <xsl:text/>" voor attribuut "transactionEffectiveDate" heeft niet de verwachte vaste waarde "2018-12-17T15:21:25" [/prio1_huidig/@transactionEffectiveDate]</svrl:text>
+                  <xsl:text/>" voor attribuut "transactionEffectiveDate" heeft niet de verwachte vaste waarde "2020-01-08T13:13:15" [/prio1_huidige_zwangerschap/@transactionEffectiveDate]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@versionDate)"/>
          <xsl:otherwise>
@@ -721,12 +784,11 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Prio1 huidig": Attribuut "versionDate" ontbreekt [/prio1_huidig/@versionDate]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Prio1 huidige zwangerschap": Attribuut "versionDate" ontbreekt [/prio1_huidige_zwangerschap/@versionDate]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@versionDate) or (@versionDate castable as xs:dateTime)"/>
          <xsl:otherwise>
@@ -735,14 +797,13 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Prio1 huidig": De waarde "<xsl:text/>
+               <svrl:text>Foutieve informatie voor "Prio1 huidige zwangerschap": De waarde "<xsl:text/>
                   <xsl:value-of select="@versionDate"/>
-                  <xsl:text/>" voor attribuut "versionDate" heeft een onjuist formaat [/prio1_huidig/@versionDate; type=xs:dateTime]</svrl:text>
+                  <xsl:text/>" voor attribuut "versionDate" heeft een onjuist formaat [/prio1_huidige_zwangerschap/@versionDate; type=xs:dateTime]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@prefix)"/>
          <xsl:otherwise>
@@ -750,12 +811,11 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Prio1 huidig": Attribuut "prefix" ontbreekt [/prio1_huidig/@prefix]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Prio1 huidige zwangerschap": Attribuut "prefix" ontbreekt [/prio1_huidige_zwangerschap/@prefix]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@transactionRef, @transactionEffectiveDate, @versionDate, @prefix, @xsi:*))"/>
          <xsl:otherwise>
@@ -764,7 +824,7 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Prio1 huidig": Ongeldige attributen aangetroffen [/prio1_huidig; allowed=(@transactionRef, @transactionEffectiveDate, @versionDate, @prefix, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Prio1 huidige zwangerschap": Ongeldige attributen aangetroffen [/prio1_huidige_zwangerschap; allowed=(@transactionRef, @transactionEffectiveDate, @versionDate, @prefix, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -774,31 +834,27 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M4">
       <xsl:apply-templates select="*" mode="M4"/>
    </xsl:template>
-
    <!--PATTERN -->
-
-
-	  <!--RULE -->
-   <xsl:template match="/prio1_huidig" priority="1000" mode="M5">
-      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="/prio1_huidig"/>
-
-		    <!--ASSERT -->
+   <!--RULE -->
+   <xsl:template match="/prio1_huidige_zwangerschap" priority="1000" mode="M5">
+      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                       context="/prio1_huidige_zwangerschap"/>
+      <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="(count(zorgverlenerzorginstelling) ge 0) and (count(zorgverlenerzorginstelling) le 1)"/>
+         <xsl:when test="count(zorgverlenerzorginstelling) eq 1"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="(count(zorgverlenerzorginstelling) ge 0) and (count(zorgverlenerzorginstelling) le 1)">
+                                test="count(zorgverlenerzorginstelling) eq 1">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Fout aantal voorkomens van "Zorgverlener/Zorginstelling": <xsl:text/>
                   <xsl:value-of select="count(zorgverlenerzorginstelling)"/>
-                  <xsl:text/> (verwacht: 0..1) [/prio1_huidig/zorgverlenerzorginstelling]</svrl:text>
+                  <xsl:text/> (verwacht: 1) [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="count(vrouw) eq 1"/>
          <xsl:otherwise>
@@ -808,28 +864,25 @@ SOFTWARE.
                </xsl:attribute>
                <svrl:text>Fout aantal voorkomens van "Vrouw": <xsl:text/>
                   <xsl:value-of select="count(vrouw)"/>
-                  <xsl:text/> (verwacht: 1) [/prio1_huidig/vrouw]</svrl:text>
+                  <xsl:text/> (verwacht: 1) [/prio1_huidige_zwangerschap/vrouw]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="(count(zwangerschap) ge 0) and (count(zwangerschap) le 1)"/>
+         <xsl:when test="count(zwangerschap) eq 1"/>
          <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="(count(zwangerschap) ge 0) and (count(zwangerschap) le 1)">
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="count(zwangerschap) eq 1">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Fout aantal voorkomens van "Zwangerschap": <xsl:text/>
                   <xsl:value-of select="count(zwangerschap)"/>
-                  <xsl:text/> (verwacht: 0..1) [/prio1_huidig/zwangerschap]</svrl:text>
+                  <xsl:text/> (verwacht: 1) [/prio1_huidige_zwangerschap/zwangerschap]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="count(medisch_onderzoek) ge 0"/>
          <xsl:otherwise>
@@ -840,12 +893,11 @@ SOFTWARE.
                </xsl:attribute>
                <svrl:text>Fout aantal voorkomens van "Medisch onderzoek": <xsl:text/>
                   <xsl:value-of select="count(medisch_onderzoek)"/>
-                  <xsl:text/> (verwacht: 0 of meer) [/prio1_huidig/medisch_onderzoek]</svrl:text>
+                  <xsl:text/> (verwacht: 0 of meer) [/prio1_huidige_zwangerschap/medisch_onderzoek]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
          <xsl:otherwise>
@@ -856,7 +908,7 @@ SOFTWARE.
                </xsl:attribute>
                <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
                   <xsl:value-of select="count(adaextension)"/>
-                  <xsl:text/> (verwacht: 0..1) [/prio1_huidig/adaextension]</svrl:text>
+                  <xsl:text/> (verwacht: 0..1) [/prio1_huidige_zwangerschap/adaextension]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -866,18 +918,14 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M5">
       <xsl:apply-templates select="*" mode="M5"/>
    </xsl:template>
-
    <!--PATTERN -->
-
-
-	  <!--RULE -->
-   <xsl:template match="/prio1_huidig/*[not(self::zorgverlenerzorginstelling)][not(self::vrouw)][not(self::zwangerschap)][not(self::medisch_onderzoek)][not(self::adaextension)]"
+   <!--RULE -->
+   <xsl:template match="/prio1_huidige_zwangerschap/*[not(self::zorgverlenerzorginstelling)][not(self::vrouw)][not(self::zwangerschap)][not(self::medisch_onderzoek)][not(self::adaextension)]"
                  priority="1000"
                  mode="M6">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/prio1_huidig/*[not(self::zorgverlenerzorginstelling)][not(self::vrouw)][not(self::zwangerschap)][not(self::medisch_onderzoek)][not(self::adaextension)]"/>
-
-		    <!--REPORT -->
+                       context="/prio1_huidige_zwangerschap/*[not(self::zorgverlenerzorginstelling)][not(self::vrouw)][not(self::zwangerschap)][not(self::medisch_onderzoek)][not(self::adaextension)]"/>
+      <!--REPORT -->
       <xsl:if test="true()">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="true()">
             <xsl:attribute name="location">
@@ -885,7 +933,7 @@ SOFTWARE.
             </xsl:attribute>
             <svrl:text>Ongeldige informatie aangetroffen: <xsl:text/>
                <xsl:value-of select="local-name(.)"/>
-               <xsl:text/> [/prio1_huidig/<xsl:text/>
+               <xsl:text/> [/prio1_huidige_zwangerschap/<xsl:text/>
                <xsl:value-of select="name(.)"/>
                <xsl:text/>]</svrl:text>
          </svrl:successful-report>
@@ -896,18 +944,14 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M6">
       <xsl:apply-templates select="*" mode="M6"/>
    </xsl:template>
-
    <!--PATTERN -->
-
-
-	  <!--RULE -->
-   <xsl:template match="/prio1_huidig/zorgverlenerzorginstelling"
+   <!--RULE -->
+   <xsl:template match="/prio1_huidige_zwangerschap/zorgverlenerzorginstelling"
                  priority="1000"
                  mode="M7">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/prio1_huidig/zorgverlenerzorginstelling"/>
-
-		    <!--ASSERT -->
+                       context="/prio1_huidige_zwangerschap/zorgverlenerzorginstelling"/>
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@conceptId)"/>
          <xsl:otherwise>
@@ -915,12 +959,11 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Zorgverlener/Zorginstelling": Attribuut "conceptId" ontbreekt [/prio1_huidig/zorgverlenerzorginstelling/@conceptId]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Zorgverlener/Zorginstelling": Attribuut "conceptId" ontbreekt [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/@conceptId]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -931,28 +974,26 @@ SOFTWARE.
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Zorgverlener/Zorginstelling": De waarde "<xsl:text/>
                   <xsl:value-of select="@conceptId"/>
-                  <xsl:text/>" voor attribuut "conceptId" heeft een onjuist formaat [/prio1_huidig/zorgverlenerzorginstelling/@conceptId; type=t-id]</svrl:text>
+                  <xsl:text/>" voor attribuut "conceptId" heeft een onjuist formaat [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/@conceptId; type=t-id]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.1')"/>
+         <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.1')"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.1')">
+                                test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.1')">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Zorgverlener/Zorginstelling": De waarde "<xsl:text/>
                   <xsl:value-of select="@conceptId"/>
-                  <xsl:text/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.5.1" [/prio1_huidig/zorgverlenerzorginstelling/@conceptId]</svrl:text>
+                  <xsl:text/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.1" [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/@conceptId]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @xsi:*))"/>
          <xsl:otherwise>
@@ -961,7 +1002,7 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Zorgverlener/Zorginstelling": Ongeldige attributen aangetroffen [/prio1_huidig/zorgverlenerzorginstelling; allowed=(@conceptId, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Zorgverlener/Zorginstelling": Ongeldige attributen aangetroffen [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling; allowed=(@conceptId, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -971,15 +1012,12 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M7">
       <xsl:apply-templates select="*" mode="M7"/>
    </xsl:template>
-
    <!--PATTERN -->
-
-
-	  <!--RULE -->
-   <xsl:template match="/prio1_huidig/vrouw" priority="1000" mode="M8">
-      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="/prio1_huidig/vrouw"/>
-
-		    <!--ASSERT -->
+   <!--RULE -->
+   <xsl:template match="/prio1_huidige_zwangerschap/vrouw" priority="1000" mode="M8">
+      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                       context="/prio1_huidige_zwangerschap/vrouw"/>
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@conceptId)"/>
          <xsl:otherwise>
@@ -987,12 +1025,11 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Vrouw": Attribuut "conceptId" ontbreekt [/prio1_huidig/vrouw/@conceptId]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Vrouw": Attribuut "conceptId" ontbreekt [/prio1_huidige_zwangerschap/vrouw/@conceptId]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -1003,28 +1040,26 @@ SOFTWARE.
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Vrouw": De waarde "<xsl:text/>
                   <xsl:value-of select="@conceptId"/>
-                  <xsl:text/>" voor attribuut "conceptId" heeft een onjuist formaat [/prio1_huidig/vrouw/@conceptId; type=t-id]</svrl:text>
+                  <xsl:text/>" voor attribuut "conceptId" heeft een onjuist formaat [/prio1_huidige_zwangerschap/vrouw/@conceptId; type=t-id]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.2')"/>
+         <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.2')"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.2')">
+                                test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.2')">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Vrouw": De waarde "<xsl:text/>
                   <xsl:value-of select="@conceptId"/>
-                  <xsl:text/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.5.2" [/prio1_huidig/vrouw/@conceptId]</svrl:text>
+                  <xsl:text/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.2" [/prio1_huidige_zwangerschap/vrouw/@conceptId]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @xsi:*))"/>
          <xsl:otherwise>
@@ -1033,7 +1068,7 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Vrouw": Ongeldige attributen aangetroffen [/prio1_huidig/vrouw; allowed=(@conceptId, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Vrouw": Ongeldige attributen aangetroffen [/prio1_huidige_zwangerschap/vrouw; allowed=(@conceptId, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -1043,16 +1078,14 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M8">
       <xsl:apply-templates select="*" mode="M8"/>
    </xsl:template>
-
    <!--PATTERN -->
-
-
-	  <!--RULE -->
-   <xsl:template match="/prio1_huidig/zwangerschap" priority="1000" mode="M9">
+   <!--RULE -->
+   <xsl:template match="/prio1_huidige_zwangerschap/zwangerschap"
+                 priority="1000"
+                 mode="M9">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/prio1_huidig/zwangerschap"/>
-
-		    <!--ASSERT -->
+                       context="/prio1_huidige_zwangerschap/zwangerschap"/>
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@conceptId)"/>
          <xsl:otherwise>
@@ -1060,12 +1093,11 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Zwangerschap": Attribuut "conceptId" ontbreekt [/prio1_huidig/zwangerschap/@conceptId]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Zwangerschap": Attribuut "conceptId" ontbreekt [/prio1_huidige_zwangerschap/zwangerschap/@conceptId]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -1076,28 +1108,26 @@ SOFTWARE.
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Zwangerschap": De waarde "<xsl:text/>
                   <xsl:value-of select="@conceptId"/>
-                  <xsl:text/>" voor attribuut "conceptId" heeft een onjuist formaat [/prio1_huidig/zwangerschap/@conceptId; type=t-id]</svrl:text>
+                  <xsl:text/>" voor attribuut "conceptId" heeft een onjuist formaat [/prio1_huidige_zwangerschap/zwangerschap/@conceptId; type=t-id]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.3')"/>
+         <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.3')"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.3')">
+                                test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.3')">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Zwangerschap": De waarde "<xsl:text/>
                   <xsl:value-of select="@conceptId"/>
-                  <xsl:text/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.5.3" [/prio1_huidig/zwangerschap/@conceptId]</svrl:text>
+                  <xsl:text/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.3" [/prio1_huidige_zwangerschap/zwangerschap/@conceptId]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @xsi:*))"/>
          <xsl:otherwise>
@@ -1106,7 +1136,7 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Zwangerschap": Ongeldige attributen aangetroffen [/prio1_huidig/zwangerschap; allowed=(@conceptId, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Zwangerschap": Ongeldige attributen aangetroffen [/prio1_huidige_zwangerschap/zwangerschap; allowed=(@conceptId, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -1116,16 +1146,14 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M9">
       <xsl:apply-templates select="*" mode="M9"/>
    </xsl:template>
-
    <!--PATTERN -->
-
-
-	  <!--RULE -->
-   <xsl:template match="/prio1_huidig/medisch_onderzoek" priority="1000" mode="M10">
+   <!--RULE -->
+   <xsl:template match="/prio1_huidige_zwangerschap/medisch_onderzoek"
+                 priority="1000"
+                 mode="M10">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/prio1_huidig/medisch_onderzoek"/>
-
-		    <!--ASSERT -->
+                       context="/prio1_huidige_zwangerschap/medisch_onderzoek"/>
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@conceptId)"/>
          <xsl:otherwise>
@@ -1133,12 +1161,11 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Medisch onderzoek": Attribuut "conceptId" ontbreekt [/prio1_huidig/medisch_onderzoek/@conceptId]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Medisch onderzoek": Attribuut "conceptId" ontbreekt [/prio1_huidige_zwangerschap/medisch_onderzoek/@conceptId]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -1149,28 +1176,26 @@ SOFTWARE.
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Medisch onderzoek": De waarde "<xsl:text/>
                   <xsl:value-of select="@conceptId"/>
-                  <xsl:text/>" voor attribuut "conceptId" heeft een onjuist formaat [/prio1_huidig/medisch_onderzoek/@conceptId; type=t-id]</svrl:text>
+                  <xsl:text/>" voor attribuut "conceptId" heeft een onjuist formaat [/prio1_huidige_zwangerschap/medisch_onderzoek/@conceptId; type=t-id]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.14')"/>
+         <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.14')"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.14')">
+                                test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.14')">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Medisch onderzoek": De waarde "<xsl:text/>
                   <xsl:value-of select="@conceptId"/>
-                  <xsl:text/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.5.14" [/prio1_huidig/medisch_onderzoek/@conceptId]</svrl:text>
+                  <xsl:text/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.14" [/prio1_huidige_zwangerschap/medisch_onderzoek/@conceptId]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @xsi:*))"/>
          <xsl:otherwise>
@@ -1179,7 +1204,7 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Medisch onderzoek": Ongeldige attributen aangetroffen [/prio1_huidig/medisch_onderzoek; allowed=(@conceptId, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Medisch onderzoek": Ongeldige attributen aangetroffen [/prio1_huidige_zwangerschap/medisch_onderzoek; allowed=(@conceptId, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -1189,34 +1214,14 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M10">
       <xsl:apply-templates select="*" mode="M10"/>
    </xsl:template>
-
    <!--PATTERN -->
-
-
-	  <!--RULE -->
-   <xsl:template match="/prio1_huidig/zorgverlenerzorginstelling"
+   <!--RULE -->
+   <xsl:template match="/prio1_huidige_zwangerschap/zorgverlenerzorginstelling"
                  priority="1000"
                  mode="M11">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/prio1_huidig/zorgverlenerzorginstelling"/>
-
-		    <!--ASSERT -->
-      <xsl:choose>
-         <xsl:when test="(count(zorgverlener) ge 0) and (count(zorgverlener) le 1)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="(count(zorgverlener) ge 0) and (count(zorgverlener) le 1)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Fout aantal voorkomens van "Zorgverlener": <xsl:text/>
-                  <xsl:value-of select="count(zorgverlener)"/>
-                  <xsl:text/> (verwacht: 0..1) [/prio1_huidig/zorgverlenerzorginstelling/zorgverlener]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
+                       context="/prio1_huidige_zwangerschap/zorgverlenerzorginstelling"/>
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="count(zorginstelling) eq 1"/>
          <xsl:otherwise>
@@ -1227,12 +1232,11 @@ SOFTWARE.
                </xsl:attribute>
                <svrl:text>Fout aantal voorkomens van "Zorginstelling": <xsl:text/>
                   <xsl:value-of select="count(zorginstelling)"/>
-                  <xsl:text/> (verwacht: 1) [/prio1_huidig/zorgverlenerzorginstelling/zorginstelling]</svrl:text>
+                  <xsl:text/> (verwacht: 1) [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
          <xsl:otherwise>
@@ -1243,7 +1247,7 @@ SOFTWARE.
                </xsl:attribute>
                <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
                   <xsl:value-of select="count(adaextension)"/>
-                  <xsl:text/> (verwacht: 0..1) [/prio1_huidig/zorgverlenerzorginstelling/adaextension]</svrl:text>
+                  <xsl:text/> (verwacht: 0..1) [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/adaextension]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -1253,18 +1257,14 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M11">
       <xsl:apply-templates select="*" mode="M11"/>
    </xsl:template>
-
    <!--PATTERN -->
-
-
-	  <!--RULE -->
-   <xsl:template match="/prio1_huidig/zorgverlenerzorginstelling/*[not(self::zorgverlener)][not(self::zorginstelling)][not(self::adaextension)]"
+   <!--RULE -->
+   <xsl:template match="/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/*[not(self::zorginstelling)][not(self::adaextension)]"
                  priority="1000"
                  mode="M12">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/prio1_huidig/zorgverlenerzorginstelling/*[not(self::zorgverlener)][not(self::zorginstelling)][not(self::adaextension)]"/>
-
-		    <!--REPORT -->
+                       context="/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/*[not(self::zorginstelling)][not(self::adaextension)]"/>
+      <!--REPORT -->
       <xsl:if test="true()">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="true()">
             <xsl:attribute name="location">
@@ -1272,7 +1272,7 @@ SOFTWARE.
             </xsl:attribute>
             <svrl:text>Ongeldige informatie aangetroffen: <xsl:text/>
                <xsl:value-of select="local-name(.)"/>
-               <xsl:text/> [/prio1_huidig/zorgverlenerzorginstelling/<xsl:text/>
+               <xsl:text/> [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/<xsl:text/>
                <xsl:value-of select="name(.)"/>
                <xsl:text/>]</svrl:text>
          </svrl:successful-report>
@@ -1283,18 +1283,14 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M12">
       <xsl:apply-templates select="*" mode="M12"/>
    </xsl:template>
-
    <!--PATTERN -->
-
-
-	  <!--RULE -->
-   <xsl:template match="/prio1_huidig/zorgverlenerzorginstelling/zorgverlener"
+   <!--RULE -->
+   <xsl:template match="/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling"
                  priority="1000"
                  mode="M13">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/prio1_huidig/zorgverlenerzorginstelling/zorgverlener"/>
-
-		    <!--ASSERT -->
+                       context="/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling"/>
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@conceptId)"/>
          <xsl:otherwise>
@@ -1302,12 +1298,11 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Zorgverlener": Attribuut "conceptId" ontbreekt [/prio1_huidig/zorgverlenerzorginstelling/zorgverlener/@conceptId]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Zorginstelling": Attribuut "conceptId" ontbreekt [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/@conceptId]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -1316,30 +1311,28 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Zorgverlener": De waarde "<xsl:text/>
+               <svrl:text>Foutieve informatie voor "Zorginstelling": De waarde "<xsl:text/>
                   <xsl:value-of select="@conceptId"/>
-                  <xsl:text/>" voor attribuut "conceptId" heeft een onjuist formaat [/prio1_huidig/zorgverlenerzorginstelling/zorgverlener/@conceptId; type=t-id]</svrl:text>
+                  <xsl:text/>" voor attribuut "conceptId" heeft een onjuist formaat [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/@conceptId; type=t-id]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10001')"/>
+         <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10020')"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10001')">
+                                test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10020')">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Zorgverlener": De waarde "<xsl:text/>
+               <svrl:text>Foutieve informatie voor "Zorginstelling": De waarde "<xsl:text/>
                   <xsl:value-of select="@conceptId"/>
-                  <xsl:text/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10001" [/prio1_huidig/zorgverlenerzorginstelling/zorgverlener/@conceptId]</svrl:text>
+                  <xsl:text/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10020" [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/@conceptId]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @xsi:*))"/>
          <xsl:otherwise>
@@ -1348,7 +1341,7 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Zorgverlener": Ongeldige attributen aangetroffen [/prio1_huidig/zorgverlenerzorginstelling/zorgverlener; allowed=(@conceptId, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Zorginstelling": Ongeldige attributen aangetroffen [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling; allowed=(@conceptId, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -1358,72 +1351,145 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M13">
       <xsl:apply-templates select="*" mode="M13"/>
    </xsl:template>
-
    <!--PATTERN -->
-
-
-	  <!--RULE -->
-   <xsl:template match="/prio1_huidig/zorgverlenerzorginstelling/zorginstelling"
+   <!--RULE -->
+   <xsl:template match="/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling"
                  priority="1000"
                  mode="M14">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/prio1_huidig/zorgverlenerzorginstelling/zorginstelling"/>
-
-		    <!--ASSERT -->
+                       context="/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling"/>
+      <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@conceptId)"/>
+         <xsl:when test="(count(zorginstelling_oid) ge 0) and (count(zorginstelling_oid) le 1)"/>
          <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@conceptId)">
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(zorginstelling_oid) ge 0) and (count(zorginstelling_oid) le 1)">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Zorginstelling": Attribuut "conceptId" ontbreekt [/prio1_huidig/zorgverlenerzorginstelling/zorginstelling/@conceptId]</svrl:text>
+               <svrl:text>Fout aantal voorkomens van "Zorginstelling OID": <xsl:text/>
+                  <xsl:value-of select="count(zorginstelling_oid)"/>
+                  <xsl:text/> (verwacht: 0..1) [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/zorginstelling_oid]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
+         <xsl:when test="(count(zorginstelling_agbid) ge 0) and (count(zorginstelling_agbid) le 1)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">
+                                test="(count(zorginstelling_agbid) ge 0) and (count(zorginstelling_agbid) le 1)">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Zorginstelling": De waarde "<xsl:text/>
-                  <xsl:value-of select="@conceptId"/>
-                  <xsl:text/>" voor attribuut "conceptId" heeft een onjuist formaat [/prio1_huidig/zorgverlenerzorginstelling/zorginstelling/@conceptId; type=t-id]</svrl:text>
+               <svrl:text>Fout aantal voorkomens van "Zorginstelling AGB-ID": <xsl:text/>
+                  <xsl:value-of select="count(zorginstelling_agbid)"/>
+                  <xsl:text/> (verwacht: 0..1) [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/zorginstelling_agbid]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10020')"/>
+         <xsl:when test="(count(zorginstelling_lvrid) ge 0) and (count(zorginstelling_lvrid) le 1)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10020')">
+                                test="(count(zorginstelling_lvrid) ge 0) and (count(zorginstelling_lvrid) le 1)">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Zorginstelling": De waarde "<xsl:text/>
-                  <xsl:value-of select="@conceptId"/>
-                  <xsl:text/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10020" [/prio1_huidig/zorgverlenerzorginstelling/zorginstelling/@conceptId]</svrl:text>
+               <svrl:text>Fout aantal voorkomens van "Zorginstelling LVR-ID": <xsl:text/>
+                  <xsl:value-of select="count(zorginstelling_lvrid)"/>
+                  <xsl:text/> (verwacht: 0..1) [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/zorginstelling_lvrid]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @xsi:*))"/>
+         <xsl:when test="(count(zorginstelling_ura) ge 0) and (count(zorginstelling_ura) le 1)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @xsi:*))">
+                                test="(count(zorginstelling_ura) ge 0) and (count(zorginstelling_ura) le 1)">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Zorginstelling": Ongeldige attributen aangetroffen [/prio1_huidig/zorgverlenerzorginstelling/zorginstelling; allowed=(@conceptId, @xsi:*)]</svrl:text>
+               <svrl:text>Fout aantal voorkomens van "Zorginstelling URA": <xsl:text/>
+                  <xsl:value-of select="count(zorginstelling_ura)"/>
+                  <xsl:text/> (verwacht: 0..1) [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/zorginstelling_ura]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(naam_zorginstelling) ge 0) and (count(naam_zorginstelling) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(naam_zorginstelling) ge 0) and (count(naam_zorginstelling) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "Naam zorginstelling": <xsl:text/>
+                  <xsl:value-of select="count(naam_zorginstelling)"/>
+                  <xsl:text/> (verwacht: 0..1) [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/naam_zorginstelling]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(adres_zorginstelling) ge 0) and (count(adres_zorginstelling) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(adres_zorginstelling) ge 0) and (count(adres_zorginstelling) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "Adres zorginstelling": <xsl:text/>
+                  <xsl:value-of select="count(adres_zorginstelling)"/>
+                  <xsl:text/> (verwacht: 0..1) [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(type_zorginstelling) ge 0) and (count(type_zorginstelling) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(type_zorginstelling) ge 0) and (count(type_zorginstelling) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "Type zorginstelling": <xsl:text/>
+                  <xsl:value-of select="count(type_zorginstelling)"/>
+                  <xsl:text/> (verwacht: 0..1) [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/type_zorginstelling]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(type_zorginstelling_bij_verwijzing) ge 0) and (count(type_zorginstelling_bij_verwijzing) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(type_zorginstelling_bij_verwijzing) ge 0) and (count(type_zorginstelling_bij_verwijzing) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "Type zorginstelling (bij verwijzing)": <xsl:text/>
+                  <xsl:value-of select="count(type_zorginstelling_bij_verwijzing)"/>
+                  <xsl:text/> (verwacht: 0..1) [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/type_zorginstelling_bij_verwijzing]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(adaextension) ge 0) and (count(adaextension) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
+                  <xsl:value-of select="count(adaextension)"/>
+                  <xsl:text/> (verwacht: 0..1) [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/adaextension]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -1433,66 +1499,14 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M14">
       <xsl:apply-templates select="*" mode="M14"/>
    </xsl:template>
-
    <!--PATTERN -->
-
-
-	  <!--RULE -->
-   <xsl:template match="/prio1_huidig/zorgverlenerzorginstelling/zorgverlener"
+   <!--RULE -->
+   <xsl:template match="/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/*[not(self::zorginstelling_oid)][not(self::zorginstelling_agbid)][not(self::zorginstelling_lvrid)][not(self::zorginstelling_ura)][not(self::naam_zorginstelling)][not(self::adres_zorginstelling)][not(self::type_zorginstelling)][not(self::type_zorginstelling_bij_verwijzing)][not(self::adaextension)]"
                  priority="1000"
                  mode="M15">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/prio1_huidig/zorgverlenerzorginstelling/zorgverlener"/>
-
-		    <!--ASSERT -->
-      <xsl:choose>
-         <xsl:when test="(count(naam_zorgverlener) ge 0) and (count(naam_zorgverlener) le 1)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="(count(naam_zorgverlener) ge 0) and (count(naam_zorgverlener) le 1)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Fout aantal voorkomens van "Naam zorgverlener": <xsl:text/>
-                  <xsl:value-of select="count(naam_zorgverlener)"/>
-                  <xsl:text/> (verwacht: 0..1) [/prio1_huidig/zorgverlenerzorginstelling/zorgverlener/naam_zorgverlener]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
-         <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="(count(adaextension) ge 0) and (count(adaextension) le 1)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
-                  <xsl:value-of select="count(adaextension)"/>
-                  <xsl:text/> (verwacht: 0..1) [/prio1_huidig/zorgverlenerzorginstelling/zorgverlener/adaextension]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-      <xsl:apply-templates select="*" mode="M15"/>
-   </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M15"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M15">
-      <xsl:apply-templates select="*" mode="M15"/>
-   </xsl:template>
-
-   <!--PATTERN -->
-
-
-	  <!--RULE -->
-   <xsl:template match="/prio1_huidig/zorgverlenerzorginstelling/zorgverlener/*[not(self::naam_zorgverlener)][not(self::adaextension)]"
-                 priority="1000"
-                 mode="M16">
-      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/prio1_huidig/zorgverlenerzorginstelling/zorgverlener/*[not(self::naam_zorgverlener)][not(self::adaextension)]"/>
-
-		    <!--REPORT -->
+                       context="/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/*[not(self::zorginstelling_oid)][not(self::zorginstelling_agbid)][not(self::zorginstelling_lvrid)][not(self::zorginstelling_ura)][not(self::naam_zorginstelling)][not(self::adres_zorginstelling)][not(self::type_zorginstelling)][not(self::type_zorginstelling_bij_verwijzing)][not(self::adaextension)]"/>
+      <!--REPORT -->
       <xsl:if test="true()">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="true()">
             <xsl:attribute name="location">
@@ -1500,29 +1514,25 @@ SOFTWARE.
             </xsl:attribute>
             <svrl:text>Ongeldige informatie aangetroffen: <xsl:text/>
                <xsl:value-of select="local-name(.)"/>
-               <xsl:text/> [/prio1_huidig/zorgverlenerzorginstelling/zorgverlener/<xsl:text/>
+               <xsl:text/> [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/<xsl:text/>
                <xsl:value-of select="name(.)"/>
                <xsl:text/>]</svrl:text>
          </svrl:successful-report>
       </xsl:if>
-      <xsl:apply-templates select="*" mode="M16"/>
+      <xsl:apply-templates select="*" mode="M15"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M16"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M16">
-      <xsl:apply-templates select="*" mode="M16"/>
+   <xsl:template match="text()" priority="-1" mode="M15"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M15">
+      <xsl:apply-templates select="*" mode="M15"/>
    </xsl:template>
-
    <!--PATTERN -->
-
-
-	  <!--RULE -->
-   <xsl:template match="/prio1_huidig/zorgverlenerzorginstelling/zorgverlener/naam_zorgverlener"
+   <!--RULE -->
+   <xsl:template match="/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/zorginstelling_oid"
                  priority="1000"
-                 mode="M17">
+                 mode="M16">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/prio1_huidig/zorgverlenerzorginstelling/zorgverlener/naam_zorgverlener"/>
-
-		    <!--ASSERT -->
+                       context="/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/zorginstelling_oid"/>
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@conceptId)"/>
          <xsl:otherwise>
@@ -1530,12 +1540,11 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Naam zorgverlener": Attribuut "conceptId" ontbreekt [/prio1_huidig/zorgverlenerzorginstelling/zorgverlener/naam_zorgverlener/@conceptId]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Zorginstelling OID": Attribuut "conceptId" ontbreekt [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/zorginstelling_oid/@conceptId]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -1544,30 +1553,28 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Naam zorgverlener": De waarde "<xsl:text/>
+               <svrl:text>Foutieve informatie voor "Zorginstelling OID": De waarde "<xsl:text/>
                   <xsl:value-of select="@conceptId"/>
-                  <xsl:text/>" voor attribuut "conceptId" heeft een onjuist formaat [/prio1_huidig/zorgverlenerzorginstelling/zorgverlener/naam_zorgverlener/@conceptId; type=t-id]</svrl:text>
+                  <xsl:text/>" voor attribuut "conceptId" heeft een onjuist formaat [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/zorginstelling_oid/@conceptId; type=t-id]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10006')"/>
+         <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10021')"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10006')">
+                                test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10021')">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Naam zorgverlener": De waarde "<xsl:text/>
+               <svrl:text>Foutieve informatie voor "Zorginstelling OID": De waarde "<xsl:text/>
                   <xsl:value-of select="@conceptId"/>
-                  <xsl:text/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10006" [/prio1_huidig/zorgverlenerzorginstelling/zorgverlener/naam_zorgverlener/@conceptId]</svrl:text>
+                  <xsl:text/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10021" [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/zorginstelling_oid/@conceptId]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -1575,12 +1582,11 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Naam zorgverlener": Attribuut "value" ontbreekt [/prio1_huidig/zorgverlenerzorginstelling/zorgverlener/naam_zorgverlener/@value]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Zorginstelling OID": Attribuut "value" ontbreekt [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/zorginstelling_oid/@value]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -1589,7 +1595,117 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Naam zorgverlener": Ongeldige attributen aangetroffen [/prio1_huidig/zorgverlenerzorginstelling/zorgverlener/naam_zorgverlener; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Zorginstelling OID": Ongeldige attributen aangetroffen [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/zorginstelling_oid; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <xsl:apply-templates select="*" mode="M16"/>
+   </xsl:template>
+   <xsl:template match="text()" priority="-1" mode="M16"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M16">
+      <xsl:apply-templates select="*" mode="M16"/>
+   </xsl:template>
+   <!--PATTERN -->
+   <!--RULE -->
+   <xsl:template match="/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/zorginstelling_agbid"
+                 priority="1000"
+                 mode="M17">
+      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                       context="/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/zorginstelling_agbid"/>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="exists(@conceptId)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@conceptId)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Zorginstelling AGB-ID": Attribuut "conceptId" ontbreekt [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/zorginstelling_agbid/@conceptId]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Zorginstelling AGB-ID": De waarde "<xsl:text/>
+                  <xsl:value-of select="@conceptId"/>
+                  <xsl:text/>" voor attribuut "conceptId" heeft een onjuist formaat [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/zorginstelling_agbid/@conceptId; type=t-id]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10022')"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10022')">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Zorginstelling AGB-ID": De waarde "<xsl:text/>
+                  <xsl:value-of select="@conceptId"/>
+                  <xsl:text/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10022" [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/zorginstelling_agbid/@conceptId]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="exists(@value)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Zorginstelling AGB-ID": Attribuut "value" ontbreekt [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/zorginstelling_agbid/@value]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="empty(@value) or (string-length(@value) ge 8)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="empty(@value) or (string-length(@value) ge 8)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Zorginstelling AGB-ID": De waarde "<xsl:text/>
+                  <xsl:value-of select="@value"/>
+                  <xsl:text/>" voor attribuut "value" moet minstens 8 karakters bevatten [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/zorginstelling_agbid/@value; min-length=8]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="empty(@value) or (string-length(@value) le 8)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="empty(@value) or (string-length(@value) le 8)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Zorginstelling AGB-ID": De waarde "<xsl:text/>
+                  <xsl:value-of select="@value"/>
+                  <xsl:text/>" voor attribuut "value" mag hoogstens 8 karakters bevatten [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/zorginstelling_agbid/@value; max-length=8]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Zorginstelling AGB-ID": Ongeldige attributen aangetroffen [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/zorginstelling_agbid; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -1599,45 +1715,107 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M17">
       <xsl:apply-templates select="*" mode="M17"/>
    </xsl:template>
-
    <!--PATTERN -->
-
-
-	  <!--RULE -->
-   <xsl:template match="/prio1_huidig/zorgverlenerzorginstelling/zorginstelling"
+   <!--RULE -->
+   <xsl:template match="/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/zorginstelling_lvrid"
                  priority="1000"
                  mode="M18">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/prio1_huidig/zorgverlenerzorginstelling/zorginstelling"/>
-
-		    <!--ASSERT -->
+                       context="/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/zorginstelling_lvrid"/>
+      <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="count(naam_zorginstelling) eq 1"/>
+         <xsl:when test="exists(@conceptId)"/>
          <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="count(naam_zorginstelling) eq 1">
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@conceptId)">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Fout aantal voorkomens van "Naam zorginstelling": <xsl:text/>
-                  <xsl:value-of select="count(naam_zorginstelling)"/>
-                  <xsl:text/> (verwacht: 1) [/prio1_huidig/zorgverlenerzorginstelling/zorginstelling/naam_zorginstelling]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Zorginstelling LVR-ID": Attribuut "conceptId" ontbreekt [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/zorginstelling_lvrid/@conceptId]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
+         <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="(count(adaextension) ge 0) and (count(adaextension) le 1)">
+                                test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
-                  <xsl:value-of select="count(adaextension)"/>
-                  <xsl:text/> (verwacht: 0..1) [/prio1_huidig/zorgverlenerzorginstelling/zorginstelling/adaextension]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Zorginstelling LVR-ID": De waarde "<xsl:text/>
+                  <xsl:value-of select="@conceptId"/>
+                  <xsl:text/>" voor attribuut "conceptId" heeft een onjuist formaat [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/zorginstelling_lvrid/@conceptId; type=t-id]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10023')"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10023')">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Zorginstelling LVR-ID": De waarde "<xsl:text/>
+                  <xsl:value-of select="@conceptId"/>
+                  <xsl:text/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10023" [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/zorginstelling_lvrid/@conceptId]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="exists(@value)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Zorginstelling LVR-ID": Attribuut "value" ontbreekt [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/zorginstelling_lvrid/@value]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="empty(@value) or (string-length(@value) ge 4)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="empty(@value) or (string-length(@value) ge 4)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Zorginstelling LVR-ID": De waarde "<xsl:text/>
+                  <xsl:value-of select="@value"/>
+                  <xsl:text/>" voor attribuut "value" moet minstens 4 karakters bevatten [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/zorginstelling_lvrid/@value; min-length=4]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="empty(@value) or (string-length(@value) le 5)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="empty(@value) or (string-length(@value) le 5)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Zorginstelling LVR-ID": De waarde "<xsl:text/>
+                  <xsl:value-of select="@value"/>
+                  <xsl:text/>" voor attribuut "value" mag hoogstens 5 karakters bevatten [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/zorginstelling_lvrid/@value; max-length=5]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Zorginstelling LVR-ID": Ongeldige attributen aangetroffen [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/zorginstelling_lvrid; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -1647,48 +1825,14 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M18">
       <xsl:apply-templates select="*" mode="M18"/>
    </xsl:template>
-
    <!--PATTERN -->
-
-
-	  <!--RULE -->
-   <xsl:template match="/prio1_huidig/zorgverlenerzorginstelling/zorginstelling/*[not(self::naam_zorginstelling)][not(self::adaextension)]"
+   <!--RULE -->
+   <xsl:template match="/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/zorginstelling_ura"
                  priority="1000"
                  mode="M19">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/prio1_huidig/zorgverlenerzorginstelling/zorginstelling/*[not(self::naam_zorginstelling)][not(self::adaextension)]"/>
-
-		    <!--REPORT -->
-      <xsl:if test="true()">
-         <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="true()">
-            <xsl:attribute name="location">
-               <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-            </xsl:attribute>
-            <svrl:text>Ongeldige informatie aangetroffen: <xsl:text/>
-               <xsl:value-of select="local-name(.)"/>
-               <xsl:text/> [/prio1_huidig/zorgverlenerzorginstelling/zorginstelling/<xsl:text/>
-               <xsl:value-of select="name(.)"/>
-               <xsl:text/>]</svrl:text>
-         </svrl:successful-report>
-      </xsl:if>
-      <xsl:apply-templates select="*" mode="M19"/>
-   </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M19"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M19">
-      <xsl:apply-templates select="*" mode="M19"/>
-   </xsl:template>
-
-   <!--PATTERN -->
-
-
-	  <!--RULE -->
-   <xsl:template match="/prio1_huidig/zorgverlenerzorginstelling/zorginstelling/naam_zorginstelling"
-                 priority="1000"
-                 mode="M20">
-      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/prio1_huidig/zorgverlenerzorginstelling/zorginstelling/naam_zorginstelling"/>
-
-		    <!--ASSERT -->
+                       context="/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/zorginstelling_ura"/>
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@conceptId)"/>
          <xsl:otherwise>
@@ -1696,12 +1840,121 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Naam zorginstelling": Attribuut "conceptId" ontbreekt [/prio1_huidig/zorgverlenerzorginstelling/zorginstelling/naam_zorginstelling/@conceptId]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Zorginstelling URA": Attribuut "conceptId" ontbreekt [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/zorginstelling_ura/@conceptId]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Zorginstelling URA": De waarde "<xsl:text/>
+                  <xsl:value-of select="@conceptId"/>
+                  <xsl:text/>" voor attribuut "conceptId" heeft een onjuist formaat [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/zorginstelling_ura/@conceptId; type=t-id]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10024')"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10024')">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Zorginstelling URA": De waarde "<xsl:text/>
+                  <xsl:value-of select="@conceptId"/>
+                  <xsl:text/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10024" [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/zorginstelling_ura/@conceptId]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="exists(@value)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Zorginstelling URA": Attribuut "value" ontbreekt [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/zorginstelling_ura/@value]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="empty(@value) or (string-length(@value) ge 8)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="empty(@value) or (string-length(@value) ge 8)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Zorginstelling URA": De waarde "<xsl:text/>
+                  <xsl:value-of select="@value"/>
+                  <xsl:text/>" voor attribuut "value" moet minstens 8 karakters bevatten [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/zorginstelling_ura/@value; min-length=8]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="empty(@value) or (string-length(@value) le 8)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="empty(@value) or (string-length(@value) le 8)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Zorginstelling URA": De waarde "<xsl:text/>
+                  <xsl:value-of select="@value"/>
+                  <xsl:text/>" voor attribuut "value" mag hoogstens 8 karakters bevatten [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/zorginstelling_ura/@value; max-length=8]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Zorginstelling URA": Ongeldige attributen aangetroffen [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/zorginstelling_ura; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <xsl:apply-templates select="*" mode="M19"/>
+   </xsl:template>
+   <xsl:template match="text()" priority="-1" mode="M19"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M19">
+      <xsl:apply-templates select="*" mode="M19"/>
+   </xsl:template>
+   <!--PATTERN -->
+   <!--RULE -->
+   <xsl:template match="/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/naam_zorginstelling"
+                 priority="1000"
+                 mode="M20">
+      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                       context="/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/naam_zorginstelling"/>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="exists(@conceptId)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@conceptId)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Naam zorginstelling": Attribuut "conceptId" ontbreekt [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/naam_zorginstelling/@conceptId]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -1712,28 +1965,26 @@ SOFTWARE.
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Naam zorginstelling": De waarde "<xsl:text/>
                   <xsl:value-of select="@conceptId"/>
-                  <xsl:text/>" voor attribuut "conceptId" heeft een onjuist formaat [/prio1_huidig/zorgverlenerzorginstelling/zorginstelling/naam_zorginstelling/@conceptId; type=t-id]</svrl:text>
+                  <xsl:text/>" voor attribuut "conceptId" heeft een onjuist formaat [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/naam_zorginstelling/@conceptId; type=t-id]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10026')"/>
+         <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10026')"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10026')">
+                                test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10026')">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Naam zorginstelling": De waarde "<xsl:text/>
                   <xsl:value-of select="@conceptId"/>
-                  <xsl:text/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10026" [/prio1_huidig/zorgverlenerzorginstelling/zorginstelling/naam_zorginstelling/@conceptId]</svrl:text>
+                  <xsl:text/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10026" [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/naam_zorginstelling/@conceptId]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -1741,12 +1992,11 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Naam zorginstelling": Attribuut "value" ontbreekt [/prio1_huidig/zorgverlenerzorginstelling/zorginstelling/naam_zorginstelling/@value]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Naam zorginstelling": Attribuut "value" ontbreekt [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/naam_zorginstelling/@value]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -1755,7 +2005,7 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Naam zorginstelling": Ongeldige attributen aangetroffen [/prio1_huidig/zorgverlenerzorginstelling/zorginstelling/naam_zorginstelling; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Naam zorginstelling": Ongeldige attributen aangetroffen [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/naam_zorginstelling; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -1765,63 +2015,1238 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M20">
       <xsl:apply-templates select="*" mode="M20"/>
    </xsl:template>
-
    <!--PATTERN -->
-
-
-	  <!--RULE -->
-   <xsl:template match="/prio1_huidig/vrouw" priority="1000" mode="M21">
-      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="/prio1_huidig/vrouw"/>
-
-		    <!--ASSERT -->
+   <!--RULE -->
+   <xsl:template match="/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling"
+                 priority="1000"
+                 mode="M21">
+      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                       context="/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling"/>
+      <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="(count(burgerservicenummer) ge 0) and (count(burgerservicenummer) le 1)"/>
+         <xsl:when test="exists(@conceptId)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@conceptId)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Adres zorginstelling": Attribuut "conceptId" ontbreekt [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/@conceptId]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="(count(burgerservicenummer) ge 0) and (count(burgerservicenummer) le 1)">
+                                test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Adres zorginstelling": De waarde "<xsl:text/>
+                  <xsl:value-of select="@conceptId"/>
+                  <xsl:text/>" voor attribuut "conceptId" heeft een onjuist formaat [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/@conceptId; type=t-id]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10027')"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10027')">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Adres zorginstelling": De waarde "<xsl:text/>
+                  <xsl:value-of select="@conceptId"/>
+                  <xsl:text/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10027" [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/@conceptId]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="empty(@* except (@conceptId, @xsi:*))"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="empty(@* except (@conceptId, @xsi:*))">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Adres zorginstelling": Ongeldige attributen aangetroffen [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling; allowed=(@conceptId, @xsi:*)]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <xsl:apply-templates select="*" mode="M21"/>
+   </xsl:template>
+   <xsl:template match="text()" priority="-1" mode="M21"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M21">
+      <xsl:apply-templates select="*" mode="M21"/>
+   </xsl:template>
+   <!--PATTERN -->
+   <!--RULE -->
+   <xsl:template match="/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/type_zorginstelling"
+                 priority="1000"
+                 mode="M22">
+      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                       context="/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/type_zorginstelling"/>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="exists(@conceptId)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@conceptId)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Type zorginstelling": Attribuut "conceptId" ontbreekt [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/type_zorginstelling/@conceptId]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Type zorginstelling": De waarde "<xsl:text/>
+                  <xsl:value-of select="@conceptId"/>
+                  <xsl:text/>" voor attribuut "conceptId" heeft een onjuist formaat [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/type_zorginstelling/@conceptId; type=t-id]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10029')"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10029')">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Type zorginstelling": De waarde "<xsl:text/>
+                  <xsl:value-of select="@conceptId"/>
+                  <xsl:text/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10029" [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/type_zorginstelling/@conceptId]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="exists(@value)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Type zorginstelling": Attribuut "value" ontbreekt [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/type_zorginstelling/@value]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="empty(@value) or (@value = ('1', '2', '3', '4', '5'))"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="empty(@value) or (@value = ('1', '2', '3', '4', '5'))">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Type zorginstelling": De waarde "<xsl:text/>
+                  <xsl:value-of select="@value"/>
+                  <xsl:text/>" voor attribuut "value" is onjuist [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/type_zorginstelling/@value; allowed=('1', '2', '3', '4', '5')]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="exists(@code)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@code)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Type zorginstelling": Attribuut "code" ontbreekt [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/type_zorginstelling/@code]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="empty(@code) or (@code = ('Z3', 'G3', 'V4', 'B2', 'L1'))"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="empty(@code) or (@code = ('Z3', 'G3', 'V4', 'B2', 'L1'))">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Type zorginstelling": De waarde "<xsl:text/>
+                  <xsl:value-of select="@code"/>
+                  <xsl:text/>" voor attribuut "code" is onjuist [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/type_zorginstelling/@code; allowed=('Z3', 'G3', 'V4', 'B2', 'L1')]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="exists(@codeSystem)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@codeSystem)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Type zorginstelling": Attribuut "codeSystem" ontbreekt [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/type_zorginstelling/@codeSystem]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.2.4.15.1060', '2.16.840.1.113883.2.4.15.1060', '2.16.840.1.113883.2.4.15.1060', '2.16.840.1.113883.2.4.15.1060', '2.16.840.1.113883.2.4.15.1060'))"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.2.4.15.1060', '2.16.840.1.113883.2.4.15.1060', '2.16.840.1.113883.2.4.15.1060', '2.16.840.1.113883.2.4.15.1060', '2.16.840.1.113883.2.4.15.1060'))">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Type zorginstelling": De waarde "<xsl:text/>
+                  <xsl:value-of select="@codeSystem"/>
+                  <xsl:text/>" voor attribuut "codeSystem" is onjuist [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/type_zorginstelling/@codeSystem; allowed=('2.16.840.1.113883.2.4.15.1060', '2.16.840.1.113883.2.4.15.1060', '2.16.840.1.113883.2.4.15.1060', '2.16.840.1.113883.2.4.15.1060', '2.16.840.1.113883.2.4.15.1060')]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="exists(@displayName)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@displayName)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Type zorginstelling": Attribuut "displayName" ontbreekt [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/type_zorginstelling/@displayName]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @xsi:*))"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @xsi:*))">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Type zorginstelling": Ongeldige attributen aangetroffen [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/type_zorginstelling; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @xsi:*)]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <xsl:apply-templates select="*" mode="M22"/>
+   </xsl:template>
+   <xsl:template match="text()" priority="-1" mode="M22"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M22">
+      <xsl:apply-templates select="*" mode="M22"/>
+   </xsl:template>
+   <!--PATTERN -->
+   <!--RULE -->
+   <xsl:template match="/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/type_zorginstelling_bij_verwijzing"
+                 priority="1000"
+                 mode="M23">
+      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                       context="/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/type_zorginstelling_bij_verwijzing"/>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="exists(@conceptId)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@conceptId)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Type zorginstelling (bij verwijzing)": Attribuut "conceptId" ontbreekt [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/type_zorginstelling_bij_verwijzing/@conceptId]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Type zorginstelling (bij verwijzing)": De waarde "<xsl:text/>
+                  <xsl:value-of select="@conceptId"/>
+                  <xsl:text/>" voor attribuut "conceptId" heeft een onjuist formaat [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/type_zorginstelling_bij_verwijzing/@conceptId; type=t-id]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82019')"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82019')">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Type zorginstelling (bij verwijzing)": De waarde "<xsl:text/>
+                  <xsl:value-of select="@conceptId"/>
+                  <xsl:text/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82019" [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/type_zorginstelling_bij_verwijzing/@conceptId]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="exists(@value)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Type zorginstelling (bij verwijzing)": Attribuut "value" ontbreekt [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/type_zorginstelling_bij_verwijzing/@value]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="exists(@code)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@code)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Type zorginstelling (bij verwijzing)": Attribuut "code" ontbreekt [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/type_zorginstelling_bij_verwijzing/@code]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="exists(@codeSystem)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@codeSystem)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Type zorginstelling (bij verwijzing)": Attribuut "codeSystem" ontbreekt [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/type_zorginstelling_bij_verwijzing/@codeSystem]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="exists(@displayName)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@displayName)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Type zorginstelling (bij verwijzing)": Attribuut "displayName" ontbreekt [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/type_zorginstelling_bij_verwijzing/@displayName]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @xsi:*))"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @xsi:*))">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Type zorginstelling (bij verwijzing)": Ongeldige attributen aangetroffen [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/type_zorginstelling_bij_verwijzing; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @xsi:*)]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <xsl:apply-templates select="*" mode="M23"/>
+   </xsl:template>
+   <xsl:template match="text()" priority="-1" mode="M23"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M23">
+      <xsl:apply-templates select="*" mode="M23"/>
+   </xsl:template>
+   <!--PATTERN -->
+   <!--RULE -->
+   <xsl:template match="/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling"
+                 priority="1000"
+                 mode="M24">
+      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                       context="/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling"/>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(straatnaam) ge 0) and (count(straatnaam) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(straatnaam) ge 0) and (count(straatnaam) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "Straatnaam": <xsl:text/>
+                  <xsl:value-of select="count(straatnaam)"/>
+                  <xsl:text/> (verwacht: 0..1) [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/straatnaam]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(huisnummer) ge 0) and (count(huisnummer) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(huisnummer) ge 0) and (count(huisnummer) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "Huisnummer": <xsl:text/>
+                  <xsl:value-of select="count(huisnummer)"/>
+                  <xsl:text/> (verwacht: 0..1) [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/huisnummer]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(huisletterhuisnummertoevoeging) ge 0) and (count(huisletterhuisnummertoevoeging) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(huisletterhuisnummertoevoeging) ge 0) and (count(huisletterhuisnummertoevoeging) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "Huisletter/huisnummertoevoeging": <xsl:text/>
+                  <xsl:value-of select="count(huisletterhuisnummertoevoeging)"/>
+                  <xsl:text/> (verwacht: 0..1) [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/huisletterhuisnummertoevoeging]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(postcode) ge 0) and (count(postcode) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(postcode) ge 0) and (count(postcode) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "Postcode": <xsl:text/>
+                  <xsl:value-of select="count(postcode)"/>
+                  <xsl:text/> (verwacht: 0..1) [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/postcode]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(plaatsnaam) ge 0) and (count(plaatsnaam) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(plaatsnaam) ge 0) and (count(plaatsnaam) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "Plaatsnaam": <xsl:text/>
+                  <xsl:value-of select="count(plaatsnaam)"/>
+                  <xsl:text/> (verwacht: 0..1) [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/plaatsnaam]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(gemeentenaam) ge 0) and (count(gemeentenaam) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(gemeentenaam) ge 0) and (count(gemeentenaam) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "Gemeentenaam": <xsl:text/>
+                  <xsl:value-of select="count(gemeentenaam)"/>
+                  <xsl:text/> (verwacht: 0..1) [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/gemeentenaam]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(land) ge 0) and (count(land) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(land) ge 0) and (count(land) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "Land": <xsl:text/>
+                  <xsl:value-of select="count(land)"/>
+                  <xsl:text/> (verwacht: 0..1) [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/land]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(adrestype) ge 0) and (count(adrestype) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(adrestype) ge 0) and (count(adrestype) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "Adrestype": <xsl:text/>
+                  <xsl:value-of select="count(adrestype)"/>
+                  <xsl:text/> (verwacht: 0..1) [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/adrestype]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(adaextension) ge 0) and (count(adaextension) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
+                  <xsl:value-of select="count(adaextension)"/>
+                  <xsl:text/> (verwacht: 0..1) [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/adaextension]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <xsl:apply-templates select="*" mode="M24"/>
+   </xsl:template>
+   <xsl:template match="text()" priority="-1" mode="M24"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M24">
+      <xsl:apply-templates select="*" mode="M24"/>
+   </xsl:template>
+   <!--PATTERN -->
+   <!--RULE -->
+   <xsl:template match="/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/*[not(self::straatnaam)][not(self::huisnummer)][not(self::huisletterhuisnummertoevoeging)][not(self::postcode)][not(self::plaatsnaam)][not(self::gemeentenaam)][not(self::land)][not(self::adrestype)][not(self::adaextension)]"
+                 priority="1000"
+                 mode="M25">
+      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                       context="/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/*[not(self::straatnaam)][not(self::huisnummer)][not(self::huisletterhuisnummertoevoeging)][not(self::postcode)][not(self::plaatsnaam)][not(self::gemeentenaam)][not(self::land)][not(self::adrestype)][not(self::adaextension)]"/>
+      <!--REPORT -->
+      <xsl:if test="true()">
+         <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="true()">
+            <xsl:attribute name="location">
+               <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+            </xsl:attribute>
+            <svrl:text>Ongeldige informatie aangetroffen: <xsl:text/>
+               <xsl:value-of select="local-name(.)"/>
+               <xsl:text/> [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/<xsl:text/>
+               <xsl:value-of select="name(.)"/>
+               <xsl:text/>]</svrl:text>
+         </svrl:successful-report>
+      </xsl:if>
+      <xsl:apply-templates select="*" mode="M25"/>
+   </xsl:template>
+   <xsl:template match="text()" priority="-1" mode="M25"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M25">
+      <xsl:apply-templates select="*" mode="M25"/>
+   </xsl:template>
+   <!--PATTERN -->
+   <!--RULE -->
+   <xsl:template match="/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/straatnaam"
+                 priority="1000"
+                 mode="M26">
+      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                       context="/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/straatnaam"/>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="exists(@conceptId)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@conceptId)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Straatnaam": Attribuut "conceptId" ontbreekt [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/straatnaam/@conceptId]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Straatnaam": De waarde "<xsl:text/>
+                  <xsl:value-of select="@conceptId"/>
+                  <xsl:text/>" voor attribuut "conceptId" heeft een onjuist formaat [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/straatnaam/@conceptId; type=t-id]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10032')"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10032')">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Straatnaam": De waarde "<xsl:text/>
+                  <xsl:value-of select="@conceptId"/>
+                  <xsl:text/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10032" [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/straatnaam/@conceptId]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="exists(@value)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Straatnaam": Attribuut "value" ontbreekt [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/straatnaam/@value]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Straatnaam": Ongeldige attributen aangetroffen [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/straatnaam; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <xsl:apply-templates select="*" mode="M26"/>
+   </xsl:template>
+   <xsl:template match="text()" priority="-1" mode="M26"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M26">
+      <xsl:apply-templates select="*" mode="M26"/>
+   </xsl:template>
+   <!--PATTERN -->
+   <!--RULE -->
+   <xsl:template match="/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/huisnummer"
+                 priority="1000"
+                 mode="M27">
+      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                       context="/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/huisnummer"/>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="exists(@conceptId)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@conceptId)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Huisnummer": Attribuut "conceptId" ontbreekt [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/huisnummer/@conceptId]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Huisnummer": De waarde "<xsl:text/>
+                  <xsl:value-of select="@conceptId"/>
+                  <xsl:text/>" voor attribuut "conceptId" heeft een onjuist formaat [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/huisnummer/@conceptId; type=t-id]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10033')"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10033')">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Huisnummer": De waarde "<xsl:text/>
+                  <xsl:value-of select="@conceptId"/>
+                  <xsl:text/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10033" [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/huisnummer/@conceptId]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="exists(@value)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Huisnummer": Attribuut "value" ontbreekt [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/huisnummer/@value]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Huisnummer": Ongeldige attributen aangetroffen [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/huisnummer; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <xsl:apply-templates select="*" mode="M27"/>
+   </xsl:template>
+   <xsl:template match="text()" priority="-1" mode="M27"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M27">
+      <xsl:apply-templates select="*" mode="M27"/>
+   </xsl:template>
+   <!--PATTERN -->
+   <!--RULE -->
+   <xsl:template match="/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/huisletterhuisnummertoevoeging"
+                 priority="1000"
+                 mode="M28">
+      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                       context="/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/huisletterhuisnummertoevoeging"/>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="exists(@conceptId)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@conceptId)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Huisletter/huisnummertoevoeging": Attribuut "conceptId" ontbreekt [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/huisletterhuisnummertoevoeging/@conceptId]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Huisletter/huisnummertoevoeging": De waarde "<xsl:text/>
+                  <xsl:value-of select="@conceptId"/>
+                  <xsl:text/>" voor attribuut "conceptId" heeft een onjuist formaat [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/huisletterhuisnummertoevoeging/@conceptId; type=t-id]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10034')"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10034')">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Huisletter/huisnummertoevoeging": De waarde "<xsl:text/>
+                  <xsl:value-of select="@conceptId"/>
+                  <xsl:text/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10034" [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/huisletterhuisnummertoevoeging/@conceptId]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="exists(@value)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Huisletter/huisnummertoevoeging": Attribuut "value" ontbreekt [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/huisletterhuisnummertoevoeging/@value]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Huisletter/huisnummertoevoeging": Ongeldige attributen aangetroffen [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/huisletterhuisnummertoevoeging; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <xsl:apply-templates select="*" mode="M28"/>
+   </xsl:template>
+   <xsl:template match="text()" priority="-1" mode="M28"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M28">
+      <xsl:apply-templates select="*" mode="M28"/>
+   </xsl:template>
+   <!--PATTERN -->
+   <!--RULE -->
+   <xsl:template match="/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/postcode"
+                 priority="1000"
+                 mode="M29">
+      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                       context="/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/postcode"/>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="exists(@conceptId)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@conceptId)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Postcode": Attribuut "conceptId" ontbreekt [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/postcode/@conceptId]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Postcode": De waarde "<xsl:text/>
+                  <xsl:value-of select="@conceptId"/>
+                  <xsl:text/>" voor attribuut "conceptId" heeft een onjuist formaat [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/postcode/@conceptId; type=t-id]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10041')"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10041')">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Postcode": De waarde "<xsl:text/>
+                  <xsl:value-of select="@conceptId"/>
+                  <xsl:text/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10041" [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/postcode/@conceptId]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="exists(@value)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Postcode": Attribuut "value" ontbreekt [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/postcode/@value]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Postcode": Ongeldige attributen aangetroffen [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/postcode; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <xsl:apply-templates select="*" mode="M29"/>
+   </xsl:template>
+   <xsl:template match="text()" priority="-1" mode="M29"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M29">
+      <xsl:apply-templates select="*" mode="M29"/>
+   </xsl:template>
+   <!--PATTERN -->
+   <!--RULE -->
+   <xsl:template match="/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/plaatsnaam"
+                 priority="1000"
+                 mode="M30">
+      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                       context="/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/plaatsnaam"/>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="exists(@conceptId)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@conceptId)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Plaatsnaam": Attribuut "conceptId" ontbreekt [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/plaatsnaam/@conceptId]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Plaatsnaam": De waarde "<xsl:text/>
+                  <xsl:value-of select="@conceptId"/>
+                  <xsl:text/>" voor attribuut "conceptId" heeft een onjuist formaat [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/plaatsnaam/@conceptId; type=t-id]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10036')"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10036')">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Plaatsnaam": De waarde "<xsl:text/>
+                  <xsl:value-of select="@conceptId"/>
+                  <xsl:text/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10036" [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/plaatsnaam/@conceptId]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="exists(@value)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Plaatsnaam": Attribuut "value" ontbreekt [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/plaatsnaam/@value]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Plaatsnaam": Ongeldige attributen aangetroffen [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/plaatsnaam; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <xsl:apply-templates select="*" mode="M30"/>
+   </xsl:template>
+   <xsl:template match="text()" priority="-1" mode="M30"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M30">
+      <xsl:apply-templates select="*" mode="M30"/>
+   </xsl:template>
+   <!--PATTERN -->
+   <!--RULE -->
+   <xsl:template match="/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/gemeentenaam"
+                 priority="1000"
+                 mode="M31">
+      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                       context="/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/gemeentenaam"/>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="exists(@conceptId)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@conceptId)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Gemeentenaam": Attribuut "conceptId" ontbreekt [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/gemeentenaam/@conceptId]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Gemeentenaam": De waarde "<xsl:text/>
+                  <xsl:value-of select="@conceptId"/>
+                  <xsl:text/>" voor attribuut "conceptId" heeft een onjuist formaat [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/gemeentenaam/@conceptId; type=t-id]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10037')"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10037')">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Gemeentenaam": De waarde "<xsl:text/>
+                  <xsl:value-of select="@conceptId"/>
+                  <xsl:text/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10037" [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/gemeentenaam/@conceptId]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="exists(@value)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Gemeentenaam": Attribuut "value" ontbreekt [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/gemeentenaam/@value]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Gemeentenaam": Ongeldige attributen aangetroffen [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/gemeentenaam; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <xsl:apply-templates select="*" mode="M31"/>
+   </xsl:template>
+   <xsl:template match="text()" priority="-1" mode="M31"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M31">
+      <xsl:apply-templates select="*" mode="M31"/>
+   </xsl:template>
+   <!--PATTERN -->
+   <!--RULE -->
+   <xsl:template match="/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/land"
+                 priority="1000"
+                 mode="M32">
+      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                       context="/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/land"/>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="exists(@conceptId)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@conceptId)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Land": Attribuut "conceptId" ontbreekt [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/land/@conceptId]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Land": De waarde "<xsl:text/>
+                  <xsl:value-of select="@conceptId"/>
+                  <xsl:text/>" voor attribuut "conceptId" heeft een onjuist formaat [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/land/@conceptId; type=t-id]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10038')"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10038')">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Land": De waarde "<xsl:text/>
+                  <xsl:value-of select="@conceptId"/>
+                  <xsl:text/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10038" [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/land/@conceptId]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="exists(@value)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Land": Attribuut "value" ontbreekt [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/land/@value]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Land": Ongeldige attributen aangetroffen [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/land; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <xsl:apply-templates select="*" mode="M32"/>
+   </xsl:template>
+   <xsl:template match="text()" priority="-1" mode="M32"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M32">
+      <xsl:apply-templates select="*" mode="M32"/>
+   </xsl:template>
+   <!--PATTERN -->
+   <!--RULE -->
+   <xsl:template match="/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/adrestype"
+                 priority="1000"
+                 mode="M33">
+      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                       context="/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/adrestype"/>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="exists(@conceptId)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@conceptId)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Adrestype": Attribuut "conceptId" ontbreekt [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/adrestype/@conceptId]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Adrestype": De waarde "<xsl:text/>
+                  <xsl:value-of select="@conceptId"/>
+                  <xsl:text/>" voor attribuut "conceptId" heeft een onjuist formaat [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/adrestype/@conceptId; type=t-id]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10039')"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10039')">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Adrestype": De waarde "<xsl:text/>
+                  <xsl:value-of select="@conceptId"/>
+                  <xsl:text/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10039" [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/adrestype/@conceptId]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="exists(@value)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Adrestype": Attribuut "value" ontbreekt [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/adrestype/@value]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="exists(@code)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@code)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Adrestype": Attribuut "code" ontbreekt [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/adrestype/@code]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="exists(@codeSystem)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@codeSystem)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Adrestype": Attribuut "codeSystem" ontbreekt [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/adrestype/@codeSystem]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="exists(@displayName)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@displayName)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Adrestype": Attribuut "displayName" ontbreekt [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/adrestype/@displayName]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @xsi:*))"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @xsi:*))">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Adrestype": Ongeldige attributen aangetroffen [/prio1_huidige_zwangerschap/zorgverlenerzorginstelling/zorginstelling/adres_zorginstelling/adrestype; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @xsi:*)]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <xsl:apply-templates select="*" mode="M33"/>
+   </xsl:template>
+   <xsl:template match="text()" priority="-1" mode="M33"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M33">
+      <xsl:apply-templates select="*" mode="M33"/>
+   </xsl:template>
+   <!--PATTERN -->
+   <!--RULE -->
+   <xsl:template match="/prio1_huidige_zwangerschap/vrouw"
+                 priority="1000"
+                 mode="M34">
+      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                       context="/prio1_huidige_zwangerschap/vrouw"/>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="count(burgerservicenummer) eq 1"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="count(burgerservicenummer) eq 1">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Fout aantal voorkomens van "Burgerservicenummer": <xsl:text/>
                   <xsl:value-of select="count(burgerservicenummer)"/>
-                  <xsl:text/> (verwacht: 0..1) [/prio1_huidig/vrouw/burgerservicenummer]</svrl:text>
+                  <xsl:text/> (verwacht: 1) [/prio1_huidige_zwangerschap/vrouw/burgerservicenummer]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="(count(naamgegevens) ge 1) and (count(naamgegevens) le 2)"/>
+         <xsl:when test="count(naamgegevens) eq 1"/>
          <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="(count(naamgegevens) ge 1) and (count(naamgegevens) le 2)">
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="count(naamgegevens) eq 1">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Fout aantal voorkomens van "Naamgegevens": <xsl:text/>
                   <xsl:value-of select="count(naamgegevens)"/>
-                  <xsl:text/> (verwacht: 1..2) [/prio1_huidig/vrouw/naamgegevens]</svrl:text>
+                  <xsl:text/> (verwacht: 1) [/prio1_huidige_zwangerschap/vrouw/naamgegevens]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
-         <xsl:when test="(count(geboortedatum) ge 0) and (count(geboortedatum) le 1)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="(count(geboortedatum) ge 0) and (count(geboortedatum) le 1)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Fout aantal voorkomens van "Geboortedatum": <xsl:text/>
-                  <xsl:value-of select="count(geboortedatum)"/>
-                  <xsl:text/> (verwacht: 0..1) [/prio1_huidig/vrouw/geboortedatum]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(bloedgroep_vrouw) ge 0) and (count(bloedgroep_vrouw) le 1)"/>
          <xsl:otherwise>
@@ -1832,12 +3257,11 @@ SOFTWARE.
                </xsl:attribute>
                <svrl:text>Fout aantal voorkomens van "Bloedgroep vrouw": <xsl:text/>
                   <xsl:value-of select="count(bloedgroep_vrouw)"/>
-                  <xsl:text/> (verwacht: 0..1) [/prio1_huidig/vrouw/bloedgroep_vrouw]</svrl:text>
+                  <xsl:text/> (verwacht: 0..1) [/prio1_huidige_zwangerschap/vrouw/bloedgroep_vrouw]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(rhesus_d_factor_vrouw) ge 0) and (count(rhesus_d_factor_vrouw) le 1)"/>
          <xsl:otherwise>
@@ -1848,12 +3272,11 @@ SOFTWARE.
                </xsl:attribute>
                <svrl:text>Fout aantal voorkomens van "Rhesus D Factor vrouw": <xsl:text/>
                   <xsl:value-of select="count(rhesus_d_factor_vrouw)"/>
-                  <xsl:text/> (verwacht: 0..1) [/prio1_huidig/vrouw/rhesus_d_factor_vrouw]</svrl:text>
+                  <xsl:text/> (verwacht: 0..1) [/prio1_huidige_zwangerschap/vrouw/rhesus_d_factor_vrouw]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(rhesus_c_factor) ge 0) and (count(rhesus_c_factor) le 1)"/>
          <xsl:otherwise>
@@ -1864,12 +3287,11 @@ SOFTWARE.
                </xsl:attribute>
                <svrl:text>Fout aantal voorkomens van "Rhesus c Factor": <xsl:text/>
                   <xsl:value-of select="count(rhesus_c_factor)"/>
-                  <xsl:text/> (verwacht: 0..1) [/prio1_huidig/vrouw/rhesus_c_factor]</svrl:text>
+                  <xsl:text/> (verwacht: 0..1) [/prio1_huidige_zwangerschap/vrouw/rhesus_c_factor]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
          <xsl:otherwise>
@@ -1880,28 +3302,24 @@ SOFTWARE.
                </xsl:attribute>
                <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
                   <xsl:value-of select="count(adaextension)"/>
-                  <xsl:text/> (verwacht: 0..1) [/prio1_huidig/vrouw/adaextension]</svrl:text>
+                  <xsl:text/> (verwacht: 0..1) [/prio1_huidige_zwangerschap/vrouw/adaextension]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M21"/>
+      <xsl:apply-templates select="*" mode="M34"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M21"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M21">
-      <xsl:apply-templates select="*" mode="M21"/>
+   <xsl:template match="text()" priority="-1" mode="M34"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M34">
+      <xsl:apply-templates select="*" mode="M34"/>
    </xsl:template>
-
    <!--PATTERN -->
-
-
-	  <!--RULE -->
-   <xsl:template match="/prio1_huidig/vrouw/*[not(self::burgerservicenummer)][not(self::naamgegevens)][not(self::geboortedatum)][not(self::bloedgroep_vrouw)][not(self::rhesus_d_factor_vrouw)][not(self::rhesus_c_factor)][not(self::adaextension)]"
+   <!--RULE -->
+   <xsl:template match="/prio1_huidige_zwangerschap/vrouw/*[not(self::burgerservicenummer)][not(self::naamgegevens)][not(self::bloedgroep_vrouw)][not(self::rhesus_d_factor_vrouw)][not(self::rhesus_c_factor)][not(self::adaextension)]"
                  priority="1000"
-                 mode="M22">
+                 mode="M35">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/prio1_huidig/vrouw/*[not(self::burgerservicenummer)][not(self::naamgegevens)][not(self::geboortedatum)][not(self::bloedgroep_vrouw)][not(self::rhesus_d_factor_vrouw)][not(self::rhesus_c_factor)][not(self::adaextension)]"/>
-
-		    <!--REPORT -->
+                       context="/prio1_huidige_zwangerschap/vrouw/*[not(self::burgerservicenummer)][not(self::naamgegevens)][not(self::bloedgroep_vrouw)][not(self::rhesus_d_factor_vrouw)][not(self::rhesus_c_factor)][not(self::adaextension)]"/>
+      <!--REPORT -->
       <xsl:if test="true()">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="true()">
             <xsl:attribute name="location">
@@ -1909,29 +3327,25 @@ SOFTWARE.
             </xsl:attribute>
             <svrl:text>Ongeldige informatie aangetroffen: <xsl:text/>
                <xsl:value-of select="local-name(.)"/>
-               <xsl:text/> [/prio1_huidig/vrouw/<xsl:text/>
+               <xsl:text/> [/prio1_huidige_zwangerschap/vrouw/<xsl:text/>
                <xsl:value-of select="name(.)"/>
                <xsl:text/>]</svrl:text>
          </svrl:successful-report>
       </xsl:if>
-      <xsl:apply-templates select="*" mode="M22"/>
+      <xsl:apply-templates select="*" mode="M35"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M22"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M22">
-      <xsl:apply-templates select="*" mode="M22"/>
+   <xsl:template match="text()" priority="-1" mode="M35"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M35">
+      <xsl:apply-templates select="*" mode="M35"/>
    </xsl:template>
-
    <!--PATTERN -->
-
-
-	  <!--RULE -->
-   <xsl:template match="/prio1_huidig/vrouw/burgerservicenummer"
+   <!--RULE -->
+   <xsl:template match="/prio1_huidige_zwangerschap/vrouw/burgerservicenummer"
                  priority="1000"
-                 mode="M23">
+                 mode="M36">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/prio1_huidig/vrouw/burgerservicenummer"/>
-
-		    <!--ASSERT -->
+                       context="/prio1_huidige_zwangerschap/vrouw/burgerservicenummer"/>
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@conceptId)"/>
          <xsl:otherwise>
@@ -1939,12 +3353,11 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Burgerservicenummer": Attribuut "conceptId" ontbreekt [/prio1_huidig/vrouw/burgerservicenummer/@conceptId]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Burgerservicenummer": Attribuut "conceptId" ontbreekt [/prio1_huidige_zwangerschap/vrouw/burgerservicenummer/@conceptId]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -1955,28 +3368,26 @@ SOFTWARE.
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Burgerservicenummer": De waarde "<xsl:text/>
                   <xsl:value-of select="@conceptId"/>
-                  <xsl:text/>" voor attribuut "conceptId" heeft een onjuist formaat [/prio1_huidig/vrouw/burgerservicenummer/@conceptId; type=t-id]</svrl:text>
+                  <xsl:text/>" voor attribuut "conceptId" heeft een onjuist formaat [/prio1_huidige_zwangerschap/vrouw/burgerservicenummer/@conceptId; type=t-id]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10030')"/>
+         <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10030')"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10030')">
+                                test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10030')">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Burgerservicenummer": De waarde "<xsl:text/>
                   <xsl:value-of select="@conceptId"/>
-                  <xsl:text/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10030" [/prio1_huidig/vrouw/burgerservicenummer/@conceptId]</svrl:text>
+                  <xsl:text/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10030" [/prio1_huidige_zwangerschap/vrouw/burgerservicenummer/@conceptId]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -1984,12 +3395,11 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Burgerservicenummer": Attribuut "value" ontbreekt [/prio1_huidig/vrouw/burgerservicenummer/@value]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Burgerservicenummer": Attribuut "value" ontbreekt [/prio1_huidige_zwangerschap/vrouw/burgerservicenummer/@value]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (string-length(@value) ge 9)"/>
          <xsl:otherwise>
@@ -2000,12 +3410,11 @@ SOFTWARE.
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Burgerservicenummer": De waarde "<xsl:text/>
                   <xsl:value-of select="@value"/>
-                  <xsl:text/>" voor attribuut "value" moet minstens 9 karakters bevatten [/prio1_huidig/vrouw/burgerservicenummer/@value; min-length=9]</svrl:text>
+                  <xsl:text/>" voor attribuut "value" moet minstens 9 karakters bevatten [/prio1_huidige_zwangerschap/vrouw/burgerservicenummer/@value; min-length=9]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (string-length(@value) le 9)"/>
          <xsl:otherwise>
@@ -2016,12 +3425,11 @@ SOFTWARE.
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Burgerservicenummer": De waarde "<xsl:text/>
                   <xsl:value-of select="@value"/>
-                  <xsl:text/>" voor attribuut "value" mag hoogstens 9 karakters bevatten [/prio1_huidig/vrouw/burgerservicenummer/@value; max-length=9]</svrl:text>
+                  <xsl:text/>" voor attribuut "value" mag hoogstens 9 karakters bevatten [/prio1_huidige_zwangerschap/vrouw/burgerservicenummer/@value; max-length=9]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -2030,26 +3438,24 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Burgerservicenummer": Ongeldige attributen aangetroffen [/prio1_huidig/vrouw/burgerservicenummer; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Burgerservicenummer": Ongeldige attributen aangetroffen [/prio1_huidige_zwangerschap/vrouw/burgerservicenummer; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M23"/>
+      <xsl:apply-templates select="*" mode="M36"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M23"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M23">
-      <xsl:apply-templates select="*" mode="M23"/>
+   <xsl:template match="text()" priority="-1" mode="M36"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M36">
+      <xsl:apply-templates select="*" mode="M36"/>
    </xsl:template>
-
    <!--PATTERN -->
-
-
-	  <!--RULE -->
-   <xsl:template match="/prio1_huidig/vrouw/naamgegevens" priority="1000" mode="M24">
+   <!--RULE -->
+   <xsl:template match="/prio1_huidige_zwangerschap/vrouw/naamgegevens"
+                 priority="1000"
+                 mode="M37">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/prio1_huidig/vrouw/naamgegevens"/>
-
-		    <!--ASSERT -->
+                       context="/prio1_huidige_zwangerschap/vrouw/naamgegevens"/>
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@conceptId)"/>
          <xsl:otherwise>
@@ -2057,12 +3463,11 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Naamgegevens": Attribuut "conceptId" ontbreekt [/prio1_huidig/vrouw/naamgegevens/@conceptId]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Naamgegevens": Attribuut "conceptId" ontbreekt [/prio1_huidige_zwangerschap/vrouw/naamgegevens/@conceptId]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -2073,28 +3478,26 @@ SOFTWARE.
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Naamgegevens": De waarde "<xsl:text/>
                   <xsl:value-of select="@conceptId"/>
-                  <xsl:text/>" voor attribuut "conceptId" heeft een onjuist formaat [/prio1_huidig/vrouw/naamgegevens/@conceptId; type=t-id]</svrl:text>
+                  <xsl:text/>" voor attribuut "conceptId" heeft een onjuist formaat [/prio1_huidige_zwangerschap/vrouw/naamgegevens/@conceptId; type=t-id]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10035')"/>
+         <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10035')"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10035')">
+                                test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10035')">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Naamgegevens": De waarde "<xsl:text/>
                   <xsl:value-of select="@conceptId"/>
-                  <xsl:text/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10035" [/prio1_huidig/vrouw/naamgegevens/@conceptId]</svrl:text>
+                  <xsl:text/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10035" [/prio1_huidige_zwangerschap/vrouw/naamgegevens/@conceptId]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @xsi:*))"/>
          <xsl:otherwise>
@@ -2103,28 +3506,24 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Naamgegevens": Ongeldige attributen aangetroffen [/prio1_huidig/vrouw/naamgegevens; allowed=(@conceptId, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Naamgegevens": Ongeldige attributen aangetroffen [/prio1_huidige_zwangerschap/vrouw/naamgegevens; allowed=(@conceptId, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M24"/>
+      <xsl:apply-templates select="*" mode="M37"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M24"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M24">
-      <xsl:apply-templates select="*" mode="M24"/>
+   <xsl:template match="text()" priority="-1" mode="M37"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M37">
+      <xsl:apply-templates select="*" mode="M37"/>
    </xsl:template>
-
    <!--PATTERN -->
-
-
-	  <!--RULE -->
-   <xsl:template match="/prio1_huidig/vrouw/geboortedatum"
+   <!--RULE -->
+   <xsl:template match="/prio1_huidige_zwangerschap/vrouw/bloedgroep_vrouw"
                  priority="1000"
-                 mode="M25">
+                 mode="M38">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/prio1_huidig/vrouw/geboortedatum"/>
-
-		    <!--ASSERT -->
+                       context="/prio1_huidige_zwangerschap/vrouw/bloedgroep_vrouw"/>
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@conceptId)"/>
          <xsl:otherwise>
@@ -2132,116 +3531,11 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Geboortedatum": Attribuut "conceptId" ontbreekt [/prio1_huidig/vrouw/geboortedatum/@conceptId]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Bloedgroep vrouw": Attribuut "conceptId" ontbreekt [/prio1_huidige_zwangerschap/vrouw/bloedgroep_vrouw/@conceptId]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
-         <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Geboortedatum": De waarde "<xsl:text/>
-                  <xsl:value-of select="@conceptId"/>
-                  <xsl:text/>" voor attribuut "conceptId" heeft een onjuist formaat [/prio1_huidig/vrouw/geboortedatum/@conceptId; type=t-id]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
-         <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10040')"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10040')">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Geboortedatum": De waarde "<xsl:text/>
-                  <xsl:value-of select="@conceptId"/>
-                  <xsl:text/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10040" [/prio1_huidig/vrouw/geboortedatum/@conceptId]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Geboortedatum": Attribuut "value" ontbreekt [/prio1_huidig/vrouw/geboortedatum/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
-         <xsl:when test="empty(@value) or ((@value castable as xs:date) or (@value castable as xs:dateTime))"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@value) or ((@value castable as xs:date) or (@value castable as xs:dateTime))">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Geboortedatum": De waarde "<xsl:text/>
-                  <xsl:value-of select="@value"/>
-                  <xsl:text/>" voor attribuut "value" heeft een onjuist formaat [/prio1_huidig/vrouw/geboortedatum/@value; type=t-datetime]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Geboortedatum": Ongeldige attributen aangetroffen [/prio1_huidig/vrouw/geboortedatum; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-      <xsl:apply-templates select="*" mode="M25"/>
-   </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M25"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M25">
-      <xsl:apply-templates select="*" mode="M25"/>
-   </xsl:template>
-
-   <!--PATTERN -->
-
-
-	  <!--RULE -->
-   <xsl:template match="/prio1_huidig/vrouw/bloedgroep_vrouw"
-                 priority="1000"
-                 mode="M26">
-      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/prio1_huidig/vrouw/bloedgroep_vrouw"/>
-
-		    <!--ASSERT -->
-      <xsl:choose>
-         <xsl:when test="exists(@conceptId)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@conceptId)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Bloedgroep vrouw": Attribuut "conceptId" ontbreekt [/prio1_huidig/vrouw/bloedgroep_vrouw/@conceptId]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -2252,28 +3546,26 @@ SOFTWARE.
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Bloedgroep vrouw": De waarde "<xsl:text/>
                   <xsl:value-of select="@conceptId"/>
-                  <xsl:text/>" voor attribuut "conceptId" heeft een onjuist formaat [/prio1_huidig/vrouw/bloedgroep_vrouw/@conceptId; type=t-id]</svrl:text>
+                  <xsl:text/>" voor attribuut "conceptId" heeft een onjuist formaat [/prio1_huidige_zwangerschap/vrouw/bloedgroep_vrouw/@conceptId; type=t-id]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10810')"/>
+         <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10810')"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10810')">
+                                test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10810')">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Bloedgroep vrouw": De waarde "<xsl:text/>
                   <xsl:value-of select="@conceptId"/>
-                  <xsl:text/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10810" [/prio1_huidig/vrouw/bloedgroep_vrouw/@conceptId]</svrl:text>
+                  <xsl:text/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10810" [/prio1_huidige_zwangerschap/vrouw/bloedgroep_vrouw/@conceptId]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -2281,12 +3573,11 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Bloedgroep vrouw": Attribuut "value" ontbreekt [/prio1_huidig/vrouw/bloedgroep_vrouw/@value]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Bloedgroep vrouw": Attribuut "value" ontbreekt [/prio1_huidige_zwangerschap/vrouw/bloedgroep_vrouw/@value]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value = ('1', '2', '3', '4', '5', '6'))"/>
          <xsl:otherwise>
@@ -2297,12 +3588,11 @@ SOFTWARE.
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Bloedgroep vrouw": De waarde "<xsl:text/>
                   <xsl:value-of select="@value"/>
-                  <xsl:text/>" voor attribuut "value" is onjuist [/prio1_huidig/vrouw/bloedgroep_vrouw/@value; allowed=('1', '2', '3', '4', '5', '6')]</svrl:text>
+                  <xsl:text/>" voor attribuut "value" is onjuist [/prio1_huidige_zwangerschap/vrouw/bloedgroep_vrouw/@value; allowed=('1', '2', '3', '4', '5', '6')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@code)"/>
          <xsl:otherwise>
@@ -2310,12 +3600,11 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Bloedgroep vrouw": Attribuut "code" ontbreekt [/prio1_huidig/vrouw/bloedgroep_vrouw/@code]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Bloedgroep vrouw": Attribuut "code" ontbreekt [/prio1_huidige_zwangerschap/vrouw/bloedgroep_vrouw/@code]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@code) or (@code = ('112144000', '112149005', '165743006', '58460004', 'UNK', 'NI'))"/>
          <xsl:otherwise>
@@ -2326,12 +3615,11 @@ SOFTWARE.
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Bloedgroep vrouw": De waarde "<xsl:text/>
                   <xsl:value-of select="@code"/>
-                  <xsl:text/>" voor attribuut "code" is onjuist [/prio1_huidig/vrouw/bloedgroep_vrouw/@code; allowed=('112144000', '112149005', '165743006', '58460004', 'UNK', 'NI')]</svrl:text>
+                  <xsl:text/>" voor attribuut "code" is onjuist [/prio1_huidige_zwangerschap/vrouw/bloedgroep_vrouw/@code; allowed=('112144000', '112149005', '165743006', '58460004', 'UNK', 'NI')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@codeSystem)"/>
          <xsl:otherwise>
@@ -2339,12 +3627,11 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Bloedgroep vrouw": Attribuut "codeSystem" ontbreekt [/prio1_huidig/vrouw/bloedgroep_vrouw/@codeSystem]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Bloedgroep vrouw": Attribuut "codeSystem" ontbreekt [/prio1_huidige_zwangerschap/vrouw/bloedgroep_vrouw/@codeSystem]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008'))"/>
          <xsl:otherwise>
@@ -2355,12 +3642,11 @@ SOFTWARE.
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Bloedgroep vrouw": De waarde "<xsl:text/>
                   <xsl:value-of select="@codeSystem"/>
-                  <xsl:text/>" voor attribuut "codeSystem" is onjuist [/prio1_huidig/vrouw/bloedgroep_vrouw/@codeSystem; allowed=('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008')]</svrl:text>
+                  <xsl:text/>" voor attribuut "codeSystem" is onjuist [/prio1_huidige_zwangerschap/vrouw/bloedgroep_vrouw/@codeSystem; allowed=('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@displayName)"/>
          <xsl:otherwise>
@@ -2368,12 +3654,11 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Bloedgroep vrouw": Attribuut "displayName" ontbreekt [/prio1_huidig/vrouw/bloedgroep_vrouw/@displayName]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Bloedgroep vrouw": Attribuut "displayName" ontbreekt [/prio1_huidige_zwangerschap/vrouw/bloedgroep_vrouw/@displayName]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @xsi:*))"/>
          <xsl:otherwise>
@@ -2382,28 +3667,24 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Bloedgroep vrouw": Ongeldige attributen aangetroffen [/prio1_huidig/vrouw/bloedgroep_vrouw; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Bloedgroep vrouw": Ongeldige attributen aangetroffen [/prio1_huidige_zwangerschap/vrouw/bloedgroep_vrouw; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M26"/>
+      <xsl:apply-templates select="*" mode="M38"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M26"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M26">
-      <xsl:apply-templates select="*" mode="M26"/>
+   <xsl:template match="text()" priority="-1" mode="M38"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M38">
+      <xsl:apply-templates select="*" mode="M38"/>
    </xsl:template>
-
    <!--PATTERN -->
-
-
-	  <!--RULE -->
-   <xsl:template match="/prio1_huidig/vrouw/rhesus_d_factor_vrouw"
+   <!--RULE -->
+   <xsl:template match="/prio1_huidige_zwangerschap/vrouw/rhesus_d_factor_vrouw"
                  priority="1000"
-                 mode="M27">
+                 mode="M39">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/prio1_huidig/vrouw/rhesus_d_factor_vrouw"/>
-
-		    <!--ASSERT -->
+                       context="/prio1_huidige_zwangerschap/vrouw/rhesus_d_factor_vrouw"/>
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@conceptId)"/>
          <xsl:otherwise>
@@ -2411,12 +3692,11 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Rhesus D Factor vrouw": Attribuut "conceptId" ontbreekt [/prio1_huidig/vrouw/rhesus_d_factor_vrouw/@conceptId]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Rhesus D Factor vrouw": Attribuut "conceptId" ontbreekt [/prio1_huidige_zwangerschap/vrouw/rhesus_d_factor_vrouw/@conceptId]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -2427,28 +3707,26 @@ SOFTWARE.
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Rhesus D Factor vrouw": De waarde "<xsl:text/>
                   <xsl:value-of select="@conceptId"/>
-                  <xsl:text/>" voor attribuut "conceptId" heeft een onjuist formaat [/prio1_huidig/vrouw/rhesus_d_factor_vrouw/@conceptId; type=t-id]</svrl:text>
+                  <xsl:text/>" voor attribuut "conceptId" heeft een onjuist formaat [/prio1_huidige_zwangerschap/vrouw/rhesus_d_factor_vrouw/@conceptId; type=t-id]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10811')"/>
+         <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10811')"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10811')">
+                                test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10811')">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Rhesus D Factor vrouw": De waarde "<xsl:text/>
                   <xsl:value-of select="@conceptId"/>
-                  <xsl:text/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10811" [/prio1_huidig/vrouw/rhesus_d_factor_vrouw/@conceptId]</svrl:text>
+                  <xsl:text/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10811" [/prio1_huidige_zwangerschap/vrouw/rhesus_d_factor_vrouw/@conceptId]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -2456,12 +3734,11 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Rhesus D Factor vrouw": Attribuut "value" ontbreekt [/prio1_huidig/vrouw/rhesus_d_factor_vrouw/@value]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Rhesus D Factor vrouw": Attribuut "value" ontbreekt [/prio1_huidige_zwangerschap/vrouw/rhesus_d_factor_vrouw/@value]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value = ('1', '2', '3', '4'))"/>
          <xsl:otherwise>
@@ -2472,12 +3749,11 @@ SOFTWARE.
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Rhesus D Factor vrouw": De waarde "<xsl:text/>
                   <xsl:value-of select="@value"/>
-                  <xsl:text/>" voor attribuut "value" is onjuist [/prio1_huidig/vrouw/rhesus_d_factor_vrouw/@value; allowed=('1', '2', '3', '4')]</svrl:text>
+                  <xsl:text/>" voor attribuut "value" is onjuist [/prio1_huidige_zwangerschap/vrouw/rhesus_d_factor_vrouw/@value; allowed=('1', '2', '3', '4')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@code)"/>
          <xsl:otherwise>
@@ -2485,12 +3761,11 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Rhesus D Factor vrouw": Attribuut "code" ontbreekt [/prio1_huidig/vrouw/rhesus_d_factor_vrouw/@code]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Rhesus D Factor vrouw": Attribuut "code" ontbreekt [/prio1_huidige_zwangerschap/vrouw/rhesus_d_factor_vrouw/@code]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@code) or (@code = ('165747007', '165746003', 'UNK', 'NI'))"/>
          <xsl:otherwise>
@@ -2501,12 +3776,11 @@ SOFTWARE.
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Rhesus D Factor vrouw": De waarde "<xsl:text/>
                   <xsl:value-of select="@code"/>
-                  <xsl:text/>" voor attribuut "code" is onjuist [/prio1_huidig/vrouw/rhesus_d_factor_vrouw/@code; allowed=('165747007', '165746003', 'UNK', 'NI')]</svrl:text>
+                  <xsl:text/>" voor attribuut "code" is onjuist [/prio1_huidige_zwangerschap/vrouw/rhesus_d_factor_vrouw/@code; allowed=('165747007', '165746003', 'UNK', 'NI')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@codeSystem)"/>
          <xsl:otherwise>
@@ -2514,12 +3788,11 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Rhesus D Factor vrouw": Attribuut "codeSystem" ontbreekt [/prio1_huidig/vrouw/rhesus_d_factor_vrouw/@codeSystem]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Rhesus D Factor vrouw": Attribuut "codeSystem" ontbreekt [/prio1_huidige_zwangerschap/vrouw/rhesus_d_factor_vrouw/@codeSystem]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008'))"/>
          <xsl:otherwise>
@@ -2530,12 +3803,11 @@ SOFTWARE.
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Rhesus D Factor vrouw": De waarde "<xsl:text/>
                   <xsl:value-of select="@codeSystem"/>
-                  <xsl:text/>" voor attribuut "codeSystem" is onjuist [/prio1_huidig/vrouw/rhesus_d_factor_vrouw/@codeSystem; allowed=('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008')]</svrl:text>
+                  <xsl:text/>" voor attribuut "codeSystem" is onjuist [/prio1_huidige_zwangerschap/vrouw/rhesus_d_factor_vrouw/@codeSystem; allowed=('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@displayName)"/>
          <xsl:otherwise>
@@ -2543,12 +3815,11 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Rhesus D Factor vrouw": Attribuut "displayName" ontbreekt [/prio1_huidig/vrouw/rhesus_d_factor_vrouw/@displayName]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Rhesus D Factor vrouw": Attribuut "displayName" ontbreekt [/prio1_huidige_zwangerschap/vrouw/rhesus_d_factor_vrouw/@displayName]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @xsi:*))"/>
          <xsl:otherwise>
@@ -2557,28 +3828,24 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Rhesus D Factor vrouw": Ongeldige attributen aangetroffen [/prio1_huidig/vrouw/rhesus_d_factor_vrouw; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Rhesus D Factor vrouw": Ongeldige attributen aangetroffen [/prio1_huidige_zwangerschap/vrouw/rhesus_d_factor_vrouw; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M27"/>
+      <xsl:apply-templates select="*" mode="M39"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M27"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M27">
-      <xsl:apply-templates select="*" mode="M27"/>
+   <xsl:template match="text()" priority="-1" mode="M39"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M39">
+      <xsl:apply-templates select="*" mode="M39"/>
    </xsl:template>
-
    <!--PATTERN -->
-
-
-	  <!--RULE -->
-   <xsl:template match="/prio1_huidig/vrouw/rhesus_c_factor"
+   <!--RULE -->
+   <xsl:template match="/prio1_huidige_zwangerschap/vrouw/rhesus_c_factor"
                  priority="1000"
-                 mode="M28">
+                 mode="M40">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/prio1_huidig/vrouw/rhesus_c_factor"/>
-
-		    <!--ASSERT -->
+                       context="/prio1_huidige_zwangerschap/vrouw/rhesus_c_factor"/>
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@conceptId)"/>
          <xsl:otherwise>
@@ -2586,12 +3853,11 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Rhesus c Factor": Attribuut "conceptId" ontbreekt [/prio1_huidig/vrouw/rhesus_c_factor/@conceptId]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Rhesus c Factor": Attribuut "conceptId" ontbreekt [/prio1_huidige_zwangerschap/vrouw/rhesus_c_factor/@conceptId]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -2602,28 +3868,26 @@ SOFTWARE.
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Rhesus c Factor": De waarde "<xsl:text/>
                   <xsl:value-of select="@conceptId"/>
-                  <xsl:text/>" voor attribuut "conceptId" heeft een onjuist formaat [/prio1_huidig/vrouw/rhesus_c_factor/@conceptId; type=t-id]</svrl:text>
+                  <xsl:text/>" voor attribuut "conceptId" heeft een onjuist formaat [/prio1_huidige_zwangerschap/vrouw/rhesus_c_factor/@conceptId; type=t-id]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10816')"/>
+         <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10816')"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10816')">
+                                test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10816')">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Rhesus c Factor": De waarde "<xsl:text/>
                   <xsl:value-of select="@conceptId"/>
-                  <xsl:text/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10816" [/prio1_huidig/vrouw/rhesus_c_factor/@conceptId]</svrl:text>
+                  <xsl:text/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10816" [/prio1_huidige_zwangerschap/vrouw/rhesus_c_factor/@conceptId]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -2631,12 +3895,11 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Rhesus c Factor": Attribuut "value" ontbreekt [/prio1_huidig/vrouw/rhesus_c_factor/@value]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Rhesus c Factor": Attribuut "value" ontbreekt [/prio1_huidige_zwangerschap/vrouw/rhesus_c_factor/@value]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value = ('1', '2', '3'))"/>
          <xsl:otherwise>
@@ -2647,12 +3910,11 @@ SOFTWARE.
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Rhesus c Factor": De waarde "<xsl:text/>
                   <xsl:value-of select="@value"/>
-                  <xsl:text/>" voor attribuut "value" is onjuist [/prio1_huidig/vrouw/rhesus_c_factor/@value; allowed=('1', '2', '3')]</svrl:text>
+                  <xsl:text/>" voor attribuut "value" is onjuist [/prio1_huidige_zwangerschap/vrouw/rhesus_c_factor/@value; allowed=('1', '2', '3')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@code)"/>
          <xsl:otherwise>
@@ -2660,12 +3922,11 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Rhesus c Factor": Attribuut "code" ontbreekt [/prio1_huidig/vrouw/rhesus_c_factor/@code]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Rhesus c Factor": Attribuut "code" ontbreekt [/prio1_huidige_zwangerschap/vrouw/rhesus_c_factor/@code]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@code) or (@code = ('733120009', '733119003', 'NI'))"/>
          <xsl:otherwise>
@@ -2676,12 +3937,11 @@ SOFTWARE.
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Rhesus c Factor": De waarde "<xsl:text/>
                   <xsl:value-of select="@code"/>
-                  <xsl:text/>" voor attribuut "code" is onjuist [/prio1_huidig/vrouw/rhesus_c_factor/@code; allowed=('733120009', '733119003', 'NI')]</svrl:text>
+                  <xsl:text/>" voor attribuut "code" is onjuist [/prio1_huidige_zwangerschap/vrouw/rhesus_c_factor/@code; allowed=('733120009', '733119003', 'NI')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@codeSystem)"/>
          <xsl:otherwise>
@@ -2689,12 +3949,11 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Rhesus c Factor": Attribuut "codeSystem" ontbreekt [/prio1_huidig/vrouw/rhesus_c_factor/@codeSystem]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Rhesus c Factor": Attribuut "codeSystem" ontbreekt [/prio1_huidige_zwangerschap/vrouw/rhesus_c_factor/@codeSystem]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.5.1008'))"/>
          <xsl:otherwise>
@@ -2705,12 +3964,11 @@ SOFTWARE.
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Rhesus c Factor": De waarde "<xsl:text/>
                   <xsl:value-of select="@codeSystem"/>
-                  <xsl:text/>" voor attribuut "codeSystem" is onjuist [/prio1_huidig/vrouw/rhesus_c_factor/@codeSystem; allowed=('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.5.1008')]</svrl:text>
+                  <xsl:text/>" voor attribuut "codeSystem" is onjuist [/prio1_huidige_zwangerschap/vrouw/rhesus_c_factor/@codeSystem; allowed=('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.5.1008')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@displayName)"/>
          <xsl:otherwise>
@@ -2718,12 +3976,11 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Rhesus c Factor": Attribuut "displayName" ontbreekt [/prio1_huidig/vrouw/rhesus_c_factor/@displayName]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Rhesus c Factor": Attribuut "displayName" ontbreekt [/prio1_huidige_zwangerschap/vrouw/rhesus_c_factor/@displayName]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @xsi:*))"/>
          <xsl:otherwise>
@@ -2732,26 +3989,24 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Rhesus c Factor": Ongeldige attributen aangetroffen [/prio1_huidig/vrouw/rhesus_c_factor; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Rhesus c Factor": Ongeldige attributen aangetroffen [/prio1_huidige_zwangerschap/vrouw/rhesus_c_factor; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M28"/>
+      <xsl:apply-templates select="*" mode="M40"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M28"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M28">
-      <xsl:apply-templates select="*" mode="M28"/>
+   <xsl:template match="text()" priority="-1" mode="M40"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M40">
+      <xsl:apply-templates select="*" mode="M40"/>
    </xsl:template>
-
    <!--PATTERN -->
-
-
-	  <!--RULE -->
-   <xsl:template match="/prio1_huidig/vrouw/naamgegevens" priority="1000" mode="M29">
+   <!--RULE -->
+   <xsl:template match="/prio1_huidige_zwangerschap/vrouw/naamgegevens"
+                 priority="1000"
+                 mode="M41">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/prio1_huidig/vrouw/naamgegevens"/>
-
-		    <!--ASSERT -->
+                       context="/prio1_huidige_zwangerschap/vrouw/naamgegevens"/>
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(voornamen) ge 0) and (count(voornamen) le 1)"/>
          <xsl:otherwise>
@@ -2762,12 +4017,11 @@ SOFTWARE.
                </xsl:attribute>
                <svrl:text>Fout aantal voorkomens van "Voornamen": <xsl:text/>
                   <xsl:value-of select="count(voornamen)"/>
-                  <xsl:text/> (verwacht: 0..1) [/prio1_huidig/vrouw/naamgegevens/voornamen]</svrl:text>
+                  <xsl:text/> (verwacht: 0..1) [/prio1_huidige_zwangerschap/vrouw/naamgegevens/voornamen]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(initialen) ge 0) and (count(initialen) le 1)"/>
          <xsl:otherwise>
@@ -2778,12 +4032,11 @@ SOFTWARE.
                </xsl:attribute>
                <svrl:text>Fout aantal voorkomens van "Initialen": <xsl:text/>
                   <xsl:value-of select="count(initialen)"/>
-                  <xsl:text/> (verwacht: 0..1) [/prio1_huidig/vrouw/naamgegevens/initialen]</svrl:text>
+                  <xsl:text/> (verwacht: 0..1) [/prio1_huidige_zwangerschap/vrouw/naamgegevens/initialen]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(roepnaam) ge 0) and (count(roepnaam) le 1)"/>
          <xsl:otherwise>
@@ -2794,28 +4047,25 @@ SOFTWARE.
                </xsl:attribute>
                <svrl:text>Fout aantal voorkomens van "Roepnaam": <xsl:text/>
                   <xsl:value-of select="count(roepnaam)"/>
-                  <xsl:text/> (verwacht: 0..1) [/prio1_huidig/vrouw/naamgegevens/roepnaam]</svrl:text>
+                  <xsl:text/> (verwacht: 0..1) [/prio1_huidige_zwangerschap/vrouw/naamgegevens/roepnaam]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="(count(achternaam) ge 0) and (count(achternaam) le 1)"/>
+         <xsl:when test="count(achternaam) eq 1"/>
          <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="(count(achternaam) ge 0) and (count(achternaam) le 1)">
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="count(achternaam) eq 1">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Fout aantal voorkomens van "Achternaam": <xsl:text/>
                   <xsl:value-of select="count(achternaam)"/>
-                  <xsl:text/> (verwacht: 0..1) [/prio1_huidig/vrouw/naamgegevens/achternaam]</svrl:text>
+                  <xsl:text/> (verwacht: 1) [/prio1_huidige_zwangerschap/vrouw/naamgegevens/achternaam]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
          <xsl:otherwise>
@@ -2826,28 +4076,24 @@ SOFTWARE.
                </xsl:attribute>
                <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
                   <xsl:value-of select="count(adaextension)"/>
-                  <xsl:text/> (verwacht: 0..1) [/prio1_huidig/vrouw/naamgegevens/adaextension]</svrl:text>
+                  <xsl:text/> (verwacht: 0..1) [/prio1_huidige_zwangerschap/vrouw/naamgegevens/adaextension]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M29"/>
+      <xsl:apply-templates select="*" mode="M41"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M29"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M29">
-      <xsl:apply-templates select="*" mode="M29"/>
+   <xsl:template match="text()" priority="-1" mode="M41"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M41">
+      <xsl:apply-templates select="*" mode="M41"/>
    </xsl:template>
-
    <!--PATTERN -->
-
-
-	  <!--RULE -->
-   <xsl:template match="/prio1_huidig/vrouw/naamgegevens/*[not(self::voornamen)][not(self::initialen)][not(self::roepnaam)][not(self::achternaam)][not(self::adaextension)]"
+   <!--RULE -->
+   <xsl:template match="/prio1_huidige_zwangerschap/vrouw/naamgegevens/*[not(self::voornamen)][not(self::initialen)][not(self::roepnaam)][not(self::achternaam)][not(self::adaextension)]"
                  priority="1000"
-                 mode="M30">
+                 mode="M42">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/prio1_huidig/vrouw/naamgegevens/*[not(self::voornamen)][not(self::initialen)][not(self::roepnaam)][not(self::achternaam)][not(self::adaextension)]"/>
-
-		    <!--REPORT -->
+                       context="/prio1_huidige_zwangerschap/vrouw/naamgegevens/*[not(self::voornamen)][not(self::initialen)][not(self::roepnaam)][not(self::achternaam)][not(self::adaextension)]"/>
+      <!--REPORT -->
       <xsl:if test="true()">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="true()">
             <xsl:attribute name="location">
@@ -2855,29 +4101,25 @@ SOFTWARE.
             </xsl:attribute>
             <svrl:text>Ongeldige informatie aangetroffen: <xsl:text/>
                <xsl:value-of select="local-name(.)"/>
-               <xsl:text/> [/prio1_huidig/vrouw/naamgegevens/<xsl:text/>
+               <xsl:text/> [/prio1_huidige_zwangerschap/vrouw/naamgegevens/<xsl:text/>
                <xsl:value-of select="name(.)"/>
                <xsl:text/>]</svrl:text>
          </svrl:successful-report>
       </xsl:if>
-      <xsl:apply-templates select="*" mode="M30"/>
+      <xsl:apply-templates select="*" mode="M42"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M30"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M30">
-      <xsl:apply-templates select="*" mode="M30"/>
+   <xsl:template match="text()" priority="-1" mode="M42"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M42">
+      <xsl:apply-templates select="*" mode="M42"/>
    </xsl:template>
-
    <!--PATTERN -->
-
-
-	  <!--RULE -->
-   <xsl:template match="/prio1_huidig/vrouw/naamgegevens/voornamen"
+   <!--RULE -->
+   <xsl:template match="/prio1_huidige_zwangerschap/vrouw/naamgegevens/voornamen"
                  priority="1000"
-                 mode="M31">
+                 mode="M43">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/prio1_huidig/vrouw/naamgegevens/voornamen"/>
-
-		    <!--ASSERT -->
+                       context="/prio1_huidige_zwangerschap/vrouw/naamgegevens/voornamen"/>
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@conceptId)"/>
          <xsl:otherwise>
@@ -2885,12 +4127,11 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Voornamen": Attribuut "conceptId" ontbreekt [/prio1_huidig/vrouw/naamgegevens/voornamen/@conceptId]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Voornamen": Attribuut "conceptId" ontbreekt [/prio1_huidige_zwangerschap/vrouw/naamgegevens/voornamen/@conceptId]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -2901,28 +4142,26 @@ SOFTWARE.
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Voornamen": De waarde "<xsl:text/>
                   <xsl:value-of select="@conceptId"/>
-                  <xsl:text/>" voor attribuut "conceptId" heeft een onjuist formaat [/prio1_huidig/vrouw/naamgegevens/voornamen/@conceptId; type=t-id]</svrl:text>
+                  <xsl:text/>" voor attribuut "conceptId" heeft een onjuist formaat [/prio1_huidige_zwangerschap/vrouw/naamgegevens/voornamen/@conceptId; type=t-id]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10042')"/>
+         <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10042')"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10042')">
+                                test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10042')">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Voornamen": De waarde "<xsl:text/>
                   <xsl:value-of select="@conceptId"/>
-                  <xsl:text/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10042" [/prio1_huidig/vrouw/naamgegevens/voornamen/@conceptId]</svrl:text>
+                  <xsl:text/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10042" [/prio1_huidige_zwangerschap/vrouw/naamgegevens/voornamen/@conceptId]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -2930,12 +4169,11 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Voornamen": Attribuut "value" ontbreekt [/prio1_huidig/vrouw/naamgegevens/voornamen/@value]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Voornamen": Attribuut "value" ontbreekt [/prio1_huidige_zwangerschap/vrouw/naamgegevens/voornamen/@value]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -2944,28 +4182,24 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Voornamen": Ongeldige attributen aangetroffen [/prio1_huidig/vrouw/naamgegevens/voornamen; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Voornamen": Ongeldige attributen aangetroffen [/prio1_huidige_zwangerschap/vrouw/naamgegevens/voornamen; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M31"/>
+      <xsl:apply-templates select="*" mode="M43"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M31"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M31">
-      <xsl:apply-templates select="*" mode="M31"/>
+   <xsl:template match="text()" priority="-1" mode="M43"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M43">
+      <xsl:apply-templates select="*" mode="M43"/>
    </xsl:template>
-
    <!--PATTERN -->
-
-
-	  <!--RULE -->
-   <xsl:template match="/prio1_huidig/vrouw/naamgegevens/initialen"
+   <!--RULE -->
+   <xsl:template match="/prio1_huidige_zwangerschap/vrouw/naamgegevens/initialen"
                  priority="1000"
-                 mode="M32">
+                 mode="M44">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/prio1_huidig/vrouw/naamgegevens/initialen"/>
-
-		    <!--ASSERT -->
+                       context="/prio1_huidige_zwangerschap/vrouw/naamgegevens/initialen"/>
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@conceptId)"/>
          <xsl:otherwise>
@@ -2973,12 +4207,11 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Initialen": Attribuut "conceptId" ontbreekt [/prio1_huidig/vrouw/naamgegevens/initialen/@conceptId]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Initialen": Attribuut "conceptId" ontbreekt [/prio1_huidige_zwangerschap/vrouw/naamgegevens/initialen/@conceptId]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -2989,28 +4222,26 @@ SOFTWARE.
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Initialen": De waarde "<xsl:text/>
                   <xsl:value-of select="@conceptId"/>
-                  <xsl:text/>" voor attribuut "conceptId" heeft een onjuist formaat [/prio1_huidig/vrouw/naamgegevens/initialen/@conceptId; type=t-id]</svrl:text>
+                  <xsl:text/>" voor attribuut "conceptId" heeft een onjuist formaat [/prio1_huidige_zwangerschap/vrouw/naamgegevens/initialen/@conceptId; type=t-id]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82359')"/>
+         <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82359')"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82359')">
+                                test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82359')">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Initialen": De waarde "<xsl:text/>
                   <xsl:value-of select="@conceptId"/>
-                  <xsl:text/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82359" [/prio1_huidig/vrouw/naamgegevens/initialen/@conceptId]</svrl:text>
+                  <xsl:text/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82359" [/prio1_huidige_zwangerschap/vrouw/naamgegevens/initialen/@conceptId]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -3018,12 +4249,11 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Initialen": Attribuut "value" ontbreekt [/prio1_huidig/vrouw/naamgegevens/initialen/@value]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Initialen": Attribuut "value" ontbreekt [/prio1_huidige_zwangerschap/vrouw/naamgegevens/initialen/@value]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -3032,28 +4262,24 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Initialen": Ongeldige attributen aangetroffen [/prio1_huidig/vrouw/naamgegevens/initialen; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Initialen": Ongeldige attributen aangetroffen [/prio1_huidige_zwangerschap/vrouw/naamgegevens/initialen; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M32"/>
+      <xsl:apply-templates select="*" mode="M44"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M32"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M32">
-      <xsl:apply-templates select="*" mode="M32"/>
+   <xsl:template match="text()" priority="-1" mode="M44"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M44">
+      <xsl:apply-templates select="*" mode="M44"/>
    </xsl:template>
-
    <!--PATTERN -->
-
-
-	  <!--RULE -->
-   <xsl:template match="/prio1_huidig/vrouw/naamgegevens/roepnaam"
+   <!--RULE -->
+   <xsl:template match="/prio1_huidige_zwangerschap/vrouw/naamgegevens/roepnaam"
                  priority="1000"
-                 mode="M33">
+                 mode="M45">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/prio1_huidig/vrouw/naamgegevens/roepnaam"/>
-
-		    <!--ASSERT -->
+                       context="/prio1_huidige_zwangerschap/vrouw/naamgegevens/roepnaam"/>
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@conceptId)"/>
          <xsl:otherwise>
@@ -3061,12 +4287,11 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Roepnaam": Attribuut "conceptId" ontbreekt [/prio1_huidig/vrouw/naamgegevens/roepnaam/@conceptId]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Roepnaam": Attribuut "conceptId" ontbreekt [/prio1_huidige_zwangerschap/vrouw/naamgegevens/roepnaam/@conceptId]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -3077,28 +4302,26 @@ SOFTWARE.
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Roepnaam": De waarde "<xsl:text/>
                   <xsl:value-of select="@conceptId"/>
-                  <xsl:text/>" voor attribuut "conceptId" heeft een onjuist formaat [/prio1_huidig/vrouw/naamgegevens/roepnaam/@conceptId; type=t-id]</svrl:text>
+                  <xsl:text/>" voor attribuut "conceptId" heeft een onjuist formaat [/prio1_huidige_zwangerschap/vrouw/naamgegevens/roepnaam/@conceptId; type=t-id]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82360')"/>
+         <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82360')"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82360')">
+                                test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82360')">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Roepnaam": De waarde "<xsl:text/>
                   <xsl:value-of select="@conceptId"/>
-                  <xsl:text/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82360" [/prio1_huidig/vrouw/naamgegevens/roepnaam/@conceptId]</svrl:text>
+                  <xsl:text/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82360" [/prio1_huidige_zwangerschap/vrouw/naamgegevens/roepnaam/@conceptId]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -3106,12 +4329,11 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Roepnaam": Attribuut "value" ontbreekt [/prio1_huidig/vrouw/naamgegevens/roepnaam/@value]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Roepnaam": Attribuut "value" ontbreekt [/prio1_huidige_zwangerschap/vrouw/naamgegevens/roepnaam/@value]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -3120,28 +4342,24 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Roepnaam": Ongeldige attributen aangetroffen [/prio1_huidig/vrouw/naamgegevens/roepnaam; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Roepnaam": Ongeldige attributen aangetroffen [/prio1_huidige_zwangerschap/vrouw/naamgegevens/roepnaam; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M33"/>
+      <xsl:apply-templates select="*" mode="M45"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M33"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M33">
-      <xsl:apply-templates select="*" mode="M33"/>
+   <xsl:template match="text()" priority="-1" mode="M45"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M45">
+      <xsl:apply-templates select="*" mode="M45"/>
    </xsl:template>
-
    <!--PATTERN -->
-
-
-	  <!--RULE -->
-   <xsl:template match="/prio1_huidig/vrouw/naamgegevens/achternaam"
+   <!--RULE -->
+   <xsl:template match="/prio1_huidige_zwangerschap/vrouw/naamgegevens/achternaam"
                  priority="1000"
-                 mode="M34">
+                 mode="M46">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/prio1_huidig/vrouw/naamgegevens/achternaam"/>
-
-		    <!--ASSERT -->
+                       context="/prio1_huidige_zwangerschap/vrouw/naamgegevens/achternaam"/>
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@conceptId)"/>
          <xsl:otherwise>
@@ -3149,12 +4367,11 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Achternaam": Attribuut "conceptId" ontbreekt [/prio1_huidig/vrouw/naamgegevens/achternaam/@conceptId]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Achternaam": Attribuut "conceptId" ontbreekt [/prio1_huidige_zwangerschap/vrouw/naamgegevens/achternaam/@conceptId]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -3165,28 +4382,26 @@ SOFTWARE.
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Achternaam": De waarde "<xsl:text/>
                   <xsl:value-of select="@conceptId"/>
-                  <xsl:text/>" voor attribuut "conceptId" heeft een onjuist formaat [/prio1_huidig/vrouw/naamgegevens/achternaam/@conceptId; type=t-id]</svrl:text>
+                  <xsl:text/>" voor attribuut "conceptId" heeft een onjuist formaat [/prio1_huidige_zwangerschap/vrouw/naamgegevens/achternaam/@conceptId; type=t-id]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82361')"/>
+         <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82361')"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82361')">
+                                test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82361')">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Achternaam": De waarde "<xsl:text/>
                   <xsl:value-of select="@conceptId"/>
-                  <xsl:text/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82361" [/prio1_huidig/vrouw/naamgegevens/achternaam/@conceptId]</svrl:text>
+                  <xsl:text/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82361" [/prio1_huidige_zwangerschap/vrouw/naamgegevens/achternaam/@conceptId]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @xsi:*))"/>
          <xsl:otherwise>
@@ -3195,28 +4410,24 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Achternaam": Ongeldige attributen aangetroffen [/prio1_huidig/vrouw/naamgegevens/achternaam; allowed=(@conceptId, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Achternaam": Ongeldige attributen aangetroffen [/prio1_huidige_zwangerschap/vrouw/naamgegevens/achternaam; allowed=(@conceptId, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M34"/>
+      <xsl:apply-templates select="*" mode="M46"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M34"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M34">
-      <xsl:apply-templates select="*" mode="M34"/>
+   <xsl:template match="text()" priority="-1" mode="M46"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M46">
+      <xsl:apply-templates select="*" mode="M46"/>
    </xsl:template>
-
    <!--PATTERN -->
-
-
-	  <!--RULE -->
-   <xsl:template match="/prio1_huidig/vrouw/naamgegevens/achternaam"
+   <!--RULE -->
+   <xsl:template match="/prio1_huidige_zwangerschap/vrouw/naamgegevens/achternaam"
                  priority="1000"
-                 mode="M35">
+                 mode="M47">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/prio1_huidig/vrouw/naamgegevens/achternaam"/>
-
-		    <!--ASSERT -->
+                       context="/prio1_huidige_zwangerschap/vrouw/naamgegevens/achternaam"/>
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(soort_naam) ge 0) and (count(soort_naam) le 1)"/>
          <xsl:otherwise>
@@ -3227,12 +4438,11 @@ SOFTWARE.
                </xsl:attribute>
                <svrl:text>Fout aantal voorkomens van "Soort naam": <xsl:text/>
                   <xsl:value-of select="count(soort_naam)"/>
-                  <xsl:text/> (verwacht: 0..1) [/prio1_huidig/vrouw/naamgegevens/achternaam/soort_naam]</svrl:text>
+                  <xsl:text/> (verwacht: 0..1) [/prio1_huidige_zwangerschap/vrouw/naamgegevens/achternaam/soort_naam]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(voorvoegsel) ge 0) and (count(voorvoegsel) le 1)"/>
          <xsl:otherwise>
@@ -3243,28 +4453,25 @@ SOFTWARE.
                </xsl:attribute>
                <svrl:text>Fout aantal voorkomens van "Voorvoegsel": <xsl:text/>
                   <xsl:value-of select="count(voorvoegsel)"/>
-                  <xsl:text/> (verwacht: 0..1) [/prio1_huidig/vrouw/naamgegevens/achternaam/voorvoegsel]</svrl:text>
+                  <xsl:text/> (verwacht: 0..1) [/prio1_huidige_zwangerschap/vrouw/naamgegevens/achternaam/voorvoegsel]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="(count(achternaam) ge 0) and (count(achternaam) le 1)"/>
+         <xsl:when test="count(achternaam) eq 1"/>
          <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="(count(achternaam) ge 0) and (count(achternaam) le 1)">
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="count(achternaam) eq 1">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Fout aantal voorkomens van "Achternaam": <xsl:text/>
                   <xsl:value-of select="count(achternaam)"/>
-                  <xsl:text/> (verwacht: 0..1) [/prio1_huidig/vrouw/naamgegevens/achternaam/achternaam]</svrl:text>
+                  <xsl:text/> (verwacht: 1) [/prio1_huidige_zwangerschap/vrouw/naamgegevens/achternaam/achternaam]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
          <xsl:otherwise>
@@ -3275,28 +4482,24 @@ SOFTWARE.
                </xsl:attribute>
                <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
                   <xsl:value-of select="count(adaextension)"/>
-                  <xsl:text/> (verwacht: 0..1) [/prio1_huidig/vrouw/naamgegevens/achternaam/adaextension]</svrl:text>
+                  <xsl:text/> (verwacht: 0..1) [/prio1_huidige_zwangerschap/vrouw/naamgegevens/achternaam/adaextension]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M35"/>
+      <xsl:apply-templates select="*" mode="M47"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M35"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M35">
-      <xsl:apply-templates select="*" mode="M35"/>
+   <xsl:template match="text()" priority="-1" mode="M47"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M47">
+      <xsl:apply-templates select="*" mode="M47"/>
    </xsl:template>
-
    <!--PATTERN -->
-
-
-	  <!--RULE -->
-   <xsl:template match="/prio1_huidig/vrouw/naamgegevens/achternaam/*[not(self::soort_naam)][not(self::voorvoegsel)][not(self::achternaam)][not(self::adaextension)]"
+   <!--RULE -->
+   <xsl:template match="/prio1_huidige_zwangerschap/vrouw/naamgegevens/achternaam/*[not(self::soort_naam)][not(self::voorvoegsel)][not(self::achternaam)][not(self::adaextension)]"
                  priority="1000"
-                 mode="M36">
+                 mode="M48">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/prio1_huidig/vrouw/naamgegevens/achternaam/*[not(self::soort_naam)][not(self::voorvoegsel)][not(self::achternaam)][not(self::adaextension)]"/>
-
-		    <!--REPORT -->
+                       context="/prio1_huidige_zwangerschap/vrouw/naamgegevens/achternaam/*[not(self::soort_naam)][not(self::voorvoegsel)][not(self::achternaam)][not(self::adaextension)]"/>
+      <!--REPORT -->
       <xsl:if test="true()">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="true()">
             <xsl:attribute name="location">
@@ -3304,29 +4507,25 @@ SOFTWARE.
             </xsl:attribute>
             <svrl:text>Ongeldige informatie aangetroffen: <xsl:text/>
                <xsl:value-of select="local-name(.)"/>
-               <xsl:text/> [/prio1_huidig/vrouw/naamgegevens/achternaam/<xsl:text/>
+               <xsl:text/> [/prio1_huidige_zwangerschap/vrouw/naamgegevens/achternaam/<xsl:text/>
                <xsl:value-of select="name(.)"/>
                <xsl:text/>]</svrl:text>
          </svrl:successful-report>
       </xsl:if>
-      <xsl:apply-templates select="*" mode="M36"/>
+      <xsl:apply-templates select="*" mode="M48"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M36"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M36">
-      <xsl:apply-templates select="*" mode="M36"/>
+   <xsl:template match="text()" priority="-1" mode="M48"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M48">
+      <xsl:apply-templates select="*" mode="M48"/>
    </xsl:template>
-
    <!--PATTERN -->
-
-
-	  <!--RULE -->
-   <xsl:template match="/prio1_huidig/vrouw/naamgegevens/achternaam/soort_naam"
+   <!--RULE -->
+   <xsl:template match="/prio1_huidige_zwangerschap/vrouw/naamgegevens/achternaam/soort_naam"
                  priority="1000"
-                 mode="M37">
+                 mode="M49">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/prio1_huidig/vrouw/naamgegevens/achternaam/soort_naam"/>
-
-		    <!--ASSERT -->
+                       context="/prio1_huidige_zwangerschap/vrouw/naamgegevens/achternaam/soort_naam"/>
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@conceptId)"/>
          <xsl:otherwise>
@@ -3334,12 +4533,11 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Soort naam": Attribuut "conceptId" ontbreekt [/prio1_huidig/vrouw/naamgegevens/achternaam/soort_naam/@conceptId]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Soort naam": Attribuut "conceptId" ontbreekt [/prio1_huidige_zwangerschap/vrouw/naamgegevens/achternaam/soort_naam/@conceptId]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -3350,28 +4548,26 @@ SOFTWARE.
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Soort naam": De waarde "<xsl:text/>
                   <xsl:value-of select="@conceptId"/>
-                  <xsl:text/>" voor attribuut "conceptId" heeft een onjuist formaat [/prio1_huidig/vrouw/naamgegevens/achternaam/soort_naam/@conceptId; type=t-id]</svrl:text>
+                  <xsl:text/>" voor attribuut "conceptId" heeft een onjuist formaat [/prio1_huidige_zwangerschap/vrouw/naamgegevens/achternaam/soort_naam/@conceptId; type=t-id]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82362')"/>
+         <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82362')"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82362')">
+                                test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82362')">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Soort naam": De waarde "<xsl:text/>
                   <xsl:value-of select="@conceptId"/>
-                  <xsl:text/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82362" [/prio1_huidig/vrouw/naamgegevens/achternaam/soort_naam/@conceptId]</svrl:text>
+                  <xsl:text/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82362" [/prio1_huidige_zwangerschap/vrouw/naamgegevens/achternaam/soort_naam/@conceptId]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -3379,12 +4575,11 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Soort naam": Attribuut "value" ontbreekt [/prio1_huidig/vrouw/naamgegevens/achternaam/soort_naam/@value]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Soort naam": Attribuut "value" ontbreekt [/prio1_huidige_zwangerschap/vrouw/naamgegevens/achternaam/soort_naam/@value]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value = ('1', '2'))"/>
          <xsl:otherwise>
@@ -3395,12 +4590,11 @@ SOFTWARE.
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Soort naam": De waarde "<xsl:text/>
                   <xsl:value-of select="@value"/>
-                  <xsl:text/>" voor attribuut "value" is onjuist [/prio1_huidig/vrouw/naamgegevens/achternaam/soort_naam/@value; allowed=('1', '2')]</svrl:text>
+                  <xsl:text/>" voor attribuut "value" is onjuist [/prio1_huidige_zwangerschap/vrouw/naamgegevens/achternaam/soort_naam/@value; allowed=('1', '2')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@code)"/>
          <xsl:otherwise>
@@ -3408,12 +4602,11 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Soort naam": Attribuut "code" ontbreekt [/prio1_huidig/vrouw/naamgegevens/achternaam/soort_naam/@code]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Soort naam": Attribuut "code" ontbreekt [/prio1_huidige_zwangerschap/vrouw/naamgegevens/achternaam/soort_naam/@code]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@code) or (@code = ('BR', 'SP'))"/>
          <xsl:otherwise>
@@ -3424,12 +4617,11 @@ SOFTWARE.
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Soort naam": De waarde "<xsl:text/>
                   <xsl:value-of select="@code"/>
-                  <xsl:text/>" voor attribuut "code" is onjuist [/prio1_huidig/vrouw/naamgegevens/achternaam/soort_naam/@code; allowed=('BR', 'SP')]</svrl:text>
+                  <xsl:text/>" voor attribuut "code" is onjuist [/prio1_huidige_zwangerschap/vrouw/naamgegevens/achternaam/soort_naam/@code; allowed=('BR', 'SP')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@codeSystem)"/>
          <xsl:otherwise>
@@ -3437,12 +4629,11 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Soort naam": Attribuut "codeSystem" ontbreekt [/prio1_huidig/vrouw/naamgegevens/achternaam/soort_naam/@codeSystem]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Soort naam": Attribuut "codeSystem" ontbreekt [/prio1_huidige_zwangerschap/vrouw/naamgegevens/achternaam/soort_naam/@codeSystem]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.5.43', '2.16.840.1.113883.5.43'))"/>
          <xsl:otherwise>
@@ -3453,12 +4644,11 @@ SOFTWARE.
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Soort naam": De waarde "<xsl:text/>
                   <xsl:value-of select="@codeSystem"/>
-                  <xsl:text/>" voor attribuut "codeSystem" is onjuist [/prio1_huidig/vrouw/naamgegevens/achternaam/soort_naam/@codeSystem; allowed=('2.16.840.1.113883.5.43', '2.16.840.1.113883.5.43')]</svrl:text>
+                  <xsl:text/>" voor attribuut "codeSystem" is onjuist [/prio1_huidige_zwangerschap/vrouw/naamgegevens/achternaam/soort_naam/@codeSystem; allowed=('2.16.840.1.113883.5.43', '2.16.840.1.113883.5.43')]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@displayName)"/>
          <xsl:otherwise>
@@ -3466,12 +4656,11 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Soort naam": Attribuut "displayName" ontbreekt [/prio1_huidig/vrouw/naamgegevens/achternaam/soort_naam/@displayName]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Soort naam": Attribuut "displayName" ontbreekt [/prio1_huidige_zwangerschap/vrouw/naamgegevens/achternaam/soort_naam/@displayName]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @xsi:*))"/>
          <xsl:otherwise>
@@ -3480,28 +4669,24 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Soort naam": Ongeldige attributen aangetroffen [/prio1_huidig/vrouw/naamgegevens/achternaam/soort_naam; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Soort naam": Ongeldige attributen aangetroffen [/prio1_huidige_zwangerschap/vrouw/naamgegevens/achternaam/soort_naam; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M37"/>
+      <xsl:apply-templates select="*" mode="M49"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M37"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M37">
-      <xsl:apply-templates select="*" mode="M37"/>
+   <xsl:template match="text()" priority="-1" mode="M49"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M49">
+      <xsl:apply-templates select="*" mode="M49"/>
    </xsl:template>
-
    <!--PATTERN -->
-
-
-	  <!--RULE -->
-   <xsl:template match="/prio1_huidig/vrouw/naamgegevens/achternaam/voorvoegsel"
+   <!--RULE -->
+   <xsl:template match="/prio1_huidige_zwangerschap/vrouw/naamgegevens/achternaam/voorvoegsel"
                  priority="1000"
-                 mode="M38">
+                 mode="M50">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/prio1_huidig/vrouw/naamgegevens/achternaam/voorvoegsel"/>
-
-		    <!--ASSERT -->
+                       context="/prio1_huidige_zwangerschap/vrouw/naamgegevens/achternaam/voorvoegsel"/>
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@conceptId)"/>
          <xsl:otherwise>
@@ -3509,12 +4694,11 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Voorvoegsel": Attribuut "conceptId" ontbreekt [/prio1_huidig/vrouw/naamgegevens/achternaam/voorvoegsel/@conceptId]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Voorvoegsel": Attribuut "conceptId" ontbreekt [/prio1_huidige_zwangerschap/vrouw/naamgegevens/achternaam/voorvoegsel/@conceptId]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -3525,28 +4709,26 @@ SOFTWARE.
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Voorvoegsel": De waarde "<xsl:text/>
                   <xsl:value-of select="@conceptId"/>
-                  <xsl:text/>" voor attribuut "conceptId" heeft een onjuist formaat [/prio1_huidig/vrouw/naamgegevens/achternaam/voorvoegsel/@conceptId; type=t-id]</svrl:text>
+                  <xsl:text/>" voor attribuut "conceptId" heeft een onjuist formaat [/prio1_huidige_zwangerschap/vrouw/naamgegevens/achternaam/voorvoegsel/@conceptId; type=t-id]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82363')"/>
+         <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82363')"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82363')">
+                                test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82363')">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Voorvoegsel": De waarde "<xsl:text/>
                   <xsl:value-of select="@conceptId"/>
-                  <xsl:text/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82363" [/prio1_huidig/vrouw/naamgegevens/achternaam/voorvoegsel/@conceptId]</svrl:text>
+                  <xsl:text/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82363" [/prio1_huidige_zwangerschap/vrouw/naamgegevens/achternaam/voorvoegsel/@conceptId]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -3554,12 +4736,11 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Voorvoegsel": Attribuut "value" ontbreekt [/prio1_huidig/vrouw/naamgegevens/achternaam/voorvoegsel/@value]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Voorvoegsel": Attribuut "value" ontbreekt [/prio1_huidige_zwangerschap/vrouw/naamgegevens/achternaam/voorvoegsel/@value]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -3568,28 +4749,24 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Voorvoegsel": Ongeldige attributen aangetroffen [/prio1_huidig/vrouw/naamgegevens/achternaam/voorvoegsel; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Voorvoegsel": Ongeldige attributen aangetroffen [/prio1_huidige_zwangerschap/vrouw/naamgegevens/achternaam/voorvoegsel; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M38"/>
+      <xsl:apply-templates select="*" mode="M50"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M38"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M38">
-      <xsl:apply-templates select="*" mode="M38"/>
+   <xsl:template match="text()" priority="-1" mode="M50"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M50">
+      <xsl:apply-templates select="*" mode="M50"/>
    </xsl:template>
-
    <!--PATTERN -->
-
-
-	  <!--RULE -->
-   <xsl:template match="/prio1_huidig/vrouw/naamgegevens/achternaam/achternaam"
+   <!--RULE -->
+   <xsl:template match="/prio1_huidige_zwangerschap/vrouw/naamgegevens/achternaam/achternaam"
                  priority="1000"
-                 mode="M39">
+                 mode="M51">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/prio1_huidig/vrouw/naamgegevens/achternaam/achternaam"/>
-
-		    <!--ASSERT -->
+                       context="/prio1_huidige_zwangerschap/vrouw/naamgegevens/achternaam/achternaam"/>
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@conceptId)"/>
          <xsl:otherwise>
@@ -3597,12 +4774,11 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Achternaam": Attribuut "conceptId" ontbreekt [/prio1_huidig/vrouw/naamgegevens/achternaam/achternaam/@conceptId]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Achternaam": Attribuut "conceptId" ontbreekt [/prio1_huidige_zwangerschap/vrouw/naamgegevens/achternaam/achternaam/@conceptId]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -3613,28 +4789,26 @@ SOFTWARE.
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Achternaam": De waarde "<xsl:text/>
                   <xsl:value-of select="@conceptId"/>
-                  <xsl:text/>" voor attribuut "conceptId" heeft een onjuist formaat [/prio1_huidig/vrouw/naamgegevens/achternaam/achternaam/@conceptId; type=t-id]</svrl:text>
+                  <xsl:text/>" voor attribuut "conceptId" heeft een onjuist formaat [/prio1_huidige_zwangerschap/vrouw/naamgegevens/achternaam/achternaam/@conceptId; type=t-id]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10043')"/>
+         <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10043')"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10043')">
+                                test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10043')">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Achternaam": De waarde "<xsl:text/>
                   <xsl:value-of select="@conceptId"/>
-                  <xsl:text/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10043" [/prio1_huidig/vrouw/naamgegevens/achternaam/achternaam/@conceptId]</svrl:text>
+                  <xsl:text/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10043" [/prio1_huidige_zwangerschap/vrouw/naamgegevens/achternaam/achternaam/@conceptId]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -3642,12 +4816,11 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Achternaam": Attribuut "value" ontbreekt [/prio1_huidig/vrouw/naamgegevens/achternaam/achternaam/@value]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Achternaam": Attribuut "value" ontbreekt [/prio1_huidige_zwangerschap/vrouw/naamgegevens/achternaam/achternaam/@value]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -3656,58 +4829,52 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Achternaam": Ongeldige attributen aangetroffen [/prio1_huidig/vrouw/naamgegevens/achternaam/achternaam; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Achternaam": Ongeldige attributen aangetroffen [/prio1_huidige_zwangerschap/vrouw/naamgegevens/achternaam/achternaam; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M39"/>
+      <xsl:apply-templates select="*" mode="M51"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M39"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M39">
-      <xsl:apply-templates select="*" mode="M39"/>
+   <xsl:template match="text()" priority="-1" mode="M51"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M51">
+      <xsl:apply-templates select="*" mode="M51"/>
    </xsl:template>
-
    <!--PATTERN -->
-
-
-	  <!--RULE -->
-   <xsl:template match="/prio1_huidig/zwangerschap" priority="1000" mode="M40">
+   <!--RULE -->
+   <xsl:template match="/prio1_huidige_zwangerschap/zwangerschap"
+                 priority="1000"
+                 mode="M52">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/prio1_huidig/zwangerschap"/>
-
-		    <!--ASSERT -->
+                       context="/prio1_huidige_zwangerschap/zwangerschap"/>
+      <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="(count(graviditeit) ge 0) and (count(graviditeit) le 1)"/>
+         <xsl:when test="count(graviditeit) eq 1"/>
          <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="(count(graviditeit) ge 0) and (count(graviditeit) le 1)">
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="count(graviditeit) eq 1">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Fout aantal voorkomens van "Graviditeit": <xsl:text/>
                   <xsl:value-of select="count(graviditeit)"/>
-                  <xsl:text/> (verwacht: 0..1) [/prio1_huidig/zwangerschap/graviditeit]</svrl:text>
+                  <xsl:text/> (verwacht: 1) [/prio1_huidige_zwangerschap/zwangerschap/graviditeit]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="(count(pariteit) ge 0) and (count(pariteit) le 1)"/>
+         <xsl:when test="count(pariteit) eq 1"/>
          <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="(count(pariteit) ge 0) and (count(pariteit) le 1)">
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="count(pariteit) eq 1">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Fout aantal voorkomens van "Pariteit": <xsl:text/>
                   <xsl:value-of select="count(pariteit)"/>
-                  <xsl:text/> (verwacht: 0..1) [/prio1_huidig/zwangerschap/pariteit]</svrl:text>
+                  <xsl:text/> (verwacht: 1) [/prio1_huidige_zwangerschap/zwangerschap/pariteit]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="count(a_terme_datum_groep) eq 1"/>
          <xsl:otherwise>
@@ -3718,12 +4885,11 @@ SOFTWARE.
                </xsl:attribute>
                <svrl:text>Fout aantal voorkomens van "A terme datum (groep)": <xsl:text/>
                   <xsl:value-of select="count(a_terme_datum_groep)"/>
-                  <xsl:text/> (verwacht: 1) [/prio1_huidig/zwangerschap/a_terme_datum_groep]</svrl:text>
+                  <xsl:text/> (verwacht: 1) [/prio1_huidige_zwangerschap/zwangerschap/a_terme_datum_groep]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
          <xsl:otherwise>
@@ -3734,28 +4900,24 @@ SOFTWARE.
                </xsl:attribute>
                <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
                   <xsl:value-of select="count(adaextension)"/>
-                  <xsl:text/> (verwacht: 0..1) [/prio1_huidig/zwangerschap/adaextension]</svrl:text>
+                  <xsl:text/> (verwacht: 0..1) [/prio1_huidige_zwangerschap/zwangerschap/adaextension]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M40"/>
+      <xsl:apply-templates select="*" mode="M52"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M40"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M40">
-      <xsl:apply-templates select="*" mode="M40"/>
+   <xsl:template match="text()" priority="-1" mode="M52"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M52">
+      <xsl:apply-templates select="*" mode="M52"/>
    </xsl:template>
-
    <!--PATTERN -->
-
-
-	  <!--RULE -->
-   <xsl:template match="/prio1_huidig/zwangerschap/*[not(self::graviditeit)][not(self::pariteit)][not(self::a_terme_datum_groep)][not(self::adaextension)]"
+   <!--RULE -->
+   <xsl:template match="/prio1_huidige_zwangerschap/zwangerschap/*[not(self::graviditeit)][not(self::pariteit)][not(self::a_terme_datum_groep)][not(self::adaextension)]"
                  priority="1000"
-                 mode="M41">
+                 mode="M53">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/prio1_huidig/zwangerschap/*[not(self::graviditeit)][not(self::pariteit)][not(self::a_terme_datum_groep)][not(self::adaextension)]"/>
-
-		    <!--REPORT -->
+                       context="/prio1_huidige_zwangerschap/zwangerschap/*[not(self::graviditeit)][not(self::pariteit)][not(self::a_terme_datum_groep)][not(self::adaextension)]"/>
+      <!--REPORT -->
       <xsl:if test="true()">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="true()">
             <xsl:attribute name="location">
@@ -3763,29 +4925,25 @@ SOFTWARE.
             </xsl:attribute>
             <svrl:text>Ongeldige informatie aangetroffen: <xsl:text/>
                <xsl:value-of select="local-name(.)"/>
-               <xsl:text/> [/prio1_huidig/zwangerschap/<xsl:text/>
+               <xsl:text/> [/prio1_huidige_zwangerschap/zwangerschap/<xsl:text/>
                <xsl:value-of select="name(.)"/>
                <xsl:text/>]</svrl:text>
          </svrl:successful-report>
       </xsl:if>
-      <xsl:apply-templates select="*" mode="M41"/>
+      <xsl:apply-templates select="*" mode="M53"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M41"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M41">
-      <xsl:apply-templates select="*" mode="M41"/>
+   <xsl:template match="text()" priority="-1" mode="M53"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M53">
+      <xsl:apply-templates select="*" mode="M53"/>
    </xsl:template>
-
    <!--PATTERN -->
-
-
-	  <!--RULE -->
-   <xsl:template match="/prio1_huidig/zwangerschap/graviditeit"
+   <!--RULE -->
+   <xsl:template match="/prio1_huidige_zwangerschap/zwangerschap/graviditeit"
                  priority="1000"
-                 mode="M42">
+                 mode="M54">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/prio1_huidig/zwangerschap/graviditeit"/>
-
-		    <!--ASSERT -->
+                       context="/prio1_huidige_zwangerschap/zwangerschap/graviditeit"/>
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@conceptId)"/>
          <xsl:otherwise>
@@ -3793,12 +4951,11 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Graviditeit": Attribuut "conceptId" ontbreekt [/prio1_huidig/zwangerschap/graviditeit/@conceptId]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Graviditeit": Attribuut "conceptId" ontbreekt [/prio1_huidige_zwangerschap/zwangerschap/graviditeit/@conceptId]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -3809,28 +4966,26 @@ SOFTWARE.
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Graviditeit": De waarde "<xsl:text/>
                   <xsl:value-of select="@conceptId"/>
-                  <xsl:text/>" voor attribuut "conceptId" heeft een onjuist formaat [/prio1_huidig/zwangerschap/graviditeit/@conceptId; type=t-id]</svrl:text>
+                  <xsl:text/>" voor attribuut "conceptId" heeft een onjuist formaat [/prio1_huidige_zwangerschap/zwangerschap/graviditeit/@conceptId; type=t-id]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20010')"/>
+         <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20010')"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20010')">
+                                test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20010')">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Graviditeit": De waarde "<xsl:text/>
                   <xsl:value-of select="@conceptId"/>
-                  <xsl:text/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20010" [/prio1_huidig/zwangerschap/graviditeit/@conceptId]</svrl:text>
+                  <xsl:text/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20010" [/prio1_huidige_zwangerschap/zwangerschap/graviditeit/@conceptId]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -3838,12 +4993,11 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Graviditeit": Attribuut "value" ontbreekt [/prio1_huidig/zwangerschap/graviditeit/@value]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Graviditeit": Attribuut "value" ontbreekt [/prio1_huidige_zwangerschap/zwangerschap/graviditeit/@value]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:decimal)"/>
          <xsl:otherwise>
@@ -3854,12 +5008,11 @@ SOFTWARE.
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Graviditeit": De waarde "<xsl:text/>
                   <xsl:value-of select="@value"/>
-                  <xsl:text/>" voor attribuut "value" heeft een onjuist formaat [/prio1_huidig/zwangerschap/graviditeit/@value; type=xs:decimal]</svrl:text>
+                  <xsl:text/>" voor attribuut "value" heeft een onjuist formaat [/prio1_huidige_zwangerschap/zwangerschap/graviditeit/@value; type=xs:decimal]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (local:decimal-convert(@value) ge 1)"/>
          <xsl:otherwise>
@@ -3870,12 +5023,11 @@ SOFTWARE.
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Graviditeit": De waarde "<xsl:text/>
                   <xsl:value-of select="@value"/>
-                  <xsl:text/>" voor attribuut "value" moet minimaal 1 zijn [/prio1_huidig/zwangerschap/graviditeit/@value; min-inclusive=1]</svrl:text>
+                  <xsl:text/>" voor attribuut "value" moet minimaal 1 zijn [/prio1_huidige_zwangerschap/zwangerschap/graviditeit/@value; min-inclusive=1]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (local:decimal-convert(@value) le 75)"/>
          <xsl:otherwise>
@@ -3886,12 +5038,11 @@ SOFTWARE.
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Graviditeit": De waarde "<xsl:text/>
                   <xsl:value-of select="@value"/>
-                  <xsl:text/>" voor attribuut "value" mag maximaal 75 zijn [/prio1_huidig/zwangerschap/graviditeit/@value; max-inclusive=75]</svrl:text>
+                  <xsl:text/>" voor attribuut "value" mag maximaal 75 zijn [/prio1_huidige_zwangerschap/zwangerschap/graviditeit/@value; max-inclusive=75]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -3900,28 +5051,24 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Graviditeit": Ongeldige attributen aangetroffen [/prio1_huidig/zwangerschap/graviditeit; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Graviditeit": Ongeldige attributen aangetroffen [/prio1_huidige_zwangerschap/zwangerschap/graviditeit; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M42"/>
+      <xsl:apply-templates select="*" mode="M54"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M42"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M42">
-      <xsl:apply-templates select="*" mode="M42"/>
+   <xsl:template match="text()" priority="-1" mode="M54"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M54">
+      <xsl:apply-templates select="*" mode="M54"/>
    </xsl:template>
-
    <!--PATTERN -->
-
-
-	  <!--RULE -->
-   <xsl:template match="/prio1_huidig/zwangerschap/pariteit"
+   <!--RULE -->
+   <xsl:template match="/prio1_huidige_zwangerschap/zwangerschap/pariteit"
                  priority="1000"
-                 mode="M43">
+                 mode="M55">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/prio1_huidig/zwangerschap/pariteit"/>
-
-		    <!--ASSERT -->
+                       context="/prio1_huidige_zwangerschap/zwangerschap/pariteit"/>
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@conceptId)"/>
          <xsl:otherwise>
@@ -3929,12 +5076,11 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Pariteit": Attribuut "conceptId" ontbreekt [/prio1_huidig/zwangerschap/pariteit/@conceptId]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Pariteit": Attribuut "conceptId" ontbreekt [/prio1_huidige_zwangerschap/zwangerschap/pariteit/@conceptId]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -3945,28 +5091,26 @@ SOFTWARE.
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Pariteit": De waarde "<xsl:text/>
                   <xsl:value-of select="@conceptId"/>
-                  <xsl:text/>" voor attribuut "conceptId" heeft een onjuist formaat [/prio1_huidig/zwangerschap/pariteit/@conceptId; type=t-id]</svrl:text>
+                  <xsl:text/>" voor attribuut "conceptId" heeft een onjuist formaat [/prio1_huidige_zwangerschap/zwangerschap/pariteit/@conceptId; type=t-id]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20153')"/>
+         <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20153')"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20153')">
+                                test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20153')">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Pariteit": De waarde "<xsl:text/>
                   <xsl:value-of select="@conceptId"/>
-                  <xsl:text/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20153" [/prio1_huidig/zwangerschap/pariteit/@conceptId]</svrl:text>
+                  <xsl:text/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20153" [/prio1_huidige_zwangerschap/zwangerschap/pariteit/@conceptId]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -3974,12 +5118,11 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Pariteit": Attribuut "value" ontbreekt [/prio1_huidig/zwangerschap/pariteit/@value]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Pariteit": Attribuut "value" ontbreekt [/prio1_huidige_zwangerschap/zwangerschap/pariteit/@value]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:decimal)"/>
          <xsl:otherwise>
@@ -3990,12 +5133,11 @@ SOFTWARE.
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Pariteit": De waarde "<xsl:text/>
                   <xsl:value-of select="@value"/>
-                  <xsl:text/>" voor attribuut "value" heeft een onjuist formaat [/prio1_huidig/zwangerschap/pariteit/@value; type=xs:decimal]</svrl:text>
+                  <xsl:text/>" voor attribuut "value" heeft een onjuist formaat [/prio1_huidige_zwangerschap/zwangerschap/pariteit/@value; type=xs:decimal]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (local:decimal-convert(@value) ge 0)"/>
          <xsl:otherwise>
@@ -4006,12 +5148,11 @@ SOFTWARE.
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Pariteit": De waarde "<xsl:text/>
                   <xsl:value-of select="@value"/>
-                  <xsl:text/>" voor attribuut "value" moet minimaal 0 zijn [/prio1_huidig/zwangerschap/pariteit/@value; min-inclusive=0]</svrl:text>
+                  <xsl:text/>" voor attribuut "value" moet minimaal 0 zijn [/prio1_huidige_zwangerschap/zwangerschap/pariteit/@value; min-inclusive=0]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (local:decimal-convert(@value) le 30)"/>
          <xsl:otherwise>
@@ -4022,12 +5163,11 @@ SOFTWARE.
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Pariteit": De waarde "<xsl:text/>
                   <xsl:value-of select="@value"/>
-                  <xsl:text/>" voor attribuut "value" mag maximaal 30 zijn [/prio1_huidig/zwangerschap/pariteit/@value; max-inclusive=30]</svrl:text>
+                  <xsl:text/>" voor attribuut "value" mag maximaal 30 zijn [/prio1_huidige_zwangerschap/zwangerschap/pariteit/@value; max-inclusive=30]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -4036,28 +5176,24 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Pariteit": Ongeldige attributen aangetroffen [/prio1_huidig/zwangerschap/pariteit; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Pariteit": Ongeldige attributen aangetroffen [/prio1_huidige_zwangerschap/zwangerschap/pariteit; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M43"/>
+      <xsl:apply-templates select="*" mode="M55"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M43"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M43">
-      <xsl:apply-templates select="*" mode="M43"/>
+   <xsl:template match="text()" priority="-1" mode="M55"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M55">
+      <xsl:apply-templates select="*" mode="M55"/>
    </xsl:template>
-
    <!--PATTERN -->
-
-
-	  <!--RULE -->
-   <xsl:template match="/prio1_huidig/zwangerschap/a_terme_datum_groep"
+   <!--RULE -->
+   <xsl:template match="/prio1_huidige_zwangerschap/zwangerschap/a_terme_datum_groep"
                  priority="1000"
-                 mode="M44">
+                 mode="M56">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/prio1_huidig/zwangerschap/a_terme_datum_groep"/>
-
-		    <!--ASSERT -->
+                       context="/prio1_huidige_zwangerschap/zwangerschap/a_terme_datum_groep"/>
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@conceptId)"/>
          <xsl:otherwise>
@@ -4065,12 +5201,11 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "A terme datum (groep)": Attribuut "conceptId" ontbreekt [/prio1_huidig/zwangerschap/a_terme_datum_groep/@conceptId]</svrl:text>
+               <svrl:text>Foutieve informatie voor "A terme datum (groep)": Attribuut "conceptId" ontbreekt [/prio1_huidige_zwangerschap/zwangerschap/a_terme_datum_groep/@conceptId]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -4081,28 +5216,26 @@ SOFTWARE.
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "A terme datum (groep)": De waarde "<xsl:text/>
                   <xsl:value-of select="@conceptId"/>
-                  <xsl:text/>" voor attribuut "conceptId" heeft een onjuist formaat [/prio1_huidig/zwangerschap/a_terme_datum_groep/@conceptId; type=t-id]</svrl:text>
+                  <xsl:text/>" voor attribuut "conceptId" heeft een onjuist formaat [/prio1_huidige_zwangerschap/zwangerschap/a_terme_datum_groep/@conceptId; type=t-id]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20029')"/>
+         <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20029')"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20029')">
+                                test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20029')">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "A terme datum (groep)": De waarde "<xsl:text/>
                   <xsl:value-of select="@conceptId"/>
-                  <xsl:text/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20029" [/prio1_huidig/zwangerschap/a_terme_datum_groep/@conceptId]</svrl:text>
+                  <xsl:text/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20029" [/prio1_huidige_zwangerschap/zwangerschap/a_terme_datum_groep/@conceptId]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @xsi:*))"/>
          <xsl:otherwise>
@@ -4111,28 +5244,24 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "A terme datum (groep)": Ongeldige attributen aangetroffen [/prio1_huidig/zwangerschap/a_terme_datum_groep; allowed=(@conceptId, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "A terme datum (groep)": Ongeldige attributen aangetroffen [/prio1_huidige_zwangerschap/zwangerschap/a_terme_datum_groep; allowed=(@conceptId, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M44"/>
+      <xsl:apply-templates select="*" mode="M56"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M44"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M44">
-      <xsl:apply-templates select="*" mode="M44"/>
+   <xsl:template match="text()" priority="-1" mode="M56"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M56">
+      <xsl:apply-templates select="*" mode="M56"/>
    </xsl:template>
-
    <!--PATTERN -->
-
-
-	  <!--RULE -->
-   <xsl:template match="/prio1_huidig/zwangerschap/a_terme_datum_groep"
+   <!--RULE -->
+   <xsl:template match="/prio1_huidige_zwangerschap/zwangerschap/a_terme_datum_groep"
                  priority="1000"
-                 mode="M45">
+                 mode="M57">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/prio1_huidig/zwangerschap/a_terme_datum_groep"/>
-
-		    <!--ASSERT -->
+                       context="/prio1_huidige_zwangerschap/zwangerschap/a_terme_datum_groep"/>
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="count(a_terme_datum) eq 1"/>
          <xsl:otherwise>
@@ -4143,12 +5272,11 @@ SOFTWARE.
                </xsl:attribute>
                <svrl:text>Fout aantal voorkomens van "A terme datum": <xsl:text/>
                   <xsl:value-of select="count(a_terme_datum)"/>
-                  <xsl:text/> (verwacht: 1) [/prio1_huidig/zwangerschap/a_terme_datum_groep/a_terme_datum]</svrl:text>
+                  <xsl:text/> (verwacht: 1) [/prio1_huidige_zwangerschap/zwangerschap/a_terme_datum_groep/a_terme_datum]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
          <xsl:otherwise>
@@ -4159,28 +5287,24 @@ SOFTWARE.
                </xsl:attribute>
                <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
                   <xsl:value-of select="count(adaextension)"/>
-                  <xsl:text/> (verwacht: 0..1) [/prio1_huidig/zwangerschap/a_terme_datum_groep/adaextension]</svrl:text>
+                  <xsl:text/> (verwacht: 0..1) [/prio1_huidige_zwangerschap/zwangerschap/a_terme_datum_groep/adaextension]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M45"/>
+      <xsl:apply-templates select="*" mode="M57"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M45"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M45">
-      <xsl:apply-templates select="*" mode="M45"/>
+   <xsl:template match="text()" priority="-1" mode="M57"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M57">
+      <xsl:apply-templates select="*" mode="M57"/>
    </xsl:template>
-
    <!--PATTERN -->
-
-
-	  <!--RULE -->
-   <xsl:template match="/prio1_huidig/zwangerschap/a_terme_datum_groep/*[not(self::a_terme_datum)][not(self::adaextension)]"
+   <!--RULE -->
+   <xsl:template match="/prio1_huidige_zwangerschap/zwangerschap/a_terme_datum_groep/*[not(self::a_terme_datum)][not(self::adaextension)]"
                  priority="1000"
-                 mode="M46">
+                 mode="M58">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/prio1_huidig/zwangerschap/a_terme_datum_groep/*[not(self::a_terme_datum)][not(self::adaextension)]"/>
-
-		    <!--REPORT -->
+                       context="/prio1_huidige_zwangerschap/zwangerschap/a_terme_datum_groep/*[not(self::a_terme_datum)][not(self::adaextension)]"/>
+      <!--REPORT -->
       <xsl:if test="true()">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="true()">
             <xsl:attribute name="location">
@@ -4188,29 +5312,25 @@ SOFTWARE.
             </xsl:attribute>
             <svrl:text>Ongeldige informatie aangetroffen: <xsl:text/>
                <xsl:value-of select="local-name(.)"/>
-               <xsl:text/> [/prio1_huidig/zwangerschap/a_terme_datum_groep/<xsl:text/>
+               <xsl:text/> [/prio1_huidige_zwangerschap/zwangerschap/a_terme_datum_groep/<xsl:text/>
                <xsl:value-of select="name(.)"/>
                <xsl:text/>]</svrl:text>
          </svrl:successful-report>
       </xsl:if>
-      <xsl:apply-templates select="*" mode="M46"/>
+      <xsl:apply-templates select="*" mode="M58"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M46"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M46">
-      <xsl:apply-templates select="*" mode="M46"/>
+   <xsl:template match="text()" priority="-1" mode="M58"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M58">
+      <xsl:apply-templates select="*" mode="M58"/>
    </xsl:template>
-
    <!--PATTERN -->
-
-
-	  <!--RULE -->
-   <xsl:template match="/prio1_huidig/zwangerschap/a_terme_datum_groep/a_terme_datum"
+   <!--RULE -->
+   <xsl:template match="/prio1_huidige_zwangerschap/zwangerschap/a_terme_datum_groep/a_terme_datum"
                  priority="1000"
-                 mode="M47">
+                 mode="M59">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/prio1_huidig/zwangerschap/a_terme_datum_groep/a_terme_datum"/>
-
-		    <!--ASSERT -->
+                       context="/prio1_huidige_zwangerschap/zwangerschap/a_terme_datum_groep/a_terme_datum"/>
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@conceptId)"/>
          <xsl:otherwise>
@@ -4218,12 +5338,11 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "A terme datum": Attribuut "conceptId" ontbreekt [/prio1_huidig/zwangerschap/a_terme_datum_groep/a_terme_datum/@conceptId]</svrl:text>
+               <svrl:text>Foutieve informatie voor "A terme datum": Attribuut "conceptId" ontbreekt [/prio1_huidige_zwangerschap/zwangerschap/a_terme_datum_groep/a_terme_datum/@conceptId]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -4234,28 +5353,26 @@ SOFTWARE.
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "A terme datum": De waarde "<xsl:text/>
                   <xsl:value-of select="@conceptId"/>
-                  <xsl:text/>" voor attribuut "conceptId" heeft een onjuist formaat [/prio1_huidig/zwangerschap/a_terme_datum_groep/a_terme_datum/@conceptId; type=t-id]</svrl:text>
+                  <xsl:text/>" voor attribuut "conceptId" heeft een onjuist formaat [/prio1_huidige_zwangerschap/zwangerschap/a_terme_datum_groep/a_terme_datum/@conceptId; type=t-id]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20030')"/>
+         <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20030')"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20030')">
+                                test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20030')">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "A terme datum": De waarde "<xsl:text/>
                   <xsl:value-of select="@conceptId"/>
-                  <xsl:text/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20030" [/prio1_huidig/zwangerschap/a_terme_datum_groep/a_terme_datum/@conceptId]</svrl:text>
+                  <xsl:text/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20030" [/prio1_huidige_zwangerschap/zwangerschap/a_terme_datum_groep/a_terme_datum/@conceptId]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -4263,12 +5380,11 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "A terme datum": Attribuut "value" ontbreekt [/prio1_huidig/zwangerschap/a_terme_datum_groep/a_terme_datum/@value]</svrl:text>
+               <svrl:text>Foutieve informatie voor "A terme datum": Attribuut "value" ontbreekt [/prio1_huidige_zwangerschap/zwangerschap/a_terme_datum_groep/a_terme_datum/@value]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or ((@value castable as xs:date) or (@value castable as xs:dateTime))"/>
          <xsl:otherwise>
@@ -4279,12 +5395,11 @@ SOFTWARE.
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "A terme datum": De waarde "<xsl:text/>
                   <xsl:value-of select="@value"/>
-                  <xsl:text/>" voor attribuut "value" heeft een onjuist formaat [/prio1_huidig/zwangerschap/a_terme_datum_groep/a_terme_datum/@value; type=t-datetime]</svrl:text>
+                  <xsl:text/>" voor attribuut "value" heeft een onjuist formaat [/prio1_huidige_zwangerschap/zwangerschap/a_terme_datum_groep/a_terme_datum/@value; type=t-datetime]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -4293,42 +5408,54 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "A terme datum": Ongeldige attributen aangetroffen [/prio1_huidig/zwangerschap/a_terme_datum_groep/a_terme_datum; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "A terme datum": Ongeldige attributen aangetroffen [/prio1_huidige_zwangerschap/zwangerschap/a_terme_datum_groep/a_terme_datum; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M47"/>
+      <xsl:apply-templates select="*" mode="M59"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M47"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M47">
-      <xsl:apply-templates select="*" mode="M47"/>
+   <xsl:template match="text()" priority="-1" mode="M59"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M59">
+      <xsl:apply-templates select="*" mode="M59"/>
    </xsl:template>
-
    <!--PATTERN -->
-
-
-	  <!--RULE -->
-   <xsl:template match="/prio1_huidig/medisch_onderzoek" priority="1000" mode="M48">
+   <!--RULE -->
+   <xsl:template match="/prio1_huidige_zwangerschap/medisch_onderzoek"
+                 priority="1000"
+                 mode="M60">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/prio1_huidig/medisch_onderzoek"/>
-
-		    <!--ASSERT -->
+                       context="/prio1_huidige_zwangerschap/medisch_onderzoek"/>
+      <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="(count(maternale_onderzoeksgegevens) ge 0) and (count(maternale_onderzoeksgegevens) le 1)"/>
+         <xsl:when test="count(datum_onderzoek) eq 1"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="(count(maternale_onderzoeksgegevens) ge 0) and (count(maternale_onderzoeksgegevens) le 1)">
+                                test="count(datum_onderzoek) eq 1">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "Datum onderzoek": <xsl:text/>
+                  <xsl:value-of select="count(datum_onderzoek)"/>
+                  <xsl:text/> (verwacht: 1) [/prio1_huidige_zwangerschap/medisch_onderzoek/datum_onderzoek]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="count(maternale_onderzoeksgegevens) eq 1"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="count(maternale_onderzoeksgegevens) eq 1">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Fout aantal voorkomens van "Maternale onderzoeksgegevens": <xsl:text/>
                   <xsl:value-of select="count(maternale_onderzoeksgegevens)"/>
-                  <xsl:text/> (verwacht: 0..1) [/prio1_huidig/medisch_onderzoek/maternale_onderzoeksgegevens]</svrl:text>
+                  <xsl:text/> (verwacht: 1) [/prio1_huidige_zwangerschap/medisch_onderzoek/maternale_onderzoeksgegevens]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
          <xsl:otherwise>
@@ -4339,28 +5466,24 @@ SOFTWARE.
                </xsl:attribute>
                <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
                   <xsl:value-of select="count(adaextension)"/>
-                  <xsl:text/> (verwacht: 0..1) [/prio1_huidig/medisch_onderzoek/adaextension]</svrl:text>
+                  <xsl:text/> (verwacht: 0..1) [/prio1_huidige_zwangerschap/medisch_onderzoek/adaextension]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M48"/>
+      <xsl:apply-templates select="*" mode="M60"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M48"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M48">
-      <xsl:apply-templates select="*" mode="M48"/>
+   <xsl:template match="text()" priority="-1" mode="M60"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M60">
+      <xsl:apply-templates select="*" mode="M60"/>
    </xsl:template>
-
    <!--PATTERN -->
-
-
-	  <!--RULE -->
-   <xsl:template match="/prio1_huidig/medisch_onderzoek/*[not(self::maternale_onderzoeksgegevens)][not(self::adaextension)]"
+   <!--RULE -->
+   <xsl:template match="/prio1_huidige_zwangerschap/medisch_onderzoek/*[not(self::datum_onderzoek)][not(self::maternale_onderzoeksgegevens)][not(self::adaextension)]"
                  priority="1000"
-                 mode="M49">
+                 mode="M61">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/prio1_huidig/medisch_onderzoek/*[not(self::maternale_onderzoeksgegevens)][not(self::adaextension)]"/>
-
-		    <!--REPORT -->
+                       context="/prio1_huidige_zwangerschap/medisch_onderzoek/*[not(self::datum_onderzoek)][not(self::maternale_onderzoeksgegevens)][not(self::adaextension)]"/>
+      <!--REPORT -->
       <xsl:if test="true()">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="true()">
             <xsl:attribute name="location">
@@ -4368,29 +5491,25 @@ SOFTWARE.
             </xsl:attribute>
             <svrl:text>Ongeldige informatie aangetroffen: <xsl:text/>
                <xsl:value-of select="local-name(.)"/>
-               <xsl:text/> [/prio1_huidig/medisch_onderzoek/<xsl:text/>
+               <xsl:text/> [/prio1_huidige_zwangerschap/medisch_onderzoek/<xsl:text/>
                <xsl:value-of select="name(.)"/>
                <xsl:text/>]</svrl:text>
          </svrl:successful-report>
       </xsl:if>
-      <xsl:apply-templates select="*" mode="M49"/>
+      <xsl:apply-templates select="*" mode="M61"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M49"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M49">
-      <xsl:apply-templates select="*" mode="M49"/>
+   <xsl:template match="text()" priority="-1" mode="M61"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M61">
+      <xsl:apply-templates select="*" mode="M61"/>
    </xsl:template>
-
    <!--PATTERN -->
-
-
-	  <!--RULE -->
-   <xsl:template match="/prio1_huidig/medisch_onderzoek/maternale_onderzoeksgegevens"
+   <!--RULE -->
+   <xsl:template match="/prio1_huidige_zwangerschap/medisch_onderzoek/datum_onderzoek"
                  priority="1000"
-                 mode="M50">
+                 mode="M62">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/prio1_huidig/medisch_onderzoek/maternale_onderzoeksgegevens"/>
-
-		    <!--ASSERT -->
+                       context="/prio1_huidige_zwangerschap/medisch_onderzoek/datum_onderzoek"/>
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@conceptId)"/>
          <xsl:otherwise>
@@ -4398,12 +5517,11 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Maternale onderzoeksgegevens": Attribuut "conceptId" ontbreekt [/prio1_huidig/medisch_onderzoek/maternale_onderzoeksgegevens/@conceptId]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Datum onderzoek": Attribuut "conceptId" ontbreekt [/prio1_huidige_zwangerschap/medisch_onderzoek/datum_onderzoek/@conceptId]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -4412,336 +5530,28 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Maternale onderzoeksgegevens": De waarde "<xsl:text/>
+               <svrl:text>Foutieve informatie voor "Datum onderzoek": De waarde "<xsl:text/>
                   <xsl:value-of select="@conceptId"/>
-                  <xsl:text/>" voor attribuut "conceptId" heeft een onjuist formaat [/prio1_huidig/medisch_onderzoek/maternale_onderzoeksgegevens/@conceptId; type=t-id]</svrl:text>
+                  <xsl:text/>" voor attribuut "conceptId" heeft een onjuist formaat [/prio1_huidige_zwangerschap/medisch_onderzoek/datum_onderzoek/@conceptId; type=t-id]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.142')"/>
+         <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.50020')"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.142')">
+                                test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.50020')">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Maternale onderzoeksgegevens": De waarde "<xsl:text/>
+               <svrl:text>Foutieve informatie voor "Datum onderzoek": De waarde "<xsl:text/>
                   <xsl:value-of select="@conceptId"/>
-                  <xsl:text/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.5.142" [/prio1_huidig/medisch_onderzoek/maternale_onderzoeksgegevens/@conceptId]</svrl:text>
+                  <xsl:text/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.50020" [/prio1_huidige_zwangerschap/medisch_onderzoek/datum_onderzoek/@conceptId]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @xsi:*))"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @xsi:*))">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Maternale onderzoeksgegevens": Ongeldige attributen aangetroffen [/prio1_huidig/medisch_onderzoek/maternale_onderzoeksgegevens; allowed=(@conceptId, @xsi:*)]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-      <xsl:apply-templates select="*" mode="M50"/>
-   </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M50"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M50">
-      <xsl:apply-templates select="*" mode="M50"/>
-   </xsl:template>
-
-   <!--PATTERN -->
-
-
-	  <!--RULE -->
-   <xsl:template match="/prio1_huidig/medisch_onderzoek/maternale_onderzoeksgegevens"
-                 priority="1000"
-                 mode="M51">
-      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/prio1_huidig/medisch_onderzoek/maternale_onderzoeksgegevens"/>
-
-		    <!--ASSERT -->
-      <xsl:choose>
-         <xsl:when test="(count(urine_bloed_en_aanvullende_onderzoeken) ge 0) and (count(urine_bloed_en_aanvullende_onderzoeken) le 1)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="(count(urine_bloed_en_aanvullende_onderzoeken) ge 0) and (count(urine_bloed_en_aanvullende_onderzoeken) le 1)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Fout aantal voorkomens van "Urine-, bloed- en aanvullende onderzoeken": <xsl:text/>
-                  <xsl:value-of select="count(urine_bloed_en_aanvullende_onderzoeken)"/>
-                  <xsl:text/> (verwacht: 0..1) [/prio1_huidig/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
-         <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="(count(adaextension) ge 0) and (count(adaextension) le 1)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
-                  <xsl:value-of select="count(adaextension)"/>
-                  <xsl:text/> (verwacht: 0..1) [/prio1_huidig/medisch_onderzoek/maternale_onderzoeksgegevens/adaextension]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-      <xsl:apply-templates select="*" mode="M51"/>
-   </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M51"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M51">
-      <xsl:apply-templates select="*" mode="M51"/>
-   </xsl:template>
-
-   <!--PATTERN -->
-
-
-	  <!--RULE -->
-   <xsl:template match="/prio1_huidig/medisch_onderzoek/maternale_onderzoeksgegevens/*[not(self::urine_bloed_en_aanvullende_onderzoeken)][not(self::adaextension)]"
-                 priority="1000"
-                 mode="M52">
-      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/prio1_huidig/medisch_onderzoek/maternale_onderzoeksgegevens/*[not(self::urine_bloed_en_aanvullende_onderzoeken)][not(self::adaextension)]"/>
-
-		    <!--REPORT -->
-      <xsl:if test="true()">
-         <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="true()">
-            <xsl:attribute name="location">
-               <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-            </xsl:attribute>
-            <svrl:text>Ongeldige informatie aangetroffen: <xsl:text/>
-               <xsl:value-of select="local-name(.)"/>
-               <xsl:text/> [/prio1_huidig/medisch_onderzoek/maternale_onderzoeksgegevens/<xsl:text/>
-               <xsl:value-of select="name(.)"/>
-               <xsl:text/>]</svrl:text>
-         </svrl:successful-report>
-      </xsl:if>
-      <xsl:apply-templates select="*" mode="M52"/>
-   </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M52"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M52">
-      <xsl:apply-templates select="*" mode="M52"/>
-   </xsl:template>
-
-   <!--PATTERN -->
-
-
-	  <!--RULE -->
-   <xsl:template match="/prio1_huidig/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken"
-                 priority="1000"
-                 mode="M53">
-      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/prio1_huidig/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken"/>
-
-		    <!--ASSERT -->
-      <xsl:choose>
-         <xsl:when test="exists(@conceptId)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@conceptId)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Urine-, bloed- en aanvullende onderzoeken": Attribuut "conceptId" ontbreekt [/prio1_huidig/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/@conceptId]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
-         <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Urine-, bloed- en aanvullende onderzoeken": De waarde "<xsl:text/>
-                  <xsl:value-of select="@conceptId"/>
-                  <xsl:text/>" voor attribuut "conceptId" heeft een onjuist formaat [/prio1_huidig/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/@conceptId; type=t-id]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
-         <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80959')"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80959')">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Urine-, bloed- en aanvullende onderzoeken": De waarde "<xsl:text/>
-                  <xsl:value-of select="@conceptId"/>
-                  <xsl:text/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80959" [/prio1_huidig/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/@conceptId]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @xsi:*))"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @xsi:*))">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Urine-, bloed- en aanvullende onderzoeken": Ongeldige attributen aangetroffen [/prio1_huidig/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken; allowed=(@conceptId, @xsi:*)]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-      <xsl:apply-templates select="*" mode="M53"/>
-   </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M53"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M53">
-      <xsl:apply-templates select="*" mode="M53"/>
-   </xsl:template>
-
-   <!--PATTERN -->
-
-
-	  <!--RULE -->
-   <xsl:template match="/prio1_huidig/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken"
-                 priority="1000"
-                 mode="M54">
-      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/prio1_huidig/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken"/>
-
-		    <!--ASSERT -->
-      <xsl:choose>
-         <xsl:when test="(count(hb) ge 0) and (count(hb) le 1)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="(count(hb) ge 0) and (count(hb) le 1)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Fout aantal voorkomens van "Hb": <xsl:text/>
-                  <xsl:value-of select="count(hb)"/>
-                  <xsl:text/> (verwacht: 0..1) [/prio1_huidig/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/hb]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
-         <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="(count(adaextension) ge 0) and (count(adaextension) le 1)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
-                  <xsl:value-of select="count(adaextension)"/>
-                  <xsl:text/> (verwacht: 0..1) [/prio1_huidig/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/adaextension]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-      <xsl:apply-templates select="*" mode="M54"/>
-   </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M54"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M54">
-      <xsl:apply-templates select="*" mode="M54"/>
-   </xsl:template>
-
-   <!--PATTERN -->
-
-
-	  <!--RULE -->
-   <xsl:template match="/prio1_huidig/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/*[not(self::hb)][not(self::adaextension)]"
-                 priority="1000"
-                 mode="M55">
-      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/prio1_huidig/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/*[not(self::hb)][not(self::adaextension)]"/>
-
-		    <!--REPORT -->
-      <xsl:if test="true()">
-         <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="true()">
-            <xsl:attribute name="location">
-               <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-            </xsl:attribute>
-            <svrl:text>Ongeldige informatie aangetroffen: <xsl:text/>
-               <xsl:value-of select="local-name(.)"/>
-               <xsl:text/> [/prio1_huidig/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/<xsl:text/>
-               <xsl:value-of select="name(.)"/>
-               <xsl:text/>]</svrl:text>
-         </svrl:successful-report>
-      </xsl:if>
-      <xsl:apply-templates select="*" mode="M55"/>
-   </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M55"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M55">
-      <xsl:apply-templates select="*" mode="M55"/>
-   </xsl:template>
-
-   <!--PATTERN -->
-
-
-	  <!--RULE -->
-   <xsl:template match="/prio1_huidig/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/hb"
-                 priority="1000"
-                 mode="M56">
-      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="/prio1_huidig/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/hb"/>
-
-		    <!--ASSERT -->
-      <xsl:choose>
-         <xsl:when test="exists(@conceptId)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@conceptId)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Hb": Attribuut "conceptId" ontbreekt [/prio1_huidig/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/hb/@conceptId]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
-         <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Hb": De waarde "<xsl:text/>
-                  <xsl:value-of select="@conceptId"/>
-                  <xsl:text/>" voor attribuut "conceptId" heeft een onjuist formaat [/prio1_huidig/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/hb/@conceptId; type=t-id]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
-         <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10814')"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10814')">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Hb": De waarde "<xsl:text/>
-                  <xsl:value-of select="@conceptId"/>
-                  <xsl:text/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10814" [/prio1_huidig/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/hb/@conceptId]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -4749,12 +5559,379 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Hb": Attribuut "value" ontbreekt [/prio1_huidig/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/hb/@value]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Datum onderzoek": Attribuut "value" ontbreekt [/prio1_huidige_zwangerschap/medisch_onderzoek/datum_onderzoek/@value]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="empty(@value) or ((@value castable as xs:date) or (@value castable as xs:dateTime))"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="empty(@value) or ((@value castable as xs:date) or (@value castable as xs:dateTime))">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Datum onderzoek": De waarde "<xsl:text/>
+                  <xsl:value-of select="@value"/>
+                  <xsl:text/>" voor attribuut "value" heeft een onjuist formaat [/prio1_huidige_zwangerschap/medisch_onderzoek/datum_onderzoek/@value; type=t-datetime]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Datum onderzoek": Ongeldige attributen aangetroffen [/prio1_huidige_zwangerschap/medisch_onderzoek/datum_onderzoek; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <xsl:apply-templates select="*" mode="M62"/>
+   </xsl:template>
+   <xsl:template match="text()" priority="-1" mode="M62"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M62">
+      <xsl:apply-templates select="*" mode="M62"/>
+   </xsl:template>
+   <!--PATTERN -->
+   <!--RULE -->
+   <xsl:template match="/prio1_huidige_zwangerschap/medisch_onderzoek/maternale_onderzoeksgegevens"
+                 priority="1000"
+                 mode="M63">
+      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                       context="/prio1_huidige_zwangerschap/medisch_onderzoek/maternale_onderzoeksgegevens"/>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="exists(@conceptId)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@conceptId)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Maternale onderzoeksgegevens": Attribuut "conceptId" ontbreekt [/prio1_huidige_zwangerschap/medisch_onderzoek/maternale_onderzoeksgegevens/@conceptId]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Maternale onderzoeksgegevens": De waarde "<xsl:text/>
+                  <xsl:value-of select="@conceptId"/>
+                  <xsl:text/>" voor attribuut "conceptId" heeft een onjuist formaat [/prio1_huidige_zwangerschap/medisch_onderzoek/maternale_onderzoeksgegevens/@conceptId; type=t-id]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.142')"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.142')">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Maternale onderzoeksgegevens": De waarde "<xsl:text/>
+                  <xsl:value-of select="@conceptId"/>
+                  <xsl:text/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.142" [/prio1_huidige_zwangerschap/medisch_onderzoek/maternale_onderzoeksgegevens/@conceptId]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="empty(@* except (@conceptId, @xsi:*))"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="empty(@* except (@conceptId, @xsi:*))">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Maternale onderzoeksgegevens": Ongeldige attributen aangetroffen [/prio1_huidige_zwangerschap/medisch_onderzoek/maternale_onderzoeksgegevens; allowed=(@conceptId, @xsi:*)]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <xsl:apply-templates select="*" mode="M63"/>
+   </xsl:template>
+   <xsl:template match="text()" priority="-1" mode="M63"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M63">
+      <xsl:apply-templates select="*" mode="M63"/>
+   </xsl:template>
+   <!--PATTERN -->
+   <!--RULE -->
+   <xsl:template match="/prio1_huidige_zwangerschap/medisch_onderzoek/maternale_onderzoeksgegevens"
+                 priority="1000"
+                 mode="M64">
+      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                       context="/prio1_huidige_zwangerschap/medisch_onderzoek/maternale_onderzoeksgegevens"/>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="count(urine_bloed_en_aanvullende_onderzoeken) eq 1"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="count(urine_bloed_en_aanvullende_onderzoeken) eq 1">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "Urine-, bloed- en aanvullende onderzoeken": <xsl:text/>
+                  <xsl:value-of select="count(urine_bloed_en_aanvullende_onderzoeken)"/>
+                  <xsl:text/> (verwacht: 1) [/prio1_huidige_zwangerschap/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(adaextension) ge 0) and (count(adaextension) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
+                  <xsl:value-of select="count(adaextension)"/>
+                  <xsl:text/> (verwacht: 0..1) [/prio1_huidige_zwangerschap/medisch_onderzoek/maternale_onderzoeksgegevens/adaextension]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <xsl:apply-templates select="*" mode="M64"/>
+   </xsl:template>
+   <xsl:template match="text()" priority="-1" mode="M64"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M64">
+      <xsl:apply-templates select="*" mode="M64"/>
+   </xsl:template>
+   <!--PATTERN -->
+   <!--RULE -->
+   <xsl:template match="/prio1_huidige_zwangerschap/medisch_onderzoek/maternale_onderzoeksgegevens/*[not(self::urine_bloed_en_aanvullende_onderzoeken)][not(self::adaextension)]"
+                 priority="1000"
+                 mode="M65">
+      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                       context="/prio1_huidige_zwangerschap/medisch_onderzoek/maternale_onderzoeksgegevens/*[not(self::urine_bloed_en_aanvullende_onderzoeken)][not(self::adaextension)]"/>
+      <!--REPORT -->
+      <xsl:if test="true()">
+         <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="true()">
+            <xsl:attribute name="location">
+               <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+            </xsl:attribute>
+            <svrl:text>Ongeldige informatie aangetroffen: <xsl:text/>
+               <xsl:value-of select="local-name(.)"/>
+               <xsl:text/> [/prio1_huidige_zwangerschap/medisch_onderzoek/maternale_onderzoeksgegevens/<xsl:text/>
+               <xsl:value-of select="name(.)"/>
+               <xsl:text/>]</svrl:text>
+         </svrl:successful-report>
+      </xsl:if>
+      <xsl:apply-templates select="*" mode="M65"/>
+   </xsl:template>
+   <xsl:template match="text()" priority="-1" mode="M65"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M65">
+      <xsl:apply-templates select="*" mode="M65"/>
+   </xsl:template>
+   <!--PATTERN -->
+   <!--RULE -->
+   <xsl:template match="/prio1_huidige_zwangerschap/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken"
+                 priority="1000"
+                 mode="M66">
+      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                       context="/prio1_huidige_zwangerschap/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken"/>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="exists(@conceptId)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@conceptId)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Urine-, bloed- en aanvullende onderzoeken": Attribuut "conceptId" ontbreekt [/prio1_huidige_zwangerschap/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/@conceptId]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Urine-, bloed- en aanvullende onderzoeken": De waarde "<xsl:text/>
+                  <xsl:value-of select="@conceptId"/>
+                  <xsl:text/>" voor attribuut "conceptId" heeft een onjuist formaat [/prio1_huidige_zwangerschap/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/@conceptId; type=t-id]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80959')"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80959')">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Urine-, bloed- en aanvullende onderzoeken": De waarde "<xsl:text/>
+                  <xsl:value-of select="@conceptId"/>
+                  <xsl:text/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80959" [/prio1_huidige_zwangerschap/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/@conceptId]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="empty(@* except (@conceptId, @xsi:*))"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="empty(@* except (@conceptId, @xsi:*))">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Urine-, bloed- en aanvullende onderzoeken": Ongeldige attributen aangetroffen [/prio1_huidige_zwangerschap/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken; allowed=(@conceptId, @xsi:*)]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <xsl:apply-templates select="*" mode="M66"/>
+   </xsl:template>
+   <xsl:template match="text()" priority="-1" mode="M66"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M66">
+      <xsl:apply-templates select="*" mode="M66"/>
+   </xsl:template>
+   <!--PATTERN -->
+   <!--RULE -->
+   <xsl:template match="/prio1_huidige_zwangerschap/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken"
+                 priority="1000"
+                 mode="M67">
+      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                       context="/prio1_huidige_zwangerschap/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken"/>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="count(hb) eq 1"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="count(hb) eq 1">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "Hb": <xsl:text/>
+                  <xsl:value-of select="count(hb)"/>
+                  <xsl:text/> (verwacht: 1) [/prio1_huidige_zwangerschap/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/hb]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(adaextension) ge 0) and (count(adaextension) le 1)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Fout aantal voorkomens van "adaextension": <xsl:text/>
+                  <xsl:value-of select="count(adaextension)"/>
+                  <xsl:text/> (verwacht: 0..1) [/prio1_huidige_zwangerschap/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/adaextension]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <xsl:apply-templates select="*" mode="M67"/>
+   </xsl:template>
+   <xsl:template match="text()" priority="-1" mode="M67"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M67">
+      <xsl:apply-templates select="*" mode="M67"/>
+   </xsl:template>
+   <!--PATTERN -->
+   <!--RULE -->
+   <xsl:template match="/prio1_huidige_zwangerschap/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/*[not(self::hb)][not(self::adaextension)]"
+                 priority="1000"
+                 mode="M68">
+      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                       context="/prio1_huidige_zwangerschap/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/*[not(self::hb)][not(self::adaextension)]"/>
+      <!--REPORT -->
+      <xsl:if test="true()">
+         <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="true()">
+            <xsl:attribute name="location">
+               <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+            </xsl:attribute>
+            <svrl:text>Ongeldige informatie aangetroffen: <xsl:text/>
+               <xsl:value-of select="local-name(.)"/>
+               <xsl:text/> [/prio1_huidige_zwangerschap/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/<xsl:text/>
+               <xsl:value-of select="name(.)"/>
+               <xsl:text/>]</svrl:text>
+         </svrl:successful-report>
+      </xsl:if>
+      <xsl:apply-templates select="*" mode="M68"/>
+   </xsl:template>
+   <xsl:template match="text()" priority="-1" mode="M68"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M68">
+      <xsl:apply-templates select="*" mode="M68"/>
+   </xsl:template>
+   <!--PATTERN -->
+   <!--RULE -->
+   <xsl:template match="/prio1_huidige_zwangerschap/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/hb"
+                 priority="1000"
+                 mode="M69">
+      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                       context="/prio1_huidige_zwangerschap/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/hb"/>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="exists(@conceptId)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@conceptId)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Hb": Attribuut "conceptId" ontbreekt [/prio1_huidige_zwangerschap/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/hb/@conceptId]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Hb": De waarde "<xsl:text/>
+                  <xsl:value-of select="@conceptId"/>
+                  <xsl:text/>" voor attribuut "conceptId" heeft een onjuist formaat [/prio1_huidige_zwangerschap/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/hb/@conceptId; type=t-id]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10814')"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10814')">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Hb": De waarde "<xsl:text/>
+                  <xsl:value-of select="@conceptId"/>
+                  <xsl:text/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10814" [/prio1_huidige_zwangerschap/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/hb/@conceptId]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="exists(@value)"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Foutieve informatie voor "Hb": Attribuut "value" ontbreekt [/prio1_huidige_zwangerschap/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/hb/@value]</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:decimal)"/>
          <xsl:otherwise>
@@ -4765,12 +5942,11 @@ SOFTWARE.
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Hb": De waarde "<xsl:text/>
                   <xsl:value-of select="@value"/>
-                  <xsl:text/>" voor attribuut "value" heeft een onjuist formaat [/prio1_huidig/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/hb/@value; type=xs:decimal]</svrl:text>
+                  <xsl:text/>" voor attribuut "value" heeft een onjuist formaat [/prio1_huidige_zwangerschap/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/hb/@value; type=xs:decimal]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (local:decimal-convert(@value) ge 0)"/>
          <xsl:otherwise>
@@ -4781,12 +5957,11 @@ SOFTWARE.
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Hb": De waarde "<xsl:text/>
                   <xsl:value-of select="@value"/>
-                  <xsl:text/>" voor attribuut "value" moet minimaal 0 zijn [/prio1_huidig/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/hb/@value; min-inclusive=0]</svrl:text>
+                  <xsl:text/>" voor attribuut "value" moet minimaal 0 zijn [/prio1_huidige_zwangerschap/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/hb/@value; min-inclusive=0]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@unit)"/>
          <xsl:otherwise>
@@ -4794,12 +5969,11 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Hb": Attribuut "unit" ontbreekt [/prio1_huidig/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/hb/@unit]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Hb": Attribuut "unit" ontbreekt [/prio1_huidige_zwangerschap/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/hb/@unit]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@unit) or (@unit eq 'mmol/L')"/>
          <xsl:otherwise>
@@ -4810,12 +5984,11 @@ SOFTWARE.
                </xsl:attribute>
                <svrl:text>Foutieve informatie voor "Hb": De waarde "<xsl:text/>
                   <xsl:value-of select="@unit"/>
-                  <xsl:text/>" voor attribuut "unit" heeft niet de verwachte vaste waarde "mmol/L" [/prio1_huidig/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/hb/@unit]</svrl:text>
+                  <xsl:text/>" voor attribuut "unit" heeft niet de verwachte vaste waarde "mmol/L" [/prio1_huidige_zwangerschap/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/hb/@unit]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @unit, @xsi:*))"/>
          <xsl:otherwise>
@@ -4824,14 +5997,14 @@ SOFTWARE.
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Hb": Ongeldige attributen aangetroffen [/prio1_huidig/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/hb; allowed=(@conceptId, @value, @unit, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Hb": Ongeldige attributen aangetroffen [/prio1_huidige_zwangerschap/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/hb; allowed=(@conceptId, @value, @unit, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M56"/>
+      <xsl:apply-templates select="*" mode="M69"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M56"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M56">
-      <xsl:apply-templates select="*" mode="M56"/>
+   <xsl:template match="text()" priority="-1" mode="M69"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M69">
+      <xsl:apply-templates select="*" mode="M69"/>
    </xsl:template>
 </xsl:stylesheet>

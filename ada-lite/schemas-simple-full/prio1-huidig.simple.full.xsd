@@ -24,17 +24,17 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 -->
    <xs:annotation>
-      <xs:documentation xml:lang="nl-NL">Schema for ADA documents prio1_huidig - Full version</xs:documentation>
+      <xs:documentation xml:lang="nl-NL">Schema for ADA documents prio1_huidige_zwangerschap - Full version</xs:documentation>
       <xs:documentation xml:lang="nl-NL">Source: design/specs-full/prio1-huidig.xml</xs:documentation>
       <xs:documentation xml:lang="nl-NL">Generator: design/xsl/ada-rtd2ada-schema-simple.xsl</xs:documentation>
-      <xs:appinfo source="shortname">prio1_huidig</xs:appinfo>
+      <xs:appinfo source="shortname">prio1_huidige_zwangerschap</xs:appinfo>
       <xs:appinfo source="source">design/specs-full/prio1-huidig.xml</xs:appinfo>
       <xs:appinfo source="lite-or-full">Full</xs:appinfo>
       <xs:appinfo source="generator">design/xsl/ada-rtd2ada-schema-simple.xsl</xs:appinfo>
    </xs:annotation>
-   <xs:element name="prio1_huidig" type="prio1_huidig">
+   <xs:element name="prio1_huidige_zwangerschap" type="prio1_huidige_zwangerschap">
       <xs:annotation>
-         <xs:documentation source="name" xml:lang="nl-NL">Prio1 huidig</xs:documentation>
+         <xs:documentation source="name" xml:lang="nl-NL">Prio1 huidige zwangerschap</xs:documentation>
       </xs:annotation>
    </xs:element>
    <xs:simpleType name="t-id">
@@ -48,10 +48,10 @@ SOFTWARE.
    <xs:simpleType name="t-datetime">
       <xs:union memberTypes="xs:date xs:dateTime"/>
    </xs:simpleType>
-   <xs:complexType name="prio1_huidig">
+   <xs:complexType name="prio1_huidige_zwangerschap">
       <xs:sequence>
          <xs:element name="zorgverlenerzorginstelling"
-                     minOccurs="0"
+                     minOccurs="1"
                      maxOccurs="1"
                      type="zorgverlenerzorginstelling">
             <xs:annotation>
@@ -66,7 +66,7 @@ SOFTWARE.
             </xs:annotation>
          </xs:element>
          <xs:element name="zwangerschap"
-                     minOccurs="0"
+                     minOccurs="1"
                      maxOccurs="1"
                      type="zwangerschap">
             <xs:annotation>
@@ -91,24 +91,16 @@ SOFTWARE.
       <xs:attribute name="transactionRef"
                     type="t-id"
                     use="required"
-                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.4.2453"/>
+                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.4.2493"/>
       <xs:attribute name="transactionEffectiveDate"
                     type="xs:dateTime"
                     use="required"
-                    fixed="2018-12-17T15:21:25"/>
+                    fixed="2020-01-08T13:13:15"/>
       <xs:attribute name="versionDate" type="xs:dateTime" use="required"/>
       <xs:attribute name="prefix" type="xs:string" use="required"/>
    </xs:complexType>
    <xs:complexType name="zorgverlenerzorginstelling">
       <xs:sequence>
-         <xs:element name="zorgverlener"
-                     minOccurs="0"
-                     maxOccurs="1"
-                     type="zorgverlener">
-            <xs:annotation>
-               <xs:documentation source="name" xml:lang="nl-NL">Zorgverlener</xs:documentation>
-            </xs:annotation>
-         </xs:element>
          <xs:element name="zorginstelling"
                      minOccurs="1"
                      maxOccurs="1"
@@ -127,40 +119,48 @@ SOFTWARE.
       <xs:attribute name="conceptId"
                     type="t-id"
                     use="required"
-                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.1"/>
-   </xs:complexType>
-   <xs:complexType name="zorgverlener">
-      <xs:sequence>
-         <xs:element name="naam_zorgverlener"
-                     minOccurs="0"
-                     maxOccurs="1"
-                     type="naam_zorgverlener">
-            <xs:annotation>
-               <xs:documentation source="name" xml:lang="nl-NL">Naam zorgverlener</xs:documentation>
-            </xs:annotation>
-         </xs:element>
-         <xs:element minOccurs="0" name="adaextension" type="adaextension">
-            <xs:annotation>
-               <xs:documentation>Optionele extensie informatie</xs:documentation>
-            </xs:annotation>
-         </xs:element>
-      </xs:sequence>
-      <xs:attribute name="conceptId"
-                    type="t-id"
-                    use="required"
-                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10001"/>
-   </xs:complexType>
-   <xs:complexType name="naam_zorgverlener">
-      <xs:attribute name="conceptId"
-                    type="t-id"
-                    use="required"
-                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10006"/>
-      <xs:attribute name="value" use="required" type="xs:string"/>
+                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.1"/>
    </xs:complexType>
    <xs:complexType name="zorginstelling">
       <xs:sequence>
+         <xs:element name="zorginstelling_oid"
+                     minOccurs="0"
+                     maxOccurs="1"
+                     type="zorginstelling_oid">
+            <xs:annotation>
+               <xs:documentation source="name" xml:lang="nl-NL">Zorginstelling OID</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">Identificatie van de instelling met behulp van een unieke root-OID (Object Identificatie). Dit gegeven wordt ingesteld in de software van de zorginstelling en dan automatisch meegegeven bij informatie-uitwisseling (met andere woorden: het is géén invulveld voor een zorgverlener).</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="zorginstelling_agbid"
+                     minOccurs="0"
+                     maxOccurs="1"
+                     type="zorginstelling_agbid">
+            <xs:annotation>
+               <xs:documentation source="name" xml:lang="nl-NL">Zorginstelling AGB-ID</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">Unieke AGB-ID van de instelling</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="zorginstelling_lvrid"
+                     minOccurs="0"
+                     maxOccurs="1"
+                     type="zorginstelling_lvrid">
+            <xs:annotation>
+               <xs:documentation source="name" xml:lang="nl-NL">Zorginstelling LVR-ID</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">Unieke LVR-identificatie van de zorginstelling.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="zorginstelling_ura"
+                     minOccurs="0"
+                     maxOccurs="1"
+                     type="zorginstelling_ura">
+            <xs:annotation>
+               <xs:documentation source="name" xml:lang="nl-NL">Zorginstelling URA</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">Unieke UZI-register abonneenummer van de instelling</xs:documentation>
+            </xs:annotation>
+         </xs:element>
          <xs:element name="naam_zorginstelling"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="1"
                      type="naam_zorginstelling">
             <xs:annotation>
@@ -168,6 +168,33 @@ SOFTWARE.
                <xs:documentation source="desc" xml:lang="nl-NL">Naam van de instelling</xs:documentation>
             </xs:annotation>
          </xs:element>
+         <xs:element name="adres_zorginstelling"
+                     minOccurs="0"
+                     maxOccurs="1"
+                     type="adres_zorginstelling">
+            <xs:annotation>
+               <xs:documentation source="name" xml:lang="nl-NL">Adres zorginstelling</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">Adres van de instelling</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="type_zorginstelling"
+                     minOccurs="0"
+                     maxOccurs="1"
+                     type="type_zorginstelling">
+            <xs:annotation>
+               <xs:documentation source="name" xml:lang="nl-NL">Type zorginstelling</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">Aanduiding van het type van de zorginstelling</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="type_zorginstelling_bij_verwijzing"
+                     minOccurs="0"
+                     maxOccurs="1"
+                     type="type_zorginstelling_bij_verwijzing">
+            <xs:annotation>
+               <xs:documentation source="name" xml:lang="nl-NL">Type zorginstelling (bij verwijzing)</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">Type zorginstelling bij een verwijzing.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
          <xs:element minOccurs="0" name="adaextension" type="adaextension">
             <xs:annotation>
                <xs:documentation>Optionele extensie informatie</xs:documentation>
@@ -177,42 +204,278 @@ SOFTWARE.
       <xs:attribute name="conceptId"
                     type="t-id"
                     use="required"
-                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10020"/>
+                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10020"/>
+   </xs:complexType>
+   <xs:complexType name="zorginstelling_oid">
+      <xs:attribute name="conceptId"
+                    type="t-id"
+                    use="required"
+                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10021"/>
+      <xs:attribute name="value" use="required" type="xs:string"/>
+   </xs:complexType>
+   <xs:complexType name="zorginstelling_agbid">
+      <xs:attribute name="conceptId"
+                    type="t-id"
+                    use="required"
+                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10022"/>
+      <xs:attribute name="value" use="required">
+         <xs:simpleType>
+            <xs:restriction base="xs:string">
+               <xs:minLength value="8"/>
+               <xs:maxLength value="8"/>
+            </xs:restriction>
+         </xs:simpleType>
+      </xs:attribute>
+   </xs:complexType>
+   <xs:complexType name="zorginstelling_lvrid">
+      <xs:attribute name="conceptId"
+                    type="t-id"
+                    use="required"
+                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10023"/>
+      <xs:attribute name="value" use="required">
+         <xs:simpleType>
+            <xs:restriction base="xs:string">
+               <xs:minLength value="4"/>
+               <xs:maxLength value="5"/>
+            </xs:restriction>
+         </xs:simpleType>
+      </xs:attribute>
+   </xs:complexType>
+   <xs:complexType name="zorginstelling_ura">
+      <xs:attribute name="conceptId"
+                    type="t-id"
+                    use="required"
+                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10024"/>
+      <xs:attribute name="value" use="required">
+         <xs:simpleType>
+            <xs:restriction base="xs:string">
+               <xs:minLength value="8"/>
+               <xs:maxLength value="8"/>
+            </xs:restriction>
+         </xs:simpleType>
+      </xs:attribute>
    </xs:complexType>
    <xs:complexType name="naam_zorginstelling">
       <xs:attribute name="conceptId"
                     type="t-id"
                     use="required"
-                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10026"/>
+                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10026"/>
       <xs:attribute name="value" use="required" type="xs:string"/>
+   </xs:complexType>
+   <xs:complexType name="adres_zorginstelling">
+      <xs:sequence>
+         <xs:element name="straatnaam" minOccurs="0" maxOccurs="1" type="straatnaam">
+            <xs:annotation>
+               <xs:documentation source="name" xml:lang="nl-NL">Straatnaam</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">Straatnaam (zonder nummer) van het adres</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="huisnummer" minOccurs="0" maxOccurs="1" type="huisnummer">
+            <xs:annotation>
+               <xs:documentation source="name" xml:lang="nl-NL">Huisnummer</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">Huisnummer van het adres. Het is verplicht indien de straatnaam ook wordt doorgegeven.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="huisletterhuisnummertoevoeging"
+                     minOccurs="0"
+                     maxOccurs="1"
+                     type="huisletterhuisnummertoevoeging">
+            <xs:annotation>
+               <xs:documentation source="name" xml:lang="nl-NL">Huisletter/huisnummertoevoeging</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">Huisletter/huisnummertoevoeging van het huisnummer</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="postcode" minOccurs="0" maxOccurs="1" type="postcode">
+            <xs:annotation>
+               <xs:documentation source="name" xml:lang="nl-NL">Postcode</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">Postcode van het adres</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="plaatsnaam" minOccurs="0" maxOccurs="1" type="plaatsnaam">
+            <xs:annotation>
+               <xs:documentation source="name" xml:lang="nl-NL">Plaatsnaam</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">Plaatsnaam als onderdeel van het adres; De naam van een stad, dorp of ander woongebied of bezorgcentrum. Merk op: dit is de woonplaats, niet de eventuele gemeente waartoe de woonplaats behoort. Voorbeeld: Haren, gemeente Groningen.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="gemeentenaam"
+                     minOccurs="0"
+                     maxOccurs="1"
+                     type="gemeentenaam">
+            <xs:annotation>
+               <xs:documentation source="name" xml:lang="nl-NL">Gemeentenaam</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">Gemeentenaam als onderdeel van het adres; In Nederland wordt dit element gebruikt om de gemeente door te geven (in andere landen kan een ander type administratieve eenheid binnen een staat/provincie gebruikt worden). De gemeente kan, maar hoeft niet, overeen te komen met de stad. Sommige gemeenten, bijvoorbeeld "Waterland", hebben een naam die geheel afwijkt van de steden die erin gelegen zijn.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="land" minOccurs="0" maxOccurs="1" type="land">
+            <xs:annotation>
+               <xs:documentation source="name" xml:lang="nl-NL">Land</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="adrestype" minOccurs="0" maxOccurs="1" type="adrestype">
+            <xs:annotation>
+               <xs:documentation source="name" xml:lang="nl-NL">Adrestype</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element minOccurs="0" name="adaextension" type="adaextension">
+            <xs:annotation>
+               <xs:documentation>Optionele extensie informatie</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+      <xs:attribute name="conceptId"
+                    type="t-id"
+                    use="required"
+                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10027"/>
+   </xs:complexType>
+   <xs:complexType name="straatnaam">
+      <xs:attribute name="conceptId"
+                    type="t-id"
+                    use="required"
+                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10032"/>
+      <xs:attribute name="value" use="required" type="xs:string"/>
+   </xs:complexType>
+   <xs:complexType name="huisnummer">
+      <xs:attribute name="conceptId"
+                    type="t-id"
+                    use="required"
+                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10033"/>
+      <xs:attribute name="value" use="required" type="xs:string"/>
+   </xs:complexType>
+   <xs:complexType name="huisletterhuisnummertoevoeging">
+      <xs:attribute name="conceptId"
+                    type="t-id"
+                    use="required"
+                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10034"/>
+      <xs:attribute name="value" use="required" type="xs:string"/>
+   </xs:complexType>
+   <xs:complexType name="postcode">
+      <xs:attribute name="conceptId"
+                    type="t-id"
+                    use="required"
+                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10041"/>
+      <xs:attribute name="value" use="required" type="xs:string"/>
+   </xs:complexType>
+   <xs:complexType name="plaatsnaam">
+      <xs:attribute name="conceptId"
+                    type="t-id"
+                    use="required"
+                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10036"/>
+      <xs:attribute name="value" use="required" type="xs:string"/>
+   </xs:complexType>
+   <xs:complexType name="gemeentenaam">
+      <xs:attribute name="conceptId"
+                    type="t-id"
+                    use="required"
+                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10037"/>
+      <xs:attribute name="value" use="required" type="xs:string"/>
+   </xs:complexType>
+   <xs:complexType name="land">
+      <xs:attribute name="conceptId"
+                    type="t-id"
+                    use="required"
+                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10038"/>
+      <xs:attribute name="value" use="required" type="xs:string"/>
+   </xs:complexType>
+   <xs:complexType name="adrestype">
+      <xs:attribute name="conceptId"
+                    type="t-id"
+                    use="required"
+                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10039"/>
+      <!-- == *** No conceptList entries found for concept adrestype == -->
+      <xs:attribute name="value" use="required" type="xs:string"/>
+      <xs:attribute name="code" use="required" type="xs:string"/>
+      <xs:attribute name="codeSystem" use="required" type="xs:string"/>
+      <xs:attribute name="displayName" use="required" type="xs:string"/>
+   </xs:complexType>
+   <xs:complexType name="type_zorginstelling">
+      <xs:attribute name="conceptId"
+                    type="t-id"
+                    use="required"
+                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10029"/>
+      <xs:attribute name="value" use="required">
+         <xs:simpleType>
+            <xs:restriction base="xs:string">
+               <xs:enumeration value="1">
+                  <xs:annotation>
+                     <xs:documentation source="name" xml:lang="nl-NL">Huisartsenpraktijk</xs:documentation>
+                  </xs:annotation>
+               </xs:enumeration>
+               <xs:enumeration value="2">
+                  <xs:annotation>
+                     <xs:documentation source="name" xml:lang="nl-NL">Verloskundigenpraktijk</xs:documentation>
+                  </xs:annotation>
+               </xs:enumeration>
+               <xs:enumeration value="3">
+                  <xs:annotation>
+                     <xs:documentation source="name" xml:lang="nl-NL">Ziekenhuis</xs:documentation>
+                  </xs:annotation>
+               </xs:enumeration>
+               <xs:enumeration value="4">
+                  <xs:annotation>
+                     <xs:documentation source="name" xml:lang="nl-NL">Echocentrum</xs:documentation>
+                  </xs:annotation>
+               </xs:enumeration>
+               <xs:enumeration value="5">
+                  <xs:annotation>
+                     <xs:documentation source="name" xml:lang="nl-NL">Laboratorium</xs:documentation>
+                  </xs:annotation>
+               </xs:enumeration>
+            </xs:restriction>
+         </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="code" use="required">
+         <xs:simpleType>
+            <xs:restriction base="xs:string">
+               <xs:enumeration value="Z3"/>
+               <xs:enumeration value="G3"/>
+               <xs:enumeration value="V4"/>
+               <xs:enumeration value="B2"/>
+               <xs:enumeration value="L1"/>
+            </xs:restriction>
+         </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="codeSystem" use="required">
+         <xs:simpleType>
+            <xs:restriction base="xs:string">
+               <xs:enumeration value="2.16.840.1.113883.2.4.15.1060"/>
+               <xs:enumeration value="2.16.840.1.113883.2.4.15.1060"/>
+               <xs:enumeration value="2.16.840.1.113883.2.4.15.1060"/>
+               <xs:enumeration value="2.16.840.1.113883.2.4.15.1060"/>
+               <xs:enumeration value="2.16.840.1.113883.2.4.15.1060"/>
+            </xs:restriction>
+         </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="displayName" use="required" type="xs:string"/>
+   </xs:complexType>
+   <xs:complexType name="type_zorginstelling_bij_verwijzing">
+      <xs:attribute name="conceptId"
+                    type="t-id"
+                    use="required"
+                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82019"/>
+      <!-- == *** No conceptList entries found for concept type_zorginstelling_bij_verwijzing == -->
+      <xs:attribute name="value" use="required" type="xs:string"/>
+      <xs:attribute name="code" use="required" type="xs:string"/>
+      <xs:attribute name="codeSystem" use="required" type="xs:string"/>
+      <xs:attribute name="displayName" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="vrouw">
       <xs:sequence>
          <xs:element name="burgerservicenummer"
-                     minOccurs="0"
+                     minOccurs="1"
                      maxOccurs="1"
                      type="burgerservicenummer">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">Burgerservicenummer</xs:documentation>
-               <xs:documentation source="desc" xml:lang="nl-NL">Uniek identificatienummer voor iedereen die een meervoudige relatie met de Nederlandse overheid heeft, goed te identificeren is en opgenomen is in de Gemeentelijke Basisadministratie Persoonsgegevens (GBA) of in de Registratie Niet Ingezetenen (RNI).</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">Het burgerservicenummer (BSN) is een uniek en persoonsgebonden identificerend nummer. Dit nummer wordt automatisch toegekend bij geboorte en wanneer iemand zich inschrijft bij de Basisregistratie personen (BRP).</xs:documentation>
             </xs:annotation>
          </xs:element>
          <xs:element name="naamgegevens"
                      minOccurs="1"
-                     maxOccurs="2"
+                     maxOccurs="1"
                      type="naamgegevens">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">Naamgegevens</xs:documentation>
                <xs:documentation source="desc" xml:lang="nl-NL">Naamgegevens van de vrouw.</xs:documentation>
-            </xs:annotation>
-         </xs:element>
-         <xs:element name="geboortedatum"
-                     minOccurs="0"
-                     maxOccurs="1"
-                     type="geboortedatum">
-            <xs:annotation>
-               <xs:documentation source="name" xml:lang="nl-NL">Geboortedatum</xs:documentation>
-               <xs:documentation source="desc" xml:lang="nl-NL">Geboortedatum.Indien de dag en/of maand van de geboortedatum niet bekend zijn, vult u dit in als 01-01-xxxx. Wanneer het geboortejaar ook onbekend is, is schatten van het geboortejaar toegestaan.</xs:documentation>
             </xs:annotation>
          </xs:element>
          <xs:element name="bloedgroep_vrouw"
@@ -251,13 +514,13 @@ SOFTWARE.
       <xs:attribute name="conceptId"
                     type="t-id"
                     use="required"
-                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.2"/>
+                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.2"/>
    </xs:complexType>
    <xs:complexType name="burgerservicenummer">
       <xs:attribute name="conceptId"
                     type="t-id"
                     use="required"
-                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10030"/>
+                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10030"/>
       <xs:attribute name="value" use="required">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -288,7 +551,7 @@ SOFTWARE.
             </xs:annotation>
          </xs:element>
          <xs:element name="achternaam"
-                     minOccurs="0"
+                     minOccurs="1"
                      maxOccurs="1"
                      type="achternaam_82361">
             <xs:annotation>
@@ -304,27 +567,27 @@ SOFTWARE.
       <xs:attribute name="conceptId"
                     type="t-id"
                     use="required"
-                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10035"/>
+                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10035"/>
    </xs:complexType>
    <xs:complexType name="voornamen">
       <xs:attribute name="conceptId"
                     type="t-id"
                     use="required"
-                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10042"/>
+                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10042"/>
       <xs:attribute name="value" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="initialen">
       <xs:attribute name="conceptId"
                     type="t-id"
                     use="required"
-                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82359"/>
+                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82359"/>
       <xs:attribute name="value" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="roepnaam">
       <xs:attribute name="conceptId"
                     type="t-id"
                     use="required"
-                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82360"/>
+                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82360"/>
       <xs:attribute name="value" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="achternaam_82361">
@@ -345,7 +608,7 @@ SOFTWARE.
             </xs:annotation>
          </xs:element>
          <xs:element name="achternaam"
-                     minOccurs="0"
+                     minOccurs="1"
                      maxOccurs="1"
                      type="achternaam_10043">
             <xs:annotation>
@@ -362,13 +625,13 @@ SOFTWARE.
       <xs:attribute name="conceptId"
                     type="t-id"
                     use="required"
-                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82361"/>
+                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82361"/>
    </xs:complexType>
    <xs:complexType name="soort_naam">
       <xs:attribute name="conceptId"
                     type="t-id"
                     use="required"
-                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82362"/>
+                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82362"/>
       <xs:attribute name="value" use="required">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -407,28 +670,21 @@ SOFTWARE.
       <xs:attribute name="conceptId"
                     type="t-id"
                     use="required"
-                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82363"/>
+                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82363"/>
       <xs:attribute name="value" use="required" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="achternaam_10043">
       <xs:attribute name="conceptId"
                     type="t-id"
                     use="required"
-                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10043"/>
+                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10043"/>
       <xs:attribute name="value" use="required" type="xs:string"/>
-   </xs:complexType>
-   <xs:complexType name="geboortedatum">
-      <xs:attribute name="conceptId"
-                    type="t-id"
-                    use="required"
-                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10040"/>
-      <xs:attribute name="value" use="required" type="t-datetime"/>
    </xs:complexType>
    <xs:complexType name="bloedgroep_vrouw">
       <xs:attribute name="conceptId"
                     type="t-id"
                     use="required"
-                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10810"/>
+                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10810"/>
       <xs:attribute name="value" use="required">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -495,7 +751,7 @@ SOFTWARE.
       <xs:attribute name="conceptId"
                     type="t-id"
                     use="required"
-                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10811"/>
+                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10811"/>
       <xs:attribute name="value" use="required">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -548,7 +804,7 @@ SOFTWARE.
       <xs:attribute name="conceptId"
                     type="t-id"
                     use="required"
-                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10816"/>
+                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10816"/>
       <xs:attribute name="value" use="required">
          <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -593,7 +849,7 @@ SOFTWARE.
    <xs:complexType name="zwangerschap">
       <xs:sequence>
          <xs:element name="graviditeit"
-                     minOccurs="0"
+                     minOccurs="1"
                      maxOccurs="1"
                      type="graviditeit">
             <xs:annotation>
@@ -601,7 +857,7 @@ SOFTWARE.
                <xs:documentation source="desc" xml:lang="nl-NL">Het aantal keren dat de vrouw zwanger is geworden (inclusief deze).</xs:documentation>
             </xs:annotation>
          </xs:element>
-         <xs:element name="pariteit" minOccurs="0" maxOccurs="1" type="pariteit">
+         <xs:element name="pariteit" minOccurs="1" maxOccurs="1" type="pariteit">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">Pariteit</xs:documentation>
                <xs:documentation source="desc" xml:lang="nl-NL">Aantal zwangerschappen die eindigden met een partus (&gt;= 16w 0d / 112 dagen)</xs:documentation>
@@ -624,13 +880,13 @@ SOFTWARE.
       <xs:attribute name="conceptId"
                     type="t-id"
                     use="required"
-                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.3"/>
+                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.3"/>
    </xs:complexType>
    <xs:complexType name="graviditeit">
       <xs:attribute name="conceptId"
                     type="t-id"
                     use="required"
-                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20010"/>
+                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20010"/>
       <xs:attribute name="value" use="required">
          <xs:simpleType>
             <xs:restriction base="xs:decimal">
@@ -644,7 +900,7 @@ SOFTWARE.
       <xs:attribute name="conceptId"
                     type="t-id"
                     use="required"
-                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20153"/>
+                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20153"/>
       <xs:attribute name="value" use="required">
          <xs:simpleType>
             <xs:restriction base="xs:decimal">
@@ -674,19 +930,28 @@ SOFTWARE.
       <xs:attribute name="conceptId"
                     type="t-id"
                     use="required"
-                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20029"/>
+                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20029"/>
    </xs:complexType>
    <xs:complexType name="a_terme_datum">
       <xs:attribute name="conceptId"
                     type="t-id"
                     use="required"
-                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20030"/>
+                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20030"/>
       <xs:attribute name="value" use="required" type="t-datetime"/>
    </xs:complexType>
    <xs:complexType name="medisch_onderzoek">
       <xs:sequence>
+         <xs:element name="datum_onderzoek"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="datum_onderzoek">
+            <xs:annotation>
+               <xs:documentation source="name" xml:lang="nl-NL">Datum onderzoek</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">Datum waarop het onderzoek heeft plaatsgevonden.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
          <xs:element name="maternale_onderzoeksgegevens"
-                     minOccurs="0"
+                     minOccurs="1"
                      maxOccurs="1"
                      type="maternale_onderzoeksgegevens">
             <xs:annotation>
@@ -702,17 +967,24 @@ SOFTWARE.
       <xs:attribute name="conceptId"
                     type="t-id"
                     use="required"
-                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.14"/>
+                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.14"/>
+   </xs:complexType>
+   <xs:complexType name="datum_onderzoek">
+      <xs:attribute name="conceptId"
+                    type="t-id"
+                    use="required"
+                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.50020"/>
+      <xs:attribute name="value" use="required" type="t-datetime"/>
    </xs:complexType>
    <xs:complexType name="maternale_onderzoeksgegevens">
       <xs:sequence>
          <xs:element name="urine_bloed_en_aanvullende_onderzoeken"
-                     minOccurs="0"
+                     minOccurs="1"
                      maxOccurs="1"
                      type="urine_bloed_en_aanvullende_onderzoeken">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">Urine-, bloed- en aanvullende onderzoeken</xs:documentation>
-               <xs:documentation source="desc" xml:lang="nl-NL">Urine-, bloed- en aanvullende onderzoeken Het gaat hier zowel om onderzoeken van bloed, urine en/of een ander monster door het laboratorium, als om onderzoeken die door de zorgverlener of patiënt 'zelf' worden gedaan. Voorbeelden van deze 'zelf'-bepalingen zijn: glucose, Hb en proteïne op basis van strips.</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">Urine-, bloed- en aanvullende onderzoekenHet gaat hier zowel om onderzoeken van bloed, urine en/of een ander monster door het laboratorium, als om onderzoeken die door de zorgverlener of patiënt 'zelf' worden gedaan. Voorbeelden van deze 'zelf'-bepalingen zijn: glucose, Hb en proteïne op basis van strips.</xs:documentation>
             </xs:annotation>
          </xs:element>
          <xs:element minOccurs="0" name="adaextension" type="adaextension">
@@ -724,11 +996,11 @@ SOFTWARE.
       <xs:attribute name="conceptId"
                     type="t-id"
                     use="required"
-                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.142"/>
+                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.142"/>
    </xs:complexType>
    <xs:complexType name="urine_bloed_en_aanvullende_onderzoeken">
       <xs:sequence>
-         <xs:element name="hb" minOccurs="0" maxOccurs="1" type="hb">
+         <xs:element name="hb" minOccurs="1" maxOccurs="1" type="hb">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">Hb</xs:documentation>
                <xs:documentation source="desc" xml:lang="nl-NL">Hb waarde</xs:documentation>
@@ -743,13 +1015,13 @@ SOFTWARE.
       <xs:attribute name="conceptId"
                     type="t-id"
                     use="required"
-                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80959"/>
+                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80959"/>
    </xs:complexType>
    <xs:complexType name="hb">
       <xs:attribute name="conceptId"
                     type="t-id"
                     use="required"
-                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10814"/>
+                    fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10814"/>
       <xs:attribute name="value" use="required">
          <xs:simpleType>
             <xs:restriction base="xs:decimal">
