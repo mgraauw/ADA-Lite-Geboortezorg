@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<prio1_vorige_zwangerschap transactionRef="2.16.840.1.113883.2.4.3.11.60.90.77.4.2499"
+                           transactionEffectiveDate="2020-01-08T13:47:27"
+                           versionDate=""
+                           prefix="peri20-">
+    <zorgverlenerzorginstelling>
+        <zorginstelling>
+            <zorginstelling_lvrid value="1808"/>
+        </zorginstelling>
+    </zorgverlenerzorginstelling>
+    <vrouw>
+        <burgerservicenummer value="999910413"/>
+    </vrouw>
+    <zwangerschap>
+        <graviditeit value="2"/>
+        <pariteit_voor_deze_zwangerschap value="1"/>
+        <wijze_einde_zwangerschap value="1"
+                                code="1"
+                                codeSystem="2.16.840.1.113883.2.4.4.13.46"
+                                displayName="Partus"/>
+    </zwangerschap>
+    <bevalling>
+        <tijdstip_begin_actieve_ontsluiting value="2018-10-07T14:30:00" datatype="datetime"/>
+        <duur_actieve_ontsluitingsfase_ontsluitingsduur unit="h"/>
+        <hoeveelheid_bloedverlies value="615" unit="ml"/>
+        <conditie_perineum_postpartum value="2"
+                                    code="199916005"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="1e graads perineumruptuur"/>
+    </bevalling>
+    <uitkomst_per_kind>
+        <baring>
+            <demografische_gegevens>
+                <geboortedatum value="2018-10-08T13:05" datatype="datetime"/>
+            </demografische_gegevens>
+            <kindspecifieke_maternale_gegevens>
+                <tijdstip_actief_meepersen value="2018-10-08T12:13:00" datatype="datetime"/>
+            </kindspecifieke_maternale_gegevens>
+            <kindspecifieke_uitkomstgegevens>
+                <type_partus value="1"
+                         code="177184002"
+                         codeSystem="2.16.840.1.113883.6.96"
+                         displayName="Spontaan"/>
+                <lichamelijk_onderzoek_kind>
+                    <apgarscore_na_5_min value="8"/>
+                    <geboortegewicht value="3450" unit="gram"/>
+                </lichamelijk_onderzoek_kind>
+            </kindspecifieke_uitkomstgegevens>
+        </baring>
+    </uitkomst_per_kind>
+</prio1_vorige_zwangerschap>

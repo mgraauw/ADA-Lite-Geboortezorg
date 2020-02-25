@@ -41,14 +41,20 @@ SOFTWARE.
    <xsl:variable name="document-uri">
       <xsl:value-of select="document-uri(/)"/>
    </xsl:variable>
+
    <!--PHASES-->
+
+
    <!--PROLOG-->
    <xsl:output xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                method="xml"
                omit-xml-declaration="no"
                standalone="yes"
                indent="yes"/>
+
    <!--XSD TYPES FOR XSLT2-->
+
+
    <!--KEYS AND FUNCTIONS-->
    <xsl:function xmlns="http://purl.oclc.org/dsdl/schematron"
                  name="local:decimal-convert"
@@ -56,12 +62,16 @@ SOFTWARE.
       <xsl:param name="in" as="xs:string"/>
       <xsl:sequence select="if ($in castable as xs:decimal) then xs:decimal($in) else xs:decimal(0)"/>
    </xsl:function>
+
    <!--DEFAULT RULES-->
+
+
    <!--MODE: SCHEMATRON-SELECT-FULL-PATH-->
    <!--This mode can be used to generate an ugly though full XPath for locators-->
    <xsl:template match="*" mode="schematron-select-full-path">
       <xsl:apply-templates select="." mode="schematron-get-full-path"/>
    </xsl:template>
+
    <!--MODE: SCHEMATRON-FULL-PATH-->
    <!--This mode can be used to generate an ugly though full XPath for locators-->
    <xsl:template match="*" mode="schematron-get-full-path">
@@ -100,6 +110,7 @@ SOFTWARE.
          </xsl:otherwise>
       </xsl:choose>
    </xsl:template>
+
    <!--MODE: SCHEMATRON-FULL-PATH-2-->
    <!--This mode can be used to generate prefixed XPath for humans-->
    <xsl:template match="node() | @*" mode="schematron-get-full-path-2">
@@ -133,6 +144,7 @@ SOFTWARE.
          <xsl:text/>/@<xsl:value-of select="name(.)"/>
       </xsl:if>
    </xsl:template>
+
    <!--MODE: GENERATE-ID-FROM-PATH -->
    <xsl:template match="/" mode="generate-id-from-path"/>
    <xsl:template match="text()" mode="generate-id-from-path">
@@ -156,6 +168,7 @@ SOFTWARE.
       <xsl:text>.</xsl:text>
       <xsl:value-of select="concat('.',name(),'-',1+count(preceding-sibling::*[name()=name(current())]),'-')"/>
    </xsl:template>
+
    <!--MODE: GENERATE-ID-2 -->
    <xsl:template match="/" mode="generate-id-2">U</xsl:template>
    <xsl:template match="*" mode="generate-id-2" priority="2">
@@ -178,6 +191,7 @@ SOFTWARE.
    </xsl:template>
    <!--Strip characters-->
    <xsl:template match="text()" priority="-1"/>
+
    <!--SCHEMA SETUP-->
    <xsl:template match="/">
       <svrl:schematron-output xmlns:svrl="http://purl.oclc.org/dsdl/svrl" title="" schemaVersion="">
@@ -2683,12 +2697,18 @@ SOFTWARE.
          <xsl:apply-templates select="/" mode="M358"/>
       </svrl:schematron-output>
    </xsl:template>
+
    <!--SCHEMATRON PATTERNS-->
+
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/" priority="1000" mode="M3">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="/"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="count(kernset_aanleverbericht) eq 1"/>
          <xsl:otherwise>
@@ -2709,12 +2729,16 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M3">
       <xsl:apply-templates select="*" mode="M3"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht" priority="1000" mode="M4">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@transactionRef)"/>
          <xsl:otherwise>
@@ -2726,7 +2750,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@transactionRef) or matches(@transactionRef, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -2741,7 +2766,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@transactionRef) or (@transactionRef eq '2.16.840.1.113883.2.4.3.11.60.90.77.4.2410')"/>
          <xsl:otherwise>
@@ -2756,7 +2782,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@transactionEffectiveDate) or (@transactionEffectiveDate castable as xs:dateTime)"/>
          <xsl:otherwise>
@@ -2771,7 +2798,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@transactionEffectiveDate) or (@transactionEffectiveDate eq '2014-10-20T00:00:00')"/>
          <xsl:otherwise>
@@ -2786,7 +2814,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@versionDate) or (@versionDate castable as xs:dateTime)"/>
          <xsl:otherwise>
@@ -2801,7 +2830,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@transactionRef, @transactionEffectiveDate, @versionDate, @prefix, @xsi:*))"/>
          <xsl:otherwise>
@@ -2820,12 +2850,16 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M4">
       <xsl:apply-templates select="*" mode="M4"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht" priority="1000" mode="M5">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="count(zorgverlening) eq 1"/>
          <xsl:otherwise>
@@ -2840,7 +2874,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="count(zorgverlenerzorginstelling) eq 1"/>
          <xsl:otherwise>
@@ -2855,7 +2890,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="count(vrouw) eq 1"/>
          <xsl:otherwise>
@@ -2869,7 +2905,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="count(obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap) ge 0"/>
          <xsl:otherwise>
@@ -2884,7 +2921,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="count(zwangerschap) eq 1"/>
          <xsl:otherwise>
@@ -2898,7 +2936,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(bevalling) ge 0) and (count(bevalling) le 1)"/>
          <xsl:otherwise>
@@ -2913,7 +2952,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="count(uitkomst_per_kind) ge 0"/>
          <xsl:otherwise>
@@ -2928,7 +2968,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="count(medisch_onderzoek) ge 0"/>
          <xsl:otherwise>
@@ -2943,7 +2984,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(postnatale_fase) ge 0) and (count(postnatale_fase) le 1)"/>
          <xsl:otherwise>
@@ -2958,7 +3000,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
          <xsl:otherwise>
@@ -2979,14 +3022,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M5">
       <xsl:apply-templates select="*" mode="M5"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/*[not(self::zorgverlening)][not(self::zorgverlenerzorginstelling)][not(self::vrouw)][not(self::obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap)][not(self::zwangerschap)][not(self::bevalling)][not(self::uitkomst_per_kind)][not(self::medisch_onderzoek)][not(self::postnatale_fase)][not(self::adaextension)]"
                  priority="1000"
                  mode="M6">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/*[not(self::zorgverlening)][not(self::zorgverlenerzorginstelling)][not(self::vrouw)][not(self::obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap)][not(self::zwangerschap)][not(self::bevalling)][not(self::uitkomst_per_kind)][not(self::medisch_onderzoek)][not(self::postnatale_fase)][not(self::adaextension)]"/>
-      <!--REPORT -->
+
+		    <!--REPORT -->
       <xsl:if test="true()">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="true()">
             <xsl:attribute name="location">
@@ -3005,14 +3052,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M6">
       <xsl:apply-templates select="*" mode="M6"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/zorgverlening"
                  priority="1000"
                  mode="M7">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/zorgverlening"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -3027,7 +3078,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.4')"/>
          <xsl:otherwise>
@@ -3042,7 +3094,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @xsi:*))"/>
          <xsl:otherwise>
@@ -3061,14 +3114,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M7">
       <xsl:apply-templates select="*" mode="M7"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/zorgverlenerzorginstelling"
                  priority="1000"
                  mode="M8">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/zorgverlenerzorginstelling"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -3083,7 +3140,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.1')"/>
          <xsl:otherwise>
@@ -3098,7 +3156,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @xsi:*))"/>
          <xsl:otherwise>
@@ -3117,12 +3176,16 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M8">
       <xsl:apply-templates select="*" mode="M8"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/vrouw" priority="1000" mode="M9">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/vrouw"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -3137,7 +3200,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.2')"/>
          <xsl:otherwise>
@@ -3152,7 +3216,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @xsi:*))"/>
          <xsl:otherwise>
@@ -3171,14 +3236,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M9">
       <xsl:apply-templates select="*" mode="M9"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap"
                  priority="1000"
                  mode="M10">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -3193,7 +3262,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.17')"/>
          <xsl:otherwise>
@@ -3208,7 +3278,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @xsi:*))"/>
          <xsl:otherwise>
@@ -3227,14 +3298,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M10">
       <xsl:apply-templates select="*" mode="M10"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/zwangerschap"
                  priority="1000"
                  mode="M11">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/zwangerschap"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -3249,7 +3324,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.3')"/>
          <xsl:otherwise>
@@ -3264,7 +3340,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @xsi:*))"/>
          <xsl:otherwise>
@@ -3283,14 +3360,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M11">
       <xsl:apply-templates select="*" mode="M11"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/bevalling"
                  priority="1000"
                  mode="M12">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/bevalling"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -3305,7 +3386,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.6')"/>
          <xsl:otherwise>
@@ -3320,7 +3402,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @xsi:*))"/>
          <xsl:otherwise>
@@ -3339,14 +3422,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M12">
       <xsl:apply-templates select="*" mode="M12"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind"
                  priority="1000"
                  mode="M13">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -3361,7 +3448,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.7')"/>
          <xsl:otherwise>
@@ -3376,7 +3464,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @xsi:*))"/>
          <xsl:otherwise>
@@ -3395,14 +3484,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M13">
       <xsl:apply-templates select="*" mode="M13"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/medisch_onderzoek"
                  priority="1000"
                  mode="M14">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/medisch_onderzoek"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -3417,7 +3510,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.14')"/>
          <xsl:otherwise>
@@ -3432,7 +3526,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @xsi:*))"/>
          <xsl:otherwise>
@@ -3451,14 +3546,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M14">
       <xsl:apply-templates select="*" mode="M14"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/postnatale_fase"
                  priority="1000"
                  mode="M15">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/postnatale_fase"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -3473,7 +3572,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.16')"/>
          <xsl:otherwise>
@@ -3488,7 +3588,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @xsi:*))"/>
          <xsl:otherwise>
@@ -3507,14 +3608,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M15">
       <xsl:apply-templates select="*" mode="M15"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/zorgverlening"
                  priority="1000"
                  mode="M16">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/zorgverlening"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(datum_start_zorgverantwoordelijkheid) ge 0) and (count(datum_start_zorgverantwoordelijkheid) le 1)"/>
          <xsl:otherwise>
@@ -3529,7 +3634,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(datum_einde_zorgverantwoordelijkheid) ge 0) and (count(datum_einde_zorgverantwoordelijkheid) le 1)"/>
          <xsl:otherwise>
@@ -3544,7 +3650,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="count(eindverantwoordelijk_in_welke_perinatale_periodeq) ge 0"/>
          <xsl:otherwise>
@@ -3559,7 +3666,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(conclusie_risicostatus_na_intake) ge 0) and (count(conclusie_risicostatus_na_intake) le 1)"/>
          <xsl:otherwise>
@@ -3574,7 +3682,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="count(zorgverzoekdetails) ge 0"/>
          <xsl:otherwise>
@@ -3589,7 +3698,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(is_er_sprake_van_overdracht_aanq) ge 0) and (count(is_er_sprake_van_overdracht_aanq) le 1)"/>
          <xsl:otherwise>
@@ -3604,7 +3714,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="count(overdrachtdetails) ge 0"/>
          <xsl:otherwise>
@@ -3619,7 +3730,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
          <xsl:otherwise>
@@ -3640,14 +3752,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M16">
       <xsl:apply-templates select="*" mode="M16"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/zorgverlening/*[not(self::datum_start_zorgverantwoordelijkheid)][not(self::datum_einde_zorgverantwoordelijkheid)][not(self::eindverantwoordelijk_in_welke_perinatale_periodeq)][not(self::conclusie_risicostatus_na_intake)][not(self::zorgverzoekdetails)][not(self::is_er_sprake_van_overdracht_aanq)][not(self::overdrachtdetails)][not(self::adaextension)]"
                  priority="1000"
                  mode="M17">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/zorgverlening/*[not(self::datum_start_zorgverantwoordelijkheid)][not(self::datum_einde_zorgverantwoordelijkheid)][not(self::eindverantwoordelijk_in_welke_perinatale_periodeq)][not(self::conclusie_risicostatus_na_intake)][not(self::zorgverzoekdetails)][not(self::is_er_sprake_van_overdracht_aanq)][not(self::overdrachtdetails)][not(self::adaextension)]"/>
-      <!--REPORT -->
+
+		    <!--REPORT -->
       <xsl:if test="true()">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="true()">
             <xsl:attribute name="location">
@@ -3666,14 +3782,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M17">
       <xsl:apply-templates select="*" mode="M17"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/zorgverlening/datum_start_zorgverantwoordelijkheid"
                  priority="1000"
                  mode="M18">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/zorgverlening/datum_start_zorgverantwoordelijkheid"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -3688,7 +3808,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20290')"/>
          <xsl:otherwise>
@@ -3703,7 +3824,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -3715,7 +3837,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or ((@value castable as xs:date) or (@value castable as xs:dateTime))"/>
          <xsl:otherwise>
@@ -3730,7 +3853,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -3749,14 +3873,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M18">
       <xsl:apply-templates select="*" mode="M18"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/zorgverlening/datum_einde_zorgverantwoordelijkheid"
                  priority="1000"
                  mode="M19">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/zorgverlening/datum_einde_zorgverantwoordelijkheid"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -3771,7 +3899,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20340')"/>
          <xsl:otherwise>
@@ -3786,7 +3915,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -3798,7 +3928,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or ((@value castable as xs:date) or (@value castable as xs:dateTime))"/>
          <xsl:otherwise>
@@ -3813,7 +3944,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -3832,14 +3964,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M19">
       <xsl:apply-templates select="*" mode="M19"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/zorgverlening/eindverantwoordelijk_in_welke_perinatale_periodeq"
                  priority="1000"
                  mode="M20">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/zorgverlening/eindverantwoordelijk_in_welke_perinatale_periodeq"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -3854,7 +3990,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20355')"/>
          <xsl:otherwise>
@@ -3869,7 +4006,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value = ('1', '2', '3', '4', '5', '6', '7', '8', 'UNK', 'NI'))"/>
          <xsl:otherwise>
@@ -3884,7 +4022,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@code) or (@code = ('1', '2', '3', '4', '5', '6', '7', '8', 'UNK', 'NI'))"/>
          <xsl:otherwise>
@@ -3899,7 +4038,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.2.4.3.22.1.2.20', '2.16.840.1.113883.2.4.3.22.1.2.20', '2.16.840.1.113883.2.4.3.22.1.2.20', '2.16.840.1.113883.2.4.3.22.1.2.20', '2.16.840.1.113883.2.4.3.22.1.2.20', '2.16.840.1.113883.2.4.3.22.1.2.20', '2.16.840.1.113883.2.4.3.22.1.2.20', '2.16.840.1.113883.2.4.3.22.1.2.20', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008'))"/>
          <xsl:otherwise>
@@ -3914,7 +4054,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('start_/intake_zwangerschapszorg', 'zwangerschap_vervolg', 'start_baring/ontsluiting', 'uitdrijving', 'nageboortetijdperk', '1e_24_uur_postpartum', '2e_-_7e_dag_postpartum', 'follow-up_eerste_6_wkn_postpartum', 'onbekend', 'geen_informatie'))"/>
          <xsl:otherwise>
@@ -3929,7 +4070,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
          <xsl:otherwise>
@@ -3948,14 +4090,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M20">
       <xsl:apply-templates select="*" mode="M20"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/zorgverlening/conclusie_risicostatus_na_intake"
                  priority="1000"
                  mode="M21">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/zorgverlening/conclusie_risicostatus_na_intake"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -3970,7 +4116,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20305')"/>
          <xsl:otherwise>
@@ -3985,7 +4132,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value = ('1', '2', '3', '4', '5'))"/>
          <xsl:otherwise>
@@ -4000,7 +4148,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@code) or (@code = ('1', '2', '3', '4', '5'))"/>
          <xsl:otherwise>
@@ -4015,7 +4164,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.2.4.4.13.26', '2.16.840.1.113883.2.4.4.13.26', '2.16.840.1.113883.2.4.4.13.26', '2.16.840.1.113883.2.4.4.13.26', '2.16.840.1.113883.2.4.4.13.26'))"/>
          <xsl:otherwise>
@@ -4030,7 +4180,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('1e_lijn_(VIL_A)', 'overlegsituatie_(VIL_B)', '2e_lijn_(VIL_C)', '1e_lijn_met_plaatsindicatie_(VIL_D)', '3e_lijns_zorg'))"/>
          <xsl:otherwise>
@@ -4045,7 +4196,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
          <xsl:otherwise>
@@ -4064,14 +4216,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M21">
       <xsl:apply-templates select="*" mode="M21"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/zorgverlening/zorgverzoekdetails"
                  priority="1000"
                  mode="M22">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/zorgverlening/zorgverzoekdetails"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -4086,7 +4242,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.41')"/>
          <xsl:otherwise>
@@ -4101,7 +4258,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @xsi:*))"/>
          <xsl:otherwise>
@@ -4120,14 +4278,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M22">
       <xsl:apply-templates select="*" mode="M22"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/zorgverlening/is_er_sprake_van_overdracht_aanq"
                  priority="1000"
                  mode="M23">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/zorgverlening/is_er_sprake_van_overdracht_aanq"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -4142,7 +4304,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20360')"/>
          <xsl:otherwise>
@@ -4157,7 +4320,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -4169,7 +4333,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
@@ -4184,7 +4349,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -4203,14 +4369,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M23">
       <xsl:apply-templates select="*" mode="M23"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/zorgverlening/overdrachtdetails"
                  priority="1000"
                  mode="M24">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/zorgverlening/overdrachtdetails"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -4225,7 +4395,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.42')"/>
          <xsl:otherwise>
@@ -4240,7 +4411,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @xsi:*))"/>
          <xsl:otherwise>
@@ -4259,14 +4431,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M24">
       <xsl:apply-templates select="*" mode="M24"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/zorgverlening/zorgverzoekdetails"
                  priority="1000"
                  mode="M25">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/zorgverlening/zorgverzoekdetails"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(overname_van_zorginstelling) ge 0) and (count(overname_van_zorginstelling) le 1)"/>
          <xsl:otherwise>
@@ -4281,7 +4457,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(redenen_van_overname) ge 0) and (count(redenen_van_overname) le 1)"/>
          <xsl:otherwise>
@@ -4296,7 +4473,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
          <xsl:otherwise>
@@ -4317,14 +4495,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M25">
       <xsl:apply-templates select="*" mode="M25"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/zorgverlening/zorgverzoekdetails/*[not(self::overname_van_zorginstelling)][not(self::redenen_van_overname)][not(self::adaextension)]"
                  priority="1000"
                  mode="M26">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/zorgverlening/zorgverzoekdetails/*[not(self::overname_van_zorginstelling)][not(self::redenen_van_overname)][not(self::adaextension)]"/>
-      <!--REPORT -->
+
+		    <!--REPORT -->
       <xsl:if test="true()">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="true()">
             <xsl:attribute name="location">
@@ -4343,14 +4525,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M26">
       <xsl:apply-templates select="*" mode="M26"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/zorgverlening/zorgverzoekdetails/overname_van_zorginstelling"
                  priority="1000"
                  mode="M27">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/zorgverlening/zorgverzoekdetails/overname_van_zorginstelling"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -4365,7 +4551,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.411')"/>
          <xsl:otherwise>
@@ -4380,7 +4567,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @xsi:*))"/>
          <xsl:otherwise>
@@ -4399,14 +4587,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M27">
       <xsl:apply-templates select="*" mode="M27"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/zorgverlening/zorgverzoekdetails/redenen_van_overname"
                  priority="1000"
                  mode="M28">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/zorgverlening/zorgverzoekdetails/redenen_van_overname"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -4421,7 +4613,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20325')"/>
          <xsl:otherwise>
@@ -4436,7 +4629,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @xsi:*))"/>
          <xsl:otherwise>
@@ -4455,14 +4649,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M28">
       <xsl:apply-templates select="*" mode="M28"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/zorgverlening/zorgverzoekdetails/overname_van_zorginstelling"
                  priority="1000"
                  mode="M29">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/zorgverlening/zorgverzoekdetails/overname_van_zorginstelling"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="count(overname_van_zorginstelling_id) ge 0"/>
          <xsl:otherwise>
@@ -4477,7 +4675,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
          <xsl:otherwise>
@@ -4498,14 +4697,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M29">
       <xsl:apply-templates select="*" mode="M29"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/zorgverlening/zorgverzoekdetails/overname_van_zorginstelling/*[not(self::overname_van_zorginstelling_id)][not(self::adaextension)]"
                  priority="1000"
                  mode="M30">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/zorgverlening/zorgverzoekdetails/overname_van_zorginstelling/*[not(self::overname_van_zorginstelling_id)][not(self::adaextension)]"/>
-      <!--REPORT -->
+
+		    <!--REPORT -->
       <xsl:if test="true()">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="true()">
             <xsl:attribute name="location">
@@ -4524,14 +4727,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M30">
       <xsl:apply-templates select="*" mode="M30"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/zorgverlening/zorgverzoekdetails/overname_van_zorginstelling/overname_van_zorginstelling_id"
                  priority="1000"
                  mode="M31">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/zorgverlening/zorgverzoekdetails/overname_van_zorginstelling/overname_van_zorginstelling_id"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -4546,7 +4753,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20320')"/>
          <xsl:otherwise>
@@ -4561,7 +4769,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -4573,7 +4782,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -4592,14 +4802,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M31">
       <xsl:apply-templates select="*" mode="M31"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/zorgverlening/zorgverzoekdetails/redenen_van_overname"
                  priority="1000"
                  mode="M32">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/zorgverlening/zorgverzoekdetails/redenen_van_overname"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="count(reden_van_overname_lijst_prn) ge 0"/>
          <xsl:otherwise>
@@ -4614,7 +4828,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
          <xsl:otherwise>
@@ -4635,14 +4850,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M32">
       <xsl:apply-templates select="*" mode="M32"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/zorgverlening/zorgverzoekdetails/redenen_van_overname/*[not(self::reden_van_overname_lijst_prn)][not(self::adaextension)]"
                  priority="1000"
                  mode="M33">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/zorgverlening/zorgverzoekdetails/redenen_van_overname/*[not(self::reden_van_overname_lijst_prn)][not(self::adaextension)]"/>
-      <!--REPORT -->
+
+		    <!--REPORT -->
       <xsl:if test="true()">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="true()">
             <xsl:attribute name="location">
@@ -4661,14 +4880,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M33">
       <xsl:apply-templates select="*" mode="M33"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/zorgverlening/zorgverzoekdetails/redenen_van_overname/reden_van_overname_lijst_prn"
                  priority="1000"
                  mode="M34">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/zorgverlening/zorgverzoekdetails/redenen_van_overname/reden_van_overname_lijst_prn"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -4683,7 +4906,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20331')"/>
          <xsl:otherwise>
@@ -4698,7 +4922,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value = ('1010', '1020', '1030', '1040', '1050', '1060', '1070', '1081', '1082', '1090', '1100', '1110', '1120', '1130', '1140', '1150', '1160', '1171', '1172', '1181', '1182', '1183', '1184', '1185', '1186', '1190', '1200', '1210', '1220', '1230', '1240', '1250', '1260', '1270', '1280', '1999', '2010', '2021', '2022', '2023', '2030', '2040', '2050', '2061', '2062', '2070', '2080', '2090', '2999', '3011', '3012', '3021', '3022', '3030', '3031', '3032', '3041', '3042', '3050', '3060', '3070', '3080', '3081', '3082', '3091', '3092', '3100', '3110', '3120', '3130', '3140', '3150', '3161', '3162', '3170', '3180', '3190', '3200', '3210', '3220', '3230', '3250', '3251', '3999', '4010', '4020', '4032', '4040', '4050', '4060', '4070', '4081', '4082', '4083', '4090', '4100', '4110', '4120', '4130', '4140', '4149', '4151', '4152', '4153', '4160', '4170', '4180', '4190', '4200', '4210', '4220', '4230', '4240', '4250', '4260', '4271', '4272', '4273', '4274', '4275', '4281', '4282', '4283', '4284', '4291', '4292', '4293', '4294', '4310', '4311', '4312', '4320', '4330', '4340', '4350', '4351', '4360', '4370', '4380', '4390', '4400', '4410', '4420', '4430', '4440', '4441', '4450', '4460', '4470', '4480', '4490', '4500', '4600', '4999', '5010', '5020', '5030', '5040', '5050', '5060', '5070', '5071', '5080', '5090', '5100', '5110', '5120', '5130', '5140', '5150', '5160', '5170', '5180', '5190', '5200', '5210', '5999', '6011', '6012', '6013', '6020', '6030', '6040', '6050', '6060', '6070', '6080', '6090', '6100', '6110', '6499', '6510', '6520', '6531', '6532', '6533', '6534', '6542', '6543', '6544', '6545', '6546', '6547', '6548', '6549', '6550', '6551', '6552', '6553', '6599', '7110', '7120', '7130', '7140', '7210', '7220', '7230', '7240', '7250', '7260', '7270', '7280', '7290', '7310', '7320', '7499', '8010', '8020', '8030', '8110', '8120', '8130', '8210', '8220', '8230', '8240', '8250', '8260', '8270', '8280', '8499', 'UNK', 'NI', 'NAV', 'OTH'))"/>
          <xsl:otherwise>
@@ -4713,7 +4938,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@code) or (@code = ('1010', '1020', '1030', '1040', '1050', '1060', '1070', '1081', '1082', '1090', '1100', '1110', '1120', '1130', '1140', '1150', '1160', '1171', '1172', '1181', '1182', '1183', '1184', '1185', '1186', '1190', '1200', '1210', '1220', '1230', '1240', '1250', '1260', '1270', '1280', '1999', '2010', '2021', '2022', '2023', '2030', '2040', '2050', '2061', '2062', '2070', '2080', '2090', '2999', '3011', '3012', '3021', '3022', '3030', '3031', '3032', '3041', '3042', '3050', '3060', '3070', '3080', '3081', '3082', '3091', '3092', '3100', '3110', '3120', '3130', '3140', '3150', '3161', '3162', '3170', '3180', '3190', '3200', '3210', '3220', '3230', '3250', '3251', '3999', '4010', '4020', '4032', '4040', '4050', '4060', '4070', '4081', '4082', '4083', '4090', '4100', '4110', '4120', '4130', '4140', '4149', '4151', '4152', '4153', '4160', '4170', '4180', '4190', '4200', '4210', '4220', '4230', '4240', '4250', '4260', '4271', '4272', '4273', '4274', '4275', '4281', '4282', '4283', '4284', '4291', '4292', '4293', '4294', '4310', '4311', '4312', '4320', '4330', '4340', '4350', '4351', '4360', '4370', '4380', '4390', '4400', '4410', '4420', '4430', '4440', '4441', '4450', '4460', '4470', '4480', '4490', '4500', '4600', '4999', '5010', '5020', '5030', '5040', '5050', '5060', '5070', '5071', '5080', '5090', '5100', '5110', '5120', '5130', '5140', '5150', '5160', '5170', '5180', '5190', '5200', '5210', '5999', '6011', '6012', '6013', '6020', '6030', '6040', '6050', '6060', '6070', '6080', '6090', '6100', '6110', '6499', '6510', '6520', '6531', '6532', '6533', '6534', '6542', '6543', '6544', '6545', '6546', '6547', '6548', '6549', '6550', '6551', '6552', '6553', '6599', '7110', '7120', '7130', '7140', '7210', '7220', '7230', '7240', '7250', '7260', '7270', '7280', '7290', '7310', '7320', '7499', '8010', '8020', '8030', '8110', '8120', '8130', '8210', '8220', '8230', '8240', '8250', '8260', '8270', '8280', '8499', 'UNK', 'NI', 'NAV', 'OTH'))"/>
          <xsl:otherwise>
@@ -4728,7 +4954,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008'))"/>
          <xsl:otherwise>
@@ -4743,7 +4970,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('Indicaties_vrouw_wegens_preëxistente_aandoeningen_–_niet_gynaecologisch_Epilepsie_zonder_medicatie', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen_–_niet_gynaecologisch_Epilepsie_met_medicatie', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen_–_niet_gynaecologisch_Neurologische_bloedingen:_o.a._subarachnoidale_bloedingen/aneurysma_pre-existent', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen_–_niet_gynaecologisch_Sclerose_multiple_preëxistente', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen_–_niet_gynaecologisch_Hernia_nuclei_pulposi_preëxistente', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen_–_niet_gynaecologisch_Longfunctiestoornis/COPD_preëxistente', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen_–_niet_gynaecologisch_Astma_preëxistente', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen_–_niet_gynaecologisch_Tuberculose_Tuberculose_met_behandeling_preëxistente', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen_–_niet_gynaecologisch_Tuberculose_Tuberculose_in_de_anamnese', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen_–_niet_gynaecologisch_HIV-infectie_preëxistente', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen_–_niet_gynaecologisch_HBsAg-dragerschap_preëxistente', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen_–_niet_gynaecologisch_Hepatitis_C_preëxistente', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen_–_niet_gynaecologisch_Hartafwijking_met_hemodynamische_consequenties_moeder', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen_–_niet_gynaecologisch_Trombose_diep_veneuse_/longembolie_preëxistente', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen_–_niet_gynaecologisch_Stollingsstoornissen_preëxistente', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen_–_niet_gynaecologisch_Nierfunctiestoornissen_preëxistente', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen_–_niet_gynaecologisch_Hypertensie,_preëxistente', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen_–_niet_gynaecologisch_Diabetes_mellitus_Diabetes_mellitus_Type_I_preëxistente', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen_–_niet_gynaecologisch_Diabetes_mellitus_Diabetes_mellitus_Type_II_preëxistente', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen_–_niet_gynaecologisch_Schildklieraandoeningen_Hyperthyreoidie,_geen_medicatie,_afwezig_TSH-receptor_antistoffen', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen_–_niet_gynaecologisch_Schildklieraandoeningen_Hyperthyreoidie,_geen_medicatie,_aanwezig_TSH-receptor_antistoffen', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen_–_niet_gynaecologisch_Schildklieraandoeningen_Hyperthyreoidie,_met_medicatie_preëxistente', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen_–_niet_gynaecologisch_Schildklieraandoeningen_Hypothyreoidie_na_chirurgische_C67_of_I-131_goed_ingesteld,_afwezig_TSH-receptor_antistoffen', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen_–_niet_gynaecologisch_Schildklieraandoeningen_Hypothyreoidie_na_chirurgische_of_I-131_goed_ingesteld,_aanwezig_TSH-receptor_antistoffen', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen_–_niet_gynaecologisch_Schildklieraandoeningen_Hypothyreoidie,_Ziekte_Hashimoto,_goed_ingesteld', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen_–_niet_gynaecologisch_Hemoglobinopathie_preëxistente', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen_–_niet_gynaecologisch_Inflammatory_Bowel_Disease_(Colitis_ulcerosa,_M._Crohn)', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen_–_niet_gynaecologisch_Systeemziekten_en_zeldzame_aandoeningen', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen_–_niet_gynaecologisch_Harddrugs_gebruik_(heroïne,_methadon,_cocaïne,_XTC_en_dergelijke)', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen_–_niet_gynaecologisch_Alcoholmisbruik_preëxistente', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen_–_niet_gynaecologisch_Psychiatrische_stoornissen_preëxistente', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen_–_niet_gynaecologisch_GBS-dragerschap_preëxistente', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen_–_niet_gynaecologisch_Adipositas_(morbide_=_BMI_&gt;_35)', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen_–_niet_gynaecologisch_Reumatoïde_artritis', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen_–_niet_gynaecologisch_Maligniteit_in_anamnese', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen_–_niet_gynaecologisch_Overige_preëxistente_aandoeningen_vrouw,_niet_gynaecologisch', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen,_gynaecologisch_Bekkenbodem_reconstructie', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen,_gynaecologisch_Portio_amputatie,_Exconisatie,_Cryo-_en_lisbehandeling_Portio_amputatie', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen,_gynaecologisch_Portio_amputatie,_Exconisatie,_Cryo-_en_lisbehandeling_Exconisatie', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen,_gynaecologisch_Portio_amputatie,_Exconisatie,_Cryo-_en_lisbehandeling_Cryo-_en_lisbehandeling', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen,_gynaecologisch_Myoom_enucleatie', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen,_gynaecologisch_Cervixcytologie_afwijkend_(diagnostiek,_follow-up)', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen,_gynaecologisch_DES-dochter_(onbehandeld_en_onder_controle)', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen,_gynaecologisch_IUD_IUD_Niet_te_verwijderen', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen,_gynaecologisch_IUD_IUD_Status_nadat_het_IUD_verwijderd_is', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen,_gynaecologisch_Fertiliteit_(sub)_behandeling_in_anamnese', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen,_gynaecologisch_Bekkenafwijking_(trauma,_symfyseruptuur,_rachitis)', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen,_gynaecologisch_Besnijdenis/ernstige_anatomische_afwijking', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen,_gynaecologisch_Overige_indicaties_vrouw_wegens_preëxistente_aandoeningen,_gynaecologisch', 'Indicaties_vrouw_wegens_obstetrische_anamnese_Bloedgroepantagonisme_Rhesus,_Kell,_Duffy,_Kidd', 'Indicaties_vrouw_wegens_obstetrische_anamnese_Bloedgroepantagonisme_ABO-antagonisme', 'Indicaties_vrouw_wegens_obstetrische_anamnese_Zwangerschapshypertensieve_syndromen_vorige_zwangerschap_Zwangerschapshypertensie_in_de_vorige_zwangerschap', 'Indicaties_vrouw_wegens_obstetrische_anamnese_Zwangerschapshypertensieve_syndromen_vorige_zwangerschap_(Pre-)eclampsie/HELLP–syndroom_in_de_vorige_zwangerschap', 'Indicaties_vrouw_wegens_obstetrische_anamnese_Miskraam_herhaald', 'Indicaties_vrouw_wegens_obstetrische_anamnese_MOLA_in_anamnese', 'Indicaties_vrouw_wegens_obstetrische_anamnese_abortus_provocatus_in_anamnese', 'Indicaties_vrouw_wegens_obstetrische_anamnese_Vroeggeboorte,_vorige_zwangerschap_Vroeggeboorte_(&lt;33_weken),_vorige_zwangerschap', 'Indicaties_vrouw_wegens_obstetrische_anamnese_Vroeggeboorte,_vorige_zwangerschap_Vroeggeboorte_(&gt;=33_weken),_vorige_zwangerschap', 'Indicaties_vrouw_wegens_obstetrische_anamnese_Cervixinsufficiëntie_en/of_cerclage', 'Indicaties_vrouw_wegens_obstetrische_anamnese_Abruptio_placentae_(Solutio)_in_anamnese', 'Indicaties_vrouw_wegens_obstetrische_anamnese_Kunstverlossing_vaginaal_(forcipale_extractie/vacuumextractie)_in_anamnese', 'Indicaties_vrouw_wegens_obstetrische_anamnese_Sectio_caesarea_in_anamnese', 'Indicaties_vrouw_wegens_obstetrische_anamnese_Sectio_Caesarea_i.a,_litteken_OUS_in_anamnese', 'Indicaties_vrouw_wegens_obstetrische_anamnese_Sectio_Caesarea_i.a.,_litteken_corporeel_in_anamnese', 'Indicaties_vrouw_wegens_obstetrische_anamnese_Dysmaturiteit_(geboortegewicht_&lt;p5)_Geboortegewicht_&lt;p5_in_anamnese', 'Indicaties_vrouw_wegens_obstetrische_anamnese_Dysmaturiteit_(geboortegewicht_&lt;p5)_Geboortegewicht_&lt;p2.3_in_anamnese', 'Indicaties_vrouw_wegens_obstetrische_anamnese_Asfyxie_(Apgar_score_5min_&lt;7)_in_anamnese', 'Indicaties_vrouw_wegens_obstetrische_anamnese_Perinatale_sterfte_in_anamnese', 'Indicaties_vrouw_wegens_obstetrische_anamnese_Aangeboren_afwijkingen_en/of_erfelijke_afwijking_eerder_kind', 'Indicaties_vrouw_wegens_obstetrische_anamnese_Haemorrhagia_/_bloedverlies_post_partum_ten_gevolge_van_episiotomie_in_anamnese', 'Indicaties_vrouw_wegens_obstetrische_anamnese_Haemorrhagia/_bloedverlies_post_partum_ten_gevolge_van_cervixruptuur_in_anamnese', 'Indicaties_vrouw_wegens_obstetrische_anamnese_Haemorrhagia_/_bloedverlies_post_partum,_andere_oorzaken_(&gt;1000_cc)_in_anamnese', 'Indicaties_vrouw_wegens_obstetrische_anamnese_Manuele_placentaverwijdering_in_de_anamnese_Placentaverwijdering_manuele_in_de_anamnese', 'Indicaties_vrouw_wegens_obstetrische_anamnese_Manuele_placentaverwijdering_in_de_anamnese_Placenta_accreta_in_anamnese', 'Indicaties_vrouw_wegens_obstetrische_anamnese_Ruptuur_totaal_in_anamnese_(wel/geen_functioneel_herstel)', 'Indicaties_vrouw_wegens_obstetrische_anamnese_Symfysiolyse_in_anamnese', 'Indicaties_vrouw_wegens_obstetrische_anamnese_Depressie_post-partum_in_anamnese', 'Indicaties_vrouw_wegens_obstetrische_anamnese_Psychose_post-partum_in_anamnese', 'Indicaties_vrouw_wegens_obstetrische_anamnese_Multipara_Grande_in_anamnese', 'Indicaties_vrouw_wegens_obstetrische_anamnese_Serotiniteit_in_anamnese', 'Indicaties_vrouw_wegens_obstetrische_anamnese_GBS-ziekte_eerder_kind_in_anamnese', 'Indicaties_vrouw_wegens_obstetrische_anamnese_Traumatische_partus_in_de_anamnese', 'Indicaties_vrouw_wegens_obstetrische_anamnese_schouderdystocie_in_anamnese', 'Indicaties_vrouw_wegens_obstetrische_anamnese_Overige_indicaties_vrouw_wegens_obstetrische_anamnese', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Termijndiscussie', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Anemie_(Hb_&lt;_5,6_mmol/l)_tijdens_zwangerschap', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Urineweginfecties_tijdens_zwangerschap_Recidiverende_urineweginfecties_(2x)_in_de_zwangerschap', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Pyelitis_tijdens_zwangerschap', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Toxoplasmose,_diagnostiek_en_therapie_tijdens_zwangerschap', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Rubella_tijdens_zwangerschap', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Cytomegalie_tijdens_zwangerschap', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Herpes_genitalis_Herpes_genitalis_(primo-infect)_tijdens_zwangerschap', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Herpes_genitalis_Herpes_genitalis_(recidief)_tijdens_zwangerschap', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Herpes_genitalis_Herpes_labialis_tijdens_zwangerschap', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Parvovirusinfectie_tijdens_zwangerschap', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Varicella/Zostervirusinfectie_tijdens_zwangerschap', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_HBsAg-dragerschap_tijdens_zwangerschap', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Hepatitis_virale_A,_B,_C,_D_of_E_tijdens_zwangerschap', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Tuberculose_tijdens_zwangerschap', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_HIV-infectie_/_Aids_tijdens_zwangerschap', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Infectieverdenking_overig', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Lues_tijdens_zwangerschap_Lues_positieve_serologie_en_behandeld_tijdens_zwangerschap', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Lues_tijdens_zwangerschap_Lues_positieve_serologie_en_onbehandeld_tijdens_zwangerschap', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Lues_tijdens_zwangerschap_Lues_primo_infectie_tijdens_zwangerschap', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_HNP_ontstaan_tijdens_zwangerschap', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Laparotomie_tijdens_zwangerschap', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Cervixcytologie_PAP_III_A_of_hoger_tijdens_zwangerschap', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Geneesmiddelengebruik_mogelijke_effect_op_zwangere_en_ongeboren_vrucht', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Harddrugs_gebruik_(heroïne,_methadon,_cocaïne,_XTC_en_dergelijke)', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Alcoholmisbruik_tijdens_zwangerschap', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Psychiatrische_aandoeningen_(neurosen/psychosen)_tijdens_zwangerschap', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Hyperemesis_gravidarum', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Extra-uteriene_graviditeit_(EUG)', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Prenatale_diagnostiek_met_riscio_op_aangeboren_afwijkingen', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Vruchtwaterverlies_(&lt;37_weken_amenorroe)_tijdens_zwangerschap', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Diabetes_mellitus_tijdens_zwangerschap_Diabetes_Mellitus_Type_I_tijdens_zwangerschap', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Diabetes_mellitus_tijdens_zwangerschap_Diabetes_Mellitus_type_II_tijdens_zwangerschap', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Diabetes_mellitus_tijdens_zwangerschap_Diabetes_gravidarum,_zonder_medicatie', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Diabetes_mellitus_tijdens_zwangerschap_Diabetes_gravidarum_+_dieet', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Diabetes_mellitus_tijdens_zwangerschap_Diabetes_gravidarum_met_insuline', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Zwangerschapshypertensie_definitie_volgens_de_ISSHP_Zwangerschapshypertensie,_diastolische_RR_&gt;=_90_en_&lt;_95_mm_Hg', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Zwangerschapshypertensie_definitie_volgens_de_ISSHP_Zwangerschapshypertensie,_diastolische_RR_&gt;=_95_en_&lt;_100_mm_Hg', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Zwangerschapshypertensie_definitie_volgens_de_ISSHP_Zwangerschapshypertensie,_diastolische_RR_&gt;=_100_mm_Hg', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Zwangerschapshypertensie_definitie_volgens_de_ISSHP_Zwangerschapshypertensie,_systolische_RR_&gt;140_mm_Hg', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Pre-eclampsie,_gesuperponeerde_pre-eclampsie,_HELLP-syndroom_Pre-eclampsie_tijdens_zwangerschap', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Pre-eclampsie,_gesuperponeerde_pre-eclampsie,_HELLP-syndroom_Pre-eclampsie_gesuperponeerde_tijdens_zwangerschap', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Pre-eclampsie,_gesuperponeerde_pre-eclampsie,_HELLP-syndroom_HELLP-syndroom_tijdens_zwangerschap', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Pre-eclampsie,_gesuperponeerde_pre-eclampsie,_HELLP-syndroom_Eclampsie', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Bloedgroepantagonisme_Trombose,_diepveneus_tijdens_de_zwangerschap', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Bloedgroepantagonisme_Rhesus,_Kell,_Duffy,_Kidd', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Bloedgroepantagonisme_ABO-antagonisme', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Stollingsstoornissen_tijdens_zwangerschap', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Bloedverlies_persisterend_voor_16_weken_tijdens_zwangerschap', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Bloedverlies_na_16_weken_deze_zwangerschap', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Abruptio_placentae_deze_zwangerschap', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Placenta_praevia_tijdens_de_zwangerschap', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Groeivertraging_foetus_tijdens_zwangerschap_(verdenking_op)', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Positieve_dyscongruentie_(evaluatie_van)', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Serotiniteit_(_&gt;_294_dagen_amenorroe)', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Vroeggeboorte_(dreigende)_deze_zwangerschap', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Cervixinsufficiëntie_tijdens_deze_zwangerschap', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Bekkenklachten_in_deze_zwangerschap', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Meerlingzwangerschap_deze_zwangerschap', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Liggingsafwijking_à_terme_(waaronder_stuitligging)', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Niet_ingedaalde_schedel_à_terme', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Niet_ingedaalde_schedel_na_het_breken_van_de_vliezen_(a_terme)', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Zorg_geen_voorgaande_prenatale_zorg_(±_à_terme)', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Afstandskind', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Intrauteriene_vruchtdood', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Obstetrisch_relevante_uterus_myomatosus', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Mola_deze_zwangerschap', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Minder_leven', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Foetale_hartritmestoornis_tijdens_zwangerschap', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Overige_indicaties_vrouw_ontstaan/vastgesteld_tijdens_de_zwangerschap', 'Indicaties_vrouw_ontstaan_tijdens_bevalling_Ligging_afwijkend_van_het_kind', 'Indicaties_vrouw_ontstaan_tijdens_bevalling_Foetale_nood_tekenen_van', 'Indicaties_vrouw_ontstaan_tijdens_bevalling_Foetale_sterfte_durante_partu', 'Indicaties_vrouw_ontstaan_tijdens_bevalling_Gebroken_vliezen_zonder_weeën', 'Indicaties_vrouw_ontstaan_tijdens_bevalling_Niet-vorderende_ontsluiting', 'Indicaties_vrouw_ontstaan_tijdens_bevalling_Niet-vorderende_uitdrijving', 'Indicaties_vrouw_ontstaan_tijdens_bevalling_Bloedverlies_overmatig_tijdens_de_baring_volgens_inschatting_zorgverlener', 'Indicaties_vrouw_ontstaan_tijdens_bevalling_Haemorragia/bloedverlies_postpartum_deze_baring', 'Indicaties_vrouw_ontstaan_tijdens_bevalling_Abruptio_placentae_tijdens_de_baring', 'Indicaties_vrouw_ontstaan_tijdens_bevalling_Vasa_praevia_tijdens_de_baring', 'Indicaties_vrouw_ontstaan_tijdens_bevalling_Retentio_placentae,_vastzittende_placenta', 'Indicaties_vrouw_ontstaan_tijdens_bevalling_Ruptuur_totaal_deze_baring', 'Indicaties_vrouw_ontstaan_tijdens_bevalling_Meconiumhoudend_vruchtwater', 'Indicaties_vrouw_ontstaan_tijdens_bevalling_Koorts_tijdens_de_baring', 'Indicaties_vrouw_ontstaan_tijdens_bevalling_Pijnbestrijding/sedatie_tijdens_de_baring', 'Indicaties_vrouw_ontstaan_tijdens_bevalling_Vulvahematoom', 'Indicaties_vrouw_ontstaan_tijdens_bevalling_Symfysiolyse', 'Indicaties_vrouw_ontstaan_tijdens_bevalling_Prenatale_zorg_geen_voorafgaande_aan_tijdens_de_baring', 'Indicaties_vrouw_ontstaan_tijdens_bevalling_Placenta_Previa_tijdens_de_baring', 'Indicaties_vrouw_ontstaan_tijdens_bevalling_Uterusdehiscentie_littekendehiscentie', 'Indicaties_vrouw_ontstaan_tijdens_bevalling_Uterusruptuur_(met_spill_in_buikholte)', 'Indicaties_vrouw_ontstaan_tijdens_bevalling_Vaginawandruptuur_deze_baring', 'Indicaties_vrouw_ontstaan_tijdens_bevalling_Overige_indicaties_vrouw_ontstaan_tijdens_de_bevalling', 'Indicaties_vrouw_ontstaan_tijdens_de_kraamperiode_(Dreigende)_eclampsie,_(verdenking_op)_HELLP-syndroom_Pre-eclampsie_tijdens_kraamperiode', 'Indicaties_vrouw_ontstaan_tijdens_de_kraamperiode_(Dreigende)_eclampsie,_(verdenking_op)_HELLP-syndroom_Pre-eclampsie_gesuperponeerde_tijdens_kraamperiode', 'Indicaties_vrouw_ontstaan_tijdens_de_kraamperiode_(Dreigende)_eclampsie,_(verdenking_op)_HELLP-syndroom_HELLP-syndroom_tijdens_kraamperiode', 'Indicaties_vrouw_ontstaan_tijdens_de_kraamperiode_Trombose_diep_veneuze_tijdens_kraamperiode', 'Indicaties_vrouw_ontstaan_tijdens_de_kraamperiode_Psychose_tijdens_kraamperiode', 'Indicaties_vrouw_ontstaan_tijdens_de_kraamperiode_Bloedverlies_abnormaal_vaginaal_tijdens_kraamperiode', 'Indicaties_vrouw_ontstaan_tijdens_de_kraamperiode_Opname-indicatie_voor_het_kind', 'Indicaties_vrouw_ontstaan_tijdens_de_kraamperiode_Embolie_tijdens_kraamperiode', 'Indicaties_vrouw_ontstaan_tijdens_de_kraamperiode_Hematoom_postpartum', 'Indicaties_vrouw_ontstaan_tijdens_de_kraamperiode_Bloedtransfusie_postpartum', 'Indicaties_vrouw_ontstaan_tijdens_de_kraamperiode_Mastitis_tijdens_kraamperiode', 'Indicaties_vrouw_ontstaan_tijdens_de_kraamperiode_Endometritis_tijdens_kraamperiode', 'Indicaties_vrouw_ontstaan_tijdens_de_kraamperiode_Cystitis_en/of_urineweg_infectie_tijdens_kraamperiode', 'Indicaties_vrouw_ontstaan_tijdens_de_kraamperiode_Overige_indicaties_vrouw_tijdens_de_kraamperiode', 'Indicaties_kind_voor_opname_Zwangerschaps_duur_als_opname_indicatie_kind', 'Indicaties_kind_voor_opname_Geboortegewicht_als_opname_indicatie_kind', 'Indicaties_kind_voor_opname_Problemen_partus_Kunstverlossing_(problemen_partus)_als_opname_indicatie_kind', 'Indicaties_kind_voor_opname_Problemen_partus_Liggingsafwijkingen_(problemen_partus)_als_opname_indicatie_kind', 'Indicaties_kind_voor_opname_Problemen_partus_Langdurig_gebroken_vliezen_(problemen_partus)_als_opname_indicatie_kind', 'Indicaties_kind_voor_opname_Problemen_partus_Problemen_partus_overig_als_opname_indicatie_kind', 'Indicaties_kind_voor_opname_Klinische_conditie_kind_Icterus_neonatorum', 'Indicaties_kind_voor_opname_Klinische_conditie_kind_Voedingsproblemen/_diarrhee_kind', 'Indicaties_kind_voor_opname_Klinische_conditie_kind_Infectieverdenking_kind', 'Indicaties_kind_voor_opname_Klinische_conditie_kind_Hartafwijking_kind_verdenking_op', 'Indicaties_kind_voor_opname_Klinische_conditie_kind_Ademhalingsproblemen_kind', 'Indicaties_kind_voor_opname_Klinische_conditie_kind_Hypoglycemie', 'Indicaties_kind_voor_opname_Klinische_conditie_kind_Slechte_start_(verdenking_Asfyxie)', 'Indicaties_kind_voor_opname_Klinische_conditie_kind_Aangeboren_afwijkingen_kind', 'Indicaties_kind_voor_opname_Klinische_conditie_kind_Convulsies_kind', 'Indicaties_kind_voor_opname_Klinische_conditie_kind_Huilen_Excessief', 'Indicaties_kind_voor_opname_Klinische_conditie_kind_Thrive_failure_to', 'Indicaties_kind_voor_opname_Klinische_conditie_kind_Klinische_condities_kind_overig', 'Indicaties_kind_voor_opname_Overige_indicaties_kind_voor_opname', 'Medisch,_Obstetrische_High_Care_indicatie_vrouw_en_kind_wegens_Indicatie_intensieve_maternale_bewaking:_HELLP_syndroom', 'Medisch,_Obstetrische_High_Care_indicatie_vrouw_en_kind_wegens_Indicatie_intensieve_maternale_bewaking:_Preeclampsie_ernstig', 'Medisch,_Obstetrische_High_Care_indicatie_vrouw_en_kind_wegens_Indicatie_intensieve_maternale_bewaking:_Obstetrische_complicatie_ernstig', 'Medisch,_Obstetrische_High_Care_indicatie_vrouw_en_kind_wegens_Indicatie_intensieve_maternale_bewaking:_Maternale_OHC_indicaties_overig', 'Medisch,_Obstetrische_High_Care_indicatie_vrouw_en_kind_wegens_Indicatie_intensieve_foetale_bewaking:_Foetale_groeivertraging_met_geschat_gewicht_&lt;_1200_g_en/of_&lt;32wk', 'Medisch,_Obstetrische_High_Care_indicatie_vrouw_en_kind_wegens_Indicatie_intensieve_foetale_bewaking:_Dreigende_vroeggeboorte_&lt;_32_weken', 'Medisch,_Obstetrische_High_Care_indicatie_vrouw_en_kind_wegens_Indicatie_intensieve_foetale_bewaking:_Alle_zwangerschappen_met_hoog-complexe_zorg_voor_foetus', 'Medisch,_Obstetrische_High_Care_indicatie_vrouw_en_kind_wegens_Indicatie_intensieve_foetale_bewaking:_Congenitaal_afwijkend_kind', 'Medisch,_Obstetrische_High_Care_indicatie_vrouw_en_kind_wegens_Indicatie_intensieve_foetale_bewaking:_Foetale_hartritmestoornis_met_specifieke_bewakingsbehoefte', 'Medisch,_Obstetrische_High_Care_indicatie_vrouw_en_kind_wegens_Indicatie_intensieve_foetale_bewaking:_Grote_meerling_(&gt;=_3)', 'Medisch,_Obstetrische_High_Care_indicatie_vrouw_en_kind_wegens_Indicatie_intensieve_foetale_bewaking:_Transfuseur-transfusée_syndroom', 'Medisch,_Obstetrische_High_Care_indicatie_vrouw_en_kind_wegens_Indicatie_intensieve_foetale_bewaking:_Uitstelprocedure_bij_meerling_(getemporiseerde_partus)', 'Medisch,_Obstetrische_High_Care_indicatie_vrouw_en_kind_wegens_Indicatie_intensieve_foetale_bewaking:_Overige_foetale_OHC_indicaties', 'Medisch,_Obstetrische_High_Care_indicatie_vrouw_en_kind_wegens_Indicatie_kraambed_bij_intensieve_neonatale_bewaking:_kraambed_wegens_neonaat_op_NICU', 'Medisch,_Obstetrische_High_Care_indicatie_vrouw_en_kind_wegens_Indicatie_kraambed_bij_intensieve_neonatale_bewaking:_kraambed_wegens_neonaat_op_intensieve_zorg_anders_dan_NICU_(bv_chirurgie)', 'Medisch,_Obstetrische_High_Care_indicatie_vrouw_en_kind_wegens_Overige_indicaties_vrouw/kind_voor_Obstetrische_High_Care', 'Niet_medische_indicatie_vrouw_en_kind,_wegens_Begin_zorgverlening', 'Niet_medische_indicatie_vrouw_en_kind,_wegens_Zorgverlening_afgesloten', 'Niet_medische_indicatie_vrouw_en_kind,_wegens_Adviesconsult', 'Niet_medische_indicatie_vrouw_en_kind,_wegens_Redenen_patiënt_Verhuizing_e.a._logistieke_redenen_patient', 'Niet_medische_indicatie_vrouw_en_kind,_wegens_Redenen_patiënt_Eigen_keuze/verzoek_patiënt', 'Niet_medische_indicatie_vrouw_en_kind,_wegens_Redenen_patiënt_Overige_niet_medische_redenen_patiënt', 'Niet_medische_indicatie_vrouw_en_kind,_wegens_Uitbesteding_zorg_Uitbesteding_zorg_1e_lijn_ivm_capaciteitstekort', 'Niet_medische_indicatie_vrouw_en_kind,_wegens_Uitbesteding_zorg_Uitbesteding_zorg_1e_lijn_overige_redenen', 'Niet_medische_indicatie_vrouw_en_kind,_wegens_Uitbesteding_zorg_Uitbesteding_zorg_2e_lijn_ivm_capaciteitstekort', 'Niet_medische_indicatie_vrouw_en_kind,_wegens_Uitbesteding_zorg_Uitbesteding_zorg_2e_lijn_overige_redenen', 'Niet_medische_indicatie_vrouw_en_kind,_wegens_Uitbesteding_zorg_Uitbesteding_zorg_3e_lijn_ivm_capaciteitstekort', 'Niet_medische_indicatie_vrouw_en_kind,_wegens_Uitbesteding_zorg_Uitbesteding_zorg_3e_lijn_overige_redenen', 'Niet_medische_indicatie_vrouw_en_kind,_wegens_Uitbesteding_zorg_Uitbesteding_zorg_Pediatrie_ivm_capaciteitstekort', 'Niet_medische_indicatie_vrouw_en_kind,_wegens_Uitbesteding_zorg_Uitbesteding_zorg_Pediatrie_overige_redenen', 'Niet_medische_indicatie_vrouw_en_kind,_wegens_Overige_niet_medische_indicaties_vrouw_en_kind', 'onbekend', 'geen_informatie', 'tijdelijk_niet_beschikbaar', 'anders'))"/>
          <xsl:otherwise>
@@ -4758,7 +4986,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
          <xsl:otherwise>
@@ -4777,14 +5006,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M34">
       <xsl:apply-templates select="*" mode="M34"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/zorgverlening/overdrachtdetails"
                  priority="1000"
                  mode="M35">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/zorgverlening/overdrachtdetails"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(datum_van_overdracht) ge 0) and (count(datum_van_overdracht) le 1)"/>
          <xsl:otherwise>
@@ -4799,7 +5032,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(overdracht_aan_zorginstelling_specialisme) ge 0) and (count(overdracht_aan_zorginstelling_specialisme) le 1)"/>
          <xsl:otherwise>
@@ -4814,7 +5048,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="count(overdracht_aan_zorginstelling_id) ge 0"/>
          <xsl:otherwise>
@@ -4829,7 +5064,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(perinatale_periode_van_overdracht) ge 0) and (count(perinatale_periode_van_overdracht) le 1)"/>
          <xsl:otherwise>
@@ -4844,7 +5080,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(redenen_van_overdracht_aan) ge 0) and (count(redenen_van_overdracht_aan) le 1)"/>
          <xsl:otherwise>
@@ -4859,7 +5096,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
          <xsl:otherwise>
@@ -4880,14 +5118,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M35">
       <xsl:apply-templates select="*" mode="M35"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/zorgverlening/overdrachtdetails/*[not(self::datum_van_overdracht)][not(self::overdracht_aan_zorginstelling_specialisme)][not(self::overdracht_aan_zorginstelling_id)][not(self::perinatale_periode_van_overdracht)][not(self::redenen_van_overdracht_aan)][not(self::adaextension)]"
                  priority="1000"
                  mode="M36">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/zorgverlening/overdrachtdetails/*[not(self::datum_van_overdracht)][not(self::overdracht_aan_zorginstelling_specialisme)][not(self::overdracht_aan_zorginstelling_id)][not(self::perinatale_periode_van_overdracht)][not(self::redenen_van_overdracht_aan)][not(self::adaextension)]"/>
-      <!--REPORT -->
+
+		    <!--REPORT -->
       <xsl:if test="true()">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="true()">
             <xsl:attribute name="location">
@@ -4906,14 +5148,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M36">
       <xsl:apply-templates select="*" mode="M36"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/zorgverlening/overdrachtdetails/datum_van_overdracht"
                  priority="1000"
                  mode="M37">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/zorgverlening/overdrachtdetails/datum_van_overdracht"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -4928,7 +5174,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20362')"/>
          <xsl:otherwise>
@@ -4943,7 +5190,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -4955,7 +5203,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or ((@value castable as xs:date) or (@value castable as xs:dateTime))"/>
          <xsl:otherwise>
@@ -4970,7 +5219,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -4989,14 +5239,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M37">
       <xsl:apply-templates select="*" mode="M37"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/zorgverlening/overdrachtdetails/overdracht_aan_zorginstelling_specialisme"
                  priority="1000"
                  mode="M38">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/zorgverlening/overdrachtdetails/overdracht_aan_zorginstelling_specialisme"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -5011,7 +5265,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20366')"/>
          <xsl:otherwise>
@@ -5026,7 +5281,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value = ('01.046', '01.019', 'UNK', 'NI'))"/>
          <xsl:otherwise>
@@ -5041,7 +5297,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@code) or (@code = ('01.046', '01.019', 'UNK', 'NI'))"/>
          <xsl:otherwise>
@@ -5056,7 +5313,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.2.4.15.111', '2.16.840.1.113883.2.4.15.111', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008'))"/>
          <xsl:otherwise>
@@ -5071,7 +5329,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('Gynaecoloog_/_obstetricus', 'Kinderarts', 'Onbekend', 'Geen_informatie'))"/>
          <xsl:otherwise>
@@ -5086,7 +5345,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
          <xsl:otherwise>
@@ -5105,14 +5365,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M38">
       <xsl:apply-templates select="*" mode="M38"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/zorgverlening/overdrachtdetails/overdracht_aan_zorginstelling_id"
                  priority="1000"
                  mode="M39">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/zorgverlening/overdrachtdetails/overdracht_aan_zorginstelling_id"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -5127,7 +5391,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20368')"/>
          <xsl:otherwise>
@@ -5142,7 +5407,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -5154,7 +5420,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -5173,14 +5440,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M39">
       <xsl:apply-templates select="*" mode="M39"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/zorgverlening/overdrachtdetails/perinatale_periode_van_overdracht"
                  priority="1000"
                  mode="M40">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/zorgverlening/overdrachtdetails/perinatale_periode_van_overdracht"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -5195,7 +5466,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20367')"/>
          <xsl:otherwise>
@@ -5210,7 +5482,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value = ('1', '2', '3', '4', '5', '6', '7', '8', '9', '91', '92', '10', 'UNK', 'NI'))"/>
          <xsl:otherwise>
@@ -5225,7 +5498,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@code) or (@code = ('1', '2', '3', '4', '5', '6', '7', '8', '9', '91', '92', '10', 'UNK', 'NI'))"/>
          <xsl:otherwise>
@@ -5240,7 +5514,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.2.4.3.22.1.2.52', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008'))"/>
          <xsl:otherwise>
@@ -5255,7 +5530,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('Ante_partum_Na_eerste_controle', 'Ante_partum_Voor_28e_week', 'Ante_partum_28e_tot_en_met_36e_week', 'Ante_partum_Vanaf_37e_week', 'Durante_partu_Tijdens_ontsluiting', 'Durante_partu_Tijdens_uitdrijving', 'Durante_partu_Nageboortetijdperk', 'Postpartum_Direct_postpartum', 'Postpartum_Tijdens_kraambed', 'Postpartum_Tijdens_kraambed_Binnen_24_uur', 'Postpartum_Tijdens_kraambed_2e_t/m_7e_dag', 'Postpartum_2e_week_of_later', 'Onbekend', 'Geen_informatie'))"/>
          <xsl:otherwise>
@@ -5270,7 +5546,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
          <xsl:otherwise>
@@ -5289,14 +5566,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M40">
       <xsl:apply-templates select="*" mode="M40"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/zorgverlening/overdrachtdetails/redenen_van_overdracht_aan"
                  priority="1000"
                  mode="M41">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/zorgverlening/overdrachtdetails/redenen_van_overdracht_aan"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -5311,7 +5592,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20365')"/>
          <xsl:otherwise>
@@ -5326,7 +5608,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @xsi:*))"/>
          <xsl:otherwise>
@@ -5345,14 +5628,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M41">
       <xsl:apply-templates select="*" mode="M41"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/zorgverlening/overdrachtdetails/redenen_van_overdracht_aan"
                  priority="1000"
                  mode="M42">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/zorgverlening/overdrachtdetails/redenen_van_overdracht_aan"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="count(reden_overdracht_aan_lijst_prn) ge 0"/>
          <xsl:otherwise>
@@ -5367,7 +5654,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
          <xsl:otherwise>
@@ -5388,14 +5676,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M42">
       <xsl:apply-templates select="*" mode="M42"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/zorgverlening/overdrachtdetails/redenen_van_overdracht_aan/*[not(self::reden_overdracht_aan_lijst_prn)][not(self::adaextension)]"
                  priority="1000"
                  mode="M43">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/zorgverlening/overdrachtdetails/redenen_van_overdracht_aan/*[not(self::reden_overdracht_aan_lijst_prn)][not(self::adaextension)]"/>
-      <!--REPORT -->
+
+		    <!--REPORT -->
       <xsl:if test="true()">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="true()">
             <xsl:attribute name="location">
@@ -5414,14 +5706,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M43">
       <xsl:apply-templates select="*" mode="M43"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/zorgverlening/overdrachtdetails/redenen_van_overdracht_aan/reden_overdracht_aan_lijst_prn"
                  priority="1000"
                  mode="M44">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/zorgverlening/overdrachtdetails/redenen_van_overdracht_aan/reden_overdracht_aan_lijst_prn"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -5436,7 +5732,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20371')"/>
          <xsl:otherwise>
@@ -5451,7 +5748,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value = ('1010', '1020', '1030', '1040', '1050', '1060', '1070', '1081', '1082', '1090', '1100', '1110', '1120', '1130', '1140', '1150', '1160', '1171', '1172', '1181', '1182', '1183', '1184', '1185', '1186', '1190', '1200', '1210', '1220', '1230', '1240', '1250', '1260', '1270', '1280', '1999', '2010', '2021', '2022', '2023', '2030', '2040', '2050', '2061', '2062', '2070', '2080', '2090', '2999', '3011', '3012', '3021', '3022', '3030', '3031', '3032', '3041', '3042', '3050', '3060', '3070', '3080', '3081', '3082', '3091', '3092', '3100', '3110', '3120', '3130', '3140', '3150', '3161', '3162', '3170', '3180', '3190', '3200', '3210', '3220', '3230', '3250', '3251', '3999', '4010', '4020', '4032', '4040', '4050', '4060', '4070', '4081', '4082', '4083', '4090', '4100', '4110', '4120', '4130', '4140', '4149', '4151', '4152', '4153', '4160', '4170', '4180', '4190', '4200', '4210', '4220', '4230', '4240', '4250', '4260', '4271', '4272', '4273', '4274', '4275', '4281', '4282', '4283', '4284', '4291', '4292', '4293', '4294', '4310', '4311', '4312', '4320', '4330', '4340', '4350', '4351', '4360', '4370', '4380', '4390', '4400', '4410', '4420', '4430', '4440', '4441', '4450', '4460', '4470', '4480', '4490', '4500', '4600', '4999', '5010', '5020', '5030', '5040', '5050', '5060', '5070', '5071', '5080', '5090', '5100', '5110', '5120', '5130', '5140', '5150', '5160', '5170', '5180', '5190', '5200', '5210', '5999', '6011', '6012', '6013', '6020', '6030', '6040', '6050', '6060', '6070', '6080', '6090', '6100', '6110', '6499', '6510', '6520', '6531', '6532', '6533', '6534', '6542', '6543', '6544', '6545', '6546', '6547', '6548', '6549', '6550', '6551', '6552', '6553', '6599', '7110', '7120', '7130', '7140', '7210', '7220', '7230', '7240', '7250', '7260', '7270', '7280', '7290', '7310', '7320', '7499', '8010', '8020', '8030', '8110', '8120', '8130', '8210', '8220', '8230', '8240', '8250', '8260', '8270', '8280', '8499', 'UNK', 'NI', 'NAV', 'OTH'))"/>
          <xsl:otherwise>
@@ -5466,7 +5764,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@code) or (@code = ('1010', '1020', '1030', '1040', '1050', '1060', '1070', '1081', '1082', '1090', '1100', '1110', '1120', '1130', '1140', '1150', '1160', '1171', '1172', '1181', '1182', '1183', '1184', '1185', '1186', '1190', '1200', '1210', '1220', '1230', '1240', '1250', '1260', '1270', '1280', '1999', '2010', '2021', '2022', '2023', '2030', '2040', '2050', '2061', '2062', '2070', '2080', '2090', '2999', '3011', '3012', '3021', '3022', '3030', '3031', '3032', '3041', '3042', '3050', '3060', '3070', '3080', '3081', '3082', '3091', '3092', '3100', '3110', '3120', '3130', '3140', '3150', '3161', '3162', '3170', '3180', '3190', '3200', '3210', '3220', '3230', '3250', '3251', '3999', '4010', '4020', '4032', '4040', '4050', '4060', '4070', '4081', '4082', '4083', '4090', '4100', '4110', '4120', '4130', '4140', '4149', '4151', '4152', '4153', '4160', '4170', '4180', '4190', '4200', '4210', '4220', '4230', '4240', '4250', '4260', '4271', '4272', '4273', '4274', '4275', '4281', '4282', '4283', '4284', '4291', '4292', '4293', '4294', '4310', '4311', '4312', '4320', '4330', '4340', '4350', '4351', '4360', '4370', '4380', '4390', '4400', '4410', '4420', '4430', '4440', '4441', '4450', '4460', '4470', '4480', '4490', '4500', '4600', '4999', '5010', '5020', '5030', '5040', '5050', '5060', '5070', '5071', '5080', '5090', '5100', '5110', '5120', '5130', '5140', '5150', '5160', '5170', '5180', '5190', '5200', '5210', '5999', '6011', '6012', '6013', '6020', '6030', '6040', '6050', '6060', '6070', '6080', '6090', '6100', '6110', '6499', '6510', '6520', '6531', '6532', '6533', '6534', '6542', '6543', '6544', '6545', '6546', '6547', '6548', '6549', '6550', '6551', '6552', '6553', '6599', '7110', '7120', '7130', '7140', '7210', '7220', '7230', '7240', '7250', '7260', '7270', '7280', '7290', '7310', '7320', '7499', '8010', '8020', '8030', '8110', '8120', '8130', '8210', '8220', '8230', '8240', '8250', '8260', '8270', '8280', '8499', 'UNK', 'NI', 'NAV', 'OTH'))"/>
          <xsl:otherwise>
@@ -5481,7 +5780,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008'))"/>
          <xsl:otherwise>
@@ -5496,7 +5796,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('Indicaties_vrouw_wegens_preëxistente_aandoeningen_–_niet_gynaecologisch_Epilepsie_zonder_medicatie', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen_–_niet_gynaecologisch_Epilepsie_met_medicatie', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen_–_niet_gynaecologisch_Neurologische_bloedingen:_o.a._subarachnoidale_bloedingen/aneurysma_pre-existent', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen_–_niet_gynaecologisch_Sclerose_multiple_preëxistente', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen_–_niet_gynaecologisch_Hernia_nuclei_pulposi_preëxistente', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen_–_niet_gynaecologisch_Longfunctiestoornis/COPD_preëxistente', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen_–_niet_gynaecologisch_Astma_preëxistente', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen_–_niet_gynaecologisch_Tuberculose_Tuberculose_met_behandeling_preëxistente', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen_–_niet_gynaecologisch_Tuberculose_Tuberculose_in_de_anamnese', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen_–_niet_gynaecologisch_HIV-infectie_preëxistente', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen_–_niet_gynaecologisch_HBsAg-dragerschap_preëxistente', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen_–_niet_gynaecologisch_Hepatitis_C_preëxistente', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen_–_niet_gynaecologisch_Hartafwijking_met_hemodynamische_consequenties_moeder', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen_–_niet_gynaecologisch_Trombose_diep_veneuse_/longembolie_preëxistente', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen_–_niet_gynaecologisch_Stollingsstoornissen_preëxistente', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen_–_niet_gynaecologisch_Nierfunctiestoornissen_preëxistente', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen_–_niet_gynaecologisch_Hypertensie,_preëxistente', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen_–_niet_gynaecologisch_Diabetes_mellitus_Diabetes_mellitus_Type_I_preëxistente', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen_–_niet_gynaecologisch_Diabetes_mellitus_Diabetes_mellitus_Type_II_preëxistente', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen_–_niet_gynaecologisch_Schildklieraandoeningen_Hyperthyreoidie,_geen_medicatie,_afwezig_TSH-receptor_antistoffen', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen_–_niet_gynaecologisch_Schildklieraandoeningen_Hyperthyreoidie,_geen_medicatie,_aanwezig_TSH-receptor_antistoffen', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen_–_niet_gynaecologisch_Schildklieraandoeningen_Hyperthyreoidie,_met_medicatie_preëxistente', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen_–_niet_gynaecologisch_Schildklieraandoeningen_Hypothyreoidie_na_chirurgische_C67_of_I-131_goed_ingesteld,_afwezig_TSH-receptor_antistoffen', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen_–_niet_gynaecologisch_Schildklieraandoeningen_Hypothyreoidie_na_chirurgische_of_I-131_goed_ingesteld,_aanwezig_TSH-receptor_antistoffen', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen_–_niet_gynaecologisch_Schildklieraandoeningen_Hypothyreoidie,_Ziekte_Hashimoto,_goed_ingesteld', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen_–_niet_gynaecologisch_Hemoglobinopathie_preëxistente', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen_–_niet_gynaecologisch_Inflammatory_Bowel_Disease_(Colitis_ulcerosa,_M._Crohn)', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen_–_niet_gynaecologisch_Systeemziekten_en_zeldzame_aandoeningen', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen_–_niet_gynaecologisch_Harddrugs_gebruik_(heroïne,_methadon,_cocaïne,_XTC_en_dergelijke)', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen_–_niet_gynaecologisch_Alcoholmisbruik_preëxistente', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen_–_niet_gynaecologisch_Psychiatrische_stoornissen_preëxistente', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen_–_niet_gynaecologisch_GBS-dragerschap_preëxistente', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen_–_niet_gynaecologisch_Adipositas_(morbide_=_BMI_&gt;_35)', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen_–_niet_gynaecologisch_Reumatoïde_artritis', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen_–_niet_gynaecologisch_Maligniteit_in_anamnese', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen_–_niet_gynaecologisch_Overige_preëxistente_aandoeningen_vrouw,_niet_gynaecologisch', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen,_gynaecologisch_Bekkenbodem_reconstructie', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen,_gynaecologisch_Portio_amputatie,_Exconisatie,_Cryo-_en_lisbehandeling_Portio_amputatie', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen,_gynaecologisch_Portio_amputatie,_Exconisatie,_Cryo-_en_lisbehandeling_Exconisatie', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen,_gynaecologisch_Portio_amputatie,_Exconisatie,_Cryo-_en_lisbehandeling_Cryo-_en_lisbehandeling', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen,_gynaecologisch_Myoom_enucleatie', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen,_gynaecologisch_Cervixcytologie_afwijkend_(diagnostiek,_follow-up)', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen,_gynaecologisch_DES-dochter_(onbehandeld_en_onder_controle)', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen,_gynaecologisch_IUD_IUD_Niet_te_verwijderen', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen,_gynaecologisch_IUD_IUD_Status_nadat_het_IUD_verwijderd_is', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen,_gynaecologisch_Fertiliteit_(sub)_behandeling_in_anamnese', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen,_gynaecologisch_Bekkenafwijking_(trauma,_symfyseruptuur,_rachitis)', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen,_gynaecologisch_Besnijdenis/ernstige_anatomische_afwijking', 'Indicaties_vrouw_wegens_preëxistente_aandoeningen,_gynaecologisch_Overige_indicaties_vrouw_wegens_preëxistente_aandoeningen,_gynaecologisch', 'Indicaties_vrouw_wegens_obstetrische_anamnese_Bloedgroepantagonisme_Rhesus,_Kell,_Duffy,_Kidd', 'Indicaties_vrouw_wegens_obstetrische_anamnese_Bloedgroepantagonisme_ABO-antagonisme', 'Indicaties_vrouw_wegens_obstetrische_anamnese_Zwangerschapshypertensieve_syndromen_vorige_zwangerschap_Zwangerschapshypertensie_in_de_vorige_zwangerschap', 'Indicaties_vrouw_wegens_obstetrische_anamnese_Zwangerschapshypertensieve_syndromen_vorige_zwangerschap_(Pre-)eclampsie/HELLP–syndroom_in_de_vorige_zwangerschap', 'Indicaties_vrouw_wegens_obstetrische_anamnese_Miskraam_herhaald', 'Indicaties_vrouw_wegens_obstetrische_anamnese_MOLA_in_anamnese', 'Indicaties_vrouw_wegens_obstetrische_anamnese_abortus_provocatus_in_anamnese', 'Indicaties_vrouw_wegens_obstetrische_anamnese_Vroeggeboorte,_vorige_zwangerschap_Vroeggeboorte_(&lt;33_weken),_vorige_zwangerschap', 'Indicaties_vrouw_wegens_obstetrische_anamnese_Vroeggeboorte,_vorige_zwangerschap_Vroeggeboorte_(&gt;=33_weken),_vorige_zwangerschap', 'Indicaties_vrouw_wegens_obstetrische_anamnese_Cervixinsufficiëntie_en/of_cerclage', 'Indicaties_vrouw_wegens_obstetrische_anamnese_Abruptio_placentae_(Solutio)_in_anamnese', 'Indicaties_vrouw_wegens_obstetrische_anamnese_Kunstverlossing_vaginaal_(forcipale_extractie/vacuumextractie)_in_anamnese', 'Indicaties_vrouw_wegens_obstetrische_anamnese_Sectio_caesarea_in_anamnese', 'Indicaties_vrouw_wegens_obstetrische_anamnese_Sectio_Caesarea_i.a,_litteken_OUS_in_anamnese', 'Indicaties_vrouw_wegens_obstetrische_anamnese_Sectio_Caesarea_i.a.,_litteken_corporeel_in_anamnese', 'Indicaties_vrouw_wegens_obstetrische_anamnese_Dysmaturiteit_(geboortegewicht_&lt;p5)_Geboortegewicht_&lt;p5_in_anamnese', 'Indicaties_vrouw_wegens_obstetrische_anamnese_Dysmaturiteit_(geboortegewicht_&lt;p5)_Geboortegewicht_&lt;p2.3_in_anamnese', 'Indicaties_vrouw_wegens_obstetrische_anamnese_Asfyxie_(Apgar_score_5min_&lt;7)_in_anamnese', 'Indicaties_vrouw_wegens_obstetrische_anamnese_Perinatale_sterfte_in_anamnese', 'Indicaties_vrouw_wegens_obstetrische_anamnese_Aangeboren_afwijkingen_en/of_erfelijke_afwijking_eerder_kind', 'Indicaties_vrouw_wegens_obstetrische_anamnese_Haemorrhagia_/_bloedverlies_post_partum_ten_gevolge_van_episiotomie_in_anamnese', 'Indicaties_vrouw_wegens_obstetrische_anamnese_Haemorrhagia/_bloedverlies_post_partum_ten_gevolge_van_cervixruptuur_in_anamnese', 'Indicaties_vrouw_wegens_obstetrische_anamnese_Haemorrhagia_/_bloedverlies_post_partum,_andere_oorzaken_(&gt;1000_cc)_in_anamnese', 'Indicaties_vrouw_wegens_obstetrische_anamnese_Manuele_placentaverwijdering_in_de_anamnese_Placentaverwijdering_manuele_in_de_anamnese', 'Indicaties_vrouw_wegens_obstetrische_anamnese_Manuele_placentaverwijdering_in_de_anamnese_Placenta_accreta_in_anamnese', 'Indicaties_vrouw_wegens_obstetrische_anamnese_Ruptuur_totaal_in_anamnese_(wel/geen_functioneel_herstel)', 'Indicaties_vrouw_wegens_obstetrische_anamnese_Symfysiolyse_in_anamnese', 'Indicaties_vrouw_wegens_obstetrische_anamnese_Depressie_post-partum_in_anamnese', 'Indicaties_vrouw_wegens_obstetrische_anamnese_Psychose_post-partum_in_anamnese', 'Indicaties_vrouw_wegens_obstetrische_anamnese_Multipara_Grande_in_anamnese', 'Indicaties_vrouw_wegens_obstetrische_anamnese_Serotiniteit_in_anamnese', 'Indicaties_vrouw_wegens_obstetrische_anamnese_GBS-ziekte_eerder_kind_in_anamnese', 'Indicaties_vrouw_wegens_obstetrische_anamnese_Traumatische_partus_in_de_anamnese', 'Indicaties_vrouw_wegens_obstetrische_anamnese_schouderdystocie_in_anamnese', 'Indicaties_vrouw_wegens_obstetrische_anamnese_Overige_indicaties_vrouw_wegens_obstetrische_anamnese', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Termijndiscussie', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Anemie_(Hb_&lt;_5,6_mmol/l)_tijdens_zwangerschap', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Urineweginfecties_tijdens_zwangerschap_Recidiverende_urineweginfecties_(2x)_in_de_zwangerschap', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Pyelitis_tijdens_zwangerschap', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Toxoplasmose,_diagnostiek_en_therapie_tijdens_zwangerschap', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Rubella_tijdens_zwangerschap', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Cytomegalie_tijdens_zwangerschap', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Herpes_genitalis_Herpes_genitalis_(primo-infect)_tijdens_zwangerschap', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Herpes_genitalis_Herpes_genitalis_(recidief)_tijdens_zwangerschap', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Herpes_genitalis_Herpes_labialis_tijdens_zwangerschap', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Parvovirusinfectie_tijdens_zwangerschap', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Varicella/Zostervirusinfectie_tijdens_zwangerschap', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_HBsAg-dragerschap_tijdens_zwangerschap', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Hepatitis_virale_A,_B,_C,_D_of_E_tijdens_zwangerschap', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Tuberculose_tijdens_zwangerschap', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_HIV-infectie_/_Aids_tijdens_zwangerschap', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Infectieverdenking_overig', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Lues_tijdens_zwangerschap_Lues_positieve_serologie_en_behandeld_tijdens_zwangerschap', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Lues_tijdens_zwangerschap_Lues_positieve_serologie_en_onbehandeld_tijdens_zwangerschap', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Lues_tijdens_zwangerschap_Lues_primo_infectie_tijdens_zwangerschap', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_HNP_ontstaan_tijdens_zwangerschap', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Laparotomie_tijdens_zwangerschap', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Cervixcytologie_PAP_III_A_of_hoger_tijdens_zwangerschap', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Geneesmiddelengebruik_mogelijke_effect_op_zwangere_en_ongeboren_vrucht', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Harddrugs_gebruik_(heroïne,_methadon,_cocaïne,_XTC_en_dergelijke)', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Alcoholmisbruik_tijdens_zwangerschap', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Psychiatrische_aandoeningen_(neurosen/psychosen)_tijdens_zwangerschap', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Hyperemesis_gravidarum', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Extra-uteriene_graviditeit_(EUG)', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Prenatale_diagnostiek_met_riscio_op_aangeboren_afwijkingen', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Vruchtwaterverlies_(&lt;37_weken_amenorroe)_tijdens_zwangerschap', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Diabetes_mellitus_tijdens_zwangerschap_Diabetes_Mellitus_Type_I_tijdens_zwangerschap', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Diabetes_mellitus_tijdens_zwangerschap_Diabetes_Mellitus_type_II_tijdens_zwangerschap', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Diabetes_mellitus_tijdens_zwangerschap_Diabetes_gravidarum,_zonder_medicatie', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Diabetes_mellitus_tijdens_zwangerschap_Diabetes_gravidarum_+_dieet', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Diabetes_mellitus_tijdens_zwangerschap_Diabetes_gravidarum_met_insuline', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Zwangerschapshypertensie_definitie_volgens_de_ISSHP_Zwangerschapshypertensie,_diastolische_RR_&gt;=_90_en_&lt;_95_mm_Hg', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Zwangerschapshypertensie_definitie_volgens_de_ISSHP_Zwangerschapshypertensie,_diastolische_RR_&gt;=_95_en_&lt;_100_mm_Hg', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Zwangerschapshypertensie_definitie_volgens_de_ISSHP_Zwangerschapshypertensie,_diastolische_RR_&gt;=_100_mm_Hg', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Zwangerschapshypertensie_definitie_volgens_de_ISSHP_Zwangerschapshypertensie,_systolische_RR_&gt;140_mm_Hg', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Pre-eclampsie,_gesuperponeerde_pre-eclampsie,_HELLP-syndroom_Pre-eclampsie_tijdens_zwangerschap', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Pre-eclampsie,_gesuperponeerde_pre-eclampsie,_HELLP-syndroom_Pre-eclampsie_gesuperponeerde_tijdens_zwangerschap', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Pre-eclampsie,_gesuperponeerde_pre-eclampsie,_HELLP-syndroom_HELLP-syndroom_tijdens_zwangerschap', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Pre-eclampsie,_gesuperponeerde_pre-eclampsie,_HELLP-syndroom_Eclampsie', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Bloedgroepantagonisme_Trombose,_diepveneus_tijdens_de_zwangerschap', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Bloedgroepantagonisme_Rhesus,_Kell,_Duffy,_Kidd', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Bloedgroepantagonisme_ABO-antagonisme', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Stollingsstoornissen_tijdens_zwangerschap', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Bloedverlies_persisterend_voor_16_weken_tijdens_zwangerschap', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Bloedverlies_na_16_weken_deze_zwangerschap', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Abruptio_placentae_deze_zwangerschap', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Placenta_praevia_tijdens_de_zwangerschap', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Groeivertraging_foetus_tijdens_zwangerschap_(verdenking_op)', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Positieve_dyscongruentie_(evaluatie_van)', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Serotiniteit_(_&gt;_294_dagen_amenorroe)', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Vroeggeboorte_(dreigende)_deze_zwangerschap', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Cervixinsufficiëntie_tijdens_deze_zwangerschap', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Bekkenklachten_in_deze_zwangerschap', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Meerlingzwangerschap_deze_zwangerschap', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Liggingsafwijking_à_terme_(waaronder_stuitligging)', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Niet_ingedaalde_schedel_à_terme', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Niet_ingedaalde_schedel_na_het_breken_van_de_vliezen_(a_terme)', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Zorg_geen_voorgaande_prenatale_zorg_(±_à_terme)', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Afstandskind', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Intrauteriene_vruchtdood', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Obstetrisch_relevante_uterus_myomatosus', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Mola_deze_zwangerschap', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Minder_leven', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Foetale_hartritmestoornis_tijdens_zwangerschap', 'Indicaties_vrouw_ontstaan/vastgesteld_tijdens_zwangerschap_Overige_indicaties_vrouw_ontstaan/vastgesteld_tijdens_de_zwangerschap', 'Indicaties_vrouw_ontstaan_tijdens_bevalling_Ligging_afwijkend_van_het_kind', 'Indicaties_vrouw_ontstaan_tijdens_bevalling_Foetale_nood_tekenen_van', 'Indicaties_vrouw_ontstaan_tijdens_bevalling_Foetale_sterfte_durante_partu', 'Indicaties_vrouw_ontstaan_tijdens_bevalling_Gebroken_vliezen_zonder_weeën', 'Indicaties_vrouw_ontstaan_tijdens_bevalling_Niet-vorderende_ontsluiting', 'Indicaties_vrouw_ontstaan_tijdens_bevalling_Niet-vorderende_uitdrijving', 'Indicaties_vrouw_ontstaan_tijdens_bevalling_Bloedverlies_overmatig_tijdens_de_baring_volgens_inschatting_zorgverlener', 'Indicaties_vrouw_ontstaan_tijdens_bevalling_Haemorragia/bloedverlies_postpartum_deze_baring', 'Indicaties_vrouw_ontstaan_tijdens_bevalling_Abruptio_placentae_tijdens_de_baring', 'Indicaties_vrouw_ontstaan_tijdens_bevalling_Vasa_praevia_tijdens_de_baring', 'Indicaties_vrouw_ontstaan_tijdens_bevalling_Retentio_placentae,_vastzittende_placenta', 'Indicaties_vrouw_ontstaan_tijdens_bevalling_Ruptuur_totaal_deze_baring', 'Indicaties_vrouw_ontstaan_tijdens_bevalling_Meconiumhoudend_vruchtwater', 'Indicaties_vrouw_ontstaan_tijdens_bevalling_Koorts_tijdens_de_baring', 'Indicaties_vrouw_ontstaan_tijdens_bevalling_Pijnbestrijding/sedatie_tijdens_de_baring', 'Indicaties_vrouw_ontstaan_tijdens_bevalling_Vulvahematoom', 'Indicaties_vrouw_ontstaan_tijdens_bevalling_Symfysiolyse', 'Indicaties_vrouw_ontstaan_tijdens_bevalling_Prenatale_zorg_geen_voorafgaande_aan_tijdens_de_baring', 'Indicaties_vrouw_ontstaan_tijdens_bevalling_Placenta_Previa_tijdens_de_baring', 'Indicaties_vrouw_ontstaan_tijdens_bevalling_Uterusdehiscentie_littekendehiscentie', 'Indicaties_vrouw_ontstaan_tijdens_bevalling_Uterusruptuur_(met_spill_in_buikholte)', 'Indicaties_vrouw_ontstaan_tijdens_bevalling_Vaginawandruptuur_deze_baring', 'Indicaties_vrouw_ontstaan_tijdens_bevalling_Overige_indicaties_vrouw_ontstaan_tijdens_de_bevalling', 'Indicaties_vrouw_ontstaan_tijdens_de_kraamperiode_(Dreigende)_eclampsie,_(verdenking_op)_HELLP-syndroom_Pre-eclampsie_tijdens_kraamperiode', 'Indicaties_vrouw_ontstaan_tijdens_de_kraamperiode_(Dreigende)_eclampsie,_(verdenking_op)_HELLP-syndroom_Pre-eclampsie_gesuperponeerde_tijdens_kraamperiode', 'Indicaties_vrouw_ontstaan_tijdens_de_kraamperiode_(Dreigende)_eclampsie,_(verdenking_op)_HELLP-syndroom_HELLP-syndroom_tijdens_kraamperiode', 'Indicaties_vrouw_ontstaan_tijdens_de_kraamperiode_Trombose_diep_veneuze_tijdens_kraamperiode', 'Indicaties_vrouw_ontstaan_tijdens_de_kraamperiode_Psychose_tijdens_kraamperiode', 'Indicaties_vrouw_ontstaan_tijdens_de_kraamperiode_Bloedverlies_abnormaal_vaginaal_tijdens_kraamperiode', 'Indicaties_vrouw_ontstaan_tijdens_de_kraamperiode_Opname-indicatie_voor_het_kind', 'Indicaties_vrouw_ontstaan_tijdens_de_kraamperiode_Embolie_tijdens_kraamperiode', 'Indicaties_vrouw_ontstaan_tijdens_de_kraamperiode_Hematoom_postpartum', 'Indicaties_vrouw_ontstaan_tijdens_de_kraamperiode_Bloedtransfusie_postpartum', 'Indicaties_vrouw_ontstaan_tijdens_de_kraamperiode_Mastitis_tijdens_kraamperiode', 'Indicaties_vrouw_ontstaan_tijdens_de_kraamperiode_Endometritis_tijdens_kraamperiode', 'Indicaties_vrouw_ontstaan_tijdens_de_kraamperiode_Cystitis_en/of_urineweg_infectie_tijdens_kraamperiode', 'Indicaties_vrouw_ontstaan_tijdens_de_kraamperiode_Overige_indicaties_vrouw_tijdens_de_kraamperiode', 'Indicaties_kind_voor_opname_Zwangerschaps_duur_als_opname_indicatie_kind', 'Indicaties_kind_voor_opname_Geboortegewicht_als_opname_indicatie_kind', 'Indicaties_kind_voor_opname_Problemen_partus_Kunstverlossing_(problemen_partus)_als_opname_indicatie_kind', 'Indicaties_kind_voor_opname_Problemen_partus_Liggingsafwijkingen_(problemen_partus)_als_opname_indicatie_kind', 'Indicaties_kind_voor_opname_Problemen_partus_Langdurig_gebroken_vliezen_(problemen_partus)_als_opname_indicatie_kind', 'Indicaties_kind_voor_opname_Problemen_partus_Problemen_partus_overig_als_opname_indicatie_kind', 'Indicaties_kind_voor_opname_Klinische_conditie_kind_Icterus_neonatorum', 'Indicaties_kind_voor_opname_Klinische_conditie_kind_Voedingsproblemen/_diarrhee_kind', 'Indicaties_kind_voor_opname_Klinische_conditie_kind_Infectieverdenking_kind', 'Indicaties_kind_voor_opname_Klinische_conditie_kind_Hartafwijking_kind_verdenking_op', 'Indicaties_kind_voor_opname_Klinische_conditie_kind_Ademhalingsproblemen_kind', 'Indicaties_kind_voor_opname_Klinische_conditie_kind_Hypoglycemie', 'Indicaties_kind_voor_opname_Klinische_conditie_kind_Slechte_start_(verdenking_Asfyxie)', 'Indicaties_kind_voor_opname_Klinische_conditie_kind_Aangeboren_afwijkingen_kind', 'Indicaties_kind_voor_opname_Klinische_conditie_kind_Convulsies_kind', 'Indicaties_kind_voor_opname_Klinische_conditie_kind_Huilen_Excessief', 'Indicaties_kind_voor_opname_Klinische_conditie_kind_Thrive_failure_to', 'Indicaties_kind_voor_opname_Klinische_conditie_kind_Klinische_condities_kind_overig', 'Indicaties_kind_voor_opname_Overige_indicaties_kind_voor_opname', 'Medisch,_Obstetrische_High_Care_indicatie_vrouw_en_kind_wegens_Indicatie_intensieve_maternale_bewaking:_HELLP_syndroom', 'Medisch,_Obstetrische_High_Care_indicatie_vrouw_en_kind_wegens_Indicatie_intensieve_maternale_bewaking:_Preeclampsie_ernstig', 'Medisch,_Obstetrische_High_Care_indicatie_vrouw_en_kind_wegens_Indicatie_intensieve_maternale_bewaking:_Obstetrische_complicatie_ernstig', 'Medisch,_Obstetrische_High_Care_indicatie_vrouw_en_kind_wegens_Indicatie_intensieve_maternale_bewaking:_Maternale_OHC_indicaties_overig', 'Medisch,_Obstetrische_High_Care_indicatie_vrouw_en_kind_wegens_Indicatie_intensieve_foetale_bewaking:_Foetale_groeivertraging_met_geschat_gewicht_&lt;_1200_g_en/of_&lt;32wk', 'Medisch,_Obstetrische_High_Care_indicatie_vrouw_en_kind_wegens_Indicatie_intensieve_foetale_bewaking:_Dreigende_vroeggeboorte_&lt;_32_weken', 'Medisch,_Obstetrische_High_Care_indicatie_vrouw_en_kind_wegens_Indicatie_intensieve_foetale_bewaking:_Alle_zwangerschappen_met_hoog-complexe_zorg_voor_foetus', 'Medisch,_Obstetrische_High_Care_indicatie_vrouw_en_kind_wegens_Indicatie_intensieve_foetale_bewaking:_Congenitaal_afwijkend_kind', 'Medisch,_Obstetrische_High_Care_indicatie_vrouw_en_kind_wegens_Indicatie_intensieve_foetale_bewaking:_Foetale_hartritmestoornis_met_specifieke_bewakingsbehoefte', 'Medisch,_Obstetrische_High_Care_indicatie_vrouw_en_kind_wegens_Indicatie_intensieve_foetale_bewaking:_Grote_meerling_(&gt;=_3)', 'Medisch,_Obstetrische_High_Care_indicatie_vrouw_en_kind_wegens_Indicatie_intensieve_foetale_bewaking:_Transfuseur-transfusée_syndroom', 'Medisch,_Obstetrische_High_Care_indicatie_vrouw_en_kind_wegens_Indicatie_intensieve_foetale_bewaking:_Uitstelprocedure_bij_meerling_(getemporiseerde_partus)', 'Medisch,_Obstetrische_High_Care_indicatie_vrouw_en_kind_wegens_Indicatie_intensieve_foetale_bewaking:_Overige_foetale_OHC_indicaties', 'Medisch,_Obstetrische_High_Care_indicatie_vrouw_en_kind_wegens_Indicatie_kraambed_bij_intensieve_neonatale_bewaking:_kraambed_wegens_neonaat_op_NICU', 'Medisch,_Obstetrische_High_Care_indicatie_vrouw_en_kind_wegens_Indicatie_kraambed_bij_intensieve_neonatale_bewaking:_kraambed_wegens_neonaat_op_intensieve_zorg_anders_dan_NICU_(bv_chirurgie)', 'Medisch,_Obstetrische_High_Care_indicatie_vrouw_en_kind_wegens_Overige_indicaties_vrouw/kind_voor_Obstetrische_High_Care', 'Niet_medische_indicatie_vrouw_en_kind,_wegens_Begin_zorgverlening', 'Niet_medische_indicatie_vrouw_en_kind,_wegens_Zorgverlening_afgesloten', 'Niet_medische_indicatie_vrouw_en_kind,_wegens_Adviesconsult', 'Niet_medische_indicatie_vrouw_en_kind,_wegens_Redenen_patiënt_Verhuizing_e.a._logistieke_redenen_patient', 'Niet_medische_indicatie_vrouw_en_kind,_wegens_Redenen_patiënt_Eigen_keuze/verzoek_patiënt', 'Niet_medische_indicatie_vrouw_en_kind,_wegens_Redenen_patiënt_Overige_niet_medische_redenen_patiënt', 'Niet_medische_indicatie_vrouw_en_kind,_wegens_Uitbesteding_zorg_Uitbesteding_zorg_1e_lijn_ivm_capaciteitstekort', 'Niet_medische_indicatie_vrouw_en_kind,_wegens_Uitbesteding_zorg_Uitbesteding_zorg_1e_lijn_overige_redenen', 'Niet_medische_indicatie_vrouw_en_kind,_wegens_Uitbesteding_zorg_Uitbesteding_zorg_2e_lijn_ivm_capaciteitstekort', 'Niet_medische_indicatie_vrouw_en_kind,_wegens_Uitbesteding_zorg_Uitbesteding_zorg_2e_lijn_overige_redenen', 'Niet_medische_indicatie_vrouw_en_kind,_wegens_Uitbesteding_zorg_Uitbesteding_zorg_3e_lijn_ivm_capaciteitstekort', 'Niet_medische_indicatie_vrouw_en_kind,_wegens_Uitbesteding_zorg_Uitbesteding_zorg_3e_lijn_overige_redenen', 'Niet_medische_indicatie_vrouw_en_kind,_wegens_Uitbesteding_zorg_Uitbesteding_zorg_Pediatrie_ivm_capaciteitstekort', 'Niet_medische_indicatie_vrouw_en_kind,_wegens_Uitbesteding_zorg_Uitbesteding_zorg_Pediatrie_overige_redenen', 'Niet_medische_indicatie_vrouw_en_kind,_wegens_Overige_niet_medische_indicaties_vrouw_en_kind', 'onbekend', 'geen_informatie', 'tijdelijk_niet_beschikbaar', 'anders'))"/>
          <xsl:otherwise>
@@ -5511,7 +5812,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
          <xsl:otherwise>
@@ -5530,14 +5832,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M44">
       <xsl:apply-templates select="*" mode="M44"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/zorgverlenerzorginstelling"
                  priority="1000"
                  mode="M45">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/zorgverlenerzorginstelling"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="count(zorginstelling) eq 1"/>
          <xsl:otherwise>
@@ -5552,7 +5858,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
          <xsl:otherwise>
@@ -5573,14 +5880,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M45">
       <xsl:apply-templates select="*" mode="M45"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/zorgverlenerzorginstelling/*[not(self::zorginstelling)][not(self::adaextension)]"
                  priority="1000"
                  mode="M46">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/zorgverlenerzorginstelling/*[not(self::zorginstelling)][not(self::adaextension)]"/>
-      <!--REPORT -->
+
+		    <!--REPORT -->
       <xsl:if test="true()">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="true()">
             <xsl:attribute name="location">
@@ -5599,14 +5910,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M46">
       <xsl:apply-templates select="*" mode="M46"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/zorgverlenerzorginstelling/zorginstelling"
                  priority="1000"
                  mode="M47">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/zorgverlenerzorginstelling/zorginstelling"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -5621,7 +5936,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10020')"/>
          <xsl:otherwise>
@@ -5636,7 +5952,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @xsi:*))"/>
          <xsl:otherwise>
@@ -5655,14 +5972,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M47">
       <xsl:apply-templates select="*" mode="M47"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/zorgverlenerzorginstelling/zorginstelling"
                  priority="1000"
                  mode="M48">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/zorgverlenerzorginstelling/zorginstelling"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="count(zorginstelling_lvrid) eq 1"/>
          <xsl:otherwise>
@@ -5677,7 +5998,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
          <xsl:otherwise>
@@ -5698,14 +6020,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M48">
       <xsl:apply-templates select="*" mode="M48"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/zorgverlenerzorginstelling/zorginstelling/*[not(self::zorginstelling_lvrid)][not(self::adaextension)]"
                  priority="1000"
                  mode="M49">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/zorgverlenerzorginstelling/zorginstelling/*[not(self::zorginstelling_lvrid)][not(self::adaextension)]"/>
-      <!--REPORT -->
+
+		    <!--REPORT -->
       <xsl:if test="true()">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="true()">
             <xsl:attribute name="location">
@@ -5724,14 +6050,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M49">
       <xsl:apply-templates select="*" mode="M49"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/zorgverlenerzorginstelling/zorginstelling/zorginstelling_lvrid"
                  priority="1000"
                  mode="M50">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/zorgverlenerzorginstelling/zorginstelling/zorginstelling_lvrid"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -5746,7 +6076,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10023')"/>
          <xsl:otherwise>
@@ -5761,7 +6092,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -5773,7 +6105,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (string-length(@value) ge 4)"/>
          <xsl:otherwise>
@@ -5788,7 +6121,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (string-length(@value) le 5)"/>
          <xsl:otherwise>
@@ -5803,7 +6137,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -5822,12 +6157,16 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M50">
       <xsl:apply-templates select="*" mode="M50"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/vrouw" priority="1000" mode="M51">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/vrouw"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(burgerservicenummer) ge 0) and (count(burgerservicenummer) le 1)"/>
          <xsl:otherwise>
@@ -5842,7 +6181,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(lokale_persoonsidentificatie) ge 0) and (count(lokale_persoonsidentificatie) le 1)"/>
          <xsl:otherwise>
@@ -5857,7 +6197,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(geboortedatum) ge 0) and (count(geboortedatum) le 1)"/>
          <xsl:otherwise>
@@ -5872,7 +6213,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(adres) ge 0) and (count(adres) le 1)"/>
          <xsl:otherwise>
@@ -5887,7 +6229,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(etniciteit) ge 0) and (count(etniciteit) le 1)"/>
          <xsl:otherwise>
@@ -5902,7 +6245,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(anamnese) ge 0) and (count(anamnese) le 1)"/>
          <xsl:otherwise>
@@ -5917,7 +6261,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(lengte_gemeten) ge 0) and (count(lengte_gemeten) le 1)"/>
          <xsl:otherwise>
@@ -5932,7 +6277,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(vrouwelijke_genitale_verminkingq) ge 0) and (count(vrouwelijke_genitale_verminkingq) le 1)"/>
          <xsl:otherwise>
@@ -5947,7 +6293,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(type_vrouwelijke_genitale_verminking) ge 0) and (count(type_vrouwelijke_genitale_verminking) le 1)"/>
          <xsl:otherwise>
@@ -5962,7 +6309,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
          <xsl:otherwise>
@@ -5983,14 +6331,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M51">
       <xsl:apply-templates select="*" mode="M51"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/vrouw/*[not(self::burgerservicenummer)][not(self::lokale_persoonsidentificatie)][not(self::geboortedatum)][not(self::adres)][not(self::etniciteit)][not(self::anamnese)][not(self::lengte_gemeten)][not(self::vrouwelijke_genitale_verminkingq)][not(self::type_vrouwelijke_genitale_verminking)][not(self::adaextension)]"
                  priority="1000"
                  mode="M52">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/vrouw/*[not(self::burgerservicenummer)][not(self::lokale_persoonsidentificatie)][not(self::geboortedatum)][not(self::adres)][not(self::etniciteit)][not(self::anamnese)][not(self::lengte_gemeten)][not(self::vrouwelijke_genitale_verminkingq)][not(self::type_vrouwelijke_genitale_verminking)][not(self::adaextension)]"/>
-      <!--REPORT -->
+
+		    <!--REPORT -->
       <xsl:if test="true()">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="true()">
             <xsl:attribute name="location">
@@ -6009,14 +6361,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M52">
       <xsl:apply-templates select="*" mode="M52"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/vrouw/burgerservicenummer"
                  priority="1000"
                  mode="M53">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/vrouw/burgerservicenummer"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -6031,7 +6387,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10030')"/>
          <xsl:otherwise>
@@ -6046,7 +6403,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -6058,7 +6416,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (string-length(@value) ge 9)"/>
          <xsl:otherwise>
@@ -6073,7 +6432,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (string-length(@value) le 9)"/>
          <xsl:otherwise>
@@ -6088,7 +6448,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -6107,14 +6468,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M53">
       <xsl:apply-templates select="*" mode="M53"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/vrouw/lokale_persoonsidentificatie"
                  priority="1000"
                  mode="M54">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/vrouw/lokale_persoonsidentificatie"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -6129,7 +6494,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10031')"/>
          <xsl:otherwise>
@@ -6144,7 +6510,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -6156,7 +6523,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -6175,14 +6543,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M54">
       <xsl:apply-templates select="*" mode="M54"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/vrouw/geboortedatum"
                  priority="1000"
                  mode="M55">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/vrouw/geboortedatum"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -6197,7 +6569,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10040')"/>
          <xsl:otherwise>
@@ -6212,7 +6585,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -6224,7 +6598,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or ((@value castable as xs:date) or (@value castable as xs:dateTime))"/>
          <xsl:otherwise>
@@ -6239,7 +6614,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -6258,14 +6634,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M55">
       <xsl:apply-templates select="*" mode="M55"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/vrouw/adres"
                  priority="1000"
                  mode="M56">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/vrouw/adres"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -6280,7 +6660,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10300')"/>
          <xsl:otherwise>
@@ -6295,7 +6676,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @xsi:*))"/>
          <xsl:otherwise>
@@ -6314,14 +6696,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M56">
       <xsl:apply-templates select="*" mode="M56"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/vrouw/etniciteit"
                  priority="1000"
                  mode="M57">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/vrouw/etniciteit"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -6336,7 +6722,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10400')"/>
          <xsl:otherwise>
@@ -6351,7 +6738,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value = ('14', '13', '12', '3', '4', '5', '8', '11', 'UNK'))"/>
          <xsl:otherwise>
@@ -6366,7 +6754,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@code) or (@code = ('14', '13', '12', '3', '4', '5', '8', '11', 'UNK'))"/>
          <xsl:otherwise>
@@ -6381,7 +6770,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.2.4.4.13.28', '2.16.840.1.113883.2.4.4.13.28', '2.16.840.1.113883.2.4.4.13.28', '2.16.840.1.113883.2.4.4.13.28', '2.16.840.1.113883.2.4.4.13.28', '2.16.840.1.113883.2.4.4.13.28', '2.16.840.1.113883.2.4.4.13.28', '2.16.840.1.113883.2.4.4.13.28', '2.16.840.1.113883.5.1008'))"/>
          <xsl:otherwise>
@@ -6396,7 +6786,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('Latijns_Amerikaans', 'Hindoestaans', 'Kaukasisch', 'Noord-Afrikaans', 'Overig_Afrikaans', 'Turks', 'Overig_Aziatisch', 'Meervoudige_afkomst_/_Overig', 'onbekend'))"/>
          <xsl:otherwise>
@@ -6411,7 +6802,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
          <xsl:otherwise>
@@ -6430,14 +6822,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M57">
       <xsl:apply-templates select="*" mode="M57"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/vrouw/anamnese"
                  priority="1000"
                  mode="M58">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/vrouw/anamnese"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -6452,7 +6848,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80811')"/>
          <xsl:otherwise>
@@ -6467,7 +6864,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @xsi:*))"/>
          <xsl:otherwise>
@@ -6486,14 +6884,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M58">
       <xsl:apply-templates select="*" mode="M58"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/vrouw/lengte_gemeten"
                  priority="1000"
                  mode="M59">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/vrouw/lengte_gemeten"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -6508,7 +6910,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20212')"/>
          <xsl:otherwise>
@@ -6523,7 +6926,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -6535,7 +6939,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:decimal)"/>
          <xsl:otherwise>
@@ -6550,7 +6955,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (local:decimal-convert(@value) ge 60)"/>
          <xsl:otherwise>
@@ -6565,7 +6971,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (local:decimal-convert(@value) le 270)"/>
          <xsl:otherwise>
@@ -6580,7 +6987,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@unit) or (@unit eq 'cm')"/>
          <xsl:otherwise>
@@ -6595,7 +7003,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @unit, @xsi:*))"/>
          <xsl:otherwise>
@@ -6614,14 +7023,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M59">
       <xsl:apply-templates select="*" mode="M59"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/vrouw/vrouwelijke_genitale_verminkingq"
                  priority="1000"
                  mode="M60">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/vrouw/vrouwelijke_genitale_verminkingq"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -6636,7 +7049,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80675')"/>
          <xsl:otherwise>
@@ -6651,7 +7065,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -6663,7 +7078,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
@@ -6678,7 +7094,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -6697,14 +7114,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M60">
       <xsl:apply-templates select="*" mode="M60"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/vrouw/type_vrouwelijke_genitale_verminking"
                  priority="1000"
                  mode="M61">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/vrouw/type_vrouwelijke_genitale_verminking"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -6719,7 +7140,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80676')"/>
          <xsl:otherwise>
@@ -6734,7 +7156,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value = ('130631000119108', '130621000119105', '130611000119103', '107411000119108', 'UNK', 'NI'))"/>
          <xsl:otherwise>
@@ -6749,7 +7172,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@code) or (@code = ('130631000119108', '130621000119105', '130611000119103', '107411000119108', 'UNK', 'NI'))"/>
          <xsl:otherwise>
@@ -6764,7 +7188,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008'))"/>
          <xsl:otherwise>
@@ -6779,7 +7204,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('Female_genital_mutilation_type_1_(disorder)', 'Female_genital_mutilation_type_2_(disorder)', 'Female_genital_mutilation_type_3_(disorder)', 'Female_genital_mutilation_type_4_(disorder)', 'onbekend', 'geen_informatie'))"/>
          <xsl:otherwise>
@@ -6794,7 +7220,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
          <xsl:otherwise>
@@ -6813,14 +7240,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M61">
       <xsl:apply-templates select="*" mode="M61"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/vrouw/adres"
                  priority="1000"
                  mode="M62">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/vrouw/adres"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(postcode) ge 0) and (count(postcode) le 1)"/>
          <xsl:otherwise>
@@ -6835,7 +7266,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
          <xsl:otherwise>
@@ -6856,14 +7288,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M62">
       <xsl:apply-templates select="*" mode="M62"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/vrouw/adres/*[not(self::postcode)][not(self::adaextension)]"
                  priority="1000"
                  mode="M63">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/vrouw/adres/*[not(self::postcode)][not(self::adaextension)]"/>
-      <!--REPORT -->
+
+		    <!--REPORT -->
       <xsl:if test="true()">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="true()">
             <xsl:attribute name="location">
@@ -6882,14 +7318,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M63">
       <xsl:apply-templates select="*" mode="M63"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/vrouw/adres/postcode"
                  priority="1000"
                  mode="M64">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/vrouw/adres/postcode"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -6904,7 +7344,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10304')"/>
          <xsl:otherwise>
@@ -6919,7 +7360,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -6931,7 +7373,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -6950,14 +7393,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M64">
       <xsl:apply-templates select="*" mode="M64"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/vrouw/anamnese"
                  priority="1000"
                  mode="M65">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/vrouw/anamnese"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(onder_behandeling_geweestq) ge 0) and (count(onder_behandeling_geweestq) le 1)"/>
          <xsl:otherwise>
@@ -6972,7 +7419,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(algemene_anamnese) ge 0) and (count(algemene_anamnese) le 1)"/>
          <xsl:otherwise>
@@ -6987,7 +7435,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
          <xsl:otherwise>
@@ -7008,14 +7457,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M65">
       <xsl:apply-templates select="*" mode="M65"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/vrouw/anamnese/*[not(self::onder_behandeling_geweestq)][not(self::algemene_anamnese)][not(self::adaextension)]"
                  priority="1000"
                  mode="M66">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/vrouw/anamnese/*[not(self::onder_behandeling_geweestq)][not(self::algemene_anamnese)][not(self::adaextension)]"/>
-      <!--REPORT -->
+
+		    <!--REPORT -->
       <xsl:if test="true()">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="true()">
             <xsl:attribute name="location">
@@ -7034,14 +7487,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M66">
       <xsl:apply-templates select="*" mode="M66"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/vrouw/anamnese/onder_behandeling_geweestq"
                  priority="1000"
                  mode="M67">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/vrouw/anamnese/onder_behandeling_geweestq"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -7056,7 +7513,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82020')"/>
          <xsl:otherwise>
@@ -7071,7 +7529,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -7083,7 +7542,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
@@ -7098,7 +7558,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -7117,14 +7578,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M67">
       <xsl:apply-templates select="*" mode="M67"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese"
                  priority="1000"
                  mode="M68">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -7139,7 +7604,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80904')"/>
          <xsl:otherwise>
@@ -7154,7 +7620,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @xsi:*))"/>
          <xsl:otherwise>
@@ -7173,14 +7640,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M68">
       <xsl:apply-templates select="*" mode="M68"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese"
                  priority="1000"
                  mode="M69">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(autoimmuun_aandoeningq) ge 0) and (count(autoimmuun_aandoeningq) le 1)"/>
          <xsl:otherwise>
@@ -7195,7 +7666,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="count(autoimmuun_aandoening) ge 0"/>
          <xsl:otherwise>
@@ -7210,7 +7682,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(cardiovasculaire_aandoeningq) ge 0) and (count(cardiovasculaire_aandoeningq) le 1)"/>
          <xsl:otherwise>
@@ -7225,7 +7698,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="count(cardiovasculaire_aandoening) ge 0"/>
          <xsl:otherwise>
@@ -7240,7 +7714,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(urogenitale_aandoeningq) ge 0) and (count(urogenitale_aandoeningq) le 1)"/>
          <xsl:otherwise>
@@ -7255,7 +7730,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="count(urogenitale_aandoening) ge 0"/>
          <xsl:otherwise>
@@ -7270,7 +7746,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(oncologische_aandoeningq) ge 0) and (count(oncologische_aandoeningq) le 1)"/>
          <xsl:otherwise>
@@ -7285,7 +7762,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="count(oncologische_aandoening) ge 0"/>
          <xsl:otherwise>
@@ -7300,7 +7778,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(schildklier_aandoeningq) ge 0) and (count(schildklier_aandoeningq) le 1)"/>
          <xsl:otherwise>
@@ -7315,7 +7794,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(schildklier_aandoening) ge 0) and (count(schildklier_aandoening) le 1)"/>
          <xsl:otherwise>
@@ -7330,7 +7810,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(diabetes_mellitusq) ge 0) and (count(diabetes_mellitusq) le 1)"/>
          <xsl:otherwise>
@@ -7345,7 +7826,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(neurologische_aandoeningq) ge 0) and (count(neurologische_aandoeningq) le 1)"/>
          <xsl:otherwise>
@@ -7360,7 +7842,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="count(neurologische_aandoening) ge 0"/>
          <xsl:otherwise>
@@ -7375,7 +7858,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(infectieziekteq) ge 0) and (count(infectieziekteq) le 1)"/>
          <xsl:otherwise>
@@ -7390,7 +7874,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="count(infectieziekte) ge 0"/>
          <xsl:otherwise>
@@ -7405,7 +7890,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(mdl_aandoeningq) ge 0) and (count(mdl_aandoeningq) le 1)"/>
          <xsl:otherwise>
@@ -7420,7 +7906,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="count(mdl_aandoening) ge 0"/>
          <xsl:otherwise>
@@ -7435,7 +7922,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(anemieq) ge 0) and (count(anemieq) le 1)"/>
          <xsl:otherwise>
@@ -7450,7 +7938,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="count(anemie) ge 0"/>
          <xsl:otherwise>
@@ -7464,7 +7953,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(longaandoeningq) ge 0) and (count(longaandoeningq) le 1)"/>
          <xsl:otherwise>
@@ -7479,7 +7969,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="count(longaandoening) ge 0"/>
          <xsl:otherwise>
@@ -7494,7 +7985,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(gynaecologische_aandoeningq) ge 0) and (count(gynaecologische_aandoeningq) le 1)"/>
          <xsl:otherwise>
@@ -7509,7 +8001,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="count(gynaecologische_aandoening) ge 0"/>
          <xsl:otherwise>
@@ -7524,7 +8017,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(orthopedische_afwijkingq) ge 0) and (count(orthopedische_afwijkingq) le 1)"/>
          <xsl:otherwise>
@@ -7539,7 +8033,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="count(orthopedische_afwijking) ge 0"/>
          <xsl:otherwise>
@@ -7554,7 +8049,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(bloedtransfusieq) ge 0) and (count(bloedtransfusieq) le 1)"/>
          <xsl:otherwise>
@@ -7569,7 +8065,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(transfusiereactieq) ge 0) and (count(transfusiereactieq) le 1)"/>
          <xsl:otherwise>
@@ -7584,7 +8081,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(operatieq) ge 0) and (count(operatieq) le 1)"/>
          <xsl:otherwise>
@@ -7599,7 +8097,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="count(type_operatie) ge 0"/>
          <xsl:otherwise>
@@ -7614,7 +8113,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(stollingsprobleemq) ge 0) and (count(stollingsprobleemq) le 1)"/>
          <xsl:otherwise>
@@ -7629,7 +8129,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="count(type_stollingsprobleem) ge 0"/>
          <xsl:otherwise>
@@ -7644,7 +8145,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(psychiatrieq) ge 0) and (count(psychiatrieq) le 1)"/>
          <xsl:otherwise>
@@ -7659,7 +8161,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(overige_aandoeningq) ge 0) and (count(overige_aandoeningq) le 1)"/>
          <xsl:otherwise>
@@ -7674,7 +8177,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="count(overige_aandoening) ge 0"/>
          <xsl:otherwise>
@@ -7689,7 +8193,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
          <xsl:otherwise>
@@ -7710,14 +8215,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M69">
       <xsl:apply-templates select="*" mode="M69"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/*[not(self::autoimmuun_aandoeningq)][not(self::autoimmuun_aandoening)][not(self::cardiovasculaire_aandoeningq)][not(self::cardiovasculaire_aandoening)][not(self::urogenitale_aandoeningq)][not(self::urogenitale_aandoening)][not(self::oncologische_aandoeningq)][not(self::oncologische_aandoening)][not(self::schildklier_aandoeningq)][not(self::schildklier_aandoening)][not(self::diabetes_mellitusq)][not(self::neurologische_aandoeningq)][not(self::neurologische_aandoening)][not(self::infectieziekteq)][not(self::infectieziekte)][not(self::mdl_aandoeningq)][not(self::mdl_aandoening)][not(self::anemieq)][not(self::anemie)][not(self::longaandoeningq)][not(self::longaandoening)][not(self::gynaecologische_aandoeningq)][not(self::gynaecologische_aandoening)][not(self::orthopedische_afwijkingq)][not(self::orthopedische_afwijking)][not(self::bloedtransfusieq)][not(self::transfusiereactieq)][not(self::operatieq)][not(self::type_operatie)][not(self::stollingsprobleemq)][not(self::type_stollingsprobleem)][not(self::psychiatrieq)][not(self::overige_aandoeningq)][not(self::overige_aandoening)][not(self::adaextension)]"
                  priority="1000"
                  mode="M70">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/*[not(self::autoimmuun_aandoeningq)][not(self::autoimmuun_aandoening)][not(self::cardiovasculaire_aandoeningq)][not(self::cardiovasculaire_aandoening)][not(self::urogenitale_aandoeningq)][not(self::urogenitale_aandoening)][not(self::oncologische_aandoeningq)][not(self::oncologische_aandoening)][not(self::schildklier_aandoeningq)][not(self::schildklier_aandoening)][not(self::diabetes_mellitusq)][not(self::neurologische_aandoeningq)][not(self::neurologische_aandoening)][not(self::infectieziekteq)][not(self::infectieziekte)][not(self::mdl_aandoeningq)][not(self::mdl_aandoening)][not(self::anemieq)][not(self::anemie)][not(self::longaandoeningq)][not(self::longaandoening)][not(self::gynaecologische_aandoeningq)][not(self::gynaecologische_aandoening)][not(self::orthopedische_afwijkingq)][not(self::orthopedische_afwijking)][not(self::bloedtransfusieq)][not(self::transfusiereactieq)][not(self::operatieq)][not(self::type_operatie)][not(self::stollingsprobleemq)][not(self::type_stollingsprobleem)][not(self::psychiatrieq)][not(self::overige_aandoeningq)][not(self::overige_aandoening)][not(self::adaextension)]"/>
-      <!--REPORT -->
+
+		    <!--REPORT -->
       <xsl:if test="true()">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="true()">
             <xsl:attribute name="location">
@@ -7736,14 +8245,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M70">
       <xsl:apply-templates select="*" mode="M70"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/autoimmuun_aandoeningq"
                  priority="1000"
                  mode="M71">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/autoimmuun_aandoeningq"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -7758,7 +8271,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80905')"/>
          <xsl:otherwise>
@@ -7773,7 +8287,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -7785,7 +8300,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
@@ -7800,7 +8316,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -7819,14 +8336,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M71">
       <xsl:apply-templates select="*" mode="M71"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/autoimmuun_aandoening"
                  priority="1000"
                  mode="M72">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/autoimmuun_aandoening"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -7841,7 +8362,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82220')"/>
          <xsl:otherwise>
@@ -7856,7 +8378,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value = ('55464009', '396332003', 'OTH'))"/>
          <xsl:otherwise>
@@ -7871,7 +8394,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@code) or (@code = ('55464009', '396332003', 'OTH'))"/>
          <xsl:otherwise>
@@ -7886,7 +8410,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.5.1008'))"/>
          <xsl:otherwise>
@@ -7901,7 +8426,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('Systemic_lupus_erythematosus_(disorder)', 'Rheumatism_(disorder)', 'Overig'))"/>
          <xsl:otherwise>
@@ -7916,7 +8442,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
          <xsl:otherwise>
@@ -7935,14 +8462,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M72">
       <xsl:apply-templates select="*" mode="M72"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/cardiovasculaire_aandoeningq"
                  priority="1000"
                  mode="M73">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/cardiovasculaire_aandoeningq"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -7957,7 +8488,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82216')"/>
          <xsl:otherwise>
@@ -7972,7 +8504,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -7984,7 +8517,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
@@ -7999,7 +8533,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -8018,14 +8553,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M73">
       <xsl:apply-templates select="*" mode="M73"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/cardiovasculaire_aandoening"
                  priority="1000"
                  mode="M74">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/cardiovasculaire_aandoening"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -8040,7 +8579,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80906')"/>
          <xsl:otherwise>
@@ -8055,7 +8595,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value = ('38341003', '85898001', '698247007', '128599005', 'OTH'))"/>
          <xsl:otherwise>
@@ -8070,7 +8611,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@code) or (@code = ('38341003', '85898001', '698247007', '128599005', 'OTH'))"/>
          <xsl:otherwise>
@@ -8085,7 +8627,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.5.1008'))"/>
          <xsl:otherwise>
@@ -8100,7 +8643,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('Hypertensive_disorder,_systemic_arterial_(disorder)', 'Cardiomyopathy_(disorder)', 'Cardiac_arrhythmia_(disorder)', 'Structural_disorder_of_heart_(disorder)', 'Overig'))"/>
          <xsl:otherwise>
@@ -8115,7 +8659,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
          <xsl:otherwise>
@@ -8134,14 +8679,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M74">
       <xsl:apply-templates select="*" mode="M74"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/urogenitale_aandoeningq"
                  priority="1000"
                  mode="M75">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/urogenitale_aandoeningq"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -8156,7 +8705,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80907')"/>
          <xsl:otherwise>
@@ -8171,7 +8721,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -8183,7 +8734,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
@@ -8198,7 +8750,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -8217,14 +8770,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M75">
       <xsl:apply-templates select="*" mode="M75"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/urogenitale_aandoening"
                  priority="1000"
                  mode="M76">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/urogenitale_aandoening"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -8239,7 +8796,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82267')"/>
          <xsl:otherwise>
@@ -8254,7 +8812,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value = ('45816000', '61373006', '236425005'))"/>
          <xsl:otherwise>
@@ -8269,7 +8828,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@code) or (@code = ('45816000', '61373006', '236425005'))"/>
          <xsl:otherwise>
@@ -8284,7 +8844,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96'))"/>
          <xsl:otherwise>
@@ -8299,7 +8860,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('Pyelonephritis_(disorder)', 'Bacteriuria_(finding)', 'Chronic_renal_impairment_(disorder)'))"/>
          <xsl:otherwise>
@@ -8314,7 +8876,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
          <xsl:otherwise>
@@ -8333,14 +8896,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M76">
       <xsl:apply-templates select="*" mode="M76"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/oncologische_aandoeningq"
                  priority="1000"
                  mode="M77">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/oncologische_aandoeningq"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -8355,7 +8922,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80908')"/>
          <xsl:otherwise>
@@ -8370,7 +8938,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -8382,7 +8951,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
@@ -8397,7 +8967,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -8416,14 +8987,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M77">
       <xsl:apply-templates select="*" mode="M77"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/oncologische_aandoening"
                  priority="1000"
                  mode="M78">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/oncologische_aandoening"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -8438,7 +9013,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82221')"/>
          <xsl:otherwise>
@@ -8453,7 +9029,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value = ('93796005', '285432005', '93143009', '93880001', '372244006', 'OTH'))"/>
          <xsl:otherwise>
@@ -8468,7 +9045,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@code) or (@code = ('93796005', '285432005', '93143009', '93880001', '372244006', 'OTH'))"/>
          <xsl:otherwise>
@@ -8483,7 +9061,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.5.1008'))"/>
          <xsl:otherwise>
@@ -8498,7 +9077,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('Primary_malignant_neoplasm_of_female_breast_(disorder)', 'Carcinoma_of_cervix_(disorder)', 'Leukemia,_disease_(disorder)', 'Primary_malignant_neoplasm_of_lung_(disorder)', 'Malignant_melanoma_(disorder)', 'other'))"/>
          <xsl:otherwise>
@@ -8513,7 +9093,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
          <xsl:otherwise>
@@ -8532,14 +9113,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M78">
       <xsl:apply-templates select="*" mode="M78"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/schildklier_aandoeningq"
                  priority="1000"
                  mode="M79">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/schildklier_aandoeningq"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -8554,7 +9139,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82217')"/>
          <xsl:otherwise>
@@ -8569,7 +9155,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -8581,7 +9168,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
@@ -8596,7 +9184,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -8615,14 +9204,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M79">
       <xsl:apply-templates select="*" mode="M79"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/schildklier_aandoening"
                  priority="1000"
                  mode="M80">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/schildklier_aandoening"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -8637,7 +9230,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80909')"/>
          <xsl:otherwise>
@@ -8652,7 +9246,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value = ('40930008', '34486009'))"/>
          <xsl:otherwise>
@@ -8667,7 +9262,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@code) or (@code = ('40930008', '34486009'))"/>
          <xsl:otherwise>
@@ -8682,7 +9278,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96'))"/>
          <xsl:otherwise>
@@ -8697,7 +9294,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('Hypothyroidism_(disorder)', 'Hyperthyroidism_(disorder)'))"/>
          <xsl:otherwise>
@@ -8712,7 +9310,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
          <xsl:otherwise>
@@ -8731,14 +9330,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M80">
       <xsl:apply-templates select="*" mode="M80"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/diabetes_mellitusq"
                  priority="1000"
                  mode="M81">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/diabetes_mellitusq"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -8753,7 +9356,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80910')"/>
          <xsl:otherwise>
@@ -8768,7 +9372,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -8780,7 +9385,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
@@ -8795,7 +9401,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -8814,14 +9421,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M81">
       <xsl:apply-templates select="*" mode="M81"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/neurologische_aandoeningq"
                  priority="1000"
                  mode="M82">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/neurologische_aandoeningq"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -8836,7 +9447,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82218')"/>
          <xsl:otherwise>
@@ -8851,7 +9463,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -8863,7 +9476,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
@@ -8878,7 +9492,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -8897,14 +9512,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M82">
       <xsl:apply-templates select="*" mode="M82"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/neurologische_aandoening"
                  priority="1000"
                  mode="M83">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/neurologische_aandoening"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -8919,7 +9538,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80912')"/>
          <xsl:otherwise>
@@ -8934,7 +9554,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value = ('84757009', '230690007', '24700007', '37796009', '84857004', '399244003', 'OTH'))"/>
          <xsl:otherwise>
@@ -8949,7 +9570,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@code) or (@code = ('84757009', '230690007', '24700007', '37796009', '84857004', '399244003', 'OTH'))"/>
          <xsl:otherwise>
@@ -8964,7 +9586,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.5.1008'))"/>
          <xsl:otherwise>
@@ -8979,7 +9602,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('Epilepsy_(disorder)', 'Cerebrovascular_accident_(disorder)', 'Multiple_sclerosis_(disorder)', 'Migraine_(disorder)', 'Herniation_of_nucleus_pulposus_(disorder)', 'Disease_of_pituitary_gland_(disorder)', 'Overig'))"/>
          <xsl:otherwise>
@@ -8994,7 +9618,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
          <xsl:otherwise>
@@ -9013,14 +9638,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M83">
       <xsl:apply-templates select="*" mode="M83"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/infectieziekteq"
                  priority="1000"
                  mode="M84">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/infectieziekteq"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -9035,7 +9664,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80913')"/>
          <xsl:otherwise>
@@ -9050,7 +9680,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -9062,7 +9693,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
@@ -9077,7 +9709,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -9096,14 +9729,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M84">
       <xsl:apply-templates select="*" mode="M84"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/infectieziekte"
                  priority="1000"
                  mode="M85">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/infectieziekte"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -9118,7 +9755,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82210')"/>
          <xsl:otherwise>
@@ -9133,7 +9771,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value = ('240589008', '15628003', '426933007', '266096002', '56717001', '28944009', '23513009', '165806002', '86406008', '66071002', '50711007', '36653000', '309465005', '186748004', '76272004', '187192000', '23502006', '61462000', '56335008', 'OTH'))"/>
          <xsl:otherwise>
@@ -9148,7 +9787,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@code) or (@code = ('240589008', '15628003', '426933007', '266096002', '56717001', '28944009', '23513009', '165806002', '86406008', '66071002', '50711007', '36653000', '309465005', '186748004', '76272004', '187192000', '23502006', '61462000', '56335008', 'OTH'))"/>
          <xsl:otherwise>
@@ -9163,7 +9803,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.5.1008'))"/>
          <xsl:otherwise>
@@ -9178,7 +9819,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('Bacterial_infectious_disease_(disorder)_Chlamydia_trachomatis_infection_(disorder)', 'Bacterial_infectious_disease_(disorder)_Gonorrhea_(disorder)', 'Bacterial_infectious_disease_(disorder)_Streptococcus_agalactiae_infection_(disorder)', 'Bacterial_infectious_disease_(disorder)_Methicillin_resistant_Staphylococcus_aureus_infection_(disorder)', 'Bacterial_infectious_disease_(disorder)_Tuberculosis_(disorder)', 'Viral_disease_(disorder)_Cytomegalovirus_infection_(disorder)', 'Viral_disease_(disorder)_Herpesvirus_infection_(disorder)', 'Viral_disease_(disorder)_Hepatitis_B_surface_antigen_positive_(finding)', 'Viral_disease_(disorder)_Human_immunodeficiency_virus_infection_(disorder)', 'Viral_disease_(disorder)_Type_B_viral_hepatitis_(disorder)', 'Viral_disease_(disorder)_Viral_hepatitis_C_(disorder)', 'Viral_disease_(disorder)_Rubella_(disorder)', 'Viral_disease_(disorder)_Varicella-zoster_virus_infection_(disorder)', 'Viral_disease_(disorder)_Parvovirus_infection_(disorder)', 'Disease_caused_by_parasite_(disorder)_Syphilis_(disorder)', 'Disease_caused_by_parasite_(disorder)_Toxoplasmosis_(disorder)', 'Disease_caused_by_parasite_(disorder)_Lyme_disease_(disorder)', 'Disease_caused_by_parasite_(disorder)_Malaria_(disorder)', 'Disease_caused_by_parasite_(disorder)_Infection_by_Trichomonas_(disorder)', 'Overig'))"/>
          <xsl:otherwise>
@@ -9193,7 +9835,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
          <xsl:otherwise>
@@ -9212,14 +9855,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M85">
       <xsl:apply-templates select="*" mode="M85"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/mdl_aandoeningq"
                  priority="1000"
                  mode="M86">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/mdl_aandoeningq"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -9234,7 +9881,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80914')"/>
          <xsl:otherwise>
@@ -9249,7 +9897,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -9261,7 +9910,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
@@ -9276,7 +9926,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -9295,14 +9946,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M86">
       <xsl:apply-templates select="*" mode="M86"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/mdl_aandoening"
                  priority="1000"
                  mode="M87">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/mdl_aandoening"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -9317,7 +9972,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82219')"/>
          <xsl:otherwise>
@@ -9332,7 +9988,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value = ('328383001', '64766004', '34000006'))"/>
          <xsl:otherwise>
@@ -9347,7 +10004,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@code) or (@code = ('328383001', '64766004', '34000006'))"/>
          <xsl:otherwise>
@@ -9362,7 +10020,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96'))"/>
          <xsl:otherwise>
@@ -9377,7 +10036,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('Chronic_liver_disease_(disorder)', 'Ulcerative_colitis_(disorder)', 'Crohn''s_disease_(disorder)'))"/>
          <xsl:otherwise>
@@ -9392,7 +10052,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
          <xsl:otherwise>
@@ -9411,14 +10072,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M87">
       <xsl:apply-templates select="*" mode="M87"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/anemieq"
                  priority="1000"
                  mode="M88">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/anemieq"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -9433,7 +10098,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80915')"/>
          <xsl:otherwise>
@@ -9448,7 +10114,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -9460,7 +10127,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
@@ -9475,7 +10143,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -9494,14 +10163,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M88">
       <xsl:apply-templates select="*" mode="M88"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/anemie"
                  priority="1000"
                  mode="M89">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/anemie"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -9516,7 +10189,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82222')"/>
          <xsl:otherwise>
@@ -9531,7 +10205,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value = ('87522002', '80141007', '127040003', '40108008'))"/>
          <xsl:otherwise>
@@ -9546,7 +10221,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@code) or (@code = ('87522002', '80141007', '127040003', '40108008'))"/>
          <xsl:otherwise>
@@ -9561,7 +10237,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96'))"/>
          <xsl:otherwise>
@@ -9576,7 +10253,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('Iron_deficiency_anemia_(disorder)', 'Hemoglobinopathy_(disorder)', 'Hereditary_hemoglobinopathy_disorder_homozygous_for_hemoglobin_S_(disorder)', 'Thalassemia_(disorder)'))"/>
          <xsl:otherwise>
@@ -9591,7 +10269,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
          <xsl:otherwise>
@@ -9610,14 +10289,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M89">
       <xsl:apply-templates select="*" mode="M89"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/longaandoeningq"
                  priority="1000"
                  mode="M90">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/longaandoeningq"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -9632,7 +10315,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80916')"/>
          <xsl:otherwise>
@@ -9647,7 +10331,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -9659,7 +10344,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
@@ -9674,7 +10360,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -9693,14 +10380,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M90">
       <xsl:apply-templates select="*" mode="M90"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/longaandoening"
                  priority="1000"
                  mode="M91">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/longaandoening"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -9715,7 +10406,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82266')"/>
          <xsl:otherwise>
@@ -9730,7 +10422,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value = ('195967001', '13645005', '31541009', 'OTH', 'NI'))"/>
          <xsl:otherwise>
@@ -9745,7 +10438,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@code) or (@code = ('195967001', '13645005', '31541009', 'OTH', 'NI'))"/>
          <xsl:otherwise>
@@ -9760,7 +10454,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008'))"/>
          <xsl:otherwise>
@@ -9775,7 +10470,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('Asthma_(disorder)', 'Chronic_obstructive_lung_disease_(disorder)', 'Sarcoidosis_(disorder)', 'Overig', 'Geen_informatie'))"/>
          <xsl:otherwise>
@@ -9790,7 +10486,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
          <xsl:otherwise>
@@ -9809,14 +10506,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M91">
       <xsl:apply-templates select="*" mode="M91"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/gynaecologische_aandoeningq"
                  priority="1000"
                  mode="M92">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/gynaecologische_aandoeningq"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -9831,7 +10532,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82211')"/>
          <xsl:otherwise>
@@ -9846,7 +10548,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -9858,7 +10561,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
@@ -9873,7 +10577,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -9892,14 +10597,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M92">
       <xsl:apply-templates select="*" mode="M92"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/gynaecologische_aandoening"
                  priority="1000"
                  mode="M93">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/gynaecologische_aandoening"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -9914,7 +10623,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80917')"/>
          <xsl:otherwise>
@@ -9929,7 +10639,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value = ('129103003', '95315005', '37849005', 'OTH'))"/>
          <xsl:otherwise>
@@ -9944,7 +10655,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@code) or (@code = ('129103003', '95315005', '37849005', 'OTH'))"/>
          <xsl:otherwise>
@@ -9959,7 +10671,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.5.1008'))"/>
          <xsl:otherwise>
@@ -9974,7 +10687,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('Endometriosis_(disorder)', 'Uterine_leiomyoma_(disorder)', 'Congenital_uterine_anomaly_(disorder)', 'Overig'))"/>
          <xsl:otherwise>
@@ -9989,7 +10703,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
          <xsl:otherwise>
@@ -10008,14 +10723,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M93">
       <xsl:apply-templates select="*" mode="M93"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/orthopedische_afwijkingq"
                  priority="1000"
                  mode="M94">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/orthopedische_afwijkingq"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -10030,7 +10749,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82213')"/>
          <xsl:otherwise>
@@ -10045,7 +10765,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -10057,7 +10778,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
@@ -10072,7 +10794,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -10091,14 +10814,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M94">
       <xsl:apply-templates select="*" mode="M94"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/orthopedische_afwijking"
                  priority="1000"
                  mode="M95">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/orthopedische_afwijking"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -10113,7 +10840,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80918')"/>
          <xsl:otherwise>
@@ -10128,7 +10856,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value = ('48334007', '282771003', 'OTH'))"/>
          <xsl:otherwise>
@@ -10143,7 +10872,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@code) or (@code = ('48334007', '282771003', 'OTH'))"/>
          <xsl:otherwise>
@@ -10158,7 +10888,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.5.1008'))"/>
          <xsl:otherwise>
@@ -10173,7 +10904,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('Congenital_dislocation_of_hip_(disorder)', 'Pelvic_injury_(disorder)', 'Overig'))"/>
          <xsl:otherwise>
@@ -10188,7 +10920,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
          <xsl:otherwise>
@@ -10207,14 +10940,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M95">
       <xsl:apply-templates select="*" mode="M95"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/bloedtransfusieq"
                  priority="1000"
                  mode="M96">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/bloedtransfusieq"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -10229,7 +10966,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10805')"/>
          <xsl:otherwise>
@@ -10244,7 +10982,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -10256,7 +10995,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
@@ -10271,7 +11011,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -10290,14 +11031,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M96">
       <xsl:apply-templates select="*" mode="M96"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/transfusiereactieq"
                  priority="1000"
                  mode="M97">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/transfusiereactieq"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -10312,7 +11057,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82231')"/>
          <xsl:otherwise>
@@ -10327,7 +11073,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -10339,7 +11086,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
@@ -10354,7 +11102,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -10373,14 +11122,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M97">
       <xsl:apply-templates select="*" mode="M97"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/operatieq"
                  priority="1000"
                  mode="M98">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/operatieq"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -10395,7 +11148,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80939')"/>
          <xsl:otherwise>
@@ -10410,7 +11164,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -10422,7 +11177,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
@@ -10437,7 +11193,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -10456,14 +11213,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M98">
       <xsl:apply-templates select="*" mode="M98"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/type_operatie"
                  priority="1000"
                  mode="M99">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/type_operatie"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -10478,7 +11239,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80818')"/>
          <xsl:otherwise>
@@ -10493,7 +11255,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value = ('12658000', '68688001', '11466000', '28233006', '79876008', '42010004', '64887002', '112697007', '12745006', '129152004:260686004=129284003', '21371007', '86481000', '80146002', '177250006', '34853001', '392090004', '118717007:260686004=129284003', '175898006', '15463004', '64915003', '13119002', '16545005', 'UNK', 'OTH'))"/>
          <xsl:otherwise>
@@ -10508,7 +11271,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@code) or (@code = ('12658000', '68688001', '11466000', '28233006', '79876008', '42010004', '64887002', '112697007', '12745006', '129152004:260686004=129284003', '21371007', '86481000', '80146002', '177250006', '34853001', '392090004', '118717007:260686004=129284003', '175898006', '15463004', '64915003', '13119002', '16545005', 'UNK', 'OTH'))"/>
          <xsl:otherwise>
@@ -10523,7 +11287,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008'))"/>
          <xsl:otherwise>
@@ -10538,7 +11303,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('Operation_on_female_genital_organs_(procedure)', 'Operation_on_female_genital_organs_(procedure)_Curettage_(procedure)', 'Operation_on_female_genital_organs_(procedure)_Cesarean_section_(procedure)', 'Operation_on_female_genital_organs_(procedure)_Manual_removal_of_retained_placenta_(procedure)', 'Operation_on_female_genital_organs_(procedure)_Operation_on_uterus_(procedure)', 'Operation_on_female_genital_organs_(procedure)_Uterine_myomectomy_(procedure)', 'Operation_on_female_genital_organs_(procedure)_Operation_on_ovary_(procedure)', 'Operation_on_musculoskeletal_system_(procedure)', 'Operation_on_musculoskeletal_system_(procedure)_Operative_procedure_on_pelvis_(procedure)', 'Operation_on_musculoskeletal_system_(procedure)_Operation_on_back_(procedure)', 'Operation_on_abdominal_region_(procedure)', 'Operation_on_abdominal_region_(procedure)_Laparotomy_(procedure)', 'Operation_on_abdominal_region_(procedure)_Appendectomy_(procedure)', 'Operation_on_abdominal_region_(procedure)_Abdominoplasty_(procedure)', 'Operation_on_abdominal_region_(procedure)_Operation_on_intestine_(procedure)', 'Operation_on_breast_(procedure)', 'Operation_on_organ_(procedure)', 'Operation_on_organ_(procedure)_Kidney_operation_(procedure)', 'Operation_on_organ_(procedure)_Operation_on_thyroid_gland_(procedure)', 'Operation_on_organ_(procedure)_Operation_on_heart_(procedure)', 'Operation_on_organ_(procedure)_Operation_on_adrenal_gland_(procedure)', 'Operation_on_nervous_system_(procedure)', 'Onbekend', 'Overig'))"/>
          <xsl:otherwise>
@@ -10553,7 +11319,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
          <xsl:otherwise>
@@ -10572,14 +11339,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M99">
       <xsl:apply-templates select="*" mode="M99"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/stollingsprobleemq"
                  priority="1000"
                  mode="M100">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/stollingsprobleemq"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -10594,7 +11365,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80940')"/>
          <xsl:otherwise>
@@ -10609,7 +11381,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -10621,7 +11394,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
@@ -10636,7 +11410,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -10655,14 +11430,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M100">
       <xsl:apply-templates select="*" mode="M100"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/type_stollingsprobleem"
                  priority="1000"
                  mode="M101">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/type_stollingsprobleem"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -10677,7 +11456,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80817')"/>
          <xsl:otherwise>
@@ -10692,7 +11472,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value = ('128105004', '90935002', '302215000', '67406007', '234467004', '36351005', '76407009', '1563006', '307116001', '307115002', '46981006', '128053003', '59282003', 'OTH'))"/>
          <xsl:otherwise>
@@ -10707,7 +11488,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@code) or (@code = ('128105004', '90935002', '302215000', '67406007', '234467004', '36351005', '76407009', '1563006', '307116001', '307115002', '46981006', '128053003', '59282003', 'OTH'))"/>
          <xsl:otherwise>
@@ -10722,7 +11504,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.5.1008'))"/>
          <xsl:otherwise>
@@ -10737,7 +11520,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('von_Willebrand_disorder_(disorder)', 'Hemophilia_(disorder)', 'Thrombocytopenic_disorder_(disorder)', 'Disseminated_intravascular_coagulation_(disorder)', 'Thrombophilia_(disorder)', 'Thrombophilia_(disorder)_Antithrombin_III_deficiency_(disorder)', 'Thrombophilia_(disorder)_Protein_C_deficiency_disease_(disorder)', 'Thrombophilia_(disorder)_Protein_S_deficiency_disease_(disorder)', 'Thrombophilia_(disorder)_Heterozygous_Factor_V_Leiden_mutation_(disorder)', 'Thrombophilia_(disorder)_Homozygous_Factor_V_Leiden_mutation_(disorder)', 'Thrombophilia_(disorder)_Factor_XII_deficiency_disease_(disorder)', 'Deep_venous_thrombosis_(disorder)', 'Pulmonary_embolism_(disorder)', 'Overig'))"/>
          <xsl:otherwise>
@@ -10752,7 +11536,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
          <xsl:otherwise>
@@ -10771,14 +11556,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M101">
       <xsl:apply-templates select="*" mode="M101"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/psychiatrieq"
                  priority="1000"
                  mode="M102">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/psychiatrieq"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -10793,7 +11582,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82159')"/>
          <xsl:otherwise>
@@ -10808,7 +11598,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -10820,7 +11611,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
@@ -10835,7 +11627,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -10854,14 +11647,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M102">
       <xsl:apply-templates select="*" mode="M102"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/overige_aandoeningq"
                  priority="1000"
                  mode="M103">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/overige_aandoeningq"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -10876,7 +11673,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82212')"/>
          <xsl:otherwise>
@@ -10891,7 +11689,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -10903,7 +11702,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
@@ -10918,7 +11718,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -10937,14 +11738,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M103">
       <xsl:apply-templates select="*" mode="M103"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/overige_aandoening"
                  priority="1000"
                  mode="M104">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/overige_aandoening"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -10959,7 +11764,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80919')"/>
          <xsl:otherwise>
@@ -10974,7 +11780,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -10986,7 +11793,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -11005,14 +11813,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M104">
       <xsl:apply-templates select="*" mode="M104"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap"
                  priority="1000"
                  mode="M105">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(wijze_einde_zwangerschap) ge 0) and (count(wijze_einde_zwangerschap) le 1)"/>
          <xsl:otherwise>
@@ -11027,7 +11839,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(definitieve_a_terme_datum) ge 0) and (count(definitieve_a_terme_datum) le 1)"/>
          <xsl:otherwise>
@@ -11042,7 +11855,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="count(diagnose) ge 0"/>
          <xsl:otherwise>
@@ -11056,7 +11870,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(irregulaire_antistoffenq) ge 0) and (count(irregulaire_antistoffenq) le 1)"/>
          <xsl:otherwise>
@@ -11071,7 +11886,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(eerdere_bevalling) ge 0) and (count(eerdere_bevalling) le 1)"/>
          <xsl:otherwise>
@@ -11086,7 +11902,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
          <xsl:otherwise>
@@ -11107,14 +11924,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M105">
       <xsl:apply-templates select="*" mode="M105"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/*[not(self::wijze_einde_zwangerschap)][not(self::definitieve_a_terme_datum)][not(self::diagnose)][not(self::irregulaire_antistoffenq)][not(self::eerdere_bevalling)][not(self::adaextension)]"
                  priority="1000"
                  mode="M106">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/*[not(self::wijze_einde_zwangerschap)][not(self::definitieve_a_terme_datum)][not(self::diagnose)][not(self::irregulaire_antistoffenq)][not(self::eerdere_bevalling)][not(self::adaextension)]"/>
-      <!--REPORT -->
+
+		    <!--REPORT -->
       <xsl:if test="true()">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="true()">
             <xsl:attribute name="location">
@@ -11133,14 +11954,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M106">
       <xsl:apply-templates select="*" mode="M106"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/wijze_einde_zwangerschap"
                  priority="1000"
                  mode="M107">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/wijze_einde_zwangerschap"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -11155,7 +11980,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80623')"/>
          <xsl:otherwise>
@@ -11170,7 +11996,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value = ('1', '2', '21', '22', '23', '3', '31', '32', '4', '5', 'NI'))"/>
          <xsl:otherwise>
@@ -11185,7 +12012,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@code) or (@code = ('1', '2', '21', '22', '23', '3', '31', '32', '4', '5', 'NI'))"/>
          <xsl:otherwise>
@@ -11200,7 +12028,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.2.4.4.13.46', '2.16.840.1.113883.2.4.4.13.46', '2.16.840.1.113883.2.4.4.13.46', '2.16.840.1.113883.2.4.4.13.46', '2.16.840.1.113883.2.4.4.13.46', '2.16.840.1.113883.2.4.4.13.46', '2.16.840.1.113883.2.4.4.13.46', '2.16.840.1.113883.2.4.4.13.46', '2.16.840.1.113883.2.4.4.13.46', '2.16.840.1.113883.2.4.4.13.46', '2.16.840.1.113883.5.1008'))"/>
          <xsl:otherwise>
@@ -11215,7 +12044,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('Partus', 'Miskraam', 'Miskraam_Spontaan', 'Miskraam_Medicamenteus', 'Miskraam_Instrumenteel', 'APLA', 'APLA_Medicamenteus', 'APLA_Instrumenteel', 'EUG_-_behandeld', '(partiële)_Mola_-_behandeld', 'geen_informatie'))"/>
          <xsl:otherwise>
@@ -11230,7 +12060,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
          <xsl:otherwise>
@@ -11249,14 +12080,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M107">
       <xsl:apply-templates select="*" mode="M107"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/definitieve_a_terme_datum"
                  priority="1000"
                  mode="M108">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/definitieve_a_terme_datum"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -11271,7 +12106,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82337')"/>
          <xsl:otherwise>
@@ -11286,7 +12122,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -11298,7 +12135,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or ((@value castable as xs:date) or (@value castable as xs:dateTime))"/>
          <xsl:otherwise>
@@ -11313,7 +12151,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -11332,14 +12171,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M108">
       <xsl:apply-templates select="*" mode="M108"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose"
                  priority="1000"
                  mode="M109">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -11354,7 +12197,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82314')"/>
          <xsl:otherwise>
@@ -11369,7 +12213,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @xsi:*))"/>
          <xsl:otherwise>
@@ -11388,14 +12233,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M109">
       <xsl:apply-templates select="*" mode="M109"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/irregulaire_antistoffenq"
                  priority="1000"
                  mode="M110">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/irregulaire_antistoffenq"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -11410,7 +12259,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82214')"/>
          <xsl:otherwise>
@@ -11425,7 +12275,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -11437,7 +12288,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
@@ -11452,7 +12304,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -11471,14 +12324,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M110">
       <xsl:apply-templates select="*" mode="M110"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling"
                  priority="1000"
                  mode="M111">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -11493,7 +12350,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.18')"/>
          <xsl:otherwise>
@@ -11508,7 +12366,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @xsi:*))"/>
          <xsl:otherwise>
@@ -11527,14 +12386,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M111">
       <xsl:apply-templates select="*" mode="M111"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose"
                  priority="1000"
                  mode="M112">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(gynaecologische_aandoening) ge 0) and (count(gynaecologische_aandoening) le 1)"/>
          <xsl:otherwise>
@@ -11549,7 +12412,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(bloedverliesq) ge 0) and (count(bloedverliesq) le 1)"/>
          <xsl:otherwise>
@@ -11564,7 +12428,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(cervixinsufficientieq) ge 0) and (count(cervixinsufficientieq) le 1)"/>
          <xsl:otherwise>
@@ -11579,7 +12444,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(infectie) ge 0) and (count(infectie) le 1)"/>
          <xsl:otherwise>
@@ -11594,7 +12460,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(hyperemesis_gravidarumq) ge 0) and (count(hyperemesis_gravidarumq) le 1)"/>
          <xsl:otherwise>
@@ -11609,7 +12476,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(hypertensieve_aandoening) ge 0) and (count(hypertensieve_aandoening) le 1)"/>
          <xsl:otherwise>
@@ -11624,7 +12492,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(zwangerschapscholestaseq) ge 0) and (count(zwangerschapscholestaseq) le 1)"/>
          <xsl:otherwise>
@@ -11639,7 +12508,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(diabetes_gravidarum_met_insulineq) ge 0) and (count(diabetes_gravidarum_met_insulineq) le 1)"/>
          <xsl:otherwise>
@@ -11654,7 +12524,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(afwijkende_groei_foetus) ge 0) and (count(afwijkende_groei_foetus) le 1)"/>
          <xsl:otherwise>
@@ -11669,7 +12540,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(dreigende_partus_immaturusq) ge 0) and (count(dreigende_partus_immaturusq) le 1)"/>
          <xsl:otherwise>
@@ -11684,7 +12556,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(dreigende_partus_prematurusq) ge 0) and (count(dreigende_partus_prematurusq) le 1)"/>
          <xsl:otherwise>
@@ -11699,7 +12572,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(abruptio_placentaeq) ge 0) and (count(abruptio_placentaeq) le 1)"/>
          <xsl:otherwise>
@@ -11714,7 +12588,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
          <xsl:otherwise>
@@ -11735,14 +12610,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M112">
       <xsl:apply-templates select="*" mode="M112"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/*[not(self::gynaecologische_aandoening)][not(self::bloedverliesq)][not(self::cervixinsufficientieq)][not(self::infectie)][not(self::hyperemesis_gravidarumq)][not(self::hypertensieve_aandoening)][not(self::zwangerschapscholestaseq)][not(self::diabetes_gravidarum_met_insulineq)][not(self::afwijkende_groei_foetus)][not(self::dreigende_partus_immaturusq)][not(self::dreigende_partus_prematurusq)][not(self::abruptio_placentaeq)][not(self::adaextension)]"
                  priority="1000"
                  mode="M113">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/*[not(self::gynaecologische_aandoening)][not(self::bloedverliesq)][not(self::cervixinsufficientieq)][not(self::infectie)][not(self::hyperemesis_gravidarumq)][not(self::hypertensieve_aandoening)][not(self::zwangerschapscholestaseq)][not(self::diabetes_gravidarum_met_insulineq)][not(self::afwijkende_groei_foetus)][not(self::dreigende_partus_immaturusq)][not(self::dreigende_partus_prematurusq)][not(self::abruptio_placentaeq)][not(self::adaextension)]"/>
-      <!--REPORT -->
+
+		    <!--REPORT -->
       <xsl:if test="true()">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="true()">
             <xsl:attribute name="location">
@@ -11761,14 +12640,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M113">
       <xsl:apply-templates select="*" mode="M113"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/gynaecologische_aandoening"
                  priority="1000"
                  mode="M114">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/gynaecologische_aandoening"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -11783,7 +12666,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82317')"/>
          <xsl:otherwise>
@@ -11798,7 +12682,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value = ('129103003', '95315005', '37849005', 'OTH'))"/>
          <xsl:otherwise>
@@ -11813,7 +12698,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@code) or (@code = ('129103003', '95315005', '37849005', 'OTH'))"/>
          <xsl:otherwise>
@@ -11828,7 +12714,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.5.1008'))"/>
          <xsl:otherwise>
@@ -11843,7 +12730,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('Endometriosis_(disorder)', 'Uterine_leiomyoma_(disorder)', 'Congenital_uterine_anomaly_(disorder)', 'Overig'))"/>
          <xsl:otherwise>
@@ -11858,7 +12746,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
          <xsl:otherwise>
@@ -11877,14 +12766,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M114">
       <xsl:apply-templates select="*" mode="M114"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/bloedverliesq"
                  priority="1000"
                  mode="M115">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/bloedverliesq"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -11899,7 +12792,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82318')"/>
          <xsl:otherwise>
@@ -11914,7 +12808,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -11926,7 +12821,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
@@ -11941,7 +12837,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -11960,14 +12857,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M115">
       <xsl:apply-templates select="*" mode="M115"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/cervixinsufficientieq"
                  priority="1000"
                  mode="M116">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/cervixinsufficientieq"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -11982,7 +12883,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82320')"/>
          <xsl:otherwise>
@@ -11997,7 +12899,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -12009,7 +12912,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
@@ -12024,7 +12928,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -12043,14 +12948,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M116">
       <xsl:apply-templates select="*" mode="M116"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/infectie"
                  priority="1000"
                  mode="M117">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/infectie"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -12065,7 +12974,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82321')"/>
          <xsl:otherwise>
@@ -12080,7 +12990,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value = ('301775005', '307534009', '45816000', '186156007', 'OTH', 'NI'))"/>
          <xsl:otherwise>
@@ -12095,7 +13006,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@code) or (@code = ('301775005', '307534009', '45816000', '186156007', 'OTH', 'NI'))"/>
          <xsl:otherwise>
@@ -12110,7 +13022,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008'))"/>
          <xsl:otherwise>
@@ -12125,7 +13038,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('Infection_of_uterus_(disorder)', 'Urinary_tract_infection_in_pregnancy_(disorder)', 'Pyelonephritis_(disorder)', 'Infectious_colitis,_enteritis_and_gastroenteritis_(disorder)', 'Overig', 'Geen_informatie'))"/>
          <xsl:otherwise>
@@ -12140,7 +13054,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
          <xsl:otherwise>
@@ -12159,14 +13074,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M117">
       <xsl:apply-templates select="*" mode="M117"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/hyperemesis_gravidarumq"
                  priority="1000"
                  mode="M118">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/hyperemesis_gravidarumq"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -12181,7 +13100,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82322')"/>
          <xsl:otherwise>
@@ -12196,7 +13116,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -12208,7 +13129,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
@@ -12223,7 +13145,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -12242,14 +13165,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M118">
       <xsl:apply-templates select="*" mode="M118"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/hypertensieve_aandoening"
                  priority="1000"
                  mode="M119">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/hypertensieve_aandoening"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -12264,7 +13191,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82323')"/>
          <xsl:otherwise>
@@ -12279,7 +13207,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value = ('48194001', '398254007', '95605009', '15938005'))"/>
          <xsl:otherwise>
@@ -12294,7 +13223,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@code) or (@code = ('48194001', '398254007', '95605009', '15938005'))"/>
          <xsl:otherwise>
@@ -12309,7 +13239,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96'))"/>
          <xsl:otherwise>
@@ -12324,7 +13255,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('Pregnancy-induced_hypertension_(disorder)', 'Pre-eclampsia_(disorder)', 'Hemolysis-elevated_liver_enzymes-low_platelet_count_syndrome_(disorder)', 'Eclampsia_(disorder)'))"/>
          <xsl:otherwise>
@@ -12339,7 +13271,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
          <xsl:otherwise>
@@ -12358,14 +13291,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M119">
       <xsl:apply-templates select="*" mode="M119"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/zwangerschapscholestaseq"
                  priority="1000"
                  mode="M120">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/zwangerschapscholestaseq"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -12380,7 +13317,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82324')"/>
          <xsl:otherwise>
@@ -12395,7 +13333,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -12407,7 +13346,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
@@ -12422,7 +13362,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -12441,14 +13382,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M120">
       <xsl:apply-templates select="*" mode="M120"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/diabetes_gravidarum_met_insulineq"
                  priority="1000"
                  mode="M121">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/diabetes_gravidarum_met_insulineq"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -12463,7 +13408,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82325')"/>
          <xsl:otherwise>
@@ -12478,7 +13424,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -12490,7 +13437,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
@@ -12505,7 +13453,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -12524,14 +13473,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M121">
       <xsl:apply-templates select="*" mode="M121"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/afwijkende_groei_foetus"
                  priority="1000"
                  mode="M122">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/afwijkende_groei_foetus"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -12546,7 +13499,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82326')"/>
          <xsl:otherwise>
@@ -12561,7 +13515,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value = ('199616008', '267258002', 'NI'))"/>
          <xsl:otherwise>
@@ -12576,7 +13531,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@code) or (@code = ('199616008', '267258002', 'NI'))"/>
          <xsl:otherwise>
@@ -12591,7 +13547,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.5.1008'))"/>
          <xsl:otherwise>
@@ -12606,7 +13563,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('Large-for-dates_fetus_(disorder)', 'Small_for_gestational_age_fetus_(disorder)', 'Geen_informatie'))"/>
          <xsl:otherwise>
@@ -12621,7 +13579,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
          <xsl:otherwise>
@@ -12640,14 +13599,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M122">
       <xsl:apply-templates select="*" mode="M122"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/dreigende_partus_immaturusq"
                  priority="1000"
                  mode="M123">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/dreigende_partus_immaturusq"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -12662,7 +13625,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82327')"/>
          <xsl:otherwise>
@@ -12677,7 +13641,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -12689,7 +13654,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
@@ -12704,7 +13670,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -12723,14 +13690,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M123">
       <xsl:apply-templates select="*" mode="M123"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/dreigende_partus_prematurusq"
                  priority="1000"
                  mode="M124">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/dreigende_partus_prematurusq"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -12745,7 +13716,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82328')"/>
          <xsl:otherwise>
@@ -12760,7 +13732,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -12772,7 +13745,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
@@ -12787,7 +13761,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -12806,14 +13781,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M124">
       <xsl:apply-templates select="*" mode="M124"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/abruptio_placentaeq"
                  priority="1000"
                  mode="M125">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/abruptio_placentaeq"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -12828,7 +13807,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82329')"/>
          <xsl:otherwise>
@@ -12843,7 +13823,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -12855,7 +13836,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
@@ -12870,7 +13852,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -12889,14 +13872,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M125">
       <xsl:apply-templates select="*" mode="M125"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling"
                  priority="1000"
                  mode="M126">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(placenta) ge 0) and (count(placenta) le 1)"/>
          <xsl:otherwise>
@@ -12911,7 +13898,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(hoeveelheid_bloedverlies) ge 0) and (count(hoeveelheid_bloedverlies) le 1)"/>
          <xsl:otherwise>
@@ -12926,7 +13914,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="count(vorige_uitkomst_per_kind) ge 0"/>
          <xsl:otherwise>
@@ -12941,7 +13930,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
          <xsl:otherwise>
@@ -12962,14 +13952,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M126">
       <xsl:apply-templates select="*" mode="M126"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/*[not(self::placenta)][not(self::hoeveelheid_bloedverlies)][not(self::vorige_uitkomst_per_kind)][not(self::adaextension)]"
                  priority="1000"
                  mode="M127">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/*[not(self::placenta)][not(self::hoeveelheid_bloedverlies)][not(self::vorige_uitkomst_per_kind)][not(self::adaextension)]"/>
-      <!--REPORT -->
+
+		    <!--REPORT -->
       <xsl:if test="true()">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="true()">
             <xsl:attribute name="location">
@@ -12988,14 +13982,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M127">
       <xsl:apply-templates select="*" mode="M127"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/placenta"
                  priority="1000"
                  mode="M128">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/placenta"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -13010,7 +14008,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80718')"/>
          <xsl:otherwise>
@@ -13025,7 +14024,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @xsi:*))"/>
          <xsl:otherwise>
@@ -13044,14 +14044,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M128">
       <xsl:apply-templates select="*" mode="M128"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/hoeveelheid_bloedverlies"
                  priority="1000"
                  mode="M129">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/hoeveelheid_bloedverlies"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -13066,7 +14070,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10598')"/>
          <xsl:otherwise>
@@ -13081,7 +14086,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -13093,7 +14099,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:decimal)"/>
          <xsl:otherwise>
@@ -13108,7 +14115,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@unit) or (@unit eq 'ml')"/>
          <xsl:otherwise>
@@ -13123,7 +14131,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @unit, @xsi:*))"/>
          <xsl:otherwise>
@@ -13142,14 +14151,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M129">
       <xsl:apply-templates select="*" mode="M129"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind"
                  priority="1000"
                  mode="M130">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -13164,7 +14177,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.19')"/>
          <xsl:otherwise>
@@ -13179,7 +14193,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @xsi:*))"/>
          <xsl:otherwise>
@@ -13198,14 +14213,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M130">
       <xsl:apply-templates select="*" mode="M130"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/placenta"
                  priority="1000"
                  mode="M131">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/placenta"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(geboorte_placenta) ge 0) and (count(geboorte_placenta) le 1)"/>
          <xsl:otherwise>
@@ -13220,7 +14239,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
          <xsl:otherwise>
@@ -13241,14 +14261,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M131">
       <xsl:apply-templates select="*" mode="M131"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/placenta/*[not(self::geboorte_placenta)][not(self::adaextension)]"
                  priority="1000"
                  mode="M132">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/placenta/*[not(self::geboorte_placenta)][not(self::adaextension)]"/>
-      <!--REPORT -->
+
+		    <!--REPORT -->
       <xsl:if test="true()">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="true()">
             <xsl:attribute name="location">
@@ -13267,14 +14291,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M132">
       <xsl:apply-templates select="*" mode="M132"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/placenta/geboorte_placenta"
                  priority="1000"
                  mode="M133">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/placenta/geboorte_placenta"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -13289,7 +14317,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82336')"/>
          <xsl:otherwise>
@@ -13304,7 +14333,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value = ('0', '2', '3', '4', 'OTH', 'NI', 'UNK'))"/>
          <xsl:otherwise>
@@ -13319,7 +14349,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@code) or (@code = ('0', '2', '3', '4', 'OTH', 'NI', 'UNK'))"/>
          <xsl:otherwise>
@@ -13334,7 +14365,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.2.4.4.13.19', '2.16.840.1.113883.2.4.4.13.19', '2.16.840.1.113883.2.4.4.13.19', '2.16.840.1.113883.2.4.4.13.19', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008'))"/>
          <xsl:otherwise>
@@ -13349,7 +14381,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('Spontaan', 'Controlled_cord_traction', 'Manuele_placentaverwijdering', 'Placentaverwijdering_bij_SC', 'Overig', 'Geen_informatie', 'Onbekend'))"/>
          <xsl:otherwise>
@@ -13364,7 +14397,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
          <xsl:otherwise>
@@ -13383,14 +14417,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M133">
       <xsl:apply-templates select="*" mode="M133"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind"
                  priority="1000"
                  mode="M134">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(vorige_baring) ge 0) and (count(vorige_baring) le 1)"/>
          <xsl:otherwise>
@@ -13405,7 +14443,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
          <xsl:otherwise>
@@ -13426,14 +14465,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M134">
       <xsl:apply-templates select="*" mode="M134"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/*[not(self::vorige_baring)][not(self::adaextension)]"
                  priority="1000"
                  mode="M135">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/*[not(self::vorige_baring)][not(self::adaextension)]"/>
-      <!--REPORT -->
+
+		    <!--REPORT -->
       <xsl:if test="true()">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="true()">
             <xsl:attribute name="location">
@@ -13452,14 +14495,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M135">
       <xsl:apply-templates select="*" mode="M135"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring"
                  priority="1000"
                  mode="M136">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -13474,7 +14521,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80709')"/>
          <xsl:otherwise>
@@ -13489,7 +14537,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @xsi:*))"/>
          <xsl:otherwise>
@@ -13508,14 +14557,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M136">
       <xsl:apply-templates select="*" mode="M136"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring"
                  priority="1000"
                  mode="M137">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="count(demografische_gegevens) ge 0"/>
          <xsl:otherwise>
@@ -13530,7 +14583,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(kindspecifieke_gegevens_vorige_uitkomsten) ge 0) and (count(kindspecifieke_gegevens_vorige_uitkomsten) le 1)"/>
          <xsl:otherwise>
@@ -13545,7 +14599,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
          <xsl:otherwise>
@@ -13566,14 +14621,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M137">
       <xsl:apply-templates select="*" mode="M137"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/*[not(self::demografische_gegevens)][not(self::kindspecifieke_gegevens_vorige_uitkomsten)][not(self::adaextension)]"
                  priority="1000"
                  mode="M138">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/*[not(self::demografische_gegevens)][not(self::kindspecifieke_gegevens_vorige_uitkomsten)][not(self::adaextension)]"/>
-      <!--REPORT -->
+
+		    <!--REPORT -->
       <xsl:if test="true()">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="true()">
             <xsl:attribute name="location">
@@ -13592,14 +14651,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M138">
       <xsl:apply-templates select="*" mode="M138"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/demografische_gegevens"
                  priority="1000"
                  mode="M139">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/demografische_gegevens"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -13614,7 +14677,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80696')"/>
          <xsl:otherwise>
@@ -13629,7 +14693,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @xsi:*))"/>
          <xsl:otherwise>
@@ -13648,14 +14713,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M139">
       <xsl:apply-templates select="*" mode="M139"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten"
                  priority="1000"
                  mode="M140">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -13670,7 +14739,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.21')"/>
          <xsl:otherwise>
@@ -13685,7 +14755,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @xsi:*))"/>
          <xsl:otherwise>
@@ -13704,14 +14775,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M140">
       <xsl:apply-templates select="*" mode="M140"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/demografische_gegevens"
                  priority="1000"
                  mode="M141">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/demografische_gegevens"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(geboortedatum) ge 0) and (count(geboortedatum) le 1)"/>
          <xsl:otherwise>
@@ -13726,7 +14801,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
          <xsl:otherwise>
@@ -13747,14 +14823,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M141">
       <xsl:apply-templates select="*" mode="M141"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/demografische_gegevens/*[not(self::geboortedatum)][not(self::adaextension)]"
                  priority="1000"
                  mode="M142">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/demografische_gegevens/*[not(self::geboortedatum)][not(self::adaextension)]"/>
-      <!--REPORT -->
+
+		    <!--REPORT -->
       <xsl:if test="true()">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="true()">
             <xsl:attribute name="location">
@@ -13773,14 +14853,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M142">
       <xsl:apply-templates select="*" mode="M142"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/demografische_gegevens/geboortedatum"
                  priority="1000"
                  mode="M143">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/demografische_gegevens/geboortedatum"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -13795,7 +14879,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80702')"/>
          <xsl:otherwise>
@@ -13810,7 +14895,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -13822,7 +14908,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or ((@value castable as xs:date) or (@value castable as xs:dateTime))"/>
          <xsl:otherwise>
@@ -13837,7 +14924,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -13856,14 +14944,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M143">
       <xsl:apply-templates select="*" mode="M143"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten"
                  priority="1000"
                  mode="M144">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(type_partus) ge 0) and (count(type_partus) le 1)"/>
          <xsl:otherwise>
@@ -13878,7 +14970,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(percentiel_van_het_geboortegewicht) ge 0) and (count(percentiel_van_het_geboortegewicht) le 1)"/>
          <xsl:otherwise>
@@ -13893,7 +14986,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(apgarscore_na_5_min) ge 0) and (count(apgarscore_na_5_min) le 1)"/>
          <xsl:otherwise>
@@ -13908,7 +15002,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(congenitale_afwijkingenq) ge 0) and (count(congenitale_afwijkingenq) le 1)"/>
          <xsl:otherwise>
@@ -13923,7 +15018,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(congenitale_afwijkingen_groep) ge 0) and (count(congenitale_afwijkingen_groep) le 1)"/>
          <xsl:otherwise>
@@ -13938,7 +15034,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
          <xsl:otherwise>
@@ -13959,14 +15056,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M144">
       <xsl:apply-templates select="*" mode="M144"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/*[not(self::type_partus)][not(self::percentiel_van_het_geboortegewicht)][not(self::apgarscore_na_5_min)][not(self::congenitale_afwijkingenq)][not(self::congenitale_afwijkingen_groep)][not(self::adaextension)]"
                  priority="1000"
                  mode="M145">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/*[not(self::type_partus)][not(self::percentiel_van_het_geboortegewicht)][not(self::apgarscore_na_5_min)][not(self::congenitale_afwijkingenq)][not(self::congenitale_afwijkingen_groep)][not(self::adaextension)]"/>
-      <!--REPORT -->
+
+		    <!--REPORT -->
       <xsl:if test="true()">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="true()">
             <xsl:attribute name="location">
@@ -13985,14 +15086,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M145">
       <xsl:apply-templates select="*" mode="M145"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/type_partus"
                  priority="1000"
                  mode="M146">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/type_partus"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -14007,7 +15112,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80624')"/>
          <xsl:otherwise>
@@ -14022,7 +15128,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value = ('48782003', '8561000146109', '200146002', '200148001', '200149009', '39406005', 'UNK', 'NI'))"/>
          <xsl:otherwise>
@@ -14037,7 +15144,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@code) or (@code = ('48782003', '8561000146109', '200146002', '200148001', '200149009', '39406005', 'UNK', 'NI'))"/>
          <xsl:otherwise>
@@ -14052,7 +15160,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008'))"/>
          <xsl:otherwise>
@@ -14067,7 +15176,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('Delivery_normal_(finding)', 'Assisted_delivery_of_fetus_(finding)', 'Cesarean_delivery_-_delivered_(finding)', 'Cesarean_delivery_-_delivered_(finding)_Delivery_by_elective_cesarean_section_(finding)', 'Cesarean_delivery_-_delivered_(finding)_Delivery_by_emergency_cesarean_section_(finding)', 'Legally_induced_abortion_(disorder)', 'onbekend', 'geen_informatie'))"/>
          <xsl:otherwise>
@@ -14082,7 +15192,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
          <xsl:otherwise>
@@ -14101,14 +15212,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M146">
       <xsl:apply-templates select="*" mode="M146"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/percentiel_van_het_geboortegewicht"
                  priority="1000"
                  mode="M147">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/percentiel_van_het_geboortegewicht"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -14123,7 +15238,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10605')"/>
          <xsl:otherwise>
@@ -14138,7 +15254,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value = ('1', '2', '3', '4', '5', '6', 'NI'))"/>
          <xsl:otherwise>
@@ -14153,7 +15270,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@code) or (@code = ('1', '2', '3', '4', '5', '6', 'NI'))"/>
          <xsl:otherwise>
@@ -14168,7 +15286,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.2.4.4.13.50', '2.16.840.1.113883.2.4.4.13.50', '2.16.840.1.113883.2.4.4.13.50', '2.16.840.1.113883.2.4.4.13.50', '2.16.840.1.113883.2.4.4.13.50', '2.16.840.1.113883.2.4.4.13.50', '2.16.840.1.113883.5.1008'))"/>
          <xsl:otherwise>
@@ -14183,7 +15302,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('&lt;_2,3', '2,3_≤_P_&lt;_10', '10_≤_P_&lt;_50', '50_≤_P_&lt;_90', '90_≤_P_≤_97,7', '&gt;_97,7', 'Geen_informatie'))"/>
          <xsl:otherwise>
@@ -14198,7 +15318,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
          <xsl:otherwise>
@@ -14217,14 +15338,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M147">
       <xsl:apply-templates select="*" mode="M147"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/apgarscore_na_5_min"
                  priority="1000"
                  mode="M148">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/apgarscore_na_5_min"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -14239,7 +15364,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10606')"/>
          <xsl:otherwise>
@@ -14254,7 +15380,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -14266,7 +15393,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:decimal)"/>
          <xsl:otherwise>
@@ -14281,7 +15409,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (local:decimal-convert(@value) ge 0)"/>
          <xsl:otherwise>
@@ -14296,7 +15425,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (local:decimal-convert(@value) le 10)"/>
          <xsl:otherwise>
@@ -14311,7 +15441,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -14330,14 +15461,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M148">
       <xsl:apply-templates select="*" mode="M148"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/congenitale_afwijkingenq"
                  priority="1000"
                  mode="M149">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/congenitale_afwijkingenq"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -14352,7 +15487,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80997')"/>
          <xsl:otherwise>
@@ -14367,7 +15503,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -14379,7 +15516,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
@@ -14394,7 +15532,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -14413,14 +15552,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M149">
       <xsl:apply-templates select="*" mode="M149"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/congenitale_afwijkingen_groep"
                  priority="1000"
                  mode="M150">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/congenitale_afwijkingen_groep"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -14435,7 +15578,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80998')"/>
          <xsl:otherwise>
@@ -14450,7 +15594,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @xsi:*))"/>
          <xsl:otherwise>
@@ -14469,14 +15614,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M150">
       <xsl:apply-templates select="*" mode="M150"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/congenitale_afwijkingen_groep"
                  priority="1000"
                  mode="M151">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/congenitale_afwijkingen_groep"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(chromosomale_afwijkingenq) ge 0) and (count(chromosomale_afwijkingenq) le 1)"/>
          <xsl:otherwise>
@@ -14491,7 +15640,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
          <xsl:otherwise>
@@ -14512,14 +15662,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M151">
       <xsl:apply-templates select="*" mode="M151"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/congenitale_afwijkingen_groep/*[not(self::chromosomale_afwijkingenq)][not(self::adaextension)]"
                  priority="1000"
                  mode="M152">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/congenitale_afwijkingen_groep/*[not(self::chromosomale_afwijkingenq)][not(self::adaextension)]"/>
-      <!--REPORT -->
+
+		    <!--REPORT -->
       <xsl:if test="true()">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="true()">
             <xsl:attribute name="location">
@@ -14538,14 +15692,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M152">
       <xsl:apply-templates select="*" mode="M152"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/congenitale_afwijkingen_groep/chromosomale_afwijkingenq"
                  priority="1000"
                  mode="M153">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/congenitale_afwijkingen_groep/chromosomale_afwijkingenq"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -14560,7 +15718,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.81002')"/>
          <xsl:otherwise>
@@ -14575,7 +15734,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -14587,7 +15747,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
@@ -14602,7 +15763,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -14621,14 +15783,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M153">
       <xsl:apply-templates select="*" mode="M153"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/zwangerschap"
                  priority="1000"
                  mode="M154">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/zwangerschap"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(graviditeit) ge 0) and (count(graviditeit) le 1)"/>
          <xsl:otherwise>
@@ -14643,7 +15809,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(pariteit_voor_deze_zwangerschap) ge 0) and (count(pariteit_voor_deze_zwangerschap) le 1)"/>
          <xsl:otherwise>
@@ -14658,7 +15825,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(definitieve_a_terme_datum) ge 0) and (count(definitieve_a_terme_datum) le 1)"/>
          <xsl:otherwise>
@@ -14673,7 +15841,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(voornemens) ge 0) and (count(voornemens) le 1)"/>
          <xsl:otherwise>
@@ -14688,7 +15857,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="count(prenatale_controle) ge 0"/>
          <xsl:otherwise>
@@ -14703,7 +15873,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="count(diagnose) ge 0"/>
          <xsl:otherwise>
@@ -14717,7 +15888,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="count(intrauteriene_behandeling) ge 0"/>
          <xsl:otherwise>
@@ -14732,7 +15904,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(maternale_sterfteq) ge 0) and (count(maternale_sterfteq) le 1)"/>
          <xsl:otherwise>
@@ -14747,7 +15920,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(wijze_einde_zwangerschap) ge 0) and (count(wijze_einde_zwangerschap) le 1)"/>
          <xsl:otherwise>
@@ -14762,7 +15936,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
          <xsl:otherwise>
@@ -14783,14 +15958,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M154">
       <xsl:apply-templates select="*" mode="M154"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/zwangerschap/*[not(self::graviditeit)][not(self::pariteit_voor_deze_zwangerschap)][not(self::definitieve_a_terme_datum)][not(self::voornemens)][not(self::prenatale_controle)][not(self::diagnose)][not(self::intrauteriene_behandeling)][not(self::maternale_sterfteq)][not(self::wijze_einde_zwangerschap)][not(self::adaextension)]"
                  priority="1000"
                  mode="M155">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/zwangerschap/*[not(self::graviditeit)][not(self::pariteit_voor_deze_zwangerschap)][not(self::definitieve_a_terme_datum)][not(self::voornemens)][not(self::prenatale_controle)][not(self::diagnose)][not(self::intrauteriene_behandeling)][not(self::maternale_sterfteq)][not(self::wijze_einde_zwangerschap)][not(self::adaextension)]"/>
-      <!--REPORT -->
+
+		    <!--REPORT -->
       <xsl:if test="true()">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="true()">
             <xsl:attribute name="location">
@@ -14809,14 +15988,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M155">
       <xsl:apply-templates select="*" mode="M155"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/zwangerschap/graviditeit"
                  priority="1000"
                  mode="M156">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/zwangerschap/graviditeit"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -14831,7 +16014,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20010')"/>
          <xsl:otherwise>
@@ -14846,7 +16030,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -14858,7 +16043,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:decimal)"/>
          <xsl:otherwise>
@@ -14873,7 +16059,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (local:decimal-convert(@value) ge 1)"/>
          <xsl:otherwise>
@@ -14888,7 +16075,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (local:decimal-convert(@value) le 75)"/>
          <xsl:otherwise>
@@ -14903,7 +16091,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -14922,14 +16111,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M156">
       <xsl:apply-templates select="*" mode="M156"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/zwangerschap/pariteit_voor_deze_zwangerschap"
                  priority="1000"
                  mode="M157">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/zwangerschap/pariteit_voor_deze_zwangerschap"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -14944,7 +16137,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20150')"/>
          <xsl:otherwise>
@@ -14959,7 +16153,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -14971,7 +16166,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:decimal)"/>
          <xsl:otherwise>
@@ -14986,7 +16182,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (local:decimal-convert(@value) ge 0)"/>
          <xsl:otherwise>
@@ -15001,7 +16198,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (local:decimal-convert(@value) le 30)"/>
          <xsl:otherwise>
@@ -15016,7 +16214,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -15035,14 +16234,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M157">
       <xsl:apply-templates select="*" mode="M157"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/zwangerschap/definitieve_a_terme_datum"
                  priority="1000"
                  mode="M158">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/zwangerschap/definitieve_a_terme_datum"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -15057,7 +16260,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82160')"/>
          <xsl:otherwise>
@@ -15072,7 +16276,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -15084,7 +16289,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or ((@value castable as xs:date) or (@value castable as xs:dateTime))"/>
          <xsl:otherwise>
@@ -15099,7 +16305,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -15118,14 +16325,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M158">
       <xsl:apply-templates select="*" mode="M158"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/zwangerschap/voornemens"
                  priority="1000"
                  mode="M159">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/zwangerschap/voornemens"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -15140,7 +16351,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80671')"/>
          <xsl:otherwise>
@@ -15155,7 +16367,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @xsi:*))"/>
          <xsl:otherwise>
@@ -15174,14 +16387,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M159">
       <xsl:apply-templates select="*" mode="M159"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/zwangerschap/prenatale_controle"
                  priority="1000"
                  mode="M160">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/zwangerschap/prenatale_controle"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -15196,7 +16413,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80732')"/>
          <xsl:otherwise>
@@ -15211,7 +16429,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @xsi:*))"/>
          <xsl:otherwise>
@@ -15230,14 +16449,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M160">
       <xsl:apply-templates select="*" mode="M160"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/zwangerschap/diagnose"
                  priority="1000"
                  mode="M161">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/zwangerschap/diagnose"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -15252,7 +16475,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82268')"/>
          <xsl:otherwise>
@@ -15267,7 +16491,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @xsi:*))"/>
          <xsl:otherwise>
@@ -15286,14 +16511,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M161">
       <xsl:apply-templates select="*" mode="M161"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/zwangerschap/intrauteriene_behandeling"
                  priority="1000"
                  mode="M162">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/zwangerschap/intrauteriene_behandeling"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -15308,7 +16537,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82230')"/>
          <xsl:otherwise>
@@ -15323,7 +16553,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value = ('45460008', '265633004', '386809009', '177112007', '236949002', 'OTH'))"/>
          <xsl:otherwise>
@@ -15338,7 +16569,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@code) or (@code = ('45460008', '265633004', '386809009', '177112007', '236949002', 'OTH'))"/>
          <xsl:otherwise>
@@ -15353,7 +16585,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.5.1008'))"/>
          <xsl:otherwise>
@@ -15368,7 +16601,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('Intrauterine_transfusion_(procedure)', 'Selective_destruction_of_fetus_(procedure)', 'Operation_on_fetus_(procedure)', 'Therapeutic_drainage_of_amniotic_fluid_(procedure)', 'Operation_on_placenta_(procedure)', 'Overig'))"/>
          <xsl:otherwise>
@@ -15383,7 +16617,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
          <xsl:otherwise>
@@ -15402,14 +16637,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M162">
       <xsl:apply-templates select="*" mode="M162"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/zwangerschap/maternale_sterfteq"
                  priority="1000"
                  mode="M163">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/zwangerschap/maternale_sterfteq"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -15424,7 +16663,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20670')"/>
          <xsl:otherwise>
@@ -15439,7 +16679,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -15451,7 +16692,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
@@ -15466,7 +16708,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -15485,14 +16728,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M163">
       <xsl:apply-templates select="*" mode="M163"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/zwangerschap/wijze_einde_zwangerschap"
                  priority="1000"
                  mode="M164">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/zwangerschap/wijze_einde_zwangerschap"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -15507,7 +16754,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80625')"/>
          <xsl:otherwise>
@@ -15522,7 +16770,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value = ('1', '2', '21', '22', '23', '3', '31', '32', '4', '5', 'NI'))"/>
          <xsl:otherwise>
@@ -15537,7 +16786,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@code) or (@code = ('1', '2', '21', '22', '23', '3', '31', '32', '4', '5', 'NI'))"/>
          <xsl:otherwise>
@@ -15552,7 +16802,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.2.4.4.13.46', '2.16.840.1.113883.2.4.4.13.46', '2.16.840.1.113883.2.4.4.13.46', '2.16.840.1.113883.2.4.4.13.46', '2.16.840.1.113883.2.4.4.13.46', '2.16.840.1.113883.2.4.4.13.46', '2.16.840.1.113883.2.4.4.13.46', '2.16.840.1.113883.2.4.4.13.46', '2.16.840.1.113883.2.4.4.13.46', '2.16.840.1.113883.2.4.4.13.46', '2.16.840.1.113883.5.1008'))"/>
          <xsl:otherwise>
@@ -15567,7 +16818,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('Partus', 'Miskraam', 'Miskraam_Spontaan', 'Miskraam_Medicamenteus', 'Miskraam_Instrumenteel', 'APLA', 'APLA_Medicamenteus', 'APLA_Instrumenteel', 'EUG_-_behandeld', '(partiële)_Mola_-_behandeld', 'geen_informatie'))"/>
          <xsl:otherwise>
@@ -15582,7 +16834,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
          <xsl:otherwise>
@@ -15601,14 +16854,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M164">
       <xsl:apply-templates select="*" mode="M164"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/zwangerschap/voornemens"
                  priority="1000"
                  mode="M165">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/zwangerschap/voornemens"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(voorgenomen_plaats_baring_tijdens_zwangerschap_type_locatie) ge 0) and (count(voorgenomen_plaats_baring_tijdens_zwangerschap_type_locatie) le 1)"/>
          <xsl:otherwise>
@@ -15623,7 +16880,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
          <xsl:otherwise>
@@ -15644,14 +16902,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M165">
       <xsl:apply-templates select="*" mode="M165"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/zwangerschap/voornemens/*[not(self::voorgenomen_plaats_baring_tijdens_zwangerschap_type_locatie)][not(self::adaextension)]"
                  priority="1000"
                  mode="M166">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/zwangerschap/voornemens/*[not(self::voorgenomen_plaats_baring_tijdens_zwangerschap_type_locatie)][not(self::adaextension)]"/>
-      <!--REPORT -->
+
+		    <!--REPORT -->
       <xsl:if test="true()">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="true()">
             <xsl:attribute name="location">
@@ -15670,14 +16932,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M166">
       <xsl:apply-templates select="*" mode="M166"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/zwangerschap/voornemens/voorgenomen_plaats_baring_tijdens_zwangerschap_type_locatie"
                  priority="1000"
                  mode="M167">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/zwangerschap/voornemens/voorgenomen_plaats_baring_tijdens_zwangerschap_type_locatie"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -15692,7 +16958,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20261')"/>
          <xsl:otherwise>
@@ -15707,7 +16974,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value = ('169813005', '23', '22232009', '05', '00', 'UNK', 'NI'))"/>
          <xsl:otherwise>
@@ -15722,7 +16990,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@code) or (@code = ('169813005', '23', '22232009', '05', '00', 'UNK', 'NI'))"/>
          <xsl:otherwise>
@@ -15737,7 +17006,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.6.96', '2.16.840.1.113883.2.4.3.22.1.8.7', '2.16.840.1.113883.6.96', '2.16.840.1.113883.2.4.3.22.1.8.7', '2.16.840.1.113883.2.4.3.22.1.8.7', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008'))"/>
          <xsl:otherwise>
@@ -15752,7 +17022,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('Home_birth_(finding)', 'Geboortecentrum', 'Hospital_(environment)', 'Nog_niet_bepaald', 'Geen_voorkeur', 'Onbekend', 'Geen_informatie'))"/>
          <xsl:otherwise>
@@ -15767,7 +17038,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
          <xsl:otherwise>
@@ -15786,14 +17058,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M167">
       <xsl:apply-templates select="*" mode="M167"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/zwangerschap/prenatale_controle"
                  priority="1000"
                  mode="M168">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/zwangerschap/prenatale_controle"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="count(datum_controle) eq 1"/>
          <xsl:otherwise>
@@ -15808,7 +17084,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(zwangerschapsduur) ge 0) and (count(zwangerschapsduur) le 1)"/>
          <xsl:otherwise>
@@ -15823,7 +17100,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(leven_voelen) ge 0) and (count(leven_voelen) le 1)"/>
          <xsl:otherwise>
@@ -15838,7 +17116,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(rookgedrag) ge 0) and (count(rookgedrag) le 1)"/>
          <xsl:otherwise>
@@ -15853,7 +17132,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(alcoholgebruik) ge 0) and (count(alcoholgebruik) le 1)"/>
          <xsl:otherwise>
@@ -15868,7 +17148,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(drugsgebruikq) ge 0) and (count(drugsgebruikq) le 1)"/>
          <xsl:otherwise>
@@ -15883,7 +17164,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(gewicht_gemeten) ge 0) and (count(gewicht_gemeten) le 1)"/>
          <xsl:otherwise>
@@ -15898,7 +17180,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
          <xsl:otherwise>
@@ -15919,14 +17202,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M168">
       <xsl:apply-templates select="*" mode="M168"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/zwangerschap/prenatale_controle/*[not(self::datum_controle)][not(self::zwangerschapsduur)][not(self::leven_voelen)][not(self::rookgedrag)][not(self::alcoholgebruik)][not(self::drugsgebruikq)][not(self::gewicht_gemeten)][not(self::adaextension)]"
                  priority="1000"
                  mode="M169">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/zwangerschap/prenatale_controle/*[not(self::datum_controle)][not(self::zwangerschapsduur)][not(self::leven_voelen)][not(self::rookgedrag)][not(self::alcoholgebruik)][not(self::drugsgebruikq)][not(self::gewicht_gemeten)][not(self::adaextension)]"/>
-      <!--REPORT -->
+
+		    <!--REPORT -->
       <xsl:if test="true()">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="true()">
             <xsl:attribute name="location">
@@ -15945,14 +17232,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M169">
       <xsl:apply-templates select="*" mode="M169"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/zwangerschap/prenatale_controle/datum_controle"
                  priority="1000"
                  mode="M170">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/zwangerschap/prenatale_controle/datum_controle"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -15967,7 +17258,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80737')"/>
          <xsl:otherwise>
@@ -15982,7 +17274,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -15994,7 +17287,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or ((@value castable as xs:date) or (@value castable as xs:dateTime))"/>
          <xsl:otherwise>
@@ -16009,7 +17303,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -16028,14 +17323,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M170">
       <xsl:apply-templates select="*" mode="M170"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/zwangerschap/prenatale_controle/zwangerschapsduur"
                  priority="1000"
                  mode="M171">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/zwangerschap/prenatale_controle/zwangerschapsduur"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -16050,7 +17349,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80738')"/>
          <xsl:otherwise>
@@ -16065,7 +17365,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -16077,7 +17378,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:decimal)"/>
          <xsl:otherwise>
@@ -16092,7 +17394,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@unit) or (@unit eq 'd')"/>
          <xsl:otherwise>
@@ -16107,7 +17410,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @unit, @xsi:*))"/>
          <xsl:otherwise>
@@ -16126,14 +17430,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M171">
       <xsl:apply-templates select="*" mode="M171"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/zwangerschap/prenatale_controle/leven_voelen"
                  priority="1000"
                  mode="M172">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/zwangerschap/prenatale_controle/leven_voelen"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -16148,7 +17456,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80746')"/>
          <xsl:otherwise>
@@ -16163,7 +17472,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value = ('289431008', '276372004', '276369006', '289432001'))"/>
          <xsl:otherwise>
@@ -16178,7 +17488,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@code) or (@code = ('289431008', '276372004', '276369006', '289432001'))"/>
          <xsl:otherwise>
@@ -16193,7 +17504,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96'))"/>
          <xsl:otherwise>
@@ -16208,7 +17520,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('Fetal_movements_present_(finding)', 'Weak_fetal_movements_(finding)', 'Reduced_fetal_movement_(finding)', 'Fetal_movements_absent_(context-dependent_category)'))"/>
          <xsl:otherwise>
@@ -16223,7 +17536,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
          <xsl:otherwise>
@@ -16242,14 +17556,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M172">
       <xsl:apply-templates select="*" mode="M172"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/zwangerschap/prenatale_controle/rookgedrag"
                  priority="1000"
                  mode="M173">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/zwangerschap/prenatale_controle/rookgedrag"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -16264,7 +17582,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80810')"/>
          <xsl:otherwise>
@@ -16279,7 +17598,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value = ('1', '2', '3', '4', '5', '6', 'UNK'))"/>
          <xsl:otherwise>
@@ -16294,7 +17614,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@code) or (@code = ('1', '2', '3', '4', '5', '6', 'UNK'))"/>
          <xsl:otherwise>
@@ -16309,7 +17630,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.2.4.4.13.58', '2.16.840.1.113883.2.4.4.13.58', '2.16.840.1.113883.2.4.4.13.58', '2.16.840.1.113883.2.4.4.13.58', '2.16.840.1.113883.2.4.4.13.58', '2.16.840.1.113883.2.4.4.13.58', '2.16.840.1.113883.5.1008'))"/>
          <xsl:otherwise>
@@ -16324,7 +17646,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('niet_gerookt', '1_-_10_per_dag', '11_-_20_per_dag', 'meer_dan_20_per_dag', 'gestopt_vóór_huidige_zwangerschap', 'gestopt_tijdens_huidige_zwangerschap', 'Unknown'))"/>
          <xsl:otherwise>
@@ -16339,7 +17662,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
          <xsl:otherwise>
@@ -16358,14 +17682,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M173">
       <xsl:apply-templates select="*" mode="M173"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/zwangerschap/prenatale_controle/alcoholgebruik"
                  priority="1000"
                  mode="M174">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/zwangerschap/prenatale_controle/alcoholgebruik"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -16380,7 +17708,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80747')"/>
          <xsl:otherwise>
@@ -16395,7 +17724,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value = ('1', '2', '3'))"/>
          <xsl:otherwise>
@@ -16410,7 +17740,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@code) or (@code = ('1', '2', '3'))"/>
          <xsl:otherwise>
@@ -16425,7 +17756,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.2.4.4.13.59', '2.16.840.1.113883.2.4.4.13.59', '2.16.840.1.113883.2.4.4.13.59'))"/>
          <xsl:otherwise>
@@ -16440,7 +17772,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('geen', '&lt;_2_eenheden_per_dag', '≥_2_eenheden_per_dag'))"/>
          <xsl:otherwise>
@@ -16455,7 +17788,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
          <xsl:otherwise>
@@ -16474,14 +17808,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M174">
       <xsl:apply-templates select="*" mode="M174"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/zwangerschap/prenatale_controle/drugsgebruikq"
                  priority="1000"
                  mode="M175">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/zwangerschap/prenatale_controle/drugsgebruikq"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -16496,7 +17834,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82102')"/>
          <xsl:otherwise>
@@ -16511,7 +17850,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -16523,7 +17863,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
@@ -16538,7 +17879,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -16557,14 +17899,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M175">
       <xsl:apply-templates select="*" mode="M175"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/zwangerschap/prenatale_controle/gewicht_gemeten"
                  priority="1000"
                  mode="M176">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/zwangerschap/prenatale_controle/gewicht_gemeten"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -16579,7 +17925,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20211')"/>
          <xsl:otherwise>
@@ -16594,7 +17941,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -16606,7 +17954,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:decimal)"/>
          <xsl:otherwise>
@@ -16621,7 +17970,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (local:decimal-convert(@value) ge 25)"/>
          <xsl:otherwise>
@@ -16636,7 +17986,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (local:decimal-convert(@value) le 249.9)"/>
          <xsl:otherwise>
@@ -16651,7 +18002,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@unit) or (@unit eq 'kg')"/>
          <xsl:otherwise>
@@ -16666,7 +18018,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @unit, @xsi:*))"/>
          <xsl:otherwise>
@@ -16685,14 +18038,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M176">
       <xsl:apply-templates select="*" mode="M176"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/zwangerschap/diagnose"
                  priority="1000"
                  mode="M177">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/zwangerschap/diagnose"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(datum) ge 0) and (count(datum) le 1)"/>
          <xsl:otherwise>
@@ -16707,7 +18064,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(zwangerschapsduur) ge 0) and (count(zwangerschapsduur) le 1)"/>
          <xsl:otherwise>
@@ -16722,7 +18080,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(gynaecologische_aandoening) ge 0) and (count(gynaecologische_aandoening) le 1)"/>
          <xsl:otherwise>
@@ -16737,7 +18096,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(bloedverliesq) ge 0) and (count(bloedverliesq) le 1)"/>
          <xsl:otherwise>
@@ -16752,7 +18112,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(partiele_molaq) ge 0) and (count(partiele_molaq) le 1)"/>
          <xsl:otherwise>
@@ -16767,7 +18128,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(cervixinsufficientieq) ge 0) and (count(cervixinsufficientieq) le 1)"/>
          <xsl:otherwise>
@@ -16782,7 +18144,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(infectie) ge 0) and (count(infectie) le 1)"/>
          <xsl:otherwise>
@@ -16797,7 +18160,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(hyperemesis_gravidarumq) ge 0) and (count(hyperemesis_gravidarumq) le 1)"/>
          <xsl:otherwise>
@@ -16812,7 +18176,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(hypertensieve_aandoening) ge 0) and (count(hypertensieve_aandoening) le 1)"/>
          <xsl:otherwise>
@@ -16827,7 +18192,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(zwangerschapscholestaseq) ge 0) and (count(zwangerschapscholestaseq) le 1)"/>
          <xsl:otherwise>
@@ -16842,7 +18208,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(diabetes_gravidarum_met_insulineq) ge 0) and (count(diabetes_gravidarum_met_insulineq) le 1)"/>
          <xsl:otherwise>
@@ -16857,7 +18224,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(afwijkende_groei_foetus) ge 0) and (count(afwijkende_groei_foetus) le 1)"/>
          <xsl:otherwise>
@@ -16872,7 +18240,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(dreigende_partus_immaturusq) ge 0) and (count(dreigende_partus_immaturusq) le 1)"/>
          <xsl:otherwise>
@@ -16887,7 +18256,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(dreigende_partus_prematurusq) ge 0) and (count(dreigende_partus_prematurusq) le 1)"/>
          <xsl:otherwise>
@@ -16902,7 +18272,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(abruptio_placentaeq) ge 0) and (count(abruptio_placentaeq) le 1)"/>
          <xsl:otherwise>
@@ -16917,7 +18288,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
          <xsl:otherwise>
@@ -16938,14 +18310,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M177">
       <xsl:apply-templates select="*" mode="M177"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/zwangerschap/diagnose/*[not(self::datum)][not(self::zwangerschapsduur)][not(self::gynaecologische_aandoening)][not(self::bloedverliesq)][not(self::partiele_molaq)][not(self::cervixinsufficientieq)][not(self::infectie)][not(self::hyperemesis_gravidarumq)][not(self::hypertensieve_aandoening)][not(self::zwangerschapscholestaseq)][not(self::diabetes_gravidarum_met_insulineq)][not(self::afwijkende_groei_foetus)][not(self::dreigende_partus_immaturusq)][not(self::dreigende_partus_prematurusq)][not(self::abruptio_placentaeq)][not(self::adaextension)]"
                  priority="1000"
                  mode="M178">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/zwangerschap/diagnose/*[not(self::datum)][not(self::zwangerschapsduur)][not(self::gynaecologische_aandoening)][not(self::bloedverliesq)][not(self::partiele_molaq)][not(self::cervixinsufficientieq)][not(self::infectie)][not(self::hyperemesis_gravidarumq)][not(self::hypertensieve_aandoening)][not(self::zwangerschapscholestaseq)][not(self::diabetes_gravidarum_met_insulineq)][not(self::afwijkende_groei_foetus)][not(self::dreigende_partus_immaturusq)][not(self::dreigende_partus_prematurusq)][not(self::abruptio_placentaeq)][not(self::adaextension)]"/>
-      <!--REPORT -->
+
+		    <!--REPORT -->
       <xsl:if test="true()">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="true()">
             <xsl:attribute name="location">
@@ -16964,14 +18340,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M178">
       <xsl:apply-templates select="*" mode="M178"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/zwangerschap/diagnose/datum"
                  priority="1000"
                  mode="M179">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/zwangerschap/diagnose/datum"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -16986,7 +18366,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82272')"/>
          <xsl:otherwise>
@@ -17001,7 +18382,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -17013,7 +18395,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or ((@value castable as xs:date) or (@value castable as xs:dateTime))"/>
          <xsl:otherwise>
@@ -17028,7 +18411,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -17047,14 +18431,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M179">
       <xsl:apply-templates select="*" mode="M179"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/zwangerschap/diagnose/zwangerschapsduur"
                  priority="1000"
                  mode="M180">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/zwangerschap/diagnose/zwangerschapsduur"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -17069,7 +18457,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82285')"/>
          <xsl:otherwise>
@@ -17084,7 +18473,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -17096,7 +18486,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:decimal)"/>
          <xsl:otherwise>
@@ -17111,7 +18502,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@unit) or (@unit eq 'd')"/>
          <xsl:otherwise>
@@ -17126,7 +18518,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @unit, @xsi:*))"/>
          <xsl:otherwise>
@@ -17145,14 +18538,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M180">
       <xsl:apply-templates select="*" mode="M180"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/zwangerschap/diagnose/gynaecologische_aandoening"
                  priority="1000"
                  mode="M181">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/zwangerschap/diagnose/gynaecologische_aandoening"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -17167,7 +18564,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82269')"/>
          <xsl:otherwise>
@@ -17182,7 +18580,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value = ('129103003', '95315005', '37849005', 'OTH'))"/>
          <xsl:otherwise>
@@ -17197,7 +18596,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@code) or (@code = ('129103003', '95315005', '37849005', 'OTH'))"/>
          <xsl:otherwise>
@@ -17212,7 +18612,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.5.1008'))"/>
          <xsl:otherwise>
@@ -17227,7 +18628,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('Endometriosis_(disorder)', 'Uterine_leiomyoma_(disorder)', 'Congenital_uterine_anomaly_(disorder)', 'Overig'))"/>
          <xsl:otherwise>
@@ -17242,7 +18644,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
          <xsl:otherwise>
@@ -17261,14 +18664,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M181">
       <xsl:apply-templates select="*" mode="M181"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/zwangerschap/diagnose/bloedverliesq"
                  priority="1000"
                  mode="M182">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/zwangerschap/diagnose/bloedverliesq"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -17283,7 +18690,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82270')"/>
          <xsl:otherwise>
@@ -17298,7 +18706,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -17310,7 +18719,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
@@ -17325,7 +18735,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -17344,14 +18755,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M182">
       <xsl:apply-templates select="*" mode="M182"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/zwangerschap/diagnose/partiele_molaq"
                  priority="1000"
                  mode="M183">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/zwangerschap/diagnose/partiele_molaq"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -17366,7 +18781,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82286')"/>
          <xsl:otherwise>
@@ -17381,7 +18797,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -17393,7 +18810,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
@@ -17408,7 +18826,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -17427,14 +18846,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M183">
       <xsl:apply-templates select="*" mode="M183"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/zwangerschap/diagnose/cervixinsufficientieq"
                  priority="1000"
                  mode="M184">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/zwangerschap/diagnose/cervixinsufficientieq"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -17449,7 +18872,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82271')"/>
          <xsl:otherwise>
@@ -17464,7 +18888,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -17476,7 +18901,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
@@ -17491,7 +18917,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -17510,14 +18937,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M184">
       <xsl:apply-templates select="*" mode="M184"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/zwangerschap/diagnose/infectie"
                  priority="1000"
                  mode="M185">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/zwangerschap/diagnose/infectie"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -17532,7 +18963,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82273')"/>
          <xsl:otherwise>
@@ -17547,7 +18979,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value = ('301775005', '307534009', '45816000', '186156007', 'OTH', 'NI'))"/>
          <xsl:otherwise>
@@ -17562,7 +18995,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@code) or (@code = ('301775005', '307534009', '45816000', '186156007', 'OTH', 'NI'))"/>
          <xsl:otherwise>
@@ -17577,7 +19011,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008'))"/>
          <xsl:otherwise>
@@ -17592,7 +19027,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('Infection_of_uterus_(disorder)', 'Urinary_tract_infection_in_pregnancy_(disorder)', 'Pyelonephritis_(disorder)', 'Infectious_colitis,_enteritis_and_gastroenteritis_(disorder)', 'Overig', 'Geen_informatie'))"/>
          <xsl:otherwise>
@@ -17607,7 +19043,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
          <xsl:otherwise>
@@ -17626,14 +19063,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M185">
       <xsl:apply-templates select="*" mode="M185"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/zwangerschap/diagnose/hyperemesis_gravidarumq"
                  priority="1000"
                  mode="M186">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/zwangerschap/diagnose/hyperemesis_gravidarumq"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -17648,7 +19089,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82274')"/>
          <xsl:otherwise>
@@ -17663,7 +19105,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -17675,7 +19118,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
@@ -17690,7 +19134,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -17709,14 +19154,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M186">
       <xsl:apply-templates select="*" mode="M186"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/zwangerschap/diagnose/hypertensieve_aandoening"
                  priority="1000"
                  mode="M187">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/zwangerschap/diagnose/hypertensieve_aandoening"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -17731,7 +19180,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82275')"/>
          <xsl:otherwise>
@@ -17746,7 +19196,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value = ('48194001', '398254007', '95605009', '15938005'))"/>
          <xsl:otherwise>
@@ -17761,7 +19212,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@code) or (@code = ('48194001', '398254007', '95605009', '15938005'))"/>
          <xsl:otherwise>
@@ -17776,7 +19228,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96'))"/>
          <xsl:otherwise>
@@ -17791,7 +19244,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('Pregnancy-induced_hypertension_(disorder)', 'Pre-eclampsia_(disorder)', 'Hemolysis-elevated_liver_enzymes-low_platelet_count_syndrome_(disorder)', 'Eclampsia_(disorder)'))"/>
          <xsl:otherwise>
@@ -17806,7 +19260,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
          <xsl:otherwise>
@@ -17825,14 +19280,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M187">
       <xsl:apply-templates select="*" mode="M187"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/zwangerschap/diagnose/zwangerschapscholestaseq"
                  priority="1000"
                  mode="M188">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/zwangerschap/diagnose/zwangerschapscholestaseq"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -17847,7 +19306,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82276')"/>
          <xsl:otherwise>
@@ -17862,7 +19322,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -17874,7 +19335,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
@@ -17889,7 +19351,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -17908,14 +19371,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M188">
       <xsl:apply-templates select="*" mode="M188"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/zwangerschap/diagnose/diabetes_gravidarum_met_insulineq"
                  priority="1000"
                  mode="M189">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/zwangerschap/diagnose/diabetes_gravidarum_met_insulineq"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -17930,7 +19397,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82277')"/>
          <xsl:otherwise>
@@ -17945,7 +19413,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -17957,7 +19426,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
@@ -17972,7 +19442,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -17991,14 +19462,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M189">
       <xsl:apply-templates select="*" mode="M189"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/zwangerschap/diagnose/afwijkende_groei_foetus"
                  priority="1000"
                  mode="M190">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/zwangerschap/diagnose/afwijkende_groei_foetus"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -18013,7 +19488,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82278')"/>
          <xsl:otherwise>
@@ -18028,7 +19504,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value = ('199616008', '267258002', 'NI'))"/>
          <xsl:otherwise>
@@ -18043,7 +19520,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@code) or (@code = ('199616008', '267258002', 'NI'))"/>
          <xsl:otherwise>
@@ -18058,7 +19536,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.5.1008'))"/>
          <xsl:otherwise>
@@ -18073,7 +19552,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('Large-for-dates_fetus_(disorder)', 'Small_for_gestational_age_fetus_(disorder)', 'Geen_informatie'))"/>
          <xsl:otherwise>
@@ -18088,7 +19568,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
          <xsl:otherwise>
@@ -18107,14 +19588,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M190">
       <xsl:apply-templates select="*" mode="M190"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/zwangerschap/diagnose/dreigende_partus_immaturusq"
                  priority="1000"
                  mode="M191">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/zwangerschap/diagnose/dreigende_partus_immaturusq"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -18129,7 +19614,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82279')"/>
          <xsl:otherwise>
@@ -18144,7 +19630,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -18156,7 +19643,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
@@ -18171,7 +19659,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -18190,14 +19679,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M191">
       <xsl:apply-templates select="*" mode="M191"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/zwangerschap/diagnose/dreigende_partus_prematurusq"
                  priority="1000"
                  mode="M192">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/zwangerschap/diagnose/dreigende_partus_prematurusq"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -18212,7 +19705,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82280')"/>
          <xsl:otherwise>
@@ -18227,7 +19721,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -18239,7 +19734,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
@@ -18254,7 +19750,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -18273,14 +19770,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M192">
       <xsl:apply-templates select="*" mode="M192"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/zwangerschap/diagnose/abruptio_placentaeq"
                  priority="1000"
                  mode="M193">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/zwangerschap/diagnose/abruptio_placentaeq"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -18295,7 +19796,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82289')"/>
          <xsl:otherwise>
@@ -18310,7 +19812,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -18322,7 +19825,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
@@ -18337,7 +19841,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -18356,14 +19861,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M193">
       <xsl:apply-templates select="*" mode="M193"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/bevalling"
                  priority="1000"
                  mode="M194">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/bevalling"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(partusnummer) ge 0) and (count(partusnummer) le 1)"/>
          <xsl:otherwise>
@@ -18378,7 +19887,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(diagnose_bevalling) ge 0) and (count(diagnose_bevalling) le 1)"/>
          <xsl:otherwise>
@@ -18393,7 +19903,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(aantal_geboren_kinderen) ge 0) and (count(aantal_geboren_kinderen) le 1)"/>
          <xsl:otherwise>
@@ -18408,7 +19919,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(risicostatus_voor_baring) ge 0) and (count(risicostatus_voor_baring) le 1)"/>
          <xsl:otherwise>
@@ -18423,7 +19935,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(wijze_waarop_de_baring_begon) ge 0) and (count(wijze_waarop_de_baring_begon) le 1)"/>
          <xsl:otherwise>
@@ -18438,7 +19951,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="count(interventies_begin_baring_groep) ge 0"/>
          <xsl:otherwise>
@@ -18453,7 +19967,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(tijdstip_begin_actieve_ontsluiting) ge 0) and (count(tijdstip_begin_actieve_ontsluiting) le 1)"/>
          <xsl:otherwise>
@@ -18468,7 +19983,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(bijstimulatie_toegediendq) ge 0) and (count(bijstimulatie_toegediendq) le 1)"/>
          <xsl:otherwise>
@@ -18483,7 +19999,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(medicatie_nageboortetijdperk_groep) ge 0) and (count(medicatie_nageboortetijdperk_groep) le 1)"/>
          <xsl:otherwise>
@@ -18498,7 +20015,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(placenta) ge 0) and (count(placenta) le 1)"/>
          <xsl:otherwise>
@@ -18513,7 +20031,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(hoeveelheid_bloedverlies) ge 0) and (count(hoeveelheid_bloedverlies) le 1)"/>
          <xsl:otherwise>
@@ -18528,7 +20047,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(conditie_perineum_postpartum) ge 0) and (count(conditie_perineum_postpartum) le 1)"/>
          <xsl:otherwise>
@@ -18543,7 +20063,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
          <xsl:otherwise>
@@ -18564,14 +20085,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M194">
       <xsl:apply-templates select="*" mode="M194"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/bevalling/*[not(self::partusnummer)][not(self::diagnose_bevalling)][not(self::aantal_geboren_kinderen)][not(self::risicostatus_voor_baring)][not(self::wijze_waarop_de_baring_begon)][not(self::interventies_begin_baring_groep)][not(self::tijdstip_begin_actieve_ontsluiting)][not(self::bijstimulatie_toegediendq)][not(self::medicatie_nageboortetijdperk_groep)][not(self::placenta)][not(self::hoeveelheid_bloedverlies)][not(self::conditie_perineum_postpartum)][not(self::adaextension)]"
                  priority="1000"
                  mode="M195">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/bevalling/*[not(self::partusnummer)][not(self::diagnose_bevalling)][not(self::aantal_geboren_kinderen)][not(self::risicostatus_voor_baring)][not(self::wijze_waarop_de_baring_begon)][not(self::interventies_begin_baring_groep)][not(self::tijdstip_begin_actieve_ontsluiting)][not(self::bijstimulatie_toegediendq)][not(self::medicatie_nageboortetijdperk_groep)][not(self::placenta)][not(self::hoeveelheid_bloedverlies)][not(self::conditie_perineum_postpartum)][not(self::adaextension)]"/>
-      <!--REPORT -->
+
+		    <!--REPORT -->
       <xsl:if test="true()">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="true()">
             <xsl:attribute name="location">
@@ -18590,14 +20115,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M195">
       <xsl:apply-templates select="*" mode="M195"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/bevalling/partusnummer"
                  priority="1000"
                  mode="M196">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/bevalling/partusnummer"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -18612,7 +20141,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20500')"/>
          <xsl:otherwise>
@@ -18627,7 +20157,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -18639,7 +20170,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (string-length(@value) ge 1)"/>
          <xsl:otherwise>
@@ -18654,7 +20186,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (string-length(@value) le 30)"/>
          <xsl:otherwise>
@@ -18669,7 +20202,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -18688,14 +20222,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M196">
       <xsl:apply-templates select="*" mode="M196"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/bevalling/diagnose_bevalling"
                  priority="1000"
                  mode="M197">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/bevalling/diagnose_bevalling"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -18710,7 +20248,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82291')"/>
          <xsl:otherwise>
@@ -18725,7 +20264,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @xsi:*))"/>
          <xsl:otherwise>
@@ -18744,14 +20284,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M197">
       <xsl:apply-templates select="*" mode="M197"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/bevalling/aantal_geboren_kinderen"
                  priority="1000"
                  mode="M198">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/bevalling/aantal_geboren_kinderen"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -18766,7 +20310,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20505')"/>
          <xsl:otherwise>
@@ -18781,7 +20326,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -18793,7 +20339,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:decimal)"/>
          <xsl:otherwise>
@@ -18808,7 +20355,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (local:decimal-convert(@value) ge 0)"/>
          <xsl:otherwise>
@@ -18823,7 +20371,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (local:decimal-convert(@value) le 9)"/>
          <xsl:otherwise>
@@ -18838,7 +20387,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -18857,14 +20407,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M198">
       <xsl:apply-templates select="*" mode="M198"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/bevalling/risicostatus_voor_baring"
                  priority="1000"
                  mode="M199">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/bevalling/risicostatus_voor_baring"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -18879,7 +20433,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20530')"/>
          <xsl:otherwise>
@@ -18894,7 +20449,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value = ('1', '3', '4', '5', 'UNK', 'NI'))"/>
          <xsl:otherwise>
@@ -18909,7 +20465,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@code) or (@code = ('1', '3', '4', '5', 'UNK', 'NI'))"/>
          <xsl:otherwise>
@@ -18924,7 +20481,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.2.4.3.22.1.2.25', '2.16.840.1.113883.2.4.3.22.1.2.25', '2.16.840.1.113883.2.4.3.22.1.2.25', '2.16.840.1.113883.2.4.3.22.1.2.25', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008'))"/>
          <xsl:otherwise>
@@ -18939,7 +20497,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('1e_lijn_(VIL_A)', '2e_lijn_(VIL_C)', '1e_lijn_met_plaatsindicatie_(VIL_D)', '3e_lijn', 'Onbekend', 'Geen_informatie'))"/>
          <xsl:otherwise>
@@ -18954,7 +20513,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
          <xsl:otherwise>
@@ -18973,14 +20533,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M199">
       <xsl:apply-templates select="*" mode="M199"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/bevalling/wijze_waarop_de_baring_begon"
                  priority="1000"
                  mode="M200">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/bevalling/wijze_waarop_de_baring_begon"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -18995,7 +20559,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20550')"/>
          <xsl:otherwise>
@@ -19010,7 +20575,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value = ('1', '2', '3', 'UNK', 'NI'))"/>
          <xsl:otherwise>
@@ -19025,7 +20591,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@code) or (@code = ('1', '2', '3', 'UNK', 'NI'))"/>
          <xsl:otherwise>
@@ -19040,7 +20607,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.2.4.3.22.1.2.46', '2.16.840.1.113883.2.4.3.22.1.2.46', '2.16.840.1.113883.2.4.3.22.1.2.46', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008'))"/>
          <xsl:otherwise>
@@ -19055,7 +20623,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('spontane_weeën', 'spontane_vliesscheur', 'interventie_om_baring_op_gang_te_brengen', 'onbekend', 'geen_informatie'))"/>
          <xsl:otherwise>
@@ -19070,7 +20639,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
          <xsl:otherwise>
@@ -19089,14 +20659,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M200">
       <xsl:apply-templates select="*" mode="M200"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/bevalling/interventies_begin_baring_groep"
                  priority="1000"
                  mode="M201">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/bevalling/interventies_begin_baring_groep"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -19111,7 +20685,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20555')"/>
          <xsl:otherwise>
@@ -19126,7 +20701,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @xsi:*))"/>
          <xsl:otherwise>
@@ -19145,14 +20721,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M201">
       <xsl:apply-templates select="*" mode="M201"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/bevalling/tijdstip_begin_actieve_ontsluiting"
                  priority="1000"
                  mode="M202">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/bevalling/tijdstip_begin_actieve_ontsluiting"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -19167,7 +20747,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20590')"/>
          <xsl:otherwise>
@@ -19182,7 +20763,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -19194,7 +20776,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or ((@value castable as xs:date) or (@value castable as xs:dateTime))"/>
          <xsl:otherwise>
@@ -19209,7 +20792,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -19228,14 +20812,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M202">
       <xsl:apply-templates select="*" mode="M202"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/bevalling/bijstimulatie_toegediendq"
                  priority="1000"
                  mode="M203">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/bevalling/bijstimulatie_toegediendq"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -19250,7 +20838,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20616')"/>
          <xsl:otherwise>
@@ -19265,7 +20854,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -19277,7 +20867,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
@@ -19292,7 +20883,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -19311,14 +20903,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M203">
       <xsl:apply-templates select="*" mode="M203"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/bevalling/medicatie_nageboortetijdperk_groep"
                  priority="1000"
                  mode="M204">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/bevalling/medicatie_nageboortetijdperk_groep"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -19333,7 +20929,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20619')"/>
          <xsl:otherwise>
@@ -19348,7 +20945,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @xsi:*))"/>
          <xsl:otherwise>
@@ -19367,14 +20965,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M204">
       <xsl:apply-templates select="*" mode="M204"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/bevalling/placenta"
                  priority="1000"
                  mode="M205">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/bevalling/placenta"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -19389,7 +20991,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80612')"/>
          <xsl:otherwise>
@@ -19404,7 +21007,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @xsi:*))"/>
          <xsl:otherwise>
@@ -19423,14 +21027,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M205">
       <xsl:apply-templates select="*" mode="M205"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/bevalling/hoeveelheid_bloedverlies"
                  priority="1000"
                  mode="M206">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/bevalling/hoeveelheid_bloedverlies"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -19445,7 +21053,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20640')"/>
          <xsl:otherwise>
@@ -19460,7 +21069,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -19472,7 +21082,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:decimal)"/>
          <xsl:otherwise>
@@ -19487,7 +21098,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@unit) or (@unit eq 'ml')"/>
          <xsl:otherwise>
@@ -19502,7 +21114,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @unit, @xsi:*))"/>
          <xsl:otherwise>
@@ -19521,14 +21134,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M206">
       <xsl:apply-templates select="*" mode="M206"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/bevalling/conditie_perineum_postpartum"
                  priority="1000"
                  mode="M207">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/bevalling/conditie_perineum_postpartum"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -19543,7 +21160,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80673')"/>
          <xsl:otherwise>
@@ -19558,7 +21176,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value = ('289854007', '199916005', '199925004', '199930000', '449807005', '449808000', '449809008', '199934009', '609344008', 'OTH', 'UNK', 'NI'))"/>
          <xsl:otherwise>
@@ -19573,7 +21192,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@code) or (@code = ('289854007', '199916005', '199925004', '199930000', '449807005', '449808000', '449809008', '199934009', '609344008', 'OTH', 'UNK', 'NI'))"/>
          <xsl:otherwise>
@@ -19588,7 +21208,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008'))"/>
          <xsl:otherwise>
@@ -19603,7 +21224,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('Perineum_intact_(finding)', 'First_degree_perineal_tear_during_delivery_-_delivered_(disorder)', 'Second_degree_perineal_tear_during_delivery_-_delivered_(disorder)', 'Third_degree_perineal_tear_during_delivery_-_delivered_(disorder)', 'Third_degree_perineal_tear_during_delivery_-_delivered_(disorder)_Type_3a_third_degree_laceration_of_perineum_(disorder)', 'Third_degree_perineal_tear_during_delivery_-_delivered_(disorder)_Type_3b_third_degree_laceration_of_perineum_(disorder)', 'Third_degree_perineal_tear_during_delivery_-_delivered_(disorder)_Type_3c_third_degree_laceration_of_perineum_(disorder)', 'Fourth_degree_perineal_tear_during_delivery_-_delivered_(disorder)', 'Episiotomy_wound_(morphologic_abnormality)', 'Anders', 'Onbekend', 'Geen_informatie'))"/>
          <xsl:otherwise>
@@ -19618,7 +21240,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
          <xsl:otherwise>
@@ -19637,14 +21260,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M207">
       <xsl:apply-templates select="*" mode="M207"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/bevalling/diagnose_bevalling"
                  priority="1000"
                  mode="M208">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/bevalling/diagnose_bevalling"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(ppromq) ge 0) and (count(ppromq) le 1)"/>
          <xsl:otherwise>
@@ -19659,7 +21286,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(promq) ge 0) and (count(promq) le 1)"/>
          <xsl:otherwise>
@@ -19674,7 +21302,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(koortsq) ge 0) and (count(koortsq) le 1)"/>
          <xsl:otherwise>
@@ -19689,7 +21318,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(niet_vorderende_ontsluitingq) ge 0) and (count(niet_vorderende_ontsluitingq) le 1)"/>
          <xsl:otherwise>
@@ -19704,7 +21334,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(niet_vorderende_uitdrijvingq) ge 0) and (count(niet_vorderende_uitdrijvingq) le 1)"/>
          <xsl:otherwise>
@@ -19719,7 +21350,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(verdenking_foetale_noodq) ge 0) and (count(verdenking_foetale_noodq) le 1)"/>
          <xsl:otherwise>
@@ -19734,7 +21366,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(vastzittende_placentaq) ge 0) and (count(vastzittende_placentaq) le 1)"/>
          <xsl:otherwise>
@@ -19749,7 +21382,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
          <xsl:otherwise>
@@ -19770,14 +21404,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M208">
       <xsl:apply-templates select="*" mode="M208"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/bevalling/diagnose_bevalling/*[not(self::ppromq)][not(self::promq)][not(self::koortsq)][not(self::niet_vorderende_ontsluitingq)][not(self::niet_vorderende_uitdrijvingq)][not(self::verdenking_foetale_noodq)][not(self::vastzittende_placentaq)][not(self::adaextension)]"
                  priority="1000"
                  mode="M209">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/bevalling/diagnose_bevalling/*[not(self::ppromq)][not(self::promq)][not(self::koortsq)][not(self::niet_vorderende_ontsluitingq)][not(self::niet_vorderende_uitdrijvingq)][not(self::verdenking_foetale_noodq)][not(self::vastzittende_placentaq)][not(self::adaextension)]"/>
-      <!--REPORT -->
+
+		    <!--REPORT -->
       <xsl:if test="true()">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="true()">
             <xsl:attribute name="location">
@@ -19796,14 +21434,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M209">
       <xsl:apply-templates select="*" mode="M209"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/bevalling/diagnose_bevalling/ppromq"
                  priority="1000"
                  mode="M210">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/bevalling/diagnose_bevalling/ppromq"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -19818,7 +21460,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82338')"/>
          <xsl:otherwise>
@@ -19833,7 +21476,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -19845,7 +21489,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
@@ -19860,7 +21505,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -19879,14 +21525,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M210">
       <xsl:apply-templates select="*" mode="M210"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/bevalling/diagnose_bevalling/promq"
                  priority="1000"
                  mode="M211">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/bevalling/diagnose_bevalling/promq"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -19901,7 +21551,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82290')"/>
          <xsl:otherwise>
@@ -19916,7 +21567,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -19928,7 +21580,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
@@ -19943,7 +21596,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -19962,14 +21616,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M211">
       <xsl:apply-templates select="*" mode="M211"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/bevalling/diagnose_bevalling/koortsq"
                  priority="1000"
                  mode="M212">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/bevalling/diagnose_bevalling/koortsq"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -19984,7 +21642,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82292')"/>
          <xsl:otherwise>
@@ -19999,7 +21658,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -20011,7 +21671,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
@@ -20026,7 +21687,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -20045,14 +21707,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M212">
       <xsl:apply-templates select="*" mode="M212"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/bevalling/diagnose_bevalling/niet_vorderende_ontsluitingq"
                  priority="1000"
                  mode="M213">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/bevalling/diagnose_bevalling/niet_vorderende_ontsluitingq"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -20067,7 +21733,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82293')"/>
          <xsl:otherwise>
@@ -20082,7 +21749,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -20094,7 +21762,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
@@ -20109,7 +21778,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -20128,14 +21798,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M213">
       <xsl:apply-templates select="*" mode="M213"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/bevalling/diagnose_bevalling/niet_vorderende_uitdrijvingq"
                  priority="1000"
                  mode="M214">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/bevalling/diagnose_bevalling/niet_vorderende_uitdrijvingq"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -20150,7 +21824,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82294')"/>
          <xsl:otherwise>
@@ -20165,7 +21840,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -20177,7 +21853,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
@@ -20192,7 +21869,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -20211,14 +21889,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M214">
       <xsl:apply-templates select="*" mode="M214"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/bevalling/diagnose_bevalling/verdenking_foetale_noodq"
                  priority="1000"
                  mode="M215">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/bevalling/diagnose_bevalling/verdenking_foetale_noodq"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -20233,7 +21915,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82296')"/>
          <xsl:otherwise>
@@ -20248,7 +21931,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -20260,7 +21944,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
@@ -20275,7 +21960,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -20294,14 +21980,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M215">
       <xsl:apply-templates select="*" mode="M215"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/bevalling/diagnose_bevalling/vastzittende_placentaq"
                  priority="1000"
                  mode="M216">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/bevalling/diagnose_bevalling/vastzittende_placentaq"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -20316,7 +22006,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82295')"/>
          <xsl:otherwise>
@@ -20331,7 +22022,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -20343,7 +22035,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
@@ -20358,7 +22051,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -20377,14 +22071,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M216">
       <xsl:apply-templates select="*" mode="M216"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/bevalling/interventies_begin_baring_groep"
                  priority="1000"
                  mode="M217">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/bevalling/interventies_begin_baring_groep"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(interventie_begin_baring) ge 0) and (count(interventie_begin_baring) le 1)"/>
          <xsl:otherwise>
@@ -20399,7 +22097,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(indicatie_interventie_begin_baring) ge 0) and (count(indicatie_interventie_begin_baring) le 1)"/>
          <xsl:otherwise>
@@ -20414,7 +22113,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
          <xsl:otherwise>
@@ -20435,14 +22135,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M217">
       <xsl:apply-templates select="*" mode="M217"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/bevalling/interventies_begin_baring_groep/*[not(self::interventie_begin_baring)][not(self::indicatie_interventie_begin_baring)][not(self::adaextension)]"
                  priority="1000"
                  mode="M218">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/bevalling/interventies_begin_baring_groep/*[not(self::interventie_begin_baring)][not(self::indicatie_interventie_begin_baring)][not(self::adaextension)]"/>
-      <!--REPORT -->
+
+		    <!--REPORT -->
       <xsl:if test="true()">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="true()">
             <xsl:attribute name="location">
@@ -20461,14 +22165,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M218">
       <xsl:apply-templates select="*" mode="M218"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/bevalling/interventies_begin_baring_groep/interventie_begin_baring"
                  priority="1000"
                  mode="M219">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/bevalling/interventies_begin_baring_groep/interventie_begin_baring"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -20483,7 +22191,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20560')"/>
          <xsl:otherwise>
@@ -20498,7 +22207,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value = ('236960006', '408818004', '425861005', '236966000', '177135005', '177136006', '177141003', 'OTH', 'NI'))"/>
          <xsl:otherwise>
@@ -20513,7 +22223,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@code) or (@code = ('236960006', '408818004', '425861005', '236966000', '177135005', '177136006', '177141003', 'OTH', 'NI'))"/>
          <xsl:otherwise>
@@ -20528,7 +22239,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008'))"/>
          <xsl:otherwise>
@@ -20543,7 +22255,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('Sweeping_of_membrane_(procedure)', 'Induction_of_labour_by_artificial_rupture_of_membranes_(procedure)', 'Cervical_ripening_with_balloon_(procedure)', 'Cervical_ripening_with_Prostaglandin_E2_(procedure)', 'Oxytocin_induction_of_labour_(procedure)', 'Prostaglandin_induction_of_labour_(procedure)', 'Elective_caesarean_section_(procedure)', 'Overig', 'Geen_informatie'))"/>
          <xsl:otherwise>
@@ -20558,7 +22271,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
          <xsl:otherwise>
@@ -20577,14 +22291,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M219">
       <xsl:apply-templates select="*" mode="M219"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/bevalling/interventies_begin_baring_groep/indicatie_interventie_begin_baring"
                  priority="1000"
                  mode="M220">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/bevalling/interventies_begin_baring_groep/indicatie_interventie_begin_baring"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -20599,7 +22317,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20570')"/>
          <xsl:otherwise>
@@ -20614,7 +22333,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value = ('1', '3', '8', '2', '4', '9', '5', '6', '7', 'OTH', 'UNK', 'NI'))"/>
          <xsl:otherwise>
@@ -20629,7 +22349,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@code) or (@code = ('1', '3', '8', '2', '4', '9', '5', '6', '7', 'OTH', 'UNK', 'NI'))"/>
          <xsl:otherwise>
@@ -20644,7 +22365,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.2.4.3.22.1.2.7', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008'))"/>
          <xsl:otherwise>
@@ -20659,7 +22381,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('gevaar_moeder_acuut_levensbedreigend', 'gevaar_moeder_niet_levensbedreigend', 'gevaar_moeder_onbekend', 'gevaar_kind_acuut_levensbedreigend', 'gevaar_kind_niet_levensbedreigend', 'gevaar_kind_onbekend', 'baring_op_korte_termijn_geïndiceerd_door_zorgverlener', 'wens_zorgverlener_(incl:_wetenschappelijk_onderzoek)', 'wens_patiënt', 'overig', 'onbekend', 'geen_informatie'))"/>
          <xsl:otherwise>
@@ -20674,7 +22397,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
          <xsl:otherwise>
@@ -20693,14 +22417,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M220">
       <xsl:apply-templates select="*" mode="M220"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/bevalling/medicatie_nageboortetijdperk_groep"
                  priority="1000"
                  mode="M221">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/bevalling/medicatie_nageboortetijdperk_groep"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(medicatie_nageboortetijdperkq) ge 0) and (count(medicatie_nageboortetijdperkq) le 1)"/>
          <xsl:otherwise>
@@ -20715,7 +22443,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="count(soort_medicatie_nageboortetijdperk) ge 0"/>
          <xsl:otherwise>
@@ -20730,7 +22459,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
          <xsl:otherwise>
@@ -20751,14 +22481,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M221">
       <xsl:apply-templates select="*" mode="M221"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/bevalling/medicatie_nageboortetijdperk_groep/*[not(self::medicatie_nageboortetijdperkq)][not(self::soort_medicatie_nageboortetijdperk)][not(self::adaextension)]"
                  priority="1000"
                  mode="M222">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/bevalling/medicatie_nageboortetijdperk_groep/*[not(self::medicatie_nageboortetijdperkq)][not(self::soort_medicatie_nageboortetijdperk)][not(self::adaextension)]"/>
-      <!--REPORT -->
+
+		    <!--REPORT -->
       <xsl:if test="true()">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="true()">
             <xsl:attribute name="location">
@@ -20777,14 +22511,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M222">
       <xsl:apply-templates select="*" mode="M222"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/bevalling/medicatie_nageboortetijdperk_groep/medicatie_nageboortetijdperkq"
                  priority="1000"
                  mode="M223">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/bevalling/medicatie_nageboortetijdperk_groep/medicatie_nageboortetijdperkq"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -20799,7 +22537,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20620')"/>
          <xsl:otherwise>
@@ -20814,7 +22553,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -20826,7 +22566,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
@@ -20841,7 +22582,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -20860,14 +22602,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M223">
       <xsl:apply-templates select="*" mode="M223"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/bevalling/medicatie_nageboortetijdperk_groep/soort_medicatie_nageboortetijdperk"
                  priority="1000"
                  mode="M224">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/bevalling/medicatie_nageboortetijdperk_groep/soort_medicatie_nageboortetijdperk"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -20882,7 +22628,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20626')"/>
          <xsl:otherwise>
@@ -20897,7 +22644,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value = ('H01BB02', 'G02AD', 'G02AB', 'OTH', 'UNK'))"/>
          <xsl:otherwise>
@@ -20912,7 +22660,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@code) or (@code = ('H01BB02', 'G02AD', 'G02AB', 'OTH', 'UNK'))"/>
          <xsl:otherwise>
@@ -20927,7 +22676,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.6.73', '2.16.840.1.113883.6.73', '2.16.840.1.113883.6.73', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008'))"/>
          <xsl:otherwise>
@@ -20942,7 +22692,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('Oxytocin', 'Prostaglandins', 'Ergot_alkaloids', 'Overig', 'Onbekend'))"/>
          <xsl:otherwise>
@@ -20957,7 +22708,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
          <xsl:otherwise>
@@ -20976,14 +22728,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M224">
       <xsl:apply-templates select="*" mode="M224"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/bevalling/placenta"
                  priority="1000"
                  mode="M225">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/bevalling/placenta"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(geboorte_placenta) ge 0) and (count(geboorte_placenta) le 1)"/>
          <xsl:otherwise>
@@ -20998,7 +22754,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
          <xsl:otherwise>
@@ -21019,14 +22776,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M225">
       <xsl:apply-templates select="*" mode="M225"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/bevalling/placenta/*[not(self::geboorte_placenta)][not(self::adaextension)]"
                  priority="1000"
                  mode="M226">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/bevalling/placenta/*[not(self::geboorte_placenta)][not(self::adaextension)]"/>
-      <!--REPORT -->
+
+		    <!--REPORT -->
       <xsl:if test="true()">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="true()">
             <xsl:attribute name="location">
@@ -21045,14 +22806,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M226">
       <xsl:apply-templates select="*" mode="M226"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/bevalling/placenta/geboorte_placenta"
                  priority="1000"
                  mode="M227">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/bevalling/placenta/geboorte_placenta"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -21067,7 +22832,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20630')"/>
          <xsl:otherwise>
@@ -21082,7 +22848,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value = ('0', '2', '3', '4', 'OTH', 'NI', 'UNK'))"/>
          <xsl:otherwise>
@@ -21097,7 +22864,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@code) or (@code = ('0', '2', '3', '4', 'OTH', 'NI', 'UNK'))"/>
          <xsl:otherwise>
@@ -21112,7 +22880,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.2.4.4.13.19', '2.16.840.1.113883.2.4.4.13.19', '2.16.840.1.113883.2.4.4.13.19', '2.16.840.1.113883.2.4.4.13.19', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008'))"/>
          <xsl:otherwise>
@@ -21127,7 +22896,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('Spontaan', 'Controlled_cord_traction', 'Manuele_placentaverwijdering', 'Placentaverwijdering_bij_SC', 'Overig', 'Geen_informatie', 'Onbekend'))"/>
          <xsl:otherwise>
@@ -21142,7 +22912,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
          <xsl:otherwise>
@@ -21161,14 +22932,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M227">
       <xsl:apply-templates select="*" mode="M227"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind"
                  priority="1000"
                  mode="M228">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(baring) ge 0) and (count(baring) le 1)"/>
          <xsl:otherwise>
@@ -21183,7 +22958,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
          <xsl:otherwise>
@@ -21204,14 +22980,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M228">
       <xsl:apply-templates select="*" mode="M228"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/*[not(self::baring)][not(self::adaextension)]"
                  priority="1000"
                  mode="M229">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/*[not(self::baring)][not(self::adaextension)]"/>
-      <!--REPORT -->
+
+		    <!--REPORT -->
       <xsl:if test="true()">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="true()">
             <xsl:attribute name="location">
@@ -21230,14 +23010,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M229">
       <xsl:apply-templates select="*" mode="M229"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring"
                  priority="1000"
                  mode="M230">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -21252,7 +23036,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40002')"/>
          <xsl:otherwise>
@@ -21267,7 +23052,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @xsi:*))"/>
          <xsl:otherwise>
@@ -21286,14 +23072,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M230">
       <xsl:apply-templates select="*" mode="M230"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring"
                  priority="1000"
                  mode="M231">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(werkelijke_plaats_baring_type_locatie) ge 0) and (count(werkelijke_plaats_baring_type_locatie) le 1)"/>
          <xsl:otherwise>
@@ -21308,7 +23098,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(ziekenhuis_baring) ge 0) and (count(ziekenhuis_baring) le 1)"/>
          <xsl:otherwise>
@@ -21323,7 +23114,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(demografische_gegevens) ge 0) and (count(demografische_gegevens) le 1)"/>
          <xsl:otherwise>
@@ -21338,7 +23130,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(kindspecifieke_maternale_gegevens) ge 0) and (count(kindspecifieke_maternale_gegevens) le 1)"/>
          <xsl:otherwise>
@@ -21353,7 +23146,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(kindspecifieke_uitkomstgegevens) ge 0) and (count(kindspecifieke_uitkomstgegevens) le 1)"/>
          <xsl:otherwise>
@@ -21368,7 +23162,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
          <xsl:otherwise>
@@ -21389,14 +23184,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M231">
       <xsl:apply-templates select="*" mode="M231"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/*[not(self::werkelijke_plaats_baring_type_locatie)][not(self::ziekenhuis_baring)][not(self::demografische_gegevens)][not(self::kindspecifieke_maternale_gegevens)][not(self::kindspecifieke_uitkomstgegevens)][not(self::adaextension)]"
                  priority="1000"
                  mode="M232">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/*[not(self::werkelijke_plaats_baring_type_locatie)][not(self::ziekenhuis_baring)][not(self::demografische_gegevens)][not(self::kindspecifieke_maternale_gegevens)][not(self::kindspecifieke_uitkomstgegevens)][not(self::adaextension)]"/>
-      <!--REPORT -->
+
+		    <!--REPORT -->
       <xsl:if test="true()">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="true()">
             <xsl:attribute name="location">
@@ -21415,14 +23214,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M232">
       <xsl:apply-templates select="*" mode="M232"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/werkelijke_plaats_baring_type_locatie"
                  priority="1000"
                  mode="M233">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/werkelijke_plaats_baring_type_locatie"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -21437,7 +23240,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40003')"/>
          <xsl:otherwise>
@@ -21452,7 +23256,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value = ('169813005', '23', '22232009', '40', 'UNK', 'NI'))"/>
          <xsl:otherwise>
@@ -21467,7 +23272,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@code) or (@code = ('169813005', '23', '22232009', '40', 'UNK', 'NI'))"/>
          <xsl:otherwise>
@@ -21482,7 +23288,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.6.96', '2.16.840.1.113883.2.4.3.22.1.8.7', '2.16.840.1.113883.6.96', '2.16.840.1.113883.2.4.3.22.1.8.7', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008'))"/>
          <xsl:otherwise>
@@ -21497,7 +23304,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('Home_birth_(finding)', 'Geboortecentrum', 'Hospital_(environment)', 'Onderweg', 'Onbekend', 'Geen_informatie'))"/>
          <xsl:otherwise>
@@ -21512,7 +23320,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
          <xsl:otherwise>
@@ -21531,14 +23340,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M233">
       <xsl:apply-templates select="*" mode="M233"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/ziekenhuis_baring"
                  priority="1000"
                  mode="M234">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/ziekenhuis_baring"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -21553,7 +23366,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82114')"/>
          <xsl:otherwise>
@@ -21568,7 +23382,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @xsi:*))"/>
          <xsl:otherwise>
@@ -21587,14 +23402,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M234">
       <xsl:apply-templates select="*" mode="M234"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/demografische_gegevens"
                  priority="1000"
                  mode="M235">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/demografische_gegevens"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -21609,7 +23428,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40006')"/>
          <xsl:otherwise>
@@ -21624,7 +23444,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @xsi:*))"/>
          <xsl:otherwise>
@@ -21643,14 +23464,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M235">
       <xsl:apply-templates select="*" mode="M235"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens"
                  priority="1000"
                  mode="M236">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -21665,7 +23490,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.71')"/>
          <xsl:otherwise>
@@ -21680,7 +23506,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @xsi:*))"/>
          <xsl:otherwise>
@@ -21699,14 +23526,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M236">
       <xsl:apply-templates select="*" mode="M236"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens"
                  priority="1000"
                  mode="M237">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -21721,7 +23552,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.72')"/>
          <xsl:otherwise>
@@ -21736,7 +23568,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @xsi:*))"/>
          <xsl:otherwise>
@@ -21755,14 +23588,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M237">
       <xsl:apply-templates select="*" mode="M237"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/ziekenhuis_baring"
                  priority="1000"
                  mode="M238">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/ziekenhuis_baring"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(ziekenhuisnummer_lvrid) ge 0) and (count(ziekenhuisnummer_lvrid) le 1)"/>
          <xsl:otherwise>
@@ -21777,7 +23614,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
          <xsl:otherwise>
@@ -21798,14 +23636,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M238">
       <xsl:apply-templates select="*" mode="M238"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/ziekenhuis_baring/*[not(self::ziekenhuisnummer_lvrid)][not(self::adaextension)]"
                  priority="1000"
                  mode="M239">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/ziekenhuis_baring/*[not(self::ziekenhuisnummer_lvrid)][not(self::adaextension)]"/>
-      <!--REPORT -->
+
+		    <!--REPORT -->
       <xsl:if test="true()">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="true()">
             <xsl:attribute name="location">
@@ -21824,14 +23666,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M239">
       <xsl:apply-templates select="*" mode="M239"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/ziekenhuis_baring/ziekenhuisnummer_lvrid"
                  priority="1000"
                  mode="M240">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/ziekenhuis_baring/ziekenhuisnummer_lvrid"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -21846,7 +23692,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40005')"/>
          <xsl:otherwise>
@@ -21861,7 +23708,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -21873,7 +23721,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (string-length(@value) ge 4)"/>
          <xsl:otherwise>
@@ -21888,7 +23737,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (string-length(@value) le 4)"/>
          <xsl:otherwise>
@@ -21903,7 +23753,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -21922,14 +23773,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M240">
       <xsl:apply-templates select="*" mode="M240"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/demografische_gegevens"
                  priority="1000"
                  mode="M241">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/demografische_gegevens"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(identificaties_kind) ge 0) and (count(identificaties_kind) le 1)"/>
          <xsl:otherwise>
@@ -21944,7 +23799,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(geslacht_medische_observatie) ge 0) and (count(geslacht_medische_observatie) le 1)"/>
          <xsl:otherwise>
@@ -21959,7 +23815,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(geboortedatum) ge 0) and (count(geboortedatum) le 1)"/>
          <xsl:otherwise>
@@ -21974,7 +23831,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(rangnummer_kind) ge 0) and (count(rangnummer_kind) le 1)"/>
          <xsl:otherwise>
@@ -21989,7 +23847,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(perinatale_sterfte_groep) ge 0) and (count(perinatale_sterfte_groep) le 1)"/>
          <xsl:otherwise>
@@ -22004,7 +23863,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
          <xsl:otherwise>
@@ -22025,14 +23885,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M241">
       <xsl:apply-templates select="*" mode="M241"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/demografische_gegevens/*[not(self::identificaties_kind)][not(self::geslacht_medische_observatie)][not(self::geboortedatum)][not(self::rangnummer_kind)][not(self::perinatale_sterfte_groep)][not(self::adaextension)]"
                  priority="1000"
                  mode="M242">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/demografische_gegevens/*[not(self::identificaties_kind)][not(self::geslacht_medische_observatie)][not(self::geboortedatum)][not(self::rangnummer_kind)][not(self::perinatale_sterfte_groep)][not(self::adaextension)]"/>
-      <!--REPORT -->
+
+		    <!--REPORT -->
       <xsl:if test="true()">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="true()">
             <xsl:attribute name="location">
@@ -22051,14 +23915,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M242">
       <xsl:apply-templates select="*" mode="M242"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/demografische_gegevens/identificaties_kind"
                  priority="1000"
                  mode="M243">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/demografische_gegevens/identificaties_kind"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -22073,7 +23941,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40007')"/>
          <xsl:otherwise>
@@ -22088,7 +23957,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @xsi:*))"/>
          <xsl:otherwise>
@@ -22107,14 +23977,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M243">
       <xsl:apply-templates select="*" mode="M243"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/demografische_gegevens/geslacht_medische_observatie"
                  priority="1000"
                  mode="M244">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/demografische_gegevens/geslacht_medische_observatie"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -22129,7 +24003,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40041')"/>
          <xsl:otherwise>
@@ -22144,7 +24019,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value = ('1', '2', '3', 'UNK', 'NI'))"/>
          <xsl:otherwise>
@@ -22159,7 +24035,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@code) or (@code = ('1', '2', '3', 'UNK', 'NI'))"/>
          <xsl:otherwise>
@@ -22174,7 +24051,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.2.4.4.13.21', '2.16.840.1.113883.2.4.4.13.21', '2.16.840.1.113883.2.4.4.13.21', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008'))"/>
          <xsl:otherwise>
@@ -22189,7 +24067,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('Mannelijk', 'Vrouwelijk', 'Niet_conclusief', 'Onbekend', 'Geen_informatie'))"/>
          <xsl:otherwise>
@@ -22204,7 +24083,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
          <xsl:otherwise>
@@ -22223,14 +24103,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M244">
       <xsl:apply-templates select="*" mode="M244"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/demografische_gegevens/geboortedatum"
                  priority="1000"
                  mode="M245">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/demografische_gegevens/geboortedatum"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -22245,7 +24129,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40050')"/>
          <xsl:otherwise>
@@ -22260,7 +24145,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -22272,7 +24158,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or ((@value castable as xs:date) or (@value castable as xs:dateTime))"/>
          <xsl:otherwise>
@@ -22287,7 +24174,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -22306,14 +24194,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M245">
       <xsl:apply-templates select="*" mode="M245"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/demografische_gegevens/rangnummer_kind"
                  priority="1000"
                  mode="M246">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/demografische_gegevens/rangnummer_kind"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -22328,7 +24220,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40025')"/>
          <xsl:otherwise>
@@ -22343,7 +24236,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -22355,7 +24249,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:decimal)"/>
          <xsl:otherwise>
@@ -22370,7 +24265,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (local:decimal-convert(@value) ge 1)"/>
          <xsl:otherwise>
@@ -22385,7 +24281,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (local:decimal-convert(@value) le 9)"/>
          <xsl:otherwise>
@@ -22400,7 +24297,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -22419,14 +24317,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M246">
       <xsl:apply-templates select="*" mode="M246"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/demografische_gegevens/perinatale_sterfte_groep"
                  priority="1000"
                  mode="M247">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/demografische_gegevens/perinatale_sterfte_groep"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -22441,7 +24343,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40279')"/>
          <xsl:otherwise>
@@ -22456,7 +24359,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @xsi:*))"/>
          <xsl:otherwise>
@@ -22475,14 +24379,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M247">
       <xsl:apply-templates select="*" mode="M247"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/demografische_gegevens/identificaties_kind"
                  priority="1000"
                  mode="M248">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/demografische_gegevens/identificaties_kind"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(bsn_kind) ge 0) and (count(bsn_kind) le 1)"/>
          <xsl:otherwise>
@@ -22497,7 +24405,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
          <xsl:otherwise>
@@ -22518,14 +24427,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M248">
       <xsl:apply-templates select="*" mode="M248"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/demografische_gegevens/identificaties_kind/*[not(self::bsn_kind)][not(self::adaextension)]"
                  priority="1000"
                  mode="M249">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/demografische_gegevens/identificaties_kind/*[not(self::bsn_kind)][not(self::adaextension)]"/>
-      <!--REPORT -->
+
+		    <!--REPORT -->
       <xsl:if test="true()">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="true()">
             <xsl:attribute name="location">
@@ -22544,14 +24457,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M249">
       <xsl:apply-templates select="*" mode="M249"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/demografische_gegevens/identificaties_kind/bsn_kind"
                  priority="1000"
                  mode="M250">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/demografische_gegevens/identificaties_kind/bsn_kind"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -22566,7 +24483,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40010')"/>
          <xsl:otherwise>
@@ -22581,7 +24499,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -22593,7 +24512,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -22612,14 +24532,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M250">
       <xsl:apply-templates select="*" mode="M250"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/demografische_gegevens/perinatale_sterfte_groep"
                  priority="1000"
                  mode="M251">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/demografische_gegevens/perinatale_sterfte_groep"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(perinatale_sterfteq) ge 0) and (count(perinatale_sterfteq) le 1)"/>
          <xsl:otherwise>
@@ -22634,7 +24558,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(fase_perinatale_sterfte) ge 0) and (count(fase_perinatale_sterfte) le 1)"/>
          <xsl:otherwise>
@@ -22649,7 +24574,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(datumtijd_vaststelling_perinatale_sterfte) ge 0) and (count(datumtijd_vaststelling_perinatale_sterfte) le 1)"/>
          <xsl:otherwise>
@@ -22664,7 +24590,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
          <xsl:otherwise>
@@ -22685,14 +24612,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M251">
       <xsl:apply-templates select="*" mode="M251"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/demografische_gegevens/perinatale_sterfte_groep/*[not(self::perinatale_sterfteq)][not(self::fase_perinatale_sterfte)][not(self::datumtijd_vaststelling_perinatale_sterfte)][not(self::adaextension)]"
                  priority="1000"
                  mode="M252">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/demografische_gegevens/perinatale_sterfte_groep/*[not(self::perinatale_sterfteq)][not(self::fase_perinatale_sterfte)][not(self::datumtijd_vaststelling_perinatale_sterfte)][not(self::adaextension)]"/>
-      <!--REPORT -->
+
+		    <!--REPORT -->
       <xsl:if test="true()">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="true()">
             <xsl:attribute name="location">
@@ -22711,14 +24642,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M252">
       <xsl:apply-templates select="*" mode="M252"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/demografische_gegevens/perinatale_sterfte_groep/perinatale_sterfteq"
                  priority="1000"
                  mode="M253">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/demografische_gegevens/perinatale_sterfte_groep/perinatale_sterfteq"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -22733,7 +24668,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40280')"/>
          <xsl:otherwise>
@@ -22748,7 +24684,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -22760,7 +24697,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
@@ -22775,7 +24713,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -22794,14 +24733,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M253">
       <xsl:apply-templates select="*" mode="M253"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/demografische_gegevens/perinatale_sterfte_groep/fase_perinatale_sterfte"
                  priority="1000"
                  mode="M254">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/demografische_gegevens/perinatale_sterfte_groep/fase_perinatale_sterfte"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -22816,7 +24759,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40290')"/>
          <xsl:otherwise>
@@ -22831,7 +24775,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value = ('237361005', '237362003', '276506001', 'NI'))"/>
          <xsl:otherwise>
@@ -22846,7 +24791,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@code) or (@code = ('237361005', '237362003', '276506001', 'NI'))"/>
          <xsl:otherwise>
@@ -22861,7 +24807,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.5.1008'))"/>
          <xsl:otherwise>
@@ -22876,7 +24823,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('Antepartum_fetal_death_(event)', 'Intrapartum_fetal_death_(event)', 'Newborn_death_(event)', 'Geen_informatie'))"/>
          <xsl:otherwise>
@@ -22891,7 +24839,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
          <xsl:otherwise>
@@ -22910,14 +24859,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M254">
       <xsl:apply-templates select="*" mode="M254"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/demografische_gegevens/perinatale_sterfte_groep/datumtijd_vaststelling_perinatale_sterfte"
                  priority="1000"
                  mode="M255">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/demografische_gegevens/perinatale_sterfte_groep/datumtijd_vaststelling_perinatale_sterfte"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -22932,7 +24885,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40300')"/>
          <xsl:otherwise>
@@ -22947,7 +24901,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -22959,7 +24914,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or ((@value castable as xs:date) or (@value castable as xs:dateTime))"/>
          <xsl:otherwise>
@@ -22974,7 +24930,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -22993,14 +24950,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M255">
       <xsl:apply-templates select="*" mode="M255"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens"
                  priority="1000"
                  mode="M256">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(tijdstip_breken_vliezen) ge 0) and (count(tijdstip_breken_vliezen) le 1)"/>
          <xsl:otherwise>
@@ -23015,7 +24976,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(kleur_en_consistentie_vruchtwater) ge 0) and (count(kleur_en_consistentie_vruchtwater) le 1)"/>
          <xsl:otherwise>
@@ -23030,7 +24992,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(tijdstip_actief_meepersen) ge 0) and (count(tijdstip_actief_meepersen) le 1)"/>
          <xsl:otherwise>
@@ -23045,7 +25008,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(episiotomieq) ge 0) and (count(episiotomieq) le 1)"/>
          <xsl:otherwise>
@@ -23060,7 +25024,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(locatie_episiotomie) ge 0) and (count(locatie_episiotomie) le 1)"/>
          <xsl:otherwise>
@@ -23075,7 +25040,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(ruggeprik_gewenst_niet_gekregenq) ge 0) and (count(ruggeprik_gewenst_niet_gekregenq) le 1)"/>
          <xsl:otherwise>
@@ -23090,7 +25056,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(pijnbestrijdingq) ge 0) and (count(pijnbestrijdingq) le 1)"/>
          <xsl:otherwise>
@@ -23105,7 +25072,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="count(pijnbestrijding) ge 0"/>
          <xsl:otherwise>
@@ -23120,7 +25088,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(sedatieq) ge 0) and (count(sedatieq) le 1)"/>
          <xsl:otherwise>
@@ -23135,7 +25104,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
          <xsl:otherwise>
@@ -23156,14 +25126,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M256">
       <xsl:apply-templates select="*" mode="M256"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/*[not(self::tijdstip_breken_vliezen)][not(self::kleur_en_consistentie_vruchtwater)][not(self::tijdstip_actief_meepersen)][not(self::episiotomieq)][not(self::locatie_episiotomie)][not(self::ruggeprik_gewenst_niet_gekregenq)][not(self::pijnbestrijdingq)][not(self::pijnbestrijding)][not(self::sedatieq)][not(self::adaextension)]"
                  priority="1000"
                  mode="M257">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/*[not(self::tijdstip_breken_vliezen)][not(self::kleur_en_consistentie_vruchtwater)][not(self::tijdstip_actief_meepersen)][not(self::episiotomieq)][not(self::locatie_episiotomie)][not(self::ruggeprik_gewenst_niet_gekregenq)][not(self::pijnbestrijdingq)][not(self::pijnbestrijding)][not(self::sedatieq)][not(self::adaextension)]"/>
-      <!--REPORT -->
+
+		    <!--REPORT -->
       <xsl:if test="true()">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="true()">
             <xsl:attribute name="location">
@@ -23182,14 +25156,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M257">
       <xsl:apply-templates select="*" mode="M257"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/tijdstip_breken_vliezen"
                  priority="1000"
                  mode="M258">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/tijdstip_breken_vliezen"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -23204,7 +25182,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80619')"/>
          <xsl:otherwise>
@@ -23219,7 +25198,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -23231,7 +25211,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or ((@value castable as xs:date) or (@value castable as xs:dateTime))"/>
          <xsl:otherwise>
@@ -23246,7 +25227,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -23265,14 +25247,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M258">
       <xsl:apply-templates select="*" mode="M258"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/kleur_en_consistentie_vruchtwater"
                  priority="1000"
                  mode="M259">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/kleur_en_consistentie_vruchtwater"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -23287,7 +25273,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20610')"/>
          <xsl:otherwise>
@@ -23302,7 +25289,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value = ('1', '2', '3', 'OTH', 'NI', 'UNK'))"/>
          <xsl:otherwise>
@@ -23317,7 +25305,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@code) or (@code = ('1', '2', '3', 'OTH', 'NI', 'UNK'))"/>
          <xsl:otherwise>
@@ -23332,7 +25321,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.2.4.4.13.18', '2.16.840.1.113883.2.4.4.13.18', '2.16.840.1.113883.2.4.4.13.18', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008'))"/>
          <xsl:otherwise>
@@ -23347,7 +25337,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('kleurloos', 'meconium', 'bloederig', 'overig', 'geen_informatie', 'onbekend'))"/>
          <xsl:otherwise>
@@ -23362,7 +25353,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
          <xsl:otherwise>
@@ -23381,14 +25373,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M259">
       <xsl:apply-templates select="*" mode="M259"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/tijdstip_actief_meepersen"
                  priority="1000"
                  mode="M260">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/tijdstip_actief_meepersen"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -23403,7 +25399,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.30030')"/>
          <xsl:otherwise>
@@ -23418,7 +25415,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -23430,7 +25428,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or ((@value castable as xs:date) or (@value castable as xs:dateTime))"/>
          <xsl:otherwise>
@@ -23445,7 +25444,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -23464,14 +25464,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M260">
       <xsl:apply-templates select="*" mode="M260"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/episiotomieq"
                  priority="1000"
                  mode="M261">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/episiotomieq"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -23486,7 +25490,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.30050')"/>
          <xsl:otherwise>
@@ -23501,7 +25506,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -23513,7 +25519,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
@@ -23528,7 +25535,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -23547,14 +25555,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M261">
       <xsl:apply-templates select="*" mode="M261"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/locatie_episiotomie"
                  priority="1000"
                  mode="M262">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/locatie_episiotomie"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -23569,7 +25581,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.30055')"/>
          <xsl:otherwise>
@@ -23584,7 +25597,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value = ('1', '2', 'UNK', 'NI'))"/>
          <xsl:otherwise>
@@ -23599,7 +25613,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@code) or (@code = ('1', '2', 'UNK', 'NI'))"/>
          <xsl:otherwise>
@@ -23614,7 +25629,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.2.4.3.22.1.3.60', '2.16.840.1.113883.2.4.3.22.1.3.60', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008'))"/>
          <xsl:otherwise>
@@ -23629,7 +25645,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('mediolaterale_episiotomie', 'mediane_episiotomie', 'onbekend', 'geen_informatie'))"/>
          <xsl:otherwise>
@@ -23644,7 +25661,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
          <xsl:otherwise>
@@ -23663,14 +25681,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M262">
       <xsl:apply-templates select="*" mode="M262"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/ruggeprik_gewenst_niet_gekregenq"
                  priority="1000"
                  mode="M263">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/ruggeprik_gewenst_niet_gekregenq"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -23685,7 +25707,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82089')"/>
          <xsl:otherwise>
@@ -23700,7 +25723,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -23712,7 +25736,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
@@ -23727,7 +25752,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -23746,14 +25772,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M263">
       <xsl:apply-templates select="*" mode="M263"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijdingq"
                  priority="1000"
                  mode="M264">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijdingq"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -23768,7 +25798,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82090')"/>
          <xsl:otherwise>
@@ -23783,7 +25814,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -23795,7 +25827,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
@@ -23810,7 +25843,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -23829,14 +25863,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M264">
       <xsl:apply-templates select="*" mode="M264"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding"
                  priority="1000"
                  mode="M265">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -23851,7 +25889,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82091')"/>
          <xsl:otherwise>
@@ -23866,7 +25905,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @xsi:*))"/>
          <xsl:otherwise>
@@ -23885,14 +25925,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M265">
       <xsl:apply-templates select="*" mode="M265"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/sedatieq"
                  priority="1000"
                  mode="M266">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/sedatieq"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -23907,7 +25951,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80827')"/>
          <xsl:otherwise>
@@ -23922,7 +25967,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -23934,7 +25980,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
@@ -23949,7 +25996,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -23968,14 +26016,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M266">
       <xsl:apply-templates select="*" mode="M266"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding"
                  priority="1000"
                  mode="M267">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="count(methode) eq 1"/>
          <xsl:otherwise>
@@ -23989,7 +26041,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(periode) ge 0) and (count(periode) le 1)"/>
          <xsl:otherwise>
@@ -24004,7 +26057,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
          <xsl:otherwise>
@@ -24025,14 +26079,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M267">
       <xsl:apply-templates select="*" mode="M267"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/*[not(self::methode)][not(self::periode)][not(self::adaextension)]"
                  priority="1000"
                  mode="M268">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/*[not(self::methode)][not(self::periode)][not(self::adaextension)]"/>
-      <!--REPORT -->
+
+		    <!--REPORT -->
       <xsl:if test="true()">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="true()">
             <xsl:attribute name="location">
@@ -24051,14 +26109,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M268">
       <xsl:apply-templates select="*" mode="M268"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode"
                  priority="1000"
                  mode="M269">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -24073,7 +26135,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82093')"/>
          <xsl:otherwise>
@@ -24088,7 +26151,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @xsi:*))"/>
          <xsl:otherwise>
@@ -24107,14 +26171,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M269">
       <xsl:apply-templates select="*" mode="M269"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/periode"
                  priority="1000"
                  mode="M270">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/periode"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -24129,7 +26197,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82097')"/>
          <xsl:otherwise>
@@ -24144,7 +26213,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value = ('OntLt3', 'OntMt3', 'Uitdr', 'Sectio', 'Postpartum'))"/>
          <xsl:otherwise>
@@ -24159,7 +26229,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@code) or (@code = ('OntLt3', 'OntMt3', 'Uitdr', 'Sectio', 'Postpartum'))"/>
          <xsl:otherwise>
@@ -24174,7 +26245,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.2.4.4.13.60', '2.16.840.1.113883.2.4.4.13.60', '2.16.840.1.113883.2.4.4.13.60', '2.16.840.1.113883.2.4.4.13.60', '2.16.840.1.113883.2.4.4.13.60'))"/>
          <xsl:otherwise>
@@ -24189,7 +26261,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('tijdens_ontsluitingsperiode_&lt;=_3_cm', 'tijdens_ontsluitingsperiode_&gt;_3_cm', 'tijdens_uitdrijving', 'tijdens_sectio', 'na_geboorte_kind'))"/>
          <xsl:otherwise>
@@ -24204,7 +26277,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
          <xsl:otherwise>
@@ -24223,14 +26297,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M270">
       <xsl:apply-templates select="*" mode="M270"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode"
                  priority="1000"
                  mode="M271">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="count(methode) eq 1"/>
          <xsl:otherwise>
@@ -24244,7 +26322,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="count(overig_middel) ge 0"/>
          <xsl:otherwise>
@@ -24259,7 +26338,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
          <xsl:otherwise>
@@ -24280,14 +26360,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M271">
       <xsl:apply-templates select="*" mode="M271"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode/*[not(self::methode)][not(self::overig_middel)][not(self::adaextension)]"
                  priority="1000"
                  mode="M272">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode/*[not(self::methode)][not(self::overig_middel)][not(self::adaextension)]"/>
-      <!--REPORT -->
+
+		    <!--REPORT -->
       <xsl:if test="true()">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="true()">
             <xsl:attribute name="location">
@@ -24306,14 +26390,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M272">
       <xsl:apply-templates select="*" mode="M272"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode/methode"
                  priority="1000"
                  mode="M273">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode/methode"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -24328,7 +26416,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82092')"/>
          <xsl:otherwise>
@@ -24343,7 +26432,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value = ('231249005', '18946005', '50697003', 'OTH'))"/>
          <xsl:otherwise>
@@ -24358,7 +26448,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@code) or (@code = ('231249005', '18946005', '50697003', 'OTH'))"/>
          <xsl:otherwise>
@@ -24373,7 +26464,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.5.1008'))"/>
          <xsl:otherwise>
@@ -24388,7 +26480,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('Local_anesthetic_intrathecal_block_(procedure)', 'Epidural_anesthesia_(procedure)', 'General_anesthesia_(procedure)', 'Overig'))"/>
          <xsl:otherwise>
@@ -24403,7 +26496,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
          <xsl:otherwise>
@@ -24422,14 +26516,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M273">
       <xsl:apply-templates select="*" mode="M273"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode/overig_middel"
                  priority="1000"
                  mode="M274">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode/overig_middel"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -24444,7 +26542,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82094')"/>
          <xsl:otherwise>
@@ -24459,7 +26558,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @xsi:*))"/>
          <xsl:otherwise>
@@ -24478,14 +26578,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M274">
       <xsl:apply-templates select="*" mode="M274"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode/overig_middel"
                  priority="1000"
                  mode="M275">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode/overig_middel"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(middel) ge 0) and (count(middel) le 1)"/>
          <xsl:otherwise>
@@ -24500,7 +26604,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(toediening) ge 0) and (count(toediening) le 1)"/>
          <xsl:otherwise>
@@ -24515,7 +26620,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
          <xsl:otherwise>
@@ -24536,14 +26642,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M275">
       <xsl:apply-templates select="*" mode="M275"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode/overig_middel/*[not(self::middel)][not(self::toediening)][not(self::adaextension)]"
                  priority="1000"
                  mode="M276">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode/overig_middel/*[not(self::middel)][not(self::toediening)][not(self::adaextension)]"/>
-      <!--REPORT -->
+
+		    <!--REPORT -->
       <xsl:if test="true()">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="true()">
             <xsl:attribute name="location">
@@ -24562,14 +26672,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M276">
       <xsl:apply-templates select="*" mode="M276"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode/overig_middel/middel"
                  priority="1000"
                  mode="M277">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode/overig_middel/middel"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -24584,7 +26698,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82095')"/>
          <xsl:otherwise>
@@ -24599,7 +26714,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value = ('52685006:363701004=404642006', '281706009:363701004=11713004', '229559001', '426060003', 'OTH'))"/>
          <xsl:otherwise>
@@ -24614,7 +26730,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@code) or (@code = ('52685006:363701004=404642006', '281706009:363701004=11713004', '229559001', '426060003', 'OTH'))"/>
          <xsl:otherwise>
@@ -24629,7 +26746,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.5.1008'))"/>
          <xsl:otherwise>
@@ -24644,7 +26762,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('Administration_of_morphinomimetic_analgesic_(procedure)', 'Sterile_water_injection_(procedure)', 'Transcutaneous_electrical_nerve_stimulation_(regime/therapy)', 'Nitrous_oxide_and_oxygen_gas_analgesia_in_labor_(procedure)', 'overig'))"/>
          <xsl:otherwise>
@@ -24659,7 +26778,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
          <xsl:otherwise>
@@ -24678,14 +26798,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M277">
       <xsl:apply-templates select="*" mode="M277"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode/overig_middel/toediening"
                  priority="1000"
                  mode="M278">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode/overig_middel/toediening"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -24700,7 +26824,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82096')"/>
          <xsl:otherwise>
@@ -24715,7 +26840,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value = ('434589000', '78746004', '386356001', '431215000', '431784008', '241716000', '241717009', 'OTH'))"/>
          <xsl:otherwise>
@@ -24730,7 +26856,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@code) or (@code = ('434589000', '78746004', '386356001', '431215000', '431784008', '241716000', '241717009', 'OTH'))"/>
          <xsl:otherwise>
@@ -24745,7 +26872,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.5.1008'))"/>
          <xsl:otherwise>
@@ -24760,7 +26888,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('Administration_of_substance_via_oral_route_(procedure)', 'Neurostimulation_procedure_(procedure)', 'Medication_administration:_intramuscular_(procedure)', 'Administration_of_substance_via_intravenous_route_(procedure)', 'Administration_of_substance_via_subcutaneous_route_(procedure)', 'Patient_controlled_analgesia_(procedure)', 'Inhalational_analgesia_(procedure)', 'overig'))"/>
          <xsl:otherwise>
@@ -24775,7 +26904,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
          <xsl:otherwise>
@@ -24794,14 +26924,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M278">
       <xsl:apply-templates select="*" mode="M278"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens"
                  priority="1000"
                  mode="M279">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(type_partus) ge 0) and (count(type_partus) le 1)"/>
          <xsl:otherwise>
@@ -24816,7 +26950,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(apgarscore_na_5_min) ge 0) and (count(apgarscore_na_5_min) le 1)"/>
          <xsl:otherwise>
@@ -24831,7 +26966,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(ligging_bij_geboorte) ge 0) and (count(ligging_bij_geboorte) le 1)"/>
          <xsl:otherwise>
@@ -24846,7 +26982,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(aanpakker_kind_groep) ge 0) and (count(aanpakker_kind_groep) le 1)"/>
          <xsl:otherwise>
@@ -24861,7 +26998,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(supervisor_groep) ge 0) and (count(supervisor_groep) le 1)"/>
          <xsl:otherwise>
@@ -24876,7 +27014,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="count(vaginale_kunstverlossing_groep) ge 0"/>
          <xsl:otherwise>
@@ -24891,7 +27030,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(sectio_caesarea_group) ge 0) and (count(sectio_caesarea_group) le 1)"/>
          <xsl:otherwise>
@@ -24906,7 +27046,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="count(overige_interventies) ge 0"/>
          <xsl:otherwise>
@@ -24921,7 +27062,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="count(lichamelijk_onderzoek_kind) ge 0"/>
          <xsl:otherwise>
@@ -24936,7 +27078,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(congenitale_afwijkingenq) ge 0) and (count(congenitale_afwijkingenq) le 1)"/>
          <xsl:otherwise>
@@ -24951,7 +27094,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(congenitale_afwijkingen_groep) ge 0) and (count(congenitale_afwijkingen_groep) le 1)"/>
          <xsl:otherwise>
@@ -24966,7 +27110,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(problematiek_kindq) ge 0) and (count(problematiek_kindq) le 1)"/>
          <xsl:otherwise>
@@ -24981,7 +27126,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="count(problematiek_kind) ge 0"/>
          <xsl:otherwise>
@@ -24996,7 +27142,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(kinderarts_betrokkenq) ge 0) and (count(kinderarts_betrokkenq) le 1)"/>
          <xsl:otherwise>
@@ -25011,7 +27158,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="count(betrokkenheid_kinderarts) ge 0"/>
          <xsl:otherwise>
@@ -25026,7 +27174,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
          <xsl:otherwise>
@@ -25047,14 +27196,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M279">
       <xsl:apply-templates select="*" mode="M279"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/*[not(self::type_partus)][not(self::apgarscore_na_5_min)][not(self::ligging_bij_geboorte)][not(self::aanpakker_kind_groep)][not(self::supervisor_groep)][not(self::vaginale_kunstverlossing_groep)][not(self::sectio_caesarea_group)][not(self::overige_interventies)][not(self::lichamelijk_onderzoek_kind)][not(self::congenitale_afwijkingenq)][not(self::congenitale_afwijkingen_groep)][not(self::problematiek_kindq)][not(self::problematiek_kind)][not(self::kinderarts_betrokkenq)][not(self::betrokkenheid_kinderarts)][not(self::adaextension)]"
                  priority="1000"
                  mode="M280">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/*[not(self::type_partus)][not(self::apgarscore_na_5_min)][not(self::ligging_bij_geboorte)][not(self::aanpakker_kind_groep)][not(self::supervisor_groep)][not(self::vaginale_kunstverlossing_groep)][not(self::sectio_caesarea_group)][not(self::overige_interventies)][not(self::lichamelijk_onderzoek_kind)][not(self::congenitale_afwijkingenq)][not(self::congenitale_afwijkingen_groep)][not(self::problematiek_kindq)][not(self::problematiek_kind)][not(self::kinderarts_betrokkenq)][not(self::betrokkenheid_kinderarts)][not(self::adaextension)]"/>
-      <!--REPORT -->
+
+		    <!--REPORT -->
       <xsl:if test="true()">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="true()">
             <xsl:attribute name="location">
@@ -25073,14 +27226,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M280">
       <xsl:apply-templates select="*" mode="M280"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/type_partus"
                  priority="1000"
                  mode="M281">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/type_partus"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -25095,7 +27252,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80626')"/>
          <xsl:otherwise>
@@ -25110,7 +27268,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value = ('48782003', '8561000146109', '200146002', '200148001', '200149009', '39406005', 'UNK', 'NI'))"/>
          <xsl:otherwise>
@@ -25125,7 +27284,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@code) or (@code = ('48782003', '8561000146109', '200146002', '200148001', '200149009', '39406005', 'UNK', 'NI'))"/>
          <xsl:otherwise>
@@ -25140,7 +27300,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008'))"/>
          <xsl:otherwise>
@@ -25155,7 +27316,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('Delivery_normal_(finding)', 'Assisted_delivery_of_fetus_(finding)', 'Cesarean_delivery_-_delivered_(finding)', 'Cesarean_delivery_-_delivered_(finding)_Delivery_by_elective_cesarean_section_(finding)', 'Cesarean_delivery_-_delivered_(finding)_Delivery_by_emergency_cesarean_section_(finding)', 'Legally_induced_abortion_(disorder)', 'onbekend', 'geen_informatie'))"/>
          <xsl:otherwise>
@@ -25170,7 +27332,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
          <xsl:otherwise>
@@ -25189,14 +27352,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M281">
       <xsl:apply-templates select="*" mode="M281"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/apgarscore_na_5_min"
                  priority="1000"
                  mode="M282">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/apgarscore_na_5_min"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -25211,7 +27378,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40071')"/>
          <xsl:otherwise>
@@ -25226,7 +27394,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -25238,7 +27407,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:decimal)"/>
          <xsl:otherwise>
@@ -25253,7 +27423,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (local:decimal-convert(@value) ge 0)"/>
          <xsl:otherwise>
@@ -25268,7 +27439,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (local:decimal-convert(@value) le 10)"/>
          <xsl:otherwise>
@@ -25283,7 +27455,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -25302,14 +27475,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M282">
       <xsl:apply-templates select="*" mode="M282"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/ligging_bij_geboorte"
                  priority="1000"
                  mode="M283">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/ligging_bij_geboorte"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -25324,7 +27501,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40140')"/>
          <xsl:otherwise>
@@ -25339,7 +27517,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value = ('37235006', '70028003', '249079005', '21882006', '8014007', '49168004', '38049006', '18559007', 'OTH', 'UNK', 'NI'))"/>
          <xsl:otherwise>
@@ -25354,7 +27533,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@code) or (@code = ('37235006', '70028003', '249079005', '21882006', '8014007', '49168004', '38049006', '18559007', 'OTH', 'UNK', 'NI'))"/>
          <xsl:otherwise>
@@ -25369,7 +27549,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008'))"/>
          <xsl:otherwise>
@@ -25384,7 +27565,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('Occipitoposterior_position_(finding)', 'Vertex_presentation_(finding)', 'Fontanelles_presenting_(finding)', 'Face_presentation_(finding)', 'Brow_presentation_(finding)', 'Complete_breech_presentation_(finding)', 'Incomplete_breech_presentation_(finding)', 'Frank_breech_presentation_(finding)', 'Overig', 'Onbekend', 'Geen_informatie'))"/>
          <xsl:otherwise>
@@ -25399,7 +27581,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
          <xsl:otherwise>
@@ -25418,14 +27601,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M283">
       <xsl:apply-templates select="*" mode="M283"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/aanpakker_kind_groep"
                  priority="1000"
                  mode="M284">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/aanpakker_kind_groep"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -25440,7 +27627,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40149')"/>
          <xsl:otherwise>
@@ -25455,7 +27643,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @xsi:*))"/>
          <xsl:otherwise>
@@ -25474,14 +27663,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M284">
       <xsl:apply-templates select="*" mode="M284"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/supervisor_groep"
                  priority="1000"
                  mode="M285">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/supervisor_groep"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -25496,7 +27689,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40169')"/>
          <xsl:otherwise>
@@ -25511,7 +27705,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @xsi:*))"/>
          <xsl:otherwise>
@@ -25530,14 +27725,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M285">
       <xsl:apply-templates select="*" mode="M285"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/vaginale_kunstverlossing_groep"
                  priority="1000"
                  mode="M286">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/vaginale_kunstverlossing_groep"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -25552,7 +27751,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40189')"/>
          <xsl:otherwise>
@@ -25567,7 +27767,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @xsi:*))"/>
          <xsl:otherwise>
@@ -25586,14 +27787,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M286">
       <xsl:apply-templates select="*" mode="M286"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/sectio_caesarea_group"
                  priority="1000"
                  mode="M287">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/sectio_caesarea_group"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -25608,7 +27813,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40219')"/>
          <xsl:otherwise>
@@ -25623,7 +27829,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @xsi:*))"/>
          <xsl:otherwise>
@@ -25642,14 +27849,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M287">
       <xsl:apply-templates select="*" mode="M287"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/overige_interventies"
                  priority="1000"
                  mode="M288">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/overige_interventies"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -25664,7 +27875,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40240')"/>
          <xsl:otherwise>
@@ -25679,7 +27891,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value = ('32189006', '237008007', '40792007', 'OTH'))"/>
          <xsl:otherwise>
@@ -25694,7 +27907,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@code) or (@code = ('32189006', '237008007', '40792007', 'OTH'))"/>
          <xsl:otherwise>
@@ -25709,7 +27923,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.5.1008'))"/>
          <xsl:otherwise>
@@ -25724,7 +27939,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('Pubiotomy_(procedure)', 'Maneuvers_for_delivery_in_shoulder_dystocia_(procedure)', 'Kristeller_maneuver_(procedure)', 'overig'))"/>
          <xsl:otherwise>
@@ -25739,7 +27955,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
          <xsl:otherwise>
@@ -25758,14 +27975,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M288">
       <xsl:apply-templates select="*" mode="M288"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind"
                  priority="1000"
                  mode="M289">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -25780,7 +28001,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80766')"/>
          <xsl:otherwise>
@@ -25795,7 +28017,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @xsi:*))"/>
          <xsl:otherwise>
@@ -25814,14 +28037,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M289">
       <xsl:apply-templates select="*" mode="M289"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingenq"
                  priority="1000"
                  mode="M290">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingenq"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -25836,7 +28063,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40080')"/>
          <xsl:otherwise>
@@ -25851,7 +28079,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -25863,7 +28092,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
@@ -25878,7 +28108,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -25897,14 +28128,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M290">
       <xsl:apply-templates select="*" mode="M290"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep"
                  priority="1000"
                  mode="M291">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -25919,7 +28154,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40081')"/>
          <xsl:otherwise>
@@ -25934,7 +28170,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @xsi:*))"/>
          <xsl:otherwise>
@@ -25953,14 +28190,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M291">
       <xsl:apply-templates select="*" mode="M291"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/problematiek_kindq"
                  priority="1000"
                  mode="M292">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/problematiek_kindq"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -25975,7 +28216,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82334')"/>
          <xsl:otherwise>
@@ -25990,7 +28232,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -26002,7 +28245,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
@@ -26017,7 +28261,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -26036,14 +28281,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M292">
       <xsl:apply-templates select="*" mode="M292"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/problematiek_kind"
                  priority="1000"
                  mode="M293">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/problematiek_kind"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -26058,7 +28307,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80789')"/>
          <xsl:otherwise>
@@ -26073,7 +28323,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value = ('56110009', '126941005', '206399009', '206192007', '219', '371129000', '290', '82353009', '35742006', '73893000', '59527008', '1857005', '206376005', '39367000', '1450', '406', '414030009', '414028007', '13404009', '3580', '267574006', '276647007', '206576006', '87476004', '205294008', '415297005', '95827002', '363696006', '206596003', '276519002', '276508000', '5800', '363225006', '46775006', '276533002', '67569000', '6990', '7100', '281610001', '7700', '363221002', '52767006', '276557002', '190268003', '8490', '363224005'))"/>
          <xsl:otherwise>
@@ -26088,7 +28339,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@code) or (@code = ('56110009', '126941005', '206399009', '206192007', '219', '371129000', '290', '82353009', '35742006', '73893000', '59527008', '1857005', '206376005', '39367000', '1450', '406', '414030009', '414028007', '13404009', '3580', '267574006', '276647007', '206576006', '87476004', '205294008', '415297005', '95827002', '363696006', '206596003', '276519002', '276508000', '5800', '363225006', '46775006', '276533002', '67569000', '6990', '7100', '281610001', '7700', '363221002', '52767006', '276557002', '190268003', '8490', '363224005'))"/>
          <xsl:otherwise>
@@ -26103,7 +28355,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.2.4.3.22.1.2.64', '2.16.840.1.113883.6.96', '2.16.840.1.113883.2.4.3.22.1.2.64', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.2.4.3.22.1.2.64', '2.16.840.1.113883.2.4.3.22.1.2.64', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.2.4.3.22.1.2.64', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.2.4.3.22.1.2.64', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.2.4.3.22.1.2.64', '2.16.840.1.113883.2.4.3.22.1.2.64', '2.16.840.1.113883.6.96', '2.16.840.1.113883.2.4.3.22.1.2.64', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.2.4.3.22.1.2.64', '2.16.840.1.113883.6.96'))"/>
          <xsl:otherwise>
@@ -26118,7 +28371,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('Birth_trauma_of_fetus_(disorder)', 'Birth_trauma_of_fetus_(disorder)_Subdural_intracranial_hemorrhage_due_to_birth_trauma_(disorder)', 'Birth_trauma_of_fetus_(disorder)_Intracranial_subarachnoid_hemorrhage_due_to_birth_injury_(disorder)', 'Birth_trauma_of_fetus_(disorder)_Tentorial_tear_due_to_birth_trauma_(disorder)', 'Birth_trauma_of_fetus_(disorder)_Overige_bloedingen_(geboortetrauma)', 'Birth_trauma_of_fetus_(disorder)_Paralysis_from_birth_trauma_(disorder)', 'Birth_trauma_of_fetus_(disorder)_Overige_geboortetraumata', 'Congenital_infectious_disease_(disorder)', 'Congenital_infectious_disease_(disorder)_Congenital_syphilis_(disorder)', 'Congenital_infectious_disease_(disorder)_Congenital_toxoplasmosis_(disorder)', 'Congenital_infectious_disease_(disorder)_Congenital_cytomegalovirus_infection_(disorder)', 'Congenital_infectious_disease_(disorder)_Congenital_rubella_syndrome_(disorder)', 'Congenital_infectious_disease_(disorder)_Sepsis_of_the_newborn_(disorder)', 'Congenital_infectious_disease_(disorder)_Inflammatory_disease_of_the_central_nervous_system_(disorder)', 'Congenital_infectious_disease_(disorder)_Overige_infecties', 'Immunologische_en_haematologische_stoornissen', 'Immunologische_en_haematologische_stoornissen_Disorder_of_immune_structure_(disorder)', 'Immunologische_en_haematologische_stoornissen_Disorder_of_hematopoietic_system_in_newborn_(disorder)', 'Immunologische_en_haematologische_stoornissen_Disorder_of_hematopoietic_system_in_newborn_(disorder)_Twin-to-twin_blood_transfer_(disorder)', 'Immunologische_en_haematologische_stoornissen_Disorder_of_hematopoietic_system_in_newborn_(disorder)_Overig_haematologisch', 'Nervous_system_and_sense_organ_diseases_(disorder)', 'Nervous_system_and_sense_organ_diseases_(disorder)_Perinatal_intracranial_hemorrhage_(disorder)', 'Nervous_system_and_sense_organ_diseases_(disorder)_Neonatal_cerebral_ischemia_(disorder)', 'Nervous_system_and_sense_organ_diseases_(disorder)_Convulsions_in_the_newborn_(disorder)', 'Nervous_system_and_sense_organ_diseases_(disorder)_Neonatal_hypotonia_(disorder)', 'Nervous_system_and_sense_organ_diseases_(disorder)_Retinopathy_of_prematurity_(disorder)', 'Nervous_system_and_sense_organ_diseases_(disorder)_Congenital_hearing_disorder_(disorder)', 'Neonatal_cardiovascular_disorder_(disorder)', 'Neonatal_cardiovascular_disorder_(disorder)_Neonatal_hypertension_(disorder)', 'Neonatal_cardiovascular_disorder_(disorder)_Neonatal_hypotension_(disorder)', 'Neonatal_cardiovascular_disorder_(disorder)_Hydrops_fetalis_(disorder)', 'Neonatal_cardiovascular_disorder_(disorder)_Overige_circulatoire_problemen', 'Neonatal_respiratory_system_disorder_(disorder)', 'Neonatal_respiratory_system_disorder_(disorder)_Respiratory_distress_syndrome_in_the_newborn_(disorder)', 'Neonatal_respiratory_system_disorder_(disorder)_Neonatal_aspiration_syndromes_(disorder)', 'Neonatal_respiratory_system_disorder_(disorder)_Bronchopulmonary_dysplasia_of_newborn_(disorder)', 'Neonatal_respiratory_system_disorder_(disorder)_Overige_respiratoire_problemen', 'Stoornissen_tractus_digestivus_en_navel', 'Stoornissen_tractus_digestivus_en_navel_Neonatal_hyperbilirubinemia_(disorder)', 'Stoornissen_tractus_digestivus_en_navel_Overige_stoornissen_tractus_digestivus_en_navel', 'Neonatal_metabolic_and_endocrinologic_disorder_(disorder)', 'Neonatal_metabolic_and_endocrinologic_disorder_(disorder)_Neonatal_hypoglycemia_(disorder)', 'Neonatal_metabolic_and_endocrinologic_disorder_(disorder)_Neonatal_hyperglycemia_(disorder)', 'Neonatal_metabolic_and_endocrinologic_disorder_(disorder)_Congenital_hypothyroidism_(disorder)', 'Neonatal_metabolic_and_endocrinologic_disorder_(disorder)_Overige_endocriene,_metabole_en_milieu_interieur_stoornissen', 'Neonatal_metabolic_and_endocrinologic_disorder_(disorder)_Neonatal_renal_disorder_(disorder)'))"/>
          <xsl:otherwise>
@@ -26133,7 +28387,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
          <xsl:otherwise>
@@ -26152,14 +28407,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M293">
       <xsl:apply-templates select="*" mode="M293"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/kinderarts_betrokkenq"
                  priority="1000"
                  mode="M294">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/kinderarts_betrokkenq"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -26174,7 +28433,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82119')"/>
          <xsl:otherwise>
@@ -26189,7 +28449,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -26201,7 +28462,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
@@ -26216,7 +28478,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -26235,14 +28498,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M294">
       <xsl:apply-templates select="*" mode="M294"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts"
                  priority="1000"
                  mode="M295">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -26257,7 +28524,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82120')"/>
          <xsl:otherwise>
@@ -26272,7 +28540,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @xsi:*))"/>
          <xsl:otherwise>
@@ -26291,14 +28560,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M295">
       <xsl:apply-templates select="*" mode="M295"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/aanpakker_kind_groep"
                  priority="1000"
                  mode="M296">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/aanpakker_kind_groep"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(rol_aanpakker_kind) ge 0) and (count(rol_aanpakker_kind) le 1)"/>
          <xsl:otherwise>
@@ -26313,7 +28586,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
          <xsl:otherwise>
@@ -26334,14 +28608,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M296">
       <xsl:apply-templates select="*" mode="M296"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/aanpakker_kind_groep/*[not(self::rol_aanpakker_kind)][not(self::adaextension)]"
                  priority="1000"
                  mode="M297">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/aanpakker_kind_groep/*[not(self::rol_aanpakker_kind)][not(self::adaextension)]"/>
-      <!--REPORT -->
+
+		    <!--REPORT -->
       <xsl:if test="true()">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="true()">
             <xsl:attribute name="location">
@@ -26360,14 +28638,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M297">
       <xsl:apply-templates select="*" mode="M297"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/aanpakker_kind_groep/rol_aanpakker_kind"
                  priority="1000"
                  mode="M298">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/aanpakker_kind_groep/rol_aanpakker_kind"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -26382,7 +28664,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40150')"/>
          <xsl:otherwise>
@@ -26397,7 +28680,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value = ('11', '25', '12', '01.046', '22', '24', '13', '01.015', '15', '23', '30.000', '32', '33', 'UNK', 'NI'))"/>
          <xsl:otherwise>
@@ -26412,7 +28696,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@code) or (@code = ('11', '25', '12', '01.046', '22', '24', '13', '01.015', '15', '23', '30.000', '32', '33', 'UNK', 'NI'))"/>
          <xsl:otherwise>
@@ -26427,7 +28712,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.2.4.3.22.1.2.59', '2.16.840.1.113883.2.4.3.22.1.2.59', '2.16.840.1.113883.2.4.3.22.1.2.59', '2.16.840.1.113883.2.4.15.111', '2.16.840.1.113883.2.4.3.22.1.2.59', '2.16.840.1.113883.2.4.3.22.1.2.59', '2.16.840.1.113883.2.4.3.22.1.2.59', '2.16.840.1.113883.2.4.15.111', '2.16.840.1.113883.2.4.3.22.1.2.59', '2.16.840.1.113883.2.4.3.22.1.2.59', '2.16.840.1.113883.2.4.15.111', '2.16.840.1.113883.2.4.3.22.1.2.59', '2.16.840.1.113883.2.4.3.22.1.2.59', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008'))"/>
          <xsl:otherwise>
@@ -26442,7 +28728,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('1e_lijns_verloskundige', 'klinisch_verloskundige', 'verloskundige_in_opleiding', 'gynaecoloog', 'gynaecoloog_in_opleiding', 'arts-assistent', 'co-assistent', 'huisarts', 'huisarts_in_opleiding', 'arts,_niet_in_opleiding', 'verpleegkundige', 'kraamverzorgende', 'niet_medisch_geschoolde', 'onbekend', 'geen_informatie'))"/>
          <xsl:otherwise>
@@ -26457,7 +28744,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
          <xsl:otherwise>
@@ -26476,14 +28764,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M298">
       <xsl:apply-templates select="*" mode="M298"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/supervisor_groep"
                  priority="1000"
                  mode="M299">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/supervisor_groep"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(rol_supervisor) ge 0) and (count(rol_supervisor) le 1)"/>
          <xsl:otherwise>
@@ -26498,7 +28790,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
          <xsl:otherwise>
@@ -26519,14 +28812,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M299">
       <xsl:apply-templates select="*" mode="M299"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/supervisor_groep/*[not(self::rol_supervisor)][not(self::adaextension)]"
                  priority="1000"
                  mode="M300">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/supervisor_groep/*[not(self::rol_supervisor)][not(self::adaextension)]"/>
-      <!--REPORT -->
+
+		    <!--REPORT -->
       <xsl:if test="true()">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="true()">
             <xsl:attribute name="location">
@@ -26545,14 +28842,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M300">
       <xsl:apply-templates select="*" mode="M300"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/supervisor_groep/rol_supervisor"
                  priority="1000"
                  mode="M301">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/supervisor_groep/rol_supervisor"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -26567,7 +28868,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40170')"/>
          <xsl:otherwise>
@@ -26582,7 +28884,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value = ('11', '25', '01.046', '22', '24', '01.015', 'NI'))"/>
          <xsl:otherwise>
@@ -26597,7 +28900,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@code) or (@code = ('11', '25', '01.046', '22', '24', '01.015', 'NI'))"/>
          <xsl:otherwise>
@@ -26612,7 +28916,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.2.4.3.22.1.2.59', '2.16.840.1.113883.2.4.3.22.1.2.59', '2.16.840.1.113883.2.4.15.111', '2.16.840.1.113883.2.4.3.22.1.2.59', '2.16.840.1.113883.2.4.3.22.1.2.59', '2.16.840.1.113883.2.4.15.111', '2.16.840.1.113883.5.1008'))"/>
          <xsl:otherwise>
@@ -26627,7 +28932,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('1e_lijns_verloskundige', 'klinisch_verloskundige', 'gynaecoloog', 'gynaecoloog_in_opleiding', 'arts-assistent', 'huisarts', 'geen_informatie'))"/>
          <xsl:otherwise>
@@ -26642,7 +28948,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
          <xsl:otherwise>
@@ -26661,14 +28968,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M301">
       <xsl:apply-templates select="*" mode="M301"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/vaginale_kunstverlossing_groep"
                  priority="1000"
                  mode="M302">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/vaginale_kunstverlossing_groep"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(vaginale_kunstverlossing) ge 0) and (count(vaginale_kunstverlossing) le 1)"/>
          <xsl:otherwise>
@@ -26683,7 +28994,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(succes_vaginale_kunstverlossingq) ge 0) and (count(succes_vaginale_kunstverlossingq) le 1)"/>
          <xsl:otherwise>
@@ -26698,7 +29010,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
          <xsl:otherwise>
@@ -26719,14 +29032,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M302">
       <xsl:apply-templates select="*" mode="M302"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/vaginale_kunstverlossing_groep/*[not(self::vaginale_kunstverlossing)][not(self::succes_vaginale_kunstverlossingq)][not(self::adaextension)]"
                  priority="1000"
                  mode="M303">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/vaginale_kunstverlossing_groep/*[not(self::vaginale_kunstverlossing)][not(self::succes_vaginale_kunstverlossingq)][not(self::adaextension)]"/>
-      <!--REPORT -->
+
+		    <!--REPORT -->
       <xsl:if test="true()">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="true()">
             <xsl:attribute name="location">
@@ -26745,14 +29062,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M303">
       <xsl:apply-templates select="*" mode="M303"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/vaginale_kunstverlossing_groep/vaginale_kunstverlossing"
                  priority="1000"
                  mode="M304">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/vaginale_kunstverlossing_groep/vaginale_kunstverlossing"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -26767,7 +29088,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40190')"/>
          <xsl:otherwise>
@@ -26782,7 +29104,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value = ('302383004', '61586001', '699999008', '359940006', '416055001', 'OTH', 'NI'))"/>
          <xsl:otherwise>
@@ -26797,7 +29120,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@code) or (@code = ('302383004', '61586001', '699999008', '359940006', '416055001', 'OTH', 'NI'))"/>
          <xsl:otherwise>
@@ -26812,7 +29136,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008'))"/>
          <xsl:otherwise>
@@ -26827,7 +29152,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('Forceps_delivery_(procedure)', 'Delivery_by_vacuum_extraction_(procedure)', 'Obstetrical_version_with_extraction_(procedure)', 'Partial_breech_extraction_(procedure)', 'Total_breech_extraction_(procedure)', 'anders', 'geen_informatie'))"/>
          <xsl:otherwise>
@@ -26842,7 +29168,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
          <xsl:otherwise>
@@ -26861,14 +29188,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M304">
       <xsl:apply-templates select="*" mode="M304"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/vaginale_kunstverlossing_groep/succes_vaginale_kunstverlossingq"
                  priority="1000"
                  mode="M305">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/vaginale_kunstverlossing_groep/succes_vaginale_kunstverlossingq"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -26883,7 +29214,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40200')"/>
          <xsl:otherwise>
@@ -26898,7 +29230,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -26910,7 +29243,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
@@ -26925,7 +29259,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -26944,14 +29279,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M305">
       <xsl:apply-templates select="*" mode="M305"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/sectio_caesarea_group"
                  priority="1000"
                  mode="M306">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/sectio_caesarea_group"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(beslismoment_sectio_caesarea) ge 0) and (count(beslismoment_sectio_caesarea) le 1)"/>
          <xsl:otherwise>
@@ -26966,7 +29305,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="count(indicatie_sectio_caesarea) ge 1"/>
          <xsl:otherwise>
@@ -26981,7 +29321,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
          <xsl:otherwise>
@@ -27002,14 +29343,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M306">
       <xsl:apply-templates select="*" mode="M306"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/sectio_caesarea_group/*[not(self::beslismoment_sectio_caesarea)][not(self::indicatie_sectio_caesarea)][not(self::adaextension)]"
                  priority="1000"
                  mode="M307">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/sectio_caesarea_group/*[not(self::beslismoment_sectio_caesarea)][not(self::indicatie_sectio_caesarea)][not(self::adaextension)]"/>
-      <!--REPORT -->
+
+		    <!--REPORT -->
       <xsl:if test="true()">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="true()">
             <xsl:attribute name="location">
@@ -27028,14 +29373,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M307">
       <xsl:apply-templates select="*" mode="M307"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/sectio_caesarea_group/beslismoment_sectio_caesarea"
                  priority="1000"
                  mode="M308">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/sectio_caesarea_group/beslismoment_sectio_caesarea"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -27050,7 +29399,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40225')"/>
          <xsl:otherwise>
@@ -27065,7 +29415,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value = ('2', '3', 'NI'))"/>
          <xsl:otherwise>
@@ -27080,7 +29431,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@code) or (@code = ('2', '3', 'NI'))"/>
          <xsl:otherwise>
@@ -27095,7 +29447,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.2.4.3.22.1.3.5', '2.16.840.1.113883.2.4.3.22.1.3.5', '2.16.840.1.113883.5.1008'))"/>
          <xsl:otherwise>
@@ -27110,7 +29463,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('Tijdens_ontsluiting_besloten', 'Tijdens_uitdrijving_besloten', 'Geen_informatie'))"/>
          <xsl:otherwise>
@@ -27125,7 +29479,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
          <xsl:otherwise>
@@ -27144,14 +29499,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M308">
       <xsl:apply-templates select="*" mode="M308"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/sectio_caesarea_group/indicatie_sectio_caesarea"
                  priority="1000"
                  mode="M309">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/sectio_caesarea_group/indicatie_sectio_caesarea"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -27166,7 +29525,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40230')"/>
          <xsl:otherwise>
@@ -27181,7 +29541,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value = ('312850006:246090004=10217006', '312850006:24609004=399031001', '15028002', '237320005', '249166003', '444433005:246090004=130955003', '418138009', '408854000', 'E', 'F', 'NI'))"/>
          <xsl:otherwise>
@@ -27196,7 +29557,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@code) or (@code = ('312850006:246090004=10217006', '312850006:24609004=399031001', '15028002', '237320005', '249166003', '444433005:246090004=130955003', '418138009', '408854000', 'E', 'F', 'NI'))"/>
          <xsl:otherwise>
@@ -27211,7 +29573,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.2.4.3.22.1.2.55', '2.16.840.1.113883.2.4.3.22.1.2.55', '2.16.840.1.113883.5.1008'))"/>
          <xsl:otherwise>
@@ -27226,7 +29589,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('History_of_third_degree_perineal_laceration_(situation)', 'History_of_fourth_degree_perineal_laceration_(situation)', 'Abnormal_fetal_presentation_(finding)', 'Failure_to_progress_in_first_stage_of_labor_(finding)', 'Failure_to_progress_in_second_stage_of_labor_(finding)', 'Suspected_fetal_distress_(situation)', 'Patient_condition_finding_(finding)', 'Maternal_request_for_treatment_(finding)', 'overig,_medische_reden', 'overig,_niet-medische_reden', 'geen_informatie'))"/>
          <xsl:otherwise>
@@ -27241,7 +29605,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
          <xsl:otherwise>
@@ -27260,14 +29625,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M309">
       <xsl:apply-templates select="*" mode="M309"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind"
                  priority="1000"
                  mode="M310">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(geboortegewicht) ge 0) and (count(geboortegewicht) le 1)"/>
          <xsl:otherwise>
@@ -27282,7 +29651,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
          <xsl:otherwise>
@@ -27303,14 +29673,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M310">
       <xsl:apply-templates select="*" mode="M310"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/*[not(self::geboortegewicht)][not(self::adaextension)]"
                  priority="1000"
                  mode="M311">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/*[not(self::geboortegewicht)][not(self::adaextension)]"/>
-      <!--REPORT -->
+
+		    <!--REPORT -->
       <xsl:if test="true()">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="true()">
             <xsl:attribute name="location">
@@ -27329,14 +29703,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M311">
       <xsl:apply-templates select="*" mode="M311"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/geboortegewicht"
                  priority="1000"
                  mode="M312">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/geboortegewicht"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -27351,7 +29729,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40060')"/>
          <xsl:otherwise>
@@ -27366,7 +29745,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -27378,7 +29758,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:decimal)"/>
          <xsl:otherwise>
@@ -27393,7 +29774,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (local:decimal-convert(@value) ge 0)"/>
          <xsl:otherwise>
@@ -27408,7 +29790,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@unit) or (@unit eq 'gram')"/>
          <xsl:otherwise>
@@ -27423,7 +29806,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @unit, @xsi:*))"/>
          <xsl:otherwise>
@@ -27442,14 +29826,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M312">
       <xsl:apply-templates select="*" mode="M312"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep"
                  priority="1000"
                  mode="M313">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="count(specificatie_congenitale_afwijking_groep) ge 0"/>
          <xsl:otherwise>
@@ -27464,7 +29852,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(chromosomale_afwijkingenq) ge 0) and (count(chromosomale_afwijkingenq) le 1)"/>
          <xsl:otherwise>
@@ -27479,7 +29868,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="count(specificatie_chromosomale_afwijking_groep) ge 0"/>
          <xsl:otherwise>
@@ -27494,7 +29884,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
          <xsl:otherwise>
@@ -27515,14 +29906,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M313">
       <xsl:apply-templates select="*" mode="M313"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/*[not(self::specificatie_congenitale_afwijking_groep)][not(self::chromosomale_afwijkingenq)][not(self::specificatie_chromosomale_afwijking_groep)][not(self::adaextension)]"
                  priority="1000"
                  mode="M314">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/*[not(self::specificatie_congenitale_afwijking_groep)][not(self::chromosomale_afwijkingenq)][not(self::specificatie_chromosomale_afwijking_groep)][not(self::adaextension)]"/>
-      <!--REPORT -->
+
+		    <!--REPORT -->
       <xsl:if test="true()">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="true()">
             <xsl:attribute name="location">
@@ -27541,14 +29936,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M314">
       <xsl:apply-templates select="*" mode="M314"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_congenitale_afwijking_groep"
                  priority="1000"
                  mode="M315">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_congenitale_afwijking_groep"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -27563,7 +29962,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40082')"/>
          <xsl:otherwise>
@@ -27578,7 +29978,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @xsi:*))"/>
          <xsl:otherwise>
@@ -27597,14 +29998,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M315">
       <xsl:apply-templates select="*" mode="M315"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/chromosomale_afwijkingenq"
                  priority="1000"
                  mode="M316">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/chromosomale_afwijkingenq"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -27619,7 +30024,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40110')"/>
          <xsl:otherwise>
@@ -27634,7 +30040,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -27646,7 +30053,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
@@ -27661,7 +30069,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -27680,14 +30089,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M316">
       <xsl:apply-templates select="*" mode="M316"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_chromosomale_afwijking_groep"
                  priority="1000"
                  mode="M317">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_chromosomale_afwijking_groep"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -27702,7 +30115,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40111')"/>
          <xsl:otherwise>
@@ -27717,7 +30131,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @xsi:*))"/>
          <xsl:otherwise>
@@ -27736,14 +30151,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M317">
       <xsl:apply-templates select="*" mode="M317"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_congenitale_afwijking_groep"
                  priority="1000"
                  mode="M318">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_congenitale_afwijking_groep"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(specificatie_congenitale_afwijking) ge 0) and (count(specificatie_congenitale_afwijking) le 1)"/>
          <xsl:otherwise>
@@ -27758,7 +30177,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
          <xsl:otherwise>
@@ -27779,14 +30199,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M318">
       <xsl:apply-templates select="*" mode="M318"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_congenitale_afwijking_groep/*[not(self::specificatie_congenitale_afwijking)][not(self::adaextension)]"
                  priority="1000"
                  mode="M319">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_congenitale_afwijking_groep/*[not(self::specificatie_congenitale_afwijking)][not(self::adaextension)]"/>
-      <!--REPORT -->
+
+		    <!--REPORT -->
       <xsl:if test="true()">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="true()">
             <xsl:attribute name="location">
@@ -27805,14 +30229,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M319">
       <xsl:apply-templates select="*" mode="M319"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_congenitale_afwijking_groep/specificatie_congenitale_afwijking"
                  priority="1000"
                  mode="M320">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_congenitale_afwijking_groep/specificatie_congenitale_afwijking"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -27827,7 +30255,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40090')"/>
          <xsl:otherwise>
@@ -27842,7 +30271,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value = ('88425004', '609417004', '431265009', '76916001', '414667000', '171131006', '47032000', '30915001', '55999004', '363222009', '09', 'B', '19416009', '61142002', '11', '8380000', '13', '9904008', '204470001', '204296002', '86299006', '30288003', '62067003', '7305005', '4374004', '94702005', '22', '95470009', '80281008', '87979003', '69771008', '84296002', '204711007', '204712000', '204739008', '29980002', '9707006', '30', '77868001', '204508009', '14532008', '80825009', '66987001', '111318005', '79231000', '83035003', '17190001', '21524000', '38', '287085006', '416010008', '406476007', '204878001', '61758007', '41962002', '82525005', '7163005', '39179006', '69', '199879009', '93471006', '398943008', '74', '81336004', '72951007', '18735004', '396347007', '429200006', '85', '73573004', '367506006', '373413006', '302297009', '45806008', '77595004', '96', '36172001', '98', 'J', '276720006', '43876007', '444406006', '82354003', '104', 'K', '217710005', '86095007', '112', '363346000:246454002=255399007', 'OTH', 'NI'))"/>
          <xsl:otherwise>
@@ -27857,7 +30287,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@code) or (@code = ('88425004', '609417004', '431265009', '76916001', '414667000', '171131006', '47032000', '30915001', '55999004', '363222009', '09', 'B', '19416009', '61142002', '11', '8380000', '13', '9904008', '204470001', '204296002', '86299006', '30288003', '62067003', '7305005', '4374004', '94702005', '22', '95470009', '80281008', '87979003', '69771008', '84296002', '204711007', '204712000', '204739008', '29980002', '9707006', '30', '77868001', '204508009', '14532008', '80825009', '66987001', '111318005', '79231000', '83035003', '17190001', '21524000', '38', '287085006', '416010008', '406476007', '204878001', '61758007', '41962002', '82525005', '7163005', '39179006', '69', '199879009', '93471006', '398943008', '74', '81336004', '72951007', '18735004', '396347007', '429200006', '85', '73573004', '367506006', '373413006', '302297009', '45806008', '77595004', '96', '36172001', '98', 'J', '276720006', '43876007', '444406006', '82354003', '104', 'K', '217710005', '86095007', '112', '363346000:246454002=255399007', 'OTH', 'NI'))"/>
          <xsl:otherwise>
@@ -27872,7 +30303,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.2.4.4.13.8', '2.16.840.1.113883.2.4.4.13.8', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.2.4.4.13.8', '2.16.840.1.113883.6.96', '2.16.840.1.113883.2.4.4.13.8', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.2.4.4.13.8', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.2.4.4.13.8', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.2.4.4.13.8', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.2.4.4.13.8', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.2.4.4.13.8', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.2.4.4.13.8', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.2.4.4.13.8', '2.16.840.1.113883.6.96', '2.16.840.1.113883.2.4.4.13.8', '2.16.840.1.113883.2.4.4.13.8', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.2.4.4.13.8', '2.16.840.1.113883.2.4.4.13.8', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.2.4.4.13.8', '2.16.840.1.113883.6.96', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008'))"/>
          <xsl:otherwise>
@@ -27887,7 +30319,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('Congenital_anomaly_of_nervous_system_(disorder)', 'Congenital_anomaly_of_nervous_system_(disorder)_Fetal_anencephaly_(disorder)', 'Congenital_anomaly_of_nervous_system_(disorder)_Fetal_microcephaly_(disorder)', 'Congenital_anomaly_of_nervous_system_(disorder)_Spina_bifida_occulta_(disorder)', 'Congenital_anomaly_of_nervous_system_(disorder)_Meningomyelocele_(disorder)', 'Congenital_anomaly_of_nervous_system_(disorder)_Meningocele_(disorder)', 'Congenital_anomaly_of_nervous_system_(disorder)_Congenital_hydrocephalus_(disorder)', 'Congenital_anomaly_of_nervous_system_(disorder)_Holoprosencephaly_sequence_(disorder)', 'Congenital_anomaly_of_nervous_system_(disorder)_Encephalocele_(disorder)', 'Congenital_anomaly_of_nervous_system_(disorder)_Neonatal_neuromuscular_disorder_(disorder)', 'Congenital_anomaly_of_nervous_system_(disorder)_overige_congenitale_afwijkingen_zenuwstelsel', 'zintuigen', 'zintuigen_Congenital_anomaly_of_eye_(disorder)', 'zintuigen_Congenital_anomaly_of_eye_(disorder)_Microphthalmos_(disorder)', 'zintuigen_Congenital_anomaly_of_eye_(disorder)_overige_congenitale_afwijkingen_ogen', 'zintuigen_Congenital_anomaly_of_ear_(disorder)', 'zintuigen_overige_congenitale_afwijkingen_zintuigen', 'Congenital_anomaly_of_cardiovascular_system_(disorder)', 'Congenital_anomaly_of_cardiovascular_system_(disorder)_Single_umbilical_artery_(disorder)', 'Congenital_anomaly_of_cardiovascular_system_(disorder)_Discordant_ventriculoarterial_connection_(disorder)', 'Congenital_anomaly_of_cardiovascular_system_(disorder)_Tetralogy_of_Fallot_(disorder)', 'Congenital_anomaly_of_cardiovascular_system_(disorder)_Ventricular_septal_defect_(disorder)', 'Congenital_anomaly_of_cardiovascular_system_(disorder)_Hypoplastic_left_heart_syndrome_(disorder)', 'Congenital_anomaly_of_cardiovascular_system_(disorder)_Coarctation_of_aorta_(disorder)', 'Congenital_anomaly_of_cardiovascular_system_(disorder)_Congenital_anomaly_of_tricuspid_valve_(disorder)', 'Congenital_anomaly_of_cardiovascular_system_(disorder)_Multiple_congenital_cardiac_defects_(disorder)', 'Congenital_anomaly_of_cardiovascular_system_(disorder)_overige_congenitale_afwijking_hart_en_bloedvaten', 'Congenital_anomaly_of_digestive_tract_(disorder)', 'Congenital_anomaly_of_digestive_tract_(disorder)_Cleft_lip_(disorder)', 'Congenital_anomaly_of_digestive_tract_(disorder)_Cleft_palate_(disorder)', 'Congenital_anomaly_of_digestive_tract_(disorder)_Congenital_anomaly_of_esophagus_(disorder)', 'Congenital_anomaly_of_digestive_tract_(disorder)_Congenital_atresia_of_small_intestine_(disorder)', 'Congenital_anomaly_of_digestive_tract_(disorder)_Atresia_of_large_intestine_(disorder)', 'Congenital_anomaly_of_digestive_tract_(disorder)_Anal_atresia_(disorder)', 'Congenital_anomaly_of_digestive_tract_(disorder)_Hirschsprung''s_disease_(disorder)', 'Congenital_anomaly_of_digestive_tract_(disorder)_Congenital_malrotation_of_intestine_(disorder)', 'Congenital_anomaly_of_digestive_tract_(disorder)_Intestinal_volvulus_(disorder)', 'Congenital_anomaly_of_digestive_tract_(disorder)_overige_congenitale_afwijking_tractus_digestivus', 'Congenital_anomaly_of_respiratory_system_(disorder)', 'Congenital_anomaly_of_respiratory_system_(disorder)_Choanal_atresia_(disorder)', 'Congenital_anomaly_of_respiratory_system_(disorder)_Congenital_anomaly_of_trachea_(disorder)', 'Congenital_anomaly_of_respiratory_system_(disorder)_Congenital_hypoplasia_of_lung_(disorder)', 'Congenital_anomaly_of_respiratory_system_(disorder)_Congenital_lobar_emphysema_(disorder)', 'Congenital_anomaly_of_respiratory_system_(disorder)_Congenital_cystic_adenomatoid_malformation_of_lung_(disorder)', 'Congenital_anomaly_of_respiratory_system_(disorder)_Hydrothorax_(disorder)', 'Congenital_anomaly_of_respiratory_system_(disorder)_Chylothorax_(disorder)', 'Congenital_anomaly_of_respiratory_system_(disorder)_Congenital_diaphragmatic_hernia_(disorder)', 'Congenital_anomaly_of_respiratory_system_(disorder)_Relaxation_of_diaphragm_(disorder)', 'Congenital_anomaly_of_respiratory_system_(disorder)_overige_congenitale_afwijking_tractus_respiratorius', 'Genitourinary_congenital_anomalies_(disorder)', 'Genitourinary_congenital_anomalies_(disorder)_Hypospadias_(disorder)', 'Genitourinary_congenital_anomalies_(disorder)_Epispadias_(disorder)', 'Genitourinary_congenital_anomalies_(disorder)_Undescended_testicle_(disorder)', 'Genitourinary_congenital_anomalies_(disorder)_Exstrophy_of_bladder_sequence_(disorder)', 'Genitourinary_congenital_anomalies_(disorder)_Oligohydramnios_sequence_(disorder)', 'Genitourinary_congenital_anomalies_(disorder)_Congenital_cystic_kidney_disease_(disorder)', 'Genitourinary_congenital_anomalies_(disorder)_Urinary_tract_obstruction_(disorder)', 'Genitourinary_congenital_anomalies_(disorder)_Disorder_of_sexual_differentiation_(disorder)', 'Genitourinary_congenital_anomalies_(disorder)_overige_congenitale_afwijking_tractus_urogenitalis', 'Congenital_anomaly_of_skin_(disorder)', 'Congenital_anomaly_of_skin_(disorder)_Hemangioma_of_skin_(disorder)', 'Congenital_anomaly_of_skin_(disorder)_Congenital_pigmented_melanocytic_nevus_of_skin_(disorder)', 'Congenital_anomaly_of_skin_(disorder)_overige_congenitale_huidafwijking', 'Congenital_anomaly_of_abdominal_wall_(disorder)', 'Congenital_anomaly_of_abdominal_wall_(disorder)_Gastroschisis_(disorder)', 'Congenital_anomaly_of_abdominal_wall_(disorder)_Congenital_omphalocele_(disorder)', 'Congenital_anomaly_of_abdominal_wall_(disorder)_Umbilical_hernia_(disorder)', 'Congenital_anomaly_of_abdominal_wall_(disorder)_Congenital_inguinal_hernia_(disorder)', 'Congenital_anomaly_of_abdominal_wall_(disorder)_overige_congenitale_afwijking_buikwand', 'Congenital_anomaly_of_musculoskeletal_system_(disorder)', 'Congenital_anomaly_of_musculoskeletal_system_(disorder)_Polydactyly_(disorder)', 'Congenital_anomaly_of_musculoskeletal_system_(disorder)_Syndactyly_(disorder)', 'Congenital_anomaly_of_musculoskeletal_system_(disorder)_Congenital_deformity_of_foot_(disorder)', 'Congenital_anomaly_of_musculoskeletal_system_(disorder)_Reduction_deformity_of_upper_limb_(disorder)', 'Congenital_anomaly_of_musculoskeletal_system_(disorder)_Reduction_deformity_of_lower_limb_(disorder)', 'Congenital_anomaly_of_musculoskeletal_system_(disorder)_overige_congenitale_afwijking_extremiteiten', 'Congenital_anomaly_of_musculoskeletal_system_(disorder)_Congenital_subluxation_of_hip_(disorder)', 'Congenital_anomaly_of_musculoskeletal_system_(disorder)_overige_congenitale_afwijking_skelet_en_spierstelsel', 'multipele/syndromale_congenitale_afwijkingen_(niet_chromosomaal)', 'multipele/syndromale_congenitale_afwijkingen_(niet_chromosomaal)_Dysmorphism_(disorder)', 'multipele/syndromale_congenitale_afwijkingen_(niet_chromosomaal)_Situs_inversus_viscerum_(disorder)', 'multipele/syndromale_congenitale_afwijkingen_(niet_chromosomaal)_Multiple_congenital_anomalies_(disorder)', 'multipele/syndromale_congenitale_afwijkingen_(niet_chromosomaal)_Multiple_system_malformation_syndrome_(disorder)', 'multipele/syndromale_congenitale_afwijkingen_(niet_chromosomaal)_overige_multipele/syndromale_afwijkingen', 'overige_congenitale_afwijkingen', 'overige_congenitale_afwijkingen_Congenital_iodine_deficiency_syndrome_(disorder)', 'overige_congenitale_afwijkingen_Inborn_error_of_metabolism_(disorder)', 'overige_congenitale_afwijkingen_andere_endocrinologische_afwijkingen', 'overige_congenitale_afwijkingen_Congenital_malignant_neoplastic_disease_(disorder)', 'overig', 'geen_informatie'))"/>
          <xsl:otherwise>
@@ -27902,7 +30335,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
          <xsl:otherwise>
@@ -27921,14 +30355,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M320">
       <xsl:apply-templates select="*" mode="M320"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_chromosomale_afwijking_groep"
                  priority="1000"
                  mode="M321">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_chromosomale_afwijking_groep"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="count(specificatie_chromosomale_afwijking) eq 1"/>
          <xsl:otherwise>
@@ -27943,7 +30381,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
          <xsl:otherwise>
@@ -27964,14 +30403,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M321">
       <xsl:apply-templates select="*" mode="M321"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_chromosomale_afwijking_groep/*[not(self::specificatie_chromosomale_afwijking)][not(self::adaextension)]"
                  priority="1000"
                  mode="M322">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_chromosomale_afwijking_groep/*[not(self::specificatie_chromosomale_afwijking)][not(self::adaextension)]"/>
-      <!--REPORT -->
+
+		    <!--REPORT -->
       <xsl:if test="true()">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="true()">
             <xsl:attribute name="location">
@@ -27990,14 +30433,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M322">
       <xsl:apply-templates select="*" mode="M322"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_chromosomale_afwijking_groep/specificatie_chromosomale_afwijking"
                  priority="1000"
                  mode="M323">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_chromosomale_afwijking_groep/specificatie_chromosomale_afwijking"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -28012,7 +30459,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.40120')"/>
          <xsl:otherwise>
@@ -28027,7 +30475,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value = ('41040004', '51500006', '21111006', '7', 'OTH', 'UNK', 'NI'))"/>
          <xsl:otherwise>
@@ -28042,7 +30491,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@code) or (@code = ('41040004', '51500006', '21111006', '7', 'OTH', 'UNK', 'NI'))"/>
          <xsl:otherwise>
@@ -28057,7 +30507,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.2.4.4.13.22', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008'))"/>
          <xsl:otherwise>
@@ -28072,7 +30523,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('Complete_trisomy_21_syndrome_(disorder)', 'Complete_trisomy_18_syndrome_(disorder)', 'Complete_trisomy_13_syndrome_(disorder)', 'Andere_numerieke_chromosomale_afwijkingen', 'Overige_chromosomale_afwijkingen', 'Onbekend', 'Geen_informatie'))"/>
          <xsl:otherwise>
@@ -28087,7 +30539,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
          <xsl:otherwise>
@@ -28106,14 +30559,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M323">
       <xsl:apply-templates select="*" mode="M323"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts"
                  priority="1000"
                  mode="M324">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(datum_betrokkenheid) ge 0) and (count(datum_betrokkenheid) le 1)"/>
          <xsl:otherwise>
@@ -28128,7 +30585,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(reden_betrokkenheid) ge 0) and (count(reden_betrokkenheid) le 1)"/>
          <xsl:otherwise>
@@ -28143,7 +30601,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(type_betrokkenheid) ge 0) and (count(type_betrokkenheid) le 1)"/>
          <xsl:otherwise>
@@ -28158,7 +30617,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(zorginstelling_lvrid) ge 0) and (count(zorginstelling_lvrid) le 1)"/>
          <xsl:otherwise>
@@ -28173,7 +30633,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
          <xsl:otherwise>
@@ -28194,14 +30655,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M324">
       <xsl:apply-templates select="*" mode="M324"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts/*[not(self::datum_betrokkenheid)][not(self::reden_betrokkenheid)][not(self::type_betrokkenheid)][not(self::zorginstelling_lvrid)][not(self::adaextension)]"
                  priority="1000"
                  mode="M325">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts/*[not(self::datum_betrokkenheid)][not(self::reden_betrokkenheid)][not(self::type_betrokkenheid)][not(self::zorginstelling_lvrid)][not(self::adaextension)]"/>
-      <!--REPORT -->
+
+		    <!--REPORT -->
       <xsl:if test="true()">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="true()">
             <xsl:attribute name="location">
@@ -28220,14 +30685,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M325">
       <xsl:apply-templates select="*" mode="M325"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts/datum_betrokkenheid"
                  priority="1000"
                  mode="M326">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts/datum_betrokkenheid"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -28242,7 +30711,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82122')"/>
          <xsl:otherwise>
@@ -28257,7 +30727,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -28269,7 +30740,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or ((@value castable as xs:date) or (@value castable as xs:dateTime))"/>
          <xsl:otherwise>
@@ -28284,7 +30756,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -28303,14 +30776,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M326">
       <xsl:apply-templates select="*" mode="M326"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts/reden_betrokkenheid"
                  priority="1000"
                  mode="M327">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts/reden_betrokkenheid"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -28325,7 +30802,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82123')"/>
          <xsl:otherwise>
@@ -28340,7 +30818,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value = ('276614003', '276609002', '289261003', '8571000146103', '289365005', '12729009', '364737004', '168092006', '387712008', '161838002', '473130003', '394886001', '281667005', '95607001', 'OTH', 'UNK', 'NI'))"/>
          <xsl:otherwise>
@@ -28355,7 +30834,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@code) or (@code = ('276614003', '276609002', '289261003', '8571000146103', '289365005', '12729009', '364737004', '168092006', '387712008', '161838002', '473130003', '394886001', '281667005', '95607001', 'OTH', 'UNK', 'NI'))"/>
          <xsl:otherwise>
@@ -28370,7 +30850,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008'))"/>
          <xsl:otherwise>
@@ -28385,7 +30866,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('Gestation_abnormality_(disorder)', 'Birth_weight_abnormality_(disorder)', 'Delivery_problem_(finding)', 'Fetal_or_neonatal_effect_of_assisted_delivery_(disorder)', 'Finding_of_malposition_of_foetus_(finding)', 'Prolonged_rupture_of_membranes_(disorder)', 'Finding_of_neonatal_condition_(finding)', 'Amniotic_fluid_-meconium_stain_(finding)', 'Neonatal_jaundice_(disorder)', 'Infant_feeding_problem_(finding)', 'Suspected_infectious_disease_(situation)', 'Suspected_heart_disease_(situation)', 'Maternal_history_of_disorder_(situation)', 'Maternal_drug_use_(disorder)', 'Overig', 'Onbekend', 'geen_informatie'))"/>
          <xsl:otherwise>
@@ -28400,7 +30882,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
          <xsl:otherwise>
@@ -28419,14 +30902,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M327">
       <xsl:apply-templates select="*" mode="M327"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts/type_betrokkenheid"
                  priority="1000"
                  mode="M328">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts/type_betrokkenheid"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -28441,7 +30928,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82121')"/>
          <xsl:otherwise>
@@ -28456,7 +30944,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value = ('1', '2', 'UNK', 'NI'))"/>
          <xsl:otherwise>
@@ -28471,7 +30960,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@code) or (@code = ('1', '2', 'UNK', 'NI'))"/>
          <xsl:otherwise>
@@ -28486,7 +30976,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.2.4.4.13.17', '2.16.840.1.113883.2.4.4.13.17', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008'))"/>
          <xsl:otherwise>
@@ -28501,7 +30992,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('consultatie', 'overdracht', 'onbekend', 'geen_informatie'))"/>
          <xsl:otherwise>
@@ -28516,7 +31008,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
          <xsl:otherwise>
@@ -28535,14 +31028,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M328">
       <xsl:apply-templates select="*" mode="M328"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts/zorginstelling_lvrid"
                  priority="1000"
                  mode="M329">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts/zorginstelling_lvrid"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -28557,7 +31054,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82335')"/>
          <xsl:otherwise>
@@ -28572,7 +31070,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -28584,7 +31083,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (string-length(@value) ge 4)"/>
          <xsl:otherwise>
@@ -28599,7 +31099,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (string-length(@value) le 5)"/>
          <xsl:otherwise>
@@ -28614,7 +31115,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -28633,14 +31135,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M329">
       <xsl:apply-templates select="*" mode="M329"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/medisch_onderzoek"
                  priority="1000"
                  mode="M330">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/medisch_onderzoek"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(maternale_onderzoeksgegevens) ge 0) and (count(maternale_onderzoeksgegevens) le 1)"/>
          <xsl:otherwise>
@@ -28655,7 +31161,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
          <xsl:otherwise>
@@ -28676,14 +31183,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M330">
       <xsl:apply-templates select="*" mode="M330"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/medisch_onderzoek/*[not(self::maternale_onderzoeksgegevens)][not(self::adaextension)]"
                  priority="1000"
                  mode="M331">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/medisch_onderzoek/*[not(self::maternale_onderzoeksgegevens)][not(self::adaextension)]"/>
-      <!--REPORT -->
+
+		    <!--REPORT -->
       <xsl:if test="true()">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="true()">
             <xsl:attribute name="location">
@@ -28702,14 +31213,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M331">
       <xsl:apply-templates select="*" mode="M331"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/medisch_onderzoek/maternale_onderzoeksgegevens"
                  priority="1000"
                  mode="M332">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/medisch_onderzoek/maternale_onderzoeksgegevens"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -28724,7 +31239,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.142')"/>
          <xsl:otherwise>
@@ -28739,7 +31255,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @xsi:*))"/>
          <xsl:otherwise>
@@ -28758,14 +31275,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M332">
       <xsl:apply-templates select="*" mode="M332"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/medisch_onderzoek/maternale_onderzoeksgegevens"
                  priority="1000"
                  mode="M333">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/medisch_onderzoek/maternale_onderzoeksgegevens"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(urine_bloed_en_aanvullende_onderzoeken) ge 0) and (count(urine_bloed_en_aanvullende_onderzoeken) le 1)"/>
          <xsl:otherwise>
@@ -28780,7 +31301,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
          <xsl:otherwise>
@@ -28801,14 +31323,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M333">
       <xsl:apply-templates select="*" mode="M333"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/medisch_onderzoek/maternale_onderzoeksgegevens/*[not(self::urine_bloed_en_aanvullende_onderzoeken)][not(self::adaextension)]"
                  priority="1000"
                  mode="M334">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/medisch_onderzoek/maternale_onderzoeksgegevens/*[not(self::urine_bloed_en_aanvullende_onderzoeken)][not(self::adaextension)]"/>
-      <!--REPORT -->
+
+		    <!--REPORT -->
       <xsl:if test="true()">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="true()">
             <xsl:attribute name="location">
@@ -28827,14 +31353,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M334">
       <xsl:apply-templates select="*" mode="M334"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken"
                  priority="1000"
                  mode="M335">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -28849,7 +31379,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80959')"/>
          <xsl:otherwise>
@@ -28864,7 +31395,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @xsi:*))"/>
          <xsl:otherwise>
@@ -28883,14 +31415,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M335">
       <xsl:apply-templates select="*" mode="M335"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken"
                  priority="1000"
                  mode="M336">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(psie) ge 0) and (count(psie) le 1)"/>
          <xsl:otherwise>
@@ -28905,7 +31441,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
          <xsl:otherwise>
@@ -28926,14 +31463,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M336">
       <xsl:apply-templates select="*" mode="M336"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/*[not(self::psie)][not(self::adaextension)]"
                  priority="1000"
                  mode="M337">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/*[not(self::psie)][not(self::adaextension)]"/>
-      <!--REPORT -->
+
+		    <!--REPORT -->
       <xsl:if test="true()">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="true()">
             <xsl:attribute name="location">
@@ -28952,14 +31493,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M337">
       <xsl:apply-templates select="*" mode="M337"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/psie"
                  priority="1000"
                  mode="M338">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/psie"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -28974,7 +31519,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80949')"/>
          <xsl:otherwise>
@@ -28989,7 +31535,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @xsi:*))"/>
          <xsl:otherwise>
@@ -29008,14 +31555,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M338">
       <xsl:apply-templates select="*" mode="M338"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/psie"
                  priority="1000"
                  mode="M339">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/psie"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(irregulaire_antistoffenq) ge 0) and (count(irregulaire_antistoffenq) le 1)"/>
          <xsl:otherwise>
@@ -29030,7 +31581,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="count(welke_irregulaire_antistoffen_vrouw_aanwezig) ge 0"/>
          <xsl:otherwise>
@@ -29045,7 +31597,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
          <xsl:otherwise>
@@ -29066,14 +31619,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M339">
       <xsl:apply-templates select="*" mode="M339"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/psie/*[not(self::irregulaire_antistoffenq)][not(self::welke_irregulaire_antistoffen_vrouw_aanwezig)][not(self::adaextension)]"
                  priority="1000"
                  mode="M340">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/psie/*[not(self::irregulaire_antistoffenq)][not(self::welke_irregulaire_antistoffen_vrouw_aanwezig)][not(self::adaextension)]"/>
-      <!--REPORT -->
+
+		    <!--REPORT -->
       <xsl:if test="true()">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="true()">
             <xsl:attribute name="location">
@@ -29092,14 +31649,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M340">
       <xsl:apply-templates select="*" mode="M340"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/psie/irregulaire_antistoffenq"
                  priority="1000"
                  mode="M341">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/psie/irregulaire_antistoffenq"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -29114,7 +31675,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10812')"/>
          <xsl:otherwise>
@@ -29129,7 +31691,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -29141,7 +31704,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
@@ -29156,7 +31720,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -29175,14 +31740,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M341">
       <xsl:apply-templates select="*" mode="M341"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/psie/welke_irregulaire_antistoffen_vrouw_aanwezig"
                  priority="1000"
                  mode="M342">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/psie/welke_irregulaire_antistoffen_vrouw_aanwezig"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -29197,7 +31766,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10813')"/>
          <xsl:otherwise>
@@ -29212,7 +31782,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value = ('112162009', '8362009', '62523009', '405844003', '8376005', '25453008', 'OTH', 'UNK'))"/>
          <xsl:otherwise>
@@ -29227,7 +31798,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@code) or (@code = ('112162009', '8362009', '62523009', '405844003', '8376005', '25453008', 'OTH', 'UNK'))"/>
          <xsl:otherwise>
@@ -29242,7 +31814,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008'))"/>
          <xsl:otherwise>
@@ -29257,7 +31830,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('Rhesus_D', 'Rhesus_c', 'Rhesus_e', 'Kell', 'Duffy', 'Kidd', 'overig', 'onbekend'))"/>
          <xsl:otherwise>
@@ -29272,7 +31846,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
          <xsl:otherwise>
@@ -29291,14 +31866,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M342">
       <xsl:apply-templates select="*" mode="M342"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/postnatale_fase"
                  priority="1000"
                  mode="M343">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/postnatale_fase"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="count(diagnose_postpartum) ge 0"/>
          <xsl:otherwise>
@@ -29313,7 +31892,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="count(kindspecifieke_gegevens) ge 0"/>
          <xsl:otherwise>
@@ -29328,7 +31908,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
          <xsl:otherwise>
@@ -29349,14 +31930,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M343">
       <xsl:apply-templates select="*" mode="M343"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/postnatale_fase/*[not(self::diagnose_postpartum)][not(self::kindspecifieke_gegevens)][not(self::adaextension)]"
                  priority="1000"
                  mode="M344">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/postnatale_fase/*[not(self::diagnose_postpartum)][not(self::kindspecifieke_gegevens)][not(self::adaextension)]"/>
-      <!--REPORT -->
+
+		    <!--REPORT -->
       <xsl:if test="true()">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="true()">
             <xsl:attribute name="location">
@@ -29375,14 +31960,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M344">
       <xsl:apply-templates select="*" mode="M344"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/postnatale_fase/diagnose_postpartum"
                  priority="1000"
                  mode="M345">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/postnatale_fase/diagnose_postpartum"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -29397,7 +31986,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82297')"/>
          <xsl:otherwise>
@@ -29412,7 +32002,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @xsi:*))"/>
          <xsl:otherwise>
@@ -29431,14 +32022,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M345">
       <xsl:apply-templates select="*" mode="M345"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/postnatale_fase/kindspecifieke_gegevens"
                  priority="1000"
                  mode="M346">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/postnatale_fase/kindspecifieke_gegevens"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -29453,7 +32048,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.161')"/>
          <xsl:otherwise>
@@ -29468,7 +32064,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @xsi:*))"/>
          <xsl:otherwise>
@@ -29487,14 +32084,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M346">
       <xsl:apply-templates select="*" mode="M346"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/postnatale_fase/diagnose_postpartum"
                  priority="1000"
                  mode="M347">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/postnatale_fase/diagnose_postpartum"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(datum) ge 0) and (count(datum) le 1)"/>
          <xsl:otherwise>
@@ -29509,7 +32110,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(pathologie_vrouwq) ge 0) and (count(pathologie_vrouwq) le 1)"/>
          <xsl:otherwise>
@@ -29524,7 +32126,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(pathologie_vrouw) ge 0) and (count(pathologie_vrouw) le 1)"/>
          <xsl:otherwise>
@@ -29539,7 +32142,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
          <xsl:otherwise>
@@ -29560,14 +32164,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M347">
       <xsl:apply-templates select="*" mode="M347"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/postnatale_fase/diagnose_postpartum/*[not(self::datum)][not(self::pathologie_vrouwq)][not(self::pathologie_vrouw)][not(self::adaextension)]"
                  priority="1000"
                  mode="M348">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/postnatale_fase/diagnose_postpartum/*[not(self::datum)][not(self::pathologie_vrouwq)][not(self::pathologie_vrouw)][not(self::adaextension)]"/>
-      <!--REPORT -->
+
+		    <!--REPORT -->
       <xsl:if test="true()">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="true()">
             <xsl:attribute name="location">
@@ -29586,14 +32194,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M348">
       <xsl:apply-templates select="*" mode="M348"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/postnatale_fase/diagnose_postpartum/datum"
                  priority="1000"
                  mode="M349">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/postnatale_fase/diagnose_postpartum/datum"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -29608,7 +32220,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82298')"/>
          <xsl:otherwise>
@@ -29623,7 +32236,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -29635,7 +32249,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or ((@value castable as xs:date) or (@value castable as xs:dateTime))"/>
          <xsl:otherwise>
@@ -29650,7 +32265,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -29669,14 +32285,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M349">
       <xsl:apply-templates select="*" mode="M349"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/postnatale_fase/diagnose_postpartum/pathologie_vrouwq"
                  priority="1000"
                  mode="M350">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/postnatale_fase/diagnose_postpartum/pathologie_vrouwq"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -29691,7 +32311,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82208')"/>
          <xsl:otherwise>
@@ -29706,7 +32327,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -29718,7 +32340,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
@@ -29733,7 +32356,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -29752,14 +32376,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M350">
       <xsl:apply-templates select="*" mode="M350"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/postnatale_fase/diagnose_postpartum/pathologie_vrouw"
                  priority="1000"
                  mode="M351">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/postnatale_fase/diagnose_postpartum/pathologie_vrouw"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -29774,7 +32402,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.82209')"/>
          <xsl:otherwise>
@@ -29789,7 +32418,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value = ('398254007', '67359005', '303063000', '95605009', '56272000', '58703003', '18260003', '301822002', '414086009', '385494008', '116859006', '78623009', '45198002', '68566005', '300927001', '6150', 'OTH'))"/>
          <xsl:otherwise>
@@ -29804,7 +32434,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@code) or (@code = ('398254007', '67359005', '303063000', '95605009', '56272000', '58703003', '18260003', '301822002', '414086009', '385494008', '116859006', '78623009', '45198002', '68566005', '300927001', '6150', 'OTH'))"/>
          <xsl:otherwise>
@@ -29819,7 +32450,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.6.96', '2.16.840.1.113883.2.4.3.22.1.2.1', '2.16.840.1.113883.5.1008'))"/>
          <xsl:otherwise>
@@ -29834,7 +32466,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('(Dreigende)_eclampsie,_(verdenking_op)_HELLP-syndroom_Pre-eclampsia_(disorder)', '(Dreigende)_eclampsie,_(verdenking_op)_HELLP-syndroom_Pre-eclampsia_added_to_pre-existing_hypertension_(disorder)', '(Dreigende)_eclampsie,_(verdenking_op)_HELLP-syndroom_Eclampsia_in_puerperium_(disorder)', '(Dreigende)_eclampsie,_(verdenking_op)_HELLP-syndroom_Hemolysis-elevated_liver_enzymes-low_platelet_count_syndrome_(disorder)', 'Postpartum_deep_phlebothrombosis_(disorder)', 'Postpartum_depression_(disorder)', 'Postpartum_psychosis_(disorder)', 'Abnormal_vaginal_bleeding_(finding)', 'Embolism_(disorder)', 'Hematoma_(disorder)', 'Transfusion_of_blood_product_(procedure)', 'Postnatal_infection_(disorder)_Endometritis_(disorder)', 'Postnatal_infection_(disorder)_Mastitis_(disorder)', 'Postnatal_infection_(disorder)_Urinary_tract_infectious_disease_(disorder)', 'Postnatal_infection_(disorder)_Episiotomy_infection_(disorder)', 'Postnatal_infection_(disorder)_Overige_infecties', 'Overig'))"/>
          <xsl:otherwise>
@@ -29849,7 +32482,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
          <xsl:otherwise>
@@ -29868,14 +32502,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M351">
       <xsl:apply-templates select="*" mode="M351"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/postnatale_fase/kindspecifieke_gegevens"
                  priority="1000"
                  mode="M352">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/postnatale_fase/kindspecifieke_gegevens"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(voeding_kind_groep) ge 0) and (count(voeding_kind_groep) le 1)"/>
          <xsl:otherwise>
@@ -29890,7 +32528,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
          <xsl:otherwise>
@@ -29911,14 +32550,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M352">
       <xsl:apply-templates select="*" mode="M352"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/postnatale_fase/kindspecifieke_gegevens/*[not(self::voeding_kind_groep)][not(self::adaextension)]"
                  priority="1000"
                  mode="M353">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/postnatale_fase/kindspecifieke_gegevens/*[not(self::voeding_kind_groep)][not(self::adaextension)]"/>
-      <!--REPORT -->
+
+		    <!--REPORT -->
       <xsl:if test="true()">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="true()">
             <xsl:attribute name="location">
@@ -29937,14 +32580,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M353">
       <xsl:apply-templates select="*" mode="M353"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/postnatale_fase/kindspecifieke_gegevens/voeding_kind_groep"
                  priority="1000"
                  mode="M354">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/postnatale_fase/kindspecifieke_gegevens/voeding_kind_groep"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -29959,7 +32606,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.70009')"/>
          <xsl:otherwise>
@@ -29974,7 +32622,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @xsi:*))"/>
          <xsl:otherwise>
@@ -29993,14 +32642,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M354">
       <xsl:apply-templates select="*" mode="M354"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/postnatale_fase/kindspecifieke_gegevens/voeding_kind_groep"
                  priority="1000"
                  mode="M355">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/postnatale_fase/kindspecifieke_gegevens/voeding_kind_groep"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(voeding_kind_datum) ge 0) and (count(voeding_kind_datum) le 1)"/>
          <xsl:otherwise>
@@ -30015,7 +32668,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="count(substantie_voeding_kind) ge 1"/>
          <xsl:otherwise>
@@ -30030,7 +32684,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="(count(adaextension) ge 0) and (count(adaextension) le 1)"/>
          <xsl:otherwise>
@@ -30051,14 +32706,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M355">
       <xsl:apply-templates select="*" mode="M355"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/postnatale_fase/kindspecifieke_gegevens/voeding_kind_groep/*[not(self::voeding_kind_datum)][not(self::substantie_voeding_kind)][not(self::adaextension)]"
                  priority="1000"
                  mode="M356">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/postnatale_fase/kindspecifieke_gegevens/voeding_kind_groep/*[not(self::voeding_kind_datum)][not(self::substantie_voeding_kind)][not(self::adaextension)]"/>
-      <!--REPORT -->
+
+		    <!--REPORT -->
       <xsl:if test="true()">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="true()">
             <xsl:attribute name="location">
@@ -30077,14 +32736,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M356">
       <xsl:apply-templates select="*" mode="M356"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/postnatale_fase/kindspecifieke_gegevens/voeding_kind_groep/voeding_kind_datum"
                  priority="1000"
                  mode="M357">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/postnatale_fase/kindspecifieke_gegevens/voeding_kind_groep/voeding_kind_datum"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -30099,7 +32762,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.70011')"/>
          <xsl:otherwise>
@@ -30114,7 +32778,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="exists(@value)"/>
          <xsl:otherwise>
@@ -30126,7 +32791,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or ((@value castable as xs:date) or (@value castable as xs:dateTime))"/>
          <xsl:otherwise>
@@ -30141,7 +32807,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
          <xsl:otherwise>
@@ -30160,14 +32827,18 @@ SOFTWARE.
    <xsl:template match="@*|node()" priority="-2" mode="M357">
       <xsl:apply-templates select="*" mode="M357"/>
    </xsl:template>
+
    <!--PATTERN -->
-   <!--RULE -->
+
+
+	  <!--RULE -->
    <xsl:template match="/kernset_aanleverbericht/postnatale_fase/kindspecifieke_gegevens/voeding_kind_groep/substantie_voeding_kind"
                  priority="1000"
                  mode="M358">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/kernset_aanleverbericht/postnatale_fase/kindspecifieke_gegevens/voeding_kind_groep/substantie_voeding_kind"/>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')"/>
          <xsl:otherwise>
@@ -30182,7 +32853,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.5.70030')"/>
          <xsl:otherwise>
@@ -30197,7 +32869,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@value) or (@value = ('1', '2', 'UNK', 'NI'))"/>
          <xsl:otherwise>
@@ -30212,7 +32885,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@code) or (@code = ('1', '2', 'UNK', 'NI'))"/>
          <xsl:otherwise>
@@ -30227,7 +32901,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@codeSystem) or (@codeSystem = ('2.16.840.1.113883.2.4.3.22.1.4.8', '2.16.840.1.113883.2.4.3.22.1.4.8', '2.16.840.1.113883.5.1008', '2.16.840.1.113883.5.1008'))"/>
          <xsl:otherwise>
@@ -30242,7 +32917,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@enum) or (@enum = ('Borstvoeding', 'Kunstvoeding', 'Onbekend', 'Geen_informatie'))"/>
          <xsl:otherwise>
@@ -30257,7 +32933,8 @@ SOFTWARE.
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <!--ASSERT -->
+
+		    <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
          <xsl:otherwise>

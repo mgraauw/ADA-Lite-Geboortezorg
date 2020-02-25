@@ -44,7 +44,7 @@
                   shortName="zorginstelling_oid">
             <name language="nl-NL">Zorginstelling OID</name>
             <desc language="nl-NL">Identificatie van de instelling met behulp van een unieke root-OID (Object Identificatie). <br clear="none"/>Dit gegeven wordt ingesteld in de software van de zorginstelling en dan automatisch meegegeven bij informatie-uitwisseling (met andere woorden: het is géén invulveld voor een zorgverlener). <br clear="none"/>
-            </desc>
+                </desc>
             <relationship type="SPEC"
                           ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.4.10021"
                           flexibility="2012-08-06T00:00:00"
@@ -87,7 +87,7 @@
                   shortName="zorginstelling_lvrid">
             <name language="nl-NL">Zorginstelling LVR-ID</name>
             <desc language="nl-NL">Unieke LVR-identificatie van de zorginstelling. <br clear="none"/>
-            </desc>
+                </desc>
             <valueDomain type="identifier">
                <property minLength="4" maxLength="5"/>
             </valueDomain>
@@ -307,7 +307,7 @@
                   shortName="type_zorginstelling_bij_verwijzing">
             <name language="nl-NL">Type zorginstelling (bij verwijzing)</name>
             <desc language="nl-NL">Type zorginstelling bij een verwijzing.<br clear="none"/>
-            </desc>
+                </desc>
             <valueDomain type="code">
                <property/>
             </valueDomain>
@@ -857,7 +857,7 @@
             <name language="nl-NL">Urine-, bloed- en aanvullende onderzoeken</name>
             <desc language="nl-NL">Urine-, bloed- en aanvullende onderzoeken<br clear="none"/>
                <br clear="none"/>Het gaat hier zowel om onderzoeken van bloed, urine en/of een ander monster door het laboratorium, als om onderzoeken die door de zorgverlener of patiënt 'zelf' worden gedaan. <br clear="none"/>Voorbeelden van deze 'zelf'-bepalingen zijn: glucose, Hb en proteïne op basis van strips.<br clear="none"/>
-            </desc>
+                </desc>
             <relationship type="SPEC"
                           ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80959"
                           flexibility="2013-09-10T00:00:00"
