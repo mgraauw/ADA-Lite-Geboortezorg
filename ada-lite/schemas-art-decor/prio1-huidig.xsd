@@ -353,7 +353,7 @@ SOFTWARE.
          </xs:element>
          <xs:element name="naamgegevens"
                      type="naamgegevens_type_2_16_840_1_113883_2_4_3_11_60_90_77_2_6_10035"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="1"/>
          <xs:element name="bloedgroep_vrouw-start" minOccurs="0" maxOccurs="1">
             <xs:complexType>

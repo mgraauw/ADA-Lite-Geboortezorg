@@ -23,6 +23,16 @@
    </zorgverlenerzorginstelling>
    <vrouw>
       <burgerservicenummer value=""/>
+      <naamgegevens>
+         <voornamen value=""/>
+         <initialen value=""/>
+         <roepnaam value=""/>
+         <achternaam>
+            <soort_naam value="" enum=""/>
+            <voorvoegsel value=""/>
+            <achternaam value=""/>
+         </achternaam>
+      </naamgegevens>
    </vrouw>
    <zwangerschap>
       <graviditeit value=""/>

@@ -3052,15 +3052,16 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="count(naamgegevens) eq 1"/>
+         <xsl:when test="(count(naamgegevens) ge 0) and (count(naamgegevens) le 1)"/>
          <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="count(naamgegevens) eq 1">
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="(count(naamgegevens) ge 0) and (count(naamgegevens) le 1)">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Fout aantal voorkomens van "Naamgegevens": <xsl:text/>
                   <xsl:value-of select="count(naamgegevens)"/>
-                  <xsl:text/> (verwacht: 1) [/prio1_huidige_zwangerschap/vrouw/naamgegevens]</svrl:text>
+                  <xsl:text/> (verwacht: 0..1) [/prio1_huidige_zwangerschap/vrouw/naamgegevens]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>

@@ -370,7 +370,7 @@ SOFTWARE.
    <pattern>
       <rule context="/prio1_huidige_zwangerschap/vrouw"><!-- == Check occurrences of children of /prio1_huidige_zwangerschap/vrouw: == -->
          <assert test="count(burgerservicenummer) eq 1">Fout aantal voorkomens van "Burgerservicenummer": <value-of select="count(burgerservicenummer)"/> (verwacht: 1) [/prio1_huidige_zwangerschap/vrouw/burgerservicenummer]</assert>
-         <assert test="count(naamgegevens) eq 1">Fout aantal voorkomens van "Naamgegevens": <value-of select="count(naamgegevens)"/> (verwacht: 1) [/prio1_huidige_zwangerschap/vrouw/naamgegevens]</assert>
+         <assert test="(count(naamgegevens) ge 0) and (count(naamgegevens) le 1)">Fout aantal voorkomens van "Naamgegevens": <value-of select="count(naamgegevens)"/> (verwacht: 0..1) [/prio1_huidige_zwangerschap/vrouw/naamgegevens]</assert>
          <assert test="(count(bloedgroep_vrouw) ge 0) and (count(bloedgroep_vrouw) le 1)">Fout aantal voorkomens van "Bloedgroep vrouw": <value-of select="count(bloedgroep_vrouw)"/> (verwacht: 0..1) [/prio1_huidige_zwangerschap/vrouw/bloedgroep_vrouw]</assert>
          <assert test="(count(rhesus_d_factor_vrouw) ge 0) and (count(rhesus_d_factor_vrouw) le 1)">Fout aantal voorkomens van "Rhesus D Factor vrouw": <value-of select="count(rhesus_d_factor_vrouw)"/> (verwacht: 0..1) [/prio1_huidige_zwangerschap/vrouw/rhesus_d_factor_vrouw]</assert>
          <assert test="(count(rhesus_c_factor) ge 0) and (count(rhesus_c_factor) le 1)">Fout aantal voorkomens van "Rhesus c Factor": <value-of select="count(rhesus_c_factor)"/> (verwacht: 0..1) [/prio1_huidige_zwangerschap/vrouw/rhesus_c_factor]</assert>

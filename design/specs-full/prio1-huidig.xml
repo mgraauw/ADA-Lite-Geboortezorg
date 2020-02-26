@@ -313,7 +313,7 @@
                 </data>
             </community>
         </concept>
-        <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10035" statusCode="draft" effectiveDate="2016-09-08T00:00:00" type="group" minimumMultiplicity="1" maximumMultiplicity="1" conformance="R" isMandatory="false" iddisplay="peri23-dataelement-10035" shortName="naamgegevens">
+        <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10035" statusCode="draft" effectiveDate="2016-09-08T00:00:00" type="group" minimumMultiplicity="0" maximumMultiplicity="1" conformance="R" isMandatory="false" iddisplay="peri23-dataelement-10035" shortName="naamgegevens">
             <implementation shortName="naamgegevens"></implementation>
             <inherit ref="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.10035" effectiveDate="2013-09-10T00:00:00" prefix="peri20-" datasetId="2.16.840.1.113883.2.4.3.11.60.90.77.1.5" datasetEffectiveDate="2013-09-10T00:00:00" datasetStatusCode="final" iType="group" iStatusCode="final" iEffectiveDate="2013-09-10T00:00:00" iVersionLabel="22" refdisplay="peri22-dataelement-10035"></inherit>
             <name language="nl-NL">Naamgegevens</name>

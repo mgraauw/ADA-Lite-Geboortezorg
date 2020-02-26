@@ -372,6 +372,144 @@
             <property minLength="9" maxLength="9"/>
          </valueDomain>
       </concept>
+      <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10035"
+               statusCode="draft"
+               effectiveDate="2016-09-08T00:00:00"
+               type="group"
+               minimumMultiplicity="0"
+               maximumMultiplicity="1"
+               conformance="R"
+               isMandatory="false"
+               shortName="naamgegevens">
+         <name language="nl-NL">Naamgegevens</name>
+         <desc language="nl-NL">Naamgegevens van de vrouw.</desc>
+         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10042"
+                  statusCode="final"
+                  effectiveDate="2016-09-08T00:00:00"
+                  type="item"
+                  minimumMultiplicity="0"
+                  maximumMultiplicity="1"
+                  conformance="R"
+                  isMandatory="false"
+                  shortName="voornamen">
+            <name language="nl-NL">Voornamen</name>
+            <desc language="nl-NL">De verzameling officiële voornamen die bij de geboorte zijn vastgelegd.</desc>
+            <valueDomain type="string">
+               <example>Johanna Henriette Maria</example>
+            </valueDomain>
+         </concept>
+         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82359"
+                  statusCode="draft"
+                  effectiveDate="2016-09-08T00:00:00"
+                  type="item"
+                  minimumMultiplicity="0"
+                  maximumMultiplicity="1"
+                  conformance="R"
+                  isMandatory="false"
+                  shortName="initialen">
+            <name language="nl-NL">Initialen</name>
+            <desc language="nl-NL">Voorletters gebaseerd op de voornamen van de persoon.</desc>
+            <valueDomain type="string">
+               <example>J.H.M.</example>
+            </valueDomain>
+         </concept>
+         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82360"
+                  statusCode="draft"
+                  effectiveDate="2016-09-08T00:00:00"
+                  type="item"
+                  minimumMultiplicity="0"
+                  maximumMultiplicity="1"
+                  conformance="R"
+                  isMandatory="false"
+                  shortName="roepnaam">
+            <name language="nl-NL">Roepnaam</name>
+            <desc language="nl-NL">Naam, die de persoon voert en die niet de officiële naam is.</desc>
+            <valueDomain type="string">
+               <example>Jet</example>
+            </valueDomain>
+         </concept>
+         <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82361"
+                  statusCode="final"
+                  effectiveDate="2016-09-08T00:00:00"
+                  type="group"
+                  minimumMultiplicity="1"
+                  maximumMultiplicity="1"
+                  conformance="R"
+                  isMandatory="false"
+                  shortName="achternaam">
+            <name language="nl-NL">Achternaam</name>
+            <desc language="nl-NL"/>
+            <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82362"
+                     statusCode="final"
+                     effectiveDate="2016-09-08T00:00:00"
+                     type="item"
+                     minimumMultiplicity="0"
+                     maximumMultiplicity="1"
+                     conformance="R"
+                     isMandatory="false"
+                     shortName="soort_naam">
+               <name language="nl-NL">Soort naam</name>
+               <desc language="nl-NL">Aanduiding die aangeeft welke functie de naam heeft.</desc>
+               <valueDomain type="code">
+                  <example>Geboortenaam partner</example>
+               </valueDomain>
+               <valueSet id="2.16.840.1.113883.2.4.3.11.60.101.11.9"
+                         name="AchternaamSoort"
+                         displayName="Achternaam soort"
+                         effectiveDate="2013-03-25T14:13:00"
+                         statusCode="final">
+                  <conceptList>
+                     <concept localId="1"
+                              code="BR"
+                              codeSystem="2.16.840.1.113883.5.43"
+                              displayName="Geslachtsnaam"
+                              value="BR">
+                        <name language="nl-NL">Geslachtsnaam</name>
+                     </concept>
+                     <concept localId="2"
+                              code="SP"
+                              codeSystem="2.16.840.1.113883.5.43"
+                              displayName="Geslachtsnaam partner"
+                              value="SP">
+                        <name language="nl-NL">Geslachtsnaam partner</name>
+                     </concept>
+                  </conceptList>
+               </valueSet>
+            </concept>
+            <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82363"
+                     statusCode="final"
+                     effectiveDate="2016-09-08T00:00:00"
+                     type="item"
+                     minimumMultiplicity="0"
+                     maximumMultiplicity="1"
+                     conformance="R"
+                     isMandatory="false"
+                     shortName="voorvoegsel">
+               <name language="nl-NL">Voorvoegsel</name>
+               <desc language="nl-NL">Deel van de achternaam dat het voorvoegsel bevat.</desc>
+               <comment language="nl-NL">GBA tabel 36 is een opsomming van te gebruiken voorvoegsels zonder bijbehorende code. Het gebruik wordt aanbevolen, maar is niet verplicht. Bij vulling via de SBV-Z zullen de voorzetsels overeenkomen met tabel 36.</comment>
+               <operationalization language="nl-NL">GBA tabel 36</operationalization>
+               <valueDomain type="string">
+                  <example>van</example>
+               </valueDomain>
+            </concept>
+            <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10043"
+                     statusCode="final"
+                     effectiveDate="2016-09-08T00:00:00"
+                     type="item"
+                     minimumMultiplicity="1"
+                     maximumMultiplicity="1"
+                     conformance="R"
+                     isMandatory="false"
+                     shortName="achternaam">
+               <name language="nl-NL">Achternaam</name>
+               <desc language="nl-NL">De achternaam van een persoon die bij de geboorte is vastgelegd. Afhankeljk van de soort naam is dit de geboortenaam van de persoon of van de partner</desc>
+               <valueDomain type="string">
+                  <example>Putten</example>
+               </valueDomain>
+            </concept>
+         </concept>
+      </concept>
    </concept>
    <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.3"
             statusCode="draft"

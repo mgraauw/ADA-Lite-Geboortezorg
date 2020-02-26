@@ -376,7 +376,7 @@
                statusCode="draft"
                effectiveDate="2016-09-08T00:00:00"
                type="group"
-               minimumMultiplicity="1"
+               minimumMultiplicity="0"
                maximumMultiplicity="1"
                conformance="R"
                isMandatory="false"

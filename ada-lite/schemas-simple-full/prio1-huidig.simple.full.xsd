@@ -470,7 +470,7 @@ SOFTWARE.
             </xs:annotation>
          </xs:element>
          <xs:element name="naamgegevens"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="1"
                      type="naamgegevens">
             <xs:annotation>
