@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <prio1_huidige_zwangerschap transactionRef="2.16.840.1.113883.2.4.3.11.60.90.77.4.2493"
                             transactionEffectiveDate="2020-01-08T13:13:15"
-                            versionDate=""
+                            versionDate="2019-01-01T00:00:00"
                             prefix="peri20-"><!-- == ADA full format document generated from lite format document == --><!-- == Source: design/examples-lite/prio1_huidig_scen1_acute.xml == --><!-- == Specification used: design/specs-full/prio1-huidig.xml == --><!-- == Generator: design/xsl/lib/ada-lite2ada-full.mod.xsl == -->
    <zorgverlenerzorginstelling conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.1">
       <zorginstelling conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10020">
@@ -43,7 +43,7 @@
    </zwangerschap>
    <medisch_onderzoek conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.14">
       <datum_onderzoek conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.50020"
-                       value="2020-02-10T00:00"/>
+                       value="2020-02-10T00:00:00"/>
       <maternale_onderzoeksgegevens conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.142">
          <urine_bloed_en_aanvullende_onderzoeken conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80959">
             <hb conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10814"

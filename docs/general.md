@@ -88,6 +88,12 @@ de code uit een ander codesysteem komt), dan wordt de code/codesysteem combinati
 Hoeveelheden worden opgenomen als numerieke waarden. De bijbehorende eenheid is terug te vinden in de PWD specificaties.
 
 ```xml
+<hoeveelheid_bloedverliesq value="true"/>
+```
+
+Booleans bevatten 'true' of 'false'.
+
+```xml
 <apgarscore_na_5_min value="8"/>
 ```
 

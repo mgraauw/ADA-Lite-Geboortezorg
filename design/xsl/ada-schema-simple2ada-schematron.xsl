@@ -265,7 +265,11 @@
               <xsl:when test="$datatype eq 't-datetime'">
                 <xsl:sequence select="'((@' || $attribute-name || ' castable as xs:date) or (@' || $attribute-name || ' castable as xs:dateTime))'"/>
               </xsl:when>
+              <xsl:when test="$datatype eq 'NullFlavorNoInformation'">
+                <!-- pass -->
+              </xsl:when>
               <xsl:otherwise>
+                <!--<xsl:message select="'Unrecognized type information for ' || $xpath-to-parent || '/@' || $attribute-name || ': ' || $datatype"/>-->
                 <xsl:sequence
                   select="error((), 'Unrecognized type information for ' || $xpath-to-parent || '/@' || $attribute-name || ': ' || $datatype)"/>
               </xsl:otherwise>

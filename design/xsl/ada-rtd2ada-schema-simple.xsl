@@ -132,6 +132,26 @@
         </xs:simpleType>  
       </xsl:if>
       
+      <!-- nullFlavor -->
+      <xs:simpleType name="NullFlavorNoInformation">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="NI"/>
+          <xs:enumeration value="UNK"/>
+          <xs:enumeration value="OTH"/>
+          <xs:enumeration value="MSK"/>
+          <xs:enumeration value="UNC"/>
+          <xs:enumeration value="NA"/>
+          <xs:enumeration value="NAV"/>
+          <xs:enumeration value="ASKU"/>
+          <xs:enumeration value="NASK"/>
+          <xs:enumeration value="INV"/>
+          <xs:enumeration value="DER"/>
+          <xs:enumeration value="NINF"/>
+          <xs:enumeration value="PINF"/>
+          <xs:enumeration value="QS"/>
+          <xs:enumeration value="TRC"/>
+        </xs:restriction>
+      </xs:simpleType>
     </xs:schema>
 
   </xsl:template>
@@ -278,7 +298,9 @@
           </xsl:call-template>
         </xsl:otherwise>
       </xsl:choose>
-
+      
+      <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
+      <xs:attribute name="root" use="optional"/>
 
     </xsl:for-each>
   </xsl:template>
@@ -329,7 +351,8 @@
     </xsl:variable>
 
     <!-- Create the attribute definition: -->
-    <xs:attribute name="value" use="{$use-required}">
+    <!-- Since we can have a nullFlavor, value is optional -->
+    <xs:attribute name="value" use="{$use-optional}">
       <!-- See if there are any default/fixed settings and output these as the correct attributes. Fixed/default settings are exclusive,
            so let fixed take precedence. -->
       <xsl:variable name="fixed" as="xs:string?" select="property/@fixed"/>

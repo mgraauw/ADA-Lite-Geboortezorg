@@ -48,6 +48,25 @@ SOFTWARE.
    <xs:simpleType name="t-datetime">
       <xs:union memberTypes="xs:date xs:dateTime"/>
    </xs:simpleType>
+   <xs:simpleType name="NullFlavorNoInformation">
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="NI"/>
+         <xs:enumeration value="UNK"/>
+         <xs:enumeration value="OTH"/>
+         <xs:enumeration value="MSK"/>
+         <xs:enumeration value="UNC"/>
+         <xs:enumeration value="NA"/>
+         <xs:enumeration value="NAV"/>
+         <xs:enumeration value="ASKU"/>
+         <xs:enumeration value="NASK"/>
+         <xs:enumeration value="INV"/>
+         <xs:enumeration value="DER"/>
+         <xs:enumeration value="NINF"/>
+         <xs:enumeration value="PINF"/>
+         <xs:enumeration value="QS"/>
+         <xs:enumeration value="TRC"/>
+      </xs:restriction>
+   </xs:simpleType>
    <xs:complexType name="prio1_huidige_zwangerschap">
       <xs:sequence>
          <xs:element name="zorgverlenerzorginstelling"
@@ -211,14 +230,16 @@ SOFTWARE.
                     type="t-id"
                     use="required"
                     fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10021"/>
-      <xs:attribute name="value" use="required" type="xs:string"/>
+      <xs:attribute name="value" use="optional" type="xs:string"/>
+      <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
+      <xs:attribute name="root" use="optional"/>
    </xs:complexType>
    <xs:complexType name="zorginstelling_agbid">
       <xs:attribute name="conceptId"
                     type="t-id"
                     use="required"
                     fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10022"/>
-      <xs:attribute name="value" use="required">
+      <xs:attribute name="value" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
                <xs:minLength value="8"/>
@@ -226,13 +247,15 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
+      <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
+      <xs:attribute name="root" use="optional"/>
    </xs:complexType>
    <xs:complexType name="zorginstelling_lvrid">
       <xs:attribute name="conceptId"
                     type="t-id"
                     use="required"
                     fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10023"/>
-      <xs:attribute name="value" use="required">
+      <xs:attribute name="value" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
                <xs:minLength value="4"/>
@@ -240,13 +263,15 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
+      <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
+      <xs:attribute name="root" use="optional"/>
    </xs:complexType>
    <xs:complexType name="zorginstelling_ura">
       <xs:attribute name="conceptId"
                     type="t-id"
                     use="required"
                     fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10024"/>
-      <xs:attribute name="value" use="required">
+      <xs:attribute name="value" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
                <xs:minLength value="8"/>
@@ -254,13 +279,17 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
+      <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
+      <xs:attribute name="root" use="optional"/>
    </xs:complexType>
    <xs:complexType name="naam_zorginstelling">
       <xs:attribute name="conceptId"
                     type="t-id"
                     use="required"
                     fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10026"/>
-      <xs:attribute name="value" use="required" type="xs:string"/>
+      <xs:attribute name="value" use="optional" type="xs:string"/>
+      <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
+      <xs:attribute name="root" use="optional"/>
    </xs:complexType>
    <xs:complexType name="adres_zorginstelling">
       <xs:sequence>
@@ -332,49 +361,63 @@ SOFTWARE.
                     type="t-id"
                     use="required"
                     fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10032"/>
-      <xs:attribute name="value" use="required" type="xs:string"/>
+      <xs:attribute name="value" use="optional" type="xs:string"/>
+      <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
+      <xs:attribute name="root" use="optional"/>
    </xs:complexType>
    <xs:complexType name="huisnummer">
       <xs:attribute name="conceptId"
                     type="t-id"
                     use="required"
                     fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10033"/>
-      <xs:attribute name="value" use="required" type="xs:string"/>
+      <xs:attribute name="value" use="optional" type="xs:string"/>
+      <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
+      <xs:attribute name="root" use="optional"/>
    </xs:complexType>
    <xs:complexType name="huisletterhuisnummertoevoeging">
       <xs:attribute name="conceptId"
                     type="t-id"
                     use="required"
                     fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10034"/>
-      <xs:attribute name="value" use="required" type="xs:string"/>
+      <xs:attribute name="value" use="optional" type="xs:string"/>
+      <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
+      <xs:attribute name="root" use="optional"/>
    </xs:complexType>
    <xs:complexType name="postcode">
       <xs:attribute name="conceptId"
                     type="t-id"
                     use="required"
                     fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10041"/>
-      <xs:attribute name="value" use="required" type="xs:string"/>
+      <xs:attribute name="value" use="optional" type="xs:string"/>
+      <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
+      <xs:attribute name="root" use="optional"/>
    </xs:complexType>
    <xs:complexType name="plaatsnaam">
       <xs:attribute name="conceptId"
                     type="t-id"
                     use="required"
                     fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10036"/>
-      <xs:attribute name="value" use="required" type="xs:string"/>
+      <xs:attribute name="value" use="optional" type="xs:string"/>
+      <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
+      <xs:attribute name="root" use="optional"/>
    </xs:complexType>
    <xs:complexType name="gemeentenaam">
       <xs:attribute name="conceptId"
                     type="t-id"
                     use="required"
                     fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10037"/>
-      <xs:attribute name="value" use="required" type="xs:string"/>
+      <xs:attribute name="value" use="optional" type="xs:string"/>
+      <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
+      <xs:attribute name="root" use="optional"/>
    </xs:complexType>
    <xs:complexType name="land">
       <xs:attribute name="conceptId"
                     type="t-id"
                     use="required"
                     fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10038"/>
-      <xs:attribute name="value" use="required" type="xs:string"/>
+      <xs:attribute name="value" use="optional" type="xs:string"/>
+      <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
+      <xs:attribute name="root" use="optional"/>
    </xs:complexType>
    <xs:complexType name="adrestype">
       <xs:attribute name="conceptId"
@@ -386,6 +429,8 @@ SOFTWARE.
       <xs:attribute name="code" use="required" type="xs:string"/>
       <xs:attribute name="codeSystem" use="required" type="xs:string"/>
       <xs:attribute name="displayName" use="required" type="xs:string"/>
+      <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
+      <xs:attribute name="root" use="optional"/>
    </xs:complexType>
    <xs:complexType name="type_zorginstelling">
       <xs:attribute name="conceptId"
@@ -446,6 +491,8 @@ SOFTWARE.
          </xs:simpleType>
       </xs:attribute>
       <xs:attribute name="displayName" use="required" type="xs:string"/>
+      <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
+      <xs:attribute name="root" use="optional"/>
    </xs:complexType>
    <xs:complexType name="type_zorginstelling_bij_verwijzing">
       <xs:attribute name="conceptId"
@@ -457,6 +504,8 @@ SOFTWARE.
       <xs:attribute name="code" use="required" type="xs:string"/>
       <xs:attribute name="codeSystem" use="required" type="xs:string"/>
       <xs:attribute name="displayName" use="required" type="xs:string"/>
+      <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
+      <xs:attribute name="root" use="optional"/>
    </xs:complexType>
    <xs:complexType name="vrouw">
       <xs:sequence>
@@ -521,7 +570,7 @@ SOFTWARE.
                     type="t-id"
                     use="required"
                     fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10030"/>
-      <xs:attribute name="value" use="required">
+      <xs:attribute name="value" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:string">
                <xs:minLength value="9"/>
@@ -529,6 +578,8 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
+      <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
+      <xs:attribute name="root" use="optional"/>
    </xs:complexType>
    <xs:complexType name="naamgegevens">
       <xs:sequence>
@@ -574,21 +625,27 @@ SOFTWARE.
                     type="t-id"
                     use="required"
                     fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10042"/>
-      <xs:attribute name="value" use="required" type="xs:string"/>
+      <xs:attribute name="value" use="optional" type="xs:string"/>
+      <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
+      <xs:attribute name="root" use="optional"/>
    </xs:complexType>
    <xs:complexType name="initialen">
       <xs:attribute name="conceptId"
                     type="t-id"
                     use="required"
                     fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82359"/>
-      <xs:attribute name="value" use="required" type="xs:string"/>
+      <xs:attribute name="value" use="optional" type="xs:string"/>
+      <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
+      <xs:attribute name="root" use="optional"/>
    </xs:complexType>
    <xs:complexType name="roepnaam">
       <xs:attribute name="conceptId"
                     type="t-id"
                     use="required"
                     fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82360"/>
-      <xs:attribute name="value" use="required" type="xs:string"/>
+      <xs:attribute name="value" use="optional" type="xs:string"/>
+      <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
+      <xs:attribute name="root" use="optional"/>
    </xs:complexType>
    <xs:complexType name="achternaam_82361">
       <xs:sequence>
@@ -665,20 +722,26 @@ SOFTWARE.
          </xs:simpleType>
       </xs:attribute>
       <xs:attribute name="displayName" use="required" type="xs:string"/>
+      <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
+      <xs:attribute name="root" use="optional"/>
    </xs:complexType>
    <xs:complexType name="voorvoegsel">
       <xs:attribute name="conceptId"
                     type="t-id"
                     use="required"
                     fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82363"/>
-      <xs:attribute name="value" use="required" type="xs:string"/>
+      <xs:attribute name="value" use="optional" type="xs:string"/>
+      <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
+      <xs:attribute name="root" use="optional"/>
    </xs:complexType>
    <xs:complexType name="achternaam_10043">
       <xs:attribute name="conceptId"
                     type="t-id"
                     use="required"
                     fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10043"/>
-      <xs:attribute name="value" use="required" type="xs:string"/>
+      <xs:attribute name="value" use="optional" type="xs:string"/>
+      <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
+      <xs:attribute name="root" use="optional"/>
    </xs:complexType>
    <xs:complexType name="bloedgroep_vrouw">
       <xs:attribute name="conceptId"
@@ -746,6 +809,8 @@ SOFTWARE.
          </xs:simpleType>
       </xs:attribute>
       <xs:attribute name="displayName" use="required" type="xs:string"/>
+      <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
+      <xs:attribute name="root" use="optional"/>
    </xs:complexType>
    <xs:complexType name="rhesus_d_factor_vrouw">
       <xs:attribute name="conceptId"
@@ -799,6 +864,8 @@ SOFTWARE.
          </xs:simpleType>
       </xs:attribute>
       <xs:attribute name="displayName" use="required" type="xs:string"/>
+      <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
+      <xs:attribute name="root" use="optional"/>
    </xs:complexType>
    <xs:complexType name="rhesus_c_factor">
       <xs:attribute name="conceptId"
@@ -845,6 +912,8 @@ SOFTWARE.
          </xs:simpleType>
       </xs:attribute>
       <xs:attribute name="displayName" use="required" type="xs:string"/>
+      <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
+      <xs:attribute name="root" use="optional"/>
    </xs:complexType>
    <xs:complexType name="zwangerschap">
       <xs:sequence>
@@ -887,7 +956,7 @@ SOFTWARE.
                     type="t-id"
                     use="required"
                     fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20010"/>
-      <xs:attribute name="value" use="required">
+      <xs:attribute name="value" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:decimal">
                <xs:minInclusive value="1"/>
@@ -895,13 +964,15 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
+      <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
+      <xs:attribute name="root" use="optional"/>
    </xs:complexType>
    <xs:complexType name="pariteit">
       <xs:attribute name="conceptId"
                     type="t-id"
                     use="required"
                     fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20153"/>
-      <xs:attribute name="value" use="required">
+      <xs:attribute name="value" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:decimal">
                <xs:minInclusive value="0"/>
@@ -909,6 +980,8 @@ SOFTWARE.
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
+      <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
+      <xs:attribute name="root" use="optional"/>
    </xs:complexType>
    <xs:complexType name="a_terme_datum_groep">
       <xs:sequence>
@@ -937,7 +1010,9 @@ SOFTWARE.
                     type="t-id"
                     use="required"
                     fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20030"/>
-      <xs:attribute name="value" use="required" type="t-datetime"/>
+      <xs:attribute name="value" use="optional" type="t-datetime"/>
+      <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
+      <xs:attribute name="root" use="optional"/>
    </xs:complexType>
    <xs:complexType name="medisch_onderzoek">
       <xs:sequence>
@@ -974,7 +1049,9 @@ SOFTWARE.
                     type="t-id"
                     use="required"
                     fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.50020"/>
-      <xs:attribute name="value" use="required" type="t-datetime"/>
+      <xs:attribute name="value" use="optional" type="t-datetime"/>
+      <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
+      <xs:attribute name="root" use="optional"/>
    </xs:complexType>
    <xs:complexType name="maternale_onderzoeksgegevens">
       <xs:sequence>
@@ -1022,7 +1099,7 @@ SOFTWARE.
                     type="t-id"
                     use="required"
                     fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10814"/>
-      <xs:attribute name="value" use="required">
+      <xs:attribute name="value" use="optional">
          <xs:simpleType>
             <xs:restriction base="xs:decimal">
                <xs:minInclusive value="0"/>
@@ -1030,6 +1107,8 @@ SOFTWARE.
          </xs:simpleType>
       </xs:attribute>
       <xs:attribute name="unit" type="xs:string" use="required" fixed="mmol/L"/>
+      <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
+      <xs:attribute name="root" use="optional"/>
    </xs:complexType>
    <xs:complexType name="adaextension">
       <xs:sequence>

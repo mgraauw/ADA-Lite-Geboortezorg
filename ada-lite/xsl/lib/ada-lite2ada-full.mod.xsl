@@ -86,7 +86,7 @@
           <!-- Get the value for this concept:  -->
           <xsl:variable name="concept-type" as="xs:string" select="($concept/@type, 'item')[1]"/>
           <xsl:choose>
-            <xsl:when test="($concept-type eq 'item') and (exists(@value) or exists(@enum))">
+            <xsl:when test="($concept-type eq 'item') and (exists(@value) or exists(@nullFlavor) or exists(@enum))">
               <xsl:call-template name="local:handle-concept-value">
                 <xsl:with-param name="concept" select="$concept"/>
                 <xsl:with-param name="value" select="@value"/>
@@ -107,7 +107,6 @@
               <xsl:comment> == *** Unrecognized concept-type/value combination for {$full-elm-path} == </xsl:comment>
             </xsl:otherwise>
           </xsl:choose>
-
           <!-- Now dive into the child elements: -->
           <xsl:apply-templates select="*" mode="#current">
             <xsl:with-param name="concept-root" as="element()" select="$concept" tunnel="true"/>
@@ -199,9 +198,11 @@
         <xsl:copy select="$value-domain/property/@unit"/>
       </xsl:when>
 
-      <!-- Anything else, just output the value as-is: -->
+      <!-- Anything else, just output the value as-is, when present: -->
       <xsl:otherwise>
-        <xsl:attribute name="value" select="$value"/>
+        <xsl:if test="exists($value)">
+          <xsl:attribute name="value" select="$value"/>
+        </xsl:if>
       </xsl:otherwise>
 
     </xsl:choose>

@@ -166,9 +166,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Datum start zorgverantwoordelijkheid": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/datum_start_zorgverantwoordelijkheid/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20290')">Foutieve informatie voor "Datum start zorgverantwoordelijkheid": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20290" [/kernset_geboortezorg/zorgverlening/datum_start_zorgverantwoordelijkheid/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Datum start zorgverantwoordelijkheid": Attribuut "value" ontbreekt [/kernset_geboortezorg/zorgverlening/datum_start_zorgverantwoordelijkheid/@value]</assert>
          <assert test="empty(@value) or ((@value castable as xs:date) or (@value castable as xs:dateTime))">Foutieve informatie voor "Datum start zorgverantwoordelijkheid": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/datum_start_zorgverantwoordelijkheid/@value; type=t-datetime]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Datum start zorgverantwoordelijkheid": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/datum_start_zorgverantwoordelijkheid; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Datum start zorgverantwoordelijkheid": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/datum_start_zorgverantwoordelijkheid; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zorgverlening/datum_einde_zorgverantwoordelijkheid: == -->
@@ -177,9 +178,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Datum einde zorgverantwoordelijkheid": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/datum_einde_zorgverantwoordelijkheid/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20340')">Foutieve informatie voor "Datum einde zorgverantwoordelijkheid": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20340" [/kernset_geboortezorg/zorgverlening/datum_einde_zorgverantwoordelijkheid/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Datum einde zorgverantwoordelijkheid": Attribuut "value" ontbreekt [/kernset_geboortezorg/zorgverlening/datum_einde_zorgverantwoordelijkheid/@value]</assert>
          <assert test="empty(@value) or ((@value castable as xs:date) or (@value castable as xs:dateTime))">Foutieve informatie voor "Datum einde zorgverantwoordelijkheid": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/datum_einde_zorgverantwoordelijkheid/@value; type=t-datetime]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Datum einde zorgverantwoordelijkheid": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/datum_einde_zorgverantwoordelijkheid; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Datum einde zorgverantwoordelijkheid": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/datum_einde_zorgverantwoordelijkheid; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zorgverlening/eindverantwoordelijk_in_welke_perinatale_periodeq: == -->
@@ -196,7 +198,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Start_/intake_zwangerschapszorg', 'Zwangerschap_vervolg', 'Start_baring/ontsluiting', 'Uitdrijving', 'Nageboortetijdperk', '1e_24_uur_postpartum', '2e_-_7e_dag_postpartum', 'Follow-up_eerste_6_wkn_postpartum', 'Geen_informatie'))">Foutieve informatie voor "Eindverantwoordelijk in welke perinatale periode?": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/eindverantwoordelijk_in_welke_perinatale_periodeq/@enum; allowed=('Start_/intake_zwangerschapszorg', 'Zwangerschap_vervolg', 'Start_baring/ontsluiting', 'Uitdrijving', 'Nageboortetijdperk', '1e_24_uur_postpartum', '2e_-_7e_dag_postpartum', 'Follow-up_eerste_6_wkn_postpartum', 'Geen_informatie')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Eindverantwoordelijk in welke perinatale periode?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/eindverantwoordelijk_in_welke_perinatale_periodeq; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Eindverantwoordelijk in welke perinatale periode?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/eindverantwoordelijk_in_welke_perinatale_periodeq; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zorgverlening/conclusie_risicostatus_na_intake: == -->
@@ -213,7 +217,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('1e_lijn_(VIL_A)', 'overlegsituatie_(VIL_B)', '2e_lijn_(VIL_C)', '1e_lijn_met_plaatsindicatie_(VIL_D)', '3e_lijns_zorg'))">Foutieve informatie voor "Conclusie risicostatus na intake": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/conclusie_risicostatus_na_intake/@enum; allowed=('1e_lijn_(VIL_A)', 'overlegsituatie_(VIL_B)', '2e_lijn_(VIL_C)', '1e_lijn_met_plaatsindicatie_(VIL_D)', '3e_lijns_zorg')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Conclusie risicostatus na intake": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/conclusie_risicostatus_na_intake; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Conclusie risicostatus na intake": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/conclusie_risicostatus_na_intake; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zorgverlening/verwijsdetails: == -->
@@ -246,9 +252,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Datum verwijzing": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/verwijsdetails/datum_verwijzing/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82013')">Foutieve informatie voor "Datum verwijzing": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82013" [/kernset_geboortezorg/zorgverlening/verwijsdetails/datum_verwijzing/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Datum verwijzing": Attribuut "value" ontbreekt [/kernset_geboortezorg/zorgverlening/verwijsdetails/datum_verwijzing/@value]</assert>
          <assert test="empty(@value) or ((@value castable as xs:date) or (@value castable as xs:dateTime))">Foutieve informatie voor "Datum verwijzing": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/verwijsdetails/datum_verwijzing/@value; type=t-datetime]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Datum verwijzing": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/datum_verwijzing; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Datum verwijzing": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/datum_verwijzing; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zorgverlening/verwijsdetails/verwijzing_van: == -->
@@ -289,7 +296,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Ante_partum_Na_eerste_controle', 'Ante_partum_Voor_28e_week', 'Ante_partum_28e_tot_en_met_36e_week', 'Ante_partum_Vanaf_37e_week', 'Durante_partu_Tijdens_ontsluiting', 'Durante_partu_Tijdens_uitdrijving', 'Durante_partu_Nageboortetijdperk', 'Postpartum_Direct_postpartum', 'Postpartum_Tijdens_kraambed', 'Postpartum_Tijdens_kraambed_Binnen_24_uur', 'Postpartum_Tijdens_kraambed_2e_t/m_7e_dag', 'Postpartum_2e_week_of_later', 'Onbekend', 'Geen_informatie'))">Foutieve informatie voor "Perinatale periode": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/perinatale_periode/@enum; allowed=('Ante_partum_Na_eerste_controle', 'Ante_partum_Voor_28e_week', 'Ante_partum_28e_tot_en_met_36e_week', 'Ante_partum_Vanaf_37e_week', 'Durante_partu_Tijdens_ontsluiting', 'Durante_partu_Tijdens_uitdrijving', 'Durante_partu_Nageboortetijdperk', 'Postpartum_Direct_postpartum', 'Postpartum_Tijdens_kraambed', 'Postpartum_Tijdens_kraambed_Binnen_24_uur', 'Postpartum_Tijdens_kraambed_2e_t/m_7e_dag', 'Postpartum_2e_week_of_later', 'Onbekend', 'Geen_informatie')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Perinatale periode": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/perinatale_periode; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Perinatale periode": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/perinatale_periode; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Any attributes allowed on /kernset_geboortezorg/zorgverlening/verwijsdetails/adaextension == -->
@@ -331,8 +340,9 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "ZorgaanbiederIdentificatieNummer": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/verwijsdetails/verwijzing_van/zorginstelling/zorgaanbieder_identificatie_nummer/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82552')">Foutieve informatie voor "ZorgaanbiederIdentificatieNummer": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82552" [/kernset_geboortezorg/zorgverlening/verwijsdetails/verwijzing_van/zorginstelling/zorgaanbieder_identificatie_nummer/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "ZorgaanbiederIdentificatieNummer": Attribuut "value" ontbreekt [/kernset_geboortezorg/zorgverlening/verwijsdetails/verwijzing_van/zorginstelling/zorgaanbieder_identificatie_nummer/@value]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "ZorgaanbiederIdentificatieNummer": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/verwijzing_van/zorginstelling/zorgaanbieder_identificatie_nummer; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "ZorgaanbiederIdentificatieNummer": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/verwijzing_van/zorginstelling/zorgaanbieder_identificatie_nummer; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zorgverlening/verwijsdetails/verwijzing_van/zorginstelling/specialisme: == -->
@@ -349,7 +359,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Verloskundige', 'Gynaecoloog_2e_lijn', 'Gynaecoloog_3e_lijn', 'Kinderarts_2e_lijn', 'Kinderarts_3e_lijn', 'Huisarts', 'Echoscopist', 'Klinisch_geneticus', 'Psychiater', 'Medisch_specialist_overig', 'Overig', 'Geen_informatie'))">Foutieve informatie voor "Specialisme": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/verwijzing_van/zorginstelling/specialisme/@enum; allowed=('Verloskundige', 'Gynaecoloog_2e_lijn', 'Gynaecoloog_3e_lijn', 'Kinderarts_2e_lijn', 'Kinderarts_3e_lijn', 'Huisarts', 'Echoscopist', 'Klinisch_geneticus', 'Psychiater', 'Medisch_specialist_overig', 'Overig', 'Geen_informatie')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Specialisme": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/verwijzing_van/zorginstelling/specialisme; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Specialisme": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/verwijzing_van/zorginstelling/specialisme; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Any attributes allowed on /kernset_geboortezorg/zorgverlening/verwijsdetails/verwijzing_van/zorginstelling/adaextension == -->
@@ -387,7 +399,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Consultation_(procedure)', 'Transfer_of_care_(procedure)', 'Geen_informatie'))">Foutieve informatie voor "Type verwijzing": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/verwijzing_naar/type_verwijzing/@enum; allowed=('Consultation_(procedure)', 'Transfer_of_care_(procedure)', 'Geen_informatie')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Type verwijzing": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/verwijzing_naar/type_verwijzing; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Type verwijzing": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/verwijzing_naar/type_verwijzing; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Any attributes allowed on /kernset_geboortezorg/zorgverlening/verwijsdetails/verwijzing_naar/adaextension == -->
@@ -409,8 +423,9 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "ZorgaanbiederIdentificatieNummer": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/verwijsdetails/verwijzing_naar/zorginstelling/zorgaanbieder_identificatie_nummer/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82579')">Foutieve informatie voor "ZorgaanbiederIdentificatieNummer": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82579" [/kernset_geboortezorg/zorgverlening/verwijsdetails/verwijzing_naar/zorginstelling/zorgaanbieder_identificatie_nummer/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "ZorgaanbiederIdentificatieNummer": Attribuut "value" ontbreekt [/kernset_geboortezorg/zorgverlening/verwijsdetails/verwijzing_naar/zorginstelling/zorgaanbieder_identificatie_nummer/@value]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "ZorgaanbiederIdentificatieNummer": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/verwijzing_naar/zorginstelling/zorgaanbieder_identificatie_nummer; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "ZorgaanbiederIdentificatieNummer": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/verwijzing_naar/zorginstelling/zorgaanbieder_identificatie_nummer; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zorgverlening/verwijsdetails/verwijzing_naar/zorginstelling/specialisme: == -->
@@ -427,7 +442,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Verloskundige', 'Gynaecoloog_2e_lijn', 'Gynaecoloog_3e_lijn', 'Kinderarts_2e_lijn', 'Kinderarts_3e_lijn', 'Huisarts', 'Echoscopist', 'Klinisch_geneticus', 'Psychiater', 'Medisch_specialist_overig', 'Overig', 'Geen_informatie'))">Foutieve informatie voor "Specialisme": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/verwijzing_naar/zorginstelling/specialisme/@enum; allowed=('Verloskundige', 'Gynaecoloog_2e_lijn', 'Gynaecoloog_3e_lijn', 'Kinderarts_2e_lijn', 'Kinderarts_3e_lijn', 'Huisarts', 'Echoscopist', 'Klinisch_geneticus', 'Psychiater', 'Medisch_specialist_overig', 'Overig', 'Geen_informatie')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Specialisme": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/verwijzing_naar/zorginstelling/specialisme; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Specialisme": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/verwijzing_naar/zorginstelling/specialisme; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Any attributes allowed on /kernset_geboortezorg/zorgverlening/verwijsdetails/verwijzing_naar/zorginstelling/adaextension == -->
@@ -459,8 +476,9 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Van 2e naar 3e lijn": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_2e_naar_3e_lijn/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82451')">Foutieve informatie voor "Van 2e naar 3e lijn": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82451" [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_2e_naar_3e_lijn/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Van 2e naar 3e lijn": Attribuut "value" ontbreekt [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_2e_naar_3e_lijn/@value]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Van 2e naar 3e lijn": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_2e_naar_3e_lijn; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Van 2e naar 3e lijn": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_2e_naar_3e_lijn; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_2e_naar_1e_lijn: == -->
@@ -477,7 +495,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Zwangerschap/baring/kind_ongestoord,_fysiologie', 'Zwangerschap/baring/kind_ongestoord,_met_advies', 'overig'))">Foutieve informatie voor "Van 2e naar 1e lijn": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_2e_naar_1e_lijn/@enum; allowed=('Zwangerschap/baring/kind_ongestoord,_fysiologie', 'Zwangerschap/baring/kind_ongestoord,_met_advies', 'overig')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Van 2e naar 1e lijn": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_2e_naar_1e_lijn; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Van 2e naar 1e lijn": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_2e_naar_1e_lijn; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_3e_naar_2e_lijn: == -->
@@ -494,7 +514,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('OHC_indicatie_vervallen', 'overig'))">Foutieve informatie voor "Van 3e naar 2e lijn": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_3e_naar_2e_lijn/@enum; allowed=('OHC_indicatie_vervallen', 'overig')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Van 3e naar 2e lijn": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_3e_naar_2e_lijn; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Van 3e naar 2e lijn": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_3e_naar_2e_lijn; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Any attributes allowed on /kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/adaextension == -->
@@ -553,7 +575,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Miskraam', 'APLA', 'EUG_-_behandeld', '(partiële)_Mola_-_behandeld', 'Geen_informatie'))">Foutieve informatie voor "Einde zwangerschap": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/einde_zwangerschap/@enum; allowed=('Miskraam', 'APLA', 'EUG_-_behandeld', '(partiële)_Mola_-_behandeld', 'Geen_informatie')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Einde zwangerschap": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/einde_zwangerschap; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Einde zwangerschap": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/einde_zwangerschap; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/bevalling: == -->
@@ -578,8 +602,9 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Overig": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/overig/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82442')">Foutieve informatie voor "Overig": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82442" [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/overig/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Overig": Attribuut "value" ontbreekt [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/overig/@value]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Overig": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/overig; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Overig": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/overig; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Any attributes allowed on /kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/adaextension == -->
@@ -626,7 +651,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Systemic_lupus_erythematosus_(disorder)', 'Rheumatism_(disorder)', 'Overig'))">Foutieve informatie voor "Auto-immuun aandoening": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/autoimmuun_aandoening/@enum; allowed=('Systemic_lupus_erythematosus_(disorder)', 'Rheumatism_(disorder)', 'Overig')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Auto-immuun aandoening": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/autoimmuun_aandoening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Auto-immuun aandoening": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/autoimmuun_aandoening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/cardiovasculaire_aandoening: == -->
@@ -643,7 +670,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Hypertensive_disorder,_systemic_arterial_(disorder)', 'Cardiomyopathy_(disorder)', 'Cardiac_arrhythmia_(disorder)', 'Structural_disorder_of_heart_(disorder)', 'Overig'))">Foutieve informatie voor "Cardiovasculaire aandoening": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/cardiovasculaire_aandoening/@enum; allowed=('Hypertensive_disorder,_systemic_arterial_(disorder)', 'Cardiomyopathy_(disorder)', 'Cardiac_arrhythmia_(disorder)', 'Structural_disorder_of_heart_(disorder)', 'Overig')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Cardiovasculaire aandoening": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/cardiovasculaire_aandoening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Cardiovasculaire aandoening": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/cardiovasculaire_aandoening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/urogenitale_aandoening: == -->
@@ -660,7 +689,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Pyelonephritis_(disorder)', 'Bacteriuria_(finding)', 'Chronic_renal_impairment_(disorder)'))">Foutieve informatie voor "Urogenitale aandoening": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/urogenitale_aandoening/@enum; allowed=('Pyelonephritis_(disorder)', 'Bacteriuria_(finding)', 'Chronic_renal_impairment_(disorder)')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Urogenitale aandoening": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/urogenitale_aandoening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Urogenitale aandoening": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/urogenitale_aandoening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/oncologische_aandoening: == -->
@@ -677,7 +708,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Primary_malignant_neoplasm_of_female_breast_(disorder)', 'Carcinoma_of_cervix_(disorder)', 'Leukemia,_disease_(disorder)', 'Primary_malignant_neoplasm_of_lung_(disorder)', 'Malignant_melanoma_(disorder)', 'other'))">Foutieve informatie voor "Oncologische aandoening": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/oncologische_aandoening/@enum; allowed=('Primary_malignant_neoplasm_of_female_breast_(disorder)', 'Carcinoma_of_cervix_(disorder)', 'Leukemia,_disease_(disorder)', 'Primary_malignant_neoplasm_of_lung_(disorder)', 'Malignant_melanoma_(disorder)', 'other')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Oncologische aandoening": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/oncologische_aandoening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Oncologische aandoening": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/oncologische_aandoening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/schildklier_aandoening: == -->
@@ -694,7 +727,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Hypothyroidism_(disorder)', 'Hyperthyroidism_(disorder)'))">Foutieve informatie voor "Schildklier aandoening": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/schildklier_aandoening/@enum; allowed=('Hypothyroidism_(disorder)', 'Hyperthyroidism_(disorder)')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Schildklier aandoening": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/schildklier_aandoening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Schildklier aandoening": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/schildklier_aandoening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/diabetes_mellitusq: == -->
@@ -703,9 +738,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Diabetes mellitus?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/diabetes_mellitusq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82465')">Foutieve informatie voor "Diabetes mellitus?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82465" [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/diabetes_mellitusq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Diabetes mellitus?": Attribuut "value" ontbreekt [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/diabetes_mellitusq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Diabetes mellitus?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/diabetes_mellitusq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Diabetes mellitus?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/diabetes_mellitusq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Diabetes mellitus?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/diabetes_mellitusq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/neurologische_aandoening: == -->
@@ -722,7 +758,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Epilepsy_(disorder)', 'Cerebrovascular_accident_(disorder)', 'Multiple_sclerosis_(disorder)', 'Migraine_(disorder)', 'Herniation_of_nucleus_pulposus_(disorder)', 'Disease_of_pituitary_gland_(disorder)', 'Overig'))">Foutieve informatie voor "Neurologische aandoening": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/neurologische_aandoening/@enum; allowed=('Epilepsy_(disorder)', 'Cerebrovascular_accident_(disorder)', 'Multiple_sclerosis_(disorder)', 'Migraine_(disorder)', 'Herniation_of_nucleus_pulposus_(disorder)', 'Disease_of_pituitary_gland_(disorder)', 'Overig')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Neurologische aandoening": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/neurologische_aandoening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Neurologische aandoening": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/neurologische_aandoening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/infectieziekte: == -->
@@ -739,7 +777,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Bacterial_infectious_disease_(disorder)_Chlamydia_trachomatis_infection_(disorder)', 'Bacterial_infectious_disease_(disorder)_Gonorrhea_(disorder)', 'Bacterial_infectious_disease_(disorder)_Streptococcus_agalactiae_infection_(disorder)', 'Bacterial_infectious_disease_(disorder)_Methicillin_resistant_Staphylococcus_aureus_infection_(disorder)', 'Bacterial_infectious_disease_(disorder)_Tuberculosis_(disorder)', 'Viral_disease_(disorder)_Cytomegalovirus_infection_(disorder)', 'Viral_disease_(disorder)_Herpesvirus_infection_(disorder)', 'Viral_disease_(disorder)_Hepatitis_B_surface_antigen_positive_(finding)', 'Viral_disease_(disorder)_Human_immunodeficiency_virus_infection_(disorder)', 'Viral_disease_(disorder)_Type_B_viral_hepatitis_(disorder)', 'Viral_disease_(disorder)_Viral_hepatitis_C_(disorder)', 'Viral_disease_(disorder)_Rubella_(disorder)', 'Viral_disease_(disorder)_Varicella-zoster_virus_infection_(disorder)', 'Viral_disease_(disorder)_Parvovirus_infection_(disorder)', 'Disease_caused_by_parasite_(disorder)_Syphilis_(disorder)', 'Disease_caused_by_parasite_(disorder)_Toxoplasmosis_(disorder)', 'Disease_caused_by_parasite_(disorder)_Lyme_disease_(disorder)', 'Disease_caused_by_parasite_(disorder)_Malaria_(disorder)', 'Disease_caused_by_parasite_(disorder)_Infection_by_Trichomonas_(disorder)', 'Overig'))">Foutieve informatie voor "Infectieziekte": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/infectieziekte/@enum; allowed=('Bacterial_infectious_disease_(disorder)_Chlamydia_trachomatis_infection_(disorder)', 'Bacterial_infectious_disease_(disorder)_Gonorrhea_(disorder)', 'Bacterial_infectious_disease_(disorder)_Streptococcus_agalactiae_infection_(disorder)', 'Bacterial_infectious_disease_(disorder)_Methicillin_resistant_Staphylococcus_aureus_infection_(disorder)', 'Bacterial_infectious_disease_(disorder)_Tuberculosis_(disorder)', 'Viral_disease_(disorder)_Cytomegalovirus_infection_(disorder)', 'Viral_disease_(disorder)_Herpesvirus_infection_(disorder)', 'Viral_disease_(disorder)_Hepatitis_B_surface_antigen_positive_(finding)', 'Viral_disease_(disorder)_Human_immunodeficiency_virus_infection_(disorder)', 'Viral_disease_(disorder)_Type_B_viral_hepatitis_(disorder)', 'Viral_disease_(disorder)_Viral_hepatitis_C_(disorder)', 'Viral_disease_(disorder)_Rubella_(disorder)', 'Viral_disease_(disorder)_Varicella-zoster_virus_infection_(disorder)', 'Viral_disease_(disorder)_Parvovirus_infection_(disorder)', 'Disease_caused_by_parasite_(disorder)_Syphilis_(disorder)', 'Disease_caused_by_parasite_(disorder)_Toxoplasmosis_(disorder)', 'Disease_caused_by_parasite_(disorder)_Lyme_disease_(disorder)', 'Disease_caused_by_parasite_(disorder)_Malaria_(disorder)', 'Disease_caused_by_parasite_(disorder)_Infection_by_Trichomonas_(disorder)', 'Overig')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Infectieziekte": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/infectieziekte; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Infectieziekte": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/infectieziekte; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/mdl_aandoening: == -->
@@ -756,7 +796,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Chronic_liver_disease_(disorder)', 'Ulcerative_colitis_(disorder)', 'Crohn''s_disease_(disorder)'))">Foutieve informatie voor "MDL aandoening": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/mdl_aandoening/@enum; allowed=('Chronic_liver_disease_(disorder)', 'Ulcerative_colitis_(disorder)', 'Crohn''s_disease_(disorder)')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "MDL aandoening": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/mdl_aandoening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "MDL aandoening": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/mdl_aandoening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/anemie: == -->
@@ -773,7 +815,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Iron_deficiency_anemia_(disorder)', 'Hemoglobinopathy_(disorder)', 'Hereditary_hemoglobinopathy_disorder_homozygous_for_hemoglobin_S_(disorder)', 'Thalassemia_(disorder)'))">Foutieve informatie voor "Anemie": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/anemie/@enum; allowed=('Iron_deficiency_anemia_(disorder)', 'Hemoglobinopathy_(disorder)', 'Hereditary_hemoglobinopathy_disorder_homozygous_for_hemoglobin_S_(disorder)', 'Thalassemia_(disorder)')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Anemie": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/anemie; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Anemie": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/anemie; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/longaandoening: == -->
@@ -790,7 +834,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Asthma_(disorder)', 'Chronic_obstructive_lung_disease_(disorder)', 'Sarcoidosis_(disorder)', 'Overig', 'Geen_informatie'))">Foutieve informatie voor "Longaandoening": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/longaandoening/@enum; allowed=('Asthma_(disorder)', 'Chronic_obstructive_lung_disease_(disorder)', 'Sarcoidosis_(disorder)', 'Overig', 'Geen_informatie')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Longaandoening": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/longaandoening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Longaandoening": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/longaandoening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/gynaecologische_aandoening: == -->
@@ -807,7 +853,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Endometriosis_(disorder)', 'Uterine_leiomyoma_(disorder)', 'Congenital_uterine_anomaly_(disorder)', 'Overig'))">Foutieve informatie voor "Gynaecologische aandoening": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/gynaecologische_aandoening/@enum; allowed=('Endometriosis_(disorder)', 'Uterine_leiomyoma_(disorder)', 'Congenital_uterine_anomaly_(disorder)', 'Overig')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Gynaecologische aandoening": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/gynaecologische_aandoening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Gynaecologische aandoening": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/gynaecologische_aandoening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/orthopedische_afwijking: == -->
@@ -824,7 +872,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Congenital_dislocation_of_hip_(disorder)', 'Pelvic_injury_(disorder)', 'Overig'))">Foutieve informatie voor "Orthopedische afwijking": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/orthopedische_afwijking/@enum; allowed=('Congenital_dislocation_of_hip_(disorder)', 'Pelvic_injury_(disorder)', 'Overig')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Orthopedische afwijking": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/orthopedische_afwijking; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Orthopedische afwijking": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/orthopedische_afwijking; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/bloedtransfusieq: == -->
@@ -833,9 +883,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Bloedtransfusie?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/bloedtransfusieq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82481')">Foutieve informatie voor "Bloedtransfusie?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82481" [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/bloedtransfusieq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Bloedtransfusie?": Attribuut "value" ontbreekt [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/bloedtransfusieq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Bloedtransfusie?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/bloedtransfusieq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Bloedtransfusie?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/bloedtransfusieq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Bloedtransfusie?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/bloedtransfusieq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/transfusiereactieq: == -->
@@ -844,9 +895,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Transfusiereactie?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/transfusiereactieq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82482')">Foutieve informatie voor "Transfusiereactie?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82482" [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/transfusiereactieq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Transfusiereactie?": Attribuut "value" ontbreekt [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/transfusiereactieq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Transfusiereactie?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/transfusiereactieq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Transfusiereactie?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/transfusiereactieq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Transfusiereactie?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/transfusiereactieq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/type_operatie: == -->
@@ -863,7 +915,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Operation_on_female_genital_organs_(procedure)', 'Operation_on_female_genital_organs_(procedure)_Curettage_(procedure)', 'Operation_on_female_genital_organs_(procedure)_Cesarean_section_(procedure)', 'Operation_on_female_genital_organs_(procedure)_Manual_removal_of_retained_placenta_(procedure)', 'Operation_on_female_genital_organs_(procedure)_Operation_on_uterus_(procedure)', 'Operation_on_female_genital_organs_(procedure)_Uterine_myomectomy_(procedure)', 'Operation_on_female_genital_organs_(procedure)_Operation_on_ovary_(procedure)', 'Operation_on_musculoskeletal_system_(procedure)', 'Operation_on_musculoskeletal_system_(procedure)_Operative_procedure_on_pelvis_(procedure)', 'Operation_on_musculoskeletal_system_(procedure)_Operation_on_back_(procedure)', 'Operation_on_abdominal_region_(procedure)', 'Operation_on_abdominal_region_(procedure)_Laparotomy_(procedure)', 'Operation_on_abdominal_region_(procedure)_Appendectomy_(procedure)', 'Operation_on_abdominal_region_(procedure)_Abdominoplasty_(procedure)', 'Operation_on_abdominal_region_(procedure)_Operation_on_intestine_(procedure)', 'Operation_on_breast_(procedure)', 'Operation_on_organ_(procedure)', 'Operation_on_organ_(procedure)_Kidney_operation_(procedure)', 'Operation_on_organ_(procedure)_Operation_on_thyroid_gland_(procedure)', 'Operation_on_organ_(procedure)_Operation_on_heart_(procedure)', 'Operation_on_organ_(procedure)_Operation_on_adrenal_gland_(procedure)', 'Operation_on_nervous_system_(procedure)', 'Onbekend', 'Overig'))">Foutieve informatie voor "Type operatie": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/type_operatie/@enum; allowed=('Operation_on_female_genital_organs_(procedure)', 'Operation_on_female_genital_organs_(procedure)_Curettage_(procedure)', 'Operation_on_female_genital_organs_(procedure)_Cesarean_section_(procedure)', 'Operation_on_female_genital_organs_(procedure)_Manual_removal_of_retained_placenta_(procedure)', 'Operation_on_female_genital_organs_(procedure)_Operation_on_uterus_(procedure)', 'Operation_on_female_genital_organs_(procedure)_Uterine_myomectomy_(procedure)', 'Operation_on_female_genital_organs_(procedure)_Operation_on_ovary_(procedure)', 'Operation_on_musculoskeletal_system_(procedure)', 'Operation_on_musculoskeletal_system_(procedure)_Operative_procedure_on_pelvis_(procedure)', 'Operation_on_musculoskeletal_system_(procedure)_Operation_on_back_(procedure)', 'Operation_on_abdominal_region_(procedure)', 'Operation_on_abdominal_region_(procedure)_Laparotomy_(procedure)', 'Operation_on_abdominal_region_(procedure)_Appendectomy_(procedure)', 'Operation_on_abdominal_region_(procedure)_Abdominoplasty_(procedure)', 'Operation_on_abdominal_region_(procedure)_Operation_on_intestine_(procedure)', 'Operation_on_breast_(procedure)', 'Operation_on_organ_(procedure)', 'Operation_on_organ_(procedure)_Kidney_operation_(procedure)', 'Operation_on_organ_(procedure)_Operation_on_thyroid_gland_(procedure)', 'Operation_on_organ_(procedure)_Operation_on_heart_(procedure)', 'Operation_on_organ_(procedure)_Operation_on_adrenal_gland_(procedure)', 'Operation_on_nervous_system_(procedure)', 'Onbekend', 'Overig')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Type operatie": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/type_operatie; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Type operatie": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/type_operatie; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/type_stollingsprobleem: == -->
@@ -880,7 +934,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('von_Willebrand_disorder_(disorder)', 'Hemophilia_(disorder)', 'Thrombocytopenic_disorder_(disorder)', 'Disseminated_intravascular_coagulation_(disorder)', 'Thrombophilia_(disorder)', 'Thrombophilia_(disorder)_Antithrombin_III_deficiency_(disorder)', 'Thrombophilia_(disorder)_Protein_C_deficiency_disease_(disorder)', 'Thrombophilia_(disorder)_Protein_S_deficiency_disease_(disorder)', 'Thrombophilia_(disorder)_Heterozygous_Factor_V_Leiden_mutation_(disorder)', 'Thrombophilia_(disorder)_Homozygous_Factor_V_Leiden_mutation_(disorder)', 'Thrombophilia_(disorder)_Factor_XII_deficiency_disease_(disorder)', 'Deep_venous_thrombosis_(disorder)', 'Pulmonary_embolism_(disorder)', 'Overig'))">Foutieve informatie voor "Type stollingsprobleem": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/type_stollingsprobleem/@enum; allowed=('von_Willebrand_disorder_(disorder)', 'Hemophilia_(disorder)', 'Thrombocytopenic_disorder_(disorder)', 'Disseminated_intravascular_coagulation_(disorder)', 'Thrombophilia_(disorder)', 'Thrombophilia_(disorder)_Antithrombin_III_deficiency_(disorder)', 'Thrombophilia_(disorder)_Protein_C_deficiency_disease_(disorder)', 'Thrombophilia_(disorder)_Protein_S_deficiency_disease_(disorder)', 'Thrombophilia_(disorder)_Heterozygous_Factor_V_Leiden_mutation_(disorder)', 'Thrombophilia_(disorder)_Homozygous_Factor_V_Leiden_mutation_(disorder)', 'Thrombophilia_(disorder)_Factor_XII_deficiency_disease_(disorder)', 'Deep_venous_thrombosis_(disorder)', 'Pulmonary_embolism_(disorder)', 'Overig')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Type stollingsprobleem": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/type_stollingsprobleem; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Type stollingsprobleem": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/type_stollingsprobleem; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/psychiatrieq: == -->
@@ -889,9 +945,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Psychiatrie?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/psychiatrieq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82488')">Foutieve informatie voor "Psychiatrie?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82488" [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/psychiatrieq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Psychiatrie?": Attribuut "value" ontbreekt [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/psychiatrieq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Psychiatrie?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/psychiatrieq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Psychiatrie?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/psychiatrieq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Psychiatrie?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/psychiatrieq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/overige_aandoeningq: == -->
@@ -900,9 +957,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Overige aandoening?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/overige_aandoeningq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82490')">Foutieve informatie voor "Overige aandoening?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82490" [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/overige_aandoeningq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Overige aandoening?": Attribuut "value" ontbreekt [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/overige_aandoeningq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Overige aandoening?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/overige_aandoeningq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Overige aandoening?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/overige_aandoeningq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Overige aandoening?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/overige_aandoeningq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Any attributes allowed on /kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/algemene_anamnese/adaextension == -->
@@ -944,7 +1002,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Endometriosis_(disorder)', 'Uterine_leiomyoma_(disorder)', 'Congenital_uterine_anomaly_(disorder)', 'Overig'))">Foutieve informatie voor "Gynaecologische aandoening": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/gynaecologische_aandoening/@enum; allowed=('Endometriosis_(disorder)', 'Uterine_leiomyoma_(disorder)', 'Congenital_uterine_anomaly_(disorder)', 'Overig')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Gynaecologische aandoening": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/gynaecologische_aandoening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Gynaecologische aandoening": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/gynaecologische_aandoening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/bloedverliesq: == -->
@@ -953,9 +1013,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Bloedverlies?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/bloedverliesq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82493')">Foutieve informatie voor "Bloedverlies?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82493" [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/bloedverliesq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Bloedverlies?": Attribuut "value" ontbreekt [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/bloedverliesq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Bloedverlies?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/bloedverliesq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Bloedverlies?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/bloedverliesq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Bloedverlies?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/bloedverliesq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/partiele_molaq: == -->
@@ -964,9 +1025,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Partiële mola?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/partiele_molaq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82494')">Foutieve informatie voor "Partiële mola?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82494" [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/partiele_molaq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Partiële mola?": Attribuut "value" ontbreekt [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/partiele_molaq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Partiële mola?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/partiele_molaq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Partiële mola?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/partiele_molaq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Partiële mola?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/partiele_molaq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/cervixinsufficientieq: == -->
@@ -975,9 +1037,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Cervixinsufficiëntie?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/cervixinsufficientieq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82495')">Foutieve informatie voor "Cervixinsufficiëntie?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82495" [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/cervixinsufficientieq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Cervixinsufficiëntie?": Attribuut "value" ontbreekt [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/cervixinsufficientieq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Cervixinsufficiëntie?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/cervixinsufficientieq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Cervixinsufficiëntie?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/cervixinsufficientieq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Cervixinsufficiëntie?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/cervixinsufficientieq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/infectie: == -->
@@ -994,7 +1057,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Infection_of_uterus_(disorder)', 'Urinary_tract_infection_in_pregnancy_(disorder)', 'Pyelonephritis_(disorder)', 'Infectious_colitis,_enteritis_and_gastroenteritis_(disorder)', 'Overig', 'Geen_informatie'))">Foutieve informatie voor "Infectie": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/infectie/@enum; allowed=('Infection_of_uterus_(disorder)', 'Urinary_tract_infection_in_pregnancy_(disorder)', 'Pyelonephritis_(disorder)', 'Infectious_colitis,_enteritis_and_gastroenteritis_(disorder)', 'Overig', 'Geen_informatie')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Infectie": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/infectie; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Infectie": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/infectie; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/hyperemesis_gravidarumq: == -->
@@ -1003,9 +1068,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Hyperemesis gravidarum?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/hyperemesis_gravidarumq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82497')">Foutieve informatie voor "Hyperemesis gravidarum?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82497" [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/hyperemesis_gravidarumq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Hyperemesis gravidarum?": Attribuut "value" ontbreekt [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/hyperemesis_gravidarumq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Hyperemesis gravidarum?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/hyperemesis_gravidarumq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Hyperemesis gravidarum?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/hyperemesis_gravidarumq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Hyperemesis gravidarum?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/hyperemesis_gravidarumq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/hypertensieve_aandoening: == -->
@@ -1022,7 +1088,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Pregnancy-induced_hypertension_(disorder)', 'Pre-eclampsia_(disorder)', 'Hemolysis-elevated_liver_enzymes-low_platelet_count_syndrome_(disorder)', 'Eclampsia_(disorder)'))">Foutieve informatie voor "Hypertensieve aandoening": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/hypertensieve_aandoening/@enum; allowed=('Pregnancy-induced_hypertension_(disorder)', 'Pre-eclampsia_(disorder)', 'Hemolysis-elevated_liver_enzymes-low_platelet_count_syndrome_(disorder)', 'Eclampsia_(disorder)')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Hypertensieve aandoening": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/hypertensieve_aandoening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Hypertensieve aandoening": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/hypertensieve_aandoening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/zwangerschapscholestaseq: == -->
@@ -1031,9 +1099,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Zwangerschapscholestase?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/zwangerschapscholestaseq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82499')">Foutieve informatie voor "Zwangerschapscholestase?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82499" [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/zwangerschapscholestaseq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Zwangerschapscholestase?": Attribuut "value" ontbreekt [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/zwangerschapscholestaseq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Zwangerschapscholestase?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/zwangerschapscholestaseq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Zwangerschapscholestase?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/zwangerschapscholestaseq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Zwangerschapscholestase?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/zwangerschapscholestaseq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/diabetes_gravidarum_met_insulineq: == -->
@@ -1042,9 +1111,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Diabetes gravidarum met insuline?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/diabetes_gravidarum_met_insulineq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82500')">Foutieve informatie voor "Diabetes gravidarum met insuline?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82500" [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/diabetes_gravidarum_met_insulineq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Diabetes gravidarum met insuline?": Attribuut "value" ontbreekt [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/diabetes_gravidarum_met_insulineq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Diabetes gravidarum met insuline?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/diabetes_gravidarum_met_insulineq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Diabetes gravidarum met insuline?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/diabetes_gravidarum_met_insulineq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Diabetes gravidarum met insuline?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/diabetes_gravidarum_met_insulineq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/afwijkende_groei_foetus: == -->
@@ -1061,7 +1131,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Large-for-dates_fetus_(disorder)', 'Small_for_gestational_age_fetus_(disorder)', 'Geen_informatie'))">Foutieve informatie voor "Afwijkende groei foetus": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/afwijkende_groei_foetus/@enum; allowed=('Large-for-dates_fetus_(disorder)', 'Small_for_gestational_age_fetus_(disorder)', 'Geen_informatie')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Afwijkende groei foetus": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/afwijkende_groei_foetus; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Afwijkende groei foetus": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/afwijkende_groei_foetus; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/dreigende_partus_immaturusq: == -->
@@ -1070,9 +1142,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Dreigende partus immaturus?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/dreigende_partus_immaturusq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82502')">Foutieve informatie voor "Dreigende partus immaturus?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82502" [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/dreigende_partus_immaturusq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Dreigende partus immaturus?": Attribuut "value" ontbreekt [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/dreigende_partus_immaturusq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Dreigende partus immaturus?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/dreigende_partus_immaturusq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Dreigende partus immaturus?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/dreigende_partus_immaturusq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Dreigende partus immaturus?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/dreigende_partus_immaturusq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/dreigende_partus_prematurusq: == -->
@@ -1081,9 +1154,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Dreigende partus prematurus?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/dreigende_partus_prematurusq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82503')">Foutieve informatie voor "Dreigende partus prematurus?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82503" [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/dreigende_partus_prematurusq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Dreigende partus prematurus?": Attribuut "value" ontbreekt [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/dreigende_partus_prematurusq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Dreigende partus prematurus?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/dreigende_partus_prematurusq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Dreigende partus prematurus?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/dreigende_partus_prematurusq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Dreigende partus prematurus?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/dreigende_partus_prematurusq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/abruptio_placentaeq: == -->
@@ -1092,9 +1166,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Abruptio placentae?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/abruptio_placentaeq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82504')">Foutieve informatie voor "Abruptio placentae?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82504" [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/abruptio_placentaeq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Abruptio placentae?": Attribuut "value" ontbreekt [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/abruptio_placentaeq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Abruptio placentae?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/abruptio_placentaeq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Abruptio placentae?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/abruptio_placentaeq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Abruptio placentae?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/abruptio_placentaeq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/fluxus_postpartumq: == -->
@@ -1103,9 +1178,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Fluxus postpartum?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/fluxus_postpartumq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82505')">Foutieve informatie voor "Fluxus postpartum?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82505" [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/fluxus_postpartumq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Fluxus postpartum?": Attribuut "value" ontbreekt [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/fluxus_postpartumq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Fluxus postpartum?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/fluxus_postpartumq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Fluxus postpartum?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/fluxus_postpartumq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Fluxus postpartum?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/fluxus_postpartumq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Any attributes allowed on /kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/adaextension == -->
@@ -1149,7 +1225,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Endometriosis_(disorder)', 'Uterine_leiomyoma_(disorder)', 'Congenital_uterine_anomaly_(disorder)', 'Overig'))">Foutieve informatie voor "Gynaecologische aandoening": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/gynaecologische_aandoening/@enum; allowed=('Endometriosis_(disorder)', 'Uterine_leiomyoma_(disorder)', 'Congenital_uterine_anomaly_(disorder)', 'Overig')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Gynaecologische aandoening": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/gynaecologische_aandoening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Gynaecologische aandoening": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/gynaecologische_aandoening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/bloedverliesq: == -->
@@ -1158,9 +1236,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Bloedverlies?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/bloedverliesq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82510')">Foutieve informatie voor "Bloedverlies?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82510" [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/bloedverliesq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Bloedverlies?": Attribuut "value" ontbreekt [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/bloedverliesq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Bloedverlies?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/bloedverliesq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Bloedverlies?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/bloedverliesq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Bloedverlies?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/bloedverliesq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/partiele_molaq: == -->
@@ -1169,9 +1248,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Partiële mola?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/partiele_molaq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82511')">Foutieve informatie voor "Partiële mola?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82511" [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/partiele_molaq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Partiële mola?": Attribuut "value" ontbreekt [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/partiele_molaq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Partiële mola?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/partiele_molaq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Partiële mola?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/partiele_molaq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Partiële mola?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/partiele_molaq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/cervixinsufficientieq: == -->
@@ -1180,9 +1260,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Cervixinsufficiëntie?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/cervixinsufficientieq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82512')">Foutieve informatie voor "Cervixinsufficiëntie?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82512" [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/cervixinsufficientieq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Cervixinsufficiëntie?": Attribuut "value" ontbreekt [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/cervixinsufficientieq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Cervixinsufficiëntie?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/cervixinsufficientieq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Cervixinsufficiëntie?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/cervixinsufficientieq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Cervixinsufficiëntie?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/cervixinsufficientieq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/infectie: == -->
@@ -1199,7 +1280,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Infection_of_uterus_(disorder)', 'Urinary_tract_infection_in_pregnancy_(disorder)', 'Pyelonephritis_(disorder)', 'Infectious_colitis,_enteritis_and_gastroenteritis_(disorder)', 'Overig', 'Geen_informatie'))">Foutieve informatie voor "Infectie": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/infectie/@enum; allowed=('Infection_of_uterus_(disorder)', 'Urinary_tract_infection_in_pregnancy_(disorder)', 'Pyelonephritis_(disorder)', 'Infectious_colitis,_enteritis_and_gastroenteritis_(disorder)', 'Overig', 'Geen_informatie')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Infectie": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/infectie; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Infectie": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/infectie; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/hyperemesis_gravidarumq: == -->
@@ -1208,9 +1291,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Hyperemesis gravidarum?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/hyperemesis_gravidarumq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82514')">Foutieve informatie voor "Hyperemesis gravidarum?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82514" [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/hyperemesis_gravidarumq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Hyperemesis gravidarum?": Attribuut "value" ontbreekt [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/hyperemesis_gravidarumq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Hyperemesis gravidarum?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/hyperemesis_gravidarumq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Hyperemesis gravidarum?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/hyperemesis_gravidarumq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Hyperemesis gravidarum?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/hyperemesis_gravidarumq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/hypertensieve_aandoening: == -->
@@ -1227,7 +1311,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Pregnancy-induced_hypertension_(disorder)', 'Pre-eclampsia_(disorder)', 'Hemolysis-elevated_liver_enzymes-low_platelet_count_syndrome_(disorder)', 'Eclampsia_(disorder)'))">Foutieve informatie voor "Hypertensieve aandoening": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/hypertensieve_aandoening/@enum; allowed=('Pregnancy-induced_hypertension_(disorder)', 'Pre-eclampsia_(disorder)', 'Hemolysis-elevated_liver_enzymes-low_platelet_count_syndrome_(disorder)', 'Eclampsia_(disorder)')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Hypertensieve aandoening": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/hypertensieve_aandoening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Hypertensieve aandoening": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/hypertensieve_aandoening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/zwangerschapscholestaseq: == -->
@@ -1236,9 +1322,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Zwangerschapscholestase?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/zwangerschapscholestaseq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82516')">Foutieve informatie voor "Zwangerschapscholestase?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82516" [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/zwangerschapscholestaseq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Zwangerschapscholestase?": Attribuut "value" ontbreekt [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/zwangerschapscholestaseq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Zwangerschapscholestase?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/zwangerschapscholestaseq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Zwangerschapscholestase?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/zwangerschapscholestaseq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Zwangerschapscholestase?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/zwangerschapscholestaseq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/diabetes_gravidarum_met_insulineq: == -->
@@ -1247,9 +1334,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Diabetes gravidarum met insuline?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/diabetes_gravidarum_met_insulineq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82517')">Foutieve informatie voor "Diabetes gravidarum met insuline?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82517" [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/diabetes_gravidarum_met_insulineq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Diabetes gravidarum met insuline?": Attribuut "value" ontbreekt [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/diabetes_gravidarum_met_insulineq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Diabetes gravidarum met insuline?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/diabetes_gravidarum_met_insulineq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Diabetes gravidarum met insuline?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/diabetes_gravidarum_met_insulineq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Diabetes gravidarum met insuline?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/diabetes_gravidarum_met_insulineq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/afwijkende_groei_foetus: == -->
@@ -1266,7 +1354,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Large-for-dates_fetus_(disorder)', 'Small_for_gestational_age_fetus_(disorder)', 'Geen_informatie'))">Foutieve informatie voor "Afwijkende groei foetus": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/afwijkende_groei_foetus/@enum; allowed=('Large-for-dates_fetus_(disorder)', 'Small_for_gestational_age_fetus_(disorder)', 'Geen_informatie')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Afwijkende groei foetus": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/afwijkende_groei_foetus; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Afwijkende groei foetus": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/afwijkende_groei_foetus; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/dreigende_partus_immaturusq: == -->
@@ -1275,9 +1365,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Dreigende partus immaturus?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/dreigende_partus_immaturusq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82519')">Foutieve informatie voor "Dreigende partus immaturus?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82519" [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/dreigende_partus_immaturusq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Dreigende partus immaturus?": Attribuut "value" ontbreekt [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/dreigende_partus_immaturusq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Dreigende partus immaturus?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/dreigende_partus_immaturusq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Dreigende partus immaturus?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/dreigende_partus_immaturusq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Dreigende partus immaturus?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/dreigende_partus_immaturusq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/dreigende_partus_prematurusq: == -->
@@ -1286,9 +1377,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Dreigende partus prematurus?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/dreigende_partus_prematurusq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82520')">Foutieve informatie voor "Dreigende partus prematurus?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82520" [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/dreigende_partus_prematurusq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Dreigende partus prematurus?": Attribuut "value" ontbreekt [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/dreigende_partus_prematurusq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Dreigende partus prematurus?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/dreigende_partus_prematurusq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Dreigende partus prematurus?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/dreigende_partus_prematurusq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Dreigende partus prematurus?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/dreigende_partus_prematurusq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/abruptio_placentaeq: == -->
@@ -1297,9 +1389,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Abruptio placentae?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/abruptio_placentaeq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82521')">Foutieve informatie voor "Abruptio placentae?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82521" [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/abruptio_placentaeq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Abruptio placentae?": Attribuut "value" ontbreekt [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/abruptio_placentaeq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Abruptio placentae?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/abruptio_placentaeq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Abruptio placentae?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/abruptio_placentaeq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Abruptio placentae?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/abruptio_placentaeq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/navelstrengprolapsq: == -->
@@ -1308,9 +1401,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Navelstrengprolaps?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/navelstrengprolapsq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82522')">Foutieve informatie voor "Navelstrengprolaps?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82522" [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/navelstrengprolapsq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Navelstrengprolaps?": Attribuut "value" ontbreekt [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/navelstrengprolapsq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Navelstrengprolaps?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/navelstrengprolapsq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Navelstrengprolaps?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/navelstrengprolapsq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Navelstrengprolaps?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/navelstrengprolapsq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/liggingsafwijking: == -->
@@ -1327,7 +1421,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Breech_presentation_(finding)', 'Transverse/oblique_lie_(finding)', 'Unstable_lie_(finding)', 'Onbekend', 'Geen_informatie'))">Foutieve informatie voor "Liggingsafwijking": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/liggingsafwijking/@enum; allowed=('Breech_presentation_(finding)', 'Transverse/oblique_lie_(finding)', 'Unstable_lie_(finding)', 'Onbekend', 'Geen_informatie')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Liggingsafwijking": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/liggingsafwijking; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Liggingsafwijking": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/liggingsafwijking; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/intrauteriene_vruchtdood: == -->
@@ -1356,9 +1452,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Vermoeden intra-uteriene vruchtdood?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/intrauteriene_vruchtdood/vermoeden_intrauteriene_vruchtdoodq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82525')">Foutieve informatie voor "Vermoeden intra-uteriene vruchtdood?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82525" [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/intrauteriene_vruchtdood/vermoeden_intrauteriene_vruchtdoodq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Vermoeden intra-uteriene vruchtdood?": Attribuut "value" ontbreekt [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/intrauteriene_vruchtdood/vermoeden_intrauteriene_vruchtdoodq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Vermoeden intra-uteriene vruchtdood?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/intrauteriene_vruchtdood/vermoeden_intrauteriene_vruchtdoodq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Vermoeden intra-uteriene vruchtdood?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/intrauteriene_vruchtdood/vermoeden_intrauteriene_vruchtdoodq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Vermoeden intra-uteriene vruchtdood?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/intrauteriene_vruchtdood/vermoeden_intrauteriene_vruchtdoodq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Any attributes allowed on /kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/intrauteriene_vruchtdood/adaextension == -->
@@ -1388,9 +1485,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "PPROM?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/bevalling/ppromq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82530')">Foutieve informatie voor "PPROM?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82530" [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/bevalling/ppromq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "PPROM?": Attribuut "value" ontbreekt [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/bevalling/ppromq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "PPROM?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/bevalling/ppromq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "PPROM?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/bevalling/ppromq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "PPROM?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/bevalling/ppromq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/bevalling/promq: == -->
@@ -1399,9 +1497,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "PROM?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/bevalling/promq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82531')">Foutieve informatie voor "PROM?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82531" [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/bevalling/promq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "PROM?": Attribuut "value" ontbreekt [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/bevalling/promq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "PROM?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/bevalling/promq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "PROM?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/bevalling/promq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "PROM?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/bevalling/promq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/bevalling/koortsq: == -->
@@ -1410,9 +1509,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Koorts?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/bevalling/koortsq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82532')">Foutieve informatie voor "Koorts?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82532" [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/bevalling/koortsq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Koorts?": Attribuut "value" ontbreekt [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/bevalling/koortsq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Koorts?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/bevalling/koortsq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Koorts?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/bevalling/koortsq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Koorts?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/bevalling/koortsq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/bevalling/niet_vorderende_ontsluitingq: == -->
@@ -1421,9 +1521,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Niet vorderende ontsluiting?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/bevalling/niet_vorderende_ontsluitingq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82533')">Foutieve informatie voor "Niet vorderende ontsluiting?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82533" [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/bevalling/niet_vorderende_ontsluitingq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Niet vorderende ontsluiting?": Attribuut "value" ontbreekt [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/bevalling/niet_vorderende_ontsluitingq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Niet vorderende ontsluiting?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/bevalling/niet_vorderende_ontsluitingq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Niet vorderende ontsluiting?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/bevalling/niet_vorderende_ontsluitingq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Niet vorderende ontsluiting?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/bevalling/niet_vorderende_ontsluitingq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/bevalling/niet_vorderende_uitdrijvingq: == -->
@@ -1432,9 +1533,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Niet vorderende uitdrijving?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/bevalling/niet_vorderende_uitdrijvingq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82534')">Foutieve informatie voor "Niet vorderende uitdrijving?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82534" [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/bevalling/niet_vorderende_uitdrijvingq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Niet vorderende uitdrijving?": Attribuut "value" ontbreekt [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/bevalling/niet_vorderende_uitdrijvingq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Niet vorderende uitdrijving?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/bevalling/niet_vorderende_uitdrijvingq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Niet vorderende uitdrijving?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/bevalling/niet_vorderende_uitdrijvingq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Niet vorderende uitdrijving?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/bevalling/niet_vorderende_uitdrijvingq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/bevalling/verdenking_foetale_noodq: == -->
@@ -1443,9 +1545,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Verdenking foetale nood?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/bevalling/verdenking_foetale_noodq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82535')">Foutieve informatie voor "Verdenking foetale nood?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82535" [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/bevalling/verdenking_foetale_noodq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Verdenking foetale nood?": Attribuut "value" ontbreekt [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/bevalling/verdenking_foetale_noodq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Verdenking foetale nood?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/bevalling/verdenking_foetale_noodq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Verdenking foetale nood?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/bevalling/verdenking_foetale_noodq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Verdenking foetale nood?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/bevalling/verdenking_foetale_noodq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/bevalling/intrauteriene_vruchtdood: == -->
@@ -1462,9 +1565,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Vastzittende placenta?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/bevalling/vastzittende_placentaq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82541')">Foutieve informatie voor "Vastzittende placenta?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82541" [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/bevalling/vastzittende_placentaq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Vastzittende placenta?": Attribuut "value" ontbreekt [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/bevalling/vastzittende_placentaq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Vastzittende placenta?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/bevalling/vastzittende_placentaq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Vastzittende placenta?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/bevalling/vastzittende_placentaq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Vastzittende placenta?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/bevalling/vastzittende_placentaq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/bevalling/conditie_perineum_postpartum: == -->
@@ -1473,9 +1577,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Conditie perineum postpartum": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/bevalling/conditie_perineum_postpartum/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82543')">Foutieve informatie voor "Conditie perineum postpartum": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82543" [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/bevalling/conditie_perineum_postpartum/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Conditie perineum postpartum": Attribuut "value" ontbreekt [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/bevalling/conditie_perineum_postpartum/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Conditie perineum postpartum": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/bevalling/conditie_perineum_postpartum/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Conditie perineum postpartum": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/bevalling/conditie_perineum_postpartum; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Conditie perineum postpartum": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/bevalling/conditie_perineum_postpartum; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/bevalling/fluxus_postpartumq: == -->
@@ -1484,9 +1589,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Fluxus postpartum?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/bevalling/fluxus_postpartumq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82542')">Foutieve informatie voor "Fluxus postpartum?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82542" [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/bevalling/fluxus_postpartumq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Fluxus postpartum?": Attribuut "value" ontbreekt [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/bevalling/fluxus_postpartumq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Fluxus postpartum?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/bevalling/fluxus_postpartumq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Fluxus postpartum?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/bevalling/fluxus_postpartumq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Fluxus postpartum?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/bevalling/fluxus_postpartumq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Any attributes allowed on /kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/bevalling/adaextension == -->
@@ -1507,9 +1613,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Vermoeden intra-uteriene vruchtdood?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/bevalling/intrauteriene_vruchtdood/vermoeden_intrauteriene_vruchtdoodq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82537')">Foutieve informatie voor "Vermoeden intra-uteriene vruchtdood?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82537" [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/bevalling/intrauteriene_vruchtdood/vermoeden_intrauteriene_vruchtdoodq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Vermoeden intra-uteriene vruchtdood?": Attribuut "value" ontbreekt [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/bevalling/intrauteriene_vruchtdood/vermoeden_intrauteriene_vruchtdoodq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Vermoeden intra-uteriene vruchtdood?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/bevalling/intrauteriene_vruchtdood/vermoeden_intrauteriene_vruchtdoodq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Vermoeden intra-uteriene vruchtdood?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/bevalling/intrauteriene_vruchtdood/vermoeden_intrauteriene_vruchtdoodq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Vermoeden intra-uteriene vruchtdood?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/bevalling/intrauteriene_vruchtdood/vermoeden_intrauteriene_vruchtdoodq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Any attributes allowed on /kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/bevalling/intrauteriene_vruchtdood/adaextension == -->
@@ -1538,7 +1645,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('(Dreigende)_eclampsie,_(verdenking_op)_HELLP-syndroom_Pre-eclampsia_(disorder)', '(Dreigende)_eclampsie,_(verdenking_op)_HELLP-syndroom_Pre-eclampsia_added_to_pre-existing_hypertension_(disorder)', '(Dreigende)_eclampsie,_(verdenking_op)_HELLP-syndroom_Eclampsia_in_puerperium_(disorder)', '(Dreigende)_eclampsie,_(verdenking_op)_HELLP-syndroom_Hemolysis-elevated_liver_enzymes-low_platelet_count_syndrome_(disorder)', 'Postpartum_deep_phlebothrombosis_(disorder)', 'Postpartum_depression_(disorder)', 'Postpartum_psychosis_(disorder)', 'Abnormal_vaginal_bleeding_(finding)', 'Embolism_(disorder)', 'Hematoma_(disorder)', 'Transfusion_of_blood_product_(procedure)', 'Postnatal_infection_(disorder)_Endometritis_(disorder)', 'Postnatal_infection_(disorder)_Mastitis_(disorder)', 'Postnatal_infection_(disorder)_Urinary_tract_infectious_disease_(disorder)', 'Postnatal_infection_(disorder)_Episiotomy_infection_(disorder)', 'Postnatal_infection_(disorder)_Overige_infecties', 'Overig'))">Foutieve informatie voor "Pathologie vrouw": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/postnatale_fase/pathologie_vrouw/@enum; allowed=('(Dreigende)_eclampsie,_(verdenking_op)_HELLP-syndroom_Pre-eclampsia_(disorder)', '(Dreigende)_eclampsie,_(verdenking_op)_HELLP-syndroom_Pre-eclampsia_added_to_pre-existing_hypertension_(disorder)', '(Dreigende)_eclampsie,_(verdenking_op)_HELLP-syndroom_Eclampsia_in_puerperium_(disorder)', '(Dreigende)_eclampsie,_(verdenking_op)_HELLP-syndroom_Hemolysis-elevated_liver_enzymes-low_platelet_count_syndrome_(disorder)', 'Postpartum_deep_phlebothrombosis_(disorder)', 'Postpartum_depression_(disorder)', 'Postpartum_psychosis_(disorder)', 'Abnormal_vaginal_bleeding_(finding)', 'Embolism_(disorder)', 'Hematoma_(disorder)', 'Transfusion_of_blood_product_(procedure)', 'Postnatal_infection_(disorder)_Endometritis_(disorder)', 'Postnatal_infection_(disorder)_Mastitis_(disorder)', 'Postnatal_infection_(disorder)_Urinary_tract_infectious_disease_(disorder)', 'Postnatal_infection_(disorder)_Episiotomy_infection_(disorder)', 'Postnatal_infection_(disorder)_Overige_infecties', 'Overig')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Pathologie vrouw": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/postnatale_fase/pathologie_vrouw; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Pathologie vrouw": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/postnatale_fase/pathologie_vrouw; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Any attributes allowed on /kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/postnatale_fase/adaextension == -->
@@ -1580,10 +1689,11 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Zorginstelling AGB-ID": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlenerzorginstelling/zorginstelling/zorginstelling_agbid/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10022')">Foutieve informatie voor "Zorginstelling AGB-ID": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10022" [/kernset_geboortezorg/zorgverlenerzorginstelling/zorginstelling/zorginstelling_agbid/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Zorginstelling AGB-ID": Attribuut "value" ontbreekt [/kernset_geboortezorg/zorgverlenerzorginstelling/zorginstelling/zorginstelling_agbid/@value]</assert>
          <assert test="empty(@value) or (string-length(@value) ge 8)">Foutieve informatie voor "Zorginstelling AGB-ID": De waarde "<value-of select="@value"/>" voor attribuut "value" moet minstens 8 karakters bevatten [/kernset_geboortezorg/zorgverlenerzorginstelling/zorginstelling/zorginstelling_agbid/@value; min-length=8]</assert>
          <assert test="empty(@value) or (string-length(@value) le 8)">Foutieve informatie voor "Zorginstelling AGB-ID": De waarde "<value-of select="@value"/>" voor attribuut "value" mag hoogstens 8 karakters bevatten [/kernset_geboortezorg/zorgverlenerzorginstelling/zorginstelling/zorginstelling_agbid/@value; max-length=8]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Zorginstelling AGB-ID": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlenerzorginstelling/zorginstelling/zorginstelling_agbid; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Zorginstelling AGB-ID": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlenerzorginstelling/zorginstelling/zorginstelling_agbid; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zorgverlenerzorginstelling/zorginstelling/zorginstelling_lvrid: == -->
@@ -1592,10 +1702,11 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Zorginstelling LVR-ID": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlenerzorginstelling/zorginstelling/zorginstelling_lvrid/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10023')">Foutieve informatie voor "Zorginstelling LVR-ID": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10023" [/kernset_geboortezorg/zorgverlenerzorginstelling/zorginstelling/zorginstelling_lvrid/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Zorginstelling LVR-ID": Attribuut "value" ontbreekt [/kernset_geboortezorg/zorgverlenerzorginstelling/zorginstelling/zorginstelling_lvrid/@value]</assert>
          <assert test="empty(@value) or (string-length(@value) ge 4)">Foutieve informatie voor "Zorginstelling LVR-ID": De waarde "<value-of select="@value"/>" voor attribuut "value" moet minstens 4 karakters bevatten [/kernset_geboortezorg/zorgverlenerzorginstelling/zorginstelling/zorginstelling_lvrid/@value; min-length=4]</assert>
          <assert test="empty(@value) or (string-length(@value) le 5)">Foutieve informatie voor "Zorginstelling LVR-ID": De waarde "<value-of select="@value"/>" voor attribuut "value" mag hoogstens 5 karakters bevatten [/kernset_geboortezorg/zorgverlenerzorginstelling/zorginstelling/zorginstelling_lvrid/@value; max-length=5]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Zorginstelling LVR-ID": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlenerzorginstelling/zorginstelling/zorginstelling_lvrid; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Zorginstelling LVR-ID": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlenerzorginstelling/zorginstelling/zorginstelling_lvrid; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Any attributes allowed on /kernset_geboortezorg/zorgverlenerzorginstelling/zorginstelling/adaextension == -->
@@ -1624,10 +1735,11 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Burgerservicenummer": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/vrouw/burgerservicenummer/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10030')">Foutieve informatie voor "Burgerservicenummer": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10030" [/kernset_geboortezorg/vrouw/burgerservicenummer/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Burgerservicenummer": Attribuut "value" ontbreekt [/kernset_geboortezorg/vrouw/burgerservicenummer/@value]</assert>
          <assert test="empty(@value) or (string-length(@value) ge 9)">Foutieve informatie voor "Burgerservicenummer": De waarde "<value-of select="@value"/>" voor attribuut "value" moet minstens 9 karakters bevatten [/kernset_geboortezorg/vrouw/burgerservicenummer/@value; min-length=9]</assert>
          <assert test="empty(@value) or (string-length(@value) le 9)">Foutieve informatie voor "Burgerservicenummer": De waarde "<value-of select="@value"/>" voor attribuut "value" mag hoogstens 9 karakters bevatten [/kernset_geboortezorg/vrouw/burgerservicenummer/@value; max-length=9]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Burgerservicenummer": Ongeldige attributen aangetroffen [/kernset_geboortezorg/vrouw/burgerservicenummer; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Burgerservicenummer": Ongeldige attributen aangetroffen [/kernset_geboortezorg/vrouw/burgerservicenummer; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/vrouw/lokale_persoonsidentificatie: == -->
@@ -1636,8 +1748,9 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Lokale persoonsidentificatie": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/vrouw/lokale_persoonsidentificatie/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10031')">Foutieve informatie voor "Lokale persoonsidentificatie": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10031" [/kernset_geboortezorg/vrouw/lokale_persoonsidentificatie/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Lokale persoonsidentificatie": Attribuut "value" ontbreekt [/kernset_geboortezorg/vrouw/lokale_persoonsidentificatie/@value]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Lokale persoonsidentificatie": Ongeldige attributen aangetroffen [/kernset_geboortezorg/vrouw/lokale_persoonsidentificatie; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Lokale persoonsidentificatie": Ongeldige attributen aangetroffen [/kernset_geboortezorg/vrouw/lokale_persoonsidentificatie; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/vrouw/geboortedatum: == -->
@@ -1646,9 +1759,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Geboortedatum": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/vrouw/geboortedatum/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10040')">Foutieve informatie voor "Geboortedatum": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10040" [/kernset_geboortezorg/vrouw/geboortedatum/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Geboortedatum": Attribuut "value" ontbreekt [/kernset_geboortezorg/vrouw/geboortedatum/@value]</assert>
          <assert test="empty(@value) or ((@value castable as xs:date) or (@value castable as xs:dateTime))">Foutieve informatie voor "Geboortedatum": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/vrouw/geboortedatum/@value; type=t-datetime]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Geboortedatum": Ongeldige attributen aangetroffen [/kernset_geboortezorg/vrouw/geboortedatum; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Geboortedatum": Ongeldige attributen aangetroffen [/kernset_geboortezorg/vrouw/geboortedatum; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/vrouw/adres: == -->
@@ -1673,7 +1787,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Latijns_Amerikaans', 'Hindoestaans', 'Kaukasisch', 'Noord-Afrikaans', 'Overig_Afrikaans', 'Turks', 'Overig_Aziatisch', 'Meervoudige_afkomst_/_Overig', 'onbekend'))">Foutieve informatie voor "Etniciteit": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/vrouw/etniciteit/@enum; allowed=('Latijns_Amerikaans', 'Hindoestaans', 'Kaukasisch', 'Noord-Afrikaans', 'Overig_Afrikaans', 'Turks', 'Overig_Aziatisch', 'Meervoudige_afkomst_/_Overig', 'onbekend')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Etniciteit": Ongeldige attributen aangetroffen [/kernset_geboortezorg/vrouw/etniciteit; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Etniciteit": Ongeldige attributen aangetroffen [/kernset_geboortezorg/vrouw/etniciteit; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/vrouw/anamnese: == -->
@@ -1690,13 +1806,14 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Lengte (gemeten)": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/vrouw/lengte_gemeten/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20212')">Foutieve informatie voor "Lengte (gemeten)": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20212" [/kernset_geboortezorg/vrouw/lengte_gemeten/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Lengte (gemeten)": Attribuut "value" ontbreekt [/kernset_geboortezorg/vrouw/lengte_gemeten/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:decimal)">Foutieve informatie voor "Lengte (gemeten)": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/vrouw/lengte_gemeten/@value; type=xs:decimal]</assert>
          <assert test="empty(@value) or (local:decimal-convert(@value) ge 60)">Foutieve informatie voor "Lengte (gemeten)": De waarde "<value-of select="@value"/>" voor attribuut "value" moet minimaal 60 zijn [/kernset_geboortezorg/vrouw/lengte_gemeten/@value; min-inclusive=60]</assert>
          <assert test="empty(@value) or (local:decimal-convert(@value) le 270)">Foutieve informatie voor "Lengte (gemeten)": De waarde "<value-of select="@value"/>" voor attribuut "value" mag maximaal 270 zijn [/kernset_geboortezorg/vrouw/lengte_gemeten/@value; max-inclusive=270]</assert>
          <!-- == Attribute "unit": == -->
          <assert test="empty(@unit) or (@unit eq 'cm')">Foutieve informatie voor "Lengte (gemeten)": De waarde "<value-of select="@unit"/>" voor attribuut "unit" heeft niet de verwachte vaste waarde "cm" [/kernset_geboortezorg/vrouw/lengte_gemeten/@unit]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @unit, @xsi:*))">Foutieve informatie voor "Lengte (gemeten)": Ongeldige attributen aangetroffen [/kernset_geboortezorg/vrouw/lengte_gemeten; allowed=(@conceptId, @value, @unit, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @unit, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Lengte (gemeten)": Ongeldige attributen aangetroffen [/kernset_geboortezorg/vrouw/lengte_gemeten; allowed=(@conceptId, @value, @unit, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/vrouw/vrouwelijke_genitale_verminkingq: == -->
@@ -1705,9 +1822,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Vrouwelijke genitale verminking?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/vrouw/vrouwelijke_genitale_verminkingq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80675')">Foutieve informatie voor "Vrouwelijke genitale verminking?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80675" [/kernset_geboortezorg/vrouw/vrouwelijke_genitale_verminkingq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Vrouwelijke genitale verminking?": Attribuut "value" ontbreekt [/kernset_geboortezorg/vrouw/vrouwelijke_genitale_verminkingq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Vrouwelijke genitale verminking?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/vrouw/vrouwelijke_genitale_verminkingq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Vrouwelijke genitale verminking?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/vrouw/vrouwelijke_genitale_verminkingq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Vrouwelijke genitale verminking?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/vrouw/vrouwelijke_genitale_verminkingq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/vrouw/type_vrouwelijke_genitale_verminking: == -->
@@ -1724,7 +1842,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Female_genital_mutilation_type_1_(disorder)', 'Female_genital_mutilation_type_2_(disorder)', 'Female_genital_mutilation_type_3_(disorder)', 'Female_genital_mutilation_type_4_(disorder)', 'onbekend', 'geen_informatie'))">Foutieve informatie voor "Type vrouwelijke genitale verminking": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/vrouw/type_vrouwelijke_genitale_verminking/@enum; allowed=('Female_genital_mutilation_type_1_(disorder)', 'Female_genital_mutilation_type_2_(disorder)', 'Female_genital_mutilation_type_3_(disorder)', 'Female_genital_mutilation_type_4_(disorder)', 'onbekend', 'geen_informatie')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Type vrouwelijke genitale verminking": Ongeldige attributen aangetroffen [/kernset_geboortezorg/vrouw/type_vrouwelijke_genitale_verminking; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Type vrouwelijke genitale verminking": Ongeldige attributen aangetroffen [/kernset_geboortezorg/vrouw/type_vrouwelijke_genitale_verminking; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Any attributes allowed on /kernset_geboortezorg/vrouw/adaextension == -->
@@ -1745,8 +1865,9 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Postcode": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/vrouw/adres/postcode/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10304')">Foutieve informatie voor "Postcode": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10304" [/kernset_geboortezorg/vrouw/adres/postcode/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Postcode": Attribuut "value" ontbreekt [/kernset_geboortezorg/vrouw/adres/postcode/@value]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Postcode": Ongeldige attributen aangetroffen [/kernset_geboortezorg/vrouw/adres/postcode; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Postcode": Ongeldige attributen aangetroffen [/kernset_geboortezorg/vrouw/adres/postcode; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Any attributes allowed on /kernset_geboortezorg/vrouw/adres/adaextension == -->
@@ -1768,9 +1889,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Onder behandeling (geweest)?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/vrouw/anamnese/onder_behandeling_geweestq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82020')">Foutieve informatie voor "Onder behandeling (geweest)?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82020" [/kernset_geboortezorg/vrouw/anamnese/onder_behandeling_geweestq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Onder behandeling (geweest)?": Attribuut "value" ontbreekt [/kernset_geboortezorg/vrouw/anamnese/onder_behandeling_geweestq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Onder behandeling (geweest)?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/vrouw/anamnese/onder_behandeling_geweestq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Onder behandeling (geweest)?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/vrouw/anamnese/onder_behandeling_geweestq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Onder behandeling (geweest)?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/vrouw/anamnese/onder_behandeling_geweestq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/vrouw/anamnese/algemene_anamnese: == -->
@@ -1826,7 +1948,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Systemic_lupus_erythematosus_(disorder)', 'Rheumatism_(disorder)', 'Overig'))">Foutieve informatie voor "Auto-immuun aandoening": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/autoimmuun_aandoening/@enum; allowed=('Systemic_lupus_erythematosus_(disorder)', 'Rheumatism_(disorder)', 'Overig')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Auto-immuun aandoening": Ongeldige attributen aangetroffen [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/autoimmuun_aandoening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Auto-immuun aandoening": Ongeldige attributen aangetroffen [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/autoimmuun_aandoening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/cardiovasculaire_aandoening: == -->
@@ -1843,7 +1967,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Hypertensive_disorder,_systemic_arterial_(disorder)', 'Cardiomyopathy_(disorder)', 'Cardiac_arrhythmia_(disorder)', 'Structural_disorder_of_heart_(disorder)', 'Overig'))">Foutieve informatie voor "Cardiovasculaire aandoening": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/cardiovasculaire_aandoening/@enum; allowed=('Hypertensive_disorder,_systemic_arterial_(disorder)', 'Cardiomyopathy_(disorder)', 'Cardiac_arrhythmia_(disorder)', 'Structural_disorder_of_heart_(disorder)', 'Overig')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Cardiovasculaire aandoening": Ongeldige attributen aangetroffen [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/cardiovasculaire_aandoening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Cardiovasculaire aandoening": Ongeldige attributen aangetroffen [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/cardiovasculaire_aandoening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/urogenitale_aandoening: == -->
@@ -1860,7 +1986,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Pyelonephritis_(disorder)', 'Bacteriuria_(finding)', 'Chronic_renal_impairment_(disorder)'))">Foutieve informatie voor "Urogenitale aandoening": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/urogenitale_aandoening/@enum; allowed=('Pyelonephritis_(disorder)', 'Bacteriuria_(finding)', 'Chronic_renal_impairment_(disorder)')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Urogenitale aandoening": Ongeldige attributen aangetroffen [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/urogenitale_aandoening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Urogenitale aandoening": Ongeldige attributen aangetroffen [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/urogenitale_aandoening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/oncologische_aandoening: == -->
@@ -1877,7 +2005,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Primary_malignant_neoplasm_of_female_breast_(disorder)', 'Carcinoma_of_cervix_(disorder)', 'Leukemia,_disease_(disorder)', 'Primary_malignant_neoplasm_of_lung_(disorder)', 'Malignant_melanoma_(disorder)', 'other'))">Foutieve informatie voor "Oncologische aandoening": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/oncologische_aandoening/@enum; allowed=('Primary_malignant_neoplasm_of_female_breast_(disorder)', 'Carcinoma_of_cervix_(disorder)', 'Leukemia,_disease_(disorder)', 'Primary_malignant_neoplasm_of_lung_(disorder)', 'Malignant_melanoma_(disorder)', 'other')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Oncologische aandoening": Ongeldige attributen aangetroffen [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/oncologische_aandoening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Oncologische aandoening": Ongeldige attributen aangetroffen [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/oncologische_aandoening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/schildklier_aandoening: == -->
@@ -1894,7 +2024,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Hypothyroidism_(disorder)', 'Hyperthyroidism_(disorder)'))">Foutieve informatie voor "Schildklier aandoening": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/schildklier_aandoening/@enum; allowed=('Hypothyroidism_(disorder)', 'Hyperthyroidism_(disorder)')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Schildklier aandoening": Ongeldige attributen aangetroffen [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/schildklier_aandoening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Schildklier aandoening": Ongeldige attributen aangetroffen [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/schildklier_aandoening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/diabetes_mellitusq: == -->
@@ -1903,9 +2035,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Diabetes mellitus?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/diabetes_mellitusq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80910')">Foutieve informatie voor "Diabetes mellitus?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80910" [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/diabetes_mellitusq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Diabetes mellitus?": Attribuut "value" ontbreekt [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/diabetes_mellitusq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Diabetes mellitus?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/diabetes_mellitusq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Diabetes mellitus?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/diabetes_mellitusq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Diabetes mellitus?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/diabetes_mellitusq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/neurologische_aandoening: == -->
@@ -1922,7 +2055,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Epilepsy_(disorder)', 'Cerebrovascular_accident_(disorder)', 'Multiple_sclerosis_(disorder)', 'Migraine_(disorder)', 'Herniation_of_nucleus_pulposus_(disorder)', 'Disease_of_pituitary_gland_(disorder)', 'Overig'))">Foutieve informatie voor "Neurologische aandoening": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/neurologische_aandoening/@enum; allowed=('Epilepsy_(disorder)', 'Cerebrovascular_accident_(disorder)', 'Multiple_sclerosis_(disorder)', 'Migraine_(disorder)', 'Herniation_of_nucleus_pulposus_(disorder)', 'Disease_of_pituitary_gland_(disorder)', 'Overig')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Neurologische aandoening": Ongeldige attributen aangetroffen [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/neurologische_aandoening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Neurologische aandoening": Ongeldige attributen aangetroffen [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/neurologische_aandoening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/infectieziekte: == -->
@@ -1939,7 +2074,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Bacterial_infectious_disease_(disorder)_Chlamydia_trachomatis_infection_(disorder)', 'Bacterial_infectious_disease_(disorder)_Gonorrhea_(disorder)', 'Bacterial_infectious_disease_(disorder)_Streptococcus_agalactiae_infection_(disorder)', 'Bacterial_infectious_disease_(disorder)_Methicillin_resistant_Staphylococcus_aureus_infection_(disorder)', 'Bacterial_infectious_disease_(disorder)_Tuberculosis_(disorder)', 'Viral_disease_(disorder)_Cytomegalovirus_infection_(disorder)', 'Viral_disease_(disorder)_Herpesvirus_infection_(disorder)', 'Viral_disease_(disorder)_Hepatitis_B_surface_antigen_positive_(finding)', 'Viral_disease_(disorder)_Human_immunodeficiency_virus_infection_(disorder)', 'Viral_disease_(disorder)_Type_B_viral_hepatitis_(disorder)', 'Viral_disease_(disorder)_Viral_hepatitis_C_(disorder)', 'Viral_disease_(disorder)_Rubella_(disorder)', 'Viral_disease_(disorder)_Varicella-zoster_virus_infection_(disorder)', 'Viral_disease_(disorder)_Parvovirus_infection_(disorder)', 'Disease_caused_by_parasite_(disorder)_Syphilis_(disorder)', 'Disease_caused_by_parasite_(disorder)_Toxoplasmosis_(disorder)', 'Disease_caused_by_parasite_(disorder)_Lyme_disease_(disorder)', 'Disease_caused_by_parasite_(disorder)_Malaria_(disorder)', 'Disease_caused_by_parasite_(disorder)_Infection_by_Trichomonas_(disorder)', 'Overig'))">Foutieve informatie voor "Infectieziekte": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/infectieziekte/@enum; allowed=('Bacterial_infectious_disease_(disorder)_Chlamydia_trachomatis_infection_(disorder)', 'Bacterial_infectious_disease_(disorder)_Gonorrhea_(disorder)', 'Bacterial_infectious_disease_(disorder)_Streptococcus_agalactiae_infection_(disorder)', 'Bacterial_infectious_disease_(disorder)_Methicillin_resistant_Staphylococcus_aureus_infection_(disorder)', 'Bacterial_infectious_disease_(disorder)_Tuberculosis_(disorder)', 'Viral_disease_(disorder)_Cytomegalovirus_infection_(disorder)', 'Viral_disease_(disorder)_Herpesvirus_infection_(disorder)', 'Viral_disease_(disorder)_Hepatitis_B_surface_antigen_positive_(finding)', 'Viral_disease_(disorder)_Human_immunodeficiency_virus_infection_(disorder)', 'Viral_disease_(disorder)_Type_B_viral_hepatitis_(disorder)', 'Viral_disease_(disorder)_Viral_hepatitis_C_(disorder)', 'Viral_disease_(disorder)_Rubella_(disorder)', 'Viral_disease_(disorder)_Varicella-zoster_virus_infection_(disorder)', 'Viral_disease_(disorder)_Parvovirus_infection_(disorder)', 'Disease_caused_by_parasite_(disorder)_Syphilis_(disorder)', 'Disease_caused_by_parasite_(disorder)_Toxoplasmosis_(disorder)', 'Disease_caused_by_parasite_(disorder)_Lyme_disease_(disorder)', 'Disease_caused_by_parasite_(disorder)_Malaria_(disorder)', 'Disease_caused_by_parasite_(disorder)_Infection_by_Trichomonas_(disorder)', 'Overig')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Infectieziekte": Ongeldige attributen aangetroffen [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/infectieziekte; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Infectieziekte": Ongeldige attributen aangetroffen [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/infectieziekte; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/mdl_aandoening: == -->
@@ -1956,7 +2093,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Chronic_liver_disease_(disorder)', 'Ulcerative_colitis_(disorder)', 'Crohn''s_disease_(disorder)'))">Foutieve informatie voor "MDL aandoening": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/mdl_aandoening/@enum; allowed=('Chronic_liver_disease_(disorder)', 'Ulcerative_colitis_(disorder)', 'Crohn''s_disease_(disorder)')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "MDL aandoening": Ongeldige attributen aangetroffen [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/mdl_aandoening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "MDL aandoening": Ongeldige attributen aangetroffen [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/mdl_aandoening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/anemie: == -->
@@ -1973,7 +2112,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Iron_deficiency_anemia_(disorder)', 'Hemoglobinopathy_(disorder)', 'Hereditary_hemoglobinopathy_disorder_homozygous_for_hemoglobin_S_(disorder)', 'Thalassemia_(disorder)'))">Foutieve informatie voor "Anemie": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/anemie/@enum; allowed=('Iron_deficiency_anemia_(disorder)', 'Hemoglobinopathy_(disorder)', 'Hereditary_hemoglobinopathy_disorder_homozygous_for_hemoglobin_S_(disorder)', 'Thalassemia_(disorder)')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Anemie": Ongeldige attributen aangetroffen [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/anemie; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Anemie": Ongeldige attributen aangetroffen [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/anemie; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/longaandoening: == -->
@@ -1990,7 +2131,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Asthma_(disorder)', 'Chronic_obstructive_lung_disease_(disorder)', 'Sarcoidosis_(disorder)', 'Overig', 'Geen_informatie'))">Foutieve informatie voor "Longaandoening": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/longaandoening/@enum; allowed=('Asthma_(disorder)', 'Chronic_obstructive_lung_disease_(disorder)', 'Sarcoidosis_(disorder)', 'Overig', 'Geen_informatie')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Longaandoening": Ongeldige attributen aangetroffen [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/longaandoening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Longaandoening": Ongeldige attributen aangetroffen [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/longaandoening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/gynaecologische_aandoening: == -->
@@ -2007,7 +2150,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Endometriosis_(disorder)', 'Uterine_leiomyoma_(disorder)', 'Congenital_uterine_anomaly_(disorder)', 'Overig'))">Foutieve informatie voor "Gynaecologische aandoening": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/gynaecologische_aandoening/@enum; allowed=('Endometriosis_(disorder)', 'Uterine_leiomyoma_(disorder)', 'Congenital_uterine_anomaly_(disorder)', 'Overig')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Gynaecologische aandoening": Ongeldige attributen aangetroffen [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/gynaecologische_aandoening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Gynaecologische aandoening": Ongeldige attributen aangetroffen [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/gynaecologische_aandoening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/orthopedische_afwijking: == -->
@@ -2024,7 +2169,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Congenital_dislocation_of_hip_(disorder)', 'Pelvic_injury_(disorder)', 'Overig'))">Foutieve informatie voor "Orthopedische afwijking": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/orthopedische_afwijking/@enum; allowed=('Congenital_dislocation_of_hip_(disorder)', 'Pelvic_injury_(disorder)', 'Overig')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Orthopedische afwijking": Ongeldige attributen aangetroffen [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/orthopedische_afwijking; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Orthopedische afwijking": Ongeldige attributen aangetroffen [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/orthopedische_afwijking; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/bloedtransfusieq: == -->
@@ -2033,9 +2180,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Bloedtransfusie?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/bloedtransfusieq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10805')">Foutieve informatie voor "Bloedtransfusie?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10805" [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/bloedtransfusieq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Bloedtransfusie?": Attribuut "value" ontbreekt [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/bloedtransfusieq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Bloedtransfusie?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/bloedtransfusieq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Bloedtransfusie?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/bloedtransfusieq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Bloedtransfusie?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/bloedtransfusieq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/transfusiereactieq: == -->
@@ -2044,9 +2192,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Transfusiereactie?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/transfusiereactieq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82231')">Foutieve informatie voor "Transfusiereactie?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82231" [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/transfusiereactieq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Transfusiereactie?": Attribuut "value" ontbreekt [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/transfusiereactieq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Transfusiereactie?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/transfusiereactieq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Transfusiereactie?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/transfusiereactieq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Transfusiereactie?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/transfusiereactieq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/type_operatie: == -->
@@ -2063,7 +2212,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Operation_on_female_genital_organs_(procedure)', 'Operation_on_female_genital_organs_(procedure)_Curettage_(procedure)', 'Operation_on_female_genital_organs_(procedure)_Cesarean_section_(procedure)', 'Operation_on_female_genital_organs_(procedure)_Manual_removal_of_retained_placenta_(procedure)', 'Operation_on_female_genital_organs_(procedure)_Operation_on_uterus_(procedure)', 'Operation_on_female_genital_organs_(procedure)_Uterine_myomectomy_(procedure)', 'Operation_on_female_genital_organs_(procedure)_Operation_on_ovary_(procedure)', 'Operation_on_musculoskeletal_system_(procedure)', 'Operation_on_musculoskeletal_system_(procedure)_Operative_procedure_on_pelvis_(procedure)', 'Operation_on_musculoskeletal_system_(procedure)_Operation_on_back_(procedure)', 'Operation_on_abdominal_region_(procedure)', 'Operation_on_abdominal_region_(procedure)_Laparotomy_(procedure)', 'Operation_on_abdominal_region_(procedure)_Appendectomy_(procedure)', 'Operation_on_abdominal_region_(procedure)_Abdominoplasty_(procedure)', 'Operation_on_abdominal_region_(procedure)_Operation_on_intestine_(procedure)', 'Operation_on_breast_(procedure)', 'Operation_on_organ_(procedure)', 'Operation_on_organ_(procedure)_Kidney_operation_(procedure)', 'Operation_on_organ_(procedure)_Operation_on_thyroid_gland_(procedure)', 'Operation_on_organ_(procedure)_Operation_on_heart_(procedure)', 'Operation_on_organ_(procedure)_Operation_on_adrenal_gland_(procedure)', 'Operation_on_nervous_system_(procedure)', 'Onbekend', 'Overig'))">Foutieve informatie voor "Type operatie": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/type_operatie/@enum; allowed=('Operation_on_female_genital_organs_(procedure)', 'Operation_on_female_genital_organs_(procedure)_Curettage_(procedure)', 'Operation_on_female_genital_organs_(procedure)_Cesarean_section_(procedure)', 'Operation_on_female_genital_organs_(procedure)_Manual_removal_of_retained_placenta_(procedure)', 'Operation_on_female_genital_organs_(procedure)_Operation_on_uterus_(procedure)', 'Operation_on_female_genital_organs_(procedure)_Uterine_myomectomy_(procedure)', 'Operation_on_female_genital_organs_(procedure)_Operation_on_ovary_(procedure)', 'Operation_on_musculoskeletal_system_(procedure)', 'Operation_on_musculoskeletal_system_(procedure)_Operative_procedure_on_pelvis_(procedure)', 'Operation_on_musculoskeletal_system_(procedure)_Operation_on_back_(procedure)', 'Operation_on_abdominal_region_(procedure)', 'Operation_on_abdominal_region_(procedure)_Laparotomy_(procedure)', 'Operation_on_abdominal_region_(procedure)_Appendectomy_(procedure)', 'Operation_on_abdominal_region_(procedure)_Abdominoplasty_(procedure)', 'Operation_on_abdominal_region_(procedure)_Operation_on_intestine_(procedure)', 'Operation_on_breast_(procedure)', 'Operation_on_organ_(procedure)', 'Operation_on_organ_(procedure)_Kidney_operation_(procedure)', 'Operation_on_organ_(procedure)_Operation_on_thyroid_gland_(procedure)', 'Operation_on_organ_(procedure)_Operation_on_heart_(procedure)', 'Operation_on_organ_(procedure)_Operation_on_adrenal_gland_(procedure)', 'Operation_on_nervous_system_(procedure)', 'Onbekend', 'Overig')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Type operatie": Ongeldige attributen aangetroffen [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/type_operatie; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Type operatie": Ongeldige attributen aangetroffen [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/type_operatie; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/type_stollingsprobleem: == -->
@@ -2080,7 +2231,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('von_Willebrand_disorder_(disorder)', 'Hemophilia_(disorder)', 'Thrombocytopenic_disorder_(disorder)', 'Disseminated_intravascular_coagulation_(disorder)', 'Thrombophilia_(disorder)', 'Thrombophilia_(disorder)_Antithrombin_III_deficiency_(disorder)', 'Thrombophilia_(disorder)_Protein_C_deficiency_disease_(disorder)', 'Thrombophilia_(disorder)_Protein_S_deficiency_disease_(disorder)', 'Thrombophilia_(disorder)_Heterozygous_Factor_V_Leiden_mutation_(disorder)', 'Thrombophilia_(disorder)_Homozygous_Factor_V_Leiden_mutation_(disorder)', 'Thrombophilia_(disorder)_Factor_XII_deficiency_disease_(disorder)', 'Deep_venous_thrombosis_(disorder)', 'Pulmonary_embolism_(disorder)', 'Overig'))">Foutieve informatie voor "Type stollingsprobleem": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/type_stollingsprobleem/@enum; allowed=('von_Willebrand_disorder_(disorder)', 'Hemophilia_(disorder)', 'Thrombocytopenic_disorder_(disorder)', 'Disseminated_intravascular_coagulation_(disorder)', 'Thrombophilia_(disorder)', 'Thrombophilia_(disorder)_Antithrombin_III_deficiency_(disorder)', 'Thrombophilia_(disorder)_Protein_C_deficiency_disease_(disorder)', 'Thrombophilia_(disorder)_Protein_S_deficiency_disease_(disorder)', 'Thrombophilia_(disorder)_Heterozygous_Factor_V_Leiden_mutation_(disorder)', 'Thrombophilia_(disorder)_Homozygous_Factor_V_Leiden_mutation_(disorder)', 'Thrombophilia_(disorder)_Factor_XII_deficiency_disease_(disorder)', 'Deep_venous_thrombosis_(disorder)', 'Pulmonary_embolism_(disorder)', 'Overig')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Type stollingsprobleem": Ongeldige attributen aangetroffen [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/type_stollingsprobleem; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Type stollingsprobleem": Ongeldige attributen aangetroffen [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/type_stollingsprobleem; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/psychiatrieq: == -->
@@ -2089,9 +2242,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Psychiatrie?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/psychiatrieq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82159')">Foutieve informatie voor "Psychiatrie?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82159" [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/psychiatrieq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Psychiatrie?": Attribuut "value" ontbreekt [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/psychiatrieq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Psychiatrie?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/psychiatrieq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Psychiatrie?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/psychiatrieq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Psychiatrie?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/psychiatrieq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/overige_aandoeningq: == -->
@@ -2100,9 +2254,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Overige aandoening?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/overige_aandoeningq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82212')">Foutieve informatie voor "Overige aandoening?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82212" [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/overige_aandoeningq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Overige aandoening?": Attribuut "value" ontbreekt [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/overige_aandoeningq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Overige aandoening?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/overige_aandoeningq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Overige aandoening?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/overige_aandoeningq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Overige aandoening?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/overige_aandoeningq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/overige_aandoening: == -->
@@ -2111,8 +2266,9 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Overige aandoening": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/overige_aandoening/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80919')">Foutieve informatie voor "Overige aandoening": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80919" [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/overige_aandoening/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Overige aandoening": Attribuut "value" ontbreekt [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/overige_aandoening/@value]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Overige aandoening": Ongeldige attributen aangetroffen [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/overige_aandoening; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Overige aandoening": Ongeldige attributen aangetroffen [/kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/overige_aandoening; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Any attributes allowed on /kernset_geboortezorg/vrouw/anamnese/algemene_anamnese/adaextension == -->
@@ -2145,7 +2301,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Partus', 'Miskraam', 'Miskraam_Spontaan', 'Miskraam_Medicamenteus', 'Miskraam_Instrumenteel', 'APLA', 'APLA_Medicamenteus', 'APLA_Instrumenteel', 'EUG_-_behandeld', '(partiële)_Mola_-_behandeld', 'geen_informatie'))">Foutieve informatie voor "Wijze einde zwangerschap": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/wijze_einde_zwangerschap/@enum; allowed=('Partus', 'Miskraam', 'Miskraam_Spontaan', 'Miskraam_Medicamenteus', 'Miskraam_Instrumenteel', 'APLA', 'APLA_Medicamenteus', 'APLA_Instrumenteel', 'EUG_-_behandeld', '(partiële)_Mola_-_behandeld', 'geen_informatie')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Wijze einde zwangerschap": Ongeldige attributen aangetroffen [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/wijze_einde_zwangerschap; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Wijze einde zwangerschap": Ongeldige attributen aangetroffen [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/wijze_einde_zwangerschap; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/definitieve_a_terme_datum: == -->
@@ -2154,9 +2312,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Definitieve à terme datum": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/definitieve_a_terme_datum/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82337')">Foutieve informatie voor "Definitieve à terme datum": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82337" [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/definitieve_a_terme_datum/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Definitieve à terme datum": Attribuut "value" ontbreekt [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/definitieve_a_terme_datum/@value]</assert>
          <assert test="empty(@value) or ((@value castable as xs:date) or (@value castable as xs:dateTime))">Foutieve informatie voor "Definitieve à terme datum": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/definitieve_a_terme_datum/@value; type=t-datetime]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Definitieve à terme datum": Ongeldige attributen aangetroffen [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/definitieve_a_terme_datum; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Definitieve à terme datum": Ongeldige attributen aangetroffen [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/definitieve_a_terme_datum; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose: == -->
@@ -2173,9 +2332,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Irregulaire antistoffen?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/irregulaire_antistoffenq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82214')">Foutieve informatie voor "Irregulaire antistoffen?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82214" [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/irregulaire_antistoffenq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Irregulaire antistoffen?": Attribuut "value" ontbreekt [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/irregulaire_antistoffenq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Irregulaire antistoffen?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/irregulaire_antistoffenq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Irregulaire antistoffen?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/irregulaire_antistoffenq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Irregulaire antistoffen?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/irregulaire_antistoffenq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling: == -->
@@ -2223,7 +2383,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Endometriosis_(disorder)', 'Uterine_leiomyoma_(disorder)', 'Congenital_uterine_anomaly_(disorder)', 'Overig'))">Foutieve informatie voor "Gynaecologische aandoening": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/gynaecologische_aandoening/@enum; allowed=('Endometriosis_(disorder)', 'Uterine_leiomyoma_(disorder)', 'Congenital_uterine_anomaly_(disorder)', 'Overig')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Gynaecologische aandoening": Ongeldige attributen aangetroffen [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/gynaecologische_aandoening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Gynaecologische aandoening": Ongeldige attributen aangetroffen [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/gynaecologische_aandoening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/bloedverliesq: == -->
@@ -2232,9 +2394,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Bloedverlies?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/bloedverliesq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82318')">Foutieve informatie voor "Bloedverlies?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82318" [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/bloedverliesq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Bloedverlies?": Attribuut "value" ontbreekt [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/bloedverliesq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Bloedverlies?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/bloedverliesq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Bloedverlies?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/bloedverliesq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Bloedverlies?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/bloedverliesq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/cervixinsufficientieq: == -->
@@ -2243,9 +2406,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Cervixinsufficiëntie?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/cervixinsufficientieq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82320')">Foutieve informatie voor "Cervixinsufficiëntie?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82320" [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/cervixinsufficientieq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Cervixinsufficiëntie?": Attribuut "value" ontbreekt [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/cervixinsufficientieq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Cervixinsufficiëntie?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/cervixinsufficientieq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Cervixinsufficiëntie?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/cervixinsufficientieq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Cervixinsufficiëntie?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/cervixinsufficientieq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/infectie: == -->
@@ -2262,7 +2426,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Infection_of_uterus_(disorder)', 'Urinary_tract_infection_in_pregnancy_(disorder)', 'Pyelonephritis_(disorder)', 'Infectious_colitis,_enteritis_and_gastroenteritis_(disorder)', 'Overig', 'Geen_informatie'))">Foutieve informatie voor "Infectie": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/infectie/@enum; allowed=('Infection_of_uterus_(disorder)', 'Urinary_tract_infection_in_pregnancy_(disorder)', 'Pyelonephritis_(disorder)', 'Infectious_colitis,_enteritis_and_gastroenteritis_(disorder)', 'Overig', 'Geen_informatie')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Infectie": Ongeldige attributen aangetroffen [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/infectie; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Infectie": Ongeldige attributen aangetroffen [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/infectie; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/hyperemesis_gravidarumq: == -->
@@ -2271,9 +2437,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Hyperemesis gravidarum?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/hyperemesis_gravidarumq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82322')">Foutieve informatie voor "Hyperemesis gravidarum?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82322" [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/hyperemesis_gravidarumq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Hyperemesis gravidarum?": Attribuut "value" ontbreekt [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/hyperemesis_gravidarumq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Hyperemesis gravidarum?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/hyperemesis_gravidarumq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Hyperemesis gravidarum?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/hyperemesis_gravidarumq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Hyperemesis gravidarum?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/hyperemesis_gravidarumq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/hypertensieve_aandoening: == -->
@@ -2290,7 +2457,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Pregnancy-induced_hypertension_(disorder)', 'Pre-eclampsia_(disorder)', 'Hemolysis-elevated_liver_enzymes-low_platelet_count_syndrome_(disorder)', 'Eclampsia_(disorder)'))">Foutieve informatie voor "Hypertensieve aandoening": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/hypertensieve_aandoening/@enum; allowed=('Pregnancy-induced_hypertension_(disorder)', 'Pre-eclampsia_(disorder)', 'Hemolysis-elevated_liver_enzymes-low_platelet_count_syndrome_(disorder)', 'Eclampsia_(disorder)')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Hypertensieve aandoening": Ongeldige attributen aangetroffen [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/hypertensieve_aandoening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Hypertensieve aandoening": Ongeldige attributen aangetroffen [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/hypertensieve_aandoening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/zwangerschapscholestaseq: == -->
@@ -2299,9 +2468,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Zwangerschapscholestase?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/zwangerschapscholestaseq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82324')">Foutieve informatie voor "Zwangerschapscholestase?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82324" [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/zwangerschapscholestaseq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Zwangerschapscholestase?": Attribuut "value" ontbreekt [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/zwangerschapscholestaseq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Zwangerschapscholestase?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/zwangerschapscholestaseq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Zwangerschapscholestase?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/zwangerschapscholestaseq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Zwangerschapscholestase?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/zwangerschapscholestaseq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/diabetes_gravidarum_met_insulineq: == -->
@@ -2310,9 +2480,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Diabetes gravidarum met insuline?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/diabetes_gravidarum_met_insulineq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82325')">Foutieve informatie voor "Diabetes gravidarum met insuline?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82325" [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/diabetes_gravidarum_met_insulineq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Diabetes gravidarum met insuline?": Attribuut "value" ontbreekt [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/diabetes_gravidarum_met_insulineq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Diabetes gravidarum met insuline?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/diabetes_gravidarum_met_insulineq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Diabetes gravidarum met insuline?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/diabetes_gravidarum_met_insulineq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Diabetes gravidarum met insuline?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/diabetes_gravidarum_met_insulineq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/afwijkende_groei_foetus: == -->
@@ -2329,7 +2500,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Large-for-dates_fetus_(disorder)', 'Small_for_gestational_age_fetus_(disorder)', 'Geen_informatie'))">Foutieve informatie voor "Afwijkende groei foetus": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/afwijkende_groei_foetus/@enum; allowed=('Large-for-dates_fetus_(disorder)', 'Small_for_gestational_age_fetus_(disorder)', 'Geen_informatie')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Afwijkende groei foetus": Ongeldige attributen aangetroffen [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/afwijkende_groei_foetus; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Afwijkende groei foetus": Ongeldige attributen aangetroffen [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/afwijkende_groei_foetus; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/dreigende_partus_immaturusq: == -->
@@ -2338,9 +2511,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Dreigende partus immaturus?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/dreigende_partus_immaturusq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82327')">Foutieve informatie voor "Dreigende partus immaturus?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82327" [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/dreigende_partus_immaturusq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Dreigende partus immaturus?": Attribuut "value" ontbreekt [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/dreigende_partus_immaturusq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Dreigende partus immaturus?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/dreigende_partus_immaturusq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Dreigende partus immaturus?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/dreigende_partus_immaturusq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Dreigende partus immaturus?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/dreigende_partus_immaturusq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/dreigende_partus_prematurusq: == -->
@@ -2349,9 +2523,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Dreigende partus prematurus?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/dreigende_partus_prematurusq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82328')">Foutieve informatie voor "Dreigende partus prematurus?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82328" [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/dreigende_partus_prematurusq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Dreigende partus prematurus?": Attribuut "value" ontbreekt [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/dreigende_partus_prematurusq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Dreigende partus prematurus?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/dreigende_partus_prematurusq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Dreigende partus prematurus?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/dreigende_partus_prematurusq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Dreigende partus prematurus?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/dreigende_partus_prematurusq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/abruptio_placentaeq: == -->
@@ -2360,9 +2535,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Abruptio placentae?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/abruptio_placentaeq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82329')">Foutieve informatie voor "Abruptio placentae?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82329" [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/abruptio_placentaeq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Abruptio placentae?": Attribuut "value" ontbreekt [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/abruptio_placentaeq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Abruptio placentae?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/abruptio_placentaeq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Abruptio placentae?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/abruptio_placentaeq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Abruptio placentae?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/abruptio_placentaeq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Any attributes allowed on /kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/adaextension == -->
@@ -2393,11 +2569,12 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Hoeveelheid bloedverlies": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/hoeveelheid_bloedverlies/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10598')">Foutieve informatie voor "Hoeveelheid bloedverlies": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10598" [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/hoeveelheid_bloedverlies/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Hoeveelheid bloedverlies": Attribuut "value" ontbreekt [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/hoeveelheid_bloedverlies/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:decimal)">Foutieve informatie voor "Hoeveelheid bloedverlies": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/hoeveelheid_bloedverlies/@value; type=xs:decimal]</assert>
          <!-- == Attribute "unit": == -->
          <assert test="empty(@unit) or (@unit eq 'ml')">Foutieve informatie voor "Hoeveelheid bloedverlies": De waarde "<value-of select="@unit"/>" voor attribuut "unit" heeft niet de verwachte vaste waarde "ml" [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/hoeveelheid_bloedverlies/@unit]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @unit, @xsi:*))">Foutieve informatie voor "Hoeveelheid bloedverlies": Ongeldige attributen aangetroffen [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/hoeveelheid_bloedverlies; allowed=(@conceptId, @value, @unit, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @unit, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Hoeveelheid bloedverlies": Ongeldige attributen aangetroffen [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/hoeveelheid_bloedverlies; allowed=(@conceptId, @value, @unit, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind: == -->
@@ -2434,7 +2611,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Spontaan', 'Controlled_cord_traction', 'Manuele_placentaverwijdering', 'Placentaverwijdering_bij_SC', 'Overig', 'Geen_informatie', 'Onbekend'))">Foutieve informatie voor "Geboorte placenta": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/placenta/geboorte_placenta/@enum; allowed=('Spontaan', 'Controlled_cord_traction', 'Manuele_placentaverwijdering', 'Placentaverwijdering_bij_SC', 'Overig', 'Geen_informatie', 'Onbekend')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Geboorte placenta": Ongeldige attributen aangetroffen [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/placenta/geboorte_placenta; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Geboorte placenta": Ongeldige attributen aangetroffen [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/placenta/geboorte_placenta; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Any attributes allowed on /kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/placenta/adaextension == -->
@@ -2504,9 +2683,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Geboortedatum": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/demografische_gegevens/geboortedatum/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80702')">Foutieve informatie voor "Geboortedatum": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80702" [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/demografische_gegevens/geboortedatum/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Geboortedatum": Attribuut "value" ontbreekt [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/demografische_gegevens/geboortedatum/@value]</assert>
          <assert test="empty(@value) or ((@value castable as xs:date) or (@value castable as xs:dateTime))">Foutieve informatie voor "Geboortedatum": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/demografische_gegevens/geboortedatum/@value; type=t-datetime]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Geboortedatum": Ongeldige attributen aangetroffen [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/demografische_gegevens/geboortedatum; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Geboortedatum": Ongeldige attributen aangetroffen [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/demografische_gegevens/geboortedatum; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Any attributes allowed on /kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/demografische_gegevens/adaextension == -->
@@ -2539,7 +2719,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Normal_delivery_procedure_(procedure)', 'Assisted_delivery_of_fetus_(procedure)', 'Cesarean_section_(procedure)', 'Cesarean_section_(procedure)_Elective_cesarian_delivery_(procedure)', 'Cesarean_section_(procedure)_Emergency_cesarian_section_(procedure)', 'Termination_of_Pregnancy_(TOP)', 'Termination_of_Pregnancy_(TOP)_Medical_termination_of_pregnancy_using_prostaglandin_(procedure)', 'Termination_of_Pregnancy_(TOP)_Postmortem_cesarean_section_(procedure)', 'Termination_of_Pregnancy_(TOP)_Overig', 'Geen_informatie'))">Foutieve informatie voor "Type partus": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/type_partus/@enum; allowed=('Normal_delivery_procedure_(procedure)', 'Assisted_delivery_of_fetus_(procedure)', 'Cesarean_section_(procedure)', 'Cesarean_section_(procedure)_Elective_cesarian_delivery_(procedure)', 'Cesarean_section_(procedure)_Emergency_cesarian_section_(procedure)', 'Termination_of_Pregnancy_(TOP)', 'Termination_of_Pregnancy_(TOP)_Medical_termination_of_pregnancy_using_prostaglandin_(procedure)', 'Termination_of_Pregnancy_(TOP)_Postmortem_cesarean_section_(procedure)', 'Termination_of_Pregnancy_(TOP)_Overig', 'Geen_informatie')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Type partus": Ongeldige attributen aangetroffen [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/type_partus; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Type partus": Ongeldige attributen aangetroffen [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/type_partus; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/percentiel_van_het_geboortegewicht: == -->
@@ -2556,7 +2738,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('&lt;_p2,3', 'p2,3_tot_p10', 'p10_tot_p50', 'p50_tot_p90', 'p90_tot_p97,7', '&gt;=_p97,7', 'Geen_informatie'))">Foutieve informatie voor "Percentiel van het geboortegewicht": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/percentiel_van_het_geboortegewicht/@enum; allowed=('&lt;_p2,3', 'p2,3_tot_p10', 'p10_tot_p50', 'p50_tot_p90', 'p90_tot_p97,7', '&gt;=_p97,7', 'Geen_informatie')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Percentiel van het geboortegewicht": Ongeldige attributen aangetroffen [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/percentiel_van_het_geboortegewicht; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Percentiel van het geboortegewicht": Ongeldige attributen aangetroffen [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/percentiel_van_het_geboortegewicht; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/apgarscore_na_5_min: == -->
@@ -2565,11 +2749,12 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Apgarscore na 5 min.": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/apgarscore_na_5_min/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10606')">Foutieve informatie voor "Apgarscore na 5 min.": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10606" [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/apgarscore_na_5_min/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Apgarscore na 5 min.": Attribuut "value" ontbreekt [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/apgarscore_na_5_min/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:decimal)">Foutieve informatie voor "Apgarscore na 5 min.": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/apgarscore_na_5_min/@value; type=xs:decimal]</assert>
          <assert test="empty(@value) or (local:decimal-convert(@value) ge 0)">Foutieve informatie voor "Apgarscore na 5 min.": De waarde "<value-of select="@value"/>" voor attribuut "value" moet minimaal 0 zijn [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/apgarscore_na_5_min/@value; min-inclusive=0]</assert>
          <assert test="empty(@value) or (local:decimal-convert(@value) le 10)">Foutieve informatie voor "Apgarscore na 5 min.": De waarde "<value-of select="@value"/>" voor attribuut "value" mag maximaal 10 zijn [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/apgarscore_na_5_min/@value; max-inclusive=10]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Apgarscore na 5 min.": Ongeldige attributen aangetroffen [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/apgarscore_na_5_min; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Apgarscore na 5 min.": Ongeldige attributen aangetroffen [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/apgarscore_na_5_min; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/congenitale_afwijkingenq: == -->
@@ -2578,9 +2763,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Congenitale afwijkingen?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/congenitale_afwijkingenq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80997')">Foutieve informatie voor "Congenitale afwijkingen?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80997" [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/congenitale_afwijkingenq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Congenitale afwijkingen?": Attribuut "value" ontbreekt [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/congenitale_afwijkingenq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Congenitale afwijkingen?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/congenitale_afwijkingenq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Congenitale afwijkingen?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/congenitale_afwijkingenq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Congenitale afwijkingen?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/congenitale_afwijkingenq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/congenitale_afwijkingen_groep: == -->
@@ -2609,9 +2795,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Chromosomale afwijkingen?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/congenitale_afwijkingen_groep/chromosomale_afwijkingenq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.81002')">Foutieve informatie voor "Chromosomale afwijkingen?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.81002" [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/congenitale_afwijkingen_groep/chromosomale_afwijkingenq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Chromosomale afwijkingen?": Attribuut "value" ontbreekt [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/congenitale_afwijkingen_groep/chromosomale_afwijkingenq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Chromosomale afwijkingen?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/congenitale_afwijkingen_groep/chromosomale_afwijkingenq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Chromosomale afwijkingen?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/congenitale_afwijkingen_groep/chromosomale_afwijkingenq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Chromosomale afwijkingen?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/congenitale_afwijkingen_groep/chromosomale_afwijkingenq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Any attributes allowed on /kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/congenitale_afwijkingen_groep/adaextension == -->
@@ -2641,8 +2828,9 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Identificatie van de zwangerschap": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/zwangerschap/identificatie_van_de_zwangerschap/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80627')">Foutieve informatie voor "Identificatie van de zwangerschap": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80627" [/kernset_geboortezorg/zwangerschap/identificatie_van_de_zwangerschap/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Identificatie van de zwangerschap": Attribuut "value" ontbreekt [/kernset_geboortezorg/zwangerschap/identificatie_van_de_zwangerschap/@value]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Identificatie van de zwangerschap": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zwangerschap/identificatie_van_de_zwangerschap; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Identificatie van de zwangerschap": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zwangerschap/identificatie_van_de_zwangerschap; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zwangerschap/graviditeit: == -->
@@ -2651,11 +2839,12 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Graviditeit": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/zwangerschap/graviditeit/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20010')">Foutieve informatie voor "Graviditeit": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20010" [/kernset_geboortezorg/zwangerschap/graviditeit/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Graviditeit": Attribuut "value" ontbreekt [/kernset_geboortezorg/zwangerschap/graviditeit/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:decimal)">Foutieve informatie voor "Graviditeit": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/zwangerschap/graviditeit/@value; type=xs:decimal]</assert>
          <assert test="empty(@value) or (local:decimal-convert(@value) ge 1)">Foutieve informatie voor "Graviditeit": De waarde "<value-of select="@value"/>" voor attribuut "value" moet minimaal 1 zijn [/kernset_geboortezorg/zwangerschap/graviditeit/@value; min-inclusive=1]</assert>
          <assert test="empty(@value) or (local:decimal-convert(@value) le 75)">Foutieve informatie voor "Graviditeit": De waarde "<value-of select="@value"/>" voor attribuut "value" mag maximaal 75 zijn [/kernset_geboortezorg/zwangerschap/graviditeit/@value; max-inclusive=75]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Graviditeit": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zwangerschap/graviditeit; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Graviditeit": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zwangerschap/graviditeit; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zwangerschap/pariteit_voor_deze_zwangerschap: == -->
@@ -2664,11 +2853,12 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Pariteit (vóór deze zwangerschap)": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/zwangerschap/pariteit_voor_deze_zwangerschap/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20150')">Foutieve informatie voor "Pariteit (vóór deze zwangerschap)": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20150" [/kernset_geboortezorg/zwangerschap/pariteit_voor_deze_zwangerschap/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Pariteit (vóór deze zwangerschap)": Attribuut "value" ontbreekt [/kernset_geboortezorg/zwangerschap/pariteit_voor_deze_zwangerschap/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:decimal)">Foutieve informatie voor "Pariteit (vóór deze zwangerschap)": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/zwangerschap/pariteit_voor_deze_zwangerschap/@value; type=xs:decimal]</assert>
          <assert test="empty(@value) or (local:decimal-convert(@value) ge 0)">Foutieve informatie voor "Pariteit (vóór deze zwangerschap)": De waarde "<value-of select="@value"/>" voor attribuut "value" moet minimaal 0 zijn [/kernset_geboortezorg/zwangerschap/pariteit_voor_deze_zwangerschap/@value; min-inclusive=0]</assert>
          <assert test="empty(@value) or (local:decimal-convert(@value) le 30)">Foutieve informatie voor "Pariteit (vóór deze zwangerschap)": De waarde "<value-of select="@value"/>" voor attribuut "value" mag maximaal 30 zijn [/kernset_geboortezorg/zwangerschap/pariteit_voor_deze_zwangerschap/@value; max-inclusive=30]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Pariteit (vóór deze zwangerschap)": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zwangerschap/pariteit_voor_deze_zwangerschap; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Pariteit (vóór deze zwangerschap)": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zwangerschap/pariteit_voor_deze_zwangerschap; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zwangerschap/definitieve_a_terme_datum: == -->
@@ -2677,9 +2867,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Definitieve à terme datum": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/zwangerschap/definitieve_a_terme_datum/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82160')">Foutieve informatie voor "Definitieve à terme datum": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82160" [/kernset_geboortezorg/zwangerschap/definitieve_a_terme_datum/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Definitieve à terme datum": Attribuut "value" ontbreekt [/kernset_geboortezorg/zwangerschap/definitieve_a_terme_datum/@value]</assert>
          <assert test="empty(@value) or ((@value castable as xs:date) or (@value castable as xs:dateTime))">Foutieve informatie voor "Definitieve à terme datum": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/zwangerschap/definitieve_a_terme_datum/@value; type=t-datetime]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Definitieve à terme datum": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zwangerschap/definitieve_a_terme_datum; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Definitieve à terme datum": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zwangerschap/definitieve_a_terme_datum; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zwangerschap/voornemens: == -->
@@ -2720,7 +2911,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Intrauterine_transfusion_(procedure)', 'Selective_destruction_of_fetus_(procedure)', 'Operation_on_fetus_(procedure)', 'Therapeutic_drainage_of_amniotic_fluid_(procedure)', 'Operation_on_placenta_(procedure)', 'Overig'))">Foutieve informatie voor "Intra-uteriene behandeling": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zwangerschap/intrauteriene_behandeling/@enum; allowed=('Intrauterine_transfusion_(procedure)', 'Selective_destruction_of_fetus_(procedure)', 'Operation_on_fetus_(procedure)', 'Therapeutic_drainage_of_amniotic_fluid_(procedure)', 'Operation_on_placenta_(procedure)', 'Overig')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Intra-uteriene behandeling": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zwangerschap/intrauteriene_behandeling; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Intra-uteriene behandeling": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zwangerschap/intrauteriene_behandeling; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zwangerschap/maternale_sterfteq: == -->
@@ -2729,9 +2922,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Maternale sterfte?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/zwangerschap/maternale_sterfteq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20670')">Foutieve informatie voor "Maternale sterfte?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20670" [/kernset_geboortezorg/zwangerschap/maternale_sterfteq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Maternale sterfte?": Attribuut "value" ontbreekt [/kernset_geboortezorg/zwangerschap/maternale_sterfteq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Maternale sterfte?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/zwangerschap/maternale_sterfteq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Maternale sterfte?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zwangerschap/maternale_sterfteq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Maternale sterfte?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zwangerschap/maternale_sterfteq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zwangerschap/wijze_einde_zwangerschap: == -->
@@ -2748,7 +2942,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Partus', 'Miskraam', 'Miskraam_Spontaan', 'Miskraam_Medicamenteus', 'Miskraam_Instrumenteel', 'APLA', 'APLA_Medicamenteus', 'APLA_Instrumenteel', 'EUG_-_behandeld', '(partiële)_Mola_-_behandeld', 'geen_informatie'))">Foutieve informatie voor "Wijze einde zwangerschap": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zwangerschap/wijze_einde_zwangerschap/@enum; allowed=('Partus', 'Miskraam', 'Miskraam_Spontaan', 'Miskraam_Medicamenteus', 'Miskraam_Instrumenteel', 'APLA', 'APLA_Medicamenteus', 'APLA_Instrumenteel', 'EUG_-_behandeld', '(partiële)_Mola_-_behandeld', 'geen_informatie')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Wijze einde zwangerschap": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zwangerschap/wijze_einde_zwangerschap; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Wijze einde zwangerschap": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zwangerschap/wijze_einde_zwangerschap; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Any attributes allowed on /kernset_geboortezorg/zwangerschap/adaextension == -->
@@ -2777,7 +2973,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Home_birth_(finding)', 'Geboortecentrum', 'Hospital_(environment)', 'Nog_niet_bepaald', 'Geen_voorkeur', 'Onbekend', 'Geen_informatie'))">Foutieve informatie voor "Voorgenomen plaats baring tijdens zwangerschap (type locatie)": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zwangerschap/voornemens/voorgenomen_plaats_baring_tijdens_zwangerschap_type_locatie/@enum; allowed=('Home_birth_(finding)', 'Geboortecentrum', 'Hospital_(environment)', 'Nog_niet_bepaald', 'Geen_voorkeur', 'Onbekend', 'Geen_informatie')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Voorgenomen plaats baring tijdens zwangerschap (type locatie)": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zwangerschap/voornemens/voorgenomen_plaats_baring_tijdens_zwangerschap_type_locatie; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Voorgenomen plaats baring tijdens zwangerschap (type locatie)": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zwangerschap/voornemens/voorgenomen_plaats_baring_tijdens_zwangerschap_type_locatie; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Any attributes allowed on /kernset_geboortezorg/zwangerschap/voornemens/adaextension == -->
@@ -2804,9 +3002,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Datum controle": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/zwangerschap/prenatale_controle/datum_controle/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80737')">Foutieve informatie voor "Datum controle": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80737" [/kernset_geboortezorg/zwangerschap/prenatale_controle/datum_controle/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Datum controle": Attribuut "value" ontbreekt [/kernset_geboortezorg/zwangerschap/prenatale_controle/datum_controle/@value]</assert>
          <assert test="empty(@value) or ((@value castable as xs:date) or (@value castable as xs:dateTime))">Foutieve informatie voor "Datum controle": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/zwangerschap/prenatale_controle/datum_controle/@value; type=t-datetime]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Datum controle": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zwangerschap/prenatale_controle/datum_controle; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Datum controle": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zwangerschap/prenatale_controle/datum_controle; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zwangerschap/prenatale_controle/zwangerschapsduur: == -->
@@ -2815,11 +3014,12 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Zwangerschapsduur": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/zwangerschap/prenatale_controle/zwangerschapsduur/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80738')">Foutieve informatie voor "Zwangerschapsduur": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80738" [/kernset_geboortezorg/zwangerschap/prenatale_controle/zwangerschapsduur/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Zwangerschapsduur": Attribuut "value" ontbreekt [/kernset_geboortezorg/zwangerschap/prenatale_controle/zwangerschapsduur/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:decimal)">Foutieve informatie voor "Zwangerschapsduur": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/zwangerschap/prenatale_controle/zwangerschapsduur/@value; type=xs:decimal]</assert>
          <!-- == Attribute "unit": == -->
          <assert test="empty(@unit) or (@unit eq 'd')">Foutieve informatie voor "Zwangerschapsduur": De waarde "<value-of select="@unit"/>" voor attribuut "unit" heeft niet de verwachte vaste waarde "d" [/kernset_geboortezorg/zwangerschap/prenatale_controle/zwangerschapsduur/@unit]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @unit, @xsi:*))">Foutieve informatie voor "Zwangerschapsduur": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zwangerschap/prenatale_controle/zwangerschapsduur; allowed=(@conceptId, @value, @unit, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @unit, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Zwangerschapsduur": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zwangerschap/prenatale_controle/zwangerschapsduur; allowed=(@conceptId, @value, @unit, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zwangerschap/prenatale_controle/leven_voelen: == -->
@@ -2836,7 +3036,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Fetal_movements_present_(finding)', 'Weak_fetal_movements_(finding)', 'Reduced_fetal_movement_(finding)', 'Fetal_movements_absent_(context-dependent_category)'))">Foutieve informatie voor "Leven voelen": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zwangerschap/prenatale_controle/leven_voelen/@enum; allowed=('Fetal_movements_present_(finding)', 'Weak_fetal_movements_(finding)', 'Reduced_fetal_movement_(finding)', 'Fetal_movements_absent_(context-dependent_category)')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Leven voelen": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zwangerschap/prenatale_controle/leven_voelen; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Leven voelen": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zwangerschap/prenatale_controle/leven_voelen; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zwangerschap/prenatale_controle/rookgedrag: == -->
@@ -2853,7 +3055,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('niet_gerookt', '1_-_10_per_dag', '11_-_20_per_dag', 'meer_dan_20_per_dag', 'gestopt_vóór_huidige_zwangerschap', 'gestopt_tijdens_huidige_zwangerschap', 'Unknown'))">Foutieve informatie voor "Rookgedrag": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zwangerschap/prenatale_controle/rookgedrag/@enum; allowed=('niet_gerookt', '1_-_10_per_dag', '11_-_20_per_dag', 'meer_dan_20_per_dag', 'gestopt_vóór_huidige_zwangerschap', 'gestopt_tijdens_huidige_zwangerschap', 'Unknown')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Rookgedrag": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zwangerschap/prenatale_controle/rookgedrag; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Rookgedrag": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zwangerschap/prenatale_controle/rookgedrag; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zwangerschap/prenatale_controle/alcoholgebruik: == -->
@@ -2870,7 +3074,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('geen', '&lt;_2_eenheden_per_dag', '≥_2_eenheden_per_dag'))">Foutieve informatie voor "Alcoholgebruik": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zwangerschap/prenatale_controle/alcoholgebruik/@enum; allowed=('geen', '&lt;_2_eenheden_per_dag', '≥_2_eenheden_per_dag')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Alcoholgebruik": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zwangerschap/prenatale_controle/alcoholgebruik; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Alcoholgebruik": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zwangerschap/prenatale_controle/alcoholgebruik; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zwangerschap/prenatale_controle/drugsgebruikq: == -->
@@ -2879,9 +3085,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Drugsgebruik?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/zwangerschap/prenatale_controle/drugsgebruikq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82102')">Foutieve informatie voor "Drugsgebruik?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82102" [/kernset_geboortezorg/zwangerschap/prenatale_controle/drugsgebruikq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Drugsgebruik?": Attribuut "value" ontbreekt [/kernset_geboortezorg/zwangerschap/prenatale_controle/drugsgebruikq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Drugsgebruik?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/zwangerschap/prenatale_controle/drugsgebruikq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Drugsgebruik?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zwangerschap/prenatale_controle/drugsgebruikq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Drugsgebruik?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zwangerschap/prenatale_controle/drugsgebruikq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zwangerschap/prenatale_controle/gewicht_gemeten: == -->
@@ -2890,13 +3097,14 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Gewicht (gemeten)": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/zwangerschap/prenatale_controle/gewicht_gemeten/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20211')">Foutieve informatie voor "Gewicht (gemeten)": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20211" [/kernset_geboortezorg/zwangerschap/prenatale_controle/gewicht_gemeten/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Gewicht (gemeten)": Attribuut "value" ontbreekt [/kernset_geboortezorg/zwangerschap/prenatale_controle/gewicht_gemeten/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:decimal)">Foutieve informatie voor "Gewicht (gemeten)": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/zwangerschap/prenatale_controle/gewicht_gemeten/@value; type=xs:decimal]</assert>
          <assert test="empty(@value) or (local:decimal-convert(@value) ge 25)">Foutieve informatie voor "Gewicht (gemeten)": De waarde "<value-of select="@value"/>" voor attribuut "value" moet minimaal 25 zijn [/kernset_geboortezorg/zwangerschap/prenatale_controle/gewicht_gemeten/@value; min-inclusive=25]</assert>
          <assert test="empty(@value) or (local:decimal-convert(@value) le 249.9)">Foutieve informatie voor "Gewicht (gemeten)": De waarde "<value-of select="@value"/>" voor attribuut "value" mag maximaal 249.9 zijn [/kernset_geboortezorg/zwangerschap/prenatale_controle/gewicht_gemeten/@value; max-inclusive=249.9]</assert>
          <!-- == Attribute "unit": == -->
          <assert test="empty(@unit) or (@unit eq 'kg')">Foutieve informatie voor "Gewicht (gemeten)": De waarde "<value-of select="@unit"/>" voor attribuut "unit" heeft niet de verwachte vaste waarde "kg" [/kernset_geboortezorg/zwangerschap/prenatale_controle/gewicht_gemeten/@unit]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @unit, @xsi:*))">Foutieve informatie voor "Gewicht (gemeten)": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zwangerschap/prenatale_controle/gewicht_gemeten; allowed=(@conceptId, @value, @unit, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @unit, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Gewicht (gemeten)": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zwangerschap/prenatale_controle/gewicht_gemeten; allowed=(@conceptId, @value, @unit, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Any attributes allowed on /kernset_geboortezorg/zwangerschap/prenatale_controle/adaextension == -->
@@ -2934,9 +3142,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Datum": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/zwangerschap/diagnose/datum/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82272')">Foutieve informatie voor "Datum": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82272" [/kernset_geboortezorg/zwangerschap/diagnose/datum/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Datum": Attribuut "value" ontbreekt [/kernset_geboortezorg/zwangerschap/diagnose/datum/@value]</assert>
          <assert test="empty(@value) or ((@value castable as xs:date) or (@value castable as xs:dateTime))">Foutieve informatie voor "Datum": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/zwangerschap/diagnose/datum/@value; type=t-datetime]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Datum": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zwangerschap/diagnose/datum; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Datum": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zwangerschap/diagnose/datum; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zwangerschap/diagnose/zwangerschapsduur: == -->
@@ -2945,11 +3154,12 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Zwangerschapsduur": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/zwangerschap/diagnose/zwangerschapsduur/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82285')">Foutieve informatie voor "Zwangerschapsduur": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82285" [/kernset_geboortezorg/zwangerschap/diagnose/zwangerschapsduur/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Zwangerschapsduur": Attribuut "value" ontbreekt [/kernset_geboortezorg/zwangerschap/diagnose/zwangerschapsduur/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:decimal)">Foutieve informatie voor "Zwangerschapsduur": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/zwangerschap/diagnose/zwangerschapsduur/@value; type=xs:decimal]</assert>
          <!-- == Attribute "unit": == -->
          <assert test="empty(@unit) or (@unit eq 'd')">Foutieve informatie voor "Zwangerschapsduur": De waarde "<value-of select="@unit"/>" voor attribuut "unit" heeft niet de verwachte vaste waarde "d" [/kernset_geboortezorg/zwangerschap/diagnose/zwangerschapsduur/@unit]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @unit, @xsi:*))">Foutieve informatie voor "Zwangerschapsduur": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zwangerschap/diagnose/zwangerschapsduur; allowed=(@conceptId, @value, @unit, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @unit, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Zwangerschapsduur": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zwangerschap/diagnose/zwangerschapsduur; allowed=(@conceptId, @value, @unit, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zwangerschap/diagnose/gynaecologische_aandoening: == -->
@@ -2966,7 +3176,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Endometriosis_(disorder)', 'Uterine_leiomyoma_(disorder)', 'Congenital_uterine_anomaly_(disorder)', 'Overig'))">Foutieve informatie voor "Gynaecologische aandoening": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zwangerschap/diagnose/gynaecologische_aandoening/@enum; allowed=('Endometriosis_(disorder)', 'Uterine_leiomyoma_(disorder)', 'Congenital_uterine_anomaly_(disorder)', 'Overig')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Gynaecologische aandoening": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zwangerschap/diagnose/gynaecologische_aandoening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Gynaecologische aandoening": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zwangerschap/diagnose/gynaecologische_aandoening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zwangerschap/diagnose/bloedverliesq: == -->
@@ -2975,9 +3187,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Bloedverlies?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/zwangerschap/diagnose/bloedverliesq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82270')">Foutieve informatie voor "Bloedverlies?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82270" [/kernset_geboortezorg/zwangerschap/diagnose/bloedverliesq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Bloedverlies?": Attribuut "value" ontbreekt [/kernset_geboortezorg/zwangerschap/diagnose/bloedverliesq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Bloedverlies?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/zwangerschap/diagnose/bloedverliesq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Bloedverlies?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zwangerschap/diagnose/bloedverliesq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Bloedverlies?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zwangerschap/diagnose/bloedverliesq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zwangerschap/diagnose/partiele_molaq: == -->
@@ -2986,9 +3199,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Partiële mola?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/zwangerschap/diagnose/partiele_molaq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82286')">Foutieve informatie voor "Partiële mola?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82286" [/kernset_geboortezorg/zwangerschap/diagnose/partiele_molaq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Partiële mola?": Attribuut "value" ontbreekt [/kernset_geboortezorg/zwangerschap/diagnose/partiele_molaq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Partiële mola?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/zwangerschap/diagnose/partiele_molaq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Partiële mola?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zwangerschap/diagnose/partiele_molaq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Partiële mola?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zwangerschap/diagnose/partiele_molaq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zwangerschap/diagnose/cervixinsufficientieq: == -->
@@ -2997,9 +3211,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Cervixinsufficiëntie?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/zwangerschap/diagnose/cervixinsufficientieq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82271')">Foutieve informatie voor "Cervixinsufficiëntie?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82271" [/kernset_geboortezorg/zwangerschap/diagnose/cervixinsufficientieq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Cervixinsufficiëntie?": Attribuut "value" ontbreekt [/kernset_geboortezorg/zwangerschap/diagnose/cervixinsufficientieq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Cervixinsufficiëntie?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/zwangerschap/diagnose/cervixinsufficientieq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Cervixinsufficiëntie?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zwangerschap/diagnose/cervixinsufficientieq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Cervixinsufficiëntie?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zwangerschap/diagnose/cervixinsufficientieq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zwangerschap/diagnose/infectie: == -->
@@ -3016,7 +3231,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Infection_of_uterus_(disorder)', 'Urinary_tract_infection_in_pregnancy_(disorder)', 'Pyelonephritis_(disorder)', 'Infectious_colitis,_enteritis_and_gastroenteritis_(disorder)', 'Overig', 'Geen_informatie'))">Foutieve informatie voor "Infectie": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zwangerschap/diagnose/infectie/@enum; allowed=('Infection_of_uterus_(disorder)', 'Urinary_tract_infection_in_pregnancy_(disorder)', 'Pyelonephritis_(disorder)', 'Infectious_colitis,_enteritis_and_gastroenteritis_(disorder)', 'Overig', 'Geen_informatie')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Infectie": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zwangerschap/diagnose/infectie; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Infectie": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zwangerschap/diagnose/infectie; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zwangerschap/diagnose/hyperemesis_gravidarumq: == -->
@@ -3025,9 +3242,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Hyperemesis gravidarum?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/zwangerschap/diagnose/hyperemesis_gravidarumq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82274')">Foutieve informatie voor "Hyperemesis gravidarum?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82274" [/kernset_geboortezorg/zwangerschap/diagnose/hyperemesis_gravidarumq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Hyperemesis gravidarum?": Attribuut "value" ontbreekt [/kernset_geboortezorg/zwangerschap/diagnose/hyperemesis_gravidarumq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Hyperemesis gravidarum?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/zwangerschap/diagnose/hyperemesis_gravidarumq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Hyperemesis gravidarum?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zwangerschap/diagnose/hyperemesis_gravidarumq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Hyperemesis gravidarum?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zwangerschap/diagnose/hyperemesis_gravidarumq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zwangerschap/diagnose/hypertensieve_aandoening: == -->
@@ -3044,7 +3262,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Pregnancy-induced_hypertension_(disorder)', 'Pre-eclampsia_(disorder)', 'Hemolysis-elevated_liver_enzymes-low_platelet_count_syndrome_(disorder)', 'Eclampsia_(disorder)'))">Foutieve informatie voor "Hypertensieve aandoening": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zwangerschap/diagnose/hypertensieve_aandoening/@enum; allowed=('Pregnancy-induced_hypertension_(disorder)', 'Pre-eclampsia_(disorder)', 'Hemolysis-elevated_liver_enzymes-low_platelet_count_syndrome_(disorder)', 'Eclampsia_(disorder)')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Hypertensieve aandoening": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zwangerschap/diagnose/hypertensieve_aandoening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Hypertensieve aandoening": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zwangerschap/diagnose/hypertensieve_aandoening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zwangerschap/diagnose/zwangerschapscholestaseq: == -->
@@ -3053,9 +3273,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Zwangerschapscholestase?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/zwangerschap/diagnose/zwangerschapscholestaseq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82276')">Foutieve informatie voor "Zwangerschapscholestase?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82276" [/kernset_geboortezorg/zwangerschap/diagnose/zwangerschapscholestaseq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Zwangerschapscholestase?": Attribuut "value" ontbreekt [/kernset_geboortezorg/zwangerschap/diagnose/zwangerschapscholestaseq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Zwangerschapscholestase?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/zwangerschap/diagnose/zwangerschapscholestaseq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Zwangerschapscholestase?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zwangerschap/diagnose/zwangerschapscholestaseq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Zwangerschapscholestase?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zwangerschap/diagnose/zwangerschapscholestaseq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zwangerschap/diagnose/diabetes_gravidarum_met_insulineq: == -->
@@ -3064,9 +3285,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Diabetes gravidarum met insuline?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/zwangerschap/diagnose/diabetes_gravidarum_met_insulineq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82277')">Foutieve informatie voor "Diabetes gravidarum met insuline?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82277" [/kernset_geboortezorg/zwangerschap/diagnose/diabetes_gravidarum_met_insulineq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Diabetes gravidarum met insuline?": Attribuut "value" ontbreekt [/kernset_geboortezorg/zwangerschap/diagnose/diabetes_gravidarum_met_insulineq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Diabetes gravidarum met insuline?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/zwangerschap/diagnose/diabetes_gravidarum_met_insulineq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Diabetes gravidarum met insuline?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zwangerschap/diagnose/diabetes_gravidarum_met_insulineq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Diabetes gravidarum met insuline?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zwangerschap/diagnose/diabetes_gravidarum_met_insulineq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zwangerschap/diagnose/afwijkende_groei_foetus: == -->
@@ -3083,7 +3305,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Large-for-dates_fetus_(disorder)', 'Small_for_gestational_age_fetus_(disorder)', 'Geen_informatie'))">Foutieve informatie voor "Afwijkende groei foetus": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zwangerschap/diagnose/afwijkende_groei_foetus/@enum; allowed=('Large-for-dates_fetus_(disorder)', 'Small_for_gestational_age_fetus_(disorder)', 'Geen_informatie')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Afwijkende groei foetus": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zwangerschap/diagnose/afwijkende_groei_foetus; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Afwijkende groei foetus": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zwangerschap/diagnose/afwijkende_groei_foetus; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zwangerschap/diagnose/dreigende_partus_immaturusq: == -->
@@ -3092,9 +3316,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Dreigende partus immaturus?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/zwangerschap/diagnose/dreigende_partus_immaturusq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82279')">Foutieve informatie voor "Dreigende partus immaturus?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82279" [/kernset_geboortezorg/zwangerschap/diagnose/dreigende_partus_immaturusq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Dreigende partus immaturus?": Attribuut "value" ontbreekt [/kernset_geboortezorg/zwangerschap/diagnose/dreigende_partus_immaturusq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Dreigende partus immaturus?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/zwangerschap/diagnose/dreigende_partus_immaturusq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Dreigende partus immaturus?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zwangerschap/diagnose/dreigende_partus_immaturusq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Dreigende partus immaturus?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zwangerschap/diagnose/dreigende_partus_immaturusq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zwangerschap/diagnose/dreigende_partus_prematurusq: == -->
@@ -3103,9 +3328,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Dreigende partus prematurus?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/zwangerschap/diagnose/dreigende_partus_prematurusq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82280')">Foutieve informatie voor "Dreigende partus prematurus?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82280" [/kernset_geboortezorg/zwangerschap/diagnose/dreigende_partus_prematurusq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Dreigende partus prematurus?": Attribuut "value" ontbreekt [/kernset_geboortezorg/zwangerschap/diagnose/dreigende_partus_prematurusq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Dreigende partus prematurus?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/zwangerschap/diagnose/dreigende_partus_prematurusq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Dreigende partus prematurus?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zwangerschap/diagnose/dreigende_partus_prematurusq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Dreigende partus prematurus?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zwangerschap/diagnose/dreigende_partus_prematurusq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zwangerschap/diagnose/abruptio_placentaeq: == -->
@@ -3114,9 +3340,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Abruptio placentae?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/zwangerschap/diagnose/abruptio_placentaeq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82289')">Foutieve informatie voor "Abruptio placentae?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82289" [/kernset_geboortezorg/zwangerschap/diagnose/abruptio_placentaeq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Abruptio placentae?": Attribuut "value" ontbreekt [/kernset_geboortezorg/zwangerschap/diagnose/abruptio_placentaeq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Abruptio placentae?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/zwangerschap/diagnose/abruptio_placentaeq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Abruptio placentae?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zwangerschap/diagnose/abruptio_placentaeq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Abruptio placentae?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zwangerschap/diagnose/abruptio_placentaeq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zwangerschap/diagnose/navelstrengprolapsq: == -->
@@ -3125,9 +3352,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Navelstrengprolaps?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/zwangerschap/diagnose/navelstrengprolapsq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82452')">Foutieve informatie voor "Navelstrengprolaps?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82452" [/kernset_geboortezorg/zwangerschap/diagnose/navelstrengprolapsq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Navelstrengprolaps?": Attribuut "value" ontbreekt [/kernset_geboortezorg/zwangerschap/diagnose/navelstrengprolapsq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Navelstrengprolaps?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/zwangerschap/diagnose/navelstrengprolapsq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Navelstrengprolaps?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zwangerschap/diagnose/navelstrengprolapsq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Navelstrengprolaps?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zwangerschap/diagnose/navelstrengprolapsq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zwangerschap/diagnose/liggingsafwijking: == -->
@@ -3144,7 +3372,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Breech_presentation_(finding)', 'Transverse/oblique_lie_(finding)', 'Unstable_lie_(finding)', 'Onbekend', 'Geen_informatie'))">Foutieve informatie voor "Liggingsafwijking": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zwangerschap/diagnose/liggingsafwijking/@enum; allowed=('Breech_presentation_(finding)', 'Transverse/oblique_lie_(finding)', 'Unstable_lie_(finding)', 'Onbekend', 'Geen_informatie')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Liggingsafwijking": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zwangerschap/diagnose/liggingsafwijking; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Liggingsafwijking": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zwangerschap/diagnose/liggingsafwijking; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zwangerschap/diagnose/intrauteriene_vruchtdood: == -->
@@ -3174,9 +3404,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Vermoeden intra-uteriene vruchtdood?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/zwangerschap/diagnose/intrauteriene_vruchtdood/vermoeden_intrauteriene_vruchtdoodq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82435')">Foutieve informatie voor "Vermoeden intra-uteriene vruchtdood?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82435" [/kernset_geboortezorg/zwangerschap/diagnose/intrauteriene_vruchtdood/vermoeden_intrauteriene_vruchtdoodq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Vermoeden intra-uteriene vruchtdood?": Attribuut "value" ontbreekt [/kernset_geboortezorg/zwangerschap/diagnose/intrauteriene_vruchtdood/vermoeden_intrauteriene_vruchtdoodq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Vermoeden intra-uteriene vruchtdood?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/zwangerschap/diagnose/intrauteriene_vruchtdood/vermoeden_intrauteriene_vruchtdoodq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Vermoeden intra-uteriene vruchtdood?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zwangerschap/diagnose/intrauteriene_vruchtdood/vermoeden_intrauteriene_vruchtdoodq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Vermoeden intra-uteriene vruchtdood?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zwangerschap/diagnose/intrauteriene_vruchtdood/vermoeden_intrauteriene_vruchtdoodq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zwangerschap/diagnose/intrauteriene_vruchtdood/vermoeden_iuvd_op_basis_van: == -->
@@ -3193,7 +3424,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Doppler_fetal_echocardiography_(procedure)', 'US_scan_of_fetus_(procedure)', 'Overig', 'Geen_informatie'))">Foutieve informatie voor "Vermoeden iuvd op basis van": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/zwangerschap/diagnose/intrauteriene_vruchtdood/vermoeden_iuvd_op_basis_van/@enum; allowed=('Doppler_fetal_echocardiography_(procedure)', 'US_scan_of_fetus_(procedure)', 'Overig', 'Geen_informatie')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Vermoeden iuvd op basis van": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zwangerschap/diagnose/intrauteriene_vruchtdood/vermoeden_iuvd_op_basis_van; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Vermoeden iuvd op basis van": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zwangerschap/diagnose/intrauteriene_vruchtdood/vermoeden_iuvd_op_basis_van; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Any attributes allowed on /kernset_geboortezorg/zwangerschap/diagnose/intrauteriene_vruchtdood/adaextension == -->
@@ -3224,10 +3457,11 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Partusnummer": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/bevalling/partusnummer/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20500')">Foutieve informatie voor "Partusnummer": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20500" [/kernset_geboortezorg/bevalling/partusnummer/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Partusnummer": Attribuut "value" ontbreekt [/kernset_geboortezorg/bevalling/partusnummer/@value]</assert>
          <assert test="empty(@value) or (string-length(@value) ge 1)">Foutieve informatie voor "Partusnummer": De waarde "<value-of select="@value"/>" voor attribuut "value" moet minstens 1 karakters bevatten [/kernset_geboortezorg/bevalling/partusnummer/@value; min-length=1]</assert>
          <assert test="empty(@value) or (string-length(@value) le 30)">Foutieve informatie voor "Partusnummer": De waarde "<value-of select="@value"/>" voor attribuut "value" mag hoogstens 30 karakters bevatten [/kernset_geboortezorg/bevalling/partusnummer/@value; max-length=30]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Partusnummer": Ongeldige attributen aangetroffen [/kernset_geboortezorg/bevalling/partusnummer; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Partusnummer": Ongeldige attributen aangetroffen [/kernset_geboortezorg/bevalling/partusnummer; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/bevalling/diagnose_bevalling: == -->
@@ -3244,11 +3478,12 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Aantal geboren kinderen": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/bevalling/aantal_geboren_kinderen/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20505')">Foutieve informatie voor "Aantal geboren kinderen": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20505" [/kernset_geboortezorg/bevalling/aantal_geboren_kinderen/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Aantal geboren kinderen": Attribuut "value" ontbreekt [/kernset_geboortezorg/bevalling/aantal_geboren_kinderen/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:decimal)">Foutieve informatie voor "Aantal geboren kinderen": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/bevalling/aantal_geboren_kinderen/@value; type=xs:decimal]</assert>
          <assert test="empty(@value) or (local:decimal-convert(@value) ge 0)">Foutieve informatie voor "Aantal geboren kinderen": De waarde "<value-of select="@value"/>" voor attribuut "value" moet minimaal 0 zijn [/kernset_geboortezorg/bevalling/aantal_geboren_kinderen/@value; min-inclusive=0]</assert>
          <assert test="empty(@value) or (local:decimal-convert(@value) le 9)">Foutieve informatie voor "Aantal geboren kinderen": De waarde "<value-of select="@value"/>" voor attribuut "value" mag maximaal 9 zijn [/kernset_geboortezorg/bevalling/aantal_geboren_kinderen/@value; max-inclusive=9]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Aantal geboren kinderen": Ongeldige attributen aangetroffen [/kernset_geboortezorg/bevalling/aantal_geboren_kinderen; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Aantal geboren kinderen": Ongeldige attributen aangetroffen [/kernset_geboortezorg/bevalling/aantal_geboren_kinderen; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/bevalling/risicostatus_voor_baring: == -->
@@ -3265,7 +3500,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('1e_lijn_(VIL_A)', '2e_lijn_(VIL_C)', '1e_lijn_met_plaatsindicatie_(VIL_D)', '3e_lijn', 'Onbekend', 'Geen_informatie'))">Foutieve informatie voor "Risicostatus vóór baring": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/bevalling/risicostatus_voor_baring/@enum; allowed=('1e_lijn_(VIL_A)', '2e_lijn_(VIL_C)', '1e_lijn_met_plaatsindicatie_(VIL_D)', '3e_lijn', 'Onbekend', 'Geen_informatie')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Risicostatus vóór baring": Ongeldige attributen aangetroffen [/kernset_geboortezorg/bevalling/risicostatus_voor_baring; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Risicostatus vóór baring": Ongeldige attributen aangetroffen [/kernset_geboortezorg/bevalling/risicostatus_voor_baring; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/bevalling/interventies_begin_baring: == -->
@@ -3290,7 +3527,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('spontane_weeën', 'spontane_vliesscheur', 'interventie_om_baring_op_gang_te_brengen', 'onbekend', 'geen_informatie'))">Foutieve informatie voor "Wijze waarop de baring begon": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/bevalling/wijze_waarop_de_baring_begon/@enum; allowed=('spontane_weeën', 'spontane_vliesscheur', 'interventie_om_baring_op_gang_te_brengen', 'onbekend', 'geen_informatie')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Wijze waarop de baring begon": Ongeldige attributen aangetroffen [/kernset_geboortezorg/bevalling/wijze_waarop_de_baring_begon; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Wijze waarop de baring begon": Ongeldige attributen aangetroffen [/kernset_geboortezorg/bevalling/wijze_waarop_de_baring_begon; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/bevalling/tijdstip_begin_actieve_ontsluiting: == -->
@@ -3299,9 +3538,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Tijdstip begin actieve ontsluiting": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/bevalling/tijdstip_begin_actieve_ontsluiting/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20590')">Foutieve informatie voor "Tijdstip begin actieve ontsluiting": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20590" [/kernset_geboortezorg/bevalling/tijdstip_begin_actieve_ontsluiting/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Tijdstip begin actieve ontsluiting": Attribuut "value" ontbreekt [/kernset_geboortezorg/bevalling/tijdstip_begin_actieve_ontsluiting/@value]</assert>
          <assert test="empty(@value) or ((@value castable as xs:date) or (@value castable as xs:dateTime))">Foutieve informatie voor "Tijdstip begin actieve ontsluiting": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/bevalling/tijdstip_begin_actieve_ontsluiting/@value; type=t-datetime]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Tijdstip begin actieve ontsluiting": Ongeldige attributen aangetroffen [/kernset_geboortezorg/bevalling/tijdstip_begin_actieve_ontsluiting; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Tijdstip begin actieve ontsluiting": Ongeldige attributen aangetroffen [/kernset_geboortezorg/bevalling/tijdstip_begin_actieve_ontsluiting; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/bevalling/medicatie_nageboortetijdperk_groep: == -->
@@ -3326,11 +3566,12 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Hoeveelheid bloedverlies": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/bevalling/hoeveelheid_bloedverlies/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20640')">Foutieve informatie voor "Hoeveelheid bloedverlies": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20640" [/kernset_geboortezorg/bevalling/hoeveelheid_bloedverlies/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Hoeveelheid bloedverlies": Attribuut "value" ontbreekt [/kernset_geboortezorg/bevalling/hoeveelheid_bloedverlies/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:decimal)">Foutieve informatie voor "Hoeveelheid bloedverlies": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/bevalling/hoeveelheid_bloedverlies/@value; type=xs:decimal]</assert>
          <!-- == Attribute "unit": == -->
          <assert test="empty(@unit) or (@unit eq 'ml')">Foutieve informatie voor "Hoeveelheid bloedverlies": De waarde "<value-of select="@unit"/>" voor attribuut "unit" heeft niet de verwachte vaste waarde "ml" [/kernset_geboortezorg/bevalling/hoeveelheid_bloedverlies/@unit]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @unit, @xsi:*))">Foutieve informatie voor "Hoeveelheid bloedverlies": Ongeldige attributen aangetroffen [/kernset_geboortezorg/bevalling/hoeveelheid_bloedverlies; allowed=(@conceptId, @value, @unit, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @unit, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Hoeveelheid bloedverlies": Ongeldige attributen aangetroffen [/kernset_geboortezorg/bevalling/hoeveelheid_bloedverlies; allowed=(@conceptId, @value, @unit, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/bevalling/conditie_perineum_postpartum: == -->
@@ -3347,7 +3588,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Perineum_intact_(finding)', 'First_degree_perineal_tear_during_delivery_-_delivered_(disorder)', 'Second_degree_perineal_tear_during_delivery_-_delivered_(disorder)', 'Third_degree_perineal_tear_during_delivery_-_delivered_(disorder)', 'Third_degree_perineal_tear_during_delivery_-_delivered_(disorder)_Type_3a_third_degree_laceration_of_perineum_(disorder)', 'Third_degree_perineal_tear_during_delivery_-_delivered_(disorder)_Type_3b_third_degree_laceration_of_perineum_(disorder)', 'Third_degree_perineal_tear_during_delivery_-_delivered_(disorder)_Type_3c_third_degree_laceration_of_perineum_(disorder)', 'Fourth_degree_perineal_tear_during_delivery_-_delivered_(disorder)', 'Episiotomy_wound_(morphologic_abnormality)', 'Anders', 'Onbekend', 'Geen_informatie'))">Foutieve informatie voor "Conditie perineum postpartum": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/bevalling/conditie_perineum_postpartum/@enum; allowed=('Perineum_intact_(finding)', 'First_degree_perineal_tear_during_delivery_-_delivered_(disorder)', 'Second_degree_perineal_tear_during_delivery_-_delivered_(disorder)', 'Third_degree_perineal_tear_during_delivery_-_delivered_(disorder)', 'Third_degree_perineal_tear_during_delivery_-_delivered_(disorder)_Type_3a_third_degree_laceration_of_perineum_(disorder)', 'Third_degree_perineal_tear_during_delivery_-_delivered_(disorder)_Type_3b_third_degree_laceration_of_perineum_(disorder)', 'Third_degree_perineal_tear_during_delivery_-_delivered_(disorder)_Type_3c_third_degree_laceration_of_perineum_(disorder)', 'Fourth_degree_perineal_tear_during_delivery_-_delivered_(disorder)', 'Episiotomy_wound_(morphologic_abnormality)', 'Anders', 'Onbekend', 'Geen_informatie')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Conditie perineum postpartum": Ongeldige attributen aangetroffen [/kernset_geboortezorg/bevalling/conditie_perineum_postpartum; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Conditie perineum postpartum": Ongeldige attributen aangetroffen [/kernset_geboortezorg/bevalling/conditie_perineum_postpartum; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Any attributes allowed on /kernset_geboortezorg/bevalling/adaextension == -->
@@ -3376,9 +3619,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "PPROM?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/bevalling/diagnose_bevalling/ppromq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82338')">Foutieve informatie voor "PPROM?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82338" [/kernset_geboortezorg/bevalling/diagnose_bevalling/ppromq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "PPROM?": Attribuut "value" ontbreekt [/kernset_geboortezorg/bevalling/diagnose_bevalling/ppromq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "PPROM?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/bevalling/diagnose_bevalling/ppromq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "PPROM?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/bevalling/diagnose_bevalling/ppromq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "PPROM?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/bevalling/diagnose_bevalling/ppromq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/bevalling/diagnose_bevalling/promq: == -->
@@ -3387,9 +3631,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "PROM?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/bevalling/diagnose_bevalling/promq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82290')">Foutieve informatie voor "PROM?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82290" [/kernset_geboortezorg/bevalling/diagnose_bevalling/promq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "PROM?": Attribuut "value" ontbreekt [/kernset_geboortezorg/bevalling/diagnose_bevalling/promq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "PROM?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/bevalling/diagnose_bevalling/promq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "PROM?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/bevalling/diagnose_bevalling/promq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "PROM?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/bevalling/diagnose_bevalling/promq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/bevalling/diagnose_bevalling/koortsq: == -->
@@ -3398,9 +3643,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Koorts?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/bevalling/diagnose_bevalling/koortsq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82292')">Foutieve informatie voor "Koorts?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82292" [/kernset_geboortezorg/bevalling/diagnose_bevalling/koortsq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Koorts?": Attribuut "value" ontbreekt [/kernset_geboortezorg/bevalling/diagnose_bevalling/koortsq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Koorts?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/bevalling/diagnose_bevalling/koortsq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Koorts?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/bevalling/diagnose_bevalling/koortsq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Koorts?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/bevalling/diagnose_bevalling/koortsq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/bevalling/diagnose_bevalling/niet_vorderende_ontsluitingq: == -->
@@ -3409,9 +3655,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Niet vorderende ontsluiting?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/bevalling/diagnose_bevalling/niet_vorderende_ontsluitingq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82293')">Foutieve informatie voor "Niet vorderende ontsluiting?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82293" [/kernset_geboortezorg/bevalling/diagnose_bevalling/niet_vorderende_ontsluitingq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Niet vorderende ontsluiting?": Attribuut "value" ontbreekt [/kernset_geboortezorg/bevalling/diagnose_bevalling/niet_vorderende_ontsluitingq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Niet vorderende ontsluiting?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/bevalling/diagnose_bevalling/niet_vorderende_ontsluitingq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Niet vorderende ontsluiting?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/bevalling/diagnose_bevalling/niet_vorderende_ontsluitingq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Niet vorderende ontsluiting?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/bevalling/diagnose_bevalling/niet_vorderende_ontsluitingq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/bevalling/diagnose_bevalling/niet_vorderende_uitdrijvingq: == -->
@@ -3420,9 +3667,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Niet vorderende uitdrijving?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/bevalling/diagnose_bevalling/niet_vorderende_uitdrijvingq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82294')">Foutieve informatie voor "Niet vorderende uitdrijving?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82294" [/kernset_geboortezorg/bevalling/diagnose_bevalling/niet_vorderende_uitdrijvingq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Niet vorderende uitdrijving?": Attribuut "value" ontbreekt [/kernset_geboortezorg/bevalling/diagnose_bevalling/niet_vorderende_uitdrijvingq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Niet vorderende uitdrijving?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/bevalling/diagnose_bevalling/niet_vorderende_uitdrijvingq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Niet vorderende uitdrijving?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/bevalling/diagnose_bevalling/niet_vorderende_uitdrijvingq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Niet vorderende uitdrijving?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/bevalling/diagnose_bevalling/niet_vorderende_uitdrijvingq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/bevalling/diagnose_bevalling/verdenking_foetale_noodq: == -->
@@ -3431,9 +3679,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Verdenking foetale nood?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/bevalling/diagnose_bevalling/verdenking_foetale_noodq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82296')">Foutieve informatie voor "Verdenking foetale nood?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82296" [/kernset_geboortezorg/bevalling/diagnose_bevalling/verdenking_foetale_noodq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Verdenking foetale nood?": Attribuut "value" ontbreekt [/kernset_geboortezorg/bevalling/diagnose_bevalling/verdenking_foetale_noodq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Verdenking foetale nood?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/bevalling/diagnose_bevalling/verdenking_foetale_noodq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Verdenking foetale nood?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/bevalling/diagnose_bevalling/verdenking_foetale_noodq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Verdenking foetale nood?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/bevalling/diagnose_bevalling/verdenking_foetale_noodq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/bevalling/diagnose_bevalling/intrauteriene_vruchtdood: == -->
@@ -3450,9 +3699,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Vastzittende placenta?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/bevalling/diagnose_bevalling/vastzittende_placentaq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82295')">Foutieve informatie voor "Vastzittende placenta?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82295" [/kernset_geboortezorg/bevalling/diagnose_bevalling/vastzittende_placentaq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Vastzittende placenta?": Attribuut "value" ontbreekt [/kernset_geboortezorg/bevalling/diagnose_bevalling/vastzittende_placentaq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Vastzittende placenta?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/bevalling/diagnose_bevalling/vastzittende_placentaq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Vastzittende placenta?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/bevalling/diagnose_bevalling/vastzittende_placentaq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Vastzittende placenta?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/bevalling/diagnose_bevalling/vastzittende_placentaq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/bevalling/diagnose_bevalling/fluxus_postpartumq: == -->
@@ -3461,9 +3711,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Fluxus postpartum?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/bevalling/diagnose_bevalling/fluxus_postpartumq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82398')">Foutieve informatie voor "Fluxus postpartum?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82398" [/kernset_geboortezorg/bevalling/diagnose_bevalling/fluxus_postpartumq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Fluxus postpartum?": Attribuut "value" ontbreekt [/kernset_geboortezorg/bevalling/diagnose_bevalling/fluxus_postpartumq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Fluxus postpartum?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/bevalling/diagnose_bevalling/fluxus_postpartumq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Fluxus postpartum?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/bevalling/diagnose_bevalling/fluxus_postpartumq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Fluxus postpartum?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/bevalling/diagnose_bevalling/fluxus_postpartumq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Any attributes allowed on /kernset_geboortezorg/bevalling/diagnose_bevalling/adaextension == -->
@@ -3485,9 +3736,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Vermoeden intra-uteriene vruchtdood?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/bevalling/diagnose_bevalling/intrauteriene_vruchtdood/vermoeden_intrauteriene_vruchtdoodq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82444')">Foutieve informatie voor "Vermoeden intra-uteriene vruchtdood?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82444" [/kernset_geboortezorg/bevalling/diagnose_bevalling/intrauteriene_vruchtdood/vermoeden_intrauteriene_vruchtdoodq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Vermoeden intra-uteriene vruchtdood?": Attribuut "value" ontbreekt [/kernset_geboortezorg/bevalling/diagnose_bevalling/intrauteriene_vruchtdood/vermoeden_intrauteriene_vruchtdoodq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Vermoeden intra-uteriene vruchtdood?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/bevalling/diagnose_bevalling/intrauteriene_vruchtdood/vermoeden_intrauteriene_vruchtdoodq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Vermoeden intra-uteriene vruchtdood?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/bevalling/diagnose_bevalling/intrauteriene_vruchtdood/vermoeden_intrauteriene_vruchtdoodq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Vermoeden intra-uteriene vruchtdood?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/bevalling/diagnose_bevalling/intrauteriene_vruchtdood/vermoeden_intrauteriene_vruchtdoodq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/bevalling/diagnose_bevalling/intrauteriene_vruchtdood/vermoeden_iuvd_op_basis_van: == -->
@@ -3504,7 +3756,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Doppler_fetal_echocardiography_(procedure)', 'US_scan_of_fetus_(procedure)', 'Overig', 'Geen_informatie'))">Foutieve informatie voor "Vermoeden iuvd op basis van": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/bevalling/diagnose_bevalling/intrauteriene_vruchtdood/vermoeden_iuvd_op_basis_van/@enum; allowed=('Doppler_fetal_echocardiography_(procedure)', 'US_scan_of_fetus_(procedure)', 'Overig', 'Geen_informatie')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Vermoeden iuvd op basis van": Ongeldige attributen aangetroffen [/kernset_geboortezorg/bevalling/diagnose_bevalling/intrauteriene_vruchtdood/vermoeden_iuvd_op_basis_van; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Vermoeden iuvd op basis van": Ongeldige attributen aangetroffen [/kernset_geboortezorg/bevalling/diagnose_bevalling/intrauteriene_vruchtdood/vermoeden_iuvd_op_basis_van; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Any attributes allowed on /kernset_geboortezorg/bevalling/diagnose_bevalling/intrauteriene_vruchtdood/adaextension == -->
@@ -3534,7 +3788,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Sweeping_of_membrane_(procedure)', 'Induction_of_labour_by_artificial_rupture_of_membranes_(procedure)', 'Cervical_ripening_with_balloon_(procedure)', 'Cervical_ripening_with_Prostaglandin_E2_(procedure)', 'Oxytocin_induction_of_labour_(procedure)', 'Prostaglandin_induction_of_labour_(procedure)', 'Elective_caesarean_section_(procedure)', 'Overig', 'Geen_informatie'))">Foutieve informatie voor "Interventie begin baring": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/bevalling/interventies_begin_baring/interventie_begin_baring/@enum; allowed=('Sweeping_of_membrane_(procedure)', 'Induction_of_labour_by_artificial_rupture_of_membranes_(procedure)', 'Cervical_ripening_with_balloon_(procedure)', 'Cervical_ripening_with_Prostaglandin_E2_(procedure)', 'Oxytocin_induction_of_labour_(procedure)', 'Prostaglandin_induction_of_labour_(procedure)', 'Elective_caesarean_section_(procedure)', 'Overig', 'Geen_informatie')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Interventie begin baring": Ongeldige attributen aangetroffen [/kernset_geboortezorg/bevalling/interventies_begin_baring/interventie_begin_baring; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Interventie begin baring": Ongeldige attributen aangetroffen [/kernset_geboortezorg/bevalling/interventies_begin_baring/interventie_begin_baring; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/bevalling/interventies_begin_baring/indicatie_interventie_begin_baring: == -->
@@ -3551,7 +3807,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Conditie_moeder_Acuut_levensbedreigend', 'Conditie_moeder_Niet_levensbedreigend', 'Conditie_moeder_Onbekend', 'Conditie_kind_Foetale_nood', 'Conditie_kind_Niet_levensbedreigend', 'Conditie_kind_Inleiding_vanwege_congenitale_afwijking', 'Conditie_kind_Onbekend', 'Interventie_in_het_kader_van_wetenschappelijk_onderzoek', 'Wens_patiënt', 'Overig', 'Onbekend', 'Geen_informatie'))">Foutieve informatie voor "Indicatie interventie begin baring": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/bevalling/interventies_begin_baring/indicatie_interventie_begin_baring/@enum; allowed=('Conditie_moeder_Acuut_levensbedreigend', 'Conditie_moeder_Niet_levensbedreigend', 'Conditie_moeder_Onbekend', 'Conditie_kind_Foetale_nood', 'Conditie_kind_Niet_levensbedreigend', 'Conditie_kind_Inleiding_vanwege_congenitale_afwijking', 'Conditie_kind_Onbekend', 'Interventie_in_het_kader_van_wetenschappelijk_onderzoek', 'Wens_patiënt', 'Overig', 'Onbekend', 'Geen_informatie')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Indicatie interventie begin baring": Ongeldige attributen aangetroffen [/kernset_geboortezorg/bevalling/interventies_begin_baring/indicatie_interventie_begin_baring; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Indicatie interventie begin baring": Ongeldige attributen aangetroffen [/kernset_geboortezorg/bevalling/interventies_begin_baring/indicatie_interventie_begin_baring; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Any attributes allowed on /kernset_geboortezorg/bevalling/interventies_begin_baring/adaextension == -->
@@ -3573,9 +3831,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Medicatie nageboortetijdperk?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/bevalling/medicatie_nageboortetijdperk_groep/medicatie_nageboortetijdperkq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20620')">Foutieve informatie voor "Medicatie nageboortetijdperk?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20620" [/kernset_geboortezorg/bevalling/medicatie_nageboortetijdperk_groep/medicatie_nageboortetijdperkq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Medicatie nageboortetijdperk?": Attribuut "value" ontbreekt [/kernset_geboortezorg/bevalling/medicatie_nageboortetijdperk_groep/medicatie_nageboortetijdperkq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Medicatie nageboortetijdperk?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/bevalling/medicatie_nageboortetijdperk_groep/medicatie_nageboortetijdperkq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Medicatie nageboortetijdperk?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/bevalling/medicatie_nageboortetijdperk_groep/medicatie_nageboortetijdperkq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Medicatie nageboortetijdperk?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/bevalling/medicatie_nageboortetijdperk_groep/medicatie_nageboortetijdperkq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/bevalling/medicatie_nageboortetijdperk_groep/soort_medicatie_nageboortetijdperk: == -->
@@ -3592,7 +3851,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Oxytocin', 'Prostaglandins', 'Ergot_alkaloids', 'Overig', 'Onbekend'))">Foutieve informatie voor "Soort medicatie nageboortetijdperk": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/bevalling/medicatie_nageboortetijdperk_groep/soort_medicatie_nageboortetijdperk/@enum; allowed=('Oxytocin', 'Prostaglandins', 'Ergot_alkaloids', 'Overig', 'Onbekend')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Soort medicatie nageboortetijdperk": Ongeldige attributen aangetroffen [/kernset_geboortezorg/bevalling/medicatie_nageboortetijdperk_groep/soort_medicatie_nageboortetijdperk; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Soort medicatie nageboortetijdperk": Ongeldige attributen aangetroffen [/kernset_geboortezorg/bevalling/medicatie_nageboortetijdperk_groep/soort_medicatie_nageboortetijdperk; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Any attributes allowed on /kernset_geboortezorg/bevalling/medicatie_nageboortetijdperk_groep/adaextension == -->
@@ -3621,7 +3882,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Spontaan', 'Controlled_cord_traction', 'Manuele_placentaverwijdering', 'Placentaverwijdering_bij_SC', 'Overig', 'Geen_informatie', 'Onbekend'))">Foutieve informatie voor "Geboorte placenta": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/bevalling/placenta/geboorte_placenta/@enum; allowed=('Spontaan', 'Controlled_cord_traction', 'Manuele_placentaverwijdering', 'Placentaverwijdering_bij_SC', 'Overig', 'Geen_informatie', 'Onbekend')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Geboorte placenta": Ongeldige attributen aangetroffen [/kernset_geboortezorg/bevalling/placenta/geboorte_placenta; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Geboorte placenta": Ongeldige attributen aangetroffen [/kernset_geboortezorg/bevalling/placenta/geboorte_placenta; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Any attributes allowed on /kernset_geboortezorg/bevalling/placenta/adaextension == -->
@@ -3674,7 +3937,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Home_birth_(finding)', 'Geboortecentrum', 'Hospital_(environment)', 'Onderweg', 'Onbekend', 'Geen_informatie'))">Foutieve informatie voor "Werkelijke plaats baring (type locatie)": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/uitkomst_per_kind/baring/werkelijke_plaats_baring_type_locatie/@enum; allowed=('Home_birth_(finding)', 'Geboortecentrum', 'Hospital_(environment)', 'Onderweg', 'Onbekend', 'Geen_informatie')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Werkelijke plaats baring (type locatie)": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/werkelijke_plaats_baring_type_locatie; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Werkelijke plaats baring (type locatie)": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/werkelijke_plaats_baring_type_locatie; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/uitkomst_per_kind/baring/ziekenhuis_baring: == -->
@@ -3727,10 +3992,11 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Ziekenhuisnummer (LVR-id)": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/uitkomst_per_kind/baring/ziekenhuis_baring/ziekenhuisnummer_lvrid/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40005')">Foutieve informatie voor "Ziekenhuisnummer (LVR-id)": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40005" [/kernset_geboortezorg/uitkomst_per_kind/baring/ziekenhuis_baring/ziekenhuisnummer_lvrid/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Ziekenhuisnummer (LVR-id)": Attribuut "value" ontbreekt [/kernset_geboortezorg/uitkomst_per_kind/baring/ziekenhuis_baring/ziekenhuisnummer_lvrid/@value]</assert>
          <assert test="empty(@value) or (string-length(@value) ge 4)">Foutieve informatie voor "Ziekenhuisnummer (LVR-id)": De waarde "<value-of select="@value"/>" voor attribuut "value" moet minstens 4 karakters bevatten [/kernset_geboortezorg/uitkomst_per_kind/baring/ziekenhuis_baring/ziekenhuisnummer_lvrid/@value; min-length=4]</assert>
          <assert test="empty(@value) or (string-length(@value) le 4)">Foutieve informatie voor "Ziekenhuisnummer (LVR-id)": De waarde "<value-of select="@value"/>" voor attribuut "value" mag hoogstens 4 karakters bevatten [/kernset_geboortezorg/uitkomst_per_kind/baring/ziekenhuis_baring/ziekenhuisnummer_lvrid/@value; max-length=4]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Ziekenhuisnummer (LVR-id)": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/ziekenhuis_baring/ziekenhuisnummer_lvrid; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Ziekenhuisnummer (LVR-id)": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/ziekenhuis_baring/ziekenhuisnummer_lvrid; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Any attributes allowed on /kernset_geboortezorg/uitkomst_per_kind/baring/ziekenhuis_baring/adaextension == -->
@@ -3771,7 +4037,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Mannelijk', 'Vrouwelijk', 'Niet_conclusief', 'Onbekend', 'Geen_informatie'))">Foutieve informatie voor "Geslacht (medische observatie)": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/geslacht_medische_observatie/@enum; allowed=('Mannelijk', 'Vrouwelijk', 'Niet_conclusief', 'Onbekend', 'Geen_informatie')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Geslacht (medische observatie)": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/geslacht_medische_observatie; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Geslacht (medische observatie)": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/geslacht_medische_observatie; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/geboortedatum: == -->
@@ -3780,9 +4048,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Geboortedatum": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/geboortedatum/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40050')">Foutieve informatie voor "Geboortedatum": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40050" [/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/geboortedatum/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Geboortedatum": Attribuut "value" ontbreekt [/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/geboortedatum/@value]</assert>
          <assert test="empty(@value) or ((@value castable as xs:date) or (@value castable as xs:dateTime))">Foutieve informatie voor "Geboortedatum": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/geboortedatum/@value; type=t-datetime]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Geboortedatum": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/geboortedatum; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Geboortedatum": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/geboortedatum; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/rangnummer_kind: == -->
@@ -3791,11 +4060,12 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Rangnummer kind": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/rangnummer_kind/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40025')">Foutieve informatie voor "Rangnummer kind": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40025" [/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/rangnummer_kind/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Rangnummer kind": Attribuut "value" ontbreekt [/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/rangnummer_kind/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:decimal)">Foutieve informatie voor "Rangnummer kind": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/rangnummer_kind/@value; type=xs:decimal]</assert>
          <assert test="empty(@value) or (local:decimal-convert(@value) ge 1)">Foutieve informatie voor "Rangnummer kind": De waarde "<value-of select="@value"/>" voor attribuut "value" moet minimaal 1 zijn [/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/rangnummer_kind/@value; min-inclusive=1]</assert>
          <assert test="empty(@value) or (local:decimal-convert(@value) le 9)">Foutieve informatie voor "Rangnummer kind": De waarde "<value-of select="@value"/>" voor attribuut "value" mag maximaal 9 zijn [/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/rangnummer_kind/@value; max-inclusive=9]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Rangnummer kind": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/rangnummer_kind; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Rangnummer kind": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/rangnummer_kind; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/perinatale_sterfte_groep: == -->
@@ -3824,8 +4094,9 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "BSN kind": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/identificaties_kind/bsn_kind/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40010')">Foutieve informatie voor "BSN kind": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40010" [/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/identificaties_kind/bsn_kind/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "BSN kind": Attribuut "value" ontbreekt [/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/identificaties_kind/bsn_kind/@value]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "BSN kind": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/identificaties_kind/bsn_kind; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "BSN kind": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/identificaties_kind/bsn_kind; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Any attributes allowed on /kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/identificaties_kind/adaextension == -->
@@ -3848,9 +4119,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Perinatale sterfte?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/perinatale_sterfte_groep/perinatale_sterfteq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40280')">Foutieve informatie voor "Perinatale sterfte?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40280" [/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/perinatale_sterfte_groep/perinatale_sterfteq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Perinatale sterfte?": Attribuut "value" ontbreekt [/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/perinatale_sterfte_groep/perinatale_sterfteq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Perinatale sterfte?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/perinatale_sterfte_groep/perinatale_sterfteq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Perinatale sterfte?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/perinatale_sterfte_groep/perinatale_sterfteq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Perinatale sterfte?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/perinatale_sterfte_groep/perinatale_sterfteq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/perinatale_sterfte_groep/fase_perinatale_sterfte: == -->
@@ -3867,7 +4139,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Antepartum_fetal_death_(event)', 'Intrapartum_fetal_death_(event)', 'Newborn_death_(event)', 'Geen_informatie'))">Foutieve informatie voor "Fase perinatale sterfte": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/perinatale_sterfte_groep/fase_perinatale_sterfte/@enum; allowed=('Antepartum_fetal_death_(event)', 'Intrapartum_fetal_death_(event)', 'Newborn_death_(event)', 'Geen_informatie')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Fase perinatale sterfte": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/perinatale_sterfte_groep/fase_perinatale_sterfte; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Fase perinatale sterfte": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/perinatale_sterfte_groep/fase_perinatale_sterfte; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/perinatale_sterfte_groep/datumtijd_vaststelling_perinatale_sterfte: == -->
@@ -3876,9 +4150,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Datum/tijd vaststelling perinatale sterfte": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/perinatale_sterfte_groep/datumtijd_vaststelling_perinatale_sterfte/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40300')">Foutieve informatie voor "Datum/tijd vaststelling perinatale sterfte": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40300" [/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/perinatale_sterfte_groep/datumtijd_vaststelling_perinatale_sterfte/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Datum/tijd vaststelling perinatale sterfte": Attribuut "value" ontbreekt [/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/perinatale_sterfte_groep/datumtijd_vaststelling_perinatale_sterfte/@value]</assert>
          <assert test="empty(@value) or ((@value castable as xs:date) or (@value castable as xs:dateTime))">Foutieve informatie voor "Datum/tijd vaststelling perinatale sterfte": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/perinatale_sterfte_groep/datumtijd_vaststelling_perinatale_sterfte/@value; type=t-datetime]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Datum/tijd vaststelling perinatale sterfte": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/perinatale_sterfte_groep/datumtijd_vaststelling_perinatale_sterfte; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Datum/tijd vaststelling perinatale sterfte": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/perinatale_sterfte_groep/datumtijd_vaststelling_perinatale_sterfte; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Any attributes allowed on /kernset_geboortezorg/uitkomst_per_kind/baring/demografische_gegevens/perinatale_sterfte_groep/adaextension == -->
@@ -3909,9 +4184,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Bijstimulatie toegediend?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/bijstimulatie_toegediendq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20616')">Foutieve informatie voor "Bijstimulatie toegediend?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20616" [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/bijstimulatie_toegediendq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Bijstimulatie toegediend?": Attribuut "value" ontbreekt [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/bijstimulatie_toegediendq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Bijstimulatie toegediend?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/bijstimulatie_toegediendq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Bijstimulatie toegediend?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/bijstimulatie_toegediendq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Bijstimulatie toegediend?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/bijstimulatie_toegediendq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/tijdstip_breken_vliezen: == -->
@@ -3920,9 +4196,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Tijdstip breken vliezen": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/tijdstip_breken_vliezen/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80619')">Foutieve informatie voor "Tijdstip breken vliezen": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80619" [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/tijdstip_breken_vliezen/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Tijdstip breken vliezen": Attribuut "value" ontbreekt [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/tijdstip_breken_vliezen/@value]</assert>
          <assert test="empty(@value) or ((@value castable as xs:date) or (@value castable as xs:dateTime))">Foutieve informatie voor "Tijdstip breken vliezen": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/tijdstip_breken_vliezen/@value; type=t-datetime]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Tijdstip breken vliezen": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/tijdstip_breken_vliezen; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Tijdstip breken vliezen": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/tijdstip_breken_vliezen; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/kleur_en_consistentie_vruchtwater: == -->
@@ -3939,7 +4216,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('kleurloos', 'meconium', 'bloederig', 'overig', 'geen_informatie', 'onbekend'))">Foutieve informatie voor "Kleur en consistentie vruchtwater": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/kleur_en_consistentie_vruchtwater/@enum; allowed=('kleurloos', 'meconium', 'bloederig', 'overig', 'geen_informatie', 'onbekend')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Kleur en consistentie vruchtwater": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/kleur_en_consistentie_vruchtwater; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Kleur en consistentie vruchtwater": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/kleur_en_consistentie_vruchtwater; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/tijdstip_actief_meepersen: == -->
@@ -3948,9 +4227,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Tijdstip actief meepersen": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/tijdstip_actief_meepersen/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.30030')">Foutieve informatie voor "Tijdstip actief meepersen": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.30030" [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/tijdstip_actief_meepersen/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Tijdstip actief meepersen": Attribuut "value" ontbreekt [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/tijdstip_actief_meepersen/@value]</assert>
          <assert test="empty(@value) or ((@value castable as xs:date) or (@value castable as xs:dateTime))">Foutieve informatie voor "Tijdstip actief meepersen": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/tijdstip_actief_meepersen/@value; type=t-datetime]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Tijdstip actief meepersen": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/tijdstip_actief_meepersen; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Tijdstip actief meepersen": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/tijdstip_actief_meepersen; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/episiotomieq: == -->
@@ -3959,9 +4239,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Episiotomie?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/episiotomieq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.30050')">Foutieve informatie voor "Episiotomie?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.30050" [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/episiotomieq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Episiotomie?": Attribuut "value" ontbreekt [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/episiotomieq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Episiotomie?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/episiotomieq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Episiotomie?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/episiotomieq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Episiotomie?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/episiotomieq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/indicatie_episiotomie: == -->
@@ -3978,7 +4259,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Foetale_indicatie', 'Maternale_indicatie', 'Maternale_indicatie_Preventie_ruptuur', 'Maternale_indicatie_Gesloten_vulva_tgv_besnijdenis', 'Kunstverlossing_(routine_handeling)', 'Overig', 'Geen_informatie'))">Foutieve informatie voor "Indicatie episiotomie": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/indicatie_episiotomie/@enum; allowed=('Foetale_indicatie', 'Maternale_indicatie', 'Maternale_indicatie_Preventie_ruptuur', 'Maternale_indicatie_Gesloten_vulva_tgv_besnijdenis', 'Kunstverlossing_(routine_handeling)', 'Overig', 'Geen_informatie')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Indicatie episiotomie": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/indicatie_episiotomie; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Indicatie episiotomie": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/indicatie_episiotomie; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/locatie_episiotomie: == -->
@@ -3995,7 +4278,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('mediolaterale_episiotomie', 'mediane_episiotomie', 'onbekend', 'geen_informatie'))">Foutieve informatie voor "Locatie episiotomie": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/locatie_episiotomie/@enum; allowed=('mediolaterale_episiotomie', 'mediane_episiotomie', 'onbekend', 'geen_informatie')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Locatie episiotomie": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/locatie_episiotomie; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Locatie episiotomie": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/locatie_episiotomie; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/ruggeprik_gewenst_niet_gekregenq: == -->
@@ -4004,9 +4289,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Ruggeprik gewenst, niet gekregen?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/ruggeprik_gewenst_niet_gekregenq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82089')">Foutieve informatie voor "Ruggeprik gewenst, niet gekregen?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82089" [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/ruggeprik_gewenst_niet_gekregenq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Ruggeprik gewenst, niet gekregen?": Attribuut "value" ontbreekt [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/ruggeprik_gewenst_niet_gekregenq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Ruggeprik gewenst, niet gekregen?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/ruggeprik_gewenst_niet_gekregenq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Ruggeprik gewenst, niet gekregen?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/ruggeprik_gewenst_niet_gekregenq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Ruggeprik gewenst, niet gekregen?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/ruggeprik_gewenst_niet_gekregenq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijdingq: == -->
@@ -4015,9 +4301,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Pijnbestrijding?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijdingq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82090')">Foutieve informatie voor "Pijnbestrijding?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82090" [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijdingq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Pijnbestrijding?": Attribuut "value" ontbreekt [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijdingq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Pijnbestrijding?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijdingq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Pijnbestrijding?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijdingq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Pijnbestrijding?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijdingq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding: == -->
@@ -4034,9 +4321,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Sedatie?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/sedatieq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80827')">Foutieve informatie voor "Sedatie?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80827" [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/sedatieq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Sedatie?": Attribuut "value" ontbreekt [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/sedatieq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Sedatie?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/sedatieq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Sedatie?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/sedatieq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Sedatie?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/sedatieq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Any attributes allowed on /kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/adaextension == -->
@@ -4074,7 +4362,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('tijdens_ontsluitingsperiode_&lt;=_3_cm', 'tijdens_ontsluitingsperiode_&gt;_3_cm', 'tijdens_uitdrijving', 'tijdens_sectio', 'na_geboorte_kind'))">Foutieve informatie voor "Periode": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/periode/@enum; allowed=('tijdens_ontsluitingsperiode_&lt;=_3_cm', 'tijdens_ontsluitingsperiode_&gt;_3_cm', 'tijdens_uitdrijving', 'tijdens_sectio', 'na_geboorte_kind')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Periode": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/periode; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Periode": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/periode; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Any attributes allowed on /kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/adaextension == -->
@@ -4104,7 +4394,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Local_anesthetic_intrathecal_block_(procedure)', 'Epidural_anesthesia_(procedure)', 'General_anesthesia_(procedure)', 'Overig'))">Foutieve informatie voor "Methode": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode/methode/@enum; allowed=('Local_anesthetic_intrathecal_block_(procedure)', 'Epidural_anesthesia_(procedure)', 'General_anesthesia_(procedure)', 'Overig')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Methode": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode/methode; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Methode": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode/methode; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode/overig_middel: == -->
@@ -4142,7 +4434,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Administration_of_morphinomimetic_analgesic_(procedure)', 'Sterile_water_injection_(procedure)', 'Transcutaneous_electrical_nerve_stimulation_(regime/therapy)', 'Nitrous_oxide_and_oxygen_gas_analgesia_in_labor_(procedure)', 'overig'))">Foutieve informatie voor "Middel": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode/overig_middel/middel/@enum; allowed=('Administration_of_morphinomimetic_analgesic_(procedure)', 'Sterile_water_injection_(procedure)', 'Transcutaneous_electrical_nerve_stimulation_(regime/therapy)', 'Nitrous_oxide_and_oxygen_gas_analgesia_in_labor_(procedure)', 'overig')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Middel": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode/overig_middel/middel; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Middel": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode/overig_middel/middel; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode/overig_middel/toediening: == -->
@@ -4159,7 +4453,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Administration_of_substance_via_oral_route_(procedure)', 'Neurostimulation_procedure_(procedure)', 'Medication_administration:_intramuscular_(procedure)', 'Administration_of_substance_via_intravenous_route_(procedure)', 'Administration_of_substance_via_subcutaneous_route_(procedure)', 'Patient_controlled_analgesia_(procedure)', 'Inhalational_analgesia_(procedure)', 'overig'))">Foutieve informatie voor "Toediening": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode/overig_middel/toediening/@enum; allowed=('Administration_of_substance_via_oral_route_(procedure)', 'Neurostimulation_procedure_(procedure)', 'Medication_administration:_intramuscular_(procedure)', 'Administration_of_substance_via_intravenous_route_(procedure)', 'Administration_of_substance_via_subcutaneous_route_(procedure)', 'Patient_controlled_analgesia_(procedure)', 'Inhalational_analgesia_(procedure)', 'overig')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Toediening": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode/overig_middel/toediening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Toediening": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode/overig_middel/toediening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Any attributes allowed on /kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode/overig_middel/adaextension == -->
@@ -4201,7 +4497,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Normal_delivery_procedure_(procedure)', 'Assisted_delivery_of_fetus_(procedure)', 'Cesarean_section_(procedure)', 'Cesarean_section_(procedure)_Elective_cesarian_delivery_(procedure)', 'Cesarean_section_(procedure)_Emergency_cesarian_section_(procedure)', 'Termination_of_Pregnancy_(TOP)', 'Termination_of_Pregnancy_(TOP)_Medical_termination_of_pregnancy_using_prostaglandin_(procedure)', 'Termination_of_Pregnancy_(TOP)_Postmortem_cesarean_section_(procedure)', 'Termination_of_Pregnancy_(TOP)_Overig', 'Geen_informatie'))">Foutieve informatie voor "Type partus": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/type_partus/@enum; allowed=('Normal_delivery_procedure_(procedure)', 'Assisted_delivery_of_fetus_(procedure)', 'Cesarean_section_(procedure)', 'Cesarean_section_(procedure)_Elective_cesarian_delivery_(procedure)', 'Cesarean_section_(procedure)_Emergency_cesarian_section_(procedure)', 'Termination_of_Pregnancy_(TOP)', 'Termination_of_Pregnancy_(TOP)_Medical_termination_of_pregnancy_using_prostaglandin_(procedure)', 'Termination_of_Pregnancy_(TOP)_Postmortem_cesarean_section_(procedure)', 'Termination_of_Pregnancy_(TOP)_Overig', 'Geen_informatie')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Type partus": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/type_partus; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Type partus": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/type_partus; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/ligging_bij_geboorte: == -->
@@ -4218,7 +4516,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Occipitoposterior_position_(finding)', 'Vertex_presentation_(finding)', 'Fontanelles_presenting_(finding)', 'Face_presentation_(finding)', 'Brow_presentation_(finding)', 'Complete_breech_presentation_(finding)', 'Incomplete_breech_presentation_(finding)', 'Frank_breech_presentation_(finding)', 'Overig', 'Onbekend', 'Geen_informatie'))">Foutieve informatie voor "Ligging bij geboorte": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/ligging_bij_geboorte/@enum; allowed=('Occipitoposterior_position_(finding)', 'Vertex_presentation_(finding)', 'Fontanelles_presenting_(finding)', 'Face_presentation_(finding)', 'Brow_presentation_(finding)', 'Complete_breech_presentation_(finding)', 'Incomplete_breech_presentation_(finding)', 'Frank_breech_presentation_(finding)', 'Overig', 'Onbekend', 'Geen_informatie')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Ligging bij geboorte": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/ligging_bij_geboorte; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Ligging bij geboorte": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/ligging_bij_geboorte; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/aanpakker_kind_groep: == -->
@@ -4267,7 +4567,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Pubiotomy_(procedure)', 'Maneuvers_for_delivery_in_shoulder_dystocia_(procedure)', 'Maneuvers_for_delivery_in_shoulder_dystocia_(procedure)_McRobert''s_maneuver_(procedure)', 'Maneuvers_for_delivery_in_shoulder_dystocia_(procedure)_Suprapubic_pressure_on_fetal_shoulder_(procedure)', 'Maneuvers_for_delivery_in_shoulder_dystocia_(procedure)_Freeing_the_posterior_arm_(procedure)', 'Maneuvers_for_delivery_in_shoulder_dystocia_(procedure)_Wood''s_screw_maneuver_(procedure)', 'Maneuvers_for_delivery_in_shoulder_dystocia_(procedure)_Half-kneeling_position_(finding)', 'Maneuvers_for_delivery_in_shoulder_dystocia_(procedure)_Overig', 'Kristeller_maneuver_(procedure)', 'Overig'))">Foutieve informatie voor "Overige interventies": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/overige_interventies/@enum; allowed=('Pubiotomy_(procedure)', 'Maneuvers_for_delivery_in_shoulder_dystocia_(procedure)', 'Maneuvers_for_delivery_in_shoulder_dystocia_(procedure)_McRobert''s_maneuver_(procedure)', 'Maneuvers_for_delivery_in_shoulder_dystocia_(procedure)_Suprapubic_pressure_on_fetal_shoulder_(procedure)', 'Maneuvers_for_delivery_in_shoulder_dystocia_(procedure)_Freeing_the_posterior_arm_(procedure)', 'Maneuvers_for_delivery_in_shoulder_dystocia_(procedure)_Wood''s_screw_maneuver_(procedure)', 'Maneuvers_for_delivery_in_shoulder_dystocia_(procedure)_Half-kneeling_position_(finding)', 'Maneuvers_for_delivery_in_shoulder_dystocia_(procedure)_Overig', 'Kristeller_maneuver_(procedure)', 'Overig')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Overige interventies": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/overige_interventies; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Overige interventies": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/overige_interventies; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind: == -->
@@ -4284,9 +4586,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Congenitale afwijkingen?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingenq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40080')">Foutieve informatie voor "Congenitale afwijkingen?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40080" [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingenq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Congenitale afwijkingen?": Attribuut "value" ontbreekt [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingenq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Congenitale afwijkingen?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingenq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Congenitale afwijkingen?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingenq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Congenitale afwijkingen?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingenq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep: == -->
@@ -4303,9 +4606,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Problematiek kind?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/problematiek_kindq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82334')">Foutieve informatie voor "Problematiek kind?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82334" [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/problematiek_kindq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Problematiek kind?": Attribuut "value" ontbreekt [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/problematiek_kindq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Problematiek kind?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/problematiek_kindq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Problematiek kind?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/problematiek_kindq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Problematiek kind?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/problematiek_kindq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/problematiek_kind: == -->
@@ -4322,7 +4626,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Birth_trauma_of_fetus_(disorder)', 'Birth_trauma_of_fetus_(disorder)_Subdural_intracranial_hemorrhage_due_to_birth_trauma_(disorder)', 'Birth_trauma_of_fetus_(disorder)_Intracranial_subarachnoid_hemorrhage_due_to_birth_injury_(disorder)', 'Birth_trauma_of_fetus_(disorder)_Tentorial_tear_due_to_birth_trauma_(disorder)', 'Birth_trauma_of_fetus_(disorder)_Overige_bloedingen_(geboortetrauma)', 'Birth_trauma_of_fetus_(disorder)_Paralysis_from_birth_trauma_(disorder)', 'Birth_trauma_of_fetus_(disorder)_Overige_geboortetraumata', 'Congenital_infectious_disease_(disorder)', 'Congenital_infectious_disease_(disorder)_Congenital_syphilis_(disorder)', 'Congenital_infectious_disease_(disorder)_Congenital_toxoplasmosis_(disorder)', 'Congenital_infectious_disease_(disorder)_Congenital_cytomegalovirus_infection_(disorder)', 'Congenital_infectious_disease_(disorder)_Congenital_rubella_syndrome_(disorder)', 'Congenital_infectious_disease_(disorder)_Sepsis_of_the_newborn_(disorder)', 'Congenital_infectious_disease_(disorder)_Inflammatory_disease_of_the_central_nervous_system_(disorder)', 'Congenital_infectious_disease_(disorder)_Overige_infecties', 'Immunologische_en_haematologische_stoornissen', 'Immunologische_en_haematologische_stoornissen_Disorder_of_immune_structure_(disorder)', 'Immunologische_en_haematologische_stoornissen_Disorder_of_hematopoietic_system_in_newborn_(disorder)', 'Immunologische_en_haematologische_stoornissen_Disorder_of_hematopoietic_system_in_newborn_(disorder)_Twin-to-twin_blood_transfer_(disorder)', 'Immunologische_en_haematologische_stoornissen_Disorder_of_hematopoietic_system_in_newborn_(disorder)_Overig_haematologisch', 'Nervous_system_and_sense_organ_diseases_(disorder)', 'Nervous_system_and_sense_organ_diseases_(disorder)_Perinatal_intracranial_hemorrhage_(disorder)', 'Nervous_system_and_sense_organ_diseases_(disorder)_Neonatal_cerebral_ischemia_(disorder)', 'Nervous_system_and_sense_organ_diseases_(disorder)_Convulsions_in_the_newborn_(disorder)', 'Nervous_system_and_sense_organ_diseases_(disorder)_Neonatal_hypotonia_(disorder)', 'Nervous_system_and_sense_organ_diseases_(disorder)_Retinopathy_of_prematurity_(disorder)', 'Nervous_system_and_sense_organ_diseases_(disorder)_Congenital_hearing_disorder_(disorder)', 'Neonatal_cardiovascular_disorder_(disorder)', 'Neonatal_cardiovascular_disorder_(disorder)_Neonatal_hypertension_(disorder)', 'Neonatal_cardiovascular_disorder_(disorder)_Neonatal_hypotension_(disorder)', 'Neonatal_cardiovascular_disorder_(disorder)_Hydrops_fetalis_(disorder)', 'Neonatal_cardiovascular_disorder_(disorder)_Overige_circulatoire_problemen', 'Neonatal_respiratory_system_disorder_(disorder)', 'Neonatal_respiratory_system_disorder_(disorder)_Respiratory_distress_syndrome_in_the_newborn_(disorder)', 'Neonatal_respiratory_system_disorder_(disorder)_Neonatal_aspiration_syndromes_(disorder)', 'Neonatal_respiratory_system_disorder_(disorder)_Bronchopulmonary_dysplasia_of_newborn_(disorder)', 'Neonatal_respiratory_system_disorder_(disorder)_Overige_respiratoire_problemen', 'Stoornissen_tractus_digestivus_en_navel', 'Stoornissen_tractus_digestivus_en_navel_Neonatal_hyperbilirubinemia_(disorder)', 'Stoornissen_tractus_digestivus_en_navel_Overige_stoornissen_tractus_digestivus_en_navel', 'Neonatal_metabolic_and_endocrinologic_disorder_(disorder)', 'Neonatal_metabolic_and_endocrinologic_disorder_(disorder)_Neonatal_hypoglycemia_(disorder)', 'Neonatal_metabolic_and_endocrinologic_disorder_(disorder)_Neonatal_hyperglycemia_(disorder)', 'Neonatal_metabolic_and_endocrinologic_disorder_(disorder)_Congenital_hypothyroidism_(disorder)', 'Neonatal_metabolic_and_endocrinologic_disorder_(disorder)_Overige_endocriene,_metabole_en_milieu_interieur_stoornissen', 'Neonatal_metabolic_and_endocrinologic_disorder_(disorder)_Neonatal_renal_disorder_(disorder)'))">Foutieve informatie voor "Problematiek kind": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/problematiek_kind/@enum; allowed=('Birth_trauma_of_fetus_(disorder)', 'Birth_trauma_of_fetus_(disorder)_Subdural_intracranial_hemorrhage_due_to_birth_trauma_(disorder)', 'Birth_trauma_of_fetus_(disorder)_Intracranial_subarachnoid_hemorrhage_due_to_birth_injury_(disorder)', 'Birth_trauma_of_fetus_(disorder)_Tentorial_tear_due_to_birth_trauma_(disorder)', 'Birth_trauma_of_fetus_(disorder)_Overige_bloedingen_(geboortetrauma)', 'Birth_trauma_of_fetus_(disorder)_Paralysis_from_birth_trauma_(disorder)', 'Birth_trauma_of_fetus_(disorder)_Overige_geboortetraumata', 'Congenital_infectious_disease_(disorder)', 'Congenital_infectious_disease_(disorder)_Congenital_syphilis_(disorder)', 'Congenital_infectious_disease_(disorder)_Congenital_toxoplasmosis_(disorder)', 'Congenital_infectious_disease_(disorder)_Congenital_cytomegalovirus_infection_(disorder)', 'Congenital_infectious_disease_(disorder)_Congenital_rubella_syndrome_(disorder)', 'Congenital_infectious_disease_(disorder)_Sepsis_of_the_newborn_(disorder)', 'Congenital_infectious_disease_(disorder)_Inflammatory_disease_of_the_central_nervous_system_(disorder)', 'Congenital_infectious_disease_(disorder)_Overige_infecties', 'Immunologische_en_haematologische_stoornissen', 'Immunologische_en_haematologische_stoornissen_Disorder_of_immune_structure_(disorder)', 'Immunologische_en_haematologische_stoornissen_Disorder_of_hematopoietic_system_in_newborn_(disorder)', 'Immunologische_en_haematologische_stoornissen_Disorder_of_hematopoietic_system_in_newborn_(disorder)_Twin-to-twin_blood_transfer_(disorder)', 'Immunologische_en_haematologische_stoornissen_Disorder_of_hematopoietic_system_in_newborn_(disorder)_Overig_haematologisch', 'Nervous_system_and_sense_organ_diseases_(disorder)', 'Nervous_system_and_sense_organ_diseases_(disorder)_Perinatal_intracranial_hemorrhage_(disorder)', 'Nervous_system_and_sense_organ_diseases_(disorder)_Neonatal_cerebral_ischemia_(disorder)', 'Nervous_system_and_sense_organ_diseases_(disorder)_Convulsions_in_the_newborn_(disorder)', 'Nervous_system_and_sense_organ_diseases_(disorder)_Neonatal_hypotonia_(disorder)', 'Nervous_system_and_sense_organ_diseases_(disorder)_Retinopathy_of_prematurity_(disorder)', 'Nervous_system_and_sense_organ_diseases_(disorder)_Congenital_hearing_disorder_(disorder)', 'Neonatal_cardiovascular_disorder_(disorder)', 'Neonatal_cardiovascular_disorder_(disorder)_Neonatal_hypertension_(disorder)', 'Neonatal_cardiovascular_disorder_(disorder)_Neonatal_hypotension_(disorder)', 'Neonatal_cardiovascular_disorder_(disorder)_Hydrops_fetalis_(disorder)', 'Neonatal_cardiovascular_disorder_(disorder)_Overige_circulatoire_problemen', 'Neonatal_respiratory_system_disorder_(disorder)', 'Neonatal_respiratory_system_disorder_(disorder)_Respiratory_distress_syndrome_in_the_newborn_(disorder)', 'Neonatal_respiratory_system_disorder_(disorder)_Neonatal_aspiration_syndromes_(disorder)', 'Neonatal_respiratory_system_disorder_(disorder)_Bronchopulmonary_dysplasia_of_newborn_(disorder)', 'Neonatal_respiratory_system_disorder_(disorder)_Overige_respiratoire_problemen', 'Stoornissen_tractus_digestivus_en_navel', 'Stoornissen_tractus_digestivus_en_navel_Neonatal_hyperbilirubinemia_(disorder)', 'Stoornissen_tractus_digestivus_en_navel_Overige_stoornissen_tractus_digestivus_en_navel', 'Neonatal_metabolic_and_endocrinologic_disorder_(disorder)', 'Neonatal_metabolic_and_endocrinologic_disorder_(disorder)_Neonatal_hypoglycemia_(disorder)', 'Neonatal_metabolic_and_endocrinologic_disorder_(disorder)_Neonatal_hyperglycemia_(disorder)', 'Neonatal_metabolic_and_endocrinologic_disorder_(disorder)_Congenital_hypothyroidism_(disorder)', 'Neonatal_metabolic_and_endocrinologic_disorder_(disorder)_Overige_endocriene,_metabole_en_milieu_interieur_stoornissen', 'Neonatal_metabolic_and_endocrinologic_disorder_(disorder)_Neonatal_renal_disorder_(disorder)')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Problematiek kind": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/problematiek_kind; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Problematiek kind": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/problematiek_kind; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/kinderarts_betrokkenq: == -->
@@ -4331,9 +4637,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Kinderarts betrokken?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/kinderarts_betrokkenq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82119')">Foutieve informatie voor "Kinderarts betrokken?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82119" [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/kinderarts_betrokkenq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Kinderarts betrokken?": Attribuut "value" ontbreekt [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/kinderarts_betrokkenq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Kinderarts betrokken?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/kinderarts_betrokkenq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Kinderarts betrokken?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/kinderarts_betrokkenq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Kinderarts betrokken?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/kinderarts_betrokkenq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts: == -->
@@ -4370,7 +4677,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('1e_lijns_verloskundige', 'klinisch_verloskundige', 'verloskundige_in_opleiding', 'gynaecoloog', 'gynaecoloog_in_opleiding', 'arts-assistent', 'co-assistent', 'huisarts', 'huisarts_in_opleiding', 'arts,_niet_in_opleiding', 'verpleegkundige', 'kraamverzorgende', 'niet_medisch_geschoolde', 'onbekend', 'geen_informatie'))">Foutieve informatie voor "Rol aanpakker kind": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/aanpakker_kind_groep/rol_aanpakker_kind/@enum; allowed=('1e_lijns_verloskundige', 'klinisch_verloskundige', 'verloskundige_in_opleiding', 'gynaecoloog', 'gynaecoloog_in_opleiding', 'arts-assistent', 'co-assistent', 'huisarts', 'huisarts_in_opleiding', 'arts,_niet_in_opleiding', 'verpleegkundige', 'kraamverzorgende', 'niet_medisch_geschoolde', 'onbekend', 'geen_informatie')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Rol aanpakker kind": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/aanpakker_kind_groep/rol_aanpakker_kind; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Rol aanpakker kind": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/aanpakker_kind_groep/rol_aanpakker_kind; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Any attributes allowed on /kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/aanpakker_kind_groep/adaextension == -->
@@ -4399,7 +4708,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('1e_lijns_verloskundige', 'klinisch_verloskundige', 'gynaecoloog', 'gynaecoloog_in_opleiding', 'arts-assistent', 'huisarts', 'geen_informatie'))">Foutieve informatie voor "Rol supervisor": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/supervisor_groep/rol_supervisor/@enum; allowed=('1e_lijns_verloskundige', 'klinisch_verloskundige', 'gynaecoloog', 'gynaecoloog_in_opleiding', 'arts-assistent', 'huisarts', 'geen_informatie')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Rol supervisor": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/supervisor_groep/rol_supervisor; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Rol supervisor": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/supervisor_groep/rol_supervisor; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Any attributes allowed on /kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/supervisor_groep/adaextension == -->
@@ -4429,7 +4740,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Forceps_delivery_(procedure)', 'Delivery_by_vacuum_extraction_(procedure)', 'Obstetrical_version_with_extraction_(procedure)', 'Partial_breech_extraction_(procedure)', 'Total_breech_extraction_(procedure)', 'anders', 'geen_informatie'))">Foutieve informatie voor "Vaginale kunstverlossing": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/vaginale_kunstverlossing_groep/vaginale_kunstverlossing/@enum; allowed=('Forceps_delivery_(procedure)', 'Delivery_by_vacuum_extraction_(procedure)', 'Obstetrical_version_with_extraction_(procedure)', 'Partial_breech_extraction_(procedure)', 'Total_breech_extraction_(procedure)', 'anders', 'geen_informatie')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Vaginale kunstverlossing": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/vaginale_kunstverlossing_groep/vaginale_kunstverlossing; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Vaginale kunstverlossing": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/vaginale_kunstverlossing_groep/vaginale_kunstverlossing; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/vaginale_kunstverlossing_groep/succes_vaginale_kunstverlossingq: == -->
@@ -4438,9 +4751,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Succes vaginale kunstverlossing?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/vaginale_kunstverlossing_groep/succes_vaginale_kunstverlossingq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40200')">Foutieve informatie voor "Succes vaginale kunstverlossing?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40200" [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/vaginale_kunstverlossing_groep/succes_vaginale_kunstverlossingq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Succes vaginale kunstverlossing?": Attribuut "value" ontbreekt [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/vaginale_kunstverlossing_groep/succes_vaginale_kunstverlossingq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Succes vaginale kunstverlossing?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/vaginale_kunstverlossing_groep/succes_vaginale_kunstverlossingq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Succes vaginale kunstverlossing?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/vaginale_kunstverlossing_groep/succes_vaginale_kunstverlossingq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Succes vaginale kunstverlossing?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/vaginale_kunstverlossing_groep/succes_vaginale_kunstverlossingq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Any attributes allowed on /kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/vaginale_kunstverlossing_groep/adaextension == -->
@@ -4471,7 +4785,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Tijdens_ontsluiting_besloten', 'Tijdens_uitdrijving_besloten', 'Geen_informatie'))">Foutieve informatie voor "Beslismoment sectio caesarea": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/sectio_caesarea_group/beslismoment_sectio_caesarea/@enum; allowed=('Tijdens_ontsluiting_besloten', 'Tijdens_uitdrijving_besloten', 'Geen_informatie')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Beslismoment sectio caesarea": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/sectio_caesarea_group/beslismoment_sectio_caesarea; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Beslismoment sectio caesarea": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/sectio_caesarea_group/beslismoment_sectio_caesarea; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/sectio_caesarea_group/indicatie_primaire_sectio: == -->
@@ -4488,7 +4804,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('History_of_third_degree_perineal_laceration_(situation)', 'History_of_fourth_degree_perineal_laceration_(situation)', 'Abnormal_fetal_presentation_(finding)', 'Suspected_fetal_distress_(situation)', 'Patient_condition_finding_(finding)', 'Maternal_request_for_treatment_(finding)', 'overig,_medische_reden', 'overig,_niet-medische_reden', 'geen_informatie'))">Foutieve informatie voor "Indicatie primaire sectio": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/sectio_caesarea_group/indicatie_primaire_sectio/@enum; allowed=('History_of_third_degree_perineal_laceration_(situation)', 'History_of_fourth_degree_perineal_laceration_(situation)', 'Abnormal_fetal_presentation_(finding)', 'Suspected_fetal_distress_(situation)', 'Patient_condition_finding_(finding)', 'Maternal_request_for_treatment_(finding)', 'overig,_medische_reden', 'overig,_niet-medische_reden', 'geen_informatie')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Indicatie primaire sectio": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/sectio_caesarea_group/indicatie_primaire_sectio; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Indicatie primaire sectio": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/sectio_caesarea_group/indicatie_primaire_sectio; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/sectio_caesarea_group/indicatie_secundaire_sectio: == -->
@@ -4505,7 +4823,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Failure_to_progress_in_first_stage_of_labor_(finding)', 'Failure_to_progress_in_second_stage_of_labor_(finding)', 'Suspected_fetal_distress_(situation)', 'Patient_condition_finding_(finding)', 'Overig,_medische_reden', 'Overig,_niet-medische_reden', 'Geen_informatie'))">Foutieve informatie voor "Indicatie secundaire sectio": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/sectio_caesarea_group/indicatie_secundaire_sectio/@enum; allowed=('Failure_to_progress_in_first_stage_of_labor_(finding)', 'Failure_to_progress_in_second_stage_of_labor_(finding)', 'Suspected_fetal_distress_(situation)', 'Patient_condition_finding_(finding)', 'Overig,_medische_reden', 'Overig,_niet-medische_reden', 'Geen_informatie')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Indicatie secundaire sectio": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/sectio_caesarea_group/indicatie_secundaire_sectio; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Indicatie secundaire sectio": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/sectio_caesarea_group/indicatie_secundaire_sectio; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Any attributes allowed on /kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/sectio_caesarea_group/adaextension == -->
@@ -4527,11 +4847,12 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Apgarscore na 5 min.": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/apgarscore_na_5_min/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40071')">Foutieve informatie voor "Apgarscore na 5 min.": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40071" [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/apgarscore_na_5_min/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Apgarscore na 5 min.": Attribuut "value" ontbreekt [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/apgarscore_na_5_min/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:decimal)">Foutieve informatie voor "Apgarscore na 5 min.": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/apgarscore_na_5_min/@value; type=xs:decimal]</assert>
          <assert test="empty(@value) or (local:decimal-convert(@value) ge 0)">Foutieve informatie voor "Apgarscore na 5 min.": De waarde "<value-of select="@value"/>" voor attribuut "value" moet minimaal 0 zijn [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/apgarscore_na_5_min/@value; min-inclusive=0]</assert>
          <assert test="empty(@value) or (local:decimal-convert(@value) le 10)">Foutieve informatie voor "Apgarscore na 5 min.": De waarde "<value-of select="@value"/>" voor attribuut "value" mag maximaal 10 zijn [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/apgarscore_na_5_min/@value; max-inclusive=10]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Apgarscore na 5 min.": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/apgarscore_na_5_min; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Apgarscore na 5 min.": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/apgarscore_na_5_min; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/geboortegewicht: == -->
@@ -4540,12 +4861,13 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Geboortegewicht": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/geboortegewicht/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40060')">Foutieve informatie voor "Geboortegewicht": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40060" [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/geboortegewicht/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Geboortegewicht": Attribuut "value" ontbreekt [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/geboortegewicht/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:decimal)">Foutieve informatie voor "Geboortegewicht": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/geboortegewicht/@value; type=xs:decimal]</assert>
          <assert test="empty(@value) or (local:decimal-convert(@value) ge 0)">Foutieve informatie voor "Geboortegewicht": De waarde "<value-of select="@value"/>" voor attribuut "value" moet minimaal 0 zijn [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/geboortegewicht/@value; min-inclusive=0]</assert>
          <!-- == Attribute "unit": == -->
          <assert test="empty(@unit) or (@unit eq 'gram')">Foutieve informatie voor "Geboortegewicht": De waarde "<value-of select="@unit"/>" voor attribuut "unit" heeft niet de verwachte vaste waarde "gram" [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/geboortegewicht/@unit]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @unit, @xsi:*))">Foutieve informatie voor "Geboortegewicht": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/geboortegewicht; allowed=(@conceptId, @value, @unit, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @unit, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Geboortegewicht": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/geboortegewicht; allowed=(@conceptId, @value, @unit, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Any attributes allowed on /kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/adaextension == -->
@@ -4576,9 +4898,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Chromosomale afwijkingen?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/chromosomale_afwijkingenq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40110')">Foutieve informatie voor "Chromosomale afwijkingen?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40110" [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/chromosomale_afwijkingenq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Chromosomale afwijkingen?": Attribuut "value" ontbreekt [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/chromosomale_afwijkingenq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Chromosomale afwijkingen?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/chromosomale_afwijkingenq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Chromosomale afwijkingen?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/chromosomale_afwijkingenq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Chromosomale afwijkingen?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/chromosomale_afwijkingenq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_chromosomale_afwijking_groep: == -->
@@ -4615,7 +4938,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Hydrops_foetalis', 'Congenital_anomaly_of_nervous_system_(disorder)', 'Congenital_anomaly_of_nervous_system_(disorder)_Fetal_anencephaly_(disorder)', 'Congenital_anomaly_of_nervous_system_(disorder)_Fetal_microcephaly_(disorder)', 'Congenital_anomaly_of_nervous_system_(disorder)_Spina_bifida_occulta_(disorder)', 'Congenital_anomaly_of_nervous_system_(disorder)_Meningomyelocele_(disorder)', 'Congenital_anomaly_of_nervous_system_(disorder)_Meningocele_(disorder)', 'Congenital_anomaly_of_nervous_system_(disorder)_Congenital_hydrocephalus_(disorder)', 'Congenital_anomaly_of_nervous_system_(disorder)_Holoprosencephaly_sequence_(disorder)', 'Congenital_anomaly_of_nervous_system_(disorder)_Encephalocele_(disorder)', 'Congenital_anomaly_of_nervous_system_(disorder)_Neonatal_neuromuscular_disorder_(disorder)', 'Congenital_anomaly_of_nervous_system_(disorder)_Overige_congenitale_afwijkingen_zenuwstelsel', 'Zintuigen', 'Zintuigen_Congenital_anomaly_of_eye_(disorder)', 'Zintuigen_Congenital_anomaly_of_eye_(disorder)_Microphthalmos_(disorder)', 'Zintuigen_Congenital_anomaly_of_eye_(disorder)_Overige_congenitale_afwijkingen_ogen', 'Zintuigen_Congenital_anomaly_of_ear_(disorder)', 'Zintuigen_Overige_congenitale_afwijkingen_zintuigen', 'Congenital_anomaly_of_cardiovascular_system_(disorder)', 'Congenital_anomaly_of_cardiovascular_system_(disorder)_Single_umbilical_artery_(disorder)', 'Congenital_anomaly_of_cardiovascular_system_(disorder)_Discordant_ventriculoarterial_connection_(disorder)', 'Congenital_anomaly_of_cardiovascular_system_(disorder)_Tetralogy_of_Fallot_(disorder)', 'Congenital_anomaly_of_cardiovascular_system_(disorder)_Ventricular_septal_defect_(disorder)', 'Congenital_anomaly_of_cardiovascular_system_(disorder)_Hypoplastic_left_heart_syndrome_(disorder)', 'Congenital_anomaly_of_cardiovascular_system_(disorder)_Coarctation_of_aorta_(disorder)', 'Congenital_anomaly_of_cardiovascular_system_(disorder)_Congenital_anomaly_of_tricuspid_valve_(disorder)', 'Congenital_anomaly_of_cardiovascular_system_(disorder)_Multiple_congenital_cardiac_defects_(disorder)', 'Congenital_anomaly_of_cardiovascular_system_(disorder)_Overige_congenitale_afwijking_hart_en_bloedvaten', 'Congenital_anomaly_of_digestive_tract_(disorder)', 'Congenital_anomaly_of_digestive_tract_(disorder)_Cleft_lip_(disorder)', 'Congenital_anomaly_of_digestive_tract_(disorder)_Cleft_palate_(disorder)', 'Congenital_anomaly_of_digestive_tract_(disorder)_Congenital_anomaly_of_esophagus_(disorder)', 'Congenital_anomaly_of_digestive_tract_(disorder)_Congenital_atresia_of_small_intestine_(disorder)', 'Congenital_anomaly_of_digestive_tract_(disorder)_Atresia_of_large_intestine_(disorder)', 'Congenital_anomaly_of_digestive_tract_(disorder)_Anal_atresia_(disorder)', 'Congenital_anomaly_of_digestive_tract_(disorder)_Hirschsprung''s_disease_(disorder)', 'Congenital_anomaly_of_digestive_tract_(disorder)_Congenital_malrotation_of_intestine_(disorder)', 'Congenital_anomaly_of_digestive_tract_(disorder)_Intestinal_volvulus_(disorder)', 'Congenital_anomaly_of_digestive_tract_(disorder)_Overige_congenitale_afwijking_tractus_digestivus', 'Congenital_anomaly_of_respiratory_system_(disorder)', 'Congenital_anomaly_of_respiratory_system_(disorder)_Choanal_atresia_(disorder)', 'Congenital_anomaly_of_respiratory_system_(disorder)_Congenital_anomaly_of_trachea_(disorder)', 'Congenital_anomaly_of_respiratory_system_(disorder)_Congenital_hypoplasia_of_lung_(disorder)', 'Congenital_anomaly_of_respiratory_system_(disorder)_Congenital_lobar_emphysema_(disorder)', 'Congenital_anomaly_of_respiratory_system_(disorder)_Congenital_cystic_adenomatoid_malformation_of_lung_(disorder)', 'Congenital_anomaly_of_respiratory_system_(disorder)_Hydrothorax_(disorder)', 'Congenital_anomaly_of_respiratory_system_(disorder)_Chylothorax_(disorder)', 'Congenital_anomaly_of_respiratory_system_(disorder)_Congenital_diaphragmatic_hernia_(disorder)', 'Congenital_anomaly_of_respiratory_system_(disorder)_Relaxation_of_diaphragm_(disorder)', 'Congenital_anomaly_of_respiratory_system_(disorder)_Overige_congenitale_afwijking_tractus_respiratorius', 'Genitourinary_congenital_anomalies_(disorder)', 'Genitourinary_congenital_anomalies_(disorder)_Hypospadias_(disorder)', 'Genitourinary_congenital_anomalies_(disorder)_Epispadias_(disorder)', 'Genitourinary_congenital_anomalies_(disorder)_Undescended_testicle_(disorder)', 'Genitourinary_congenital_anomalies_(disorder)_Exstrophy_of_bladder_sequence_(disorder)', 'Genitourinary_congenital_anomalies_(disorder)_Oligohydramnios_sequence_(disorder)', 'Genitourinary_congenital_anomalies_(disorder)_Congenital_cystic_kidney_disease_(disorder)', 'Genitourinary_congenital_anomalies_(disorder)_Urinary_tract_obstruction_(disorder)', 'Genitourinary_congenital_anomalies_(disorder)_Disorder_of_sexual_differentiation_(disorder)', 'Genitourinary_congenital_anomalies_(disorder)_Overige_congenitale_afwijking_tractus_urogenitalis', 'Congenital_anomaly_of_skin_(disorder)', 'Congenital_anomaly_of_skin_(disorder)_Hemangioma_of_skin_(disorder)', 'Congenital_anomaly_of_skin_(disorder)_Congenital_pigmented_melanocytic_nevus_of_skin_(disorder)', 'Congenital_anomaly_of_skin_(disorder)_Overige_congenitale_huidafwijking', 'Congenital_anomaly_of_abdominal_wall_(disorder)', 'Congenital_anomaly_of_abdominal_wall_(disorder)_Gastroschisis_(disorder)', 'Congenital_anomaly_of_abdominal_wall_(disorder)_Congenital_omphalocele_(disorder)', 'Congenital_anomaly_of_abdominal_wall_(disorder)_Umbilical_hernia_(disorder)', 'Congenital_anomaly_of_abdominal_wall_(disorder)_Congenital_inguinal_hernia_(disorder)', 'Congenital_anomaly_of_abdominal_wall_(disorder)_Overige_congenitale_afwijking_buikwand', 'Congenital_anomaly_of_musculoskeletal_system_(disorder)', 'Congenital_anomaly_of_musculoskeletal_system_(disorder)_Polydactyly_(disorder)', 'Congenital_anomaly_of_musculoskeletal_system_(disorder)_Syndactyly_(disorder)', 'Congenital_anomaly_of_musculoskeletal_system_(disorder)_Congenital_deformity_of_foot_(disorder)', 'Congenital_anomaly_of_musculoskeletal_system_(disorder)_Reduction_deformity_of_upper_limb_(disorder)', 'Congenital_anomaly_of_musculoskeletal_system_(disorder)_Reduction_deformity_of_lower_limb_(disorder)', 'Congenital_anomaly_of_musculoskeletal_system_(disorder)_Overige_congenitale_afwijking_extremiteiten', 'Congenital_anomaly_of_musculoskeletal_system_(disorder)_Congenital_subluxation_of_hip_(disorder)', 'Congenital_anomaly_of_musculoskeletal_system_(disorder)_Overige_congenitale_afwijking_skelet_en_spierstelsel', 'Multipele/syndromale_congenitale_afwijkingen_(niet_chromosomaal)', 'Multipele/syndromale_congenitale_afwijkingen_(niet_chromosomaal)_Dysmorphism_(disorder)', 'Multipele/syndromale_congenitale_afwijkingen_(niet_chromosomaal)_Situs_inversus_viscerum_(disorder)', 'Multipele/syndromale_congenitale_afwijkingen_(niet_chromosomaal)_Multiple_congenital_anomalies_(disorder)', 'Multipele/syndromale_congenitale_afwijkingen_(niet_chromosomaal)_Multiple_system_malformation_syndrome_(disorder)', 'Multipele/syndromale_congenitale_afwijkingen_(niet_chromosomaal)_Overige_multipele/syndromale_afwijkingen', 'Overige_congenitale_afwijkingen', 'Overige_congenitale_afwijkingen_Congenital_iodine_deficiency_syndrome_(disorder)', 'Overige_congenitale_afwijkingen_Andere_endocrinologische_afwijkingen', 'Overige_congenitale_afwijkingen_Inborn_error_of_metabolism_(disorder)', 'Overige_congenitale_afwijkingen_Congenital_malignant_neoplastic_disease_(disorder)', 'Overig', 'Geen_informatie'))">Foutieve informatie voor "Specificatie congenitale afwijking": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_congenitale_afwijking_groep/specificatie_congenitale_afwijking/@enum; allowed=('Hydrops_foetalis', 'Congenital_anomaly_of_nervous_system_(disorder)', 'Congenital_anomaly_of_nervous_system_(disorder)_Fetal_anencephaly_(disorder)', 'Congenital_anomaly_of_nervous_system_(disorder)_Fetal_microcephaly_(disorder)', 'Congenital_anomaly_of_nervous_system_(disorder)_Spina_bifida_occulta_(disorder)', 'Congenital_anomaly_of_nervous_system_(disorder)_Meningomyelocele_(disorder)', 'Congenital_anomaly_of_nervous_system_(disorder)_Meningocele_(disorder)', 'Congenital_anomaly_of_nervous_system_(disorder)_Congenital_hydrocephalus_(disorder)', 'Congenital_anomaly_of_nervous_system_(disorder)_Holoprosencephaly_sequence_(disorder)', 'Congenital_anomaly_of_nervous_system_(disorder)_Encephalocele_(disorder)', 'Congenital_anomaly_of_nervous_system_(disorder)_Neonatal_neuromuscular_disorder_(disorder)', 'Congenital_anomaly_of_nervous_system_(disorder)_Overige_congenitale_afwijkingen_zenuwstelsel', 'Zintuigen', 'Zintuigen_Congenital_anomaly_of_eye_(disorder)', 'Zintuigen_Congenital_anomaly_of_eye_(disorder)_Microphthalmos_(disorder)', 'Zintuigen_Congenital_anomaly_of_eye_(disorder)_Overige_congenitale_afwijkingen_ogen', 'Zintuigen_Congenital_anomaly_of_ear_(disorder)', 'Zintuigen_Overige_congenitale_afwijkingen_zintuigen', 'Congenital_anomaly_of_cardiovascular_system_(disorder)', 'Congenital_anomaly_of_cardiovascular_system_(disorder)_Single_umbilical_artery_(disorder)', 'Congenital_anomaly_of_cardiovascular_system_(disorder)_Discordant_ventriculoarterial_connection_(disorder)', 'Congenital_anomaly_of_cardiovascular_system_(disorder)_Tetralogy_of_Fallot_(disorder)', 'Congenital_anomaly_of_cardiovascular_system_(disorder)_Ventricular_septal_defect_(disorder)', 'Congenital_anomaly_of_cardiovascular_system_(disorder)_Hypoplastic_left_heart_syndrome_(disorder)', 'Congenital_anomaly_of_cardiovascular_system_(disorder)_Coarctation_of_aorta_(disorder)', 'Congenital_anomaly_of_cardiovascular_system_(disorder)_Congenital_anomaly_of_tricuspid_valve_(disorder)', 'Congenital_anomaly_of_cardiovascular_system_(disorder)_Multiple_congenital_cardiac_defects_(disorder)', 'Congenital_anomaly_of_cardiovascular_system_(disorder)_Overige_congenitale_afwijking_hart_en_bloedvaten', 'Congenital_anomaly_of_digestive_tract_(disorder)', 'Congenital_anomaly_of_digestive_tract_(disorder)_Cleft_lip_(disorder)', 'Congenital_anomaly_of_digestive_tract_(disorder)_Cleft_palate_(disorder)', 'Congenital_anomaly_of_digestive_tract_(disorder)_Congenital_anomaly_of_esophagus_(disorder)', 'Congenital_anomaly_of_digestive_tract_(disorder)_Congenital_atresia_of_small_intestine_(disorder)', 'Congenital_anomaly_of_digestive_tract_(disorder)_Atresia_of_large_intestine_(disorder)', 'Congenital_anomaly_of_digestive_tract_(disorder)_Anal_atresia_(disorder)', 'Congenital_anomaly_of_digestive_tract_(disorder)_Hirschsprung''s_disease_(disorder)', 'Congenital_anomaly_of_digestive_tract_(disorder)_Congenital_malrotation_of_intestine_(disorder)', 'Congenital_anomaly_of_digestive_tract_(disorder)_Intestinal_volvulus_(disorder)', 'Congenital_anomaly_of_digestive_tract_(disorder)_Overige_congenitale_afwijking_tractus_digestivus', 'Congenital_anomaly_of_respiratory_system_(disorder)', 'Congenital_anomaly_of_respiratory_system_(disorder)_Choanal_atresia_(disorder)', 'Congenital_anomaly_of_respiratory_system_(disorder)_Congenital_anomaly_of_trachea_(disorder)', 'Congenital_anomaly_of_respiratory_system_(disorder)_Congenital_hypoplasia_of_lung_(disorder)', 'Congenital_anomaly_of_respiratory_system_(disorder)_Congenital_lobar_emphysema_(disorder)', 'Congenital_anomaly_of_respiratory_system_(disorder)_Congenital_cystic_adenomatoid_malformation_of_lung_(disorder)', 'Congenital_anomaly_of_respiratory_system_(disorder)_Hydrothorax_(disorder)', 'Congenital_anomaly_of_respiratory_system_(disorder)_Chylothorax_(disorder)', 'Congenital_anomaly_of_respiratory_system_(disorder)_Congenital_diaphragmatic_hernia_(disorder)', 'Congenital_anomaly_of_respiratory_system_(disorder)_Relaxation_of_diaphragm_(disorder)', 'Congenital_anomaly_of_respiratory_system_(disorder)_Overige_congenitale_afwijking_tractus_respiratorius', 'Genitourinary_congenital_anomalies_(disorder)', 'Genitourinary_congenital_anomalies_(disorder)_Hypospadias_(disorder)', 'Genitourinary_congenital_anomalies_(disorder)_Epispadias_(disorder)', 'Genitourinary_congenital_anomalies_(disorder)_Undescended_testicle_(disorder)', 'Genitourinary_congenital_anomalies_(disorder)_Exstrophy_of_bladder_sequence_(disorder)', 'Genitourinary_congenital_anomalies_(disorder)_Oligohydramnios_sequence_(disorder)', 'Genitourinary_congenital_anomalies_(disorder)_Congenital_cystic_kidney_disease_(disorder)', 'Genitourinary_congenital_anomalies_(disorder)_Urinary_tract_obstruction_(disorder)', 'Genitourinary_congenital_anomalies_(disorder)_Disorder_of_sexual_differentiation_(disorder)', 'Genitourinary_congenital_anomalies_(disorder)_Overige_congenitale_afwijking_tractus_urogenitalis', 'Congenital_anomaly_of_skin_(disorder)', 'Congenital_anomaly_of_skin_(disorder)_Hemangioma_of_skin_(disorder)', 'Congenital_anomaly_of_skin_(disorder)_Congenital_pigmented_melanocytic_nevus_of_skin_(disorder)', 'Congenital_anomaly_of_skin_(disorder)_Overige_congenitale_huidafwijking', 'Congenital_anomaly_of_abdominal_wall_(disorder)', 'Congenital_anomaly_of_abdominal_wall_(disorder)_Gastroschisis_(disorder)', 'Congenital_anomaly_of_abdominal_wall_(disorder)_Congenital_omphalocele_(disorder)', 'Congenital_anomaly_of_abdominal_wall_(disorder)_Umbilical_hernia_(disorder)', 'Congenital_anomaly_of_abdominal_wall_(disorder)_Congenital_inguinal_hernia_(disorder)', 'Congenital_anomaly_of_abdominal_wall_(disorder)_Overige_congenitale_afwijking_buikwand', 'Congenital_anomaly_of_musculoskeletal_system_(disorder)', 'Congenital_anomaly_of_musculoskeletal_system_(disorder)_Polydactyly_(disorder)', 'Congenital_anomaly_of_musculoskeletal_system_(disorder)_Syndactyly_(disorder)', 'Congenital_anomaly_of_musculoskeletal_system_(disorder)_Congenital_deformity_of_foot_(disorder)', 'Congenital_anomaly_of_musculoskeletal_system_(disorder)_Reduction_deformity_of_upper_limb_(disorder)', 'Congenital_anomaly_of_musculoskeletal_system_(disorder)_Reduction_deformity_of_lower_limb_(disorder)', 'Congenital_anomaly_of_musculoskeletal_system_(disorder)_Overige_congenitale_afwijking_extremiteiten', 'Congenital_anomaly_of_musculoskeletal_system_(disorder)_Congenital_subluxation_of_hip_(disorder)', 'Congenital_anomaly_of_musculoskeletal_system_(disorder)_Overige_congenitale_afwijking_skelet_en_spierstelsel', 'Multipele/syndromale_congenitale_afwijkingen_(niet_chromosomaal)', 'Multipele/syndromale_congenitale_afwijkingen_(niet_chromosomaal)_Dysmorphism_(disorder)', 'Multipele/syndromale_congenitale_afwijkingen_(niet_chromosomaal)_Situs_inversus_viscerum_(disorder)', 'Multipele/syndromale_congenitale_afwijkingen_(niet_chromosomaal)_Multiple_congenital_anomalies_(disorder)', 'Multipele/syndromale_congenitale_afwijkingen_(niet_chromosomaal)_Multiple_system_malformation_syndrome_(disorder)', 'Multipele/syndromale_congenitale_afwijkingen_(niet_chromosomaal)_Overige_multipele/syndromale_afwijkingen', 'Overige_congenitale_afwijkingen', 'Overige_congenitale_afwijkingen_Congenital_iodine_deficiency_syndrome_(disorder)', 'Overige_congenitale_afwijkingen_Andere_endocrinologische_afwijkingen', 'Overige_congenitale_afwijkingen_Inborn_error_of_metabolism_(disorder)', 'Overige_congenitale_afwijkingen_Congenital_malignant_neoplastic_disease_(disorder)', 'Overig', 'Geen_informatie')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Specificatie congenitale afwijking": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_congenitale_afwijking_groep/specificatie_congenitale_afwijking; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Specificatie congenitale afwijking": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_congenitale_afwijking_groep/specificatie_congenitale_afwijking; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Any attributes allowed on /kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_congenitale_afwijking_groep/adaextension == -->
@@ -4644,7 +4969,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Complete_trisomy_21_syndrome_(disorder)', 'Complete_trisomy_18_syndrome_(disorder)', 'Complete_trisomy_13_syndrome_(disorder)', 'Andere_numerieke_chromosomale_afwijkingen', 'Overige_chromosomale_afwijkingen', 'Geen_informatie'))">Foutieve informatie voor "Specificatie chromosomale afwijking": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_chromosomale_afwijking_groep/specificatie_chromosomale_afwijking/@enum; allowed=('Complete_trisomy_21_syndrome_(disorder)', 'Complete_trisomy_18_syndrome_(disorder)', 'Complete_trisomy_13_syndrome_(disorder)', 'Andere_numerieke_chromosomale_afwijkingen', 'Overige_chromosomale_afwijkingen', 'Geen_informatie')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Specificatie chromosomale afwijking": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_chromosomale_afwijking_groep/specificatie_chromosomale_afwijking; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Specificatie chromosomale afwijking": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_chromosomale_afwijking_groep/specificatie_chromosomale_afwijking; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Any attributes allowed on /kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_chromosomale_afwijking_groep/adaextension == -->
@@ -4668,9 +4995,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Datum betrokkenheid": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts/datum_betrokkenheid/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82122')">Foutieve informatie voor "Datum betrokkenheid": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82122" [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts/datum_betrokkenheid/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Datum betrokkenheid": Attribuut "value" ontbreekt [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts/datum_betrokkenheid/@value]</assert>
          <assert test="empty(@value) or ((@value castable as xs:date) or (@value castable as xs:dateTime))">Foutieve informatie voor "Datum betrokkenheid": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts/datum_betrokkenheid/@value; type=t-datetime]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Datum betrokkenheid": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts/datum_betrokkenheid; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Datum betrokkenheid": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts/datum_betrokkenheid; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts/reden_betrokkenheid: == -->
@@ -4687,7 +5015,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Maternale_indicatie', 'Delivery_problem_(finding)', 'Delivery_problem_(finding)_Fetal_or_neonatal_effect_of_assisted_delivery_(disorder)', 'Delivery_problem_(finding)_Finding_of_malposition_of_foetus_(finding)', 'Delivery_problem_(finding)_Prolonged_rupture_of_membranes_(disorder)', 'Delivery_problem_(finding)_Amniotic_fluid_-meconium_stain_(finding)', 'Gestation_abnormality_(disorder)', 'Birth_weight_abnormality_(disorder)', 'Birth_asphyxia_(disorder)', 'Perinatal_respiratory_distress_(disorder)', 'Neonatal_hypoglycemia_(disorder)', 'Suspected_infectious_disease_(situation)', 'Verdenking_op_congenitale_afwijking', 'Neonatal_jaundice_(disorder)', '(verdenking_op)_Convulsies', 'Infant_feeding_problem_(finding)', '(te_verwachten)_Onttrekkingsverschijnselen', 'Psychosociale_indicatie', 'Overig', 'Geen_informatie'))">Foutieve informatie voor "Reden betrokkenheid": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts/reden_betrokkenheid/@enum; allowed=('Maternale_indicatie', 'Delivery_problem_(finding)', 'Delivery_problem_(finding)_Fetal_or_neonatal_effect_of_assisted_delivery_(disorder)', 'Delivery_problem_(finding)_Finding_of_malposition_of_foetus_(finding)', 'Delivery_problem_(finding)_Prolonged_rupture_of_membranes_(disorder)', 'Delivery_problem_(finding)_Amniotic_fluid_-meconium_stain_(finding)', 'Gestation_abnormality_(disorder)', 'Birth_weight_abnormality_(disorder)', 'Birth_asphyxia_(disorder)', 'Perinatal_respiratory_distress_(disorder)', 'Neonatal_hypoglycemia_(disorder)', 'Suspected_infectious_disease_(situation)', 'Verdenking_op_congenitale_afwijking', 'Neonatal_jaundice_(disorder)', '(verdenking_op)_Convulsies', 'Infant_feeding_problem_(finding)', '(te_verwachten)_Onttrekkingsverschijnselen', 'Psychosociale_indicatie', 'Overig', 'Geen_informatie')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Reden betrokkenheid": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts/reden_betrokkenheid; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Reden betrokkenheid": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts/reden_betrokkenheid; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts/type_betrokkenheid: == -->
@@ -4704,7 +5034,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('consultatie', 'overdracht', 'onbekend', 'geen_informatie'))">Foutieve informatie voor "Type betrokkenheid": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts/type_betrokkenheid/@enum; allowed=('consultatie', 'overdracht', 'onbekend', 'geen_informatie')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Type betrokkenheid": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts/type_betrokkenheid; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Type betrokkenheid": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts/type_betrokkenheid; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts/zorginstelling_lvrid: == -->
@@ -4713,10 +5045,11 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Zorginstelling LVR-ID": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts/zorginstelling_lvrid/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82335')">Foutieve informatie voor "Zorginstelling LVR-ID": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82335" [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts/zorginstelling_lvrid/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Zorginstelling LVR-ID": Attribuut "value" ontbreekt [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts/zorginstelling_lvrid/@value]</assert>
          <assert test="empty(@value) or (string-length(@value) ge 4)">Foutieve informatie voor "Zorginstelling LVR-ID": De waarde "<value-of select="@value"/>" voor attribuut "value" moet minstens 4 karakters bevatten [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts/zorginstelling_lvrid/@value; min-length=4]</assert>
          <assert test="empty(@value) or (string-length(@value) le 5)">Foutieve informatie voor "Zorginstelling LVR-ID": De waarde "<value-of select="@value"/>" voor attribuut "value" mag hoogstens 5 karakters bevatten [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts/zorginstelling_lvrid/@value; max-length=5]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Zorginstelling LVR-ID": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts/zorginstelling_lvrid; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Zorginstelling LVR-ID": Ongeldige attributen aangetroffen [/kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts/zorginstelling_lvrid; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Any attributes allowed on /kernset_geboortezorg/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts/adaextension == -->
@@ -4798,9 +5131,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Irregulaire antistoffen?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/psie/irregulaire_antistoffenq/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10812')">Foutieve informatie voor "Irregulaire antistoffen?": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10812" [/kernset_geboortezorg/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/psie/irregulaire_antistoffenq/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Irregulaire antistoffen?": Attribuut "value" ontbreekt [/kernset_geboortezorg/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/psie/irregulaire_antistoffenq/@value]</assert>
          <assert test="empty(@value) or (@value castable as xs:boolean)">Foutieve informatie voor "Irregulaire antistoffen?": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/psie/irregulaire_antistoffenq/@value; type=xs:boolean]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Irregulaire antistoffen?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/psie/irregulaire_antistoffenq; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Irregulaire antistoffen?": Ongeldige attributen aangetroffen [/kernset_geboortezorg/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/psie/irregulaire_antistoffenq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/psie/welke_irregulaire_antistoffen_vrouw_aanwezig: == -->
@@ -4817,7 +5151,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Rhesus_D', 'Rhesus_c', 'Rhesus_e', 'Kell', 'Duffy', 'Kidd', 'overig', 'onbekend'))">Foutieve informatie voor "Welke irregulaire antistoffen vrouw aanwezig.": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/psie/welke_irregulaire_antistoffen_vrouw_aanwezig/@enum; allowed=('Rhesus_D', 'Rhesus_c', 'Rhesus_e', 'Kell', 'Duffy', 'Kidd', 'overig', 'onbekend')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Welke irregulaire antistoffen vrouw aanwezig.": Ongeldige attributen aangetroffen [/kernset_geboortezorg/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/psie/welke_irregulaire_antistoffen_vrouw_aanwezig; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Welke irregulaire antistoffen vrouw aanwezig.": Ongeldige attributen aangetroffen [/kernset_geboortezorg/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/psie/welke_irregulaire_antistoffen_vrouw_aanwezig; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Any attributes allowed on /kernset_geboortezorg/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/psie/adaextension == -->
@@ -4868,9 +5204,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Datum": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/postnatale_fase/diagnoseinterventie_postpartum/datum/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82298')">Foutieve informatie voor "Datum": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82298" [/kernset_geboortezorg/postnatale_fase/diagnoseinterventie_postpartum/datum/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Datum": Attribuut "value" ontbreekt [/kernset_geboortezorg/postnatale_fase/diagnoseinterventie_postpartum/datum/@value]</assert>
          <assert test="empty(@value) or ((@value castable as xs:date) or (@value castable as xs:dateTime))">Foutieve informatie voor "Datum": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/postnatale_fase/diagnoseinterventie_postpartum/datum/@value; type=t-datetime]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Datum": Ongeldige attributen aangetroffen [/kernset_geboortezorg/postnatale_fase/diagnoseinterventie_postpartum/datum; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Datum": Ongeldige attributen aangetroffen [/kernset_geboortezorg/postnatale_fase/diagnoseinterventie_postpartum/datum; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/postnatale_fase/diagnoseinterventie_postpartum/pathologie_vrouw: == -->
@@ -4887,7 +5224,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('(Dreigende)_eclampsie,_(verdenking_op)_HELLP-syndroom_Pre-eclampsia_(disorder)', '(Dreigende)_eclampsie,_(verdenking_op)_HELLP-syndroom_Pre-eclampsia_added_to_pre-existing_hypertension_(disorder)', '(Dreigende)_eclampsie,_(verdenking_op)_HELLP-syndroom_Eclampsia_in_puerperium_(disorder)', '(Dreigende)_eclampsie,_(verdenking_op)_HELLP-syndroom_Hemolysis-elevated_liver_enzymes-low_platelet_count_syndrome_(disorder)', 'Postpartum_deep_phlebothrombosis_(disorder)', 'Postpartum_depression_(disorder)', 'Postpartum_psychosis_(disorder)', 'Abnormal_vaginal_bleeding_(finding)', 'Embolism_(disorder)', 'Hematoma_(disorder)', 'Anemia_(disorder)', 'Postnatal_infection_(disorder)_Endometritis_(disorder)', 'Postnatal_infection_(disorder)_Mastitis_(disorder)', 'Postnatal_infection_(disorder)_Urinary_tract_infectious_disease_(disorder)', 'Postnatal_infection_(disorder)_Episiotomy_infection_(disorder)', 'Postnatal_infection_(disorder)_Overige_infecties', 'Overig'))">Foutieve informatie voor "Pathologie vrouw": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/postnatale_fase/diagnoseinterventie_postpartum/pathologie_vrouw/@enum; allowed=('(Dreigende)_eclampsie,_(verdenking_op)_HELLP-syndroom_Pre-eclampsia_(disorder)', '(Dreigende)_eclampsie,_(verdenking_op)_HELLP-syndroom_Pre-eclampsia_added_to_pre-existing_hypertension_(disorder)', '(Dreigende)_eclampsie,_(verdenking_op)_HELLP-syndroom_Eclampsia_in_puerperium_(disorder)', '(Dreigende)_eclampsie,_(verdenking_op)_HELLP-syndroom_Hemolysis-elevated_liver_enzymes-low_platelet_count_syndrome_(disorder)', 'Postpartum_deep_phlebothrombosis_(disorder)', 'Postpartum_depression_(disorder)', 'Postpartum_psychosis_(disorder)', 'Abnormal_vaginal_bleeding_(finding)', 'Embolism_(disorder)', 'Hematoma_(disorder)', 'Anemia_(disorder)', 'Postnatal_infection_(disorder)_Endometritis_(disorder)', 'Postnatal_infection_(disorder)_Mastitis_(disorder)', 'Postnatal_infection_(disorder)_Urinary_tract_infectious_disease_(disorder)', 'Postnatal_infection_(disorder)_Episiotomy_infection_(disorder)', 'Postnatal_infection_(disorder)_Overige_infecties', 'Overig')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Pathologie vrouw": Ongeldige attributen aangetroffen [/kernset_geboortezorg/postnatale_fase/diagnoseinterventie_postpartum/pathologie_vrouw; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Pathologie vrouw": Ongeldige attributen aangetroffen [/kernset_geboortezorg/postnatale_fase/diagnoseinterventie_postpartum/pathologie_vrouw; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Any attributes allowed on /kernset_geboortezorg/postnatale_fase/diagnoseinterventie_postpartum/adaextension == -->
@@ -4929,9 +5268,10 @@ SOFTWARE.
          <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Voeding kind (datum)": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/postnatale_fase/kindspecifieke_gegevens/voeding_kind_groep/voeding_kind_datum/@conceptId; type=t-id]</assert>
          <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.60.90.77.2.6.70011')">Foutieve informatie voor "Voeding kind (datum)": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.6.70011" [/kernset_geboortezorg/postnatale_fase/kindspecifieke_gegevens/voeding_kind_groep/voeding_kind_datum/@conceptId]</assert>
          <!-- == Attribute "value": == -->
-         <assert test="exists(@value)">Foutieve informatie voor "Voeding kind (datum)": Attribuut "value" ontbreekt [/kernset_geboortezorg/postnatale_fase/kindspecifieke_gegevens/voeding_kind_groep/voeding_kind_datum/@value]</assert>
          <assert test="empty(@value) or ((@value castable as xs:date) or (@value castable as xs:dateTime))">Foutieve informatie voor "Voeding kind (datum)": De waarde "<value-of select="@value"/>" voor attribuut "value" heeft een onjuist formaat [/kernset_geboortezorg/postnatale_fase/kindspecifieke_gegevens/voeding_kind_groep/voeding_kind_datum/@value; type=t-datetime]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @xsi:*))">Foutieve informatie voor "Voeding kind (datum)": Ongeldige attributen aangetroffen [/kernset_geboortezorg/postnatale_fase/kindspecifieke_gegevens/voeding_kind_groep/voeding_kind_datum; allowed=(@conceptId, @value, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Voeding kind (datum)": Ongeldige attributen aangetroffen [/kernset_geboortezorg/postnatale_fase/kindspecifieke_gegevens/voeding_kind_groep/voeding_kind_datum; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/postnatale_fase/kindspecifieke_gegevens/voeding_kind_groep/substantie_voeding_kind: == -->
@@ -4948,7 +5288,9 @@ SOFTWARE.
          <!-- == Attribute "displayName": == -->
          <!-- == Attribute "enum": == -->
          <assert test="empty(@enum) or (@enum = ('Borstvoeding', 'Kunstvoeding', 'Onbekend', 'Geen_informatie'))">Foutieve informatie voor "Substantie voeding kind": De waarde "<value-of select="@enum"/>" voor attribuut "enum" is onjuist [/kernset_geboortezorg/postnatale_fase/kindspecifieke_gegevens/voeding_kind_groep/substantie_voeding_kind/@enum; allowed=('Borstvoeding', 'Kunstvoeding', 'Onbekend', 'Geen_informatie')]</assert>
-         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">Foutieve informatie voor "Substantie voeding kind": Ongeldige attributen aangetroffen [/kernset_geboortezorg/postnatale_fase/kindspecifieke_gegevens/voeding_kind_groep/substantie_voeding_kind; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</assert>
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Substantie voeding kind": Ongeldige attributen aangetroffen [/kernset_geboortezorg/postnatale_fase/kindspecifieke_gegevens/voeding_kind_groep/substantie_voeding_kind; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Any attributes allowed on /kernset_geboortezorg/postnatale_fase/kindspecifieke_gegevens/voeding_kind_groep/adaextension == -->

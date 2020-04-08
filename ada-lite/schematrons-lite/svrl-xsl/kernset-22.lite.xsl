@@ -3827,19 +3827,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Datum start zorgverantwoordelijkheid": Attribuut "value" ontbreekt [/kernset_aanleverbericht/zorgverlening/datum_start_zorgverantwoordelijkheid/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or ((@value castable as xs:date) or (@value castable as xs:dateTime))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -3856,14 +3843,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Datum start zorgverantwoordelijkheid": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zorgverlening/datum_start_zorgverantwoordelijkheid; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Datum start zorgverantwoordelijkheid": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zorgverlening/datum_start_zorgverantwoordelijkheid; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -3918,19 +3905,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Datum einde zorgverantwoordelijkheid": Attribuut "value" ontbreekt [/kernset_aanleverbericht/zorgverlening/datum_einde_zorgverantwoordelijkheid/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or ((@value castable as xs:date) or (@value castable as xs:dateTime))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -3947,14 +3921,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Datum einde zorgverantwoordelijkheid": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zorgverlening/datum_einde_zorgverantwoordelijkheid; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Datum einde zorgverantwoordelijkheid": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zorgverlening/datum_einde_zorgverantwoordelijkheid; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -4073,14 +4047,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Eindverantwoordelijk in welke perinatale periode?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zorgverlening/eindverantwoordelijk_in_welke_perinatale_periodeq; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Eindverantwoordelijk in welke perinatale periode?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zorgverlening/eindverantwoordelijk_in_welke_perinatale_periodeq; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -4199,14 +4173,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Conclusie risicostatus na intake": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zorgverlening/conclusie_risicostatus_na_intake; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Conclusie risicostatus na intake": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zorgverlening/conclusie_risicostatus_na_intake; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -4323,19 +4297,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Is er sprake van 'overdracht aan'?": Attribuut "value" ontbreekt [/kernset_aanleverbericht/zorgverlening/is_er_sprake_van_overdracht_aanq/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -4352,14 +4313,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Is er sprake van 'overdracht aan'?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zorgverlening/is_er_sprake_van_overdracht_aanq; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Is er sprake van 'overdracht aan'?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zorgverlening/is_er_sprake_van_overdracht_aanq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -4772,27 +4733,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Overname van zorginstelling (id)": Attribuut "value" ontbreekt [/kernset_aanleverbericht/zorgverlening/zorgverzoekdetails/overname_van_zorginstelling/overname_van_zorginstelling_id/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Overname van zorginstelling (id)": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zorgverlening/zorgverzoekdetails/overname_van_zorginstelling/overname_van_zorginstelling_id; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Overname van zorginstelling (id)": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zorgverlening/zorgverzoekdetails/overname_van_zorginstelling/overname_van_zorginstelling_id; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -4989,14 +4937,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Reden van overname (lijst PRN)": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zorgverlening/zorgverzoekdetails/redenen_van_overname/reden_van_overname_lijst_prn; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Reden van overname (lijst PRN)": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zorgverlening/zorgverzoekdetails/redenen_van_overname/reden_van_overname_lijst_prn; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -5193,19 +5141,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Datum van overdracht": Attribuut "value" ontbreekt [/kernset_aanleverbericht/zorgverlening/overdrachtdetails/datum_van_overdracht/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or ((@value castable as xs:date) or (@value castable as xs:dateTime))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -5222,14 +5157,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Datum van overdracht": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zorgverlening/overdrachtdetails/datum_van_overdracht; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Datum van overdracht": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zorgverlening/overdrachtdetails/datum_van_overdracht; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -5348,14 +5283,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Overdracht aan zorginstelling (specialisme)": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zorgverlening/overdrachtdetails/overdracht_aan_zorginstelling_specialisme; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Overdracht aan zorginstelling (specialisme)": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zorgverlening/overdrachtdetails/overdracht_aan_zorginstelling_specialisme; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -5410,27 +5345,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Overdracht aan zorginstelling (id)": Attribuut "value" ontbreekt [/kernset_aanleverbericht/zorgverlening/overdrachtdetails/overdracht_aan_zorginstelling_id/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Overdracht aan zorginstelling (id)": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zorgverlening/overdrachtdetails/overdracht_aan_zorginstelling_id; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Overdracht aan zorginstelling (id)": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zorgverlening/overdrachtdetails/overdracht_aan_zorginstelling_id; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -5549,14 +5471,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Perinatale periode van overdracht": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zorgverlening/overdrachtdetails/perinatale_periode_van_overdracht; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Perinatale periode van overdracht": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zorgverlening/overdrachtdetails/perinatale_periode_van_overdracht; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -5815,14 +5737,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Reden 'overdracht aan' (lijst PRN)": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zorgverlening/overdrachtdetails/redenen_van_overdracht_aan/reden_overdracht_aan_lijst_prn; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Reden 'overdracht aan' (lijst PRN)": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zorgverlening/overdrachtdetails/redenen_van_overdracht_aan/reden_overdracht_aan_lijst_prn; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -6095,19 +6017,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Zorginstelling LVR-ID": Attribuut "value" ontbreekt [/kernset_aanleverbericht/zorgverlenerzorginstelling/zorginstelling/zorginstelling_lvrid/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or (string-length(@value) ge 4)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -6140,14 +6049,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Zorginstelling LVR-ID": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zorgverlenerzorginstelling/zorginstelling/zorginstelling_lvrid; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Zorginstelling LVR-ID": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zorgverlenerzorginstelling/zorginstelling/zorginstelling_lvrid; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -6406,19 +6315,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Burgerservicenummer": Attribuut "value" ontbreekt [/kernset_aanleverbericht/vrouw/burgerservicenummer/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or (string-length(@value) ge 9)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -6451,14 +6347,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Burgerservicenummer": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/burgerservicenummer; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Burgerservicenummer": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/burgerservicenummer; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -6513,27 +6409,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Lokale persoonsidentificatie": Attribuut "value" ontbreekt [/kernset_aanleverbericht/vrouw/lokale_persoonsidentificatie/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Lokale persoonsidentificatie": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/lokale_persoonsidentificatie; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Lokale persoonsidentificatie": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/lokale_persoonsidentificatie; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -6588,19 +6471,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Geboortedatum": Attribuut "value" ontbreekt [/kernset_aanleverbericht/vrouw/geboortedatum/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or ((@value castable as xs:date) or (@value castable as xs:dateTime))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -6617,14 +6487,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Geboortedatum": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/geboortedatum; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Geboortedatum": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/geboortedatum; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -6805,14 +6675,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Etniciteit": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/etniciteit; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Etniciteit": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/etniciteit; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -6929,19 +6799,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Lengte (gemeten)": Attribuut "value" ontbreekt [/kernset_aanleverbericht/vrouw/lengte_gemeten/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:decimal)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -7006,14 +6863,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @unit, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @unit, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @unit, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @unit, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Lengte (gemeten)": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/lengte_gemeten; allowed=(@conceptId, @value, @unit, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Lengte (gemeten)": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/lengte_gemeten; allowed=(@conceptId, @value, @unit, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -7068,19 +6925,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Vrouwelijke genitale verminking?": Attribuut "value" ontbreekt [/kernset_aanleverbericht/vrouw/vrouwelijke_genitale_verminkingq/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -7097,14 +6941,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Vrouwelijke genitale verminking?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/vrouwelijke_genitale_verminkingq; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Vrouwelijke genitale verminking?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/vrouwelijke_genitale_verminkingq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -7223,14 +7067,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Type vrouwelijke genitale verminking": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/type_vrouwelijke_genitale_verminking; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Type vrouwelijke genitale verminking": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/type_vrouwelijke_genitale_verminking; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -7363,27 +7207,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Postcode": Attribuut "value" ontbreekt [/kernset_aanleverbericht/vrouw/adres/postcode/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Postcode": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/adres/postcode; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Postcode": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/adres/postcode; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -7532,19 +7363,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Onder behandeling (geweest)?": Attribuut "value" ontbreekt [/kernset_aanleverbericht/vrouw/anamnese/onder_behandeling_geweestq/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -7561,14 +7379,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Onder behandeling (geweest)?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/anamnese/onder_behandeling_geweestq; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Onder behandeling (geweest)?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/anamnese/onder_behandeling_geweestq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -8290,19 +8108,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Auto-immuun aandoening?": Attribuut "value" ontbreekt [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/autoimmuun_aandoeningq/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -8319,14 +8124,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Auto-immuun aandoening?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/autoimmuun_aandoeningq; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Auto-immuun aandoening?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/autoimmuun_aandoeningq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -8445,14 +8250,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Auto-immuun aandoening": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/autoimmuun_aandoening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Auto-immuun aandoening": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/autoimmuun_aandoening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -8507,19 +8312,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Cardiovasculaire aandoening?": Attribuut "value" ontbreekt [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/cardiovasculaire_aandoeningq/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -8536,14 +8328,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Cardiovasculaire aandoening?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/cardiovasculaire_aandoeningq; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Cardiovasculaire aandoening?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/cardiovasculaire_aandoeningq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -8662,14 +8454,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Cardiovasculaire aandoening": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/cardiovasculaire_aandoening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Cardiovasculaire aandoening": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/cardiovasculaire_aandoening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -8724,19 +8516,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Urogenitale aandoening?": Attribuut "value" ontbreekt [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/urogenitale_aandoeningq/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -8753,14 +8532,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Urogenitale aandoening?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/urogenitale_aandoeningq; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Urogenitale aandoening?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/urogenitale_aandoeningq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -8879,14 +8658,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Urogenitale aandoening": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/urogenitale_aandoening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Urogenitale aandoening": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/urogenitale_aandoening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -8941,19 +8720,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Oncologische aandoening?": Attribuut "value" ontbreekt [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/oncologische_aandoeningq/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -8970,14 +8736,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Oncologische aandoening?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/oncologische_aandoeningq; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Oncologische aandoening?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/oncologische_aandoeningq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -9096,14 +8862,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Oncologische aandoening": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/oncologische_aandoening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Oncologische aandoening": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/oncologische_aandoening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -9158,19 +8924,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Schildklier aandoening?": Attribuut "value" ontbreekt [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/schildklier_aandoeningq/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -9187,14 +8940,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Schildklier aandoening?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/schildklier_aandoeningq; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Schildklier aandoening?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/schildklier_aandoeningq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -9313,14 +9066,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Schildklier aandoening": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/schildklier_aandoening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Schildklier aandoening": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/schildklier_aandoening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -9375,19 +9128,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Diabetes mellitus?": Attribuut "value" ontbreekt [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/diabetes_mellitusq/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -9404,14 +9144,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Diabetes mellitus?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/diabetes_mellitusq; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Diabetes mellitus?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/diabetes_mellitusq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -9466,19 +9206,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Neurologische aandoening?": Attribuut "value" ontbreekt [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/neurologische_aandoeningq/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -9495,14 +9222,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Neurologische aandoening?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/neurologische_aandoeningq; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Neurologische aandoening?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/neurologische_aandoeningq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -9621,14 +9348,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Neurologische aandoening": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/neurologische_aandoening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Neurologische aandoening": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/neurologische_aandoening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -9683,19 +9410,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Infectieziekte?": Attribuut "value" ontbreekt [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/infectieziekteq/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -9712,14 +9426,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Infectieziekte?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/infectieziekteq; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Infectieziekte?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/infectieziekteq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -9838,14 +9552,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Infectieziekte": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/infectieziekte; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Infectieziekte": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/infectieziekte; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -9900,19 +9614,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "MDL aandoening?": Attribuut "value" ontbreekt [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/mdl_aandoeningq/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -9929,14 +9630,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "MDL aandoening?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/mdl_aandoeningq; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "MDL aandoening?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/mdl_aandoeningq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -10055,14 +9756,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "MDL aandoening": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/mdl_aandoening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "MDL aandoening": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/mdl_aandoening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -10117,19 +9818,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Anemie?": Attribuut "value" ontbreekt [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/anemieq/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -10146,14 +9834,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Anemie?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/anemieq; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Anemie?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/anemieq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -10272,14 +9960,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Anemie": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/anemie; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Anemie": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/anemie; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -10334,19 +10022,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Longaandoening?": Attribuut "value" ontbreekt [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/longaandoeningq/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -10363,14 +10038,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Longaandoening?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/longaandoeningq; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Longaandoening?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/longaandoeningq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -10489,14 +10164,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Longaandoening": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/longaandoening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Longaandoening": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/longaandoening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -10551,19 +10226,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Gynaecologische aandoening?": Attribuut "value" ontbreekt [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/gynaecologische_aandoeningq/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -10580,14 +10242,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Gynaecologische aandoening?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/gynaecologische_aandoeningq; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Gynaecologische aandoening?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/gynaecologische_aandoeningq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -10706,14 +10368,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Gynaecologische aandoening": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/gynaecologische_aandoening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Gynaecologische aandoening": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/gynaecologische_aandoening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -10768,19 +10430,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Orthopedische afwijking?": Attribuut "value" ontbreekt [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/orthopedische_afwijkingq/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -10797,14 +10446,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Orthopedische afwijking?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/orthopedische_afwijkingq; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Orthopedische afwijking?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/orthopedische_afwijkingq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -10923,14 +10572,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Orthopedische afwijking": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/orthopedische_afwijking; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Orthopedische afwijking": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/orthopedische_afwijking; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -10985,19 +10634,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Bloedtransfusie?": Attribuut "value" ontbreekt [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/bloedtransfusieq/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -11014,14 +10650,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Bloedtransfusie?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/bloedtransfusieq; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Bloedtransfusie?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/bloedtransfusieq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -11076,19 +10712,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Transfusiereactie?": Attribuut "value" ontbreekt [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/transfusiereactieq/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -11105,14 +10728,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Transfusiereactie?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/transfusiereactieq; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Transfusiereactie?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/transfusiereactieq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -11167,19 +10790,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Operatie?": Attribuut "value" ontbreekt [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/operatieq/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -11196,14 +10806,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Operatie?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/operatieq; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Operatie?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/operatieq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -11322,14 +10932,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Type operatie": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/type_operatie; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Type operatie": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/type_operatie; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -11384,19 +10994,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Stollingsprobleem?": Attribuut "value" ontbreekt [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/stollingsprobleemq/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -11413,14 +11010,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Stollingsprobleem?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/stollingsprobleemq; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Stollingsprobleem?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/stollingsprobleemq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -11539,14 +11136,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Type stollingsprobleem": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/type_stollingsprobleem; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Type stollingsprobleem": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/type_stollingsprobleem; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -11601,19 +11198,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Psychiatrie?": Attribuut "value" ontbreekt [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/psychiatrieq/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -11630,14 +11214,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Psychiatrie?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/psychiatrieq; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Psychiatrie?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/psychiatrieq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -11692,19 +11276,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Overige aandoening?": Attribuut "value" ontbreekt [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/overige_aandoeningq/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -11721,14 +11292,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Overige aandoening?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/overige_aandoeningq; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Overige aandoening?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/overige_aandoeningq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -11783,27 +11354,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Overige aandoening": Attribuut "value" ontbreekt [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/overige_aandoening/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Overige aandoening": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/overige_aandoening; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Overige aandoening": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/vrouw/anamnese/algemene_anamnese/overige_aandoening; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -12063,14 +11621,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Wijze einde zwangerschap": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/wijze_einde_zwangerschap; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Wijze einde zwangerschap": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/wijze_einde_zwangerschap; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -12125,19 +11683,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Definitieve à terme datum": Attribuut "value" ontbreekt [/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/definitieve_a_terme_datum/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or ((@value castable as xs:date) or (@value castable as xs:dateTime))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -12154,14 +11699,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Definitieve à terme datum": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/definitieve_a_terme_datum; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Definitieve à terme datum": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/definitieve_a_terme_datum; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -12278,19 +11823,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Irregulaire antistoffen?": Attribuut "value" ontbreekt [/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/irregulaire_antistoffenq/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -12307,14 +11839,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Irregulaire antistoffen?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/irregulaire_antistoffenq; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Irregulaire antistoffen?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/irregulaire_antistoffenq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -12749,14 +12281,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Gynaecologische aandoening": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/gynaecologische_aandoening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Gynaecologische aandoening": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/gynaecologische_aandoening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -12811,19 +12343,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Bloedverlies?": Attribuut "value" ontbreekt [/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/bloedverliesq/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -12840,14 +12359,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Bloedverlies?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/bloedverliesq; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Bloedverlies?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/bloedverliesq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -12902,19 +12421,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Cervixinsufficiëntie?": Attribuut "value" ontbreekt [/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/cervixinsufficientieq/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -12931,14 +12437,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Cervixinsufficiëntie?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/cervixinsufficientieq; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Cervixinsufficiëntie?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/cervixinsufficientieq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -13057,14 +12563,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Infectie": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/infectie; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Infectie": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/infectie; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -13119,19 +12625,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Hyperemesis gravidarum?": Attribuut "value" ontbreekt [/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/hyperemesis_gravidarumq/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -13148,14 +12641,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Hyperemesis gravidarum?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/hyperemesis_gravidarumq; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Hyperemesis gravidarum?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/hyperemesis_gravidarumq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -13274,14 +12767,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Hypertensieve aandoening": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/hypertensieve_aandoening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Hypertensieve aandoening": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/hypertensieve_aandoening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -13336,19 +12829,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Zwangerschapscholestase?": Attribuut "value" ontbreekt [/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/zwangerschapscholestaseq/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -13365,14 +12845,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Zwangerschapscholestase?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/zwangerschapscholestaseq; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Zwangerschapscholestase?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/zwangerschapscholestaseq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -13427,19 +12907,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Diabetes gravidarum met insuline?": Attribuut "value" ontbreekt [/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/diabetes_gravidarum_met_insulineq/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -13456,14 +12923,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Diabetes gravidarum met insuline?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/diabetes_gravidarum_met_insulineq; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Diabetes gravidarum met insuline?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/diabetes_gravidarum_met_insulineq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -13582,14 +13049,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Afwijkende groei foetus": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/afwijkende_groei_foetus; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Afwijkende groei foetus": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/afwijkende_groei_foetus; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -13644,19 +13111,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Dreigende partus immaturus?": Attribuut "value" ontbreekt [/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/dreigende_partus_immaturusq/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -13673,14 +13127,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Dreigende partus immaturus?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/dreigende_partus_immaturusq; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Dreigende partus immaturus?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/dreigende_partus_immaturusq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -13735,19 +13189,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Dreigende partus prematurus?": Attribuut "value" ontbreekt [/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/dreigende_partus_prematurusq/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -13764,14 +13205,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Dreigende partus prematurus?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/dreigende_partus_prematurusq; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Dreigende partus prematurus?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/dreigende_partus_prematurusq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -13826,19 +13267,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Abruptio placentae?": Attribuut "value" ontbreekt [/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/abruptio_placentaeq/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -13855,14 +13283,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Abruptio placentae?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/abruptio_placentaeq; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Abruptio placentae?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/diagnose/abruptio_placentaeq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -14089,19 +13517,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Hoeveelheid bloedverlies": Attribuut "value" ontbreekt [/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/hoeveelheid_bloedverlies/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:decimal)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -14134,14 +13549,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @unit, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @unit, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @unit, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @unit, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Hoeveelheid bloedverlies": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/hoeveelheid_bloedverlies; allowed=(@conceptId, @value, @unit, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Hoeveelheid bloedverlies": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/hoeveelheid_bloedverlies; allowed=(@conceptId, @value, @unit, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -14400,14 +13815,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Geboorte placenta": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/placenta/geboorte_placenta; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Geboorte placenta": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/placenta/geboorte_placenta; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -14898,19 +14313,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Geboortedatum": Attribuut "value" ontbreekt [/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/demografische_gegevens/geboortedatum/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or ((@value castable as xs:date) or (@value castable as xs:dateTime))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -14927,14 +14329,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Geboortedatum": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/demografische_gegevens/geboortedatum; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Geboortedatum": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/demografische_gegevens/geboortedatum; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -15195,14 +14597,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Type partus": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/type_partus; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Type partus": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/type_partus; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -15321,14 +14723,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Percentiel van het geboortegewicht": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/percentiel_van_het_geboortegewicht; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Percentiel van het geboortegewicht": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/percentiel_van_het_geboortegewicht; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -15383,19 +14785,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Apgarscore na 5 min.": Attribuut "value" ontbreekt [/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/apgarscore_na_5_min/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:decimal)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -15444,14 +14833,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Apgarscore na 5 min.": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/apgarscore_na_5_min; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Apgarscore na 5 min.": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/apgarscore_na_5_min; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -15506,19 +14895,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Congenitale afwijkingen?": Attribuut "value" ontbreekt [/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/congenitale_afwijkingenq/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -15535,14 +14911,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Congenitale afwijkingen?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/congenitale_afwijkingenq; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Congenitale afwijkingen?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/congenitale_afwijkingenq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -15737,19 +15113,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Chromosomale afwijkingen?": Attribuut "value" ontbreekt [/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/congenitale_afwijkingen_groep/chromosomale_afwijkingenq/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -15766,14 +15129,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Chromosomale afwijkingen?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/congenitale_afwijkingen_groep/chromosomale_afwijkingenq; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Chromosomale afwijkingen?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/congenitale_afwijkingen_groep/chromosomale_afwijkingenq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -16033,19 +15396,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Graviditeit": Attribuut "value" ontbreekt [/kernset_aanleverbericht/zwangerschap/graviditeit/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:decimal)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -16094,14 +15444,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Graviditeit": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zwangerschap/graviditeit; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Graviditeit": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zwangerschap/graviditeit; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -16156,19 +15506,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Pariteit (vóór deze zwangerschap)": Attribuut "value" ontbreekt [/kernset_aanleverbericht/zwangerschap/pariteit_voor_deze_zwangerschap/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:decimal)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -16217,14 +15554,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Pariteit (vóór deze zwangerschap)": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zwangerschap/pariteit_voor_deze_zwangerschap; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Pariteit (vóór deze zwangerschap)": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zwangerschap/pariteit_voor_deze_zwangerschap; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -16279,19 +15616,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Definitieve à terme datum": Attribuut "value" ontbreekt [/kernset_aanleverbericht/zwangerschap/definitieve_a_terme_datum/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or ((@value castable as xs:date) or (@value castable as xs:dateTime))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -16308,14 +15632,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Definitieve à terme datum": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zwangerschap/definitieve_a_terme_datum; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Definitieve à terme datum": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zwangerschap/definitieve_a_terme_datum; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -16620,14 +15944,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Intra-uteriene behandeling": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zwangerschap/intrauteriene_behandeling; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Intra-uteriene behandeling": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zwangerschap/intrauteriene_behandeling; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -16682,19 +16006,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Maternale sterfte?": Attribuut "value" ontbreekt [/kernset_aanleverbericht/zwangerschap/maternale_sterfteq/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -16711,14 +16022,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Maternale sterfte?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zwangerschap/maternale_sterfteq; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Maternale sterfte?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zwangerschap/maternale_sterfteq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -16837,14 +16148,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Wijze einde zwangerschap": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zwangerschap/wijze_einde_zwangerschap; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Wijze einde zwangerschap": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zwangerschap/wijze_einde_zwangerschap; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -17041,14 +16352,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Voorgenomen plaats baring tijdens zwangerschap (type locatie)": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zwangerschap/voornemens/voorgenomen_plaats_baring_tijdens_zwangerschap_type_locatie; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Voorgenomen plaats baring tijdens zwangerschap (type locatie)": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zwangerschap/voornemens/voorgenomen_plaats_baring_tijdens_zwangerschap_type_locatie; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -17277,19 +16588,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Datum controle": Attribuut "value" ontbreekt [/kernset_aanleverbericht/zwangerschap/prenatale_controle/datum_controle/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or ((@value castable as xs:date) or (@value castable as xs:dateTime))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -17306,14 +16604,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Datum controle": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zwangerschap/prenatale_controle/datum_controle; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Datum controle": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zwangerschap/prenatale_controle/datum_controle; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -17368,19 +16666,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Zwangerschapsduur": Attribuut "value" ontbreekt [/kernset_aanleverbericht/zwangerschap/prenatale_controle/zwangerschapsduur/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:decimal)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -17413,14 +16698,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @unit, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @unit, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @unit, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @unit, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Zwangerschapsduur": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zwangerschap/prenatale_controle/zwangerschapsduur; allowed=(@conceptId, @value, @unit, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Zwangerschapsduur": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zwangerschap/prenatale_controle/zwangerschapsduur; allowed=(@conceptId, @value, @unit, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -17539,14 +16824,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Leven voelen": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zwangerschap/prenatale_controle/leven_voelen; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Leven voelen": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zwangerschap/prenatale_controle/leven_voelen; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -17665,14 +16950,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Rookgedrag": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zwangerschap/prenatale_controle/rookgedrag; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Rookgedrag": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zwangerschap/prenatale_controle/rookgedrag; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -17791,14 +17076,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Alcoholgebruik": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zwangerschap/prenatale_controle/alcoholgebruik; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Alcoholgebruik": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zwangerschap/prenatale_controle/alcoholgebruik; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -17853,19 +17138,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Drugsgebruik?": Attribuut "value" ontbreekt [/kernset_aanleverbericht/zwangerschap/prenatale_controle/drugsgebruikq/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -17882,14 +17154,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Drugsgebruik?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zwangerschap/prenatale_controle/drugsgebruikq; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Drugsgebruik?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zwangerschap/prenatale_controle/drugsgebruikq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -17938,19 +17210,6 @@ SOFTWARE.
                <svrl:text>Foutieve informatie voor "Gewicht (gemeten)": De waarde "<xsl:text/>
                   <xsl:value-of select="@conceptId"/>
                   <xsl:text/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.60.90.77.2.5.20211" [/kernset_aanleverbericht/zwangerschap/prenatale_controle/gewicht_gemeten/@conceptId]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Gewicht (gemeten)": Attribuut "value" ontbreekt [/kernset_aanleverbericht/zwangerschap/prenatale_controle/gewicht_gemeten/@value]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -18021,14 +17280,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @unit, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @unit, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @unit, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @unit, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Gewicht (gemeten)": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zwangerschap/prenatale_controle/gewicht_gemeten; allowed=(@conceptId, @value, @unit, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Gewicht (gemeten)": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zwangerschap/prenatale_controle/gewicht_gemeten; allowed=(@conceptId, @value, @unit, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -18385,19 +17644,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Datum": Attribuut "value" ontbreekt [/kernset_aanleverbericht/zwangerschap/diagnose/datum/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or ((@value castable as xs:date) or (@value castable as xs:dateTime))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -18414,14 +17660,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Datum": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zwangerschap/diagnose/datum; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Datum": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zwangerschap/diagnose/datum; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -18476,19 +17722,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Zwangerschapsduur": Attribuut "value" ontbreekt [/kernset_aanleverbericht/zwangerschap/diagnose/zwangerschapsduur/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:decimal)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -18521,14 +17754,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @unit, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @unit, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @unit, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @unit, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Zwangerschapsduur": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zwangerschap/diagnose/zwangerschapsduur; allowed=(@conceptId, @value, @unit, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Zwangerschapsduur": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zwangerschap/diagnose/zwangerschapsduur; allowed=(@conceptId, @value, @unit, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -18647,14 +17880,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Gynaecologische aandoening": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zwangerschap/diagnose/gynaecologische_aandoening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Gynaecologische aandoening": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zwangerschap/diagnose/gynaecologische_aandoening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -18709,19 +17942,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Bloedverlies?": Attribuut "value" ontbreekt [/kernset_aanleverbericht/zwangerschap/diagnose/bloedverliesq/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -18738,14 +17958,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Bloedverlies?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zwangerschap/diagnose/bloedverliesq; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Bloedverlies?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zwangerschap/diagnose/bloedverliesq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -18800,19 +18020,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Partiële mola?": Attribuut "value" ontbreekt [/kernset_aanleverbericht/zwangerschap/diagnose/partiele_molaq/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -18829,14 +18036,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Partiële mola?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zwangerschap/diagnose/partiele_molaq; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Partiële mola?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zwangerschap/diagnose/partiele_molaq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -18891,19 +18098,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Cervixinsufficiëntie?": Attribuut "value" ontbreekt [/kernset_aanleverbericht/zwangerschap/diagnose/cervixinsufficientieq/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -18920,14 +18114,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Cervixinsufficiëntie?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zwangerschap/diagnose/cervixinsufficientieq; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Cervixinsufficiëntie?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zwangerschap/diagnose/cervixinsufficientieq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -19046,14 +18240,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Infectie": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zwangerschap/diagnose/infectie; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Infectie": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zwangerschap/diagnose/infectie; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -19108,19 +18302,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Hyperemesis gravidarum?": Attribuut "value" ontbreekt [/kernset_aanleverbericht/zwangerschap/diagnose/hyperemesis_gravidarumq/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -19137,14 +18318,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Hyperemesis gravidarum?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zwangerschap/diagnose/hyperemesis_gravidarumq; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Hyperemesis gravidarum?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zwangerschap/diagnose/hyperemesis_gravidarumq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -19263,14 +18444,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Hypertensieve aandoening": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zwangerschap/diagnose/hypertensieve_aandoening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Hypertensieve aandoening": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zwangerschap/diagnose/hypertensieve_aandoening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -19325,19 +18506,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Zwangerschapscholestase?": Attribuut "value" ontbreekt [/kernset_aanleverbericht/zwangerschap/diagnose/zwangerschapscholestaseq/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -19354,14 +18522,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Zwangerschapscholestase?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zwangerschap/diagnose/zwangerschapscholestaseq; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Zwangerschapscholestase?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zwangerschap/diagnose/zwangerschapscholestaseq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -19416,19 +18584,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Diabetes gravidarum met insuline?": Attribuut "value" ontbreekt [/kernset_aanleverbericht/zwangerschap/diagnose/diabetes_gravidarum_met_insulineq/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -19445,14 +18600,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Diabetes gravidarum met insuline?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zwangerschap/diagnose/diabetes_gravidarum_met_insulineq; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Diabetes gravidarum met insuline?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zwangerschap/diagnose/diabetes_gravidarum_met_insulineq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -19571,14 +18726,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Afwijkende groei foetus": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zwangerschap/diagnose/afwijkende_groei_foetus; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Afwijkende groei foetus": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zwangerschap/diagnose/afwijkende_groei_foetus; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -19633,19 +18788,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Dreigende partus immaturus?": Attribuut "value" ontbreekt [/kernset_aanleverbericht/zwangerschap/diagnose/dreigende_partus_immaturusq/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -19662,14 +18804,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Dreigende partus immaturus?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zwangerschap/diagnose/dreigende_partus_immaturusq; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Dreigende partus immaturus?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zwangerschap/diagnose/dreigende_partus_immaturusq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -19724,19 +18866,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Dreigende partus prematurus?": Attribuut "value" ontbreekt [/kernset_aanleverbericht/zwangerschap/diagnose/dreigende_partus_prematurusq/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -19753,14 +18882,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Dreigende partus prematurus?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zwangerschap/diagnose/dreigende_partus_prematurusq; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Dreigende partus prematurus?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zwangerschap/diagnose/dreigende_partus_prematurusq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -19815,19 +18944,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Abruptio placentae?": Attribuut "value" ontbreekt [/kernset_aanleverbericht/zwangerschap/diagnose/abruptio_placentaeq/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -19844,14 +18960,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Abruptio placentae?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zwangerschap/diagnose/abruptio_placentaeq; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Abruptio placentae?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zwangerschap/diagnose/abruptio_placentaeq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -20160,19 +19276,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Partusnummer": Attribuut "value" ontbreekt [/kernset_aanleverbericht/bevalling/partusnummer/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or (string-length(@value) ge 1)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -20205,14 +19308,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Partusnummer": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/bevalling/partusnummer; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Partusnummer": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/bevalling/partusnummer; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -20329,19 +19432,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Aantal geboren kinderen": Attribuut "value" ontbreekt [/kernset_aanleverbericht/bevalling/aantal_geboren_kinderen/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:decimal)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -20390,14 +19480,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Aantal geboren kinderen": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/bevalling/aantal_geboren_kinderen; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Aantal geboren kinderen": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/bevalling/aantal_geboren_kinderen; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -20516,14 +19606,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Risicostatus vóór baring": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/bevalling/risicostatus_voor_baring; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Risicostatus vóór baring": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/bevalling/risicostatus_voor_baring; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -20642,14 +19732,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Wijze waarop de baring begon": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/bevalling/wijze_waarop_de_baring_begon; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Wijze waarop de baring begon": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/bevalling/wijze_waarop_de_baring_begon; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -20766,19 +19856,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Tijdstip begin actieve ontsluiting": Attribuut "value" ontbreekt [/kernset_aanleverbericht/bevalling/tijdstip_begin_actieve_ontsluiting/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or ((@value castable as xs:date) or (@value castable as xs:dateTime))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -20795,14 +19872,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Tijdstip begin actieve ontsluiting": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/bevalling/tijdstip_begin_actieve_ontsluiting; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Tijdstip begin actieve ontsluiting": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/bevalling/tijdstip_begin_actieve_ontsluiting; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -20857,19 +19934,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Bijstimulatie toegediend?": Attribuut "value" ontbreekt [/kernset_aanleverbericht/bevalling/bijstimulatie_toegediendq/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -20886,14 +19950,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Bijstimulatie toegediend?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/bevalling/bijstimulatie_toegediendq; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Bijstimulatie toegediend?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/bevalling/bijstimulatie_toegediendq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -21072,19 +20136,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Hoeveelheid bloedverlies": Attribuut "value" ontbreekt [/kernset_aanleverbericht/bevalling/hoeveelheid_bloedverlies/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:decimal)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -21117,14 +20168,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @unit, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @unit, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @unit, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @unit, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Hoeveelheid bloedverlies": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/bevalling/hoeveelheid_bloedverlies; allowed=(@conceptId, @value, @unit, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Hoeveelheid bloedverlies": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/bevalling/hoeveelheid_bloedverlies; allowed=(@conceptId, @value, @unit, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -21243,14 +20294,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Conditie perineum postpartum": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/bevalling/conditie_perineum_postpartum; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Conditie perineum postpartum": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/bevalling/conditie_perineum_postpartum; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -21479,19 +20530,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "PPROM?": Attribuut "value" ontbreekt [/kernset_aanleverbericht/bevalling/diagnose_bevalling/ppromq/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -21508,14 +20546,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "PPROM?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/bevalling/diagnose_bevalling/ppromq; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "PPROM?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/bevalling/diagnose_bevalling/ppromq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -21570,19 +20608,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "PROM?": Attribuut "value" ontbreekt [/kernset_aanleverbericht/bevalling/diagnose_bevalling/promq/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -21599,14 +20624,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "PROM?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/bevalling/diagnose_bevalling/promq; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "PROM?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/bevalling/diagnose_bevalling/promq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -21661,19 +20686,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Koorts?": Attribuut "value" ontbreekt [/kernset_aanleverbericht/bevalling/diagnose_bevalling/koortsq/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -21690,14 +20702,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Koorts?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/bevalling/diagnose_bevalling/koortsq; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Koorts?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/bevalling/diagnose_bevalling/koortsq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -21752,19 +20764,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Niet vorderende ontsluiting?": Attribuut "value" ontbreekt [/kernset_aanleverbericht/bevalling/diagnose_bevalling/niet_vorderende_ontsluitingq/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -21781,14 +20780,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Niet vorderende ontsluiting?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/bevalling/diagnose_bevalling/niet_vorderende_ontsluitingq; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Niet vorderende ontsluiting?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/bevalling/diagnose_bevalling/niet_vorderende_ontsluitingq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -21843,19 +20842,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Niet vorderende uitdrijving?": Attribuut "value" ontbreekt [/kernset_aanleverbericht/bevalling/diagnose_bevalling/niet_vorderende_uitdrijvingq/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -21872,14 +20858,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Niet vorderende uitdrijving?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/bevalling/diagnose_bevalling/niet_vorderende_uitdrijvingq; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Niet vorderende uitdrijving?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/bevalling/diagnose_bevalling/niet_vorderende_uitdrijvingq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -21934,19 +20920,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Verdenking foetale nood?": Attribuut "value" ontbreekt [/kernset_aanleverbericht/bevalling/diagnose_bevalling/verdenking_foetale_noodq/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -21963,14 +20936,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Verdenking foetale nood?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/bevalling/diagnose_bevalling/verdenking_foetale_noodq; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Verdenking foetale nood?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/bevalling/diagnose_bevalling/verdenking_foetale_noodq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -22025,19 +20998,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Vastzittende placenta?": Attribuut "value" ontbreekt [/kernset_aanleverbericht/bevalling/diagnose_bevalling/vastzittende_placentaq/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -22054,14 +21014,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Vastzittende placenta?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/bevalling/diagnose_bevalling/vastzittende_placentaq; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Vastzittende placenta?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/bevalling/diagnose_bevalling/vastzittende_placentaq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -22274,14 +21234,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Interventie begin baring": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/bevalling/interventies_begin_baring_groep/interventie_begin_baring; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Interventie begin baring": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/bevalling/interventies_begin_baring_groep/interventie_begin_baring; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -22400,14 +21360,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Indicatie interventie begin baring": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/bevalling/interventies_begin_baring_groep/indicatie_interventie_begin_baring; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Indicatie interventie begin baring": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/bevalling/interventies_begin_baring_groep/indicatie_interventie_begin_baring; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -22556,19 +21516,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Medicatie nageboortetijdperk?": Attribuut "value" ontbreekt [/kernset_aanleverbericht/bevalling/medicatie_nageboortetijdperk_groep/medicatie_nageboortetijdperkq/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -22585,14 +21532,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Medicatie nageboortetijdperk?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/bevalling/medicatie_nageboortetijdperk_groep/medicatie_nageboortetijdperkq; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Medicatie nageboortetijdperk?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/bevalling/medicatie_nageboortetijdperk_groep/medicatie_nageboortetijdperkq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -22711,14 +21658,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Soort medicatie nageboortetijdperk": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/bevalling/medicatie_nageboortetijdperk_groep/soort_medicatie_nageboortetijdperk; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Soort medicatie nageboortetijdperk": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/bevalling/medicatie_nageboortetijdperk_groep/soort_medicatie_nageboortetijdperk; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -22915,14 +21862,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Geboorte placenta": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/bevalling/placenta/geboorte_placenta; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Geboorte placenta": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/bevalling/placenta/geboorte_placenta; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -23323,14 +22270,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Werkelijke plaats baring (type locatie)": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/werkelijke_plaats_baring_type_locatie; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Werkelijke plaats baring (type locatie)": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/werkelijke_plaats_baring_type_locatie; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -23711,19 +22658,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Ziekenhuisnummer (LVR-id)": Attribuut "value" ontbreekt [/kernset_aanleverbericht/uitkomst_per_kind/baring/ziekenhuis_baring/ziekenhuisnummer_lvrid/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or (string-length(@value) ge 4)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -23756,14 +22690,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Ziekenhuisnummer (LVR-id)": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/ziekenhuis_baring/ziekenhuisnummer_lvrid; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Ziekenhuisnummer (LVR-id)": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/ziekenhuis_baring/ziekenhuisnummer_lvrid; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -24086,14 +23020,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Geslacht (medische observatie)": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/demografische_gegevens/geslacht_medische_observatie; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Geslacht (medische observatie)": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/demografische_gegevens/geslacht_medische_observatie; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -24148,19 +23082,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Geboortedatum": Attribuut "value" ontbreekt [/kernset_aanleverbericht/uitkomst_per_kind/baring/demografische_gegevens/geboortedatum/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or ((@value castable as xs:date) or (@value castable as xs:dateTime))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -24177,14 +23098,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Geboortedatum": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/demografische_gegevens/geboortedatum; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Geboortedatum": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/demografische_gegevens/geboortedatum; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -24239,19 +23160,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Rangnummer kind": Attribuut "value" ontbreekt [/kernset_aanleverbericht/uitkomst_per_kind/baring/demografische_gegevens/rangnummer_kind/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:decimal)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -24300,14 +23208,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Rangnummer kind": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/demografische_gegevens/rangnummer_kind; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Rangnummer kind": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/demografische_gegevens/rangnummer_kind; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -24502,27 +23410,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "BSN kind": Attribuut "value" ontbreekt [/kernset_aanleverbericht/uitkomst_per_kind/baring/demografische_gegevens/identificaties_kind/bsn_kind/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "BSN kind": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/demografische_gegevens/identificaties_kind/bsn_kind; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "BSN kind": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/demografische_gegevens/identificaties_kind/bsn_kind; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -24687,19 +23582,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Perinatale sterfte?": Attribuut "value" ontbreekt [/kernset_aanleverbericht/uitkomst_per_kind/baring/demografische_gegevens/perinatale_sterfte_groep/perinatale_sterfteq/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -24716,14 +23598,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Perinatale sterfte?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/demografische_gegevens/perinatale_sterfte_groep/perinatale_sterfteq; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Perinatale sterfte?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/demografische_gegevens/perinatale_sterfte_groep/perinatale_sterfteq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -24842,14 +23724,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Fase perinatale sterfte": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/demografische_gegevens/perinatale_sterfte_groep/fase_perinatale_sterfte; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Fase perinatale sterfte": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/demografische_gegevens/perinatale_sterfte_groep/fase_perinatale_sterfte; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -24904,19 +23786,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Datum/tijd vaststelling perinatale sterfte": Attribuut "value" ontbreekt [/kernset_aanleverbericht/uitkomst_per_kind/baring/demografische_gegevens/perinatale_sterfte_groep/datumtijd_vaststelling_perinatale_sterfte/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or ((@value castable as xs:date) or (@value castable as xs:dateTime))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -24933,14 +23802,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Datum/tijd vaststelling perinatale sterfte": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/demografische_gegevens/perinatale_sterfte_groep/datumtijd_vaststelling_perinatale_sterfte; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Datum/tijd vaststelling perinatale sterfte": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/demografische_gegevens/perinatale_sterfte_groep/datumtijd_vaststelling_perinatale_sterfte; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -25201,19 +24070,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Tijdstip breken vliezen": Attribuut "value" ontbreekt [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/tijdstip_breken_vliezen/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or ((@value castable as xs:date) or (@value castable as xs:dateTime))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -25230,14 +24086,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Tijdstip breken vliezen": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/tijdstip_breken_vliezen; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Tijdstip breken vliezen": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/tijdstip_breken_vliezen; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -25356,14 +24212,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Kleur en consistentie vruchtwater": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/kleur_en_consistentie_vruchtwater; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Kleur en consistentie vruchtwater": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/kleur_en_consistentie_vruchtwater; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -25418,19 +24274,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Tijdstip actief meepersen": Attribuut "value" ontbreekt [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/tijdstip_actief_meepersen/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or ((@value castable as xs:date) or (@value castable as xs:dateTime))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -25447,14 +24290,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Tijdstip actief meepersen": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/tijdstip_actief_meepersen; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Tijdstip actief meepersen": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/tijdstip_actief_meepersen; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -25509,19 +24352,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Episiotomie?": Attribuut "value" ontbreekt [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/episiotomieq/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -25538,14 +24368,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Episiotomie?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/episiotomieq; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Episiotomie?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/episiotomieq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -25664,14 +24494,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Locatie episiotomie": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/locatie_episiotomie; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Locatie episiotomie": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/locatie_episiotomie; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -25726,19 +24556,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Ruggeprik gewenst, niet gekregen?": Attribuut "value" ontbreekt [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/ruggeprik_gewenst_niet_gekregenq/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -25755,14 +24572,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Ruggeprik gewenst, niet gekregen?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/ruggeprik_gewenst_niet_gekregenq; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Ruggeprik gewenst, niet gekregen?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/ruggeprik_gewenst_niet_gekregenq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -25817,19 +24634,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Pijnbestrijding?": Attribuut "value" ontbreekt [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijdingq/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -25846,14 +24650,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Pijnbestrijding?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijdingq; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Pijnbestrijding?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijdingq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -25970,19 +24774,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Sedatie?": Attribuut "value" ontbreekt [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/sedatieq/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -25999,14 +24790,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Sedatie?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/sedatieq; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Sedatie?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/sedatieq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -26280,14 +25071,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Periode": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/periode; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Periode": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/periode; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -26499,14 +25290,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Methode": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode/methode; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Methode": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode/methode; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -26781,14 +25572,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Middel": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode/overig_middel/middel; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Middel": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode/overig_middel/middel; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -26907,14 +25698,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Toediening": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode/overig_middel/toediening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Toediening": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_maternale_gegevens/pijnbestrijding/methode/overig_middel/toediening; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -27335,14 +26126,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Type partus": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/type_partus; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Type partus": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/type_partus; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -27397,19 +26188,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Apgarscore na 5 min.": Attribuut "value" ontbreekt [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/apgarscore_na_5_min/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:decimal)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -27458,14 +26236,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Apgarscore na 5 min.": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/apgarscore_na_5_min; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Apgarscore na 5 min.": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/apgarscore_na_5_min; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -27584,14 +26362,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Ligging bij geboorte": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/ligging_bij_geboorte; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Ligging bij geboorte": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/ligging_bij_geboorte; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -27958,14 +26736,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Overige interventies": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/overige_interventies; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Overige interventies": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/overige_interventies; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -28082,19 +26860,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Congenitale afwijkingen?": Attribuut "value" ontbreekt [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingenq/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -28111,14 +26876,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Congenitale afwijkingen?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingenq; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Congenitale afwijkingen?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingenq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -28235,19 +27000,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Problematiek kind?": Attribuut "value" ontbreekt [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/problematiek_kindq/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -28264,14 +27016,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Problematiek kind?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/problematiek_kindq; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Problematiek kind?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/problematiek_kindq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -28390,14 +27142,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Problematiek kind": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/problematiek_kind; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Problematiek kind": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/problematiek_kind; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -28452,19 +27204,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Kinderarts betrokken?": Attribuut "value" ontbreekt [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/kinderarts_betrokkenq/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -28481,14 +27220,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Kinderarts betrokken?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/kinderarts_betrokkenq; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Kinderarts betrokken?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/kinderarts_betrokkenq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -28747,14 +27486,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Rol aanpakker kind": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/aanpakker_kind_groep/rol_aanpakker_kind; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Rol aanpakker kind": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/aanpakker_kind_groep/rol_aanpakker_kind; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -28951,14 +27690,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Rol supervisor": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/supervisor_groep/rol_supervisor; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Rol supervisor": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/supervisor_groep/rol_supervisor; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -29171,14 +27910,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Vaginale kunstverlossing": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/vaginale_kunstverlossing_groep/vaginale_kunstverlossing; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Vaginale kunstverlossing": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/vaginale_kunstverlossing_groep/vaginale_kunstverlossing; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -29233,19 +27972,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Succes vaginale kunstverlossing?": Attribuut "value" ontbreekt [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/vaginale_kunstverlossing_groep/succes_vaginale_kunstverlossingq/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -29262,14 +27988,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Succes vaginale kunstverlossing?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/vaginale_kunstverlossing_groep/succes_vaginale_kunstverlossingq; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Succes vaginale kunstverlossing?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/vaginale_kunstverlossing_groep/succes_vaginale_kunstverlossingq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -29482,14 +28208,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Beslismoment sectio caesarea": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/sectio_caesarea_group/beslismoment_sectio_caesarea; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Beslismoment sectio caesarea": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/sectio_caesarea_group/beslismoment_sectio_caesarea; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -29608,14 +28334,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Indicatie sectio caesarea": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/sectio_caesarea_group/indicatie_sectio_caesarea; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Indicatie sectio caesarea": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/sectio_caesarea_group/indicatie_sectio_caesarea; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -29748,19 +28474,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Geboortegewicht": Attribuut "value" ontbreekt [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/geboortegewicht/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:decimal)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -29809,14 +28522,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @unit, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @unit, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @unit, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @unit, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Geboortegewicht": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/geboortegewicht; allowed=(@conceptId, @value, @unit, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Geboortegewicht": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/lichamelijk_onderzoek_kind/geboortegewicht; allowed=(@conceptId, @value, @unit, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -30043,19 +28756,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Chromosomale afwijkingen?": Attribuut "value" ontbreekt [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/chromosomale_afwijkingenq/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -30072,14 +28772,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Chromosomale afwijkingen?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/chromosomale_afwijkingenq; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Chromosomale afwijkingen?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/chromosomale_afwijkingenq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -30338,14 +29038,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Specificatie congenitale afwijking": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_congenitale_afwijking_groep/specificatie_congenitale_afwijking; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Specificatie congenitale afwijking": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_congenitale_afwijking_groep/specificatie_congenitale_afwijking; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -30542,14 +29242,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Specificatie chromosomale afwijking": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_chromosomale_afwijking_groep/specificatie_chromosomale_afwijking; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Specificatie chromosomale afwijking": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/congenitale_afwijkingen_groep/specificatie_chromosomale_afwijking_groep/specificatie_chromosomale_afwijking; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -30730,19 +29430,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Datum betrokkenheid": Attribuut "value" ontbreekt [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts/datum_betrokkenheid/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or ((@value castable as xs:date) or (@value castable as xs:dateTime))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -30759,14 +29446,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Datum betrokkenheid": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts/datum_betrokkenheid; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Datum betrokkenheid": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts/datum_betrokkenheid; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -30885,14 +29572,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Reden betrokkenheid": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts/reden_betrokkenheid; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Reden betrokkenheid": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts/reden_betrokkenheid; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -31011,14 +29698,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Type betrokkenheid": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts/type_betrokkenheid; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Type betrokkenheid": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts/type_betrokkenheid; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -31073,19 +29760,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Zorginstelling LVR-ID": Attribuut "value" ontbreekt [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts/zorginstelling_lvrid/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or (string-length(@value) ge 4)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -31118,14 +29792,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Zorginstelling LVR-ID": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts/zorginstelling_lvrid; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Zorginstelling LVR-ID": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/uitkomst_per_kind/baring/kindspecifieke_uitkomstgegevens/betrokkenheid_kinderarts/zorginstelling_lvrid; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -31694,19 +30368,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Irregulaire antistoffen?": Attribuut "value" ontbreekt [/kernset_aanleverbericht/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/psie/irregulaire_antistoffenq/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -31723,14 +30384,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Irregulaire antistoffen?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/psie/irregulaire_antistoffenq; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Irregulaire antistoffen?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/psie/irregulaire_antistoffenq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -31849,14 +30510,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Welke irregulaire antistoffen vrouw aanwezig.": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/psie/welke_irregulaire_antistoffen_vrouw_aanwezig; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Welke irregulaire antistoffen vrouw aanwezig.": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/medisch_onderzoek/maternale_onderzoeksgegevens/urine_bloed_en_aanvullende_onderzoeken/psie/welke_irregulaire_antistoffen_vrouw_aanwezig; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -32239,19 +30900,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Datum": Attribuut "value" ontbreekt [/kernset_aanleverbericht/postnatale_fase/diagnose_postpartum/datum/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or ((@value castable as xs:date) or (@value castable as xs:dateTime))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -32268,14 +30916,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Datum": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/postnatale_fase/diagnose_postpartum/datum; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Datum": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/postnatale_fase/diagnose_postpartum/datum; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -32330,19 +30978,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Pathologie vrouw?": Attribuut "value" ontbreekt [/kernset_aanleverbericht/postnatale_fase/diagnose_postpartum/pathologie_vrouwq/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or (@value castable as xs:boolean)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -32359,14 +30994,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Pathologie vrouw?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/postnatale_fase/diagnose_postpartum/pathologie_vrouwq; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Pathologie vrouw?": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/postnatale_fase/diagnose_postpartum/pathologie_vrouwq; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -32485,14 +31120,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Pathologie vrouw": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/postnatale_fase/diagnose_postpartum/pathologie_vrouw; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Pathologie vrouw": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/postnatale_fase/diagnose_postpartum/pathologie_vrouw; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -32781,19 +31416,6 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(@value)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(@value)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Voeding kind (datum)": Attribuut "value" ontbreekt [/kernset_aanleverbericht/postnatale_fase/kindspecifieke_gegevens/voeding_kind_groep/voeding_kind_datum/@value]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-      <xsl:choose>
          <xsl:when test="empty(@value) or ((@value castable as xs:date) or (@value castable as xs:dateTime))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -32810,14 +31432,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Voeding kind (datum)": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/postnatale_fase/kindspecifieke_gegevens/voeding_kind_groep/voeding_kind_datum; allowed=(@conceptId, @value, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Voeding kind (datum)": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/postnatale_fase/kindspecifieke_gegevens/voeding_kind_groep/voeding_kind_datum; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -32936,14 +31558,14 @@ SOFTWARE.
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))"/>
+         <xsl:when test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*))">
+                                test="empty(@* except (@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Foutieve informatie voor "Substantie voeding kind": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/postnatale_fase/kindspecifieke_gegevens/voeding_kind_groep/substantie_voeding_kind; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @xsi:*)]</svrl:text>
+               <svrl:text>Foutieve informatie voor "Substantie voeding kind": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/postnatale_fase/kindspecifieke_gegevens/voeding_kind_groep/substantie_voeding_kind; allowed=(@conceptId, @value, @code, @codeSystem, @displayName, @enum, @nullFlavor, @root, @xsi:*)]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
