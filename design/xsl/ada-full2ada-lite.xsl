@@ -11,8 +11,18 @@
     
     <xsl:template match="*">
         <xsl:copy>
-            <xsl:copy-of select="(@* except @conceptId)"/>
-            <xsl:apply-templates/>
+            <xsl:choose>
+                <xsl:when test="@code">
+                    <xsl:attribute name="value" select="@code"/>
+                    <xsl:copy-of select="@displayName"/>
+                </xsl:when>
+                <xsl:when test="@value">
+                    <xsl:copy-of select="@value"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:apply-templates/>
+                </xsl:otherwise>
+            </xsl:choose>
         </xsl:copy>
     </xsl:template>
     

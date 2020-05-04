@@ -178,6 +178,9 @@
             <xsl:when test="exists($enum)">
               <xsl:sequence select="($valueset-concept-or-exception-elements[bc-alg:value-to-enum(.) eq $enum])[1]"/>
             </xsl:when>
+            <xsl:when test="exists($nullFlavor)">
+                  <!-- Already handled above -->
+              </xsl:when>
             <xsl:otherwise>
               <!-- Should not happen... -->
               <xsl:sequence select="error((), 'Internal error in ' || static-base-uri() || ': no value or enum')"/>
