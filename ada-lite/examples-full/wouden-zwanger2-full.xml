@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<prio1_vorige_zwangerschap transactionRef="2.16.840.1.113883.2.4.3.11.60.90.77.4.2499"
+                           transactionEffectiveDate="2020-01-08T13:47:27"
+                           versionDate="2020-05-08T14:52:56"
+                           prefix="peri20-"><!-- == ADA full format document generated from lite format document == --><!-- == Source: design/examples-lite/wouden-zwanger2.xml == --><!-- == Specification used: design/specs-full/prio1-vorig.xml == --><!-- == Generator: ada-lite/xsl/lib/ada-lite2ada-full.mod.xsl == -->
+   <zorgverlenerzorginstelling conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.1">
+      <zorginstelling conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10020">
+         <naam_zorginstelling conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10026"
+                              value="Leverancier B"/>
+      </zorginstelling>
+   </zorgverlenerzorginstelling>
+   <vrouw conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.2">
+      <burgerservicenummer conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10030"
+                           value="999910413"/>
+   </vrouw>
+   <zwangerschap conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.3">
+      <graviditeit conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20010" value="2"/>
+      <pariteit_voor_deze_zwangerschap conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20150" value="1"/>
+      <wijze_einde_zwangerschap conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80625"
+                                value="9"
+                                code="4"
+                                codeSystem="2.16.840.1.113883.2.4.4.13.46"
+                                displayName="EUG - behandeld"/>
+      <datum_einde_zwangerschap conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20540"
+                                value="2016-06-02"/>
+   </zwangerschap>
+</prio1_vorige_zwangerschap>

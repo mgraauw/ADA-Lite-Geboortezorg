@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<prio1_huidige_zwangerschap transactionRef="2.16.840.1.113883.2.4.3.11.60.90.77.4.2493"
+                            transactionEffectiveDate="2020-01-08T13:13:15"
+                            versionDate="2020-05-08T14:50:23"
+                            prefix="peri20-"><!-- == ADA full format document generated from lite format document == --><!-- == Source: design/examples-lite/wouden-zwanger4.xml == --><!-- == Specification used: design/specs-full/prio1-huidig.xml == --><!-- == Generator: ada-lite/xsl/lib/ada-lite2ada-full.mod.xsl == -->
+   <zorgverlenerzorginstelling conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.1">
+      <zorginstelling conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10020">
+         <zorginstelling_lvrid conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10023" value="1234"/>
+      </zorginstelling>
+   </zorgverlenerzorginstelling>
+   <vrouw conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.2">
+      <burgerservicenummer conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10030"
+                           value="999910413"/>
+      <naamgegevens conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10035">
+         <achternaam conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82361">
+            <voorvoegsel conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82363"
+                         value="van der "/>
+            <achternaam conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10043"
+                        value="Wouden"/>
+         </achternaam>
+      </naamgegevens>
+      <bloedgroep_vrouw conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10810"
+                        value="3"
+                        code="165743006"
+                        codeSystem="2.16.840.1.113883.6.96"
+                        displayName="Blood group AB (finding)"/>
+      <rhesus_d_factor_vrouw conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10811"
+                             value="1"
+                             code="165747007"
+                             codeSystem="2.16.840.1.113883.6.96"
+                             displayName="Rh D Positief"/>
+      <rhesus_c_factor conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10816"
+                       value="2"
+                       code="733119003"
+                       codeSystem="2.16.840.1.113883.6.96"
+                       displayName="Rhc negative (finding)"/>
+   </vrouw>
+   <zwangerschap conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.3">
+      <graviditeit conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20010" value="4"/>
+      <pariteit conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20153" value="2"/>
+      <a_terme_datum_groep conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20029">
+         <a_terme_datum conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20030"
+                        value="2020-01-19"/>
+      </a_terme_datum_groep>
+   </zwangerschap>
+   <medisch_onderzoek conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.14">
+      <datum_onderzoek conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.50020"
+                       value="2019-11-13T00:00:00"/>
+      <maternale_onderzoeksgegevens conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.142">
+         <urine_bloed_en_aanvullende_onderzoeken conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80959">
+            <hb conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10814"
+                value="8.5"
+                unit="mmol/L"/>
+         </urine_bloed_en_aanvullende_onderzoeken>
+      </maternale_onderzoeksgegevens>
+   </medisch_onderzoek>
+</prio1_huidige_zwangerschap>

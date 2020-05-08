@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<prio1_vorige_zwangerschap transactionRef="2.16.840.1.113883.2.4.3.11.60.90.77.4.2499"
+                           transactionEffectiveDate="2020-01-08T13:47:27"
+                           versionDate="2020-05-08T14:52:57"
+                           prefix="peri20-"><!-- == ADA full format document generated from lite format document == --><!-- == Source: design/examples-lite/wouden-zwanger3.xml == --><!-- == Specification used: design/specs-full/prio1-vorig.xml == --><!-- == Generator: ada-lite/xsl/lib/ada-lite2ada-full.mod.xsl == -->
+   <zorgverlenerzorginstelling conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.1">
+      <zorginstelling conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10020">
+         <naam_zorginstelling conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10026"
+                              value="Leverancier A"/>
+      </zorginstelling>
+   </zorgverlenerzorginstelling>
+   <vrouw conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.2">
+      <burgerservicenummer conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10030"
+                           value="999910413"/>
+   </vrouw>
+   <zwangerschap conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.3">
+      <graviditeit conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20010" value="3"/>
+      <pariteit_voor_deze_zwangerschap conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20150" value="1"/>
+      <wijze_einde_zwangerschap conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80625"
+                                value="1"
+                                code="1"
+                                codeSystem="2.16.840.1.113883.2.4.4.13.46"
+                                displayName="Partus"/>
+      <datum_einde_zwangerschap conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20540"
+                                value="2017-06-22"/>
+   </zwangerschap>
+   <bevalling conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.6">
+      <tijdstip_begin_actieve_ontsluiting conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20590"
+                                          value="2017-06-22T12:41:00"/>
+      <hoeveelheid_bloedverlies conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20640"
+                                value="400"
+                                unit="ml"/>
+      <conditie_perineum_postpartum conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80673"
+                                    value="1"
+                                    code="289854007"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="Perineum intact  (finding)"/>
+   </bevalling>
+   <uitkomst_per_kind conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.7">
+      <baring conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40002">
+         <demografische_gegevens conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40006">
+            <geboortedatum conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40050"
+                           value="2017-06-22"/>
+         </demografische_gegevens>
+         <kindspecifieke_maternale_gegevens conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.71">
+            <tijdstip_actief_meepersen conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.30030"
+                                       value="2017-06-22T16:39:00"/>
+         </kindspecifieke_maternale_gegevens>
+         <kindspecifieke_uitkomstgegevens conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.72">
+            <type_partus conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80626"
+                         value="1"
+                         code="177184002"
+                         codeSystem="2.16.840.1.113883.6.96"
+                         displayName="Normal delivery procedure (procedure)"/>
+            <zwangerschapsduur conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20062"
+                               value="268"
+                               unit="d"/>
+            <lichamelijk_onderzoek_kind conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80766">
+               <apgarscore_na_5_min conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40071" value="7"/>
+               <geboortegewicht conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40060"
+                                value="2845"
+                                unit="gram"/>
+            </lichamelijk_onderzoek_kind>
+         </kindspecifieke_uitkomstgegevens>
+      </baring>
+   </uitkomst_per_kind>
+</prio1_vorige_zwangerschap>

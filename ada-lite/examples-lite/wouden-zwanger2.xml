@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<prio1_vorige_zwangerschap transactionRef="2.16.840.1.113883.2.4.3.11.60.90.77.4.2499"
+                           transactionEffectiveDate="2020-01-08T13:47:27"
+                           prefix="peri20-">
+    <zorgverlenerzorginstelling>
+        <zorginstelling>
+            <naam_zorginstelling value="Leverancier B"/>
+        </zorginstelling>
+    </zorgverlenerzorginstelling>
+    <vrouw>
+        <burgerservicenummer value="999910413"/>
+    </vrouw>
+    <zwangerschap>
+        <graviditeit value="2"/>
+        <pariteit_voor_deze_zwangerschap value="1"/>
+        <wijze_einde_zwangerschap value="4" displayName="EUG"/>
+        <datum_einde_zwangerschap value="2016-06-02"/>
+    </zwangerschap>
+</prio1_vorige_zwangerschap>
