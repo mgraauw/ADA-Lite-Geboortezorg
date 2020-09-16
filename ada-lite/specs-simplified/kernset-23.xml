@@ -9,7 +9,7 @@
          shortName="kernset_geboortezorg"><!-- == Generated lite version of specification from full version for kernset_geboortezorg == --><!-- == Source: design/specs-full/kernset-23.xml == --><!-- == Generator: design/xsl/spec-full2spec-lite.xsl == -->
    <name language="nl-NL">Kernset Geboortezorg</name>
    <desc language="nl-NL">Kernset Geboortezorg<br clear="none"/>
-  </desc>
+   </desc>
    <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.4"
             statusCode="draft"
             effectiveDate="2016-09-08T00:00:00"

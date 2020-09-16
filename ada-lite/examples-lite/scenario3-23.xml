@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kernset_geboortezorg transactionRef="2.16.840.1.113883.2.4.3.11.60.90.77.4.2437"
+                      transactionEffectiveDate="2016-11-22T08:24:02"
+                      
+                      prefix="peri20-">
+    <zorgverlening>
+        <datum_start_zorgverantwoordelijkheid value="2018-03-10T00:00:00"/>
+        <datum_einde_zorgverantwoordelijkheid value="2018-11-03T00:00:00"/>
+        <eindverantwoordelijk_in_welke_perinatale_periodeq value="1" displayName="start /intake zwangerschapszorg"/>
+        <eindverantwoordelijk_in_welke_perinatale_periodeq value="2" displayName="zwangerschap vervolg"/>
+        <eindverantwoordelijk_in_welke_perinatale_periodeq value="3" displayName="start baring/ontsluiting"/>
+        <eindverantwoordelijk_in_welke_perinatale_periodeq value="4" displayName="uitdrijving"/>
+        <eindverantwoordelijk_in_welke_perinatale_periodeq value="5" displayName="nageboortetijdperk"/>
+        <eindverantwoordelijk_in_welke_perinatale_periodeq value="6" displayName="1e 24 uur postpartum"/>
+        <eindverantwoordelijk_in_welke_perinatale_periodeq value="7" displayName="2e - 7e dag postpartum"/>
+        <eindverantwoordelijk_in_welke_perinatale_periodeq value="8" displayName="follow-up eerste 6 wkn postpartum"/>
+        <conclusie_risicostatus_na_intake value="3" displayName="2e lijn (VIL C)"/>
+    </zorgverlening>
+    <zorgverlenerzorginstelling>
+        <zorginstelling>
+            <zorginstelling_lvrid value="9999"/>
+        </zorginstelling>
+    </zorgverlenerzorginstelling>
+    <vrouw>
+        <burgerservicenummer value="895623146"/>
+        <lokale_persoonsidentificatie value="000000"/>
+        <geboortedatum value="1989-08-05"/>
+        <adres>
+            <postcode value="5421 JG"/>
+        </adres>
+        <etniciteit value="4" displayName="Overig Afrikaans"/>
+        <anamnese>
+            <onder_behandeling_geweestq value="true"/>
+            <algemene_anamnese>
+                <cardiovasculaire_aandoening value="698247007" displayName="Hartritmestoornis"/>
+                <schildklier_aandoening value="34486009" displayName="Hyperthyreoidie"/>
+                <anemie value="87522002" displayName="IJzergebrek"/>
+                <bloedtransfusieq value="true"/>
+                <type_operatie value="64915003" displayName="Hart"/>
+            </algemene_anamnese>
+        </anamnese>
+        <lengte_gemeten value="167"/>
+        <vrouwelijke_genitale_verminkingq value="true"/>
+        <type_vrouwelijke_genitale_verminking value="130621000119105" displayName="Type 2"/>
+    </vrouw>
+    <zwangerschap>
+        <!--<dossiernummer value="ad9c3280-209d-11e9-b56e-0800200c9a66"/>-->
+        <graviditeit value="1"/>
+        <pariteit_voor_deze_zwangerschap value="0"/>
+        <definitieve_a_terme_datum value="2018-09-22"/>
+        <voornemens>
+            <voorgenomen_plaats_baring_tijdens_zwangerschap_type_locatie value="22232009" displayName="Ziekenhuis"/>
+        </voornemens>
+        <prenatale_controle>
+            <datum_controle value="2018-05-21T00:00:00"/>
+            <zwangerschapsduur value="156"/>
+            <leven_voelen value="289431008" displayName="goed"/>
+            <rookgedrag value="1" displayName="niet gerookt"/>
+            <alcoholgebruik value="1" displayName="geen"/>
+            <drugsgebruikq value="false"/>
+            <gewicht_gemeten value="67"/>
+        </prenatale_controle>
+        <diagnose>
+            <datum value="2018-05-21T00:00:00"/>
+            <zwangerschapsduur value="156"/>
+            <bloedverliesq value="true"/>
+            <infectie value="307534009" displayName="Urineweg infectie"/>
+            <afwijkende_groei_foetus value="267258002" displayName="Dysmaturiteit"/>
+            <abruptio_placentaeq value="true"/>
+        </diagnose>
+        <maternale_sterfteq value="false"/>
+        <wijze_einde_zwangerschap value="1" displayName="Partus"/>
+    </zwangerschap>
+    <bevalling>
+        <partusnummer value="000000"/>
+        <diagnose_bevalling>
+            <ppromq value="true"/>
+            <verdenking_foetale_noodq value="true"/>
+        </diagnose_bevalling>
+        <aantal_geboren_kinderen value="2"/>
+        <risicostatus_voor_baring value="3" displayName="2e lijn (VIL C)"/>
+        <wijze_waarop_de_baring_begon value="2" displayName="Spontane vliesscheur"/>
+        <tijdstip_begin_actieve_ontsluiting value="2018-08-27T22:09:00"/>
+        <medicatie_nageboortetijdperk_groep>
+            <medicatie_nageboortetijdperkq value="false"/>
+        </medicatie_nageboortetijdperk_groep>
+        <placenta>
+            <geboorte_placenta value="2" displayName="Controlled cord traction"/>
+        </placenta>
+        <hoeveelheid_bloedverlies value="1740"/>
+        <conditie_perineum_postpartum value="609344008" displayName="Episiotomiewond"/>
+    </bevalling>
+    <uitkomst_per_kind>
+        <baring>
+            <werkelijke_plaats_baring_type_locatie value="22232009" displayName="Ziekenhuis"/>
+            <ziekenhuis_baring>
+                <ziekenhuisnummer_lvrid value="9999"/>
+            </ziekenhuis_baring>
+            <demografische_gegevens>
+                <identificaties_kind>
+                    <bsn_kind value="847035116"/>
+                </identificaties_kind>
+                <geslacht_medische_observatie value="2" displayName="vrouwelijk"/>
+                <geboortedatum value="2018-08-28T06:30:00"/>
+                <rangnummer_kind value="1"/>
+                <perinatale_sterfte_groep>
+                    <perinatale_sterfteq value="false"/>
+                </perinatale_sterfte_groep>
+            </demografische_gegevens>
+            <kindspecifieke_maternale_gegevens>
+                <tijdstip_breken_vliezen value="2018-08-27T22:09:00"/>
+                <kleur_en_consistentie_vruchtwater value="1" displayName="Kleurloos"/>
+                <tijdstip_actief_meepersen value="2018-08-27T23:49:00"/>
+                <episiotomieq value="true"/>
+                <locatie_episiotomie value="1" displayName="mediolaterale episiotomie"/>
+                <ruggeprik_gewenst_niet_gekregenq value="false"/>
+                <pijnbestrijdingq value="true"/>
+                <pijnbestrijding>
+                    <methode>
+                        <methode value="OTH" displayName="Overig middel"/>
+                        <overig_middel>
+                            <middel value="52685006:363701004=404642006" displayName="Morfinometica"/>
+                            <toediening value="431215000" displayName="Intraveneus"/>
+                        </overig_middel>
+                    </methode>
+                    <periode value="Uitdr" displayName="tijdens uitdrijving"/>
+                </pijnbestrijding>
+                <sedatieq value="false"/>
+            </kindspecifieke_maternale_gegevens>
+            <kindspecifieke_uitkomstgegevens>
+                <type_partus value="3311000146109" displayName="Vaginale kunstverlossing"/>
+                <ligging_bij_geboorte value="21882006" displayName="Aangezicht"/>
+                <aanpakker_kind_groep>
+                    <rol_aanpakker_kind value="24" displayName="arts-assistent"/>
+                </aanpakker_kind_groep>
+                <supervisor_groep>
+                    <rol_supervisor value="01.046" displayName="gynaecoloog"/>
+                </supervisor_groep>
+                <vaginale_kunstverlossing_groep>
+                    <vaginale_kunstverlossing value="302383004" displayName="Forceps"/>
+                    <succes_vaginale_kunstverlossingq value="true"/>
+                </vaginale_kunstverlossing_groep>
+                <lichamelijk_onderzoek_kind>
+                    <geboortegewicht value="2040"/>
+                </lichamelijk_onderzoek_kind>
+                <congenitale_afwijkingenq value="false"/>
+                <problematiek_kindq value="true"/>
+                <problematiek_kind value="56110009" displayName="Geboortetrauma"/>
+                <kinderarts_betrokkenq value="true"/>
+                <betrokkenheid_kinderarts>
+                    <datum_betrokkenheid value="2018-08-28T00:00:00"/>
+                    <reden_betrokkenheid value="8571000146103" displayName="kunstverlossing"/>
+                    <type_betrokkenheid value="1" displayName="Consultatie"/>
+                    <zorginstelling_lvrid value="9999"/>
+                </betrokkenheid_kinderarts>
+            </kindspecifieke_uitkomstgegevens>
+        </baring>
+    </uitkomst_per_kind>
+    <uitkomst_per_kind>
+        <baring>
+            <werkelijke_plaats_baring_type_locatie value="22232009" displayName="Ziekenhuis"/>
+            <ziekenhuis_baring>
+                <ziekenhuisnummer_lvrid value="9999"/>
+            </ziekenhuis_baring>
+            <demografische_gegevens>
+                <identificaties_kind>
+                    <bsn_kind value="847035128"/>
+                </identificaties_kind>
+                <geslacht_medische_observatie value="1" displayName="mannelijk"/>
+                <geboortedatum value="2018-08-28T07:02:00"/>
+                <rangnummer_kind value="2"/>
+                <perinatale_sterfte_groep>
+                    <perinatale_sterfteq value="true"/>
+                    <fase_perinatale_sterfte value="276506001" displayName="Postpartum"/>
+                    <datumtijd_vaststelling_perinatale_sterfte value="2018-08-28T08:10:00"/>
+                </perinatale_sterfte_groep>
+            </demografische_gegevens>
+            <kindspecifieke_maternale_gegevens>
+                <tijdstip_breken_vliezen value="2018-08-27T23:13:00"/>
+                <kleur_en_consistentie_vruchtwater value="1" displayName="Kleurloos"/>
+                <tijdstip_actief_meepersen value="2018-08-28T06:45:00"/>
+                <episiotomieq value="true"/>
+                <locatie_episiotomie value="1" displayName="mediolaterale episiotomie"/>
+                <ruggeprik_gewenst_niet_gekregenq value="false"/>
+                <pijnbestrijdingq value="true"/>
+                <pijnbestrijding>
+                    <methode>
+                        <methode value="OTH" displayName="Overig middel"/>
+                        <overig_middel>
+                            <middel value="426060003" displayName="Entonox"/>
+                            <toediening value="241717009" displayName="Inhalatie"/>
+                        </overig_middel>
+                    </methode>
+                    <periode value="Uitdr" displayName="tijdens uitdrijving"/>
+                </pijnbestrijding>
+                <sedatieq value="false"/>
+            </kindspecifieke_maternale_gegevens>
+            <kindspecifieke_uitkomstgegevens>
+                <type_partus value="3311000146109" displayName="Vaginale kunstverlossing"/>
+                <ligging_bij_geboorte value="49168004" displayName="Volkomen stuit"/>
+                <aanpakker_kind_groep>
+                    <rol_aanpakker_kind value="24" displayName="arts-assistent"/>
+                </aanpakker_kind_groep>
+                <supervisor_groep>
+                    <rol_supervisor value="01.046" displayName="gynaecoloog"/>
+                </supervisor_groep>
+                <vaginale_kunstverlossing_groep>
+                    <vaginale_kunstverlossing value="416055001" displayName="Stuitextractie"/>
+                    <succes_vaginale_kunstverlossingq value="true"/>
+                </vaginale_kunstverlossing_groep>
+                <overige_interventies value="237008007" displayName="Opheffen schouderdystocie"/>
+                <lichamelijk_onderzoek_kind>
+                    <geboortegewicht value="1580"/>
+                </lichamelijk_onderzoek_kind>
+                <congenitale_afwijkingenq value="true"/>
+                <congenitale_afwijkingen_groep>
+                    <specificatie_congenitale_afwijking_groep>
+                        <specificatie_congenitale_afwijking value="76916001" displayName="spina bifida occulta"/>
+                    </specificatie_congenitale_afwijking_groep>
+                    <specificatie_congenitale_afwijking_groep>
+                        <specificatie_congenitale_afwijking value="94702005" displayName="gecompliceerd vitium"/>
+                    </specificatie_congenitale_afwijking_groep>
+                    <chromosomale_afwijkingenq value="true"/>
+                    <specificatie_chromosomale_afwijking_groep>
+                        <specificatie_chromosomale_afwijking value="21111006" displayName=""/>
+                    </specificatie_chromosomale_afwijking_groep>
+                </congenitale_afwijkingen_groep>
+                <problematiek_kindq value="true"/>
+                <problematiek_kind value="126941005" displayName="Subdurale bloeding"/>
+                <kinderarts_betrokkenq value="true"/>
+                <betrokkenheid_kinderarts>
+                    <datum_betrokkenheid value="2018-08-28T00:00:00"/>
+                    <reden_betrokkenheid value="OTH" displayName="overig"/>
+                    <type_betrokkenheid value="2" displayName="Overdracht"/>
+                    <zorginstelling_lvrid value="0001"/>
+                </betrokkenheid_kinderarts>
+            </kindspecifieke_uitkomstgegevens>
+        </baring>
+    </uitkomst_per_kind>
+    <medisch_onderzoek>
+        <maternale_onderzoeksgegevens>
+            <urine_bloed_en_aanvullende_onderzoeken>
+                <psie>
+                    <irregulaire_antistoffenq value="false"/>
+                </psie>
+            </urine_bloed_en_aanvullende_onderzoeken>
+        </maternale_onderzoeksgegevens>
+    </medisch_onderzoek>
+    <postnatale_fase>
+        <kindspecifieke_gegevens>
+            <!--<rangnummer_kind value="1"/>-->
+            <voeding_kind_groep>
+                <voeding_kind_datum value="2018-09-03"/>
+                <substantie_voeding_kind value="1" displayName="borstvoeding"/>
+            </voeding_kind_groep>
+        </kindspecifieke_gegevens>
+    </postnatale_fase>
+</kernset_geboortezorg>

@@ -5,8 +5,10 @@
          <zorgverlener_uzinummer value=""/>
          <zorgverlener_agbid value=""/>
          <zorgverlener_lvr1id value=""/>
+         <zorgverlener_lvr2_eigen_id value=""/>
          <naam_zorgverlener value=""/>
          <zorgverlenertype value="" enum=""/>
+         <zorgverlenertype_lvr2code value="" enum=""/>
          <telefoon_waar_zorgverlener_is_te_bereiken value=""/>
       </zorgverlener>
       <zorginstelling>
@@ -21,7 +23,9 @@
             <huisletterhuisnummertoevoeging value=""/>
             <postcode value=""/>
             <plaatsnaam value=""/>
+            <gemeentenaam value=""/>
             <land value=""/>
+            <adrestype value="" enum=""/>
          </adres_zorginstelling>
          <type_zorginstelling value="" enum=""/>
          <type_zorginstelling_bij_verwijzing value="" enum=""/>
@@ -47,6 +51,7 @@
          <huisletterhuisnummertoevoeging value=""/>
          <postcode value=""/>
          <plaatsnaam value=""/>
+         <gemeentenaam value=""/>
          <land value=""/>
          <adrestype value="" enum=""/>
       </adres>
@@ -129,7 +134,7 @@
          </familie_anamnese>
          <indicatie_prenatale_diagnostiek>
             <indicatie_invasieve_prenatale_diagnostiekq value=""/>
-            <indicatie_guoq value=""/>
+            <indicatie_guo1q value=""/>
             <indicatie_niptq value=""/>
          </indicatie_prenatale_diagnostiek>
       </anamnese>
@@ -148,6 +153,10 @@
       </bmi>
       <vrouwelijke_genitale_verminkingq value=""/>
       <type_vrouwelijke_genitale_verminking value="" enum=""/>
+      <actuele_bloeddruk>
+         <actuele_bloeddruk_systolisch value=""/>
+         <actuele_bloeddruk_diastolisch value=""/>
+      </actuele_bloeddruk>
       <bloedgroep_vrouw value="" enum=""/>
       <rhesus_d_factor_vrouw value="" enum=""/>
       <rhesus_c_factor value="" enum=""/>
@@ -182,6 +191,7 @@
       <chorioniciteit value="" enum=""/>
       <consanguiniteitq value=""/>
       <vals_positieve_zwangerschapq value=""/>
+      <lvr1_administratienummer value=""/>
       <subfertiliteitsbehandelingq value=""/>
       <soort_subfertiliteitsbehandeling_groep>
          <ovulatieinductie_toegepastq value=""/>
@@ -195,6 +205,7 @@
          <voorgenomen_voeding value="" enum=""/>
          <voorgenomen_achternaam value=""/>
          <kraamzorg>
+            <kraamzorg_aangevraagd value=""/>
             <kraamzorginstelling value=""/>
          </kraamzorg>
          <bevalplan value=""/>
@@ -205,6 +216,7 @@
          <zorgverlenertype value="" enum=""/>
          <zwangerschapsduur value=""/>
          <leven_voelen value="" enum=""/>
+         <pitting_oedeemq value=""/>
          <ernst_oedeem value="" enum=""/>
          <rookgedrag value="" enum=""/>
          <alcoholgebruik value="" enum=""/>
@@ -263,32 +275,6 @@
       <datum_einde_zwangerschap value=""/>
       <bijlage value=""/>
    </zwangerschap>
-   <counseling_prenatale_screening_en_prenatale_diagnostiek>
-      <counseling_prenatale_gewenst value="" enum=""/>
-      <reden_verzending value="" enum=""/>
-      <counseling_combinatietest>
-         <datum_counseling value=""/>
-         <zorgverlener>
-            <zorgverlener_uzinummer value=""/>
-            <zorgverlener_agbid value=""/>
-            <zorgverlener_lvr1id value=""/>
-            <naam_zorgverlener value=""/>
-         </zorgverlener>
-         <direct_ipd_gewenstq value=""/>
-         <combinatietest_gewenstq value=""/>
-      </counseling_combinatietest>
-      <counseling_seo>
-         <datum_counseling value=""/>
-         <zorgverlener>
-            <zorgverlener_uzinummer value=""/>
-            <zorgverlener_agbid value=""/>
-            <zorgverlener_lvr1id value=""/>
-            <naam_zorgverlener value=""/>
-         </zorgverlener>
-         <direct_guo_gewenstq value=""/>
-         <seo_gewenstq value=""/>
-      </counseling_seo>
-   </counseling_prenatale_screening_en_prenatale_diagnostiek>
    <bevalling>
       <partusnummer value=""/>
       <diagnose_bevalling>
@@ -300,6 +286,11 @@
          <niet_vorderende_ontsluitingq value=""/>
          <niet_vorderende_uitdrijvingq value=""/>
          <verdenking_foetale_noodq value=""/>
+         <meconiumhoudend_vruchtwaterq value=""/>
+         <intrauteriene_vruchtdood>
+            <vermoeden_intrauteriene_vruchtdoodq value=""/>
+            <vermoeden_iuvd_op_basis_van value="" enum=""/>
+         </intrauteriene_vruchtdood>
          <vastzittende_placentaq value=""/>
          <fluxus_postpartumq value=""/>
       </diagnose_bevalling>
@@ -313,6 +304,8 @@
       </interventies_begin_baring>
       <wijze_waarop_de_baring_begon value="" enum=""/>
       <tijdstip_begin_actieve_ontsluiting value=""/>
+      <duur_actieve_ontsluitingsfase_ontsluitingsduur value=""/>
+      <duur_uitdrijving_vanaf_actief_meepersen value=""/>
       <medicatie_nageboortetijdperk_groep>
          <medicatie_nageboortetijdperkq value=""/>
          <soort_medicatie_nageboortetijdperk value="" enum=""/>
@@ -393,6 +386,7 @@
             <geboorteplaats>
                <postcode value=""/>
                <plaatsnaam value=""/>
+               <gemeentenaam value=""/>
                <land value=""/>
             </geboorteplaats>
             <meerlingindicatie value=""/>
@@ -467,71 +461,6 @@
                <apgarscore_na_5_min value=""/>
                <apgarscore_na_10_min value=""/>
                <afwijkende_bevindingen_kindq value=""/>
-               <afwijkende_bevindingen>
-                  <algemene_indruk>
-                     <zieke_indrukq value=""/>
-                     <bewustzijn value="" enum=""/>
-                     <respiratie value="" enum=""/>
-                     <dysmorfie value="" enum=""/>
-                  </algemene_indruk>
-                  <bijzonderheden_huid value="" enum=""/>
-                  <hoofd>
-                     <fontanel value="" enum=""/>
-                     <schedel value="" enum=""/>
-                     <ogen value="" enum=""/>
-                     <oren value="" enum=""/>
-                     <neus value=""/>
-                     <mond value="" enum=""/>
-                     <kin__standafwijkingq value=""/>
-                  </hoofd>
-                  <bijzonderheden_hals value="" enum=""/>
-                  <thorax>
-                     <inspectie value="" enum=""/>
-                     <skelet>
-                        <claviculae_fractuur value="" enum=""/>
-                        <overige_afwijkingen_ribbensternum value=""/>
-                     </skelet>
-                     <mamma value="" enum=""/>
-                     <hart value="" enum=""/>
-                     <longen value="" enum=""/>
-                  </thorax>
-                  <abdomen>
-                     <inspectie value="" enum=""/>
-                     <buikwand value="" enum=""/>
-                     <lever__vergrootq value=""/>
-                     <milt_palpabelq value=""/>
-                     <darmen__afwijkende_peristaltiekq value=""/>
-                     <toelichting_darmen__afwijkende_peristaltiek value=""/>
-                     <anus__atresiefistelq value=""/>
-                     <andere_palpabele_weerstandenq value=""/>
-                     <toelichting_palpabele_weerstanden value=""/>
-                  </abdomen>
-                  <rug>
-                     <inspectie__palpatie value="" enum=""/>
-                     <overige_bevindingen value=""/>
-                  </rug>
-                  <extremiteiten>
-                     <proportie__afwijkendq value=""/>
-                     <vorm__afwijkendq value=""/>
-                     <toelichting_afwijkende_vorm value=""/>
-                     <heupen__asymmetrisch__asymmetrische_plooienq value=""/>
-                     <beweeglijkheid value="" enum=""/>
-                     <handen value="" enum=""/>
-                     <voeten value="" enum=""/>
-                  </extremiteiten>
-                  <genitalia>
-                     <mannelijk>
-                        <penis value="" enum=""/>
-                     </mannelijk>
-                     <vrouwelijk value="" enum=""/>
-                     <geslacht_niet_conclusief value=""/>
-                  </genitalia>
-                  <neurologie>
-                     <tonus value="" enum=""/>
-                     <beweeglijkheid__asymmetrischq value=""/>
-                     <reflexen__moro__asymmetrischq value=""/>
-                  </neurologie>
-               </afwijkende_bevindingen>
                <geboortegewicht value=""/>
                <percentiel_van_het_geboortegewicht value="" enum=""/>
                <lengte value=""/>
@@ -569,160 +498,29 @@
             <bijzonderheden_kind value=""/>
             <opmerkingen_baring value=""/>
          </kindspecifieke_uitkomstgegevens>
-         <labonderzoek_neonataal_bloed>
-            <datum_afname_neonataal_bloed value=""/>
-            <afnemer_identificatie value=""/>
-            <rol_afnemer value="" enum=""/>
-            <naam_afnemer value=""/>
-            <zorgaanbieder_afnemer value=""/>
-            <hl7_labaanvraag>
-               <uitvoerend_lab value=""/>
-            </hl7_labaanvraag>
-         </labonderzoek_neonataal_bloed>
       </baring>
    </uitkomst_per_kind>
    <medisch_onderzoek>
       <onderzoek_identificatie value=""/>
       <datum_onderzoek value=""/>
-      <naam_uitvoerder_onderzoek value=""/>
-      <zorgverlenertype value="" enum=""/>
+      <uitvoerder_onderzoek>
+         <zorgverlener_agbid value=""/>
+         <naam_uitvoerder_onderzoek value=""/>
+         <zorgverlenertype value="" enum=""/>
+      </uitvoerder_onderzoek>
       <zwangerschapsduur_op_datum_onderzoek value=""/>
-      <onderzoektype_jonge_zwangerschapsecho value="" enum=""/>
-      <onderzoektype_ntmeting value="" enum=""/>
-      <onderzoektype_seo value="" enum=""/>
-      <onderzoektype_guo value="" enum=""/>
-      <onderzoektype_kansbepaling_combinatietest value="" enum=""/>
-      <seotype value="" enum=""/>
-      <conclusie_seo value="" enum=""/>
-      <advies_seo value="" enum=""/>
-      <conclusie_a_terme_datum value=""/>
-      <uitslag_screening>
-         <indicatie_prenatale_diagnostiek_obv_screening value="" enum=""/>
-      </uitslag_screening>
-      <foetusspecifieke_onderzoeksgegevens>
-         <foetus_identificatie value=""/>
-         <foetus_volgletter value="" enum=""/>
-         <echoscopie>
-            <crl value=""/>
-            <bpd value=""/>
-            <bpd_percentiel value=""/>
-            <nt_in_mm value=""/>
-            <hc value=""/>
-            <hc_percentiel value=""/>
-            <tcd value=""/>
-            <ac value=""/>
-            <ac_percentiel value=""/>
-            <fl value=""/>
-            <fl_percentiel value=""/>
-            <efw value=""/>
-            <hartactie_aanwezigq value=""/>
-            <hartactie>
-               <regelmaat_hartslag value="" enum=""/>
-               <frequentie_hartslag value="" enum=""/>
-            </hartactie>
-            <ligging value="" enum=""/>
-            <beweging value="" enum=""/>
-            <vruchtwater value="" enum=""/>
-            <placentalokalisatie>
-               <placentalokalisatie value="" enum=""/>
-               <ostium value="" enum=""/>
-               <over_sectio_littekenq value=""/>
-            </placentalokalisatie>
-            <afwijking_placentavliezennavelstrengq value=""/>
-            <afwijking_placentavliezennavelstreng value="" enum=""/>
-            <cervixlengte value=""/>
-            <navelstreng_vaten value="" enum=""/>
-            <opmerkingen value=""/>
-            <bevindingen>
-               <algehele_beoordeling value="" enum=""/>
-               <neuraalbuis_van_de_wervelkolom value="" enum=""/>
-               <hersenen_neuraalbuisdefect value="" enum=""/>
-               <hersenen_overige value="" enum=""/>
-               <aangezicht value="" enum=""/>
-               <nek__huid value="" enum=""/>
-               <hart value="" enum=""/>
-               <longen value="" enum=""/>
-               <diafragma value="" enum=""/>
-               <buikwand value="" enum=""/>
-               <maagdarm value="" enum=""/>
-               <nierenblaas value="" enum=""/>
-               <extremiteiten value="" enum=""/>
-               <skelet value="" enum=""/>
-               <sonomarkers>
-                  <echodense_focus_in_het_hart value="" enum=""/>
-                  <plexus_choroideus_cysten value="" enum=""/>
-                  <verdikte_nekplooi__nekhuid value="" enum=""/>
-                  <echodense_darmen value="" enum=""/>
-                  <milde_ventriculomegalie value="" enum=""/>
-                  <pyelectasie value="" enum=""/>
-                  <kort_femur value="" enum=""/>
-                  <_2_navelstrengvaten value="" enum=""/>
-               </sonomarkers>
-               <biometrie value="" enum=""/>
-               <vruchtwatercompartiment value="" enum=""/>
-               <navelstreng value="" enum=""/>
-               <placenta_afwijkingen value="" enum=""/>
-               <wervelkolom_neuraalbuisdefect value="" enum=""/>
-               <wervelkolom_overige value="" enum=""/>
-            </bevindingen>
-         </echoscopie>
-         <echoparameters_bpd_hc_ac_fl value=""/>
-         <combinatietest>
-            <datum_kansbepaling value=""/>
-            <methode_kansbepaling value="" enum=""/>
-            <software_kansbepaling>
-               <naam_kansbepaling_softwareapplicatie value="" enum=""/>
-               <versie_softwareapplicatie value=""/>
-            </software_kansbepaling>
-            <a_priori_kans_op_trisomie_21_down value=""/>
-            <a_priori_kans_op_trisomie_18_edwards value=""/>
-            <a_priori_kans_op_trisomie_13_patau value=""/>
-            <combinatietest_kans_op_trisomie_21 value=""/>
-            <combinatietest_kans_op_trisomie_18 value=""/>
-            <combinatietest_kans_op_trisomie_13 value=""/>
-            <gehanteerde_gegevens>
-               <zwangerschapsduur value=""/>
-               <actuele_aantal_foetus value=""/>
-               <chorioniciteit value="" enum=""/>
-               <lengte value=""/>
-               <gewicht_gemeten value=""/>
-               <diabetes_mellitusq value=""/>
-               <ivf__icsi_graviditeitq value=""/>
-               <trisomie_in_de_anamneseq value=""/>
-               <gehanteerde_rookgewoonteq value=""/>
-               <etniciteit value="" enum=""/>
-               <gehanteerde_pappa_concentratie_in_m_iul value=""/>
-               <gehanteerde_pappa_in_mo_m value=""/>
-               <gehanteerde_vrij_h_cg_concentratie_in_ngml value=""/>
-               <gehanteerde_vrij_h_cg_in_mo_m value=""/>
-               <gehanteerde_corrected_pappa value=""/>
-               <gehanteerde_corrected_vrij_h_cg value=""/>
-               <gehanteerde_datum_ntmeting value=""/>
-               <nt_in_mm value=""/>
-               <nt_in_mo_m value=""/>
-               <crl value=""/>
-               <bpd value=""/>
-            </gehanteerde_gegevens>
-         </combinatietest>
-         <invasieve_prenatale_diagnostiek value="" enum=""/>
-      </foetusspecifieke_onderzoeksgegevens>
       <maternale_onderzoeksgegevens>
          <urine_bloed_en_aanvullende_onderzoeken>
             <psie>
                <bloedgroep_vrouw value="" enum=""/>
                <rhesus_d_factor_vrouw value="" enum=""/>
-               <rhesus_c_factor value="" enum=""/>
+               <rhesus_c_factor_vrouw value="" enum=""/>
                <hbs_ag value="" enum=""/>
                <hiv value="" enum=""/>
                <lues value="" enum=""/>
                <irregulaire_antistoffenq value=""/>
                <welke_irregulaire_antistoffen_vrouw_aanwezig value="" enum=""/>
             </psie>
-            <niptq value=""/>
-            <nipt__uitslag>
-               <nipt__uitslag value="" enum=""/>
-               <nipt__geslacht value="" enum=""/>
-            </nipt__uitslag>
             <hb value=""/>
             <anemie>
                <mcv value=""/>
@@ -781,11 +579,11 @@
       </maternale_onderzoeksgegevens>
    </medisch_onderzoek>
    <postnatale_fase>
-      <diagnoseinterventie_postpartum>
+      <diagnoseinterventie_postnataal>
          <datum value=""/>
          <pathologie_vrouw value="" enum=""/>
          <interventie value="" enum=""/>
-      </diagnoseinterventie_postpartum>
+      </diagnoseinterventie_postnataal>
       <kraamzorgq value=""/>
       <kraamzorginstelling>
          <naam_zorginstelling value=""/>
@@ -794,6 +592,7 @@
       <bloedverlies_kraambed value="" enum=""/>
       <opmerkingen_kraambed value=""/>
       <kindspecifieke_gegevens>
+         <rangnummer_kind value=""/>
          <voeding_kind_groep>
             <voeding_kind_datum value=""/>
             <substantie_voeding_kind value="" enum=""/>
