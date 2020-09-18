@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- LET OP: Eerst preprocess-specs.xsl op specs-raw draaien om specs-full te vullen! -->
+
+
 <p:declare-step xmlns:p="http://www.w3.org/ns/xproc" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:xtlc="http://www.xtpxlib.nl/ns/common"
   xmlns:svrl="http://purl.oclc.org/dsdl/svrl" xmlns:pxf="http://exproc.org/proposed/steps/file" xmlns:cx="http://xmlcalabash.com/ns/extensions"
   xmlns:local="#local.e53_j2w_xgb" version="1.0" xpath-version="2.0" exclude-inline-prefixes="#all">
