@@ -600,6 +600,19 @@
                     refdisplay="peri22-dataelement-3">
          <name language="nl-NL">Zwangerschap</name>
       </relationship>
+      <concept minimumMultiplicity="0"
+               maximumMultiplicity="1"
+               conformance="R"
+               isMandatory="false"
+               id="2.16.840.1.113883.2.4.3.11.999.60.5.6.3.1"
+               statusCode="draft"
+               effectiveDate="2019-01-28T00:00:00"
+               type="item"
+               shortName="dossiernummer">
+         <name language="nl-NL">Dossiernummer</name>
+         <desc language="nl-NL">Dossiernummer van de betreffende zwangerschap bij deze zorgaanbieder.</desc>
+         <valueDomain type="identifier"/>
+      </concept>
       <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80627"
                statusCode="draft"
                effectiveDate="2016-09-08T00:00:00"

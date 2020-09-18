@@ -12,7 +12,7 @@
   -->
   <!-- ================================================================== -->
 
-  <diff older="kernset-22.xml" newer="kernset-23.xml" output="diff-kernset-22-23"
+  <!--<diff older="kernset-22.xml" newer="kernset-23.xml" output="diff-kernset-22-23"
     description="Kernset versie 2.2 en 2.3"/>
 
   <diff older="verloskundig-dossier-22.xml" newer="verloskundig-dossier-23.xml"
@@ -20,6 +20,6 @@
 
   <diff older="samenvatting-voorgaande-zwangerschap-22.xml"
     newer="samenvatting-voorgaande-zwangerschap-23.xml" output="diff-samenvatting-voorgaande-zwangerschap-22-23"
-    description="Samenvatting voorgaande zwangerschap versie 2.2 en 2.3"/>
+    description="Samenvatting voorgaande zwangerschap versie 2.2 en 2.3"/>-->
 
 </difflist>

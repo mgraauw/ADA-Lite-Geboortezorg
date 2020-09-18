@@ -170,6 +170,7 @@
       </partner>
    </vrouw>
    <zwangerschap>
+      <dossiernummer value=""/>
       <identificatie_van_de_zwangerschap value=""/>
       <casemanager_naam value=""/>
       <graviditeit value=""/>

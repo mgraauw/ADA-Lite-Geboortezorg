@@ -671,7 +671,7 @@ SOFTWARE.
                      type="geboortedatum_10040">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">Geboortedatum</xs:documentation>
-               <xs:documentation source="desc" xml:lang="nl-NL">Geboortedatum.Indien de dag en/of maand van de geboortedatum niet bekend zijn, vult u dit in als 01-01-xxxx. Wanneer het geboortejaar ook onbekend is, is schatten van het geboortejaar toegestaan.</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">Geboortedatum. Indien de dag en/of maand van de geboortedatum niet bekend zijn, vult u dit in als 01-01-xxxx. Wanneer het geboortejaar ook onbekend is, is schatten van het geboortejaar toegestaan.</xs:documentation>
             </xs:annotation>
          </xs:element>
          <xs:element minOccurs="0" name="adaextension" type="adaextension">
@@ -893,6 +893,15 @@ SOFTWARE.
    </xs:complexType>
    <xs:complexType name="zwangerschap">
       <xs:sequence>
+         <xs:element name="dossiernummer"
+                     minOccurs="0"
+                     maxOccurs="1"
+                     type="dossiernummer">
+            <xs:annotation>
+               <xs:documentation source="name" xml:lang="nl-NL">Dossiernummer</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">Dossiernummer van de betreffende zwangerschap bij deze zorgaanbieder.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
          <xs:element name="identificatie_van_de_zwangerschap"
                      minOccurs="0"
                      maxOccurs="1"
@@ -944,7 +953,7 @@ SOFTWARE.
                      type="wijze_einde_zwangerschap">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">Wijze einde zwangerschap</xs:documentation>
-               <xs:documentation source="desc" xml:lang="nl-NL">De wijze waarop de zwangerschap geëindigd is.TOP (Termination of Pregnancy) is zwangerschapsafbreking na 16+0 weken (16w0d). Bij TOP wordt hier 'Partus' geregistreerd, zodat dit meegenomen wordt als pariteit. Dit in tegenstelling tot APLA, waarmee een zwangerschapsafbreking (abortus) van minder dan 16 weken wordt bedoeld.</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">De wijze waarop de zwangerschap geëindigd is. TOP (Termination of Pregnancy) is zwangerschapsafbreking na 16+0 weken (16w0d). Bij TOP wordt hier 'Partus' geregistreerd, zodat dit meegenomen wordt als pariteit. Dit in tegenstelling tot APLA, waarmee een zwangerschapsafbreking (abortus) van minder dan 16 weken wordt bedoeld.</xs:documentation>
             </xs:annotation>
          </xs:element>
          <xs:element name="datum_einde_zwangerschap"
@@ -953,7 +962,7 @@ SOFTWARE.
                      type="datum_einde_zwangerschap">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">Datum einde zwangerschap</xs:documentation>
-               <xs:documentation source="desc" xml:lang="nl-NL">Moment (datum en tijd) waarop de zwangerschap medisch gezien is geëindigd, anders dan na een partus (bij een partus wordt dit item niet ingevuld).NB. Bij een partus wordt op een andere plaats in het dossier geregistreerd: geboortedatum per kind én geboortedatum/tijd van de placenta(e).</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">Moment (datum en tijd) waarop de zwangerschap medisch gezien is geëindigd, anders dan na een partus (bij een partus wordt dit item niet ingevuld). NB. Bij een partus wordt op een andere plaats in het dossier geregistreerd: geboortedatum per kind én geboortedatum/tijd van de placenta(e).</xs:documentation>
             </xs:annotation>
          </xs:element>
          <xs:element minOccurs="0" name="adaextension" type="adaextension">
@@ -966,6 +975,15 @@ SOFTWARE.
                     type="t-id"
                     use="optional"
                     fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.3"/>
+   </xs:complexType>
+   <xs:complexType name="dossiernummer">
+      <xs:attribute name="conceptId"
+                    type="t-id"
+                    use="optional"
+                    fixed="2.16.840.1.113883.2.4.3.11.999.60.5.6.3.1"/>
+      <xs:attribute name="value" use="optional" type="xs:string"/>
+      <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
+      <xs:attribute name="root" use="optional"/>
    </xs:complexType>
    <xs:complexType name="identificatie_van_de_zwangerschap">
       <xs:attribute name="conceptId"
@@ -1101,7 +1119,7 @@ SOFTWARE.
                      type="dreigende_partus_immaturusq">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">Dreigende partus immaturus?</xs:documentation>
-               <xs:documentation source="desc" xml:lang="nl-NL">Is er sprake van dreigende partus immaturus?Een partus immaturus is van 16w0d tot en met 23w6d.</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">Is er sprake van dreigende partus immaturus? Een partus immaturus is van 16w0d tot en met 23w6d.</xs:documentation>
             </xs:annotation>
          </xs:element>
          <xs:element name="dreigende_partus_prematurusq"
@@ -1110,7 +1128,7 @@ SOFTWARE.
                      type="dreigende_partus_prematurusq">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">Dreigende partus prematurus?</xs:documentation>
-               <xs:documentation source="desc" xml:lang="nl-NL">Is er sprake van dreigende partus prematurus?Een partus prematurus is van 24w0d tot en met 36w6d.</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">Is er sprake van dreigende partus prematurus? Een partus prematurus is van 24w0d tot en met 36w6d.</xs:documentation>
             </xs:annotation>
          </xs:element>
          <xs:element name="abruptio_placentaeq"
@@ -1798,7 +1816,7 @@ SOFTWARE.
                      type="fluxus_postpartumq">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">Fluxus postpartum?</xs:documentation>
-               <xs:documentation source="desc" xml:lang="nl-NL">Is er sprake van een fluxus postpartum? Er is sprake van een fluxus postpartum wanneer er na de geboorte van het kind meer dan 1000 cc bloedverlies is.Ja/Nee/Onbekend</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">Is er sprake van een fluxus postpartum? Er is sprake van een fluxus postpartum wanneer er na de geboorte van het kind meer dan 1000 cc bloedverlies is. Ja/Nee/Onbekend</xs:documentation>
             </xs:annotation>
          </xs:element>
          <xs:element minOccurs="0" name="adaextension" type="adaextension">
@@ -1941,7 +1959,7 @@ SOFTWARE.
                      type="interventie_begin_baring">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">Interventie begin baring</xs:documentation>
-               <xs:documentation source="desc" xml:lang="nl-NL">Interventie begin baringEen primaire sectio is een geplande sectio en wordt óók als zodanig geregistreerd als deze uitgevoerd wordt wanneer de weeën al zijn begonnen, de vliezen zijn gebroken en/of de uitdrijving is begonnen.</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">Interventie begin baring Een primaire sectio is een geplande sectio en wordt óók als zodanig geregistreerd als deze uitgevoerd wordt wanneer de weeën al zijn begonnen, de vliezen zijn gebroken en/of de uitdrijving is begonnen.</xs:documentation>
             </xs:annotation>
          </xs:element>
          <xs:element name="indicatie_interventie_begin_baring"
@@ -1950,7 +1968,7 @@ SOFTWARE.
                      type="indicatie_interventie_begin_baring">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">Indicatie interventie begin baring</xs:documentation>
-               <xs:documentation source="desc" xml:lang="nl-NL">Indicatie interventie begin baring.Registreer hier één indicatie: de meest zwaarwegende.</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">Indicatie interventie begin baring. Registreer hier één indicatie: de meest zwaarwegende.</xs:documentation>
             </xs:annotation>
          </xs:element>
          <xs:element minOccurs="0" name="adaextension" type="adaextension">
@@ -2650,7 +2668,7 @@ SOFTWARE.
                      type="ziekenhuis_baring">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">Ziekenhuis baring</xs:documentation>
-               <xs:documentation source="desc" xml:lang="nl-NL">Het ziekenhuis waar baring plaats vond.Alleen van toepassing indien "Werkelijke plaats baring (type locatie)" een ziekenhuis betreft.</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">Het ziekenhuis waar baring plaats vond. Alleen van toepassing indien "Werkelijke plaats baring (type locatie)" een ziekenhuis betreft.</xs:documentation>
             </xs:annotation>
          </xs:element>
          <xs:element name="demografische_gegevens"
@@ -3230,7 +3248,7 @@ SOFTWARE.
                      type="type_partus">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">Type partus</xs:documentation>
-               <xs:documentation source="desc" xml:lang="nl-NL">Type partus.Een primaire sectio is een geplande sectio en wordt óók als zodanig geregistreerd als deze uitgevoerd wordt wanneer de weeën al zijn begonnen, de vliezen zijn gebroken en/of de uitdrijving is begonnen.TOP (Termination of Pregnancy) is zwangerschapsafbreking na 16 weken. Dit in tegenstelling tot APLA, waarmee een zwangerschapsafbreking (abortus) van minder dan 16 weken wordt bedoeld.</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">Type partus. Een primaire sectio is een geplande sectio en wordt óók als zodanig geregistreerd als deze uitgevoerd wordt wanneer de weeën al zijn begonnen, de vliezen zijn gebroken en/of de uitdrijving is begonnen. TOP (Termination of Pregnancy) is zwangerschapsafbreking na 16 weken. Dit in tegenstelling tot APLA, waarmee een zwangerschapsafbreking (abortus) van minder dan 16 weken wordt bedoeld.</xs:documentation>
             </xs:annotation>
          </xs:element>
          <xs:element name="zwangerschapsduur"
@@ -3637,7 +3655,7 @@ SOFTWARE.
                      type="indicatie_sectio_caesarea">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">Indicatie sectio caesarea</xs:documentation>
-               <xs:documentation source="desc" xml:lang="nl-NL">Indicatie sectio caesareaHieronder vallen de indicaties van alle sectio’s zowel primair als secundair.</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">Indicatie sectio caesarea Hieronder vallen de indicaties van alle sectio’s zowel primair als secundair.</xs:documentation>
             </xs:annotation>
          </xs:element>
          <xs:element minOccurs="0" name="adaextension" type="adaextension">
@@ -5510,7 +5528,7 @@ SOFTWARE.
                      type="urine_bloed_en_aanvullende_onderzoeken">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">Urine-, bloed- en aanvullende onderzoeken</xs:documentation>
-               <xs:documentation source="desc" xml:lang="nl-NL">Urine-, bloed- en aanvullende onderzoekenHet gaat hier zowel om onderzoeken van bloed, urine en/of een ander monster door het laboratorium, als om onderzoeken die door de zorgverlener of patiënt 'zelf' worden gedaan. Voorbeelden van deze 'zelf'-bepalingen zijn: glucose, Hb en proteïne op basis van strips.</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">Urine-, bloed- en aanvullende onderzoeken Het gaat hier zowel om onderzoeken van bloed, urine en/of een ander monster door het laboratorium, als om onderzoeken die door de zorgverlener of patiënt 'zelf' worden gedaan. Voorbeelden van deze 'zelf'-bepalingen zijn: glucose, Hb en proteïne op basis van strips.</xs:documentation>
             </xs:annotation>
          </xs:element>
          <xs:element minOccurs="0" name="adaextension" type="adaextension">

@@ -1315,6 +1315,7 @@ SOFTWARE.
    <!-- == Any attributes allowed on /kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/obstetrische_anamnese/adaextension == -->
    <pattern>
       <rule context="/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap"><!-- == Check occurrences of children of /kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap: == -->
+         <assert test="(count(dossiernummer) ge 0) and (count(dossiernummer) le 1)">Fout aantal voorkomens van "Dossiernummer": <value-of select="count(dossiernummer)"/> (verwacht: 0..1) [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/dossiernummer]</assert>
          <assert test="(count(gynaecologische_aandoening) ge 0) and (count(gynaecologische_aandoening) le 1)">Fout aantal voorkomens van "Gynaecologische aandoening": <value-of select="count(gynaecologische_aandoening)"/> (verwacht: 0..1) [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/gynaecologische_aandoening]</assert>
          <assert test="(count(bloedverliesq) ge 0) and (count(bloedverliesq) le 1)">Fout aantal voorkomens van "Bloedverlies?": <value-of select="count(bloedverliesq)"/> (verwacht: 0..1) [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/bloedverliesq]</assert>
          <assert test="(count(partiele_molaq) ge 0) and (count(partiele_molaq) le 1)">Fout aantal voorkomens van "Partiële mola?": <value-of select="count(partiele_molaq)"/> (verwacht: 0..1) [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/partiele_molaq]</assert>
@@ -1335,8 +1336,20 @@ SOFTWARE.
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap: == -->
-      <rule context="/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/*[not(self::gynaecologische_aandoening)][not(self::bloedverliesq)][not(self::partiele_molaq)][not(self::cervixinsufficientieq)][not(self::infectie)][not(self::hyperemesis_gravidarumq)][not(self::hypertensieve_aandoening)][not(self::zwangerschapscholestaseq)][not(self::diabetes_gravidarum_met_insulineq)][not(self::afwijkende_groei_foetus)][not(self::dreigende_partus_immaturusq)][not(self::dreigende_partus_prematurusq)][not(self::abruptio_placentaeq)][not(self::navelstrengprolapsq)][not(self::liggingsafwijking)][not(self::intrauteriene_vruchtdood)][not(self::adaextension)]">
+      <rule context="/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/*[not(self::dossiernummer)][not(self::gynaecologische_aandoening)][not(self::bloedverliesq)][not(self::partiele_molaq)][not(self::cervixinsufficientieq)][not(self::infectie)][not(self::hyperemesis_gravidarumq)][not(self::hypertensieve_aandoening)][not(self::zwangerschapscholestaseq)][not(self::diabetes_gravidarum_met_insulineq)][not(self::afwijkende_groei_foetus)][not(self::dreigende_partus_immaturusq)][not(self::dreigende_partus_prematurusq)][not(self::abruptio_placentaeq)][not(self::navelstrengprolapsq)][not(self::liggingsafwijking)][not(self::intrauteriene_vruchtdood)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/<value-of select="name(.)"/>]</report>
+      </rule>
+   </pattern>
+   <!-- == Check attributes of /kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/dossiernummer: == -->
+   <pattern>
+      <rule context="/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/dossiernummer"><!-- == Attribute "conceptId": == -->
+         <assert test="exists(@conceptId)">Foutieve informatie voor "Dossiernummer": Attribuut "conceptId" ontbreekt [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/dossiernummer/@conceptId]</assert>
+         <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Dossiernummer": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/dossiernummer/@conceptId; type=t-id]</assert>
+         <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.999.60.5.6.3.1')">Foutieve informatie voor "Dossiernummer": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.999.60.5.6.3.1" [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/dossiernummer/@conceptId]</assert>
+         <!-- == Attribute "value": == -->
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Dossiernummer": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/dossiernummer; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zorgverlening/verwijsdetails/redenen_van_verwijzing/van_1e_naar_2e_lijn/zwangerschap/gynaecologische_aandoening: == -->
@@ -3089,6 +3102,7 @@ SOFTWARE.
    <!-- == Any attributes allowed on /kernset_geboortezorg/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/congenitale_afwijkingen_groep/adaextension == -->
    <pattern>
       <rule context="/kernset_geboortezorg/zwangerschap"><!-- == Check occurrences of children of /kernset_geboortezorg/zwangerschap: == -->
+         <assert test="(count(dossiernummer) ge 0) and (count(dossiernummer) le 1)">Fout aantal voorkomens van "Dossiernummer": <value-of select="count(dossiernummer)"/> (verwacht: 0..1) [/kernset_geboortezorg/zwangerschap/dossiernummer]</assert>
          <assert test="(count(identificatie_van_de_zwangerschap) ge 0) and (count(identificatie_van_de_zwangerschap) le 1)">Fout aantal voorkomens van "Identificatie van de zwangerschap": <value-of select="count(identificatie_van_de_zwangerschap)"/> (verwacht: 0..1) [/kernset_geboortezorg/zwangerschap/identificatie_van_de_zwangerschap]</assert>
          <assert test="(count(graviditeit) ge 0) and (count(graviditeit) le 1)">Fout aantal voorkomens van "Graviditeit": <value-of select="count(graviditeit)"/> (verwacht: 0..1) [/kernset_geboortezorg/zwangerschap/graviditeit]</assert>
          <assert test="(count(pariteit_voor_deze_zwangerschap) ge 0) and (count(pariteit_voor_deze_zwangerschap) le 1)">Fout aantal voorkomens van "Pariteit (vóór deze zwangerschap)": <value-of select="count(pariteit_voor_deze_zwangerschap)"/> (verwacht: 0..1) [/kernset_geboortezorg/zwangerschap/pariteit_voor_deze_zwangerschap]</assert>
@@ -3103,8 +3117,20 @@ SOFTWARE.
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /kernset_geboortezorg/zwangerschap: == -->
-      <rule context="/kernset_geboortezorg/zwangerschap/*[not(self::identificatie_van_de_zwangerschap)][not(self::graviditeit)][not(self::pariteit_voor_deze_zwangerschap)][not(self::definitieve_a_terme_datum)][not(self::voornemens)][not(self::prenatale_controle)][not(self::diagnose)][not(self::intrauteriene_behandeling)][not(self::maternale_sterfteq)][not(self::wijze_einde_zwangerschap)][not(self::adaextension)]">
+      <rule context="/kernset_geboortezorg/zwangerschap/*[not(self::dossiernummer)][not(self::identificatie_van_de_zwangerschap)][not(self::graviditeit)][not(self::pariteit_voor_deze_zwangerschap)][not(self::definitieve_a_terme_datum)][not(self::voornemens)][not(self::prenatale_controle)][not(self::diagnose)][not(self::intrauteriene_behandeling)][not(self::maternale_sterfteq)][not(self::wijze_einde_zwangerschap)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/kernset_geboortezorg/zwangerschap/<value-of select="name(.)"/>]</report>
+      </rule>
+   </pattern>
+   <!-- == Check attributes of /kernset_geboortezorg/zwangerschap/dossiernummer: == -->
+   <pattern>
+      <rule context="/kernset_geboortezorg/zwangerschap/dossiernummer"><!-- == Attribute "conceptId": == -->
+         <assert test="exists(@conceptId)">Foutieve informatie voor "Dossiernummer": Attribuut "conceptId" ontbreekt [/kernset_geboortezorg/zwangerschap/dossiernummer/@conceptId]</assert>
+         <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Dossiernummer": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_geboortezorg/zwangerschap/dossiernummer/@conceptId; type=t-id]</assert>
+         <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.999.60.5.6.3.1')">Foutieve informatie voor "Dossiernummer": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.999.60.5.6.3.1" [/kernset_geboortezorg/zwangerschap/dossiernummer/@conceptId]</assert>
+         <!-- == Attribute "value": == -->
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Dossiernummer": Ongeldige attributen aangetroffen [/kernset_geboortezorg/zwangerschap/dossiernummer; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_geboortezorg/zwangerschap/identificatie_van_de_zwangerschap: == -->

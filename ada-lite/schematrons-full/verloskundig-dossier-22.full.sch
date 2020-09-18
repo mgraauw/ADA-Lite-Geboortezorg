@@ -2489,6 +2489,7 @@ SOFTWARE.
    <!-- == Any attributes allowed on /verloskundig_dossier_22/vrouw/partner/persoonsnaam/adaextension == -->
    <pattern>
       <rule context="/verloskundig_dossier_22/zwangerschap"><!-- == Check occurrences of children of /verloskundig_dossier_22/zwangerschap: == -->
+         <assert test="(count(dossiernummer) ge 0) and (count(dossiernummer) le 1)">Fout aantal voorkomens van "Dossiernummer": <value-of select="count(dossiernummer)"/> (verwacht: 0..1) [/verloskundig_dossier_22/zwangerschap/dossiernummer]</assert>
          <assert test="count(identificatie_van_de_zwangerschap) eq 1">Fout aantal voorkomens van "Identificatie van de zwangerschap": <value-of select="count(identificatie_van_de_zwangerschap)"/> (verwacht: 1) [/verloskundig_dossier_22/zwangerschap/identificatie_van_de_zwangerschap]</assert>
          <assert test="(count(casemanager_naam) ge 0) and (count(casemanager_naam) le 1)">Fout aantal voorkomens van "Casemanager naam": <value-of select="count(casemanager_naam)"/> (verwacht: 0..1) [/verloskundig_dossier_22/zwangerschap/casemanager_naam]</assert>
          <assert test="(count(graviditeit) ge 0) and (count(graviditeit) le 1)">Fout aantal voorkomens van "Graviditeit": <value-of select="count(graviditeit)"/> (verwacht: 0..1) [/verloskundig_dossier_22/zwangerschap/graviditeit]</assert>
@@ -2523,8 +2524,20 @@ SOFTWARE.
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /verloskundig_dossier_22/zwangerschap: == -->
-      <rule context="/verloskundig_dossier_22/zwangerschap/*[not(self::identificatie_van_de_zwangerschap)][not(self::casemanager_naam)][not(self::graviditeit)][not(self::pariteit_voor_deze_zwangerschap)][not(self::pariteit)][not(self::aantal_levende_kinderen)][not(self::fetal_loss)][not(self::a_terme_datum_groep)][not(self::definitieve_a_terme_datum)][not(self::foliumzuur_gebruik)][not(self::hoeveelling)][not(self::amnioniciteit)][not(self::chorioniciteit)][not(self::consanguiniteitq)][not(self::vals_positieve_zwangerschapq)][not(self::subfertiliteitsbehandelingq)][not(self::soort_subfertiliteitsbehandeling_groep)][not(self::trisomie_in_de_anamneseq)][not(self::voornemens)][not(self::prenatale_controle)][not(self::diagnose)][not(self::interventie)][not(self::intrauteriene_behandeling)][not(self::antenatale_betrokkenheid_kinderartsq)][not(self::reden_antenatale_betrokkenheid_kinderarts)][not(self::maternale_sterfteq)][not(self::datum_maternale_sterfte)][not(self::wijze_einde_zwangerschap)][not(self::datum_einde_zwangerschap)][not(self::bijlage)][not(self::adaextension)]">
+      <rule context="/verloskundig_dossier_22/zwangerschap/*[not(self::dossiernummer)][not(self::identificatie_van_de_zwangerschap)][not(self::casemanager_naam)][not(self::graviditeit)][not(self::pariteit_voor_deze_zwangerschap)][not(self::pariteit)][not(self::aantal_levende_kinderen)][not(self::fetal_loss)][not(self::a_terme_datum_groep)][not(self::definitieve_a_terme_datum)][not(self::foliumzuur_gebruik)][not(self::hoeveelling)][not(self::amnioniciteit)][not(self::chorioniciteit)][not(self::consanguiniteitq)][not(self::vals_positieve_zwangerschapq)][not(self::subfertiliteitsbehandelingq)][not(self::soort_subfertiliteitsbehandeling_groep)][not(self::trisomie_in_de_anamneseq)][not(self::voornemens)][not(self::prenatale_controle)][not(self::diagnose)][not(self::interventie)][not(self::intrauteriene_behandeling)][not(self::antenatale_betrokkenheid_kinderartsq)][not(self::reden_antenatale_betrokkenheid_kinderarts)][not(self::maternale_sterfteq)][not(self::datum_maternale_sterfte)][not(self::wijze_einde_zwangerschap)][not(self::datum_einde_zwangerschap)][not(self::bijlage)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/verloskundig_dossier_22/zwangerschap/<value-of select="name(.)"/>]</report>
+      </rule>
+   </pattern>
+   <!-- == Check attributes of /verloskundig_dossier_22/zwangerschap/dossiernummer: == -->
+   <pattern>
+      <rule context="/verloskundig_dossier_22/zwangerschap/dossiernummer"><!-- == Attribute "conceptId": == -->
+         <assert test="exists(@conceptId)">Foutieve informatie voor "Dossiernummer": Attribuut "conceptId" ontbreekt [/verloskundig_dossier_22/zwangerschap/dossiernummer/@conceptId]</assert>
+         <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Dossiernummer": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/verloskundig_dossier_22/zwangerschap/dossiernummer/@conceptId; type=t-id]</assert>
+         <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.999.60.5.6.3.1')">Foutieve informatie voor "Dossiernummer": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.999.60.5.6.3.1" [/verloskundig_dossier_22/zwangerschap/dossiernummer/@conceptId]</assert>
+         <!-- == Attribute "value": == -->
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Dossiernummer": Ongeldige attributen aangetroffen [/verloskundig_dossier_22/zwangerschap/dossiernummer; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /verloskundig_dossier_22/zwangerschap/identificatie_van_de_zwangerschap: == -->

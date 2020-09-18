@@ -917,6 +917,15 @@ SOFTWARE.
    </xs:complexType>
    <xs:complexType name="zwangerschap">
       <xs:sequence>
+         <xs:element name="dossiernummer"
+                     minOccurs="0"
+                     maxOccurs="1"
+                     type="dossiernummer">
+            <xs:annotation>
+               <xs:documentation source="name" xml:lang="nl-NL">Dossiernummer</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">Dossiernummer van de betreffende zwangerschap bij deze zorgaanbieder.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
          <xs:element name="graviditeit"
                      minOccurs="1"
                      maxOccurs="1"
@@ -950,6 +959,15 @@ SOFTWARE.
                     type="t-id"
                     use="required"
                     fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.3"/>
+   </xs:complexType>
+   <xs:complexType name="dossiernummer">
+      <xs:attribute name="conceptId"
+                    type="t-id"
+                    use="required"
+                    fixed="2.16.840.1.113883.2.4.3.11.999.60.5.6.3.1"/>
+      <xs:attribute name="value" use="optional" type="xs:string"/>
+      <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
+      <xs:attribute name="root" use="optional"/>
    </xs:complexType>
    <xs:complexType name="graviditeit">
       <xs:attribute name="conceptId"
@@ -1061,7 +1079,7 @@ SOFTWARE.
                      type="urine_bloed_en_aanvullende_onderzoeken">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">Urine-, bloed- en aanvullende onderzoeken</xs:documentation>
-               <xs:documentation source="desc" xml:lang="nl-NL">Urine-, bloed- en aanvullende onderzoekenHet gaat hier zowel om onderzoeken van bloed, urine en/of een ander monster door het laboratorium, als om onderzoeken die door de zorgverlener of patiënt 'zelf' worden gedaan. Voorbeelden van deze 'zelf'-bepalingen zijn: glucose, Hb en proteïne op basis van strips.</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">Urine-, bloed- en aanvullende onderzoeken Het gaat hier zowel om onderzoeken van bloed, urine en/of een ander monster door het laboratorium, als om onderzoeken die door de zorgverlener of patiënt 'zelf' worden gedaan. Voorbeelden van deze 'zelf'-bepalingen zijn: glucose, Hb en proteïne op basis van strips.</xs:documentation>
             </xs:annotation>
          </xs:element>
          <xs:element minOccurs="0" name="adaextension" type="adaextension">

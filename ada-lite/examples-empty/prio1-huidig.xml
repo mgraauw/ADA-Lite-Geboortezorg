@@ -38,6 +38,7 @@
       <rhesus_c_factor value="" enum=""/>
    </vrouw>
    <zwangerschap>
+      <dossiernummer value=""/>
       <graviditeit value=""/>
       <pariteit value=""/>
       <a_terme_datum_groep>

@@ -558,6 +558,19 @@
             shortName="zwangerschap">
       <name language="nl-NL">Zwangerschap</name>
       <desc language="nl-NL">De al dan niet afgesloten zwangerschap waarop de gegevens betrekking hebben.</desc>
+      <concept minimumMultiplicity="0"
+               maximumMultiplicity="1"
+               conformance="R"
+               isMandatory="false"
+               id="2.16.840.1.113883.2.4.3.11.999.60.5.6.3.1"
+               statusCode="draft"
+               effectiveDate="2019-01-28T00:00:00"
+               type="item"
+               shortName="dossiernummer">
+         <name language="nl-NL">Dossiernummer</name>
+         <desc language="nl-NL">Dossiernummer van de betreffende zwangerschap bij deze zorgaanbieder.</desc>
+         <valueDomain type="identifier"/>
+      </concept>
       <concept id="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.80627"
                statusCode="final"
                effectiveDate="2013-09-10T00:00:00"

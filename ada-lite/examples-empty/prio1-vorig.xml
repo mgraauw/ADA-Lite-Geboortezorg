@@ -35,6 +35,7 @@
       </naamgegevens>
    </vrouw>
    <zwangerschap>
+      <dossiernummer value=""/>
       <graviditeit value=""/>
       <pariteit_voor_deze_zwangerschap value=""/>
       <wijze_einde_zwangerschap value="" enum=""/>

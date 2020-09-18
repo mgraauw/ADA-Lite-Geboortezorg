@@ -341,6 +341,7 @@
   </p:viewport>
 
   <!-- Do the diffs: -->
+  
   <p:viewport match="specification-diff">
     <p:variable name="older" select="/*/@older"/>
     <p:variable name="newer" select="/*/@newer"/>
@@ -487,19 +488,19 @@
   </p:viewport>
 
   <!-- Validate with schema: -->
-  <p:viewport match="validate-schema">
+  <!--<p:viewport match="validate-schema">
     <p:variable name="in" select="/*/@in"/>
     <p:variable name="schema" select="/*/@schema"/>
     <cx:message>
       <p:with-option name="message" select="concat('validate-schema: ', $in, ' - ', $schema)"/> 
     </cx:message>
     <p:identity name="original"/>
-    <!-- Load the schema file: -->
+    <!-\- Load the schema file: -\->
     <p:load dtd-validate="false" name="schema-file">
       <p:with-option name="href" select="$schema"/>
     </p:load>
     <p:sink/>
-    <!-- Load the file to validate and go: -->
+    <!-\- Load the file to validate and go: -\->
     <p:load dtd-validate="false">
       <p:with-option name="href" select="$in"/>
     </p:load>
@@ -519,7 +520,7 @@
         </p:identity>
       </p:group>
       <p:catch name="catch-validation-errors">
-        <!-- Get error messages: -->
+        <!-\- Get error messages: -\->
         <p:filter select="//c:error">
           <p:input port="source">
             <p:pipe port="error" step="catch-validation-errors"/>
@@ -530,7 +531,7 @@
     </p:try>
     <p:identity name="validation-result"/>
     <p:sink/>
-    <!-- Create output: -->
+    <!-\- Create output: -\->
     <p:insert match="/*" position="first-child">
       <p:input port="source">
         <p:pipe port="result" step="original"/>
@@ -541,7 +542,7 @@
     </p:insert>
   </p:viewport>
 
-  <!-- Validate with schematron: -->
+  <!-\- Validate with schematron: -\->
   <p:viewport match="validate-schematron">
     <p:variable name="in" select="/*/@in"/>
     <p:variable name="schematron" select="/*/@schematron"/>
@@ -549,12 +550,12 @@
       <p:with-option name="message" select="concat('validate-schematron: ', $in, ' - ', $schematron)"/> 
     </cx:message>
     <p:identity name="original"/>
-    <!-- Load the Schematron file: -->
+    <!-\- Load the Schematron file: -\->
     <p:load dtd-validate="false" name="schematron-file">
       <p:with-option name="href" select="$schematron"/>
     </p:load>
     <p:sink/>
-    <!-- Load the file to validate and go: -->
+    <!-\- Load the file to validate and go: -\->
     <p:load dtd-validate="false">
       <p:with-option name="href" select="$in"/>
     </p:load>
@@ -565,7 +566,7 @@
       <p:with-param name="null" select="()"/>
     </p:validate-with-schematron>
     <p:sink/>
-    <!-- Get the report and filter only the necessary failed messages: -->
+    <!-\- Get the report and filter only the necessary failed messages: -\->
     <p:filter select="//svrl:failed-assert | //svrl:successful-report">
       <p:input port="source">
         <p:pipe port="report" step="schematron-validation"/>
@@ -579,7 +580,7 @@
       <p:with-param name="null" select="()"/>
     </p:xslt>
     <p:sink/>
-    <!-- Create output: -->
+    <!-\- Create output: -\->
     <p:insert match="/*" position="first-child">
       <p:input port="source">
         <p:pipe port="result" step="original"/>
@@ -588,7 +589,7 @@
         <p:pipe port="result" step="schematron-validation-filtered"/>
       </p:input>
     </p:insert>
-  </p:viewport>
+  </p:viewport>-->
 
   <!-- Add some additional info to the root element: -->
   <p:add-attribute attribute-name="validation-errors" match="/*">

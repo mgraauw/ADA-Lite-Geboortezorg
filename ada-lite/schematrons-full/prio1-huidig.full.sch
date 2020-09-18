@@ -613,6 +613,7 @@ SOFTWARE.
    <!-- == Any attributes allowed on /prio1_huidige_zwangerschap/vrouw/naamgegevens/achternaam/adaextension == -->
    <pattern>
       <rule context="/prio1_huidige_zwangerschap/zwangerschap"><!-- == Check occurrences of children of /prio1_huidige_zwangerschap/zwangerschap: == -->
+         <assert test="(count(dossiernummer) ge 0) and (count(dossiernummer) le 1)">Fout aantal voorkomens van "Dossiernummer": <value-of select="count(dossiernummer)"/> (verwacht: 0..1) [/prio1_huidige_zwangerschap/zwangerschap/dossiernummer]</assert>
          <assert test="count(graviditeit) eq 1">Fout aantal voorkomens van "Graviditeit": <value-of select="count(graviditeit)"/> (verwacht: 1) [/prio1_huidige_zwangerschap/zwangerschap/graviditeit]</assert>
          <assert test="count(pariteit) eq 1">Fout aantal voorkomens van "Pariteit": <value-of select="count(pariteit)"/> (verwacht: 1) [/prio1_huidige_zwangerschap/zwangerschap/pariteit]</assert>
          <assert test="count(a_terme_datum_groep) eq 1">Fout aantal voorkomens van "A terme datum (groep)": <value-of select="count(a_terme_datum_groep)"/> (verwacht: 1) [/prio1_huidige_zwangerschap/zwangerschap/a_terme_datum_groep]</assert>
@@ -620,8 +621,20 @@ SOFTWARE.
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /prio1_huidige_zwangerschap/zwangerschap: == -->
-      <rule context="/prio1_huidige_zwangerschap/zwangerschap/*[not(self::graviditeit)][not(self::pariteit)][not(self::a_terme_datum_groep)][not(self::adaextension)]">
+      <rule context="/prio1_huidige_zwangerschap/zwangerschap/*[not(self::dossiernummer)][not(self::graviditeit)][not(self::pariteit)][not(self::a_terme_datum_groep)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/prio1_huidige_zwangerschap/zwangerschap/<value-of select="name(.)"/>]</report>
+      </rule>
+   </pattern>
+   <!-- == Check attributes of /prio1_huidige_zwangerschap/zwangerschap/dossiernummer: == -->
+   <pattern>
+      <rule context="/prio1_huidige_zwangerschap/zwangerschap/dossiernummer"><!-- == Attribute "conceptId": == -->
+         <assert test="exists(@conceptId)">Foutieve informatie voor "Dossiernummer": Attribuut "conceptId" ontbreekt [/prio1_huidige_zwangerschap/zwangerschap/dossiernummer/@conceptId]</assert>
+         <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Dossiernummer": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/prio1_huidige_zwangerschap/zwangerschap/dossiernummer/@conceptId; type=t-id]</assert>
+         <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.999.60.5.6.3.1')">Foutieve informatie voor "Dossiernummer": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.999.60.5.6.3.1" [/prio1_huidige_zwangerschap/zwangerschap/dossiernummer/@conceptId]</assert>
+         <!-- == Attribute "value": == -->
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Dossiernummer": Ongeldige attributen aangetroffen [/prio1_huidige_zwangerschap/zwangerschap/dossiernummer; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /prio1_huidige_zwangerschap/zwangerschap/graviditeit: == -->

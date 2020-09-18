@@ -774,6 +774,15 @@ SOFTWARE.
    </xs:complexType>
    <xs:complexType name="zwangerschap">
       <xs:sequence>
+         <xs:element name="dossiernummer"
+                     minOccurs="0"
+                     maxOccurs="1"
+                     type="dossiernummer">
+            <xs:annotation>
+               <xs:documentation source="name" xml:lang="nl-NL">Dossiernummer</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">Dossiernummer van de betreffende zwangerschap bij deze zorgaanbieder.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
          <xs:element name="graviditeit"
                      minOccurs="0"
                      maxOccurs="1"
@@ -798,7 +807,7 @@ SOFTWARE.
                      type="wijze_einde_zwangerschap">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">Wijze einde zwangerschap</xs:documentation>
-               <xs:documentation source="desc" xml:lang="nl-NL">De wijze waarop de zwangerschap geëindigd is.TOP (Termination of Pregnancy) is zwangerschapsafbreking na 16+0 weken (16w0d). Bij TOP wordt hier 'Partus' geregistreerd, zodat dit meegenomen wordt als pariteit. Dit in tegenstelling tot APLA, waarmee een zwangerschapsafbreking (abortus) van minder dan 16 weken wordt bedoeld.</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">De wijze waarop de zwangerschap geëindigd is. TOP (Termination of Pregnancy) is zwangerschapsafbreking na 16+0 weken (16w0d). Bij TOP wordt hier 'Partus' geregistreerd, zodat dit meegenomen wordt als pariteit. Dit in tegenstelling tot APLA, waarmee een zwangerschapsafbreking (abortus) van minder dan 16 weken wordt bedoeld.</xs:documentation>
             </xs:annotation>
          </xs:element>
          <xs:element name="datum_einde_zwangerschap"
@@ -807,7 +816,7 @@ SOFTWARE.
                      type="datum_einde_zwangerschap">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">Datum einde zwangerschap</xs:documentation>
-               <xs:documentation source="desc" xml:lang="nl-NL">Moment (datum en tijd) waarop de zwangerschap medisch gezien is geëindigd, anders dan na een partus (bij een partus wordt dit item niet ingevuld).NB. Bij een partus wordt op een andere plaats in het dossier geregistreerd: geboortedatum per kind én geboortedatum/tijd van de placenta(e).</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">Moment (datum en tijd) waarop de zwangerschap medisch gezien is geëindigd, anders dan na een partus (bij een partus wordt dit item niet ingevuld). NB. Bij een partus wordt op een andere plaats in het dossier geregistreerd: geboortedatum per kind én geboortedatum/tijd van de placenta(e).</xs:documentation>
             </xs:annotation>
          </xs:element>
          <xs:element minOccurs="0" name="adaextension" type="adaextension">
@@ -820,6 +829,15 @@ SOFTWARE.
                     type="t-id"
                     use="optional"
                     fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.3"/>
+   </xs:complexType>
+   <xs:complexType name="dossiernummer">
+      <xs:attribute name="conceptId"
+                    type="t-id"
+                    use="optional"
+                    fixed="2.16.840.1.113883.2.4.3.11.999.60.5.6.3.1"/>
+      <xs:attribute name="value" use="optional" type="xs:string"/>
+      <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
+      <xs:attribute name="root" use="optional"/>
    </xs:complexType>
    <xs:complexType name="graviditeit">
       <xs:attribute name="conceptId"
@@ -1035,7 +1053,7 @@ SOFTWARE.
                      type="tijdstip_begin_actieve_ontsluiting">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">Tijdstip begin actieve ontsluiting</xs:documentation>
-               <xs:documentation source="desc" xml:lang="nl-NL">Datum en tijd begin actieve ontsluitingKNOV definitie van actieve ontsluting: dunne verstreken cervix én ten minste 3 cm ontsluiting én krachtige, pijnlijke weeën om de 2 à 3 minuten.</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">Datum en tijd begin actieve ontsluiting KNOV definitie van actieve ontsluting: dunne verstreken cervix én ten minste 3 cm ontsluiting én krachtige, pijnlijke weeën om de 2 à 3 minuten.</xs:documentation>
             </xs:annotation>
          </xs:element>
          <xs:element name="duur_actieve_ontsluitingsfase_ontsluitingsduur"
@@ -1444,7 +1462,7 @@ SOFTWARE.
                      type="type_partus">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">Type partus</xs:documentation>
-               <xs:documentation source="desc" xml:lang="nl-NL">Type partus.Een primaire sectio is een geplande sectio en wordt óók als zodanig geregistreerd als deze uitgevoerd wordt wanneer de weeën al zijn begonnen, de vliezen zijn gebroken en/of de uitdrijving is begonnen.TOP (Termination of Pregnancy) is zwangerschapsafbreking na 16 weken. Dit in tegenstelling tot APLA, waarmee een zwangerschapsafbreking (abortus) van minder dan 16 weken wordt bedoeld.</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">Type partus. Een primaire sectio is een geplande sectio en wordt óók als zodanig geregistreerd als deze uitgevoerd wordt wanneer de weeën al zijn begonnen, de vliezen zijn gebroken en/of de uitdrijving is begonnen. TOP (Termination of Pregnancy) is zwangerschapsafbreking na 16 weken. Dit in tegenstelling tot APLA, waarmee een zwangerschapsafbreking (abortus) van minder dan 16 weken wordt bedoeld.</xs:documentation>
             </xs:annotation>
          </xs:element>
          <xs:element name="zwangerschapsduur"

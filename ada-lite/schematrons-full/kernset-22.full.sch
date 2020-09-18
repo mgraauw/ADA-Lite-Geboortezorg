@@ -1944,6 +1944,7 @@ SOFTWARE.
    <!-- == Any attributes allowed on /kernset_aanleverbericht/obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap/eerdere_bevalling/vorige_uitkomst_per_kind/vorige_baring/kindspecifieke_gegevens_vorige_uitkomsten/congenitale_afwijkingen_groep/adaextension == -->
    <pattern>
       <rule context="/kernset_aanleverbericht/zwangerschap"><!-- == Check occurrences of children of /kernset_aanleverbericht/zwangerschap: == -->
+         <assert test="(count(dossiernummer) ge 0) and (count(dossiernummer) le 1)">Fout aantal voorkomens van "Dossiernummer": <value-of select="count(dossiernummer)"/> (verwacht: 0..1) [/kernset_aanleverbericht/zwangerschap/dossiernummer]</assert>
          <assert test="(count(graviditeit) ge 0) and (count(graviditeit) le 1)">Fout aantal voorkomens van "Graviditeit": <value-of select="count(graviditeit)"/> (verwacht: 0..1) [/kernset_aanleverbericht/zwangerschap/graviditeit]</assert>
          <assert test="(count(pariteit_voor_deze_zwangerschap) ge 0) and (count(pariteit_voor_deze_zwangerschap) le 1)">Fout aantal voorkomens van "Pariteit (vóór deze zwangerschap)": <value-of select="count(pariteit_voor_deze_zwangerschap)"/> (verwacht: 0..1) [/kernset_aanleverbericht/zwangerschap/pariteit_voor_deze_zwangerschap]</assert>
          <assert test="(count(definitieve_a_terme_datum) ge 0) and (count(definitieve_a_terme_datum) le 1)">Fout aantal voorkomens van "Definitieve à terme datum": <value-of select="count(definitieve_a_terme_datum)"/> (verwacht: 0..1) [/kernset_aanleverbericht/zwangerschap/definitieve_a_terme_datum]</assert>
@@ -1957,8 +1958,20 @@ SOFTWARE.
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /kernset_aanleverbericht/zwangerschap: == -->
-      <rule context="/kernset_aanleverbericht/zwangerschap/*[not(self::graviditeit)][not(self::pariteit_voor_deze_zwangerschap)][not(self::definitieve_a_terme_datum)][not(self::voornemens)][not(self::prenatale_controle)][not(self::diagnose)][not(self::intrauteriene_behandeling)][not(self::maternale_sterfteq)][not(self::wijze_einde_zwangerschap)][not(self::adaextension)]">
+      <rule context="/kernset_aanleverbericht/zwangerschap/*[not(self::dossiernummer)][not(self::graviditeit)][not(self::pariteit_voor_deze_zwangerschap)][not(self::definitieve_a_terme_datum)][not(self::voornemens)][not(self::prenatale_controle)][not(self::diagnose)][not(self::intrauteriene_behandeling)][not(self::maternale_sterfteq)][not(self::wijze_einde_zwangerschap)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/kernset_aanleverbericht/zwangerschap/<value-of select="name(.)"/>]</report>
+      </rule>
+   </pattern>
+   <!-- == Check attributes of /kernset_aanleverbericht/zwangerschap/dossiernummer: == -->
+   <pattern>
+      <rule context="/kernset_aanleverbericht/zwangerschap/dossiernummer"><!-- == Attribute "conceptId": == -->
+         <assert test="exists(@conceptId)">Foutieve informatie voor "Dossiernummer": Attribuut "conceptId" ontbreekt [/kernset_aanleverbericht/zwangerschap/dossiernummer/@conceptId]</assert>
+         <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Dossiernummer": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/kernset_aanleverbericht/zwangerschap/dossiernummer/@conceptId; type=t-id]</assert>
+         <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.999.60.5.6.3.1')">Foutieve informatie voor "Dossiernummer": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.999.60.5.6.3.1" [/kernset_aanleverbericht/zwangerschap/dossiernummer/@conceptId]</assert>
+         <!-- == Attribute "value": == -->
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Dossiernummer": Ongeldige attributen aangetroffen [/kernset_aanleverbericht/zwangerschap/dossiernummer; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /kernset_aanleverbericht/zwangerschap/graviditeit: == -->

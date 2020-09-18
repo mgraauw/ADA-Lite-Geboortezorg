@@ -6998,7 +6998,7 @@ SOFTWARE.
                      type="geboortedatum_10040">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">Geboortedatum</xs:documentation>
-               <xs:documentation source="desc" xml:lang="nl-NL">Geboortedatum.Indien de dag en/of maand van de geboortedatum niet bekend zijn, vult u dit in als 01-01-xxxx. Wanneer het geboortejaar ook onbekend is, is schatten van het geboortejaar toegestaan.</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">Geboortedatum. Indien de dag en/of maand van de geboortedatum niet bekend zijn, vult u dit in als 01-01-xxxx. Wanneer het geboortejaar ook onbekend is, is schatten van het geboortejaar toegestaan.</xs:documentation>
             </xs:annotation>
          </xs:element>
          <xs:element name="adres" minOccurs="0" maxOccurs="1" type="adres">
@@ -7425,7 +7425,7 @@ SOFTWARE.
                      type="infectieziekte">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">Infectieziekte</xs:documentation>
-               <xs:documentation source="desc" xml:lang="nl-NL">InfectieziekteLet op! Sommige infectieziekten behoeven extra attentiewaarde bij een verwijzing, bijvoorbeeld: MRSA, HIV, Hepatitis.</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">Infectieziekte Let op! Sommige infectieziekten behoeven extra attentiewaarde bij een verwijzing, bijvoorbeeld: MRSA, HIV, Hepatitis.</xs:documentation>
             </xs:annotation>
          </xs:element>
          <xs:element name="mdl_aandoeningq"
@@ -7523,7 +7523,7 @@ SOFTWARE.
                      type="transfusiereactieq">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">Transfusiereactie?</xs:documentation>
-               <xs:documentation source="desc" xml:lang="nl-NL">Heeft vrouw een transfusiereactie gehad?Alleen van toepassing als Bloedtransfusie? = 'Ja'.</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">Heeft vrouw een transfusiereactie gehad? Alleen van toepassing als Bloedtransfusie? = 'Ja'.</xs:documentation>
             </xs:annotation>
          </xs:element>
          <xs:element name="operatieq" minOccurs="0" maxOccurs="1" type="operatieq">
@@ -9612,7 +9612,7 @@ SOFTWARE.
                      type="wijze_einde_zwangerschap_80623">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">Wijze einde zwangerschap</xs:documentation>
-               <xs:documentation source="desc" xml:lang="nl-NL">De wijze waarop de zwangerschap geëindigd is.TOP (Termination of Pregnancy) is zwangerschapsafbreking na 16 weken. Bij TOP wordt hier 'Partus' geregistreerd, zodat dit meegenomen wordt als pariteit. Dit in tegenstelling tot APLA, waarmee een zwangerschapsafbreking (abortus) van minder dan 16 weken wordt bedoeld.</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">De wijze waarop de zwangerschap geëindigd is. TOP (Termination of Pregnancy) is zwangerschapsafbreking na 16 weken. Bij TOP wordt hier 'Partus' geregistreerd, zodat dit meegenomen wordt als pariteit. Dit in tegenstelling tot APLA, waarmee een zwangerschapsafbreking (abortus) van minder dan 16 weken wordt bedoeld.</xs:documentation>
             </xs:annotation>
          </xs:element>
          <xs:element name="definitieve_a_terme_datum"
@@ -9922,7 +9922,7 @@ SOFTWARE.
                      type="dreigende_partus_immaturusq_82327">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">Dreigende partus immaturus?</xs:documentation>
-               <xs:documentation source="desc" xml:lang="nl-NL">Is er sprake van dreigende partus immaturus?Een partus immaturus is van 16w0d tot en met 23w6d.</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">Is er sprake van dreigende partus immaturus? Een partus immaturus is van 16w0d tot en met 23w6d.</xs:documentation>
             </xs:annotation>
          </xs:element>
          <xs:element name="dreigende_partus_prematurusq"
@@ -9931,7 +9931,7 @@ SOFTWARE.
                      type="dreigende_partus_prematurusq_82328">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">Dreigende partus prematurus?</xs:documentation>
-               <xs:documentation source="desc" xml:lang="nl-NL">Is er sprake van dreigende partus prematurus?Een partus prematurus is van 24w0d tot en met 36w6d.</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">Is er sprake van dreigende partus prematurus? Een partus prematurus is van 24w0d tot en met 36w6d.</xs:documentation>
             </xs:annotation>
          </xs:element>
          <xs:element name="abruptio_placentaeq"
@@ -10572,7 +10572,7 @@ SOFTWARE.
                      type="vorige_baring">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">Vorige baring</xs:documentation>
-               <xs:documentation source="desc" xml:lang="nl-NL">Vorige baring.Baring is het geboren laten worden van één uitkomst (kind).</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">Vorige baring. Baring is het geboren laten worden van één uitkomst (kind).</xs:documentation>
             </xs:annotation>
          </xs:element>
          <xs:element minOccurs="0" name="adaextension" type="adaextension">
@@ -10655,7 +10655,7 @@ SOFTWARE.
                      type="type_partus_80624">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">Type partus</xs:documentation>
-               <xs:documentation source="desc" xml:lang="nl-NL">Type partus.Een primaire sectio is een geplande sectio en wordt óók als zodanig geregistreerd als deze uitgevoerd wordt wanneer de weeën al zijn begonnen, de vliezen zijn gebroken en/of de uitdrijving is begonnen.TOP (Termination of Pregnancy) is zwangerschapsafbreking na 16 weken. Dit in tegenstelling tot APLA, waarmee een zwangerschapsafbreking (abortus) van minder dan 16 weken wordt bedoeld.</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">Type partus. Een primaire sectio is een geplande sectio en wordt óók als zodanig geregistreerd als deze uitgevoerd wordt wanneer de weeën al zijn begonnen, de vliezen zijn gebroken en/of de uitdrijving is begonnen. TOP (Termination of Pregnancy) is zwangerschapsafbreking na 16 weken. Dit in tegenstelling tot APLA, waarmee een zwangerschapsafbreking (abortus) van minder dan 16 weken wordt bedoeld.</xs:documentation>
             </xs:annotation>
          </xs:element>
          <xs:element name="percentiel_van_het_geboortegewicht"
@@ -11006,6 +11006,15 @@ SOFTWARE.
    </xs:complexType>
    <xs:complexType name="zwangerschap">
       <xs:sequence>
+         <xs:element name="dossiernummer"
+                     minOccurs="0"
+                     maxOccurs="1"
+                     type="dossiernummer">
+            <xs:annotation>
+               <xs:documentation source="name" xml:lang="nl-NL">Dossiernummer</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">Dossiernummer van de betreffende zwangerschap bij deze zorgaanbieder.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
          <xs:element name="graviditeit"
                      minOccurs="0"
                      maxOccurs="1"
@@ -11080,7 +11089,7 @@ SOFTWARE.
                      type="wijze_einde_zwangerschap_80625">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">Wijze einde zwangerschap</xs:documentation>
-               <xs:documentation source="desc" xml:lang="nl-NL">De wijze waarop de zwangerschap geëindigd is.TOP (Termination of Pregnancy) is zwangerschapsafbreking na 16 weken. Bij TOP wordt hier 'Partus' geregistreerd, zodat dit meegenomen wordt als pariteit. Dit in tegenstelling tot APLA, waarmee een zwangerschapsafbreking (abortus) van minder dan 16 weken wordt bedoeld.</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">De wijze waarop de zwangerschap geëindigd is. TOP (Termination of Pregnancy) is zwangerschapsafbreking na 16 weken. Bij TOP wordt hier 'Partus' geregistreerd, zodat dit meegenomen wordt als pariteit. Dit in tegenstelling tot APLA, waarmee een zwangerschapsafbreking (abortus) van minder dan 16 weken wordt bedoeld.</xs:documentation>
             </xs:annotation>
          </xs:element>
          <xs:element minOccurs="0" name="adaextension" type="adaextension">
@@ -11093,6 +11102,15 @@ SOFTWARE.
                     type="t-id"
                     use="optional"
                     fixed="2.16.840.1.113883.2.4.3.11.60.90.77.2.5.3"/>
+   </xs:complexType>
+   <xs:complexType name="dossiernummer">
+      <xs:attribute name="conceptId"
+                    type="t-id"
+                    use="optional"
+                    fixed="2.16.840.1.113883.2.4.3.11.999.60.5.6.3.1"/>
+      <xs:attribute name="value" use="optional" type="xs:string"/>
+      <xs:attribute name="nullFlavor" type="NullFlavorNoInformation" use="optional"/>
+      <xs:attribute name="root" use="optional"/>
    </xs:complexType>
    <xs:complexType name="graviditeit">
       <xs:attribute name="conceptId"
@@ -11143,7 +11161,7 @@ SOFTWARE.
                      type="voorgenomen_plaats_baring_tijdens_zwangerschap_type_locatie">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">Voorgenomen plaats baring tijdens zwangerschap (type locatie)</xs:documentation>
-               <xs:documentation source="desc" xml:lang="nl-NL">Voorgenomen plaats baring tijdens zwangerschap (type locatie).Het gaat hier primair om de wens van de vrouw die soms beperkt wordt door de risicostatus. Er kan gekozen worden voor 'ziekenhuis' ook als er géén sprake is van een medische indicaite.</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">Voorgenomen plaats baring tijdens zwangerschap (type locatie). Het gaat hier primair om de wens van de vrouw die soms beperkt wordt door de risicostatus. Er kan gekozen worden voor 'ziekenhuis' ook als er géén sprake is van een medische indicaite.</xs:documentation>
             </xs:annotation>
          </xs:element>
          <xs:element minOccurs="0" name="adaextension" type="adaextension">
@@ -11696,7 +11714,7 @@ SOFTWARE.
                      type="partiele_molaq">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">Partiële mola?</xs:documentation>
-               <xs:documentation source="desc" xml:lang="nl-NL">Is er sprake van een partiële mola, met intacte zwangerschap?Een mola wordt geregistreerd bij 'wijze einde zwangerschap'.</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">Is er sprake van een partiële mola, met intacte zwangerschap? Een mola wordt geregistreerd bij 'wijze einde zwangerschap'.</xs:documentation>
             </xs:annotation>
          </xs:element>
          <xs:element name="cervixinsufficientieq"
@@ -11766,7 +11784,7 @@ SOFTWARE.
                      type="dreigende_partus_immaturusq_82279">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">Dreigende partus immaturus?</xs:documentation>
-               <xs:documentation source="desc" xml:lang="nl-NL">Is er sprake van dreigende partus immaturus?Een partus immaturus is van 16w0d tot en met 23w6d.</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">Is er sprake van dreigende partus immaturus? Een partus immaturus is van 16w0d tot en met 23w6d.</xs:documentation>
             </xs:annotation>
          </xs:element>
          <xs:element name="dreigende_partus_prematurusq"
@@ -11775,7 +11793,7 @@ SOFTWARE.
                      type="dreigende_partus_prematurusq_82280">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">Dreigende partus prematurus?</xs:documentation>
-               <xs:documentation source="desc" xml:lang="nl-NL">Is er sprake van dreigende partus prematurus?Een partus prematurus is van 24w0d tot en met 36w6d.</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">Is er sprake van dreigende partus prematurus? Een partus prematurus is van 24w0d tot en met 36w6d.</xs:documentation>
             </xs:annotation>
          </xs:element>
          <xs:element name="abruptio_placentaeq"
@@ -12572,7 +12590,7 @@ SOFTWARE.
                      type="tijdstip_begin_actieve_ontsluiting">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">Tijdstip begin actieve ontsluiting</xs:documentation>
-               <xs:documentation source="desc" xml:lang="nl-NL">Datum en tijd begin actieve ontsluitingKNOV definitie van actieve ontsluting: dunne verstreken cervix én ten minste 3 cm ontsluiting én krachtige, pijnlijke weeën om de 2 à 3 minuten.</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">Datum en tijd begin actieve ontsluiting KNOV definitie van actieve ontsluting: dunne verstreken cervix én ten minste 3 cm ontsluiting én krachtige, pijnlijke weeën om de 2 à 3 minuten.</xs:documentation>
             </xs:annotation>
          </xs:element>
          <xs:element name="bijstimulatie_toegediendq"
@@ -12651,13 +12669,13 @@ SOFTWARE.
          <xs:element name="ppromq" minOccurs="0" maxOccurs="1" type="ppromq">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">PPROM?</xs:documentation>
-               <xs:documentation source="desc" xml:lang="nl-NL">PPROM = Preterm Prelabor Rupture of Membranes.PPROM = Breken van vliezen zonder weeën tot en met 36w6d.</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">PPROM = Preterm Prelabor Rupture of Membranes. PPROM = Breken van vliezen zonder weeën tot en met 36w6d.</xs:documentation>
             </xs:annotation>
          </xs:element>
          <xs:element name="promq" minOccurs="0" maxOccurs="1" type="promq">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">PROM?</xs:documentation>
-               <xs:documentation source="desc" xml:lang="nl-NL">PROM = Prelabor Rupture of MembranesPROM = Breken van vliezen zonder weeën 37w0d of later.</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">PROM = Prelabor Rupture of Membranes PROM = Breken van vliezen zonder weeën 37w0d of later.</xs:documentation>
             </xs:annotation>
          </xs:element>
          <xs:element name="koortsq" minOccurs="0" maxOccurs="1" type="koortsq">
@@ -12681,7 +12699,7 @@ SOFTWARE.
                      type="niet_vorderende_uitdrijvingq">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">Niet vorderende uitdrijving?</xs:documentation>
-               <xs:documentation source="desc" xml:lang="nl-NL">Niet vorderende uitdrijving?Er is sprake van niet vorderende uitdrijving (NVOG richtlijn) wanneer: bij primipara: zonder regionale anesthesie de uitdrijving langer dan 2 uur duurt met regionale anesthesie de uitdrijving langer dan 3 uur duurt; bij multipara die eerder vaginaal bevallen is: zonder regionale anesthesie de uitdrijving langer dan 1 uur duurt. met regionale anesthesie de uitdrijving langer dan 2 uur duurt</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">Niet vorderende uitdrijving? Er is sprake van niet vorderende uitdrijving (NVOG richtlijn) wanneer: bij primipara: zonder regionale anesthesie de uitdrijving langer dan 2 uur duurt met regionale anesthesie de uitdrijving langer dan 3 uur duurt; bij multipara die eerder vaginaal bevallen is: zonder regionale anesthesie de uitdrijving langer dan 1 uur duurt. met regionale anesthesie de uitdrijving langer dan 2 uur duurt</xs:documentation>
             </xs:annotation>
          </xs:element>
          <xs:element name="verdenking_foetale_noodq"
@@ -12998,7 +13016,7 @@ SOFTWARE.
                      type="interventie_begin_baring">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">Interventie begin baring</xs:documentation>
-               <xs:documentation source="desc" xml:lang="nl-NL">Interventie begin baringEen primaire sectio is een geplande sectio en wordt óók als zodanig geregistreerd als deze uitgevoerd wordt wanneer de weeën al zijn begonnen, de vliezen zijn gebroken en/of de uitdrijving is begonnen.</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">Interventie begin baring Een primaire sectio is een geplande sectio en wordt óók als zodanig geregistreerd als deze uitgevoerd wordt wanneer de weeën al zijn begonnen, de vliezen zijn gebroken en/of de uitdrijving is begonnen.</xs:documentation>
             </xs:annotation>
          </xs:element>
          <xs:element name="indicatie_interventie_begin_baring"
@@ -13007,7 +13025,7 @@ SOFTWARE.
                      type="indicatie_interventie_begin_baring">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">Indicatie interventie begin baring</xs:documentation>
-               <xs:documentation source="desc" xml:lang="nl-NL">Indicatie interventie begin baring.Registreer hier één indicatie: de meest zwaarwegende.</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">Indicatie interventie begin baring. Registreer hier één indicatie: de meest zwaarwegende.</xs:documentation>
             </xs:annotation>
          </xs:element>
          <xs:element minOccurs="0" name="adaextension" type="adaextension">
@@ -13856,7 +13874,7 @@ SOFTWARE.
                      type="ziekenhuis_baring">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">Ziekenhuis baring</xs:documentation>
-               <xs:documentation source="desc" xml:lang="nl-NL">Het ziekenhuis waar baring plaats vond.Alleen van toepassing indien "Werkelijke plaats baring (type locatie)" een ziekenhuis betreft.</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">Het ziekenhuis waar baring plaats vond. Alleen van toepassing indien "Werkelijke plaats baring (type locatie)" een ziekenhuis betreft.</xs:documentation>
             </xs:annotation>
          </xs:element>
          <xs:element name="demografische_gegevens"
@@ -14450,7 +14468,7 @@ SOFTWARE.
          <xs:element name="sedatieq" minOccurs="0" maxOccurs="1" type="sedatieq">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">Sedatie?</xs:documentation>
-               <xs:documentation source="desc" xml:lang="nl-NL">Is er sprake van sedatie?Ja/Nee/OnbekendSedatie is geen pijnbestrijding en wordt in principe niet durante partu toegepast. Opiaten, epiduraal of spinaal horen onder pijnbestrijding en dus niet onder sedatie.Onder sedatie valt bijvoorbeeld dormicum of phenergan.</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">Is er sprake van sedatie?Ja/Nee/Onbekend Sedatie is geen pijnbestrijding en wordt in principe niet durante partu toegepast. Opiaten, epiduraal of spinaal horen onder pijnbestrijding en dus niet onder sedatie.Onder sedatie valt bijvoorbeeld dormicum of phenergan.</xs:documentation>
             </xs:annotation>
          </xs:element>
          <xs:element minOccurs="0" name="adaextension" type="adaextension">
@@ -15183,7 +15201,7 @@ SOFTWARE.
                      type="type_partus_80626">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">Type partus</xs:documentation>
-               <xs:documentation source="desc" xml:lang="nl-NL">Type partus.Een primaire sectio is een geplande sectio en wordt óók als zodanig geregistreerd als deze uitgevoerd wordt wanneer de weeën al zijn begonnen, de vliezen zijn gebroken en/of de uitdrijving is begonnen.TOP (Termination of Pregnancy) is zwangerschapsafbreking na 16 weken. Dit in tegenstelling tot APLA, waarmee een zwangerschapsafbreking (abortus) van minder dan 16 weken wordt bedoeld.</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">Type partus. Een primaire sectio is een geplande sectio en wordt óók als zodanig geregistreerd als deze uitgevoerd wordt wanneer de weeën al zijn begonnen, de vliezen zijn gebroken en/of de uitdrijving is begonnen. TOP (Termination of Pregnancy) is zwangerschapsafbreking na 16 weken. Dit in tegenstelling tot APLA, waarmee een zwangerschapsafbreking (abortus) van minder dan 16 weken wordt bedoeld.</xs:documentation>
             </xs:annotation>
          </xs:element>
          <xs:element name="apgarscore_na_5_min"
@@ -16014,7 +16032,7 @@ SOFTWARE.
                      type="succes_vaginale_kunstverlossingq">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">Succes vaginale kunstverlossing?</xs:documentation>
-               <xs:documentation source="desc" xml:lang="nl-NL">Vaginale kunstverlossing geslaagd?Een vaginale kunstverlossing is geslaagd als het kind daarmee geboren wordt, onafhankelijk van de conditie van het kind.</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">Vaginale kunstverlossing geslaagd? Een vaginale kunstverlossing is geslaagd als het kind daarmee geboren wordt, onafhankelijk van de conditie van het kind.</xs:documentation>
             </xs:annotation>
          </xs:element>
          <xs:element minOccurs="0" name="adaextension" type="adaextension">
@@ -16171,7 +16189,7 @@ SOFTWARE.
                      type="indicatie_sectio_caesarea">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">Indicatie sectio caesarea</xs:documentation>
-               <xs:documentation source="desc" xml:lang="nl-NL">Indicatie sectio caesareaHieronder vallen de indicaties van alle sectio’s zowel primair als secundair.</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">Indicatie sectio caesarea Hieronder vallen de indicaties van alle sectio’s zowel primair als secundair.</xs:documentation>
             </xs:annotation>
          </xs:element>
          <xs:element minOccurs="0" name="adaextension" type="adaextension">
@@ -18903,7 +18921,7 @@ SOFTWARE.
                      type="urine_bloed_en_aanvullende_onderzoeken">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">Urine-, bloed- en aanvullende onderzoeken</xs:documentation>
-               <xs:documentation source="desc" xml:lang="nl-NL">Urine-, bloed- en aanvullende onderzoekenHet gaat hier zowel om onderzoeken van bloed, urine en/of een ander monster door het laboratorium, als om onderzoeken die door de zorgverlener of patiënt 'zelf' worden gedaan. Voorbeelden van deze 'zelf'-bepalingen zijn: glucose, Hb en proteïne op basis van strips.</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">Urine-, bloed- en aanvullende onderzoeken Het gaat hier zowel om onderzoeken van bloed, urine en/of een ander monster door het laboratorium, als om onderzoeken die door de zorgverlener of patiënt 'zelf' worden gedaan. Voorbeelden van deze 'zelf'-bepalingen zijn: glucose, Hb en proteïne op basis van strips.</xs:documentation>
             </xs:annotation>
          </xs:element>
          <xs:element minOccurs="0" name="adaextension" type="adaextension">
@@ -19156,7 +19174,7 @@ SOFTWARE.
                      type="pathologie_vrouw">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">Pathologie vrouw</xs:documentation>
-               <xs:documentation source="desc" xml:lang="nl-NL">Specificatie van de pathologie van de vrouw postpartum.Deze lijst is geïnspireerd door VIL Codelijst A Indicaties 6000-6499 met uitzondering van code 6050 (Opname-indicatie voor het kind), en met toevoeging van Depressie en met uitbreiding van een aantal infecties.</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">Specificatie van de pathologie van de vrouw postpartum. Deze lijst is geïnspireerd door VIL Codelijst A Indicaties 6000-6499 met uitzondering van code 6050 (Opname-indicatie voor het kind), en met toevoeging van Depressie en met uitbreiding van een aantal infecties.</xs:documentation>
             </xs:annotation>
          </xs:element>
          <xs:element minOccurs="0" name="adaextension" type="adaextension">
@@ -19433,7 +19451,7 @@ SOFTWARE.
                      type="voeding_kind_groep">
             <xs:annotation>
                <xs:documentation source="name" xml:lang="nl-NL">Voeding kind (groep)</xs:documentation>
-               <xs:documentation source="desc" xml:lang="nl-NL">Voeding kind (groep).Registratie richtlijn PRN: de voeding van het kind bij voorkeur vastleggen op de zevende dag.De voeding van het kind mag vaker dan één keer (dus op meer dan één datum) worden vastgelegd, soms is dit ook nuttig omdat het verandert. Daarnaast is het ook mogelijk dat een kind op één datum verschillende substanties voeding krijgt (bijvoorbeeld zowel borst- als kunstvoeding). Ook dat kan vastgelegd worden.</xs:documentation>
+               <xs:documentation source="desc" xml:lang="nl-NL">Voeding kind (groep). Registratie richtlijn PRN: de voeding van het kind bij voorkeur vastleggen op de zevende dag. De voeding van het kind mag vaker dan één keer (dus op meer dan één datum) worden vastgelegd, soms is dit ook nuttig omdat het verandert. Daarnaast is het ook mogelijk dat een kind op één datum verschillende substanties voeding krijgt (bijvoorbeeld zowel borst- als kunstvoeding). Ook dat kan vastgelegd worden.</xs:documentation>
             </xs:annotation>
          </xs:element>
          <xs:element minOccurs="0" name="adaextension" type="adaextension">

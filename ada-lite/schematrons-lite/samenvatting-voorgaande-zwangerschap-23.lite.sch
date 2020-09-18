@@ -562,6 +562,7 @@ SOFTWARE.
    <!-- == Any attributes allowed on /voorgaande_zwangerschap_samenvatting_23/vrouw/naamgegevens/achternaam/adaextension == -->
    <pattern>
       <rule context="/voorgaande_zwangerschap_samenvatting_23/zwangerschap"><!-- == Check occurrences of children of /voorgaande_zwangerschap_samenvatting_23/zwangerschap: == -->
+         <assert test="(count(dossiernummer) ge 0) and (count(dossiernummer) le 1)">Fout aantal voorkomens van "Dossiernummer": <value-of select="count(dossiernummer)"/> (verwacht: 0..1) [/voorgaande_zwangerschap_samenvatting_23/zwangerschap/dossiernummer]</assert>
          <assert test="(count(identificatie_van_de_zwangerschap) ge 0) and (count(identificatie_van_de_zwangerschap) le 1)">Fout aantal voorkomens van "Identificatie van de zwangerschap": <value-of select="count(identificatie_van_de_zwangerschap)"/> (verwacht: 0..1) [/voorgaande_zwangerschap_samenvatting_23/zwangerschap/identificatie_van_de_zwangerschap]</assert>
          <assert test="(count(graviditeit) ge 0) and (count(graviditeit) le 1)">Fout aantal voorkomens van "Graviditeit": <value-of select="count(graviditeit)"/> (verwacht: 0..1) [/voorgaande_zwangerschap_samenvatting_23/zwangerschap/graviditeit]</assert>
          <assert test="(count(pariteit_voor_deze_zwangerschap) ge 0) and (count(pariteit_voor_deze_zwangerschap) le 1)">Fout aantal voorkomens van "Pariteit (vóór deze zwangerschap)": <value-of select="count(pariteit_voor_deze_zwangerschap)"/> (verwacht: 0..1) [/voorgaande_zwangerschap_samenvatting_23/zwangerschap/pariteit_voor_deze_zwangerschap]</assert>
@@ -573,8 +574,19 @@ SOFTWARE.
       </rule>
    </pattern>
    <pattern><!-- == Check for any unexpected elements in /voorgaande_zwangerschap_samenvatting_23/zwangerschap: == -->
-      <rule context="/voorgaande_zwangerschap_samenvatting_23/zwangerschap/*[not(self::identificatie_van_de_zwangerschap)][not(self::graviditeit)][not(self::pariteit_voor_deze_zwangerschap)][not(self::definitieve_a_terme_datum)][not(self::diagnose)][not(self::wijze_einde_zwangerschap)][not(self::datum_einde_zwangerschap)][not(self::adaextension)]">
+      <rule context="/voorgaande_zwangerschap_samenvatting_23/zwangerschap/*[not(self::dossiernummer)][not(self::identificatie_van_de_zwangerschap)][not(self::graviditeit)][not(self::pariteit_voor_deze_zwangerschap)][not(self::definitieve_a_terme_datum)][not(self::diagnose)][not(self::wijze_einde_zwangerschap)][not(self::datum_einde_zwangerschap)][not(self::adaextension)]">
          <report test="true()">Ongeldige informatie aangetroffen: <value-of select="local-name(.)"/> [/voorgaande_zwangerschap_samenvatting_23/zwangerschap/<value-of select="name(.)"/>]</report>
+      </rule>
+   </pattern>
+   <!-- == Check attributes of /voorgaande_zwangerschap_samenvatting_23/zwangerschap/dossiernummer: == -->
+   <pattern>
+      <rule context="/voorgaande_zwangerschap_samenvatting_23/zwangerschap/dossiernummer"><!-- == Attribute "conceptId": == -->
+         <assert test="empty(@conceptId) or matches(@conceptId, '^([0-9]+\.)+([0-9]+)$')">Foutieve informatie voor "Dossiernummer": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft een onjuist formaat [/voorgaande_zwangerschap_samenvatting_23/zwangerschap/dossiernummer/@conceptId; type=t-id]</assert>
+         <assert test="empty(@conceptId) or (@conceptId eq '2.16.840.1.113883.2.4.3.11.999.60.5.6.3.1')">Foutieve informatie voor "Dossiernummer": De waarde "<value-of select="@conceptId"/>" voor attribuut "conceptId" heeft niet de verwachte vaste waarde "2.16.840.1.113883.2.4.3.11.999.60.5.6.3.1" [/voorgaande_zwangerschap_samenvatting_23/zwangerschap/dossiernummer/@conceptId]</assert>
+         <!-- == Attribute "value": == -->
+         <!-- == Attribute "nullFlavor": == -->
+         <!-- == Attribute "root": == -->
+         <assert test="empty(@* except (@conceptId, @value, @nullFlavor, @root, @xsi:*))">Foutieve informatie voor "Dossiernummer": Ongeldige attributen aangetroffen [/voorgaande_zwangerschap_samenvatting_23/zwangerschap/dossiernummer; allowed=(@conceptId, @value, @nullFlavor, @root, @xsi:*)]</assert>
       </rule>
    </pattern>
    <!-- == Check attributes of /voorgaande_zwangerschap_samenvatting_23/zwangerschap/identificatie_van_de_zwangerschap: == -->

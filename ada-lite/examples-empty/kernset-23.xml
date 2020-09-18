@@ -60,6 +60,7 @@
                   <fluxus_postpartumq value=""/>
                </obstetrische_anamnese>
                <zwangerschap>
+                  <dossiernummer value=""/>
                   <gynaecologische_aandoening value="" enum=""/>
                   <bloedverliesq value=""/>
                   <partiele_molaq value=""/>
@@ -191,6 +192,7 @@
       </eerdere_bevalling>
    </obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap>
    <zwangerschap>
+      <dossiernummer value=""/>
       <identificatie_van_de_zwangerschap value=""/>
       <graviditeit value=""/>
       <pariteit_voor_deze_zwangerschap value=""/>

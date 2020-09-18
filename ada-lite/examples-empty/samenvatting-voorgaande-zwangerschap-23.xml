@@ -39,6 +39,7 @@
       <geboortedatum value=""/>
    </vrouw>
    <zwangerschap>
+      <dossiernummer value=""/>
       <identificatie_van_de_zwangerschap value=""/>
       <graviditeit value=""/>
       <pariteit_voor_deze_zwangerschap value=""/>
