@@ -1,0 +1,544 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kernset_geboortezorg transactionRef="2.16.840.1.113883.2.4.3.11.60.90.77.4.2437"
+                      transactionEffectiveDate="2016-11-22T08:24:02"
+                      versionDate=""
+                      prefix="peri20-"><!-- == ADA full format document generated from lite format document == --><!-- == Source: design/examples-lite/scenario6-23.xml == --><!-- == Specification used: design/specs-full/kernset-236.xml == --><!-- == Generator: design/xsl/lib/ada-lite2ada-full.mod.xsl == -->
+   <zorgverlening conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.4">
+      <datum_start_zorgverantwoordelijkheid conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20290"
+                                            value="T-306D"/>
+      <datum_einde_zorgverantwoordelijkheid conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20340" value="T-78D"/>
+      <eindverantwoordelijk_in_welke_perinatale_periodeq conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20355"
+                                                         value="1"
+                                                         code="1"
+                                                         codeSystem="2.16.840.1.113883.2.4.3.22.1.2.20"
+                                                         displayName="Start /intake zwangerschapszorg"/>
+      <eindverantwoordelijk_in_welke_perinatale_periodeq conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20355"
+                                                         value="2"
+                                                         code="2"
+                                                         codeSystem="2.16.840.1.113883.2.4.3.22.1.2.20"
+                                                         displayName="Zwangerschap vervolg"/>
+      <eindverantwoordelijk_in_welke_perinatale_periodeq conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20355"
+                                                         value="3"
+                                                         code="3"
+                                                         codeSystem="2.16.840.1.113883.2.4.3.22.1.2.20"
+                                                         displayName="Start baring/ontsluiting"/>
+      <eindverantwoordelijk_in_welke_perinatale_periodeq conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20355"
+                                                         value="4"
+                                                         code="4"
+                                                         codeSystem="2.16.840.1.113883.2.4.3.22.1.2.20"
+                                                         displayName="Uitdrijving"/>
+      <eindverantwoordelijk_in_welke_perinatale_periodeq conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20355"
+                                                         value="5"
+                                                         code="5"
+                                                         codeSystem="2.16.840.1.113883.2.4.3.22.1.2.20"
+                                                         displayName="Nageboortetijdperk"/>
+      <eindverantwoordelijk_in_welke_perinatale_periodeq conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20355"
+                                                         value="6"
+                                                         code="6"
+                                                         codeSystem="2.16.840.1.113883.2.4.3.22.1.2.20"
+                                                         displayName="1e 24 uur postpartum"/>
+      <eindverantwoordelijk_in_welke_perinatale_periodeq conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20355"
+                                                         value="7"
+                                                         code="7"
+                                                         codeSystem="2.16.840.1.113883.2.4.3.22.1.2.20"
+                                                         displayName="2e - 7e dag postpartum"/>
+      <eindverantwoordelijk_in_welke_perinatale_periodeq conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20355"
+                                                         value="8"
+                                                         code="8"
+                                                         codeSystem="2.16.840.1.113883.2.4.3.22.1.2.20"
+                                                         displayName="Follow-up eerste 6 wkn postpartum"/>
+      <conclusie_risicostatus_na_intake conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20305"
+                                        value="3"
+                                        code="3"
+                                        codeSystem="2.16.840.1.113883.2.4.4.13.26"
+                                        displayName="2e lijn (VIL C)"/>
+   </zorgverlening>
+   <zorgverlenerzorginstelling conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.1">
+      <zorginstelling conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10020">
+         <zorginstelling_agbid conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10022"
+                               value="12345678"/>
+         <zorginstelling_lvrid conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10023" value="0110"/>
+      </zorginstelling>
+   </zorgverlenerzorginstelling>
+   <vrouw conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.2">
+      <burgerservicenummer conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10030"
+                           value="100202020"/>
+      <lokale_persoonsidentificatie conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10031"
+                                    value="987654321"/>
+      <geboortedatum conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10040" value="T-31Y"/>
+      <adres conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10300">
+         <postcode conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10304"
+                   value="1234 AB"/>
+      </adres>
+      <etniciteit conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10400"
+                  value="3"
+                  code="12"
+                  codeSystem="2.16.840.1.113883.2.4.4.13.28"
+                  displayName="Kaukasisch"/>
+      <anamnese conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80811">
+         <onder_behandeling_geweestq conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82020" value="true"/>
+         <algemene_anamnese conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80904">
+            <autoimmuun_aandoening conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82220"
+                                   value="2"
+                                   code="396332003"
+                                   codeSystem="2.16.840.1.113883.6.96"
+                                   displayName="reuma (aandoening)"/>
+            <cardiovasculaire_aandoening conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80906"
+                                         value="5"
+                                         code="OTH"
+                                         codeSystem="2.16.840.1.113883.5.1008"
+                                         displayName="Overig"/>
+            <urogenitale_aandoening conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82267"
+                                    value="1"
+                                    code="45816000"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="pyelonefritis (aandoening)"/>
+            <oncologische_aandoening conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82221"
+                                     value="6"
+                                     code="OTH"
+                                     codeSystem="2.16.840.1.113883.5.1008"
+                                     displayName="other"/>
+            <schildklier_aandoening conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80909"
+                                    value="1"
+                                    code="40930008"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="hypothyreoïdie (aandoening)"/>
+            <diabetes_mellitusq conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80910" value="false"/>
+            <neurologische_aandoening conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80912"
+                                      value="5"
+                                      code="84857004"
+                                      codeSystem="2.16.840.1.113883.6.96"
+                                      displayName="hernia nuclei pulposi (aandoening)"/>
+            <neurologische_aandoening conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80912"
+                                      value="7"
+                                      code="OTH"
+                                      codeSystem="2.16.840.1.113883.5.1008"
+                                      displayName="Overig"/>
+            <mdl_aandoening conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82219"
+                            value="3"
+                            code="34000006"
+                            codeSystem="2.16.840.1.113883.6.96"
+                            displayName="ziekte van Crohn (aandoening)"/>
+            <anemie conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82222"
+                    value="1"
+                    code="87522002"
+                    codeSystem="2.16.840.1.113883.6.96"
+                    displayName="ijzergebreksanemie (aandoening)"/>
+            <longaandoening conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82266"
+                            value="1"
+                            code="195967001"
+                            codeSystem="2.16.840.1.113883.6.96"
+                            displayName="astma (aandoening)"/>
+            <orthopedische_afwijking conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80918"
+                                     value="2"
+                                     code="282771003"
+                                     codeSystem="2.16.840.1.113883.6.96"
+                                     displayName="letsel van bekken (aandoening)"/>
+            <bloedtransfusieq conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10805" value="false"/>
+            <type_operatie conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80818"
+                           value="3"
+                           code="11466000"
+                           codeSystem="2.16.840.1.113883.6.96"
+                           displayName="sectio caesarea (verrichting)"/>
+            <type_operatie conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80818"
+                           value="10"
+                           code="129152004:260686004=129284003"
+                           codeSystem="2.16.840.1.113883.6.96"
+                           displayName="Operation on back (procedure)"/>
+            <psychiatrieq conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82159" value="false"/>
+            <overige_aandoeningq conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82212" value="false"/>
+         </algemene_anamnese>
+      </anamnese>
+      <lengte_gemeten conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20212"
+                      value="172"
+                      unit="cm"/>
+      <vrouwelijke_genitale_verminkingq conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80675" value="false"/>
+   </vrouw>
+   <obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.17">
+      <wijze_einde_zwangerschap conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80623"
+                                value="1"
+                                code="1"
+                                codeSystem="2.16.840.1.113883.2.4.4.13.46"
+                                displayName="Partus"/>
+      <definitieve_a_terme_datum conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82337"
+                                 value="T-1064D"/>
+      <diagnose conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82314">
+         <bloedverliesq conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82318" value="true"/>
+         <cervixinsufficientieq conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82320" value="false"/>
+         <infectie conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82321"
+                   value="1"
+                   code="301775005"
+                   codeSystem="2.16.840.1.113883.6.96"
+                   displayName="infectie van uterus (aandoening)"/>
+         <hyperemesis_gravidarumq conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82322" value="false"/>
+         <hypertensieve_aandoening conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82323"
+                                   value="1"
+                                   code="48194001"
+                                   codeSystem="2.16.840.1.113883.6.96"
+                                   displayName="zwangerschapsgeïnduceerde hypertensie (aandoening)"/>
+         <zwangerschapscholestaseq conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82324" value="false"/>
+         <diabetes_gravidarum_met_insulineq conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82325" value="false"/>
+         <afwijkende_groei_foetus conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82326"
+                                  value="1"
+                                  code="199616008"
+                                  codeSystem="2.16.840.1.113883.6.96"
+                                  displayName="large for gestational age (aandoening)"/>
+         <dreigende_partus_immaturusq conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82327" value="false"/>
+         <dreigende_partus_prematurusq conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82328" value="false"/>
+         <abruptio_placentaeq conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82329" value="true"/>
+      </diagnose>
+      <irregulaire_antistoffenq conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82214" value="false"/>
+      <eerdere_bevalling conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.18">
+         <placenta conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80718">
+            <geboorte_placenta conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82336"
+                               value="4"
+                               code="4"
+                               codeSystem="2.16.840.1.113883.2.4.4.13.19"
+                               displayName="Placentaverwijdering bij SC"/>
+         </placenta>
+         <hoeveelheid_bloedverlies conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10598"
+                                   value="895"
+                                   unit="ml"/>
+         <vorige_uitkomst_per_kind conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.19">
+            <vorige_baring conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80709">
+               <demografische_gegevens conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80696">
+                  <geboortedatum conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80702"
+                                 value="T-1112D"/>
+               </demografische_gegevens>
+               <kindspecifieke_gegevens_vorige_uitkomsten conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.21">
+                  <type_partus conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80624"
+                               value="5"
+                               code="274130007"
+                               codeSystem="2.16.840.1.113883.6.96"
+                               displayName="spoedkeizersnede (verrichting)"/>
+                  <percentiel_van_het_geboortegewicht conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10605"
+                                                      value="2"
+                                                      code="2"
+                                                      codeSystem="2.16.840.1.113883.2.4.4.13.50"
+                                                      displayName="p2,3 tot p10"/>
+                  <apgarscore_na_5_min conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10606" value="8"/>
+                  <congenitale_afwijkingenq conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80997" value="true"/>
+                  <congenitale_afwijkingen_groep conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80998">
+                     <chromosomale_afwijkingenq conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.81002" value="false"/>
+                  </congenitale_afwijkingen_groep>
+               </kindspecifieke_gegevens_vorige_uitkomsten>
+            </vorige_baring>
+         </vorige_uitkomst_per_kind>
+      </eerdere_bevalling>
+   </obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap>
+   <zwangerschap conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.3">
+      <dossiernummer conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.84211"
+                     value="0af1e5b1-bf99-40a2-ade9-728186c32f31"/>
+      <graviditeit conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20010" value="2"/>
+      <pariteit_voor_deze_zwangerschap conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20150" value="1"/>
+      <definitieve_a_terme_datum conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82160" value="T-91D"/>
+      <voornemens conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80671">
+         <voorgenomen_plaats_baring_tijdens_zwangerschap_type_locatie conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20261"
+                                                                      value="3"
+                                                                      code="22232009"
+                                                                      codeSystem="2.16.840.1.113883.6.96"
+                                                                      displayName="ziekenhuis (omgeving)"/>
+      </voornemens>
+      <prenatale_controle conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80732">
+         <datum_controle conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80737"
+                         value="T-306D"/>
+         <zwangerschapsduur conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80738"
+                            value="65"
+                            unit="d"/>
+         <leven_voelen conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80746"
+                       value="4"
+                       code="289432001"
+                       codeSystem="2.16.840.1.113883.6.96"
+                       displayName="foetale bewegingen afwezig (situatie)"/>
+         <rookgedrag conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80810"
+                     value="5"
+                     code="5"
+                     codeSystem="2.16.840.1.113883.2.4.4.13.58"
+                     displayName="gestopt vóór huidige zwangerschap"/>
+         <alcoholgebruik conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80747"
+                         value="1"
+                         code="1"
+                         codeSystem="2.16.840.1.113883.2.4.4.13.59"
+                         displayName="geen"/>
+         <drugsgebruikq conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82102" value="false"/>
+         <gewicht_gemeten conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20211"
+                          value="68"
+                          unit="kg"/>
+      </prenatale_controle>
+      <diagnose conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82268">
+         <datum conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82272"
+                value="T-306D"/>
+         <zwangerschapsduur conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82285"
+                            value="65"
+                            unit="d"/>
+         <gynaecologische_aandoening conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82269"
+                                     value="4"
+                                     code="OTH"
+                                     codeSystem="2.16.840.1.113883.5.1008"
+                                     displayName="Overig"/>
+         <bloedverliesq conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82270" value="false"/>
+         <partiele_molaq conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82286" value="false"/>
+         <cervixinsufficientieq conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82271" value="false"/>
+         <hyperemesis_gravidarumq conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82274" value="false"/>
+         <zwangerschapscholestaseq conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82276" value="false"/>
+         <diabetes_gravidarum_met_insulineq conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82277" value="false"/>
+         <afwijkende_groei_foetus conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82278"
+                                  value="3"
+                                  code="267258002"
+                                  codeSystem="2.16.840.1.113883.6.96"
+                                  displayName="small for gestational age (aandoening)"/>
+         <dreigende_partus_immaturusq conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82279" value="false"/>
+         <dreigende_partus_prematurusq conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82280" value="false"/>
+         <abruptio_placentaeq conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82289" value="false"/>
+         <navelstrengprolapsq conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82452"><!-- == *** Unrecognized concept-type/value combination for kernset_geboortezorg/zwangerschap/diagnose/navelstrengprolapsq == --></navelstrengprolapsq>
+         <intrauteriene_vruchtdood conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80613">
+            <vermoeden_intrauteriene_vruchtdoodq conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82435" value="false"/>
+         </intrauteriene_vruchtdood>
+      </diagnose>
+      <maternale_sterfteq conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20670" value="false"/>
+      <wijze_einde_zwangerschap conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80625"
+                                value="1"
+                                code="1"
+                                codeSystem="2.16.840.1.113883.2.4.4.13.46"
+                                displayName="Partus"/>
+   </zwangerschap>
+   <bevalling conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.6">
+      <partusnummer conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20500"
+                    value="4567890123"/>
+      <diagnose_bevalling conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82291">
+         <ppromq conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82338" value="false"/>
+         <promq conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82290" value="false"/>
+         <koortsq conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82292" value="false"/>
+         <niet_vorderende_ontsluitingq conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82293" value="false"/>
+         <niet_vorderende_uitdrijvingq conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82294" value="false"/>
+         <verdenking_foetale_noodq conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82296" value="false"/>
+         <intrauteriene_vruchtdood conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82443">
+            <vermoeden_intrauteriene_vruchtdoodq conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82444" value="false"/>
+         </intrauteriene_vruchtdood>
+         <vastzittende_placentaq conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82295" value="false"/>
+         <fluxus_postpartumq conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82398" value="true"/>
+      </diagnose_bevalling>
+      <aantal_geboren_kinderen conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20505" value="1"/>
+      <risicostatus_voor_baring conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20530"
+                                value="2"
+                                code="3"
+                                codeSystem="2.16.840.1.113883.2.4.3.22.1.2.25"
+                                displayName="2e lijn (VIL C)"/>
+      <interventies_begin_baring conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20555">
+         <interventie_begin_baring conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20560"
+                                   value="4"
+                                   code="236966000"
+                                   codeSystem="2.16.840.1.113883.6.96"
+                                   displayName="cervicale rijping met prostaglandine E2 (verrichting)"/>
+         <indicatie_interventie_begin_baring conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20570"
+                                             value="3"
+                                             code="3"
+                                             codeSystem="2.16.840.1.113883.2.4.3.22.1.2.7"
+                                             displayName="Conditie moeder - niet levensbedreigend"/>
+      </interventies_begin_baring>
+      <wijze_waarop_de_baring_begon conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20550"
+                                    value="1"
+                                    code="1"
+                                    codeSystem="2.16.840.1.113883.2.4.3.22.1.2.46"
+                                    displayName="spontane weeën"/>
+      <tijdstip_begin_actieve_ontsluiting conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20590"
+                                          value="T-78D{03:45}"/>
+      <medicatie_nageboortetijdperk_groep conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20619">
+         <medicatie_nageboortetijdperkq conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20620" value="true"/>
+         <soort_medicatie_nageboortetijdperk conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20626"
+                                             value="1"
+                                             code="H01BB02"
+                                             codeSystem="2.16.840.1.113883.6.73"
+                                             displayName="Oxytocin"/>
+      </medicatie_nageboortetijdperk_groep>
+      <placenta conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80612">
+         <geboorte_placenta conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20630"
+                            value="1"
+                            code="0"
+                            codeSystem="2.16.840.1.113883.2.4.4.13.19"
+                            displayName="Spontaan"/>
+      </placenta>
+      <hoeveelheid_bloedverlies conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20640"
+                                value="1050"
+                                unit="ml"/>
+      <conditie_perineum_postpartum conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80673"
+                                    value="2"
+                                    code="199916005"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="eerstegraads perineumruptuur durante partu - bevallen (aandoening)"/>
+      <conditie_perineum_postpartum conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80673"
+                                    value="9"
+                                    code="609344008"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="episiotomiewond (afwijkende morfologie)"/>
+   </bevalling>
+   <uitkomst_per_kind conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.7">
+      <baring conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40002">
+         <werkelijke_plaats_baring_type_locatie conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40003"
+                                                value="3"
+                                                code="22232009"
+                                                codeSystem="2.16.840.1.113883.6.96"
+                                                displayName="ziekenhuis (omgeving)"/>
+         <ziekenhuis_baring conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82114">
+            <ziekenhuisnummer_lvrid conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40005" value="0110"/>
+         </ziekenhuis_baring>
+         <demografische_gegevens conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40006">
+            <identificaties_kind conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40007">
+               <bsn_kind conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40010"
+                         value="847035116"/>
+            </identificaties_kind>
+            <geslacht_medische_observatie conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40041"
+                                          value="1"
+                                          code="1"
+                                          codeSystem="2.16.840.1.113883.2.4.4.13.21"
+                                          displayName="Mannelijk"/>
+            <geboortedatum conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40050" value="T-78D"/>
+            <rangnummer_kind conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40025" value="1"/>
+            <perinatale_sterfte_groep conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40279">
+               <perinatale_sterfteq conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40280" value="false"/>
+            </perinatale_sterfte_groep>
+         </demografische_gegevens>
+         <kindspecifieke_maternale_gegevens conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.71">
+            <bijstimulatie_toegediendq conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20616" value="true"/>
+            <tijdstip_breken_vliezen conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80619"
+                                     value="T-78D{04:30}"/>
+            <kleur_en_consistentie_vruchtwater conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20610"
+                                               value="1"
+                                               code="1"
+                                               codeSystem="2.16.840.1.113883.2.4.4.13.18"
+                                               displayName="kleurloos"/>
+            <tijdstip_actief_meepersen conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.30030"
+                                       value="T-78D{05:00}"/>
+            <episiotomieq conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.30050" value="true"/>
+            <locatie_episiotomie conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.30055"
+                                 value="1"
+                                 code="1"
+                                 codeSystem="2.16.840.1.113883.2.4.3.22.1.3.60"
+                                 displayName="mediolaterale episiotomie"/>
+            <ruggenprik_gewenst_niet_gekregenq conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82089" value="true"/>
+            <pijnbestrijdingq conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82090" value="true"/>
+            <pijnbestrijding conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82091">
+               <methode conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82093">
+                  <methode conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82092"
+                           value="4"
+                           code="OTH"
+                           codeSystem="2.16.840.1.113883.5.1008"
+                           displayName="Overig"/>
+                  <overig_middel conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82094">
+                     <middel conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82095"
+                             value="4"
+                             code="426060003"
+                             codeSystem="2.16.840.1.113883.6.96"
+                             displayName="analgesie met lachgas en zuurstof durante partu (verrichting)"/>
+                     <toediening conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82096"
+                                 value="7"
+                                 code="241717009"
+                                 codeSystem="2.16.840.1.113883.6.96"
+                                 displayName="inhalatieanalgesie (verrichting)"/>
+                  </overig_middel>
+               </methode>
+               <periode conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82097"
+                        value="2"
+                        code="OntMt3"
+                        codeSystem="2.16.840.1.113883.2.4.4.13.60"
+                        displayName="tijdens ontsluitingsperiode &gt; 3 cm"/>
+            </pijnbestrijding>
+            <sedatieq conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80827" value="true"/>
+         </kindspecifieke_maternale_gegevens>
+         <kindspecifieke_uitkomstgegevens conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.72">
+            <type_partus conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80626"
+                         value="2"
+                         code="3311000146109"
+                         codeSystem="2.16.840.1.113883.6.96"
+                         displayName="geassisteerde vaginale verlossing (verrichting)"/>
+            <ligging_bij_geboorte conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40140"
+                                  value="2"
+                                  code="70028003"
+                                  codeSystem="2.16.840.1.113883.6.96"
+                                  displayName="achterhoofdsligging (bevinding)"/>
+            <aanpakker_kind_groep conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40149">
+               <rol_aanpakker_kind conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40150"
+                                   value="2"
+                                   code="25"
+                                   codeSystem="2.16.840.1.113883.2.4.3.22.1.2.59"
+                                   displayName="klinisch verloskundige"/>
+            </aanpakker_kind_groep>
+            <supervisor_groep conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40169">
+               <rol_supervisor conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40170"
+                               value="3"
+                               code="01.046"
+                               codeSystem="2.16.840.1.113883.2.4.15.111"
+                               displayName="gynaecoloog"/>
+            </supervisor_groep>
+            <vaginale_kunstverlossing_groep conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40189">
+               <vaginale_kunstverlossing conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40190"
+                                         value="2"
+                                         code="61586001"
+                                         codeSystem="2.16.840.1.113883.6.96"
+                                         displayName="kunstverlossing met vacuümextractie (verrichting)"/>
+               <succes_vaginale_kunstverlossingq conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40200" value="true"/>
+            </vaginale_kunstverlossing_groep>
+            <lichamelijk_onderzoek_kind conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80766">
+               <apgarscore_na_5_min conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40071" value="9"/>
+               <geboortegewicht conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40060"
+                                value="3550"
+                                unit="gram"/>
+            </lichamelijk_onderzoek_kind>
+            <congenitale_afwijkingenq conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40080" value="true"/>
+            <congenitale_afwijkingen_groep conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40081">
+               <specificatie_congenitale_afwijking_groep conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40082">
+                  <specificatie_congenitale_afwijking conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40090"
+                                                      value="65"
+                                                      code="74"
+                                                      codeSystem="2.16.840.1.113883.2.4.4.13.8"
+                                                      displayName="Overige congenitale huidafwijking"/>
+               </specificatie_congenitale_afwijking_groep>
+               <chromosomale_afwijkingenq conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40110" value="false"/>
+            </congenitale_afwijkingen_groep>
+            <problematiek_kindq conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82334" value="true"/>
+            <problematiek_kind conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80789"
+                               value="1"
+                               code="56110009"
+                               codeSystem="2.16.840.1.113883.6.96"
+                               displayName="geboortetrauma (aandoening)"/>
+            <kinderarts_betrokkenq conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82119" value="true"/>
+            <betrokkenheid_kinderarts conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82120">
+               <datum_betrokkenheid conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82122" value="T-78D"/>
+               <reden_betrokkenheid conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82123"
+                                    value="3"
+                                    code="8571000146103"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    displayName="gevolgen voor foetus of neonaat van kunstverlossing (aandoening)"/>
+               <type_betrokkenheid conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82121"
+                                   value="1"
+                                   code="1"
+                                   codeSystem="2.16.840.1.113883.2.4.4.13.17"
+                                   displayName="consultatie"/>
+               <zorginstelling_lvrid conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82335" value="0110"/>
+            </betrokkenheid_kinderarts>
+         </kindspecifieke_uitkomstgegevens>
+      </baring>
+   </uitkomst_per_kind>
+   <medisch_onderzoek conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.14">
+      <maternale_onderzoeksgegevens conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.142">
+         <urine_bloed_en_aanvullende_onderzoeken conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80959">
+            <psie conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80949">
+               <irregulaire_antistoffenq conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10812" value="false"/>
+            </psie>
+         </urine_bloed_en_aanvullende_onderzoeken>
+      </maternale_onderzoeksgegevens>
+   </medisch_onderzoek>
+   <postnatale_fase conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.16">
+      <kindspecifieke_gegevens conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.161">
+         <rangnummer_kind conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.83377" value="1"/>
+         <voeding_kind_groep conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.70009">
+            <voeding_kind_datum conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.70011" value="T-78D"/>
+            <substantie_voeding_kind conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.70030"
+                                     value="1"
+                                     code="1"
+                                     codeSystem="2.16.840.1.113883.2.4.3.22.1.4.8"
+                                     displayName="Borstvoeding"/>
+         </voeding_kind_groep>
+      </kindspecifieke_gegevens>
+   </postnatale_fase>
+</kernset_geboortezorg>

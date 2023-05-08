@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kernset_geboortezorg transactionRef="2.16.840.1.113883.2.4.3.11.60.90.77.4.2437"><!-- == Generated empty ADA Lite document for kernset_geboortezorg == --><!-- == Source: design/specs-full/kernset-236.xml == --><!-- == Generator: design/xsl/ada-rtd2example-empty.xsl == --><!-- == IMPORTANT REMARK: When elements in have both a value and an enum attribute, use only one of them, not both! == -->
+   <zorgverlening>
+      <datum_start_zorgverantwoordelijkheid value=""/>
+      <datum_einde_zorgverantwoordelijkheid value=""/>
+      <eindverantwoordelijk_in_welke_perinatale_periodeq value="" enum=""/>
+      <conclusie_risicostatus_na_intake value="" enum=""/>
+      <verwijsdetails>
+         <datum_verwijzing value=""/>
+         <verwijzing_van>
+            <zorginstelling>
+               <zorgaanbieder_identificatie_nummer value=""/>
+               <specialisme value="" enum=""/>
+            </zorginstelling>
+         </verwijzing_van>
+         <verwijzing_naar>
+            <zorginstelling>
+               <zorgaanbieder_identificatie_nummer value=""/>
+               <specialisme value="" enum=""/>
+            </zorginstelling>
+            <type_verwijzing value="" enum=""/>
+         </verwijzing_naar>
+         <redenen_van_verwijzing>
+            <van_1e_naar_2e_lijn>
+               <algemene_anamnese>
+                  <autoimmuun_aandoening value="" enum=""/>
+                  <cardiovasculaire_aandoening value="" enum=""/>
+                  <urogenitale_aandoening value="" enum=""/>
+                  <oncologische_aandoening value="" enum=""/>
+                  <schildklier_aandoening value="" enum=""/>
+                  <diabetes_mellitusq value=""/>
+                  <neurologische_aandoening value="" enum=""/>
+                  <infectieziekte value="" enum=""/>
+                  <mdl_aandoening value="" enum=""/>
+                  <anemie value="" enum=""/>
+                  <longaandoening value="" enum=""/>
+                  <gynaecologische_aandoening value="" enum=""/>
+                  <orthopedische_afwijking value="" enum=""/>
+                  <bloedtransfusieq value=""/>
+                  <transfusiereactieq value=""/>
+                  <type_operatie value="" enum=""/>
+                  <type_stollingsprobleem value="" enum=""/>
+                  <psychiatrieq value=""/>
+                  <overige_aandoeningq value=""/>
+               </algemene_anamnese>
+               <obstetrische_anamnese>
+                  <gynaecologische_aandoening value="" enum=""/>
+                  <bloedverliesq value=""/>
+                  <partiele_molaq value=""/>
+                  <cervixinsufficientieq value=""/>
+                  <infectie value="" enum=""/>
+                  <hyperemesis_gravidarumq value=""/>
+                  <hypertensieve_aandoening value="" enum=""/>
+                  <zwangerschapscholestaseq value=""/>
+                  <diabetes_gravidarum_met_insulineq value=""/>
+                  <afwijkende_groei_foetus value="" enum=""/>
+                  <dreigende_partus_immaturusq value=""/>
+                  <dreigende_partus_prematurusq value=""/>
+                  <abruptio_placentaeq value=""/>
+                  <fluxus_postpartumq value=""/>
+               </obstetrische_anamnese>
+               <zwangerschap>
+                  <gynaecologische_aandoening value="" enum=""/>
+                  <bloedverliesq value=""/>
+                  <partiele_molaq value=""/>
+                  <cervixinsufficientieq value=""/>
+                  <infectie value="" enum=""/>
+                  <hyperemesis_gravidarumq value=""/>
+                  <hypertensieve_aandoening value="" enum=""/>
+                  <zwangerschapscholestaseq value=""/>
+                  <diabetes_gravidarum_met_insulineq value=""/>
+                  <afwijkende_groei_foetus value="" enum=""/>
+                  <dreigende_partus_immaturusq value=""/>
+                  <dreigende_partus_prematurusq value=""/>
+                  <abruptio_placentaeq value=""/>
+                  <navelstrengprolapsq value=""/>
+                  <liggingsafwijking value="" enum=""/>
+                  <meerlingzwangerschapq value=""/>
+                  <serotiniteitq value=""/>
+                  <intrauteriene_vruchtdood>
+                     <vermoeden_intrauteriene_vruchtdoodq value=""/>
+                  </intrauteriene_vruchtdood>
+                  <surmenageq value=""/>
+               </zwangerschap>
+               <einde_zwangerschap value="" enum=""/>
+               <bevalling>
+                  <ppromq value=""/>
+                  <promq value=""/>
+                  <koortsq value=""/>
+                  <niet_vorderende_ontsluitingq value=""/>
+                  <niet_vorderende_uitdrijvingq value=""/>
+                  <verdenking_foetale_noodq value=""/>
+                  <meconiumhoudend_vruchtwaterq value=""/>
+                  <intrauteriene_vruchtdood>
+                     <vermoeden_intrauteriene_vruchtdoodq value=""/>
+                  </intrauteriene_vruchtdood>
+                  <vastzittende_placentaq value=""/>
+                  <conditie_perineum_postpartum value=""/>
+                  <fluxus_postpartumq value=""/>
+                  <behoefte_aan_pijnbestrijdingq value=""/>
+               </bevalling>
+               <postnatale_fase>
+                  <pathologie_vrouw value="" enum=""/>
+               </postnatale_fase>
+               <overig value=""/>
+            </van_1e_naar_2e_lijn>
+            <van_2e_naar_3e_lijn value=""/>
+            <van_2e_naar_1e_lijn value="" enum=""/>
+            <van_3e_naar_2e_lijn value="" enum=""/>
+         </redenen_van_verwijzing>
+         <perinatale_periode value="" enum=""/>
+      </verwijsdetails>
+   </zorgverlening>
+   <zorgverlenerzorginstelling>
+      <zorginstelling>
+         <zorginstelling_agbid value=""/>
+         <zorginstelling_lvrid value=""/>
+      </zorginstelling>
+   </zorgverlenerzorginstelling>
+   <vrouw>
+      <burgerservicenummer value=""/>
+      <lokale_persoonsidentificatie value=""/>
+      <geboortedatum value=""/>
+      <adres>
+         <postcode value=""/>
+      </adres>
+      <etniciteit value="" enum=""/>
+      <anamnese>
+         <onder_behandeling_geweestq value=""/>
+         <algemene_anamnese>
+            <autoimmuun_aandoening value="" enum=""/>
+            <cardiovasculaire_aandoening value="" enum=""/>
+            <urogenitale_aandoening value="" enum=""/>
+            <oncologische_aandoening value="" enum=""/>
+            <schildklier_aandoening value="" enum=""/>
+            <diabetes_mellitusq value=""/>
+            <neurologische_aandoening value="" enum=""/>
+            <infectieziekte value="" enum=""/>
+            <mdl_aandoening value="" enum=""/>
+            <anemie value="" enum=""/>
+            <longaandoening value="" enum=""/>
+            <gynaecologische_aandoening value="" enum=""/>
+            <orthopedische_afwijking value="" enum=""/>
+            <bloedtransfusieq value=""/>
+            <transfusiereactieq value=""/>
+            <type_operatie value="" enum=""/>
+            <type_stollingsprobleem value="" enum=""/>
+            <psychiatrieq value=""/>
+            <overige_aandoeningq value=""/>
+            <overige_aandoening value=""/>
+         </algemene_anamnese>
+      </anamnese>
+      <lengte_gemeten value=""/>
+      <vrouwelijke_genitale_verminkingq value=""/>
+      <type_vrouwelijke_genitale_verminking value="" enum=""/>
+   </vrouw>
+   <obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap>
+      <wijze_einde_zwangerschap value="" enum=""/>
+      <definitieve_a_terme_datum value=""/>
+      <diagnose>
+         <gynaecologische_aandoening value="" enum=""/>
+         <bloedverliesq value=""/>
+         <cervixinsufficientieq value=""/>
+         <infectie value="" enum=""/>
+         <hyperemesis_gravidarumq value=""/>
+         <hypertensieve_aandoening value="" enum=""/>
+         <zwangerschapscholestaseq value=""/>
+         <diabetes_gravidarum_met_insulineq value=""/>
+         <afwijkende_groei_foetus value="" enum=""/>
+         <dreigende_partus_immaturusq value=""/>
+         <dreigende_partus_prematurusq value=""/>
+         <abruptio_placentaeq value=""/>
+      </diagnose>
+      <irregulaire_antistoffenq value=""/>
+      <eerdere_bevalling>
+         <placenta>
+            <geboorte_placenta value="" enum=""/>
+         </placenta>
+         <hoeveelheid_bloedverlies value=""/>
+         <vorige_uitkomst_per_kind>
+            <vorige_baring>
+               <demografische_gegevens>
+                  <geboortedatum value=""/>
+               </demografische_gegevens>
+               <kindspecifieke_gegevens_vorige_uitkomsten>
+                  <type_partus value="" enum=""/>
+                  <percentiel_van_het_geboortegewicht value="" enum=""/>
+                  <apgarscore_na_5_min value=""/>
+                  <congenitale_afwijkingenq value=""/>
+                  <congenitale_afwijkingen_groep>
+                     <chromosomale_afwijkingenq value=""/>
+                  </congenitale_afwijkingen_groep>
+               </kindspecifieke_gegevens_vorige_uitkomsten>
+            </vorige_baring>
+         </vorige_uitkomst_per_kind>
+      </eerdere_bevalling>
+   </obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap>
+   <zwangerschap>
+      <dossiernummer value=""/>
+      <graviditeit value=""/>
+      <pariteit_voor_deze_zwangerschap value=""/>
+      <definitieve_a_terme_datum value=""/>
+      <voornemens>
+         <voorgenomen_plaats_baring_tijdens_zwangerschap_type_locatie value="" enum=""/>
+         <naar_welk_ziekenhuis_wil_de_vrouw_worden_verwezenq>
+            <zorginstelling_agbid value=""/>
+            <zorginstelling_lvrid value=""/>
+            <naam_zorginstelling value=""/>
+         </naar_welk_ziekenhuis_wil_de_vrouw_worden_verwezenq>
+      </voornemens>
+      <prenatale_controle>
+         <datum_controle value=""/>
+         <zwangerschapsduur value=""/>
+         <leven_voelen value="" enum=""/>
+         <rookgedrag value="" enum=""/>
+         <alcoholgebruik value="" enum=""/>
+         <drugsgebruikq value=""/>
+         <gewicht_gemeten value=""/>
+      </prenatale_controle>
+      <diagnose>
+         <datum value=""/>
+         <zwangerschapsduur value=""/>
+         <gynaecologische_aandoening value="" enum=""/>
+         <bloedverliesq value=""/>
+         <partiele_molaq value=""/>
+         <cervixinsufficientieq value=""/>
+         <infectie value="" enum=""/>
+         <hyperemesis_gravidarumq value=""/>
+         <hypertensieve_aandoening value="" enum=""/>
+         <zwangerschapscholestaseq value=""/>
+         <diabetes_gravidarum_met_insulineq value=""/>
+         <afwijkende_groei_foetus value="" enum=""/>
+         <dreigende_partus_immaturusq value=""/>
+         <dreigende_partus_prematurusq value=""/>
+         <abruptio_placentaeq value=""/>
+         <navelstrengprolapsq value=""/>
+         <liggingsafwijking value="" enum=""/>
+         <intrauteriene_vruchtdood>
+            <vermoeden_intrauteriene_vruchtdoodq value=""/>
+            <vermoeden_iuvd_op_basis_van value="" enum=""/>
+         </intrauteriene_vruchtdood>
+      </diagnose>
+      <intrauteriene_behandeling value="" enum=""/>
+      <maternale_sterfteq value=""/>
+      <wijze_einde_zwangerschap value="" enum=""/>
+   </zwangerschap>
+   <bevalling>
+      <partusnummer value=""/>
+      <diagnose_bevalling>
+         <ppromq value=""/>
+         <promq value=""/>
+         <koortsq value=""/>
+         <niet_vorderende_ontsluitingq value=""/>
+         <niet_vorderende_uitdrijvingq value=""/>
+         <verdenking_foetale_noodq value=""/>
+         <intrauteriene_vruchtdood>
+            <vermoeden_intrauteriene_vruchtdoodq value=""/>
+            <vermoeden_iuvd_op_basis_van value="" enum=""/>
+         </intrauteriene_vruchtdood>
+         <vastzittende_placentaq value=""/>
+         <fluxus_postpartumq value=""/>
+      </diagnose_bevalling>
+      <aantal_geboren_kinderen value=""/>
+      <risicostatus_voor_baring value="" enum=""/>
+      <interventies_begin_baring>
+         <interventie_begin_baring value="" enum=""/>
+         <indicatie_interventie_begin_baring value="" enum=""/>
+      </interventies_begin_baring>
+      <wijze_waarop_de_baring_begon value="" enum=""/>
+      <tijdstip_begin_actieve_ontsluiting value=""/>
+      <medicatie_nageboortetijdperk_groep>
+         <medicatie_nageboortetijdperkq value=""/>
+         <soort_medicatie_nageboortetijdperk value="" enum=""/>
+      </medicatie_nageboortetijdperk_groep>
+      <placenta>
+         <geboorte_placenta value="" enum=""/>
+      </placenta>
+      <hoeveelheid_bloedverlies value=""/>
+      <conditie_perineum_postpartum value="" enum=""/>
+   </bevalling>
+   <uitkomst_per_kind>
+      <baring>
+         <werkelijke_plaats_baring_type_locatie value="" enum=""/>
+         <ziekenhuis_baring>
+            <ziekenhuisnummer_lvrid value=""/>
+         </ziekenhuis_baring>
+         <demografische_gegevens>
+            <identificaties_kind>
+               <bsn_kind value=""/>
+            </identificaties_kind>
+            <geslacht_medische_observatie value="" enum=""/>
+            <geboortedatum value=""/>
+            <rangnummer_kind value=""/>
+            <perinatale_sterfte_groep>
+               <perinatale_sterfteq value=""/>
+               <fase_perinatale_sterfte value="" enum=""/>
+               <datumtijd_vaststelling_perinatale_sterfte value=""/>
+            </perinatale_sterfte_groep>
+         </demografische_gegevens>
+         <kindspecifieke_maternale_gegevens>
+            <bijstimulatie_toegediendq value=""/>
+            <tijdstip_breken_vliezen value=""/>
+            <kleur_en_consistentie_vruchtwater value="" enum=""/>
+            <tijdstip_actief_meepersen value=""/>
+            <episiotomieq value=""/>
+            <indicatie_episiotomie value="" enum=""/>
+            <locatie_episiotomie value="" enum=""/>
+            <ruggenprik_gewenst_niet_gekregenq value=""/>
+            <pijnbestrijdingq value=""/>
+            <pijnbestrijding>
+               <methode>
+                  <methode value="" enum=""/>
+                  <overig_middel>
+                     <middel value="" enum=""/>
+                     <toediening value="" enum=""/>
+                  </overig_middel>
+               </methode>
+               <periode value="" enum=""/>
+            </pijnbestrijding>
+            <sedatieq value=""/>
+         </kindspecifieke_maternale_gegevens>
+         <kindspecifieke_uitkomstgegevens>
+            <type_partus value="" enum=""/>
+            <ligging_bij_geboorte value="" enum=""/>
+            <aanpakker_kind_groep>
+               <rol_aanpakker_kind value="" enum=""/>
+            </aanpakker_kind_groep>
+            <supervisor_groep>
+               <rol_supervisor value="" enum=""/>
+            </supervisor_groep>
+            <vaginale_kunstverlossing_groep>
+               <vaginale_kunstverlossing value="" enum=""/>
+               <succes_vaginale_kunstverlossingq value=""/>
+            </vaginale_kunstverlossing_groep>
+            <sectio_caesarea_group>
+               <beslismoment_sectio_caesarea value="" enum=""/>
+               <indicatie_primaire_sectio value="" enum=""/>
+               <indicatie_secundaire_sectio value="" enum=""/>
+            </sectio_caesarea_group>
+            <overige_interventies value="" enum=""/>
+            <lichamelijk_onderzoek_kind>
+               <apgarscore_na_5_min value=""/>
+               <geboortegewicht value=""/>
+            </lichamelijk_onderzoek_kind>
+            <congenitale_afwijkingenq value=""/>
+            <congenitale_afwijkingen_groep>
+               <specificatie_congenitale_afwijking_groep>
+                  <specificatie_congenitale_afwijking value="" enum=""/>
+               </specificatie_congenitale_afwijking_groep>
+               <chromosomale_afwijkingenq value=""/>
+               <specificatie_chromosomale_afwijking_groep>
+                  <specificatie_chromosomale_afwijking value="" enum=""/>
+               </specificatie_chromosomale_afwijking_groep>
+            </congenitale_afwijkingen_groep>
+            <problematiek_kindq value=""/>
+            <problematiek_kind value="" enum=""/>
+            <kinderarts_betrokkenq value=""/>
+            <betrokkenheid_kinderarts>
+               <datum_betrokkenheid value=""/>
+               <reden_betrokkenheid value="" enum=""/>
+               <type_betrokkenheid value="" enum=""/>
+               <zorginstelling_lvrid value=""/>
+            </betrokkenheid_kinderarts>
+         </kindspecifieke_uitkomstgegevens>
+      </baring>
+   </uitkomst_per_kind>
+   <medisch_onderzoek>
+      <maternale_onderzoeksgegevens>
+         <urine_bloed_en_aanvullende_onderzoeken>
+            <psie>
+               <irregulaire_antistoffenq value=""/>
+               <welke_irregulaire_antistoffen_vrouw_aanwezig value="" enum=""/>
+            </psie>
+         </urine_bloed_en_aanvullende_onderzoeken>
+      </maternale_onderzoeksgegevens>
+   </medisch_onderzoek>
+   <postnatale_fase>
+      <diagnoseinterventie_postnataal>
+         <datum value=""/>
+         <pathologie_vrouw value="" enum=""/>
+      </diagnoseinterventie_postnataal>
+      <kindspecifieke_gegevens>
+         <rangnummer_kind value=""/>
+         <voeding_kind_groep>
+            <voeding_kind_datum value=""/>
+            <substantie_voeding_kind value="" enum=""/>
+         </voeding_kind_groep>
+      </kindspecifieke_gegevens>
+   </postnatale_fase>
+</kernset_geboortezorg>

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kernset_geboortezorg transactionRef="2.16.840.1.113883.2.4.3.11.60.90.77.4.2437"
+                      transactionEffectiveDate="2016-11-22T08:24:02"
+                      versionDate=""
+                      prefix="peri20-">
+   <zorgverlening>
+      <datum_start_zorgverantwoordelijkheid value="T-80D"/>
+      <datum_einde_zorgverantwoordelijkheid value="T-78D"/>
+      <eindverantwoordelijk_in_welke_perinatale_periodeq value="4" displayName="uitdrijving"/>
+      <eindverantwoordelijk_in_welke_perinatale_periodeq value="5" displayName="nageboortetijdperk"/>
+      <eindverantwoordelijk_in_welke_perinatale_periodeq value="6" displayName="1e 24 uur postpartum"/>
+      <conclusie_risicostatus_na_intake value="3" displayName="2e lijn (VIL C)"/>
+      <verwijsdetails>
+         <datum_verwijzing value="T-80D"/>
+         <verwijzing_van>
+            <zorginstelling>
+               <zorgaanbieder_identificatie_nummer value="1504"/>
+               <specialisme value="01" displayName="verloskundige"/>
+            </zorginstelling>
+         </verwijzing_van>
+         <verwijzing_naar>
+            <zorginstelling>
+               <zorgaanbieder_identificatie_nummer value="0110"/>
+               <specialisme value="02" displayName="gynaecoloog 2e lijn"/>
+            </zorginstelling>
+            <type_verwijzing value="308292007" displayName="Overname"/>
+         </verwijzing_naar>
+         <redenen_van_verwijzing>
+            <van_1e_naar_2e_lijn>
+               <bevalling>
+                  <behoefte_aan_pijnbestrijdingq value="true"/>
+               </bevalling>
+            </van_1e_naar_2e_lijn>
+         </redenen_van_verwijzing>
+         <perinatale_periode value="6" displayName="tijdens uitdrijving"/>
+      </verwijsdetails>
+   </zorgverlening>
+   <zorgverlenerzorginstelling>
+      <zorginstelling>
+         <zorginstelling_lvrid value="0110"/>
+      </zorginstelling>
+   </zorgverlenerzorginstelling>
+   <vrouw>
+      <burgerservicenummer value="961921821"/>
+      <lokale_persoonsidentificatie value="*"/>
+      <geboortedatum value="T-41Y"/>
+      <adres>
+         <postcode value="5689 CZ"/>
+      </adres>
+      <etniciteit value="12" displayName="Kaukasisch"/>
+      <anamnese>
+         <onder_behandeling_geweestq value="false"/>
+      </anamnese>
+      <lengte_gemeten value="184"/>
+      <vrouwelijke_genitale_verminkingq value="false"/>
+   </vrouw>
+   <obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap>
+      <wijze_einde_zwangerschap value="2" displayName="Miskraam"/>
+      <definitieve_a_terme_datum value="T-575D"/>
+      <diagnose>
+         <bloedverliesq value="true"/>
+         <hyperemesis_gravidarumq value="true"/>
+      </diagnose>
+      <irregulaire_antistoffenq value="true"/>
+   </obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap>
+   <zwangerschap>
+      <dossiernummer value="5460cff0-2089-11e9-b56e-0800200c9a66"/>
+      <graviditeit value="2"/>
+      <pariteit_voor_deze_zwangerschap value="0"/>
+      <definitieve_a_terme_datum value="T-78D"/>
+      <voornemens>
+         <voorgenomen_plaats_baring_tijdens_zwangerschap_type_locatie value="00" displayName="Geen voorkeur"/>
+      </voornemens>
+      <prenatale_controle>
+         <datum_controle value="T-240D"/>
+         <zwangerschapsduur value="155"/>
+         <leven_voelen value="276372004" displayName="weinig"/>
+         <rookgedrag value="5" displayName="gestopt vóór huidige zwangerschap"/>
+         <alcoholgebruik value="UNK" displayName="onbekend"/>
+         <drugsgebruikq value="true"/>
+         <gewicht_gemeten value="85"/>
+      </prenatale_controle>
+      <diagnose>
+         <datum value="T-240D"/>
+         <zwangerschapsduur value="155"/>
+         <infectie value="307534009" displayName="Urineweg infectie"/>
+         <liggingsafwijking value="UNK" displayName="onbekend"/>
+      </diagnose>
+      <maternale_sterfteq value="false"/>
+   </zwangerschap>
+   <bevalling>
+      <partusnummer value="21234"/>
+      <aantal_geboren_kinderen value="1"/>
+      <risicostatus_voor_baring value="1" displayName="1e lijn (VIL A)"/>
+      <wijze_waarop_de_baring_begon value="1" displayName="Spontane weeën"/>
+      <tijdstip_begin_actieve_ontsluiting value="T-81D{22:00}"/>
+      <medicatie_nageboortetijdperk_groep>
+         <medicatie_nageboortetijdperkq value="false"/>
+      </medicatie_nageboortetijdperk_groep>
+      <placenta>
+         <geboorte_placenta value="0" displayName="Spontaan"/>
+      </placenta>
+      <hoeveelheid_bloedverlies value="850"/>
+      <conditie_perineum_postpartum value="199925004" displayName="2e graads perineumruptuur"/>
+      <conditie_perineum_postpartum value="609344008" displayName="Episiotomiewond"/>
+   </bevalling>
+   <uitkomst_per_kind>
+      <baring>
+         <werkelijke_plaats_baring_type_locatie value="22232009" displayName="Ziekenhuis"/>
+         <ziekenhuis_baring>
+            <ziekenhuisnummer_lvrid value="0110"/>
+         </ziekenhuis_baring>
+         <demografische_gegevens>
+            <geslacht_medische_observatie value="1" displayName="mannelijk"/>
+            <geboortedatum value="T-80D{14:50}"/>
+            <rangnummer_kind value="1"/>
+            <perinatale_sterfte_groep>
+               <perinatale_sterfteq value="false"/>
+            </perinatale_sterfte_groep>
+         </demografische_gegevens>
+         <kindspecifieke_maternale_gegevens>
+            <bijstimulatie_toegediendq value="true"/>
+            <tijdstip_breken_vliezen value="T-80D{12:34}"/>
+            <kleur_en_consistentie_vruchtwater value="1" displayName="Kleurloos"/>
+            <tijdstip_actief_meepersen value="T-80D{14:30}"/>
+            <episiotomieq value="true"/>
+            <indicatie_episiotomie value="OTH" displayName="overig"/>
+            <locatie_episiotomie value="1" displayName="mediolaterale episiotomie"/>
+            <ruggenprik_gewenst_niet_gekregenq value="true"/>
+            <pijnbestrijdingq value="true"/>
+            <pijnbestrijding>
+               <methode>
+                  <methode value="OTH" displayName="Overig middel"/>
+                  <overig_middel>
+                     <middel value="229559001" displayName="TENS"/>
+                     <toediening value="78746004" displayName="Elektroden"/>
+                  </overig_middel>
+               </methode>
+               <periode value="Uitdr" displayName="tijdens uitdrijving"/>
+            </pijnbestrijding>
+            <sedatieq value="false"/>
+         </kindspecifieke_maternale_gegevens>
+         <kindspecifieke_uitkomstgegevens>
+            <type_partus value="177184002" displayName="Spontaan"/>
+            <ligging_bij_geboorte value="37235006" displayName="Achterhoofd-achter"/>
+            <aanpakker_kind_groep>
+               <rol_aanpakker_kind value="22" displayName="gynaecoloog in opleiding"/>
+            </aanpakker_kind_groep>
+            <supervisor_groep>
+               <rol_supervisor value="22" displayName="gynaecoloog in opleiding"/>
+            </supervisor_groep>
+            <lichamelijk_onderzoek_kind>
+               <apgarscore_na_5_min value="9"/>
+               <geboortegewicht value="3720"/>
+            </lichamelijk_onderzoek_kind>
+            <congenitale_afwijkingenq value="false"/>
+            <congenitale_afwijkingen_groep>
+               <chromosomale_afwijkingenq value="false"/>
+            </congenitale_afwijkingen_groep>
+            <problematiek_kindq value="false"/>
+            <kinderarts_betrokkenq value="false"/>
+         </kindspecifieke_uitkomstgegevens>
+      </baring>
+   </uitkomst_per_kind>
+   <postnatale_fase>
+      <kindspecifieke_gegevens>
+         <rangnummer_kind value="1"/>
+         <voeding_kind_groep>
+            <voeding_kind_datum value="T-79D"/>
+            <substantie_voeding_kind value="1" displayName="borstvoeding"/>
+            <substantie_voeding_kind value="2" displayName="kunstvoeding"/>
+         </voeding_kind_groep>
+      </kindspecifieke_gegevens>
+   </postnatale_fase>
+</kernset_geboortezorg>

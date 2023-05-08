@@ -276,7 +276,8 @@
           <xsl:variable name="corresponding-concept-newer" as="element()*" select="$conceptlist-newer/(concept | extension)[@code eq $code-older]"/>
           <xsl:choose>
             <xsl:when test="count($corresponding-concept-newer) gt 1">
-              <xsl:sequence select="error((), 'Cannot handle multiple corresponding newer concepts/extensions')"/>
+              <!--<xsl:sequence select="error((), 'Cannot handle multiple corresponding newer concepts/extensions')"/>-->
+              <xsl:output select="error((), 'Cannot handle multiple corresponding newer concepts/extensions')"/>
             </xsl:when>
             <xsl:when test="count($corresponding-concept-newer) eq 1">
               <xsl:variable name="code-type-newer" as="xs:string" select="local-name($corresponding-concept-newer)"/>

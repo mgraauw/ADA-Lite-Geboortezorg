@@ -15,4 +15,4 @@ Make sure to look at the last bits in which it uses the generated XML Schemas an
   - `design/specs-full` 
   - `design/exaples-lite` 
 - The `design/generator/xsl` sub-directory contains the XSLT stylesheet(s) that are part of the generator itself. 
-- The `design/generator/data` sub-directory contains files that are used by the generator. What these files are for is documented in the files themselves. 
+- The `design/generator/data` sub-directory contains files that are used by the generator. What these files are for is documented in the files themselves.

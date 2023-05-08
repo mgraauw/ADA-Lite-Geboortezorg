@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kernset_geboortezorg transactionRef="2.16.840.1.113883.2.4.3.11.60.90.77.4.2437"
+                      transactionEffectiveDate="2016-11-22T08:24:02"
+                      versionDate=""
+                      prefix="peri20-">
+   <zorgverlening>
+      <datum_start_zorgverantwoordelijkheid value="T-388D"/>
+      <datum_einde_zorgverantwoordelijkheid value="T-150D"/>
+      <eindverantwoordelijk_in_welke_perinatale_periodeq value="1" displayName="start /intake zwangerschapszorg"/>
+      <eindverantwoordelijk_in_welke_perinatale_periodeq value="2" displayName="zwangerschap vervolg"/>
+      <eindverantwoordelijk_in_welke_perinatale_periodeq value="3" displayName="start baring/ontsluiting"/>
+      <eindverantwoordelijk_in_welke_perinatale_periodeq value="4" displayName="uitdrijving"/>
+      <eindverantwoordelijk_in_welke_perinatale_periodeq value="5" displayName="nageboortetijdperk"/>
+      <eindverantwoordelijk_in_welke_perinatale_periodeq value="6" displayName="1e 24 uur postpartum"/>
+      <eindverantwoordelijk_in_welke_perinatale_periodeq value="7" displayName="2e - 7e dag postpartum"/>
+      <eindverantwoordelijk_in_welke_perinatale_periodeq value="8" displayName="follow-up eerste 6 wkn postpartum"/>
+      <conclusie_risicostatus_na_intake value="3" displayName="2e lijn (VIL C)"/>
+   </zorgverlening>
+   <zorgverlenerzorginstelling>
+      <zorginstelling>
+         <zorginstelling_lvrid value="0179"/>
+      </zorginstelling>
+   </zorgverlenerzorginstelling>
+   <vrouw>
+      <burgerservicenummer value="912345676"/>
+      <lokale_persoonsidentificatie value="*"/>
+      <geboortedatum value="T-22Y"/>
+      <adres>
+         <postcode value="9562 GF"/>
+      </adres>
+      <etniciteit value="14" displayName="Latijns Amerikaans"/>
+      <anamnese>
+         <onder_behandeling_geweestq value="true"/>
+         <algemene_anamnese>
+            <cardiovasculaire_aandoening value="38341003" displayName="Hypertensie"/>
+            <diabetes_mellitusq value="true"/>
+            <neurologische_aandoening value="84757009" displayName="Epilepsie"/>
+            <longaandoening value="OTH" displayName="Overig"/>
+            <orthopedische_afwijking value="OTH" displayName="Overig"/>
+            <type_stollingsprobleem value="OTH" displayName="Overig"/>
+            <psychiatrieq value="true"/>
+         </algemene_anamnese>
+      </anamnese>
+      <lengte_gemeten value="186"/>
+   </vrouw>
+   <obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap>
+      <wijze_einde_zwangerschap value="1" displayName="Partus"/>
+      <definitieve_a_terme_datum value="T-940D"/>
+      <diagnose>
+         <infectie value="307534009" displayName="Urineweg infectie"/>
+         <zwangerschapscholestaseq value="true"/>
+         <afwijkende_groei_foetus value="NI" displayName="Geen informatie"/>
+      </diagnose>
+      <irregulaire_antistoffenq value="true"/>
+      <eerdere_bevalling>
+         <placenta>
+            <geboorte_placenta value="0" displayName="Spontaan"/>
+         </placenta>
+         <vorige_uitkomst_per_kind>
+            <vorige_baring>
+               <demografische_gegevens>
+                  <geboortedatum value="T-936D"/>
+               </demografische_gegevens>
+               <kindspecifieke_gegevens_vorige_uitkomsten>
+                  <type_partus value="3311000146109" displayName="Vaginale kunstverlossing"/>
+                  <percentiel_van_het_geboortegewicht value="3" displayName="p10 tot p50"/>
+                  <apgarscore_na_5_min value="10"/>
+                  <congenitale_afwijkingenq value="false"/>
+               </kindspecifieke_gegevens_vorige_uitkomsten>
+            </vorige_baring>
+         </vorige_uitkomst_per_kind>
+      </eerdere_bevalling>
+   </obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap>
+   <zwangerschap>
+      <dossiernummer value="68a34ee0-20a0-11e9-b56e-0800200c9a66"/>
+      <graviditeit value="2"/>
+      <pariteit_voor_deze_zwangerschap value="1"/>
+      <definitieve_a_terme_datum value="T-163D"/>
+      <voornemens>
+         <voorgenomen_plaats_baring_tijdens_zwangerschap_type_locatie value="NI" displayName="Geen informatie"/>
+      </voornemens>
+      <prenatale_controle>
+         <datum_controle value="T-357D"/>
+         <zwangerschapsduur value="86"/>
+         <leven_voelen value="289432001" displayName="geen"/>
+         <rookgedrag value="6" displayName="gestopt tijdens huidige zwangerschap"/>
+         <alcoholgebruik value="1" displayName="geen"/>
+         <drugsgebruikq value="true"/>
+         <gewicht_gemeten value="89"/>
+      </prenatale_controle>
+      <diagnose>
+         <datum value="T-357D"/>
+         <zwangerschapsduur value="86"/>
+         <afwijkende_groei_foetus value="199616008" displayName="Macrosomie"/>
+         <abruptio_placentaeq value="true"/>
+      </diagnose>
+      <intrauteriene_behandeling value="265633004" displayName="Selectieve foeticide"/>
+      <maternale_sterfteq value="true"/>
+      <wijze_einde_zwangerschap value="1" displayName="Partus"/>
+   </zwangerschap>
+   <bevalling>
+      <partusnummer value="000000"/>
+      <aantal_geboren_kinderen value="1"/>
+      <risicostatus_voor_baring value="3" displayName="2e lijn (VIL C)"/>
+      <interventies_begin_baring>
+         <interventie_begin_baring value="80771000146107" displayName="Primaire sectio caesarea"/>
+         <indicatie_interventie_begin_baring value="1" displayName="acuut levensbedreigend"/>
+      </interventies_begin_baring>
+      <wijze_waarop_de_baring_begon value="3" displayName="Interventie om baring op gang te brengen"/>
+      <medicatie_nageboortetijdperk_groep>
+         <medicatie_nageboortetijdperkq value="false"/>
+      </medicatie_nageboortetijdperk_groep>
+      <placenta>
+         <geboorte_placenta value="4" displayName="Placentaverwijdering bij SC"/>
+      </placenta>
+      <hoeveelheid_bloedverlies value="1500"/>
+      <conditie_perineum_postpartum value="289854007" displayName="Gaaf"/>
+   </bevalling>
+   <uitkomst_per_kind>
+      <baring>
+         <werkelijke_plaats_baring_type_locatie value="22232009" displayName="Ziekenhuis"/>
+         <ziekenhuis_baring>
+            <ziekenhuisnummer_lvrid value="0179"/>
+         </ziekenhuis_baring>
+         <demografische_gegevens>
+            <identificaties_kind>
+               <bsn_kind value="528741913"/>
+            </identificaties_kind>
+            <geslacht_medische_observatie value="3" displayName="niet conclusief"/>
+            <geboortedatum value="T-161D{02:30}"/>
+            <rangnummer_kind value="1"/>
+            <perinatale_sterfte_groep>
+               <perinatale_sterfteq value="false"/>
+            </perinatale_sterfte_groep>
+         </demografische_gegevens>
+         <kindspecifieke_maternale_gegevens>
+            <kleur_en_consistentie_vruchtwater value="2" displayName="Meconium"/>
+            <episiotomieq value="false"/>
+            <ruggenprik_gewenst_niet_gekregenq value="false"/>
+            <pijnbestrijdingq value="true"/>
+            <pijnbestrijding>
+               <methode>
+                  <methode value="50697003" displayName="Algehele anesthesie"/>
+               </methode>
+               <periode value="Sectio" displayName="tijdens sectio"/>
+            </pijnbestrijding>
+            <sedatieq value="true"/>
+         </kindspecifieke_maternale_gegevens>
+         <kindspecifieke_uitkomstgegevens>
+            <type_partus value="274130007" displayName="Secundair"/>
+            <ligging_bij_geboorte value="UNK" displayName="Onbekend"/>
+            <aanpakker_kind_groep>
+               <rol_aanpakker_kind value="01.046" displayName="gynaecoloog"/>
+            </aanpakker_kind_groep>
+            <supervisor_groep>
+               <rol_supervisor value="01.046" displayName="gynaecoloog"/>
+            </supervisor_groep>
+            <vaginale_kunstverlossing_groep>
+               <vaginale_kunstverlossing value="61586001" displayName="Vacuüm"/>
+               <succes_vaginale_kunstverlossingq value="false"/>
+            </vaginale_kunstverlossing_groep>
+            <sectio_caesarea_group>
+               <beslismoment_sectio_caesarea value="3" displayName="Tijdens uitdrijving besloten"/>
+               <indicatie_secundaire_sectio value="418138009" displayName="maternale conditie"/>
+            </sectio_caesarea_group>
+            <lichamelijk_onderzoek_kind>
+               <geboortegewicht value="3750"/>
+            </lichamelijk_onderzoek_kind>
+            <congenitale_afwijkingenq value="true"/>
+            <congenitale_afwijkingen_groep>
+               <chromosomale_afwijkingenq value="true"/>
+               <specificatie_chromosomale_afwijking_groep>
+                  <specificatie_chromosomale_afwijking value="41040004" displayName="trisomie 21"/>
+               </specificatie_chromosomale_afwijking_groep>
+            </congenitale_afwijkingen_groep>
+            <problematiek_kindq value="true"/>
+            <problematiek_kind value="95827002" displayName="Gehoor"/>
+            <kinderarts_betrokkenq value="false"/>
+         </kindspecifieke_uitkomstgegevens>
+      </baring>
+   </uitkomst_per_kind>
+   <medisch_onderzoek>
+      <maternale_onderzoeksgegevens>
+         <urine_bloed_en_aanvullende_onderzoeken>
+            <psie>
+               <irregulaire_antistoffenq value="true"/>
+               <welke_irregulaire_antistoffen_vrouw_aanwezig value="405844003" displayName="Kell"/>
+            </psie>
+         </urine_bloed_en_aanvullende_onderzoeken>
+      </maternale_onderzoeksgegevens>
+   </medisch_onderzoek>
+   <postnatale_fase>
+      <diagnoseinterventie_postnataal>
+         <datum value="T-161D"/>
+         <pathologie_vrouw value="56272000" displayName="Trombose diep veneuze postpartum"/>
+      </diagnoseinterventie_postnataal>
+      <kindspecifieke_gegevens>
+         <voeding_kind_groep>
+            <voeding_kind_datum value="T-161D"/>
+            <substantie_voeding_kind value="2" displayName="kunstvoeding"/>
+         </voeding_kind_groep>
+      </kindspecifieke_gegevens>
+   </postnatale_fase>
+</kernset_geboortezorg>

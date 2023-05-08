@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kernset_geboortezorg transactionRef="2.16.840.1.113883.2.4.3.11.60.90.77.4.2437"
+                      transactionEffectiveDate="2016-11-22T08:24:02"
+                      versionDate=""
+                      prefix="peri20-">
+   <zorgverlening>
+      <datum_start_zorgverantwoordelijkheid value="T-332D"/>
+      <datum_einde_zorgverantwoordelijkheid value="T-80D"/>
+      <eindverantwoordelijk_in_welke_perinatale_periodeq value="1" displayName="start /intake zwangerschapszorg"/>
+      <eindverantwoordelijk_in_welke_perinatale_periodeq value="2" displayName="zwangerschap vervolg"/>
+      <eindverantwoordelijk_in_welke_perinatale_periodeq value="3" displayName="start baring/ontsluiting"/>
+      <eindverantwoordelijk_in_welke_perinatale_periodeq value="4" displayName="uitdrijving"/>
+      <conclusie_risicostatus_na_intake value="1" displayName="1e lijn (VIL A)"/>
+      <verwijsdetails>
+         <datum_verwijzing value="T-80D"/>
+         <verwijzing_van>
+            <zorginstelling>
+               <zorgaanbieder_identificatie_nummer value="1504"/>
+               <specialisme value="01" displayName="verloskundige"/>
+            </zorginstelling>
+         </verwijzing_van>
+         <verwijzing_naar>
+            <zorginstelling>
+               <zorgaanbieder_identificatie_nummer value="0110"/>
+               <specialisme value="02" displayName="gynaecoloog 2e lijn"/>
+            </zorginstelling>
+            <type_verwijzing value="308292007" displayName="Overname"/>
+         </verwijzing_naar>
+         <redenen_van_verwijzing>
+            <van_1e_naar_2e_lijn>
+               <bevalling>
+                  <behoefte_aan_pijnbestrijdingq value="true"/>
+               </bevalling>
+            </van_1e_naar_2e_lijn>
+         </redenen_van_verwijzing>
+         <perinatale_periode value="6" displayName="tijdens uitdrijving"/>
+      </verwijsdetails>
+   </zorgverlening>
+   <zorgverlenerzorginstelling>
+      <zorginstelling>
+         <zorginstelling_lvrid value="1504"/>
+      </zorginstelling>
+   </zorgverlenerzorginstelling>
+   <vrouw>
+      <burgerservicenummer value="961921821"/>
+      <lokale_persoonsidentificatie value="*"/>
+      <geboortedatum value="T-41Y"/>
+      <adres>
+         <postcode value="5689 CZ"/>
+      </adres>
+      <etniciteit value="12" displayName="Kaukasisch"/>
+      <anamnese>
+         <onder_behandeling_geweestq value="false"/>
+      </anamnese>
+      <lengte_gemeten value="184"/>
+      <vrouwelijke_genitale_verminkingq value="false"/>
+   </vrouw>
+   <obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap>
+      <wijze_einde_zwangerschap value="2" displayName="Miskraam"/>
+      <definitieve_a_terme_datum value="T-575D"/>
+      <diagnose>
+         <bloedverliesq value="true"/>
+         <hyperemesis_gravidarumq value="true"/>
+      </diagnose>
+      <irregulaire_antistoffenq value="true"/>
+   </obstetrische_anamnese_gegroepeerd_per_voorgaande_zwangerschap>
+   <zwangerschap>
+      <dossiernummer value="5460cff0-2089-11e9-b56e-0800200c9a66"/>
+      <graviditeit value="2"/>
+      <pariteit_voor_deze_zwangerschap value="0"/>
+      <definitieve_a_terme_datum value="T-78D"/>
+      <voornemens>
+         <voorgenomen_plaats_baring_tijdens_zwangerschap_type_locatie value="00" displayName="Geen voorkeur"/>
+      </voornemens>
+      <prenatale_controle>
+         <datum_controle value="T-240D"/>
+         <zwangerschapsduur value="155"/>
+         <leven_voelen value="276372004" displayName="weinig"/>
+         <rookgedrag value="5" displayName="gestopt vóór huidige zwangerschap"/>
+         <alcoholgebruik value="UNK" displayName="onbekend"/>
+         <drugsgebruikq value="true"/>
+         <gewicht_gemeten value="85"/>
+      </prenatale_controle>
+      <diagnose>
+         <datum value="T-240D"/>
+         <zwangerschapsduur value="155"/>
+         <infectie value="307534009" displayName="Urineweg infectie"/>
+         <liggingsafwijking value="UNK" displayName="onbekend"/>
+      </diagnose>
+      <maternale_sterfteq value="false"/>
+   </zwangerschap>
+   <bevalling>
+      <partusnummer value="21123"/>
+      <aantal_geboren_kinderen value="1"/>
+      <risicostatus_voor_baring value="1" displayName="1e lijn (VIL A)"/>
+      <wijze_waarop_de_baring_begon value="1" displayName="Spontane weeën"/>
+      <tijdstip_begin_actieve_ontsluiting value="T-81D{22:00}"/>
+   </bevalling>
+</kernset_geboortezorg>

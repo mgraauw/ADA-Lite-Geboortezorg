@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kernset_geboortezorg transactionRef="2.16.840.1.113883.2.4.3.11.60.90.77.4.2437"
+                      transactionEffectiveDate="2016-11-22T08:24:02"
+                      versionDate=""
+                      prefix="peri20-"><!-- == ADA full format document generated from lite format document == --><!-- == Source: design/examples-lite/test-wijzigingen-236.xml == --><!-- == Specification used: design/specs-full/kernset-236.xml == --><!-- == Generator: design/xsl/lib/ada-lite2ada-full.mod.xsl == -->
+   <zorgverlening conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.4">
+      <datum_start_zorgverantwoordelijkheid conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20290"
+                                            value="T-332D"/>
+      <datum_einde_zorgverantwoordelijkheid conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20340" value="T-80D"/>
+      <eindverantwoordelijk_in_welke_perinatale_periodeq conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20355"
+                                                         value="1"
+                                                         code="1"
+                                                         codeSystem="2.16.840.1.113883.2.4.3.22.1.2.20"
+                                                         displayName="Start /intake zwangerschapszorg"/>
+      <eindverantwoordelijk_in_welke_perinatale_periodeq conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20355"
+                                                         value="2"
+                                                         code="2"
+                                                         codeSystem="2.16.840.1.113883.2.4.3.22.1.2.20"
+                                                         displayName="Zwangerschap vervolg"/>
+      <eindverantwoordelijk_in_welke_perinatale_periodeq conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20355"
+                                                         value="3"
+                                                         code="3"
+                                                         codeSystem="2.16.840.1.113883.2.4.3.22.1.2.20"
+                                                         displayName="Start baring/ontsluiting"/>
+      <eindverantwoordelijk_in_welke_perinatale_periodeq conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20355"
+                                                         value="4"
+                                                         code="4"
+                                                         codeSystem="2.16.840.1.113883.2.4.3.22.1.2.20"
+                                                         displayName="Uitdrijving"/>
+      <conclusie_risicostatus_na_intake conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20305"
+                                        value="1"
+                                        code="1"
+                                        codeSystem="2.16.840.1.113883.2.4.4.13.26"
+                                        displayName="1e lijn (VIL A)"/>
+      <verwijsdetails conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82012">
+         <datum_verwijzing conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82013" value="T-80D"/>
+         <verwijzing_van conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82550">
+            <zorginstelling conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82551">
+               <zorgaanbieder_identificatie_nummer conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82552" value="1504"/>
+               <specialisme conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82554"
+                            value="1"
+                            code="01"
+                            codeSystem="2.16.840.1.113883.2.4.4.15.1"
+                            displayName="Verloskundige"/>
+            </zorginstelling>
+         </verwijzing_van>
+         <verwijzing_naar conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82577">
+            <zorginstelling conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82578">
+               <zorgaanbieder_identificatie_nummer conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82579" value="0110"/>
+               <specialisme conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82580"
+                            value="2"
+                            code="02"
+                            codeSystem="2.16.840.1.113883.2.4.4.15.1"
+                            displayName="Gynaecoloog 2e lijn"/>
+            </zorginstelling>
+            <type_verwijzing conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82581"
+                             value="2"
+                             code="308292007"
+                             codeSystem="2.16.840.1.113883.6.96"
+                             displayName="overdracht van zorg (verrichting)"/>
+         </verwijzing_naar>
+         <redenen_van_verwijzing conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82014">
+            <van_1e_naar_2e_lijn conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82450">
+               <zwangerschap conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82506">
+                  <meerlingzwangerschapq conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.83404" value="true"/>
+                  <serotiniteitq conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.84192" value="true"/>
+                  <surmenageq conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.84216" value="true"/>
+               </zwangerschap>
+               <bevalling conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82527">
+                  <meconiumhoudend_vruchtwaterq conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.83403" value="true"/>
+                  <behoefte_aan_pijnbestrijdingq conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.84215" value="true"/>
+               </bevalling>
+            </van_1e_naar_2e_lijn>
+         </redenen_van_verwijzing>
+         <perinatale_periode conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20367"
+                             value="8"
+                             code="6"
+                             codeSystem="2.16.840.1.113883.2.4.3.22.1.2.52"
+                             displayName="Tijdens uitdrijving"/>
+      </verwijsdetails>
+   </zorgverlening>
+   <zorgverlenerzorginstelling conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.1">
+      <zorginstelling conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10020">
+         <zorginstelling_lvrid conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10023" value="1504"/>
+      </zorginstelling>
+   </zorgverlenerzorginstelling>
+   <vrouw conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.2">
+      <burgerservicenummer conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10030"
+                           value="961921821"/>
+      <geboortedatum conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.10040" value="T-41Y"/>
+   </vrouw>
+   <zwangerschap conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.3">
+      <dossiernummer conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.84211"
+                     value="5460cff0-2089-11e9-b56e-0800200c9a66"/>
+      <graviditeit conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20010" value="2"/>
+      <pariteit_voor_deze_zwangerschap conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20150" value="0"/>
+      <definitieve_a_terme_datum conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82160" value="T-78D"/>
+      <voornemens conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.80671">
+         <voorgenomen_plaats_baring_tijdens_zwangerschap_type_locatie conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20261"
+                                                                      value="5"
+                                                                      code="00"
+                                                                      codeSystem="2.16.840.1.113883.2.4.3.22.1.8.7"
+                                                                      displayName="Geen voorkeur"/>
+         <naar_welk_ziekenhuis_wil_de_vrouw_worden_verwezenq conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.84194">
+            <zorginstelling_agbid conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.84195" value="123"/>
+            <zorginstelling_lvrid conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.84210" value="345"/>
+            <naam_zorginstelling conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.84196"
+                                 value="Test installing voor verwijzen"/>
+         </naar_welk_ziekenhuis_wil_de_vrouw_worden_verwezenq>
+      </voornemens>
+   </zwangerschap>
+   <bevalling conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.6">
+      <partusnummer conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20500" value="21123"/>
+      <aantal_geboren_kinderen conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.20505" value="1"/>
+   </bevalling>
+   <uitkomst_per_kind conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.7">
+      <baring conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.40002">
+         <kindspecifieke_maternale_gegevens conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.71">
+            <ruggenprik_gewenst_niet_gekregenq conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82089" value="true"/>
+         </kindspecifieke_maternale_gegevens>
+      </baring>
+   </uitkomst_per_kind>
+   <postnatale_fase conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.16">
+      <diagnoseinterventie_postnataal conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82297">
+         <datum conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82298"
+                value="20220101"/>
+         <pathologie_vrouw conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.82209"
+                           value="2"
+                           code="398254007"
+                           codeSystem="2.16.840.1.113883.6.96"
+                           displayName="pre-eclampsie (aandoening)"/>
+      </diagnoseinterventie_postnataal>
+      <kindspecifieke_gegevens conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.161">
+         <rangnummer_kind conceptId="2.16.840.1.113883.2.4.3.11.60.90.77.2.6.83377" value="1"/>
+      </kindspecifieke_gegevens>
+   </postnatale_fase>
+</kernset_geboortezorg>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kernset_geboortezorg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                      transactionRef="2.16.840.1.113883.2.4.3.11.60.90.77.4.2437"
+                      transactionEffectiveDate="2016-11-22T08:24:02"
+                      versionDate=""
+                      prefix="peri20-">
+   <zorgverlening>
+      <datum_start_zorgverantwoordelijkheid value="T-332D"/>
+      <datum_einde_zorgverantwoordelijkheid value="T-80D"/>
+      <eindverantwoordelijk_in_welke_perinatale_periodeq value="1" displayName="start /intake zwangerschapszorg"/>
+      <eindverantwoordelijk_in_welke_perinatale_periodeq value="2" displayName="zwangerschap vervolg"/>
+      <eindverantwoordelijk_in_welke_perinatale_periodeq value="3" displayName="start baring/ontsluiting"/>
+      <eindverantwoordelijk_in_welke_perinatale_periodeq value="4" displayName="uitdrijving"/>
+      <conclusie_risicostatus_na_intake value="1" displayName="1e lijn (VIL A)"/>
+      <verwijsdetails>
+         <datum_verwijzing value="T-80D"/>
+         <verwijzing_van>
+            <zorginstelling>
+               <zorgaanbieder_identificatie_nummer value="1504"/>
+               <specialisme value="01" displayName="verloskundige"/>
+            </zorginstelling>
+         </verwijzing_van>
+         <verwijzing_naar>
+            <zorginstelling>
+               <zorgaanbieder_identificatie_nummer value="0110"/>
+               <specialisme value="02" displayName="gynaecoloog 2e lijn"/>
+            </zorginstelling>
+            <type_verwijzing value="308292007" displayName="Overname"/>
+         </verwijzing_naar>
+         <redenen_van_verwijzing>
+            <van_1e_naar_2e_lijn>
+               <zwangerschap>
+                  <meerlingzwangerschapq value="true"/>
+                  <serotiniteitq value="true"/>
+                  <surmenageq value="true"/>
+               </zwangerschap>
+               <bevalling>
+                  <meconiumhoudend_vruchtwaterq value="true"/>
+                  <behoefte_aan_pijnbestrijdingq value="true"/>
+               </bevalling>
+            </van_1e_naar_2e_lijn>
+         </redenen_van_verwijzing>
+         <perinatale_periode value="6" displayName="tijdens uitdrijving"/>
+      </verwijsdetails>
+   </zorgverlening>
+   <zorgverlenerzorginstelling>
+      <zorginstelling>
+         <zorginstelling_lvrid value="1504"/>
+      </zorginstelling>
+   </zorgverlenerzorginstelling>
+   <vrouw>
+      <burgerservicenummer value="961921821"/>
+      <geboortedatum value="T-41Y"/>
+   </vrouw>
+   <zwangerschap>
+      <dossiernummer value="5460cff0-2089-11e9-b56e-0800200c9a66"/>
+      <graviditeit value="2"/>
+      <pariteit_voor_deze_zwangerschap value="0"/>
+      <definitieve_a_terme_datum value="T-78D"/>
+      <voornemens>
+         <voorgenomen_plaats_baring_tijdens_zwangerschap_type_locatie value="00" displayName="Geen voorkeur"/>
+         <naar_welk_ziekenhuis_wil_de_vrouw_worden_verwezenq>
+            <zorginstelling_agbid value="123"/>
+            <zorginstelling_lvrid value="345"/>
+            <naam_zorginstelling value="Test installing voor verwijzen"/>
+         </naar_welk_ziekenhuis_wil_de_vrouw_worden_verwezenq>
+      </voornemens>
+   </zwangerschap>
+   <bevalling>
+      <partusnummer value="21123"/>
+      <aantal_geboren_kinderen value="1"/>
+   </bevalling>
+   <uitkomst_per_kind>
+      <baring>
+         <kindspecifieke_maternale_gegevens>
+            <ruggenprik_gewenst_niet_gekregenq value="true"/>
+         </kindspecifieke_maternale_gegevens>
+      </baring>
+   </uitkomst_per_kind>
+   <postnatale_fase>
+      <diagnoseinterventie_postnataal>
+         <datum value="20220101"/>
+         <pathologie_vrouw value="398254007"/>
+      </diagnoseinterventie_postnataal>
+      <kindspecifieke_gegevens>
+         <rangnummer_kind value="1"/>
+      </kindspecifieke_gegevens>
+   </postnatale_fase>
+</kernset_geboortezorg>
